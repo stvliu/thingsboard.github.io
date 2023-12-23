@@ -3,7 +3,7 @@ abstract: "Documentation for using ThingsBoard IoT Platform."
 toc:
 - title: 社区版
   path: /docs/
-- title: ThingsBoard是什么?
+- title: GridLinks是什么?
   path: /docs/getting-started-guides/what-is-thingsboard/
 - title: 如何连接您的设备?
   path: /docs/getting-started-guides/connectivity/
@@ -19,13 +19,13 @@ toc:
     path: /docs/user-guide/asset-profiles/
   - title: 属性
     path: /docs/user-guide/attributes/
-  - title: 时间序列数据
+  - title: 时序数据
     path: /docs/user-guide/telemetry/
-  - title: 告警
+  - title: 警报
     path: /docs/user-guide/alarms/
   - title: 向设备发送远程命令
     path: /docs/user-guide/rpc/
-  - title: 空中下载(OTA)更新
+  - title: OTA更新
     path: /docs/user-guide/ota-updates/
   - title: 通知中心
     path: /docs/user-guide/notifications/
@@ -128,74 +128,74 @@ toc:
     - title: 模板化
       path: /docs/user-guide/templatization/
       new: true
-- title: 白标
-  pe: true
-  section:
-    - title: 概述
-      path: /docs/pe/user-guide/white-labeling/
-    - title: 自助注册
-      path: /docs/pe/user-guide/self-registration/
-    - title: 邮件模板
-      path: /docs/pe/user-guide/mail-templates/
-    - title: 自定义翻译
-      path: /docs/pe/user-guide/custom-translation/
-    - title: 自定义菜单
-      path: /docs/pe/user-guide/custom-menu/
-- title: 集成
-  pe: true
-  section:
-  - title: 概述
-    path: /docs/user-guide/integrations/
-  - title: 远程集成
-    path: /docs/user-guide/integrations/remote-integrations/
-  - title: HTTP
-    path: /docs/user-guide/integrations/http/
-  - title: MQTT
-    path: /docs/user-guide/integrations/mqtt/
-  - title: CoAP
-    path: /docs/user-guide/integrations/coap/
-  - title: Kafka
-    path: /docs/user-guide/integrations/kafka/
-  - title: OPC-UA
-    path: /docs/user-guide/integrations/opc-ua/
-  - title: Actility ThingPark
-    path: /docs/user-guide/integrations/thingpark/
-  - title: TheThingsStack
-    path: /docs/user-guide/integrations/ttn/
-  - title: TheThingsIndustries
-    path: /docs/user-guide/integrations/tti/
-  - title: LORIOT
-    path: /docs/user-guide/integrations/loriot/
-  - title: ChirpStack
-    path: /docs/user-guide/integrations/chirpstack/
-  - title: AWS IoT
-    path: /docs/user-guide/integrations/aws-iot/
-  - title: AWS Kinesis
-    path: /docs/user-guide/integrations/aws-kinesis/
-  - title: IBM Watson
-    path: /docs/user-guide/integrations/ibm-watson-iot/
-  - title: Azure事件中心
-    path: /docs/user-guide/integrations/azure-event-hub/
-  - title: Azure服务总线
-    path: /docs/user-guide/integrations/azure-service-bus/
-    new: true
-  - title: Azure IoT中心
-    path: /docs/user-guide/integrations/azure-iot-hub/
-  - title: TCP
-    path: /docs/user-guide/integrations/tcp/
-  - title: UDP
-    path: /docs/user-guide/integrations/udp/
-  - title: SigFox
-    path: /docs/user-guide/integrations/sigfox/
-  - title: Ocean Connect
-    path: /docs/user-guide/integrations/ocean-connect/
-  - title: Tuya
-    path: /docs/user-guide/integrations/tuya/
-    new: true
-  - title: 自定义集成开发指南
-    path: /docs/user-guide/integrations/custom/
-  - title: 使用Telegram Bot在智能手机上接收通知和告警
-    path: /docs/user-guide/rule-engine-2-0/tutorials/integration-with-telegram-bot/
+# - title: 白标
+#   pe: true
+#   section:
+#     - title: 概述
+#       path: /docs/pe/user-guide/white-labeling/
+#     - title: 自助注册
+#       path: /docs/pe/user-guide/self-registration/
+#     - title: 邮件模板
+#       path: /docs/pe/user-guide/mail-templates/
+#     - title: 自定义翻译
+#       path: /docs/pe/user-guide/custom-translation/
+#     - title: 自定义菜单
+#       path: /docs/pe/user-guide/custom-menu/
+# - title: 集成
+#   pe: true
+#   section:
+#   - title: 概述
+#     path: /docs/user-guide/integrations/
+#   - title: 远程集成
+#     path: /docs/user-guide/integrations/remote-integrations/
+#   - title: HTTP
+#     path: /docs/user-guide/integrations/http/
+#   - title: MQTT
+#     path: /docs/user-guide/integrations/mqtt/
+#   - title: CoAP
+#     path: /docs/user-guide/integrations/coap/
+#   - title: Kafka
+#     path: /docs/user-guide/integrations/kafka/
+#   - title: OPC-UA
+#     path: /docs/user-guide/integrations/opc-ua/
+#   - title: Actility ThingPark
+#     path: /docs/user-guide/integrations/thingpark/
+#   - title: TheThingsStack
+#     path: /docs/user-guide/integrations/ttn/
+#   - title: TheThingsIndustries
+#     path: /docs/user-guide/integrations/tti/
+#   - title: LORIOT
+#     path: /docs/user-guide/integrations/loriot/
+#   - title: ChirpStack
+#     path: /docs/user-guide/integrations/chirpstack/
+#   - title: AWS IoT
+#     path: /docs/user-guide/integrations/aws-iot/
+#   - title: AWS Kinesis
+#     path: /docs/user-guide/integrations/aws-kinesis/
+#   - title: IBM Watson
+#     path: /docs/user-guide/integrations/ibm-watson-iot/
+#   - title: Azure事件中心
+#     path: /docs/user-guide/integrations/azure-event-hub/
+#   - title: Azure服务总线
+#     path: /docs/user-guide/integrations/azure-service-bus/
+#     new: true
+#   - title: Azure IoT中心
+#     path: /docs/user-guide/integrations/azure-iot-hub/
+#   - title: TCP
+#     path: /docs/user-guide/integrations/tcp/
+#   - title: UDP
+#     path: /docs/user-guide/integrations/udp/
+#   - title: SigFox
+#     path: /docs/user-guide/integrations/sigfox/
+#   - title: Ocean Connect
+#     path: /docs/user-guide/integrations/ocean-connect/
+#   - title: Tuya
+#     path: /docs/user-guide/integrations/tuya/
+#     new: true
+#   - title: 自定义集成开发指南
+#     path: /docs/user-guide/integrations/custom/
+#   - title: 使用Telegram Bot在智能手机上接收通知和告警
+#     path: /docs/user-guide/rule-engine-2-0/tutorials/integration-with-telegram-bot/
 - title: 分析
   section:
   - title: 趋势分析

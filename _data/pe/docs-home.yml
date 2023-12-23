@@ -3,7 +3,7 @@ abstract: "Documentation for using ThingsBoard Professional Edition IoT Platform
 toc:
 - title: 专业版
   path: /docs/pe/  
-- title: ThingsBoard是什么?
+- title: GridLinks是什么?
   path: /docs/pe/getting-started-guides/what-is-thingsboard/
 - title: 如何连接您的设备?
   path: /docs/pe/getting-started-guides/connectivity/
@@ -40,7 +40,7 @@ toc:
       path: /docs/pe/user-guide/asset-profiles/
     - title: 属性
       path: /docs/pe/user-guide/attributes/
-    - title: 时间序列数据
+    - title: 时序数据
       path: /docs/pe/user-guide/telemetry/
     - title: 告警
       path: /docs/pe/user-guide/alarms/

@@ -1,11 +1,11 @@
 bigheader: "ThingsBoard Cloud Documentation"
 abstract: "Documentation for using ThingsBoard Cloud IoT Platform."
 toc:
-- title: ThingsBoard 云
+- title: ThingsBoard云平台
   path: /docs/paas/
-- title: ThingsBoard是什么?
+- title: GridLinks是什么?
   path: /docs/paas/getting-started-guides/what-is-thingsboard/  
-- title: ThingsBoard云是什么?
+- title: ThingsBoard云平台是什么?
   path: /products/paas/what-is-thingsboard-cloud/
 - title: 如何连接您的设备?
   path: /docs/paas/getting-started-guides/connectivity/
@@ -40,7 +40,7 @@ toc:
       path: /docs/paas/user-guide/asset-profiles/
     - title: 属性
       path: /docs/paas/user-guide/attributes/
-    - title: 时间序列数据
+    - title: 时序数据
       path: /docs/paas/user-guide/telemetry/
     - title: 告警
       path: /docs/paas/user-guide/alarms/

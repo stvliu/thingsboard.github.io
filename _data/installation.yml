@@ -1,7 +1,7 @@
 bigheader: "Installation"
 abstract: "Documentation for installation and configuration of ThingsBoard IoT Platform."
 toc:
-- title: Installation options
+- title: 安装 options
   path: /docs/user-guide/install/installation-options/
 - title: On premise
   section:

@@ -5,10 +5,10 @@ tocs:
 - installation
 docs-header:
 - toc: getting-started
-  title: Getting Started
+  title: 入门
 - toc: docs-home
-  title: Documentation
+  title: 文档
 - toc: guides
-  title: Guides
+  title: 指南
 - toc: installation
-  title: Installation
+  title: 安装

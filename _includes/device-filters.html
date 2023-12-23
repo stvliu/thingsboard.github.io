@@ -19,7 +19,7 @@
 {% assign connections = connections | compact | uniq %}
 {% assign vendors = vendors | compact | uniq %}
 <div class="group">
-    <div class="title">Hardware types</div>
+    <div class="title">硬件类型</div>
     <div class="filters-wrapper">
         {% for category in categories %}
             <div class="filter">
@@ -31,7 +31,7 @@
     </div>
 </div>
 <div class="group">
-    <div class="title">Connectivity</div>
+    <div class="title">连接</div>
     <div class="filters-wrapper">
         {% for connection in connections %}
             <div class="filter">
@@ -43,7 +43,7 @@
     </div>
 </div>
 <div class="group">
-    <div class="title">Chip</div>
+    <div class="title">芯片</div>
     <div class="filters-wrapper">
         {% for chip in chips %}
             <div class="filter">
@@ -55,7 +55,7 @@
     </div>
 </div>
 <div class="group">
-    <div class="title">Vendors</div>
+    <div class="title">供应商</div>
     <div class="filters-wrapper">
         {% for vendor in vendors %}
             <div class="filter">

@@ -18,7 +18,7 @@
     <link rel="shortcut icon" type="image/png" href="/images/favicon.png">
     <script type="text/javascript">
         function _gaLt(event) {
-            /* If GA is blocked or not loaded, or not main|middle|touch click then don't track */
+            /* 如果 GA 被阻止或未加载，或不是主|中|触摸点击，则不跟踪 */
             if (!ga.hasOwnProperty("loaded") || ga.loaded != true || (event.which != 1 && event.which != 2)) {
                 return;
             }
@@ -35,7 +35,7 @@
                         target = "_blank";
                     }
 
-                    var hbrun = false; // tracker has not yet run
+                    var hbrun = false; // 跟踪器尚未运行
                     var hitBack = function() {
                         if (hbrun) return;
                         hbrun = true;
@@ -44,13 +44,13 @@
 
                     if (target) {
                         ga(
-                                "send", "event", "Outgoing Links", link,
+                                "send", "event", "外链", link,
                                 document.location.pathname + document.location.search
                         );
                     } else {
                         event.preventDefault ? event.preventDefault() : event.returnValue = !1;
                         ga(
-                                "send", "event", "Outgoing Links", link,
+                                "send", "event", "外链", link,
                                 document.location.pathname + document.location.search, {
                                     "hitCallback": hitBack
                                 }

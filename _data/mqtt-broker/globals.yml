@@ -7,14 +7,14 @@ tocs:
   - faq
 docs-header:
   - toc: getting-started
-    title: Getting Started
+    title: 入门
   - toc: docs-home
-    title: Documentation
+    title: 文档
   - toc: installation
-    title: Installation
+    title: 安装
   - toc: reference
-    title: Architecture
+    title: 架构
   - toc: api
     title: API
   - toc: faq
-    title: FAQ
+    title: 常见问题

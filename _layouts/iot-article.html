@@ -16,23 +16,23 @@
         var name = $('input[name=name]', form).val();
         var email = $('input[name=email]', form).val();
 
-        if (!validateValue('Name', name)) {
+        if (!validateValue('姓名', name)) {
             return false;
         }
-        if (!validateValue('Email Address', email)) {
+        if (!validateValue('电子邮件地址', email)) {
             return false;
         }
 
         var emailExp = /^[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
         if(email.match(emailExp)==null) {
-            window.alert("Entered Email Address is not valid.");
+            window.alert("输入的电子邮件地址无效。");
             return false; 
         }
     }
 
     function validateValue(name, val) {
         if (isEmpty(val)) {
-            window.alert("Please fill '" + name + "' field.");
+            window.alert("请填写'" + name + "'字段。");
             return false;
         }
         return true;

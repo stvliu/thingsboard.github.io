@@ -1,86 +1,86 @@
 <section class="modal-wizard hidden">
   <button class="btn-close" onClick="closeWizard(event)">&#10005;</button>
   <div class="modal-wizard__content">
-    <h3 class="modal-wizard__header">Trendz analytics platform</h3>
+    <h3 class="modal-wizard__header">Trendz 分析平台</h3>
     <p class="modal-wizard__text">
-      You are one step closer to get a powerful analytics tool that will help you to grow your business and predict changes
+      您离获得一个强大的分析工具又近了一步，它将帮助您发展业务并预测变化
     </p>
   </div>
   <div id="choose-plan">
     <div class="options">
       <div class="options__container" id="cloud-option" onClick="openChosenPlan('cloud-content')">
-        <span>Cloud</span>
+        <span>云</span>
       </div>
       <div class="options__container" id="self-managed-option" onClick="openChosenPlan('self-managed-content')">
-        <span>Self-Managed</span>
+        <span>自管理</span>
       </div>
       <div class="background bg-left" id="options-bg"></div>
     </div>
     <div id="cloud-content" class="tab-content">
       <div class="steps-container">
         <div class="step step-1">
-          <h4 class="step__header">Step 1</h4>
-          <p class="step__content">Log in to ThingsBaord Cloud account and select “Plan and Billing” menu option. Press “Update Plan” button</p>
+          <h4 class="step__header">步骤 1</h4>
+          <p class="step__content">登录 ThingsBaord Cloud 帐户并选择“计划和计费”菜单选项。按“更新计划”按钮</p>
         </div>
         <div class="step step-2">
-          <h4 class="step__header">Step 2</h4>
-          <p class="step__content">Choose “ThingsBoard + Trendz” and select the most suitable plan for you</p>
+          <h4 class="step__header">步骤 2</h4>
+          <p class="step__content">选择“ThingsBoard + Trendz”并选择最适合您的计划</p>
         </div>
         <div class="step step-3">
-          <h4 class="step__header">Step 3</h4>
-          <p class="step__content">Reload the page to see new “Trendz Analytics” option in your ThingsBoard Menu</p>
+          <h4 class="step__header">步骤 3</h4>
+          <p class="step__content">重新加载页面，在 ThingsBoard 菜单中查看新的“Trendz Analytics”选项</p>
         </div>
       </div>
       {% include images-gallery.html imageCollection="cloudPlan" max-width="100%" align="space-between" %}
       <div class="modal-wizard__button">
-        <a href="https://thingsboard.cloud/billing" target="_blank" onClick="goToPurchase(event, 'cloud')">Go to ThingsBoard Cloud</a>
+        <a href="https://thingsboard.cloud/billing" target="_blank" onClick="goToPurchase(event, 'cloud')">转到 ThingsBoard Cloud</a>
       </div>
     </div>
     <div id="self-managed-content" class="tab-content">
         <div class="steps-container" >
           <div class="step step-1">
-            <h4 class="step__header">Step 1</h4>
-            <p class="step__content">Log into Licence Portal and create new Trendz Analytics Subscription</p>
+            <h4 class="step__header">步骤 1</h4>
+            <p class="step__content">登录许可证门户并创建新的 Trendz Analytics 订阅</p>
           </div>
           <div class="step step-2">
-            <h4 class="step__header">Step 2</h4>
-            <p class="step__content">Get your license key</p>
+            <h4 class="step__header">步骤 2</h4>
+            <p class="step__content">获取您的许可证密钥</p>
           </div>
           <div class="step step-3">
-            <h4 class="step__header">Step 3</h4>
+            <h4 class="step__header">步骤 3</h4>
             <p class="step__content">
-              Follow
-              <a href="/docs/trendz/install/installation-options/">the instructions to install Trendz</a>
-              the instructions to install Trendz Analytics to your server
+              按照
+              <a href="/docs/trendz/install/installation-options/">安装 Trendz 的说明</a>
+              将 Trendz Analytics 安装到您的服务器的说明
             </p>
           </div>
         </div>
         {% include images-gallery.html imageCollection="selfManagedPlan" max-width="100%" align="space-between" %}
         <div class="modal-wizard__button">
-          <a href="https://license.thingsboard.io" target="_blank" onClick="goToPurchase(event, '{{ include.defaultPlan }}')">Go to License Portal</a>
+          <a href="https://license.thingsboard.io" target="_blank" onClick="goToPurchase(event, '{{ include.defaultPlan }}')">转到许可证门户</a>
         </div>
     </div>
   </div>
   <div id="go-to-portal">
     <div class="text-container">
       <div class="text-block">
-        <p class="header">Well Done! You are all set!</p>
-        <p>If you want to use your account effectively, please, check the materials we have prepared for you:</p>
+        <p class="header">做得好！您已全部设置完毕！</p>
+        <p>如果您想有效地使用您的帐户，请查看我们为您准备的资料：</p>
       </div>
       <div class="text-block">
         <p>
-          Our detailed
-          <a href="/docs/trendz/">articles </a>
-          on how to use Trendz features
+          我们详细的
+          <a href="/docs/trendz/">文章 </a>
+          关于如何使用 Trendz 功能
         </p>
         <p>
-          Our easy and quick
-          <a href="https://www.youtube.com/playlist?list=PLYEKB_XwLCZIs-_Aoos3CdNIqSYrXk4LN">“How to” videos</a>
+          我们简单快速的
+          <a href="https://www.youtube.com/playlist?list=PLYEKB_XwLCZIs-_Aoos3CdNIqSYrXk4LN">“操作方法”视频</a>
         </p>
       </div>
     </div>
     <div class="modal-wizard__button">
-      <a href="/docs/trendz/">Documentation</a>
+      <a href="/docs/trendz/">文档</a>
     </div>
   </div>
 </section>
