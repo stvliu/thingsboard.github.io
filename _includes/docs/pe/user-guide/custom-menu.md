@@ -145,7 +145,7 @@ ThingsBoard 自定义菜单功能允许您扩展 ThingsBoard UI。
         title: 在“**自定义菜单**”窗口中以 JSON 格式指定数据。使用下面的 JSON 作为示例。单击“**保存**”；
     ===
         image: /images/user-guide/white-labeling/custom-menu/custom-menu-add-new-menu-item-3.png,
-        title: 创建了新菜单项。单击“我的仪表板”部分 -> “废物管理管理”页面。将打开 JSON 中指定的仪表板；
+        title: 创建了新菜单项。单击“我的仪表板”部分 -> “污染物管理管理”页面。将打开 JSON 中指定的仪表板；
     ===
         image: /images/user-guide/white-labeling/custom-menu/custom-menu-add-new-menu-item-4.png,
         title: 转到“智能农业和智能农业解决方案”页面。页面将打开 JSON 中指定的文档。

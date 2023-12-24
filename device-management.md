@@ -135,7 +135,7 @@ redirect_from: "/docs/services/device-management/"
                 </div>
                 <div class="definitions-list-item one-to-one-and-half align-start">
                     <div class="term bold padding-top">智慧城市</div>
-                    <div class="definition">我们的解决方案已部署在智慧城市项目中，以管理各种物联网设备，例如交通传感器、废物管理系统和智能照明系统。这有助于城市管理者更有效地监控和管理其基础设施。</div>
+                    <div class="definition">我们的解决方案已部署在智慧城市项目中，以管理各种物联网设备，例如交通传感器、污染物管理系统和智能照明系统。这有助于城市管理者更有效地监控和管理其基础设施。</div>
                 </div>
                 <div class="definitions-list-item one-to-one-and-half align-start">
                     <div class="term bold">能源</div>

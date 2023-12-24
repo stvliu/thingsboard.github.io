@@ -11,7 +11,7 @@
 
 ## 简介
 ![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
-EXXN IoT 网关是一款多功能设备，配备 ARM 处理器，可适应各种用例，包括监测环境传感器、能源消耗、氡气水平、海洋环境和边缘计算。
+EXXN IoT 网关是一款多功能设备，配备 ARM 处理器，可适应各种案例，包括监测环境传感器、能源消耗、氡气水平、海洋环境和边缘计算。
 <br>
 <br>
 <br>

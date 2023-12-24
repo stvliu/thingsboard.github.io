@@ -21,7 +21,7 @@ description: 专业服务
 
   <div class="card">
     <h3 class="title">咨询</h3>
-    <p class="description">我们的核心团队将审查您的业务用例、现有环境、SLA 要求，并基于现有基础设施和 GridLinks 平台的协同作用制定解决方案架构。</p>
+    <p class="description">我们的核心团队将审查您的业务案例、现有环境、SLA 要求，并基于现有基础设施和 GridLinks 平台的协同作用制定解决方案架构。</p>
   </div>
 
   <div class="card">

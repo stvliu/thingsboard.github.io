@@ -86,7 +86,7 @@ GridLinks 支持著名的消息代理/队列提供商（Kafka、RabbitMQ、AWS S
 * **突发** - 所有消息按到达顺序提交给规则链。
 * **批处理** - 使用 **分组参数“批处理大小”**将消息分组到批处理中。在确认上一批之前不会提交新批处理。
 
-请参阅此[指南](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/tutorials/queues-for-synchronization/)作为提交策略用例的示例。
+请参阅此[指南](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/tutorials/queues-for-synchronization/)作为提交策略案例的示例。
 
 ##### 重试处理设置
 
@@ -125,7 +125,7 @@ GridLinks 支持著名的消息代理/队列提供商（Kafka、RabbitMQ、AWS S
 * **重试间隔** - 在重试之前在消费者线程中等待的时间（以秒为单位）；
 * **其他重试间隔** - 第二次及后续重试尝试的等待时间（以秒为单位）。
 
-请参阅此[指南](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/tutorials/queues-for-message-reprocessing/)作为处理策略用例的示例。
+请参阅此[指南](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/tutorials/queues-for-message-reprocessing/)作为处理策略案例的示例。
 
 ##### 轮询设置
 

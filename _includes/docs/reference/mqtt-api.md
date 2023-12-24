@@ -360,7 +360,7 @@ v2/fw/response/+/chunk/+
 
 ## 协议自定义
 
-MQTT 传输可以通过更改相应的 [模块](https://github.com/thingsboard/thingsboard/tree/master/transport/mqtt) 来针对特定用例进行完全自定义。
+MQTT 传输可以通过更改相应的 [模块](https://github.com/thingsboard/thingsboard/tree/master/transport/mqtt) 来针对特定案例进行完全自定义。
 
 
 ## 后续步骤

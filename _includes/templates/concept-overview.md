@@ -62,7 +62,7 @@
 
 {% else %}
 
-{% include templates/_errorthrower.md missing_block='usage' heading='用法' purpose='以代码示例、命令等形式展示此对象的简单、常见用例，使用制表符显示多种方法' %}
+{% include templates/_errorthrower.md missing_block='usage' heading='用法' purpose='以代码示例、命令等形式展示此对象的简单、常见案例，使用制表符显示多种方法' %}
 
 {% endif %}
 

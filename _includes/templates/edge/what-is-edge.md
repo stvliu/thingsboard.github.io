@@ -34,7 +34,7 @@ ThingsBoard Edge CE 适用于 **单个** 租户和/或 **单个** 客户。在�
 
 ![image](/images/edge/overview/edge_overview.svg)
 
-#### ThingsBoard Edge 的用例
+#### ThingsBoard Edge 的案例
 
 - **自动驾驶汽车**
   边缘计算允许以最小的延迟收集、处理和响应道路事件。现代自动驾驶汽车会生成大量数据 - 每天从 5 TB 到 20 TB 不等。4G 或 5G 网络可能无法处理如此高的吞吐量，但 ThingsBoard Edge 可以过滤这些数据，在本地处理大部分数据，并且仅将其中一部分数据推送到云端。

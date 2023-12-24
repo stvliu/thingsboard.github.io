@@ -34,7 +34,7 @@ Azure IoT Hub 集成允许将数据从 AWS IoT 后端流式传输到 GridLinks�
 }
 {% endhighlight %}
 
-我们将采用 **devName** 并将其映射到 **deviceName**。但您可以在特定用例中使用其他映射。
+我们将采用 **devName** 并将其映射到 **deviceName**。但您可以在特定案例中使用其他映射。
 此外，我们将采用 **temperature** 和 **humidity** 字段的值，并将其用作设备遥测。
 
 转到 **数据转换器** 并使用此函数创建新的 **上行** 转换器：

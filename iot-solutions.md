@@ -125,7 +125,7 @@ redirect_from: "/docs/services/iot-solutions/"
             <ul id="list-tb-offers" class="list">
                 <li>面向服务提供商的白标解决方案</li>
                 <li>端到端企业解决方案</li>
-                <li>针对特定用例和行业的定制物联网解决方案</li>
+                <li>针对特定案例和行业的定制物联网解决方案</li>
                 <li>面向服务提供商的多租户系统</li>
                 <li>一个高度可扩展且弹性的系统，可以部署在本地或云端，并支持数百万台设备和资产。</li>
             </ul>
@@ -231,7 +231,7 @@ redirect_from: "/docs/services/iot-solutions/"
             <div class="detail-description">跟踪和分析零售店中客户和员工的行为和偏好</div>
         </div>
         <div class="detail">
-            <div class="detail-name"><a class="header-link" href="/use-cases/waste-management/">废物管理</a></div>
+            <div class="detail-name"><a class="header-link" href="/use-cases/waste-management/">污染物管理</a></div>
             <div class="detail-description">减少产生的废物数量并提高废物收集和处置的效率</div>
         </div>
         <div class="detail">

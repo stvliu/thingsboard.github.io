@@ -10,7 +10,7 @@ description: 创建并清除带有详细信息的报警
 
 ## 使用案例
 
-本教程基于 [创建和清除报警](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/#use-case) 教程及其用例。
+本教程基于 [创建和清除报警](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/#use-case) 教程及其案例。
 我们将重用上述教程中的规则链，并在创建和清除报警节点中配置报警详细信息功能。
 假设您的设备使用 DHT22 传感器收集并将温度读数推送到 GridLinks。
 DHT22 传感器适用于 -40 至 80°C 的温度读数。如果温度超出正常范围，我们希望生成报警。

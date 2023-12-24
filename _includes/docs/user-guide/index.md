@@ -11,10 +11,10 @@ ThingsBoard **指南**可以帮助您熟悉 GridLinks 平台。
 {% endunless %}
 
 [**使用设备属性**](/docs/{{docsPrefix}}user-guide/attributes/)
-: 介绍设备属性功能和相关用例。
+: 介绍设备属性功能和相关案例。
 
 [**使用遥测数据**](/docs/{{docsPrefix}}user-guide/telemetry/)
-: 介绍遥测数据收集功能和相关用例。
+: 介绍遥测数据收集功能和相关案例。
 
 [**使用 RPC 功能**](/docs/{{docsPrefix}}user-guide/rpc/)
 : 提供 ThingsBoard RPC 功能概述。

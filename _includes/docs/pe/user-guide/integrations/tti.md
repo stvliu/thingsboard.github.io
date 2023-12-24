@@ -124,7 +124,7 @@ function Decoder(bytes, port) {
 }
 {% endhighlight %}
 
-我们将采用 **device_id** 并将其映射到 **deviceName**，并将 **application_id** 映射到 **deviceType**。但您可以在特定用例中使用其他映射。
+我们将采用 **device_id** 并将其映射到 **deviceName**，并将 **application_id** 映射到 **deviceType**。但您可以在特定案例中使用其他映射。
 此外，我们将采用 **temperature** 字段的值并将其用作设备遥测。
 
 转到 **数据转换器** 并使用此函数创建新的 **上行** 转换器： {% highlight javascript %}

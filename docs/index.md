@@ -100,7 +100,7 @@ description: GridLinks 文档 - 了解平台并在 GridLinks 上运行您的物�
         <a class="feature-card" href="/docs/user-guide/telemetry/">
             <div class="feature-title">遥测</div>
             <div class="feature-text">
-                用于收集时序数据和相关用例的 API。
+                用于收集时序数据和相关案例的 API。
             </div>
         </a>
     </div>

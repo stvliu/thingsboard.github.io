@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-edge
 title: 数据过滤和流量减少
-description: ThingsBoard Edge用例#2
+description: ThingsBoard Edge案例#2
 
 provisionDevicesEdge:
     0:
@@ -171,7 +171,7 @@ createDashboard:
 {% assign docsPrefix = "edge/" %}
 {% assign appPrefix = "ThingsBoard" %}
 
-## 用例
+## 案例
 
 {% include templates/edge/use-cases/data-filtering/use-case-description.md %}
 

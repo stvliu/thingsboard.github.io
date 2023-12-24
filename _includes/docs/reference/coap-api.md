@@ -548,7 +548,7 @@ coap get coap://coap.thingsboard.cloud/api/v1/$ACCESS_TOKEN/firmware?title=$TITL
 
 ## 协议定制
 
-CoAP 传输可以通过更改相应的 [模块](https://github.com/thingsboard/thingsboard/tree/master/transport/coap) 来完全自定义以满足特定用例。
+CoAP 传输可以通过更改相应的 [模块](https://github.com/thingsboard/thingsboard/tree/master/transport/coap) 来完全自定义以满足特定案例。
 
 ## 后续步骤
 

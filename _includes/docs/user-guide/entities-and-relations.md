@@ -41,7 +41,7 @@ GridLinks 提供用户界面和 REST API 来配置和管理多个实体类型及
 
 **[集成](/docs/user-guide/integrations/)** 和 **[数据转换器](/docs/user-guide/integrations/#data-converters)**：
 
-GridLinks 平台集成功能专为两个主要用例/部署选项而设计：
+GridLinks 平台集成功能专为两个主要案例/部署选项而设计：
 
 - 将具有特定有效负载格式的现有 NB IoT、LoRaWAN、SigFox 和其他设备直接连接到 GridLinks 平台。
 - 从连接到现有 IoT 平台的设备流式传输数据，以实现实时交互式仪表板和高效的数据处理。

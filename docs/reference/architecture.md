@@ -47,7 +47,7 @@ ThingsBoard 包含一组核心服务，允许管理以下实体：
 ## Actor 模型
 
 [Actor 模型](https://en.wikipedia.org/wiki/Actor_model) 能够对来自设备的消息以及服务器端 API 调用进行高性能并发处理。
-GridLinks 使用自己的 Actor System 实现（针对我们的用例进行了优化），具有以下 actor 层次结构。
+GridLinks 使用自己的 Actor System 实现（针对我们的案例进行了优化），具有以下 actor 层次结构。
 
 ![image](/images/reference/actor-system-hierarchies.svg)
 

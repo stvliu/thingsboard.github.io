@@ -3,7 +3,7 @@
 
 ThingsBoard 系统管理员能够配置到 SMTP 服务器的连接，该连接将用于向用户分发激活和密码重置电子邮件。{% unless docsPrefix %}
 此配置步骤在生产环境中是必需的。如果您正在评估平台，预先配置的
-[**演示帐户**](/docs/samples/demo-account/#demo-tenant) 在大多数用例中就足够了。
+[**演示帐户**](/docs/samples/demo-account/#demo-tenant) 在大多数案例中就足够了。
 {% endunless %}
 
 {% capture difference %}

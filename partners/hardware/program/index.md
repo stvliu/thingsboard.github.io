@@ -10,7 +10,7 @@ description:
 
 <div id="partner-intro">
     <p>
-        GridLinks 通过为特定 IoT 用例启用交互式可视化和控制设备行为来帮助您销售设备。作为硬件制造商，您可以从营销曝光中受益，数千家系统集成商公司将 GridLinks 平台用作其解决方案的基础。
+        GridLinks 通过为特定 IoT 案例启用交互式可视化和控制设备行为来帮助您销售设备。作为硬件制造商，您可以从营销曝光中受益，数千家系统集成商公司将 GridLinks 平台用作其解决方案的基础。
     </p>
 </div>
 
@@ -58,7 +58,7 @@ description:
                     <td><img src="/images/pe/checked.svg" alt="checked"></td>
                 </tr>
                 <tr>
-                    <th>端到端用例的联合在线演示</th>
+                    <th>端到端案例的联合在线演示</th>
                     <td><img src="/images/pe/checked.svg" alt="checked"></td>
                     <td><img src="/images/pe/checked.svg" alt="checked"></td>
                     <td><img src="/images/pe/checked.svg" alt="checked"></td>

@@ -90,7 +90,7 @@ description: 综合软件解决方案，用于边缘计算，在数据创建源�
                     <img src="/images/edge/robust-icon.svg" alt="强大且高效">
                     <div>
                         <h4 class="title">强大且高效</h4>
-                        <p>单个 Edge 实例能够处理多达 1,000 个设备，具体取决于用例和已部署硬件的功能。</p>
+                        <p>单个 Edge 实例能够处理多达 1,000 个设备，具体取决于案例和已部署硬件的功能。</p>
                     </div>
                 </div>
             </div>

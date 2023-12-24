@@ -52,7 +52,7 @@
 
 默认情况下，[主](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/)队列将用于存储来自任何资产的所有传入事件。
 API 层将把消息提交到此队列，规则引擎将轮询队列以获取新消息。
-但是，对于多种用例，您可能希望为不同资产使用不同的队列。
+但是，对于多种案例，您可能希望为不同资产使用不同的队列。
 例如，您可能希望隔离紧急资产数据和其他资产或设备的数据处理。
 这样，即使您的系统因数百万水表而产生峰值负载，每当重要的资产配置发生更改时，都将立即处理。
 队列的分离还允许您自定义不同的[提交](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/#queue-submit-strategy)和[处理](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/#queue-processing-strategy)策略。

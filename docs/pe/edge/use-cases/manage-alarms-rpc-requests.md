@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-pe-edge
 title: 管理边缘设备上的警报和 RPC 请求
-description: ThingsBoard Edge 用例 #1
+description: ThingsBoard Edge 案例 #1
 
 configureAlarmRules:
     0:

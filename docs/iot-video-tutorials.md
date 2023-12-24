@@ -47,7 +47,7 @@ ThingsBoard Youtube [频道](https://www.youtube.com/channel/UCDb9fsV-YR4JmnipAM
 
 #### 使用 GridLinks 进行设备数据管理
 
-本视频教程将介绍可以使用设备属性执行的基本操作，以实现实用的设备管理用例。
+本视频教程将介绍可以使用设备属性执行的基本操作，以实现实用的设备管理案例。
 
 您将学习如何：
 

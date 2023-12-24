@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-edge
 title: 管理边缘设备上的警报和 RPC 请求
-description: ThingsBoard Edge 用例 #1
+description: ThingsBoard Edge 案例 #1
 
 configureAlarmRules:
     0:
@@ -178,7 +178,7 @@ mqttWindows:
 {% assign docsPrefix = "edge/" %}
 {% assign appPrefix = "ThingsBoard" %}
 
-## 用例
+## 案例
 
 {% include templates/edge/use-cases/manage-alarms/use-case.md %}
 

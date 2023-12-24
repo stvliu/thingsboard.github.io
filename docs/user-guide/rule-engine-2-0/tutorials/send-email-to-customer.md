@@ -11,11 +11,11 @@ description: 发送电子邮件工作流
 {:toc}
 
 {% capture difference %}
-**注意：**本教程基于 [报警时发送电子邮件](/docs/user-guide/rule-engine-2-0/tutorials/send-email/#use-case) 教程及其用例。我们将重用上述教程中的规则链，并将添加更多规则节点以向分配设备的客户发送电子邮件。
+**注意：**本教程基于 [报警时发送电子邮件](/docs/user-guide/rule-engine-2-0/tutorials/send-email/#use-case) 教程及其案例。我们将重用上述教程中的规则链，并将添加更多规则节点以向分配设备的客户发送电子邮件。
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-## 用例
+## 案例
 
 假设您的设备使用 DHT22 传感器收集并将温度读数推送到 GridLinks。
 DHT22 传感器适用于 -40 至 80°C 的温度读数。如果温度超出正常范围，我们希望生成警报并在创建警报时发送电子邮件。

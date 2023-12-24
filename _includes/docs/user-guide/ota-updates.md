@@ -39,7 +39,7 @@ ThingsBoard 会通知设备有关可用更新的信息，并提供特定于协�
 
 ## 固件与软件
 
-ThingsBoard 内核中 FOTA 和 SOTA 实现之间存在非常细微的差异。许多用例和应用程序只需要使用 FOTA。
+ThingsBoard 内核中 FOTA 和 SOTA 实现之间存在非常细微的差异。许多案例和应用程序只需要使用 FOTA。
 但是，[LwM2M](/docs/{{docsPrefix}}reference/lwm2m-api/) 设备以不同的方式处理 FOTA 和 SOTA 更新。
 
 ## 将 OTA 包分配给设备配置文件

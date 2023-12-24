@@ -141,7 +141,7 @@ ng-component::-webkit-scrollbar-thumb {
 </div> 
 
 <br>
-[联系我们](/docs/contact-us/) 以建议您用例中缺少的功能。
+[联系我们](/docs/contact-us/) 以建议您案例中缺少的功能。
 
 ## 后续步骤
 

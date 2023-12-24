@@ -11,7 +11,7 @@ description: 发送电子邮件工作流
 
 ## 使用案例
 
-在本教程中，我们将实现以下教程中的用例：[创建和清除警报](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/#use-case)：
+在本教程中，我们将实现以下教程中的案例：[创建和清除警报](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/#use-case)：
 
 假设您的设备使用 DHT22 传感器收集温度读数并将其推送到 GridLinks。
 DHT22 传感器适用于 -40 至 80°C 的温度读数。如果温度超出正常范围，我们希望生成警报并在创建警报时发送电子邮件。

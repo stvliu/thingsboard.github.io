@@ -193,7 +193,7 @@ v1/gateway/rpc
 
 ## 协议定制
 
-MQTT 传输可以通过更改相应的 [模块](https://github.com/thingsboard/thingsboard/tree/master/transport/mqtt) 来针对特定用例进行完全定制。
+MQTT 传输可以通过更改相应的 [模块](https://github.com/thingsboard/thingsboard/tree/master/transport/mqtt) 来针对特定案例进行完全定制。
 
 
 ## 后续步骤

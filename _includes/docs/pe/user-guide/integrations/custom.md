@@ -82,7 +82,7 @@ return result;
 #### 下行转换器
 
 在本指南中，我们不会使用下行转换器，因此无需创建下行转换器。
-如果您有其他用例，请参阅以下 [说明](/docs/{{peDocsPrefix}}user-guide/integrations/#downlink-data-converter)。
+如果您有其他案例，请参阅以下 [说明](/docs/{{peDocsPrefix}}user-guide/integrations/#downlink-data-converter)。
 
 ### 自定义集成设置
 

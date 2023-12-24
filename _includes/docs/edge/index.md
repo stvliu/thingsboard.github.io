@@ -59,9 +59,9 @@
     <div class="col-12 col-sm-6 mb-4">
         <a class="feature-card" href="/docs/{{docsPrefix}}edge/use-cases/overview/">
             <img class="feature-logo" src="/images/feature-logo/tutorials.svg" alt="Tutorials icon">
-            <div class="feature-title">用例</div>
+            <div class="feature-title">案例</div>
             <div class="feature-text">
-                概述可以使用 {{platformName}} Edge 实现的用例。
+                概述可以使用 {{platformName}} Edge 实现的案例。
             </div>
         </a>
     </div>

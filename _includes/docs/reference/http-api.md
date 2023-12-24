@@ -531,7 +531,7 @@ https://thingsboard.cloud/api/v1/$ACCESS_TOKEN/firmware?title=$TITLE&version=$VE
 
 ## 协议定制
 
-HTTP 传输可以通过更改相应的 [模块](https://github.com/thingsboard/thingsboard/tree/master/transport/http) 来完全定制以满足特定用例。
+HTTP 传输可以通过更改相应的 [模块](https://github.com/thingsboard/thingsboard/tree/master/transport/http) 来完全定制以满足特定案例。
 
 ## 后续步骤
 

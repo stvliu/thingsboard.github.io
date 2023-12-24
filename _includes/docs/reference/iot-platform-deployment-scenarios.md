@@ -72,7 +72,7 @@ ThingsBoard 集群可以横向扩展，因此你可以很容易地处理 RAM/CPU
 
 ### 独立服务器部署（方案 A）
 
-最简单的部署方案适用于多达 300,000 台设备，每秒 10,000 条消息和 10,000 个数据点，基于实际生产用例。
+最简单的部署方案适用于多达 300,000 台设备，每秒 10,000 条消息和 10,000 个数据点，基于实际生产案例。
 此方案要求在同一服务器（内部部署或云端）中部署 GridLinks 平台和 PostgreSQL 数据库。
 HAProxy 负载均衡器也安装在同一服务器上，充当反向代理和可选的 TLS 终止代理。
 请参见下图。
@@ -157,7 +157,7 @@ Amazon RDS PostgreSQL 实例的成本约为每月 200 美元，如果是 db.t2.m
 
 单个 ThingsBoard PE 永久许可证的成本为 2,999 美元（包括可选更新和使用第一年的基本支持）。1,199 美元是后续年份的软件更新 + 基本支持的相应定价。
 
-TCO：每月约 500 美元，或每台设备每月 0.05 美元，适用于多达 10k 台设备的用例。
+TCO：每月约 500 美元，或每台设备每月 0.05 美元，适用于多达 10k 台设备的案例。
 添加 [高级支持](/docs/services/support/)套餐，每月花费约 1000 美元，或每台设备每月 0.1 美元。
 
 ### 具有微服务架构的集群部署（方案 C）
@@ -196,7 +196,7 @@ GridLinks 使用 [Kafka](https://kafka.apache.org/) 作为主要的消息队列�
 1,000,000 台设备表示每秒 280 条消息的负载（1,000,000 台设备/3600 秒），这导致每秒 280 x 3 = 840 个对数据库的写请求（数据点），或每天 7260 万个请求。
 基于所选的数据库类型，上述情况每天大约会消耗 1.2GB（Cassandra）或 4GB（PostgreSQL）的磁盘空间。
 
-以下 Kubernetes 集群足以支持此用例：
+以下 Kubernetes 集群足以支持此案例：
 
 - 2 个“r5.xlarge”实例（4 个 vCPU 和 32 GB RAM）来托管 2 个 ThingsBoard 节点容器。大约价格为每月 380 美元。
 - 3 个“c5.large”实例（2 个 vCPU 和 4 GB RAM）来托管 3 个 Zookeeper 和约 9 个 JS 执行器。大约价格为每月 120 美元。
@@ -210,12 +210,12 @@ GridLinks 使用 [Kafka](https://kafka.apache.org/) 作为主要的消息队列�
 因此，基础设施成本约为每月 1,770 美元，或每台设备每月 0.00177 美元。
 
 两个 GridLinks PE 永久许可证的成本为 5,998 美元（包括可选更新和使用第一年的基本支持）。2,398 美元是后续年份的软件更新 + 基本支持的相应定价。
-对于超过 10k 台设备的用例，我们提供 **托管服务** 来支持生产环境（而不是基本支持订阅）。费率为每台设备每月 0.01 美元。
+对于超过 10k 台设备的案例，我们提供 **托管服务** 来支持生产环境（而不是基本支持订阅）。费率为每台设备每月 0.01 美元。
 
 TCO：每月约 12,270 美元，或每台设备每月 0.01227 美元。
 
 **如果你想在你的集群设置中复制此案例，请按照以下指南操作：**
-[智能电表用例性能测试](https://github.com/ashvayka/tb-pe-k8s-perf-tests/tree/scenario/1-million-smart-meters)
+[智能电表案例性能测试](https://github.com/ashvayka/tb-pe-k8s-perf-tests/tree/scenario/1-million-smart-meters)
 
 #### 100 万智能追踪器的 TCO
 
@@ -226,7 +226,7 @@ TCO：每月约 12,270 美元，或每台设备每月 0.01227 美元。
 这导致每秒 16667 x 5 = 83,335 个对数据库的写请求（数据点），或每天 7.2B 个请求。
 Cassandra 可以可靠地处理此负载，并每天产生 144GB。由于数据需要在 Cassandra 中复制 3 次，因此每天产生 432GB 的磁盘空间。
 
-以下 Kubernetes 集群足以支持此用例：
+以下 Kubernetes 集群足以支持此案例：
 
 - 8 个“c5.large”实例（2 个 vCPU 和 4 GB RAM）来托管 8 个 ThingsBoard MQTT 传输容器。大约价格为每月 320 美元。
 - 15 个“c5.xlarge”实例（4 个 vCPU 和 8 GB RAM）来托管 15 个 ThingsBoard 节点容器。大约价格为每月 1095 美元。
@@ -246,4 +246,4 @@ ThingsBoard **托管服务** 来支持生产环境：每台设备每月 0.01 美
 TCO：每月约 27,508 美元，或每台设备每月 0.0275 美元。
 
 **如果你想在你的集群设置中复制此案例，请按照以下指南操作：**
-[智能追踪器用例性能测试](https://github.com/ashvayka/tb-pe-k8s-perf-tests/tree/scenario/1-million-smart-trackers)
+[智能追踪器案例性能测试](https://github.com/ashvayka/tb-pe-k8s-perf-tests/tree/scenario/1-million-smart-trackers)

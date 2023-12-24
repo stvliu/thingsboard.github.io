@@ -116,7 +116,7 @@ curl -v -X GET 'https://thingsboard.cloud/api/plugins/telemetry/DEVICE/ad17c410-
 ![image](/images/user-guide/shared-attributes.svg)
 {: refdef}
 
-共享属性最常见的用例是存储设备设置。
+共享属性最常见的案例是存储设备设置。
 让我们假设相同的建筑物监控解决方案并回顾几个示例：
 
 1. *targetFirmwareVersion* 属性可用于存储特定设备的固件版本。
@@ -194,7 +194,7 @@ curl -v -X GET 'https://thingsboard.cloud/api/plugins/telemetry/DEVICE/ad17c410-
 ![image](/images/user-guide/client-side-attributes.svg)
 {: refdef}
 
-客户端属性最常见的用例是报告设备状态。
+客户端属性最常见的案例是报告设备状态。
 让我们假设相同的建筑物监控解决方案并回顾几个示例：
 
 1. *currentFirmwareVersion* 属性可用于向平台报告设备的已安装固件/应用程序版本。
@@ -278,7 +278,7 @@ API 向后兼容 TB v1.0+，这就是 API 调用 URL 包含“插件”的主要
 **根据属性值对逻辑表达式生成警报**
 
 使用 [警报规则](/docs/{{docsPrefix}}user-guide/device-profiles/#alarm-rules) 通过 UI 配置最常见的警报条件，
-或使用 [过滤器节点](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/filter-nodes/) 通过自定义 JS 函数配置更具体的用例。
+或使用 [过滤器节点](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/filter-nodes/) 通过自定义 JS 函数配置更具体的案例。
 
 **在将传入的客户端属性存储在数据库中之前修改它们**
 

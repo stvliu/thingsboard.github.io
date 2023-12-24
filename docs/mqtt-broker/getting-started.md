@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-mqtt-broker
 title: TBMQ 入门
-description: TBMQ - 真实用例的代理
+description: TBMQ - 真实案例的代理
 
 broker-sessions:
     0:

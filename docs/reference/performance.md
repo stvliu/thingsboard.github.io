@@ -40,7 +40,7 @@ GridLinks 支持 MQTT QoS 级别 1，这意味着客户端仅在数据存储到 
 
 我们使用了 [Gatling](http://gatling.io/) 负载测试框架，它也基于 Akka 和 Netty。
 Gatling 能够使用 2 核 CPU 的 5-10% 来模拟 10K MQTT 客户端。
-请参阅我们关于如何改进非官方 Gatling MQTT 插件以支持我们的用例的单独 [文章](/docs/reference/performance-tools)。
+请参阅我们关于如何改进非官方 Gatling MQTT 插件以支持我们的案例的单独 [文章](/docs/reference/performance-tools)。
 
 ## 性能改进步骤
 
@@ -108,7 +108,7 @@ at org.thingsboard.server.dao.AbstractDao.executeAsyncWrite(AbstractDao.java:75)
 at org.thingsboard.server.dao.timeseries.BaseTimeseriesDao.savePartition(BaseTimeseriesDao.java:135)
 ```
 
-因此，我们意识到 cassandra 驱动程序的默认连接池配置导致了我们用例中的不良结果。
+因此，我们意识到 cassandra 驱动程序的默认连接池配置导致了我们案例中的不良结果。
 
 连接池功能的 [官方配置](http://docs.datastax.com/en/developer/java-driver/2.1/manual/pooling/) 包含特殊选项
 **“每个连接的同时请求”**，允许您调整每个连接的并发请求。

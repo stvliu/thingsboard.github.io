@@ -138,7 +138,7 @@ notitle: "true"
 							<a class="title" href="/docs/pe/user-guide/ui/devices/">设备</a>
 							<p>GridLinks 支持类似于 Google IoT Core 的设备配置和管理。
                             但是，IoT 应用程序不仅仅是设备。GridLinks 支持其他 <a href="/docs/pe/user-guide/entities-and-relations/">实体和关系</a>。
-                            关系模型支持高级用例和业务逻辑。例如，您可以在资产、设备、客户等之间配置关系。</p>
+                            关系模型支持高级案例和业务逻辑。例如，您可以在资产、设备、客户等之间配置关系。</p>
 						</div>
 					</div>
 				</div>
@@ -187,7 +187,7 @@ notitle: "true"
                             该平台为您提供了更多关于如何添加、分组和控制设备的灵活性。
                             您可以在不同的租户下注册设备或将设备分配给不同的客户。
                             最终用户能够在 <a href="/docs/pe/user-guide/self-registration/">自助注册</a> 过程中 <a href="/docs/pe/user-guide/claiming-devices/">声明设备</a>。
-                            ThingsBoard 具有所有必需的内置工具来支持复杂用例。</p>
+                            ThingsBoard 具有所有必需的内置工具来支持复杂案例。</p>
 						</div>
 					</div>
 				</div>

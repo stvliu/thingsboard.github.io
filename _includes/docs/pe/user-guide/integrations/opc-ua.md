@@ -51,7 +51,7 @@ OPC UA 集成允许您将数据从 OPC UA 服务器流式传输到 GridLinks，�
 
 我们将获取 *opcUaNode_name* 元数据值并将其映射到 *deviceName*，并将 *deviceType* 设置为 *airconditioner*。
 
-但是，您可以在特定用例中使用其他映射。
+但是，您可以在特定案例中使用其他映射。
 
 此外，我们将检索 *temperature*、*humidity* 和 *powerConsumption* 字段的值，并将它们用作设备遥测。
 
