@@ -3,7 +3,7 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: 使用物联网设备属性
-description: 使用 ThingsBoard 属性功能进行物联网设备管理
+description: 使用 GridLinks 属性功能进行物联网设备管理
 server-side-attrs-ui:
     0:
         image: /images/user-guide/attributes/add-server-side-ce-src.png

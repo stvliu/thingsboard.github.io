@@ -8,20 +8,20 @@ Json 转换器是默认转换器，它在来自代理的传入消息中查找 de
 | timeout                     | **60000**                 | 触发“设备断开连接”事件的超时                                                                                        |
 | attributes:                 |                           | 本小节包含传入消息的参数，这些参数将被解释为设备的属性。                              |
 | ... type                    | **string**                | 当前属性的传入数据类型。                                                                                            |
-| ... key                     | **model**                 | 要发送到 ThingsBoard 实例的属性名称。                                                                                       |
-| ... value                   | **${sensorModel}**        | 简单 JSON 表达式，用于在传入消息中查找值，该值将作为 key 参数的值发送到 ThingsBoard 实例。     |
+| ... key                     | **model**                 | 要发送到 GridLinks 实例的属性名称。                                                                                       |
+| ... value                   | **${sensorModel}**        | 简单 JSON 表达式，用于在传入消息中查找值，该值将作为 key 参数的值发送到 GridLinks 实例。     |
 |                             |                           |                                                                                                                                           |
 | ... type                    | **string**                | 当前属性的传入数据类型。                                                                                            |
 | ... key                     | **${sensorModel}**        | 简单 JSON 表达式，用于在传入消息中查找值，该值用作属性名称。                                     |
-| ... value                   | **on**                    | 要发送到 ThingsBoard 实例的属性值。                                                                                      |
+| ... value                   | **on**                    | 要发送到 GridLinks 实例的属性值。                                                                                      |
 | timeseries:                 |                           | 本小节包含传入消息的参数，这些参数将被解释为设备的遥测。                               |
 | ... type                    | **double**                | 当前遥测的传入数据类型。                                                                                            |
-| ... key                     | **temperature**           | 要发送到 ThingsBoard 实例的遥测名称。                                                                                       |
-| ... value                   | **${temp}**               | 简单 JSON 表达式，用于在传入消息中查找值，该值将作为 key 参数的值发送到 ThingsBoard 实例。     |
+| ... key                     | **temperature**           | 要发送到 GridLinks 实例的遥测名称。                                                                                       |
+| ... value                   | **${temp}**               | 简单 JSON 表达式，用于在传入消息中查找值，该值将作为 key 参数的值发送到 GridLinks 实例。     |
 |                             |                           |                                                                                                                                           |
 | ... type                    | **double**                | 当前遥测的传入数据类型。                                                                                            |
-| ... key                     | **humidity**              | 要发送到 ThingsBoard 实例的遥测名称。                                                                                       |
-| ... value                   | **${hum}**                | 简单 JSON 表达式，用于在传入消息中查找值，该值将作为 key 参数的值发送到 ThingsBoard 实例。     |
+| ... key                     | **humidity**              | 要发送到 GridLinks 实例的遥测名称。                                                                                       |
+| ... value                   | **${hum}**                | 简单 JSON 表达式，用于在传入消息中查找值，该值将作为 key 参数的值发送到 GridLinks 实例。     |
 |--- 
 
 {% capture difference %}

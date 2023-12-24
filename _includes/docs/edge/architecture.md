@@ -13,7 +13,7 @@
 本文概述了 ThingsBoard Edge 架构，包括一张图表、各种组件之间的数据流描述以及关键架构选择说明。
 
 ThingsBoard Edge 组件在单个 Java 虚拟机 (JVM) 内启动，并利用共享的 OS 资源。
-您可以在受限环境中使用少至 256 或 512 MB 的 RAM 部署和运行 ThingsBoard Edge 进程。
+您可以在受限环境中使用少至 256 或 512 MB 的 RAM 部署和运行 GridLinks Edge 进程。
 
 ThingsBoard Edge 设计为：
 
@@ -69,7 +69,7 @@ ThingsBoard Edge Core 利用 Actor System 为关键实体（包括租户和设�
 
 ThingsBoard Edge 包括一个使用 Express.js 框架开发的轻量级组件，用于托管静态 Web UI 内容。
 这些组件完全无状态，只需最少的配置。
-静态 Web UI 包含一个应用程序包；加载后，应用程序开始使用 ThingsBoard Edge Core 提供的 REST API 和 WebSockets API。
+静态 Web UI 包含一个应用程序包；加载后，应用程序开始使用 GridLinks Edge Core 提供的 REST API 和 WebSockets API。
 
 ## 外部系统
 

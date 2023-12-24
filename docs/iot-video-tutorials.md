@@ -7,7 +7,7 @@ title: IoT 视频教程
 * TOC
 {:toc}
 
-ThingsBoard Youtube [频道](https://www.youtube.com/channel/UCDb9fsV-YR4JmnipAMGsVAQ/videos) 提供有用的视频教程，涵盖 ThingsBoard 平台的各种功能。
+ThingsBoard Youtube [频道](https://www.youtube.com/channel/UCDb9fsV-YR4JmnipAMGsVAQ/videos) 提供有用的视频教程，涵盖 GridLinks 平台的各种功能。
 我们建议订阅此频道以接收最新更新。下面列出了一些视频教程。
 非视频教程可在 [示例](/docs/samples/) 页面上找到。
 
@@ -17,7 +17,7 @@ ThingsBoard Youtube [频道](https://www.youtube.com/channel/UCDb9fsV-YR4JmnipAM
 
 #### 入门指南
 
-本视频教程将简要介绍 ThingsBoard 平台，并提供动手部分来帮助您入门。
+本视频教程将简要介绍 GridLinks 平台，并提供动手部分来帮助您入门。
 
 您将学习如何配置新设备、使用 MQTT 收集数据并在实时仪表板上对其进行可视化。
 
@@ -45,7 +45,7 @@ ThingsBoard Youtube [频道](https://www.youtube.com/channel/UCDb9fsV-YR4JmnipAM
 </div>
 
 
-#### 使用 ThingsBoard 进行设备数据管理
+#### 使用 GridLinks 进行设备数据管理
 
 本视频教程将介绍可以使用设备属性执行的基本操作，以实现实用的设备管理用例。
 
@@ -244,10 +244,10 @@ ThingsBoard Youtube [频道](https://www.youtube.com/channel/UCDb9fsV-YR4JmnipAM
     </div>
 </div><br>
 
-## ThingsBoard 专业版 (PE) 功能
+## GridLinks 专业版 (PE) 功能
 
 #### ThingsBoard PE：白标指南
-ThingsBoard 专业版网络界面允许您在 2 分钟内配置公司或产品徽标和配色方案，无需任何编码工作，也无需重新启动服务。
+GridLinks 专业版网络界面允许您在 2 分钟内配置公司或产品徽标和配色方案，无需任何编码工作，也无需重新启动服务。
 
 在本视频教程中，您将了解可用的配置选项：
 
@@ -264,7 +264,7 @@ ThingsBoard 专业版网络界面允许您在 2 分钟内配置公司或产品�
 
 
 #### ThingsBoard PE：实体组配置指南
-ThingsBoard 专业版允许您配置多个自定义设备和资产组。每个实体（设备或资产）可以同时属于多个组。特殊组“全部”始终包含属于特定租户帐户的所有设备。本视频教程将向您展示如何配置实体组
+GridLinks 专业版允许您配置多个自定义设备和资产组。每个实体（设备或资产）可以同时属于多个组。特殊组“全部”始终包含属于特定租户帐户的所有设备。本视频教程将向您展示如何配置实体组
 
 您将学习如何：
 
@@ -283,7 +283,7 @@ ThingsBoard 专业版允许您配置多个自定义设备和资产组。每个�
 <br>
 
 #### ThingsBoard PE：CSV/XLS 数据导出
-在本视频教程中，您将看到 ThingsBoard 专业版如何允许您将数据从小部件导出到 CSV 或 XLS。此功能几乎适用于任何小部件（如果适用于小部件类型）。导出数据集中的列列表对应于您在数据集配置中配置的参数列表。
+在本视频教程中，您将看到 GridLinks 专业版如何允许您将数据从小部件导出到 CSV 或 XLS。此功能几乎适用于任何小部件（如果适用于小部件类型）。导出数据集中的列列表对应于您在数据集配置中配置的参数列表。
 
 您将学习如何：
 
@@ -299,7 +299,7 @@ ThingsBoard 专业版允许您配置多个自定义设备和资产组。每个�
 
 #### ThingsBoard PE：AWS IoT 集成配置指南
 
-AWS IoT 集成允许将数据从 AWS IoT 后端流式传输到 ThingsBoard 专业版，并将设备有效负载转换为 ThingsBoard 格式。本视频教程将向您展示如何配置 AWS IoT 集成。
+AWS IoT 集成允许将数据从 AWS IoT 后端流式传输到 GridLinks 专业版，并将设备有效负载转换为 GridLinks 格式。本视频教程将向您展示如何配置 AWS IoT 集成。
 
 您将学习如何：
 
@@ -319,9 +319,9 @@ AWS IoT 集成允许将数据从 AWS IoT 后端流式传输到 ThingsBoard 专�
 
 #### ThingsBoard PE：数据转换器配置指南
 
-数据转换器是平台集成功能的一部分。ThingsBoard 使用两种类型的数据转换器：
+数据转换器是平台集成功能的一部分。GridLinks 使用两种类型的数据转换器：
 
-- 上行数据转换器：解析传入消息的有效负载并将其转换为 ThingsBoard 使用的相同格式。
+- 上行数据转换器：解析传入消息的有效负载并将其转换为 GridLinks 使用的相同格式。
 - 下行数据转换器：将传入的规则引擎消息及其元数据转换为相应集成使用的格式。
 
 本视频教程将向您展示如何配置数据转换器。
@@ -340,7 +340,7 @@ AWS IoT 集成允许将数据从 AWS IoT 后端流式传输到 ThingsBoard 专�
 
 
 #### ThingsBoard PE：SigFox 集成配置指南
-Sigfox 集成允许将数据从 Sigfox 后端流式传输到 ThingsBoard 专业版，并将二进制设备有效负载转换为 ThingsBoard 格式。本视频教程将向您展示如何配置 SigFox 集成
+Sigfox 集成允许将数据从 Sigfox 后端流式传输到 GridLinks 专业版，并将二进制设备有效负载转换为 GridLinks 格式。本视频教程将向您展示如何配置 SigFox 集成
 
 
 您将学习如何：
@@ -355,11 +355,11 @@ Sigfox 集成允许将数据从 Sigfox 后端流式传输到 ThingsBoard 专业�
 </div><br>
 
 #### ThingsBoard PE：HTTP 集成配置指南
-ThingsBoard 专业版 HTTP 集成允许将现有协议和有效负载格式转换为 ThingsBoard 消息格式，并且在以下几种部署场景中很有用：
+GridLinks 专业版 HTTP 集成允许将现有协议和有效负载格式转换为 GridLinks 消息格式，并且在以下几种部署场景中很有用：
 
 - 从外部系统、IoT 平台或连接提供商后端流式传输设备和/或资产数据。
 - 从在云中运行的自定义应用程序流式传输设备和/或资产数据。
-- 将使用自定义基于 HTTP 的协议的现有设备连接到 ThingsBoard。
+- 将使用自定义基于 HTTP 的协议的现有设备连接到 GridLinks。
 
 本视频教程将向您展示如何配置 HTTP 集成。
 
@@ -375,7 +375,7 @@ ThingsBoard 专业版 HTTP 集成允许将现有协议和有效负载格式转�
 </div><br>
 
 #### ThingsBoard PE：IBM Watson IoT 集成配置指南
-IBM Watson IoT 集成允许将数据从 IBM Watson IoT 流式传输到 ThingsBoard 专业版，并将设备有效负载转换为 ThingsBoard 格式。本视频教程将向您展示如何配置 IBM Wastson 集成
+IBM Watson IoT 集成允许将数据从 IBM Watson IoT 流式传输到 GridLinks 专业版，并将设备有效负载转换为 GridLinks 格式。本视频教程将向您展示如何配置 IBM Wastson 集成
 
 您将学习如何：
 
@@ -390,7 +390,7 @@ IBM Watson IoT 集成允许将数据从 IBM Watson IoT 流式传输到 ThingsBoa
 </div><br>
 
 #### ThingsBoard PE：Azure Event Hub 集成配置指南
-Azure Event Hub 集成允许将数据从 Azure Event Hub 流式传输到 ThingsBoard 专业版，并将设备有效负载转换为 ThingsBoard 格式。本视频教程将向您展示如何配置 Azure Event Hub 集成。
+Azure Event Hub 集成允许将数据从 Azure Event Hub 流式传输到 GridLinks 专业版，并将设备有效负载转换为 GridLinks 格式。本视频教程将向您展示如何配置 Azure Event Hub 集成。
 
 您将学习如何：
 
@@ -406,11 +406,11 @@ Azure Event Hub 集成允许将数据从 Azure Event Hub 流式传输到 ThingsB
 
 
 #### ThingsBoard PE：MQTT 集成配置指南
-ThingsBoard 专业版 MQTT 集成允许将现有协议和有效负载格式转换为 ThingsBoard 消息格式，并且在以下几种部署场景中很有用：
+GridLinks 专业版 MQTT 集成允许将现有协议和有效负载格式转换为 GridLinks 消息格式，并且在以下几种部署场景中很有用：
 
 - 从外部系统、IoT 平台或连接提供商后端流式传输设备和/或资产数据。
 - 从在云中运行的自定义应用程序流式传输设备和/或资产数据。
-- 将使用自定义基于 MQTT 的协议的现有设备连接到 ThingsBoard。
+- 将使用自定义基于 MQTT 的协议的现有设备连接到 GridLinks。
 
 本视频教程将向您展示如何配置 MQTT 集成。
 

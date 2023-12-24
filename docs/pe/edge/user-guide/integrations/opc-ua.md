@@ -104,7 +104,7 @@ rpcDownlink:
 
 ## 概述
 
-OPC UA 集成允许您将数据从 OPC UA 服务器流式传输到 ThingsBoard Edge，并将设备有效负载转换为 ThingsBoard Edge 格式。
+OPC UA 集成允许您将数据从 OPC UA 服务器流式传输到 GridLinks Edge，并将设备有效负载转换为 GridLinks Edge 格式。
 
 <object width="100%" style="max-width: max-content;" data="/images/user-guide/integrations/opc-ua-integration.svg"></object>
 
@@ -204,7 +204,7 @@ return result;
 ```
 {: .copy-code}
 
-解码器函数的目的是将传入的数据和元数据解析为 ThingsBoard Edge 可以使用的一种格式。**deviceName** 和 **deviceType** 是必需的，而 **attributes** 和 **telemetry** 是可选的。**Attributes** 和 **telemetry** 是扁平键值对象。不支持嵌套对象。
+解码器函数的目的是将传入的数据和元数据解析为 GridLinks Edge 可以使用的一种格式。**deviceName** 和 **deviceType** 是必需的，而 **attributes** 和 **telemetry** 是可选的。**Attributes** 和 **telemetry** 是扁平键值对象。不支持嵌套对象。
 
 您可以在创建转换器时或在创建转换器后更改解码器函数。如果转换器已经创建，则单击“铅笔”图标进行编辑。复制转换器的配置示例（或您自己的配置）并将其插入解码器函数。通过单击“对勾”图标保存更改。
 

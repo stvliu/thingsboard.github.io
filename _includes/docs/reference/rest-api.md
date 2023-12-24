@@ -4,14 +4,14 @@
 ## 交互式文档
 
 {% if docsPrefix == "paas/" or docsPrefix == "pe/"  %}
-ThingsBoard REST API 交互式文档可通过 Swagger UI 获取。例如，您可以使用 **[Swagger UI 链接](https://thingsboard.cloud/swagger-ui.html)** 浏览 ThingsBoard Cloud API 文档。
+ThingsBoard REST API 交互式文档可通过 Swagger UI 获取。例如，您可以使用 **[Swagger UI 链接](https://thingsboard.cloud/swagger-ui.html)** 浏览 GridLinks云服务 API 文档。
 {% else %}
 ThingsBoard REST API 交互式文档可通过 Swagger UI 获取。例如，您可以使用 **[Swagger UI 链接](https://demo.thingsboard.io/swagger-ui.html)** 浏览社区版演示服务器 API 文档。
 {% endif %}
 
 {% if docsPrefix == "paas/" %}
 {% else %}
-安装 ThingsBoard 服务器后，您可以使用以下 URL 打开交互式文档：
+安装 GridLinks 服务器后，您可以使用以下 URL 打开交互式文档：
 
 ``` 
 http://YOUR_HOST:PORT/swagger-ui.html
@@ -36,7 +36,7 @@ http://YOUR_HOST:PORT/swagger-ui.html
 
 ## JWT 令牌
 
-ThingsBoard 使用 [JWT](https://jwt.io/) 令牌在 API 客户端（浏览器、脚本等）和平台之间安全地表示声明。
+GridLinks 使用 [JWT](https://jwt.io/) 令牌在 API 客户端（浏览器、脚本等）和平台之间安全地表示声明。
 当您登录平台时，您的用户名和密码将交换为一对令牌。
 
 
@@ -50,7 +50,7 @@ ThingsBoard 使用 [JWT](https://jwt.io/) 令牌在 API 客户端（浏览器、
 主令牌是您应该用来执行 API 调用的短期令牌。刷新令牌用于在主令牌过期后获取新的主令牌。
 主令牌和刷新令牌的过期时间可以通过 JWT_TOKEN_EXPIRATION_TIME 和 JWT_REFRESH_TOKEN_EXPIRATION_TIME 参数在系统设置中进行 [配置](/docs/user-guide/install/{{docsPrefix}}config/)。默认过期时间值分别为 2.5 小时和 1 周。
 
-请参阅以下示例命令，以获取用户“tenant@thingsboard.org”、密码“tenant”和服务器“THINGSBOARD_URL”的令牌：
+请参阅以下示例命令，以获取用户“tenant@gridlinks.com”、密码“tenant”和服务器“THINGSBOARD_URL”的令牌：
 
 {% endif %}
 

@@ -31,7 +31,7 @@ export SSL_PEM_KEY_PASSWORD=secret
 * SSL_PEM_KEY - 服务器证书私钥文件的路径。默认情况下是可选的。如果服务器证书文件中不存在私钥，则需要；
 * SSL_PEM_KEY_PASSWORD - 可选的服务器证书私钥密码。
 
-完成设置后，启动或重新启动 ThingsBoard 服务器。
+完成设置后，启动或重新启动 GridLinks 服务器。
 
 {% include templates/ssl/pem_files_location.md %}
 

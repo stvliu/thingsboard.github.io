@@ -3,7 +3,7 @@
 
 ## 批量配置概述
 
-ThingsBoard 提供了使用 CSV 文件批量配置以下类型实体的选项：
+GridLinks 提供了使用 CSV 文件批量配置以下类型实体的选项：
 
 - **设备**
 - **资产**
@@ -13,7 +13,7 @@ ThingsBoard 提供了使用 CSV 文件批量配置以下类型实体的选项：
 
 - **属性** - 与实体关联的静态和半静态键值对。例如，序列号、型号、固件版本；
 - **遥测数据** - 可用于存储、查询和可视化的时序数据点。例如，温度、湿度、电池电量；
-- **凭据** - 用于设备通过在设备上运行的应用程序连接到 ThingsBoard 服务器。
+- **凭据** - 用于设备通过在设备上运行的应用程序连接到 GridLinks 服务器。
 
 ## 导入实体
 
@@ -39,7 +39,7 @@ ThingsBoard 提供了使用 CSV 文件批量配置以下类型实体的选项：
 
 ### 步骤 3：选择列类型
 
-在此步骤中，您需要定义下载的文件的列与 ThingsBoard 平台中的数据类型之间的匹配。您还可以设置/更改属性/遥测键的默认名称。
+在此步骤中，您需要定义下载的文件的列与 GridLinks 平台中的数据类型之间的匹配。您还可以设置/更改属性/遥测键的默认名称。
 
 <img data-gifffer="/images/user-guide/bull-provisioning/bulk-provision-step-3.gif" alt="批量配置步骤 3">
 
@@ -77,7 +77,7 @@ A,test-import-device.csv,text,resources/test-import-device.csv,/docs/{{docsPrefi
 
 - **CSV 分隔符** - 选择您的编辑器分隔符号。在示例文件中，分隔符为“,”；
 - **第一行包含列名称** - 示例文件包含列名称，因此我们选择此选项；
-- **更新属性/遥测** - 取消选中此选项，因为我们要添加新设备，而不是更新 ThingsBoard 平台中现有设备的参数。
+- **更新属性/遥测** - 取消选中此选项，因为我们要添加新设备，而不是更新 GridLinks 平台中现有设备的参数。
 
 ![image](/images/user-guide/bull-provisioning/import-device-config.png)
 

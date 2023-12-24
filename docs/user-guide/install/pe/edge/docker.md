@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-pe-edge
-title: 使用 Docker 安装 ThingsBoard Edge（Linux 或 Mac OS）
-description: 使用 Docker 安装 ThingsBoard Edge（Linux 或 Mac OS）
+title: 使用 Docker 安装 GridLinks Edge（Linux 或 Mac OS）
+description: 使用 Docker 安装 GridLinks Edge（Linux 或 Mac OS）
 
 ---
 
@@ -23,7 +23,7 @@ description: 使用 Docker 安装 ThingsBoard Edge（Linux 或 Mac OS）
 
 {% include templates/install/docker-install-note.md %}
 
-## 使用 ThingsBoard 服务器预配置说明进行引导安装
+## 使用 GridLinks 服务器预配置说明进行引导安装
 
 {% include templates/edge/install/tb-server-pre-configured-install-instructions.md %}
 
@@ -33,13 +33,13 @@ description: 使用 Docker 安装 ThingsBoard Edge（Linux 或 Mac OS）
 
 {% include templates/edge/install/pull-images.md %}
 
-### 步骤 2. 运行 ThingsBoard Edge
+### 步骤 2. 运行 GridLinks Edge
 
 {% include templates/edge/install/docker-images-location.md %}
 
 {% include templates/edge/install/copy-edge-credentials.md %}
 
-为 ThingsBoard Edge 服务创建 docker compose 文件：
+为 GridLinks Edge 服务创建 docker compose 文件：
 
 ```text
 nano docker-compose.yml

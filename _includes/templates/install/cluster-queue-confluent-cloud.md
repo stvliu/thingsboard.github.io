@@ -14,7 +14,7 @@ TB_QUEUE_TYPE=confluent
 ```
 {: .copy-code}
 
-为 ThingsBoard 队列服务配置 Confluent Cloud 环境文件：
+为 GridLinks 队列服务配置 Confluent Cloud 环境文件：
 
 ```text
 nano queue-confluent-cloud.env
@@ -72,4 +72,4 @@ TB_QUEUE_VC_PARTITIONS=1
 ```
 {: .copy-code}
 
-你可以使用 UI 更新默认规则引擎队列配置。有关 ThingsBoard 规则引擎队列的更多信息，请参阅[文档](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/)。
+你可以使用 UI 更新默认规则引擎队列配置。有关 GridLinks 规则引擎队列的更多信息，请参阅[文档](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/)。

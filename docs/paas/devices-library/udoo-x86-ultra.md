@@ -1,6 +1,6 @@
 ---
 layout: devices-library-article
-title: 如何将 Udoo x86 Ultra 连接到 ThingsBoard？
+title: 如何将 Udoo x86 Ultra 连接到 GridLinks？
 category: 单板计算机
 chip: Pentium N3710
 connectivity: WIFI，蓝牙

@@ -5,7 +5,7 @@
 
 ## 简介
 
-ThingsBoard 使用邮件模板在发生某些事件时向用户发送电子邮件通知。
+GridLinks 使用邮件模板在发生某些事件时向用户发送电子邮件通知。
 例如，关于激活帐户或重置密码的消息。
 
 {% capture difference %}
@@ -15,7 +15,7 @@ ThingsBoard 使用邮件模板在发生某些事件时向用户发送电子邮�
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-ThingsBoard 提供具有示例内容的默认系统邮件消息模板，可以从列表中单独自定义。
+GridLinks 提供具有示例内容的默认系统邮件消息模板，可以从列表中单独自定义。
 
 为此，请执行以下步骤：
 - 转到“**白标**”页面 -> “**邮件模板**”选项卡；

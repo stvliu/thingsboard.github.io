@@ -1,6 +1,6 @@
 ---
 layout: devices-library-article
-title: 如何将 UG65 LoRaWAN® 半工业网关连接到 ThingsBoard？
+title: 如何将 UG65 LoRaWAN® 半工业网关连接到 GridLinks？
 category: 其他设备
 connectivity: HTTP、MQTT、UDP、LTE、4G、3G、LoRaWAN®
 vendor: Milesight

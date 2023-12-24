@@ -58,7 +58,7 @@ description:
                     </div>
                 </div>
                 <div class="feature-des"><h2>白标</h2>
-                    <p>使用 ThingsBoard PE <a href="/docs/pe/user-guide/white-labeling/">白标</a> 功能，使用您的公司或产品徽标和配色方案重新设计您的移动应用程序界面。</p>
+                    <p>使用 GridLinks PE <a href="/docs/pe/user-guide/white-labeling/">白标</a> 功能，使用您的公司或产品徽标和配色方案重新设计您的移动应用程序界面。</p>
                     <a class="read-more-button" href="/docs/pe/mobile/white-labeling/">阅读更多<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
                 </div>
             </div>
@@ -74,7 +74,7 @@ description:
             </div>
             <div class="block dark">
                 <div class="feature-des"><h2>自助注册</h2>
-                    <p>使用 ThingsBoard PE <a href="/docs/pe/user-guide/self-registration/">自助注册</a> 功能为您的客户设置注册页面。</p>
+                    <p>使用 GridLinks PE <a href="/docs/pe/user-guide/self-registration/">自助注册</a> 功能为您的客户设置注册页面。</p>
                     <a class="read-more-button" href="/docs/pe/mobile/self-registration/">阅读更多<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
                 </div>
                 <div class="preview">
@@ -128,7 +128,7 @@ description:
             </div>
             <div class="block">
                 <div class="feature-des"><h2>结构化的设备导航</h2>
-                    <p>按设备类型和在线状态浏览设备。在 ThingsBoard 上，分配特定于设备的仪表板和图像。</p>
+                    <p>按设备类型和在线状态浏览设备。在 GridLinks 上，分配特定于设备的仪表板和图像。</p>
                     <a class="read-more-button" href="/docs/pe/mobile/customize-devices/">阅读更多<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
                 </div>
                 <div class="preview">
@@ -166,7 +166,7 @@ description:
                     </div>
                 </div>
                 <div class="feature-des"><h2>丰富的移动操作集</h2>
-                    <p>使用移动设备在仪表板中拍照、扫描二维码、更新位置等。使用 ThingsBoard 使用您自己的处理逻辑扩展操作。</p>
+                    <p>使用移动设备在仪表板中拍照、扫描二维码、更新位置等。使用 GridLinks 使用您自己的处理逻辑扩展操作。</p>
                     <a class="read-more-button" href="/docs/pe/mobile/mobile-actions/">阅读更多<img class="arrow first" src="/images/pe/read-more-arrow.svg"alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
                 </div>
             </div>

@@ -5,7 +5,7 @@
 
 ## 概述
 
-CoAP 集成允许从使用 CoAP 协议连接到 ThingsBoard 的设备流式传输数据，并将这些设备的有效负载转换为 ThingsBoard 格式。
+CoAP 集成允许从使用 CoAP 协议连接到 GridLinks 的设备流式传输数据，并将这些设备的有效负载转换为 GridLinks 格式。
 
 请查看集成图以了解更多信息。
 
@@ -16,10 +16,10 @@ CoAP 集成允许从使用 CoAP 协议连接到 ThingsBoard 的设备流式传�
 在本教程中，我们将向您展示 CoAP 集成如何作为 **tb-core** 服务的一部分工作，并选择 **NO SECURE** 安全模式。为此，我们将使用：
 
 {% if docsPrefix == "pe/" %}
-- 本地安装的 [ThingsBoard Professional Edition](https://thingsboard.io/docs/user-guide/install/pe/installation-options/) 实例；
+- 本地安装的 [ GridLinks专业版](https://thingsboard.io/docs/user-guide/install/pe/installation-options/) 实例；
 {% endif %}
 {% if docsPrefix == "paas/" %}
-- ThingsBoard Professional Edition 实例 — [thingsboard.cloud](https://thingsboard.cloud)；
+-  GridLinks专业版 实例 — [thingsboard.cloud](https://thingsboard.cloud)；
 {% endif %}
 
 - [coap-client](https://manpages.ubuntu.com/manpages/focal/man5/coap-client.5.html) 实用程序，旨在模拟将连接到 CoAP 集成的 CoAP 客户端；
@@ -65,7 +65,7 @@ SN-001,default,temperature,25.7,humidity,69
 
 ## 上行转换器
 
-在设置 **CoAP 集成** 之前，您需要创建一个 **上行转换器**，它是一个用于解析和转换 CoAP 集成接收的数据的脚本，以转换为 ThingsBoard 使用的格式。**deviceName** 和 **deviceType** 是必需的，而属性和遥测是可选的。属性和遥测是扁平的键值对象。不支持嵌套对象。
+在设置 **CoAP 集成** 之前，您需要创建一个 **上行转换器**，它是一个用于解析和转换 CoAP 集成接收的数据的脚本，以转换为 GridLinks 使用的格式。**deviceName** 和 **deviceType** 是必需的，而属性和遥测是可选的。属性和遥测是扁平的键值对象。不支持嵌套对象。
 
 要创建 **上行转换器**，请转到 **数据转换器** 部分，然后单击 **添加新数据转换器 —> 创建新转换器**。将其命名为 **“CoAP 上行转换器”** 并选择类型 **上行**。现在使用调试模式。
 

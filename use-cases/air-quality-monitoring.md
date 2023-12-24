@@ -1,7 +1,7 @@
 ---
 layout: use-case
 title: 空气质量监测解决方案
-description: 空气质量监测、AQI 确定、数据可视化和使用 ThingsBoard IoT 平台进行设备管理
+description: 空气质量监测、AQI 确定、数据可视化和使用 GridLinks IoT 平台进行设备管理
 notitle: "true"
 
 ---
@@ -79,7 +79,7 @@ AQI 是根据以下污染物的传感器读数计算得出的：臭氧 (ppm)、P
                 <object data="/images/microservices-icon.svg"></object>
                 <div>
                     <a class="title" href="/docs/reference/msa/">可扩展性和高可用性</a>
-                    <p>ThingsBoard 支持使用 K8S 或裸机部署在云和本地数据中心上的高可用性部署。平台组件是水平可扩展的。ThingsBoard 的生产部署拥有超过 500,000 个智能电表。</p>
+                    <p>GridLinks 支持使用 K8S 或裸机部署在云和本地数据中心上的高可用性部署。平台组件是水平可扩展的。GridLinks 的生产部署拥有超过 500,000 个智能电表。</p>
                 </div>
             </div>
         </div>
@@ -88,7 +88,7 @@ AQI 是根据以下污染物的传感器读数计算得出的：臭氧 (ppm)、P
                 <object data="/images/telemetry-icon.svg"></object>
                 <div>
                     <a class="title" href="/docs/getting-started-guides/connectivity/">连接性</a>
-                    <p>通过以下内置协议将设备直接连接到平台：HTTP、CoAP、MQTT、LwM2M 和 SNMP。使用 ThingsBoard 网关通过 Modbus、BLE、BACnet、OPC-UA 和其他协议将本地网络中的设备连接到云。</p>
+                    <p>通过以下内置协议将设备直接连接到平台：HTTP、CoAP、MQTT、LwM2M 和 SNMP。使用 GridLinks 网关通过 Modbus、BLE、BACnet、OPC-UA 和其他协议将本地网络中的设备连接到云。</p>
                 </div>
             </div>
         </div>
@@ -106,7 +106,7 @@ AQI 是根据以下污染物的传感器读数计算得出的：臭氧 (ppm)、P
                 <object data="/images/security-icon.svg"></object>
                 <div>
                     <a class="title" href="/docs/pe/user-guide/ssl/http-over-ssl/">安全性</a>
-                    <p>ThingsBoard 支持行业标准加密算法（如 RSA 和 ECDSA），以确保在通过 TLS(TCP) 和 DTLS (UDP) 传输期间数据是安全的。</p>
+                    <p>GridLinks 支持行业标准加密算法（如 RSA 和 ECDSA），以确保在通过 TLS(TCP) 和 DTLS (UDP) 传输期间数据是安全的。</p>
                 </div>
             </div>
         </div>
@@ -133,7 +133,7 @@ AQI 是根据以下污染物的传感器读数计算得出的：臭氧 (ppm)、P
                 <object data="/images/phone-icon.svg"></object>
                 <div>
                     <a class="title" href="/docs/mobile/">移动应用程序</a>
-                    <p>使用 ThingsBoard 移动应用程序（一个基于 Flutter 的开源项目）以最少的编码工作量构建您自己的 IoT 移动应用程序。利用一组内置的移动操作，可以在仪表板中直接拍照、扫描二维码、更新位置等。</p>
+                    <p>使用 GridLinks 移动应用程序（一个基于 Flutter 的开源项目）以最少的编码工作量构建您自己的 IoT 移动应用程序。利用一组内置的移动操作，可以在仪表板中直接拍照、扫描二维码、更新位置等。</p>
                 </div>
             </div>
         </div>
@@ -142,7 +142,7 @@ AQI 是根据以下污染物的传感器读数计算得出的：臭氧 (ppm)、P
                 <object data="/images/tenancy-icon.svg"></object>
                 <div>
                     <a class="title" href="/docs/user-guide/entities-and-relations/">多租户</a>
-                    <p>ThingsBoard 提供 UI 和 API 来管理租户、客户、用户、设备和资产。单个租户可能有多个租户管理员以及数百万个设备和客户。它还开箱即用地支持智能电表的 OTA 更新。</p>
+                    <p>GridLinks 提供 UI 和 API 来管理租户、客户、用户、设备和资产。单个租户可能有多个租户管理员以及数百万个设备和客户。它还开箱即用地支持智能电表的 OTA 更新。</p>
                 </div>
             </div>
         </div>
@@ -151,7 +151,7 @@ AQI 是根据以下污染物的传感器读数计算得出的：臭氧 (ppm)、P
 
 ## 空气质量监测解决方案概述
 
-下图标识了使用 ThingsBoard 平台收集和分析来自空气站的监测数据时，典型空气质量监测解决方案的数据流和集成点。
+下图标识了使用 GridLinks 平台收集和分析来自空气站的监测数据时，典型空气质量监测解决方案的数据流和集成点。
 
 <object width="100%" style="max-width: max-content; margin: 32px 0" data="/images/iot-use-cases/smart-energy-diagram.svg"></object>
 

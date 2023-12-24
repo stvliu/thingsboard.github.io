@@ -11,7 +11,7 @@ description: 物联网网关远程配置
 本指南概述了网关仪表板的所有子仪表板，用于远程配置。
 
 出于本指南的目的，我们将使用以下内容：
-1. ThingsBoard 平台的本地安装实例（您可以在此处阅读如何安装](/docs/user-guide/install/installation-options/)。
+1. GridLinks 平台的本地安装实例（您可以在此处阅读如何安装](/docs/user-guide/install/installation-options/)。
 2. ThingsBoard 物联网网关（您可以在此处阅读如何安装](/docs/iot-gateway/installation/)。
 
 资源（可选）：
@@ -179,11 +179,11 @@ GRPC%,%grpc-toggle%,%templates/iot-gateway/gateway-dashboard-grpc-conf.md%br%
 仪表板包含两个小部件：
 - 网关常规图表统计信息 - 此处显示常规统计信息指标，即：
   - 发送到设备 - 从网关发送到设备的总数据量；
-  - 发送到 ThingsBoard - 从网关发送到 ThingsBoard 的总数据量；
+  - 发送到 GridLinks - 从网关发送到 GridLinks 的总数据量；
   - 从 ThingsBoard 接收 - 从 RPC 和属性更新接收的总数据量；
   - 从设备转换 - 网关上转换的数据总数；
   - 产生的事件 - 从 ThingsBoard 接收的事件数；
-  - 发送的事件 - 发送到 ThingsBoard 的事件总数；
+  - 发送的事件 - 发送到 GridLinks 的事件总数；
   - 从设备接收 - 从设备接收的总数据量。
 - 网关自定义统计信息 - 此处显示自定义统计信息，您可以使用选择器选择单个指标。此外，最右侧的小部件将根据数据类型更改其类型（如果整数/浮点数据是图形，则其他类型是表格）。
 

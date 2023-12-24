@@ -15,7 +15,7 @@ python-prediction-basic-example:
     title: '启用预测并选择自定义模型'
   2:
     image: /images/trendz/python-predict-univariable-sources.png
-    title: '编写用于时间序列预测的 Python 代码'
+    title: '编写用于时序预测的 Python 代码'
   3:
     image: /images/trendz/python-predict-univariable-result.png
     title: '条形图，其中包含历史数据和未来 14 天的预测'

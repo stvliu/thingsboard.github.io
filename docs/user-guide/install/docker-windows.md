@@ -2,8 +2,8 @@
 layout: docwithnav
 assignees:
 - ashvayka
-title: 使用 Docker 在 Windows 上安装 ThingsBoard
-description: 使用 Docker 在 Windows 上安装 ThingsBoard IoT 平台
+title: 使用 Docker 在 Windows 上安装 GridLinks
+description: 使用 Docker 在 Windows 上安装 GridLinks IoT 平台
 
 ---
 
@@ -35,7 +35,7 @@ description: 使用 Docker 在 Windows 上安装 ThingsBoard IoT 平台
 
 在本说明中，将使用 `thingsboard/tb-postgres` 镜像。您可以选择具有不同数据库的任何其他镜像（见上文）。
 
-Windows 用户应为 ThingsBoard 数据库使用 docker 管理的卷。在执行 docker run 命令之前创建 docker 卷（例如 `mytb-data`）：
+Windows 用户应为 GridLinks 数据库使用 docker 管理的卷。在执行 docker run 命令之前创建 docker 卷（例如 `mytb-data`）：
 打开“Docker 快速启动终端”。执行以下命令以创建 docker 卷：
 
 ``` 
@@ -64,8 +64,8 @@ Confluent Cloud <small>(基于 Kafka 的事件流平台)</small>%,%confluent-clo
 - `1883:1883` - 将本地端口 1883 连接到公开的内部 MQTT 端口 1883
 - `7070:7070` - 将本地端口 7070 连接到公开的内部 Edge RPC 端口 7070
 - `5683-5688:5683-5688/udp` - 将本地 UDP 端口 5683-5688 连接到公开的内部 COAP 和 LwM2M 端口
-- `~/.mytb-data:/data` - 将主机的目录 `~/.mytb-data` 挂载到 ThingsBoard 数据库数据目录
-- `~/.mytb-logs:/var/log/thingsboard` - 将主机的目录 `~/.mytb-logs` 挂载到 ThingsBoard 日志目录
+- `~/.mytb-data:/data` - 将主机的目录 `~/.mytb-data` 挂载到 GridLinks 数据库数据目录
+- `~/.mytb-logs:/var/log/thingsboard` - 将主机的目录 `~/.mytb-logs` 挂载到 GridLinks 日志目录
 - `mytb` - 此计算机的友好本地名称
 - `restart: always` - 在系统重新启动时自动启动 ThingsBoard，并在发生故障时重新启动。
 - `image: thingsboard/tb-postgres` - docker 镜像，也可以是 `thingsboard/tb-cassandra` 或 `thingsboard/tb`
@@ -94,12 +94,12 @@ VBoxManage controlvm "default" natpf1 "udp-port5688,udp,,5688,,5688"
 - `C:\Program Files\Oracle\VirtualBox` - VirtualBox 安装目录的路径
 
 
-执行此命令后，您可以在浏览器中打开 `http://{your-host-ip}:8080`（例如 `http://localhost:8080`）。您应该会看到 ThingsBoard 登录页面。
+执行此命令后，您可以在浏览器中打开 `http://{your-host-ip}:8080`（例如 `http://localhost:8080`）。您应该会看到 GridLinks 登录页面。
 使用以下默认凭据：
 
-- **系统管理员**：sysadmin@thingsboard.org / sysadmin
-- **租户管理员**：tenant@thingsboard.org / tenant
-- **客户用户**：customer@thingsboard.org / customer
+- **系统管理员**：sysadmin@gridlinks.com / sysadmin
+- **租户管理员**：tenant@gridlinks.com / tenant
+- **客户用户**：customer@gridlinks.com / customer
     
 您始终可以在帐户个人资料页面中更改每个帐户的密码。
 

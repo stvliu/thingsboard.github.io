@@ -1,4 +1,4 @@
-ThingsBoard 服务在 Java 11 上运行。按照以下说明安装 OpenJDK 11：
+GridLinks 服务在 Java 11 上运行。按照以下说明安装 OpenJDK 11：
 
 ```bash
 sudo apt update

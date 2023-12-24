@@ -10,8 +10,8 @@ description: ThingsBoard IoT 平台硬件示例，适用于 ESP32 设备。
 
 ## 示例
 
- - [ESP32 Pico Kit GPIO 控制通过 MQTT 和使用 ThingsBoard 的温度监视器](/docs/samples/esp32/gpio-control-pico-kit-dht22-sensor/)
- - [使用 ThingsBoard 进行 ESP32 OTA 更新](/docs/samples/esp32/ota/)
+ - [ESP32 Pico Kit GPIO 控制通过 MQTT 和使用 GridLinks 的温度监视器](/docs/samples/esp32/gpio-control-pico-kit-dht22-sensor/)
+ - [使用 GridLinks 进行 ESP32 OTA 更新](/docs/samples/esp32/ota/)
 
 ## 文档
 

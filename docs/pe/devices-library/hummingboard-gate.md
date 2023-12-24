@@ -1,6 +1,6 @@
 ---
 layout: devices-library-article
-title: 如何将 HummingBoard Gate 连接到 ThingsBoard？
+title: 如何将 HummingBoard Gate 连接到 GridLinks？
 category: 单板计算机
 chip: i.MX6DualLite
 connectivity: 以太网、WIFI、蓝牙

@@ -96,7 +96,7 @@ const Shared_Attribute_Callback attributes_callback(SHARED_ATTRIBUTES_LIST.cbegi
 {% assign updateLedColor = '
     ===
         image: /images/devices-library/basic/microcontrollers/dashboard/thingsboard-example-dashboard-change-led-color.png,
-        title: 您可以使用 ThingsBoard 仪表板上的微件更新板上 LED 的颜色。
+        title: 您可以使用 GridLinks 仪表板上的微件更新板上 LED 的颜色。
 '
 %}
 

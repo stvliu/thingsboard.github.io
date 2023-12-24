@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-paas
 title: 设备配置
-description: 使用 ThingsBoard 配置设备功能进行物联网设备管理
+description: 使用 GridLinks 配置设备功能进行物联网设备管理
 deviceProfileConfiguration:
     0:
         image: /images/user-guide/device-provisioning/device-provisioning-step-1.png 

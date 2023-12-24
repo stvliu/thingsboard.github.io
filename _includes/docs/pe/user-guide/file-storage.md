@@ -11,7 +11,7 @@ ThingsBoard 能够将二进制内容（文件）存储在数据库中。
 
 ### 文件小部件
 
-ThingsBoard 通过 **文件** 小部件（它是 **文件** 小部件包的一部分）提供对存储文件的访问。
+GridLinks 通过 **文件** 小部件（它是 **文件** 小部件包的一部分）提供对存储文件的访问。
 
 ![image](/images/user-guide/ui/file-storage-files-widget.png)
 

@@ -53,13 +53,13 @@ _专门针对事件的文档即将推出。_
 
 ## 资产关系
 
-ThingsBoard 提供用户界面和 REST API 来配置和管理您的 IoT 应用程序中的多个实体类型及其 [关系](/docs/{{docsPrefix}}user-guide/entities-and-relations/)。
+GridLinks 提供用户界面和 REST API 来配置和管理您的 IoT 应用程序中的多个实体类型及其 [关系](/docs/{{docsPrefix}}user-guide/entities-and-relations/)。
 
 {% include images-gallery.html imageCollection="asset-relations-pe" %}
 
 ## 审计日志
 
-ThingsBoard 提供跟踪用户操作的功能，以便保留 [审计日志](/docs/{{docsPrefix}}user-guide/audit-log/)。
+GridLinks 提供跟踪用户操作的功能，以便保留 [审计日志](/docs/{{docsPrefix}}user-guide/audit-log/)。
 可以记录与主要实体相关联的用户操作：资产、设备、仪表板、规则等。
 
 {% include images-gallery.html imageCollection="asset-auditlogs-pe" %}

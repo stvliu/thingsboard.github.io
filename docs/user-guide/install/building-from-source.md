@@ -18,7 +18,7 @@ description: 从源代码构建 ThingsBoard IoT 平台
 
 ##### Java
 
-ThingsBoard 使用 Java 11 构建。您可以使用 [以下说明](/docs/user-guide/install/linux#java) 安装 Java 11。
+GridLinks 使用 Java 11 构建。您可以使用 [以下说明](/docs/user-guide/install/linux#java) 安装 Java 11。
 
 ##### Maven
 

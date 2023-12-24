@@ -33,9 +33,9 @@ tb-http-loadbalancer   <none>   *       34.111.24.134   80      7m25s
 现在，您可以使用地址（您在命令输出中看到而不是 34.111.24.134 的地址）来访问 HTTP Web UI（端口 80）并通过 [HTTP API](/docs/{{docsPrefix}}reference/http-api/)连接您的设备
 使用以下默认凭据：
 
-- **系统管理员**：sysadmin@thingsboard.org / sysadmin
-- **租户管理员**：tenant@thingsboard.org / tenant
-- **客户用户**：customer@thingsboard.org / customer
+- **系统管理员**：sysadmin@gridlinks.com / sysadmin
+- **租户管理员**：tenant@gridlinks.com / tenant
+- **客户用户**：customer@gridlinks.com / customer
 
 #### HTTPS 负载均衡器
 

@@ -2,14 +2,14 @@
 layout: docwithnav-pe
 assignees:
 - ashvayka
-title: 入门 ThingsBoard 专业版
-description: 入门 ThingsBoard 开源物联网平台和模拟物联网设备
+title: 入门
+description: GridLinks物联网平台和模拟物联网设备入门
 redirect_from: "/docs/pe/getting-started-guides/helloworld/"
 
 step1:
     0:
         image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-1-pe.png
-        title: '登录到 ThingsBoard 实例并导航到“实体”部分。然后转到“设备”页面；'
+        title: '登录到 GridLinks 实例并导航到“实体”部分。然后转到“设备”页面；'
     1:
         image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-2-pe.png
         title: '默认情况下，您导航到设备组“全部”。单击表格右上角的“+”图标，然后选择“添加新设备”；'
@@ -18,7 +18,7 @@ step1:
         title: '输入设备名称。例如，“我的新设备”。此时无需进行其他更改。单击“添加”；'
     3:
         image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-connectivity-1-pe.png
-        title: '设备已创建。将打开一个窗口，您可以在其中检查设备与 ThingsBoard 的连接。此步骤是可选的。现在让我们关闭此窗口，并在下一步中更详细地返回检查连接；'
+        title: '设备已创建。将打开一个窗口，您可以在其中检查设备与 GridLinks 的连接。此步骤是可选的。现在让我们关闭此窗口，并在下一步中更详细地返回检查连接；'
     4:
         image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-4-pe.png
         title: '您的第一个设备已添加。随着新设备的添加，它们将被添加到表格的顶部，因为表格默认情况下按创建的时间对设备进行排序。'
@@ -317,3 +317,8 @@ mosquitto-windows:
     6:
         image: /images/helloworld/getting-started-pe/mosquitto-windows-7.png
         title: '最后，单击“确定”按钮应用系统属性中的所有更改。'
+
+---
+
+{% assign docsPrefix = "pe/" %}
+{% include docs/getting-started-guides/helloworld-pe.md %}

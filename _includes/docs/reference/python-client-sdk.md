@@ -28,7 +28,7 @@ from tb_device_mqtt import TBDeviceMqttClient, TBPublishInfo
 
 telemetry = {"temperature": 41.9, "enabled": False, "currentFirmwareVersion": "v1.2.2"}
 client = TBDeviceMqttClient("127.0.0.1", "A1_TEST_TOKEN")
-# 连接到 ThingsBoard
+# 连接到 GridLinks
 client.connect()
 # 发送遥测而不检查传递状态
 client.send_telemetry(telemetry) 
@@ -36,7 +36,7 @@ client.send_telemetry(telemetry)
 result = client.send_telemetry(telemetry)
 # get 是一个阻塞调用，等待传递状态  
 success = result.get() == TBPublishInfo.TB_ERR_SUCCESS
-# 断开与 ThingsBoard 的连接
+# 断开与 GridLinks 的连接
 client.disconnect()
 
 ```
@@ -44,7 +44,7 @@ client.disconnect()
 ### 使用 TLS 的连接
 
 到本地的 TLS 连接。{% if docsPrefix != 'paas/' %}有关客户端和 ThingsBoard 配置的更多信息，请参阅 [MQTT over SSL](/docs/{{docsPrefix}}user-guide/mqtt-over-ssl/)。{% endif %}
-要通过 MQTT over SSL 连接到 ThingsBoard，首先，您应该生成一个证书，并具有如下所示的代码：
+要通过 MQTT over SSL 连接到 GridLinks，首先，您应该生成一个证书，并具有如下所示的代码：
 
 ```python
 from socket import gethostname
@@ -61,7 +61,7 @@ client.disconnect()
 
 ## 使用设备 API
 
-**TBDeviceMqttClient** 提供对 ThingsBoard 平台的设备 MQTT API 的访问。  
+**TBDeviceMqttClient** 提供对 GridLinks 平台的设备 MQTT API 的访问。  
 它允许发布遥测和属性更新、订阅属性更改、发送和接收 RPC 命令等。    
 
 #### 订阅属性
@@ -87,7 +87,7 @@ while True:
 
 #### 发送遥测包
 
-为了将数据发送到 ThingsBoard，可以使用如下代码：
+为了将数据发送到 GridLinks，可以使用如下代码：
 
 ```python
 from time import time
@@ -137,7 +137,7 @@ while True:
 #### 响应服务器 RPC 调用
 
 如果您想为某些 RPC 请求发送响应，可以使用如下代码中的逻辑。  
-以下示例连接到 ThingsBoard 本地实例并等待 RPC 请求。  
+以下示例连接到 GridLinks 本地实例并等待 RPC 请求。  
 收到 RPC 请求后，客户端将向 ThingsBoard 发送带有来自具有客户端的设备的机器数据的响应，该设备的名称为 **Test Device A1**。  
 
 ```python
@@ -170,7 +170,7 @@ while True:
 
 #### 发送遥测和属性
 
-为了将数据发送到 ThingsBoard，设备名称为 **Test Device A1**，可以使用如下代码：
+为了将数据发送到 GridLinks，设备名称为 **Test Device A1**，可以使用如下代码：
 
 ```python
 from time import time
@@ -217,7 +217,7 @@ while True:
 #### 响应服务器 RPC 调用
 
 如果您想为某些 RPC 请求发送响应，可以使用如下代码中的逻辑。  
-以下示例将连接到 ThingsBoard 本地实例并等待 RPC 请求。  
+以下示例将连接到 GridLinks 本地实例并等待 RPC 请求。  
 收到 RPC 请求后，客户端将向 ThingsBoard 发送带有设备名称为 **Test Device A1** 的数据的响应。  
 
 ```python

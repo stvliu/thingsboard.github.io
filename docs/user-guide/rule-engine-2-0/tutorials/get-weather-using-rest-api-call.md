@@ -16,7 +16,7 @@ description: REST API 天气指南
 
 假设您需要了解资产位置的当前天气。您可以将天气信息用于某些数据处理逻辑，或者仅用于跟踪历史记录并在仪表板上启用此信息的显示。
 
-在本教程中，我们将配置 ThingsBoard 规则引擎以使用 REST API 自动获取天气信息。
+在本教程中，我们将配置 GridLinks 规则引擎以使用 REST API 自动获取天气信息。
 您可以将本教程用作更复杂任务的基础。
 
 ## 先决条件
@@ -29,7 +29,7 @@ description: REST API 天气指南
 
 ## 添加资产
 
-在 ThingsBoard 中添加资产实体。其名称为 **Building A**，其类型为 **building**。
+在 GridLinks 中添加资产实体。其名称为 **Building A**，其类型为 **building**。
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/rest-api-weather/rest-api-weather-building.png)
 

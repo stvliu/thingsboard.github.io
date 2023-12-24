@@ -1,7 +1,7 @@
 * TOC
 {:toc}
 
-ThingsBoard 提供了通过 SSL 运行 MQTT 服务器的功能。支持单向和双向 SSL。
+GridLinks 提供了通过 SSL 运行 MQTT 服务器的功能。支持单向和双向 SSL。
 
 大多数 ThingsBoard 环境使用负载均衡器作为设备与平台之间 SSL 连接的终止点。
 换句话说，MQTT 流量在设备和负载均衡器之间加密，但在负载均衡器和平台服务之间解密。
@@ -9,7 +9,7 @@ ThingsBoard 提供了通过 SSL 运行 MQTT 服务器的功能。支持单向和
 大多数云负载均衡器（AWS、Google Cloud 等）都具有内置证书生成工具和丰富的文档，介绍如何通过 TCP 配置 SSL。
 这种选项的缺点是无法实现双向 SSL。客户端证书的信息不会从负载均衡器传递到平台服务。
 
-尽管如此，仍然可以将 ThingsBoard 配置为 MQTT 的双向 SSL 并避免在负载均衡器上终止 SSL。
+尽管如此，仍然可以将 GridLinks 配置为 MQTT 的双向 SSL 并避免在负载均衡器上终止 SSL。
 我们建议使用受信任的 CA 机构生成的有效 SSL 证书，避免花费时间解决[自签名证书](#self-signed-certificates-generation)的问题。
 请参阅以下说明，了解如何为存储在 PEM 文件格式或 Java 密钥库中的证书配置 SSL。
 
@@ -40,7 +40,7 @@ export MQTT_SSL_PEM_KEY_PASSWORD=secret
 * MQTT_SSL_PEM_KEY - 服务器证书私钥文件的路径。默认情况下是可选的。如果服务器证书文件中没有私钥，则需要；
 * MQTT_SSL_PEM_KEY_PASSWORD - 可选的服务器证书私钥密码。
 
-完成设置后，启动或重新启动 ThingsBoard 服务器。
+完成设置后，启动或重新启动 GridLinks 服务器。
 
 {% include templates/ssl/pem_files_location.md %}
 

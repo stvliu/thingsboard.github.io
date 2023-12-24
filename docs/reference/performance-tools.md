@@ -86,7 +86,7 @@ class MqttSimulation extends Simulation {
 
 ## 性能测试项目
 
-我们的性能测试项目 **托管在 GitHub 上**。它主要用 Java 编写，并使用 Maven 作为构建工具。Gatling 和 Gatling-MQTT 插件是用 Scala 编写的，并使用 SBT 工具构建源代码和运行测试。但是，在 ThingsBoard，我们更多的是 Java 人员，而不是 Scala 人员，这就是为什么我们已经实施了连接到平台、创建设备、对其进行预热并提供 **凭据 ID** 字符串的自定义 Java 代码：
+我们的性能测试项目 **托管在 GitHub 上**。它主要用 Java 编写，并使用 Maven 作为构建工具。Gatling 和 Gatling-MQTT 插件是用 Scala 编写的，并使用 SBT 工具构建源代码和运行测试。但是，在 GridLinks，我们更多的是 Java 人员，而不是 Scala 人员，这就是为什么我们已经实施了连接到平台、创建设备、对其进行预热并提供 **凭据 ID** 字符串的自定义 Java 代码：
 
 **MqttSimulation.scala**
 
@@ -99,7 +99,7 @@ val deviceCredentialsIds: Array[String] = MqttStressTestTool.createDevices(testP
 
 ```java
 RestClient restClient = new RestClient(params.getRestApiUrl());
-// 登录到 ThingsBoard 服务器
+// 登录到 GridLinks 服务器
 restClient.login(params.getUsername(), params.getPassword());
 for (int i = 0; i < params.getDeviceCount(); i++) {
     // 使用 REST API 创建设备
@@ -125,7 +125,7 @@ Thread.sleep(1000);
 // 获取已创建设备的设备凭据 ID
 val deviceCredentialsIds: Array[String] = MqttStressTestTool.createDevices(testParams).asScala.toArray
 
-// 在连接到 ThingsBoard 服务器的阶段提供设备凭据 ID 作为用户名
+// 在连接到 GridLinks 服务器的阶段提供设备凭据 ID 作为用户名
 val mqttConf = mqtt
     .host(testParams.getMqttUrls.head)
     .userName("${deviceCredentialsId}")

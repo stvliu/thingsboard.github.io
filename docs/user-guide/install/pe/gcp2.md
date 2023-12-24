@@ -1,11 +1,11 @@
 ---
 layout: docwithnav-pe
-title: 从 GCP Marketplace 安装 ThingsBoard PE
-description: 从 Google Cloud Platform Marketplace 安装 ThingsBoard PE
+title: 从 GCP Marketplace 安装 GridLinks PE
+description: 从 Google Cloud Platform Marketplace 安装 GridLinks PE
 
 ---
 
-本指南介绍如何从 GCP Marketplace 安装 ThingsBoard Professional Edition。
+本指南介绍如何从 GCP Marketplace 安装 GridLinks Professional Edition。
 使用本指南，您将安装该产品的自备许可证 (BYOL) 版本。
 基本上，您可以直接从 ThingsBoard, Inc 获取许可证，但从 GCP 购买相应的服务器实例和基础设施。
 
@@ -18,7 +18,7 @@ description: 从 Google Cloud Platform Marketplace 安装 ThingsBoard PE
 
 ### 步骤 1. 启动 ThingsBoard PE BYOL
 
-在 GCP Marketplace 上打开 [ThingsBoard Professional Edition BYOL](https://console.cloud.google.com/marketplace/details/thingsboard-public/thingsboard-pe) 产品页面。
+在 GCP Marketplace 上打开 [ GridLinks专业版 BYOL](https://console.cloud.google.com/marketplace/details/thingsboard-public/thingsboard-pe) 产品页面。
 
 ![image](/images/user-guide/install/gcp-marketplace-pe/launch.png) 
 
@@ -73,7 +73,7 @@ sudo nano /etc/thingsboard/conf/thingsboard.conf
 export TB_LICENSE_SECRET=YOUR_LICENSE_SECRET_HERE
 ``` 
 
-### 步骤 4. 启动 ThingsBoard 服务
+### 步骤 4. 启动 GridLinks 服务
 
 执行以下命令启动 ThingsBoard：
 
@@ -94,7 +94,7 @@ sudo service thingsboard start
 
 使用此登录名以系统管理员身份连接
 
-- **sysadmin@thingsboard.org**
+- **sysadmin@gridlinks.com**
 
 系统管理员的默认密码为 **sysadmin**
 

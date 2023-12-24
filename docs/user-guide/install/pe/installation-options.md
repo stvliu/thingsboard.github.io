@@ -2,8 +2,8 @@
 layout: docwithnav-pe
 assignees:
 - ashvayka
-title: ThingsBoard Professional Edition 安装选项
-description: ThingsBoard Professional Edition 安装说明，适用于各种操作系统和云平台
+title:  GridLinks专业版 安装选项
+description:  GridLinks专业版 安装说明，适用于各种操作系统和云平台
 notitle: "true"
 redirect_from: "/docs/pe/user-guide/install/installation-options/"
 ---
@@ -13,10 +13,10 @@ redirect_from: "/docs/pe/user-guide/install/installation-options/"
        <div class="install-options-hero">
           <div class="container">
             <div class="install-options-hero-content">
-                <h1>ThingsBoard Professional Edition 安装选项</h1>
+                <h1> GridLinks专业版 安装选项</h1>
                 <div class="install-options-description">
                     <p>
-                        ThingsBoard Professional Edition 旨在运行并利用大多数硬件，从本地 Raspberry PI 到云中的强大服务器
+                         GridLinks专业版 旨在运行并利用大多数硬件，从本地 Raspberry PI 到云中的强大服务器
                     </p>
                 </div>
             </div>

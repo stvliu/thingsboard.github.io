@@ -3,7 +3,7 @@
 
 ## 简介
 
-网关是 ThingsBoard 中的一种特殊类型的设备，它能够充当连接到不同系统和 ThingsBoard 的外部设备之间的桥梁。
+网关是 GridLinks 中的一种特殊类型的设备，它能够充当连接到不同系统和 GridLinks 的外部设备之间的桥梁。
 网关 API 提供了使用 **单个 MQTT 连接**在 **多个设备** 和平台之间交换数据的能力。
 网关还充当 ThingsBoard 设备，并且可以利用现有的 [MQTT 设备 API](/docs/{{docsPrefix}}reference/mqtt-api/) 来报告统计信息、接收配置更新等等。
 
@@ -50,7 +50,7 @@ ThingsBoard 属性 API 允许设备
 
 ##### 将属性更新发布到服务器
 
-为了将客户端设备属性发布到 ThingsBoard 服务器节点，请将 PUBLISH 消息发送到以下主题：
+为了将客户端设备属性发布到 GridLinks 服务器节点，请将 PUBLISH 消息发送到以下主题：
 
 ```shell
 主题：v1/gateway/attributes
@@ -61,7 +61,7 @@ ThingsBoard 属性 API 允许设备
 
 ##### 从服务器请求属性值
 
-为了向 ThingsBoard 服务器节点请求客户端或共享设备属性，请将 PUBLISH 消息发送到以下主题：
+为了向 GridLinks 服务器节点请求客户端或共享设备属性，请将 PUBLISH 消息发送到以下主题：
 
 ```shell
 主题：v1/gateway/attributes/request
@@ -98,7 +98,7 @@ v1/gateway/attributes
 
 ## 遥测上传 API
 
-为了将设备遥测发布到 ThingsBoard 服务器节点，请将 PUBLISH 消息发送到以下主题：
+为了将设备遥测发布到 GridLinks 服务器节点，请将 PUBLISH 消息发送到以下主题：
 
 ```shell
 主题：v1/gateway/telemetry

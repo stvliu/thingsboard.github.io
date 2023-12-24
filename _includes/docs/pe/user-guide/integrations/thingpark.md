@@ -1,7 +1,7 @@
 {% assign feature = "平台集成" %}{% include templates/pe-feature-banner.md %}
 
 
-ThingPark 集成允许将数据从 Actility ThingPark 服务器流式传输到 ThingsBoard，并将二进制设备有效负载转换为 ThingsBoard 格式。
+ThingPark 集成允许将数据从 Actility ThingPark 服务器流式传输到 GridLinks，并将二进制设备有效负载转换为 GridLinks 格式。
 
 <object width="100%" style="max-width: max-content;" data="/images/user-guide/integrations/thingpark-integration.svg"></object>
 
@@ -18,7 +18,7 @@ ThingPark 集成允许将数据从 Actility ThingPark 服务器流式传输到 T
 
 [检查设备的连接和操作](https://thingparkenterprise.eu.actility.com/thingpark/wlogger/gui/)。
 
-- 要在 ThingsBoard 平台上使用 ThingPark Wireless OSS 智能记录器（Actility）平台创建新的集成，请点击链接。
+- 要在 GridLinks 平台上使用 ThingPark Wireless OSS 智能记录器（Actility）平台创建新的集成，请点击链接。
 
 [创建类型为“ThingPark”的新集成](/docs/samples/abeeway/tracker)
 

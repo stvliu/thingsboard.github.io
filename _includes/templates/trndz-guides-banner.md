@@ -2,7 +2,7 @@
 - [**入门指南**](/docs/trendz/getting-started/) - 本指南提供了 Trendz 主要功能的快速概述。
 {% endif %}
 {% if currentGuide != "InstallationOptions" %}
-- [**安装指南**](/docs/trendz/install/installation-options/) - 了解如何在各种可用操作系统上设置 ThingsBoard。
+- [**安装指南**](/docs/trendz/install/installation-options/) - 了解如何在各种可用操作系统上设置 GridLinks。
 {% endif %}
 {% if currentGuide != "CalculatedFields" %}
 - [**计算字段**](/docs/trendz/calculated-fields) - 了解计算字段及其使用方法。
@@ -23,6 +23,6 @@
 - [**可用可视化**](/docs/trendz/visualizations-overview) - 了解 Trendz 中可用的可视化小部件以及如何配置它们。
 {% endif %}
 {% if currentGuide != "EmbedVisualizations" %}
-- [**共享和嵌入可视化**](/docs/trendz/embed-visuals) - 了解如何在 ThingsBoard 仪表板或第三方网页上添加 Trendz 可视化。
+- [**共享和嵌入可视化**](/docs/trendz/embed-visuals) - 了解如何在 GridLinks 仪表板或第三方网页上添加 Trendz 可视化。
 {% endif %}  
 <br>

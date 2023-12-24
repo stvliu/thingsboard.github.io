@@ -1,4 +1,4 @@
-ThingsBoard 支持以下协议进行设备连接：
+GridLinks 支持以下协议进行设备连接：
 
 - **[MQTT](/docs/{{docsPrefix}}reference/mqtt-api)**
 {% if docsPrefix != "edge/" and docsPrefix != "pe/edge/" %}
@@ -13,5 +13,5 @@ ThingsBoard 支持以下协议进行设备连接：
 
 **注意** 您还可以使用以下方式将**现有**设备连接到平台：
 
-- **[ThingsBoard 网关](/docs/iot-gateway/what-is-iot-gateway/)**
+- **[GridLinks 网关](/docs/iot-gateway/what-is-iot-gateway/)**
 或使用 **[网关 MQTT API](/docs/{{docsPrefix}}reference/gateway-mqtt-api/)** 设计您自己的网关。

@@ -1,7 +1,7 @@
 ---
 layout: plain
-title: ThingsBoard Professional Edition EULA
-description: ThingsBoard Professional Edition End User License Agreement
+title:  GridLinks专业版 EULA
+description:  GridLinks专业版 End User License Agreement
 
 ---
 
@@ -21,7 +21,7 @@ description: ThingsBoard Professional Edition End User License Agreement
 
 <p style="text-align: center; font-size: 1.17em; font-weight: bold;">一般使用条件</p>
 
-在本协议中，术语“软件”的含义应理解为 ThingsBoard Professional Edition IoT 平台，该平台能够快速开发、管理和扩展物联网项目，并提供以下可能性：(i) 配置和控制设备；(ii) 收集和可视化设备数据；(iii) 分析设备数据并触发警报；(iv) 将设备数据传递给其他系统；(v) 使用可自定义的规则和插件启用特定用例的功能。被许可方可以在以下网址找到有关软件功能的所有具体功能：https://thingsboard.io/docs。
+在本协议中，术语“软件”的含义应理解为 GridLinks Professional Edition IoT 平台，该平台能够快速开发、管理和扩展物联网项目，并提供以下可能性：(i) 配置和控制设备；(ii) 收集和可视化设备数据；(iii) 分析设备数据并触发警报；(iv) 将设备数据传递给其他系统；(v) 使用可自定义的规则和插件启用特定用例的功能。被许可方可以在以下网址找到有关软件功能的所有具体功能：https://thingsboard.io/docs。
 
 使用软件时，被许可方有义务遵守此处规定的条款和条件。在按费用使用软件之前，被许可方可以在免费试用短期许可证下使用软件，其期限为 10（十）天（以下简称“试用期”）。
 

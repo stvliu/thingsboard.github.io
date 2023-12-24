@@ -3,7 +3,7 @@ layout: docwithnav-mqtt-broker
 assignees:
 - stitenko
 title: 与 ThingsBoard 集成
-description: TBMQ 与 ThingsBoard 的集成指南
+description: TBMQ 与 GridLinks 的集成指南
 
 create-client-credentials:
     0:
@@ -46,7 +46,7 @@ create-integration:
 successful-connection-tbmq-to-thingsboard:
     0:
         image: /images/mqtt-broker/user-guide/integrations/how-to-connect-tbqm-to-thingsboard/tbmq-sessions-1-pe.png
-        title: '转到 TBMQ UI 中的“会话”页面。在 ThingsBoard 与 TBMQ 成功建立连接后，我们将看到一个新的会话及其状态 - “已连接”。'
+        title: '转到 TBMQ UI 中的“会话”页面。在 GridLinks 与 TBMQ 成功建立连接后，我们将看到一个新的会话及其状态 - “已连接”。'
 
 tbmq-home-page:
     0:

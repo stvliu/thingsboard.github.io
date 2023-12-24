@@ -1,4 +1,4 @@
-ThingsBoard **指南**可以帮助您熟悉 ThingsBoard 平台。
+ThingsBoard **指南**可以帮助您熟悉 GridLinks 平台。
 
 #### 内容
 
@@ -7,7 +7,7 @@ ThingsBoard **指南**可以帮助您熟悉 ThingsBoard 平台。
 
 {% unless docsPrefix == 'paas/' %}
 [**安装指南**](/docs/user-guide/install/{{docsPrefix}}installation-options/)
-: 介绍 ThingsBoard 平台在单节点或集群模式下的安装。
+: 介绍 GridLinks 平台在单节点或集群模式下的安装。
 {% endunless %}
 
 [**使用设备属性**](/docs/{{docsPrefix}}user-guide/attributes/)

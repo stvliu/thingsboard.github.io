@@ -7,14 +7,14 @@ cloudEvents:
         image: /images/edge/cloud-events.png
 ---
 
-**云事件**页面显示 ThingsBoard Edge 推送到云的事件。
+**云事件**页面显示 GridLinks Edge 推送到云的事件。
 
 {% include images-gallery.html imageCollection="cloudEvents" %}
 
 查看 **状态** 列以了解事件是否已推送到云。
 有两种状态类型：
-* **已部署** - 事件已推送到 ThingsBoard CE/PE 服务器。
-* **待处理** - 事件已在 ThingsBoard Edge 上创建，存储到本地数据库，并在连接恢复后立即推送到云。
+* **已部署** - 事件已推送到 GridLinks CE/PE 服务器。
+* **待处理** - 事件已在 GridLinks Edge 上创建，存储到本地数据库，并在连接恢复后立即推送到云。
 
 可能的云操作列表：
 * 已添加

@@ -13,10 +13,10 @@ description: 发送电子邮件工作流
 
 在本教程中，我们将实现以下教程中的用例：[创建和清除警报](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/#use-case)：
 
-假设您的设备使用 DHT22 传感器收集温度读数并将其推送到 ThingsBoard。
+假设您的设备使用 DHT22 传感器收集温度读数并将其推送到 GridLinks。
 DHT22 传感器适用于 -40 至 80°C 的温度读数。如果温度超出正常范围，我们希望生成警报并在创建警报时发送电子邮件。
 
-在本教程中，我们将配置 ThingsBoard 规则引擎以：
+在本教程中，我们将配置 GridLinks 规则引擎以：
 
 - 如果温度超出范围（即低于 -40 度和高于 80 度），则向用户发送电子邮件。
 
@@ -161,7 +161,7 @@ DHT22 传感器适用于 -40 至 80°C 的温度读数。如果温度超出正�
 如果您有权登录 ThingsBoard，则可以使用系统管理员帐户自定义 SMTP 设置并发送测试电子邮件。
  - 对于默认系统管理员帐户：
 
-   - 登录 - **sysadmin@thingsboard.org**。
+   - 登录 - **sysadmin@gridlinks.com**。
    - 密码 - **sysadmin**。
 
 - 转到 **系统设置** -> **外发邮件** 并按照以下屏幕截图中的说明配置 **外发邮件设置**：

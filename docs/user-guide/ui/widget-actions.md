@@ -3,7 +3,7 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: 操作部件
-description: ThingsBoard 仪表盘部件操作
+description: GridLinks 仪表盘部件操作
 entity-sources:
     0:
         image: /images/user-guide/ui/widgets/actions/entity-cards/entity-sources.png

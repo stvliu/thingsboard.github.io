@@ -1,11 +1,11 @@
 ---
 layout: docwithnav-pe
-title: 从 AWS Marketplace 安装 ThingsBoard PE
-description: 从 AWS Marketplace 安装 ThingsBoard PE
+title: 从 AWS Marketplace 安装 GridLinks PE
+description: 从 AWS Marketplace 安装 GridLinks PE
 redirect_from: "/docs/user-guide/install/aws-marketplace-pe/"
 ---
 
-本指南介绍如何从 AWS Marketplace 安装 ThingsBoard Professional Edition。
+本指南介绍如何从 AWS Marketplace 安装 GridLinks Professional Edition。
 使用本指南，您将安装产品的 [BYOL](https://docs.aws.amazon.com/marketplace/latest/userguide/pricing.html#ami-pricing-models) 版本。
 基本上，您直接从 ThingsBoard, Inc 获取许可证，但从 AWS 购买相应的服务器实例和基础设施。
 
@@ -18,7 +18,7 @@ redirect_from: "/docs/user-guide/install/aws-marketplace-pe/"
 
 ### 步骤 1. 订阅 ThingsBoard PE BYOL
 
-打开 [AWS Marketplace](https://aws.amazon.com/marketplace) 上的 [ThingsBoard Professional Edition BYOL](https://aws.amazon.com/marketplace/pp/B07V8S6JLG) 产品页面。
+打开 [AWS Marketplace](https://aws.amazon.com/marketplace) 上的 [ GridLinks专业版 BYOL](https://aws.amazon.com/marketplace/pp/B07V8S6JLG) 产品页面。
 
 - 单击 **继续订阅** 按钮
 
@@ -138,7 +138,7 @@ sudo nano /etc/thingsboard/conf/thingsboard.conf
 export TB_LICENSE_SECRET=YOUR_LICENSE_SECRET_HERE
 ``` 
 
-### 步骤 6. 启动 ThingsBoard 服务
+### 步骤 6. 启动 GridLinks 服务
 
 执行以下命令启动 ThingsBoard：
 
@@ -163,7 +163,7 @@ sudo service thingsboard start
 
 使用此登录名以系统管理员身份连接
 
-- **sysadmin@thingsboard.org**
+- **sysadmin@gridlinks.com**
 
 系统管理员的默认密码是实例 ID（请参阅 [步骤 3.7](/docs/user-guide/install/pe/aws/#step-37-obtain-your-public-ip-and-ec2-instance-id)）。在此示例中：
 
@@ -267,7 +267,7 @@ ThingsBoard 日志存储在 <i>/var/log/thingsboard</i> 文件夹中。
 
 **如何获得专业支持？**
 
-请查看 ThingsBoard 专业 <a href="/docs/services/support/">支持计划</a> 并 <a href="/docs/contact-us/">联系我们</a>。
+请查看 GridLinks 专业 <a href="/docs/services/support/">支持计划</a> 并 <a href="/docs/contact-us/">联系我们</a>。
 <br><br>
 
 ### 后续步骤

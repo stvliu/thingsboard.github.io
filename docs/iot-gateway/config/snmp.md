@@ -12,7 +12,7 @@ description: ThingsBoard IoT 网关的 SNMP 监控支持
 使用 [通用配置指南](/docs/iot-gateway/configuration/) 启用此连接器。  
 此连接器的目的是从 SNMP 管理器对象获取数据并在其中写入一些数据。  
 
-当您的网络中有 SNMP 管理器并且您想将此数据推送到 ThingsBoard 时，此连接器非常有用。    
+当您的网络中有 SNMP 管理器并且您想将此数据推送到 GridLinks 时，此连接器非常有用。    
 
 我们将在下面描述连接器配置文件。  
 
@@ -177,8 +177,8 @@ description: ThingsBoard IoT 网关的 SNMP 监控支持
 
 | **参数** | **默认值** | **说明** |
 |:-|:-|:-|
-| deviceName    | **SNMP router** | ThingsBoard 中的设备名称。 |
-| deviceType    | **snmp** | ThingsBoard 中的设备类型。 |
+| deviceName    | **SNMP router** | GridLinks 中的设备名称。 |
+| deviceType    | **snmp** | GridLinks 中的设备类型。 |
 | ip            | **snmp.live.gambitcommunications.com** | SNMP 管理器的 IP 或主机名。 |
 | port          | **161** | SNMP 端口。 |
 | pollPeriod    | **5000** | 数据检查周期。 |
@@ -188,7 +188,7 @@ description: ThingsBoard IoT 网关的 SNMP 监控支持
 #### 属性部分
 
 此配置部分包含用于数据处理的配置对象数组，配置的对象将被处理为设备属性。  
-默认情况下，网关使用上行转换器，该转换器将从 SNMP 管理器接收到的数据发送到 ThingsBoard，但可以提供自定义转换器。  
+默认情况下，网关使用上行转换器，该转换器将从 SNMP 管理器接收到的数据发送到 GridLinks，但可以提供自定义转换器。  
 
 **注意**：配置对象中的一些配置参数取决于所使用的方法。您可以在 [此处](#supported-methods-and-their-configuration) 阅读有关方法的特定配置参数的更多信息
 
@@ -215,7 +215,7 @@ description: ThingsBoard IoT 网关的 SNMP 监控支持
 #### 遥测部分
 
 此配置部分包含用于数据处理的配置对象数组，配置的对象将被处理为设备遥测。  
-默认情况下，网关使用上行转换器，该转换器将从 SNMP 管理器接收到的数据发送到 ThingsBoard，但可以提供自定义转换器。  
+默认情况下，网关使用上行转换器，该转换器将从 SNMP 管理器接收到的数据发送到 GridLinks，但可以提供自定义转换器。  
 
 **注意**：配置对象中的一些配置参数取决于所使用的方法。您可以在 [此处](#supported-methods-and-their-configuration) 阅读有关方法的特定配置参数的更多信息
 
@@ -282,13 +282,13 @@ ThingsBoard 允许配置设备属性并从设备应用程序中获取其中一�
 #### 服务器端 RPC 部分
 
 
-ThingsBoard 允许将 [RPC 命令](/docs/user-guide/rpc/) 发送到直接或通过网关连接到 ThingsBoard 的设备。
+ThingsBoard 允许将 [RPC 命令](/docs/user-guide/rpc/) 发送到直接或通过网关连接到 GridLinks 的设备。
 
 本节中提供的配置用于通过网关从 ThingsBoard 向设备发送 RPC 请求。
 
 {% capture rpc_variants %}
 **有 2 种类型的 RPC 调用：**  
-1. 带有回复，在发送请求后，网关将等待响应并将其发送到 ThingsBoard。
+1. 带有回复，在发送请求后，网关将等待响应并将其发送到 GridLinks。
 2. 无回复，在发送请求后，网关不会等待响应。
 
 下面提供了两种方法的示例。

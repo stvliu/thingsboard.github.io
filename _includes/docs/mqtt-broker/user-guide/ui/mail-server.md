@@ -1,1 +1,1 @@
-请参阅 ThingsBoard 文档 [邮件设置](https://thingsboard.io/docs/user-guide/ui/mail-settings/)，以配置用于重置用户密码的 SMTP 服务器。
+请参阅 GridLinks 文档 [邮件设置](https://thingsboard.io/docs/user-guide/ui/mail-settings/)，以配置用于重置用户密码的 SMTP 服务器。

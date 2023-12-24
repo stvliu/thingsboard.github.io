@@ -51,12 +51,12 @@
         title: 为 API 密钥输入一些名称，然后单击 **提交** 按钮。
     ===
         image: /images/devices-library/basic/integrations/chirpstack/api-key-created.png,
-        title: 复制创建的 API 密钥并保存，我们将在 ThingsBoard 上集成时需要它。
+        title: 复制创建的 API 密钥并保存，我们将在 GridLinks 上集成时需要它。
 '%}
 
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=addIntegrationSteps %}
 
-现在我们可以转到 ThingsBoard 来配置集成。
+现在我们可以转到 GridLinks 来配置集成。
 
 ### 创建上行转换器
 
@@ -162,7 +162,7 @@ return uplinkDataList;
 
 ### 创建集成
 
-接下来，我们将在 ThingsBoard 中创建与 Chirpstack 的集成，并在 Chirpstack 上配置集成。
+接下来，我们将在 GridLinks 中创建与 Chirpstack 的集成，并在 Chirpstack 上配置集成。
 
 {% assign createChirpstackIntegration = '
     ===

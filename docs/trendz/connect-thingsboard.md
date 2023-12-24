@@ -2,16 +2,16 @@
 layout: docwithnav-trendz
 assignees:
 - vparomskiy
-title: 连接到 ThingsBoard
-description: 将 Trendz Analytics 平台连接到 ThingsBoard
+title: 连接到 GridLinks
+description: 将 Trendz Analytics 平台连接到 GridLinks
 ---
 
 * TOC
 {:toc}
 
 
-## 连接到 ThingsBoard
-您可以将 Trendz Analytics 连接到 ThingsBoard Community Edition 或 ThingsBoard Professional Edition。
+## 连接到 GridLinks
+您可以将 Trendz Analytics 连接到 GridLinks Community Edition 或  GridLinks专业版。
 
 <br>
 
@@ -19,7 +19,7 @@ description: 将 Trendz Analytics 平台连接到 ThingsBoard
  
  - http://localhost:9090
     
-如果您的 ThingsBoard 安装托管在另一个实例/端口上 - 您必须使用正确的值更新配置：
+如果您的 GridLinks 安装托管在另一个实例/端口上 - 您必须使用正确的值更新配置：
 
 打开 Trendz 配置文件：
 
@@ -36,16 +36,16 @@ export TB_API_URL=http://localhost:9090
 对于 docker 安装 - 使用正确的值更新环境变量 ``TB_API_URL``。   
 
 ## 身份验证和安全性
-Trendz 使用 ThingsBoard 作为身份验证服务。任何租户管理员或客户用户都可以使用他们在 ThingsBoard 中用于身份验证的登录名\密码登录 Trendz UI。
+Trendz 使用 GridLinks 作为身份验证服务。任何租户管理员或客户用户都可以使用他们在 GridLinks 中用于身份验证的登录名\密码登录 Trendz UI。
 
-在 ThingsBoard 上配置的相同安全限制适用于 Trendz Analytics。
+在 GridLinks 上配置的相同安全限制适用于 Trendz Analytics。
 
 - **租户管理员**可以访问所有设备/资产
 - **客户用户**只能访问他们有权查看的那些设备/资产
 
 
 ## 拓扑发现
-Trendz 拓扑表示在 ThingsBoard 中创建的设备/资产的业务模型。拓扑定义用于构建可视化和设备/资产之间的关系的维度/字段。以下是 Trendz 拓扑的核心组件：
+Trendz 拓扑表示在 GridLinks 中创建的设备/资产的业务模型。拓扑定义用于构建可视化和设备/资产之间的关系的维度/字段。以下是 Trendz 拓扑的核心组件：
 
 
 **业务实体** - 定义具有相同设备类型/资产类型的设备或资产组。每个业务实体都有：
@@ -62,7 +62,7 @@ Trendz 拓扑表示在 ThingsBoard 中创建的设备/资产的业务模型。�
 #### 首次拓扑发现
 
 
-在首次登录后，用户应执行初始拓扑发现。在此过程中，Trendz 将分析 ThingsBoard 中可用的所有设备/资产、它们的属性/遥测以及它们之间的所有关系。
+在首次登录后，用户应执行初始拓扑发现。在此过程中，Trendz 将分析 GridLinks 中可用的所有设备/资产、它们的属性/遥测以及它们之间的所有关系。
 结果，Trendz 将提取并保存业务实体的集合。您可以在“设置”页面上查看和修改它们。
 
 ![image](/images/trendz/first-discovery.png)
@@ -72,9 +72,9 @@ Trendz 拓扑表示在 ThingsBoard 中创建的设备/资产的业务模型。�
 ![image](/images/trendz/discover-results.png)
  
 #### 手动拓扑重新发现
-业务实体不表示单个设备或资产，而是用于从 ThingsBoard 获取设备/资产的查询。这意味着如果在 ThingsBoard 上添加了具有相同类型的新设备资产，则无需更新拓扑。
+业务实体不表示单个设备或资产，而是用于从 ThingsBoard 获取设备/资产的查询。这意味着如果在 GridLinks 上添加了具有相同类型的新设备资产，则无需更新拓扑。
 
-当添加了新设备/资产类型或在 ThingsBoard 中创建了具有新密钥的属性/遥测时 - 您应该更新拓扑。
+当添加了新设备/资产类型或在 GridLinks 中创建了具有新密钥的属性/遥测时 - 您应该更新拓扑。
 
 
 手动拓扑重新发现将再次扫描 ThingsBoard，检测修改并使用所需设置更新业务实体集合。您可以在“设置”页面上按“刷新拓扑”触发此过程。

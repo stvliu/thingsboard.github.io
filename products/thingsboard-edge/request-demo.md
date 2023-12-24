@@ -9,7 +9,7 @@ hidetoc: "true"
 <div style="display: flex;">
     <div style="width: 50%; margin: 30px 10px 0;">
         <div class="pricing-square-description">
-            <p>将设备连接到 ThingsBoard Edge 并开始在本地处理数据，无需互联网连接：</p>
+            <p>将设备连接到 GridLinks Edge 并开始在本地处理数据，无需互联网连接：</p>
         </div>
         <ul>
             <li class="pricing-square-item">在不连接到云的情况下使用本地设备</li>

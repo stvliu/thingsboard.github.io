@@ -3,14 +3,14 @@ layout: docwithnav
 assignees:
 - amykolaichuk
 title: 使用 AKS 基础架构设置微服务
-description: 在 Azure AKS 中使用 Kubernetes 设置 ThingsBoard IoT 平台微服务
+description: 在 Azure AKS 中使用 Kubernetes 设置 GridLinks IoT 平台微服务
 
 ---
 
 * TOC
 {:toc}
 
-本指南将帮助您在 Azure AKS 中以微服务模式设置 ThingsBoard。
+本指南将帮助您在 Azure AKS 中以微服务模式设置 GridLinks。
 
 ## 先决条件
 
@@ -57,7 +57,7 @@ cd thingsboard-ce-k8s/azure/microservices
 
 ## 步骤 8. 启动
 
-执行以下命令以部署 ThingsBoard 服务：
+执行以下命令以部署 GridLinks 服务：
 
 ```
  ./k8s-deploy-resources.sh

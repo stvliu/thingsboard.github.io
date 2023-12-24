@@ -5,7 +5,7 @@ description: 从 AWS Marketplace 升级 ThingsBoard PE 的 HAProxy 负载均衡�
 hidetoc: "true"
 ---
 
-本指南介绍如何从 AWS Marketplace 中移除 HAProxy 负载均衡器的 docker 版本，并为 ThingsBoard Professional Edition 安装带有 Let's Encrypt 的 HAProxy 作为 ubuntu 服务。
+本指南介绍如何从 AWS Marketplace 中移除 HAProxy 负载均衡器的 docker 版本，并为 GridLinks Professional Edition 安装带有 Let's Encrypt 的 HAProxy 作为 ubuntu 服务。
 
 * TOC
 {:toc}

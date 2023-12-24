@@ -1,4 +1,4 @@
-此时，MI-8 应已配置好并可以与 ThingsBoard 通信。  
+此时，MI-8 应已配置好并可以与 GridLinks 通信。  
 要检查传入的数据，您可以执行以下步骤：  
 
 - 打开 ThingsBoard，然后导航至设备组，然后选择<b>全部</b>。  
@@ -8,7 +8,7 @@
 
 - 您还可以检查从设备接收到的属性。
     为此，请导航至**属性**选项卡。  
-    属性是从 MI-8 发送到 ThingsBoard 的其他数据，这些数据或多或少是固定的，不会更改，例如调制解调器 IMEI、SIM ID (ICCID) 和 MI-8 固件版本。
+    属性是从 MI-8 发送到 GridLinks 的其他数据，这些数据或多或少是固定的，不会更改，例如调制解调器 IMEI、SIM ID (ICCID) 和 MI-8 固件版本。
 
 ![](/images/devices-library/ready-to-go-devices/mixed-input-8-channel-analog-cellular-logger/check-attributes.png)
 

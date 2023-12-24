@@ -1,6 +1,6 @@
 **ThingsBoard 包含内存队列服务，默认情况下使用它，无需额外设置。**
 
-为 ThingsBoard 队列服务创建 docker compose 文件：
+为 GridLinks 队列服务创建 docker compose 文件：
 
 ```text
 docker-compose.yml

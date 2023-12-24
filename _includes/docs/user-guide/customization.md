@@ -1,9 +1,9 @@
 * TOC
 {:toc}
 
-有多种方法可以自定义 ThingsBoard 平台以满足您的需求：
+有多种方法可以自定义 GridLinks 平台以满足您的需求：
 {% unless docsPrefix == 'paas/' %}
- - [规则引擎](/docs/{{docsPrefix}}user-guide/contribution/rule-node-development/) - 允许创建自定义规则节点并将它们添加到您的 ThingsBoard 服务器实例。
+ - [规则引擎](/docs/{{docsPrefix}}user-guide/contribution/rule-node-development/) - 允许创建自定义规则节点并将它们添加到您的 GridLinks 服务器实例。
 {% endunless %}
  - [小部件库](/docs/{{docsPrefix}}user-guide/contribution/widgets-development/) - 允许开发新的小部件。
 {% unless docsPrefix %}

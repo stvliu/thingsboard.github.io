@@ -3,7 +3,7 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: 使用 AWS EKS 的整体式设置
-description: 使用 AWS EKS 中的 Kubernetes 设置 ThingsBoard IoT 平台整体式
+description: 使用 AWS EKS 中的 Kubernetes 设置 GridLinks IoT 平台整体式
 rdsSetup:
     0:
         image: /images/install/cloud/aws/rds-1.png
@@ -35,7 +35,7 @@ rdsEndpointUrl:
 
 {% assign tbServicesFile = "tb-node.yml" %}
 
-本指南将帮助你使用 AWS EKS 在整体式模式下设置 ThingsBoard。
+本指南将帮助你使用 AWS EKS 在整体式模式下设置 GridLinks。
 有关其工作原理的更多详细信息，请参阅[整体式](/docs/reference/monolithic/)体系结构页面。
 与 Docker Compose 相比，通过 K8S 进行整体式部署的优势在于，如果 AWS 实例中断，
 K8S 将在另一个实例上重新启动服务。我们将使用 Amazon RDS 来管理 PostgreSQL。

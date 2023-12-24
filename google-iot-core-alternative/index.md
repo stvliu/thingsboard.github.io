@@ -1,6 +1,6 @@
 ---
 layout: common
-title: ThingsBoard 是 Google IoT Core 的替代方案
+title: GridLinks 是 Google IoT Core 的替代方案
 description:
 notitle: "true"
 ---
@@ -22,7 +22,7 @@ notitle: "true"
                 <div class="block" style="padding-top: 160px; ">
                     <div>
                         <p>Google Cloud 于 2023 年 8 月关闭了 IoT Core 服务。您可能想知道在哪里以及如何迁移。
-                           ThingsBoard 是 Google IoT Cloud 的绝佳替代方案。
+                           GridLinks 是 Google IoT Cloud 的绝佳替代方案。
                            ThingsBoard 于 2016 年作为开源项目推出，现已发展成为一个成熟的平台，在全球拥有 1000 多个客户。</p>
                         <p>ThingsBoard, Inc. 提供围绕该平台的托管服务、培训、支持和软件开发服务。
                            我们还可以在您现有的 Google Cloud 基础架构中托管和管理一个私有平台实例。 </p>
@@ -121,7 +121,7 @@ notitle: "true"
                     </tbody>
             </table>
         </main>
-        <p>在此处 <a href="/docs/pe/getting-started-guides/what-is-thingsboard/">了解有关 ThingsBoard 功能的更多信息</a>。</p>
+        <p>在此处 <a href="/docs/pe/getting-started-guides/what-is-thingsboard/">了解有关 GridLinks 功能的更多信息</a>。</p>
     </section>
 
     <section class="bottom-features">
@@ -130,14 +130,14 @@ notitle: "true"
 				<div class="bottom-features1"></div><div class="bottom-features2"></div><div class="small11"></div><div class="small12"></div><div class="bottom-features3"></div><div class="small13"></div><div class="small14"></div><div class="small15"></div>
 			</div>
             <h3>关键概念</h3>
-            <p>请参阅下面将 IoT Core 的关键概念映射到 ThingsBoard 功能文档：</p>
+            <p>请参阅下面将 IoT Core 的关键概念映射到 GridLinks 功能文档：</p>
             <div class="row cards">
                 <div class="col-lg-6">
 					<div class="block">
 						<div>
 							<a class="title" href="/docs/pe/user-guide/ui/devices/">设备</a>
-							<p>ThingsBoard 支持类似于 Google IoT Core 的设备配置和管理。
-                            但是，IoT 应用程序不仅仅是设备。ThingsBoard 支持其他 <a href="/docs/pe/user-guide/entities-and-relations/">实体和关系</a>。
+							<p>GridLinks 支持类似于 Google IoT Core 的设备配置和管理。
+                            但是，IoT 应用程序不仅仅是设备。GridLinks 支持其他 <a href="/docs/pe/user-guide/entities-and-relations/">实体和关系</a>。
                             关系模型支持高级用例和业务逻辑。例如，您可以在资产、设备、客户等之间配置关系。</p>
 						</div>
 					</div>
@@ -169,7 +169,7 @@ notitle: "true"
 					<div class="block">
 						<div>
 							<a class="title" href="/docs/pe/user-guide/attributes/">设备配置</a>
-							<p>ThingsBoard 的设备配置功能类似于 Google IoT Core。
+							<p>GridLinks 的设备配置功能类似于 Google IoT Core。
                             请参阅有关设备 <a href="/docs/pe/user-guide/attributes/">属性</a> 的文档。
                             经验丰富的用户可能会注意到一些重要的区别：
                             ThingsBoard 允许分别推送每个属性（配置）更新；
@@ -182,7 +182,7 @@ notitle: "true"
 					<div class="block">
 						<div>
 							<a class="title" href="/docs/pe/user-guide/device-provisioning/">设备注册表和设备管理器</a>
-							<p>ThingsBoard 提供了用于注册、监视和配置设备的灵活界面：
+							<p>GridLinks 提供了用于注册、监视和配置设备的灵活界面：
                             仪表板、管理 Web UI、REST API、<a href="/docs/pe/user-guide/bulk-provisioning/">CSV 上传</a> 和自动 <a href="/docs/pe/user-guide/device-provisioning/">配置</a>。
                             该平台为您提供了更多关于如何添加、分组和控制设备的灵活性。
                             您可以在不同的租户下注册设备或将设备分配给不同的客户。
@@ -197,9 +197,9 @@ notitle: "true"
 							<a class="title" href="/docs/pe/getting-started-guides/connectivity/">通过 MQTT 和 HTTP 发布</a>
 							<p>IoT Core 的中心点是一个 MQTT 代理，它允许设备和云端之间进行数据交换。
                             ThingsBoard 也充当 MQTT 代理，但有一些区别。
-                            使用 ThingsBoard，您不受静态主题名称模式的限制，并且可以根据需要定义任何通配符主题过滤器。
+                            使用 GridLinks，您不受静态主题名称模式的限制，并且可以根据需要定义任何通配符主题过滤器。
                             该平台接受 JSON 或 protobuf 有效负载。
-                            ThingsBoard 支持 <a href="/docs/pe/user-guide/access-token/">访问令牌</a>、
+                            GridLinks 支持 <a href="/docs/pe/user-guide/access-token/">访问令牌</a>、
                             <a href="/docs/pe/user-guide/basic-mqtt/">基本 MQTT 凭据</a> 或
                             <a href="/docs/pe/user-guide/certificates/">X.509 证书</a>。
 
@@ -215,7 +215,7 @@ notitle: "true"
 					<div class="block">
 						<div>
 							<a class="title" href="/docs/pe/user-guide/rpc/">向设备发送命令并从设备接收命令</a>
-							<p>您可以使用 ThingsBoard <a href="/docs/pe/user-guide/rpc/">RPC</a> 功能向设备发送命令并从设备接收命令。
+							<p>您可以使用 GridLinks <a href="/docs/pe/user-guide/rpc/">RPC</a> 功能向设备发送命令并从设备接收命令。
                             命令可以是持久的或非持久的，单向的或双向的，并且您可以为不同类型的命令配置重试和失败策略。
                             命令可以由用户通过仪表板、通过 REST API 或基于平台收到的事件触发。</p>
 						</div>

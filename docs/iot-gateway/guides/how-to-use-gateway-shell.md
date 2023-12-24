@@ -14,7 +14,7 @@ description: 如何使用网关 Shell
 通过使用提供的命令和相应的参数，用户可以执行特定操作并从网关检索信息。请参阅本指南中概述的使用示例，以有效利用网关 Shell 功能。
 
 出于本教程的目的，您需要：
-1. ThingsBoard 平台的本地安装实例（如果您是 ThingsBoard 新手，[请使用此“如何安装”文档](/docs/user-guide/install/installation-options/)）。
+1. GridLinks 平台的本地安装实例（如果您是 GridLinks 新手，[请使用此“如何安装”文档](/docs/user-guide/install/installation-options/)）。
 2. [已安装](/docs/iot-gateway/installation/)且[已配置](/docs/iot-gateway/configuration/) ThingsBoard IoT 网关。
 
 ### 存储命令

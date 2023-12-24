@@ -5,7 +5,7 @@
 
 ## 概述
 
-Azure Service Bus 集成允许将数据从 Azure Service Bus 流式传输到 ThingsBoard，并将设备有效负载转换为 ThingsBoard 格式。
+Azure Service Bus 集成允许将数据从 Azure Service Bus 流式传输到 GridLinks，并将设备有效负载转换为 GridLinks 格式。
 
 ![image](/images/user-guide/integrations/azure-service-bus/azure-service-bus-overview.png)
 
@@ -17,7 +17,7 @@ Azure Service Bus 集成允许将数据从 Azure Service Bus 流式传输到 Thi
 
 ## 创建上行转换器
 
-您可以在**数据转换器**部分或直接在集成中创建**上行转换器**。上行对于将来自设备的传入数据转换为在 ThingsBoard 中显示它们所需的格式是必需的。单击“加号”和“创建新转换器”。要查看事件，请启用调试。在函数解码器字段中，指定一个脚本来解析和转换数据。
+您可以在**数据转换器**部分或直接在集成中创建**上行转换器**。上行对于将来自设备的传入数据转换为在 GridLinks 中显示它们所需的格式是必需的。单击“加号”和“创建新转换器”。要查看事件，请启用调试。在函数解码器字段中，指定一个脚本来解析和转换数据。
 
 {% capture difference %}
 **注意**

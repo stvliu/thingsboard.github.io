@@ -372,7 +372,7 @@ Here an example of message **metadata** to send a single file:
 }
 {% endhighlight %}
 
-**NOTE**: This is part of [File Storage](/docs/{{docsPrefix}}user-guide/file-storage/) feature supported by [ThingsBoard Professional Edition](/products/thingsboard-pe/).
+**NOTE**: This is part of [File Storage](/docs/{{docsPrefix}}user-guide/file-storage/) feature supported by [ GridLinks专业版](/products/thingsboard-pe/).
 
 <br>
 
@@ -426,7 +426,7 @@ Multiple attachments supported. Use a comma separated no whitespace references (
 }
 {% endhighlight %}
 
-**NOTE**: This is part of [File Storage](/docs/{{docsPrefix}}user-guide/file-storage/) feature supported by [ThingsBoard Professional Edition](/products/thingsboard-pe/).
+**NOTE**: This is part of [File Storage](/docs/{{docsPrefix}}user-guide/file-storage/) feature supported by [ GridLinks专业版](/products/thingsboard-pe/).
 
 <br>
 

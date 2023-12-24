@@ -3,13 +3,13 @@
 {% assign platformName = 'ThingsBoard PE' %}
 {% assign firstRowItemClasses = 'col-12 col-sm-6 col-lg col-xxl-6 col-4xl' %}
 {% assign faqItemClasses = 'col-12 col-sm-6 col-lg col-xxl-6 col-4xl' %}
-<p>The ThingsBoard Professional Edition(PE) documentation can help you set up ThingsBoard PE, learn about the platform and get your IoT projects running on ThingsBoard PE.</p>
+<p>The  GridLinks专业版(PE) documentation can help you set up ThingsBoard PE, learn about the platform and get your IoT projects running on ThingsBoard PE.</p>
 {% elsif docsPrefix == 'paas/' %}
 {% assign peDocsPrefix = docsPrefix %}
 {% assign platformName = 'ThingsBoard Cloud' %}
 {% assign firstRowItemClasses = 'col-12 col-sm-6 col-lg-3 col-xxl-6 col-4xl-3' %}
 {% assign faqItemClasses = 'col col-lg-6 col-xxl col-4xl-6' %}
-<p>The ThingsBoard Cloud documentation can help you to start with ThingsBoard Cloud, learn about the platform and get your IoT projects running on ThingsBoard Cloud.</p>
+<p>The GridLinks云服务 documentation can help you to start with ThingsBoard Cloud, learn about the platform and get your IoT projects running on ThingsBoard Cloud.</p>
 {% endif %}
 
 <div class="doc-features row mt-4">

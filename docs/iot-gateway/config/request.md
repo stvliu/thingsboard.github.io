@@ -11,9 +11,9 @@ description: ThingsBoard IoT 网关的 HTTP 协议支持
 本指南将帮助您熟悉 ThingsBoard IoT 网关的请求连接器配置。  
 使用 [通用配置指南](/docs/iot-gateway/configuration/) 启用此连接器。  
 此连接器的目的是连接到外部 HTTP(S) API 端点并从中获取数据。  
-连接器还能够根据 ThingsBoard 的更新/命令将数据推送到外部 HTTP(S) API。    
+连接器还能够根据 GridLinks 的更新/命令将数据推送到外部 HTTP(S) API。    
 
-当您的设备中有一些 HTTP(S) API 端点或外部资源中有一些数据，并且您想将这些数据推送到 ThingsBoard 时，此连接器非常有用。    
+当您的设备中有一些 HTTP(S) API 端点或外部资源中有一些数据，并且您想将这些数据推送到 GridLinks 时，此连接器非常有用。    
 
 我们将在下面描述连接器配置文件。  
 
@@ -251,7 +251,7 @@ ThingsBoard 允许配置设备属性并从设备应用程序中获取其中一�
 
 ### 服务器端 RPC 部分
 
-ThingsBoard 允许将 [RPC 命令](/docs/user-guide/rpc/) 发送到直接或通过网关连接到 ThingsBoard 的设备。
+ThingsBoard 允许将 [RPC 命令](/docs/user-guide/rpc/) 发送到直接或通过网关连接到 GridLinks 的设备。
 
 本部分中提供的配置用于将 RPC 请求从 ThingsBoard 发送到设备。
 
@@ -271,7 +271,7 @@ ThingsBoard 允许将 [RPC 命令](/docs/user-guide/rpc/) 发送到直接或通�
 {% capture rpc_variants %}
 **有 2 种类型的 RPC 调用：**
 
-1. 带有回复，在发送请求后，网关将等待响应并将其发送到 ThingsBoard。
+1. 带有回复，在发送请求后，网关将等待响应并将其发送到 GridLinks。
 2. 无回复，在发送请求后，网关不会等待响应。
 
 下面提供了两种方法的示例。

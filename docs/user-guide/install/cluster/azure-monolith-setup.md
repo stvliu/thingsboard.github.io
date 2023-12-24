@@ -10,7 +10,7 @@ description: ThingsBoard IoT 平台单体设置，在 Azure AKS 中使用 Kubern
 * TOC
 {:toc}
 
-本指南将帮助您在 Azure AKS 中以单体模式设置 ThingsBoard。
+本指南将帮助您在 Azure AKS 中以单体模式设置 GridLinks。
 
 ## 先决条件
 
@@ -54,7 +54,7 @@ cd thingsboard-ce-k8s/azure/monolith
 
 ## 步骤 7. 启动
 
-执行以下命令以部署 ThingsBoard 服务：
+执行以下命令以部署 GridLinks 服务：
 
 ```
  ./k8s-deploy-resources.sh

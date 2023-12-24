@@ -9,7 +9,7 @@ description: 增量验证
 
 ## 使用案例
 
-假设我们有一个设备，它使用温度传感器来收集和读取 ThingsBoard 中的温度读数。
+假设我们有一个设备，它使用温度传感器来收集和读取 GridLinks 中的温度读数。
 此外，假设我们需要在最近五分钟的温度读数与最新温度读数之间的增量超过 5 度时生成警报。
 请注意，这只是一个简单的理论用例，用于演示平台的功能。您可以将本教程作为更复杂场景的基础。
 
@@ -23,7 +23,7 @@ description: 增量验证
 
 ## 添加设备
 
-在 ThingsBoard 中添加设备实体。它的名称是 **Thermometer**，类型是 **temperature sensor**。
+在 GridLinks 中添加设备实体。它的名称是 **Thermometer**，类型是 **temperature sensor**。
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/delta-validation/add-thermometer.png)
 

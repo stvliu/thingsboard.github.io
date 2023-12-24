@@ -8,7 +8,7 @@ description: 物联网设备支持的 LWM2M API 参考
 upload-models:
     0:
         image: /images/lwm2m/upload-ce.png
-        title: '登录到 ThingsBoard 实例并转到系统设置 -> 资源库，然后单击“+”按钮'
+        title: '登录到 GridLinks 实例并转到系统设置 -> 资源库，然后单击“+”按钮'
     1:
         image: /images/lwm2m/upload-1-ce.png
         title: '上传资源模型文件'
@@ -53,7 +53,7 @@ device-objects:
 data-fetch:
     0:
         image: /images/lwm2m/data-fetch-ce.png
-        title: '勾选“属性”以获取设备连接时想要获取的数据，并将其存储为 ThingsBoard 属性'
+        title: '勾选“属性”以获取设备连接时想要获取的数据，并将其存储为 GridLinks 属性'
     1:
         image: /images/lwm2m/data-fetch-1-ce.png
         title: '如果您希望服务器观察它们并获取更新的值，请勾选遥测和/或观察框'

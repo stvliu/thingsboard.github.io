@@ -21,7 +21,7 @@ charts-addwidget:
         title: '在“添加小部件”对话框中，点击添加按钮添加数据源。'
     5:
         image: /images/user-guide/ui/widgets/charts/charts-addwidget-5-ce.png
-        title: '添加实体别名和实体时间序列，然后点击“添加”。'
+        title: '添加实体别名和实体时序，然后点击“添加”。'
     6:
         image: /images/user-guide/ui/widgets/charts/charts-addwidget-6-ce.png
         title: '在仍处于编辑模式时，拖动小部件角调整其大小。之后，点击橙色对勾保存所有应用的更改。'
@@ -151,7 +151,7 @@ bars-comparison:
 bars-legend:
     0:
         image: /images/user-guide/ui/widgets/charts/bars-legend-ce.png
-        title: '在高级选项卡中，启用自定义图例以在键标签中使用属性或时间序列值。点击“+ 新建”按钮。从出现的下拉菜单中，选择键类型。键名输入在下面的行中。通过点击窗口右上角的橙色对勾应用所有配置的设置。'
+        title: '在高级选项卡中，启用自定义图例以在键标签中使用属性或时序值。点击“+ 新建”按钮。从出现的下拉菜单中，选择键类型。键名输入在下面的行中。通过点击窗口右上角的橙色对勾应用所有配置的设置。'
     1:
         image: /images/user-guide/ui/widgets/charts/bars-legend-1-ce.png
         title: '转到数据选项卡，然后点击数据键上的铅笔图标以输入数据键配置。'
@@ -259,7 +259,7 @@ state-comparison:
 state-legend:
     0:
         image: /images/user-guide/ui/widgets/charts/state-legend-ce.png
-        title: '在高级选项卡中，启用自定义图例以在键标签中使用属性或时间序列值。点击“+ 新建”按钮。从出现的下拉菜单中，选择键类型。键名输入在下面的行中。通过点击窗口右上角的橙色对勾应用所有配置的设置。'
+        title: '在高级选项卡中，启用自定义图例以在键标签中使用属性或时序值。点击“+ 新建”按钮。从出现的下拉菜单中，选择键类型。键名输入在下面的行中。通过点击窗口右上角的橙色对勾应用所有配置的设置。'
     1:
         image: /images/user-guide/ui/widgets/charts/state-legend-1-ce.png
         title: '转到数据选项卡，然后点击数据键上的铅笔图标以输入数据键配置。在打开的对话框中，输入带有括号内数据键名称的模式 ${}。点击“保存”应用新的标签名称。'

@@ -65,7 +65,7 @@ co2_emission_card_with_trend:
 building_energy_dashboard:
   0:
     image: /images/trendz/guide/building_energy/building_electricity_dashboard_add_new.png
-    title: '在 ThingsBoard 中创建新仪表板'
+    title: '在 GridLinks 中创建新仪表板'
   1:
     image: /images/trendz/guide/building_energy/building_electricity_dashboard_config.png
     title: '将名称设置为 - 能耗报告'
@@ -118,12 +118,12 @@ building_energy_dashboard:
 * 堆叠条形图，比较按来源划分的能源消耗。
 * 堆叠条形图，比较当前和前一年，按月细分。
 * 计算建筑中的碳排放
-* 创建 ThingsBoard 仪表板以可视化具有过滤选项的数据
+* 创建 GridLinks 仪表板以可视化具有过滤选项的数据
 
 ## 入门：
 
 ### 先决条件
-已安装在建筑物中并通过 MQTT API 连接到 ThingsBoard 的电能表。为了简化数据聚合和分析，每个电能表具有 2 个属性：
+已安装在建筑物中并通过 MQTT API 连接到 GridLinks 的电能表。为了简化数据聚合和分析，每个电能表具有 2 个属性：
 * `sourceType` - 能源消耗来源的名称（暖通空调、照明、插头负载、电梯等）。有多个具有相同来源的电能表。
 * `area` - 安装区域的名称（办公室、会议室、大厅厨房等）。该区域有多个电能表。
 
@@ -247,13 +247,13 @@ return totalUsage * emissionConversionFactor;
 
 {% include images-gallery.html imageCollection="co2_emission_card_with_trend" %}
 
-### 第 6 步：在 ThingsBoard 中创建能耗分析仪表板
+### 第 6 步：在 GridLinks 中创建能耗分析仪表板
 在最后一步中，我们将把我们在一个交互式仪表板中创建的所有视图连接到我们的用户。该仪表板可以与我们所有的客户共享，它将仅显示与用户相关的数据。他们将能够使用过滤器来选择建筑、
-消耗来源和区域。我们从将我们在前面的步骤中创建的所有 Trendz 视图添加到 ThingsBoard 中的一个仪表板开始：
+消耗来源和区域。我们从将我们在前面的步骤中创建的所有 Trendz 视图添加到 GridLinks 中的一个仪表板开始：
 
-* 在 ThingsBoard 中创建名称为 **能耗报告** 的仪表板
+* 在 GridLinks 中创建名称为 **能耗报告** 的仪表板
 * 在 Trendz 中：对于我们在前面的步骤中创建的每个小部件：
-  * 点击 `共享到 ThingsBoard` 按钮并复制 `添加到仪表板`。
+  * 点击 `共享到 GridLinks` 按钮并复制 `添加到仪表板`。
   * 选择 **能耗报告** 仪表板。
   * 启用 **创建别名** 复选框。
   * 选择 `建筑` 作为过滤器。
@@ -271,7 +271,7 @@ return totalUsage * emissionConversionFactor;
 最后，我们必须添加层次结构小部件，该小部件将显示酒店中的所有建筑/楼层/区域，并允许用户选择特定区域。一旦用户点击实体 - **过滤区域** 别名将刷新并加载所选实体的所有区域。
 之后，仪表板上的所有 Trendz 小部件都将更新，因为它们使用 **过滤区域** 别名作为数据源。结果，用户将看到所选区域的占用数据。
 
-* 将 ThingsBoard 表格小部件 `卡片` -> `实体表` 添加到仪表板。它将显示对用户可见的所有建筑。
+* 将 GridLinks 表格小部件 `卡片` -> `实体表` 添加到仪表板。它将显示对用户可见的所有建筑。
   * 将数据源别名设置为 **所有建筑**
   * 最新数据键 - **名称**
 * 为实体表小部件添加 `点击行` 操作。它将更新仪表板状态中的 `selectedEntity` 参数。

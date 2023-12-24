@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: PLC KERNEL 和 ThingsBoard
-description: 使用 ThingsBoard PE 平台监控 PLC KERNEL
+description: 使用 GridLinks PE 平台监控 PLC KERNEL
 hidetoc: "true"
 ---
 
@@ -57,7 +57,7 @@ hidetoc: "true"
 
 ### 步骤 2 LogiPaint 配置
 
-要连接 PLC KERNEL 设备，您首先需要获取设备凭据。ThingsBoard 支持各种设备凭据。我们建议使用本指南中默认自动生成的凭据，即访问令牌。
+要连接 PLC KERNEL 设备，您首先需要获取设备凭据。GridLinks 支持各种设备凭据。我们建议使用本指南中默认自动生成的凭据，即访问令牌。
 
 * [步骤 2.1] 单击表格中的设备行以打开设备详细信息。
 <br>

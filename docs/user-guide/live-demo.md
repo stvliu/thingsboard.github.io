@@ -10,7 +10,7 @@ description: ThingsBoard IoT 平台实时演示服务器
 * TOC
 {:toc}
 
-实时演示是一个单节点服务器，用于简化 ThingsBoard 平台的入门过程。
+实时演示是一个单节点服务器，用于简化 GridLinks 平台的入门过程。
 
 您可以使用以下 URL 访问演示服务器 [**demo.thingsboard.io**](https://demo.thingsboard.io/signup)
 

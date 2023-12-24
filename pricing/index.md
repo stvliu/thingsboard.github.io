@@ -677,7 +677,7 @@ selfManagedPlan:
             <div class="pricing-content-description-cloud pricing-cloud active col-lg">
                 <h2>Subscription plans</h2>
                 <div class="pricing-content-details">
-                    <b>Trendz Cloud</b> subscription plans include hosting, backups, maintenance and already integrated with your ThingsBoard Cloud account.
+                    <b>Trendz Cloud</b> subscription plans include hosting, backups, maintenance and already integrated with your GridLinks云服务 account.
                 </div>
             </div>
         </div>
@@ -1105,7 +1105,7 @@ selfManagedPlan:
                     For that purpose we made a possibility to Activate/Deactivate instance.
                     In order to migrate between servers customer must deactivate its instance, install the software on new server and then use already existing license secret.
                     Backup of all data from previos instance is necessary if customer wants to continue utilizing same environment after migration.
-                    Notice: license check mechanism won't allow using ThingsBoard Professional Edition on two or more servers simultaneously (unless you purchase two instances of the same subscription plan).         
+                    Notice: license check mechanism won't allow using  GridLinks专业版 on two or more servers simultaneously (unless you purchase two instances of the same subscription plan).         
                 </p>    
             </div>    
         </div>
@@ -1145,8 +1145,8 @@ selfManagedPlan:
             <div class="container">
                 <p>
                     ThingsBoard Edge Community Edition is able to connect only to ThingsBoard Community Edition server.
-                    ThingsBoard Edge Professional Edition is able to connect only to ThingsBoard Professional Edition server (it can be <a href="https://thingsboard.cloud" target="blank">ThingsBoard Cloud</a> or on-premise instances).
-                    ThingsBoard Edge Community Edition <b>can not</b> be connected to ThingsBoard Professional Edition and vise-verse.
+                    ThingsBoard Edge Professional Edition is able to connect only to  GridLinks专业版 server (it can be <a href="https://thingsboard.cloud" target="blank">ThingsBoard Cloud</a> or on-premise instances).
+                    ThingsBoard Edge Community Edition <b>can not</b> be connected to  GridLinks专业版 and vise-verse.
                 </p>    
             </div>
         </div>
@@ -1165,7 +1165,7 @@ selfManagedPlan:
         <div class="item" data-tag="h4" data-item-id="trial-enable" data-title="How can I enable free trial?">
             <div class="container">
                 <p>
-                    Customer may <a href="https://thingsboard.cloud/signup" target="blank">signup on ThingsBoard Professional Edition Cloud</a> and get 30 days of free trial on Maker plan. 
+                    Customer may <a href="https://thingsboard.cloud/signup" target="blank">signup on  GridLinks专业版 Cloud</a> and get 30 days of free trial on Maker plan. 
                     30 days of seamless experience and the newest features, except white-labeling!
                 </p>    
             </div>    
@@ -1203,7 +1203,7 @@ selfManagedPlan:
         <div class="item" data-tag="h4" data-item-id="what-is-cloud" data-title="What is ThingsBoard Cloud?">
             <div class="container">
                 <p>
-                ThingsBoard Cloud is a fully managed, scalable, and fault-tolerant platform for your IoT applications with combined subscription plans based on a monthly fee which already includes hosting costs.
+                GridLinks云服务 is a fully managed, scalable, and fault-tolerant platform for your IoT applications with combined subscription plans based on a monthly fee which already includes hosting costs.
                 </p>  
             </div>    
         </div>
@@ -1211,8 +1211,8 @@ selfManagedPlan:
             <div class="container">
                 <p>
                 Pay-as-you-go subscription plans include license fees only with no hosing services, which means that you have to deploy ThingsBoard on an external cloud (AWS, Azure, GCP, etc), or on the local server (On-premise). This means you have to pay separately for the infrastructure and manage ThingsBoard PE server.
-                ThingsBoard Cloud allows you to use ThingsBoard Professional Edition platform as a service on ThingsBoard enviroment.<br><br>
-                Example: Pay as you go Prototype subscription fee is $99 comparing to Prototype subscription on ThingsBoard cloud which is $149. ThingsBoard Cloud Prototype subscription price differs from the Prototype plan for the self-managed license by hosting fee which included in the Cloud subscription price
+                GridLinks云服务 allows you to use  GridLinks专业版 platform as a service on ThingsBoard enviroment.<br><br>
+                Example: Pay as you go Prototype subscription fee is $99 comparing to Prototype subscription on ThingsBoard cloud which is $149. GridLinks云服务 Prototype subscription price differs from the Prototype plan for the self-managed license by hosting fee which included in the Cloud subscription price
                 </p>  
             </div>    
         </div>
@@ -1234,7 +1234,7 @@ selfManagedPlan:
         <div class="item" data-tag="h4" data-item-id="api-limits" data-title="Is there any API Limits?">
             <div class="container">
                 <p>
-                Yes, ThingsBoard Cloud subscriptions have Entity, API and Rate limits. See subscription <a href="/products/paas/subscription/" target="blank">documentation</a> for more details.
+                Yes, GridLinks云服务 subscriptions have Entity, API and Rate limits. See subscription <a href="/products/paas/subscription/" target="blank">documentation</a> for more details.
                 </p>  
             </div>    
         </div>
@@ -1242,7 +1242,7 @@ selfManagedPlan:
             <div class="container">
                 <p>
                 Data point is a key-value pair that your device telemetry messages contain. For example, the message <i>{"temperature":42, "humidity": 60}</i> contains two data points.  
-                Each ThingsBoard Cloud subscription plan has a maximum number of data points that can be sent from all your devices per month. 
+                Each GridLinks云服务 subscription plan has a maximum number of data points that can be sent from all your devices per month. 
                 There are other <a href="/products/paas/subscription/" target ="blank">important parameters</a> of the subscription.
                 </p>  
             </div>    
@@ -1251,7 +1251,7 @@ selfManagedPlan:
             <div class="container">
                 <p>
                ThingsBoard web interface allows you to configure your company or product logo and color scheme in 2 minutes with zero coding efforts and no service restart required. 
-               See feature <a href="/docs/user-guide/white-labeling/" target ="blank">documentation</a> for more details. ThingsBoard Cloud extends white-labeling feature with ability to configure own domain name easily. But currently it is not possible to connect third-party SMTP servers, notifications will be sent from our system. We plan to add this ability in future releases.
+               See feature <a href="/docs/user-guide/white-labeling/" target ="blank">documentation</a> for more details. GridLinks云服务 extends white-labeling feature with ability to configure own domain name easily. But currently it is not possible to connect third-party SMTP servers, notifications will be sent from our system. We plan to add this ability in future releases.
                See <a href="/products/paas/domains/" target ="blank">managing domain</a> for more details.
                 </p>  
             </div>    

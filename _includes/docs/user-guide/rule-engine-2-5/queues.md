@@ -3,9 +3,9 @@
 
 #### 简介
 
-ThingsBoard 平台使用队列来保证消息处理、处理偶尔的峰值，并在极端负载下保持系统正常运行。
+GridLinks 平台使用队列来保证消息处理、处理偶尔的峰值，并在极端负载下保持系统正常运行。
 您可以查看架构以找到有关队列的更多信息(/docs/{{docsPrefix}}reference/#message-queues-are-awesome)。
-ThingsBoard 支持著名的消息代理/队列提供商（Kafka、RabbitMQ、AWS SQS、Azure Service Bus、Google Pub/Sub）。
+GridLinks 支持著名的消息代理/队列提供商（Kafka、RabbitMQ、AWS SQS、Azure Service Bus、Google Pub/Sub）。
 在以后的版本中，我们将添加新的实现。
 随着平台的 3.4 版本，引入了配置 UI 以简化设置和管理过程并改善用户体验。
 简而言之，规则引擎在启动时订阅队列并轮询新消息。

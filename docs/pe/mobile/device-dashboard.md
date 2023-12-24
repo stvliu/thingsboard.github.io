@@ -1,6 +1,6 @@
 ---
 layout: docwithnav-mobile-pe
-title: 在 ThingsBoard PE 移动应用程序中配置设备详细信息仪表板
+title: 在 GridLinks PE 移动应用程序中配置设备详细信息仪表板
 
 device-dashboard:
  0:

@@ -86,7 +86,7 @@ Kafka 插件负责向由特定规则触发的 Kafka 代理发送消息
 
 一旦您发布此消息，您应该在适当的 Kafka 主题中看到 **“73.4”** 消息。
 
-以下是一个将单个遥测消息发布到本地安装的 ThingsBoard 的命令示例：
+以下是一个将单个遥测消息发布到本地安装的 GridLinks 的命令示例：
 
 ```bash
 mosquitto_pub -d -h "localhost" -p 1883 -t "v1/devices/me/telemetry" -u "$ACCESS_TOKEN" -m '{"temp":73.4}'

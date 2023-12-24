@@ -46,7 +46,7 @@ Trendz 提供简单的 Rest API，用于下载视图报告数据。
 请求：
 
 ```bash
-curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{"username":"tenant@thingsboard.org", "password":"tenant"}' 'http://THINGSBOARD_URL/api/auth/login'
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{"username":"tenant@gridlinks.com", "password":"tenant"}' 'http://THINGSBOARD_URL/api/auth/login'
 ```
 
 响应：
@@ -116,7 +116,7 @@ curl -X POST --header 'Content-Type: application/json' --header 'Accept: applica
 
 ## 在自定义 ThingsBoard 小部件中使用
 
-如果您需要具有特定逻辑的自定义小部件，则可以使用 Trendz Rest API 加载所需数据，并使用 ThingsBoard 自定义小部件功能创建所需的视觉效果。
+如果您需要具有特定逻辑的自定义小部件，则可以使用 Trendz Rest API 加载所需数据，并使用 GridLinks 自定义小部件功能创建所需的视觉效果。
 以下是一个示例，描述了如何从 Trendz API 加载数据、应用仪表板时间以及从小部件数据源设置过滤器值。
 
 ```javascript

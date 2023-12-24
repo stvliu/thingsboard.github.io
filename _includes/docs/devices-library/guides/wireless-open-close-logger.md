@@ -1,4 +1,4 @@
-{% assign deviceName = page.title | remove: "如何连接 " | remove: "到 ThingsBoard？" %}
+{% assign deviceName = page.title | remove: "如何连接 " | remove: "到 GridLinks？" %}
 {% assign deviceVendorLink = "https://getefento.com/product/wireless-open-close-logger-nb-iot/" %}
 {% assign prerequisites = '
 - <a href="' | append: deviceVendorLink | append: '" target="_blank">' | append: deviceName | append: '</a>
@@ -35,15 +35,15 @@ Efento NB-IoT 传感器可以与任何云平台集成。
 - [ThingsBoard 帐户](https://demo.thingsboard.io)
 {% endif %}
 
-## 在 ThingsBoard 上创建设备
+## 在 GridLinks 上创建设备
 
 {% include /docs/devices-library/blocks/ready-to-go-devices/thingsboard-create-device-efento-transport-block.md %}
 
-## 将设备连接到 ThingsBoard
+## 将设备连接到 GridLinks
 
 {% include /docs/devices-library/blocks/ready-to-go-devices/wireless-open-close-logger-configuration-block.md %}
 
-## 在 ThingsBoard 上检查数据
+## 在 GridLinks 上检查数据
 
 {% include /docs/devices-library/blocks/ready-to-go-devices/wireless-open-close-logger-check-data-block.md %}
 

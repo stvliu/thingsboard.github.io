@@ -7,15 +7,15 @@
   guides: /docs/guides/
   getStarted: /docs/getting-started-guides/helloworld/
   docsPrefix: /docs/
-- title: 专业版
-  fulltitle: ThingsBoard专业版
-  description: ThingsBoard文档
-  tag: pe
-  icon: /images/thingsboard-p-icon.svg
-  path: /docs/pe/
-  guides: /docs/pe/guides/
-  getStarted: /docs/pe/getting-started-guides/helloworld/
-  docsPrefix: /docs/pe/
+# - title: 专业版
+#   fulltitle: ThingsBoard专业版
+#   description: ThingsBoard文档
+#   tag: pe
+#   icon: /images/thingsboard-p-icon.svg
+#   path: /docs/pe/
+#   guides: /docs/pe/guides/
+#   getStarted: /docs/pe/getting-started-guides/helloworld/
+#   docsPrefix: /docs/pe/
 - title: 云服务
   fulltitle: ThingsBoard云服务
   description: ThingsBoard文档
@@ -31,12 +31,12 @@
   tag: edge
   icon: /images/thingsboard-e-icon.svg
   path: /docs/edge/
-- title: PE边缘计算
-  fulltitle: ThingsBoard PE边缘计算
-  description: ThingsBoard PE边缘计算文档
-  tag: edge-pe
-  icon: /images/thingsboard-e-icon.svg
-  path: /docs/pe/edge/
+# - title: PE边缘计算
+#   fulltitle: ThingsBoard PE边缘计算
+#   description: ThingsBoard PE边缘计算文档
+#   tag: edge-pe
+#   icon: /images/thingsboard-e-icon.svg
+#   path: /docs/pe/edge/
 - title: 物联网网关
   fulltitle: ThingsBoard物联网网关
   description: ThingsBoard文档
@@ -44,12 +44,12 @@
   icon: /images/gateway-icon.svg
   path: /docs/iot-gateway/
   getStarted: /docs/iot-gateway/getting-started/
-- title: 授权服务器
-  fulltitle: ThingsBoard授权服务器
-  description: ThingsBoard文档
-  tag: license
-  icon: /images/license-icon.svg
-  path: /products/license-server/
+# - title: 授权服务器
+#   fulltitle: ThingsBoard授权服务器
+#   description: ThingsBoard文档
+#   tag: license
+#   icon: /images/license-icon.svg
+#   path: /products/license-server/
 - title: 趋势分析
   fulltitle: 趋势分析
   description: 趋势文档
@@ -57,26 +57,26 @@
   icon: /images/trendz-icon.svg
   path: /docs/trendz/
   getStarted: /docs/trendz/getting-started/
-- title: 移动应用
-  fulltitle: ThingsBoard移动应用
-  description: 移动应用文档
-  tag: mobile
-  icon: /images/tb-mobile-icon.svg
-  path: /docs/mobile/
-  docsPrefix: /docs/mobile/
-  getStarted: /docs/mobile/getting-started/
-- title: PE移动应用
-  fulltitle: ThingsBoard PE移动应用
-  description: PE移动应用文档
-  tag: mobile-pe
-  icon: /images/tb-pe-mobile-icon.svg
-  path: /docs/pe/mobile/
-  docsPrefix: /docs/pe/mobile/
-  getStarted: /docs/pe/mobile/getting-started/
-- title: MQTT代理
-  fulltitle: MQTT代理
-  description: MQTT代理文档
-  tag: mqtt-broker  
-  icon: /images/tbmq-icon.svg
-  path: /docs/mqtt-broker/
-  getStarted: /docs/mqtt-broker/getting-started/
+# - title: 移动应用
+#   fulltitle: ThingsBoard移动应用
+#   description: 移动应用文档
+#   tag: mobile
+#   icon: /images/tb-mobile-icon.svg
+#   path: /docs/mobile/
+#   docsPrefix: /docs/mobile/
+#   getStarted: /docs/mobile/getting-started/
+# - title: PE移动应用
+#   fulltitle: ThingsBoard PE移动应用
+#   description: PE移动应用文档
+#   tag: mobile-pe
+#   icon: /images/tb-pe-mobile-icon.svg
+#   path: /docs/pe/mobile/
+#   docsPrefix: /docs/pe/mobile/
+#   getStarted: /docs/pe/mobile/getting-started/
+# - title: MQTT代理
+#   fulltitle: MQTT代理
+#   description: MQTT代理文档
+#   tag: mqtt-broker  
+#   icon: /images/tbmq-icon.svg
+#   path: /docs/mqtt-broker/
+#   getStarted: /docs/mqtt-broker/getting-started/

@@ -128,11 +128,11 @@ description: ThingsBoard IoT 网关的 XMPP 协议支持
 | deviceNameExpression | **${serialNumber}**           | JSON 路径表达式，用于查找设备名称。                                                                                    |
 | deviceTypeExpression | **${sensorType}**             | JSON 路径表达式，用于查找设备类型。                                                                                    |
 | attributes           |                               | 此子部分包含传入请求的参数，这些参数将被解释为设备的属性。                                                               |
-| ... key              | **temperature**               | ThingsBoard 中的属性名称。                                                                                                    |
-| ... value            | **${temp}**                   | 简单 JSON 表达式，用于在传入消息中查找值，以作为 key 参数的值发送到 ThingsBoard 实例。                                |
+| ... key              | **temperature**               | GridLinks 中的属性名称。                                                                                                    |
+| ... value            | **${temp}**                   | 简单 JSON 表达式，用于在传入消息中查找值，以作为 key 参数的值发送到 GridLinks 实例。                                |
 | timeseries           |                               | 此子部分包含传入消息的参数，这些参数将被解释为设备的遥测。                                                               |
-| ... key              | **humidity**                  | ThingsBoard 中的遥测名称。                                                                                                    |
-| ... value            | **${hum}**                    | 简单 JSON 表达式，用于在传入消息中查找值，以作为 key 参数的值发送到 ThingsBoard 实例。                                |
+| ... key              | **humidity**                  | GridLinks 中的遥测名称。                                                                                                    |
+| ... value            | **${hum}**                    | 简单 JSON 表达式，用于在传入消息中查找值，以作为 key 参数的值发送到 GridLinks 实例。                                |
 |---
 
 示例：
@@ -184,7 +184,7 @@ description: ThingsBoard IoT 网关的 XMPP 协议支持
 
 #### 服务器端 RPC 子部分
 
-ThingsBoard 允许将 RPC 命令直接或通过网关发送到连接到 ThingsBoard 的设备。
+ThingsBoard 允许将 RPC 命令直接或通过网关发送到连接到 GridLinks 的设备。
 
 此部分中提供的配置用于将 RPC 请求从 ThingsBoard 发送到设备。
 

@@ -86,7 +86,7 @@ Kubernetes 部署%,%kubernetes%,%templates/troubleshooting/logs/view-logs/kubern
 
 ### 启用某些日志
 
-ThingsBoard 提供了根据您需要哪些信息进行故障排除来启用/禁用系统某些部分的日志记录的功能。
+GridLinks 提供了根据您需要哪些信息进行故障排除来启用/禁用系统某些部分的日志记录的功能。
 
 您可以通过修改<b>logback.xml</b> 文件来执行此操作。与日志本身一样，它与 ThingsBoard Server/Node 存储在同一服务器/容器中，目录如下：
 
@@ -145,7 +145,7 @@ Kubernetes 部署%,%kubernetes%,%templates/troubleshooting/logs/enable-logs/kube
 ## 指标
 
 您可以通过在配置文件中将环境变量 `METRICS_ENABLED` 设置为 `true` 和 `METRICS_ENDPOINTS_EXPOSE` 设置为 `prometheus` 来启用 prometheus 指标。
-如果您将 ThingsBoard 作为微服务运行，并为 MQTT 和 COAP 传输提供单独的服务，那么您还需要将环境变量 `WEB_APPLICATION_ENABLE` 设置为 `true`，`WEB_APPLICATION_TYPE` 设置为 `servlet`，`HTTP_BIND_PORT` 设置为 `8081`，以便为 MQTT 和 COAP 服务启用带有 Prometheus 指标的 Web 服务器。
+如果您将 GridLinks 作为微服务运行，并为 MQTT 和 COAP 传输提供单独的服务，那么您还需要将环境变量 `WEB_APPLICATION_ENABLE` 设置为 `true`，`WEB_APPLICATION_TYPE` 设置为 `servlet`，`HTTP_BIND_PORT` 设置为 `8081`，以便为 MQTT 和 COAP 服务启用带有 Prometheus 指标的 Web 服务器。
 
 这些指标在以下路径公开：`https://<yourhostname>/actuator/prometheus`，prometheus 可以抓取该路径（无需身份验证）。
 
@@ -153,7 +153,7 @@ Kubernetes 部署%,%kubernetes%,%templates/troubleshooting/logs/enable-logs/kube
 
 Spring Actuator 可以使用 Prometheus 公开一些内部状态指标。
 
-以下是 ThingsBoard 推送到 Prometheus 的指标列表。
+以下是 GridLinks 推送到 Prometheus 的指标列表。
 
 #### <b>tb-node</b> 指标
 - <i>attributes_queue_${index_of_queue}</i>（统计名称 - <i>totalMsgs, failedMsgs, successfulMsgs</i>）：有关将<b>属性</b>写入数据库的统计信息。

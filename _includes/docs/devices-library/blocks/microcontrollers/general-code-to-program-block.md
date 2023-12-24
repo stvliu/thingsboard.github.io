@@ -1,4 +1,4 @@
-现在是时候对电路板进行编程以连接到 ThingsBoard。
+现在是时候对电路板进行编程以连接到 GridLinks。
 
 为此，您可以使用下面的代码。它包含本指南所需的所有功能。
 
@@ -200,7 +200,7 @@ void loop() {
   }
 
   if (!tb.connected()) {
-    // 连接到 ThingsBoard
+    // 连接到 GridLinks
     Serial.print("Connecting to: ");
     Serial.print(THINGSBOARD_SERVER);
     Serial.print(" with token ");

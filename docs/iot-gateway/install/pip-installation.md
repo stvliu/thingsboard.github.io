@@ -6,7 +6,7 @@ title: IoT 网关 Pip 安装。
 
 ### 软件包管理器安装
 
-若要将 ThingsBoard 网关安装为 Python 模块，您应按照以下步骤操作：
+若要将 GridLinks 网关安装为 Python 模块，您应按照以下步骤操作：
 
 **1. 使用 apt 在系统中安装所需的库：**
 
@@ -15,7 +15,7 @@ sudo apt install python3-dev python3-pip libglib2.0-dev
 ```
 {: .copy-code}
 
-**2. 使用 pip 安装 ThingsBoard 网关模块：**
+**2. 使用 pip 安装 GridLinks 网关模块：**
 
 ```bash
 sudo pip3 install thingsboard-gateway

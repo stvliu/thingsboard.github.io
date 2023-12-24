@@ -89,7 +89,7 @@ SQS 插件具有以下配置参数：
 {"temp":73.4}
 ```
 
-以下是一个将单个遥测消息发布到本地安装的 ThingsBoard 的命令示例：
+以下是一个将单个遥测消息发布到本地安装的 GridLinks 的命令示例：
 
 ```bash
 mosquitto_pub -d -h "localhost" -p 1883 -t "v1/devices/me/telemetry" -u "$ACCESS_TOKEN" -m "{'temp':73.4}"
@@ -136,7 +136,7 @@ SQS FIFO 队列规则配置与 SQS 标准队列配置非常相似，但有一些
 {"temp":68.3}
 ```
 
-以下是一个将单个遥测消息发布到本地安装的 ThingsBoard 的命令示例：
+以下是一个将单个遥测消息发布到本地安装的 GridLinks 的命令示例：
 
 ```bash
 mosquitto_pub -d -h "localhost" -p 1883 -t "v1/devices/me/telemetry" -u "$ACCESS_TOKEN" -m "{'temp':68.3}"

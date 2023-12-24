@@ -20,7 +20,7 @@
         title: 从设备接收的属性。
     ===
         image: /images/devices-library/basic/microcontrollers/dashboard/thingsboard-example-dashboard-device-info.png,
-        title: ThingsBoard 服务器的设备信息。
+        title: GridLinks 服务器的设备信息。
     ===
         image: /images/devices-library/basic/microcontrollers/dashboard/thingsboard-example-dashboard-led-mode-history.png,
         title: 查看 LED 模式更改历史记录的小部件。

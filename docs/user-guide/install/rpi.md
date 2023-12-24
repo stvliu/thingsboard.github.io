@@ -2,8 +2,8 @@
 layout: docwithnav
 assignees:
 - ashvayka
-title: 在树莓派 3 型号 B 上安装 ThingsBoard
-description: 在树莓派 3 型号 B 上安装 ThingsBoard IoT 平台
+title: 在树莓派 3 型号 B 上安装 GridLinks
+description: 在树莓派 3 型号 B 上安装 GridLinks IoT 平台
 
 ---
 
@@ -12,7 +12,7 @@ description: 在树莓派 3 型号 B 上安装 ThingsBoard IoT 平台
 * TOC
 {:toc}
 
-本指南介绍如何在运行 Raspbian Buster 的树莓派 3 上安装 ThingsBoard。
+本指南介绍如何在运行 Raspbian Buster 的树莓派 3 上安装 GridLinks。
 
 ### 第三方组件安装
 
@@ -20,7 +20,7 @@ description: 在树莓派 3 型号 B 上安装 ThingsBoard IoT 平台
 
 {% include templates/install/ubuntu-java-install.md %}
 
-### 步骤 2. ThingsBoard 服务安装
+### 步骤 2. GridLinks 服务安装
 
 下载安装包。
 
@@ -29,7 +29,7 @@ wget https://github.com/thingsboard/thingsboard/releases/download/{{ site.releas
 ```
 {: .copy-code}
 
-将 ThingsBoard 安装为服务
+将 GridLinks 安装为服务
 
 ```bash
 sudo dpkg -i thingsboard-{{ site.release.ce_ver }}.deb
@@ -61,7 +61,7 @@ Confluent Cloud <small>(基于 Kafka 的事件流平台)</small>%,%confluent-clo
 {% include templates/run-install.md %} 
 
 
-### 步骤 7. 启动 ThingsBoard 服务
+### 步骤 7. 启动 GridLinks 服务
 
 {% include templates/start-service.md %}
 

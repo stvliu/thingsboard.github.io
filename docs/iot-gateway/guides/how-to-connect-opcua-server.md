@@ -76,8 +76,8 @@ description: 了解如何连接 OPC-UA 服务器
 让我们分析我们的设置：
 
 1. 连接器的常规配置。在此部分中，我们定义了主要设置（例如连接器名称 — OPC-UA 默认服务器、URL — 192.168.1.113:4840/server/ 等）。您可以在 [此处](/docs/iot-gateway/config/opc-ua/#section-server) 阅读有关可用参数的更多信息。  
-2. 常规设备配置。在此部分中，我们定义了 OPC-UA 设备的主要设置（例如 OPC-UA 服务器模式中的设备对象 - Device\\d*$、ThingsBoard 中的设备名称模式 — Device\\d*$ 等）。您可以在 [此处](/docs/iot-gateway/config/opc-ua/#section-mapping) 阅读有关可用参数的更多信息。  
-3. 属性配置。在此部分中，我们定义了 ThingsBoard 中 batteryLevel 属性的设置。您可以在 [此处](/docs/iot-gateway/config/opc-ua/#subsection-attributes) 阅读有关可用参数的更多信息。  
+2. 常规设备配置。在此部分中，我们定义了 OPC-UA 设备的主要设置（例如 OPC-UA 服务器模式中的设备对象 - Device\\d*$、GridLinks 中的设备名称模式 — Device\\d*$ 等）。您可以在 [此处](/docs/iot-gateway/config/opc-ua/#section-mapping) 阅读有关可用参数的更多信息。  
+3. 属性配置。在此部分中，我们定义了 GridLinks 中 batteryLevel 属性的设置。您可以在 [此处](/docs/iot-gateway/config/opc-ua/#subsection-attributes) 阅读有关可用参数的更多信息。  
 4. 时序配置。在此部分中，我们设置了温度和湿度参数。您可以在 [此处](/docs/iot-gateway/config/opc-ua/#subsection-timeseries) 阅读有关可用参数的更多信息。  
 
 将配置文件另存为 opcua.json，放在配置文件夹中（包含常规配置文件 - **tb_gateway.yaml** 的目录）。  

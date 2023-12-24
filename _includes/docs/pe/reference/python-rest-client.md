@@ -43,7 +43,7 @@ logging.basicConfig(level=logging.DEBUG,
 url = "http://localhost:8080"
 
 # Default Tenant Administrator credentials
-username = "tenant@thingsboard.org"
+username = "tenant@gridlinks.com"
 password = "tenant"
 
 
@@ -105,7 +105,7 @@ def main():
             logging.info('Group permission created:\n%r\n', group_permission)
 
             # Creating User for Customer 1 with default dashboard from Tenant "Shared Dashboards" group.
-            user_email = "user@thingsboard.org"
+            user_email = "user@gridlinks.com"
             user_password = "secret"
             additional_info = {
                 "defaultDashboardId": dashboard.id.id,
@@ -147,7 +147,7 @@ logging.basicConfig(level=logging.DEBUG,
 url = "http://localhost:8080"
 
 # Default Tenant Administrator credentials
-username = "tenant@thingsboard.org"
+username = "tenant@gridlinks.com"
 password = "tenant"
 
 
@@ -189,7 +189,7 @@ logging.basicConfig(level=logging.DEBUG,
 url = "http://localhost:8080"
 
 # Default Tenant Administrator credentials
-username = "tenant@thingsboard.org"
+username = "tenant@gridlinks.com"
 password = "tenant"
 
 
@@ -228,7 +228,7 @@ logging.basicConfig(level=logging.DEBUG,
 url = "https://thingsboard.cloud"
 
 # Default Tenant Administrator credentials
-username = "tenant@thingsboard.org"
+username = "tenant@gridlinks.com"
 password = "tenant"
 
 
@@ -311,7 +311,7 @@ logging.basicConfig(level=logging.DEBUG,
 # ThingsBoard REST API URL
 url = "http://localhost:8080"
 # Default Tenant Administrator credentials
-username = "tenant@thingsboard.org"
+username = "tenant@gridlinks.com"
 password = "tenant"
 
 

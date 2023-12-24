@@ -1,6 +1,6 @@
 ---
 layout: devices-library-article
-title: 如何将 UG56 LoRaWAN® 网关连接到 ThingsBoard？
+title: 如何将 UG56 LoRaWAN® 网关连接到 GridLinks？
 category: 其他设备
 connectivity: HTTP、MQTT、UDP、NB-IoT、LTE-M、LoRaWAN®
 vendor: Milesight

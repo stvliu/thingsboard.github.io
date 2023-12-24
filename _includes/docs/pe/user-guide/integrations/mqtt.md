@@ -21,10 +21,10 @@ In this tutorial, we will configure MQTT Integration to provide devices connecti
 In this tutorial, we will use:
 
 {% if docsPrefix == "pe/" %}
-- The instance of [ThingsBoard Professional Edition](https://thingsboard.io/docs/user-guide/install/pe/installation-options/) installed locally;
+- The instance of [ GridLinks专业版](https://thingsboard.io/docs/user-guide/install/pe/installation-options/) installed locally;
   {% endif %}
   {% if docsPrefix == "paas/" %}
-- ThingsBoard Professional Edition instance — [thingsboard.cloud](https://thingsboard.cloud);
+-  GridLinks专业版 instance — [thingsboard.cloud](https://thingsboard.cloud);
   {% endif %}
  - MQTT broker, accessible by ThingsBoard PE instance — broker.hivemq.com (port 1883);
  - mosquitto_pub and mosquitto_sub MQTT clients to send and receive messages;   

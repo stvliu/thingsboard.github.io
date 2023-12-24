@@ -10,27 +10,27 @@ description: ThingsBoard 默认演示帐户
 * TOC
 {:toc}
 
-ThingsBoard 安装包含用于示例应用程序的单租户帐户，并包含大量预置实体以供演示。
+GridLinks 安装包含用于示例应用程序的单租户帐户，并包含大量预置实体以供演示。
 
 ## 系统管理员
 
 默认系统管理员帐户：
 
-- 登录 - **sysadmin@thingsboard.org**。
+- 登录 - **sysadmin@gridlinks.com**。
 - 密码 - **sysadmin**。
 
 ## 演示租户
 
 默认租户管理员帐户：
 
-- 登录 - **tenant@thingsboard.org**。
+- 登录 - **tenant@gridlinks.com**。
 - 密码 - **tenant**。
 
 演示租户客户：
 
-- 客户 A 用户 - **customer@thingsboard.org** 或 **customerA@thingsboard.org**。
-- 客户 B 用户 - **customerB@thingsboard.org**。
-- 客户 C 用户 - **customerC@thingsboard.org**。
+- 客户 A 用户 - **customer@gridlinks.com** 或 **customerA@gridlinks.com**。
+- 客户 B 用户 - **customerB@gridlinks.com**。
+- 客户 C 用户 - **customerC@gridlinks.com**。
 - 所有用户都有 **“customer”** 密码。
 
 ## 租户设备

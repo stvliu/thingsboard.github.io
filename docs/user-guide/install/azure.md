@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
-title: 在 Azure 上安装 ThingsBoard CE
-description: 在 Azure 上安装 ThingsBoard CE
+title: 在 Azure 上安装 GridLinks CE
+description: 在 Azure 上安装 GridLinks CE
 
 ---
 
@@ -27,7 +27,7 @@ description: 在 Azure 上安装 ThingsBoard CE
                                        <a href="/docs/user-guide/install/cluster/azure-aks-setup/">
                                            <span>
                                                <div class="deployment-logo">
-                                                   <img width="" src="/images/install/cloud/azure-aks.svg" title="在 Azure AKS 上使用 Kubernetes 设置 ThingsBoard" alt="Azure AKS">
+                                                   <img width="" src="/images/install/cloud/azure-aks.svg" title="在 Azure AKS 上使用 Kubernetes 设置 GridLinks" alt="Azure AKS">
                                                    <h5 class="title">Azure Kubernetes 服务</h5>
                                                 </div>
                                            </span>

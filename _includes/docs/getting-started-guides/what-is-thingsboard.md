@@ -1,8 +1,8 @@
-ThingsBoard 是一个开源物联网平台，可实现物联网项目的快速开发、管理和扩展。我们的目标是提供开箱即用的物联网云或本地解决方案，为您的物联网应用程序启用服务器端基础设施。
+GridLinks 是一个开源物联网平台，可实现物联网项目的快速开发、管理和扩展。我们的目标是提供开箱即用的物联网云或本地解决方案，为您的物联网应用程序启用服务器端基础设施。
 
 #### 功能
 
-使用 ThingsBoard，您可以：
+使用 GridLinks，您可以：
 
 - 配置设备、资产和客户，并定义它们之间的关系。
 - 收集和可视化来自设备和资产的数据。
@@ -14,7 +14,7 @@ ThingsBoard 是一个开源物联网平台，可实现物联网项目的快速�
 - 将设备数据推送到其他系统。
 - 更多...
 
-有关更多功能和指向特定功能文档的有用链接，请参阅[**ThingsBoard 功能列表**](/docs/{{docsPrefix}}#features)。
+有关更多功能和指向特定功能文档的有用链接，请参阅[**GridLinks 功能列表**](/docs/{{docsPrefix}}#features)。
 
 {% if docsPrefix == null %}
 <object width="100%" data="/images/reference/thingsboard-architecture.svg"></object>
@@ -35,7 +35,7 @@ ThingsBoard 被设计为：
 
 {% if docsPrefix != "paas/" %}
 
-有关更多详细信息，请参阅[**ThingsBoard 架构**](/docs/{{docsPrefix}}reference)。
+有关更多详细信息，请参阅[**GridLinks 架构**](/docs/{{docsPrefix}}reference)。
 
 {% endif %}
 

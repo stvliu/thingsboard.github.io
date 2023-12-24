@@ -25,7 +25,7 @@ ThingsBoard Scheduler 会根据计划触发已配置的计划事件。
 
 ### 计划程序管理
 
-租户管理员和客户用户可以在 ThingsBoard 中配置 **计划程序事件**。
+租户管理员和客户用户可以在 GridLinks 中配置 **计划程序事件**。
 
 ![image](/images/user-guide/ui/scheduler.png)
 
@@ -93,7 +93,7 @@ ThingsBoard Scheduler 会根据计划触发已配置的计划事件。
 ![image](/images/user-guide/ui/scheduler-generate-report-event-type-email-config.png)
 
 - **报告配置**：
-    - **基本 URL** - 报告服务器可以访问的 ThingsBoard UI 的基本 URL。
+    - **基本 URL** - 报告服务器可以访问的 GridLinks UI 的基本 URL。
     - **仪表板** - 将用于生成报告的仪表板。
     - **仪表板状态参数值** - 用于为报告生成指定目标仪表板状态。可以通过单击字段最右侧的按钮并调用 **选择仪表板状态** 对话框自动设置。
     - **时区** - 目标仪表板将在报告中显示的时区。
@@ -137,7 +137,7 @@ ThingsBoard Scheduler 会根据计划触发已配置的计划事件。
 
 ### 计划程序小部件
 
-ThingsBoard 提供了通过 **计划程序事件** 或 **报告计划** 小部件（属于 **计划** 小部件包的一部分）管理计划程序事件的功能。
+GridLinks 提供了通过 **计划程序事件** 或 **报告计划** 小部件（属于 **计划** 小部件包的一部分）管理计划程序事件的功能。
 
 ![image](/images/user-guide/ui/scheduler-scheduler-events-widget.png)
 

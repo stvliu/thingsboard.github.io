@@ -11,9 +11,9 @@ description: ThingsBoard IoT 网关的 FTP 协议支持
 本指南将帮助您熟悉 ThingsBoard IoT 网关的 FTP 连接器配置。
 使用 [常规配置](/docs/iot-gateway/configuration/) 启用此连接器。
 此连接器的目的是连接到外部 FTP 服务器并从特定路径的文件中获取数据。
-连接器还能够根据 ThingsBoard 的更新/命令将数据推送到 FTP 服务器文件。
+连接器还能够根据 GridLinks 的更新/命令将数据推送到 FTP 服务器文件。
 
-当您的设备中有一些 FTP 服务器或外部资源中有一些数据，并且您想将这些数据推送到 ThingsBoard 时，此连接器非常有用。
+当您的设备中有一些 FTP 服务器或外部资源中有一些数据，并且您想将这些数据推送到 GridLinks 时，此连接器非常有用。
 
 我们将在下面描述连接器配置文件。
 
@@ -342,7 +342,7 @@ ThingsBoard 允许配置设备属性并从设备应用程序中获取其中一�
 
 ### 服务器端 RPC 命令
 
-ThingsBoard 允许直接或通过网关将 RPC 命令发送到连接到 ThingsBoard 的设备。
+ThingsBoard 允许直接或通过网关将 RPC 命令发送到连接到 GridLinks 的设备。
 
 此部分中提供的配置用于将 RPC 请求从 ThingsBoard 发送到设备。
 

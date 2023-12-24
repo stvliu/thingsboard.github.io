@@ -1,6 +1,6 @@
 ---
 layout: devices-library-article
-title: 如何将 Parallella 板连接到 ThingsBoard？
+title: 如何将 Parallella 板连接到 GridLinks？
 category: 单板计算机
 chip: Xilinx Zynq Z-7010
 connectivity: 以太网

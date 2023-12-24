@@ -1,13 +1,13 @@
 * TOC
 {:toc}
 
-ThingsBoard 提供了一套与时间序列数据相关的丰富功能：
+GridLinks 提供了一套与时序数据相关的丰富功能：
 
 - 使用各种 [协议和集成](/docs/{{docsPrefix}}getting-started-guides/connectivity/) 从设备 **收集** 数据；
-- 将时间序列数据存储在 SQL (PostgreSQL) 或 NoSQL (Cassandra 或 Timescale) 数据库中；
-- 使用灵活的聚合查询指定时间范围内的最新时间序列数据值或所有数据；
+- 将时序数据存储在 SQL (PostgreSQL) 或 NoSQL (Cassandra 或 Timescale) 数据库中；
+- 使用灵活的聚合查询指定时间范围内的最新时序数据值或所有数据；
 - 使用 [WebSockets](#websocket-api) **订阅** 数据更新，以便进行可视化或实时分析；
-- 使用可配置且高度可定制的小部件和 [仪表板](/docs/{{docsPrefix}}user-guide/dashboards/) **可视化** 时间序列数据；
+- 使用可配置且高度可定制的小部件和 [仪表板](/docs/{{docsPrefix}}user-guide/dashboards/) **可视化** 时序数据；
 - 使用灵活的 [规则引擎](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/re-getting-started/) **过滤和分析** 数据；
 - 基于收集的数据生成 [警报](/docs/{{docsPrefix}}user-guide/alarms/)；
 - 使用 [外部规则节点](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/external-nodes/)（例如 Kafka 或 RabbitMQ 规则节点）将数据 **转发** 到外部系统。
@@ -16,10 +16,10 @@ ThingsBoard 提供了一套与时间序列数据相关的丰富功能：
 
 ## 数据点
 
-ThingsBoard 在内部将时间序列数据视为带时间戳的键值对。我们将单个带时间戳的键值对称为 **数据点**。键值格式的灵活性和简单性允许与市场上几乎任何物联网设备轻松无缝地集成。键始终是字符串，基本上是数据点键名，而值可以是字符串、布尔值、双精度、整数或 JSON。
+GridLinks 在内部将时序数据视为带时间戳的键值对。我们将单个带时间戳的键值对称为 **数据点**。键值格式的灵活性和简单性允许与市场上几乎任何物联网设备轻松无缝地集成。键始终是字符串，基本上是数据点键名，而值可以是字符串、布尔值、双精度、整数或 JSON。
 
 {% capture internal_data_format %}
-以下示例使用 **内部** 数据格式。设备本身可以使用 **各种协议和数据格式** 上传数据。有关更多详细信息，请参阅 [时间序列数据上传 API](/docs/{{docsPrefix}}user-guide/telemetry/#time-series-data-upload-api)。
+以下示例使用 **内部** 数据格式。设备本身可以使用 **各种协议和数据格式** 上传数据。有关更多详细信息，请参阅 [时序数据上传 API](/docs/{{docsPrefix}}user-guide/telemetry/#time-series-data-upload-api)。
 {% endcapture %}
 {% include templates/info-banner.md content=internal_data_format %}
 
@@ -41,7 +41,7 @@ ThingsBoard 在内部将时间序列数据视为带时间戳的键值对。我�
 ```
 {: .copy-code}
 
-您可能注意到上面列出的 JSON 没有时间戳信息。在这种情况下，ThingsBoard 使用当前服务器时间戳。但是，您可以在消息中包含时间戳信息。请参阅以下示例：
+您可能注意到上面列出的 JSON 没有时间戳信息。在这种情况下，GridLinks 使用当前服务器时间戳。但是，您可以在消息中包含时间戳信息。请参阅以下示例：
 
 ```json
 {
@@ -55,7 +55,7 @@ ThingsBoard 在内部将时间序列数据视为带时间戳的键值对。我�
 {: .copy-code}
 
 
-## 时间序列数据上传 API
+## 时序数据上传 API
 
 您可以使用内置的传输协议实现：
 
@@ -68,19 +68,19 @@ ThingsBoard 在内部将时间序列数据视为带时间戳的键值对。我�
 
 ## 数据可视化
 
-我们假设您已经将时间序列数据推送到 ThingsBoard。现在您可以在仪表板中使用它。我们建议您阅读 [仪表板概述](/docs/{{docsPrefix}}user-guide/dashboards/) 以开始使用。一旦您熟悉如何创建仪表板和配置数据源，您就可以使用小部件可视化最新值或实时变化和历史值。可视化最新值的小部件的良好示例是 [数字](/docs/{{docsPrefix}}user-guide/ui/widget-library/#digital-gauges) 和 [模拟](/docs/{{docsPrefix}}user-guide/ui/widget-library/#analog-gauges) 仪表，或 [卡片](/docs/{{docsPrefix}}user-guide/ui/widget-library/#cards)。[图表](/docs/{{docsPrefix}}user-guide/ui/widget-library/#charts) 用于可视化历史和实时值，[地图](/docs/{{docsPrefix}}user-guide/ui/widget-library/#maps-widgets) 用于可视化设备和资产的移动。
+我们假设您已经将时序数据推送到 GridLinks。现在您可以在仪表板中使用它。我们建议您阅读 [仪表板概述](/docs/{{docsPrefix}}user-guide/dashboards/) 以开始使用。一旦您熟悉如何创建仪表板和配置数据源，您就可以使用小部件可视化最新值或实时变化和历史值。可视化最新值的小部件的良好示例是 [数字](/docs/{{docsPrefix}}user-guide/ui/widget-library/#digital-gauges) 和 [模拟](/docs/{{docsPrefix}}user-guide/ui/widget-library/#analog-gauges) 仪表，或 [卡片](/docs/{{docsPrefix}}user-guide/ui/widget-library/#cards)。[图表](/docs/{{docsPrefix}}user-guide/ui/widget-library/#charts) 用于可视化历史和实时值，[地图](/docs/{{docsPrefix}}user-guide/ui/widget-library/#maps-widgets) 用于可视化设备和资产的移动。
 
-您还可以使用 [输入小部件](/docs/{{docsPrefix}}user-guide/ui/widget-library/#input-widgets) 允许仪表板用户使用仪表板输入新的时间序列值。
+您还可以使用 [输入小部件](/docs/{{docsPrefix}}user-guide/ui/widget-library/#input-widgets) 允许仪表板用户使用仪表板输入新的时序值。
 
 ## 数据存储
 
 {% if docsPrefix == "paas/" %}
 
-ThingsBoard Cloud 将时间序列数据存储在具有 3 个副本因子的 Cassandra 数据库中。ThingsBoard 的本地安装支持将时间序列数据存储在 SQL (PostgreSQL) 或 NoSQL (Cassandra 或 Timescale) 数据库中。
+ThingsBoard Cloud 将时序数据存储在具有 3 个副本因子的 Cassandra 数据库中。GridLinks 的本地安装支持将时序数据存储在 SQL (PostgreSQL) 或 NoSQL (Cassandra 或 Timescale) 数据库中。
 
 {% else %}
 
-系统管理员可以将 ThingsBoard 配置为将时间序列数据存储在 SQL (PostgreSQL) 或 NoSQL (Cassandra 或 Timescale) 数据库中。建议将 SQL 存储用于每秒少于 5000 个 [数据点](#数据点) 的小型环境。当您对解决方案有高吞吐量或高可用性要求时，将数据存储在 Cassandra 中才有意义。
+系统管理员可以将 GridLinks 配置为将时序数据存储在 SQL (PostgreSQL) 或 NoSQL (Cassandra 或 Timescale) 数据库中。建议将 SQL 存储用于每秒少于 5000 个 [数据点](#数据点) 的小型环境。当您对解决方案有高吞吐量或高可用性要求时，将数据存储在 Cassandra 中才有意义。
 
 有关更多信息，请参阅 [SQL 与 NoSQL 与混合](/docs/{{docsPrefix}}reference/#sql-vs-nosql-vs-hybrid-database-approach)。
 
@@ -90,42 +90,42 @@ ThingsBoard Cloud 将时间序列数据存储在具有 3 个副本因子的 Cass
 
 {% if docsPrefix == "paas/" %}
 
-ThingsBoard 使用可配置的生存时间 (TTL) 参数存储数据。该参数的值是 [订阅](/products/paas/subscription/) 计划的一部分。您可以在“保存时间序列”规则节点中或使用消息的“TTL”元数据字段覆盖默认值。这允许您优化存储消耗。TTL 的最大允许值为 5 年。例如，您可以将“原始”数据存储 3 个月，将聚合数据存储 3 年。
+GridLinks 使用可配置的生存时间 (TTL) 参数存储数据。该参数的值是 [订阅](/products/paas/subscription/) 计划的一部分。您可以在“保存时序”规则节点中或使用消息的“TTL”元数据字段覆盖默认值。这允许您优化存储消耗。TTL 的最大允许值为 5 年。例如，您可以将“原始”数据存储 3 个月，将聚合数据存储 3 年。
 
 {% else %}
 
 数据保留策略和配置取决于所选的 [存储](#数据存储)。
 
-Cassandra 支持每个插入行的生存时间 (TTL) 参数。这就是为什么您可以使用“TS_KV_TTL”环境变量在系统级别配置默认 TTL 参数的原因。您可以在“保存时间序列”规则节点中或使用消息的“TTL”元数据字段覆盖默认值。这允许您优化存储消耗。TTL 的最大允许值为 5 年。例如，您可以将“原始”数据存储 3 个月，将聚合数据存储 3 年。
+Cassandra 支持每个插入行的生存时间 (TTL) 参数。这就是为什么您可以使用“TS_KV_TTL”环境变量在系统级别配置默认 TTL 参数的原因。您可以在“保存时序”规则节点中或使用消息的“TTL”元数据字段覆盖默认值。这允许您优化存储消耗。TTL 的最大允许值为 5 年。例如，您可以将“原始”数据存储 3 个月，将聚合数据存储 3 年。
 
-PostgreSQL 和 Timescale 不支持每个插入行的生存时间 (TTL) 参数。这就是为什么您只能使用“SQL_TTL_*”环境变量配置定期时间序列数据清理例程的原因。
+PostgreSQL 和 Timescale 不支持每个插入行的生存时间 (TTL) 参数。这就是为什么您只能使用“SQL_TTL_*”环境变量配置定期时序数据清理例程的原因。
 {% endif %}
 
 ## 数据持久性
 
-将带有时间序列数据的消息发送到 ThingsBoard 的设备将在消息成功存储到为特定设备 [配置文件](/docs/{{docsPrefix}}user-guide/device-profiles/#queue-name) 配置的规则引擎 [队列](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/) 后收到确认。
+将带有时序数据的消息发送到 GridLinks 的设备将在消息成功存储到为特定设备 [配置文件](/docs/{{docsPrefix}}user-guide/device-profiles/#queue-name) 配置的规则引擎 [队列](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/) 后收到确认。
 
-作为租户管理员，您可以为队列配置 [处理策略](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/#queue-processing-strategy)。您可以将队列配置为重新处理或忽略消息处理的失败。这允许对时间序列数据和规则引擎处理的所有其他消息的持久性级别进行细粒度控制。
+作为租户管理员，您可以为队列配置 [处理策略](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/#queue-processing-strategy)。您可以将队列配置为重新处理或忽略消息处理的失败。这允许对时序数据和规则引擎处理的所有其他消息的持久性级别进行细粒度控制。
 
 ## 规则引擎
 
 [规则引擎](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/re-getting-started/) 负责处理各种传入数据和事件。您可以在下面找到使用规则引擎中属性的最常见场景：
 
-**根据针对时间序列值的逻辑表达式生成警报**
+**根据针对时序值的逻辑表达式生成警报**
 
 使用 [警报规则](/docs/{{docsPrefix}}user-guide/device-profiles/#alarm-rules) 通过 UI 配置最常见的警报条件，或使用 [过滤器节点](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/filter-nodes/) 通过自定义 JS 函数配置更具体的使用案例。
 
-**在将传入时间序列数据存储到数据库之前修改它们**
+**在将传入时序数据存储到数据库之前修改它们**
 
 使用 [消息类型开关](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/filter-nodes/#message-type-switch-node) 规则节点过滤包含“发布遥测”请求的消息。然后，使用 [转换规则节点](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/transformation-nodes/) 修改特定消息。
 
-**计算前一个和当前时间序列值之间的增量**
+**计算前一个和当前时序值之间的增量**
 
 使用 [计算增量](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/enrichment-nodes/#calculate-delta) 规则节点根据智能电表读数计算功率、水和其他消耗。
 
-**获取以前的时间序列值以分析来自设备的传入遥测**
+**获取以前的时序值以分析来自设备的传入遥测**
 
-使用 [发起者遥测](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/enrichment-nodes/#originator-telemetry) 规则节点使用设备的先前时间序列数据丰富传入的时间序列数据消息。
+使用 [发起者遥测](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/enrichment-nodes/#originator-telemetry) 规则节点使用设备的先前时序数据丰富传入的时序数据消息。
 
 **获取属性值以分析来自设备的传入遥测**
 
@@ -143,16 +143,16 @@ PostgreSQL 和 Timescale 不支持每个插入行的生存时间 (TTL) 参数。
 
 ## 数据查询 REST API
 
-ThingsBoard 提供以下 REST API 来获取实体数据：
+GridLinks 提供以下 REST API 来获取实体数据：
 
 {% capture api_note %}
 **注意：**API 可通过 Swagger UI 使用。有关更多详细信息，请查看常规 [REST API](/docs/{{docsPrefix}}reference/rest-api/) 文档。API 向后兼容 TB v1.0+，这就是 API 调用 URL 包含“插件”的主要原因。
 {% endcapture %}
 {% include templates/info-banner.md content=api_note %}
 
-##### 获取特定实体的时间序列数据键
+##### 获取特定实体的时序数据键
 
-您可以使用对以下 URL 的 GET 请求获取特定 *实体类型* 和 *实体 ID* 的所有时间序列 *数据键* 列表
+您可以使用对以下 URL 的 GET 请求获取特定 *实体类型* 和 *实体 ID* 的所有时序 *数据键* 列表
 
 ```shell
 http(s)://host:port/api/plugins/telemetry/{entityType}/{entityId}/keys/timeseries
@@ -166,7 +166,7 @@ B,get-telemetry-keys-result.json,json,resources/get-telemetry-keys-result.json,/
 
 支持的实体类型为：TENANT、CUSTOMER、USER、DASHBOARD、ASSET、DEVICE、ALARM、ENTITY_VIEW
 
-##### 获取特定实体的最新时间序列数据值
+##### 获取特定实体的最新时序数据值
 
 您可以使用对以下 URL 的 GET 请求获取特定 *实体类型* 和 *实体 ID* 的最新值列表
 
@@ -182,7 +182,7 @@ B,get-latest-telemetry-values-result.json,json,resources/get-latest-telemetry-va
 
 支持的实体类型为：TENANT、CUSTOMER、USER、DASHBOARD、ASSET、DEVICE、ALARM、ENTITY_VIEW
 
-##### 获取特定实体的历史时间序列数据值
+##### 获取特定实体的历史时序数据值
 
 您还可以使用对以下 URL 的 GET 请求获取特定 *实体类型* 和 *实体 ID* 的历史值列表
 
@@ -234,7 +234,7 @@ ws(s)://host:port/api/ws/plugins/telemetry?token=$JWT_TOKEN
  - **entityType** - 唯一实体类型。支持的实体类型为：TENANT、CUSTOMER、USER、DASHBOARD、ASSET、DEVICE、ALARM
  - **entityId** - 唯一实体标识符
  - **keys** - 数据键的逗号分隔列表
- - **timeWindow** - 时间序列订阅的获取间隔，以毫秒为单位。数据将在以下间隔内获取 **[now()-timeWindow, now()]**
+ - **timeWindow** - 时序订阅的获取间隔，以毫秒为单位。数据将在以下间隔内获取 **[now()-timeWindow, now()]**
  - **startTs** - 历史数据查询的获取间隔的开始时间，以毫秒为单位。
  - **endTs** - 历史数据查询的获取间隔的结束时间，以毫秒为单位。
 

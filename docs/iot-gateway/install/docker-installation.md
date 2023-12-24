@@ -1,13 +1,13 @@
 ---
 layout: docwithnav-gw
-title: 使用 Docker 在 Linux 或 Mac OS 上安装 ThingsBoard IoT 网关。
+title: 使用 Docker 在 Linux 或 Mac OS 上安装 GridLinks IoT 网关。
 
 ---
 
 * TOC
 {:toc}
 
-本指南将帮助您在 Linux 或 Mac OS 上使用 Docker 安装并启动 ThingsBoard 网关。
+本指南将帮助您在 Linux 或 Mac OS 上使用 Docker 安装并启动 GridLinks 网关。
 
 
 ## 先决条件

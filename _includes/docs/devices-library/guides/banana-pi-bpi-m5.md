@@ -1,4 +1,4 @@
-{% assign deviceName = page.title | remove: "如何连接 " | remove: "到 ThingsBoard？" %}
+{% assign deviceName = page.title | remove: "如何连接 " | remove: "到 GridLinks？" %}
 {% assign prerequisites = "
 - " | append: deviceName | append: "
 - [tb-mqtt-client 库](https://pypi.org/project/tb-mqtt-client/)
@@ -17,7 +17,7 @@ Banana Pi BPI-M5 是一款功能强大的单板计算机，配备 Realtek RTD 76
 
 {% include /docs/devices-library/blocks/basic/introduction-block.md %}
 
-## 在 ThingsBoard 上创建设备
+## 在 GridLinks 上创建设备
 
 {% include /docs/devices-library/blocks/basic/thingsboard-create-device-block.md %}
 
@@ -25,7 +25,7 @@ Banana Pi BPI-M5 是一款功能强大的单板计算机，配备 Realtek RTD 76
 
 {% include /docs/devices-library/blocks/single-board-computers/install-required-libraries-and-tools-block.md %}
 
-## 将设备连接到 ThingsBoard
+## 将设备连接到 GridLinks
 
 {% include /docs/devices-library/blocks/basic/thingsboard-provide-device-access-token-block.md %}
 
@@ -34,7 +34,7 @@ Banana Pi BPI-M5 是一款功能强大的单板计算机，配备 Realtek RTD 76
 ## 使用客户端和共享属性请求同步设备状态
 {% include /docs/devices-library/blocks/single-board-computers/thingsboard-synchronize-device-state-using-attribute-requests-block.md %}
 
-## 在 ThingsBoard 上检查数据
+## 在 GridLinks 上检查数据
 
 {% include /docs/devices-library/blocks/single-board-computers/check-data-on-thingsboard-block.md %}
 

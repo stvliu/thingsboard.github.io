@@ -5,17 +5,17 @@
 
 Telegram 提供创建 Telegram 机器人的可能性，这些机器人被视为第三方应用程序。
 因此，在本教程中，我们将演示如何创建 Telegram 机器人<br>
-并配置 ThingsBoard 规则引擎，以便能够使用 Rest API 调用扩展向 Telegram 应用发送通知。
+并配置 GridLinks 规则引擎，以便能够使用 Rest API 调用扩展向 Telegram 应用发送通知。
 
 ## 使用案例
 
 本教程基于 [创建和清除警报](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/#use-case) 教程及其用例。
 我们将重用上述教程中的规则链，并将添加更多规则节点以与 Telegram 集成
 
-假设您的设备使用 DHT22 传感器将温度读数收集并推送到 ThingsBoard。
+假设您的设备使用 DHT22 传感器将温度读数收集并推送到 GridLinks。
 DHT22 传感器适用于 -40 至 80°C 的温度读数。如果温度超出正常范围，我们希望生成警报，并在创建警报时向 Telegram 应用发送通知。
 
-在本教程中，我们将配置 ThingsBoard 规则引擎以：
+在本教程中，我们将配置 GridLinks 规则引擎以：
 
 - 如果创建了警报，则向用户发送消息通知。
 

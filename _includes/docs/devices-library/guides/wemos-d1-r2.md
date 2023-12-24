@@ -1,5 +1,5 @@
 {% assign boardLedCount = 1 %}
-{% assign deviceName = page.title | remove: "如何连接 " | remove: "到 ThingsBoard？" %}
+{% assign deviceName = page.title | remove: "如何连接 " | remove: "到 GridLinks？" %}
 {% assign arduinoBoardPath="**ESP8266** > **LOLIN(WEMOS) D1 R2 & mini**" %}
 {% assign prerequisites = "
 - " | append: deviceName | append: "
@@ -18,7 +18,7 @@ WeMos 的特点是成本低，连接和编程简单。
 
 {% include /docs/devices-library/blocks/basic/introduction-block.md %}
 
-## 在 ThingsBoard 上创建设备
+## 在 GridLinks 上创建设备
 
 {% include /docs/devices-library/blocks/basic/thingsboard-create-device-block.md %}
 
@@ -28,13 +28,13 @@ WeMos 的特点是成本低，连接和编程简单。
 
 {% include /docs/devices-library/blocks/microcontrollers/thingsboard-arduino-library-install-block.md %}
 
-## 将设备连接到 ThingsBoard
+## 将设备连接到 GridLinks
 
 {% include /docs/devices-library/blocks/basic/thingsboard-provide-device-access-token-block.md %}
 
 {% include /docs/devices-library/blocks/microcontrollers/general-code-to-program-block.md %}
 
-## 在 ThingsBoard 上检查数据
+## 在 GridLinks 上检查数据
 
 {% include /docs/devices-library/blocks/basic/thingsboard-upload-example-dashboard.md %}
 

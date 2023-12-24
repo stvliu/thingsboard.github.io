@@ -3,14 +3,14 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: 使用 GCP 基础设施设置微服务
-description: 在 GKE 中使用 Kubernetes 设置 ThingsBoard IoT 平台微服务
+description: 在 GKE 中使用 Kubernetes 设置 GridLinks IoT 平台微服务
 
 ---
 
 * TOC
 {:toc}
 
-本指南将帮助您在 GKE 中以微服务模式设置 ThingsBoard。
+本指南将帮助您在 GKE 中以微服务模式设置 GridLinks。
 
 ## 先决条件
 

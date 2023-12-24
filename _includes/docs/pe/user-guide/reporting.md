@@ -30,7 +30,7 @@ ThingsBoard 允许您使用现有仪表板生成报告。
 在每次生成报告请求时，ThingsBoard 节点使用配置的端点 URL 向报告服务器发送请求。
 
 报告服务器在无头浏览器中打开一个带有目标仪表板 URL 的网页并等待页面呈现，
-然后它将仪表板网页捕获到指定格式（*PDF \| PNG \| JPEG*）中，并将捕获的数据作为对 ThingsBoard 的响应发送。
+然后它将仪表板网页捕获到指定格式（*PDF \| PNG \| JPEG*）中，并将捕获的数据作为对 GridLinks 的响应发送。
 
 {% if docsPrefix == 'pe/' %}
 系统管理员可以使用 [thingsboard.yml](/docs/user-guide/install/pe/config/) 配置报告服务器端点 URL。
@@ -85,7 +85,7 @@ ThingsBoard PE 的默认 **根规则链** 支持计划报告生成。
 
 ### 报告小部件
 
-ThingsBoard 通过 **报告** 小部件（它是 **文件** 小部件包的一部分）提供对生成的报告文件的访问。
+GridLinks 通过 **报告** 小部件（它是 **文件** 小部件包的一部分）提供对生成的报告文件的访问。
 
 ![image](/images/user-guide/ui/reporting-reports-widget.png)
  

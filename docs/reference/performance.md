@@ -9,7 +9,7 @@ description: ThingsBoard IoT 平台数据收集性能概述
 {:toc}
 
 ThingsBoard 开源 IoT 平台的关键功能之一是数据收集，这是一项必须在高负载下可靠运行的关键功能。
-在本文中，我们将介绍我们为确保 ThingsBoard 服务器的单个实例能够持续处理 **20,000+** 个设备和每秒 **30,000+** 条 MQTT 发布消息所采取的步骤和改进，
+在本文中，我们将介绍我们为确保 GridLinks 服务器的单个实例能够持续处理 **20,000+** 个设备和每秒 **30,000+** 条 MQTT 发布消息所采取的步骤和改进，
 总而言之，这为我们提供了每分钟大约 **200 万条已发布消息**。
 
 ## 架构
@@ -17,7 +17,7 @@ ThingsBoard 开源 IoT 平台的关键功能之一是数据收集，这是一项
 ThingsBoard 性能利用三个主要项目：
 
 - [Netty](http://netty.io/)，用于 IoT 设备的高性能 MQTT 服务器/代理。
-- [Cassandra](http://cassandra.apache.org/)，用于可扩展的高性能 NoSQL 数据库，以存储来自设备的时间序列数据。
+- [Cassandra](http://cassandra.apache.org/)，用于可扩展的高性能 NoSQL 数据库，以存储来自设备的时序数据。
 - Actor System，用于数百万个设备之间的高性能消息协调。
 - Kafka（或 RabbitMQ、AWS SQS、Azure Event Hub、Google PubSub） - 作为可扩展的消息队列
 
@@ -25,16 +25,16 @@ ThingsBoard 性能利用三个主要项目：
 
 ## 数据流和测试工具
 
-IoT 设备通过 MQTT 连接到 ThingsBoard 服务器，并使用 JSON 有效负载发出“发布”命令。
+IoT 设备通过 MQTT 连接到 GridLinks 服务器，并使用 JSON 有效负载发出“发布”命令。
 单个发布消息的大小约为 100 字节。
 [MQTT](http://mqtt.org/) 是轻量级的发布/订阅消息传递协议，与 HTTP 请求/响应协议相比，它具有许多优势。
 
 ![image](/images/reference/performance/performance-diagram-0.svg)
 
-ThingsBoard 服务器处理 MQTT 发布消息，并将其异步存储到 Cassandra。
+GridLinks 服务器处理 MQTT 发布消息，并将其异步存储到 Cassandra。
 服务器还可以将数据推送到 Web UI 仪表板的 websocket 订阅（如果存在）。
 我们尝试避免任何阻塞操作，这对整体系统性能至关重要。
-ThingsBoard 支持 MQTT QoS 级别 1，这意味着客户端仅在数据存储到 Cassandra 数据库后才会收到对发布消息的响应。
+GridLinks 支持 MQTT QoS 级别 1，这意味着客户端仅在数据存储到 Cassandra 数据库后才会收到对发布消息的响应。
 使用 QoS 级别 1 可能出现的重复数据只是对相应 Cassandra 行的覆盖，因此不会出现在持久数据中。
 此功能提供可靠的数据传递和持久性。
 
@@ -53,7 +53,7 @@ Gatling 能够使用 2 核 CPU 的 5-10% 来模拟 10K MQTT 客户端。
 
 ### 步骤 2. 连接池
 
-我们决定迁移到 AWS EC2 实例，以便能够共享我们执行的结果和测试。我们开始在 [c4.xlarge](http://www.ec2instances.info/?selected=c4.xlarge) 实例（4 个 vCPU 和 7.5 Gb RAM）上运行测试，Cassandra 和 ThingsBoard 服务位于同一位置。
+我们决定迁移到 AWS EC2 实例，以便能够共享我们执行的结果和测试。我们开始在 [c4.xlarge](http://www.ec2instances.info/?selected=c4.xlarge) 实例（4 个 vCPU 和 7.5 Gb RAM）上运行测试，Cassandra 和 GridLinks 服务位于同一位置。
 
 ![image](/images/reference/performance/performance-diagram-1.svg)
 
@@ -150,11 +150,11 @@ poolingOptions
 
 ![image](/images/reference/performance/single_node_x2_with_fix_rps.png)
 
-我们还在 [c4.4xlarge](http://www.ec2instances.info/?selected=c4.4xlarge) 上执行了测试，该测试具有 16 个 vCPU 和 30Gb 的 RAM，但没有注意到显着的改进，并决定分离 ThingsBoard 服务器并将 Cassandra 移至三个节点集群。
+我们还在 [c4.4xlarge](http://www.ec2instances.info/?selected=c4.4xlarge) 上执行了测试，该测试具有 16 个 vCPU 和 30Gb 的 RAM，但没有注意到显着的改进，并决定分离 GridLinks 服务器并将 Cassandra 移至三个节点集群。
 
 ### 步骤 4：水平扩展
 
-我们的主要目标是确定使用在 [c4.2xlarge](http://www.ec2instances.info/?selected=c4.2xlarge) 上运行的单个 ThingsBoard 服务器可以处理多少 MQTT 消息。
+我们的主要目标是确定使用在 [c4.2xlarge](http://www.ec2instances.info/?selected=c4.2xlarge) 上运行的单个 GridLinks 服务器可以处理多少 MQTT 消息。
 我们将在单独的文章中介绍 ThingsBoard 集群的水平可扩展性。
 因此，我们决定将 Cassandra 移至三个具有默认配置的 [c4.xlarge](http://www.ec2instances.info/?selected=c4.xlarge) 单独实例，并同时从两个单独的 [c4.xlarge](http://www.ec2instances.info/?selected=c4.xlarge) 实例启动 gatling 压力测试工具，以最大程度地减少第三方对延迟和吞吐量的可能影响。
 
@@ -181,7 +181,7 @@ poolingOptions
 ## 结论
 
 此性能测试演示了一个小型 ThingsBoard 集群（每小时成本约为 **1 美元**）如何轻松接收、存储和可视化来自您设备的 **1 亿多条消息**。
-我们将继续致力于性能改进，并在我们的下一篇博文中发布 ThingsBoard 服务器集群的性能结果。
+我们将继续致力于性能改进，并在我们的下一篇博文中发布 GridLinks 服务器集群的性能结果。
 我们希望这篇文章对正在评估该平台并希望自行执行性能测试的人们有用。
 我们还希望性能改进步骤对使用类似技术的任何工程师都有用。
 

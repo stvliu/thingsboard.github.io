@@ -174,7 +174,7 @@ Do nothing, postgresql is already running.
 
 ## Upgrading to 2.4.1PE
 
-These steps are applicable for 2.4.0PE ThingsBoard Professional Edition version.
+These steps are applicable for 2.4.0PE  GridLinks专业版 version.
 
 ### Ubuntu/CentOS
 
@@ -272,7 +272,7 @@ net start thingsboard
 
 ## Upgrading to 2.4.2.1PE
 
-These steps are applicable for 2.4.1PE and 2.4.2PE ThingsBoard Professional Edition versions.
+These steps are applicable for 2.4.1PE and 2.4.2PE  GridLinks专业版 versions.
 
 ### Ubuntu/CentOS
 
@@ -369,7 +369,7 @@ net start thingsboard
 
 ## Upgrading to 2.4.3PE
 
-These steps are applicable for 2.4.2PE and 2.4.2.1PE ThingsBoard Professional Edition versions.
+These steps are applicable for 2.4.2PE and 2.4.2.1PE  GridLinks专业版 versions.
 
 ### Ubuntu/CentOS
 
@@ -467,7 +467,7 @@ net start thingsboard
 
 ## Upgrading to 2.5PE
 
-These steps are applicable for 2.4.3PE ThingsBoard Professional Edition version.
+These steps are applicable for 2.4.3PE  GridLinks专业版 version.
 
 ### Ubuntu/CentOS
 
@@ -632,7 +632,7 @@ net start thingsboard
 
 <br>
 
-These steps are applicable for 2.5PE ThingsBoard Professional Edition version.
+These steps are applicable for 2.5PE  GridLinks专业版 version.
 
 ### Ubuntu/CentOS
 

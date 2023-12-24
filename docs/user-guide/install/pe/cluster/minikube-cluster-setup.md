@@ -2,8 +2,8 @@
 layout: docwithnav-pe
 assignees:
 - ashvayka
-title: ThingsBoard Professional Edition 集群设置与 Kubernetes 和 Minikube 指南
-description: ThingsBoard Professional Edition 集群设置与 Kubernetes 和 Minikube 指南
+title:  GridLinks专业版 集群设置与 Kubernetes 和 Minikube 指南
+description:  GridLinks专业版 集群设置与 Kubernetes 和 Minikube 指南
 
 ---
 
@@ -12,7 +12,7 @@ description: ThingsBoard Professional Edition 集群设置与 Kubernetes 和 Min
 * TOC
 {:toc}
 
-本指南将帮助您使用 Kubernetes 和 Minikube 在集群模式下设置 ThingsBoard。
+本指南将帮助您使用 Kubernetes 和 Minikube 在集群模式下设置 GridLinks。
 为此，我们将使用 [Docker Hub](https://hub.docker.com/search?q=thingsboard&type=image&image_filter=store) 上可用的 Docker 容器映像。
 
 ## 先决条件
@@ -36,7 +36,7 @@ minikube addons enable ingress
 
 ## 步骤 1. 查看体系结构页面
 
-从 ThingsBoard v2.2 开始，可以使用新的微服务体系结构和 Docker 容器安装 ThingsBoard 集群。
+从 GridLinks v2.2 开始，可以使用新的微服务体系结构和 Docker 容器安装 GridLinks 集群。
 有关更多详细信息，请参阅 [**微服务**](/docs/reference/msa/) 体系结构页面。
 
 ## 步骤 2. 克隆 ThingsBoard PE Kubernetes 脚本
@@ -78,7 +78,7 @@ nano tb-node.yml
 
 ## 步骤 5. 查看体系结构页面
 
-从 ThingsBoard v2.2 开始，可以使用新的微服务体系结构和 Docker 容器安装 ThingsBoard 集群。
+从 GridLinks v2.2 开始，可以使用新的微服务体系结构和 Docker 容器安装 GridLinks 集群。
 有关更多详细信息，请参阅 [**微服务**](/docs/reference/msa/) 体系结构页面。
 
 ## 步骤 6. 配置 Minikube
@@ -121,7 +121,7 @@ minikube addons enable ingress
 ```
 {: .copy-code}
 
-如果您是第一次在 `high-availability` `DEPLOYMENT_TYPE` 中运行 ThingsBoard 或尚未配置 Redis 集群，则在出现提示时键入 **'yes'**。
+如果您是第一次在 `high-availability` `DEPLOYMENT_TYPE` 中运行 GridLinks 或尚未配置 Redis 集群，则在出现提示时键入 **'yes'**。
 
 执行以下命令以部署 ThingsBoard 资源：
  
@@ -138,16 +138,16 @@ minikube ip
 ```
 {: .copy-code}
 
-您应该会看到 ThingsBoard 登录页面。
+您应该会看到 GridLinks 登录页面。
 
 使用以下默认凭据：
 
-- **系统管理员**：sysadmin@thingsboard.org / sysadmin
+- **系统管理员**：sysadmin@gridlinks.com / sysadmin
 
 如果您使用演示数据安装了数据库（使用 `--loadDemo` 标志），您还可以使用以下凭据：
 
-- **租户管理员**：tenant@thingsboard.org / tenant
-- **客户用户**：customer@thingsboard.org / customer
+- **租户管理员**：tenant@gridlinks.com / tenant
+- **客户用户**：customer@gridlinks.com / customer
 
 如果出现任何问题，您可以检查服务日志以查找错误。
 例如，要查看 ThingsBoard 节点日志，请执行以下命令：

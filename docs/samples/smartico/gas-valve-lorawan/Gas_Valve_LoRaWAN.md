@@ -15,7 +15,7 @@ Gas Shutoff Valve LoRaWAN “Smartico V-LR” 设计用于远程关闭低压气�
 ![image](/images/samples/smartico/gas-valve-lorawan/MainDash.png)
 
 ## 先决条件
-LoRaWAN 技术用于将数据从气阀 V-LR 传输到 ThingsBoard 平台。这是一种无线通信技术，允许在长距离上交换少量数据。首先，您需要配置 LoRaWAN 服务器并确保数据从设备发送到服务器。本指南使用 [ChirpStack 开源 LoRaWAN 网络服务器](https://www.chirpstack.io/application-server/)。
+LoRaWAN 技术用于将数据从气阀 V-LR 传输到 GridLinks 平台。这是一种无线通信技术，允许在长距离上交换少量数据。首先，您需要配置 LoRaWAN 服务器并确保数据从设备发送到服务器。本指南使用 [ChirpStack 开源 LoRaWAN 网络服务器](https://www.chirpstack.io/application-server/)。
 在应用程序页面上完成服务器配置后，表中应出现带有设备类型的条目。
 
 ![image](/images/samples/smartico/gas-valve-lorawan/Lora1.PNG)
@@ -31,7 +31,7 @@ LoRaWAN 技术用于将数据从气阀 V-LR 传输到 ThingsBoard 平台。这�
 ![image](/images/samples/smartico/gas-valve-lorawan/converter.PNG)
 
 ## 步骤 2. 集成配置。
-要将 Gas Shutoff Valve LoRaWAN “Smartico V-LR” 集成到 ThingsBoard 平台，您应该创建一个新的集成，如图所示。
+要将 Gas Shutoff Valve LoRaWAN “Smartico V-LR” 集成到 GridLinks 平台，您应该创建一个新的集成，如图所示。
 
 ![image](/images/samples/smartico/gas-valve-lorawan/integration.PNG)
 
@@ -109,7 +109,7 @@ LoRaWAN 技术用于将数据从气阀 V-LR 传输到 ThingsBoard 平台。这�
 ![image](/images/samples/smartico/gas-valve-lorawan/asset2.PNG)
 
 ## 步骤 5. 规则链导入和配置。
-除了仪表读数外，还可以监视设备的状态。例如，您可以获取有关电池电量不足、打开设备外壳、暴露于磁场等信息。此信息显示在警报小部件中。因此，您应该首先设置规则链。导入包含警报的 [alarms_gas_valve.json](/docs/samples/smartico/gas-valve-lorawan/resources/alarms_gas_valve.json) 文件，并将规则链的配置保存在 ThingsBoard 中。
+除了仪表读数外，还可以监视设备的状态。例如，您可以获取有关电池电量不足、打开设备外壳、暴露于磁场等信息。此信息显示在警报小部件中。因此，您应该首先设置规则链。导入包含警报的 [alarms_gas_valve.json](/docs/samples/smartico/gas-valve-lorawan/resources/alarms_gas_valve.json) 文件，并将规则链的配置保存在 GridLinks 中。
 
 ![image](/images/samples/smartico/gas-valve-lorawan/alarm1.PNG)
 

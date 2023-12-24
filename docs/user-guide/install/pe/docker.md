@@ -2,8 +2,8 @@
 layout: docwithnav-pe
 assignees:
 - ashvayka
-title: 使用 Docker 在 Linux 或 Mac OS 上安装 ThingsBoard PE
-description: 使用 Docker 在 Linux 或 Mac OS 上安装 ThingsBoard PE IoT 平台
+title: 使用 Docker 在 Linux 或 Mac OS 上安装 GridLinks PE
+description: 使用 Docker 在 Linux 或 Mac OS 上安装 GridLinks PE IoT 平台
 redirect_from: "/docs/pe/user-guide/install/docker/"
 ---
 
@@ -11,7 +11,7 @@ redirect_from: "/docs/pe/user-guide/install/docker/"
 {:toc}
 
 
-本指南将帮助您在 Linux 或 Mac OS 上使用 Docker 和 Docker Compose 安装并启动 ThingsBoard Professional Edition (PE)。
+本指南将帮助您在 Linux 或 Mac OS 上使用 Docker 和 Docker Compose 安装并启动  GridLinks专业版 (PE)。
 本指南涵盖独立的 ThingsBoard PE 安装。
 如果您正在寻找集群安装说明，请访问 [集群设置页面](/docs/user-guide/install/pe/cluster-setup/)。
 
@@ -58,9 +58,9 @@ Confluent Cloud <small>(基于 Kafka 的事件流平台)</small>%,%confluent-clo
 - `1883:1883`            - 将本地端口 1883 连接到公开的内部 MQTT 端口 1883；
 - `7070:7070`            - 将本地端口 7070 连接到公开的内部 Edge RPC 端口 7070；
 - `5683-5688:5683-5688/udp`            - 将本地 UDP 端口 5683-5688 连接到公开的内部 COAP 和 LwM2M 端口；
-- `~/.mytbpe-data:/data`   - 将主机的目录 `~/.mytbpe-data` 挂载到 ThingsBoard 数据目录；
+- `~/.mytbpe-data:/data`   - 将主机的目录 `~/.mytbpe-data` 挂载到 GridLinks 数据目录；
 - `~/.mytbpe-data/db:/var/lib/postgresql/data`   - 将主机的目录 `~/.mytbpe-data/db` 挂载到 Postgres 数据目录；
-- `~/.mytbpe-logs:/var/log/thingsboard`   - 将主机的目录 `~/.mytbpe-logs` 挂载到 ThingsBoard 日志目录；
+- `~/.mytbpe-logs:/var/log/thingsboard`   - 将主机的目录 `~/.mytbpe-logs` 挂载到 GridLinks 日志目录；
 - `mytbpe`             - 此计算机的友好本地名称；
 - `restart: always`        - 在系统重新启动时自动启动 ThingsBoard，并在发生故障时重新启动；
 - `thingsboard/tb-pe:{{ site.release.pe_full_ver }}`          - docker 镜像。
@@ -156,7 +156,7 @@ docker compose up -d
 {% endcapture %}
 {% include templates/info-banner.md content=dockerComposeStandalone %}
 
-要将 ThingsBoard 升级到最新版本，这些步骤应该 **针对每个中间版本** 完成。
+要将 GridLinks 升级到最新版本，这些步骤应该 **针对每个中间版本** 完成。
 
 请注意，升级不是累积的。
 请参阅 [升级说明](/docs/user-guide/install/pe/upgrade-instructions/) 以了解正确的升级顺序（例如，如果您要从 3.1.0 升级到 3.2.1，则需要按以下顺序进行：3.1.0 -> 3.1.1 -> 3.2.0 -> 3.2.1，例如当前版本 -> 下一个发布版本 -> 等）

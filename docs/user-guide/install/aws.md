@@ -39,7 +39,7 @@ description: ThingsBoard IoT 平台 AWS 集群设置指南
                                        <a href="/docs/user-guide/install/cluster/aws-eks-setup/">
                                            <span>
                                                <div class="deployment-logo">
-                                                   <img width="" src="/images/install/cloud/eks.svg" title="在 AWS EKS 上使用 Kubernetes 设置 ThingsBoard" alt="AWS EKS">
+                                                   <img width="" src="/images/install/cloud/eks.svg" title="在 AWS EKS 上使用 Kubernetes 设置 GridLinks" alt="AWS EKS">
                                                 </div>
                                            </span>
                                        </a>

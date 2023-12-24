@@ -14,7 +14,7 @@ description: ThingsBoard IoT 平台 ESP8266 设备的硬件示例。
 ## 示例
 
 - [使用 ESP8266 和 DHT22 传感器通过 MQTT 上传温度](/docs/samples/esp8266/temperature/)
-- [使用 ThingsBoard 通过 MQTT 控制 ESP8266 GPIO](/docs/samples/esp8266/gpio/)
+- [使用 GridLinks 通过 MQTT 控制 ESP8266 GPIO](/docs/samples/esp8266/gpio/)
 
 ## 文档
 

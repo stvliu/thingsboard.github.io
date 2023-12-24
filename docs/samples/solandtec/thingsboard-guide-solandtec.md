@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
-title: ADAM-6717 与 ThingsBoard Cloud 的连接指南，解锁无缝的物联网连接
-description: ADAM-6717 与 ThingsBoard Cloud 的连接指南，解锁无缝的物联网连接
+title: ADAM-6717 与 GridLinks云服务 的连接指南，解锁无缝的物联网连接
+description: ADAM-6717 与 GridLinks云服务 的连接指南，解锁无缝的物联网连接
 ---
 
 * TOC
@@ -9,12 +9,12 @@ description: ADAM-6717 与 ThingsBoard Cloud 的连接指南，解锁无缝的�
 
 ## 概述
 
-在本综合指南中，我们将引导您完成在 ADAM-6717 和 ThingsBoard Cloud 之间建立无缝连接的过程。
-通过遵循这些分步说明，您将能够将 ThingsBoard Cloud 的强大功能与您的 ADAM-6717 模块集成并利用。
+在本综合指南中，我们将引导您完成在 ADAM-6717 和 GridLinks云服务 之间建立无缝连接的过程。
+通过遵循这些分步说明，您将能够将 GridLinks Cloud 的强大功能与您的 ADAM-6717 模块集成并利用。
 
-## 第 1 步：在 ThingsBoard Cloud 平台上创建新设备
+## 第 1 步：在 GridLinks Cloud 平台上创建新设备
 
-要在 ADAM-6717 模块和 ThingsBoard Cloud 平台之间建立连接，第一步是创建一个新设备。
+要在 ADAM-6717 模块和 GridLinks云服务 平台之间建立连接，第一步是创建一个新设备。
 按照以下说明进行操作：
 
 - 登录到您的 Thingsboard 实例。
@@ -36,7 +36,7 @@ description: ADAM-6717 与 ThingsBoard Cloud 的连接指南，解锁无缝的�
 
 - 输入所有必要详细信息后，单击“添加”按钮以创建新设备。
 
-通过创建新设备，您正在准备一个目的地，您的 ADAM-6717 模块中的数据将被发送到该目的地，以便在 ThingsBoard Cloud 平台内存储和可视化。
+通过创建新设备，您正在准备一个目的地，您的 ADAM-6717 模块中的数据将被发送到该目的地，以便在 GridLinks Cloud 平台内存储和可视化。
 
 ## 第 2 步：配置 ADAM-6717 模块以实现连接
 
@@ -67,22 +67,22 @@ ADAM-6700 系列网关具有两个 MAC ID，它们列在设备侧面的标签上
 
 ![image](/images/samples/solandtec/Imagen6.png)
 
-## 第 3 步：配置 NodeRED 以与 ThingsBoard Cloud 集成
+## 第 3 步：配置 NodeRED 以与 GridLinks云服务 集成
 
-此配置设置了一个流，其中数据将由注入节点注入并使用 MQTT 输出节点发送到 ThingsBoard Cloud。
+此配置设置了一个流，其中数据将由注入节点注入并使用 MQTT 输出节点发送到 GridLinks Cloud。
 - 将“注入”节点从 Node-RED 调色板拖放到工作区。同样，从调色板中拖放一个“MQTT 输出”节点。
 - 通过单击并拖动它们之间的连接器，将注入节点的输出连接到 MQTT 输出节点的输入。
-- 注入节点：Thingsboard 以 JSON 格式获取数据，该格式使用“键”和“值”。通过将注入节点配置为使用键值对以 JSON 格式发送数据，您可以确保数据与 ThingsBoard 的数据结构兼容。
+- 注入节点：Thingsboard 以 JSON 格式获取数据，该格式使用“键”和“值”。通过将注入节点配置为使用键值对以 JSON 格式发送数据，您可以确保数据与 GridLinks 的数据结构兼容。
 - 双击 MQTT 输出节点以打开其配置设置。
 
 ![image](/images/samples/solandtec/Imagen7.png)
 
 在 MQTT 服务器设置中，您需要配置以下信息：
 
-- **MQTT 代理**：提供 MQTT 代理的地址或主机名。这通常是 ThingsBoard Cloud 为 MQTT 通信提供的 URL。
-- **端口**：指定 MQTT 代理的端口号。MQTT 的默认端口是 1883，但请咨询 ThingsBoard Cloud 以了解任何特定端口要求。
-- **客户端 ID**：输入连接到 MQTT 代理的客户端的唯一标识符。这有助于在 ThingsBoard Cloud 平台中识别您的 Node-RED 实例。
-- **主题**：指定您要发布数据的 MQTT 主题。此主题应与 ThingsBoard Cloud 中定义的主题结构一致。
+- **MQTT 代理**：提供 MQTT 代理的地址或主机名。这通常是 GridLinks Cloud 为 MQTT 通信提供的 URL。
+- **端口**：指定 MQTT 代理的端口号。MQTT 的默认端口是 1883，但请咨询 GridLinks云服务 以了解任何特定端口要求。
+- **客户端 ID**：输入连接到 MQTT 代理的客户端的唯一标识符。这有助于在 GridLinks Cloud 平台中识别您的 Node-RED 实例。
+- **主题**：指定您要发布数据的 MQTT 主题。此主题应与 GridLinks云服务 中定义的主题结构一致。
 - **QoS**：选择消息传递的服务质量级别。建议使用 QoS 级别 1 来确保可靠的消息传递。
 - **保留**：选择 MQTT 消息是否应由代理保留。保留的消息保留在代理上，并在连接时发送给新订阅者。
 
@@ -96,13 +96,13 @@ ADAM-6700 系列网关具有两个 MAC ID，它们列在设备侧面的标签上
 
 按照前面步骤中提到的配置注入节点和 MQTT 输出节点后，您就可以发送数据了。
 - 在您的 Node-RED 工作区中找到“注入”节点。
-- 单击“注入”按钮以触发将数据发送到 ThingsBoard Cloud 中的设备。
-- 单击“注入”按钮后，Node-RED 将生成数据有效负载并将其发送到 MQTT 输出节点，然后该节点将数据发布到 ThingsBoard Cloud 平台上指定的主题。
+- 单击“注入”按钮以触发将数据发送到 GridLinks Cloud 中的设备。
+- 单击“注入”按钮后，Node-RED 将生成数据有效负载并将其发送到 MQTT 输出节点，然后该节点将数据发布到 GridLinks Cloud 平台上指定的主题。
 
 ![image](/images/samples/solandtec/Imagen11.png)
 
 <br>
-恭喜！您现在已成功将数据从 Node-RED 发送到 ThingsBoard Cloud 中的设备。
+恭喜！您现在已成功将数据从 Node-RED 发送到 GridLinks Cloud 中的设备。
 
 ## 后续步骤
 

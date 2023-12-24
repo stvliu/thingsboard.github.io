@@ -1,6 +1,6 @@
 ---
 layout: devices-library-article
-title: 如何将 HiLetgo ESP32 开发板连接到 ThingsBoard？
+title: 如何将 HiLetgo ESP32 开发板连接到 GridLinks？
 category: 微控制器
 chip: ESP32
 connectivity: HTTP, MQTT, WIFI, 蓝牙

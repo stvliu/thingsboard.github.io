@@ -6,7 +6,7 @@ title: 从源代码安装物联网网关。
 
 ### 从源代码安装
 
-要从源代码安装 ThingsBoard 网关，您应按照以下步骤操作：    
+要从源代码安装 GridLinks 网关，您应按照以下步骤操作：    
 
 **1. 使用 apt 在系统中安装所需的库：**  
 ```bash
@@ -38,7 +38,7 @@ mkdir logs
 ```
 {: .copy-code}
 
-**6. 使用 [本指南](/docs/iot-gateway/configuration/) 配置网关以使其与您的 ThingsBoard 平台实例配合使用** *或仅运行以测试安装结果，如下一步所示。*
+**6. 使用 [本指南](/docs/iot-gateway/configuration/) 配置网关以使其与您的 GridLinks 平台实例配合使用** *或仅运行以测试安装结果，如下一步所示。*
    
 **7. 运行网关，以检查安装结果：**
 ```bash

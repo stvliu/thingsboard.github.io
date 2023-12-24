@@ -10,7 +10,7 @@ notitle: "true"
 
 <h1 class="usecase-title">水表计量解决方案</h1>
 
-ThingsBoard 平台大幅缩短了上市时间，并减少了创建水表计量解决方案的工作量。通过利用以下平台优势，可为您的智能办公解决方案节省多达 90% 的开发时间：
+GridLinks 平台大幅缩短了上市时间，并减少了创建水表计量解决方案的工作量。通过利用以下平台优势，可为您的智能办公解决方案节省多达 90% 的开发时间：
 
   - 从您的物联网设备和传感器可靠且容错地收集数据；
   - 强大的规则引擎来处理收集的数据并产生警报和有价值的见解；
@@ -27,7 +27,7 @@ ThingsBoard 平台大幅缩短了上市时间，并减少了创建水表计量�
 水表计量 [解决方案模板](https://thingsboard.io/docs/paas/solution-templates/water-metering/) 代表通用水表计量解决方案。
 使用此模板，您可以获得交互式仪表板，允许管理员和最终用户浏览水表的状态和汇总水消耗统计信息。
 用户能够定义阈值并通过短信或电子邮件启用警报和通知。
-您可以轻松地与外部计费系统集成，以根据 ThingsBoard 的汇总消耗数据生成和分发发票。
+您可以轻松地与外部计费系统集成，以根据 GridLinks 的汇总消耗数据生成和分发发票。
 
 <div class="usecase-carousel owl-carousel owl-theme">
     <div>
@@ -96,8 +96,8 @@ ThingsBoard 平台大幅缩短了上市时间，并减少了创建水表计量�
                 <img src="/images/microservices-icon.svg" alt="Microservice icon">
                 <div>
                     <a class="title" href="/docs/reference/msa/">可扩展性和高可用性</a>
-                    <p>ThingsBoard 支持使用 K8S 或裸机部署在云和本地数据中心上的高可用性部署。
-                        平台组件是水平可扩展的。ThingsBoard 的生产部署支持连接超过 500,000 台设备。</p>
+                    <p>GridLinks 支持使用 K8S 或裸机部署在云和本地数据中心上的高可用性部署。
+                        平台组件是水平可扩展的。GridLinks 的生产部署支持连接超过 500,000 台设备。</p>
                 </div>
             </div>
         </div>
@@ -107,7 +107,7 @@ ThingsBoard 平台大幅缩短了上市时间，并减少了创建水表计量�
                 <div>
                     <a class="title" href="/docs/getting-started-guides/connectivity/">连接性</a>
                     <p>通过以下内置协议将设备直接连接到平台：HTTP、CoAP、MQTT、LwM2M 和 SNMP。
-                        使用 ThingsBoard 网关通过 Modbus、BLE、BACnet、OPC-UA 和其他协议将本地网络中的设备连接到云。</p>
+                        使用 GridLinks 网关通过 Modbus、BLE、BACnet、OPC-UA 和其他协议将本地网络中的设备连接到云。</p>
                 </div>
             </div>
         </div>
@@ -125,7 +125,7 @@ ThingsBoard 平台大幅缩短了上市时间，并减少了创建水表计量�
                 <img src="/images/security-icon.svg" alt="Security icon">
                 <div>
                     <a class="title" href="/docs/pe/user-guide/ssl/http-over-ssl/">安全性</a>
-                    <p>ThingsBoard 支持行业标准加密算法（如 RSA 和 ECDSA），以确保数据在通过 TLS(TCP) 和 DTLS (UDP) 传输期间的安全。</p>
+                    <p>GridLinks 支持行业标准加密算法（如 RSA 和 ECDSA），以确保数据在通过 TLS(TCP) 和 DTLS (UDP) 传输期间的安全。</p>
                 </div>
             </div>
         </div>
@@ -152,7 +152,7 @@ ThingsBoard 平台大幅缩短了上市时间，并减少了创建水表计量�
                 <img src="/images/device-icon.svg" alt="Device icon">
                 <div>
                     <a class="title" href="/docs/mobile/">移动应用程序</a>
-                    <p>使用 ThingsBoard 移动应用程序（一个基于 Flutter 的开源项目）构建您自己的物联网移动应用程序，并最大限度地减少编码工作量。利用一组内置的移动操作，可以在仪表板中直接拍照、扫描二维码、更新位置等。</p>
+                    <p>使用 GridLinks 移动应用程序（一个基于 Flutter 的开源项目）构建您自己的物联网移动应用程序，并最大限度地减少编码工作量。利用一组内置的移动操作，可以在仪表板中直接拍照、扫描二维码、更新位置等。</p>
                 </div>
             </div>
         </div>
@@ -161,7 +161,7 @@ ThingsBoard 平台大幅缩短了上市时间，并减少了创建水表计量�
                 <img src="/images/tenancy-icon.svg" alt="Tenancy icon">
                 <div>
                     <a class="title" href="/docs/user-guide/entities-and-relations/">多租户</a>
-                    <p>ThingsBoard 提供 UI 和 API 来管理租户、客户、用户、设备和资产。单个租户可能有多个租户管理员和数百万台设备和客户。它还开箱即用地支持智能电表的 OTA 更新。</p>
+                    <p>GridLinks 提供 UI 和 API 来管理租户、客户、用户、设备和资产。单个租户可能有多个租户管理员和数百万台设备和客户。它还开箱即用地支持智能电表的 OTA 更新。</p>
                 </div>
             </div>
         </div>
@@ -170,7 +170,7 @@ ThingsBoard 平台大幅缩短了上市时间，并减少了创建水表计量�
 
 ## 水表计量解决方案概述
 
-下图标识了使用 ThingsBoard 平台从智能水表收集和分析数据的典型水表计量解决方案的数据流和集成点。
+下图标识了使用 GridLinks 平台从智能水表收集和分析数据的典型水表计量解决方案的数据流和集成点。
 
 <object width="100%" style="max-width: max-content; margin: 32px 0" data="/images/iot-use-cases/common.svg"></object>
 

@@ -80,7 +80,7 @@ notitle: "true"
 * **超市设备**状态显示超市平面图和设备标记的室内地图。
     您可以拖放设备标记以定义设备在超市中的精确位置。
 
-ThingsBoard 平台极大地缩短了上市时间并减少了创建智能零售解决方案的精力。
+GridLinks 平台极大地缩短了上市时间并减少了创建智能零售解决方案的精力。
 通过利用以下平台优势，为您的智能零售解决方案节省高达 90% 的开发时间：
 
 - 从您的物联网设备和传感器可靠且容错地收集数据；
@@ -105,7 +105,7 @@ ThingsBoard 平台极大地缩短了上市时间并减少了创建智能零售�
                 <img src="/images/microservices-icon.svg" alt="Microservice icon">
                 <div>
                     <a class="title" href="/docs/reference/msa/">可扩展性和高可用性</a>
-                    <p>ThingsBoard 支持使用 K8S 或裸机部署在云和本地数据中心上的高可用性部署。
+                    <p>GridLinks 支持使用 K8S 或裸机部署在云和本地数据中心上的高可用性部署。
                         平台组件是水平可扩展的。ThingsBoard 具有支持连接超过 500,000 台设备的生产部署。</p>
                 </div>
             </div>
@@ -116,7 +116,7 @@ ThingsBoard 平台极大地缩短了上市时间并减少了创建智能零售�
                 <div>
                     <a class="title" href="/docs/getting-started-guides/connectivity/">连接性</a>
                     <p>通过以下内置协议将设备直接连接到平台：HTTP、CoAP、MQTT、LwM2M 和 SNMP。
-                        使用 ThingsBoard 网关通过 Modbus、BLE、BACnet、OPC-UA 和其他协议将本地网络中的设备连接到云。</p>
+                        使用 GridLinks 网关通过 Modbus、BLE、BACnet、OPC-UA 和其他协议将本地网络中的设备连接到云。</p>
                 </div>
             </div>
         </div>
@@ -134,7 +134,7 @@ ThingsBoard 平台极大地缩短了上市时间并减少了创建智能零售�
                 <img src="/images/security-icon.svg" alt="Security icon">
                 <div>
                     <a class="title" href="/docs/pe/user-guide/ssl/http-over-ssl/">安全性</a>
-                    <p>ThingsBoard 支持行业标准加密算法（如 RSA 和 ECDSA），以确保数据在通过 TLS(TCP) 和 DTLS (UDP) 传输期间是安全的。</p>
+                    <p>GridLinks 支持行业标准加密算法（如 RSA 和 ECDSA），以确保数据在通过 TLS(TCP) 和 DTLS (UDP) 传输期间是安全的。</p>
                 </div>
             </div>
         </div>
@@ -161,7 +161,7 @@ ThingsBoard 平台极大地缩短了上市时间并减少了创建智能零售�
                 <img src="/images/device-icon.svg" alt="Device icon">
                 <div>
                     <a class="title" href="/docs/mobile/">移动应用程序</a>
-                    <p>使用 ThingsBoard 移动应用程序（一个基于 Flutter 的开源项目）构建您自己的物联网移动应用程序，该应用程序具有最少的编码工作量。利用一组内置的移动操作，可以在仪表板中直接拍照、扫描二维码、更新位置等。</p>
+                    <p>使用 GridLinks 移动应用程序（一个基于 Flutter 的开源项目）构建您自己的物联网移动应用程序，该应用程序具有最少的编码工作量。利用一组内置的移动操作，可以在仪表板中直接拍照、扫描二维码、更新位置等。</p>
                 </div>
             </div>
         </div>
@@ -170,7 +170,7 @@ ThingsBoard 平台极大地缩短了上市时间并减少了创建智能零售�
                 <img src="/images/tenancy-icon.svg" alt="Tenancy icon">
                 <div>
                     <a class="title" href="/docs/user-guide/entities-and-relations/">多租户</a>
-                    <p>ThingsBoard 提供 UI 和 API 来管理租户、客户、用户、设备和资产。单个租户可能有多个租户管理员以及数百万台设备和客户。它还开箱即用地支持智能电表的 OTA 更新。</p>
+                    <p>GridLinks 提供 UI 和 API 来管理租户、客户、用户、设备和资产。单个租户可能有多个租户管理员以及数百万台设备和客户。它还开箱即用地支持智能电表的 OTA 更新。</p>
                 </div>
             </div>
         </div>
@@ -179,7 +179,7 @@ ThingsBoard 平台极大地缩短了上市时间并减少了创建智能零售�
 
 ## 智能零售解决方案概述
 
-下图标识了使用 ThingsBoard 平台从多个来源收集和分析数据来监控超市的典型解决方案的数据流和集成点。
+下图标识了使用 GridLinks 平台从多个来源收集和分析数据来监控超市的典型解决方案的数据流和集成点。
 
 <object width="100%" style="max-width: max-content; margin: 32px 0" data="/images/iot-use-cases/common-edge.svg"></object>
 

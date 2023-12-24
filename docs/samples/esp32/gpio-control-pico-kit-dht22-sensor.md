@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
-title: ESP32 Pico Kit GPIO 控制和 DHT22 传感器监控，使用 ThingsBoard Arduino SDK
-description: ThingsBoard IoT 平台示例，用于 ESP32 Pico Kit GPIO 控制和温度/湿度监控，使用 ThingsBoard Arduino SDK
+title: ESP32 Pico Kit GPIO 控制和 DHT22 传感器监控，使用 GridLinks Arduino SDK
+description: ThingsBoard IoT 平台示例，用于 ESP32 Pico Kit GPIO 控制和温度/湿度监控，使用 GridLinks Arduino SDK
 hidetoc: "true"
 ---
 
@@ -14,9 +14,9 @@ hidetoc: "true"
 
 [ESP32](https://www.espressif.com/en/products/hardware/esp32/overview) 是一系列低成本、低功耗的片上系统微控制器，集成了自包含的 Wi-Fi 和双模蓝牙。ESP32 是 ESP8266 芯片的继任者。
 
-此示例应用程序允许您使用 ThingsBoard Web UI 控制 ESP32 设备的 GPIO，并显示来自 DHT22 传感器的湿度/温度数据。我们将观察连接到引脚的 LED 来控制 GPIO。此应用程序的目的是演示 ThingsBoard [RPC 功能](/docs/user-guide/rpc/) 和 ThingsBoard [遥测](/docs/user-guide/telemetry/)。
+此示例应用程序允许您使用 GridLinks Web UI 控制 ESP32 设备的 GPIO，并显示来自 DHT22 传感器的湿度/温度数据。我们将观察连接到引脚的 LED 来控制 GPIO。此应用程序的目的是演示 GridLinks [RPC 功能](/docs/user-guide/rpc/) 和 ThingsBoard [遥测](/docs/user-guide/telemetry/)。
 
-在 ESP32 上运行的应用程序使用 ThingsBoard Arduino SDK 编写，该 SDK 非常简单易懂。
+在 ESP32 上运行的应用程序使用 GridLinks Arduino SDK 编写，该 SDK 非常简单易懂。
 
 当前 GPIO 状态和 GPIO 控制小部件可视化使用内置的可自定义仪表板。
 
@@ -68,12 +68,12 @@ LED6 正极 | Pico 21 通过电阻 (68Ω - 100Ω)
 
 ## 设备配置
 
-此步骤包含将设备连接到 ThingsBoard 所需的说明。
+此步骤包含将设备连接到 GridLinks 所需的说明。
 
-在浏览器中打开 ThingsBoard Web UI (http://localhost:8080) 并以租户管理员身份登录。
+在浏览器中打开 GridLinks Web UI (http://localhost:8080) 并以租户管理员身份登录。
 如果您在 TB 安装期间加载了演示数据，则可以使用以下凭据：
 
- - 登录名：tenant@thingsboard.org
+ - 登录名：tenant@gridlinks.com
  - 密码：tenant
 
 转到“设备”部分。单击“+”按钮并创建一个名为“ESP32 Pico Device”的设备。将“设备类型”设置为“default”。
@@ -123,7 +123,7 @@ LED6 正极 | Pico 21 通过电阻 (68Ω - 100Ω)
 
 ### 安装 Arduino ThingsBoard SDK
 
-为了简化应用程序开发，请从标准 Arduino 库存储库安装 ThingsBoard Arduino SDK 及其依赖项：
+为了简化应用程序开发，请从标准 Arduino 库存储库安装 GridLinks Arduino SDK 及其依赖项：
 
 1. 进入 **草图 -> 包含库...** 子菜单。选择 **管理库**。
 
@@ -137,7 +137,7 @@ LED6 正极 | Pico 21 通过电阻 (68Ω - 100Ω)
 
    ![image](/images/samples/esp32/gpio-temperature/do-not-use-beta-version-arduinojson.png)
 
-从现在开始，您可以在 Arduino IDE 中直接使用 ThingsBoard SDK。
+从现在开始，您可以在 Arduino IDE 中直接使用 GridLinks SDK。
 
 ### 安装 ESP32 DHT22 驱动程序
 
@@ -176,11 +176,11 @@ esp32-dht-gpio,esp32-dht-gpio.ino,c,resources/esp32-dht-gpio.ino,/docs/samples/e
 
 ## 数据可视化和 GPIO 控制
 
-最后，打开 ThingsBoard Web UI。您可以通过以租户管理员身份登录来访问此仪表板。
+最后，打开 GridLinks Web UI。您可以通过以租户管理员身份登录来访问此仪表板。
 
 在本地安装的情况下（如果在 TB 安装期间添加了演示数据）：
 
- - 登录名：tenant@thingsboard.org
+ - 登录名：tenant@gridlinks.com
  - 密码：tenant
 
 在实时演示服务器的情况下：
@@ -196,7 +196,7 @@ esp32-dht-gpio,esp32-dht-gpio.ino,c,resources/esp32-dht-gpio.ino,/docs/samples/e
 ![image](/images/samples/esp32/gpio-temperature/telemetry.png)
 
 之后，打开 **“仪表板”** 部分，然后找到并打开 **“ESP32 Pico 仪表板”**。
-结果，您将看到一个时间序列图表，显示温度和湿度水平（类似于介绍中的仪表板图像）。
+结果，您将看到一个时序图表，显示温度和湿度水平（类似于介绍中的仪表板图像）。
 
 您还应该观察设备的 GPIO 控制。它由两个小部件组成：一个用于控制 LED 闪烁速度（以毫秒为单位），另一个用于打开和关闭各个 LED。
 

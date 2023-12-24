@@ -8,7 +8,7 @@ hidetoc: "true"
 
 {% assign feature = "Platform Integrations" %}{% include templates/pe-feature-banner.md %}
 
-本指南包含有关如何通过 T-Mobile NB IoT 网络将 SODAQ NB-IoT 板连接到 ThingsBoard Professional Edition (PE) 的分步说明。
+本指南包含有关如何通过 T-Mobile NB IoT 网络将 SODAQ NB-IoT 板连接到 GridLinks Professional Edition (PE) 的分步说明。
 在本指南中，我们将使用免费的 ThingsBoard PE 演示服务器 [thingsboard.cloud](https://thingsboard.cloud/signup)。
 本指南对希望将 SODAQ NB-IoT 板或其他硬件连接到 T-Mobile NB IoT 网络的任何人都有用。
 
@@ -27,9 +27,9 @@ hidetoc: "true"
 
 ## 集成概述
 
-ThingsBoard 平台集成功能允许将数据从各种平台和连接解决方案推送到 ThingsBoard。
-我们将使用“UDP”平台集成来使用 T-Mobile NB IoT 网络的数据并自动在 ThingsBoard 中注册设备。
-除了配置集成之外，我们还将设置 ThingsBoard 来解码传入数据，将其存储在数据库中，在仪表板上可视化并根据可配置阈值生成警报。
+GridLinks 平台集成功能允许将数据从各种平台和连接解决方案推送到 GridLinks。
+我们将使用“UDP”平台集成来使用 T-Mobile NB IoT 网络的数据并自动在 GridLinks 中注册设备。
+除了配置集成之外，我们还将设置 GridLinks 来解码传入数据，将其存储在数据库中，在仪表板上可视化并根据可配置阈值生成警报。
 
 ## 步骤 1. 数据转换器配置
 
@@ -147,7 +147,7 @@ ThingsBoard 平台集成功能允许将数据从各种平台和连接解决方�
 
 需要注意的几点：
 
-* 来自传入消息的 IMEI 将成为 ThingsBoard 中的设备名称；
+* 来自传入消息的 IMEI 将成为 GridLinks 中的设备名称；
 * ThingsBoard 将自动创建类型为“tracker”且名称等于 IMEI 的设备；
 * 从传入的十六进制字符串中解码时间戳和传感器读数。
 * 下表显示了传入十六进制字符串中包含的每个编码字段的第一个字节位置和字节数：

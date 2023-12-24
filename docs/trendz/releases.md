@@ -26,7 +26,7 @@ description: ThingsBoard Trendz Analytics 发布说明
 * 修复视图中的工具提示和单位
 * 修复字段加载顺序过程
 * 修复多个字段的热图导出
-* 修复 ThingsBoard 仪表板和 Trendz 视图之间的时间同步
+* 修复 GridLinks 仪表板和 Trendz 视图之间的时间同步
 * 修复拓扑发现后的业务实体排序
 * 修复导出为图像时的图表背景颜色
 
@@ -56,7 +56,7 @@ description: ThingsBoard Trendz Analytics 发布说明
 * 为预测模型添加 Python 脚本支持（Beta）
 * 添加对多变量预测模型的支持
 * 添加新的预测模型：Prophet、ARIMA、SARIMAX
-* 在 ThingsBoard 仪表板上以相对时间自动刷新小部件
+* 在 GridLinks 仪表板上以相对时间自动刷新小部件
 * 添加白标设置
 * 添加暗模式
 * 手动设置轴的最小/最大范围
@@ -74,7 +74,7 @@ description: ThingsBoard Trendz Analytics 发布说明
 * 添加安排异常自动发现的功能
 * 为开发计算字段添加调试工具
 * 将简单的计算字段计算迁移到后端 JS 引擎
-* 将小部件包更新到 ThingsBoard v3.5
+* 将小部件包更新到 GridLinks v3.5
 * 为计算字段添加预测支持
 * 视图字段的不区分大小写搜索
 * 为表格、饼图和条形图添加前 N 个限制
@@ -109,12 +109,12 @@ description: ThingsBoard Trendz Analytics 发布说明
 * 修复标题编辑器
 * 修复热图 NaN 错误
 * 修复群集设置中缓存的报告竞争条件
-* 修复非时间序列字段的缓存
+* 修复非时序字段的缓存
 
 ## v1.9.2-HF2（2022 年 12 月）
 
 **改进：**
-* 添加对最新 ThingsBoard API 版本的支持
+* 添加对最新 GridLinks API 版本的支持
 
 **错误修复：**
 
@@ -139,7 +139,7 @@ description: ThingsBoard Trendz Analytics 发布说明
 * 在视图表中添加计划任务状态
 * 为 Trendz UI 添加白标选项
 * 改进大型拓扑的 UI 响应能力
-* 支持在 ThingsBoard 仪表板中原生数据导出
+* 支持在 GridLinks 仪表板中原生数据导出
 
 
 **错误修复：**
@@ -155,7 +155,7 @@ description: ThingsBoard Trendz Analytics 发布说明
 * 大型报告的预览模式
 * 为散点图添加线性回归
 * 使用用户时区进行计划任务
-* 为 ThingsBoard 3.4+ 更新本机库
+* 为 GridLinks 3.4+ 更新本机库
 
 
 **错误修复：**
@@ -173,22 +173,22 @@ description: ThingsBoard Trendz Analytics 发布说明
 
 * 添加可配置的填充间隙策略
 * 添加视图模板
-* 将计算的指标作为遥测数据保存在 ThingsBoard 中
+* 将计算的指标作为遥测数据保存在 GridLinks 中
 * 支持报告的警报字段
 * 支持报告的异常字段
 * 在饼图中组合多个字段
 * 保存状态和计算字段以供重复使用
 * 实现与状态和计算字段相关的多根加载
 * 切换到状态和计算字段的 javascript 引擎
-* 改进时间序列预测模型
-* 支持 ThingsBoard 的间隔时间窗口
+* 改进时序预测模型
+* 支持 GridLinks 的间隔时间窗口
 * 改进大型数据集的性能
-* 为 ThingsBoard 3.3+ 更新本机库
+* 为 GridLinks 3.3+ 更新本机库
 * 自动刷新报告中的过滤器值
 * 将资源路径更新为允许在同一域上托管 Trendz 和 Thingsboard
 * 条形图/折线图的可配置工具提示类型
 * 在报告构建期间收集测量值
-* 将 ThingsBoard 小部件库资源托管在 Trendz 服务中
+* 将 GridLinks 小部件库资源托管在 Trendz 服务中
 
 ## v1.8.2（2021 年 12 月）
 
@@ -204,7 +204,7 @@ description: ThingsBoard Trendz Analytics 发布说明
 * 为状态、简单字段和计算字段添加持久缓存
 * 添加视图报告短期缓存
 * 计划字段缓存刷新
-* 添加 ThingsBoard 的本机小部件包
+* 添加 GridLinks 的本机小部件包
 * 更改使用画布的视图的渲染引擎
 * 为第三方服务添加简化的 REST API
 * 为日历视图添加日期单击事件
@@ -253,7 +253,7 @@ description: ThingsBoard Trendz Analytics 发布说明
 * 支持 ThingsBoard 过滤 API
 * 添加日历热图小部件
 * 配置过滤器可见性
-* 支持 ThingsBoard 仪表板中的行单击事件
+* 支持 GridLinks 仪表板中的行单击事件
 * 访问计算字段中的请求开始/结束时间
 * 添加对 Centos 8 的支持
 * 改进傅里叶变换预测模型
@@ -290,7 +290,7 @@ description: ThingsBoard Trendz Analytics 发布说明
 * 显示/隐藏表格的总列
 * 更改图例位置
 * 图表的可配置笔划类型
-* 小部件包：从 ThingsBoard 仪表板获取时间
+* 小部件包：从 GridLinks 仪表板获取时间
 * 小部件包：通过 ThingsBoard 别名支持多值过滤器
 * 可配置的轴位置和标签
 
@@ -331,7 +331,7 @@ description: ThingsBoard Trendz Analytics 发布说明
 
 **改进：**
 
-* 时间序列预测
+* 时序预测
 * 状态字段
 * 缓存和重用数据流
 * 从分析中删除冗余点

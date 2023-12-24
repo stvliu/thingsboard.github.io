@@ -106,7 +106,7 @@ redirect_from: "/docs/services/device-management/"
             </ul>
             <div class="text-content">从本质上讲，如果您的业务严重依赖物联网设备，那么投资物联网设备管理软件可以极大地提高您的运营效率和安全性。</div>
             <h2>我们在物联网设备管理解决方案中的产品</h2>
-            <div class="text-content">在 ThingsBoard，我们提供一套全面的工具来管理您的物联网设备。我们的设备管理平台支持分布式基础设施的各个方面，用于管理、控制和监控软件、硬件和通信组件以及数据流和数据质量。</div>
+            <div class="text-content">在 GridLinks，我们提供一套全面的工具来管理您的物联网设备。我们的设备管理平台支持分布式基础设施的各个方面，用于管理、控制和监控软件、硬件和通信组件以及数据流和数据质量。</div>
             <h3 class="small-padding">我们的解决方案包括：</h3>
             <ul class="list">
                 <li>使用唯一标识符和凭据轻松将新设备添加到系统。</li>
@@ -121,7 +121,7 @@ redirect_from: "/docs/services/device-management/"
         <img class="image" srcset="/images/iot-articles/device_settings_1_1090x658.png 1090w, /images/iot-articles/device_settings_1_2180x1316.png 2180w" sizes="(max-width: 1920px) 1090px, (min-width: 1921px) 2180px" src="/images/iot-articles/device_settings_1_1090x658.png" alt="IoT solutions dashboard with widgets dark"/>
         <div class="text-wrapper">
             <h2 class="center-text">我们的案例</h2>
-            <div class="text-content">在 ThingsBoard，我们已在各种场景中成功实施了我们的物联网设备管理解决方案。</div>
+            <div class="text-content">在 GridLinks，我们已在各种场景中成功实施了我们的物联网设备管理解决方案。</div>
         </div>
         <div class="definitions-block">
             <div class="definitions-list side-paddings">

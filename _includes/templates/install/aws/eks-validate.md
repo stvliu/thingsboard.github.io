@@ -15,12 +15,12 @@ kubectl get ingress
 
 使用以下默认凭据：
 
-- **系统管理员**：sysadmin@thingsboard.org / sysadmin
+- **系统管理员**：sysadmin@gridlinks.com / sysadmin
 
 如果您使用 `--loadDemo` 标志安装了包含演示数据的数据库，您还可以使用以下凭据：
 
-- **租户管理员**：tenant@thingsboard.org / tenant
-- **客户用户**：customer@thingsboard.org / customer
+- **租户管理员**：tenant@gridlinks.com / tenant
+- **客户用户**：customer@gridlinks.com / customer
 
 #### 验证 MQTT/CoAP 访问
 

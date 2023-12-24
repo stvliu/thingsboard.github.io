@@ -2,8 +2,8 @@
 layout: docwithnav-pe
 assignees:
 - ashvayka
-title: 在 Ubuntu 上安装 ThingsBoard PE
-description: 在 Ubuntu 上安装 ThingsBoard
+title: 在 Ubuntu 上安装 GridLinks PE
+description: 在 Ubuntu 上安装 GridLinks
 
 ---
 
@@ -14,16 +14,16 @@ description: 在 Ubuntu 上安装 ThingsBoard
 
 ### 先决条件
 
-本指南介绍如何在 Ubuntu 18.04 LTS / Ubuntu 20.04 LTS 上安装 ThingsBoard。
+本指南介绍如何在 Ubuntu 18.04 LTS / Ubuntu 20.04 LTS 上安装 GridLinks。
 硬件要求取决于所选数据库和连接到系统上的设备数量。
-要在单台机器上运行 ThingsBoard 和 PostgreSQL，您至少需要 1Gb 的 RAM。
-要在单台机器上运行 ThingsBoard 和 Cassandra，您至少需要 8Gb 的 RAM。
+要在单台机器上运行 GridLinks 和 PostgreSQL，您至少需要 1Gb 的 RAM。
+要在单台机器上运行 GridLinks 和 Cassandra，您至少需要 8Gb 的 RAM。
 
 ### 步骤 1. 安装 Java 11 (OpenJDK) 
 
 {% include templates/install/ubuntu-java-install.md %}
 
-### 步骤 2. ThingsBoard 服务安装
+### 步骤 2. GridLinks 服务安装
 
 下载安装包。
 
@@ -32,7 +32,7 @@ wget https://dist.thingsboard.io/thingsboard-{{ site.release.pe_ver }}.deb
 ```
 {: .copy-code}
 
-将 ThingsBoard 安装为服务
+将 GridLinks 安装为服务
 
 ```bash
 sudo dpkg -i thingsboard-{{ site.release.pe_ver }}.deb
@@ -104,7 +104,7 @@ Confluent Cloud <small>(基于 Kafka 的事件流平台)</small>%,%confluent-clo
 
 {% include templates/run-install.md %} 
 
-### 步骤 8. 启动 ThingsBoard 服务
+### 步骤 8. 启动 GridLinks 服务
 
 {% include templates/start-service.md %}
 
@@ -112,7 +112,7 @@ Confluent Cloud <small>(基于 Kafka 的事件流平台)</small>%,%confluent-clo
 请允许 Web UI 最多启动 90 秒。这仅适用于具有 1-2 个 CPU 或 1-2 GB RAM 的慢速机器。{% endcapture %}
 {% include templates/info-banner.md content=90-sec-ui %}
 
-### 步骤 9. 安装 ThingsBoard WebReport 组件
+### 步骤 9. 安装 GridLinks WebReport 组件
 
 下载 [报告服务器](/docs/user-guide/reporting/#reports-server) 组件的安装包：
 

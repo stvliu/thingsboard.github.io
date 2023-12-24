@@ -1,6 +1,6 @@
 ---
 layout: docwithnav
-title: ThingsBoard 架构
+title: GridLinks 架构
 description: ThingsBoard IoT 平台架构
 redirect_from: "/docs/user-guide/rule-engine-2-0/architecture/"
 
@@ -9,7 +9,7 @@ redirect_from: "/docs/user-guide/rule-engine-2-0/architecture/"
 * TOC
 {:toc}
 
-ThingsBoard 设计为在多个节点上分布工作负载，而没有单点故障。
+GridLinks 设计为在多个节点上分布工作负载，而没有单点故障。
 每个 ThingsBoard 节点都是相同的，可以处理来自设备和服务器端应用程序的请求。
 
 ## 概述
@@ -18,7 +18,7 @@ ThingsBoard 设计为在多个节点上分布工作负载，而没有单点故�
 
 #### 设备连接
 
-ThingsBoard 支持 [**MQTT**](/docs/reference/mqtt-api/)、[**LwM2M**](/docs/reference/lwm2m-api/)、[**CoAP**](/docs/reference/coap-api/) 和 [**HTTP**](/docs/reference/http-api/) 协议进行设备连接。
+GridLinks 支持 [**MQTT**](/docs/reference/mqtt-api/)、[**LwM2M**](/docs/reference/lwm2m-api/)、[**CoAP**](/docs/reference/coap-api/) 和 [**HTTP**](/docs/reference/http-api/) 协议进行设备连接。
 可以插入对不同协议的支持或自定义现有实现。
 
 #### 规则引擎
@@ -39,7 +39,7 @@ ThingsBoard 包含一组核心服务，允许管理以下实体：
 
 #### 服务器端 API 网关
 
-每个 ThingsBoard 服务器都为注册用户提供 REST API。
+每个 GridLinks 服务器都为注册用户提供 REST API。
 系统遥测服务允许使用 websocket 和 REST API 管理属性并获取时序数据。
 系统 RPC 服务提供 REST API 将自定义命令推送到设备。
 在此处详细了解 ThingsBoard REST API [here](/docs/reference/rest-api/)
@@ -47,7 +47,7 @@ ThingsBoard 包含一组核心服务，允许管理以下实体：
 ## Actor 模型
 
 [Actor 模型](https://en.wikipedia.org/wiki/Actor_model) 能够对来自设备的消息以及服务器端 API 调用进行高性能并发处理。
-ThingsBoard 使用自己的 Actor System 实现（针对我们的用例进行了优化），具有以下 actor 层次结构。
+GridLinks 使用自己的 Actor System 实现（针对我们的用例进行了优化），具有以下 actor 层次结构。
 
 ![image](/images/reference/actor-system-hierarchies.svg)
 
@@ -70,12 +70,12 @@ ThingsBoard 使用自己的 Actor System 实现（针对我们的用例进行了
 
 ###### 服务发现
 
-ThingsBoard 使用 Zookeeper 进行服务发现。
+GridLinks 使用 Zookeeper 进行服务发现。
 所有 ThingsBoard 节点都是相同的，并在 Zookeeper 中注册为临时节点。Apache Curator [路径缓存收据](http://curator.apache.org/curator-recipes/path-cache.html) 用于跟踪所有可用的同级节点。
 
 ###### 一致性哈希
 
-ThingsBoard 采用 [一致性哈希](https://en.wikipedia.org/wiki/Consistent_hashing) 来确保可扩展性和可用性。
+GridLinks 采用 [一致性哈希](https://en.wikipedia.org/wiki/Consistent_hashing) 来确保可扩展性和可用性。
 在特定节点上接收到的来自设备 A 的消息可能会根据设备 ID 的哈希转发到其他节点。
 尽管这会引入一定的网络开销，但它允许使用已确定的服务器上的相应设备 actor 处理来自特定设备的所有消息，这具有以下优点：
 
@@ -93,17 +93,17 @@ ThingsBoard 采用 [一致性哈希](https://en.wikipedia.org/wiki/Consistent_ha
 
 ### 传输加密
 
-作为系统管理员，您可以将 ThingsBoard 配置为对 HTTP(s) 和 MQTT 传输使用安全套接字层。
+作为系统管理员，您可以将 GridLinks 配置为对 HTTP(s) 和 MQTT 传输使用安全套接字层。
 CoAP 的 DTLS 尚不支持。
 
 ### 设备认证
 
-ThingsBoard 设计为支持多种类型的设备凭据。
+GridLinks 设计为支持多种类型的设备凭据。
 当前版本为所有 [协议](/docs/reference/protocols/) 提供基于令牌的凭据支持，并为 MQTT 协议提供基于 X.509 证书的凭据支持。有关更多详细信息，请参阅 [MQTT over SSL](/docs/user-guide/mqtt-over-ssl/) 指南。
 
 ## 第三方工具
 
-ThingsBoard 使用以下主要第三方项目：
+GridLinks 使用以下主要第三方项目：
 
 * Zookeeper - 用于服务协调
 * Cassandra - 作为可扩展且可靠的数据库

@@ -1,6 +1,6 @@
 ---
 layout: docwithnav-mobile
-title: 在 ThingsBoard 移动应用程序中配置警报详细信息仪表板
+title: 在 GridLinks 移动应用程序中配置警报详细信息仪表板
 
 alarm-dashboard:
  0:

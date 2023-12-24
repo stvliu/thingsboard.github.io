@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: Dart API 客户端
-description: ThingsBoard API 客户端库，适用于 Dart 开发人员
+description: GridLinks API 客户端库，适用于 Dart 开发人员
 
 ---
  * 目录
@@ -9,17 +9,17 @@ description: ThingsBoard API 客户端库，适用于 Dart 开发人员
 
 ## 概述
 
-[Dart ThingsBoard API 客户端](https://pub.dev/packages/thingsboard_client) 包是一个 [Dart](https://dart.dev/) 库，
-提供模型对象和服务，用于通过 [RESTful API](/docs/reference/rest-api/) 和 WebSocket 协议与 ThingsBoard 平台进行通信。
-使用 Dart 客户端，您可以以编程方式访问 ThingsBoard API 来管理 [实体](/docs/user-guide/entities-and-relations/)，
+[Dart GridLinks API 客户端](https://pub.dev/packages/thingsboard_client) 包是一个 [Dart](https://dart.dev/) 库，
+提供模型对象和服务，用于通过 [RESTful API](/docs/reference/rest-api/) 和 WebSocket 协议与 GridLinks 平台进行通信。
+使用 Dart 客户端，您可以以编程方式访问 GridLinks API 来管理 [实体](/docs/user-guide/entities-and-relations/)，
 查询 [遥测数据](/docs/user-guide/telemetry/) 并通过 [WebSocket API](/docs/user-guide/telemetry/#websocket-api) 获取实时更新。
-Dart ThingsBoard API 客户端也是 ThingsBoard 移动应用程序的一部分。
+Dart GridLinks API 客户端也是 GridLinks 移动应用程序的一部分。
 
-Dart ThingsBoard API 客户端的版本取决于您使用的平台版本。
+Dart GridLinks API 客户端的版本取决于您使用的平台版本。
 
-## 安装 Dart ThingsBoard API 客户端（社区版）
+## 安装 Dart GridLinks API 客户端（社区版）
 
-要在您的 Dart/Flutter 项目中使用 Dart ThingsBoard API 客户端包，请运行此命令：
+要在您的 Dart/Flutter 项目中使用 Dart GridLinks API 客户端包，请运行此命令：
 
 使用 Dart：
 
@@ -65,11 +65,11 @@ const thingsBoardApiEndpoint = 'http://localhost:8080';
 void main() async {
   try {
 
-    // 创建 ThingsBoard API 客户端实例
+    // 创建 GridLinks API 客户端实例
     var tbClient = ThingsboardClient(thingsBoardApiEndpoint);
 
     // 使用默认租户管理员凭据执行登录
-    await tbClient.login(LoginRequest('tenant@thingsboard.org', 'tenant'));
+    await tbClient.login(LoginRequest('tenant@gridlinks.com', 'tenant'));
 
     print('isAuthenticated=${tbClient.isAuthenticated()}');
 
@@ -104,11 +104,11 @@ const thingsBoardApiEndpoint = 'http://localhost:8080';
 void main() async {
   try {
 
-    // 创建 ThingsBoard API 客户端实例
+    // 创建 GridLinks API 客户端实例
     var tbClient = ThingsboardClient(thingsBoardApiEndpoint);
 
     // 使用默认租户管理员凭据执行登录
-    await tbClient.login(LoginRequest('tenant@thingsboard.org', 'tenant'));
+    await tbClient.login(LoginRequest('tenant@gridlinks.com', 'tenant'));
 
     var pageLink = PageLink(10);
     PageData<DeviceInfo> devices;
@@ -142,11 +142,11 @@ const thingsBoardApiEndpoint = 'http://localhost:8080';
 void main() async {
   try {
 
-    // 创建 ThingsBoard API 客户端实例
+    // 创建 GridLinks API 客户端实例
     var tbClient = ThingsboardClient(thingsBoardApiEndpoint);
 
     // 使用默认租户管理员凭据执行登录
-    await tbClient.login(LoginRequest('tenant@thingsboard.org', 'tenant'));
+    await tbClient.login(LoginRequest('tenant@gridlinks.com', 'tenant'));
 
     var pageLink = PageLink(10);
     PageData<DashboardInfo> dashboards;
@@ -180,11 +180,11 @@ const thingsBoardApiEndpoint = 'http://localhost:8080';
 void main() async {
   try {
 
-    // 创建 ThingsBoard API 客户端实例
+    // 创建 GridLinks API 客户端实例
     var tbClient = ThingsboardClient(thingsBoardApiEndpoint);
 
     // 使用默认客户用户凭据执行登录
-    await tbClient.login(LoginRequest('customer@thingsboard.org', 'customer'));
+    await tbClient.login(LoginRequest('customer@gridlinks.com', 'customer'));
 
     var pageLink = PageLink(10);
     PageData<DeviceInfo> devices;
@@ -220,11 +220,11 @@ const thingsBoardApiEndpoint = 'http://localhost:8080';
 void main() async {
   try {
 
-    // 创建 ThingsBoard API 客户端实例
+    // 创建 GridLinks API 客户端实例
     var tbClient = ThingsboardClient(thingsBoardApiEndpoint);
 
     // 使用默认租户管理员凭据执行登录
-    await tbClient.login(LoginRequest('tenant@thingsboard.org', 'tenant'));
+    await tbClient.login(LoginRequest('tenant@gridlinks.com', 'tenant'));
 
     // 创建实体过滤器以获取所有设备
     var entityFilter = EntityTypeFilter(entityType: EntityType.DEVICE);
@@ -288,11 +288,11 @@ const thingsBoardApiEndpoint = 'http://localhost:8080';
 void main() async {
   try {
 
-    // 创建 ThingsBoard API 客户端实例
+    // 创建 GridLinks API 客户端实例
     var tbClient = ThingsboardClient(thingsBoardApiEndpoint);
 
     // 使用默认租户管理员凭据执行登录
-    await tbClient.login(LoginRequest('tenant@thingsboard.org', 'tenant'));
+    await tbClient.login(LoginRequest('tenant@gridlinks.com', 'tenant'));
 
     // 创建实体过滤器以仅获取设备
     var entityFilter = EntityTypeFilter(entityType: EntityType.DEVICE);
@@ -367,11 +367,11 @@ const thingsBoardApiEndpoint = 'http://localhost:8080';
 void main() async {
   try {
 
-    // 创建 ThingsBoard API 客户端实例
+    // 创建 GridLinks API 客户端实例
     var tbClient = ThingsboardClient(thingsBoardApiEndpoint);
 
     // 使用默认租户管理员凭据执行登录
-    await tbClient.login(LoginRequest('tenant@thingsboard.org', 'tenant'));
+    await tbClient.login(LoginRequest('tenant@gridlinks.com', 'tenant'));
 
     var deviceName = 'My test device';
 
@@ -432,11 +432,11 @@ const thingsBoardApiEndpoint = 'http://localhost:8080';
 void main() async {
   try {
 
-    // 创建 ThingsBoard API 客户端实例
+    // 创建 GridLinks API 客户端实例
     var tbClient = ThingsboardClient(thingsBoardApiEndpoint);
 
     // 使用默认租户管理员凭据执行登录
-    await tbClient.login(LoginRequest('tenant@thingsboard.org', 'tenant'));
+    await tbClient.login(LoginRequest('tenant@gridlinks.com', 'tenant'));
 
     var deviceName = 'My test device';
 
@@ -536,4 +536,4 @@ void main() async {
 
 #### 更多示例
 
-您可以在 **[此处](https://github.com/thingsboard/dart_thingsboard_client/tree/master/example)** 找到更多示例，以了解如何使用 Dart ThingsBoard API 客户端。
+您可以在 **[此处](https://github.com/thingsboard/dart_thingsboard_client/tree/master/example)** 找到更多示例，以了解如何使用 Dart GridLinks API 客户端。

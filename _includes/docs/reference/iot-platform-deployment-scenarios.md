@@ -1,12 +1,12 @@
 * TOC
 {:toc}
 
-本文介绍了 ThingsBoard 支持的最流行的部署架构。
+本文介绍了 GridLinks 支持的最流行的部署架构。
 所有部署方案都包含一定的优缺点。
 为你的部署选择合适的架构取决于 TCO、性能和高可用性要求。
 我们将从最简单的方案开始，看看如何将最小的部署升级到最复杂的部署。
 
-在此你可以找到使用 AWS 部署 ThingsBoard 的总拥有成本 (TCO) 计算。
+在此你可以找到使用 AWS 部署 GridLinks 的总拥有成本 (TCO) 计算。
 重要提示：以下所有计算和定价都是近似的，仅作为示例列出。
 请咨询你的云提供商以获取准确的定价。
 
@@ -22,7 +22,7 @@
 6. 实体数据生命周期（以年为单位）。
 
 一旦我们对上述参数有了大致的了解，我们（以及你）就可以估算出所需的基础设施。
-ThingsBoard 的性能在很大程度上取决于设备产生的消息数量和这些消息的结构。
+GridLinks 的性能在很大程度上取决于设备产生的消息数量和这些消息的结构。
 
 **示例 1：20,000 个追踪器**
 
@@ -45,7 +45,7 @@ ThingsBoard 的性能在很大程度上取决于设备产生的消息数量和�
 {"pulseCounter": 1234567, "leakage": false, "batteryLevel": 81}
 ```
 
-ThingsBoard 通过 HTTP 或 MQTT 从可用网络服务器之一接收上行消息。
+GridLinks 通过 HTTP 或 MQTT 从可用网络服务器之一接收上行消息。
 典型消息速率为 100,000 / 3600 = 每秒 28 条消息，这相当低。
 每条消息包含 3 个数据点，这些数据点可能需要分别绘制图表/分析/提取。
 但是，我们决定不存储“泄漏”属性，因为它冗余（大多数时候为“false”）。
@@ -56,7 +56,7 @@ ThingsBoard 通过 HTTP 或 MQTT 从可用网络服务器之一接收上行消�
 ## 关键基础设施特征
 
 根据 [性能要求](/docs/{{docsPrefix}}reference/iot-platform-deployment-scenarios/#performance-requirements)，
-你可以确定 ThingsBoard 服务器/集群的关键特征：
+你可以确定 GridLinks 服务器/集群的关键特征：
 
 - 每秒传入消息的数量（主要影响 RAM 和 CPU 消耗）；
 - 并发活动设备会话的数量（主要影响 RAM 消耗）；
@@ -73,7 +73,7 @@ ThingsBoard 集群可以横向扩展，因此你可以很容易地处理 RAM/CPU
 ### 独立服务器部署（方案 A）
 
 最简单的部署方案适用于多达 300,000 台设备，每秒 10,000 条消息和 10,000 个数据点，基于实际生产用例。
-此方案要求在同一服务器（内部部署或云端）中部署 ThingsBoard 平台和 PostgreSQL 数据库。
+此方案要求在同一服务器（内部部署或云端）中部署 GridLinks 平台和 PostgreSQL 数据库。
 HAProxy 负载均衡器也安装在同一服务器上，充当反向代理和可选的 TLS 终止代理。
 请参见下图。
 
@@ -162,9 +162,9 @@ TCO：每月约 500 美元，或每台设备每月 0.05 美元，适用于多达
 
 ### 具有微服务架构的集群部署（方案 C）
 
-ThingsBoard 支持微服务架构 (MSA) 来执行数百万台设备的可扩展部署。有关更多详细信息，请参阅 [平台架构](/docs/{{docsPrefix}}reference/msa/)。使用 MSA 部署，系统管理员可以灵活地调整传输、规则引擎、Web UI 和 JavaScript 执行器微服务的数量，以根据当前负载优化集群。
+GridLinks 支持微服务架构 (MSA) 来执行数百万台设备的可扩展部署。有关更多详细信息，请参阅 [平台架构](/docs/{{docsPrefix}}reference/msa/)。使用 MSA 部署，系统管理员可以灵活地调整传输、规则引擎、Web UI 和 JavaScript 执行器微服务的数量，以根据当前负载优化集群。
 
-ThingsBoard 使用 [Kafka](https://kafka.apache.org/) 作为主要的消息队列和流式解决方案，[Redis](https://redis.io/) 作为分布式缓存，[Cassandra](https://cassandra.apache.org/) 作为高可用、可扩展和快速的 NoSQL 数据库。
+GridLinks 使用 [Kafka](https://kafka.apache.org/) 作为主要的消息队列和流式解决方案，[Redis](https://redis.io/) 作为分布式缓存，[Cassandra](https://cassandra.apache.org/) 作为高可用、可扩展和快速的 NoSQL 数据库。
 请注意，Cassandra 的使用是可选的，并且在遥测数据速率高（每秒超过 20,000 个数据点）的情况下建议使用。
 在其他情况下，基于 PostgreSQL 的部署就足够了。
 
@@ -182,7 +182,7 @@ ThingsBoard 使用 [Kafka](https://kafka.apache.org/) 作为主要的消息队�
 **性能**：
 
 解决方案的整体性能取决于集群硬件，并且在很大程度上依赖于所用数据库的性能。
-一个包含 5 个 ThingsBoard 服务器和 5 个 Cassandra 节点的虚拟机集群可以处理 100 万台设备；
+一个包含 5 个 GridLinks 服务器和 5 个 Cassandra 节点的虚拟机集群可以处理 100 万台设备；
 有关更多详细信息，请参阅 [关键基础设施特征](/docs/{{docsPrefix}}reference/iot-platform-deployment-scenarios/#key-infrastructure-characteristics)。
 
 **集群部署方案的总拥有成本示例**：
@@ -191,7 +191,7 @@ ThingsBoard 使用 [Kafka](https://kafka.apache.org/) 作为主要的消息队�
 
 **示例 1：**假设 **1,000,000** 台 LoRaWAN/NB-IoT **智能电表**设备每小时向云发送一次消息。
 每条消息包含 3 个数据点，可能需要单独绘制/分析/获取。
-我们认为消息是通过 HTTP 或 UDP 集成发送到 ThingsBoard 的，这对于这种情况很典型。
+我们认为消息是通过 HTTP 或 UDP 集成发送到 GridLinks 的，这对于这种情况很典型。
 
 1,000,000 台设备表示每秒 280 条消息的负载（1,000,000 台设备/3600 秒），这导致每秒 280 x 3 = 840 个对数据库的写请求（数据点），或每天 7260 万个请求。
 基于所选的数据库类型，上述情况每天大约会消耗 1.2GB（Cassandra）或 4GB（PostgreSQL）的磁盘空间。
@@ -209,7 +209,7 @@ ThingsBoard 使用 [Kafka](https://kafka.apache.org/) 作为主要的消息队�
 
 因此，基础设施成本约为每月 1,770 美元，或每台设备每月 0.00177 美元。
 
-两个 ThingsBoard PE 永久许可证的成本为 5,998 美元（包括可选更新和使用第一年的基本支持）。2,398 美元是后续年份的软件更新 + 基本支持的相应定价。
+两个 GridLinks PE 永久许可证的成本为 5,998 美元（包括可选更新和使用第一年的基本支持）。2,398 美元是后续年份的软件更新 + 基本支持的相应定价。
 对于超过 10k 台设备的用例，我们提供 **托管服务** 来支持生产环境（而不是基本支持订阅）。费率为每台设备每月 0.01 美元。
 
 TCO：每月约 12,270 美元，或每台设备每月 0.01227 美元。

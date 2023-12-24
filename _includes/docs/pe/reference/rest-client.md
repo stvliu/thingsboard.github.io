@@ -4,7 +4,7 @@
 ## REST 客户端
 
 ThingsBoard REST API 客户端可帮助您通过 Java 应用程序与 ThingsBoard REST API 进行交互。
-使用 Rest 客户端，您可以以编程方式在 ThingsBoard 中创建资产、设备、客户、用户和其他实体及其关系。
+使用 Rest 客户端，您可以以编程方式在 GridLinks 中创建资产、设备、客户、用户和其他实体及其关系。
  
 安装 Rest 客户端的推荐方法是使用构建自动化工具，例如 Maven。
 REST 客户端的版本取决于您正在使用的平台的版本。   
@@ -45,7 +45,7 @@ REST 客户端的版本取决于您正在使用的平台的版本。
 String url = "http://localhost:8080";
 
 // 默认租户管理员凭据
-String username = "tenant@thingsboard.org";
+String username = "tenant@gridlinks.com";
 String password = "tenant";
 
 // 创建新的 rest 客户端并使用凭据进行身份验证
@@ -72,7 +72,7 @@ client.close();
 String url = "http://localhost:8080";
 
 // 使用默认客户用户凭据登录
-String username = "tenant@thingsboard.org";
+String username = "tenant@gridlinks.com";
 String password = "tenant";
 RestClient client = new RestClient(url);
 client.login(username, password);
@@ -95,7 +95,7 @@ client.close();
 String url = "http://localhost:8080";
 
 // 默认租户管理员凭据
-String username = "tenant@thingsboard.org";
+String username = "tenant@gridlinks.com";
 String password = "tenant";
 
 // 创建新的 rest 客户端并使用凭据进行身份验证
@@ -124,7 +124,7 @@ client.close();
 String url = "http://localhost:8080";
 
 // 默认租户管理员凭据
-String username = "tenant@thingsboard.org";
+String username = "tenant@gridlinks.com";
 String password = "tenant";
 
 // 创建新的 rest 客户端并使用凭据进行身份验证
@@ -155,7 +155,7 @@ client.close();
 String url = "http://localhost:8080";
 
 // 使用默认客户用户凭据登录
-String username = "tenant@thingsboard.org";
+String username = "tenant@gridlinks.com";
 String password = "tenant";
 RestClient client = new RestClient(url);
 client.login(username, password);
@@ -181,7 +181,7 @@ client.close();
 String url = "http://localhost:8080";
 
 // 使用默认客户用户凭据登录
-String username = "tenant@thingsboard.org";
+String username = "tenant@gridlinks.com";
 String password = "tenant";
 RestClient client = new RestClient(url);
 client.login(username, password);
@@ -230,7 +230,7 @@ client.close();
 String url = "http://localhost:8080";
 
 // 使用默认客户用户凭据登录
-String username = "tenant@thingsboard.org";
+String username = "tenant@gridlinks.com";
 String password = "tenant";
 RestClient client = new RestClient(url);
 client.login(username, password);
@@ -294,7 +294,7 @@ client.close();
 String url = "http://localhost:8080";
 
 // 使用默认客户用户凭据登录
-String username = "tenantg@thingsboard.org";
+String username = "tenant@gridlinks.com";
 String password = "tenant";
 RestClient client = new RestClient(url);
 client.login(username, password);
@@ -344,7 +344,7 @@ client.close();
 final String url = "http://localhost:8080";
 
 // 默认系统管理员凭据
-final String username = "sysadmin@thingsboard.org";
+final String username = "sysadmin@gridlinks.com";
 final String password = "sysadmin";
 
 // 创建新的 restClient 并使用系统管理员凭据进行身份验证
@@ -356,7 +356,7 @@ Tenant tenant = new Tenant();
 tenant.setTitle("Test Tenant");
 tenant = restClient.saveTenant(tenant);
 
-final String tenantUsername = "testtenant@thingsboard.org";
+final String tenantUsername = "testtenant@gridlinks.com";
 final String tenantPassword = "testtenant";
 
 // 为租户创建用户
@@ -428,7 +428,7 @@ groupPermission.setEntityGroupType(sharedDashboardsGroup.getType());
 groupPermission = restClient.saveGroupPermission(groupPermission);
 
 // 使用租户“共享仪表板”组中的默认仪表板为客户 1 创建用户。
-String userEmail = "user@thingsboard.org";
+String userEmail = "user@gridlinks.com";
 String userPassword = "secret";
 User user = new User();
 user.setAuthority(Authority.CUSTOMER_USER);

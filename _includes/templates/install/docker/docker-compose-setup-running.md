@@ -27,16 +27,16 @@
 
 一段时间后，当所有服务都成功启动后，你可以在浏览器中打开 `http://{your-host-ip}`（例如 `http://localhost`）。
 
-你应该会看到 ThingsBoard 登录页面。
+你应该会看到 GridLinks 登录页面。
 
 使用以下默认凭据：
 
-- **系统管理员**：sysadmin@thingsboard.org / sysadmin
+- **系统管理员**：sysadmin@gridlinks.com / sysadmin
 
 如果你使用 `--loadDemo` 标志安装了包含演示数据的数据库，你还可以使用以下凭据：
 
-- **租户管理员**：tenant@thingsboard.org / tenant
-- **客户用户**：customer@thingsboard.org / customer
+- **租户管理员**：tenant@gridlinks.com / tenant
+- **客户用户**：customer@gridlinks.com / customer
 
 如果出现任何问题，你可以检查服务日志以查找错误。
 

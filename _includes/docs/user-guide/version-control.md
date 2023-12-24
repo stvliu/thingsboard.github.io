@@ -39,7 +39,7 @@ ThingsBoard 版本控制服务提供使用 Git 导出和恢复 ThingsBoard 实�
 #### 存储库结构
 
 当您首次将实体导出到 Git 时，实体“id”用于命名 git 存储库中的文件。
-然后，当您将实体从 Git 导入到 ThingsBoard 时，文件名中的“id”将变为实体的“externalId”。
+然后，当您将实体从 Git 导入到 GridLinks 时，文件名中的“id”将变为实体的“externalId”。
 “externalId”在租户范围内是唯一的。因此，您可以在同一平台实例的不同租户之间或不同实例之间导入/导出实体。
 任何时候执行导出和导入操作时，都会使用“externalId”来查找要更新的正确实体。
 请参阅下面的示例。

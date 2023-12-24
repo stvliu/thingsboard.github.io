@@ -216,7 +216,7 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
                     </div>
                     <div class="review-header">与 ThingsBoard 部门合作的非凡体验</div>
                     <div class="review-body">
-                        <h6>我们很高兴分享我们与 ThingsBoard 开发部门合作的非凡体验，以进行定制部件开发。作为一家专门提供创新物联网解决方案的公司，与 ThingsBoard Professional Edition 平台合作，我们寻求他们的专业知识来缩短我们的上市时间。从最初的估算到最终交付，ThingsBoard 的开发团队展示了卓越的专业精神和技术能力。</h6>
+                        <h6>我们很高兴分享我们与 ThingsBoard 开发部门合作的非凡体验，以进行定制部件开发。作为一家专门提供创新物联网解决方案的公司，与  GridLinks专业版 平台合作，我们寻求他们的专业知识来缩短我们的上市时间。从最初的估算到最终交付，GridLinks 的开发团队展示了卓越的专业精神和技术能力。</h6>
                     </div>
                     <a href="/docs/services/development-services/customers-full-reviews/#review-asg" class="full-review-link">阅读完整反馈</a>
                 </div>

@@ -5,7 +5,7 @@
 
 `redis-cli flushall`
 
-请注意，此命令仅适用于您将 Redis 专用于 ThingsBoard 的情况。如果其他应用程序使用 Redis，则需要找到 ThingsBoard 数据库并仅刷新该数据库。默认数据库索引为 0，可通过 REDIS_DB <a style="pointer-events: all;" href="/docs/user-guide/install/config/">ThingsBoard 环境值</a>进行配置。
+请注意，此命令仅适用于您将 Redis 专用于 GridLinks 的情况。如果其他应用程序使用 Redis，则需要找到 GridLinks 数据库并仅刷新该数据库。默认数据库索引为 0，可通过 REDIS_DB <a style="pointer-events: all;" href="/docs/user-guide/install/config/">ThingsBoard 环境值</a>进行配置。
 
 `redis-cli`
 

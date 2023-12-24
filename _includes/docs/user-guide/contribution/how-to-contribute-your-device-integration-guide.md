@@ -19,7 +19,7 @@
 
 哇！从现在开始，您在您的私有 GitHub 存储库中拥有我们网站的副本。
 
-## ThingsBoard 文档 repo（网站）的本地部署
+## GridLinks 文档 repo（网站）的本地部署
 
 现在您可以在本地计算机上启动网站以查看最新版本。
 thingsboard.io 使用 jekyll 网站生成器。因此，要在本地主机上运行网站，您需要安装一个 jekyll 服务器。

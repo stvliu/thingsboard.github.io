@@ -1,7 +1,7 @@
 * TOC
 {:toc}
 
-ThingsBoard 提供了通过 DTLS 运行 CoAP 服务器的功能。支持单向和双向 DTLS。
+GridLinks 提供了通过 DTLS 运行 CoAP 服务器的功能。支持单向和双向 DTLS。
 DTLS 预置需要有效的 [ECDSA](https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm) 证书。
 ECDSA 密钥比 RSA 密钥小，因此更适合受限设备。有关更多详细信息，请参阅比较 [文章](https://sectigostore.com/blog/ecdsa-vs-rsa-everything-you-need-to-know/)。
 我们建议使用由受信任的 CA 机构生成的有效 SSL 证书，避免花费时间解决 [自签名证书](#self-signed-certificates-generation) 的问题。
@@ -34,7 +34,7 @@ export COAP_DTLS_PEM_KEY_PASSWORD=secret
 * COAP_DTLS_PEM_KEY - 服务器证书私钥文件的路径。默认情况下是可选的。如果服务器证书文件中不存在私钥，则需要；
 * COAP_DTLS_PEM_KEY_PASSWORD - 可选服务器证书私钥密码。
 
-完成设置后，启动或重新启动 ThingsBoard 服务器。
+完成设置后，启动或重新启动 GridLinks 服务器。
 
 {% include templates/ssl/pem_files_location.md %}
 

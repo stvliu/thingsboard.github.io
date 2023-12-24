@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: Senquip 遥测设备
-description: 将 Senquip 遥测设备集成到 ThingsBoard 中。
+description: 将 Senquip 遥测设备集成到 GridLinks 中。
 
 ---
 
@@ -12,7 +12,7 @@ description: 将 Senquip 遥测设备集成到 ThingsBoard 中。
 
 ## 样例
 
-- [将 Senquip 遥测设备连接到 ThingsBoard](/docs/samples/senquip/senquip/)
+- [将 Senquip 遥测设备连接到 GridLinks](/docs/samples/senquip/senquip/)
 
 ## 文档
 

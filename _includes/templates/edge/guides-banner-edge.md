@@ -2,14 +2,14 @@
 - [入门指南](/docs/{{docsPrefix}}getting-started/) - 提供 ThingsBoard Edge 主要功能的快速概述。旨在 15-30 分钟内完成：
 {% endif %}
 {% if currentGuide != "InstallationGuides" %}
-- [安装指南](/docs/user-guide/install/{{docsPrefix}}installation-options/) - 了解如何在各种可用操作系统上设置 ThingsBoard Edge 并连接到 ThingsBoard CE 服务器。
+- [安装指南](/docs/user-guide/install/{{docsPrefix}}installation-options/) - 了解如何在各种可用操作系统上设置 GridLinks Edge 并连接到 GridLinks CE 服务器。
 {% endif %}
 - 边缘规则引擎：
 {% if currentGuide != "EdgeRuleEngineOverview" %}
   - [概述](/docs/{{docsPrefix}}rule-engine/general/) - 了解 ThingsBoard Edge 规则引擎。
 {% endif %}
 {% if currentGuide != "RuleChainTemplates" %}
-  - [规则链模板](/docs/{{docsPrefix}}rule-engine/rule-chain-templates/) - 了解如何使用 ThingsBoard Edge 规则链模板。
+  - [规则链模板](/docs/{{docsPrefix}}rule-engine/rule-chain-templates/) - 了解如何使用 GridLinks Edge 规则链模板。
 {% endif %}
 {% if currentGuide != "ProvisionRuleChainFromCloudToEdge" %}
   - [从云端到边缘配置规则链](/docs/{{docsPrefix}}rule-engine/provision-rule-chains/) - 了解如何从云端到边缘配置边缘规则链。

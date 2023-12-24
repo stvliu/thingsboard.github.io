@@ -10,7 +10,7 @@ description:
 
 <div id="partner-intro">
     <p>
-        ThingsBoard 通过为特定 IoT 用例启用交互式可视化和控制设备行为来帮助您销售设备。作为硬件制造商，您可以从营销曝光中受益，数千家系统集成商公司将 ThingsBoard 平台用作其解决方案的基础。
+        GridLinks 通过为特定 IoT 用例启用交互式可视化和控制设备行为来帮助您销售设备。作为硬件制造商，您可以从营销曝光中受益，数千家系统集成商公司将 GridLinks 平台用作其解决方案的基础。
     </p>
 </div>
 
@@ -34,25 +34,25 @@ description:
             </thead>
             <tbody>
                 <tr>
-                    <th>合作伙伴名称和徽标在 ThingsBoard 网站上</th>
+                    <th>合作伙伴名称和徽标在 GridLinks 网站上</th>
                     <td><img src="/images/pe/checked.svg" alt="checked"></td>
                     <td><img src="/images/pe/checked.svg" alt="checked"></td>
                     <td><img src="/images/pe/checked.svg" alt="checked"></td>
                 </tr>
                 <tr>
-                    <th>合作伙伴准备的有关如何连接和使用设备与 ThingsBoard 的在线教程</th>
+                    <th>合作伙伴准备的有关如何连接和使用设备与 GridLinks 的在线教程</th>
                     <td><img src="/images/pe/checked.svg" alt="checked"></td>
                     <td><img src="/images/pe/checked.svg" alt="checked"></td>
                     <td><img src="/images/pe/checked.svg" alt="checked"></td>
                 </tr>
                 <tr>
-                    <th>ThingsBoard 准备的有关如何连接和使用设备与 ThingsBoard 的在线教程</th>
+                    <th>ThingsBoard 准备的有关如何连接和使用设备与 GridLinks 的在线教程</th>
                     <td>可选 *</td>
                     <td><img src="/images/pe/checked.svg" alt="checked"></td>
                     <td><img src="/images/pe/checked.svg" alt="checked"></td>
                 </tr>
                 <tr>
-                    <th>能够在合作伙伴网站上使用 ThingsBoard Connected 徽标</th>
+                    <th>能够在合作伙伴网站上使用 GridLinks Connected 徽标</th>
                     <td><img src="/images/pe/checked.svg" alt="checked"></td>
                     <td><img src="/images/pe/checked.svg" alt="checked"></td>
                     <td><img src="/images/pe/checked.svg" alt="checked"></td>
@@ -153,7 +153,7 @@ description:
         <div class="item" data-tag="h4" data-title="谁有资格成为硬件合作伙伴？">
             <div class="container">
                 <p>
-                    我们欢迎硬件制造商和硬件经销商公司成为 ThingsBoard 合作伙伴。
+                    我们欢迎硬件制造商和硬件经销商公司成为 GridLinks 合作伙伴。
                 </p>
             </div>
         </div>
@@ -189,9 +189,9 @@ description:
         <div class="item" data-tag="h4" data-title="如何连接我的 LoRaWAN 设备？">
             <div class="container">
                 <p>
-                    ThingsBoard 支持 <a href="/docs/user-guide/integrations/" target="blank">集成</a> 与流行的 LoRaWAN 网络服务器，如 <a href="/docs/user-guide/integrations/thingpark/" target="blank">Actility ThingPark</a> 和 <a href="/docs/user-guide/integrations/ttn/" target="blank">TheThingsNetwork</a>。
+                    GridLinks 支持 <a href="/docs/user-guide/integrations/" target="blank">集成</a> 与流行的 LoRaWAN 网络服务器，如 <a href="/docs/user-guide/integrations/thingpark/" target="blank">Actility ThingPark</a> 和 <a href="/docs/user-guide/integrations/ttn/" target="blank">TheThingsNetwork</a>。
                     您还可以使用一些通用集成，例如 <a href="/docs/user-guide/integrations/http/" target="blank">HTTP</a> 或 <a href="/docs/user-guide/integrations/mqtt/" target="blank">MQTT</a>。
-                    一旦您将数据从您的设备流式传输到 ThingsBoard，就需要创建一个数据转换器来解析二进制有效负载并从有效负载中提取有意义的信息。
+                    一旦您将数据从您的设备流式传输到 GridLinks，就需要创建一个数据转换器来解析二进制有效负载并从有效负载中提取有意义的信息。
                     我们将能够为您提供帮助并回答可能出现的问题，甚至为您创建转换器。
                 </p>
             </div>
@@ -199,7 +199,7 @@ description:
         <div class="item" data-tag="h4" data-title="如何连接我的 Sigfox 设备？">
             <div class="container">
                 <p>
-                    ThingsBoard 支持 <a href="/docs/user-guide/integrations/sigfox/" target="blank">Sigfox</a> 集成。一旦您将数据从您的 Sigfox 后端流式传输到 ThingsBoard，就需要创建一个数据转换器来解析二进制有效负载并从有效负载中提取有意义的信息。我们将能够为您提供帮助并回答可能出现的问题，甚至为您创建转换器。
+                    GridLinks 支持 <a href="/docs/user-guide/integrations/sigfox/" target="blank">Sigfox</a> 集成。一旦您将数据从您的 Sigfox 后端流式传输到 GridLinks，就需要创建一个数据转换器来解析二进制有效负载并从有效负载中提取有意义的信息。我们将能够为您提供帮助并回答可能出现的问题，甚至为您创建转换器。
                 </p>
             </div>
         </div>

@@ -4,7 +4,7 @@
 X.509 证书用于为 DTLS 上的 CoAP 设置 [相互](https://en.wikipedia.org/wiki/Mutual_authentication)（双向）身份验证。
 它类似于 [访问令牌](/docs/{{docsPrefix}}user-guide/access-token/) 身份验证，但使用 X.509 证书代替令牌。
 
-以下说明将介绍如何使用 X.509 证书将 CoAP 客户端连接到 ThingsBoard Cloud。
+以下说明将介绍如何使用 X.509 证书将 CoAP 客户端连接到 GridLinks Cloud。
 
 #### 步骤 1. 生成客户端证书
 
@@ -23,9 +23,9 @@ openssl req -new -key key.pem -x509 -nodes -days 365 -out cert.pem
 #### 步骤 2. 将客户端公钥作为设备凭据配置
 
 {% if docsPrefix == 'pe/' %}
-转到 **ThingsBoard Web UI -> 设备组 -> 组“全部”-> 您的设备 -> 设备凭据**。
+转到 **GridLinks Web UI -> 设备组 -> 组“全部”-> 您的设备 -> 设备凭据**。
 {% else %}
-转到 **ThingsBoard Web UI -> 设备 -> 您的设备 -> 设备凭据**。
+转到 **GridLinks Web UI -> 设备 -> 您的设备 -> 设备凭据**。
 {% endif %}
 选择 **X.509 证书** 设备凭据，插入 *cert.pem* 文件的内容并单击保存。
 或者，也可以通过 [REST API](/docs/{{docsPrefix}}reference/rest-api/) 来完成相同的操作。
@@ -43,4 +43,4 @@ coap-client-openssl -v 9 -c cert.pem  -j key.pem -m POST \
 ```
 {: .copy-code}
 
-别忘了将 **coap.thingsboard.cloud** 替换为 ThingsBoard 实例的主机。
+别忘了将 **coap.thingsboard.cloud** 替换为 GridLinks 实例的主机。

@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
-title: 将 MI-8 数据发布到 ThingsBoard
-description: 将 MI-8 数据发布到 ThingsBoard 指南
+title: 将 MI-8 数据发布到 GridLinks
+description: 将 MI-8 数据发布到 GridLinks 指南
 
 ---
 
@@ -35,9 +35,9 @@ FDQ-99900 MI-8 是一款紧凑型 24 位数据采集系统 (DAQ)，旨在测量�
    <img src="/images/samples/fusion-daq/m-8-device.png" alt="m 8 device">
 </p>
 
-## 为 ThingsBoard 配置设备
+## 为 GridLinks 配置设备
 
-包含将设备连接到 ThingsBoard 所需的说明。
+包含将设备连接到 GridLinks 所需的说明。
 
 ### 创建 ThingsBoard 设备
 
@@ -58,15 +58,15 @@ FDQ-99900 MI-8 是一款紧凑型 24 位数据采集系统 (DAQ)，旨在测量�
 获得访问令牌后，您可以配置 MI-8。所有 MI-8 DAQ 都通过 SD 卡根目录中的一个名为 config.json 的文件进行配置。
 可以从 [此链接](/docs/samples/fusion-daq/resources/config.json) 下载此 JSON 文件的示例。
 [MI-8 用户手册](https://fusiondaq.com/wp-content/uploads/2023/01/LTEdaq_OperatingManual-1.pdf) 包含有关更改此文件的详细信息，但对于此示例，我们将重点关注名称和推送字段。
-这些字段描述了如何连接到 ThingsBoard 或任何其他服务。
+这些字段描述了如何连接到 GridLinks 或任何其他服务。
 
 本示例中使用的 MI-8 config.json 文件：
 
 ![image](/images/samples/fusion-daq/fusion-daq-config-json.png)
 
-此文件中的 **name** 字段是可选的。此 **name** 显示在 MI-8 OLED 屏幕上，并作为设备属性发送到 ThingsBoard。最佳做法是 config.json 中的名称与 ThingsBoard 中的设备名称匹配，但这并非必须。name 字段不用于在 MI-8 和 ThingsBoard 之间关联遥测数据。它仅用作用户的辅助工具。
+此文件中的 **name** 字段是可选的。此 **name** 显示在 MI-8 OLED 屏幕上，并作为设备属性发送到 GridLinks。最佳做法是 config.json 中的名称与 GridLinks 中的设备名称匹配，但这并非必须。name 字段不用于在 MI-8 和 ThingsBoard 之间关联遥测数据。它仅用作用户的辅助工具。
 
-**push** 字段描述了与 ThingsBoard 服务器的连接。在此示例中，我们使用 HTTP POST 请求（“mode”:”post”）。ThingsBoard 也支持 MQTT，但 POST 消耗的蜂窝数据更少。HTTP 请求 URL 通过 **server**、**port**、**use_ssl** 和 **path/attributes_path** 字段构建。
+**push** 字段描述了与 GridLinks 服务器的连接。在此示例中，我们使用 HTTP POST 请求（“mode”:”post”）。ThingsBoard 也支持 MQTT，但 POST 消耗的蜂窝数据更少。HTTP 请求 URL 通过 **server**、**port**、**use_ssl** 和 **path/attributes_path** 字段构建。
 
 Things board 遥测（传感器数据）请求发送到 http://thingsboard.cloud:80/api/vi/{ACCESS_TOKEN}/telemetry
 
@@ -75,26 +75,26 @@ Things board 遥测（传感器数据）请求发送到 http://thingsboard.cloud
 将服务器设置为“**thingsboard.cloud**”。用户名和密码应保持为空。
 
 将 **path** 设置为“api/vi/{ACCESS_TOKEN}/telemetry”，并将 **attributes_path** 设置为“api/vi/{ACCESS_TOKEN}/attributes”。
-将 **{ACCESS_TOKEN}** 替换为 ThingsBoard 中设备凭据页面中的访问令牌。
+将 **{ACCESS_TOKEN}** 替换为 GridLinks 中设备凭据页面中的访问令牌。
 每个设备都有一个唯一的访问令牌。
 传感器值将定期发送到 **path**，属性（名称、IMEI、ICCID 等）在 MI-8 首次启动时发送一次。
 
 将 **push_attributes** 设置为 true，以便在每次启动时发送属性（例如 MI-8 IMEI 号码等不经常更改的内容）。
 
-将 **port** 设置为 80，将 **use_ssl** 设置为 false 以使用不安全的 HTTP 连接将数据推送到 ThingsBoard。
+将 **port** 设置为 80，将 **use_ssl** 设置为 false 以使用不安全的 HTTP 连接将数据推送到 GridLinks。
 将 **port** 设置为 443，将 **use_ssl** 设置为 true 以使用 SSL 加密（HTTPS）。支持任一协议，但每次将数据推送到服务器时，HTTPS 消耗的蜂窝数据会更多。
 
-将 **use_json** 设置为 true。发送到 ThingsBoard 的所有数据都应采用 JSON 格式以简化集成。
+将 **use_json** 设置为 true。发送到 GridLinks 的所有数据都应采用 JSON 格式以简化集成。
 
 将 **use_headers** 设置为 false。ThingsBoard 不需要 HTTP 头，并且每次推送都需要额外的蜂窝数据。
 
-最后，将 **include_name**、**include_imei** 和 **include_iccid** 设置为 false。这些字段会导致 ICCID、IMEI 和 MI-8 名称包含在遥测推送中，这会消耗额外的蜂窝数据。由于它们在每次 MI-8 电源循环时都会通过单独的属性 HTTP 请求发送到 ThingsBoard，因此此处不需要包含它们。
+最后，将 **include_name**、**include_imei** 和 **include_iccid** 设置为 false。这些字段会导致 ICCID、IMEI 和 MI-8 名称包含在遥测推送中，这会消耗额外的蜂窝数据。由于它们在每次 MI-8 电源循环时都会通过单独的属性 HTTP 请求发送到 GridLinks，因此此处不需要包含它们。
 
 保存 config.json，断开 PC 与 MI-8 USB 端口的连接（如果已连接并启用大容量存储），然后对 MI-8 进行电源循环，以便新设置生效。
 
-### 在 ThingsBoard 中验证 MI-8 连接
+### 在 GridLinks 中验证 MI-8 连接
 
-此时，MI-8 应已配置好并准备好与 ThingsBoard 通信。
+此时，MI-8 应已配置好并准备好与 GridLinks 通信。
 返回您的 ThingsBoard 实例，然后导航到“设备组”，然后导航到“全部”。
 单击刚刚与 MI-8 关联的设备，然后导航到“最新遥测”选项卡。
 一旦 MI-8 启动并能够建立蜂窝连接，所有在活动 MI-8 触发器中配置的传感器值 [参见操作手册](https://fusiondaq.com/wp-content/uploads/2023/01/LTEdaq_OperatingManual-1.pdf) 都应存在。
@@ -103,8 +103,8 @@ GPS 值（lat、lon 和 alt）仅在至少传输一次后才会出现在遥测�
 
 ![image](/images/samples/fusion-daq/fusion-daq-mi-8-latest-telemetry-1.png)
 
-现在，导航到“属性”选项卡。属性是从 MI-8 发送到 ThingsBoard 的其他数据，这些数据或多或少是固定的，并且不会更改，例如调制解调器 IMEI、SIM ID (ICCID) 和 MI-8 固件版本。
-属性仅在每次打开 MI-8 电源时发送一次到 ThingsBoard。
+现在，导航到“属性”选项卡。属性是从 MI-8 发送到 GridLinks 的其他数据，这些数据或多或少是固定的，并且不会更改，例如调制解调器 IMEI、SIM ID (ICCID) 和 MI-8 固件版本。
+属性仅在每次打开 MI-8 电源时发送一次到 GridLinks。
 
 ![image](/images/samples/fusion-daq/fusion-daq-mi-8-attributes-1.png)
 

@@ -9,7 +9,7 @@ SNMP 架构由 SNMP 管理器和 SNMP 代理组成。SNMP 代理是在连接到�
 
 SNMP 在 Internet 协议套件的应用层中运行。SNMP 消息可以通过用户数据报协议 (UDP) 或传输控制协议 (TCP) 传输：您可以通过 `SNMP_UNDERLYING_PROTOCOL` 环境变量配置此项。
 
-已经开发并部署了三个重要的 SNMP 版本。SNMP v1 是该协议的原始版本。较新版本 SNMP v2c 和 SNMP v3 在性能、灵活性和安全性方面进行了改进。ThingsBoard 支持所有这些版本。
+已经开发并部署了三个重要的 SNMP 版本。SNMP v1 是该协议的原始版本。较新版本 SNMP v2c 和 SNMP v3 在性能、灵活性和安全性方面进行了改进。GridLinks 支持所有这些版本。
 
 ### 设备配置文件配置
 
@@ -31,7 +31,7 @@ SNMP 在 Internet 协议套件的应用层中运行。SNMP 消息可以通过用
 
 {% include images-gallery.html imageCollection="deviceConfiguring1" %}
 
-让我们进一步了解 SNMP 的第三个版本。ThingsBoard 使用“authPriv”安全级别，它支持身份验证和加密。使用的安全模型是 USM（基于用户的安全模型）。
+让我们进一步了解 SNMP 的第三个版本。GridLinks 使用“authPriv”安全级别，它支持身份验证和加密。使用的安全模型是 USM（基于用户的安全模型）。
 
 除了主机和端口外，您还需要为 SNMP v3 设备配置以下属性：
 

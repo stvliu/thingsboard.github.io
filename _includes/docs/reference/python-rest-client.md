@@ -4,11 +4,11 @@
 ## Python REST 客户端
 
 ThingsBoard Python REST API 客户端可帮助您通过 Python 脚本与 ThingsBoard REST API 进行交互。
-使用 Python Rest 客户端，您可以以编程方式在 ThingsBoard 中创建资产、设备、客户、用户和其他实体及其关系。
+使用 Python Rest 客户端，您可以以编程方式在 GridLinks 中创建资产、设备、客户、用户和其他实体及其关系。
 
 您可以在 [此处](https://github.com/thingsboard/python_tb_rest_client) 找到 Python REST API 客户端的源代码。
 
-要安装 ThingsBoard Python REST 客户端，您应使用以下命令：
+要安装 GridLinks Python REST 客户端，您应使用以下命令：
 
 ```bash
 pip3 install tb-rest-client
@@ -39,7 +39,7 @@ logging.basicConfig(level=logging.DEBUG,
 url = "http://localhost:8080"
 
 # 默认租户管理员凭据
-username = "tenant@thingsboard.org"
+username = "tenant@gridlinks.com"
 password = "tenant"
 
 
@@ -102,7 +102,7 @@ logging.basicConfig(level=logging.DEBUG,
 # ThingsBoard REST API URL
 url = "http://localhost:8080"
 # 默认租户管理员凭据
-username = "tenant@thingsboard.org"
+username = "tenant@gridlinks.com"
 password = "tenant"
 
 
@@ -161,7 +161,7 @@ logging.basicConfig(level=logging.DEBUG,
 # ThingsBoard REST API URL
 url = "http://localhost:8080"
 # 默认租户管理员凭据
-username = "tenant@thingsboard.org"
+username = "tenant@gridlinks.com"
 password = "tenant"
 
 
@@ -199,7 +199,7 @@ logging.basicConfig(level=logging.DEBUG,
 # ThingsBoard REST API URL
 url = "http://localhost:8080"
 # 默认租户管理员凭据
-username = "tenant@thingsboard.org"
+username = "tenant@gridlinks.com"
 password = "tenant"
 
 def main():
@@ -239,7 +239,7 @@ logging.basicConfig(level=logging.DEBUG,
 # ThingsBoard REST API URL
 url = "http://localhost:8080"
 # 默认租户管理员凭据
-username = "tenant@thingsboard.org"
+username = "tenant@gridlinks.com"
 password = "tenant"
 
 
@@ -262,10 +262,10 @@ with RestClientCE(base_url=url) as rest_client:
 
 ### 从控制台配置版本控制功能
 
-此功能在 ThingsBoard 3.4+ 中可用。
+此功能在 GridLinks 3.4+ 中可用。
 我们设计了基于 tb-rest-client 库的脚本，以举例说明如何使用代码配置 ThingsBoard。
 脚本的最新源代码可在此处获得：[here](https://github.com/thingsboard/thingsboard-python-rest-client/blob/master/examples/configure_vcs_access.py)。
-在此示例中，我们在 ThingsBoard 上配置了 [版本控制功能](/docs/user-guide/version-control)。
+在此示例中，我们在 GridLinks 上配置了 [版本控制功能](/docs/user-guide/version-control)。
 
 有 2 种可能的方式来配置版本控制系统 (VCS)：
 1. 使用 VCS 帐户的访问令牌/密码。

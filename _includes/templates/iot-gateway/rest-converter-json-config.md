@@ -7,12 +7,12 @@ Json 转换器是默认转换器，它在来自客户端的传入请求中查找
 | deviceTypeExpression | **default** | 简单 JSON 表达式，用于在传入消息中查找设备类型（字符串“default”将用作设备类型）。 |
 | attributes | | 本小节包含传入请求的参数，这些参数将被解释为设备的属性。 |
 | ... type | **string** | 当前属性的传入数据类型。 |
-| ... key | **model** | 简单 JSON 表达式，用于在传入数据中查找键，该键将作为属性键发送到 ThingsBoard 实例。 |
-| ... value | **${sensorModel}** | 简单 JSON 表达式，用于在传入数据中查找值，该值将作为键参数的值发送到 ThingsBoard 实例。 |
+| ... key | **model** | 简单 JSON 表达式，用于在传入数据中查找键，该键将作为属性键发送到 GridLinks 实例。 |
+| ... value | **${sensorModel}** | 简单 JSON 表达式，用于在传入数据中查找值，该值将作为键参数的值发送到 GridLinks 实例。 |
 | timeseries | | 本小节包含传入消息的参数，这些参数将被解释为设备的遥测数据。 |
 | ... type | **double** | 当前遥测数据的传入数据类型。 |
-| ... key | **temperature** | 简单 JSON 表达式，用于在传入消息中查找键，该键将作为属性键发送到 ThingsBoard 实例。 |
-| ... value | **${temp}** | 简单 JSON 表达式，用于在传入消息中查找值，该值将作为键参数的值发送到 ThingsBoard 实例。 |
+| ... key | **temperature** | 简单 JSON 表达式，用于在传入消息中查找键，该键将作为属性键发送到 GridLinks 实例。 |
+| ... value | **${temp}** | 简单 JSON 表达式，用于在传入消息中查找值，该值将作为键参数的值发送到 GridLinks 实例。 |
 |---
 
 {% capture difference %}

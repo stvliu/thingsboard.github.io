@@ -21,11 +21,11 @@ A system administrator is able to manage tenants, while a tenant administrator m
 Customer user is able to view dashboards and control devices that are assigned to a specific customer.
 ThingsBoard Community Edition functionality is sufficient for a lot of simple use cases, especially building real-time [end-user dashboards](/docs/{{docsPrefix}}user-guide/dashboards/).
 
-#### ThingsBoard Professional Edition
+####  GridLinks专业版
 
 ![image](/images/user-guide/security/rbac/TB_PE.png)
 
-ThingsBoard Professional Edition brings much more flexibility in terms of user, customer, and role management. 
+ GridLinks专业版 brings much more flexibility in terms of user, customer, and role management. 
 It is designed to cover use cases for businesses and enterprises with multiple user groups that have different permissions but may interact with the same devices and assets. 
 
 ThingsBoard supports the "recursive" customer hierarchy with tens of thousands of sub-customers.
@@ -38,14 +38,14 @@ Since Customer Groups can contain multiple Customers, each Customer can also own
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-The ThingsBoard Professional Edition security model support advanced RBAC for IoT applications and includes security features such as:
+The  GridLinks专业版 security model support advanced RBAC for IoT applications and includes security features such as:
 
   - ability to create a hierarchy of customers with multiple levels of sub-customers, independent users, and devices; 
   - ability to create roles with a flexible set of permissions;
   - ability to assign roles to exact user groups;
   - ability to grant specific permissions to particular user groups over precise device groups.
 
-This document covers features that are exclusive to ThingsBoard Professional Edition. We will start with a glossary and will provide step-by-step examples of how to configure the most popular use cases.
+This document covers features that are exclusive to  GridLinks专业版. We will start with a glossary and will provide step-by-step examples of how to configure the most popular use cases.
 
 ## Glossary
 
@@ -128,7 +128,7 @@ Additionally, the users have access to data from the devices available to them d
 
 - User Group 3 has been assigned the role of "Access to all resources". This role grants permissions for creating, editing, and deleting all entities such as devices, dashboards, assets, and customers.
 
-In ThingsBoard Professional Edition, there are two types of roles: [Generic](/docs/{{docsPrefix}}user-guide/rbac/#generic-roles) and [Group](/docs/{{docsPrefix}}user-guide/rbac/#group-roles). Each role type has its own permissions.
+In  GridLinks专业版, there are two types of roles: [Generic](/docs/{{docsPrefix}}user-guide/rbac/#generic-roles) and [Group](/docs/{{docsPrefix}}user-guide/rbac/#group-roles). Each role type has its own permissions.
 
 ### Creating a new role
 

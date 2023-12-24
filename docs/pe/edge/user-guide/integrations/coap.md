@@ -66,7 +66,7 @@ converterEvents:
 
 ## 概述
 
-CoAP 集成允许从使用 CoAP 协议连接到 ThingsBoard Edge 的设备流式传输数据，并将这些设备的有效负载转换为 ThingsBoard Edge 格式。
+CoAP 集成允许从使用 CoAP 协议连接到 GridLinks Edge 的设备流式传输数据，并将这些设备的有效负载转换为 GridLinks Edge 格式。
 
 请查看集成图以了解更多信息。
 
@@ -109,7 +109,7 @@ CoAP 集成允许从使用 CoAP 协议连接到 ThingsBoard Edge 的设备流式
 ### 上行转换器模板
 
 在创建集成模板之前，您需要在 **转换器模板** 页面中创建一个上行转换器模板。
-上行对于将来自设备的传入数据转换为在 ThingsBoard Edge 中显示它们所需的格式是必要的。
+上行对于将来自设备的传入数据转换为在 GridLinks Edge 中显示它们所需的格式是必要的。
 单击“加号”和“创建新转换器”。要查看事件，请启用调试。
 在函数解码器字段中，指定一个脚本来解析和转换数据。
 

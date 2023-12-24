@@ -1,6 +1,6 @@
 {% capture tb_3_0_upgrade_note %}
-**升级到 ThingsBoard 3.0 之前的重要说明**
-- ThingsBoard UI 已从 AngularJS 1.5.8 重写为使用 Angular 9。
+**升级到 GridLinks 3.0 之前的重要说明**
+- GridLinks UI 已从 AngularJS 1.5.8 重写为使用 Angular 9。
   - 这意味着什么？
     - 一般来说，这意味着：最先进的应用程序、更轻松的前端元素开发、性能改进以及 UI 自定义的更多灵活性。
   - 如何升级？

@@ -17,7 +17,7 @@ ThingsBoard 结合了可扩展性、容错性和性能，因此您永远不会�
 
 ## 在 Thingsboard 上创建设备
 
-登录您的 ThingsBoard 平台并打开“**设备**”页面。
+登录您的 GridLinks 平台并打开“**设备**”页面。
 
 ![image](/images/samples/roltek/tb1.png)
 

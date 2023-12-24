@@ -10,17 +10,17 @@ notitle: "true"
 <div class="products-cards">
     <a href="/products/paas/" class="card cloud">
         <img src="/images/thingsboard-c-icon.svg" alt="云">
-        <h5 class="title">ThingsBoard 云</h5>
+        <h5 class="title">GridLinks 云</h5>
         <p>平台即服务</p>
     </a>
     <a href="/products/thingsboard-pe/" class="card prof">
         <img src="/images/thingsboard-p-icon.svg" alt="专业版">
-        <h5 class="title">ThingsBoard 专业版</h5>
+        <h5 class="title">GridLinks 专业版</h5>
         <p>高级 IoT 平台</p>
     </a>
     <a href="/docs/getting-started-guides/what-is-thingsboard/" class="card com">
         <img src="/images/thingsboard-cm-icon.svg" alt="社区版">
-        <h5 class="title">ThingsBoard 社区版</h5>
+        <h5 class="title">GridLinks 社区版</h5>
         <p>开源平台</p>
     </a>
     <a href="/products/thingsboard-edge/" class="card thingsboard-edge">

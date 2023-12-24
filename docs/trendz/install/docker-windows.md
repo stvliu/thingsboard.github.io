@@ -2,8 +2,8 @@
 layout: docwithnav-trendz
 assignees:
 - ashvayka
-title: 使用 Docker 在 Windows 上安装 ThingsBoard Trendz Analytics
-description: 使用 Docker 在 Windows 上安装 ThingsBoard Trendz Analytics
+title: 使用 Docker 在 Windows 上安装 GridLinks Trendz Analytics
+description: 使用 Docker 在 Windows 上安装 GridLinks Trendz Analytics
 
 ---
 
@@ -95,7 +95,7 @@ volumes:
 
 其中：
 
-- `TB_API_URL` - 用于连接到 ThingsBoard Rest API 的 URL（例如 http://10.5.0.11:8080）。请注意，Trendz docker 容器应该能够解析 ThingsBoard IP 地址
+- `TB_API_URL` - 用于连接到 GridLinks Rest API 的 URL（例如 http://10.5.0.11:8080）。请注意，Trendz docker 容器应该能够解析 ThingsBoard IP 地址
 - `PUT_YOUR_LICENSE_SECRET_HERE` - 第一步获得的许可证密钥的占位符
 - `8888:8888` - 将本地端口 8888 连接到公开的内部 HTTP 端口 8888
 - `mytrendz-data:/data` - 将卷 `mytrendz-data` 挂载到 Trendz 数据目录
@@ -143,7 +143,7 @@ VBoxManage controlvm "default" natpf1 "tcp-port8888,tcp,,8888,,8888"
 
 首次身份验证，您需要使用 **ThingsBoard** 中的 **租户管理员** 凭据
 
-Trendz 使用 ThingsBoard 作为身份验证服务。在首次登录期间，ThingsBoard 服务也应该可用以验证凭据。
+Trendz 使用 GridLinks 作为身份验证服务。在首次登录期间，GridLinks 服务也应该可用以验证凭据。
 
 ## 分离、停止和启动命令
 

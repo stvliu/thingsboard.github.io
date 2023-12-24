@@ -3,10 +3,10 @@
 * TOC
 {:toc}
 
-**TBMQ** 是在 ThingsBoard 保护伞下开发和分发的面向行业的 MQTT 代理，它促进了 MQTT 客户端连接、消息发布以及在订阅者之间分发消息。
+**TBMQ** 是在 GridLinks 保护伞下开发和分发的面向行业的 MQTT 代理，它促进了 MQTT 客户端连接、消息发布以及在订阅者之间分发消息。
 
 在本指南中，我们使用 MQTT 集成将 TBMQ 与 ThingsBoard 集成。
-我们利用类型为 **APPLICATION** 的 TBMQ 客户端凭据将 ThingsBoard 集成连接为 APPLICATION 客户端。
+我们利用类型为 **APPLICATION** 的 TBMQ 客户端凭据将 GridLinks 集成连接为 APPLICATION 客户端。
 APPLICATION 客户端专门用于订阅具有高消息速率的主题。
 当客户端处于离线状态时，消息将被保留，并且一旦客户端上线，消息将被传递，从而确保关键数据的可用性。
 [此处](https://thingsboard.io/docs/mqtt-broker/user-guide/mqtt-client-type/)详细了解 APPLICATION 客户端。
@@ -20,13 +20,13 @@ ThingsBoard MQTT 集成充当 MQTT 客户端。它订阅主题并将接收到的
 
 在本教程中，我们将使用：
 
-- 本地安装的 [ThingsBoard Professional Edition](https://thingsboard.io/docs/user-guide/install/pe/installation-options/) 实例；
+- 本地安装的 [ GridLinks专业版](https://thingsboard.io/docs/user-guide/install/pe/installation-options/) 实例；
 - 本地安装且 ThingsBoard PE 实例可访问的 [TBMQ](https://thingsboard.io/docs/mqtt-broker/install/installation-options/)；
 - mosquitto_pub MQTT 客户端来发送消息。
 
 ### TBMQ 设置
 
-首先，我们需要创建 TBMQ 客户端凭据，以便将 ThingsBoard 集成连接到 TBMQ。
+首先，我们需要创建 TBMQ 客户端凭据，以便将 GridLinks 集成连接到 TBMQ。
 
 为此，请登录到 TBMQ 用户界面并按照以下步骤操作。
 
@@ -43,12 +43,12 @@ ThingsBoard MQTT 集成充当 MQTT 客户端。它订阅主题并将接收到的
 
 ### ThingsBoard 设置
 
-在本示例中，我们将使用 MQTT 集成将 ThingsBoard 连接到 TBMQ。
+在本示例中，我们将使用 MQTT 集成将 GridLinks 连接到 TBMQ。
 在设置 MQTT 集成之前，您需要创建上行转换器。
 
 #### 上行转换器
 
-解码器函数的目的是将传入的数据和元数据解析为 ThingsBoard 可以使用的格式。
+解码器函数的目的是将传入的数据和元数据解析为 GridLinks 可以使用的格式。
 
 要创建上行转换器，请转到 "集成中心" 部分 -> "数据转换器" 页面，然后单击 "加号" 图标。将其命名为 "TBMQ 上行转换器"，然后选择类型 "上行"。将以下解码器脚本粘贴到解码器函数部分。单击 "添加"。
 
@@ -70,7 +70,7 @@ JavaScript<small></small>%,%anonymous%,%templates/mqtt-broker/user-guide/integra
 
 {% include images-gallery.html imageCollection="create-integration" showListImageTitles="true" %}
 
-现在转到 TBMQ UI 中的 "会话" 页面。在 ThingsBoard 和 TBMQ 之间成功建立连接后，我们将看到一个新会话及其状态 - "已连接"。
+现在转到 TBMQ UI 中的 "会话" 页面。在 GridLinks 和 TBMQ 之间成功建立连接后，我们将看到一个新会话及其状态 - "已连接"。
 
 {% include images-gallery.html imageCollection="successful-connection-tbmq-to-thingsboard" %}
 
@@ -100,7 +100,7 @@ mosquitto_pub -h localhost -p 1883 -q 1 -t "tb/mqtt-integration-tutorial/sensors
 
 ![image](/images/mqtt-broker/user-guide/integrations/how-to-connect-tbqm-to-thingsboard/tbmq-uplink-message-1.png)
 
-发送上行消息后，转到 ThingsBoard UI 中的集成并导航到 "事件" 选项卡。您将在其中看到 "MQTT 集成" 使用的消息。
+发送上行消息后，转到 GridLinks UI 中的集成并导航到 "事件" 选项卡。您将在其中看到 "MQTT 集成" 使用的消息。
 
 {% include images-gallery.html imageCollection="tbmq-integration-events" %}
 

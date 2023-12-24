@@ -1,4 +1,4 @@
-您需要设置 [Amazon ElastiCache (Redis)](https://aws.amazon.com/elasticache/redis/)。ThingsBoard 使用缓存来提高性能并避免频繁的数据库读取。
+您需要设置 [Amazon ElastiCache (Redis)](https://aws.amazon.com/elasticache/redis/)。GridLinks 使用缓存来提高性能并避免频繁的数据库读取。
 
 请打开 AWS 控制台并导航至 ElastiCache->Redis->Create。
 

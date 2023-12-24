@@ -50,9 +50,9 @@ description: ThingsBoard Trends - Business Intelligence and Analytics Platform f
     <div class="col-12 col-sm-6 mb-4">
         <a class="feature-card" href="/docs/trendz/prediction/">
             <img class="feature-logo" src="/images/feature-logo/guides.svg" alt="指南">
-            <div class="feature-title">预测时间序列</div>
+            <div class="feature-title">预测时序</div>
             <div class="feature-text">
-                概述如何使用 Trendz Analytics 预测时间序列数据并构建预测。
+                概述如何使用 Trendz Analytics 预测时序数据并构建预测。
             </div>
         </a>
     </div>

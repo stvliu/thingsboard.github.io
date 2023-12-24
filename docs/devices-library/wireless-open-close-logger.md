@@ -1,6 +1,6 @@
 ---
 layout: devices-library-article
-title: 如何将无线开/关记录器连接到 ThingsBoard？
+title: 如何将无线开/关记录器连接到 GridLinks？
 category: 其他设备
 connectivity: CoAP、NB-IoT、BLE
 vendor: Efento

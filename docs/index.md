@@ -1,16 +1,16 @@
 ---
 layout: docwithnav
-title: ThingsBoard 社区版
-description: ThingsBoard 文档 - 了解平台并在 ThingsBoard 上运行您的物联网项目
+title: GridLinks 社区版
+description: GridLinks 文档 - 了解平台并在 GridLinks 上运行您的物联网项目
 ---
 
-<p>ThingsBoard 文档可以帮助您设置 ThingsBoard，了解平台并在 ThingsBoard 上运行您的物联网项目。</p>
+<p>GridLinks 文档可以帮助您设置 GridLinks，了解平台并在 GridLinks 上运行您的物联网项目。</p>
 
 <div class="doc-features row mt-4">
     <div class="col-12 col-sm-6 col-lg col-xxl-6 col-4xl mb-4">
         <a class="feature-card" href="/docs/getting-started-guides/what-is-thingsboard/">
             <img class="feature-logo" src="/images/feature-logo/thingsboard-logo.svg" alt="Thingsboard logo">
-            <div class="feature-title">什么是 ThingsBoard？</div>
+            <div class="feature-title">什么是 GridLinks？</div>
             <div class="feature-text">
                 <ul>
                     <li>功能</li>
@@ -24,7 +24,7 @@ description: ThingsBoard 文档 - 了解平台并在 ThingsBoard 上运行您的
             <img class="feature-logo" src="/images/feature-logo/getting-started.svg" alt="Getting started icon">
             <div class="feature-title">入门</div>
             <div class="feature-text">
-                了解如何使用 ThingsBoard 平台。
+                了解如何使用 GridLinks 平台。
             </div>
         </a>
     </div>
@@ -61,7 +61,7 @@ description: ThingsBoard 文档 - 了解平台并在 ThingsBoard 上运行您的
             <img class="feature-logo" src="/images/feature-logo/guides.svg" alt="Guides icon">
             <div class="feature-title">设备库</div>
             <div class="feature-text">
-                了解如何将不同设备连接到 ThingsBoard。
+                了解如何将不同设备连接到 GridLinks。
             </div>
         </a>
     </div>
@@ -70,7 +70,7 @@ description: ThingsBoard 文档 - 了解平台并在 ThingsBoard 上运行您的
             <img class="feature-logo" src="/images/feature-logo/guides.svg" alt="Guides icon">
             <div class="feature-title">指南</div>
             <div class="feature-text">
-                了解 ThingsBoard 的主要功能。
+                了解 GridLinks 的主要功能。
             </div>
         </a>
     </div>
@@ -100,7 +100,7 @@ description: ThingsBoard 文档 - 了解平台并在 ThingsBoard 上运行您的
         <a class="feature-card" href="/docs/user-guide/telemetry/">
             <div class="feature-title">遥测</div>
             <div class="feature-text">
-                用于收集时间序列数据和相关用例的 API。
+                用于收集时序数据和相关用例的 API。
             </div>
         </a>
     </div>

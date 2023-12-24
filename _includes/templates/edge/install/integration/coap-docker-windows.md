@@ -19,14 +19,14 @@ docker run -it -p 5683:5683/udp -v tb-pe-coap-integration-logs:/var/log/tb-coap-
 
 其中：
 
-- `EDGE_IP_OR_HOST_ADDRESS` - 是 ThingsBoard Edge 的主机名或 IP 地址；
-- `9090` - 是 ThingsBoard Edge 的集成端口。它在 tb-edge.yml 中使用 INTEGRATIONS_RPC_PORT 环境变量进行配置；
+- `EDGE_IP_OR_HOST_ADDRESS` - 是 GridLinks Edge 的主机名或 IP 地址；
+- `9090` - 是 GridLinks Edge 的集成端口。它在 tb-edge.yml 中使用 INTEGRATIONS_RPC_PORT 环境变量进行配置；
 - `YOUR_ROUTING_KEY` - 在 [步骤 3](/docs/pe/edge/user-guide/integrations/remote-integrations/#step-3-save-remote-integration-credentials) 中获得的集成路由密钥的占位符；
 - `YOUR_SECRET` - 在 [步骤 3](/docs/pe/edge/user-guide/integrations/remote-integrations/#step-3-save-remote-integration-credentials) 中获得的集成密钥的占位符；
 - `docker run` - 运行此容器；
 - `-it` - 附加一个终端会话，其中包含当前 ThingsBoard 远程集成进程的输出；
 - `-p 5683:5683/udp` - 将本地 udp 端口 5683 连接到公开的内部 5683 udp 端口以进行集成。
-- `-v tb-pe-coap-integration-logs:/var/log/tb-coap-integration` - 将主机的目录 `~/.tb-pe-coap-integration-logs` 挂载到 ThingsBoard 远程集成日志目录；
+- `-v tb-pe-coap-integration-logs:/var/log/tb-coap-integration` - 将主机的目录 `~/.tb-pe-coap-integration-logs` 挂载到 GridLinks 远程集成日志目录；
 - `--name tb-pe-coap-integration` - 此计算机的友好本地名称；
 - `--restart always` - 在系统重新启动时自动启动 ThingsBoard 集成，并在发生故障时重新启动；
 - `thingsboard/tb-pe-coap-integration:{{ site.release.pe_full_ver }}` - docker 镜像。

@@ -2,8 +2,8 @@
 layout: docwithnav-trendz
 assignees:
 - vparomskiy
-title: 将计算值保存为遥测数据到 ThingsBoard
-description: 将计算值保存为遥测数据到 ThingsBoard
+title: 将计算值保存为遥测数据到 GridLinks
+description: 将计算值保存为遥测数据到 GridLinks
 ---
 
 Trendz 中的计算字段提供基于现有遥测数据和属性计算各种指标的功能。
@@ -17,14 +17,14 @@ Trendz 中的计算字段提供基于现有遥测数据和属性计算各种指�
 * 性能优化 - 一旦计算出指标并将其保存为遥测数据，您就可以优化 Trendz 服务器的性能。无需在每次需要时加载原始遥测数据并重新计算指标，而是可以直接从 ThingsBoard 加载预先计算的指标。这减少了服务器上的负载，从而实现更快、更高效的操作。
 
 
-将计算指标保存到 ThingsBoard 的简化工作流如下：
+将计算指标保存到 GridLinks 的简化工作流如下：
 
 * 创建 Trendz 计算字段以计算所需的指标
 * 在表格视图中可视化指标
 * 配置将针对新传入遥测数据运行计算的后台作业
-* 将计算的指标保存为新的遥测数据到 ThingsBoard
+* 将计算的指标保存为新的遥测数据到 GridLinks
 
-**您可以在本文中找到有关如何执行此操作的详细分步教程 - [同步到 ThingsBoard](/docs/trendz/save-telemetry-to-thingsboard/)。**
+**您可以在本文中找到有关如何执行此操作的详细分步教程 - [同步到 GridLinks](/docs/trendz/save-telemetry-to-thingsboard/)。**
 
 ## 后续步骤
 

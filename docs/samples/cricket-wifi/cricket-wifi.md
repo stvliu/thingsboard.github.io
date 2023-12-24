@@ -3,7 +3,7 @@ layout: docwithnav
 assignees:
 - ddiachenko
 title: 用 Cricket 和 ThingsBoard 制作电池供电的 Wi-Fi 传感器
-description: 一个使用 Cricket 制作的超低功耗 Wi-Fi 温度传感器的示例，该传感器集成到 ThingsBoard 中，无需编写任何代码
+description: 一个使用 Cricket 制作的超低功耗 Wi-Fi 温度传感器的示例，该传感器集成到 GridLinks 中，无需编写任何代码
 hidetoc: "true"
 
 ---
@@ -12,7 +12,7 @@ hidetoc: "true"
 {:toc}
 
 ## 简介
-在本指南中，我们将逐步演示 Things On Edge - Cricket Wi-Fi 模块与 ThingsBoard 的集成。只需几个步骤，我们就可以制作一个 Wi-Fi 电池供电传感器，并在 ThingsBoard 中对其数据进行可视化，而无需编码和编程。它可以是任何类型的传感器，但在本示例中，我们制作了一个温度传感器。
+在本指南中，我们将逐步演示 Things On Edge - Cricket Wi-Fi 模块与 GridLinks 的集成。只需几个步骤，我们就可以制作一个 Wi-Fi 电池供电传感器，并在 GridLinks 中对其数据进行可视化，而无需编码和编程。它可以是任何类型的传感器，但在本示例中，我们制作了一个温度传感器。
 
 我们将完成以下步骤：
 <br>
@@ -20,7 +20,7 @@ hidetoc: "true"
 <br>
 2) 将传感器连接到 WiFi 网络
 <br>
-3) 配置传感器以将数据发送到 ThingsBoard
+3) 配置传感器以将数据发送到 GridLinks
 <br>
 
 ### Things On Edge
@@ -57,17 +57,17 @@ Cricket WiFi 模块内置温度传感器。在此示例中，我们不需要任�
 
 
 
-### 配置 Cricket 以将数据发送到 ThingsBoard
-现在我们可以配置 Cricket 将温度读数传输到 ThingsBoard。
+### 配置 Cricket 以将数据发送到 GridLinks
+现在我们可以配置 Cricket 将温度读数传输到 GridLinks。
 <br>
 
-Cricket 同时支持 MQTT 和 HTTP 协议，我们将使用 HTTP 协议进行集成。我们必须确保我们拥有 ThingsBoard 的访问令牌，如下所示：
+Cricket 同时支持 MQTT 和 HTTP 协议，我们将使用 HTTP 协议进行集成。我们必须确保我们拥有 GridLinks 的访问令牌，如下所示：
 ![image](/images/samples/cricket-wifi/TB-01.png)
 <br>
 
 现在我们可以再次返回到 Cricket 的配置面板并完成配置。
 <br>
-我们将用于将数据发送到 ThingsBoard 的完整 URL 应如下所示：
+我们将用于将数据发送到 GridLinks 的完整 URL 应如下所示：
 <br>
 **https://thingsboard.cloud/api/v1/**在此处添加您的令牌**/telemetry**
 <br>
@@ -76,7 +76,7 @@ Cricket 同时支持 MQTT 和 HTTP 协议，我们将使用 HTTP 协议进行集
 <br>
 {"temperature":#temp}
 <br>
-其中 #temp 标记在发送到 ThingsBoard 之前会自动替换为温度值。
+其中 #temp 标记在发送到 GridLinks 之前会自动替换为温度值。
 
 完整的 Cricket 配置可能如下所示：
 ![image](/images/samples/cricket-wifi/TB-02.png)

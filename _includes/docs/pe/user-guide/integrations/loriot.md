@@ -5,7 +5,7 @@
 
 ## 概述
 
-LORIOT 是 LoRaWAN 网络，旨在使用 LoRaWAN 堆栈连接您的设备。将 LORIOT 与 ThingsBoard 集成后，您可以在 ThingsBoard IoT 平台中连接、通信、处理和可视化设备数据。
+LORIOT 是 LoRaWAN 网络，旨在使用 LoRaWAN 堆栈连接您的设备。将 LORIOT 与 ThingsBoard 集成后，您可以在 GridLinks IoT 平台中连接、通信、处理和可视化设备数据。
 
 ## 创建 LORIOT 帐户
 
@@ -19,7 +19,7 @@ LORIOT 是 LoRaWAN 网络，旨在使用 LoRaWAN 堆栈连接您的设备。将 
 
 ## 创建上行转换器
 
-在创建集成之前，您需要在 **数据转换器** 中创建一个 **上行转换器**。上行对于将来自设备的传入数据转换为在 ThingsBoard 中显示它们所需的格式是必需的。单击 **“加号”** 和 **“创建新转换器”。** 
+在创建集成之前，您需要在 **数据转换器** 中创建一个 **上行转换器**。上行对于将来自设备的传入数据转换为在 GridLinks 中显示它们所需的格式是必需的。单击 **“加号”** 和 **“创建新转换器”。** 
 要查看事件，请启用 **调试。** 在函数解码器字段中，指定一个脚本来解析和转换数据。
 
 {% capture difference %}
@@ -46,7 +46,7 @@ LORIOT 是 LoRaWAN 网络，旨在使用 LoRaWAN 堆栈连接您的设备。将 
      "snr"  : 1.2
  }
 ```
-如您所见，唯一的设备 ID 到达“EUI”字段。我们将在 ThingsBoard 中将其用作设备名称。设备数据编码在“data”字段中。
+如您所见，唯一的设备 ID 到达“EUI”字段。我们将在 GridLinks 中将其用作设备名称。设备数据编码在“data”字段中。
 此处的编码数据为：
 ```
 "data": "2A3F"
@@ -78,7 +78,7 @@ JavaScript<small></small>%,%anonymous%,%templates/integration/loriot/loriot-upli
 
 {% include images-gallery.html imageCollection="integration" %}
 
-为了将数据从 LORIOT 传输到 ThingsBoard，您需要为 LORIOT 应用程序配置 **输出**。您可以手动执行此操作（推荐），或者 ThingsBoard 集成可以为您执行此操作（您需要向我们提供 LORIOT 帐户的登录名和密码，以便我们能够自动配置输出）。  
+为了将数据从 LORIOT 传输到 GridLinks，您需要为 LORIOT 应用程序配置 **输出**。您可以手动执行此操作（推荐），或者 ThingsBoard 集成可以为您执行此操作（您需要向我们提供 LORIOT 帐户的登录名和密码，以便我们能够自动配置输出）。  
 <br>
 
 <div style="font-size: 20px; margin-bottom: 8px; font-weight: bold;">配置输出选项</div>
@@ -114,7 +114,7 @@ LORIOT 帐户<br><small>推荐</small>%,%loriot-account%,%templates/integration/
 
 使用控制台而不是 LORIOT 服务器“模拟”来自设备的消息可能很有用。要发送上行消息，您需要来自集成、**端口** 和 LORIOT 中的 **EUI** 的 **HTTP 端点 URL**。
 
-让我们转到 ThingsBoard 中的 **集成** 选项卡。找到您的 LORIOT 集成并单击它。您可以在其中找到 HTTP 端点 URL。单击图标复制 URL。
+让我们转到 GridLinks 中的 **集成** 选项卡。找到您的 LORIOT 集成并单击它。您可以在其中找到 HTTP 端点 URL。单击图标复制 URL。
 
 {% include images-gallery.html imageCollection="endpoint_url" %}
 

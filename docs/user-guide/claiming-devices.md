@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: 声明设备
-description: 使用 ThingsBoard 声明设备功能进行物联网设备管理
+description: 使用 GridLinks 声明设备功能进行物联网设备管理
 
 device-claiming-permissions-in-pe-carousel:
     0:

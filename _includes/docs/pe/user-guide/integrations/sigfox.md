@@ -5,7 +5,7 @@
 
 ## 概述
 
-Sigfox 集成允许将数据从 Sigfox 后端流式传输到 ThingsBoard，并将二进制设备有效负载转换为 ThingsBoard 格式。
+Sigfox 集成允许将数据从 Sigfox 后端流式传输到 GridLinks，并将二进制设备有效负载转换为 GridLinks 格式。
 
 请查看集成图以了解更多信息。
 
@@ -16,10 +16,10 @@ Sigfox 集成允许将数据从 Sigfox 后端流式传输到 ThingsBoard，并�
 在本教程中，我们将使用：
 
 {% if docsPrefix == "pe/" %}
- - 本地安装的 [ThingsBoard Professional Edition](https://thingsboard.io/docs/user-guide/install/pe/installation-options/) 实例；
+ - 本地安装的 [ GridLinks专业版](https://thingsboard.io/docs/user-guide/install/pe/installation-options/) 实例；
   {% endif %}
   {% if docsPrefix == "paas/" %}
- - ThingsBoard Professional Edition 实例 — [thingsboard.cloud](https://thingsboard.cloud)；
+ -  GridLinks专业版 实例 — [thingsboard.cloud](https://thingsboard.cloud)；
   {% endif %}
 
  - 一个 [Sigfox](https://www.sigfox.com/) 帐户；
@@ -31,7 +31,7 @@ Sigfox 集成允许将数据从 Sigfox 后端流式传输到 ThingsBoard，并�
 
 ### 创建上行转换器
 
-您可以在数据转换器页面或直接在集成中创建上行转换器。上行转换器对于将来自设备的传入数据转换为在 ThingsBoard 中显示它们所需的格式是必要的。
+您可以在数据转换器页面或直接在集成中创建上行转换器。上行转换器对于将来自设备的传入数据转换为在 GridLinks 中显示它们所需的格式是必要的。
 
 转到 **集成中心** -> **数据转换器** 页面，然后单击“加号”按钮以创建新的转换器。将其命名为“**SigFox 上行转换器**”，然后选择类型 **上行**。要查看事件，请启用 **调试模式**。在函数解码器字段中，指定一个脚本来解析和转换数据。
 
@@ -93,7 +93,7 @@ JavaScript<small></small>%,%anonymous%,%templates/integration/sigfox/sigfox-upli
 
 ## SigFox 配置
 
-现在我们需要设置一个 **Sigfox 帐户**，以便将我们设备的数据发送到 ThingsBoard 平台。
+现在我们需要设置一个 **Sigfox 帐户**，以便将我们设备的数据发送到 GridLinks 平台。
 
 转到您的 **Sigfox 帐户** -> **设备类型** -> 进入您的设备类型编辑模式。在我的例子中，这是“**恒温器**”。
 
@@ -107,7 +107,7 @@ JavaScript<small></small>%,%anonymous%,%templates/integration/sigfox/sigfox-upli
 
 **回调** 是一个自定义 http 请求，其中包含您的设备数据以及其他变量，当 Sigfox 云收到上述设备消息时，该请求将发送到给定的平台。
 
-创建一个回调来将 Sigfox 云连接到您的 ThingsBoard 平台。在右上角，单击“**新建**”按钮，然后选择“**自定义回调**”。
+创建一个回调来将 Sigfox 云连接到您的 GridLinks 平台。在右上角，单击“**新建**”按钮，然后选择“**自定义回调**”。
 
 ![image](/images/user-guide/integrations/sigfox/sigfox-device-callbacks-2-pe.png)
 

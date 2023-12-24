@@ -2,8 +2,8 @@
 layout: docwithnav-pe
 assignees:
 - ashvayka
-title: 在 Windows 上安装 ThingsBoard PE
-description: 在 Windows 上安装 ThingsBoard
+title: 在 Windows 上安装 GridLinks PE
+description: 在 Windows 上安装 GridLinks
 
 ---
 
@@ -16,17 +16,17 @@ description: 在 Windows 上安装 ThingsBoard
 
 ### 先决条件
 
-本指南介绍如何在 Windows 机器上安装 ThingsBoard。
+本指南介绍如何在 Windows 机器上安装 GridLinks。
 以下说明适用于 Windows 10/8.1/8/7 32 位/64 位。
 硬件要求取决于所选数据库和连接到系统的设备数量。
-要在单台机器上运行 ThingsBoard 和 PostgreSQL，您至少需要 2Gb 的 RAM。
-要在单台机器上运行 ThingsBoard 和 Cassandra，您至少需要 8Gb 的 RAM。
+要在单台机器上运行 GridLinks 和 PostgreSQL，您至少需要 2Gb 的 RAM。
+要在单台机器上运行 GridLinks 和 Cassandra，您至少需要 8Gb 的 RAM。
 
 ### 步骤 1. 安装 Java 11 (OpenJDK)
 
 {% include templates/install/windows-java-install.md %}
 
-### 步骤 2. ThingsBoard 服务安装
+### 步骤 2. GridLinks 服务安装
 
 下载并运行安装包。
 
@@ -36,7 +36,7 @@ https://dist.thingsboard.io/thingsboard-windows-setup-{{ site.release.pe_ver }}.
 {: .copy-code}
 
 
-**注意：**我们假设您已将 ThingsBoard 安装到默认位置：*C:\Program Files (x86)\thingsboard*
+**注意：**我们假设您已将 GridLinks 安装到默认位置：*C:\Program Files (x86)\thingsboard*
 
 ### 步骤 3. 获取并配置许可证密钥
 
@@ -99,9 +99,9 @@ Confluent Cloud <small>(基于 Kafka 的事件流平台)</small>%,%confluent-clo
 
 ### 步骤 7. 运行安装脚本
 
-以管理员身份启动 Windows shell（命令提示符）。将目录更改为 ThingsBoard 安装目录。
+以管理员身份启动 Windows shell（命令提示符）。将目录更改为 GridLinks 安装目录。
 
-执行 **install.bat** 脚本以将 ThingsBoard 安装为 Windows 服务（或运行 **"install.bat --loadDemo"** 以安装并添加演示数据）。
+执行 **install.bat** 脚本以将 GridLinks 安装为 Windows 服务（或运行 **"install.bat --loadDemo"** 以安装并添加演示数据）。
 这意味着它将在系统启动时自动启动。
 类似地，**uninstall.bat** 将从 Windows 服务中删除 ThingsBoard。
 输出应类似于以下内容：
@@ -116,7 +116,7 @@ Installing thingsboard ...
 ThingsBoard installed successfully!
 ```
 
-### 步骤 8. 启动 ThingsBoard 服务
+### 步骤 8. 启动 GridLinks 服务
 
 {% include templates/windows-start-service.md %}
 
@@ -124,7 +124,7 @@ ThingsBoard installed successfully!
 请允许 Web UI 启动长达 90 秒。这仅适用于具有 1-2 个 CPU 或 1-2 GB RAM 的慢速机器。{% endcapture %}
 {% include templates/info-banner.md content=90-sec-ui %}
 
-### 步骤 9. 安装 ThingsBoard Web Report Server 组件
+### 步骤 9. 安装 GridLinks Web Report Server 组件
 
 下载并解压安装包。
 
@@ -133,11 +133,11 @@ https://dist.thingsboard.io/tb-web-report-windows-{{ site.release.pe_ver }}.zip
 ```
 {: .copy-code}
 
-**注意：**我们假设您已将 ThingsBoard Web Report Server 解压到默认位置：*C:\Program Files (x86)\tb-web-report*
+**注意：**我们假设您已将 GridLinks Web Report Server 解压到默认位置：*C:\Program Files (x86)\tb-web-report*
 
-以管理员身份启动 Windows shell（命令提示符）。将目录更改为 ThingsBoard 安装目录。
+以管理员身份启动 Windows shell（命令提示符）。将目录更改为 GridLinks 安装目录。
 
-执行 **install.bat** 脚本以将 ThingsBoard Web Report Server 安装为 Windows 服务。
+执行 **install.bat** 脚本以将 GridLinks Web Report Server 安装为 Windows 服务。
 这意味着它将在系统启动时自动启动。
 类似地，**uninstall.bat** 将从 Windows 服务中删除 ThingsBoard。
 输出应如下所示：
@@ -148,7 +148,7 @@ https://dist.thingsboard.io/tb-web-report-windows-{{ site.release.pe_ver }}.zip
     tb-web-report installed successfully!  
 ```
 
-现在让我们启动 ThingsBoard 服务！
+现在让我们启动 GridLinks 服务！
 以管理员身份打开命令提示符并执行以下命令：
 
 ```shell
@@ -179,7 +179,7 @@ YYYY-MM-DD HH:mm:ss,sss [main] INFO  o.t.s.ThingsboardServerApplication - Starte
 
 ### Windows 防火墙设置
 
-为了能够从外部访问 ThingsBoard Web UI 和设备连接（HTTP、MQTT、CoAP），您需要使用高级安全性的 Windows 防火墙创建一个新的入站规则。
+为了能够从外部访问 GridLinks Web UI 和设备连接（HTTP、MQTT、CoAP），您需要使用高级安全性的 Windows 防火墙创建一个新的入站规则。
 
 - 从“控制面板”中打开“Windows 防火墙”：
 
@@ -209,7 +209,7 @@ YYYY-MM-DD HH:mm:ss,sss [main] INFO  o.t.s.ThingsboardServerApplication - Starte
 
 ![image](/images/user-guide/install/windows/windows7-firewall-7.png)
 
-- 最后，为该规则命名（例如“ThingsBoard 服务网络”）并单击“完成”。
+- 最后，为该规则命名（例如“GridLinks 服务网络”）并单击“完成”。
 
 ![image](/images/user-guide/install/windows/windows7-firewall-8.png)
 

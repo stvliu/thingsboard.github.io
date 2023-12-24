@@ -2,7 +2,7 @@
 
 ## 概述
 
-IBM Watson IoT 集成允许将数据从 IBM Watson IoT 流式传输到 ThingsBoard，并将设备有效负载转换为 ThingsBoard 格式。
+IBM Watson IoT 集成允许将数据从 IBM Watson IoT 流式传输到 GridLinks，并将设备有效负载转换为 GridLinks 格式。
 
  ![image](/images/user-guide/integrations/ibm-watson-integration.svg)
  

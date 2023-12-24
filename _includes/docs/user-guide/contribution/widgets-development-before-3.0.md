@@ -323,7 +323,7 @@ Map describing available widget action sources to which user actions can be assi
 ### Creating simple widgets
 
 Below is the set of simple tutorials how to create minimal widgets of each type.
-In order to minimize the amount of code, the Angular framework will be used, on which ThingsBoard UI is actually based.
+In order to minimize the amount of code, the Angular framework will be used, on which GridLinks UI is actually based.
 By the way, you can always use pure JavaScript or jQuery API in your widget code.
 
 #### Latest Values widget
@@ -728,7 +728,7 @@ self.onDataUpdated = function() {
 In this example the **alarmSource** and **alarms** properties of [subscription](#subscription-object) is assigned to the **$scope** and become accessible within HTML template.
 Inside the HTML a special **ng-repeat** angular directive is used in order to iterate over available alarm **dataKeys** of **alarmSource** and render corresponding columns.
 The table rows are rendered by iterating over **alarms** array and corresponding cells rendered by iterating over **dataKeys**.
-The function **getAlarmValue** is fetching alarm value using special alarmFields constants obtained from **types** which is part of ThingsBoard UI and accessed via Angular **$injector**.
+The function **getAlarmValue** is fetching alarm value using special alarmFields constants obtained from **types** which is part of GridLinks UI and accessed via Angular **$injector**.
 The function **getAlarmCellStyle** is used to assign custom cell style for each alarm cell. In this example, we introduced new settings property called **alarmSeverityColorFunction** that contains function body returning color depending on alarm severity.
 Inside the **getAlarmCellStyle** function there is corresponding invocation of **alarmSeverityColorFunction** with severity value in order to get color for alarm severity cell.
 Note that in this code **onDataUpdated** function is implemented in order to update **alarms** property with latest alarms from subscription.
@@ -857,7 +857,7 @@ The value displayed was obtained from [subscription](#subscription-object) **dat
 ### Using existing JavaScript code
 
 Another approach of creating widgets is to use existing bundled JavaScript code.
-In this case, you can create own JavaScript class or Angular directive and bundle it into the ThingsBoard UI code.
+In this case, you can create own JavaScript class or Angular directive and bundle it into the GridLinks UI code.
 In order to make this code accessible within the widget, you need to register corresponding Angular module or inject JavaScript class to a global variable (for ex. window object).
 Some of the ThingsBoard widgets already use this approach. Take a look at the [widget.service.js](https://github.com/thingsboard/thingsboard/blob/v2.5.5/ui/src/app/api/widget.service.js).
 Here you can find how some bundled classes or modules are registered for later use in ThingsBoard widgets.

@@ -8,12 +8,12 @@
 | timeout | **60000** | 触发“设备断开连接”事件的超时时间。 |
 | attributes: | | 此小节包含传入消息的参数，这些参数将被解释为设备的属性。 |
 | ... type | **raw** | 当前属性的传入数据类型。 |
-| ... key | **temp** | 要发送到 ThingsBoard 实例的属性名称。 |
-| ... value | **[:]** | 将发送到 ThingsBoard 的数据的最终视图，[:] - 将使用 Python 切片规则替换为设备数据。 |
+| ... key | **temp** | 要发送到 GridLinks 实例的属性名称。 |
+| ... value | **[:]** | 将发送到 GridLinks 的数据的最终视图，[:] - 将使用 Python 切片规则替换为设备数据。 |
 | timeseries: | | 此小节包含传入消息的参数，这些参数将被解释为设备的遥测数据。 |
 | ... type | **raw** | 当前遥测数据的传入数据类型。 |
-| ... key | **rawData** | 要发送到 ThingsBoard 实例的遥测数据名称。 |
-| ... value | **[4:]** | 将发送到 ThingsBoard 的数据的最终视图，[:] - 将使用 Python 切片规则替换为设备数据。 |
+| ... key | **rawData** | 要发送到 GridLinks 实例的遥测数据名称。 |
+| ... value | **[4:]** | 将发送到 GridLinks 的数据的最终视图，[:] - 将使用 Python 切片规则替换为设备数据。 |
 |---
 
 {% capture difference %}

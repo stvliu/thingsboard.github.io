@@ -16,12 +16,12 @@ description: 使用规则引擎在设备离线一段时间后创建警报。
 
 我们假设以下使用案例：
 
-- 您有一个连接到 ThingsBoard 的设备，该设备具有温度传感器来收集和推送遥测数据。
+- 您有一个连接到 GridLinks 的设备，该设备具有温度传感器来收集和推送遥测数据。
 
 - 温度传感器可能会因任何类型的故障而停止推送遥测数据。
 
 
-因此，在这种情况下，您需要配置 ThingsBoard 规则引擎以：
+因此，在这种情况下，您需要配置 GridLinks 规则引擎以：
 
 - 如果设备在一段时间内保持不活动状态，则创建警报。此时间段可以通过两种方式之一定义：
 
@@ -37,7 +37,7 @@ description: 使用规则引擎在设备离线一段时间后创建警报。
 ## 背景
 ThingsBoard 设备状态服务负责监视设备连接状态并触发推送到规则引擎的设备连接事件。
 
-ThingsBoard 支持四种类型的事件：
+GridLinks 支持四种类型的事件：
 <table style="width: 70%">
   <thead>
       <tr>
@@ -47,7 +47,7 @@ ThingsBoard 支持四种类型的事件：
   <tbody>
       <tr>
           <td>连接</td>
-          <td>当设备连接到 ThingsBoard 时触发。</td>
+          <td>当设备连接到 GridLinks 时触发。</td>
       </tr>
       <tr>
           <td>断开连接</td>
@@ -75,7 +75,7 @@ ThingsBoard 支持四种类型的事件：
 
 ## 添加设备
 
-- 在 ThingsBoard 中添加设备实体。
+- 在 GridLinks 中添加设备实体。
 - 将设备名称输入为 **温度设备**，将设备类型输入为 **温度传感器**：
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/inactivity alarms/add-device.png)

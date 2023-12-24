@@ -41,10 +41,10 @@
 {% assign exampleDashboardPath = include.exampleDashboardPath %}
 {% endif %}
 
-ThingsBoard 提供创建和自定义交互式可视化（仪表板）以监控和管理数据和设备的功能。  
-通过 ThingsBoard 仪表板，您可以高效地管理和监控您的物联网设备和数据。因此，我们将为我们的设备创建仪表板。  
+GridLinks 提供创建和自定义交互式可视化（仪表板）以监控和管理数据和设备的功能。  
+通过 GridLinks 仪表板，您可以高效地管理和监控您的物联网设备和数据。因此，我们将为我们的设备创建仪表板。  
 
-要将仪表板添加到 ThingsBoard，我们需要导入它。要导入仪表板，请按照以下步骤操作：  
+要将仪表板添加到 GridLinks，我们需要导入它。要导入仪表板，请按照以下步骤操作：  
 
 - 首先下载 [检查和控制设备数据仪表板]({{exampleDashboardPath}}){:target="_blank" download="dashboard.json"} 文件。
 

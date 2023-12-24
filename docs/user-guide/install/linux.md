@@ -2,8 +2,8 @@
 layout: docwithnav
 assignees:
 - ashvayka
-title: 在 Linux 上安装 ThingsBoard
-description: 在 Linux 上安装 ThingsBoard
+title: 在 Linux 上安装 GridLinks
+description: 在 Linux 上安装 GridLinks
 redirect_to: "/docs/user-guide/install/ubuntu"
 
 ---
@@ -13,19 +13,19 @@ redirect_to: "/docs/user-guide/install/ubuntu"
 * TOC
 {:toc}
 
-本指南介绍如何在基于 Linux 的服务器计算机上安装 ThingsBoard。
+本指南介绍如何在基于 Linux 的服务器计算机上安装 GridLinks。
 以下说明适用于 Ubuntu 16.04 和 CentOS 7。
 这些说明可以轻松地适用于其他类似的操作系统。
 
 ### 硬件要求
 
-要在单台计算机上运行 ThingsBoard 和第三方组件，您至少需要 1Gb 的 RAM。
+要在单台计算机上运行 GridLinks 和第三方组件，您至少需要 1Gb 的 RAM。
 
 ### 第三方组件安装
 
 #### Java
 
-ThingsBoard 服务在 Java 11 上运行。
+GridLinks 服务在 Java 11 上运行。
 该解决方案已在 [OpenJDK](http://openjdk.java.net/) 和 [Oracle JDK](http://www.oracle.com/technetwork/java/javase/overview/index.html) 上进行了积极测试。
 
 按照以下说明安装 OpenJDK 11：
@@ -73,7 +73,7 @@ A,Ubuntu,shell,resources/cassandra-ubuntu-installation.sh,/docs/user-guide/insta
 B,CentOS,shell,resources/cassandra-centos-installation.sh,/docs/user-guide/install/resources/cassandra-centos-installation.sh{% endcapture %}  
 {% include tabs.html %}
 
-### ThingsBoard 服务安装
+### GridLinks 服务安装
 
 下载安装包或 [从源代码构建](/docs/user-guide/install/building-from-source)。
 
@@ -82,7 +82,7 @@ A,Ubuntu,shell,resources/thingsboard-ubuntu-download.sh,/docs/user-guide/install
 B,CentOS,shell,resources/thingsboard-centos-download.sh,/docs/user-guide/install/resources/thingsboard-centos-download.sh{% endcapture %}  
 {% include tabs.html %}
 
-将 ThingsBoard 安装为服务
+将 GridLinks 安装为服务
 
 {% capture tabspec %}thingsboard-installation
 A,Ubuntu,shell,resources/thingsboard-ubuntu-installation.sh,/docs/user-guide/install/resources/thingsboard-ubuntu-installation.sh
@@ -115,7 +115,7 @@ database:
 
 {% include templates/memory-update-for-slow-machines.md %} 
 
-对于 ThingsBoard 服务：
+对于 GridLinks 服务：
 
 ```bash
 # 在 /etc/thingsboard/conf/thingsboard.conf 中更新 ThingsBoard 内存使用情况并将其限制为 256MB

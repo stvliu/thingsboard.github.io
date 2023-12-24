@@ -2,8 +2,8 @@
 layout: docwithnav
 assignees:
 - ashvayka
-title: 在 Ubuntu 服务器上安装 ThingsBoard CE
-description: 在 Ubuntu 服务器上安装 ThingsBoard CE
+title: 在 Ubuntu 服务器上安装 GridLinks CE
+description: 在 Ubuntu 服务器上安装 GridLinks CE
 
 ---
 
@@ -12,16 +12,16 @@ description: 在 Ubuntu 服务器上安装 ThingsBoard CE
 
 ### 先决条件
 
-本指南介绍如何在 Ubuntu 18.04 LTS / Ubuntu 20.04 LTS 上安装 ThingsBoard。
+本指南介绍如何在 Ubuntu 18.04 LTS / Ubuntu 20.04 LTS 上安装 GridLinks。
 硬件要求取决于所选数据库和连接到系统的设备数量。
-要在单台机器上运行 ThingsBoard 和 PostgreSQL，您至少需要 1Gb 的 RAM。
-要在单台机器上运行 ThingsBoard 和 Cassandra，您至少需要 8Gb 的 RAM。
+要在单台机器上运行 GridLinks 和 PostgreSQL，您至少需要 1Gb 的 RAM。
+要在单台机器上运行 GridLinks 和 Cassandra，您至少需要 8Gb 的 RAM。
 
 ### 步骤 1. 安装 Java 11 (OpenJDK)
 
 {% include templates/install/ubuntu-java-install.md %}
 
-### 步骤 2. 安装 ThingsBoard 服务
+### 步骤 2. 安装 GridLinks 服务
 
 下载安装包。
 
@@ -30,7 +30,7 @@ wget https://github.com/thingsboard/thingsboard/releases/download/{{ site.releas
 ```
 {: .copy-code}
 
-将 ThingsBoard 安装为服务
+将 GridLinks 安装为服务
 
 ```bash
 sudo dpkg -i thingsboard-{{ site.release.ce_ver }}.deb
@@ -72,7 +72,7 @@ Confluent Cloud <small>(基于 Kafka 的事件流平台)</small>%,%confluent-clo
 {% include templates/run-install.md %} 
 
 
-### 步骤 7. 启动 ThingsBoard 服务
+### 步骤 7. 启动 GridLinks 服务
 
 {% include templates/start-service.md %}
 

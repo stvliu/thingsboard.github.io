@@ -94,7 +94,7 @@ SNS 是一种基于推送的服务，因此我们需要创建一个订阅才能�
 {"temp":88.2}
 ```
 
-以下是一个将单个遥测消息发布到本地安装的 ThingsBoard 的命令示例：
+以下是一个将单个遥测消息发布到本地安装的 GridLinks 的命令示例：
 
 ```bash
 mosquitto_pub -d -h "localhost" -p 1883 -t "v1/devices/me/telemetry" -u "$ACCESS_TOKEN" -m "{'temp':88.2}"

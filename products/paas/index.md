@@ -21,7 +21,7 @@ description:
 	<main>
 		<h1 class="intro_title"><a href="what-is-thingsboard-cloud/">ThingsBoard Cloud</a> 是一个完全托管、可扩展且容错的平台，适用于您的物联网应用程序</h1>
 		<div id="labeling">
-        <p>ThingsBoard Cloud 适用于希望使用 ThingsBoard Professional Edition 但不想托管平台自身实例的每个人。</p>
+        <p>ThingsBoard Cloud 适用于希望使用 GridLinks Professional Edition 但不想托管平台自身实例的每个人。</p>
 		</div>
         <div id="cards" class="row">
             <div class="col-lg-6">

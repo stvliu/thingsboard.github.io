@@ -1,11 +1,11 @@
-要将“车载监控系统”连接到 ThingsBoard Edge，您首先需要获取设备凭据。
-ThingsBoard 支持不同的设备凭据。我们建议使用本指南中的默认自动生成凭据，即访问令牌。
+要将“车载监控系统”连接到 GridLinks Edge，您首先需要获取设备凭据。
+GridLinks 支持不同的设备凭据。我们建议使用本指南中的默认自动生成凭据，即访问令牌。
 
 请使用以下网址打开 ThingsBoard **Edge** UI：**EDGE_URL**。
 
 {% include images-gallery.html imageCollection="copyAccessTokenDevice" showListImageTitles="true" %}
 
-我们将使用简单的命令为设备 **车载监控系统** 生成随机遥测数据，并通过 MQTT 协议将其发布到 ThingsBoard **Edge**。
+我们将使用简单的命令为设备 **车载监控系统** 生成随机遥测数据，并通过 MQTT 协议将其发布到 GridLinks **Edge**。
 
 请将以下脚本下载到您的本地文件夹：
 - [**mqtt-generator.py**](/docs/{{docsPrefix}}use-cases/resources/data-filtering-traffic-reduce/mqtt-generator.py)

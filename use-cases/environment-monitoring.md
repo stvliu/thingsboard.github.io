@@ -10,7 +10,7 @@ notitle: "true"
 
 <h1 class="usecase-title">环境监测解决方案</h1>
 
-ThingsBoard 平台大幅缩短了环境监测解决方案的上市时间和创建工作。
+GridLinks 平台大幅缩短了环境监测解决方案的上市时间和创建工作。
 该平台广泛用于：
 
   - 一些大城市的空气质量监测；
@@ -53,7 +53,7 @@ ThingsBoard 平台大幅缩短了环境监测解决方案的上市时间和创�
     <a target="_blank" href="https://thingsboard.cloud/dashboard/dfaef940-8a91-11ec-83d0-83ba2015b874?publicId=4978baf0-8a92-11ec-98f9-ff45c37940c6" class="button">查看实时演示</a>
 </div>
 
-实时仪表板是 [解决方案模板](https://thingsboard.io/docs/paas/solution-templates/temperature-humidity-sensors/) 的一部分，并显示使用 ThingsBoard MQTT API 收集的温度和湿度传感器的实时数据。
+实时仪表板是 [解决方案模板](https://thingsboard.io/docs/paas/solution-templates/temperature-humidity-sensors/) 的一部分，并显示使用 GridLinks MQTT API 收集的温度和湿度传感器的实时数据。
 您可以使用仪表板来：
 
 * 添加新传感器；
@@ -75,8 +75,8 @@ ThingsBoard 平台大幅缩短了环境监测解决方案的上市时间和创�
                 <img src="/images/microservices-icon.svg" alt="Microservice icon">
                 <div>
                     <a class="title" href="/docs/reference/msa/">可扩展性和高可用性</a>
-                    <p>ThingsBoard 支持使用 K8S 或裸机部署在云和本地数据中心上的高可用性部署。
-                        平台组件是水平可扩展的。ThingsBoard 的生产部署支持连接超过 500,000 台设备。</p>
+                    <p>GridLinks 支持使用 K8S 或裸机部署在云和本地数据中心上的高可用性部署。
+                        平台组件是水平可扩展的。GridLinks 的生产部署支持连接超过 500,000 台设备。</p>
                 </div>
             </div>
         </div>
@@ -86,7 +86,7 @@ ThingsBoard 平台大幅缩短了环境监测解决方案的上市时间和创�
                 <div>
                     <a class="title" href="/docs/getting-started-guides/connectivity/">连接性</a>
                     <p>通过以下内置协议将设备直接连接到平台：HTTP、CoAP、MQTT、LwM2M 和 SNMP。
-                        使用 ThingsBoard 网关通过 Modbus、BLE、BACnet、OPC-UA 和其他协议将本地网络中的设备连接到云。</p>
+                        使用 GridLinks 网关通过 Modbus、BLE、BACnet、OPC-UA 和其他协议将本地网络中的设备连接到云。</p>
                 </div>
             </div>
         </div>
@@ -104,7 +104,7 @@ ThingsBoard 平台大幅缩短了环境监测解决方案的上市时间和创�
                 <img src="/images/security-icon.svg" alt="Security icon">
                 <div>
                     <a class="title" href="/docs/pe/user-guide/ssl/http-over-ssl/">安全性</a>
-                    <p>ThingsBoard 支持行业标准加密算法（如 RSA 和 ECDSA），以确保数据在通过 TLS(TCP) 和 DTLS (UDP) 传输期间的安全。</p>
+                    <p>GridLinks 支持行业标准加密算法（如 RSA 和 ECDSA），以确保数据在通过 TLS(TCP) 和 DTLS (UDP) 传输期间的安全。</p>
                 </div>
             </div>
         </div>
@@ -131,7 +131,7 @@ ThingsBoard 平台大幅缩短了环境监测解决方案的上市时间和创�
                 <img src="/images/device-icon.svg" alt="Device icon">
                 <div>
                     <a class="title" href="/docs/mobile/">移动应用程序</a>
-                    <p>使用 ThingsBoard 移动应用程序（一个基于 Flutter 的开源项目）以最少的编码工作量构建您自己的物联网移动应用程序。利用内置的一组移动操作，可以在仪表板中直接拍照、扫描二维码、更新位置等。</p>
+                    <p>使用 GridLinks 移动应用程序（一个基于 Flutter 的开源项目）以最少的编码工作量构建您自己的物联网移动应用程序。利用内置的一组移动操作，可以在仪表板中直接拍照、扫描二维码、更新位置等。</p>
                 </div>
             </div>
         </div>
@@ -140,7 +140,7 @@ ThingsBoard 平台大幅缩短了环境监测解决方案的上市时间和创�
                 <img src="/images/tenancy-icon.svg" alt="Tenancy icon">
                 <div>
                     <a class="title" href="/docs/user-guide/entities-and-relations/">多租户</a>
-                    <p>ThingsBoard 提供 UI 和 API 来管理租户、客户、用户、设备和资产。单个租户可能有多个租户管理员和数百万台设备和客户。它还开箱即用地支持智能电表的 OTA 更新。</p>
+                    <p>GridLinks 提供 UI 和 API 来管理租户、客户、用户、设备和资产。单个租户可能有多个租户管理员和数百万台设备和客户。它还开箱即用地支持智能电表的 OTA 更新。</p>
                 </div>
             </div>
         </div>
@@ -149,7 +149,7 @@ ThingsBoard 平台大幅缩短了环境监测解决方案的上市时间和创�
 
 ## 环境监测解决方案概述
 
-下图标识了使用 ThingsBoard 平台收集和分析物联网传感器数据的典型环境监测解决方案的数据流和集成点。
+下图标识了使用 GridLinks 平台收集和分析物联网传感器数据的典型环境监测解决方案的数据流和集成点。
 
 <object width="100%" style="max-width: max-content; margin: 32px 0" data="/images/iot-use-cases/common-edge.svg"></object>
 

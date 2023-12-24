@@ -3,7 +3,7 @@
 
 ## 用例说明
 
-作为设备制造商或固件开发人员，我希望我的设备能够在 ThingsBoard 中自动配置自身。
+作为设备制造商或固件开发人员，我希望我的设备能够在 GridLinks 中自动配置自身。
 在自动配置期间，设备可以生成唯一凭据或要求服务器为设备提供唯一凭据。
 
 从 3.5 版本开始，ThingsBoard 允许使用 [X.509 证书链](/docs/{{docsPrefix}}user-guide/certificates/) 通过 MQTT 上的认证自动配置新设备。
@@ -46,12 +46,12 @@ ThingsBoard 验证请求并回复设备配置响应（响应）。
 找到配置文件后，平台将使用配置的配置策略来验证设备名称。
 有两种可用的配置策略：
 
-* **允许创建新设备** - 检查具有相同名称的设备尚未在 ThingsBoard 中注册。
+* **允许创建新设备** - 检查具有相同名称的设备尚未在 GridLinks 中注册。
 当您在制造期间不知道唯一设备名称（MAC 地址等）的列表，但设备本身在固件中可以访问此信息时，此策略非常有用。
 它更容易实现，但不如第二种策略安全。
-* **检查预配置设备** - 检查具有相同名称的设备已在 ThingsBoard 中创建，但尚未配置。
+* **检查预配置设备** - 检查具有相同名称的设备已在 GridLinks 中创建，但尚未配置。
 当您只想允许对特定设备列表进行配置时，此策略非常有用。假设您在制造期间收集了唯一 ID（MAC 地址等）的列表。
-您可以使用 [批量配置](/docs/{{docsPrefix}}user-guide/bulk-provisioning/) 将此列表上传到 ThingsBoard。现在，列表中的设备可以发出配置请求，其他设备将无法自行配置。
+您可以使用 [批量配置](/docs/{{docsPrefix}}user-guide/bulk-provisioning/) 将此列表上传到 GridLinks。现在，列表中的设备可以发出配置请求，其他设备将无法自行配置。
 
 配置完成后，ThingsBoard 将更新设备的 *provisionState* 服务器属性，并将其设置为 *provisioned* 值。
 
@@ -70,7 +70,7 @@ ThingsBoard 验证请求并回复设备配置响应（响应）。
 请参阅以下每个选项的请求/响应和代码示例：
 
 {% capture mqttcredentialstogglespec %}
-ThingsBoard 服务器生成的凭据%,%without%,%templates/provisioning/mqtt-without-credentials-type.md%br%
+GridLinks 服务器生成的凭据%,%without%,%templates/provisioning/mqtt-without-credentials-type.md%br%
 设备提供<br>访问令牌%,%access-token%,%templates/provisioning/mqtt-access-token-credentials-type.md%br%
 设备提供<br>基本 MQTT 凭据%,%mqtt-basic%,%templates/provisioning/mqtt-basic-credentials-type.md%br%
 设备提供<br>X.509 证书%,%x509-certificate%,%templates/provisioning/x509-certificate-credentials-type.md{% endcapture %}
@@ -83,7 +83,7 @@ ThingsBoard 服务器生成的凭据%,%without%,%templates/provisioning/mqtt-wit
 请参阅以下每个选项的请求/响应和代码示例：
 
 {% capture httpcredentialstogglespec %}
-ThingsBoard 服务器生成的凭据%,%without%,%templates/provisioning/http-without-credentials-type.md%br%
+GridLinks 服务器生成的凭据%,%without%,%templates/provisioning/http-without-credentials-type.md%br%
 设备提供<br>访问令牌%,%access-token%,%templates/provisioning/http-access-token-credentials-type.md%br%{% endcapture %}
 {% include content-toggle.html content-toggle-id="httpprovisioning" toggle-spec=httpcredentialstogglespec %}
 
@@ -94,7 +94,7 @@ ThingsBoard 服务器生成的凭据%,%without%,%templates/provisioning/http-wit
 请参阅以下每个选项的请求/响应和代码示例：
 
 {% capture coapcredentialstogglespec %}
-ThingsBoard 服务器生成的凭据%,%without%,%templates/provisioning/coap-without-credentials-type.md%br%
+GridLinks 服务器生成的凭据%,%without%,%templates/provisioning/coap-without-credentials-type.md%br%
 设备提供<br>访问令牌%,%access-token%,%templates/provisioning/coap-access-token-credentials-type.md%br%{% endcapture %}
 {% include content-toggle.html content-toggle-id="coapprovisioning" toggle-spec=coapcredentialstogglespec %}
 

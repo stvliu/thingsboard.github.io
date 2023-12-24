@@ -3,7 +3,7 @@
 * TOC
 {:toc}
 
-华为 OceanConnect 集成允许将数据从 OceanConnect 平台流式传输到 ThingsBoard，并将二进制设备有效负载转换为 ThingsBoard 格式。
+华为 OceanConnect 集成允许将数据从 OceanConnect 平台流式传输到 GridLinks，并将二进制设备有效负载转换为 GridLinks 格式。
 
 
  ![image](/images/user-guide/integrations/ocean-connect-integration.svg)

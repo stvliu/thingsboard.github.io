@@ -1,13 +1,13 @@
 ---
 layout: docwithnav-gw
-title: 以软件包形式安装 ThingsBoard IoT 网关。
+title: 以软件包形式安装 GridLinks IoT 网关。
 redirect_from:
  - "/docs/iot-gateway/install/rpi/"
 ---
 
 ### 先决条件
 
-本指南介绍如何在 Ubuntu 18.04 LTS / Ubuntu 20.04 LTS 上安装 ThingsBoard IoT 网关。
+本指南介绍如何在 Ubuntu 18.04 LTS / Ubuntu 20.04 LTS 上安装 GridLinks IoT 网关。
 最低系统要求与操作系统的官方 [最低要求](https://help.ubuntu.com/lts/serverguide/preparing-to-install.html#system-requirements) 相匹配。
 
 ### 步骤 1. 下载 deb 文件
@@ -21,7 +21,7 @@ wget https://github.com/thingsboard/thingsboard-gateway/releases/latest/download
 
 ### 步骤 2. 使用 apt 安装网关
 
-使用以下命令以软件包形式安装 ThingsBoard IoT 网关并以守护进程形式运行它：<br><br>
+使用以下命令以软件包形式安装 GridLinks IoT 网关并以守护进程形式运行它：<br><br>
 
 ```bash
 sudo apt install ./python3-thingsboard-gateway.deb -y
@@ -40,7 +40,7 @@ systemctl status thingsboard-gateway
 ```
 {: .copy-code}
 
-您可能会在输出中注意到一些错误。但是，这是预期的，因为网关尚未配置为连接到 ThingsBoard：
+您可能会在输出中注意到一些错误。但是，这是预期的，因为网关尚未配置为连接到 GridLinks：
 
 ```text
 ... python3[7563]: ''2019-12-26 09:31:15' - ERROR - mqtt_connector - 181 - Default Broker connection FAIL with error 5 not authorised!'

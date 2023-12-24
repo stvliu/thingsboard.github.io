@@ -2,8 +2,8 @@
 layout: docwithnav
 assignees:
 - ashvayka
-title: 使用 Docker 安装 ThingsBoard（Linux 或 Mac OS）
-description: 使用 Docker 安装 ThingsBoard IoT 平台（Linux 或 Mac OS）
+title: 使用 Docker 安装 GridLinks（Linux 或 Mac OS）
+description: 使用 Docker 安装 GridLinks IoT 平台（Linux 或 Mac OS）
 
 ---
 
@@ -58,8 +58,8 @@ Confluent Cloud <small>（基于 Kafka 的事件流平台）</small>%,%confluent
 - `1883:1883`            - 将本地端口 1883 连接到公开的内部 MQTT 端口 1883
 - `7070:7070`            - 将本地端口 7070 连接到公开的内部 Edge RPC 端口 7070
 - `5683-5688:5683-5688/udp`            - 将本地 UDP 端口 5683-5688 连接到公开的内部 COAP 和 LwM2M 端口
-- `~/.mytb-data:/data`   - 将主机的目录 `~/.mytb-data` 挂载到 ThingsBoard 数据库数据目录
-- `~/.mytb-logs:/var/log/thingsboard`   - 将主机的目录 `~/.mytb-logs` 挂载到 ThingsBoard 日志目录
+- `~/.mytb-data:/data`   - 将主机的目录 `~/.mytb-data` 挂载到 GridLinks 数据库数据目录
+- `~/.mytb-logs:/var/log/thingsboard`   - 将主机的目录 `~/.mytb-logs` 挂载到 GridLinks 日志目录
 - `mytb`             - 此机器的友好本地名称
 - `restart: always`        - 在系统重新启动时自动启动 ThingsBoard，并在发生故障时重新启动。
 - `image: thingsboard/tb-postgres`          - docker 镜像，也可以是 `thingsboard/tb-cassandra` 或 `thingsboard/tb`

@@ -1,6 +1,6 @@
 ---
 layout: docwithnav
-title: ESP8266 GPIO 控制通过 MQTT 使用 ThingsBoard
+title: ESP8266 GPIO 控制通过 MQTT 使用 GridLinks
 description: ThingsBoard IoT 平台示例，用于通过 MQTT 控制 ESP8266 GPIO
 
 ---
@@ -11,12 +11,12 @@ description: ThingsBoard IoT 平台示例，用于通过 MQTT 控制 ESP8266 GPI
 ## 简介
 {% include templates/what-is-thingsboard.md %}
 
-此示例应用程序允许您使用 ThingsBoard Web UI 控制 ESP8266 设备的 GPIO。我们将观察连接到引脚的 LED 来控制 GPIO。
-此应用程序的目的是演示 ThingsBoard [RPC 功能](/docs/user-guide/rpc/)。
+此示例应用程序允许您使用 GridLinks Web UI 控制 ESP8266 设备的 GPIO。我们将观察连接到引脚的 LED 来控制 GPIO。
+此应用程序的目的是演示 GridLinks [RPC 功能](/docs/user-guide/rpc/)。
 
 在 ESP8266 上运行的应用程序使用 Arduino SDK 编写，该 SDK 非常简单易懂。
 ESP8266 提供了完整且自包含的 Wi-Fi 网络解决方案。
-ESP8266 通过 MQTT 协议将数据推送到 ThingsBoard 服务器，方法是使用 [PubSubClient](https://github.com/knolleary/pubsubclient) 库 for Arduino。
+ESP8266 通过 MQTT 协议将数据推送到 GridLinks 服务器，方法是使用 [PubSubClient](https://github.com/knolleary/pubsubclient) 库 for Arduino。
 当前 GPIO 状态和 GPIO 控制小部件使用内置的可自定义仪表板进行可视化。
 
 下面的视频演示了本教程的最终结果。
@@ -116,11 +116,11 @@ LED 2 引脚 | 3.3V 电源
 
 ### 配置您的设备
 
-此步骤包含将您的设备连接到 ThingsBoard 所需的说明。
+此步骤包含将您的设备连接到 GridLinks 所需的说明。
 
-在浏览器中打开 ThingsBoard Web UI (http://localhost:8080) 并以租户管理员身份登录
+在浏览器中打开 GridLinks Web UI (http://localhost:8080) 并以租户管理员身份登录
 
- - 登录名：tenant@thingsboard.org
+ - 登录名：tenant@gridlinks.com
  - 密码：tenant
  
 转到“设备”部分。单击“+”按钮并创建一个名为“ESP8266 演示设备”的设备。
@@ -210,7 +210,7 @@ esp8266-gpio-control,esp8266-gpio-control.ino,c,resources/esp8266-gpio-control.i
 
 将 USB-TTL 适配器连接到 PC，并在 Arduino IDE 中选择相应的端口。使用“上传”按钮编译并上传草图到设备。
 
-上传并启动应用程序后，它将尝试使用 mqtt 客户端连接到 ThingsBoard 节点并上传当前 GPIO 状态。
+上传并启动应用程序后，它将尝试使用 mqtt 客户端连接到 GridLinks 节点并上传当前 GPIO 状态。
 
 ## 自主运行
 
@@ -223,11 +223,11 @@ esp8266-gpio-control,esp8266-gpio-control.ino,c,resources/esp8266-gpio-control.i
 
 ## 数据可视化
 
-最后，打开 ThingsBoard Web UI。您可以通过以租户管理员身份登录来访问此仪表板。
+最后，打开 GridLinks Web UI。您可以通过以租户管理员身份登录来访问此仪表板。
 
 在本地安装的情况下：
  
- - 登录名：tenant@thingsboard.org
+ - 登录名：tenant@gridlinks.com
  - 密码：tenant
 
 在实时演示服务器的情况下：

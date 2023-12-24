@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-pe
-title: ThingsBoard 专业版
-description: ThingsBoard 专业版文档 - 了解平台并在 ThingsBoard 上运行您的物联网项目
+title: GridLinks 专业版
+description: GridLinks 专业版文档 - 了解平台并在 GridLinks 上运行您的物联网项目
 ---
 
 {% assign docsPrefix = "pe/" %}

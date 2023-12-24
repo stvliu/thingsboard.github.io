@@ -1,6 +1,6 @@
 {% assign boardLedCount = 1 %}
 {% assign hasCamera = "true" %}
-{% assign deviceName = page.title | remove: "如何连接 " | remove: "到 ThingsBoard？" %}
+{% assign deviceName = page.title | remove: "如何连接 " | remove: "到 GridLinks？" %}
 {% assign arduinoBoardPath = "**M5Stack** > **M5TimerCAM**（或在较旧的 ESP-IDF 版本中为 M5Stack-Timer-CAM）" %}
 {% assign prerequisites = "
 - [" | append: deviceName | append: "](https://shop.m5stack.com/collections/m5-cameras/products/esp32-psram-timer-camera-fisheye-ov3660)
@@ -19,7 +19,7 @@
 
 {% include /docs/devices-library/blocks/basic/introduction-block.md %}
 
-## 在 ThingsBoard 上创建设备
+## 在 GridLinks 上创建设备
 
 {% include /docs/devices-library/blocks/basic/thingsboard-create-device-block.md %}
 
@@ -29,13 +29,13 @@
 
 {% include /docs/devices-library/blocks/microcontrollers/thingsboard-arduino-library-install-block.md %}
 
-## 将设备连接到 ThingsBoard
+## 将设备连接到 GridLinks
 
 {% include /docs/devices-library/blocks/basic/thingsboard-provide-device-access-token-block.md %}
 
 {% include /docs/devices-library/blocks/microcontrollers/camera-code-to-program-block.md %}
 
-## 在 ThingsBoard 上查看数据
+## 在 GridLinks 上查看数据
 
 {% include /docs/devices-library/blocks/basic/thingsboard-upload-example-dashboard.md %}
 

@@ -80,7 +80,7 @@ DHT-22 GND (-) | 树莓派 GND
 
 在浏览器中打开物联网平台 Web UI (http://localhost:8080) 并以租户管理员身份登录
 
- - 登录名：tenant@thingsboard.org
+ - 登录名：tenant@gridlinks.com
  - 密码：tenant
  
 转到“设备”部分。单击“+”按钮并创建一个名为“DHT22 演示设备”的设备。
@@ -154,7 +154,7 @@ python mqtt-dht22.py
 
 如果是本地安装：
  
- - 登录名：tenant@thingsboard.org
+ - 登录名：tenant@gridlinks.com
  - 密码：tenant
 
 如果是实时演示服务器：
@@ -170,7 +170,7 @@ python mqtt-dht22.py
 ![image](/images/samples/raspberry/temperature/attributes.png)
 
 之后，打开 **“仪表板”** 部分，然后找到并打开 **“DHT22：温度和湿度演示仪表板”**。
-结果，您将看到两个数字仪表和两个时间序列图表，显示温度和湿度水平（类似于简介中的仪表板图像）。
+结果，您将看到两个数字仪表和两个时序图表，显示温度和湿度水平（类似于简介中的仪表板图像）。
 
 ## 另请参阅
 

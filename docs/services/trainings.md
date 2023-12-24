@@ -8,9 +8,9 @@ description: ThingsBoard 培训课程
 
 <h1 class="mainTitle">培训课程</h1>
 
-ThingsBoard 培训课程是 ThingsBoard 核心团队成员为贵公司的工程师提供的教育活动。ThingsBoard 教育课程的主要目标是：
+ThingsBoard 培训课程是 GridLinks 核心团队成员为贵公司的工程师提供的教育活动。ThingsBoard 教育课程的主要目标是：
 
-- 提升您对 ThingsBoard 平台的体验。
+- 提升您对 GridLinks 平台的体验。
 - 让您熟悉平台功能、API 和集成。
 - 解决与您的用例相关的实际问题。
 - 缩短您的物联网产品或解决方案的上市时间。
@@ -25,7 +25,7 @@ ThingsBoard 培训课程是针对最多 8 人的按需在线活动。还提供�
   <div class="card">
     <h3 class="title">ThingsBoard 基础知识</h3>
     <p class="sub-title">物联网和编程概念的基本理解</p>
-    <p class="description">了解 ThingsBoard 平台如何帮助企业实施物联网用例并支持物联网解决方案。此培训课程将为您提供对 ThingsBoard 功能的基本了解，以及如何在您的物联网产品中使用这些功能。</p>
+    <p class="description">了解 GridLinks 平台如何帮助企业实施物联网用例并支持物联网解决方案。此培训课程将为您提供对 GridLinks 功能的基本了解，以及如何在您的物联网产品中使用这些功能。</p>
     <div class="card-bot">
       <p class="length"><b>8 小时</b>（1 个完整工作日或两个 4 小时课程）</p>
       <p class="audience"><b>软件和硬件工程师、架构师</b></p>
@@ -38,15 +38,15 @@ ThingsBoard 培训课程是针对最多 8 人的按需在线活动。还提供�
         <li>讨论您的用例，以突出培训课程中的重点。</li>
         <p>平台安装</p>
         <li>查看可用的安装选项。突出显示安全性和配置方面。</li>
-        <li>练习：在 AWS 上设置 ThingsBoard 实例。</li>
+        <li>练习：在 AWS 上设置 GridLinks 实例。</li>
         <p>Web UI</p>
         <li>解释基本的 Web UI 功能和主要实体：设备、客户、用户、仪表板。</li>
         <li>查看可用的窗口小部件类型并解释其基本配置参数。</li>
         <li>解释 ThingsBoard 用户角色及其权限。</li>
         <li>练习：创建设备并提供设备凭证。</li>
         <li>练习：创建仪表板并将其分配给客户。</li>
-        <p>ThingsBoard API</p>
-        <li>解释 ThingsBoard API，用于设备连接和与服务器端应用程序集成。</li>
+        <p>GridLinks API</p>
+        <li>解释 GridLinks API，用于设备连接和与服务器端应用程序集成。</li>
         <li>练习：创建设备固件以通过 MQTT 发布遥测和属性。</li>
         <li>练习：将窗口小部件添加到仪表板以可视化来自先前练习的数据。</li>
         <p>规则引擎</p>
@@ -60,8 +60,8 @@ ThingsBoard 培训课程是针对最多 8 人的按需在线活动。还提供�
 
   <div class="card">
     <h3 class="title">ThingsBoard 数据可视化</h3>
-    <p class="sub-title">ThingsBoard 平台的基本概念</p>
-    <p class="description">了解 ThingsBoard 平台如何帮助收集和可视化物联网数据，并利用这些知识来改善客户体验。此培训课程将为您提供对 ThingsBoard 可视化功能、窗口小部件自定义、用户角色和权限的深入了解。</p>
+    <p class="sub-title">GridLinks 平台的基本概念</p>
+    <p class="description">了解 GridLinks 平台如何帮助收集和可视化物联网数据，并利用这些知识来改善客户体验。此培训课程将为您提供对 ThingsBoard 可视化功能、窗口小部件自定义、用户角色和权限的深入了解。</p>
     <div class="card-bot">
       <p class="length"><b>8 小时</b>（1 个完整工作日或两个 4 小时课程）</p>
       <p class="audience"><b>前端开发人员、工程师、架构师</b></p>
@@ -99,9 +99,9 @@ ThingsBoard 培训课程是针对最多 8 人的按需在线活动。还提供�
   </div>
 
   <div class="card">
-    <h3 class="title">使用 ThingsBoard 进行设备连接和应用程序开发</h3>
-    <p class="sub-title">ThingsBoard 平台的基本概念</p>
-    <p class="description">了解如何使用 ThingsBoard 平台 API 为您的物联网设备构建连接的应用程序。此培训课程将为您提供对支持的网络协议和设备 API 的深入了解。</p>
+    <h3 class="title">使用 GridLinks 进行设备连接和应用程序开发</h3>
+    <p class="sub-title">GridLinks 平台的基本概念</p>
+    <p class="description">了解如何使用 GridLinks 平台 API 为您的物联网设备构建连接的应用程序。此培训课程将为您提供对支持的网络协议和设备 API 的深入了解。</p>
     <div class="card-bot">
       <p class="length"><b>8 小时</b>（1 个完整工作日或两个 4 小时课程）</p>
       <p class="audience"><b>开发人员、工程师、架构师</b></p>
@@ -121,7 +121,7 @@ ThingsBoard 培训课程是针对最多 8 人的按需在线活动。还提供�
         <li>用例和功能概述。</li>
         <li>练习：将设备属性更改报告给 ThingsBoard。</li>
         <li>练习：订阅服务器端属性更新。</li>
-        <li>练习：使用 ThingsBoard 服务器保存和恢复应用程序状态。</li>
+        <li>练习：使用 GridLinks 服务器保存和恢复应用程序状态。</li>
         <p>时序 API</p>
         <li>用例和功能概述。</li>
         <li>练习：将时序数据报告给 ThingsBoard。</li>
@@ -140,9 +140,9 @@ ThingsBoard 培训课程是针对最多 8 人的按需在线活动。还提供�
   </div>
 
   <div class="card">
-    <h3 class="title">使用 ThingsBoard API 进行服务器端应用程序开发</h3>
-    <p class="sub-title">ThingsBoard 平台的基本概念</p>
-    <p class="description">了解如何使用 ThingsBoard 平台 API 将您的云应用程序与您的物联网设备连接起来。此培训课程将为您提供对平台 REST 和 websocket API、规则引擎、数据收集和分析用例的深入了解。</p>
+    <h3 class="title">使用 GridLinks API 进行服务器端应用程序开发</h3>
+    <p class="sub-title">GridLinks 平台的基本概念</p>
+    <p class="description">了解如何使用 GridLinks 平台 API 将您的云应用程序与您的物联网设备连接起来。此培训课程将为您提供对平台 REST 和 websocket API、规则引擎、数据收集和分析用例的深入了解。</p>
     <div class="card-bot">
       <p class="length"><b>8 小时</b>（1 个完整工作日或两个 4 小时课程）</p>
       <p class="audience"><b>开发人员、工程师、分析师和架构师</b></p>
@@ -196,8 +196,8 @@ ThingsBoard 培训课程是针对最多 8 人的按需在线活动。还提供�
         <li>讨论您的用例，以突出培训课程中的重点。</li>
         <p>单节点平台安装</p>
         <li>解释安装选项。突出安全性和配置方面。</li>
-        <li>练习：使用公共 AMI 在 AWS 上设置 ThingsBoard 实例。</li>
-        <li>练习：在 CentOS 上设置 ThingsBoard 实例。</li>
+        <li>练习：使用公共 AMI 在 AWS 上设置 GridLinks 实例。</li>
+        <li>练习：在 CentOS 上设置 GridLinks 实例。</li>
         <p>ThingsBoard 配置</p>
         <li>解释主要配置文件。</li>
         <li>练习：一般系统配置。</li>
@@ -210,7 +210,7 @@ ThingsBoard 培训课程是针对最多 8 人的按需在线活动。还提供�
         <li>练习：ThingsBoard 集群设置故障排除。</li>
         <p>负载平衡、可扩展性和故障转移</p>
         <li>用例和平台功能概述。</li>
-        <li>ThingsBoard 架构概述。</li>
+        <li>GridLinks 架构概述。</li>
         <li>练习：调整集群性能。</li>
         <li>练习：扩展 ThingsBoard 集群。</li>
         <li>练习：更换故障节点。</li>

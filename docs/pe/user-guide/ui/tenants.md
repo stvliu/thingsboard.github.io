@@ -8,7 +8,7 @@ description: ThingsBoard 租户管理
 tenants-pe:
     0:
         image: /images/user-guide/tenant-profile/PE/create-tenant-1-pe.png
-        title: '以系统管理员身份登录到 ThingsBoard 实例 WEB UI；'
+        title: '以系统管理员身份登录到 GridLinks 实例 WEB UI；'
     1:
         image: /images/user-guide/tenant-profile/PE/create-tenant-2-pe.png
         title: '导航到租户页面。然后单击屏幕右上角的“加号”图标；'

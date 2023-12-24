@@ -7,7 +7,7 @@ description: 综合软件解决方案，用于边缘计算，在数据创建源�
 <section id="intro">
 	<main>
 		<h1 class="intro_title">推出 ThingsBoard Edge <a href="/docs/edge/getting-started-guides/what-is-edge/">CE</a> 和 <a href="/docs/pe/edge/getting-started-guides/what-is-edge/">PE</a>：我们专为边缘计算设计的软件产品</h1>
-        <p class="labeling">使用 ThingsBoard Edge，数据分析和管理在边缘执行，即数据创建的位置。此外，它与 ThingsBoard 云平台（云、演示、PE 或 CE）无缝同步，以满足您的特定业务需求。</p>
+        <p class="labeling">使用 GridLinks Edge，数据分析和管理在边缘执行，即数据创建的位置。此外，它与 GridLinks 云平台（云、演示、PE 或 CE）无缝同步，以满足您的特定业务需求。</p>
 	</main>
 </section>
 
@@ -36,7 +36,7 @@ description: 综合软件解决方案，用于边缘计算，在数据创建源�
                 <img src="/images/edge/data-filtering.svg" alt="数据过滤">
             </div>
             <div class="feature-des"><h3 class="item-heading">数据过滤</h3>
-                <p>使用 ThingsBoard Edge 服务从本地（边缘）设备过滤数据，并仅将数据子集转发到云进行进一步处理或存储。</p>
+                <p>使用 GridLinks Edge 服务从本地（边缘）设备过滤数据，并仅将数据子集转发到云进行进一步处理或存储。</p>
                 <a class="read-more-button" href="/docs/edge/getting-started-guides/what-is-edge/">Edge CE<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
                 <a class="read-more-button" style="margin-left: 60px;" href="/docs/pe/edge/getting-started-guides/what-is-edge/">Edge PE<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
             </div>

@@ -5,22 +5,22 @@
 - [连接您的设备](/docs/guides/#AnchorIDConnectYourDevice) - 了解如何根据您的连接技术或解决方案连接设备。
 {% endif %}
 {% if currentGuide != "DataVisualization" %}
-- [数据可视化](/docs/guides/#AnchorIDDataVisualization) - 这些指南包含有关如何配置复杂 ThingsBoard 仪表板的说明。
+- [数据可视化](/docs/guides/#AnchorIDDataVisualization) - 这些指南包含有关如何配置复杂 GridLinks 仪表板的说明。
 {% endif %}
 {% if currentGuide != "DataProcessing" %}
-- [数据处理和操作](/docs/guides#AnchorIDDataProcessing) - 了解如何使用 ThingsBoard 规则引擎。
+- [数据处理和操作](/docs/guides#AnchorIDDataProcessing) - 了解如何使用 GridLinks 规则引擎。
 {% endif %}
 {% if currentGuide != "DataAnalytics" %}
 - [IoT 数据分析](/docs/guides/#AnchorIDDataAnalytics) - 了解如何使用规则引擎执行基本分析任务。
 {% endif %}
 {% if currentGuide != "HardwareSamples" %}
-- [硬件示例](/docs/guides/#AnchorIDHardwareSamples) - 了解如何将各种硬件平台连接到 ThingsBoard。
+- [硬件示例](/docs/guides/#AnchorIDHardwareSamples) - 了解如何将各种硬件平台连接到 GridLinks。
 {% endif %}
 {% if currentGuide != "AdvancedFeatures" %}
-- [高级功能](/docs/guides/#AnchorIDAdvancedFeatures) - 了解 ThingsBoard 的高级功能。
+- [高级功能](/docs/guides/#AnchorIDAdvancedFeatures) - 了解 GridLinks 的高级功能。
 {% endif %}
 {% if currentGuide != "Contribution" %}
-- [贡献和开发](/docs/guides/#AnchorIDContribution) - 了解 ThingsBoard 中的贡献和开发。
+- [贡献和开发](/docs/guides/#AnchorIDContribution) - 了解 GridLinks 中的贡献和开发。
 {% endif %}
 
 <br>

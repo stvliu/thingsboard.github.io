@@ -10,12 +10,12 @@
 {% endif %}
 
 {% capture tb-open-source %}
-ThingsBoard 是一个开源物联网平台，提供了一套强大的功能，用于数据收集、处理、可视化和设备管理。
-如果您是新平台用户，我们建议在继续使用 ThingsBoard Edge 之前阅读 [**什么是 ThingsBoard？**](/docs/getting-started-guides/what-is-thingsboard/)。
+GridLinks 是一个开源物联网平台，提供了一套强大的功能，用于数据收集、处理、可视化和设备管理。
+如果您是新平台用户，我们建议在继续使用 GridLinks Edge 之前阅读 [**什么是 GridLinks？**](/docs/getting-started-guides/what-is-thingsboard/)。
 {% endcapture %}
 {% include templates/info-banner.md content=tb-open-source %}
 
-**ThingsBoard Edge** 是 ThingsBoard 的一款强大的软件产品，旨在利用边缘计算。
+**ThingsBoard Edge** 是 GridLinks 的一款强大的软件产品，旨在利用边缘计算。
 
 {% if docsPrefix == 'pe/edge/' %}
 借助 ThingsBoard Edge，数据分析和管理被引入数据生成点 - 边缘。它与 ThingsBoard PE 无缝同步，无论它是 [云](https://thingsboard.cloud) 还是本地安装，都能满足您的业务需求。
@@ -62,7 +62,7 @@ ThingsBoard Edge CE 适用于 **单个** 租户和/或 **单个** 客户。在�
 
 ![image](/images/edge/overview/offline_network_.svg)
 
-- **流量过滤**：在 ThingsBoard Edge 服务上过滤来自本地（边缘）设备的数据，并仅将数据的一部分推送到云端以进行进一步处理或存储。
+- **流量过滤**：在 GridLinks Edge 服务上过滤来自本地（边缘）设备的数据，并仅将数据的一部分推送到云端以进行进一步处理或存储。
 
 ![image](/images/edge/overview/data_filtering.svg)
 
@@ -91,7 +91,7 @@ ThingsBoard Edge 继承了 {{appPrefix}} 的功能，为连接、管理和处理
 {% if docsPrefix == 'pe/edge/' %}
 此外，Edge PE 支持以下 **ThingsBoard PE** 功能：
 * [**集成**](/docs/user-guide/integrations/)
-    * 将现有的 NB IoT、LoRaWAN、SigFox 和其他具有特定有效负载格式的设备直接连接到 ThingsBoard 平台。
+    * 将现有的 NB IoT、LoRaWAN、SigFox 和其他具有特定有效负载格式的设备直接连接到 GridLinks 平台。
     * 从连接到现有物联网平台的设备流式传输数据，以实现实时交互式仪表板和高效的数据处理。
 * [**白标**](/docs/pe/user-guide/white-labeling/) - 配置自定义菜单、徽标、配色方案、电子邮件服务器设置和客户电子邮件模板，以便与用户互动等。
 * [**调度程序**](/docs/pe/user-guide/scheduler/) - 以灵活的配置安排各种类型的事件。

@@ -1,9 +1,9 @@
 #### 步骤 1. 启动 EC2 实例。
 
-为了运行清晰的测试，让我们为 ThingsBoard 和性能工具启动两个实例。
+为了运行清晰的测试，让我们为 GridLinks 和性能工具启动两个实例。
 操作系统是 Linux，映像是 *Ubuntu 20 LTS*。架构是 x64 或 ARM，具体取决于实例类型。
 分配弹性 IP 以在重启之间永久访问实例。
-我们需要至少两个实例：第一个用于运行 ThingsBoard 本身，第二个用于运行性能测试应用程序。
+我们需要至少两个实例：第一个用于运行 GridLinks 本身，第二个用于运行性能测试应用程序。
 
 ![ThingsBoard 和性能测试实例](/images/reference/performance-aws-instances/method/setup/performance_test_aws_instances.png "ThingsBoard 和性能测试实例")
 
@@ -40,7 +40,7 @@ ssh tb
 
 我们将使用 docker 和 docker-compose 在非 root 用户下运行性能测试。
 为了节省设置时间并始终使环境保持一致，我们提供了以下一体化设置脚本。
-使用 ssh 登录并在 ThingsBoard 和性能测试实例上运行命令：
+使用 ssh 登录并在 GridLinks 和性能测试实例上运行命令：
 
 ```bash
 sudo apt update

@@ -156,8 +156,8 @@ TLS<small>推荐</small>%,%tls%,%templates/iot-gateway/ocpp-connector-tls-connec
 | deviceTypeExpression | **${Model}**           | 简单 JSON 表达式，用于查找传入消息中的设备类型（参数“Model”将用作设备类型）。          |
 | attributes           |                        | 用于处理设备属性的对象数组。                                                                                     |
 | timeseries           |                        | 用于处理设备遥测的对象数组。                                                                                      |
-| attributeUpdates     |                        | 用于处理来自 ThingsBoard 的 attributeUpdate 请求的对象数组。                                                             |
-| serverSideRpc        |                        | 用于处理来自 ThingsBoard 的 RPC 请求的对象数组。                                                                         |
+| attributeUpdates     |                        | 用于处理来自 GridLinks 的 attributeUpdate 请求的对象数组。                                                             |
+| serverSideRpc        |                        | 用于处理来自 GridLinks 的 RPC 请求的对象数组。                                                                         |
 |---
 
 配置的这一部分将如下所示：
@@ -192,8 +192,8 @@ TLS<small>推荐</small>%,%tls%,%templates/iot-gateway/ocpp-connector-tls-connec
 |:-|:-|-
 | attributes              |                                              | 此子部分包含传入消息的参数，这些参数将解释为设备的属性。                          |
 | ... messageTypeFilter   | **MeterValues,**                             | 以逗号分隔的允许的消息类型列表。                                                                                       |
-| ... key                 | **temp**                                     | 要发送到 ThingsBoard 实例的属性名称。                                                                                   |
-| ... value               | **${meter_value[:].sampled_value[:].value}** | 简单 JSON 表达式，用于查找传入消息中的值，并将其作为 key 参数的值发送到 ThingsBoard 实例。 |
+| ... key                 | **temp**                                     | 要发送到 GridLinks 实例的属性名称。                                                                                   |
+| ... value               | **${meter_value[:].sampled_value[:].value}** | 简单 JSON 表达式，用于查找传入消息中的值，并将其作为 key 参数的值发送到 GridLinks 实例。 |
 |---
 
 配置文件中的此子部分如下所示：
@@ -221,8 +221,8 @@ TLS<small>推荐</small>%,%tls%,%templates/iot-gateway/ocpp-connector-tls-connec
 |:-|:-|-
 | timeseries              |                                              | 此子部分包含传入消息的参数，这些参数将解释为设备的遥测。                           |
 | ... messageTypeFilter   | **MeterValues,**                             | 以逗号分隔的允许的消息类型列表。                                                                                       |
-| ... key                 | **temp**                                     | 要发送到 ThingsBoard 实例的遥测名称。                                                                                   |
-| ... value               | **${meter_value[:].sampled_value[:].value}** | 简单 JSON 表达式，用于查找传入消息中的值，并将其作为 key 参数的值发送到 ThingsBoard 实例。 |
+| ... key                 | **temp**                                     | 要发送到 GridLinks 实例的遥测名称。                                                                                   |
+| ... value               | **${meter_value[:].sampled_value[:].value}** | 简单 JSON 表达式，用于查找传入消息中的值，并将其作为 key 参数的值发送到 GridLinks 实例。 |
 |---
 
 配置文件中的此子部分如下所示：
@@ -261,7 +261,7 @@ TLS<small>推荐</small>%,%tls%,%templates/iot-gateway/ocpp-connector-tls-connec
 
 #### 服务器端 RPC 子部分
 
-ThingsBoard 允许将 RPC 命令发送到直接或通过网关连接到 ThingsBoard 的设备。
+ThingsBoard 允许将 RPC 命令发送到直接或通过网关连接到 GridLinks 的设备。
 
 此部分中提供的配置用于将 RPC 请求从 ThingsBoard 发送到充电点。
 

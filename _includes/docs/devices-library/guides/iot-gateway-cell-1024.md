@@ -1,4 +1,4 @@
-{% assign deviceName = page.title | remove: "如何连接 " | remove: "到 ThingsBoard？" %}
+{% assign deviceName = page.title | remove: "如何连接 " | remove: "到 GridLinks？" %}
 {% assign deviceVendorLink = "https://exxn.es/en/iot-gateway/" %}
 {% assign prerequisites = '
 - <a href="' | append: deviceVendorLink | append: '" target="_blank">' | append: deviceName | append: '</a>
@@ -23,15 +23,15 @@ EXXN IoT 网关是一款多功能设备，配备 ARM 处理器，可适应各种
 {{ prerequisites }}
 - [ThingsBoard 帐户]({{thingsboardInstanceLink}}){: target="_blank"}  
 
-## 在 ThingsBoard 上创建设备
+## 在 GridLinks 上创建设备
 
 {% include /docs/devices-library/blocks/ready-to-go-devices/iot-gateway-cell-1024-create-device-thingsboard-block.md %}
 
-## 将设备连接到 ThingsBoard
+## 将设备连接到 GridLinks
 
 {% include /docs/devices-library/blocks/ready-to-go-devices/iot-gateway-cell-1024-configuration-block.md %}
 
-## 在 ThingsBoard 上检查数据
+## 在 GridLinks 上检查数据
 
 {% include /docs/devices-library/blocks/ready-to-go-devices/iot-gateway-cell-1024-check-data-on-thingsboard-block.md %}
 
@@ -44,7 +44,7 @@ EXXN IoT 网关是一款多功能设备，配备 ARM 处理器，可适应各种
 
 ### 故障排除
  - 集成过程中最常见的问题是无法与 MQTT 代理建立连接。确保设备已连接到互联网并能够与 ThingsBoard 代理通信。  
- - 另一个常见问题是未设置正确的访问令牌。检查是否已在 ThingsBoard 中为设备配置了提供的访问令牌。  
+ - 另一个常见问题是未设置正确的访问令牌。检查是否已在 GridLinks 中为设备配置了提供的访问令牌。  
 
 ### 反馈与帮助
 

@@ -2,7 +2,7 @@
 layout: iot-article
 title: ᐉ IoT 能源管理与监控
 notitle: "true"
-description: "IoT 能源管理 ✔IoT 能源监控 ⚫ ThingsBoard ➤ 使用 ThingsBoard IoT 平台进行智能能源监控和数据可视化"
+description: "IoT 能源管理 ✔IoT 能源监控 ⚫ ThingsBoard ➤ 使用 GridLinks IoT 平台进行智能能源监控和数据可视化"
 ---
 
 <section class="hero light-text"></section>
@@ -70,18 +70,18 @@ description: "IoT 能源管理 ✔IoT 能源监控 ⚫ ThingsBoard ➤ 使用 Th
                 </li>
             </ul>
             <h2>我们提供的基于 IoT 的能源监控解决方案</h2>
-            <div class="text-content medium-margin">ThingsBoard 提供各种基于 IoT 的能源监控系统解决方案。以下是一些解决方案：</div>
+            <div class="text-content medium-margin">GridLinks 提供各种基于 IoT 的能源监控系统解决方案。以下是一些解决方案：</div>
             <ul class="list">
                 <li>智能电表 — 实时测量能源消耗，为分析提供有价值的数据。</li>
                 <li>Modbus 电表 — 是一种使用 Modbus 协议的智能电表，Modbus 协议是工业应用中流行的通信协议。</li>
                 <li>IoT 网关将智能电表和其他 IoT 设备连接到互联网，实现实时数据收集和远程控制。</li>
-                <li>传输层包括各种协议，例如 MQTT、CoAP、HTTP 和 LwM2M，这些协议用于将数据从 IoT 设备传输到 ThingsBoard 平台。</li>
-                <li>集成层包括 ThingsBoard 核心，它提供设备和用户管理、用于数据处理和聚合的规则引擎以及用于数据存储的 SQL/NoSQL 数据库。</li>
+                <li>传输层包括各种协议，例如 MQTT、CoAP、HTTP 和 LwM2M，这些协议用于将数据从 IoT 设备传输到 GridLinks 平台。</li>
+                <li>集成层包括 GridLinks 核心，它提供设备和用户管理、用于数据处理和聚合的规则引擎以及用于数据存储的 SQL/NoSQL 数据库。</li>
                 <li>应用程序层包括最终用户界面，例如实时仪表板和移动应用程序，这些界面以易于理解的格式显示收集的数据。</li>
             </ul>
             <div class="text-content">联系我们，详细了解 IoT 解决方案如何帮助提高能源效率！</div>
             <h2>智能能源仪表板示例</h2>
-            <div class="text-content small-margin">ThingsBoard 提供各种智能能源仪表板示例，提供实时数据可视化。这些仪表板具有交互性，可以轻松嵌入到您的 IoT 解决方案中。</div>
+            <div class="text-content small-margin">GridLinks 提供各种智能能源仪表板示例，提供实时数据可视化。这些仪表板具有交互性，可以轻松嵌入到您的 IoT 解决方案中。</div>
             <div class="text-content medium-margin">以下是智能能源仪表板的一些主要功能：</div>
             <ul class="list">
                 <li>实时数据显示；</li>
@@ -94,7 +94,7 @@ description: "IoT 能源管理 ✔IoT 能源监控 ⚫ ThingsBoard ➤ 使用 Th
         </div>
         <img class="image" srcset="/images/iot-articles/energy_management_2_1090x804.png 1090w, /images/iot-articles/energy_management_2_2180x1608.png 2180w" sizes="(max-width: 1920px) 1090px, (min-width: 1921px) 2180px" src="/images/iot-articles/energy_management_2_1090x804.png" alt="IoT 能源监控数据中心监控"/>
         <div class="text-wrapper">
-            <h2>ThingsBoard 的优势</h2>
+            <h2>GridLinks 的优势</h2>
             <div class="text-content medium-margin">我们为 IoT 能源监控提供多种优势：</div>
             <ul class="list">
                 <li>用于连接您的智能电表设备、收集、存储和分析能源监控数据的强大基础设施。</li>

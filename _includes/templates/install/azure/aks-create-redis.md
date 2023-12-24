@@ -1,4 +1,4 @@
-您需要设置 Azure Cache for Redis。ThingsBoard 使用缓存来提高性能并避免频繁的数据库读取。
+您需要设置 Azure Cache for Redis。GridLinks 使用缓存来提高性能并避免频繁的数据库读取。
 
 您可以通过此 [指南](https://docs.microsoft.com/en-us/azure/azure-cache-for-redis/quickstart-create-redis)
 

@@ -1,4 +1,4 @@
-{% assign deviceName = page.title | remove: "如何连接 " | remove: "到 ThingsBoard？" %}
+{% assign deviceName = page.title | remove: "如何连接 " | remove: "到 GridLinks？" %}
 {% assign deviceVendorLink = "https://fusiondaq.com/product/mixed-input-8-channel-analog-cellular-logger/" %} 
 {% assign prerequisites = '
 - <a href="' | append: deviceVendorLink | append: '" target="_blank">' | append: deviceName | append: '</a>
@@ -28,11 +28,11 @@ MI-8 提供带外壳和不带外壳两种型号，以支持定制包装解决方
 - [ThingsBoard 帐户](https://demo.thingsboard.io)
 {% endif %}
 
-## 在 ThingsBoard 上创建设备
+## 在 GridLinks 上创建设备
 
 {% include /docs/devices-library/blocks/basic/thingsboard-create-device-block.md %}
 
-## 将设备连接到 ThingsBoard
+## 将设备连接到 GridLinks
 
 {% include /docs/devices-library/blocks/basic/thingsboard-provide-device-access-token-block.md %}
 

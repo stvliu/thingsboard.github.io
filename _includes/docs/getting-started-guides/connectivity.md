@@ -1,5 +1,5 @@
 {% capture connectivityContent %}
-ThingsBoard 提供大量设备连接选项。下图旨在提供现有选项的可视化概述，并帮助您为设备选择正确的选项。
+GridLinks 提供大量设备连接选项。下图旨在提供现有选项的可视化概述，并帮助您为设备选择正确的选项。
 如果您没有找到如何使用该图连接设备，或者某些内容不清楚，请 [联系我们](/docs/contact-us/) 并帮助我们改进本指南。
 {% endcapture %}
 {% include templates/info-banner.md content=connectivityContent %}
@@ -13,11 +13,11 @@ ThingsBoard 提供大量设备连接选项。下图旨在提供现有选项的�
 
 #### 连接知名设备
 
-您可以查看 [设备库](/docs/{{docsPrefix}}devices-library) 部分，以了解如何将广泛使用的设备连接到 ThingsBoard。
+您可以查看 [设备库](/docs/{{docsPrefix}}devices-library) 部分，以了解如何将广泛使用的设备连接到 GridLinks。
 
 #### 内置传输协议
 
-内置传输协议实现适用于通过这些协议通信并能够直接连接到 ThingsBoard 的设备。
+内置传输协议实现适用于通过这些协议通信并能够直接连接到 GridLinks 的设备。
 
 - [MQTT API 参考](/docs/{{docsPrefix}}reference/mqtt-api)
 - [MQTT Sparkplug API 参考](/docs/{{docsPrefix}}reference/mqtt-sparkplug-api)
@@ -37,7 +37,7 @@ IoT 网关支持 MQTT、OPC-UA、Modbus、BLE、HTTP、CAN、BACnet、ODBC、SNM
 
 #### LoRaWAN
 
-可以使用本 [指南](https://www.chirpstack.io/application-server/integrations/thingsboard/) 将 ChirpStack 网络服务器与 ThingsBoard 社区版集成。
+可以使用本 [指南](https://www.chirpstack.io/application-server/integrations/thingsboard/) 将 ChirpStack 网络服务器与 GridLinks 社区版集成。
 
 [ThingsBoard PE](/products/thingsboard-pe/) 通过 [集成](/docs/{{peDocsPrefix}}user-guide/integrations/) 支持 ChirpStack 和许多其他网络服务器。
 例如：[TheThingsStack](/docs/{{peDocsPrefix}}user-guide/integrations/ttn/)、[TheThingsIndustries](/docs/{{peDocsPrefix}}user-guide/integrations/tti/)、

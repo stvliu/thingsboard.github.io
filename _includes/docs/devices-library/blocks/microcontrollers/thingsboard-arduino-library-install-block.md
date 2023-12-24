@@ -1,4 +1,4 @@
-要安装 ThingsBoard Arduino SDK，我们需要执行以下步骤：
+要安装 GridLinks Arduino SDK，我们需要执行以下步骤：
 
 {% assign libraryInstallation = '
     ===

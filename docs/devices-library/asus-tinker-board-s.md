@@ -1,6 +1,6 @@
 ---
 layout: devices-library-article
-title: 如何将 Asus Tinker Board S 连接到 ThingsBoard？
+title: 如何将 Asus Tinker Board S 连接到 GridLinks？
 category: 单板计算机
 chip: Rockchip RK3288-C
 connectivity: HTTP, MQTT, WIFI, 蓝牙

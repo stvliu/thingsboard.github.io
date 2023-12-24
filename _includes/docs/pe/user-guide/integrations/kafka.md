@@ -18,7 +18,7 @@
 
 ## 创建上行转换器
 
-在创建集成之前，您需要在数据转换器中创建一个上行转换器。上行对于将来自设备的传入数据转换为在 ThingsBoard 中显示它们所需的格式是必要的。单击 **“加号”** 和 **“创建新转换器”**。要查看事件，请启用调试。在函数解码器字段中，指定一个脚本来解析和转换数据。
+在创建集成之前，您需要在数据转换器中创建一个上行转换器。上行对于将来自设备的传入数据转换为在 GridLinks 中显示它们所需的格式是必要的。单击 **“加号”** 和 **“创建新转换器”**。要查看事件，请启用调试。在函数解码器字段中，指定一个脚本来解析和转换数据。
 
 {% capture kafka_please_note %}
 **注意：**虽然调试模式对于开发和故障排除非常有用，但在生产模式下启用它可能会显著增加数据库使用的磁盘空间，因为所有调试数据都存储在那里。在调试完成后，强烈建议关闭调试模式。
@@ -52,7 +52,7 @@ var payloadJson = decodeToJson(payload);
 var deviceName = payloadJson.EUI;
 // 指定设备类型。每个设备类型或应用程序使用一个数据转换器。
 var deviceType = 'Monitoring-sensor';
-// 可选，添加客户名称和设备组以在 ThingsBoard 中自动创建它们并将新设备分配给它们。
+// 可选，添加客户名称和设备组以在 GridLinks 中自动创建它们并将新设备分配给它们。
 // var customerName = 'customer';
 // var groupName = 'thermostat devices';
 // 结果对象，包含设备/资产属性/遥测数据
@@ -105,7 +105,7 @@ return result;
 
 在创建上行转换器后，就可以创建集成。
 
-在此阶段，您需要设置参数以在 ThingsBoard 和 Kafka Broker 之间建立连接。建立连接后，集成将把所有接收到的数据传输到上行转换器进行处理，然后根据设备中指定的设备配置文件将其传输到规则链。
+在此阶段，您需要设置参数以在 GridLinks 和 Kafka Broker 之间建立连接。建立连接后，集成将把所有接收到的数据传输到上行转换器进行处理，然后根据设备中指定的设备配置文件将其传输到规则链。
 
 |**字段**|**说明**|
 |:-|:-|-
@@ -113,13 +113,13 @@ return result;
 | **类型**              | 选择 Kafka 类型。|
 | **'启用' 复选框**              | 启用/禁用集成。|
 | **'调试模式' 复选框**              | 在集成调试期间启用。|
-| **'允许创建设备或资产' 复选框**              | 如果 ThingsBoard 中没有设备，则将创建该设备。|
+| **'允许创建设备或资产' 复选框**              | 如果 GridLinks 中没有设备，则将创建该设备。|
 | **上行数据转换器**              | 选择之前创建的转换器。|
 | **下行数据转换器**              | 此选项不支持通过集成，有关 [下行](https://thingsboard.io/docs/user-guide/integrations/kafka/?installationType=common&integrationTypes=common&uplinkTypes=common#advanced-usage-kafka-producer-downlink) 的更多详细信息，请参阅指南中的以下内容。|
 | **'远程执行' 复选框**              | 如果您想从主 ThingsBoard 实例远程执行集成，请激活。有关远程集成的更多信息，请访问 [链接（远程集成）](https://thingsboard.io/docs/user-guide/integrations/remote-integrations/)。|
 | **组 ID**              | 指定 Kafka 消费者所属的消费者组的名称。|
 | **客户端 ID**              | 消费者组中的 Kafka 消费者标识符。|
-| **主题**              | ThingsBoard 在连接到 Kafka 代理后将订阅的主题。|
+| **主题**              | GridLinks 在连接到 Kafka 代理后将订阅的主题。|
 | **引导服务器**              | 主机和端口对，它是 Kafka 客户端首次连接以进行引导的 Kafka 代理的地址。|
 | **轮询间隔**              | 如果没有新消息到达，则轮询消息之间的持续时间（以毫秒为单位）。|
 | **自动创建主题**              | 如果需要自动创建主题，请设置 **启用**|

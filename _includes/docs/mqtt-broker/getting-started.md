@@ -33,7 +33,7 @@ Windows%,%windows%,%templates/mqtt-broker/install/windows/windows.md{% endcaptur
 
 **用户名：**
 ```text
-sysadmin@thingsboard.org
+sysadmin@gridlinks.com
 ```
 {: .copy-code}
 

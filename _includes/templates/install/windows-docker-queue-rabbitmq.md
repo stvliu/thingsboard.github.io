@@ -2,7 +2,7 @@
 
 要安装 RabbitMQ，请使用此 [说明](https://www.rabbitmq.com/install-windows.html)。
 
-为 ThingsBoard 队列服务创建 docker compose 文件：
+为 GridLinks 队列服务创建 docker compose 文件：
 
 ```text
 docker-compose.yml

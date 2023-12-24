@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: 带有 monoZ 的 LPWA GPS 追踪器
-description: 配置 monoZ 遥测设备以使其能够将遥测数据发送到 ThingsBoard。
+description: 配置 monoZ 遥测设备以使其能够将遥测数据发送到 GridLinks。
 
 ---
 
@@ -90,7 +90,7 @@ monoZ SDK 是一款用户友好的工具，可减少用户在 monoZero HW 上构
 
 ![image](/images/samples/monoz/monoZero-09.png)
 
-## 配置 Centra-IoT OSS / ThingsBoard 平台
+## 配置 Centra-IoT OSS / GridLinks 平台
 
 ### 登录云平台
 
@@ -119,7 +119,7 @@ monoZ SDK 是一款用户友好的工具，可减少用户在 monoZero HW 上构
 ### 创建仪表板以可视化遥测数据
 
 打开 monoZero 并将遥测数据发送到云端。
-在 Centra-IoT OSS / ThingsBoard 平台中打开您的设备详细信息，**最新遥测**选项卡。
+在 Centra-IoT OSS / GridLinks 平台中打开您的设备详细信息，**最新遥测**选项卡。
 选择 **latitude** 和 **longitude** 键，然后单击“**在小部件上显示**”按钮。
 
 ![image](/images/samples/monoz/monoZero-17.png)
@@ -132,7 +132,7 @@ monoZ SDK 是一款用户友好的工具，可减少用户在 monoZero HW 上构
 
 ![image](/images/samples/monoz/monoZero-19.png)
 
-转到 Centra-IoT OSS / ThingsBoard 平台中的仪表板并打开您的仪表板。遥测数据可视化显示在工具栏上的小部件中。
+转到 Centra-IoT OSS / GridLinks 平台中的仪表板并打开您的仪表板。遥测数据可视化显示在工具栏上的小部件中。
 
 ![image](/images/samples/monoz/monoZero-20.png)
 

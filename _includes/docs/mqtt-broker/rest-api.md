@@ -43,7 +43,7 @@ JWT 令牌用作安全交换信息的一种机制。
 主令牌和刷新令牌的过期时间可以通过 `JWT_TOKEN_EXPIRATION_TIME` 和 `JWT_REFRESH_TOKEN_EXPIRATION_TIME` 参数在系统设置中[配置](/docs/mqtt-broker/install/config/)。
 默认过期时间值分别为 2.5 小时和 1 周。
 
-请参阅以下示例命令，以获取用户“sysadmin@thingsboard.org”、密码“sysadmin”和服务器“THINGSBOARD_MQTT_BROKER_URL”的令牌：
+请参阅以下示例命令，以获取用户“sysadmin@gridlinks.com”、密码“sysadmin”和服务器“THINGSBOARD_MQTT_BROKER_URL”的令牌：
 
 {% capture tabspec %}token
 A,get-token.sh,shell,reference/resources/get-token.sh,/docs/mqtt-broker/reference/resources/get-token.sh

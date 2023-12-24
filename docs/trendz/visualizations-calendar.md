@@ -30,10 +30,10 @@ description: Trendz 日历
 
 Trendz 日历视图支持日期点击事件。当您想选择感兴趣的日期并向下钻取以进行进一步分析时，这非常有用。
 
-例如，您可以在 ThingsBoard 中创建一个包含多个小部件的仪表板。所有小部件都从仪表板获取时间范围。
+例如，您可以在 GridLinks 中创建一个包含多个小部件的仪表板。所有小部件都从仪表板获取时间范围。
 通过在日历小部件上配置日期点击事件，您可以在仪表板上设置所需的时间范围，以便所有其他小部件自动更新并显示所选日期的数据。
 
-* 在 ThingsBoard 仪表板上添加 Trendz 日历视图
+* 在 GridLinks 仪表板上添加 Trendz 日历视图
 * 打开小部件编辑模式并切换到 **操作** 选项卡。
 * 按 **添加操作** 按钮。
 * 在 **操作源** 字段中选择 **date-selected**。
@@ -78,7 +78,7 @@ widgetContext.stateController.updateState('consumption_details', additionalParam
 当将多个字段添加到 **值** 部分时，将激活切换字段选择器。在这种情况下，用户可以选择小部件中显示的字段。
 当用户切换字段时，Trendz 视图会触发特殊事件。您可以在触发切换事件时触发所需的操作。
 
-* 在 ThingsBoard 仪表板上添加 Trendz 日历视图
+* 在 GridLinks 仪表板上添加 Trendz 日历视图
 * 打开小部件编辑模式并切换到 **操作** 选项卡。
 * 按 **添加操作** 按钮。
 * 在 **操作源** 字段中选择 **changed-radio-button**。

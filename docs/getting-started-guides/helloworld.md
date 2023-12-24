@@ -3,10 +3,10 @@
 * TOC
 {:toc}
 
-此教程的目的是演示 ThingsBoard 最受欢迎功能的基本用法。您将学习如何：
+此教程的目的是演示 GridLinks 最受欢迎功能的基本用法。您将学习如何：
 
-- 将设备连接到 ThingsBoard；
-- 将数据从设备推送到 ThingsBoard；
+- 将设备连接到 GridLinks；
+- 将数据从设备推送到 GridLinks；
 - 构建实时最终用户仪表板；
 - 定义阈值并触发警报；
 - 通过电子邮件、短信或其他系统设置有关新警报的推送通知。
@@ -15,9 +15,9 @@
 
 {% include templates/prerequisites.md %}
 
-## 第 1 步。预置设备
+## 第 1 步 预置设备
 
-例如，让我们添加一个设备，该设备将以下数据传输到 ThingsBoard 平台：设备的名称和温度读数作为遥测。
+例如，让我们添加一个设备，该设备将以下数据传输到 GridLinks 平台：设备的名称和温度读数作为遥测。
 
 要添加新设备，请按照以下步骤操作：
 
@@ -36,19 +36,19 @@
 * [设备预置](/docs/user-guide/device-provisioning/) 允许设备固件自动预置设备，因此您无需手动配置每个设备；
 * [REST API](/docs/api/) 以编程方式预置设备和其他实体；
 
-## 第 2 步。连接设备
+## 第 2 步 连接设备
 
-现在，让我们检查我们的设备与 ThingsBoard 平台的连接。
+现在，让我们检查我们的设备与 GridLinks 平台的连接。
 为此，请使用“检查连接”功能代表您的设备发布遥测数据（例如，温度读数）。您可以在添加设备时和之后执行此操作。
 
 {% include images-gallery.html imageCollection="step2" showListImageTitles="true" %}
 
 <br>
-您还可以使用 [ThingsBoard API 参考](/docs/{{docsPrefix}}api)。在这里，您可以找到有关设备连接支持的所有协议的更详细信息。
+您还可以使用 [GridLinks API 参考](/docs/{{docsPrefix}}api)。在这里，您可以找到有关设备连接支持的所有协议的更详细信息。
 
-## 第 3 步。创建仪表板
+## 第 3 步 创建仪表板
 
-ThingsBoard 中的仪表板允许用户可视化和监控从物联网设备收集的数据。
+GridLinks 中的仪表板允许用户可视化和监控从物联网设备收集的数据。
 
 让我们创建一个仪表板并在其中添加三个小部件，以便显示实体列表及其最新值，以及显示与指定实体相关的警报信号。
 
@@ -81,7 +81,7 @@ ThingsBoard 中的仪表板允许用户可视化和监控从物联网设备收�
 
 ### 第 3.3 步 添加图表小部件
 
-图表小部件允许您使用可自定义的折线图和条形图显示时间序列数据。
+图表小部件允许您使用可自定义的折线图和条形图显示时序数据。
 
 要添加图表小部件，我们需要从小部件库中选择它。
 图表小部件显示同一数据键（在本例中为“温度”）的多个历史值。
@@ -105,7 +105,7 @@ ThingsBoard 中的仪表板允许用户可视化和监控从物联网设备收�
 别名是对小部件中使用的单个实体或实体组的引用。
 您可以在此处了解有关 [不同别名的更多信息](/docs/{{docsPrefix}}user-guide/ui/aliases/)。
 
-## 第 4 步。配置警报规则
+## 第 4 步 配置警报规则
 
 我们将使用 [警报规则](/docs/user-guide/device-profiles/#alarm-rules) 功能在温度读数大于 25 度时发出警报。
 为此，我们应该编辑设备配置文件并添加新的警报规则。
@@ -114,7 +114,7 @@ ThingsBoard 中的仪表板允许用户可视化和监控从物联网设备收�
 
 {% include images-gallery.html imageCollection="step4" showListImageTitles="true" %}
 
-## 第 5 步。创建警报
+## 第 5 步 创建警报
 
 现在，我们的警报规则处于活动状态（请参阅 [步骤 4](/docs/getting-started-guides/helloworld/#step-4-configure-alarm-rules)），
 我们应该代表设备发送新的遥测（请参阅 [步骤 2](/docs/getting-started-guides/helloworld/#step-2-connect-device)）以触发警报。
@@ -122,16 +122,16 @@ ThingsBoard 中的仪表板允许用户可视化和监控从物联网设备收�
 
 {% include images-gallery.html imageCollection="step5" showListImageTitles="true" %}
 
-## 第 6 步。警报通知
+## 第 6 步 警报通知
 
-使用 **通知中心** 设置通知非常容易。ThingsBoard 通知中心允许您向最终用户发送通知。
+使用 **通知中心** 设置通知非常容易。GridLinks 通知中心允许您向最终用户发送通知。
 在此处了解有关通知及其配置方式的更多信息（请参阅 [此处](/docs/{{docsPrefix}}user-guide/notifications/)）。
 
 我们还建议查看警报规则 [示例](/docs/{{docsPrefix}}user-guide/device-profiles/#alarm-rules) 和有关 [警报通知](/docs/{{docsPrefix}}user-guide/device-profiles/#notifications-about-alarms) 的文档。
 
-## 第 7 步。将设备和仪表板分配给客户
+## 第 7 步 将设备和仪表板分配给客户
 
-ThingsBoard 最重要的功能之一是将仪表板分配给客户的能力。
+GridLinks 最重要的功能之一是将仪表板分配给客户的能力。
 您可以将不同的设备分配给不同的客户。然后，您可以创建一个或多个仪表板并将其分配给多个客户。
 每个客户用户都将看到自己的设备，并且无法看到属于其他客户的设备或任何其他数据。
 
@@ -181,5 +181,5 @@ ThingsBoard 最重要的功能之一是将仪表板分配给客户的能力。
 
 ## 您的反馈
 
-不要犹豫，在 **[github](https://github.com/thingsboard/thingsboard)** 上为 ThingsBoard 加星，以帮助我们传播信息。
+不要犹豫，在 **[github](https://github.com/thingsboard/thingsboard)** 上为 GridLinks 加星，以帮助我们传播信息。
 如果您对本示例有任何疑问，请将其发布在 **[论坛](https://groups.google.com/forum/#!forum/thingsboard)** 上。

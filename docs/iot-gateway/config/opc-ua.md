@@ -108,7 +108,7 @@ description: ThingsBoard IoT 网关的 OPC-UA 协议支持
 
 在 **“状态”** 主选项卡上，复制连接地址（UA TCP）。
 
-要将 OPC UA 服务器连接到 ThingsBoard，请在 OPC-UA 连接器配置文件 (opcua.json) 中，将 “url” 值替换为复制的连接地址。
+要将 OPC UA 服务器连接到 GridLinks，请在 OPC-UA 连接器配置文件 (opcua.json) 中，将 “url” 值替换为复制的连接地址。
 
 我们的 **server** 部分将如下所示：
 
@@ -182,7 +182,7 @@ description: ThingsBoard IoT 网关的 OPC-UA 协议支持
 ![image](/images/gateway/opc-ua-configuration-2.png)
 {: refdef}
 
-运行 **ThingsBoard IoT 网关** 后，您将在 ThingsBoard 实例中看到新设备 **Device OPC-UA**。
+运行 **ThingsBoard IoT 网关** 后，您将在 GridLinks 实例中看到新设备 **Device OPC-UA**。
 
 {:refdef: style="text-align: left;"}
 ![image](/images/gateway/gateway-opc-ua-attributes-1.png)
@@ -193,7 +193,7 @@ description: ThingsBoard IoT 网关的 OPC-UA 协议支持
 
 | **参数**   | **默认值**           | **说明**                                                                                      |
 |:-|:-|-
-| key             | **CertificateNumber**       | 将被解释为 ThingsBoard 平台实例的属性的标记。                           |
+| key             | **CertificateNumber**       | 将被解释为 GridLinks 平台实例的属性的标记。                           |
 | path            | **${ns=2;i=5}**             | OPC-UA 对象中变量的名称，用于在某个变量中查找值。 ** \* **     |
 |---
 
@@ -249,7 +249,7 @@ description: ThingsBoard IoT 网关的 OPC-UA 协议支持
 ![image](/images/gateway/opc-ua-configuration-3.png)
 {: refdef}
 
-您必须在设备的 **属性** 部分中看到发送到 ThingsBoard 的属性：
+您必须在设备的 **属性** 部分中看到发送到 GridLinks 的属性：
 
 {:refdef: style="text-align: left;"}
 ![image](/images/gateway/gateway-opc-ua-attributes-2.png)
@@ -260,7 +260,7 @@ description: ThingsBoard IoT 网关的 OPC-UA 协议支持
 
 | **参数**   | **默认值**           | **说明**                                                                   |
 |:-|:-|-
-| key             | **temperature °C**                                                             | 将被解释为 ThingsBoard 平台实例的遥测数据的标记。        |
+| key             | **temperature °C**                                                             | 将被解释为 GridLinks 平台实例的遥测数据的标记。        |
 | path            | **${Root\\.Objects\\.Device1\\.TemperatureAndHumiditySensor\\.Temperature}**   | OPC-UA 对象中变量的名称，用于在某个变量中查找值。 ** \* ** |
 |---
 
@@ -314,14 +314,14 @@ description: ThingsBoard IoT 网关的 OPC-UA 协议支持
 ![image](/images/gateway/opc-ua-configuration-4.png)
 {: refdef}
 
-您必须在设备的 **最新遥测数据** 部分中看到发送到 ThingsBoard 的遥测数据：
+您必须在设备的 **最新遥测数据** 部分中看到发送到 GridLinks 的遥测数据：
 
 {:refdef: style="text-align: left;"}
 ![image](/images/gateway/gateway-opc-ua-attributes-3.png)
 {: refdef}
 
 ### “rpc_methods” 子部分
-此子部分包含来自 ThingsBoard 平台实例的 RPC 请求的配置。
+此子部分包含来自 GridLinks 平台实例的 RPC 请求的配置。
 
 | **参数**         | **默认值**                 | **说明**                                                                                    |
 |:-|:-|-
@@ -346,7 +346,7 @@ description: ThingsBoard IoT 网关的 OPC-UA 协议支持
 {% include templates/info-banner.md content=methodFilterOptions %}
 
 ### “attributes_updates” 子部分
-此子部分包含来自 ThingsBoard 平台实例的属性更新请求的配置。
+此子部分包含来自 GridLinks 平台实例的属性更新请求的配置。
 
 | **参数**             | **默认值**                                            | **说明**                                                                               |
 |:-|:-|-
@@ -392,7 +392,7 @@ description: ThingsBoard IoT 网关的 OPC-UA 协议支持
 ![image](/images/gateway/gateway-opc-ua-attributes-updates-1.png)
 {: refdef}
 
-转到 **“共享属性”** 并为 ThingsBoard 实例中的设备创建一个新属性。
+转到 **“共享属性”** 并为 GridLinks 实例中的设备创建一个新属性。
 
 指定键名 - deviceName、值类型 - 字符串、字符串值 - Device OPC-UA。
 

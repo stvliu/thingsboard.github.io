@@ -1,4 +1,4 @@
-{% assign deviceName = page.title | remove: "如何连接 " | remove: "到 ThingsBoard？" %}
+{% assign deviceName = page.title | remove: "如何连接 " | remove: "到 GridLinks？" %}
 {% assign deviceVendorLink = "https://www.milesight-iot.com/lorawan/gateway/ug67" %}
 {% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}
 {% assign thingsboardHost = 'https://thingsboard.cloud' %}
@@ -32,7 +32,7 @@ IP67 等级
 
 {% assign feature = "平台集成" %}{% include templates/pe-feature-banner.md %}
 
-按照本指南中所述的步骤操作后，您将在网络服务器上连接并配置网关，并在 ThingsBoard 上集成，这将允许您添加设备、从设备接收数据并处理数据。
+按照本指南中所述的步骤操作后，您将在网络服务器上连接并配置网关，并在 GridLinks 上集成，这将允许您添加设备、从设备接收数据并处理数据。
 
 ## 先决条件
 

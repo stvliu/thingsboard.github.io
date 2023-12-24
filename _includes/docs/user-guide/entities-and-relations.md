@@ -3,7 +3,7 @@
 
 ## 实体概述
 
-ThingsBoard 提供用户界面和 REST API 来配置和管理多个实体类型及其在 IoT 应用程序中的关系。
+GridLinks 提供用户界面和 REST API 来配置和管理多个实体类型及其在 IoT 应用程序中的关系。
 支持的实体有：
 
 - **[租户](/docs/{{docsPrefix}}user-guide/ui/tenants/)** - 您可以将租户视为一个独立的业务实体：它是拥有或生产设备和资产的个人或组织；
@@ -34,19 +34,19 @@ ThingsBoard 提供用户界面和 REST API 来配置和管理多个实体类型�
 {% if docsPrefix == "pe/" %}
 **[实体组](/docs/pe/user-guide/groups/)**：
 
-ThingsBoard Professional Edition 允许您为客户、用户、设备、资产、实体视图和仪表板配置实体组。
+ GridLinks专业版 允许您为客户、用户、设备、资产、实体视图和仪表板配置实体组。
 每个实体可以同时属于多个组。实体组始终有一个所有者 - 特定的租户或客户。
 组中的所有实体必须具有相同的实体类型（即您不能将设备和资产放入一个组中）。
 实体组对于仪表板和数据处理很有用，但它们存在的主要原因是为了支持 IoT 的高级基于角色的访问控制 ([RBAC](/docs/pe/user-guide/rbac/))。
 
 **[集成](/docs/user-guide/integrations/)** 和 **[数据转换器](/docs/user-guide/integrations/#data-converters)**：
 
-ThingsBoard 平台集成功能专为两个主要用例/部署选项而设计：
+GridLinks 平台集成功能专为两个主要用例/部署选项而设计：
 
-- 将具有特定有效负载格式的现有 NB IoT、LoRaWAN、SigFox 和其他设备直接连接到 ThingsBoard 平台。
+- 将具有特定有效负载格式的现有 NB IoT、LoRaWAN、SigFox 和其他设备直接连接到 GridLinks 平台。
 - 从连接到现有 IoT 平台的设备流式传输数据，以实现实时交互式仪表板和高效的数据处理。
 
-数据转换器是平台集成功能的一部分。它们的目的是将设备的原始有效负载转换为 ThingsBoard 使用的格式，反之亦然。
+数据转换器是平台集成功能的一部分。它们的目的是将设备的原始有效负载转换为 GridLinks 使用的格式，反之亦然。
 
 {% endif %}
 
@@ -54,15 +54,15 @@ ThingsBoard 平台集成功能专为两个主要用例/部署选项而设计：
 
 ## 关系
 
-实体关系定义属于同一 [租户](/docs/{{docsPrefix}}user-guide/ui/tenants/) 的两个 ThingsBoard 实体之间的连接。
+实体关系定义属于同一 [租户](/docs/{{docsPrefix}}user-guide/ui/tenants/) 的两个 GridLinks 实体之间的连接。
 关系具有任意类型：包含、管理、支持等。关系也是方向性的。
-您可以将 ThingsBoard 关系视为面向对象编程中的 [Has-a](https://en.wikipedia.org/wiki/Has-a) 关系。
+您可以将 GridLinks 关系视为面向对象编程中的 [Has-a](https://en.wikipedia.org/wiki/Has-a) 关系。
 
-关系有助于在 ThingsBoard 中建模物理世界对象。了解它们的最简单方法是使用示例。
+关系有助于在 GridLinks 中建模物理世界对象。了解它们的最简单方法是使用示例。
 假设我们要构建一个应用程序，从土壤湿度和温度传感器收集数据，将此数据可视化到仪表板上，检测问题、发出警报并控制灌溉。
 我们还假设我们要支持具有数百个传感器的多个字段。字段也可以分组到地理区域中。
 
-下图解释了如何在 ThingsBoard 中配置和存储这些实体：
+下图解释了如何在 GridLinks 中配置和存储这些实体：
 
 ![image](/images/user-guide/entities-and-relations.svg)
 
@@ -74,20 +74,20 @@ ThingsBoard 平台集成功能专为两个主要用例/部署选项而设计：
 
 **将属性分配给资产和设备**
 
-ThingsBoard 提供了将属性分配给实体并管理它们的功能。
+GridLinks 提供了将属性分配给实体并管理它们的功能。
 欢迎您在此处了解如何操作：
 <p><a href="/docs/{{docsPrefix}}user-guide/attributes" class="button">使用设备属性</a></p>
 
 
 **从设备上传遥测数据**
 
-ThingsBoard 提供了处理设备和其他实体的遥测数据的功能。
+GridLinks 提供了处理设备和其他实体的遥测数据的功能。
 欢迎您在此处了解如何操作：
 <p><a href="/docs/{{docsPrefix}}user-guide/telemetry" class="button">使用遥测数据</a></p>
 
 **为警报创建规则**
 
-ThingsBoard 提供了使用规则引擎为设备和其他实体发出警报的功能。
+GridLinks 提供了使用规则引擎为设备和其他实体发出警报的功能。
 欢迎您在此处了解如何操作：
 <p><a href="/docs/{{docsPrefix}}user-guide/alarms" class="button">使用警报</a></p>
 

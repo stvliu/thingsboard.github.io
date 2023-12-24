@@ -1,6 +1,6 @@
 ---
 layout: devices-library-article
-title: 如何将 Coral Dev Board 连接到 ThingsBoard？
+title: 如何将 Coral Dev Board 连接到 GridLinks？
 category: 单板计算机
 chip: Google Edge TPU ML
 connectivity: WIFI，蓝牙

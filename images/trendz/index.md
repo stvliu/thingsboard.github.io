@@ -82,8 +82,8 @@ description:
         <main class="accent-circle">
             <div class="content">
                 <h3 class="header">连接数据</h3>
-                <p class="text">通过自动拓扑发现，只需点击几下即可将 Trendz 连接到 ThingsBoard。</p>
-                <p class="text">Trendz 适用于所有 ThingsBoard 产品，包括： 开源 ThingsBoard 社区版 ThingsBoard 专业版。</p>
+                <p class="text">通过自动拓扑发现，只需点击几下即可将 Trendz 连接到 GridLinks。</p>
+                <p class="text">Trendz 适用于所有 ThingsBoard 产品，包括： 开源 GridLinks 社区版 GridLinks 专业版。</p>
                 <a href="/docs/trendz/connect-thingsboard/" class="button try-pe">了解更多信息</a>
             </div>
             <div class="image-block">
@@ -105,7 +105,7 @@ description:
                 <div class="text">
                     <span>通过以下方式与您的用户共享可视化见解：</span>
                     <ul>
-                        <li>将它们添加到 ThingsBoard 仪表板</li>
+                        <li>将它们添加到 GridLinks 仪表板</li>
                         <li>嵌入到第三方网站</li>
                         <li>将数据导出到电子表格和图像</li>
                     </ul>

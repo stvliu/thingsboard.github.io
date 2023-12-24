@@ -30,7 +30,7 @@ kubectl logs -f tb-node-1 > tb-node-1.log
 ```
 
 
-**注意：**您始终可以登录到 ThingsBoard 容器并在其中查看日志：
+**注意：**您始终可以登录到 GridLinks 容器并在其中查看日志：
 
 ```bash
 kubectl exec -it tb-node-0 -- bash

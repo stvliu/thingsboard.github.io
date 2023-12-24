@@ -57,7 +57,7 @@
 
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=addIntegrationSteps %}
 
-现在我们可以转到 ThingsBoard 来配置集成。
+现在我们可以转到 GridLinks 来配置集成。
 
 ### 创建上行转换器
 
@@ -150,7 +150,7 @@ return result;
 
 ### 创建集成
 
-接下来，我们将在 ThingsBoard 中创建与 The Things Stack (TTS) 的集成。
+接下来，我们将在 GridLinks 中创建与 The Things Stack (TTS) 的集成。
 
 {% assign createTTSIntegration = '
     ===

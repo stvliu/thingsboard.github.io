@@ -1,6 +1,6 @@
 ---
 layout: thingsboard-pe
-title: ThingsBoard Professional Edition
+title:  GridLinks专业版
 description: 
 ---
 <main>
@@ -29,7 +29,7 @@ description:
                 <div class="block">
                     <div class="feature-des">
                     <h3 class="item-heading">白标</h3>
-                    <p>在 2 分钟内使用您的公司或产品徽标和配色方案重新标记 ThingsBoard 平台网络界面。无需编码或重新启动服务。允许您的客户及其子客户也对他们的界面进行白标标记。</p>
+                    <p>在 2 分钟内使用您的公司或产品徽标和配色方案重新标记 GridLinks 平台网络界面。无需编码或重新启动服务。允许您的客户及其子客户也对他们的界面进行白标标记。</p>
                     <a class="read-more-button" href="/docs/user-guide/white-labeling/">了解更多<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
                     </div>
                     <img class="preview" src="/images/pe/white-labeling.svg" alt="white labeling">
@@ -242,7 +242,7 @@ description:
             <div class="item">
                 <img src="/images/pe/cloud-premises.svg" alt="Flexible deployment options">
                 <h3 class="item-heading">灵活的部署选项</h3>
-                <p>在云端或本地部署 ThingsBoard 平台。使用通用硬件通过向集群添加新节点来横向扩展。单个 ThingsBoard 服务器可以支持 10,000 多个设备和每小时 1 亿条消息，而简单的集群可以支持数百万个设备和数十亿条消息。</p>
+                <p>在云端或本地部署 GridLinks 平台。使用通用硬件通过向集群添加新节点来横向扩展。单个 GridLinks 服务器可以支持 10,000 多个设备和每小时 1 亿条消息，而简单的集群可以支持数百万个设备和数十亿条消息。</p>
             </div>
             <div class="divider"></div>
             <div class="item">

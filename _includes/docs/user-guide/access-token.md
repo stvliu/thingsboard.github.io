@@ -3,12 +3,12 @@
 
 
 基于访问令牌的身份验证是默认的设备身份验证类型。
-在设备在 ThingsBoard 中创建后，将生成唯一的访问令牌。之后可以更改它。
+在设备在 GridLinks 中创建后，将生成唯一的访问令牌。之后可以更改它。
 客户端必须在 MQTT 连接消息中将访问令牌指定为用户名。
 
 #### 纯 MQTT（无 SSL）
 
-让我们回顾一下使用访问令牌 *YOUR_ACCESS_TOKEN* 将温度读数上传到 ThingsBoard Cloud 的简单命令。
+让我们回顾一下使用访问令牌 *YOUR_ACCESS_TOKEN* 将温度读数上传到 GridLinks Cloud 的简单命令。
 有关更多详细信息，请参阅 [MQTT API](/docs/{{docsPrefix}}reference/mqtt-api/)。该命令使用纯 MQTT，不使用 TLS：
 
 ```bash
@@ -18,7 +18,7 @@ mosquitto_pub -d -q 1 -h "YOUR_TB_HOST" -p "1883" \
 {: .copy-code}
 
 上述命令需要 mosquitto 客户端库，可以使用以下命令安装：**apt-get install mosquitto-clients**。
-别忘了将 **YOUR_TB_HOST** 替换为 ThingsBoard 实例的主机，将 **YOUR_ACCESS_TOKEN** 替换为设备的访问令牌。
+别忘了将 **YOUR_TB_HOST** 替换为 GridLinks 实例的主机，将 **YOUR_ACCESS_TOKEN** 替换为设备的访问令牌。
 
 #### MQTTS（MQTT over SSL）
 
@@ -41,4 +41,4 @@ mosquitto_pub --cafile ca-root.pem -d -q 1 -h "YOUR_TB_HOST" -p "8883" \
 {: .copy-code}
 
 上述命令需要 mosquitto 客户端库，可以使用以下命令安装：**apt-get install mosquitto-clients**。
-别忘了将 **YOUR_TB_HOST** 替换为 ThingsBoard 实例的主机，将 **YOUR_ACCESS_TOKEN** 替换为设备的访问令牌。
+别忘了将 **YOUR_TB_HOST** 替换为 GridLinks 实例的主机，将 **YOUR_ACCESS_TOKEN** 替换为设备的访问令牌。

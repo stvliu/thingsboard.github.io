@@ -151,7 +151,7 @@ security:
             mapperConfig:
               # 允许在用户不存在时创建用户
               allowUserCreation: "${SECURITY_OAUTH2_DEFAULT_MAPPER_ALLOW_USER_CREATION:true}"
-              # 允许用户设置 ThingsBoard 内部密码并通过默认登录窗口登录
+              # 允许用户设置 GridLinks 内部密码并通过默认登录窗口登录
               activateUser: "${SECURITY_OAUTH2_DEFAULT_MAPPER_ACTIVATE_USER:false}"
               # 转换器类型，用于将外部用户转换为内部用户 - 'basic' 或 'custom'
               type: "${SECURITY_OAUTH2_DEFAULT_MAPPER_TYPE:basic}"

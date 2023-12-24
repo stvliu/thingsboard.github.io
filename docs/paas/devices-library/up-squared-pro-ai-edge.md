@@ -1,6 +1,6 @@
 ---
 layout: devices-library-article
-title: 如何将 UP Squared Pro AI Edge 连接到 ThingsBoard？
+title: 如何将 UP Squared Pro AI Edge 连接到 GridLinks？
 category: 单板计算机
 chip: 英特尔 Atom x7-E3950 处理器
 connectivity: 以太网、WIFI、蓝牙

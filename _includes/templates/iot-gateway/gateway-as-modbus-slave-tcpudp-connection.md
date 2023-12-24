@@ -7,7 +7,7 @@
 | 设备名称 | **Modbus_Slave_Example** | 设备名称 |
 | 设备类型 | **default** | 设备类型 |
 | 轮询周期 | **5000** | 检查属性和遥测的毫秒数周期。 |
-| 将数据发送到 ThingsBoard | **false** | 如果设置为 TRUE，网关将进行自动配置，并且每 <pollPeriod> 毫秒向 ThingsBoard 发送值 |
+| 将数据发送到 GridLinks | **false** | 如果设置为 TRUE，网关将进行自动配置，并且每 <pollPeriod> 毫秒向 ThingsBoard 发送值 |
 | 字节顺序 | **BIG** | 要读取的字节顺序。 |
 | 单元 ID | **0** | 设备的单元 ID |
 |---

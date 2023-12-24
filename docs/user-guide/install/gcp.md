@@ -2,9 +2,9 @@
 layout: docwithnav
 assignees:
 - ashvayka
-title: 在 GCP 上安装 ThingsBoard CE
+title: 在 GCP 上安装 GridLinks CE
 notitle: "true"
-description: 在 Google Cloud Platform 上安装 ThingsBoard CE
+description: 在 Google Cloud Platform 上安装 GridLinks CE
 
 ---
 

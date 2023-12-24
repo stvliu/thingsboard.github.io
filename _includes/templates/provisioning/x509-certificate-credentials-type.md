@@ -1,7 +1,7 @@
 {% if docsPrefix != 'paas/' %}
 {% capture info %}
 <br>
-**信息：要使用此功能，您应该配置 [ThingsBoard 中的 MQTT over SSL](/docs/{{docsPrefix}}user-guide/mqtt-over-ssl/)**  
+**信息：要使用此功能，您应该配置 [GridLinks 中的 MQTT over SSL](/docs/{{docsPrefix}}user-guide/mqtt-over-ssl/)**  
 {% endcapture %}
 {% include templates/info-banner.md content=info %}
 {% endif %}
@@ -10,11 +10,11 @@
 |---
 | **参数**             | **示例值**                            | **说明**                                                                |
 |:-|:-|-
-| *deviceName*              | **DEVICE_NAME**                              | ThingsBoard 中的设备名称。                                                    |
+| *deviceName*              | **DEVICE_NAME**                              | GridLinks 中的设备名称。                                                    |
 | *provisionDeviceKey*      | **PUT_PROVISION_KEY_HERE**                   | Provisioning 设备密钥，您应该从配置的设备配置文件中获取它。    |
 | *provisionDeviceSecret*   | **PUT_PROVISION_SECRET_HERE**                | Provisioning 设备密钥，您应该从配置的设备配置文件中获取它。 | 
 | credentialsType           | **X509_CERTIFICATE**                         | 凭据类型参数。                                                    |
-| hash                      | **MIIB........AQAB**                         | ThingsBoard 中设备的公钥 X509 哈希。                                |
+| hash                      | **MIIB........AQAB**                         | GridLinks 中设备的公钥 X509 哈希。                                |
 |---
 
 Provisioning 请求数据示例：
@@ -150,13 +150,13 @@ class ProvisionClient(Client):
 
     def __on_connect(self, client, userdata, flags, rc):  # 连接回调
         if rc == 0:
-            print("[Provisioning 客户端] 已连接到 ThingsBoard ")
+            print("[Provisioning 客户端] 已连接到 GridLinks ")
             client.subscribe(self.PROVISION_RESPONSE_TOPIC)  # 订阅 Provisioning 响应主题
             provision_request = dumps(self.__provision_request)
             print("[Provisioning 客户端] 发送 Provisioning 请求 %s" % provision_request)
             client.publish(self.PROVISION_REQUEST_TOPIC, provision_request)  # 发布 Provisioning 请求主题
         else:
-            print("[Provisioning 客户端] 无法连接到 ThingsBoard！结果: %s" % RESULT_CODES[rc])
+            print("[Provisioning 客户端] 无法连接到 GridLinks！结果: %s" % RESULT_CODES[rc])
 
     def __on_message(self, client, userdata, msg):
         decoded_payload = msg.payload.decode("UTF-8")
@@ -176,7 +176,7 @@ class ProvisionClient(Client):
         self.disconnect()
 
     def provision(self):
-        print("[Provisioning 客户端] 正在连接到 ThingsBoard (provisioning 客户端)")
+        print("[Provisioning 客户端] 正在连接到 GridLinks (provisioning 客户端)")
         self.__clean_credentials()
         self.connect(self._host, self._port, 60)
         self.loop_forever()
@@ -216,9 +216,9 @@ class ProvisionClient(Client):
 
 def on_tb_connected(client, userdata, flags, rc):  # 使用接收到的凭据连接的回调
     if rc == 0:
-        print("[ThingsBoard 客户端] 已使用凭据连接到 ThingsBoard：用户名: %s，密码: %s，客户端 ID: %s" % (client._username, client._password, client._client_id))
+        print("[ThingsBoard 客户端] 已使用凭据连接到 GridLinks：用户名: %s，密码: %s，客户端 ID: %s" % (client._username, client._password, client._client_id))
     else:
-        print("[ThingsBoard 客户端] 无法连接到 ThingsBoard！结果: %s" % RESULT_CODES[rc])
+        print("[ThingsBoard 客户端] 无法连接到 GridLinks！结果: %s" % RESULT_CODES[rc])
 
 
 if __name__ == '__main__':

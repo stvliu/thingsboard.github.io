@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-pe
-title: 在 Azure 上安装 ThingsBoard PE
-description: 在 Azure 上安装 ThingsBoard PE
+title: 在 Azure 上安装 GridLinks PE
+description: 在 Azure 上安装 GridLinks PE
 
 ---
 
@@ -27,7 +27,7 @@ description: 在 Azure 上安装 ThingsBoard PE
                                        <a href="/docs/user-guide/install/pe/cluster/azure-from-markeplace/">
                                            <span>
                                                <div class="deployment-logo">
-                                                   <img width="" src="/images/install/cloud/azure-vm.svg" title="从 Azure Marketplace 安装 ThingsBoard PE" alt="Azure Marketplace">
+                                                   <img width="" src="/images/install/cloud/azure-vm.svg" title="从 Azure Marketplace 安装 GridLinks PE" alt="Azure Marketplace">
                                                    <h5 class="title">Azure Marketplace</h5>
                                                 </div>
                                            </span>
@@ -37,7 +37,7 @@ description: 在 Azure 上安装 ThingsBoard PE
                                        <a href="/docs/user-guide/install/pe/cluster/azure-aks-setup/">
                                            <span>
                                                <div class="deployment-logo">
-                                                   <img width="" src="/images/install/cloud/azure-aks.svg" title="在 Azure AKS 上使用 Kubernetes 设置 ThingsBoard" alt="Azure AKS">
+                                                   <img width="" src="/images/install/cloud/azure-aks.svg" title="在 Azure AKS 上使用 Kubernetes 设置 GridLinks" alt="Azure AKS">
                                                    <h5 class="title">Azure Kubernetes 服务</h5>
                                                 </div>
                                            </span>

@@ -1,6 +1,6 @@
 ---
 layout: docwithnav-mobile-pe
-title: 在 ThingsBoard PE 移动应用程序中配置移动操作
+title: 在 GridLinks PE 移动应用程序中配置移动操作
 
 mobile-actions:
  0:

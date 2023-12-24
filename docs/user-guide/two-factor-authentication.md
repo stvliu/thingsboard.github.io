@@ -3,7 +3,7 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: 双因素认证
-description: 使用 ThingsBoard 进行双因素认证
+description: 使用 GridLinks 进行双因素认证
 
 two-factor-authentication-password-and-authentication:
     0:

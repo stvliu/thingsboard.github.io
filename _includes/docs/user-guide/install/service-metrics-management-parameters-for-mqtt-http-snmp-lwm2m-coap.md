@@ -1,4 +1,4 @@
-#### ThingsBoard 服务参数
+#### GridLinks 服务参数
 
 <table>
     <thead>

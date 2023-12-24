@@ -56,7 +56,7 @@ device-objects:
 data-fetch:
     0:
         image: /images/lwm2m/data-fetch-pe.png
-        title: '勾选“属性”，以在设备连接时获取您想要的数据并将其存储为 ThingsBoard 属性'
+        title: '勾选“属性”，以在设备连接时获取您想要的数据并将其存储为 GridLinks 属性'
     1:
         image: /images/lwm2m/data-fetch-1-pe.png
         title: '如果您希望服务器观察它们并获取更新的值，请勾选遥测和/或观察框'

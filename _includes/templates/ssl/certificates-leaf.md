@@ -37,13 +37,13 @@ openssl req -new -key key.pem -x509 -nodes -days 365 -out cert.pem
 
 #### 步骤 3. 将客户端公钥配置为设备凭证
 
-转到 **ThingsBoard Web UI -> 实体 -> 设备 -> 您的设备 -> 管理凭证**。
+转到 **GridLinks Web UI -> 实体 -> 设备 -> 您的设备 -> 管理凭证**。
 选择 **X.509 证书** 设备凭证，插入 *cert.pem* 文件的内容，然后单击保存。
 或者，也可以通过 [REST API](/docs/{{docsPrefix}}reference/rest-api/) 完成相同的操作。
 
 #### 步骤 4. 测试连接
 
-执行以下命令，使用安全通道将温度读数上传到 ThingsBoard Cloud：
+执行以下命令，使用安全通道将温度读数上传到 GridLinks Cloud：
 
 {% if docsPrefix == 'paas/' %}
 ```bash
@@ -59,4 +59,4 @@ mosquitto_pub --cafile ca-root.pem -d -q 1 -h "YOUR_TB_HOST" -p "8883" \
 {: .copy-code}
 {% endif %}
 
-别忘了将 **YOUR_TB_HOST** 替换为 ThingsBoard 实例的主机。
+别忘了将 **YOUR_TB_HOST** 替换为 GridLinks 实例的主机。

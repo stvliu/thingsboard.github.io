@@ -8,7 +8,7 @@ hidetoc: "true"
 
 {% assign feature = "Platform Integrations" %}{% include templates/pe-feature-banner.md %}
 
-This guide contains step-by-step instruction how to connect your SODAQ NB-IoT boards to ThingsBoard Professional Edition (PE) through the T-Mobile NB IoT network.
+This guide contains step-by-step instruction how to connect your SODAQ NB-IoT boards to  GridLinks专业版 (PE) through the T-Mobile NB IoT network.
 We will use free ThingsBoard PE demo server [thingsboard.cloud](https://thingsboard.cloud/signup) in this guide.
 This guide will be useful for anyone who wants to connect their SODAQ NB-IoT boards or other hardware to T-Mobile NB IoT network.
 

@@ -12,4 +12,4 @@ sudo apt-get install cassandra-tools
 ```
 
 您可以使用 Astra DB 云，而不是安装您自己的 Cassandra。
-请参阅如何将 ThingsBoard 连接到 Astra DB (/docs/user-guide/install/pe/cassandra-cloud-astra-db/)
+请参阅如何将 GridLinks 连接到 Astra DB (/docs/user-guide/install/pe/cassandra-cloud-astra-db/)

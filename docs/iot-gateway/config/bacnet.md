@@ -109,8 +109,8 @@ BACnet 连接器是一种读取和写入 BACnet IP 设备中某些基本对象�
 
 | **参数**  | **默认值**                  | **描述**                                                                                     |
 |:-|:-|-
-| **deviceName** | **BACnet Device ${objectName}**    | ThingsBoard 的设备名称。您可以使用 **objectName** 属性从设备获取对象名称。 |
-| **deviceType** | **default**                        | ThingsBoard 的设备类型。                                                                        |
+| **deviceName** | **BACnet Device ${objectName}**    | GridLinks 的设备名称。您可以使用 **objectName** 属性从设备获取对象名称。 |
+| **deviceType** | **default**                        | GridLinks 的设备类型。                                                                        |
 | **address**    | **192.168.188.181:10520**          | BACnet 网络中的设备地址。                                                               |
 | **pollPeriod** | **10000**                          | 检查设备数据的周期。                                                                 |
 
@@ -127,11 +127,11 @@ BACnet 连接器是一种读取和写入 BACnet IP 设备中某些基本对象�
 
 ###### “属性”的关键设置
 
-本小节中的配置单元提供设置，以便将来自 BACnet 设备的数据作为 ThingsBoard 平台实例上的设备属性进行处理。
+本小节中的配置单元提供设置，以便将来自 BACnet 设备的数据作为 GridLinks 平台实例上的设备属性进行处理。
 
 | **参数**  | **默认值**  | **描述**                                     |
 |:-|:-|-
-| **key**        | **temperature**    | ThingsBoard 平台实例的属性键。    |
+| **key**        | **temperature**    | GridLinks 平台实例的属性键。    |
 | **objectId**   | **analogOutput:1** | BACnet 设备中的对象 ID。                     |
 | **propertyId** | **presentValue**   | BACnet 设备中的属性 ID。                   |
 
@@ -149,11 +149,11 @@ BACnet 连接器是一种读取和写入 BACnet IP 设备中某些基本对象�
 
 ###### “时序”的关键设置
 
-本小节中的配置单元提供设置，以便将来自 BACnet 设备的数据作为 ThingsBoard 平台实例上的设备遥测进行处理。
+本小节中的配置单元提供设置，以便将来自 BACnet 设备的数据作为 GridLinks 平台实例上的设备遥测进行处理。
 
 | **参数**  | **默认值** | **描述**                                     |
 |:-|:-|-
-| **key**        | **state**         | ThingsBoard 平台实例的遥测键。    |
+| **key**        | **state**         | GridLinks 平台实例的遥测键。    |
 | **objectId**   | **binaryValue:1** | BACnet 设备中的对象 ID。                     |
 | **propertyId** | **presentValue**  | BACnet 设备中的属性 ID。                   |
 
@@ -170,7 +170,7 @@ BACnet 连接器是一种读取和写入 BACnet IP 设备中某些基本对象�
 ```
 
 ###### “属性更新”的关键设置
-本小节中的配置单元提供设置，以便将来自 ThingsBoard 平台实例上的共享属性的数据处理到 BACnet 设备。
+本小节中的配置单元提供设置，以便将来自 GridLinks 平台实例上的共享属性的数据处理到 BACnet 设备。
 
 | **参数**  | **默认值**  | **描述**                                                   |
 |:-|:-|-

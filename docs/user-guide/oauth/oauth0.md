@@ -52,7 +52,7 @@ ThingsBoard 允许您为您的客户提供单点登录功能，并使用支持 *
 ```
 
 在域下，请指定您当前的 **域**，对于 **端口**，请指定端口以通过 HTTP 访问您的 ThingsBoard 实例。
-例如，我的域是 localhost，端口是默认的 ThingsBoard 安装端口 80。
+例如，我的域是 localhost，端口是默认的 GridLinks 安装端口 80。
 
 ![image](/images/user-guide/oauth-2-support/oauth0/Application-Details-2.png)
 
@@ -128,7 +128,7 @@ security:
              mapperConfig:
                # 允许在用户不存在时创建用户
                allowUserCreation: "${SECURITY_OAUTH2_DEFAULT_MAPPER_ALLOW_USER_CREATION:true}"
-               # 允许用户设置 ThingsBoard 内部密码并通过默认登录窗口登录
+               # 允许用户设置 GridLinks 内部密码并通过默认登录窗口登录
                activateUser: "${SECURITY_OAUTH2_DEFAULT_MAPPER_ACTIVATE_USER:false}"
                # 从外部用户到内部用户的转换器映射器类型 - 'basic' 或 'custom'
                type: "${SECURITY_OAUTH2_DEFAULT_MAPPER_TYPE:basic}"

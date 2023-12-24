@@ -10,10 +10,10 @@ ThingsBoard 允许您为您的客户提供单点登录功能，并使用支持 O
 
 ## OAuth 2.0 身份验证流程
 
-ThingsBoard 支持授权码授予类型，以将授权码交换为访问令牌。
+GridLinks 支持授权码授予类型，以将授权码交换为访问令牌。
 
 一旦用户通过重定向 URL 返回 ThingsBoard 客户端，平台将从 URL 中获取授权码，并使用它向外部用户管理平台请求访问令牌。
-使用 [基本映射器](/docs/{{docsPrefix}}user-guide/oauth-2-support/#basic-mapper) 或 [自定义映射器](/docs/{{docsPrefix}}user-guide/oauth-2-support/#custom-mapper)，外部用户信息对象将从外部平台转换为 ThingsBoard 内部 OAuth 2.0 用户。
+使用 [基本映射器](/docs/{{docsPrefix}}user-guide/oauth-2-support/#basic-mapper) 或 [自定义映射器](/docs/{{docsPrefix}}user-guide/oauth-2-support/#custom-mapper)，外部用户信息对象将从外部平台转换为 GridLinks 内部 OAuth 2.0 用户。
 此后，将发生常规的 ThingsBoard 授权流程。
 
 
@@ -56,9 +56,9 @@ http://localhost:8080/login/oauth2/code/
 [comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/4-Authorized-redirect-uris.png&#41;)
 {% include images-gallery.html imageCollection="step4" preview="false" max-width="100%" %}
 
-#### ThingsBoard 的配置
+#### GridLinks 的配置
 
-以系统管理员身份转到您的 ThingsBoard (sysadmin@thingsboard.org / sysadmin)。检查常规设置 -> 基本 URL 在末尾不应包含“/”（例如，“`http://127.0.0.1:8080`”而不是“`https://127.0.0.1:8080/`”）。然后在 **主页** 部分，找到“OAuth2”图标并单击它。
+以系统管理员身份转到您的 ThingsBoard (sysadmin@gridlinks.com / sysadmin)。检查常规设置 -> 基本 URL 在末尾不应包含“/”（例如，“`http://127.0.0.1:8080`”而不是“`https://127.0.0.1:8080/`”）。然后在 **主页** 部分，找到“OAuth2”图标并单击它。
 
 [comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/5-home-oauth2.png&#41;)
 {% include images-gallery.html imageCollection="step5" preview="false" max-width="100%" %}
@@ -101,7 +101,7 @@ http://localhost:8080/login/oauth2/code/
 [comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/11-login-with-google.png&#41;)
 {% include images-gallery.html imageCollection="step11" preview="false" max-width="100%" %}
 
-一旦我们单击它并选择我们的一个 Google 帐户，我们将使用我们的 Google 电子邮件作为租户管理员电子邮件登录到 ThingsBoard：
+一旦我们单击它并选择我们的一个 Google 帐户，我们将使用我们的 Google 电子邮件作为租户管理员电子邮件登录到 GridLinks：
 
 [comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/12-tenant-administrator.png&#41;)
 {% include images-gallery.html imageCollection="step12" preview="false" max-width="100%" %}
@@ -147,7 +147,7 @@ http://localhost:8080/login/oauth2/code/
 [comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/18-auth0-advanced-settings.png&#41;)
 {% include images-gallery.html imageCollection="step18" preview="false" max-width="100%" %}
 
-#### ThingsBoard 的配置
+#### GridLinks 的配置
 
 现在我们可以添加另一个提供商：
 
@@ -180,7 +180,7 @@ http://localhost:8080/login/oauth2/code/
 [comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/23-login-with-auth0.png&#41;)
 {% include images-gallery.html imageCollection="step23" preview="false" max-width="100%" %}
 
-一旦我们单击它并选择我们的 *Auth0* 帐户，我们将使用我们的电子邮件作为客户用户登录到 ThingsBoard：
+一旦我们单击它并选择我们的 *Auth0* 帐户，我们将使用我们的电子邮件作为客户用户登录到 GridLinks：
 
 [comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/24_customer.png&#41;)
 {% include images-gallery.html imageCollection="step24" preview="false" max-width="100%" %}
@@ -190,7 +190,7 @@ http://localhost:8080/login/oauth2/code/
 [comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/25-tenants-emails.png&#41;)
 {% include images-gallery.html imageCollection="step25" preview="false" max-width="100%" %}
 
-我们已经完成了我们的示例，现在您的用户无需在 ThingsBoard 中创建帐户 - 他们可以使用已经存在的 SSO 提供商来实现此目的。
+我们已经完成了我们的示例，现在您的用户无需在 GridLinks 中创建帐户 - 他们可以使用已经存在的 SSO 提供商来实现此目的。
 
 ### 结果片段
 此片段包含我们示例中使用的两个提供商：
@@ -198,10 +198,10 @@ http://localhost:8080/login/oauth2/code/
 [comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/26-both-providers.png&#41;)
 {% include images-gallery.html imageCollection="step26" preview="false" max-width="100%" %}
 
-## 将外部用户映射到 ThingsBoard 内部用户结构
+## 将外部用户映射到 GridLinks 内部用户结构
 
-可以通过使用 **基本** 和 **自定义** 映射器将外部用户的信息对象映射到 ThingsBoard 用户。
-映射器的主要功能是将外部用户的信息对象中的键值属性映射到 ThingsBoard OAuth 2.0 用户的预期结构：
+可以通过使用 **基本** 和 **自定义** 映射器将外部用户的信息对象映射到 GridLinks 用户。
+映射器的主要功能是将外部用户的信息对象中的键值属性映射到 GridLinks OAuth 2.0 用户的预期结构：
 
 ```java
 public class OAuth2User {
@@ -225,7 +225,7 @@ public class OAuth2User {
 
 ### 基本映射器
 
-基本映射器能够使用一组预定义的规则将外部 OAuth 2.0 用户信息对象合并到 ThingsBoard OAuth 2.0 用户中。
+基本映射器能够使用一组预定义的规则将外部 OAuth 2.0 用户信息对象合并到 GridLinks OAuth 2.0 用户中。
 
 [comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/27-oauth2-basic-mapper-pe.png&#41;)
 {% include images-gallery.html imageCollection="step27" preview="false" max-width="100%" %}
@@ -235,8 +235,8 @@ public class OAuth2User {
 以下是其他属性的详细信息：
 
 - **allowUserCreation** -
-  如果此选项设置为 **true**，那么，如果用户帐户在 ThingsBoard 中还不存在，它将被创建。
-  如果此选项设置为 **false**，用户将收到访问被拒绝的错误，如果他尝试使用外部 OAuth 2.0 提供商登录，但 ThingsBoard 中没有具有这些凭据的用户。   
+  如果此选项设置为 **true**，那么，如果用户帐户在 GridLinks 中还不存在，它将被创建。
+  如果此选项设置为 **false**，用户将收到访问被拒绝的错误，如果他尝试使用外部 OAuth 2.0 提供商登录，但 GridLinks 中没有具有这些凭据的用户。   
  
 - **emailAttributeKey** -
   这是外部 OAuth 2.0 用户信息中属性的键，该键将用作 ThingsBoard 用户的电子邮件属性。
@@ -307,7 +307,7 @@ public class OAuth2User {
 
 如果基本映射器功能无法满足您的业务需求，您可以借助自定义映射器添加一个实现来满足您的特定目标。
 
-自定义映射器设计为一个单独的微服务，它在 ThingsBoard 核心微服务附近运行。
+自定义映射器设计为一个单独的微服务，它在 GridLinks 核心微服务附近运行。
 ThingsBoard 将所有映射请求转发到此微服务，并期望作为响应的 ThingsBoard OAuth 2.0 用户对象：
 
 ```java
@@ -383,7 +383,7 @@ public class OAuth2User {
 
 ## HaProxy 配置
 
-如果 ThingsBoard 在负载均衡器（如 HAProxy）下运行，请正确配置平衡算法，以确保在 ThingsBoard 实例上可以使用正确的会话：
+如果 GridLinks 在负载均衡器（如 HAProxy）下运行，请正确配置平衡算法，以确保在 GridLinks 实例上可以使用正确的会话：
 ```bash
 backend tb-api-backend
   ...

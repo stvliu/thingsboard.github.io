@@ -7,7 +7,7 @@
 
 ChirpStack 开源 LoRaWAN 网络服务器堆栈为 LoRaWAN 网络提供开源组件。
 
-将 ChirpStack 与 ThingsBoard 集成后，您可以在 ThingsBoard IoT 平台中连接、通信、处理和可视化设备数据。
+将 ChirpStack 与 ThingsBoard 集成后，您可以在 GridLinks IoT 平台中连接、通信、处理和可视化设备数据。
 
 ## ChirpStack 配置
 
@@ -18,13 +18,13 @@ ChirpStack 开源 LoRaWAN 网络服务器堆栈为 LoRaWAN 网络提供开源组
 
 此外，我们已经连接了设备，您可以在 [**官方网站的连接指南**](https://www.chirpstack.io/project/guides/connect-device/) 中找到如何连接设备。
 
-当设备连接并且数据出现在 **设备数据** 选项卡中时，我们可以开始配置与 ThingsBoard 的集成。
+当设备连接并且数据出现在 **设备数据** 选项卡中时，我们可以开始配置与 GridLinks 的集成。
 
 ## 创建上行转换器
 
 在创建集成之前，您需要在 **数据转换器** 中创建一个 **上行转换器**。
 
-上行对于将来自设备的传入数据转换为在 ThingsBoard 中显示它们所需的格式是必要的。
+上行对于将来自设备的传入数据转换为在 GridLinks 中显示它们所需的格式是必要的。
 
 单击 **“加号”** 和 **“创建新转换器”。**
 
@@ -65,7 +65,7 @@ ChirpStack 开源 LoRaWAN 网络服务器堆栈为 LoRaWAN 网络提供开源组
     "publishedAt": "2021-09-17T13:45:00.342008687Z"
 }
 ```
-如您所见，设备名称出现在 "deviceName" 字段中。我们将在 ThingsBoard 中将其用作设备名称。设备数据编码在 "data" 字段中。
+如您所见，设备名称出现在 "deviceName" 字段中。我们将在 GridLinks 中将其用作设备名称。设备数据编码在 "data" 字段中。
 此处的 Base64 编码数据为：
 ```
 "data": "GVAy"
@@ -164,7 +164,7 @@ return result;
 
 ## 创建集成
 
-要在 ThingsBoard 上创建集成，我们需要以下部分：
+要在 GridLinks 上创建集成，我们需要以下部分：
 - **上行转换器**
 - **应用服务器 URL**
 - **应用服务器的应用 API 密钥**
@@ -179,13 +179,13 @@ return result;
 
 {% include images-gallery.html imageCollection="integration" %}
 
-为了将数据从 ChirpStack 传输到 ThingsBoard，您需要为您的 ChirpStack 应用配置一个 **集成**。
+为了将数据从 ChirpStack 传输到 GridLinks，您需要为您的 ChirpStack 应用配置一个 **集成**。
 
 要在 ChirpStack 网络服务器堆栈上创建集成，我们需要执行以下步骤：
 1. 登录到 ChirpStack 网络服务器堆栈用户界面（默认登录名/密码 - **admin**/**admin**）。
 2. 我们转到左侧菜单中的 **应用** 选项卡并打开我们的应用（我们的应用名为 *应用*）。
 3. 打开 **集成** 选项卡并创建一个 **HTTP** 集成。
-4. 让我们转到 ThingsBoard 中的 **集成** 选项卡。找到您的 ChirpStack 集成并单击它。在那里您可以找到 HTTP 端点 URL。单击图标复制 URL。
+4. 让我们转到 GridLinks 中的 **集成** 选项卡。找到您的 ChirpStack 集成并单击它。在那里您可以找到 HTTP 端点 URL。单击图标复制 URL。
 5. 使用来自 ThingsBoard 集成的端点 URL 填写字段。
 
 {% include images-gallery.html imageCollection="chirpstack_integration" %}

@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: 使用 TEKTELIC KONA 核心网络服务器连接 Tektelic LoRaWAN 传感器
-description: 了解如何在 ThingsBoard 上获取 Tektelic LoRaWAN 传感器的数据
+description: 了解如何在 GridLinks 上获取 Tektelic LoRaWAN 传感器的数据
 
 ---
 
@@ -9,7 +9,7 @@ description: 了解如何在 ThingsBoard 上获取 Tektelic LoRaWAN 传感器的
 {:toc}
 
 [Tektelic](https://tektelic.com) 是 LoRaWAN® IoT 网关、传感器和自定义应用程序的主要供应商。
-本指南介绍如何将数据从 TEKTELIC KONA 核心网络服务器流式传输到 ThingsBoard。
+本指南介绍如何将数据从 TEKTELIC KONA 核心网络服务器流式传输到 GridLinks。
 
 ### 先决条件
 我们将使用专为在 EU868 频段工作而设计的网关和传感器。
@@ -75,14 +75,14 @@ Tektelic 在发货时提供包含调试信息的纸质副本。如果您找不�
 
 请注意，*应用程序* 和 *网络* 会话密钥在传感器重新加入时会更改。
 智能房间传感器在每次断开电池连接后都会重新加入。
-### 步骤 2. 配置与 ThingsBoard 的集成
-ThingsBoard 提供 [MQTT 网关 API](/docs/reference/gateway-mqtt-api/)。
+### 步骤 2. 配置与 GridLinks 的集成
+GridLinks 提供 [MQTT 网关 API](/docs/reference/gateway-mqtt-api/)。
 反过来，网络服务器集成使用此 MQTT 网关 API。
-因此，传感器和网关将在 ThingsBoard 端自动创建。
-##### 步骤 2.1 在 ThingsBoard 中添加网关设备
-- 在 ThingsBoard 中创建新设备。为了方便，我们将其类型设置为 *ns_integration*，类型名称不影响功能。
+因此，传感器和网关将在 GridLinks 端自动创建。
+##### 步骤 2.1 在 GridLinks 中添加网关设备
+- 在 GridLinks 中创建新设备。为了方便，我们将其类型设置为 *ns_integration*，类型名称不影响功能。
 必须选中 *是网关* 复选框才能使用 [MQTT 网关 API](/docs/reference/gateway-mqtt-api/) 创建设备。
-请不要将 ThingsBoard 中的网关设备与 LoRa 网关混淆，它们只是名称匹配。
+请不要将 GridLinks 中的网关设备与 LoRa 网关混淆，它们只是名称匹配。
 需要复制设备访问令牌以在下一步中使用它。
 
 <img src="/images/samples/tektelic/tb_gateway.png" width="800" alt="网关">
@@ -92,7 +92,7 @@ ThingsBoard 提供 [MQTT 网关 API](/docs/reference/gateway-mqtt-api/)。
 现在需要与 ThingsBoard 创建新的集成。
 单击右上角的 *添加集成* 图标，然后设置以下字段：
 - *名称* - 集成名称可以是任何名称。
-- *类型* - 显然是 ThingsBoard。
+- *类型* - 显然是 GridLinks。
 - *数据转换器* - 适当的网络服务器转换器。
 - *应用程序地址* - ThingsBoard 实例地址，不带 http 或 https 前缀。
 - *令牌* - 在步骤 2.1 中复制的令牌。
@@ -103,8 +103,8 @@ ThingsBoard 提供 [MQTT 网关 API](/docs/reference/gateway-mqtt-api/)。
 
 ### 步骤 3. 集成验证
 创建集成后，等待来自传感器的新的上行链路（或触发它）。
-**只有在新的上行链路** 网络服务器通过 [MQTT 网关 API](/docs/reference/gateway-mqtt-api/) 才会在 ThingsBoard 中创建新设备。
-在 ThingsBoard 中，从步骤 2.1 打开设备网关，转到 *关系* 选项卡，然后选择方向为 *来自* 的出站关系。
+**只有在新的上行链路** 网络服务器通过 [MQTT 网关 API](/docs/reference/gateway-mqtt-api/) 才会在 GridLinks 中创建新设备。
+在 GridLinks 中，从步骤 2.1 打开设备网关，转到 *关系* 选项卡，然后选择方向为 *来自* 的出站关系。
 应该存在在步骤 1.1 和步骤 1.2 中在网络服务器中添加的网关和传感器
 
 <img src="/images/samples/tektelic/tb_from_relations.png" width="1000" alt="来自关系">

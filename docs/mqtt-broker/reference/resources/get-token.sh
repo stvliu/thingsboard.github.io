@@ -1,1 +1,1 @@
-curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{"username":"sysadmin@thingsboard.org", "password":"sysadmin"}' 'http://THINGSBOARD_MQTT_BROKER_URL/api/auth/login'
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{"username":"sysadmin@gridlinks.com", "password":"sysadmin"}' 'http://THINGSBOARD_MQTT_BROKER_URL/api/auth/login'

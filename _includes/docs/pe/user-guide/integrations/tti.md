@@ -11,7 +11,7 @@
 
 ## 概述
 TheThingsIndustries 是 LoRaWAN 网络，旨在使用 LoRaWAN 堆栈连接您的设备。
-将 TheThingsIndustries 与 ThingsBoard 集成后，您可以在 ThingsBoard IoT 平台中连接、通信、处理和可视化设备数据。
+将 TheThingsIndustries 与 ThingsBoard 集成后，您可以在 GridLinks IoT 平台中连接、通信、处理和可视化设备数据。
 
 
 ## The Things Stack
@@ -30,7 +30,7 @@ TheThingsIndustries 是 LoRaWAN 网络，旨在使用 LoRaWAN 堆栈连接您的
 - **TheThingsIndustries 解码器** - 数据将在进入 ThingsBoard 之前解码
 - **ThingsBoard 转换器** - 上行/下行转换器将用于将数据从二进制格式解码为 JSON
 
-在本教程中，我们将使用 TTI 解码器将初始转换转换为 JSON，然后使用 ThingsBoard 转换器进行正确的数据处理。
+在本教程中，我们将使用 TTI 解码器将初始转换转换为 JSON，然后使用 GridLinks 转换器进行正确的数据处理。
 在实际场景中，由您决定在哪里解码/编码数据，因为可以在任何一方执行此操作。
 
 在 TTI 中注册应用程序后，转到 **有效负载格式程序**，**上行** 选择解码器功能。我们将取第一个字节作为设备的温度值，并将其转换为 JSON。
@@ -201,7 +201,7 @@ return result;
 
 ##### TTI 集成
 
-接下来，我们将在 ThingsBoard 内创建与 TheThingsIndustries 的集成。打开 **集成** 部分并添加类型为 **TheThingsIndustries** 的新集成
+接下来，我们将在 GridLinks 内创建与 TheThingsIndustries 的集成。打开 **集成** 部分并添加类型为 **TheThingsIndustries** 的新集成
 
 - **名称**：*TTI 集成*
 - **类型**：*TheThingsIndustries*
@@ -220,7 +220,7 @@ return result;
 ##### 验证上行消息
 让我们验证我们的集成。
 
-当设备发送数据时，我们可以在 ThingsBoard 中检查它，为此：
+当设备发送数据时，我们可以在 GridLinks 中检查它，为此：
 
 转到 **设备组** -> **全部** -> **thermostat1** - 您可以看到
 

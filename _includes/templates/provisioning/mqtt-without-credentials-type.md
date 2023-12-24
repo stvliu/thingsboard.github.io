@@ -1,6 +1,6 @@
 | **参数**             | **示例值**                            | **描述**                                                                |
 |:-|:-
-| *deviceName*              | **DEVICE_NAME**                              | ThingsBoard 中的设备名称。                                                    |
+| *deviceName*              | **DEVICE_NAME**                              | GridLinks 中的设备名称。                                                    |
 | *provisionDeviceKey*      | **PUT_PROVISION_KEY_HERE**                   | プロビジョニング デバイス キー。構成されたデバイス プロファイルから取得する必要があります。    |
 | *provisionDeviceSecret*   | **PUT_PROVISION_SECRET_HERE**                | プロビジョニング デバイス シークレット。構成されたデバイス プロファイルから取得する必要があります。 | 
 |-

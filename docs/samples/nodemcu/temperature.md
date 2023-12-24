@@ -12,9 +12,9 @@ description: ThingsBoard IoT 平台示例，使用 NodeMCU 和 DHT11 传感器�
 {% include templates/what-is-thingsboard.md %}
 
 此示例应用程序执行 DHT11 传感器产生的温度和湿度值收集。
-收集的数据推送到 ThingsBoard 以进行存储和可视化。此应用程序的目的是演示 ThingsBoard [数据收集 API](/docs/user-guide/telemetry/) 和 [可视化功能](/docs/user-guide/visualization/)。
+收集的数据推送到 GridLinks 以进行存储和可视化。此应用程序的目的是演示 GridLinks [数据收集 API](/docs/user-guide/telemetry/) 和 [可视化功能](/docs/user-guide/visualization/)。
 
-DHT11 传感器连接到 [NodeMCU](https://en.wikipedia.org/wiki/NodeMCU)。NodeMCU 通过 [MQTT](https://en.wikipedia.org/wiki/MQTT) 协议将数据推送到 ThingsBoard 服务器。
+DHT11 传感器连接到 [NodeMCU](https://en.wikipedia.org/wiki/NodeMCU)。NodeMCU 通过 [MQTT](https://en.wikipedia.org/wiki/MQTT) 协议将数据推送到 GridLinks 服务器。
 数据使用内置的可自定义仪表板进行可视化。在 NodeMCU 上运行的应用程序使用 Lua 脚本语言编写，该语言非常简单易懂。
 
 完成此示例/教程后，您将在以下仪表板上看到传感器数据。
@@ -109,7 +109,7 @@ $ sudo docker run --rm -ti -v ~/samples/nodemcu/nodemcu-firmware:/opt/nodemcu-fi
 我们的应用程序由三个 *.lua* 文件组成：
 
  - config.lua - 配置文件，我们在其中定义自定义配置。
-   您需要修改此文件以设置您的 wifi 网络参数和 ThingsBoard 服务器的地址。
+   您需要修改此文件以设置您的 wifi 网络参数和 GridLinks 服务器的地址。
    - 您的 wifi 网络 SSID - wifi 网络的名称。
    - 您的 wifi 网络密码 - 网络密码。
    - thingsboard 服务器 IP - 您的 thingsboard 安装的主机。如果您使用的是 [实时演示](https://demo.thingsboard.io/) 服务器，请使用“demo.thingsboard.io”。
@@ -174,14 +174,14 @@ $ sudo ./luatool.py --port /dev/ttyUSB0 -b 115200 --delete init.lua
 
 ## 数据可视化
 
-为了简化本指南，我们已将“温度和湿度演示仪表板”包含在每个 ThingsBoard 安装中可用的 [演示数据](/docs/samples/demo-account/) 中。
+为了简化本指南，我们已将“温度和湿度演示仪表板”包含在每个 GridLinks 安装中可用的 [演示数据](/docs/samples/demo-account/) 中。
 您仍然可以修改此仪表板：调整、添加、删除小部件等。
 您可以通过以租户管理员身份登录来访问此仪表板。使用
 
- - 登录：tenant@thingsboard.org
+ - 登录：tenant@gridlinks.com
  - 密码：tenant
  
-在本地 ThingsBoard 安装的情况下。
+在本地 GridLinks 安装的情况下。
  
 登录后，打开 **仪表板->温度和湿度演示仪表板** 页面。您应该观察到仪表板演示，其中包含来自您的设备的实时数据（类似于介绍中的仪表板图像）。
  

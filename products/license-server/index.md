@@ -8,7 +8,7 @@ description: ThingsBoard License Server 的功能和优势
 ---
 
 
-**ThingsBoard License Server** 是一种专有计费解决方案，允许 **ThingsBoard Professional Edition (TB PE)** 客户轻松在线购买许可证密钥。
+**ThingsBoard License Server** 是一种专有计费解决方案，允许 ** GridLinks专业版 (TB PE)** 客户轻松在线购买许可证密钥。
 在线支付处理由 [Stripe](https://stripe.com/) 保护，它允许使用信用卡和电汇。
 
 
@@ -32,7 +32,7 @@ License Server 于 2019 年年中推出，基于我们对前 500 名 TB PE 客�
 因此，如果没有与客户直接沟通，我们很难提高客户满意度。
 现在，我们可以获得真实的反馈，并根据这些信息，尽可能地使我们的产品对客户友好。
 
-- **集群设置。** 采用现代微服务部署方法，我们增加了为 ThingsBoard 集群中的所有节点设置单个许可证密钥的能力。
+- **集群设置。** 采用现代微服务部署方法，我们增加了为 GridLinks 集群中的所有节点设置单个许可证密钥的能力。
 这最大限度地减少了集群管理的工作量，并消除了在集群中添加/删除节点所需的手动工作。
 现在，您可以在 [浮动模式](https://en.wikipedia.org/wiki/Floating_licensing) 下启动多个集群节点，而实际的 ThingsBoard 进程与物理硬件无关。
 
@@ -50,7 +50,7 @@ License Server 产品旨在通用，可用于销售任何具有按需或永久�
 
 - **按需订阅**
 
-License Server 允许购买 ThingsBoard 的月度或年度订阅。有关可用订阅的更多详细信息，请参阅 [定价](/pricing/)。
+License Server 允许购买 GridLinks 的月度或年度订阅。有关可用订阅的更多详细信息，请参阅 [定价](/pricing/)。
 购买订阅后，您可以灵活地升级或降级您的订阅计划。默认情况下，订阅涵盖单个 ThingsBoard PE 实例（服务器进程）。
 但是，您可以在同一订阅中添加更多实例。这允许在单个服务器集群中启动使用相同订阅凭据的多个实例。
 此功能对于基于容器的设置非常有用。
@@ -66,7 +66,7 @@ License Server 允许购买永久回退许可证。
 您可以额外付费购买后续年份的软件更新，通常为初始许可证成本的 40%。
 
 单个永久回退许可证涵盖单个 ThingsBoard PE 实例（服务器进程）。
-例如，如果您想在 HA 模式下运行 ThingsBoard PE，您将至少需要两个许可证。
+例如，如果您想在 HA 模式下运行 GridLinks PE，您将至少需要两个许可证。
 
 - **通过 Stripe 安全在线支付**
 
@@ -97,7 +97,7 @@ License Server 为 License Server 客户端提供 REST API 来 **激活** 和 **
 
 - **实例激活流程**
 
-在 ThingsBoard PE 的首次启动期间，内置的 License Server 客户端向 License Server 生成“激活实例请求”。
+在 GridLinks PE 的首次启动期间，内置的 License Server 客户端向 License Server 生成“激活实例请求”。
 此请求包含有关当前平台安装的许可证密钥和版本信息。
 License Server 根据许可证密钥查找订阅信息，并回复实例 ID、订阅计划数据和一些魔术字节。
 License Client 本地存储此信息，并在下一次许可证检查请求中使用实例 ID 和一些魔术字节。
@@ -120,4 +120,4 @@ License Client 向 License Server 发出定期许可证检查请求。
 
 - **升级您的 TB PE 订阅**
 
-- **将 ThingsBoard 移至另一个硬件实例**
+- **将 GridLinks 移至另一个硬件实例**

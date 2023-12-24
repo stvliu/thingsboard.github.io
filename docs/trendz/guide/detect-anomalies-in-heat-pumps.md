@@ -3,7 +3,7 @@ layout: docwithnav-trendz
 assignees:
 - vparomskiy
 title: 热泵异常检测
-description: 基于无监督多元时间序列异常检测构建热泵预测性维护系统
+description: 基于无监督多元时序异常检测构建热泵预测性维护系统
 
 heatpumps-dashboard:
   0:
@@ -57,7 +57,7 @@ heatpumps-save-anomaly-score-as-telemetry:
 heatpumps-create-anomaly-alert:
   0:
     image: /images/trendz/guide/heatpump_anomalies/heatpump_anomaly_score_alert_create.png
-    title: '在 ThingsBoard 设备配置文件中创建热泵异常分数警报'
+    title: '在 GridLinks 设备配置文件中创建热泵异常分数警报'
   1:
     image: /images/trendz/guide/heatpump_anomalies/heatpump_anomaly_score_alert_configuration.png
     title: '配置异常分数警报创建和清除规则'
@@ -71,7 +71,7 @@ heatpumps-create-anomaly-alert:
 heatpumps-notify-about-anomalies:
   0:
     image: /images/trendz/guide/heatpump_anomalies/heatpump_open_root_rulechain.png
-    title: '在 ThingsBoard 中打开根规则链'
+    title: '在 GridLinks 中打开根规则链'
   1:
     image: /images/trendz/guide/heatpump_anomalies/heatpump_send_email_node_configuration.png
     title: '将 toEmail 规则节点添加到根规则链'
@@ -115,7 +115,7 @@ heatpumps-notify-about-anomalies:
 本指南的范围之外是如何在系统中配置热泵以及用户自我注册过程。您可以在我们的文档中找到有关如何执行此操作的教程。
 
 ### 步骤 1：创建异常检测模型
-为了识别热泵可能存在的问题，我们将使用 Trendz 异常检测仪器。Trendz 使用无监督机器学习算法来检测时间序列数据中的异常。
+为了识别热泵可能存在的问题，我们将使用 Trendz 异常检测仪器。Trendz 使用无监督机器学习算法来检测时序数据中的异常。
 要训练模型，我们需要配置应分析哪些遥测键。在我们的案例中，我们将使用以下键：`compressorSpeed`、`airflow`、`coolantPressure`、`coolantTemperature`、`powerUsageWh`。
 
 * 转到异常页面，然后单击“创建模型”按钮。
@@ -191,9 +191,9 @@ heatpumps-notify-about-anomalies:
 {% include images-gallery.html imageCollection="heatpumps-save-anomaly-score-as-telemetry" %}
 
 #### 如果异常分数高于 50，则配置警报。
-此时，我们已经在 ThingsBoard 中为每个热泵提供了 `heatpumpAnomalyScore` 遥测，该遥测告诉我们其当前行为的异常程度。这意味着我们可以在 ThingsBoard 中创建警报规则，如果分数索引高于 50，则发出警报。
+此时，我们已经在 GridLinks 中为每个热泵提供了 `heatpumpAnomalyScore` 遥测，该遥测告诉我们其当前行为的异常程度。这意味着我们可以在 GridLinks 中创建警报规则，如果分数索引高于 50，则发出警报。
 
-* 在 ThingsBoard 中打开热泵的设备配置文件并添加新的警报规则
+* 在 GridLinks 中打开热泵的设备配置文件并添加新的警报规则
 * 警报类型 - **异常行为**
 * 创建警报规则
   * 严重性 - `警告`
@@ -204,9 +204,9 @@ heatpumps-notify-about-anomalies:
 {% include images-gallery.html imageCollection="heatpumps-create-anomaly-alert" %}
 
 #### 一旦创建警报，就发送通知
-最后一步是向维护团队发送通知，一旦创建警报。我们将使用 ThingsBoard 规则引擎向维护团队发送电子邮件通知。如果设备配置文件中的警报规则发出警报，我们可以捕获此事件并添加发送电子邮件的步骤。
+最后一步是向维护团队发送通知，一旦创建警报。我们将使用 GridLinks 规则引擎向维护团队发送电子邮件通知。如果设备配置文件中的警报规则发出警报，我们可以捕获此事件并添加发送电子邮件的步骤。
 
-* 在 ThingsBoard 中打开根规则链
+* 在 GridLinks 中打开根规则链
 * 在 `设备配置文件` 节点后添加 `toEmail` 规则节点，并通过 `警报创建` 关系将其连接起来。
 * 打开 `toEmail` 节点设置并将其配置为向维护团队发送电子邮件。
   * 来自模板 - `info@testmail.org`

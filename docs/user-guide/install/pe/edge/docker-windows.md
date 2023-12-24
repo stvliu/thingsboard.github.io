@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-pe-edge
-title: 使用 Docker 在 Windows 上安装 ThingsBoard Edge
-description: 使用 Docker 在 Windows 上安装 ThingsBoard Edge
+title: 使用 Docker 在 Windows 上安装 GridLinks Edge
+description: 使用 Docker 在 Windows 上安装 GridLinks Edge
 ---
 
 * TOC
@@ -25,11 +25,11 @@ description: 使用 Docker 在 Windows 上安装 ThingsBoard Edge
 
 {% include templates/edge/install/pull-images.md %}
 
-### 步骤 2. 运行 ThingsBoard Edge
+### 步骤 2. 运行 GridLinks Edge
 
 {% include templates/edge/install/docker-images-location.md %}
 
-Windows 用户应为 ThingsBoard Edge 数据库使用 docker 管理的卷。
+Windows 用户应为 GridLinks Edge 数据库使用 docker 管理的卷。
 在执行 docker run 命令之前创建 docker 卷（例如 `mytb-edge-data`）：
 打开“Docker 快速启动终端”。执行以下命令以创建 docker 卷：
 
@@ -42,7 +42,7 @@ docker volume create mytb-edge-data-db
 
 {% include templates/edge/install/copy-edge-credentials.md %}
 
-为 ThingsBoard Edge 服务创建 docker compose 文件：
+为 GridLinks Edge 服务创建 docker compose 文件：
 
 ```text
 docker-compose.yml

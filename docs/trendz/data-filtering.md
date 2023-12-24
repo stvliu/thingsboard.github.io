@@ -19,7 +19,7 @@ description: 如何在 Trendz Analytics 中过滤和清除数据集
 
 ## 过滤器选项
 
-您可以通过 ThingsBoard 中存在的任何字段进行过滤：
+您可以通过 GridLinks 中存在的任何字段进行过滤：
 * 资产/设备名称
 * 资产/设备标签
 * 资产/设备所有者（客户）

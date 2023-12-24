@@ -1,11 +1,11 @@
 ---
 layout: pe-aws
-title: ThingsBoard Professional Edition on AWS Marketplace
+title:  GridLinks专业版 on AWS Marketplace
 description: 
 redirect_to: "/pricing/"
 ---
 
-# ThingsBoard Professional Edition on AWS Marketplace
+#  GridLinks专业版 on AWS Marketplace
 
 <br>
 <br>
@@ -156,7 +156,7 @@ redirect_to: "/pricing/"
     <div class="item" data-tag="h4" data-item-id="what-does-free-trial-mean" data-title="如何启用免费试用？">
         <div class="container">
             <p>
-                我们建议使用 ThingsBoard Professional Edition 实时演示，以获得无缝体验和最新源代码中的最新功能！
+                我们建议使用 GridLinks Professional Edition 实时演示，以获得无缝体验和最新源代码中的最新功能！
                 请注意，这是一个共享环境，引入了硬件和软件限制，以便在同一服务器实例上托管多个试用租户。  
             </p>    
         </div>    
@@ -290,7 +290,7 @@ redirect_to: "/pricing/"
         <div class="container">
             <p>
                 可用的社区资源如下：<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/thingsboard/thingsboard/issues">GitHub 问题页面</a> - 我们的 GitHub 问题页面包含大量关于 ThingsBoard 的问答和讨论。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/thingsboard/thingsboard/issues">GitHub 问题页面</a> - 我们的 GitHub 问题页面包含大量关于 GridLinks 的问答和讨论。<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://groups.google.com/forum/#!forum/thingsboard">问答论坛</a> - 我们的用户论坛是获得社区支持的好地方。<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://stackoverflow.com/questions/tagged/thingsboard">Stack Overflow</a> - ThingsBoard 团队还将监控标记为 thingsboard 的帖子。 
             </p>    
@@ -299,7 +299,7 @@ redirect_to: "/pricing/"
     <div class="item" data-tag="h4" data-item-id="how-do-i-get-free-help-tb" data-title="如何获得专业支持？">
         <div class="container">
             <p>
-                请查看 ThingsBoard 专业 <a href="/docs/services/support/">支持计划</a> 并 <a href="/docs/contact-us/">联系我们</a>。
+                请查看 GridLinks 专业 <a href="/docs/services/support/">支持计划</a> 并 <a href="/docs/contact-us/">联系我们</a>。
             </p>    
         </div>    
     </div>                            

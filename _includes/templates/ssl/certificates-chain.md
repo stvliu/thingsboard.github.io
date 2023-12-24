@@ -186,13 +186,13 @@ cat deviceCert.pem intermediateCert.pem rootCert.pem > chain.pem
 
 #### 步骤 3. 将客户端中间公钥预置为设备配置文件 X509 预置策略
 
-转到 **ThingsBoard Web UI -> 配置文件 -> 设备配置文件 -> 您的设备配置文件 -> 设备预置**。
+转到 **GridLinks Web UI -> 配置文件 -> 设备配置文件 -> 您的设备配置文件 -> 设备预置**。
 选择 **X.509 证书链** 预置策略，插入 *intermediateCert.pem* 文件的内容和从 *deviceCert.pem* 获取公用名称的正则表达式模式，选择是否允许创建新设备，然后单击保存。
 或者，也可以通过 [REST API](/docs/{{docsPrefix}}reference/rest-api/) 完成相同的操作。
 
 #### 步骤 4. 测试连接
 
-执行以下命令，使用安全通道将温度读数上传到 ThingsBoard Cloud：
+执行以下命令，使用安全通道将温度读数上传到 GridLinks Cloud：
 
 {% if docsPrefix == 'paas/' %}
 ```bash
@@ -218,4 +218,4 @@ mosquitto_pub --insecure --cafile server.pem -d -q 1 -h "YOUR_TB_HOST" -p "8883"
 
  
 
-不要忘记将 **YOUR_TB_HOST** 替换为 ThingsBoard 实例的主机。
+不要忘记将 **YOUR_TB_HOST** 替换为 GridLinks 实例的主机。

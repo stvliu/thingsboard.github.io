@@ -1,6 +1,6 @@
 ---
 layout: devices-library-article
-title: 如何将 ODROID-XU4 连接到 ThingsBoard？
+title: 如何将 ODROID-XU4 连接到 GridLinks？
 category: 单板计算机
 chip: Samsung Exynos5422
 connectivity: 以太网

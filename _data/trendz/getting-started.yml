@@ -1,6 +1,6 @@
-bigheader: "Getting Started"
+bigheader: "入门"
 abstract: "Getting Started with Trendz Analytics."
 hidetoc: "true"
 toc:
-- title: Getting Started
+- title: 入门
   path: /docs/trendz/getting-started/

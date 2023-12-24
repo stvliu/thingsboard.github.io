@@ -47,7 +47,7 @@ Docker-Compose 部署%,%docker-compose%,%templates/edge/troubleshooting/logs/vie
 
 ### 启用某些日志
 
-ThingsBoard 提供了启用/禁用系统某些部分的日志记录的功能，具体取决于您需要哪些信息进行故障排除。
+GridLinks 提供了启用/禁用系统某些部分的日志记录的功能，具体取决于您需要哪些信息进行故障排除。
 
 您可以通过修改<b>logback.xml</b>文件来做到这一点。作为日志本身，它存储在以下目录中：
 
@@ -111,7 +111,7 @@ Docker-Compose 部署%,%docker-compose%,%templates/edge/troubleshooting/logs/ena
 
 Spring Actuator 可以使用 Prometheus 公开一些内部状态指标。
 
-以下是 ThingsBoard 推送到 Prometheus 的指标列表。
+以下是 GridLinks 推送到 Prometheus 的指标列表。
 
 #### <b>tb-edge</b> 指标：
 - <i>attributes_queue_${index_of_queue}</i>（statsNames - <i>totalMsgs, failedMsgs, successfulMsgs</i>）：有关将<b>属性</b>写入数据库的统计信息。

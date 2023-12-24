@@ -2,8 +2,8 @@
 layout: docwithnav
 assignees:
 - ashvayka
-title: ThingsBoard 安装选项
-description: ThingsBoard 安装说明，适用于各种操作系统和云平台
+title: GridLinks 安装选项
+description: GridLinks 安装说明，适用于各种操作系统和云平台
 notitle: "true"
 ---
 
@@ -12,10 +12,10 @@ notitle: "true"
        <div class="install-options-hero">
           <div class="container">
             <div class="install-options-hero-content">
-                <h1>ThingsBoard 安装选项</h1>
+                <h1>GridLinks 安装选项</h1>
                 <div class="install-options-description">
                     <p>
-                        ThingsBoard 旨在运行并利用大多数硬件，从本地 Raspberry PI 到云中的强大服务器
+                        GridLinks 旨在运行并利用大多数硬件，从本地 Raspberry PI 到云中的强大服务器
                     </p>
                 </div>
             </div>

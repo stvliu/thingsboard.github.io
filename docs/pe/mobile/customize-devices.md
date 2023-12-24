@@ -1,6 +1,6 @@
 ---
 layout: docwithnav-mobile-pe
-title: 在 ThingsBoard PE 移动应用程序中自定义设备图标
+title: 在 GridLinks PE 移动应用程序中自定义设备图标
 
 device-image:
  0:

@@ -10,7 +10,7 @@
 
 ## 概述
 
-Azure Event Hub 集成允许将数据从 Azure Event Hub 流式传输到 ThingsBoard，并将设备有效负载转换为 ThingsBoard 格式。
+Azure Event Hub 集成允许将数据从 Azure Event Hub 流式传输到 GridLinks，并将设备有效负载转换为 GridLinks 格式。
 
  ![image](/images/user-guide/integrations/azure-event-hub-integration.svg)
  
@@ -46,7 +46,7 @@ Azure Event Hub 集成允许将数据从 Azure Event Hub 流式传输到 ThingsB
 
 ## 创建上行转换器
 
-在创建集成之前，您需要在数据转换器中创建上行转换器。上行对于将来自设备的传入数据转换为在 ThingsBoard 中显示它们所需的格式是必要的。单击“加号”和“创建新转换器”。要查看事件，请启用调试。在函数解码器字段中，指定一个脚本来解析和转换数据。
+在创建集成之前，您需要在数据转换器中创建上行转换器。上行对于将来自设备的传入数据转换为在 GridLinks 中显示它们所需的格式是必要的。单击“加号”和“创建新转换器”。要查看事件，请启用调试。在函数解码器字段中，指定一个脚本来解析和转换数据。
 
 **注意** 尽管调试模式对于开发和故障排除非常有用，但在生产模式下启用它可能会极大地增加数据库使用的磁盘空间，因为所有调试数据都存储在那里。强烈建议在完成调试后关闭调试模式。
 

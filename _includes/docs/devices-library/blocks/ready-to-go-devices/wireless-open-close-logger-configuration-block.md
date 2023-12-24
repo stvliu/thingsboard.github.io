@@ -15,16 +15,16 @@
         title: 下载并安装应用程序后，选择“附近传感器”模式并解锁高级用户模式：打开应用程序菜单并快速点击 Efento 徽标五次。
     ===
         image: /images/devices-library/ready-to-go-devices/wireless-open-close-sensor/efento-sensor-configuration-2.jpg,
-        title: 确保您使用的 APN 允许设备连接到运行 ThingsBoard 实例的服务器。您可以在 Efento 移动应用程序中检查网络状态。连接到传感器 -> 单击菜单（右上角的三个点）
+        title: 确保您使用的 APN 允许设备连接到运行 GridLinks 实例的服务器。您可以在 Efento 移动应用程序中检查网络状态。连接到传感器 -> 单击菜单（右上角的三个点）
     ===
         image: /images/devices-library/ready-to-go-devices/wireless-open-close-sensor/efento-sensor-configuration-3.jpg,
         title: 单击蜂窝网络状态。确保“注册状态”字段的值为“已注册”或“已注册漫游”
     ===
         image: /images/devices-library/ready-to-go-devices/wireless-open-close-sensor/efento-sensor-configuration-2.jpg,
-        title: 将传感器设置为将数据发送到运行 ThingsBoard 实例的服务器。连接到传感器 -> 单击菜单（右上角的三个点）。
+        title: 将传感器设置为将数据发送到运行 GridLinks 实例的服务器。连接到传感器 -> 单击菜单（右上角的三个点）。
     ===
         image: /images/devices-library/ready-to-go-devices/wireless-open-close-sensor/efento-sensor-configuration-4.jpg,
-        title: 单击高级用户 -> 服务器配置。选择“其他”并填写服务器地址（' | append: thingsboardHost | append: '）。用于 CoAP 通信的默认端口为 5683。将身份验证模式设置为“自定义令牌”，并在 ThingsBoard 平台上为设备输入您创建的令牌。
+        title: 单击高级用户 -> 服务器配置。选择“其他”并填写服务器地址（' | append: thingsboardHost | append: '）。用于 CoAP 通信的默认端口为 5683。将身份验证模式设置为“自定义令牌”，并在 GridLinks 平台上为设备输入您创建的令牌。
 '
 %}
 

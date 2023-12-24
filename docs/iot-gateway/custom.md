@@ -408,7 +408,7 @@ Default location of logs folder for Python module - "./logs/"
 
 ### Step 6. Check a result in the ThingsBoard instance
 
-To check the result, you should connect device, and go to the ThingsBoard UI into "Devices" tab.  
+To check the result, you should connect device, and go to the GridLinks UI into "Devices" tab.  
 If device connected correctly and has sent some data, you will see device with a name - "CustomSerialDevice1".  
 To check the data - open device and go to the telemetry tab.
 You should see the telemetry from config (humidity) with some value 48 (Value from example, your value can be different).

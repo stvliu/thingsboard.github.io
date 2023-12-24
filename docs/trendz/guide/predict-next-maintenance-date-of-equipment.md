@@ -35,7 +35,7 @@ predictive-maintenance-save-remaining-time-as-telemetry:
 predictive-maintenance-create-alarm:
   0:
     image: /images/trendz/guide/predictive_maintenance/Predict_remaining_open_machine_device_St3_1.png
-    title: '转到 ThingsBoard 中的警报规则部分'
+    title: '转到 GridLinks 中的警报规则部分'
   1:
     image: /images/trendz/guide/predictive_maintenance/Predict_remaining_create_alarm_rule_St3_2.png
     title: '定义剩余时间少于 14 天时将触发的警报'
@@ -52,7 +52,7 @@ predictive-maintenance-create-alarm:
 predictive-maintenance-notify-maintenance-team:
   0:
     image: /images/trendz/guide/predictive_maintenance/Predict_remaining_open_root_rule_chain_St4_1.png
-    title: '转到 ThingsBoard 中的默认规则链'
+    title: '转到 GridLinks 中的默认规则链'
   1:
     image: /images/trendz/guide/predictive_maintenance/Predict_remaining_to_email_St4_2.png
     title: '添加具有电子邮件属性的 toEmail 节点'
@@ -90,7 +90,7 @@ predictive-maintenance-notify-maintenance-team:
 * 使用 Trendz Analytics 创建每台机器生产的盖子数量的预测。
 * 计算每台机器生产 500,000 个盖子所需的剩余天数。
 * 将计算出的剩余天数保存为机器遥测。
-* 如果剩余时间少于 14 天，则在 ThingsBoard 中创建警报。
+* 如果剩余时间少于 14 天，则在 GridLinks 中创建警报。
 * 一旦创建警报，就向维护团队发送电子邮件。
 
 ### 主要成果
@@ -102,7 +102,7 @@ predictive-maintenance-notify-maintenance-team:
 
 ### 先决条件
 
-装配机已通过 OPC-UA 集成连接到 ThingsBoard，并且遥测数据可在 ThingsBoard 中使用。您可以在我们的 [连接指南](https://thingsboard.io/docs/pe/guides/#AnchorIDConnectYourDevice) 中找到有关如何执行此操作的更多详细信息。
+装配机已通过 OPC-UA 集成连接到 GridLinks，并且遥测数据可在 GridLinks 中使用。您可以在我们的 [连接指南](https://thingsboard.io/docs/pe/guides/#AnchorIDConnectYourDevice) 中找到有关如何执行此操作的更多详细信息。
 设备报告了许多有用的遥测数据，但对于此用例，我们只使用 `capsProduced` 遥测。
 
 
@@ -158,14 +158,14 @@ return [{ts: 1, value: remainingDays}];
 * 将默认时间范围设置为 **过去 7 天**
 * 使用名称 **机器维护剩余天数预测作业** 保存视图
 
-一旦视图保存，Trendz 将调度后台作业，该作业将定期执行计算函数并将结果保存为机器的遥测。在每次运行时，Trendz 都会从 ThingsBoard 中获取新数据并在其上执行计算函数。
+一旦视图保存，Trendz 将调度后台作业，该作业将定期执行计算函数并将结果保存为机器的遥测。在每次运行时，Trendz 都会从 GridLinks 中获取新数据并在其上执行计算函数。
 
 {% include images-gallery.html imageCollection="predictive-maintenance-save-remaining-time-as-telemetry" %}
 
 ### 步骤 3：如果剩余时间少于 14 天，则创建警报
-此时，我们已经在 ThingsBoard 中为每台机器提供了 `capsForecast` 遥测，该遥测告诉我们距离下次维护还有多少天。这意味着我们可以在 ThignsBoard 中创建警报规则，如果剩余时间少于 14 天，则触发警报。
+此时，我们已经在 GridLinks 中为每台机器提供了 `capsForecast` 遥测，该遥测告诉我们距离下次维护还有多少天。这意味着我们可以在 ThignsBoard 中创建警报规则，如果剩余时间少于 14 天，则触发警报。
 
-* 在 ThingsBoard 中打开机器的设备配置文件并添加新的警报规则
+* 在 GridLinks 中打开机器的设备配置文件并添加新的警报规则
 * 警报类型 - **需要维护**
 * 创建警报规则
   * 严重性 - `警告`
@@ -178,9 +178,9 @@ return [{ts: 1, value: remainingDays}];
 {% include images-gallery.html imageCollection="predictive-maintenance-create-alarm" %}
 
 ### 步骤 4：一旦创建警报就发送通知
-最后一步是一旦创建警报就向维护团队发送通知。我们将使用 ThingsBoard 规则引擎向维护团队发送电子邮件通知。如果设备配置文件中的警报规则触发警报，我们可以捕获此事件并添加发送电子邮件的步骤。
+最后一步是一旦创建警报就向维护团队发送通知。我们将使用 GridLinks 规则引擎向维护团队发送电子邮件通知。如果设备配置文件中的警报规则触发警报，我们可以捕获此事件并添加发送电子邮件的步骤。
 
-* 在 ThingsBoard 中打开根规则链
+* 在 GridLinks 中打开根规则链
 * 在 `设备配置文件` 节点后添加 `toEmail` 规则节点，并通过 `警报创建` 关系将其连接起来。
 * 打开 `toEmail` 节点设置并将其配置为向维护团队发送电子邮件。
   * `来自模板` - info@testmail.org

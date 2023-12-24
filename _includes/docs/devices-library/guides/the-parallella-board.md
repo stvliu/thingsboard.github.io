@@ -1,4 +1,4 @@
-{% assign deviceName = page.title | remove: "如何连接 " | remove: "到 ThingsBoard？" %}
+{% assign deviceName = page.title | remove: "如何连接 " | remove: "到 GridLinks？" %}
 {% assign prerequisites = "
 - " | append: deviceName | append: "
 - [tb-mqtt-client 库](https://pypi.org/project/tb-mqtt-client/)
@@ -14,7 +14,7 @@ Parallella 板是一款基于 Xilinx Zynq Z-7010 SoC 的单板计算机，具有
 
 {% include /docs/devices-library/blocks/basic/introduction-block.md %}
 
-## 在 ThingsBoard 上创建设备
+## 在 GridLinks 上创建设备
 
 {% include /docs/devices-library/blocks/basic/thingsboard-create-device-block.md %}
 
@@ -22,7 +22,7 @@ Parallella 板是一款基于 Xilinx Zynq Z-7010 SoC 的单板计算机，具有
 
 {% include /docs/devices-library/blocks/single-board-computers/install-required-libraries-and-tools-block.md %}
 
-## 将设备连接到 ThingsBoard
+## 将设备连接到 GridLinks
 
 {% include /docs/devices-library/blocks/basic/thingsboard-provide-device-access-token-block.md %}
 
@@ -31,7 +31,7 @@ Parallella 板是一款基于 Xilinx Zynq Z-7010 SoC 的单板计算机，具有
 ## 使用客户端和共享属性请求同步设备状态
 {% include /docs/devices-library/blocks/single-board-computers/thingsboard-synchronize-device-state-using-attribute-requests-block.md %}
 
-## 在 ThingsBoard 上检查数据
+## 在 GridLinks 上检查数据
 
 {% include /docs/devices-library/blocks/single-board-computers/check-data-on-thingsboard-block.md %}
 

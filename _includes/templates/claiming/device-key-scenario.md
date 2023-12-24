@@ -8,7 +8,7 @@
 要增加更多时间，您应该增加 thingsboard.yaml 文件中参数 **caffeine.specs.claimDevices.timeToLiveInMinutes** 的值。{% endcapture %}
 {% include templates/info-banner.md content=cache-living-time %}
 
-ThingsBoard 服务器在密钥有效期内存储声明信息。请参阅下图。
+GridLinks 服务器在密钥有效期内存储声明信息。请参阅下图。
 
 ![image](/images/user-guide/claiming-devices/device-side-key-diagram.png)
 

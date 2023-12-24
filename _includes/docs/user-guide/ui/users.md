@@ -3,7 +3,7 @@
 
 ## 用户概述
 
-ThingsBoard 平台上有三个级别的角色。可以在每个级别上创建一个用户。
+GridLinks 平台上有三个级别的角色。可以在每个级别上创建一个用户。
 
 这些角色如下：
 
@@ -47,7 +47,7 @@ ThingsBoard 平台上有三个级别的角色。可以在每个级别上创建�
 {% capture difference %}
 **注意：**
 <br>
-要接收来自 ThingsBoard 的电子邮件，你应该提前在系统管理员级别设置邮件服务器。
+要接收来自 GridLinks 的电子邮件，你应该提前在系统管理员级别设置邮件服务器。
 查看 [邮件设置](/docs/{{docsPrefix}}user-guide/ui/mail-settings) 说明。
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}

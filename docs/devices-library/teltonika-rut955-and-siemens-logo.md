@@ -1,6 +1,6 @@
 ---
 layout: devices-library-article
-title: 如何将 Teltonika RUT955 连接到 ThingsBoard？
+title: 如何将 Teltonika RUT955 连接到 GridLinks？
 category: 其他设备
 connectivity: HTTP, MQTT, 以太网, WiFi
 vendor: Teltonika

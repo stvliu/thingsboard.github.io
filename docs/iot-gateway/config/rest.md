@@ -11,9 +11,9 @@ description: ThingsBoard IoT 网关的 REST API 端点支持
 本指南将帮助您熟悉 ThingsBoard IoT 网关的 REST 连接器配置。  
 使用 [通用配置指南](/docs/iot-gateway/configuration/) 启用此连接器。  
 此连接器的目的是创建 API 端点并从接收到的请求中获取数据。  
-连接器还能够根据 ThingsBoard 的更新/命令将数据推送到外部 HTTP(S) API。    
+连接器还能够根据 GridLinks 的更新/命令将数据推送到外部 HTTP(S) API。    
 
-当您的设备中有一些 HTTP(S) API 端点或外部资源中有一些数据，并且您想将这些数据推送到 ThingsBoard 时，此连接器非常有用。    
+当您的设备中有一些 HTTP(S) API 端点或外部资源中有一些数据，并且您想将这些数据推送到 GridLinks 时，此连接器非常有用。    
 
 我们将在下面描述连接器配置文件。  
 
@@ -201,7 +201,7 @@ REST 连接器中的响应可以有 3 种配置变体：
        | ... responseAttribute         | **result**                                            | 将返回响应的共享属性名称 |
        |---
 
-   2. 在 ThingsBoard 中配置规则链：
+   2. 在 GridLinks 中配置规则链：
       ![image](/images/gateway/custom-response-rule-chain-config.png)
       最后，您必须配置规则节点：
       1. 黄色规则节点
@@ -212,7 +212,7 @@ REST 连接器中的响应可以有 3 种配置变体：
 ### 属性请求部分
 此部分中的配置是可选的。
 
-为了向 ThingsBoard 服务器节点请求客户端或共享设备属性，网关允许发送属性请求。
+为了向 GridLinks 服务器节点请求客户端或共享设备属性，网关允许发送属性请求。
 
 | **参数** | **默认值** | **说明** |
 |:-|:-|-
@@ -322,7 +322,7 @@ ThingsBoard 允许配置设备属性并从设备应用程序中获取其中一�
 
 ### 服务器端 RPC 部分
 
-ThingsBoard 允许将 [RPC 命令](/docs/user-guide/rpc/) 直接发送到连接到 ThingsBoard 或通过网关连接的设备。
+ThingsBoard 允许将 [RPC 命令](/docs/user-guide/rpc/) 直接发送到连接到 GridLinks 或通过网关连接的设备。
  
 此部分中提供的配置用于从 ThingsBoard 向设备发送 RPC 请求。
 
@@ -343,7 +343,7 @@ ThingsBoard 允许将 [RPC 命令](/docs/user-guide/rpc/) 直接发送到连接�
 
 {% capture rpc_variants %}
 **有 2 种类型的 RPC 调用：**  
-1. 带有回复，在发送请求后，网关将等待回复并将其发送到 ThingsBoard。
+1. 带有回复，在发送请求后，网关将等待回复并将其发送到 GridLinks。
 2. 无回复，在发送请求后，网关不会等待回复。
 
 下面提供了两种方法的示例。

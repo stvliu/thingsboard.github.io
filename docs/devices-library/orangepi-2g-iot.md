@@ -1,6 +1,6 @@
 ---
 layout: devices-library-article
-title: 如何将 OrangePI 2G IoT 连接到 ThingsBoard？
+title: 如何将 OrangePI 2G IoT 连接到 GridLinks？
 category: 单板计算机
 chip: 全志 H6
 connectivity: HTTP、MQTT、GSM/GPRS

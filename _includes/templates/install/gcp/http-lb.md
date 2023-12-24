@@ -4,7 +4,7 @@
   唯一的优点是配置简单且成本最低。可能是开发服务器的不错选择，但绝对不适合生产环境。
 * https - 支持 HTTPS 的负载均衡器。建议**用于生产。**充当 SSL 终止点。
   您可以轻松配置它以颁发和维护有效的 SSL 证书。自动将所有非安全 (HTTP) 流量重定向到安全 (HTTPS) 端口。
-* transparent - 负载均衡器，只需将流量转发到 ThingsBoard 的 http 和 https 端口。要求您配置和维护有效的 SSL 证书。
+* transparent - 负载均衡器，只需将流量转发到 GridLinks 的 http 和 https 端口。要求您配置和维护有效的 SSL 证书。
   适用于无法容忍 LB 作为 SSL 终止点的生产环境。
 
 请参阅以下链接/说明，了解如何配置每个建议的选项。
@@ -36,9 +36,9 @@ tb-http-loadbalancer   <none>   *       34.111.24.134   80      7m25s
 
 使用以下默认凭据：
 
-- **系统管理员**：sysadmin@thingsboard.org / sysadmin
-- **租户管理员**：tenant@thingsboard.org / tenant
-- **客户用户**：customer@thingsboard.org / customer
+- **系统管理员**：sysadmin@gridlinks.com / sysadmin
+- **租户管理员**：tenant@gridlinks.com / tenant
+- **客户用户**：customer@gridlinks.com / customer
 
 #### HTTPS 负载均衡器
 
@@ -122,7 +122,7 @@ kubectl describe managedcertificate managed-cert
 如果您正确配置了域记录，最终将配置证书。配置完成后，您可以使用您的域名访问 Web UI（通过 https）并通过 [HTTP API](/docs/{{docsPrefix}}reference/http-api/)连接您的设备。
 
 {% capture https_lb_device_api_warn %}
-**注意**：负载均衡器会将所有 HTTP 流量重定向到 HTTPS。不支持 HTTPS 的设备将无法连接到 ThingsBoard。
+**注意**：负载均衡器会将所有 HTTP 流量重定向到 HTTPS。不支持 HTTPS 的设备将无法连接到 GridLinks。
 如果您想支持此类设备，您可以为 HTTP 传输部署单独的负载均衡器（推荐）或通过更改 *https-load-balancer.yml* 文件中的 *redirectToHttps* 设置来禁用重定向行为。
 
 {% endcapture %}

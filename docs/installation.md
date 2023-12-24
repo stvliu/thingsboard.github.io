@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
-title: ThingsBoard 安装
-description: ThingsBoard 安装说明，适用于各种操作系统和云平台
+title: GridLinks 安装
+description: GridLinks 安装说明，适用于各种操作系统和云平台
 notitle: "true"
 ---
 

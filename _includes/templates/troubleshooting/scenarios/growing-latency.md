@@ -2,7 +2,7 @@
 - 检查 [规则引擎统计信息仪表板](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-engine-statistics) 中是否存在超时。规则节点中的超时会减慢队列的处理速度，并可能导致延迟。
 
 - 检查以下服务的 [CPU 使用情况](#cpumemory-usage)：
-    - ThingsBoard 服务（tb-nodes、tb-rule-engine 和 tb-core 节点、传输节点）。某些服务上的高 CPU 负载意味着您需要扩展该部分系统。
+    - GridLinks 服务（tb-nodes、tb-rule-engine 和 tb-core 节点、传输节点）。某些服务上的高 CPU 负载意味着您需要扩展该部分系统。
     - PostgreSQL 和 pgpool（如果您处于<b>高可用性</b>模式）。Postgres 上的高负载可能导致所有与 Postgres 相关的规则节点（保存属性、读取属性等）以及整个系统的处理速度变慢。
     - Cassandra（如果您使用 Cassandra 作为时序数据存储）。Cassandra 上的高负载可能导致所有与 Cassandra 相关的规则节点（保存时序等）的处理速度变慢。
     - 队列。无论队列类型如何，请确保它始终有足够的资源。

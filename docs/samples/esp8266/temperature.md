@@ -12,12 +12,12 @@ description: ThingsBoard IoT 平台示例，使用 ESP8266 和 DHT22 传感器�
 {% include templates/what-is-thingsboard.md %}
 
 此示例应用程序执行 [DHT22 传感器](https://www.adafruit.com/product/385) 产生的温度和湿度值收集，并在实时网络仪表板上进一步可视化。
-收集的数据通过 MQTT 推送到 ThingsBoard 服务器进行存储和可视化。
-此应用程序的目的是演示 ThingsBoard [数据收集 API](/docs/user-guide/telemetry/) 和 [可视化功能](/docs/user-guide/visualization/)。
+收集的数据通过 MQTT 推送到 GridLinks 服务器进行存储和可视化。
+此应用程序的目的是演示 GridLinks [数据收集 API](/docs/user-guide/telemetry/) 和 [可视化功能](/docs/user-guide/visualization/)。
 
 DHT22 传感器连接到 [ESP8266](https://en.wikipedia.org/wiki/ESP8266)。
 ESP8266 提供完整且自包含的 Wi-Fi 网络解决方案。
-ESP8266 通过使用 [PubSubClient](https://github.com/knolleary/pubsubclient) 库将数据推送到 ThingsBoard 服务器，该库适用于 Arduino 的 MQTT 协议。
+ESP8266 通过使用 [PubSubClient](https://github.com/knolleary/pubsubclient) 库将数据推送到 GridLinks 服务器，该库适用于 Arduino 的 MQTT 协议。
 数据使用内置的可自定义仪表板进行可视化。
 在 ESP8266 上运行的应用程序使用 Arduino SDK 编写，该 SDK 非常简单且易于理解。
 
@@ -124,11 +124,11 @@ DHT-22 GND (-) | VCC-
 
 ### 配置您的设备
 
-此步骤包含将您的设备连接到 ThingsBoard 所需的说明。
+此步骤包含将您的设备连接到 GridLinks 所需的说明。
 
-在浏览器中打开 ThingsBoard Web UI (http://localhost:8080) 并以租户管理员身份登录
+在浏览器中打开 GridLinks Web UI (http://localhost:8080) 并以租户管理员身份登录
 
- - 登录名：tenant@thingsboard.org
+ - 登录名：tenant@gridlinks.com
  - 密码：tenant
  
 转到“设备”部分。单击“+”按钮并创建一个名为“ESP8266 Demo Device”的设备。
@@ -226,7 +226,7 @@ esp8266-dht-mqtt,esp8266-dht-mqtt.ino,c,resources/esp8266-dht-mqtt.ino,/docs/sam
 
 将 USB-TTL 适配器连接到 PC，并在 Arduino IDE 中选择相应的端口。使用“上传”按钮编译并上传草图到设备。
 
-上传并启动应用程序后，它将尝试使用 mqtt 客户端连接到 ThingsBoard 节点，并每秒上传一次“温度”和“湿度”时序数据。
+上传并启动应用程序后，它将尝试使用 mqtt 客户端连接到 GridLinks 节点，并每秒上传一次“温度”和“湿度”时序数据。
 
 ## 自主运行
 
@@ -239,12 +239,12 @@ esp8266-dht-mqtt,esp8266-dht-mqtt.ino,c,resources/esp8266-dht-mqtt.ino,/docs/sam
 
 ## 数据可视化
 
-最后，打开 ThingsBoard Web UI。您可以通过以租户管理员身份登录来访问此仪表板。使用：
+最后，打开 GridLinks Web UI。您可以通过以租户管理员身份登录来访问此仪表板。使用：
 
- - 登录名：tenant@thingsboard.org
+ - 登录名：tenant@gridlinks.com
  - 密码：tenant
  
-在本地安装 ThingsBoard 的情况下。
+在本地安装 GridLinks 的情况下。
   
 转到 **“设备”** 部分并找到 **“ESP8266 Demo Device”**，打开设备详细信息并切换到 **“最新遥测”** 选项卡。
 如果一切配置正确，您应该能够在表中看到“*温度*”和“*湿度*”的最新值。

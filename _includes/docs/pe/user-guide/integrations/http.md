@@ -5,17 +5,17 @@
 
 ## 概述
 
-HTTP 集成允许将现有协议和有效负载格式转换为 ThingsBoard 消息格式，并且在多种部署场景中很有用：
+HTTP 集成允许将现有协议和有效负载格式转换为 GridLinks 消息格式，并且在多种部署场景中很有用：
 
 - 从外部系统、物联网平台或连接提供商后端流式传输设备和/或资产数据。
 - 从在云中运行的自定义应用程序流式传输设备和/或资产数据。
-- 将具有基于 HTTP 的自定义协议的现有设备连接到 ThingsBoard。
+- 将具有基于 HTTP 的自定义协议的现有设备连接到 GridLinks。
 
 <object width="100%" style="max-width: max-content;" data="/images/user-guide/integrations/http-integration.svg"></object>
 
 ## 创建上行转换器
 
-在创建集成之前，您需要在数据转换器中创建一个上行转换器。上行对于将来自设备的传入数据转换为在 ThingsBoard 中显示它们所需的格式是必需的。
+在创建集成之前，您需要在数据转换器中创建一个上行转换器。上行对于将来自设备的传入数据转换为在 GridLinks 中显示它们所需的格式是必需的。
 单击“加号”和“创建新转换器”。要查看事件，请启用调试。
 在函数解码器字段中，指定一个脚本来解析和转换数据。
 
@@ -243,7 +243,7 @@ JavaScript<small></small>%,%anonymous%,%templates/integration/http/http-downlink
 {% endif %}
 
 <br>
-再次发送上行消息。我们将在终端中收到来自 ThingsBoard 的响应：
+再次发送上行消息。我们将在终端中收到来自 GridLinks 的响应：
 
 {% include images-gallery.html imageCollection="downlink-terminal" %}
 

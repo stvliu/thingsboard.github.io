@@ -113,7 +113,7 @@
 - **使用系统报告服务器** - 如果设置，[报告服务器](/docs/{{peDocsPrefix}}user-guide/reporting/#reports-server) 端点 URL 将从系统配置（**thingsboard.yml**）获取。
 - **报告服务器端点 URL** - [报告服务器](/docs/{{peDocsPrefix}}user-guide/reporting/#reports-server) 的端点 URL。
 - **从消息中使用报告配置** - 如果设置，报告生成配置将从传入的消息正文中获取。
-- **基本 URL** - ThingsBoard UI 的基本 URL，报告服务器应可访问该 URL。
+- **基本 URL** - GridLinks UI 的基本 URL，报告服务器应可访问该 URL。
 - **仪表板** - 将用于生成报告的仪表板。
 - **仪表板状态参数值** - 用于指定报告生成的仪表板目标状态。可以通过单击字段最右侧的按钮并调用 **选择仪表板状态** 对话框自动设置。
 - **时区** - 目标仪表板将在报告中显示的时区。

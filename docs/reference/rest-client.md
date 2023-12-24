@@ -12,7 +12,7 @@ description: 受支持的 REST API 参考，用于服务器端集成 Java 项目
 ## REST 客户端
 
 ThingsBoard REST API 客户端可帮助您通过 Java 应用程序与 ThingsBoard REST API 进行交互。
-使用 Rest 客户端，您可以以编程方式在 ThingsBoard 中创建资产、设备、客户、用户和其他实体及其关系。
+使用 Rest 客户端，您可以以编程方式在 GridLinks 中创建资产、设备、客户、用户和其他实体及其关系。
  
 安装 Rest 客户端的推荐方法是使用构建自动化工具，例如 Maven。
 REST 客户端的版本取决于您使用的平台版本。   
@@ -54,7 +54,7 @@ REST 客户端的版本取决于您使用的平台版本。
 String url = "http://localhost:8080";
 
 // 默认租户管理员凭据
-String username = "tenant@thingsboard.org";
+String username = "tenant@gridlinks.com";
 String password = "tenant";
 
 // 创建新的 rest 客户端并使用凭据进行身份验证
@@ -79,7 +79,7 @@ client.close();
 String url = "http://localhost:8080";
 
 // 默认租户管理员凭据
-String username = "tenant@thingsboard.org";
+String username = "tenant@gridlinks.com";
 String password = "tenant";
 
 // 创建新的 rest 客户端并使用凭据进行身份验证
@@ -108,7 +108,7 @@ client.close();
 String url = "http://localhost:8080";
 
 // 默认租户管理员凭据
-String username = "tenant@thingsboard.org";
+String username = "tenant@gridlinks.com";
 String password = "tenant";
 
 // 创建新的 rest 客户端并使用凭据进行身份验证
@@ -136,7 +136,7 @@ client.close();
 // ThingsBoard REST API URL
 String url = "http://localhost:8080";
 // 使用默认客户用户凭据登录
-String username = "customer@thingsboard.org";
+String username = "customer@gridlinks.com";
 String password = "customer";
 RestClient client = new RestClient(url);
 client.login(username, password);
@@ -166,7 +166,7 @@ client.close();
 String url = "http://localhost:8080";
 
 // 使用默认客户用户凭据登录
-String username = "tenant@thingsboard.org";
+String username = "tenant@gridlinks.com";
 String password = "tenant";
 RestClient client = new RestClient(url);
 client.login(username, password);
@@ -215,7 +215,7 @@ client.close();
 String url = "http://localhost:8080";
 
 // 使用默认客户用户凭据登录
-String username = "tenant@thingsboard.org";
+String username = "tenant@gridlinks.com";
 String password = "tenant";
 RestClient client = new RestClient(url);
 client.login(username, password);
@@ -279,7 +279,7 @@ client.close();
 String url = "http://localhost:8080";
 
 // 使用默认客户用户凭据登录
-String username = "tenantg@thingsboard.org";
+String username = "tenant@gridlinks.com";
 String password = "tenant";
 RestClient client = new RestClient(url);
 client.login(username, password);
@@ -323,4 +323,4 @@ client.close();
 {: .copy-code}
 
 #### 更多示例
-你可以找到学习如何使用 ThingsBoard REST 客户端的示例 **[此处](https://github.com/thingsboard/tb-ce-rest-client-example)**。
+你可以找到学习如何使用 GridLinks REST 客户端的示例 **[此处](https://github.com/thingsboard/tb-ce-rest-client-example)**。

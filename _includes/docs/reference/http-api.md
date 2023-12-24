@@ -9,7 +9,7 @@
 您可以在 [此处](https://www.w3.org/Protocols/rfc2616/rfc2616.txt) 找到有关 HTTP 的更多信息。
 HTTP 协议基于 TCP，并使用请求-响应模型。
 
-ThingsBoard 服务器节点充当支持 HTTP 和 HTTPS 协议的 HTTP 服务器。
+GridLinks 服务器节点充当支持 HTTP 和 HTTPS 协议的 HTTP 服务器。
 
 ##### 客户端库设置
 
@@ -32,7 +32,7 @@ ThingsBoard 服务器节点充当支持 HTTP 和 HTTPS 协议的 HTTP 服务器�
 
 ## 遥测上传 API
 
-为了将遥测数据发布到 ThingsBoard 服务器节点，请向以下 URL 发送 POST 请求：
+为了将遥测数据发布到 GridLinks 服务器节点，请向以下 URL 发送 POST 请求：
 
 {% if docsPrefix == null or docsPrefix == "pe/" %}
 ```shell
@@ -104,7 +104,7 @@ ThingsBoard 属性 API 允许设备
 
 ##### 将属性更新发布到服务器
 
-为了将客户端设备属性发布到 ThingsBoard 服务器节点，请向以下 URL 发送 POST 请求：
+为了将客户端设备属性发布到 GridLinks 服务器节点，请向以下 URL 发送 POST 请求：
 
 {% if docsPrefix == null or docsPrefix == "pe/" %}
 ```shell
@@ -143,7 +143,7 @@ C,new-attributes-values.json,json,resources/new-attributes-values.json,/docs/ref
 
 ##### 从服务器请求属性值
 
-为了向 ThingsBoard 服务器节点请求客户端或共享设备属性，请向以下 URL 发送 GET 请求：
+为了向 GridLinks 服务器节点请求客户端或共享设备属性，请向以下 URL 发送 GET 请求：
 
 {% if docsPrefix == null or docsPrefix == "pe/" %}
 ```shell
@@ -491,7 +491,7 @@ https://thingsboard.cloud/api/v1/provision
 
 ## 固件 API
 
-当 ThingsBoard 通过 HTTP 启动固件更新时，它会设置 fw_title、fw_version、fw_checksum、fw_checksum_algorithm 共享属性。
+当 GridLinks 通过 HTTP 启动固件更新时，它会设置 fw_title、fw_version、fw_checksum、fw_checksum_algorithm 共享属性。
 为了接收共享属性更新，设备必须 GET 请求
 
 {% if docsPrefix == null or docsPrefix == "pe/" %}

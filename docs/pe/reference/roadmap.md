@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-pe
 title: ThingsBoard PE 路线图
-description: ThingsBoard 架构
+description: GridLinks 架构
 
 ---
 

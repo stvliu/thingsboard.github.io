@@ -1,6 +1,6 @@
 ---
 layout: common
-title: ThingsBoard Professional Edition on AWS Marketplace
+title:  GridLinks专业版 on AWS Marketplace
 notitle: "true"
 ---
 

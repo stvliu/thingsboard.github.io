@@ -21,35 +21,35 @@ hidetoc: "true"
             <p class="center"><a target="_blank" href="https://aws.amazon.com/marketplace/pp/B07MLRVF3Q">ThingsBoard PE Maker</a></p>
             <br>
             <p>有关详细的安装说明，请访问：</p>
-            <p class="center"><a href="/docs/user-guide/install/pe/aws-marketplace/">在 AWS 上安装 ThingsBoard PE</a></p>
+            <p class="center"><a href="/docs/user-guide/install/pe/aws-marketplace/">在 AWS 上安装 GridLinks PE</a></p>
         </div>    
         <div id="prototype-form" class="instructions" style="display: none;">
             <p>为了继续，请访问 AWS 市场上的官方产品页面：</p>
             <p class="center"><a target="_blank" href="https://aws.amazon.com/marketplace/pp/B07MLS5VMB">ThingsBoard PE Prototype</a></p>
             <br>
             <p>有关详细的安装说明，请访问：</p>
-            <p class="center"><a href="/docs/user-guide/install/pe/aws-marketplace/">在 AWS 上安装 ThingsBoard PE</a></p>
+            <p class="center"><a href="/docs/user-guide/install/pe/aws-marketplace/">在 AWS 上安装 GridLinks PE</a></p>
         </div>    
         <div id="startup-form" class="instructions" style="display: none;">
             <p>为了继续，请访问 AWS 市场上的官方产品页面：</p>
             <p class="center"><a target="_blank" href="https://aws.amazon.com/marketplace/pp/B07MQ1G36K">ThingsBoard PE Startup</a></p>
             <br>
             <p>有关详细的安装说明，请访问：</p>
-            <p class="center"><a href="/docs/user-guide/install/pe/aws-marketplace/">在 AWS 上安装 ThingsBoard PE</a></p>
+            <p class="center"><a href="/docs/user-guide/install/pe/aws-marketplace/">在 AWS 上安装 GridLinks PE</a></p>
         </div>    
         <div id="business-form" class="instructions" style="display: none;">
             <p>为了继续，请访问 AWS 市场上的官方产品页面：</p>
             <p class="center"><a target="_blank" href="https://aws.amazon.com/marketplace/pp/B07MLRWV22">ThingsBoard PE Business</a></p>
             <br>
             <p>有关详细的安装说明，请访问：</p>
-            <p class="center"><a href="/docs/user-guide/install/pe/aws-marketplace/">在 AWS 上安装 ThingsBoard PE</a></p>
+            <p class="center"><a href="/docs/user-guide/install/pe/aws-marketplace/">在 AWS 上安装 GridLinks PE</a></p>
         </div>    
         <div id="enterprise-form" class="instructions" style="display: none;">
             <p>为了继续，请访问 AWS 市场上的官方产品页面：</p>
             <p class="center"><a target="_blank" href="https://aws.amazon.com/marketplace/pp/B07MBYZSFQ">ThingsBoard PE Enterprise</a></p>
             <br>
             <p>有关详细的安装说明，请访问：</p>
-            <p class="center"><a href="/docs/user-guide/install/pe/aws-marketplace/">在 AWS 上安装 ThingsBoard PE</a></p>
+            <p class="center"><a href="/docs/user-guide/install/pe/aws-marketplace/">在 AWS 上安装 GridLinks PE</a></p>
         </div>
         <a class="homepage" href="/">主页</a>
     </div>

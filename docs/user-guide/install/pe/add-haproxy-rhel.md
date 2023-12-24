@@ -1,11 +1,11 @@
 ---
 layout: docwithnav
-title: 在 CentOS/RHEL 上安装 ThingsBoard 的 HAProxy 负载均衡器
-description: 在 CentOS/RHEL 上安装 ThingsBoard 的 HAProxy 负载均衡器
+title: 在 CentOS/RHEL 上安装 GridLinks 的 HAProxy 负载均衡器
+description: 在 CentOS/RHEL 上安装 GridLinks 的 HAProxy 负载均衡器
 hidetoc: "true"
 ---
 
-本指南介绍如何将 HAProxy 与 Let's Encrypt 一起安装为一项服务。如果您将 ThingsBoard 托管在云中并且为您的实例分配了有效的 DNS 名称，则可以这样做。
+本指南介绍如何将 HAProxy 与 Let's Encrypt 一起安装为一项服务。如果您将 GridLinks 托管在云中并且为您的实例分配了有效的 DNS 名称，则可以这样做。
 
 * TOC
 {:toc}

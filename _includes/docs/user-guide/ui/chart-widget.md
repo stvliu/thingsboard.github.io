@@ -5,7 +5,7 @@
 
 本指南将研究图表小部件：它们的功能、特性、小部件的基本和高级设置以及小部件的数据键。
 
-图表小部件允许您使用可自定义的折线图和条形图显示时间序列数据。此外，您可以使用各种饼图来显示最新值。
+图表小部件允许您使用可自定义的折线图和条形图显示时序数据。此外，您可以使用各种饼图来显示最新值。
 
 ## 如何创建图表小部件
 
@@ -15,22 +15,22 @@
 
 ## 图表小部件类型
 
-图表小部件分为时间序列和小部件和最新值小部件。时间序列小部件对于可视化时间序列数据随时间的变化非常有用。
-最新值小部件用于当您需要查看多个实体的最新属性值或时间序列数据时。
+图表小部件分为时序和小部件和最新值小部件。时序小部件对于可视化时序数据随时间的变化非常有用。
+最新值小部件用于当您需要查看多个实体的最新属性值或时序数据时。
 
-### 时间序列小部件
+### 时序小部件
 
-时间序列小部件可视化时间序列数据随时间的变化。阅读[此处](/docs/{{docsPrefix}}user-guide/dashboards/#time-window)以了解如何设置时间窗口。
+时序小部件可视化时序数据随时间的变化。阅读[此处](/docs/{{docsPrefix}}user-guide/dashboards/#time-window)以了解如何设置时间窗口。
 
 ##### 条形图
 
-[条形图](/docs/{{docsPrefix}}user-guide/ui/chart-widget/#timeseries-bar-chart)小部件显示时间序列数据随时间的变化。示例显示温度读数。
+[条形图](/docs/{{docsPrefix}}user-guide/ui/chart-widget/#timeseries-bar-chart)小部件显示时序数据随时间的变化。示例显示温度读数。
 
 {% include images-gallery.html imageCollection="charts-bar" %}
 
 ##### 折线图
 
-[折线图](/docs/{{docsPrefix}}user-guide/ui/chart-widget/#timeseries-line-chart)小部件显示时间序列数据随时间的变化。示例显示温度和湿度读数。
+[折线图](/docs/{{docsPrefix}}user-guide/ui/chart-widget/#timeseries-line-chart)小部件显示时序数据随时间的变化。示例显示温度和湿度读数。
 
 {% include images-gallery.html imageCollection="charts-line" %}
 
@@ -43,56 +43,56 @@
 
 ### 最新值小部件
 
-最新值小部件呈现多个实体的属性或时间序列数据的最新值。最新值小部件主要支持数值。
+最新值小部件呈现多个实体的属性或时序数据的最新值。最新值小部件主要支持数值。
 
 ##### 雷达
 
-雷达小部件在雷达图中显示多个实体的最新属性或时间序列数据值。仅支持数值。
+雷达小部件在雷达图中显示多个实体的最新属性或时序数据值。仅支持数值。
 
-在示例中，小部件显示三个设备的最新压力时间序列数据。
+在示例中，小部件显示三个设备的最新压力时序数据。
 
 {% include images-gallery.html imageCollection="charts-radar" %}
 
 ##### 极坐标面积图
 
-极坐标面积图小部件在极坐标面积图中显示多个实体的最新属性或时间序列数据值。仅支持数值。
+极坐标面积图小部件在极坐标面积图中显示多个实体的最新属性或时序数据值。仅支持数值。
 
-在示例中，小部件显示三个设备的最新压力时间序列数据。
+在示例中，小部件显示三个设备的最新压力时序数据。
 
 {% include images-gallery.html imageCollection="charts-polar" %}
 
 ##### 饼图 - Chart.js
 
-饼图 - Chart.js 小部件在饼图中显示多个实体的最新属性或时间序列数据值。仅支持数值。
+饼图 - Chart.js 小部件在饼图中显示多个实体的最新属性或时序数据值。仅支持数值。
 
-在示例中，小部件显示三个设备的最新温度时间序列数据值。
+在示例中，小部件显示三个设备的最新温度时序数据值。
 
 {% include images-gallery.html imageCollection="charts-piejs" %}
 
 ##### 饼图 - Flot
 
-[饼图 - Flot](/docs/{{docsPrefix}}user-guide/ui/chart-widget/#latest-values-pie---flot)小部件在饼图中显示多个实体的最新属性或时间序列数据值。
+[饼图 - Flot](/docs/{{docsPrefix}}user-guide/ui/chart-widget/#latest-values-pie---flot)小部件在饼图中显示多个实体的最新属性或时序数据值。
 仅支持数值。
 
-在示例中，小部件显示三个设备的最新压力时间序列数据值。
+在示例中，小部件显示三个设备的最新压力时序数据值。
 
 {% include images-gallery.html imageCollection="charts-pieflot" %}
 
 ##### 甜甜圈
 
-[甜甜圈](/docs/{{docsPrefix}}user-guide/ui/chart-widget/#latest-values-doughnut)小部件在甜甜圈图中显示多个实体的最新属性或时间序列数据值。
+[甜甜圈](/docs/{{docsPrefix}}user-guide/ui/chart-widget/#latest-values-doughnut)小部件在甜甜圈图中显示多个实体的最新属性或时序数据值。
 仅支持数值。
 
-在示例中，小部件显示三个设备的最新湿度时间序列数据值。
+在示例中，小部件显示三个设备的最新湿度时序数据值。
 
 {% include images-gallery.html imageCollection="charts-doughnut" %}
 
 ##### 条形图
 
-条形图小部件将多个实体的属性或时间序列数据的最新值显示为单独的条形图。
+条形图小部件将多个实体的属性或时序数据的最新值显示为单独的条形图。
 唯一允许使用不仅是数值的最新值图表小部件。
 
-在示例中，小部件显示三个设备的最新压力时间序列数据值。
+在示例中，小部件显示三个设备的最新压力时序数据值。
 
 {% include images-gallery.html imageCollection="charts-bars" %}
 
@@ -110,7 +110,7 @@
 
 {% include images-gallery.html imageCollection="charts-bar-advanced" showListImageTitles="true" %}
 
-#### 时间序列条形图
+#### 时序条形图
 
 ##### 1. 常规设置
 
@@ -126,13 +126,13 @@
 
 **条形图对齐**负责图表小部件上条形图相对于时间点的放置。
 
-**所有阈值的默认线宽**、**阴影大小**、**字体颜色和大小**适用于时间序列折线图和状态图小部件。
+**所有阈值的默认线宽**、**阴影大小**、**字体颜色和大小**适用于时序折线图和状态图小部件。
 
 **工具提示值格式函数，f(value)**用于您想要手动自定义工具提示时。
 您可以通过[设置](/docs/{{docsPrefix}}user-guide/dashboards/#5-other-settings)或
 [高级数据键配置](/docs/{{docsPrefix}}user-guide/ui/advanced-data-key-configuration/#2-charts)自定义将在工具提示中显示的值。
 通过设置进行的工具提示配置是基本的，同时应用于所有实体。在高级数据键配置中配置时，
-它仅应用于特定时间序列数据，并且基本工具提示函数将被此配置覆盖。
+它仅应用于特定时序数据，并且基本工具提示函数将被此配置覆盖。
 
 但是，如果您的小部件需要一些非常特别的东西，那么工具提示值格式函数适合您。
 假设您有温度读数，并且您希望在小部件上看到摄氏度和华氏度值，这些值将以两个浮点数显示。
@@ -165,14 +165,14 @@
 
 ##### 3. 自定义图例设置
 
-自定义图例设置适用于您需要显示图表中无法显示的数据的情况，例如属性或仅在图表图例中显示特定时间序列。
+自定义图例设置适用于您需要显示图表中无法显示的数据的情况，例如属性或仅在图表图例中显示特定时序。
 例如，让我们使用无法在图表中显示的活动/非活动属性，只能在表格小部件中显示。
 
 {% include images-gallery.html imageCollection="bars-legend" showListImageTitles="true" %}
 
-#### 时间序列折线图
+#### 时序折线图
 
-时间序列折线图小部件的高级设置与时间序列条形图相同。您可以在[上面](/docs/{{docsPrefix}}user-guide/ui/chart-widget/#timeseries-bar-chart)了解这些设置。
+时序折线图小部件的高级设置与时序条形图相同。您可以在[上面](/docs/{{docsPrefix}}user-guide/ui/chart-widget/#timeseries-bar-chart)了解这些设置。
 
 ##### 1. 显示平滑（曲线）线
 
@@ -204,7 +204,7 @@
 您可以通过[设置](/docs/{{docsPrefix}}user-guide/dashboards/#5-other-settings)或
 [高级数据键配置](/docs/{{docsPrefix}}user-guide/ui/advanced-data-key-configuration/#2-charts)自定义将在工具提示中显示的值。
 通过设置进行的工具提示配置是基本的，同时应用于所有实体。在高级数据键配置中配置时，
-它仅应用于特定时间序列数据，并且基本工具提示函数将被此配置覆盖。
+它仅应用于特定时序数据，并且基本工具提示函数将被此配置覆盖。
 
 在状态图中，您可以根据实体值将实体状态配置为显示在工具提示上。
 
@@ -222,11 +222,11 @@ return celsiusValue + ' °C (' + farenheitValue + ' °F)';
 
 **1.6. 网格设置**
 
-网格设置与[时间序列条形图](/docs/{{docsPrefix}}user-guide/ui/chart-widget/#1-common-settings)中的相同。
+网格设置与[时序条形图](/docs/{{docsPrefix}}user-guide/ui/chart-widget/#1-common-settings)中的相同。
 
 **1.7. 轴设置**
 
-轴设置与[时间序列条形图](/docs/{{docsPrefix}}user-guide/ui/chart-widget/#1-common-settings)中的相同。
+轴设置与[时序条形图](/docs/{{docsPrefix}}user-guide/ui/chart-widget/#1-common-settings)中的相同。
 
 **1.8. 刻度格式化程序函数**
 
@@ -238,7 +238,7 @@ return celsiusValue + ' °C (' + farenheitValue + ' °F)';
 
 ##### 3. 自定义图例设置
 
-自定义图例设置与[时间序列条形图](/docs/{{docsPrefix}}user-guide/ui/chart-widget/#3-custom-legend-settings)中的相同。
+自定义图例设置与[时序条形图](/docs/{{docsPrefix}}user-guide/ui/chart-widget/#3-custom-legend-settings)中的相同。
 
 #### 最新值饼图 - Flot
 

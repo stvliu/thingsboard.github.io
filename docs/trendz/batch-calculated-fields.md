@@ -123,7 +123,7 @@ groupTelemetryByTime = function (telemetry, groupedTelemetry, keyName) {
 
 #### 填充遥测流中的空白
 
-在此示例中，我们将演示如何检测时间序列流中的空白并用 `0` 值填充它：
+在此示例中，我们将演示如何检测时序流中的空白并用 `0` 值填充它：
 
 ```javascript
 var temperatureReadings = none(thermostat.temperature);

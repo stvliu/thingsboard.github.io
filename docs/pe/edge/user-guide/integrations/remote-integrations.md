@@ -54,7 +54,7 @@ device:
 
 可以从主 ThingsBoard Edge 实例远程执行任何 ThingsBoard 集成。
 本指南包含有关如何远程启动 ThingsBoard 集成的分步说明。
-例如，我们将启动 HTTP 集成并将数据通过 *远程* HTTP 集成推送到 ThingsBoard Edge。
+例如，我们将启动 HTTP 集成并将数据通过 *远程* HTTP 集成推送到 GridLinks Edge。
 
 有关更多一般信息，请参阅 [部署选项](/docs/pe/edge/user-guide/integrations/#deployment-options)。
 
@@ -62,14 +62,14 @@ device:
 
 我们假设您已经启动并运行了 ThingsBoard Edge 实例，并已连接到 **服务器**。
 
-## ThingsBoard 服务器配置步骤
+## GridLinks 服务器配置步骤
 
 转换器和集成模板在 **服务器** 上创建，因此请以租户管理员身份登录到服务器实例。
 
 ### 步骤 1. 创建上行转换器
 
 在创建集成模板之前，您需要在 **转换器模板** 页面中创建一个上行转换器模板。
-上行链路对于将来自设备的传入数据转换为在 ThingsBoard Edge 中显示它们所需的格式是必需的。
+上行链路对于将来自设备的传入数据转换为在 GridLinks Edge 中显示它们所需的格式是必需的。
 单击“加号”和“创建新转换器”。要查看事件，请启用调试。
 在函数解码器字段中，指定一个脚本来解析和转换数据。
 
@@ -142,7 +142,7 @@ return result;
 
 ### 选择您的平台并安装
 
-可以通过 Docker、Debian 或 RPM 软件包安装 ThingsBoard 集成。
+可以通过 Docker、Debian 或 RPM 软件包安装 GridLinks 集成。
 请使用以下步骤之一。
 
  * [Linux 或 Mac OS 上的 Docker](#docker-on-linuxmac)
@@ -252,7 +252,7 @@ curl -v -X POST -d "{\"deviceName\":\"$DEVICE_NAME\",\"temperature\":33,\"model\
 
 ## 远程集成配置
 
-远程集成配置通过 ThingsBoard UI 完成，没有具体步骤。
+远程集成配置通过 GridLinks UI 完成，没有具体步骤。
 探索与特定集成相关的指南和视频教程：
 
  - [HTTP](/docs/pe/edge/user-guide/integrations/http/)

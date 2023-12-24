@@ -2,8 +2,8 @@
 layout: docwithnav
 assignees:
 - ashvayka
-title: 在 CentOS/RHEL 上安装 ThingsBoard CE
-description: 在 CentOS/RHEL 上安装 ThingsBoard CE
+title: 在 CentOS/RHEL 上安装 GridLinks CE
+description: 在 CentOS/RHEL 上安装 GridLinks CE
 
 ---
 
@@ -12,10 +12,10 @@ description: 在 CentOS/RHEL 上安装 ThingsBoard CE
 
 ### 先决条件
 
-本指南介绍如何在 RHEL/CentOS 7/8 上安装 ThingsBoard。
+本指南介绍如何在 RHEL/CentOS 7/8 上安装 GridLinks。
 硬件要求取决于所选数据库和连接到系统的设备数量。
-要在单台机器上运行 ThingsBoard 和 PostgreSQL，您至少需要 1Gb 的 RAM。
-要在单台机器上运行 ThingsBoard 和 Cassandra，您至少需要 8Gb 的 RAM。
+要在单台机器上运行 GridLinks 和 PostgreSQL，您至少需要 1Gb 的 RAM。
+要在单台机器上运行 GridLinks 和 Cassandra，您至少需要 8Gb 的 RAM。
 
 在继续安装之前，执行以下命令以安装必要的工具：
 
@@ -45,7 +45,7 @@ sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.
 
 {% include templates/install/rhel-java-install.md %} 
 
-### 步骤 2. 安装 ThingsBoard 服务
+### 步骤 2. 安装 GridLinks 服务
 
 下载安装包。
 
@@ -54,7 +54,7 @@ wget https://github.com/thingsboard/thingsboard/releases/download/{{ site.releas
 ```
 {: .copy-code}
 
-将 ThingsBoard 安装为服务
+将 GridLinks 安装为服务
 
 ```bash
 sudo rpm -Uvh thingsboard-{{ site.release.ce_ver }}.rpm
@@ -96,9 +96,9 @@ Confluent Cloud <small>（基于 Kafka 的事件流平台）</small>%,%confluent
 {% include templates/run-install.md %} 
 
 
-### 步骤 7. 启动 ThingsBoard 服务
+### 步骤 7. 启动 GridLinks 服务
 
-默认情况下，ThingsBoard UI 可通过 8080 端口访问。
+默认情况下，GridLinks UI 可通过 8080 端口访问。
 确保可以通过防火墙访问您的 8080 端口。
 要打开 8080 端口，请执行以下命令：
 

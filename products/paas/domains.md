@@ -3,7 +3,7 @@ layout: docwithnav-paas
 assignees:
 - ashvayka
 title: 域管理
-description: 通过 ThingsBoard Cloud 管理域
+description: 通过 GridLinks云服务 管理域
 registerDomain:
     0:
         image: /images/user-guide/domain/domain-register-step-1.png
@@ -27,7 +27,7 @@ white-labeling:
         title: '转到“白标”页面，然后导航到“登录”选项卡。在相应字段中输入域名和基本 URL。不要忘记选中“禁止使用客户端请求标头中的主机名”复选框。然后保存所有更改；'
     1:
         image: /images/user-guide/domain/domain-login-1.png
-        title: '现在，您可以使用您的域名访问 ThingsBoard Cloud Web UI 和服务。尝试通过在浏览器地址栏中输入所选域名来登录。'
+        title: '现在，您可以使用您的域名访问 GridLinks云服务 Web UI 和服务。尝试通过在浏览器地址栏中输入所选域名来登录。'
 
 domainDetails:
     0:
@@ -52,7 +52,7 @@ deleteDomain:
 [ThingsBoard Cloud](https://thingsboard.cloud/signup) 允许您注册自定义域，以便为用户访问、链接等提供所需的主机名。
 当您注册有效的域时，ThingsBoard Cloud 会自动向 [Let's Encrypt](https://letsencrypt.org/) 申请后者的 SSL 证书，并管理进一步的证书续订。
 域注册后，您的租户和应用程序可以通过您的域名使用安全 (HTTPS) 连接访问。
-与 Web UI 一样，所有其他 ThingsBoard Cloud 服务（例如 MQTT/HTTP/CoAP 传输或 HTTP 集成）都可以通过您的自定义域名访问。
+与 Web UI 一样，所有其他 GridLinks云服务 服务（例如 MQTT/HTTP/CoAP 传输或 HTTP 集成）都可以通过您的自定义域名访问。
 
 ### 域注册
 
@@ -80,7 +80,7 @@ deleteDomain:
 
 {% include images-gallery.html imageCollection="white-labeling" %}
 
-现在，您可以使用您的域名访问 ThingsBoard Cloud Web UI 和服务。尝试通过在浏览器地址栏中输入所选域名来登录。
+现在，您可以使用您的域名访问 GridLinks云服务 Web UI 和服务。尝试通过在浏览器地址栏中输入所选域名来登录。
 
 继续进一步自定义登录页面以完成平台重新品牌化。
 
@@ -95,7 +95,7 @@ deleteDomain:
 ### 删除域
 
 要删除已注册的域，请单击“域”选项卡上的“删除”按钮。在确认对话框中，如果您确定要删除域，请单击“是”。
-确认后，域信息和关联的 SSL 证书将被删除，您将无法使用该域访问 ThingsBoard Cloud Web 界面和服务。请注意，您始终可以使用 [域注册](#域注册) 程序重新注册相同或不同的域。
+确认后，域信息和关联的 SSL 证书将被删除，您将无法使用该域访问 GridLinks云服务 Web 界面和服务。请注意，您始终可以使用 [域注册](#域注册) 程序重新注册相同或不同的域。
 
 {% include images-gallery.html imageCollection="deleteDomain" %}
 

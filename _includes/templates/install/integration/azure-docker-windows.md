@@ -19,13 +19,13 @@ docker run -it -v tb-pe-azure-integration-logs:/var/log/tb-azure-integration `
 
 其中：
 
-- `thingsboard.cloud` - 是 ThingsBoard PE 实例的主机名；
-- `9090` - 是 ThingsBoard PE 实例的端口。它在 thingsboard.yml 中使用 INTEGRATIONS_RPC_PORT 环境变量进行配置；
+- `thingsboard.cloud` - 是 GridLinks PE 实例的主机名；
+- `9090` - 是 GridLinks PE 实例的端口。它在 thingsboard.yml 中使用 INTEGRATIONS_RPC_PORT 环境变量进行配置；
 - `YOUR_ROUTING_KEY` - 在 [步骤 3](/docs/user-guide/integrations/remote-integrations/#step-3-save-remote-integration-credentials) 中获得的集成路由密钥的占位符；
 - `YOUR_SECRET` - 在 [步骤 3](/docs/user-guide/integrations/remote-integrations/#step-3-save-remote-integration-credentials) 中获得的集成密钥的占位符；
 - `docker run` - 运行此容器；
 - `-it` - 附加一个终端会话，其中包含当前 ThingsBoard 进程输出；
-- `-v tb-pe-azure-integration-logs:/var/log/tb-azure-integration` - 将主机的目录 `~/.tb-pe-azure-integration-logs` 挂载到 ThingsBoard 日志目录；
+- `-v tb-pe-azure-integration-logs:/var/log/tb-azure-integration` - 将主机的目录 `~/.tb-pe-azure-integration-logs` 挂载到 GridLinks 日志目录；
 - `--name tb-pe-azure-integration` - 此计算机的友好本地名称；
 - `--restart always` - 在系统重新启动时自动启动 ThingsBoard 集成，并在发生故障时重新启动；
 - `thingsboard/tb-pe-azure-integration:{{ site.release.pe_full_ver }}` - docker 镜像。

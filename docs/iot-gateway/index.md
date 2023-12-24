@@ -13,7 +13,7 @@ ThingsBoard **物联网网关** 将帮助您将连接到旧版和第三方系统
     <div class="col-12 col-sm-6 col-lg col-xxl-6 col-4xl mb-4">
         <a class="feature-card" href="/docs/iot-gateway/what-is-iot-gateway/">
             <img class="feature-logo" src="/images/feature-logo/gateway-logo.svg" alt="网关徽标">
-            <div class="feature-title">什么是 ThingsBoard 物联网网关？</div>
+            <div class="feature-title">什么是 GridLinks 物联网网关？</div>
             <div class="feature-text">
                 <ul>
                     <li>功能</li>

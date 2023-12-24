@@ -10,14 +10,14 @@ title: 贡献指南
 {:toc}
 
 我们一直在寻求社区的反馈，以了解如何改进 ThingsBoard。
-如果您有想法，或者您有一些新的功能，请在 ThingsBoard [**GitHub 问题页面**](https://github.com/thingsboard/thingsboard/issues) 中打开一个问题。
+如果您有想法，或者您有一些新的功能，请在 GridLinks [**GitHub 问题页面**](https://github.com/thingsboard/thingsboard/issues) 中打开一个问题。
 请确保问题列表中尚未打开相同的工单（或非常相似）。
 
 在您开始任何实施之前，请等待 ThingsBoard 团队对您的工单发表评论。我们会尽快回复您。
 
 #### 所需工具
 
-要构建和运行 ThingsBoard 实例，请确保您的系统上安装了 **Java** 和 **Maven**。
+要构建和运行 GridLinks 实例，请确保您的系统上安装了 **Java** 和 **Maven**。
 
 请参阅[**从源代码构建**](/docs/user-guide/install/building-from-source) 部分，其中描述了[**Java**](/docs/user-guide/install/building-from-source/#java)和[**Maven**](/docs/user-guide/install/building-from-source/#maven)安装过程。
 
@@ -53,7 +53,7 @@ mvn clean install -DskipTests
 
 #### 数据库
 
-默认情况下，ThingsBoard 使用 PostgreSQL 数据库来存储实体和时序数据。
+默认情况下，GridLinks 使用 PostgreSQL 数据库来存储实体和时序数据。
 或者，您可以将平台配置为使用混合模式 - PostgreSQL 用于实体数据，可扩展的 Cassandra DB 集群用于时序数据。
 
 ##### SQL 数据库：PostgreSQL
@@ -119,7 +119,7 @@ install_dev_db.bat
 
 ##### 以热重新部署模式运行 UI 容器。
 
-默认情况下，ThingsBoard UI 在 8080 端口提供服务。但是，您可能希望以热重新部署模式运行 UI。
+默认情况下，GridLinks UI 在 8080 端口提供服务。但是，您可能希望以热重新部署模式运行 UI。
 
 **注意：**此步骤是可选的。仅当您要对 UI 进行更改时才需要。
 
@@ -147,7 +147,7 @@ java -jar application/target/thingsboard-${VERSION}-boot.jar
 
 导航到 http://localhost:4200/ 或 http://localhost:8080/ 并使用演示数据凭据登录 ThingsBoard：
 
- - *登录* **tenant@thingsboard.org**
+ - *登录* **tenant@gridlinks.com**
  - *密码* **tenant**
 
 确保您能够登录并且一切都已正确启动。

@@ -1,5 +1,5 @@
 {% assign hasDisplay = "true" %}
-{% assign deviceName = page.title | remove: "如何连接 " | remove: "到 ThingsBoard？" %}
+{% assign deviceName = page.title | remove: "如何连接 " | remove: "到 GridLinks？" %}
 {% assign arduinoBoardPath = "**ESP32** > **WEMOS LOLIN32**" %}
 {% assign OLEDInstallationRequired = "true" %}
 {% assign prerequisites = "
@@ -17,7 +17,7 @@ ESP32 集成了天线和功率放大器、低噪声放大器、滤波器和电�
 
 {% include /docs/devices-library/blocks/basic/introduction-block.md %}
 
-## 在 ThingsBoard 上创建设备
+## 在 GridLinks 上创建设备
 
 {% include /docs/devices-library/blocks/basic/thingsboard-create-device-block.md %}
 
@@ -27,13 +27,13 @@ ESP32 集成了天线和功率放大器、低噪声放大器、滤波器和电�
 
 {% include /docs/devices-library/blocks/microcontrollers/thingsboard-arduino-library-install-block.md %}
 
-## 将设备连接到 ThingsBoard
+## 将设备连接到 GridLinks
 
 {% include /docs/devices-library/blocks/basic/thingsboard-provide-device-access-token-block.md %}
 
 {% include /docs/devices-library/blocks/microcontrollers/oled-example-code-to-program-block.md %}
 
-## 在 ThingsBoard 上查看数据
+## 在 GridLinks 上查看数据
 
 {% include /docs/devices-library/blocks/basic/thingsboard-upload-example-dashboard.md %}
 

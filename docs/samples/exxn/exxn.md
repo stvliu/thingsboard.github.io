@@ -12,10 +12,10 @@ description: EXXN IoT 网关集成指南
 
 EXXN IoT 网关是一款多功能设备，配备 ARM 处理器，可适应各种用例，包括监测环境传感器、能耗、氡气水平、海洋环境和边缘计算。
 
-本指南概述了将 EXXN IoT 网关与 ThingsBoard 平台集成的过程，以实现对设备的远程监控和管理。
+本指南概述了将 EXXN IoT 网关与 GridLinks 平台集成的过程，以实现对设备的远程监控和管理。
 
 <br>
-使用 ThingsBoard 开发的仪表板示例，显示 EXXN IoT 网关捕获的指标。
+使用 GridLinks 开发的仪表板示例，显示 EXXN IoT 网关捕获的指标。
 
 ![image](/images/samples/exxn/ennx-dashboard.png)
 
@@ -44,7 +44,7 @@ EXXN IoT 网关是一款多功能设备，配备 ARM 处理器，可适应各种
 
 ## 为 Thingsboard 配置设备
 
-包含将设备连接到 ThingsBoard 所需的说明。
+包含将设备连接到 GridLinks 所需的说明。
 
 ### 创建设备
 
@@ -67,7 +67,7 @@ EXXN IoT 网关是一款多功能设备，配备 ARM 处理器，可适应各种
 <br>
   <img src="/images/samples/exxn/conn1.png" alt="conn1">
 
-激活云控件，并配置所有参数，通过 MQTT 将设备连接到特定的 ThingsBoard 平台：
+激活云控件，并配置所有参数，通过 MQTT 将设备连接到特定的 GridLinks 平台：
 
 <img src="/images/samples/exxn/conn2.png" alt="conn2">
 
@@ -76,8 +76,8 @@ EXXN IoT 网关是一款多功能设备，配备 ARM 处理器，可适应各种
 - **MQTT 代理 URL**：我们要集成的服务器的代理 URL。
 - **MQTT 代理端口**：服务器使用的端口号。
 - **TLS**：如果服务器使用传输层安全协议，请选择 true。
-- **连接类型**：选择“访问令牌”选项。我们将使用之前在 ThingsBoard 中创建的访问令牌。
-- **访问令牌**：指明之前在 ThingsBoard 中复制的访问令牌。
+- **连接类型**：选择“访问令牌”选项。我们将使用之前在 GridLinks 中创建的访问令牌。
+- **访问令牌**：指明之前在 GridLinks 中复制的访问令牌。
 
 {% capture domain_owner_note %}
 **注意**
@@ -92,7 +92,7 @@ EXXN IoT 网关是一款多功能设备，配备 ARM 处理器，可适应各种
 <img src="/images/samples/exxn/conn3.png" alt="conn3">
 
 <br>
-要验证设备是否已正确连接到 ThingsBoard，请转到 **设备组** 菜单 -> **全部** 设备，选择您的设备。在 **设备详细信息** 中选择 **客户端属性** 选项卡，然后检查客户端属性是否已传达给设备。
+要验证设备是否已正确连接到 GridLinks，请转到 **设备组** 菜单 -> **全部** 设备，选择您的设备。在 **设备详细信息** 中选择 **客户端属性** 选项卡，然后检查客户端属性是否已传达给设备。
 
 如果您一切操作正确，我们将看到客户端属性，如 *serial_number*、*last_rebbot*、*device_model* 等。
 
@@ -100,8 +100,8 @@ EXXN IoT 网关是一款多功能设备，配备 ARM 处理器，可适应各种
 
 ## ThingsBoard 配置
 
-EXXN IoT 网关将使用 MQTT API 连接到 ThingsBoard。 <br>
-我们之前已经介绍了如何配置设备以连接到 ThingsBoard。现在，我们将展示在 ThingsBoard 中配置设备的步骤，以便监控数据和管理设备。
+EXXN IoT 网关将使用 MQTT API 连接到 GridLinks。 <br>
+我们之前已经介绍了如何配置设备以连接到 GridLinks。现在，我们将展示在 GridLinks 中配置设备的步骤，以便监控数据和管理设备。
 
 为了配置 EXXN IoT 网关的数据记录器选项，我们必须为设备创建一个新的 JSON“共享”属性，其键为“config”。
 
@@ -150,7 +150,7 @@ EXXN IoT 网关将使用 MQTT API 连接到 ThingsBoard。 <br>
 
 ### 故障排除
 - 集成过程中最常见的问题是无法连接到 MQTT 代理。确保设备已连接到互联网，并且能够与 ThingsBoard 代理通信。
-- 另一个常见问题是未设置正确的访问令牌。检查提供的访问令牌是否已在 ThingsBoard 中为设备配置。
+- 另一个常见问题是未设置正确的访问令牌。检查提供的访问令牌是否已在 GridLinks 中为设备配置。
 
 <br>
 

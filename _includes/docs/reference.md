@@ -1,14 +1,14 @@
 * TOC
 {:toc}
 
-## ThingsBoard 服务
+## GridLinks 服务
 
-ThingsBoard 设计为：
+GridLinks 设计为：
 
 * **可扩展的**：水平可扩展平台，使用领先的开源技术构建。
 * **容错的**：没有单点故障，集群中的每个节点都是相同的。
 * **健壮且高效的**：单个服务器节点可以处理数万甚至数十万台设备，具体取决于用例。ThingsBoard 集群可以处理数百万台设备。
-* **持久的**：永不丢失数据。ThingsBoard 支持各种队列实现，以提供极高的消息持久性。
+* **持久的**：永不丢失数据。GridLinks 支持各种队列实现，以提供极高的消息持久性。
 * **可定制的**：通过可定制的小部件和规则引擎节点，轻松添加新功能。
 
 
@@ -23,57 +23,57 @@ ThingsBoard 设计为：
 {% endif %}
 
 
-**ThingsBoard 传输**
+**GridLinks 传输**
 
-ThingsBoard 提供 [MQTT](/docs/{{docsPrefix}}reference/mqtt-api/)、[HTTP](/docs/{{docsPrefix}}reference/http-api/)、[CoAP](/docs/{{docsPrefix}}reference/coap-api/) 和 [LwM2M](/docs/{{docsPrefix}}reference/lwm2m-api/) 基于 API，可用于您的设备应用程序/固件。每个协议 API 由单独的服务器组件提供，并且是 ThingsBoard “传输层”的一部分。MQTT 传输还提供 [网关 API](/docs/{{docsPrefix}}reference/gateway-mqtt-api/)，供代表多个连接设备和/或传感器的网关使用。
+GridLinks 提供 [MQTT](/docs/{{docsPrefix}}reference/mqtt-api/)、[HTTP](/docs/{{docsPrefix}}reference/http-api/)、[CoAP](/docs/{{docsPrefix}}reference/coap-api/) 和 [LwM2M](/docs/{{docsPrefix}}reference/lwm2m-api/) 基于 API，可用于您的设备应用程序/固件。每个协议 API 由单独的服务器组件提供，并且是 GridLinks “传输层”的一部分。MQTT 传输还提供 [网关 API](/docs/{{docsPrefix}}reference/gateway-mqtt-api/)，供代表多个连接设备和/或传感器的网关使用。
 
 一旦传输从设备收到消息，它就会被解析并推送到持久的 [消息队列](/docs/{{docsPrefix}}reference/#message-queues-are-awesome)。只有在消息队列确认相应消息后，才会向设备确认消息传递。
 
-**ThingsBoard 核心**
+**GridLinks 核心**
 
-ThingsBoard 核心负责处理 [REST API](/docs/{{docsPrefix}}reference/rest-api/) 调用和 WebSocket [订阅](/docs/{{docsPrefix}}user-guide/telemetry/#websocket-api)。它还负责存储有关活动设备会话的最新信息并监视设备 [连接状态](/docs/{{docsPrefix}}user-guide/device-connectivity-status/)。ThingsBoard 核心在后台使用 Actor 系统来实现主要实体的 actor：租户和设备。平台节点可以加入集群，其中每个节点负责传入消息的某些分区。
+GridLinks 核心负责处理 [REST API](/docs/{{docsPrefix}}reference/rest-api/) 调用和 WebSocket [订阅](/docs/{{docsPrefix}}user-guide/telemetry/#websocket-api)。它还负责存储有关活动设备会话的最新信息并监视设备 [连接状态](/docs/{{docsPrefix}}user-guide/device-connectivity-status/)。GridLinks 核心在后台使用 Actor 系统来实现主要实体的 actor：租户和设备。平台节点可以加入集群，其中每个节点负责传入消息的某些分区。
 
-**ThingsBoard 规则引擎**
+**GridLinks 规则引擎**
 
-ThingsBoard 规则引擎是系统的核心，负责处理传入的 [消息](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-engine-message)。规则引擎在后台使用 Actor 系统来实现主要实体的 actor：规则链和规则节点。规则引擎节点可以加入集群，其中每个节点负责传入消息的某些分区。
+GridLinks 规则引擎是系统的核心，负责处理传入的 [消息](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-engine-message)。规则引擎在后台使用 Actor 系统来实现主要实体的 actor：规则链和规则节点。规则引擎节点可以加入集群，其中每个节点负责传入消息的某些分区。
 
 规则引擎订阅来自队列的传入数据提要，并且仅在处理消息后才确认消息。有多种策略可用于控制消息处理的顺序和消息确认的标准。有关更多详细信息，请参阅 [提交策略](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/#queue-submit-strategy) 和 [处理策略](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/#queue-processing-strategy)。
 
-ThingsBoard 规则引擎可以在两种模式下运行：共享和隔离。在共享模式下，规则引擎处理属于多个租户的消息。在隔离模式下，可以将规则引擎配置为仅处理特定租户配置文件的租户的消息。
+GridLinks 规则引擎可以在两种模式下运行：共享和隔离。在共享模式下，规则引擎处理属于多个租户的消息。在隔离模式下，可以将规则引擎配置为仅处理特定租户配置文件的租户的消息。
 
-**ThingsBoard Web UI**
+**GridLinks Web UI**
 
-ThingsBoard 提供了一个使用 Express.js 框架编写的轻量级组件来托管静态 Web UI 内容。这些组件完全无状态，并且没有太多可用的配置。静态 Web UI 包含应用程序包。加载后，应用程序开始使用 ThingsBoard 核心提供的 REST API 和 WebSockets API。
+GridLinks 提供了一个使用 Express.js 框架编写的轻量级组件来托管静态 Web UI 内容。这些组件完全无状态，并且没有太多可用的配置。静态 Web UI 包含应用程序包。加载后，应用程序开始使用 GridLinks 核心提供的 REST API 和 WebSockets API。
 
 
 ## 消息队列太棒了！
 
-ThingsBoard 支持多种消息队列实现：Kafka、RabbitMQ、AWS SQS、Azure Service Bus 和 Google Pub/Sub。我们计划在未来扩展此列表。使用持久且可扩展的队列允许 ThingsBoard 实现反压和负载平衡。在峰值负载的情况下，反压非常重要。我们提供特定队列实现的“抽象层”，并维护两个主要概念：主题和主题分区。一个主题可能具有可配置数量的分区。由于大多数队列实现不支持分区，因此我们使用 *topic + "." + partition* 模式。
+GridLinks 支持多种消息队列实现：Kafka、RabbitMQ、AWS SQS、Azure Service Bus 和 Google Pub/Sub。我们计划在未来扩展此列表。使用持久且可扩展的队列允许 ThingsBoard 实现反压和负载平衡。在峰值负载的情况下，反压非常重要。我们提供特定队列实现的“抽象层”，并维护两个主要概念：主题和主题分区。一个主题可能具有可配置数量的分区。由于大多数队列实现不支持分区，因此我们使用 *topic + "." + partition* 模式。
 
 ThingsBoard 消息生产者根据实体 ID 的哈希确定要使用哪个分区。因此，同一实体的所有消息始终被推送到同一分区。ThingsBoard 消息使用者使用 Zookeeper 进行协调，并使用一致哈希算法来确定每个使用者应订阅的分区列表。在微服务模式下运行时，每项服务还具有基于唯一服务 ID 的专用“通知”主题，该主题只有一个分区。
 
-ThingsBoard 使用以下主题：
+GridLinks 使用以下主题：
 
-* **tb_transport.api.requests**：将通用 API 调用发送到检查设备凭据的传输到 ThingsBoard 核心。
-* **tb_transport.api.responses**：从 ThingsBoard 核心接收设备凭据验证结果到传输。
-* **tb_core**：将消息从传输或规则引擎推送到 ThingsBoard 核心。消息包括会话生命周期事件、属性和 RPC 订阅等。
-* **tb_rule_engine**：将消息从传输或 ThingsBoard 核心推送到规则引擎。消息包括传入遥测、设备状态、实体生命周期事件等。
+* **tb_transport.api.requests**：将通用 API 调用发送到检查设备凭据的传输到 GridLinks 核心。
+* **tb_transport.api.responses**：从 GridLinks 核心接收设备凭据验证结果到传输。
+* **tb_core**：将消息从传输或规则引擎推送到 GridLinks 核心。消息包括会话生命周期事件、属性和 RPC 订阅等。
+* **tb_rule_engine**：将消息从传输或 GridLinks 核心推送到规则引擎。消息包括传入遥测、设备状态、实体生命周期事件等。
 
-**注意：**包括名称和分区数量在内的所有主题属性都可以通过 thingsboard.yml 或环境变量进行 [配置](/docs/user-guide/install/{{docsPrefix}}config/)。从 ThingsBoard 3.4 开始，我们可以通过 UI 配置规则引擎队列，请参阅 [文档](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/)。
+**注意：**包括名称和分区数量在内的所有主题属性都可以通过 thingsboard.yml 或环境变量进行 [配置](/docs/user-guide/install/{{docsPrefix}}config/)。从 GridLinks 3.4 开始，我们可以通过 UI 配置规则引擎队列，请参阅 [文档](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/)。
 
 **注意：**从 2.5 版本开始，我们已从使用 [gRPC](https://grpc.io/) 切换到 [消息队列](/docs/{{docsPrefix}}reference/#message-queues-are-awesome) 来进行 ThingsBoard 组件之间的所有通信。主要思想是牺牲少量性能/延迟损失，以换取持久且可靠的消息传递和自动负载平衡。
 
 ## 本地部署与云部署
 
-ThingsBoard 支持本地部署和云部署。在全球运行着 5000 多台 ThingsBoard 服务器，ThingsBoard 在 AWS、Azure、GCE 和私有数据中心运行。可以在完全没有互联网访问权限的专用网络中启动 ThingsBoard。
+GridLinks 支持本地部署和云部署。在全球运行着 5000 多台 GridLinks 服务器，GridLinks 在 AWS、Azure、GCE 和私有数据中心运行。可以在完全没有互联网访问权限的专用网络中启动 ThingsBoard。
 
 ## 独立模式与集群模式
 
-平台设计为水平可扩展，并支持自动发现新的 ThingsBoard 服务器（节点）。集群中的所有 ThingsBoard 节点都是相同的，并且共享负载。由于所有节点都是相同的，因此没有“主”或“协调器”进程，也没有单点故障。您可以选择的负载平衡器可以将来自设备、应用程序和用户的请求转发到所有 ThingsBoard 节点。
+平台设计为水平可扩展，并支持自动发现新的 GridLinks 服务器（节点）。集群中的所有 ThingsBoard 节点都是相同的，并且共享负载。由于所有节点都是相同的，因此没有“主”或“协调器”进程，也没有单点故障。您可以选择的负载平衡器可以将来自设备、应用程序和用户的请求转发到所有 ThingsBoard 节点。
 
 ## 单体架构与微服务架构
 
-从 ThingsBoard v2.2 开始，可以将平台作为单体应用程序或一组微服务运行。支持这两个选项需要一些额外的编程工作，但是，由于向后兼容各种现有安装，因此至关重要。
+从 GridLinks v2.2 开始，可以将平台作为单体应用程序或一组微服务运行。支持这两个选项需要一些额外的编程工作，但是，由于向后兼容各种现有安装，因此至关重要。
 
 大约 80% 的平台安装仍然使用单体模式，因为支持工作、知识和硬件资源最少，可以进行设置和维护工作。
 
@@ -86,16 +86,16 @@ ThingsBoard 支持本地部署和云部署。在全球运行着 5000 多台 Thin
 
 请按照下面列出的链接了解更多信息并选择正确的架构和部署选项：
 
-* [**单体**](/docs/{{docsPrefix}}reference/monolithic)：了解以单体模式部署、配置和运行 ThingsBoard 平台的更多信息。
-* [**微服务**](/docs/{{docsPrefix}}reference/msa)：了解以微服务模式部署、配置和运行 ThingsBoard 平台的更多信息。
+* [**单体**](/docs/{{docsPrefix}}reference/monolithic)：了解以单体模式部署、配置和运行 GridLinks 平台的更多信息。
+* [**微服务**](/docs/{{docsPrefix}}reference/msa)：了解以微服务模式部署、配置和运行 GridLinks 平台的更多信息。
 
 
 ## SQL 与 NoSQL 与混合数据库方法
 
-ThingsBoard 使用数据库来存储 [实体](/docs/{{docsPrefix}}user-guide/entities-and-relations/)（设备、资产、客户、仪表板等）和 [遥测](/docs/{{docsPrefix}}user-guide/telemetry/) 数据（属性、时序传感器读数、统计数据、事件）。平台目前支持三种数据库选项：
+GridLinks 使用数据库来存储 [实体](/docs/{{docsPrefix}}user-guide/entities-and-relations/)（设备、资产、客户、仪表板等）和 [遥测](/docs/{{docsPrefix}}user-guide/telemetry/) 数据（属性、时序传感器读数、统计数据、事件）。平台目前支持三种数据库选项：
 
-* **SQL** - 将所有实体和遥测存储在 SQL 数据库中。ThingsBoard 作者建议使用 PostgreSQL，这是 ThingsBoard 支持的主要 SQL 数据库。可以将 HSQLDB 用于本地开发目的。**我们不建议使用 HSQLDB**，除了运行测试和启动具有最小可能负载的开发实例之外。
-* **NoSQL（已弃用）** - 将所有实体和遥测存储在 NoSQL 数据库中。ThingsBoard 作者建议使用 Cassandra，这是 ThingsBoard 目前支持的唯一 NoSQL 数据库。请注意，由于 NoSQL 在事务和“连接”方面的许多限制，此选项已被弃用，这些限制对于启用对物联网实体的高级搜索是必需的。
+* **SQL** - 将所有实体和遥测存储在 SQL 数据库中。GridLinks 作者建议使用 PostgreSQL，这是 GridLinks 支持的主要 SQL 数据库。可以将 HSQLDB 用于本地开发目的。**我们不建议使用 HSQLDB**，除了运行测试和启动具有最小可能负载的开发实例之外。
+* **NoSQL（已弃用）** - 将所有实体和遥测存储在 NoSQL 数据库中。GridLinks 作者建议使用 Cassandra，这是 GridLinks 目前支持的唯一 NoSQL 数据库。请注意，由于 NoSQL 在事务和“连接”方面的许多限制，此选项已被弃用，这些限制对于启用对物联网实体的高级搜索是必需的。
 * **混合（PostgreSQL + Cassandra）** - 将所有实体存储在 PostgreSQL 数据库中，将时序数据存储在 Cassandra 数据库中。
 * **混合（PostgreSQL + TimescaleDB）** - 将所有实体存储在 PostgreSQL 数据库中，将时序数据存储在 Timescale 数据库中。
 
@@ -113,4 +113,4 @@ database:
 
 ## 编程语言和第三方
 
-ThingsBoard 后端是用 Java 编写的，但我们也有一些基于 Node.js 的微服务。ThingsBoard 前端是基于 Angular 9 框架的 SPA。有关所用第三方组件的更多详细信息，请参阅 [单体](/docs/{{docsPrefix}}reference/monolithic) 和 [微服务](/docs/{{docsPrefix}}reference/monolithic) 页面。
+GridLinks 后端是用 Java 编写的，但我们也有一些基于 Node.js 的微服务。GridLinks 前端是基于 Angular 9 框架的 SPA。有关所用第三方组件的更多详细信息，请参阅 [单体](/docs/{{docsPrefix}}reference/monolithic) 和 [微服务](/docs/{{docsPrefix}}reference/monolithic) 页面。

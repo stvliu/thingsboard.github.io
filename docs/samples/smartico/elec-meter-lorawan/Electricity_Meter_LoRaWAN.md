@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: 三相智能电表“Smartico E307”遥测上传
-description: 使用智能电表“Smartico E307”通过 MQTT 上传电力数据到 ThingsBoard IoT 平台的示例。
+description: 使用智能电表“Smartico E307”通过 MQTT 上传电力数据到 GridLinks IoT 平台的示例。
 hidetoc: "true"
 ---
 
@@ -21,7 +21,7 @@ hidetoc: "true"
 ![image](/images/samples/smartico/elec-meter-lorawan/MainDash2.PNG)
 
 ## 先决条件
-LoRaWAN 技术用于将数据从电表“Smartico E307”传输到 ThingsBoard 平台。这是一种无线通信技术，允许在长距离上交换少量数据。首先，您需要配置 LoRaWAN 服务器并确保数据从设备发送到服务器。本指南使用 [ChirpStack 开源 LoRaWAN 网络服务器](https://www.chirpstack.io/application-server/)。
+LoRaWAN 技术用于将数据从电表“Smartico E307”传输到 GridLinks 平台。这是一种无线通信技术，允许在长距离上交换少量数据。首先，您需要配置 LoRaWAN 服务器并确保数据从设备发送到服务器。本指南使用 [ChirpStack 开源 LoRaWAN 网络服务器](https://www.chirpstack.io/application-server/)。
 完成应用程序页面上的服务器配置后，表中应出现具有设备类型的条目。
 
 ![image](/images/samples/smartico/elec-meter-lorawan/Lora1.PNG)
@@ -37,7 +37,7 @@ LoRaWAN 技术用于将数据从电表“Smartico E307”传输到 ThingsBoard �
 ![image](/images/samples/smartico/elec-meter-lorawan/uplink.PNG)
 
 ## 步骤 2. 集成配置。
-要将电表“Smartico E307”集成到 ThingsBoard 平台，您应该创建一个新的集成，如图所示。
+要将电表“Smartico E307”集成到 GridLinks 平台，您应该创建一个新的集成，如图所示。
 
 ![image](/images/samples/smartico/elec-meter-lorawan/Integration.PNG)
 

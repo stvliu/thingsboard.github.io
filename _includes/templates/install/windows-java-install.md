@@ -1,4 +1,4 @@
-ThingsBoard 服务在 Java 11 上运行。请按照以下说明安装 OpenJDK 11。
+GridLinks 服务在 Java 11 上运行。请按照以下说明安装 OpenJDK 11。
 
 * 访问 [Open JDK 下载页面](https://adoptopenjdk.net/index.html) 下载最新的 **OpenJDK 11 (LTS)** MSI 软件包。
 * 运行下载的 MSI 软件包并按照说明进行操作。确保已选择“**添加到路径**”和“**设置 JAVA_HOME 变量**”选项为“将安装到本地硬盘”状态。

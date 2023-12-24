@@ -11,7 +11,7 @@ var payloadJson = decodeToJson(payload);
 var deviceName = payloadJson.EUI;
 // 指定设备类型。每个设备类型或应用程序使用一个数据转换器。
 var deviceType = 'temperature-sensor';
-// 可选，添加客户名称和设备组，以便在 ThingsBoard 中自动创建它们并将新设备分配给它们。
+// 可选，添加客户名称和设备组，以便在 GridLinks 中自动创建它们并将新设备分配给它们。
 // var customerName = 'customer';
 // var groupName = 'thermostat devices';
 // 包含设备/资产属性/遥测数据的 result 对象

@@ -79,7 +79,7 @@ description: ThingsBoard IoT 网关的 ODBC 支持
 要安装并使 ODBC 连接器正常工作，需要执行以下几个步骤：
 
 1. 为 Windows 安装 [Visual C++ Redistributable 包](https://github.com/mkleehammer/pyodbc/wiki/Install#installing-on-windows) 或为 Linux 安装 [ODBC 包](https://github.com/mkleehammer/pyodbc/wiki/Install#installing-on-linux)。
-2. 为 ThingsBoard 网关需要连接的数据库安装 ODBC 驱动程序。
+2. 为 GridLinks 网关需要连接的数据库安装 ODBC 驱动程序。
 3. 在 Windows 上的 [ODBC 数据源管理器](https://docs.microsoft.com/en-us/sql/database-engine/configure-windows/open-the-odbc-data-source-administrator) 中添加数据源，或在 Unix 系统上将驱动程序信息（名称、库路径等）添加到 ODBC 配置文件 [odbcinst.ini](https://github.com/mkleehammer/pyodbc/wiki/Drivers-and-Driver-Managers#odbc-configuration-files-unix-only) 中。
 
 ## “connection”部分
@@ -146,7 +146,7 @@ ODBC 连接器的主要思想是定期查询 ODBC 数据库是否出现新数据
 
 *query* 选项的要求：
 
-1. 满足 ThingsBoard 网关需要连接的数据库的 SQL 方言要求的有效 SQL *SELECT* 语句。
+1. 满足 GridLinks 网关需要连接的数据库的 SQL 方言要求的有效 SQL *SELECT* 语句。
 2. 在 _SELECT_ 列表中包含 *attributes* 或/和 *timeseries* 列。
 3. 在 _SELECT_ 列表中包含 [*device*](/docs/iot-gateway/config/odbc/#subsection-device) 列，以找出数据属于哪个设备。
 4. 在 _SELECT_ 列表中包含 [*iterator*](/docs/iot-gateway/config/odbc/#subsection-iterator) 列。
@@ -158,7 +158,7 @@ ODBC 连接器的主要思想是定期查询 ODBC 数据库是否出现新数据
 
 每次轮询迭代，连接器将按 _ts_ 列（[*iterator*](/docs/iot-gateway/config/odbc/#subsection-iterator)）排序，读取 10 条记录。
 
-每条记录包含时间序列列（*bool_v*、*str_v*、*dbl_v*、*long_v*）、[设备](/docs/iot-gateway/config/odbc/#subsection-device) 列（*entity_id*）和 [*iterator*](/docs/iot-gateway/config/odbc/#subsection-iterator) 列（*ts*）。
+每条记录包含时序列（*bool_v*、*str_v*、*dbl_v*、*long_v*）、[设备](/docs/iot-gateway/config/odbc/#subsection-device) 列（*entity_id*）和 [*iterator*](/docs/iot-gateway/config/odbc/#subsection-iterator) 列（*ts*）。
 
 每次轮询迭代后，连接器都会记住第 10 条记录（最后一条记录）的 *ts* 列的值，并在下次迭代中将其用于 _WHERE_ 子句。
 ```sql
@@ -204,7 +204,7 @@ LIMIT 10                                             (6)
 **结论**
 
 1. 对于同一个数据库，每个迭代器使用唯一的名称。
-2. 仅在其他连接器配置部分已调试且属性和时间序列列表已最终确定时，才启用 _iterator_ 持久性功能。
+2. 仅在其他连接器配置部分已调试且属性和时序列表已最终确定时，才启用 _iterator_ 持久性功能。
 
 
 | **参数** | **默认值** | **说明** |
@@ -218,14 +218,14 @@ LIMIT 10                                             (6)
 
 ## “mapping”部分
 
-此 **强制性** 部分提供了有关如何将从数据库获取的结果集映射到设备属性和时间序列值的信息。
+此 **强制性** 部分提供了有关如何将从数据库获取的结果集映射到设备属性和时序值的信息。
 
 | **参数** | **默认值** | **说明** |
 |:-|:-|-|
 | **device** | | 设备配置。 |
 | sendDataOnlyOnChange | **false** | 仅在数据自上次检查以来发生更改时发送，如果未指定，则每次轮询迭代后都会发送数据。 |
 | attributes | | 设备属性列表。 |
-| timeseries | | 时间序列键列表。 |
+| timeseries | | 时序键列表。 |
 
 ### “device”小节
 
@@ -248,7 +248,7 @@ LIMIT 10                                             (6)
 
 ### “attributes”和“timeseries”小节
 
-这些 **可选** 小节提供了有关哪些数据库列被视为属性，哪些被视为时间序列键，以及在发送到 ThingsBoard 服务器之前应执行哪些预处理工作的信息。
+这些 **可选** 小节提供了有关哪些数据库列被视为属性，哪些被视为时序键，以及在发送到 GridLinks 服务器之前应执行哪些预处理工作的信息。
 
 连接器支持这些小节的几种配置模式：
 
@@ -297,7 +297,7 @@ LIMIT 10                                             (6)
 ```json
 "timeseries": "*"
 ```
-,表示将所有数据库列视为时间序列。
+,表示将所有数据库列视为时序。
 
 ## “serverSideRpc”部分
 

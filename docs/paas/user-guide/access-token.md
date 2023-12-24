@@ -12,12 +12,12 @@ description: 基于 ThingsBoard 访问令牌的身份验证。
 {:toc}
 
 基于访问令牌的身份验证是默认的设备身份验证类型。
-在 ThingsBoard 中创建设备后，将生成唯一的访问令牌。之后可以更改它。
+在 GridLinks 中创建设备后，将生成唯一的访问令牌。之后可以更改它。
 客户端必须在 MQTT 连接消息中将访问令牌指定为用户名。
 
 #### 纯 MQTT（无 SSL）
 
-让我们回顾一下使用访问令牌 *YOUR_ACCESS_TOKEN* 将温度读数上传到 ThingsBoard Cloud 的简单命令。
+让我们回顾一下使用访问令牌 *YOUR_ACCESS_TOKEN* 将温度读数上传到 GridLinks Cloud 的简单命令。
 有关更多详细信息，请参阅 [MQTT API](/docs/{{docsPrefix}}reference/mqtt-api/)。该命令使用纯 MQTT，不使用 TLS：
 
 ```bash
@@ -38,7 +38,7 @@ wget https://thingsboard.io/docs/{{docsPrefix}}user-guide/resources/mqtt-over-ss
 ```
 {: .copy-code}
 
-现在，您可以使用 *ca-root.pem* 建立与 ThingsBoard Cloud 的安全连接，并使用访问令牌 *YOUR_ACCESS_TOKEN* 对设备进行身份验证以上传遥测数据：
+现在，您可以使用 *ca-root.pem* 建立与 GridLinks云服务 的安全连接，并使用访问令牌 *YOUR_ACCESS_TOKEN* 对设备进行身份验证以上传遥测数据：
 
 ```bash
 mosquitto_pub --cafile ca-root.pem -d -q 1 -h "mqtt.thingsboard.cloud" -p "8883" -t "v1/devices/me/telemetry" -u "YOUR_ACCESS_TOKEN" -m {"temperature":25}

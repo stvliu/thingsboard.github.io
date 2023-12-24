@@ -15,7 +15,7 @@ Enrichment Nodes 用于更新传入消息的元数据。
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-calculate-delta.png)
 
-根据前一时间序列读数和当前读数计算“增量”，并将其添加到消息中。
+根据前一时序读数和当前读数计算“增量”，并将其添加到消息中。
 增量计算在消息发起者的范围内完成，例如设备、资产或客户。
 对于智能计量用例非常有用。
 例如，当水表设备每天报告一次脉冲计数器的绝对值时。

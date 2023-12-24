@@ -74,7 +74,7 @@ const std::array<RPC_Callback, 1U> callbacks = {
 {% assign takePictureRPC = '
     ===
         image: /images/devices-library/basic/microcontrollers/dashboard/thingsboard-example-dashboard-take-a-picture.png,
-        title: 您可以通过按 ThingsBoard 仪表板上的按钮从摄像头模块拍摄照片。
+        title: 您可以通过按 GridLinks 仪表板上的按钮从摄像头模块拍摄照片。
 '
 %}
 

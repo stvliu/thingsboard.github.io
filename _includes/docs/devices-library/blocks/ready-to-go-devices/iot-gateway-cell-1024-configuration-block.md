@@ -4,7 +4,7 @@
         title: 打开浏览器，使用 URL：https://[IP_DEVICE] 访问 Cell 1024 的管理 Web，然后转到“<b>云</b>”选项卡。
     ===
         image: /images/devices-library/ready-to-go-devices/iot-gateway-cell-1024/conn2.png,
-        title: 激活云控制并配置所有参数，以便通过 MQTT 将设备连接到特定的 ThingsBoard 平台。
+        title: 激活云控制并配置所有参数，以便通过 MQTT 将设备连接到特定的 GridLinks 平台。
     ===
         image: /images/devices-library/ready-to-go-devices/iot-gateway-cell-1024/conn3.png,
         title: 单击“<b>保存配置</b>”按钮。
@@ -19,8 +19,8 @@
 |**MQTT 代理 URL**| 要集成的服务器的代理 URL。 |
 |**MQTT 代理端口**| 服务器使用的端口号。 |
 |**TLS**| 如果服务器使用传输层安全协议，请选择 true。 |
-|**连接类型**| 选择“访问令牌”选项。我们将使用之前在 ThingsBoard 中创建的访问令牌。 |
-|**访问令牌**| 指示之前在 ThingsBoard 中复制的访问令牌。 |
+|**连接类型**| 选择“访问令牌”选项。我们将使用之前在 GridLinks 中创建的访问令牌。 |
+|**访问令牌**| 指示之前在 GridLinks 中复制的访问令牌。 |
 
 {% capture provisioningIsComing %}
 **注意**
@@ -31,7 +31,7 @@ EXXN 团队正在研究一种预置集成方法，该方法将无需在设备上
 {% endcapture %}
 {% include templates/info-banner.md content=provisioningIsComing %}
 
-要验证设备是否已正确连接到 ThingsBoard，请转到 **设备组** 菜单 -> **所有** 设备，选择您的设备。  
+要验证设备是否已正确连接到 GridLinks，请转到 **设备组** 菜单 -> **所有** 设备，选择您的设备。  
 在 **设备详细信息** 中选择 **客户端属性** 选项卡，然后检查是否已将客户端属性传达给设备。  
 
 {% assign checkConnection = '
@@ -43,9 +43,9 @@ EXXN 团队正在研究一种预置集成方法，该方法将无需在设备上
 
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=checkConnection %}
 
-EXXN IoT 网关将使用 MQTT API 连接到 ThingsBoard。  
-我们之前已经介绍了如何配置设备以连接到 ThingsBoard。  
-现在，我们将展示在 ThingsBoard 中配置设备以监视数据和管理设备的步骤。  
+EXXN IoT 网关将使用 MQTT API 连接到 GridLinks。  
+我们之前已经介绍了如何配置设备以连接到 GridLinks。  
+现在，我们将展示在 GridLinks 中配置设备以监视数据和管理设备的步骤。  
 
 为了配置 EXXN IoT 网关的数据记录器选项，我们应该为具有键“**config**”的设备创建一个新的 JSON“**共享属性**”。  
 

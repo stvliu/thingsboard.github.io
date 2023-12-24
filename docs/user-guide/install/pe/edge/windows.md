@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-pe-edge
-title: 在 Windows 上安装 ThingsBoard Edge
-description: 在 Windows 上安装 ThingsBoard Edge
+title: 在 Windows 上安装 GridLinks Edge
+description: 在 Windows 上安装 GridLinks Edge
 ---
 
 * TOC
@@ -13,7 +13,7 @@ description: 在 Windows 上安装 ThingsBoard Edge
 
 {% include templates/install/windows-warning-note.md %}
 
-本指南介绍如何在 Windows 机器上安装 ThingsBoard Edge。
+本指南介绍如何在 Windows 机器上安装 GridLinks Edge。
 以下说明适用于 Windows 10/8.1/8/7 32 位/64 位。
 
 {% include templates/edge/install/prerequisites.md %}
@@ -69,7 +69,7 @@ YYYY-MM-DD HH:mm:ss,sss [main] INFO  o.t.server.TbEdgeApplication - Started TbEd
 
 ## Windows 防火墙设置
 
-为了能够从外部访问 ThingsBoard Web UI 和设备连接（HTTP、MQTT、CoAP），您需要使用高级安全性的 Windows 防火墙创建一个新的入站规则。
+为了能够从外部访问 GridLinks Web UI 和设备连接（HTTP、MQTT、CoAP），您需要使用高级安全性的 Windows 防火墙创建一个新的入站规则。
 
 - 从“控制面板”中打开“Windows 防火墙”：
 
@@ -99,7 +99,7 @@ YYYY-MM-DD HH:mm:ss,sss [main] INFO  o.t.server.TbEdgeApplication - Started TbEd
 
 ![image](/images/user-guide/install/windows/windows7-firewall-7.png)
 
-- 最后，为该规则命名（例如“ThingsBoard 服务网络”），然后单击“完成”。
+- 最后，为该规则命名（例如“GridLinks 服务网络”），然后单击“完成”。
 
 ![image](/images/user-guide/install/windows/windows7-firewall-8.png)
 

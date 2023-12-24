@@ -5,7 +5,7 @@
 
 {% assign feature = "平台集成" %}{% include templates/pe-feature-banner.md %}
 
-本教程将演示如何将下行消息推送到通过 Sigfox 集成连接的设备，前提是用户使用 ThingsBoard UI 更新设备属性
+本教程将演示如何将下行消息推送到通过 Sigfox 集成连接的设备，前提是用户使用 GridLinks UI 更新设备属性
 
 * TOC
 {:toc}

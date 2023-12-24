@@ -2,8 +2,8 @@
 layout: docwithnav
 assignees:
 - zbeacon
-title: 如何使用 ThingsBoard IoT 网关将 Modbus 设备连接到 ThingsBoard
-description: 了解如何使用 ThingsBoard IoT 网关将 Modbus 设备连接到 ThingsBoard
+title: 如何使用 GridLinks IoT 网关将 Modbus 设备连接到 GridLinks
+description: 了解如何使用 GridLinks IoT 网关将 Modbus 设备连接到 GridLinks
 
 ---
 
@@ -95,9 +95,9 @@ description: 了解如何使用 ThingsBoard IoT 网关将 Modbus 设备连接到
 让我们分析一下我们的设置：
 
 1. 连接器的常规配置。在此部分中，我们定义了主要设置（例如连接器名称 — Modbus 默认服务器、端口 — 5020 等）。您可以在此处阅读有关可用参数的更多信息。
-2. 常规设备配置。在此部分中，我们定义了 Modbus 设备的主要设置（例如 ThingsBoard 中的设备名称 — TH_sensor、单元 ID — 1 等）。您可以在此处阅读有关可用参数的更多信息。
-3. 时间序列配置。在此部分中，我们设置了温度和湿度参数。您可以在此处阅读有关可用参数的更多信息。
-4. 属性配置。在此部分中，我们定义了 ThingsBoard 中 batteryLevel 属性的设置。您可以在此处阅读有关可用参数的更多信息。
+2. 常规设备配置。在此部分中，我们定义了 Modbus 设备的主要设置（例如 GridLinks 中的设备名称 — TH_sensor、单元 ID — 1 等）。您可以在此处阅读有关可用参数的更多信息。
+3. 时序配置。在此部分中，我们设置了温度和湿度参数。您可以在此处阅读有关可用参数的更多信息。
+4. 属性配置。在此部分中，我们定义了 GridLinks 中 batteryLevel 属性的设置。您可以在此处阅读有关可用参数的更多信息。
 
 将配置文件另存为 modbus.json，放在配置文件夹中（包含常规配置文件 **tb_gateway.yaml** 的目录）。  
 

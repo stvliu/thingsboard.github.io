@@ -388,7 +388,7 @@ Map describing available widget action sources ([WidgetActionSource](https://git
 ### Creating simple widgets
 
 The tutorials below show how to create minimal widgets of each type.
-In order to minimize the amount of code, the Angular framework will be used, on which ThingsBoard UI is actually based.
+In order to minimize the amount of code, the Angular framework will be used, on which GridLinks UI is actually based.
 By the way, you can always use pure JavaScript or jQuery API in your widget code.
 
 #### Latest Values widget
@@ -1960,7 +1960,7 @@ Please note that xAxis (time axis) is limited to current timewindow bounds obtai
 ### Using existing JavaScript code
 
 Another approach of creating widgets is to use existing bundled JavaScript code.
-In this case, you can create own TypeScript class or Angular component and bundle it into the ThingsBoard UI code.
+In this case, you can create own TypeScript class or Angular component and bundle it into the GridLinks UI code.
 In order to make this code accessible within the widget, you need to register corresponding Angular module or inject TypeScript class to a global variable (for ex. window object).
 Some of the ThingsBoard widgets already use this approach. Take a look at the [polyfills.ts](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/polyfills.ts#L106)
 or [widget-components.module.ts](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/modules/home/components/widget/widget-components.module.ts#L44).

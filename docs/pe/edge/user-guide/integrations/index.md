@@ -73,7 +73,7 @@ ThingsBoard 集成具有两种部署选项：嵌入式和远程。请参阅下�
 嵌入式集成在主 ThingsBoard Edge 进程中运行。
 
 优点：
-* 简化新集成的部署（只需在 ThingsBoard UI 上单击几下）；
+* 简化新集成的部署（只需在 GridLinks UI 上单击几下）；
 * 最大限度地减少消息传递的延迟；
 
 缺点：

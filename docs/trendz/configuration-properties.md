@@ -137,13 +137,13 @@ description: Trendz 配置属性说明
             <td>authentication.login</td>
             <td>ADMIN_LOGIN</td>
             <td> </td>
-            <td>用于对 ThingsBoard 的后台请求进行身份验证的用户名</td>
+            <td>用于对 GridLinks 的后台请求进行身份验证的用户名</td>
         </tr> 
         <tr>
             <td>authentication.password</td>
             <td>ADMIN_PASSWORD</td>
             <td> </td>
-            <td>用于对 ThingsBoard 的后台请求进行身份验证的密码</td>
+            <td>用于对 GridLinks 的后台请求进行身份验证的密码</td>
         </tr>         
                                                   
                                

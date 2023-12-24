@@ -8,7 +8,7 @@
 [MQTT](https://en.wikipedia.org/wiki/MQTT) 是一种轻量级的发布-订阅消息传递协议，这可能使其成为各种物联网设备最合适的协议。
 您可以在 [此处](https://mqtt.org/) 找到有关 MQTT 的更多信息。
 
-ThingsBoard 服务器节点充当 MQTT 代理，支持 QoS 级别 0（最多一次）和 1（至少一次）以及一组 [可配置](/docs/{{docsPrefix}}user-guide/device-profiles/#mqtt-device-topic-filters) 主题。
+GridLinks 服务器节点充当 MQTT 代理，支持 QoS 级别 0（最多一次）和 1（至少一次）以及一组 [可配置](/docs/{{docsPrefix}}user-guide/device-profiles/#mqtt-device-topic-filters) 主题。
 
 ##### 客户端库设置
 
@@ -22,7 +22,7 @@ ThingsBoard 服务器节点充当 MQTT 代理，支持 QoS 级别 0（最多一�
 
 连接序列期间可能的返回代码及其原因：
 
-* **0x00 已连接** - 成功连接到 ThingsBoard MQTT 服务器。
+* **0x00 已连接** - 成功连接到 GridLinks MQTT 服务器。
 * **0x04 连接被拒绝，用户名或密码错误** - 用户名为空。
 * **0x05 连接被拒绝，未授权** - 用户名包含无效的 **$ACCESS_TOKEN**。
 
@@ -45,7 +45,7 @@ MQTT<small>Windows</small>%,%mqtt-windows%,%templates/helloworld-pe/mqtt-windows
 
 ## 遥测上传 API
 
-为了将遥测数据发布到 ThingsBoard 服务器节点，请将 PUBLISH 消息发送到以下主题：
+为了将遥测数据发布到 GridLinks 服务器节点，请将 PUBLISH 消息发送到以下主题：
 
 ```shell
 v1/devices/me/telemetry
@@ -94,7 +94,7 @@ ThingsBoard 属性 API 允许设备
 
 ##### 将属性更新发布到服务器
 
-为了将客户端设备属性发布到 ThingsBoard 服务器节点，请将 PUBLISH 消息发送到以下主题：
+为了将客户端设备属性发布到 GridLinks 服务器节点，请将 PUBLISH 消息发送到以下主题：
 
 ```shell
 v1/devices/me/attributes
@@ -109,7 +109,7 @@ C,new-attributes-values.json,json,resources/new-attributes-values.json,/docs/ref
 
 ##### 从服务器请求属性值
 
-为了将客户端或共享设备属性请求到 ThingsBoard 服务器节点，请将 PUBLISH 消息发送到以下主题：
+为了将客户端或共享设备属性请求到 GridLinks 服务器节点，请将 PUBLISH 消息发送到以下主题：
 
 ```shell
 v1/devices/me/attributes/request/$request_id

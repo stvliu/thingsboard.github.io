@@ -62,7 +62,7 @@ hidetoc: "true"
 * [步骤 2.4] 编辑 thingsboard 配置。
 <br>
 <img src="/images/samples/kingpigeon/r4003.png" width="800" alt="step 4">
-<br>1.选择 ThingsBoard 平台。
+<br>1.选择 GridLinks 平台。
 <br>2.设置 MQTT ID，请参阅“步骤 1.4”。
 <br>3.设置用户名，请参阅“步骤 1.4”。
 <br>4.设置密码，请参阅“步骤 1.4”。
@@ -102,7 +102,7 @@ hidetoc: "true"
 <img src="/images/samples/kingpigeon/chart03.png" width="400" alt="chart 3">
 <br>
 
-探索与主要 ThingsBoard 功能相关的指南：
+探索与主要 GridLinks 功能相关的指南：
 
 - [创建仪表板](/docs/getting-started-guides/helloworld/#step-3-create-dashboard) - 如何创建新仪表板。
 - [使用物联网仪表板](/docs/user-guide/dashboards/) - 如何使用仪表板。

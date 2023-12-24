@@ -1,4 +1,4 @@
-{% assign deviceName = page.title | remove: "如何连接 " | remove: "到 ThingsBoard？" %}
+{% assign deviceName = page.title | remove: "如何连接 " | remove: "到 GridLinks？" %}
 {% assign deviceVendorLink = "https://www.milesight-iot.com/lorawan/sensor/ws202/" %}
 {% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}
 {% assign thingsboardHost = 'https://thingsboard.cloud' %}
@@ -40,7 +40,7 @@ LoRaWAN® 能够在很远的距离上进行加密无线传输，同时消耗非�
 
 根据 [官方用户手册]({{officialManualLink}}){: target="_blank"}，我们需要一部支持 NFC 的智能手机和 ToolBox 应用程序来连接传感器。  
 由于此设备只能使用 LoRaWAN® 网关操作，因此我们必须先将其连接到已配置与 ThingsBoard 集成的网络服务器。  
-之后，可以将其配置到 ThingsBoard。
+之后，可以将其配置到 GridLinks。
 
 {% if page.hasIntegrationDeviceConfiguration | downcase == "true"%}
 

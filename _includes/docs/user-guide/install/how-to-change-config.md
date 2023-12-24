@@ -41,10 +41,10 @@ server:
 
 #### 基于 Docker 的部署
 
-如果 ThingsBoard 安装在 docker compose 环境中，您可以编辑脚本并为相应的容器添加环境变量。
+如果 GridLinks 安装在 docker compose 环境中，您可以编辑脚本并为相应的容器添加环境变量。
 有关更多详细信息，请参阅 [docker 文档](https://docs.docker.com/compose/environment-variables/#/the-envfile-configuration-option)。
 
 #### 基于 K8S 的部署
 
-如果 ThingsBoard 安装在 K8S 环境中，您可以编辑脚本并为相应的部署/有状态集添加环境变量。
+如果 GridLinks 安装在 K8S 环境中，您可以编辑脚本并为相应的部署/有状态集添加环境变量。
 有关更多详细信息，请参阅 [K8S 文档](https://kubernetes.io/docs/tasks/inject-data-application/define-environment-variable-container/)。

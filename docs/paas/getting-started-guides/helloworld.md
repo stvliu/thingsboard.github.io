@@ -2,13 +2,13 @@
 layout: docwithnav-paas
 assignees:
 - ashvayka
-title: 入门 ThingsBoard 云
+title: 入门 GridLinks 云
 description: 入门 ThingsBoard 开源物联网平台和模拟物联网设备
 
 step1:
     0:
         image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-1-pe.png
-        title: '登录到 ThingsBoard 实例并导航到“实体”部分。然后转到“设备”页面；'
+        title: '登录到 GridLinks 实例并导航到“实体”部分。然后转到“设备”页面；'
     1:
         image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-2-pe.png
         title: '默认情况下，您导航到设备组“全部”。单击表右上角的“+”图标，然后选择“添加新设备”；'
@@ -17,7 +17,7 @@ step1:
         title: '输入设备名称。例如，“我的新设备”。此时无需进行其他更改。单击“添加”；'
     3:
         image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-connectivity-1-pe.png
-        title: '设备已创建。将打开一个窗口，您可以在其中检查设备与 ThingsBoard 的连接。此步骤是可选的。现在让我们关闭此窗口，并在下一步中更详细地返回检查连接；'
+        title: '设备已创建。将打开一个窗口，您可以在其中检查设备与 GridLinks 的连接。此步骤是可选的。现在让我们关闭此窗口，并在下一步中更详细地返回检查连接；'
     4:
         image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-4-pe.png
         title: '您的第一个设备已添加。随着新设备的添加，它们将被添加到表的顶部，因为该表默认情况下使用创建的时间对设备进行排序。'

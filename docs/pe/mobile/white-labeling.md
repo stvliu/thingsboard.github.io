@@ -1,6 +1,6 @@
 ---
 layout: docwithnav-mobile-pe
-title: 在 ThingsBoard PE 移动应用程序中配置白标
+title: 在 GridLinks PE 移动应用程序中配置白标
 
 login-white-labeling:
  0:

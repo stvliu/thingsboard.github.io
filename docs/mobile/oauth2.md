@@ -1,6 +1,6 @@
 ---
 layout: docwithnav-mobile
-title: 在 ThingsBoard 移动应用程序中配置 OAuth 2.0
+title: 在 GridLinks 移动应用程序中配置 OAuth 2.0
 
 oauth2:
  0:

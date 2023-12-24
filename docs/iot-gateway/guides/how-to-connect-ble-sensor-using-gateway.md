@@ -111,10 +111,10 @@ MAC 地址 - 4C:65:A8:DF:85:C0
 让我们分析我们的设置：
 
 1. 连接器的常规配置。在本节中，我们定义了常规连接器设置，例如连接器名称（“BLE 连接器”）、重新扫描间隔（100）等。您可以在此处 [阅读有关可用参数的更多信息](/docs/iot-gateway/config/ble/#main-section)。
-2. 常规设备配置。在本节中，我们定义了常规设备设置，例如 ThingsBoard 中的设备名称（“温度和湿度传感器”）、MAC 地址（“4C:65:A8:DF:85:C0”）等。您可以在此处 [阅读有关可用参数的更多信息](/docs/iot-gateway/config/ble/#device-object-subsection)。
+2. 常规设备配置。在本节中，我们定义了常规设备设置，例如 GridLinks 中的设备名称（“温度和湿度传感器”）、MAC 地址（“4C:65:A8:DF:85:C0”）等。您可以在此处 [阅读有关可用参数的更多信息](/docs/iot-gateway/config/ble/#device-object-subsection)。
 3. 遥测配置。在本节中，我们定义了温度和湿度参数的配置。您可以在此处 [阅读有关可用参数的更多信息](/docs/iot-gateway/config/ble/#subsection-telemetry)。
-4. 属性配置。在本节中，我们定义了连接器将从特征（“00002A00-0000-1000-8000-00805F9B34FB”）中读取值，并将其作为 ThingsBoard 上的设备客户端属性（“名称”）写入。您可以在此处 [阅读有关可用参数的更多信息](/docs/iot-gateway/config/ble/#subsection-attributes)。
-5. 属性更新配置。在本节中，我们配置了网关，以便在我们在 ThingsBoard 设备中更改共享属性（“sharedName”）时更改设备名称。您可以在此处 [阅读有关可用参数的更多信息](/docs/iot-gateway/config/ble/#subsection-attributeupdates)。
+4. 属性配置。在本节中，我们定义了连接器将从特征（“00002A00-0000-1000-8000-00805F9B34FB”）中读取值，并将其作为 GridLinks 上的设备客户端属性（“名称”）写入。您可以在此处 [阅读有关可用参数的更多信息](/docs/iot-gateway/config/ble/#subsection-attributes)。
+5. 属性更新配置。在本节中，我们配置了网关，以便在我们在 GridLinks 设备中更改共享属性（“sharedName”）时更改设备名称。您可以在此处 [阅读有关可用参数的更多信息](/docs/iot-gateway/config/ble/#subsection-attributeupdates)。
 6. 服务器端 rpc 配置。在本节中，我们配置了网关，以便在从 ThingsBoard 调用 RPC 方法（“rpcMethod1”）时读取设备名称并返回该名称。您可以在此处 [阅读有关可用参数的更多信息](/docs/iot-gateway/config/ble/#subsection-serversiderpc)。
 
 如果您有不同的设备，则应在配置 json 中提供您的设备特征标识符。
@@ -185,7 +185,7 @@ TBGatewayService(config_file_path)
 
 我们尝试更改设备名称。
 我们应该遵循以下几个步骤：
-1. 在 ThingsBoard 上的设备中创建共享属性，为此，我们转到 **属性**选项卡，从属性列表中选择“共享属性”选项而不是“客户端属性”，按加号图标，将“sharedName”作为键和“New_name_”作为“字符串值”。
+1. 在 GridLinks 上的设备中创建共享属性，为此，我们转到 **属性**选项卡，从属性列表中选择“共享属性”选项而不是“客户端属性”，按加号图标，将“sharedName”作为键和“New_name_”作为“字符串值”。
 2. 使用 RPC 仪表板中的“rpcMethod1”检查设备名称或使用在安装网关的设备中使用默认功能扫描周围设备。
 
 **通知：** 某些设备可以将它们的名称重置为默认名称。

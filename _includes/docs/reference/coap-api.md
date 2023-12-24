@@ -9,7 +9,7 @@
 CoAP 协议基于 UDP，但类似于 HTTP，它使用请求-响应模型。
 CoAP 观察 [选项](https://tools.ietf.org/html/rfc7641) 允许订阅资源并在资源更改时接收通知。
 
-ThingsBoard 服务器节点充当支持常规请求和观察请求的 CoAP 服务器。
+GridLinks 服务器节点充当支持常规请求和观察请求的 CoAP 服务器。
 
 ##### 客户端库设置
 
@@ -52,7 +52,7 @@ CoAP cli 不支持查询参数。如果您需要使用查询参数，则应该�
 
 ## 遥测上传 API
 
-要将遥测数据发布到 ThingsBoard 服务器节点，请向以下 URL 发送 POST 请求：
+要将遥测数据发布到 GridLinks 服务器节点，请向以下 URL 发送 POST 请求：
 
 {% if docsPrefix == null or docsPrefix == "pe/" %}
 ```shell
@@ -131,7 +131,7 @@ ThingsBoard 属性 API 允许设备
 
 ##### 将属性更新发布到服务器
 
-要将客户端设备属性发布到 ThingsBoard 服务器节点，请向以下 URL 发送 POST 请求：
+要将客户端设备属性发布到 GridLinks 服务器节点，请向以下 URL 发送 POST 请求：
 
 {% if docsPrefix == null or docsPrefix == "pe/" %}
 
@@ -172,7 +172,7 @@ B,new-attributes-values.json,json,resources/new-attributes-values.json,/docs/ref
 
 ##### 从服务器请求属性值
 
-要向 ThingsBoard 服务器节点请求客户端或共享设备属性，请向以下 URL 发送 GET 请求：
+要向 GridLinks 服务器节点请求客户端或共享设备属性，请向以下 URL 发送 GET 请求：
 
 {% if docsPrefix == null or docsPrefix == "pe/"%}
 ```shell

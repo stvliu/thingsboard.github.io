@@ -1,10 +1,10 @@
 * TOC
 {:toc}
 
-本教程的目的是演示最受欢迎的 ThingsBoard 功能的基本用法。您将学习如何：
+本教程的目的是演示最受欢迎的 GridLinks 功能的基本用法。您将学习如何：
 
-- 将设备连接到 ThingsBoard；
-- 将数据从设备推送到 ThingsBoard；
+- 将设备连接到 GridLinks；
+- 将数据从设备推送到 GridLinks；
 - 构建实时最终用户仪表板；
 - 定义阈值并触发警报；
 - 通过电子邮件、短信或其他系统设置有关新警报的推送通知。
@@ -15,7 +15,7 @@
 
 ## 步骤 1. 配置设备
 
-例如，让我们添加一个设备，该设备将以下数据传输到 ThingsBoard 平台：设备名称和温度读数作为遥测。
+例如，让我们添加一个设备，该设备将以下数据传输到 GridLinks 平台：设备名称和温度读数作为遥测。
 
 要添加新设备，请按照以下步骤操作：
 
@@ -36,17 +36,17 @@
 
 ## 步骤 2. 连接设备
 
-现在，让我们检查我们的设备与 ThingsBoard 平台的连接。
+现在，让我们检查我们的设备与 GridLinks 平台的连接。
 要实现此目的，请使用“检查连接”功能代表您的设备发布遥测数据（例如，温度读数）。您可以在添加设备时和添加设备后执行此操作。
 
 {% include images-gallery.html imageCollection="step2" showListImageTitles="true" %}
 
 <br>
-您还可以使用 [ThingsBoard API 参考](/docs/{{docsPrefix}}api)。在这里，您可以找到有关设备连接支持的所有协议的更详细信息。
+您还可以使用 [GridLinks API 参考](/docs/{{docsPrefix}}api)。在这里，您可以找到有关设备连接支持的所有协议的更详细信息。
 
 ## 步骤 3. 创建仪表板
 
-ThingsBoard 中的仪表板允许用户可视化和监视从物联网设备收集的数据。
+GridLinks 中的仪表板允许用户可视化和监视从物联网设备收集的数据。
 
 让我们创建一个仪表板并在其中添加三个小部件，以便显示实体列表及其最新值，以及显示与指定实体相关的警报信号。
 
@@ -79,7 +79,7 @@ ThingsBoard 中的仪表板允许用户可视化和监视从物联网设备收�
 
 ### 步骤 3.3 添加图表小部件
 
-图表小部件允许您使用可自定义的折线图和条形图显示时间序列数据。
+图表小部件允许您使用可自定义的折线图和条形图显示时序数据。
 
 要添加图表小部件，我们需要从小部件库中选择它。
 图表小部件显示同一数据键（在本例中为“温度”）的多个历史值。
@@ -121,14 +121,14 @@ ThingsBoard 中的仪表板允许用户可视化和监视从物联网设备收�
 
 ## 步骤 6. 警报通知
 
-使用 **通知中心** 设置通知非常容易。ThingsBoard 通知中心允许您向最终用户发送通知。
+使用 **通知中心** 设置通知非常容易。GridLinks 通知中心允许您向最终用户发送通知。
 在此处了解有关通知以及如何配置它们的更多信息 [此处](/docs/{{docsPrefix}}user-guide/notifications/)。
 
 我们还建议查看警报规则 [示例](/docs/{{docsPrefix}}user-guide/device-profiles/#alarm-rules) 和有关 [警报通知](/docs/{{docsPrefix}}user-guide/device-profiles/#notifications-about-alarms) 的文档。
 
 ## 步骤 7. 与客户共享仪表板
 
-ThingsBoard 最重要的功能之一是创建最终用户仪表板的能力。
+GridLinks 最重要的功能之一是创建最终用户仪表板的能力。
 每个客户用户都应该看到自己的设备，并且不应该能够看到属于其他客户的设备或任何其他数据。
 
 我们已经创建了一个设备（请参阅 [步骤 1](#step-1-provision-device)）和一个仪表板（请参阅 [步骤 3](#step-3-create-dashboard)）。
@@ -186,5 +186,5 @@ ThingsBoard 最重要的功能之一是创建最终用户仪表板的能力。
 
 ## 您的反馈
 
-不要犹豫，在 **[github](https://github.com/thingsboard/thingsboard)** 上为 ThingsBoard 加星，以帮助我们传播信息。
+不要犹豫，在 **[github](https://github.com/thingsboard/thingsboard)** 上为 GridLinks 加星，以帮助我们传播信息。
 如果您对本示例有任何疑问，请将其发布在 **[论坛](https://groups.google.com/forum/#!forum/thingsboard)** 上。

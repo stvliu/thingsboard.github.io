@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
-title: Get ThingsBoard Professional Edition
-description: ThingsBoard Professional Edition Installation
+title: Get  GridLinks专业版
+description:  GridLinks专业版 Installation
 hidetoc: "true"
 
 ---

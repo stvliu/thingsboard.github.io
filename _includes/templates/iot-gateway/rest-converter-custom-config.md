@@ -21,7 +21,7 @@
 {% capture difference %}
 <br>
   
-**通常，如果您想从响应中结构不规则的某些设备收集数据，或者在将数据发送到 ThingsBoard 之前需要对数据进行一些处理，则需要自定义转换器。**  
+**通常，如果您想从响应中结构不规则的某些设备收集数据，或者在将数据发送到 GridLinks 之前需要对数据进行一些处理，则需要自定义转换器。**  
 {% endcapture %}  
 {% include templates/info-banner.md content=difference %}  
 

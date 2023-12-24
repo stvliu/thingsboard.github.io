@@ -75,7 +75,7 @@ function decodeToJson(payload) {
 return result;
 ```
 
-解码器函数的目的是将传入的数据和元数据解析为 ThingsBoard 可以使用的一种格式。
+解码器函数的目的是将传入的数据和元数据解析为 GridLinks 可以使用的一种格式。
 **deviceName** 和 **deviceType** 是必需的，而 **attributes** 和 **telemetry** 是可选的。
 **Attributes** 和 **telemetry** 是扁平的键值对象。不支持嵌套对象。
 
@@ -142,7 +142,7 @@ mvn clean install
 主要源代码是 [CustomIntegration](https://github.com/thingsboard/remote-integration-example/blob/master/src/main/java/org/thingsboard/integration/custom/basic/CustomIntegration.java) Java 类。
 集成正在从 TCP 客户端等待 "Hello to ThingsBoard" 消息，并回复 "Hello from ThingsBoard!"。
 一旦 [客户端模拟器](https://github.com/thingsboard/remote-integration-example/blob/master/src/main/java/org/thingsboard/integration/custom/client/CustomClient.java) 接收到 "Hello from ThingsBoard!"，它将开始以以下格式向 ThingsBoard 发送自动生成的数据：**“25,40,94”**。
-集成将按原样将传入消息传递给 [上行转换器](/docs/{{peDocsPrefix}}user-guide/integrations/custom/#uplink-converter)，并将数据推送到 ThingsBoard。
+集成将按原样将传入消息传递给 [上行转换器](/docs/{{peDocsPrefix}}user-guide/integrations/custom/#uplink-converter)，并将数据推送到 GridLinks。
 
 **注意：**从 ThingsBoard 版本 3.3.1 开始，向 tb-remote-integration.yml 添加了一个新的必需配置属性：
 

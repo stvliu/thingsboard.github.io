@@ -3,7 +3,7 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: 小部件库
-description: ThingsBoard 仪表板小部件库
+description: GridLinks 仪表板小部件库
 wl-dashboard-widgets:
     0:
         image: /images/user-guide/ui/widgets/widget-library/wl-dashboard-widgets-ce.png
@@ -12,7 +12,7 @@ wl-dashboard-widgets:
 wl-latest-values-datasource:
     0:
         image: /images/user-guide/ui/widgets/widget-library/latest-values-datasource-1-ce.png
-        title: '此小部件类型使用实体时间序列的值作为数据源；'
+        title: '此小部件类型使用实体时序的值作为数据源；'
     1:
         image: /images/user-guide/ui/widgets/widget-library/latest-values-datasource-2-ce.png
         title: '显示当前温度值的数字仪表。'
@@ -20,10 +20,10 @@ wl-latest-values-datasource:
 wl-timeseries:
     0:
         image: /images/user-guide/ui/widgets/widget-library/wl-timeseries-1-ce.png
-        title: '这种小部件仅使用实体时间序列的值作为数据源；'
+        title: '这种小部件仅使用实体时序的值作为数据源；'
     1:
         image: /images/user-guide/ui/widgets/widget-library/wl-timeseries-2-ce.png
-        title: '时间序列小部件的一个示例是“时间序列折线图”。它实时显示设备的温度值。'
+        title: '时序小部件的一个示例是“时序折线图”。它实时显示设备的温度值。'
 
 wl-control-widget:
     0:
@@ -75,7 +75,7 @@ wl-analog-gauges-bundle:
 wl-cards-bundle:
     0:
         image: /images/user-guide/ui/widgets/widget-library/wl-cards-bundle-ce.png
-        title: '用于在表格或卡片小部件中可视化时间序列数据或属性。'
+        title: '用于在表格或卡片小部件中可视化时序数据或属性。'
 
 wl-charts-bundle:
     0:
@@ -185,7 +185,7 @@ wl-scheduling-bundle:
 wl-tables-bundle:
     0:
         image: /images/user-guide/ui/widgets/widget-library/wl-tables-bundle-ce.png
-        title: '用于显示实体列表、警报信号列表和一个或多个实体的时间序列数据，以及显示基于实体别名和可选过滤器的持久性 RPC 请求，并具有分页功能。'
+        title: '用于显示实体列表、警报信号列表和一个或多个实体的时序数据，以及显示基于实体别名和可选过滤器的持久性 RPC 请求，并具有分页功能。'
 
 add-widget:
     0:

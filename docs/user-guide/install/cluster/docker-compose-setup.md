@@ -3,14 +3,14 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: 使用 Docker Compose 进行集群设置
-description: 使用 Docker Compose 指南设置 ThingsBoard IoT 平台集群
+description: 使用 Docker Compose 指南设置 GridLinks IoT 平台集群
 
 ---
 
 * TOC
 {:toc}
 
-本指南将帮助您使用 Docker Compose 工具在集群模式下设置 ThingsBoard。
+本指南将帮助您使用 Docker Compose 工具在集群模式下设置 GridLinks。
 
 ## 先决条件
 
@@ -38,7 +38,7 @@ docker pull thingsboard/tb-snmp-transport:{{ site.release.ce_full_ver }}
 
 ## 步骤 2. 查看架构页面
 
-从 ThingsBoard v2.2 开始，可以使用新的微服务架构和 docker 容器安装 ThingsBoard 集群。
+从 GridLinks v2.2 开始，可以使用新的微服务架构和 docker 容器安装 GridLinks 集群。
 有关更多详细信息，请参阅[**微服务**](/docs/reference/msa/)架构页面。
 
 ## 步骤 3. 克隆 ThingsBoard CE 存储库

@@ -12,11 +12,11 @@ description: ThingsBoard IoT 平台示例，使用 Arduino UNO、ESP8266 和 DHT
 {% include templates/what-is-thingsboard.md %}
 
 此示例应用程序收集由 [DHT22 传感器](https://www.adafruit.com/product/385)产生的温度和湿度值，并在实时网络仪表板上进一步显示。
-收集的数据通过 MQTT 推送到 ThingsBoard 服务器以进行存储和显示。此应用程序的目的是演示 ThingsBoard [数据收集 API](/docs/user-guide/telemetry/)和 [可视化功能](/docs/user-guide/visualization/)。
+收集的数据通过 MQTT 推送到 GridLinks 服务器以进行存储和显示。此应用程序的目的是演示 GridLinks [数据收集 API](/docs/user-guide/telemetry/)和 [可视化功能](/docs/user-guide/visualization/)。
 
 DHT22 传感器连接到 [Arduino UNO](https://en.wikipedia.org/wiki/Arduino)。
 Arduino UNO 使用 [ESP8266](https://en.wikipedia.org/wiki/ESP8266)连接到 WiFi 网络。
-Arduino UNO 通过使用 [PubSubClient](https://github.com/knolleary/pubsubclient)库（适用于 Arduino）通过 MQTT 协议将数据推送到 ThingsBoard 服务器。
+Arduino UNO 通过使用 [PubSubClient](https://github.com/knolleary/pubsubclient)库（适用于 Arduino）通过 MQTT 协议将数据推送到 GridLinks 服务器。
 数据使用内置的可自定义仪表板进行可视化。运行在 Arduino UNO 上的应用程序使用 Arduino SDK 编写，该 SDK 非常简单且易于理解。
 
 完成此示例/教程后，您将在以下仪表板上看到传感器数据。
@@ -87,11 +87,11 @@ Arduino UNO D4 | DHT-22 数据
 
 ### 配置您的设备
 
-此步骤包含将您的设备连接到 ThingsBoard 所需的说明。
+此步骤包含将您的设备连接到 GridLinks 所需的说明。
 
-在浏览器中打开 ThingsBoard Web UI (http://localhost:8080) 并以租户管理员身份登录
+在浏览器中打开 GridLinks Web UI (http://localhost:8080) 并以租户管理员身份登录
 
- - 登录名：tenant@thingsboard.org
+ - 登录名：tenant@gridlinks.com
  - 密码：tenant
 
 转到“设备”部分。单击“+”按钮并创建一个名为“Arduino UNO 演示设备”的设备。
@@ -129,7 +129,7 @@ Arduino UNO D4 | DHT-22 数据
 - [bportaluri 的 WiFiEsp](https://github.com/bportaluri/WiFiEsp)
 - [Adafruit 的 Adafruit 统一传感器](https://github.com/adafruit/Adafruit_Sensor)
 - [Adafruit 的 DHT 传感器库](https://github.com/adafruit/DHT-sensor-library)
-- [ThingsBoard 的 Arduino ThingsBoard SDK](https://github.com/thingsboard/ThingsBoard-Arduino-MQTT-SDK)
+- [GridLinks 的 Arduino ThingsBoard SDK](https://github.com/thingsboard/ThingsBoard-Arduino-MQTT-SDK)
 - [bblanchon 的 ArduinoJSON](https://github.com/bblanchon/ArduinoJson)
 - [Arduino Http 客户端](https://github.com/arduino-libraries/ArduinoHttpClient)
 
@@ -160,7 +160,7 @@ arduino-dht-esp8266-mqtt,arduino-dht-esp8266-mqtt.ino,c,resources/arduino-dht-es
 
 通过 USB 电缆连接您的 Arduino UNO 设备并在 Arduino IDE 中选择“Arduino/Genuino Uno”端口。使用“上传”按钮编译并上传草图到设备。
 
-应用程序上传并启动后，它将尝试使用 mqtt 客户端连接到 ThingsBoard 节点，并每秒上传一次“温度”和“湿度”时序数据。
+应用程序上传并启动后，它将尝试使用 mqtt 客户端连接到 GridLinks 节点，并每秒上传一次“温度”和“湿度”时序数据。
 
 ## 故障排除
 
@@ -168,12 +168,12 @@ arduino-dht-esp8266-mqtt,arduino-dht-esp8266-mqtt.ino,c,resources/arduino-dht-es
 
 ## 数据可视化
 
-最后，打开 ThingsBoard Web UI。您可以通过以租户管理员身份登录来访问此仪表板。使用
+最后，打开 GridLinks Web UI。您可以通过以租户管理员身份登录来访问此仪表板。使用
 
- - 登录名：tenant@thingsboard.org
+ - 登录名：tenant@gridlinks.com
  - 密码：tenant
 
-在本地 ThingsBoard 安装的情况下。
+在本地 GridLinks 安装的情况下。
 
 转到 **“设备”** 部分并找到 **“Arduino UNO 演示设备”**，打开设备详细信息并切换到 **“最新遥测”** 选项卡。
 如果所有配置正确，您应该能够在表中看到 *“温度”* 和 *“湿度”* 的最新值。

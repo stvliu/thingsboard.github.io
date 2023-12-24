@@ -1,5 +1,5 @@
 {% assign boardLedCount = 0 %}
-{% assign deviceName = page.title | remove: "如何连接 " | remove: "到 ThingsBoard？" %}
+{% assign deviceName = page.title | remove: "如何连接 " | remove: "到 GridLinks？" %}
 {% assign arduinoBoardPath = "**ESP32** > **ESP32 Pico-D4** (旧名称为 ESP32 Pico 套件)" %}
 {% assign prerequisites = "
 - " | append: deviceName | append: "
@@ -16,7 +16,7 @@ ESP32 PICO 套件是由 Espressif 生产的基于 ESP32 的开发板。
 
 {% include /docs/devices-library/blocks/basic/introduction-block.md %}
 
-## 在 ThingsBoard 上创建设备
+## 在 GridLinks 上创建设备
 
 {% include /docs/devices-library/blocks/basic/thingsboard-create-device-block.md %}
 
@@ -26,13 +26,13 @@ ESP32 PICO 套件是由 Espressif 生产的基于 ESP32 的开发板。
 
 {% include /docs/devices-library/blocks/microcontrollers/thingsboard-arduino-library-install-block.md %}
 
-## 将设备连接到 ThingsBoard
+## 将设备连接到 GridLinks
 
 {% include /docs/devices-library/blocks/basic/thingsboard-provide-device-access-token-block.md %}
 
 {% include /docs/devices-library/blocks/microcontrollers/general-code-to-program-block.md %}
 
-## 在 ThingsBoard 上检查数据
+## 在 GridLinks 上检查数据
 
 {% include /docs/devices-library/blocks/basic/thingsboard-upload-example-dashboard.md %}
 

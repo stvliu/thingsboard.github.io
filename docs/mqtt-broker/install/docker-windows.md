@@ -36,7 +36,7 @@ docker-compose 文件中 TBMQ 的主要配置点：
 - `restart: always` - 在系统重新启动时自动启动 TBMQ，并在发生故障时重新启动；
 - `SECURITY_MQTT_BASIC_ENABLED: "true"` - 启用 MQTT 基本安全性。**注意**：默认情况下安全性处于禁用状态。
 
-**注意**：如果在已经运行 ThingsBoard 的同一主机上安装 TBMQ，则可能会看到以下问题：
+**注意**：如果在已经运行 GridLinks 的同一主机上安装 TBMQ，则可能会看到以下问题：
 
 ```
 Error response from daemon: ... Bind for 0.0.0.0:1883 failed: port is already allocated

@@ -151,11 +151,11 @@ CoAP<br>%,%aws%,%templates/install/coap-firmware.md%br%{% endcapture %}
 
 ## 仪表板
 
-ThingsBoard 提供固件/软件更新的摘要，以监控和跟踪设备的固件/软件更新状态，例如哪些设备正在更新、任何启动问题以及哪些设备已更新。
+GridLinks 提供固件/软件更新的摘要，以监控和跟踪设备的固件/软件更新状态，例如哪些设备正在更新、任何启动问题以及哪些设备已更新。
 
 ### 固件更新监控仪表板
 
-仪表板会自动为添加到 ThingsBoard 的每个新租户创建。
+仪表板会自动为添加到 GridLinks 的每个新租户创建。
 您还可以下载仪表板 JSON [此处](https://github.com/thingsboard/thingsboard/blob/master/application/src/main/data/json/demo/dashboards/firmware.json) 并将其导入现有租户。
 
 在那里，您可以看到所有设备的列表，其中包含有关其固件的完整信息。
@@ -168,7 +168,7 @@ ThingsBoard 提供固件/软件更新的摘要，以监控和跟踪设备的固�
 
 ### 软件更新监控仪表板
 
-仪表板会自动为添加到 ThingsBoard 的每个新租户创建。
+仪表板会自动为添加到 GridLinks 的每个新租户创建。
 您还可以下载仪表板 JSON [此处](https://github.com/thingsboard/thingsboard/blob/master/application/src/main/data/json/demo/dashboards/software.json) 并将其导入现有租户。
 
 在那里，您可以看到所有设备的列表，其中包含有关其软件的完整信息。

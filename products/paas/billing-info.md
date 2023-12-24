@@ -3,7 +3,7 @@ layout: docwithnav-paas
 assignees:
 - ashvayka
 title: 计划和计费
-description: 通过 ThingsBoard Cloud 的计费选项
+description: 通过 GridLinks云服务 的计费选项
 subscription:
     0:
         image: /images/cloud/subscription.png

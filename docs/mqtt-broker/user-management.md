@@ -8,7 +8,7 @@ description: 用户管理指南
 * TOC
 {:toc}
 
-默认情况下，系统最初建立时只有一个管理员用户，用户名为 **sysadmin@thingsboard.org**，密码为 **sysadmin**。
+默认情况下，系统最初建立时只有一个管理员用户，用户名为 **sysadmin@gridlinks.com**，密码为 **sysadmin**。
 
 但是，在生产环境中运行时，强烈建议创建一个新的管理员用户，完全删除默认用户或修改上述用户关联的密码。
 

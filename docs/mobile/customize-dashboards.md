@@ -1,6 +1,6 @@
 ---
 layout: docwithnav-mobile
-title: 在 ThingsBoard 移动应用程序中自定义主页屏幕
+title: 在 GridLinks 移动应用程序中自定义主页屏幕
 
 dashboard-image:
  0:

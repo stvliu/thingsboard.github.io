@@ -10,14 +10,14 @@ description: 服务 RPC 方法
 {:toc}
 
 
-本指南解释了如何在 ThingsBoard IoT 网关中使用 RPC API。
+本指南解释了如何在 GridLinks IoT 网关中使用 RPC API。
 
 为了本教程的目的，您需要：
 
-1. 本地安装的 ThingsBoard 平台实例（如果您是 ThingsBoard 新手，[使用此“如何安装”文档](/docs/user-guide/install/installation-options/)）。
+1. 本地安装的 GridLinks 平台实例（如果您是 GridLinks 新手，[使用此“如何安装”文档](/docs/user-guide/install/installation-options/)）。
 2. [已安装](/docs/iot-gateway/installation/) 和 [已配置](/docs/iot-gateway/configuration/) ThingsBoard IoT 网关。
 
-## 步骤 1. 创建一个仪表板以在 ThingsBoard IoT 网关中使用 RPC API
+## 步骤 1. 创建一个仪表板以在 GridLinks IoT 网关中使用 RPC API
 
 要使用调试终端，我们必须从 **控制小部件** 包中添加 **RPC 调试终端** 小部件。<br>
 为此，我们执行以下步骤：

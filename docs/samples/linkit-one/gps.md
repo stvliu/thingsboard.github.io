@@ -13,11 +13,11 @@ description: ThingsBoard IoT 平台示例，用于使用 LinkIt ONE 上传和可
 
 此示例应用程序展示了跟踪 LinkIt ONE 设备的 GPS 位置并在地图上执行进一步可视化的功能。
 它执行 GPS 模块产生的纬度和经度值的收集。
-收集的数据被推送到 ThingsBoard 以进行存储和可视化。
-此应用程序的目的是演示 ThingsBoard 数据收集 API 和可视化功能。
+收集的数据被推送到 GridLinks 以进行存储和可视化。
+此应用程序的目的是演示 GridLinks 数据收集 API 和可视化功能。
 
 GPS 模块是 [LinkIt ONE](https://wiki.seeedstudio.com/LinkIt_ONE/) 的内置模块。
-LinkIt ONE 通过使用 Arduino 的 [PubSubClient](https://github.com/knolleary/pubsubclient) 库通过 MQTT 协议将数据推送到 ThingsBoard 服务器。
+LinkIt ONE 通过使用 Arduino 的 [PubSubClient](https://github.com/knolleary/pubsubclient) 库通过 MQTT 协议将数据推送到 GridLinks 服务器。
 数据使用地图小部件进行可视化，该小部件是可自定义仪表板的一部分。
 在 LinkIt ONE 上运行的应用程序使用 Arduino SDK 编写，非常简单易懂。
 
@@ -40,11 +40,11 @@ LinkIt ONE 通过使用 Arduino 的 [PubSubClient](https://github.com/knolleary/
 
 ### 配置您的设备
 
-此步骤包含将您的设备连接到 ThingsBoard 所需的说明。
+此步骤包含将您的设备连接到 GridLinks 所需的说明。
 
-在浏览器中打开 ThingsBoard Web UI (http://localhost:8080) 并以租户管理员身份登录
+在浏览器中打开 GridLinks Web UI (http://localhost:8080) 并以租户管理员身份登录
 
-- 登录名：tenant@thingsboard.org
+- 登录名：tenant@gridlinks.com
 - 密码：tenant
 
 转到“设备”部分。
@@ -103,7 +103,7 @@ gps,gps_tracker.ino,c,resources/gps_tracker.ino,/docs/samples/linkit-one/resourc
 通过 USB 电缆连接您的 LinkIt One 设备并在 Arduino IDE 中选择串行调试 COM 端口。
 使用“上传”按钮编译并上传草图到设备。
 
-应用程序上传并启动后，它将尝试使用 mqtt 客户端连接到 ThingsBoard 节点，并每秒上传一次“纬度”和“经度”属性。
+应用程序上传并启动后，它将尝试使用 mqtt 客户端连接到 GridLinks 节点，并每秒上传一次“纬度”和“经度”属性。
 
 ## 故障排除
 
@@ -111,14 +111,14 @@ gps,gps_tracker.ino,c,resources/gps_tracker.ino,/docs/samples/linkit-one/resourc
 
 ## 数据可视化
 
-最后，打开 ThingsBoard Web UI。
+最后，打开 GridLinks Web UI。
 您可以通过以租户管理员身份登录来访问此仪表板。
 使用
 
-- 登录名：tenant@thingsboard.org
+- 登录名：tenant@gridlinks.com
 - 密码：tenant
 
-在本地 ThingsBoard 安装的情况下。
+在本地 GridLinks 安装的情况下。
 
 转到 **“设备”** 部分并找到 **“LinkIt One Demo Device”**，打开设备详细信息并切换到 **“属性”** 选项卡。
 如果所有配置正确，您应该能够在表中看到 *“纬度”*、*“经度”* 和电池状态属性及其最新值。

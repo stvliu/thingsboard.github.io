@@ -1,6 +1,6 @@
 ---
 layout: devices-library-article
-title: 如何将混合输入、8 通道模拟蜂窝记录器连接到 ThingsBoard？
+title: 如何将混合输入、8 通道模拟蜂窝记录器连接到 GridLinks？
 category: 其他设备
 connectivity: HTTP、MQTT、NB-IoT、LTE-M
 vendor: Fusion DAQ

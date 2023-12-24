@@ -19,10 +19,10 @@ description: ThingsBoard IoT 平台性能测试
  - [测试客户端 AMI](https://console.aws.amazon.com/ec2/v2/home?region=us-west-1#LaunchInstanceWizard:ami=ami-30b0ec50)（用户名 **ubuntu**）
 
 
-如果您想验证托管在单个服务器实例上的所有组件的性能，只需运行 ThingsBoard AMI 实例。
+如果您想验证托管在单个服务器实例上的所有组件的性能，只需运行 GridLinks AMI 实例。
 默认情况下，此实例将使用本地运行的 Cassandra。
 
-如果您想验证使用外部 Cassandra 集群的独立 ThingsBoard 服务器的性能，请先使用提供的 Cassandra AMI 初始化 Cassandra 集群。
+如果您想验证使用外部 Cassandra 集群的独立 GridLinks 服务器的性能，请先使用提供的 Cassandra AMI 初始化 Cassandra 集群。
 例如，我们对三个 Cassandra 实例进行配置。
 使用 Cassandra AMI 启动 3 个 AWS 实例后，请更新 **cassandra.yml** 文件以使其在集群中运行。
 在我们的案例中，我们有 3 个实例，其 IP 地址如下：
@@ -107,7 +107,7 @@ cqlsh 172.21.12.100 -f /usr/share/thingsboard/data/system-data.cql
 cqlsh 172.21.12.100 -f /usr/share/thingsboard/data/demo-data.cql 
 ```
 
-Cassandra 集群设置完成后，请运行 ThingsBoard AMI 实例。您需要更新 **thingsboard.yml** 配置以使用 Cassandra 集群而不是本地实例：
+Cassandra 集群设置完成后，请运行 GridLinks AMI 实例。您需要更新 **thingsboard.yml** 配置以使用 Cassandra 集群而不是本地实例：
 
 ```bash
 sudo nano /etc/thingsboard/conf/thingsboard.yml
@@ -119,20 +119,20 @@ sudo nano /etc/thingsboard/conf/thingsboard.yml
 url: "${CASSANDRA_URL:172.21.12.100:9042,172.21.12.101:9042,172.21.12.102:9042}"
 ```
 
-配置更新后，重新启动 ThingsBoard 服务：
+配置更新后，重新启动 GridLinks 服务：
 
 ```bash
 sudo service thingsboard stop
 sudo service thingsboard start
 ```
 
-使用 ThingsBoard 和 Cassandra AMI 设置集群配置后，您可以使用以下命令从“客户端”计算机（ThingsBoard 性能测试 AMI）执行测试：
+使用 GridLinks 和 Cassandra AMI 设置集群配置后，您可以使用以下命令从“客户端”计算机（ThingsBoard 性能测试 AMI）执行测试：
  
 ```bash
 cd projects/performance-tests
 ```
 
-更新 **mqttUrls** 和 **restUrl**，并在 **test.properties** 文件中设置部署 ThingsBoard 服务的 AWS 实例的专用 IP：
+更新 **mqttUrls** 和 **restUrl**，并在 **test.properties** 文件中设置部署 GridLinks 服务的 AWS 实例的专用 IP：
 
 ```bash
 nano src/main/resources/test.properties

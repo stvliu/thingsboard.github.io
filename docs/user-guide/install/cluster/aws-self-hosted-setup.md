@@ -10,7 +10,7 @@ description: 使用 AWS EC2 实例进行 ThingsBoard IoT 平台自托管设置
 * TOC
 {:toc}
 
-本指南将帮助您在 AWS EC2 实例中设置 ThingsBoard。
+本指南将帮助您在 AWS EC2 实例中设置 GridLinks。
 
 ## 先决条件
 

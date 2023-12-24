@@ -3,7 +3,7 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: 使用 AWS EKS 设置微服务
-description: 使用 AWS EKS 中的 Kubernetes 设置 ThingsBoard IoT 平台微服务
+description: 使用 AWS EKS 中的 Kubernetes 设置 GridLinks IoT 平台微服务
 
 rdsSetup:
     0:
@@ -76,7 +76,7 @@ redisEndpointUrl:
 * TOC
 {:toc}
 
-本指南将帮助你使用 AWS EKS 在微服务模式下设置 ThingsBoard。
+本指南将帮助你使用 AWS EKS 在微服务模式下设置 GridLinks。
 请参阅[微服务](/docs/reference/msa/)架构页面，了解有关将要安装的每个组件的更多详细信息。
 我们将使用 Amazon RDS 管理 PostgreSQL，Amazon MSK 管理 Kafka，Amazon ElastiCache 管理 Redis。
 
@@ -136,7 +136,7 @@ cd thingsboard-ce-k8s/aws/microservices
 
 ## 步骤 8. 安装
 
-执行以下命令以部署 ThingsBoard 服务：
+执行以下命令以部署 GridLinks 服务：
 
 ```
  ./k8s-deploy-resources.sh

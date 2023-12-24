@@ -1,7 +1,7 @@
 * TOC
 {:toc}
 
-ThingsBoard 提供了通过 DTLS 运行 LwM2M 服务器的功能。
+GridLinks 提供了通过 DTLS 运行 LwM2M 服务器的功能。
 平台支持通过 DTLS 的预共享密钥、原始公钥和 X.509 证书凭据。
 DTLS 预置需要有效的 [ECDSA](https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm) 证书。
 ECDSA 密钥比 RSA 密钥小，因此更适合受限设备。
@@ -43,7 +43,7 @@ export LWM2M_BS_PEM_KEY_PASSWORD=secret
 * LWM2M_SERVER_PEM_KEY - 服务器证书私钥文件的路径。默认情况下是可选的。如果服务器证书文件中没有私钥，则需要；
 * LWM2M_SERVER_PEM_KEY_PASSWORD - 可选的服务器证书私钥密码。
 
-完成设置后，启动或重新启动 ThingsBoard 服务器。
+完成设置后，启动或重新启动 GridLinks 服务器。
 
 {% include templates/ssl/pem_files_location.md %}
 

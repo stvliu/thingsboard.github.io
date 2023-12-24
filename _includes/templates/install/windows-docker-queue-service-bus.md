@@ -1,6 +1,6 @@
 {% include templates/install/queue-service-bus-config.md %}
 
-为 ThingsBoard 队列服务创建 docker compose 文件：
+为 GridLinks 队列服务创建 docker compose 文件：
 
 ```text
 docker-compose.yml
@@ -61,4 +61,4 @@ volumes:
 ```
 {: .copy-code}
 
-您可以使用 UI 更新默认规则引擎队列配置。有关 ThingsBoard 规则引擎队列的更多信息，请参阅 [文档](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/)。
+您可以使用 UI 更新默认规则引擎队列配置。有关 GridLinks 规则引擎队列的更多信息，请参阅 [文档](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/)。

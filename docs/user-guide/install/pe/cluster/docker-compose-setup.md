@@ -2,8 +2,8 @@
 layout: docwithnav-pe
 assignees:
 - ashvayka
-title: ThingsBoard Professional Edition 集群设置与 Docker Compose 指南
-description: ThingsBoard Professional Edition 集群设置与 Docker Compose 指南
+title:  GridLinks专业版 集群设置与 Docker Compose 指南
+description:  GridLinks专业版 集群设置与 Docker Compose 指南
 redirect_from: "/docs/user-guide/install/pe/docker-cassandra/"  
 
 ---
@@ -13,7 +13,7 @@ redirect_from: "/docs/user-guide/install/pe/docker-cassandra/"
 
 {% assign docsPrefix = "pe/" %}
 
-本指南将帮助您使用 Docker Compose 在集群模式下设置 ThingsBoard。
+本指南将帮助您使用 Docker Compose 在集群模式下设置 GridLinks。
 为此，我们将使用 [Docker Hub](https://hub.docker.com/search?q=thingsboard&type=image&image_filter=store) 上提供的 Docker 容器映像。
 
 ## 先决条件
@@ -63,14 +63,14 @@ nano tb-node.env
 并将许可证密钥参数放在 "PUT_YOUR_LICENSE_SECRET_HERE" 的位置：
 
 ```bash
-# ThingsBoard 服务器配置
+# GridLinks 服务器配置
 ...
 TB_LICENSE_SECRET=PUT_YOUR_LICENSE_SECRET_HERE
 ```
 
 ## 步骤 5. 配置部署类型
 
-从 ThingsBoard v2.2 开始，可以使用新的微服务架构和 Docker 容器安装 ThingsBoard 集群。
+从 GridLinks v2.2 开始，可以使用新的微服务架构和 Docker 容器安装 GridLinks 集群。
 有关更多详细信息，请参阅 [**微服务**](/docs/reference/msa/) 架构页面。
 
 Docker Compose 脚本支持三种部署模式。要设置部署模式，请将 `.env` 文件中 `TB_SETUP` 变量的值更改为以下之一：

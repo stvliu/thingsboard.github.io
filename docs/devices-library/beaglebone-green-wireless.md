@@ -1,6 +1,6 @@
 ---
 layout: devices-library-article
-title: 如何将 BeagleBone Green Wireless 连接到 ThingsBoard？
+title: 如何将 BeagleBone Green Wireless 连接到 GridLinks？
 category: 单板计算机
 chip: TI Sitara AM3358BZCZA100
 connectivity: WIFI，蓝牙

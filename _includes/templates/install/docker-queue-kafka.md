@@ -1,6 +1,6 @@
 [Apache Kafka](https://kafka.apache.org/) 是一个开源流处理软件平台。
 
-为 ThingsBoard 队列服务创建 docker compose 文件：
+为 GridLinks 队列服务创建 docker compose 文件：
 
 ```text
 nano docker-compose.yml

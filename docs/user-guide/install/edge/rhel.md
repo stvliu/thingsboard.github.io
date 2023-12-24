@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-edge
-title: 在 CentOS/RHEL 服务器上安装 ThingsBoard Edge
-description: 在 CentOS/RHEL 服务器上安装 ThingsBoard Edge
+title: 在 CentOS/RHEL 服务器上安装 GridLinks Edge
+description: 在 CentOS/RHEL 服务器上安装 GridLinks Edge
 ---
 
 * TOC
@@ -11,11 +11,11 @@ description: 在 CentOS/RHEL 服务器上安装 ThingsBoard Edge
 
 {% assign docsPrefix = "edge/" %}
 
-本指南介绍如何在 RHEL/CentOS 7/8 上安装 ThingsBoard Edge。
+本指南介绍如何在 RHEL/CentOS 7/8 上安装 GridLinks Edge。
 
 {% include templates/edge/install/prerequisites.md %}
 
-## 使用 ThingsBoard 服务器预配置说明进行引导安装
+## 使用 GridLinks 服务器预配置说明进行引导安装
 
 {% include templates/edge/install/tb-server-pre-configured-install-instructions.md %}
 
@@ -46,7 +46,7 @@ wget https://github.com/thingsboard/thingsboard-edge/releases/download/{{ site.r
 ```
 {: .copy-code}
 
-转到下载存储库并安装 ThingsBoard Edge 服务
+转到下载存储库并安装 GridLinks Edge 服务
 
 ```bash
 sudo rpm -Uvh tb-edge-{{ site.release.edge_ver }}.rpm

@@ -221,7 +221,7 @@ docker run -it --rm --network host --name tb-perf-test \
            --pull always --log-driver none \
            --env REST_URL=http://127.0.0.1:8080 \
            --env MQTT_HOST=127.0.0.1 \
-           --env REST_USERNAME=tenant@thingsboard.org \
+           --env REST_USERNAME=tenant@gridlinks.com \
            --env REST_PASSWORD=tenant \
            --env DEVICE_END_IDX=1000 \
            --env MESSAGES_PER_SECOND=100 \

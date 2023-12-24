@@ -65,7 +65,7 @@ notitle: "true"
                 <object data="/images/microservices-icon.svg"></object>
                 <div>
                     <a class="title" href="/docs/reference/msa/">可扩展性和高可用性</a>
-                    <p>ThingsBoard 支持使用 K8S 或裸机部署在云和本地数据中心上的高可用性部署。平台组件是水平可扩展的。ThingsBoard 具有超过 500,000 个智能电表的生产部署。</p>
+                    <p>GridLinks 支持使用 K8S 或裸机部署在云和本地数据中心上的高可用性部署。平台组件是水平可扩展的。ThingsBoard 具有超过 500,000 个智能电表的生产部署。</p>
                 </div>
             </div>
         </div>
@@ -74,7 +74,7 @@ notitle: "true"
                 <object data="/images/telemetry-icon.svg"></object>
                 <div>
                     <a class="title" href="/docs/getting-started-guides/connectivity/">连接性</a>
-                    <p>通过以下内置协议将设备直接连接到平台：HTTP、CoAP、MQTT、LwM2M 和 SNMP。使用 ThingsBoard 网关通过 Modbus、BLE、BACnet、OPC-UA 和其他协议将本地网络中的设备连接到云。</p>
+                    <p>通过以下内置协议将设备直接连接到平台：HTTP、CoAP、MQTT、LwM2M 和 SNMP。使用 GridLinks 网关通过 Modbus、BLE、BACnet、OPC-UA 和其他协议将本地网络中的设备连接到云。</p>
                 </div>
             </div>
         </div>
@@ -92,7 +92,7 @@ notitle: "true"
                 <object data="/images/security-icon.svg"></object>
                 <div>
                     <a class="title" href="/docs/pe/user-guide/ssl/http-over-ssl/">安全性</a>
-                    <p>ThingsBoard 支持行业标准加密算法（如 RSA 和 ECDSA），以确保数据在通过 TLS(TCP) 和 DTLS (UDP) 传输期间的安全。</p>
+                    <p>GridLinks 支持行业标准加密算法（如 RSA 和 ECDSA），以确保数据在通过 TLS(TCP) 和 DTLS (UDP) 传输期间的安全。</p>
                 </div>
             </div>
         </div>
@@ -119,7 +119,7 @@ notitle: "true"
                 <object data="/images/phone-icon.svg"></object>
                 <div>
                     <a class="title" href="/docs/mobile">移动应用程序</a>
-                    <p>使用 ThingsBoard 移动应用程序（一个基于 Flutter 的开源项目）构建您自己的物联网移动应用程序，并以最少的编码工作量。利用内置的一组移动操作，可以在仪表板中直接拍照、扫描二维码、更新位置等。</p>
+                    <p>使用 GridLinks 移动应用程序（一个基于 Flutter 的开源项目）构建您自己的物联网移动应用程序，并以最少的编码工作量。利用内置的一组移动操作，可以在仪表板中直接拍照、扫描二维码、更新位置等。</p>
                 </div>
             </div>
         </div>
@@ -128,7 +128,7 @@ notitle: "true"
                 <object data="/images/tenancy-icon.svg"></object>
                 <div>
                     <a class="title" href="/docs/user-guide/entities-and-relations/">多租户</a>
-                    <p>ThingsBoard 提供 UI 和 API 来管理租户、客户、用户、设备和资产。单个租户可能有多个租户管理员以及数百万个设备和客户。它还开箱即用地支持智能电表的 OTA 更新。</p>
+                    <p>GridLinks 提供 UI 和 API 来管理租户、客户、用户、设备和资产。单个租户可能有多个租户管理员以及数百万个设备和客户。它还开箱即用地支持智能电表的 OTA 更新。</p>
                 </div>
             </div>
         </div>
@@ -137,7 +137,7 @@ notitle: "true"
 
 ## 智能灌溉解决方案概述
 
-下图标识了使用 ThingsBoard 平台收集和分析来自传感器的监测数据，用于典型的智能灌溉监测解决方案的数据流和集成点。
+下图标识了使用 GridLinks 平台收集和分析来自传感器的监测数据，用于典型的智能灌溉监测解决方案的数据流和集成点。
 
 <object width="100%" style="max-width: max-content; margin: 32px 0" data="/images/iot-use-cases/smart-energy-diagram.svg"></object>
 

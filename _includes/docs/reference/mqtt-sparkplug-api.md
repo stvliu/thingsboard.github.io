@@ -24,7 +24,7 @@ ThingsBoard 仅支持 **Sparkplug™ B** 有效负载。
 
 ## 入门
 
-本指南将教我们如何：将 Sparkplug EoN 节点连接到 ThingsBoard，收集设备指标并将它们存储为 ThingsBoard 时序数据，以及将命令推送到设备。
+本指南将教我们如何：将 Sparkplug EoN 节点连接到 GridLinks，收集设备指标并将它们存储为 GridLinks 时序数据，以及将命令推送到设备。
 
 ### 步骤 1. 创建设备配置文件
 
@@ -161,9 +161,9 @@ ThingsBoard [共享属性](/docs/{{docsPrefix}}user-guide/attributes/#shared-att
 
 {% include images-gallery.html imageCollection="sparkplug-update-metrics-using-shared-attributes-5" %}
 
-#### 使用 ThingsBoard RPC 命令从服务器更新指标到 MQTT EON/设备
+#### 使用 GridLinks RPC 命令从服务器更新指标到 MQTT EON/设备
 
-ThingsBoard 支持使用 RPC（远程过程调用）功能按需更新 Sparkplug EoN 节点或设备的指标。我们还使用术语“命令”而不是 RPC 以简化。
+GridLinks 支持使用 RPC（远程过程调用）功能按需更新 Sparkplug EoN 节点或设备的指标。我们还使用术语“命令”而不是 RPC 以简化。
 您可以使用 REST API、仪表板小部件、规则引擎或自定义脚本发送命令。
 有关命令的结构，请参阅此处记录 [here](/docs/{{docsPrefix}}user-guide/rpc/#server-side-rpc)。
 

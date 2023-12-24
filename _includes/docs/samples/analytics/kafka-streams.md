@@ -1,7 +1,7 @@
 * TOC
 {:toc}
 
-ThingsBoard 规则引擎支持对传入遥测数据的基本分析，例如阈值越界。
+GridLinks 规则引擎支持对传入遥测数据的基本分析，例如阈值越界。
 规则引擎背后的理念是提供功能，根据设备属性或数据本身，将数据从物联网设备路由到不同的插件。
 但是，大多数实际用例还需要高级分析的支持：机器学习、预测分析等。
 
@@ -9,7 +9,7 @@ ThingsBoard 规则引擎支持对传入遥测数据的基本分析，例如阈�
 
 - 使用内置规则引擎功能将遥测设备数据从 ThingsBoard 路由到 Kafka 主题（适用于 ThingsBoard CE 和 PE）。
 - 使用简单的 Kafka Streams 应用程序聚合来自多个设备的数据。
-- 使用 ThingsBoard PE Kafka 集成将分析结果推回 ThingsBoard 以进行持久化和可视化。
+- 使用 GridLinks PE Kafka 集成将分析结果推回 ThingsBoard 以进行持久化和可视化。
 
 当然，本教程中的分析非常简单，但我们的目标是突出集成步骤。
 
@@ -40,7 +40,7 @@ ThingsBoard 用于收集、存储和可视化来自每个电池板中这些太�
 其中两个模块将产生相同的值，一个模块将产生低得多的值。
 当然，您应该用真实设备产生的真实数据替换此数据。这只是一个示例。
 
-让我们创建三个类型为“solar-module”的设备。如果您使用的是 ThingsBoard PE，您可以将它们放入新的“Solar Modules”组中。
+让我们创建三个类型为“solar-module”的设备。如果您使用的是 GridLinks PE，您可以将它们放入新的“Solar Modules”组中。
 
 ![image](/images/samples/analytics/kafka-streams/solar-module-devices.png)
 
@@ -79,7 +79,7 @@ ThingsBoard 用于收集、存储和可视化来自每个电池板中这些太�
 完成后，应用程序将每个模块值与平均值进行比较，如果差异大于偏差，我们将此视为异常。
 
 异常计算的结果被推送到“anomalies-topic”。
-ThingsBoard 使用 Kafka 集成订阅此主题，生成警报并将异常存储到数据库。
+GridLinks 使用 Kafka 集成订阅此主题，生成警报并将异常存储到数据库。
 
 
 #### 下载示例应用程序

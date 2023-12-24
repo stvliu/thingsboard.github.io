@@ -8,7 +8,7 @@ description: ThingsBoard 租户管理
 create-tenants-ce:
     0:
         image: /images/user-guide/tenant-profile/CE/create-tenant-1-ce.png
-        title: '以系统管理员身份登录到 ThingsBoard 实例 WEB UI；'
+        title: '以系统管理员身份登录到 GridLinks 实例 WEB UI；'
     1:
         image: /images/user-guide/tenant-profile/CE/create-tenant-2-ce.png
         title: '导航到租户页面。然后单击屏幕右上角的“加号”图标；'

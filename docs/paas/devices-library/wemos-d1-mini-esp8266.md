@@ -1,6 +1,6 @@
 ---
 layout: devices-library-article
-title: 如何将基于 ESP-12F ESP8266 的 WeMos D1 Mini 连接到 ThingsBoard？
+title: 如何将基于 ESP-12F ESP8266 的 WeMos D1 Mini 连接到 GridLinks？
 category: 微控制器
 chip: ESP8266
 connectivity: HTTP, MQTT, WIFI

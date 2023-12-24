@@ -84,7 +84,7 @@ downlinkTerminal:
 
 ## 概述
 
-MQTT 集成允许连接到外部 MQTT 代理，订阅来自这些代理的数据流，并将任何类型的有效负载从您的设备转换为 ThingsBoard Edge 消息格式。
+MQTT 集成允许连接到外部 MQTT 代理，订阅来自这些代理的数据流，并将任何类型的有效负载从您的设备转换为 GridLinks Edge 消息格式。
 每当您的设备已连接到外部 MQTT 代理或任何其他基于 MQTT 后端的 IoT 平台或连接提供程序时，通常会使用它。
 
 请查看集成图以了解更多信息。
@@ -120,7 +120,7 @@ ThingsBoard Edge MQTT 集成充当 MQTT 客户端。
 **上行转换器** 是一个用于解析和转换 MQTT 集成接收的数据的脚本。
 **下行转换器** 解析和转换从 ThingsBoard 发送到现有设备的数据。
 
-上行对于将来自设备的传入数据转换为在 ThingsBoard Edge 中显示它们所需的格式是必需的。
+上行对于将来自设备的传入数据转换为在 GridLinks Edge 中显示它们所需的格式是必需的。
 单击“加号”和“创建新转换器”。要查看事件，请启用调试。
 在函数解码器字段中，指定一个脚本来解析和转换数据。
 
@@ -172,7 +172,7 @@ return result;
 ```
 {: .copy-code}
 
-解码器函数的目的是将传入的数据和元数据解析为 ThingsBoard Edge 可以使用的一种格式。
+解码器函数的目的是将传入的数据和元数据解析为 GridLinks Edge 可以使用的一种格式。
 **deviceName** 和 **deviceType** 是必需的，而 **attributes** 和 **telemetry** 是可选的。
 **Attributes** 和 **telemetry** 是扁平键值对象。不支持嵌套对象。
 

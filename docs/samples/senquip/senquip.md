@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
-title: 将 Senquip 遥测设备连接到 ThingsBoard
-description: 配置 Senquip 遥测设备，使其能够将遥测数据发送到 ThingsBoard。
+title: 将 Senquip 遥测设备连接到 GridLinks
+description: 配置 Senquip 遥测设备，使其能够将遥测数据发送到 GridLinks。
 
 ---
 
@@ -9,12 +9,12 @@ description: 配置 Senquip 遥测设备，使其能够将遥测数据发送到 
 {:toc}
 
 ## 简介
-ThingsBoard 是一个用于物联网解决方案的服务管理、数据收集、处理和可视化平台。如果您是第一次使用该平台，我们建议您查看 [what-is-thingsboard](/docs/getting-started-guides/what-is-thingsboard/) 页面和 [getting-started](/docs/getting-started-guides/helloworld/) 指南。
+GridLinks 是一个用于物联网解决方案的服务管理、数据收集、处理和可视化平台。如果您是第一次使用该平台，我们建议您查看 [what-is-thingsboard](/docs/getting-started-guides/what-is-thingsboard/) 页面和 [getting-started](/docs/getting-started-guides/helloworld/) 指南。
 
 
-Senquip 制造可编程遥测设备，例如 [ORB-C1](https://www.senquip.com)，该设备可连接到任何工业传感器或系统。Senquip 设备可以同时与第三方端点（通过 UDP、HTTP 和 MQTT）和 [Senquip Portal](https://portal.senquip.com) 保持连接。这允许从 [Senquip Portal](https://portal.senquip.com) 进行配置更改和固件更新，同时将测量数据发送到 ThingsBoard。
+Senquip 制造可编程遥测设备，例如 [ORB-C1](https://www.senquip.com)，该设备可连接到任何工业传感器或系统。Senquip 设备可以同时与第三方端点（通过 UDP、HTTP 和 MQTT）和 [Senquip Portal](https://portal.senquip.com) 保持连接。这允许从 [Senquip Portal](https://portal.senquip.com) 进行配置更改和固件更新，同时将测量数据发送到 GridLinks。
 
-Senquip 设备可以连接到 MODBUS、CAN 总线、电流、电压、频率和许多其他类型的传感器。在此示例中，位置、温度和 CAN 总线数据将使用 MQTT 从 Senquip ORB-C1 发送到 ThingsBoard。
+Senquip 设备可以连接到 MODBUS、CAN 总线、电流、电压、频率和许多其他类型的传感器。在此示例中，位置、温度和 CAN 总线数据将使用 MQTT 从 Senquip ORB-C1 发送到 GridLinks。
 
 以下是使用此数据进行实际安装的图片。
 
@@ -73,7 +73,7 @@ Senquip 设备可以同时发送到 Senquip Portal 和第二个端点。在此�
 * [步骤 2] 设置代理地址（设置/端点/MQTT/代理地址 = “thingsboard.cloud:1883”）。
 * [步骤 3] 设置客户端地址，我们将使用唯一的设备 ID “AYCAN24V1”（设置/端点/MQTT/客户端 ID = “AYCAN24V1”）。
 * [步骤 4] 设置数据主题（设置/端点/MQTT/数据主题 = “v1/devices/me/telemetry”）。
-* [步骤 5] 选择要在 ThingsBoard 上使用的用户名，我们选择了“Senquip”（设置/端点/MQTT/用户名 = “Senquip”）。
+* [步骤 5] 选择要在 GridLinks 上使用的用户名，我们选择了“Senquip”（设置/端点/MQTT/用户名 = “Senquip”）。
 * [步骤 6] 选择与用户名关联的密码，我们选择了“SenquipPassword”，我们建议您选择更安全的内容（设置/端点/MQTT/密码 = “SenquipPassword”）。
 
 端点设置现在应如下所示。
@@ -115,7 +115,7 @@ Senquip 设备以 [JSON](https://en.wikipedia.org/wiki/JSON) 格式发送数据�
 
 JSON 数据包中的每个测量值都有一个键和一个值。例如，GPS 纬度具有键“gps_lat”和值“-32.70245”。在此示例中，正在接收 5 条 CAN 消息，每条消息都有一个标识符和一个值，因此 JSON 数据包中的 CAN 数据嵌套有 5 个单独的 CAN 标识符和值。
 
-通过选择我们刚刚添加到 ThingsBoard 的设备并按“最新遥测”，我们可以看到遥测到达 ThingsBoard。请注意 ThingsBoard 如何自动识别 JSON 数据包中的数据并将其转换为键和值表。还请注意，CAN 数据是如何作为 5 行 CAN 标识符和值插入的。
+通过选择我们刚刚添加到 GridLinks 的设备并按“最新遥测”，我们可以看到遥测到达 ThingsBoard。请注意 ThingsBoard 如何自动识别 JSON 数据包中的数据并将其转换为键和值表。还请注意，CAN 数据是如何作为 5 行 CAN 标识符和值插入的。
 
 ![image](/images/samples/senquip/telemetry.jpg)
 

@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
-title: 使用 ThingsBoard 的设施监控系统原型
-description: 使用物联网设备和 ThingsBoard 的设施监控系统原型
+title: 使用 GridLinks 的设施监控系统原型
+description: 使用物联网设备和 GridLinks 的设施监控系统原型
 ---
 
 {% include templates/old-guide-notice.md %}

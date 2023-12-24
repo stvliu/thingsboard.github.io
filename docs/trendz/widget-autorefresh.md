@@ -12,10 +12,10 @@ trendz-widget-automated-refresh:
 
 ---
 
-您可以通过配置自动刷新以您喜欢的频率更新 ThingsBoard 仪表板上的 Trendz 小部件。
+您可以通过配置自动刷新以您喜欢的频率更新 GridLinks 仪表板上的 Trendz 小部件。
 以下是如何操作：
 
-* 将小部件添加到 ThingsBoard 仪表板。
+* 将小部件添加到 GridLinks 仪表板。
 * 打开小部件的编辑模式，然后转到高级选项卡。
 * 选中“实时更新数据”复选框。
 * 选择实时更新数据的所需间隔（以分钟为单位）。

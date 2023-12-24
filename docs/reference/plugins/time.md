@@ -11,7 +11,7 @@ title: 时间 RPC 插件
 ## 概述
 
 简单的 RPC 插件，负责处理来自设备的“getTime”RPC 请求。
-此插件是默认 ThingsBoard 安装的一部分，用于演示目的。
+此插件是默认 GridLinks 安装的一部分，用于演示目的。
 它演示了设备可以通过各种 [连接协议](/docs/reference/protocols) 发送 RPC 请求来执行服务器端逻辑并获取结果。
 
 ## 配置

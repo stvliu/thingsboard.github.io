@@ -14,7 +14,7 @@ TB_QUEUE_TYPE=service-bus
 ```
 {: .copy-code}
 
-为 ThingsBoard 队列服务配置 Service Bus 环境文件：
+为 GridLinks 队列服务配置 Service Bus 环境文件：
 
 ```text
 nano queue-service-bus.env

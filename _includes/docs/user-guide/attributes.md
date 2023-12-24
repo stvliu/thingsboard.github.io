@@ -3,7 +3,7 @@
 ## 为实体和属性管理分配自定义属性
 
 
-ThingsBoard 提供了为实体分配自定义属性并管理这些属性的功能。
+GridLinks 提供了为实体分配自定义属性并管理这些属性的功能。
 这些属性存储在数据库中，可用于数据可视化和数据处理。
 
 属性被视为键值对。键值格式的灵活性和简单性允许与市场上几乎任何物联网设备轻松无缝地集成。
@@ -71,7 +71,7 @@ ThingsBoard 提供了为实体分配自定义属性并管理这些属性的功�
 https://$YOUR_THINGSBOARD_HOST/api/plugins/telemetry/$ENTITY_TYPE/$ENTITY_ID/SERVER_SCOPE
 ```
 
-以下示例为具有 ID 'ad17c410-914c-11eb-af0c-d5862211a5f6' 的设备和 ThingsBoard Cloud 服务器创建名为“newAttributeName”且值为“newAttributeValue”的属性：
+以下示例为具有 ID 'ad17c410-914c-11eb-af0c-d5862211a5f6' 的设备和 GridLinks云服务 服务器创建名为“newAttributeName”且值为“newAttributeValue”的属性：
 ```shell
 curl -v 'https://thingsboard.cloud/api/plugins/telemetry/DEVICE/ad17c410-914c-11eb-af0c-d5862211a5f6/SERVER_SCOPE' \
 -H 'x-authorization: Bearer $YOUR_JWT_TOKEN_HERE' \
@@ -140,7 +140,7 @@ curl -v -X GET 'https://thingsboard.cloud/api/plugins/telemetry/DEVICE/ad17c410-
 https://$YOUR_THINGSBOARD_HOST/api/plugins/telemetry/$ENTITY_TYPE/$ENTITY_ID/SHARED_SCOPE
 ```
 
-以下示例为具有 ID 'ad17c410-914c-11eb-af0c-d5862211a5f6' 的设备和 ThingsBoard Cloud 服务器创建名为“newAttributeName”且值为“newAttributeValue”的属性：
+以下示例为具有 ID 'ad17c410-914c-11eb-af0c-d5862211a5f6' 的设备和 GridLinks云服务 服务器创建名为“newAttributeName”且值为“newAttributeValue”的属性：
 ```shell
 curl -v 'https://thingsboard.cloud/api/plugins/telemetry/DEVICE/ad17c410-914c-11eb-af0c-d5862211a5f6/SHARED_SCOPE' \
 -H 'x-authorization: Bearer $YOUR_JWT_TOKEN_HERE' \
@@ -215,7 +215,7 @@ https://$YOUR_THINGSBOARD_HOST/api/plugins/telemetry/$ENTITY_TYPE/$ENTITY_ID/CLI
 ```
 {: .copy-code}
 
-以下示例获取具有 ID 'ad17c410-914c-11eb-af0c-d5862211a5f6' 的设备和 ThingsBoard Cloud 服务器的所有属性：
+以下示例获取具有 ID 'ad17c410-914c-11eb-af0c-d5862211a5f6' 的设备和 GridLinks云服务 服务器的所有属性：
 
 ```shell
 curl -v -X GET 'https://thingsboard.cloud/api/plugins/telemetry/DEVICE/ad17c410-914c-11eb-af0c-d5862211a5f6/values/attributes/CLIENT_SCOPE' \

@@ -26,4 +26,4 @@ description: ThingsBoard 许可证服务器中的用户
 
 - **升级您的 TB PE 订阅**
 
-- **将 ThingsBoard 移至另一个硬件实例**
+- **将 GridLinks 移至另一个硬件实例**

@@ -1,6 +1,6 @@
 ---
 layout: devices-library-article
-title: 如何将 M5Stack Timer Camera X 连接到 ThingsBoard？
+title: 如何将 M5Stack Timer Camera X 连接到 GridLinks？
 category: 微控制器
 chip: ESP32
 connectivity: HTTP, MQTT, WIFI, 蓝牙

@@ -1,11 +1,11 @@
 ---
 layout: docwithnav
-title: 在 DigitalOcean 上安装 ThingsBoard
-description: 在 DigitalOcean 上安装 ThingsBoard
+title: 在 DigitalOcean 上安装 GridLinks
+description: 在 DigitalOcean 上安装 GridLinks
 
 ---
 
-本指南介绍如何在 DigitalOcean 上安装 ThingsBoard 社区版。
+本指南介绍如何在 DigitalOcean 上安装 GridLinks 社区版。
 
 * TOC
 {:toc}

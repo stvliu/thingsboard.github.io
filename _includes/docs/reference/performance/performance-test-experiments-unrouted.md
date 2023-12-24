@@ -40,6 +40,6 @@ CPU 约为 60%，因此出现了瓶颈。
 
 ![](/images/reference/performance-aws-instances/method/experiments/img_7.png)
 
-我们尝试将时间序列写入而不将最新值持久化到 PostgreSQL - 无效果
+我们尝试将时序写入而不将最新值持久化到 PostgreSQL - 无效果
 
 ![](/images/reference/performance-aws-instances/method/experiments/img_9.png)

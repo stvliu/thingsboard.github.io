@@ -1,4 +1,4 @@
-ThingsBoard API 由两部分组成：设备 API 和服务器端 API。
+GridLinks API 由两部分组成：设备 API 和服务器端 API。
 
 设备 API 按支持的通信协议分组：
 
@@ -11,7 +11,7 @@ ThingsBoard API 由两部分组成：设备 API 和服务器端 API。
 * [**LWM2M API**](/docs/{{docsPrefix}}reference/lwm2m-api)
 * [**SNMP API**](/docs/{{docsPrefix}}reference/snmp-api)
 
-[**网关 MQTT API**](/docs/{{docsPrefix}}reference/gateway-mqtt-api) 允许您使用 **[ThingsBoard 网关](/docs/iot-gateway/what-is-iot-gateway/)** 将 **现有** 设备连接到平台，或实现您自己的网关。
+[**网关 MQTT API**](/docs/{{docsPrefix}}reference/gateway-mqtt-api) 允许您使用 **[GridLinks 网关](/docs/iot-gateway/what-is-iot-gateway/)** 将 **现有** 设备连接到平台，或实现您自己的网关。
 
 {% if docsPrefix != "edge/" and docsPrefix != "pe/edge/" %}
 

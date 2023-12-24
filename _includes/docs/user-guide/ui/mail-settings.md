@@ -19,7 +19,7 @@ ThingsBoard 系统管理员能够配置到 SMTP 服务器的连接，该连接�
 需要执行以下步骤来配置邮件服务器设置。
 
 首先，您必须以 *系统管理员* 身份登录到您的 ThingsBoard 实例 WEB UI。然后，左键单击 WEB UI 右上角的三个点，然后选择“个人资料”。
-将 'sysadmin@thingsboard.org' 更改为您的电子邮件地址。现在再次以管理员身份重新登录。
+将 'sysadmin@gridlinks.com' 更改为您的电子邮件地址。现在再次以管理员身份重新登录。
 
 {% if docsPrefix == null %}
 ![image](/images/user-guide/ui/mail/mail-settings-change-administrator-email-address-ce.png)
@@ -46,7 +46,7 @@ SendGrid 配置非常简单直接。首先，您需要创建一个 [SendGrid](ht
 
 {% include images-gallery.html imageCollection="sendgrid-configuration" showListImageTitles="true" %}
 
-**ㅤ2. 设置 ThingsBoard 邮件服务器设置**
+**ㅤ2. 设置 GridLinks 邮件服务器设置**
 
 现在导航到您的 ThingsBoard 实例的“设置”页面 -> “邮件服务器”选项卡，然后填写表单：
 
@@ -82,7 +82,7 @@ SendGrid 配置非常简单直接。首先，您需要创建一个 [SendGrid](ht
 
 {% include images-gallery.html imageCollection="gmail-generate-an-app-password" showListImageTitles="true" %}
 
-**ㅤ2. 设置 ThingsBoard 邮件服务器设置**
+**ㅤ2. 设置 GridLinks 邮件服务器设置**
 
 一旦准备就绪，您应该能够使用以下信息设置邮件服务器。
 导航到您的 ThingsBoard 实例的“设置”页面 -> “邮件服务器”选项卡，然后填写表单：
@@ -114,9 +114,9 @@ SendGrid 配置非常简单直接。首先，您需要创建一个 [SendGrid](ht
 使用 OAuth 2.0 协议，用户可以通过 Gmail Web OAuth 进行身份验证，而不是直接在应用程序中输入用户名和密码。
 这种方式更安全，但有点复杂。
 
-要使用 Gmail OAuth2，您需要在 Google Developers Console 中创建一个项目，但首先让我们设置 ThingsBoard 邮件服务器设置。
+要使用 Gmail OAuth2，您需要在 Google Developers Console 中创建一个项目，但首先让我们设置 GridLinks 邮件服务器设置。
 
-**ㅤ1. 设置 ThingsBoard 邮件服务器设置**
+**ㅤ1. 设置 GridLinks 邮件服务器设置**
 
 - 在您的 ThingsBoard 实例中，转到“设置”页面 -> “邮件服务器”选项卡；
 - 填写“发件人”字段；
@@ -178,7 +178,7 @@ SendGrid 配置非常简单直接。首先，您需要创建一个 [SendGrid](ht
 
 要使用 Office 365 OAuth2，您需要在 Azure 门户中注册一个应用程序，但首先让我们设置 Thingsboard 邮件服务器设置。
 
-**ㅤ1. 设置 ThingsBoard 邮件服务器设置**
+**ㅤ1. 设置 GridLinks 邮件服务器设置**
 
  - 在您的 ThingsBoard 实例中，转到“设置”页面 -> “邮件服务器”选项卡；
  - 填写“发件人”字段；

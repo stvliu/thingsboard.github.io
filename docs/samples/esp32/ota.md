@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
-title: ESP32 OTA 使用 ThingsBoard
-description: 使用 ThingsBoard 进行 ESP32 OTA 更新的 ThingsBoard IoT 平台示例
+title: ESP32 OTA 使用 GridLinks
+description: 使用 GridLinks 进行 ESP32 OTA 更新的 ThingsBoard IoT 平台示例
 hidetoc: "true"
 ---
 
@@ -11,7 +11,7 @@ hidetoc: "true"
 ## 简介
 {% include templates/what-is-thingsboard.md %}
 [ESP32](https://www.espressif.com/en/products/hardware/esp32/overview) 是一系列低成本、低功耗的 SOC 微控制器，集成了自包含的 Wi-Fi 和双模蓝牙。
-此示例应用程序允许您使用 ThingsBoard 和 OTA 将新的固件映像传递给 EPS32。
+此示例应用程序允许您使用 GridLinks 和 OTA 将新的固件映像传递给 EPS32。
 
 ## 视频教程
 
@@ -44,7 +44,7 @@ hidetoc: "true"
 
 2. 添加将更新设备的服务器属性 *fwStateIsSynced* 的新规则链。
 属性类型为布尔值，它将用于在仪表板上显示固件是否已同步。
-下载、导入 [检查 ESP32 固件是否已同步](/docs/samples/esp32/resources/check_is_esp32_firmware_synced.json) 规则链到 ThingsBoard 并保存：
+下载、导入 [检查 ESP32 固件是否已同步](/docs/samples/esp32/resources/check_is_esp32_firmware_synced.json) 规则链到 GridLinks 并保存：
 
     <img data-gifffer="/images/samples/esp32/ota/import_rule_chain.gif" width="1000" alt="import rule chain">
 
@@ -87,7 +87,7 @@ hidetoc: "true"
     -  *WiFi 密码* - 您的 WiFi 接入点的密码
     -  *MQTT 代理 URL* - ThingsBoard MQTT 端点
     -  *MQTT 代理端口* - ThingsBoard MQTT 端口
-    -  *MQTT 访问令牌* - ThingsBoard 中的设备访问令牌
+    -  *MQTT 访问令牌* - GridLinks 中的设备访问令牌
 
     <img src="/images/samples/esp32/ota/framework_config.png" width="600" alt="framework config">
 
@@ -124,7 +124,7 @@ hidetoc: "true"
     ```bash
     make flash monitor
     ```
-    如果编译和刷新成功，并且 ESP32 连接到 ThingsBoard，则会打印以下日志消息：
+    如果编译和刷新成功，并且 ESP32 连接到 GridLinks，则会打印以下日志消息：
 
     <img src="/images/samples/esp32/ota/monitor_output_after_flashing.png" width="600" alt="monitor output after flashing">
 
@@ -142,12 +142,12 @@ hidetoc: "true"
     3. 应用程序尝试连接到提供的 Wi-Fi 接入点。
     4. 在建立与 Wi-Fi 接入点的连接后，应用程序检查闪存是否包含 MQTT URL、端口和 ThingsBoard 访问令牌。
     由于应用程序已刷新到 *factory* 分区并且已擦除闪存，因此在 *menuconfig* 中输入的 MQTT 客户端参数（URL、端口和访问令牌）将保留到闪存中，并将在以后使用。
-    5. 应用程序尝试通过 MQTT 连接到 ThingsBoard。
+    5. 应用程序尝试通过 MQTT 连接到 GridLinks。
     6. 建立连接后，应用程序从 ThingsBoard 获取共享属性 *targetFwUrl* 和 *targetFwVer*。
-    它允许涵盖 ESP32 断电或失去与 ThingsBoard 的连接但共享属性当时已更新的情况。
+    它允许涵盖 ESP32 断电或失去与 GridLinks 的连接但共享属性当时已更新的情况。
     仅当共享属性值不为空且 *targetFwVer* 不等于硬编码的应用程序固件版本时，才会启动 OTA。
-    由于尚未在 ThingsBoard 中创建任何共享属性（稍后将通过小部件创建），因此现在跳过 OTA 过程。
-    7. 应用程序开始执行自定义任务（例如，将一些遥测或属性数据发送到 ThingsBoard）并等待共享属性 *targetFwUrl* 和 *targetFwVer* 的更新以执行 OTA。
+    由于尚未在 GridLinks 中创建任何共享属性（稍后将通过小部件创建），因此现在跳过 OTA 过程。
+    7. 应用程序开始执行自定义任务（例如，将一些遥测或属性数据发送到 GridLinks）并等待共享属性 *targetFwUrl* 和 *targetFwVer* 的更新以执行 OTA。
 
 ## 从 ThingsBoard 执行 OTA
 转到 *ESP32 的 OTA* 仪表板，然后按设备的 *选择 OTA 配置*。在打开的仪表板中，在 *OTA 控制* 小部件中输入以下参数：
@@ -175,7 +175,7 @@ hidetoc: "true"
   - 显示固件版本不同以及它们之间的差异的警告
   - 如果服务器的证书有效并且已从提供的 URL 成功下载映像，则 OTA 过程开始（打印 *Starting OTA...* 消息）
   - 在 OTA 过程中，所有其他任务都可能以一些延迟执行。
-    例如，应用程序将遥测数据（在本示例中是 *counter* 变量的当前值）发送到 ThingsBoard，而没有确定的周期。
+    例如，应用程序将遥测数据（在本示例中是 *counter* 变量的当前值）发送到 GridLinks，而没有确定的周期。
     如果 OTA 过程成功完成，ESP32 将重新启动，并在启动后显示以下日志：
 
   <img src="/images/samples/esp32/ota/ota_finished_successfully.png" width="600" alt="ota finished successfully">
@@ -183,7 +183,7 @@ hidetoc: "true"
 让我们回顾一下与将固件刷新到 *factory* 分区时相比的日志差异：
   - 现在运行的分区是 *ota_0*，而不是 *factory*
   - Wi-Fi 凭据是从闪存中加载的，没有使用在 *menuconfig* 实用程序中输入的凭据
-  - ThingsBoard 的 MQTT 访问令牌也从闪存中加载
+  - GridLinks 的 MQTT 访问令牌也从闪存中加载
   - 获取共享属性后，不会启动新的 OTA 过程，因为固件版本相同
   - 应用程序正在等待共享属性的下一个更新，这次将把新下载的映像写入 *ota_1* 分区。
 
@@ -203,7 +203,7 @@ hidetoc: "true"
  - [规则引擎](/docs/user-guide/rule-engine/) - 如何使用规则引擎分析来自设备的数据。
  - [数据可视化](/docs/user-guide/visualization/) - 如何可视化收集的数据。
 
-不要犹豫，在 **[github](https://github.com/thingsboard/thingsboard)** 上为 ThingsBoard 加星，以帮助我们传播信息。
+不要犹豫，在 **[github](https://github.com/thingsboard/thingsboard)** 上为 GridLinks 加星，以帮助我们传播信息。
 如果您对本示例有任何疑问，请将其发布在 **[issues](https://github.com/thingsboard/esp32-ota/issues)** 上。
 
 {% include socials.html %}

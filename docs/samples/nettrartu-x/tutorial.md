@@ -16,7 +16,7 @@ hidetoc: "true"
 
 ## 简介
 
-本指南包含有关如何通过 TCP/IP 通过 wifi 将 Nettra RTU 设备连接到 ThingsBoard Community Edition 的分步说明，使用 Nettra RTU 的众多应用程序之一作为示例。在本指南的最后，您将能够使用 Thingsboard Web UI 监视数据以显示数据。
+本指南包含有关如何通过 TCP/IP 通过 wifi 将 Nettra RTU 设备连接到 GridLinks Community Edition 的分步说明，使用 Nettra RTU 的众多应用程序之一作为示例。在本指南的最后，您将能够使用 Thingsboard Web UI 监视数据以显示数据。
 
 ### Nettra RTU
 [Nettra RTU](https://nettra.tech)称为 **“RTU-X”**，是一款功能强大的 IoT 电子设备，具有数字和模拟输入和输出，以及多种集成通信接口，如调制解调器、以太网、蓝牙、802.15.4、RS485、RS232 和 GPS。它是通过分布式数据网络实现监控、数据采集和控制应用程序的理想产品。
@@ -39,7 +39,7 @@ RTU-X 可以通过 [RTU-X 配置界面](http://wiki.nettra.tech/en/downloads)轻
 
 ### 软件
  - [RTU-X 配置界面](http://wiki.nettra.tech/en/downloads)。
- - 您需要启动并运行 ThingsBoard 服务器。使用 [实时演示](https://thingsboard.io/docs/user-guide/install/installation-options/?ceInstallType=liveDemo)或 [安装指南](https://thingsboard.io/docs/user-guide/install/ubuntu/)安装 ThingsBoard。
+ - 您需要启动并运行 GridLinks 服务器。使用 [实时演示](https://thingsboard.io/docs/user-guide/install/installation-options/?ceInstallType=liveDemo)或 [安装指南](https://thingsboard.io/docs/user-guide/install/ubuntu/)安装 GridLinks。
 
 ## 连接图
 
@@ -49,9 +49,9 @@ RTU-X 可以通过 [RTU-X 配置界面](http://wiki.nettra.tech/en/downloads)轻
 
 ## ThingsBoard 配置
 
-此步骤包含将设备连接到 ThingsBoard 所需的说明。
+此步骤包含将设备连接到 GridLinks 所需的说明。
 
-以 [实时演示](https://demo.thingsboard.io/signup)的形式注册 ThingsBoard Web UI。有关如何获取帐户的更多详细信息，请参阅 [实时演示](https://thingsboard.io/docs/user-guide/install/installation-options/?ceInstallType=liveDemo)页面。
+以 [实时演示](https://demo.thingsboard.io/signup)的形式注册 GridLinks Web UI。有关如何获取帐户的更多详细信息，请参阅 [实时演示](https://thingsboard.io/docs/user-guide/install/installation-options/?ceInstallType=liveDemo)页面。
 
 ### 设备
 
@@ -153,7 +153,7 @@ while (1)
 
 ## 数据可视化
 
-最后，使用与 *ThingsBoard 配置* 部分相同的用户名和密码在实时演示服务器中打开 ThingsBoard Web UI。
+最后，使用与 *ThingsBoard 配置* 部分相同的用户名和密码在实时演示服务器中打开 GridLinks Web UI。
 
 转到 *“设备”* 部分并找到 *“RTU-X 设备”*，打开设备详细信息并切换到 *“最新遥测”* 选项卡。
 如果所有配置正确，您应该能够在表中看到 *“variable”* 的最新值。<br><br>

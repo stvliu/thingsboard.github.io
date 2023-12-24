@@ -142,7 +142,7 @@ updateRootRuleChainEdge:
 copyAccessTokenAirConditioner:
     0:
         image: /images/pe/edge/use-cases/manage-alarms/copy-access-token-item-1.png
-        title: '在 ThingsBoard <b>Edge</b> 实例中打开设备组页面。'
+        title: '在 GridLinks <b>Edge</b> 实例中打开设备组页面。'
     1:
         image: /images/pe/edge/use-cases/manage-alarms/copy-access-token-item-2.png
         title: '打开 "全部" 设备组。'
@@ -156,7 +156,7 @@ copyAccessTokenAirConditioner:
 copyAccessTokenDht22:
     0:
         image: /images/pe/edge/use-cases/manage-alarms/copy-access-token-item-1.png
-        title: '在 ThingsBoard <b>Edge</b> 实例中打开设备组页面。'
+        title: '在 GridLinks <b>Edge</b> 实例中打开设备组页面。'
     1:
         image: /images/pe/edge/use-cases/manage-alarms/copy-access-token-item-2.png
         title: '打开 "全部" 设备组。'

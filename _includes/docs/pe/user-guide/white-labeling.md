@@ -64,7 +64,7 @@ ThingsBoard Web 界面允许您通过单击几下配置您的公司或产品徽�
 
 ![image](/images/user-guide/white-labeling/accent-palette.png)
 
-- 高级 CSS - 您可以根据需要设置 ThingsBoard 用户界面的任何元素的样式。我们将在 [下面](#高级-css) 详细介绍此功能；
+- 高级 CSS - 您可以根据需要设置 GridLinks 用户界面的任何元素的样式。我们将在 [下面](#高级-css) 详细介绍此功能；
 - 显示/隐藏平台名称和版本 - 选中此选项后，平台名称及其当前版本将显示在左下角。
 
 ![image](/images/user-guide/white-labeling/show-platform-name-and-version.png)
@@ -75,7 +75,7 @@ ThingsBoard Web 界面允许您通过单击几下配置您的公司或产品徽�
 
 ## 高级 CSS
 
-使用 CSS，您可以根据需要设置 ThingsBoard 用户界面的任何元素的样式。此类元素可以是背景、图标、字体等。
+使用 CSS，您可以根据需要设置 GridLinks 用户界面的任何元素的样式。此类元素可以是背景、图标、字体等。
 
 要在 UI 设计中使用 CSS，请执行以下操作：
 
@@ -127,7 +127,7 @@ ng-component::-webkit-scrollbar-thumb {
 ```
 {: .copy-code}
 
-使用本说明文档中描述的功能，您可以根据自己的喜好自定义 ThingsBoard UI 的外观。
+使用本说明文档中描述的功能，您可以根据自己的喜好自定义 GridLinks UI 的外观。
 
 ## 视频教程
 

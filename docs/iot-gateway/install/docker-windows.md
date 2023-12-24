@@ -1,6 +1,6 @@
 ---
 layout: docwithnav-gw
-title: 使用 Docker 在 Windows 上安装 ThingsBoard IoT 网关。
+title: 使用 Docker 在 Windows 上安装 GridLinks IoT 网关。
 redirect_from:
  - "/docs/iot-gateway/install/windows/"
 ---
@@ -8,7 +8,7 @@ redirect_from:
 * TOC
 {:toc}
 
-本指南将帮助您在 Windows 上使用 Docker 安装并启动 ThingsBoard 网关。
+本指南将帮助您在 Windows 上使用 Docker 安装并启动 GridLinks 网关。
 
 
 ## 先决条件

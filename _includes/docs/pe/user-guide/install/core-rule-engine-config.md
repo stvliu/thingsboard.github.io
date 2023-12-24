@@ -3951,7 +3951,7 @@
 		<tr>
 			<td>swagger.description</td>
 			<td>SWAGGER_DESCRIPTION</td>
-			<td> ThingsBoard Professional Edition IoT platform REST API documentation.</td>
+			<td>  GridLinks专业版 IoT platform REST API documentation.</td>
 			<td> The description on the API doc UI page</td>
 		</tr>
 		<tr>

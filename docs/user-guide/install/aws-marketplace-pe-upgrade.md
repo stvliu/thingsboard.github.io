@@ -5,7 +5,7 @@ description: Upgrading ThingsBoard PE from AWS Marketplace
 
 ---
 
-This guide describes how to upgrade ThingsBoard Professional Edition from AWS Marketplace. 
+This guide describes how to upgrade  GridLinks专业版 from AWS Marketplace. 
 
 <ul id="markdown-toc">
   <li>
@@ -59,7 +59,7 @@ $ sudo tb-update-pkg.sh
 The output should be like:
 
 ```text
-Updating ThingsBoard Professional Edition...
+Updating  GridLinks专业版...
 Installing ThingsBoard PE package...
 (Reading database ... 104150 files and directories currently installed.)
 Preparing to unpack /tmp/tb.deb ...
@@ -158,7 +158,7 @@ The output should be like:
 
 ```text
  ===================================================
- :: ThingsBoard Professional Edition ::       (v2.0.2PE)
+ ::  GridLinks专业版 ::       (v2.0.2PE)
  ===================================================
 
 Starting ThingsBoard Upgrade from version 1.4.0 ...
@@ -220,7 +220,7 @@ $ sudo tb-update-pkg.sh
 The output should be like:
 
 ```text
-Updating ThingsBoard Professional Edition...
+Updating  GridLinks专业版...
 Installing ThingsBoard PE package...
 (Reading database ... 104150 files and directories currently installed.)
 Preparing to unpack /tmp/tb.deb ...
@@ -319,7 +319,7 @@ The output should be like:
 
 ```text
  ===================================================
- :: ThingsBoard Professional Edition ::       (v2.1.0PE)
+ ::  GridLinks专业版 ::       (v2.1.0PE)
  ===================================================
 
 Starting ThingsBoard Upgrade from version 2.0.0 ...
@@ -424,7 +424,7 @@ $ sudo tb-update-pkg.sh
 The output should be like:
 
 ```text
-Updating ThingsBoard Professional Edition...
+Updating  GridLinks专业版...
 Installing ThingsBoard PE package...
 (Reading database ... 104150 files and directories currently installed.)
 Preparing to unpack /tmp/tb.deb ...
@@ -529,7 +529,7 @@ The output should be like:
 
 ```text
  ===================================================
- :: ThingsBoard Professional Edition ::       (v2.1.3PE)
+ ::  GridLinks专业版 ::       (v2.1.3PE)
  ===================================================
 
 Starting ThingsBoard Upgrade from version 2.0.0 ...
@@ -597,7 +597,7 @@ $ sudo tb-update-pkg.sh
 The output should be like:
 
 ```text
-Updating ThingsBoard Professional Edition...
+Updating  GridLinks专业版...
 Installing ThingsBoard PE package...
 (Reading database ... 196038 files and directories currently installed.)
 Preparing to unpack thingsboard.deb ...
@@ -670,7 +670,7 @@ The output should be like:
 
 ```text
  ===================================================
- :: ThingsBoard Professional Edition ::       (v2.2.0PE)
+ ::  GridLinks专业版 ::       (v2.2.0PE)
  ===================================================
 
 Starting ThingsBoard Upgrade from version 2.0.0 ...
@@ -800,7 +800,7 @@ $ sudo tb-update-pkg.sh
 The output should be like:
 
 ```text
-Updating ThingsBoard Professional Edition...
+Updating  GridLinks专业版...
 Installing ThingsBoard PE package...
 (Reading database ... 221177 files and directories currently installed.)
 Preparing to unpack thingsboard.deb ...
@@ -879,7 +879,7 @@ $ cat /var/log/thingsboard/thingsboard.log | grep ERROR
 
 These steps are applicable for the following ThingsBoard PE versions:
 
-- ThingsBoard Professional Edition with Cassandra v.2.2.0PE
+-  GridLinks专业版 with Cassandra v.2.2.0PE
 - ThingsBoard PE Maker v.2.2.1PEMK
 - ThingsBoard PE Prototype v.2.2.1PEPT
 - ThingsBoard PE Startup v.2.2.1PEST
@@ -908,7 +908,7 @@ $ sudo tb-update-pkg.sh
 The output should be like:
 
 ```text
-Updating ThingsBoard Professional Edition...
+Updating  GridLinks专业版...
 Installing ThingsBoard PE package...
 (Reading database ... 221177 files and directories currently installed.)
 Preparing to unpack thingsboard.deb ...
@@ -969,7 +969,7 @@ $ sudo nano /usr/share/thingsboard/conf/thingsboard.conf
 
 - locate and replace ```-Dplatform=deb``` with the following value:
 
-For **ThingsBoard Professional Edition with Cassandra** or **ThingsBoard PE Enterprise**: ```-Dplatform=ami-pe-cassandra```
+For ** GridLinks专业版 with Cassandra** or **ThingsBoard PE Enterprise**: ```-Dplatform=ami-pe-cassandra```
 
 For  **ThingsBoard PE Maker**: ```-Dplatform=ami-pe-mk```
 
@@ -979,7 +979,7 @@ For  **ThingsBoard PE Startup**: ```-Dplatform=ami-pe-st```
 
 For  **ThingsBoard PE Business**: ```-Dplatform=ami-pe-bs```
 
-The final line should be like this (example for **ThingsBoard Professional Edition with Cassandra**):
+The final line should be like this (example for ** GridLinks专业版 with Cassandra**):
 
 ```
    ...
@@ -999,7 +999,7 @@ For **ThingsBoard PE Maker**, **ThingsBoard PE Prototype** or **ThingsBoard PE S
 
 {% include templates/enable-postgresql.md %} 
 
-For **ThingsBoard Professional Edition with Cassandra**, **ThingsBoard PE Business** or **ThingsBoard PE Enterprise**:
+For ** GridLinks专业版 with Cassandra**, **ThingsBoard PE Business** or **ThingsBoard PE Enterprise**:
 
 - locate the following lines:
 
@@ -1033,7 +1033,7 @@ The output should be like:
 
 ```text
  ===================================================
- :: ThingsBoard Professional Edition ::       (v2.3.0PE)
+ ::  GridLinks专业版 ::       (v2.3.0PE)
  ===================================================
 
 Starting ThingsBoard Upgrade from version 2.2.0 ...
@@ -1068,7 +1068,7 @@ $ cat /var/log/thingsboard/thingsboard.log | grep ERROR
 
 These steps are applicable for the following ThingsBoard PE versions:
 
-- ThingsBoard Professional Edition with Cassandra v.2.2.0PE
+-  GridLinks专业版 with Cassandra v.2.2.0PE
 - ThingsBoard PE Maker v.2.3.0PEMK
 - ThingsBoard PE Prototype v.2.3.0PEPT
 - ThingsBoard PE Startup v.2.3.0PEST
@@ -1097,7 +1097,7 @@ $ sudo tb-update-pkg.sh
 The output should be like:
 
 ```text
-Updating ThingsBoard Professional Edition...
+Updating  GridLinks专业版...
 Installing ThingsBoard PE package...
 (Reading database ... 221177 files and directories currently installed.)
 Preparing to unpack thingsboard.deb ...
@@ -1158,7 +1158,7 @@ $ sudo nano /usr/share/thingsboard/conf/thingsboard.conf
 
 - locate and replace ```-Dplatform=deb``` with the following value:
 
-For **ThingsBoard Professional Edition with Cassandra** or **ThingsBoard PE Enterprise**: ```-Dplatform=ami-pe-cassandra```
+For ** GridLinks专业版 with Cassandra** or **ThingsBoard PE Enterprise**: ```-Dplatform=ami-pe-cassandra```
 
 For  **ThingsBoard PE Maker**: ```-Dplatform=ami-pe-mk```
 
@@ -1168,7 +1168,7 @@ For  **ThingsBoard PE Startup**: ```-Dplatform=ami-pe-st```
 
 For  **ThingsBoard PE Business**: ```-Dplatform=ami-pe-bs```
 
-The final line should be like this (example for **ThingsBoard Professional Edition with Cassandra**):
+The final line should be like this (example for ** GridLinks专业版 with Cassandra**):
 
 ```
    ...
@@ -1188,7 +1188,7 @@ For **ThingsBoard PE Maker**, **ThingsBoard PE Prototype** or **ThingsBoard PE S
 
 {% include templates/enable-postgresql.md %} 
 
-For **ThingsBoard Professional Edition with Cassandra**, **ThingsBoard PE Business** or **ThingsBoard PE Enterprise**:
+For ** GridLinks专业版 with Cassandra**, **ThingsBoard PE Business** or **ThingsBoard PE Enterprise**:
 
 - locate the following lines:
 
@@ -1222,7 +1222,7 @@ The output should be like:
 
 ```text
  ===================================================
- :: ThingsBoard Professional Edition ::       (v2.3.1PE)
+ ::  GridLinks专业版 ::       (v2.3.1PE)
  ===================================================
 
 Starting ThingsBoard Upgrade from version 2.3.0 ...

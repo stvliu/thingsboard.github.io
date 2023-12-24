@@ -36,7 +36,7 @@ rdsEndpointUrl:
 
 {% assign tbServicesFile = "tb-node.yml" %}
 
-本指南将帮助你在 AWS EKS 中以整体模式设置 ThingsBoard。
+本指南将帮助你在 AWS EKS 中以整体模式设置 GridLinks。
 
 ## 先决条件
 

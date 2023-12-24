@@ -72,7 +72,7 @@ Arduino UNO 通过使用 [Arduino 物联网平台 SDK](https://github.com/things
 在浏览器中打开物联网平台 Web UI (http://localhost:8080) 并以租户管理员身份登录。
 如果您在安装物联网平台期间加载了演示数据，则可以使用以下凭据：
 
-- 登录名：tenant@thingsboard.org
+- 登录名：tenant@gridlinks.com
 - 密码：tenant
 
 转到“设备”部分。单击“+”按钮，并创建一个名为“Arduino UNO 演示设备”的设备。将“设备类型”设置为“default”。
@@ -162,7 +162,7 @@ arduino_uno_sim808_htu21d_http,arduino_uno_sim808_htu21d_http.ino,c,resources/ar
 
 最后，打开物联网平台 Web UI。您可以使用租户管理员身份登录来访问此仪表板。使用
 
-- 登录名：tenant@thingsboard.org
+- 登录名：tenant@gridlinks.com
 - 密码：tenant
 
 在本地安装物联网平台的情况下。

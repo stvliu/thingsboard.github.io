@@ -2,7 +2,7 @@
 
 **用户名**：
 ```
-sysadmin@thingsboard.org
+sysadmin@gridlinks.com
 ```
 {: .copy-code}
 **密码**：

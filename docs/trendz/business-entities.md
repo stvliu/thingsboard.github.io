@@ -6,7 +6,7 @@ title: 业务实体
 description: 业务实体
 ---
 
-本指南介绍 Trendz 如何使用 ThingsBoard 中的实体，例如资产、设备、关系等。
+本指南介绍 Trendz 如何使用 GridLinks 中的实体，例如资产、设备、关系等。
 
 * TOC
 {:toc}
@@ -32,7 +32,7 @@ description: 业务实体
 - 时间范围 - 上个月
 
 
-* Trendz 将找到 ThingsBoard 中所有可用的建筑物。
+* Trendz 将找到 GridLinks 中所有可用的建筑物。
 * 然后为每个建筑找到所有公寓。
 * 最后，找到属于公寓的所有能量表。
 * 之后，对于每个建筑的所有能量表，Trendz 将加载上个月的所有能量遥测

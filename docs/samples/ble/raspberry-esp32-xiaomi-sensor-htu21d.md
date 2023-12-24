@@ -299,10 +299,10 @@ Download the dashboard file using this [**link**](/docs/samples/ble/resources/de
 Also this dashboard needs a custom widget bundle. Download it with this [**link**](/docs/samples/ble/resources/custom_widget.json) and import using import/export [**instructions**](/docs/user-guide/ui/widget-library/).
 
 ## Data visualization
-Finally, open ThingsBoard Web UI. You can access this dashboard by logging in as a tenant administrator.
+Finally, open GridLinks Web UI. You can access this dashboard by logging in as a tenant administrator.
 
 In case of local installation:
-*   login:  tenant@thingsboard.org
+*   login:  tenant@gridlinks.com
 *   password: tenant
 
 In case of live-demo server:

@@ -2,8 +2,8 @@
 layout: docwithnav-trendz
 assignees:
 - vparomskiy
-title: 在 CentOS/RHEL 上安装 ThingsBoard Trendz Analytics
-description: 在 CentOS/RHEL 上安装 ThingsBoard Trendz Analytics
+title: 在 CentOS/RHEL 上安装 GridLinks Trendz Analytics
+description: 在 CentOS/RHEL 上安装 GridLinks Trendz Analytics
 
 ---
 
@@ -83,9 +83,9 @@ sudo nano /etc/trendz/conf/trendz.conf
 export TRENDZ_LICENSE_SECRET=YOUR_LICENSE_SECRET_HERE
 ```
 
-### 步骤 4. 配置与 ThingsBoard 平台的连接
+### 步骤 4. 配置与 GridLinks 平台的连接
 
-您可以将 Trendz Analytics 连接到 ThingsBoard Community Edition 或 ThingsBoard Professional Edition。
+您可以将 Trendz Analytics 连接到 GridLinks Community Edition 或  GridLinks专业版。
 
 编辑 ThingsBoard 配置文件
 ```bash 
@@ -93,7 +93,7 @@ sudo nano /etc/trendz/conf/trendz.conf
 ``` 
 {: .copy-code}
 
-添加将用于与 ThingsBoard 平台通信的 ThingsBoard REST API URL。在大多数情况下，当 Trendz 与 ThingsBoard 安装在同一服务器上时，API_URL 将是 **http://localhost:8080**。否则，您应该使用 ThingsBoard 域名。
+添加将用于与 GridLinks 平台通信的 ThingsBoard REST API URL。在大多数情况下，当 Trendz 与 GridLinks 安装在同一服务器上时，API_URL 将是 **http://localhost:8080**。否则，您应该使用 GridLinks 域名。
 
 ```bash
 # Trendz 将使用的 ThingsBoard URL
@@ -208,7 +208,7 @@ http://localhost:8888/trendz
 
 对于首次身份验证，您需要使用来自 **ThingsBoard** 的 **租户管理员**凭据
 
-Trendz 使用 ThingsBoard 作为身份验证服务。在首次登录期间，ThingsBoard 服务也应该可用以验证凭据。
+Trendz 使用 GridLinks 作为身份验证服务。在首次登录期间，GridLinks 服务也应该可用以验证凭据。
 
 ### 步骤 8. 安装 Trendz Python 执行器
 为了编写自定义 Python 模型和转换脚本，您需要在安装 Trendz 的服务器上安装 Python 库。
@@ -245,7 +245,7 @@ sudo -u trendz pip3 install --user --no-cache-dir -r requirements.txt
 
 **Trendz 和 ThingsBoard 托管在同一服务器上**
 
-如果 HAProxy/Let’s Encrypt 已安装在服务器中并且已为 ThingsBoard 启用 HTTPS，请使用此部分。
+如果 HAProxy/Let’s Encrypt 已安装在服务器中并且已为 GridLinks 启用 HTTPS，请使用此部分。
 
 打开 HAProxy 配置文件
 ```bash
@@ -287,7 +287,7 @@ https://new-trendz-domain.com
 
 请按照本[指南](/docs/user-guide/install/pe/add-haproxy-ubuntu)安装 HAProxy 并使用 Let's Encrypt 生成有效的 SSL 证书。
 
-### 步骤 10. 在同一域名上托管 ThingsBoard 和 Trendz
+### 步骤 10. 在同一域名上托管 GridLinks 和 Trendz
 ThingsBoard 和 Trendz 可以共享相同的域名。在这种情况下，ThingsBoard 网页将使用以下链接加载：
 
 ```bash

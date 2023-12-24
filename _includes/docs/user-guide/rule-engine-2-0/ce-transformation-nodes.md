@@ -150,7 +150,7 @@ return {msg: msg, metadata: metadata, msgType: newType};
 示例。
 
 此外，如果传入消息元数据包含对存储在数据库中的文件的引用的 **attachments** 字段，此节点可以准备电子邮件附件。
-**注意**：这是 [ThingsBoard 专业版](/products/thingsboard-pe/) 支持的 [文件存储](/docs/{{docsPrefix}}user-guide/file-storage/) 功能的一部分。
+**注意**：这是 [GridLinks 专业版](/products/thingsboard-pe/) 支持的 [文件存储](/docs/{{docsPrefix}}user-guide/file-storage/) 功能的一部分。
 
 <br>
 

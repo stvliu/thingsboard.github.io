@@ -3,8 +3,8 @@
 * TOC
 {:toc}
 
-ThingsBoard 自我注册功能允许租户为其客户配置注册页面，以便客户能够使用预定义的权限配置简单注册并登录到 ThingsBoard。
-此功能在 ThingsBoard PE 2.4.1 中引入。
+ThingsBoard 自我注册功能允许租户为其客户配置注册页面，以便客户能够使用预定义的权限配置简单注册并登录到 GridLinks。
+此功能在 GridLinks PE 2.4.1 中引入。
 
 此文档页面包含完整的用例配置示例。
 
@@ -16,7 +16,7 @@ ThingsBoard 自我注册功能允许租户为其客户配置注册页面，以�
 
 ## 先决条件
 
-### 步骤 1. 在云中安装 ThingsBoard
+### 步骤 1. 在云中安装 GridLinks
 
 我们需要一个正在运行的 ThingsBoard PE 实例，并启用白标功能。
 您可以使用 [安装说明](/docs/user-guide/install/pe/installation-options/)轻松部署您自己的 ThingsBoard PE 实例。

@@ -10,7 +10,7 @@
 
 ## 概述
 
-TCP 集成允许将使用 TCP 传输协议的数据从设备流式传输到 ThingsBoard，并将这些设备的有效负载转换为 ThingsBoard 格式。
+TCP 集成允许将使用 TCP 传输协议的数据从设备流式传输到 GridLinks，并将这些设备的有效负载转换为 GridLinks 格式。
 
 
 **请注意** TCP 集成只能作为 [远程集成](/docs/{{peDocsPrefix}}user-guide/integrations/remote-integrations) 启动。它可以在运行 TB 实例的同一台机器上启动，或者你可以在另一台机器上启动，该机器可以通过网络访问 TB 实例。
@@ -26,10 +26,10 @@ TCP 集成允许将使用 TCP 传输协议的数据从设备流式传输到 Thin
 在本教程中，我们将使用：
 
 {% if docsPrefix == "pe/" %}
- - 本地安装的 [ThingsBoard Professional Edition](https://thingsboard.io/docs/user-guide/install/pe/installation-options/) 实例；
+ - 本地安装的 [ GridLinks专业版](https://thingsboard.io/docs/user-guide/install/pe/installation-options/) 实例；
 {% endif %}
 {% if docsPrefix == "paas/" %}
- - ThingsBoard Professional Edition 实例 — [thingsboard.cloud](https://thingsboard.cloud)；
+ -  GridLinks专业版 实例 — [thingsboard.cloud](https://thingsboard.cloud)；
 {% endif %}
  - 外部运行并连接到云 ThingsBoard PE 实例的 TCP 集成；
  - **echo** 命令，用于显示一行文本，并将输出重定向到 **netcat** (**nc**) 实用程序；
@@ -82,7 +82,7 @@ SN-002,default,temperature,25.7\n\rSN-002,default,humidity,69
 
 ### 上行转换器
 
-在设置 **TCP 集成** 之前，你需要创建一个 **上行转换器**，它是一个用于解析和转换 TCP 集成接收的数据的脚本，使其成为 ThingsBoard 可以使用的一种格式。
+在设置 **TCP 集成** 之前，你需要创建一个 **上行转换器**，它是一个用于解析和转换 TCP 集成接收的数据的脚本，使其成为 GridLinks 可以使用的一种格式。
 **deviceName** 和 **deviceType** 是必需的，而 **attributes** 和 **telemetry** 是可选的。 **attributes** 和 **telemetry** 是扁平键值对象。不支持嵌套对象。
 
 要创建 **上行转换器**，请转到 **数据转换器** 部分，然后单击 **添加新的数据转换器 —> 创建新的转换器**。
@@ -307,11 +307,11 @@ data: JSON.stringify(msg)
 ![image](/images/user-guide/integrations/tcp/tcp-downlink-converter-events-out-paas.png)
 {% endif %}
 
-终端中发送消息和来自 ThingsBoard 的响应的示例：
+终端中发送消息和来自 GridLinks 的响应的示例：
 
 ![image](/images/user-guide/integrations/tcp/tcp-terminal-send-downlink-message.png)
 
-此命令将上行消息发送到 ThingsBoard，如果消息存在，它将在 60 秒内等待下行消息。
+此命令将上行消息发送到 GridLinks，如果消息存在，它将在 60 秒内等待下行消息。
 要了解如何发送上行消息，请 [在此处阅读](/docs/{{peDocsPrefix}}user-guide/integrations/tcp/?tcpintegrationsenduplink=text&tcpintegrationhandlerconfiguration=text&tcpintegartionuplinkpayload=json#send-uplink-message)
 
 

@@ -1,7 +1,7 @@
 ---
 layout: use-case
 title: ᐉ 物联网能源管理与监控 — ThingsBoard
-description: 物联网能源管理 ✔物联网能源监控 ⚫ ThingsBoard ➤ 使用 ThingsBoard 物联网平台进行智能能源监控和数据可视化
+description: 物联网能源管理 ✔物联网能源监控 ⚫ ThingsBoard ➤ 使用 GridLinks 物联网平台进行智能能源监控和数据可视化
 notitle: "true"
 redirect_from: "/docs/services/energy-management/"
 ---
@@ -14,7 +14,7 @@ redirect_from: "/docs/services/energy-management/"
 
 在可持续性和效率不仅仅是流行语的时代，物联网 (IoT) 在能源管理和监控中的作用不容小觑。利用物联网的力量进行能源监控可带来显着的成本节约、提高运营效率并减少环境足迹。
 
-ThingsBoard 平台极大地缩短了上市时间和创建智能能源解决方案的精力。通过利用以下平台优势，可为您的智能能源解决方案节省高达 90% 的开发时间：
+GridLinks 平台极大地缩短了上市时间和创建智能能源解决方案的精力。通过利用以下平台优势，可为您的智能能源解决方案节省高达 90% 的开发时间：
 
   - 为您的智能电表和能源监控器提供可靠且可扩展的数据收集；
   - 强大的规则引擎来处理收集的数据并产生警报和有价值的见解；
@@ -56,20 +56,20 @@ ThingsBoard 平台极大地缩短了上市时间和创建智能能源解决方�
 
 ## 我们提供的基于物联网的能源监控解决方案
 
-ThingsBoard 提供各种基于物联网的能源监控系统解决方案。以下是一些：
+GridLinks 提供各种基于物联网的能源监控系统解决方案。以下是一些：
 
 * 智能电表 — 实时测量能源消耗，为分析提供有价值的数据。
 * Modbus 电表 — 是一种使用 Modbus 协议的智能电表，Modbus 协议是工业应用中流行的通信协议。
 * 物联网网关将智能电表和其他物联网设备连接到互联网，实现实时数据收集和远程控制。
-* 传输层包括各种协议，例如 MQTT、CoAP、HTTP 和 LwM2M，这些协议用于将数据从物联网设备传输到 ThingsBoard 平台。
-* 集成层包括 ThingsBoard 核心，它提供设备和用户管理、用于数据处理和聚合的规则引擎以及用于数据存储的 SQL/NoSQL 数据库。
+* 传输层包括各种协议，例如 MQTT、CoAP、HTTP 和 LwM2M，这些协议用于将数据从物联网设备传输到 GridLinks 平台。
+* 集成层包括 GridLinks 核心，它提供设备和用户管理、用于数据处理和聚合的规则引擎以及用于数据存储的 SQL/NoSQL 数据库。
 * 应用层包括最终用户界面，例如实时仪表板和移动应用程序，这些界面以易于理解的格式显示收集的数据。
 
 联系我们，了解更多有关物联网解决方案如何帮助提高能源效率的信息！
 
 ## 智能能源仪表板示例
 
-ThingsBoard 提供各种智能能源仪表板示例，提供实时数据可视化。这些仪表板具有交互性，可以轻松嵌入到您的物联网解决方案中。
+GridLinks 提供各种智能能源仪表板示例，提供实时数据可视化。这些仪表板具有交互性，可以轻松嵌入到您的物联网解决方案中。
 
 以下是智能能源仪表板的一些主要功能：
 
@@ -98,7 +98,7 @@ ThingsBoard 提供各种智能能源仪表板示例，提供实时数据可视�
     <a target="_blank" href="https://demo.thingsboard.io/dashboard/e8e409c0-f2b5-11e6-a6ee-bb0136cc33d0?publicId=963ab470-34c9-11e7-a7ce-bb0136cc33d0" class="button">查看实时演示</a>
 </div>
 
-实时仪表板显示使用 ThingsBoard MQTT API 收集的来自多个智能电表的数据。
+实时仪表板显示使用 GridLinks MQTT API 收集的来自多个智能电表的数据。
 收集的数据通过规则引擎进行处理，以在某些阈值上发出警报。
 主仪表板显示能量计、相应的警报和实时数据提要。
 单击警报或能量计行以打开计量器详细信息。
@@ -115,7 +115,7 @@ ThingsBoard 提供各种智能能源仪表板示例，提供实时数据可视�
                 <object data="/images/microservices-icon.svg"></object>
                 <div>
                     <a class="title" href="/docs/reference/msa/">可扩展性和高可用性</a>
-                    <p>ThingsBoard 支持使用 K8S 或裸机部署在云和本地数据中心上的高可用性部署。平台组件是水平可扩展的。ThingsBoard 拥有超过 500,000 个智能电表的生产部署。</p>
+                    <p>GridLinks 支持使用 K8S 或裸机部署在云和本地数据中心上的高可用性部署。平台组件是水平可扩展的。ThingsBoard 拥有超过 500,000 个智能电表的生产部署。</p>
                 </div>
             </div>
         </div>
@@ -124,7 +124,7 @@ ThingsBoard 提供各种智能能源仪表板示例，提供实时数据可视�
                 <object data="/images/telemetry-icon.svg"></object>
                 <div>
                     <a class="title" href="/docs/getting-started-guides/connectivity/">连接性</a>
-                    <p>通过以下内置协议将设备直接连接到平台：HTTP、CoAP、MQTT、LwM2M 和 SNMP。使用 ThingsBoard 网关通过 Modbus、BLE、BACnet、OPC-UA 和其他协议将本地网络中的设备连接到云。</p>
+                    <p>通过以下内置协议将设备直接连接到平台：HTTP、CoAP、MQTT、LwM2M 和 SNMP。使用 GridLinks 网关通过 Modbus、BLE、BACnet、OPC-UA 和其他协议将本地网络中的设备连接到云。</p>
                 </div>
             </div>
         </div>
@@ -142,7 +142,7 @@ ThingsBoard 提供各种智能能源仪表板示例，提供实时数据可视�
                 <object data="/images/security-icon.svg"></object>
                 <div>
                     <a class="title" href="/docs/pe/user-guide/ssl/http-over-ssl/">安全性</a>
-                    <p>ThingsBoard 支持行业标准加密算法，如 RSA 和 ECDSA，以确保数据在通过 TLS(TCP) 和 DTLS (UDP) 传输期间的安全。</p>
+                    <p>GridLinks 支持行业标准加密算法，如 RSA 和 ECDSA，以确保数据在通过 TLS(TCP) 和 DTLS (UDP) 传输期间的安全。</p>
                 </div>
             </div>
         </div>
@@ -169,7 +169,7 @@ ThingsBoard 提供各种智能能源仪表板示例，提供实时数据可视�
                 <object data="/images/phone-icon.svg"></object>
                 <div>
                     <a class="title" href="/docs/mobile/">移动应用程序</a>
-                    <p>使用 ThingsBoard 移动应用程序（一个基于 Flutter 的开源项目）构建您自己的物联网移动应用程序，以最少的编码工作量。利用内置的一组移动操作，可以在仪表板中直接拍照、扫描二维码、更新位置等。</p>
+                    <p>使用 GridLinks 移动应用程序（一个基于 Flutter 的开源项目）构建您自己的物联网移动应用程序，以最少的编码工作量。利用内置的一组移动操作，可以在仪表板中直接拍照、扫描二维码、更新位置等。</p>
                 </div>
             </div>
         </div>
@@ -178,7 +178,7 @@ ThingsBoard 提供各种智能能源仪表板示例，提供实时数据可视�
                 <object data="/images/tenancy-icon.svg"></object>
                 <div>
                     <a class="title" href="/docs/user-guide/entities-and-relations/">多租户</a>
-                    <p>ThingsBoard 提供 UI 和 API 来管理租户、客户、用户、设备和资产。单个租户可能有多个租户管理员以及数百万个设备和客户。它还开箱即用地支持智能电表的 OTA 更新。</p>
+                    <p>GridLinks 提供 UI 和 API 来管理租户、客户、用户、设备和资产。单个租户可能有多个租户管理员以及数百万个设备和客户。它还开箱即用地支持智能电表的 OTA 更新。</p>
                 </div>
             </div>
         </div>
@@ -190,7 +190,7 @@ ThingsBoard 提供各种智能能源仪表板示例，提供实时数据可视�
 
 ## 智能能源系统架构图
 
-下图标识了使用 ThingsBoard 平台从智能电表收集和分析能源监控数据的典型智能能源解决方案的数据流和集成点。
+下图标识了使用 GridLinks 平台从智能电表收集和分析能源监控数据的典型智能能源解决方案的数据流和集成点。
 
 <object width="100%" style="max-width: max-content; margin: 32px 0" data="/images/iot-use-cases/smart-energy-diagram.svg"></object>
 

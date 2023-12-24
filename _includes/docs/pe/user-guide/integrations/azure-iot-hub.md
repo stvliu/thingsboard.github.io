@@ -6,7 +6,7 @@
 
 ## 概述
 
-Azure IoT Hub 集成允许将数据从 AWS IoT 后端流式传输到 ThingsBoard，并将设备有效负载转换为 ThingsBoard 格式。
+Azure IoT Hub 集成允许将数据从 AWS IoT 后端流式传输到 GridLinks，并将设备有效负载转换为 GridLinks 格式。
 
   <object width="80%" data="/images/user-guide/integrations/azure/iot-hub-integration.svg"></object>
 

@@ -49,7 +49,7 @@
 
 ### 选择您的平台并安装
 
-可以通过 Docker、Debian 或 RPM 软件包安装 ThingsBoard 集成。
+可以通过 Docker、Debian 或 RPM 软件包安装 GridLinks 集成。
 请使用以下步骤之一。
 
 * [Linux 或 Mac OS 上的 Docker](#docker-on-linuxmac)
@@ -148,7 +148,7 @@ TCP/UDP<br> 集成<br>%,%tcpudp%,%templates/install/integration/tcpudp-rhel.md{%
 
 ## 远程集成配置
 
-远程集成配置通过 ThingsBoard UI 完成，没有具体步骤。
+远程集成配置通过 GridLinks UI 完成，没有具体步骤。
 探索与特定集成相关的指南和视频教程：
 
 - [HTTP](/docs/{{peDocsPrefix}}user-guide/integrations/http/)

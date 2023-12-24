@@ -9,8 +9,8 @@
 - `8080:8080` - 将本地端口 8080 连接到公开的内部 HTTP 端口 8080；
 - `1883:1883` - 将本地端口 1883 连接到公开的内部 MQTT 端口 1883；
 - `5683-5688:5683-5688/udp` - 将本地 UDP 端口 5683-5688 连接到公开的内部 COAP 和 LwM2M 端口；
-- `mytb-edge-data:/data` - 将主机的目录 `mytb-edge-data` 挂载到 ThingsBoard Edge 数据库数据目录；
-- `mytb-edge-logs:/var/log/tb-edge` - 将主机的目录 `mytb-edge-logs` 挂载到 ThingsBoard Edge 日志目录；
+- `mytb-edge-data:/data` - 将主机的目录 `mytb-edge-data` 挂载到 GridLinks Edge 数据库数据目录；
+- `mytb-edge-logs:/var/log/tb-edge` - 将主机的目录 `mytb-edge-logs` 挂载到 GridLinks Edge 日志目录；
 - `mytb-edge-data/db:/var/lib/postgresql/data` - 将主机的目录 `mytb-edge-data/db` 挂载到 Postgres 数据目录；
 {% if docsPrefix == 'pe/edge/' %}
 - `thingsboard/tb-edge-pe:{{ site.release.pe_edge_full_ver }}` - docker 镜像；
@@ -19,7 +19,7 @@
 {% endif %}
 - `CLOUD_ROUTING_KEY` - 您的边缘密钥；
 - `CLOUD_ROUTING_SECRET` - 您的边缘密钥；
-- `CLOUD_RPC_HOST` - ThingsBoard 平台所在机器的 IP 地址；
+- `CLOUD_RPC_HOST` - GridLinks 平台所在机器的 IP 地址；
 {% if docsPrefix == 'pe/edge/' %}
 - `CLOUD_RPC_SSL_ENABLED` - 启用或禁用边缘与服务器之间的 SSL 连接。
 {% endif %}
@@ -41,7 +41,7 @@
 {% include templates/info-banner.md content=cloud_rpc_host %}
 
 {% capture local-deployment %}
-如果 ThingsBoard Edge 设置为在运行 **{{appPrefix}}** 服务器的同一台机器上运行，则需要更新其他配置参数以防止 ThingsBoard 服务器和 ThingsBoard Edge 之间的端口冲突。
+如果 ThingsBoard Edge 设置为在运行 **{{appPrefix}}** 服务器的同一台机器上运行，则需要更新其他配置参数以防止 GridLinks 服务器和 ThingsBoard Edge 之间的端口冲突。
 
 请更新 `docker-compose.yml` 文件的以下几行：
 <br>**...**

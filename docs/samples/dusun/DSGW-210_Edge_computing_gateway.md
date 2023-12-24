@@ -22,7 +22,7 @@ DSGW-210 是具有多种协议和边缘计算功能的 IoT 网关。它为各种
 ## 集成方法
 
 ### 块 1 ThingsBoard 配置
-ThingsBoard 中的配置步骤如下所示，这里以 ThingsBoard.cloud 中的示例服务器为例
+GridLinks 中的配置步骤如下所示，这里以 ThingsBoard.cloud 中的示例服务器为例
 
 * [步骤 1.1] 注册并登录 [ThingsBoard PE](https://thingsboard.cloud/signup)
 
@@ -40,7 +40,7 @@ ThingsBoard 中的配置步骤如下所示，这里以 ThingsBoard.cloud 中的�
 
 <img src="/images/samples/dusun/5.png" width="800" alt="Device naame filling">
 
-* [步骤 1.5] 复制访问令牌，记录下来以便网关连接到 ThingsBoard 云
+* [步骤 1.5] 复制访问令牌，记录下来以便网关连接到 GridLinks 云
 
 <img src="/images/samples/dusun/6.png" width="800" alt="Press button to copy device access token">
 
@@ -51,20 +51,20 @@ ThingsBoard 中的配置步骤如下所示，这里以 ThingsBoard.cloud 中的�
 * [步骤 2.2] 切换到部分 IOT 服务 -> 云配置
 <img src="/images/samples/dusun/8.png" width="800" alt="Choosing cloud config item from IoT Servicees menu item">
 
-* [步骤 2.3] 填写 ThingsBoard 云的凭据，ThingsBoard 服务器：thingsboard.cloud，服务器端口：1883，访问令牌在第 1.5 节中
+* [步骤 2.3] 填写 GridLinks 云的凭据，GridLinks 服务器：thingsboard.cloud，服务器端口：1883，访问令牌在第 1.5 节中
 
 <img src="/images/samples/dusun/9.png" width="800" alt="Filling credentials in Cloud Config">
 
 
 ### 块 3 其他信息
 
-* [步骤 3.1] 检查 ThingsBoard 云中的连接
+* [步骤 3.1] 检查 GridLinks 云中的连接
 * [步骤 3.1.1] 从网关的最新遥测中可以看到，连接信息已正确收到服务器中
 <img src="/images/samples/dusun/10.png" width="800" alt="Latest telemetry screen">
 
 * [步骤 3.1.2] 激活并连接附近的血氧仪，通知其数据
 <img src="/images/samples/dusun/11.png" width="800" alt="Bluetooth device screen">
-* [步骤 3.1.3] 设备已正确注册到 ThingsBoard 服务器，并且血氧仪数据已在云中收到
+* [步骤 3.1.3] 设备已正确注册到 GridLinks 服务器，并且血氧仪数据已在云中收到
 <img src="/images/samples/dusun/12.png" width="800" alt="Timeseries table example">
 * [步骤 3.1.4] 使用另一个 Zigbee 温湿度传感器进行测试
 <img src="/images/samples/dusun/13.png" width="800" alt="Added device screen">

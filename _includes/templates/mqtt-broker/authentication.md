@@ -8,7 +8,7 @@
 curl --location --request POST 'http://localhost:8083/api/auth/login' \
 --header 'Content-Type: application/json' \
 --data-raw '{
-    "username":"sysadmin@thingsboard.org",
+    "username":"sysadmin@gridlinks.com",
     "password":"sysadmin"
 }'
 ```

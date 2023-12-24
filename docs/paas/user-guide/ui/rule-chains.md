@@ -3,7 +3,7 @@ layout: docwithnav-paas
 assignees:
 - vparomskiy
 title: 规则链
-description: ThingsBoard 规则链管理
+description: GridLinks 规则链管理
 
 create-rule-chain:
     0:

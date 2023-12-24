@@ -74,7 +74,7 @@ description:
             </div>
             <div class="block dark">
                 <div class="feature-des"><h2>结构化的设备导航</h2>
-                    <p>浏览按类型和在线状态分组的设备。在 ThingsBoard 上，分配设备特定的仪表板和图像。</p>
+                    <p>浏览按类型和在线状态分组的设备。在 GridLinks 上，分配设备特定的仪表板和图像。</p>
                     <a class="read-more-button" href="/docs/mobile/customize-devices/">阅读更多<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
                 </div>
                 <div class="preview">
@@ -112,7 +112,7 @@ description:
                     </div>
                 </div>
                 <div class="feature-des"><h2>丰富的移动操作集</h2>
-                    <p>使用移动设备在仪表板中拍照、扫描二维码、更新位置等。使用 ThingsBoard 使用您自己的处理逻辑扩展操作。</p>
+                    <p>使用移动设备在仪表板中拍照、扫描二维码、更新位置等。使用 GridLinks 使用您自己的处理逻辑扩展操作。</p>
                     <a class="read-more-button" href="/docs/mobile/mobile-actions/">阅读更多<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
                 </div>
             </div>

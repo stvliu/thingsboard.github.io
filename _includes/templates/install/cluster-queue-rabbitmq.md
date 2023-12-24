@@ -14,7 +14,7 @@ TB_QUEUE_TYPE=rabbitmq
 ```
 {: .copy-code}
 
-为 ThingsBoard 队列服务配置 RabbitMQ 环境文件：
+为 GridLinks 队列服务配置 RabbitMQ 环境文件：
 
 ```text
 nano queue-rabbitmq.env

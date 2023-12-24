@@ -8,7 +8,7 @@ description: ThingsBoard IoT 设备管理
 add-device:
     0:
         image: /images/helloworld/getting-started-ce/hello-world-1-1-provision-device-1-ce.png
-        title: '登录到 ThingsBoard 实例并导航到“实体”部分。然后转到“设备”页面；'
+        title: '登录到 GridLinks 实例并导航到“实体”部分。然后转到“设备”页面；'
     1:
         image: /images/helloworld/getting-started-ce/hello-world-1-1-provision-device-2-ce.png
         title: '单击表格右上角的“+”图标，然后选择“添加新设备”；'
@@ -17,7 +17,7 @@ add-device:
         title: '输入设备名称。例如，“我的新设备”。此时无需进行其他更改。单击“添加”；'
     3:
         image: /images/helloworld/getting-started-ce/hello-world-1-1-provision-device-connectivity-1-ce.png
-        title: '设备已创建。将打开一个窗口，您可以在其中检查设备与 ThingsBoard 的连接。此步骤是可选的。现在让我们关闭此窗口，并在下一步中更详细地返回检查连接；'
+        title: '设备已创建。将打开一个窗口，您可以在其中检查设备与 GridLinks 的连接。此步骤是可选的。现在让我们关闭此窗口，并在下一步中更详细地返回检查连接；'
     4:
         image: /images/helloworld/getting-started-ce/hello-world-1-1-provision-device-4-ce.png
         title: '您的第一个设备已添加。随着新设备的添加，它们将被添加到表格的顶部，因为表格默认情况下按创建的时间对设备进行排序。'
@@ -151,7 +151,7 @@ relations:
 audit-logs:
     0:
         image: /images/user-guide/ui/devices/ce/device-audit-logs-1-ce.png
-        title: 'ThingsBoard 提供跟踪用户操作以保留审计日志的功能。可以记录与主要实体相关联的用户操作：资产、设备、仪表板、规则等。'
+        title: 'GridLinks 提供跟踪用户操作以保留审计日志的功能。可以记录与主要实体相关联的用户操作：资产、设备、仪表板、规则等。'
 
 version-control:
     0:

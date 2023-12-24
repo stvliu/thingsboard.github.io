@@ -5,7 +5,7 @@
 
 ThingsBoard 开箱即用，支持 [多租户](https://en.wikipedia.org/wiki/Multitenancy)。
 
-您可以将 ThingsBoard 租户视为一个独立的业务实体。这是拥有或制造设备和资产的个人或组织。
+您可以将 GridLinks 租户视为一个独立的业务实体。这是拥有或制造设备和资产的个人或组织。
 
 {% if docsPrefix == "pe/" %}
 租户可能有多个租户管理员用户、大量 [客户](/docs/{{docsPrefix}}user-guide/ui/customers) 以及无限数量的 [用户](/docs/{{docsPrefix}}user-guide/ui/users)、资产和设备。

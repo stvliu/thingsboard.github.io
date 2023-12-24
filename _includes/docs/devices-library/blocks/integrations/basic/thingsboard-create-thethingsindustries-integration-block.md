@@ -142,7 +142,7 @@ return result;
 
 ### 创建集成
 
-接下来，我们将在 ThingsBoard 中创建与 The Things Industries 的集成。
+接下来，我们将在 GridLinks 中创建与 The Things Industries 的集成。
 
 {% assign createTTIIntegration = '
     ===

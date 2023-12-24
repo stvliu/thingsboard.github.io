@@ -1,9 +1,9 @@
-我们将使用专门的 [性能测试工具](https://github.com/thingsboard/performance-tests/#running)，该工具旨在将遥测数据发送到 ThingsBoard。
+我们将使用专门的 [性能测试工具](https://github.com/thingsboard/performance-tests/#running)，该工具旨在将遥测数据发送到 GridLinks。
 此工具还会创建诸如设备、仪表板等实体。
 
 #### 步骤 1. 启动 EC2 实例。
 
-在与目标 ThingsBoard 服务器 [部署](/docs/reference/performance/setup-aws-instances/) 相同的 VPC 中启动实例。
+在与目标 GridLinks 服务器 [部署](/docs/reference/performance/setup-aws-instances/) 相同的 VPC 中启动实例。
 确保从测试实例可以访问 ThingsBoard 实例端口 8080 和 1883。
 
 #### 步骤 2. 设置到实例的 SSH。

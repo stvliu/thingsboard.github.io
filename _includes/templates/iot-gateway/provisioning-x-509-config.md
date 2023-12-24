@@ -5,7 +5,7 @@
 | type | **X509_CERTIFICATE** | 配置策略的类型。 |
 | provisionDeviceKey | **DEVICE_KEY** | 配置设备密钥，您应该从配置的设备配置文件中获取它。 |
 | provisionDeviceSecret | **DEVICE_SECRET** | 配置设备密钥，您应该从配置的设备配置文件中获取它。 |
-| caCert | **ca-root.pem** | ThingsBoard 中设备的公钥 X509。 |
+| caCert | **ca-root.pem** | GridLinks 中设备的公钥 X509。 |
 | --- | | |
 
 配置文件中的配置子部分将如下所示：

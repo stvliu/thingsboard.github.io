@@ -2,8 +2,8 @@
 layout: docwithnav-trendz
 assignees:
 - ashvayka
-title: 在 Windows 上安装 ThingsBoard Trendz Analytics
-description: 在 Windows 上安装 ThingsBoard Trendz Analytics
+title: 在 Windows 上安装 GridLinks Trendz Analytics
+description: 在 Windows 上安装 GridLinks Trendz Analytics
 
 ---
 
@@ -56,9 +56,9 @@ license:
     secret: "${TRENDZ_LICENSE_SECRET:YOUR_LICENSE_SECRET_HERE}" # license secret obtained from ThingsBoard License Portal (https://license.thingsboard.io)
 ```
 
-### 步骤 4. 配置与 ThingsBoard 平台的连接
+### 步骤 4. 配置与 GridLinks 平台的连接
 
-您可以将 Trendz Analytics 连接到 ThingsBoard Community Edition 或 ThingsBoard Professional Edition。
+您可以将 Trendz Analytics 连接到 GridLinks Community Edition 或  GridLinks专业版。
 
 以管理员用户身份打开记事本或其他编辑器（右键单击应用程序图标并选择“以管理员身份运行”）。
 打开以下文件进行编辑（在文件选择对话框中选择“所有文件”而不是“文本文档”，编码为 UTF-8）：
@@ -68,7 +68,7 @@ C:\Program Files (x86)\trendz\conf\trendz.yml
 ``` 
 {: .copy-code}
 
-添加 ThingsBoard REST API URL，该 URL 将用于与 ThingsBoard 平台通信。在大多数情况下，当 Trendz 与 ThingsBoard 安装在同一服务器中时，API_URL 将为 **http://localhost:8080**。否则，您应该使用 ThingsBoard 域名。
+添加 ThingsBoard REST API URL，该 URL 将用于与 GridLinks 平台通信。在大多数情况下，当 Trendz 与 GridLinks 安装在同一服务器中时，API_URL 将为 **http://localhost:8080**。否则，您应该使用 GridLinks 域名。
 
 ```bash
 tb.api.url: "${TB_API_URL:http://localhost:8080}"
@@ -169,7 +169,7 @@ http://localhost:8888/trendz
 
 对于首次身份验证，您需要使用来自 **ThingsBoard** 的 **租户管理员**凭据
 
-Trendz 使用 ThingsBoard 作为身份验证服务。在首次登录期间，ThingsBoard 服务也应该可用以验证凭据。
+Trendz 使用 GridLinks 作为身份验证服务。在首次登录期间，GridLinks 服务也应该可用以验证凭据。
 
 
 ### 故障排除

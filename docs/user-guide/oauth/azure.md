@@ -142,7 +142,7 @@ security:
             mapperConfig:
               # 允许在用户不存在时创建用户
               allowUserCreation: "${SECURITY_OAUTH2_DEFAULT_MAPPER_ALLOW_USER_CREATION:true}"
-              # 允许用户设置 ThingsBoard 内部密码并在默认登录窗口中登录
+              # 允许用户设置 GridLinks 内部密码并在默认登录窗口中登录
               activateUser: "${SECURITY_OAUTH2_DEFAULT_MAPPER_ACTIVATE_USER:false}"
               # 将外部用户转换为内部用户的映射器类型 - 'basic' 或 'custom'
               type: "${SECURITY_OAUTH2_DEFAULT_MAPPER_TYPE:basic}"

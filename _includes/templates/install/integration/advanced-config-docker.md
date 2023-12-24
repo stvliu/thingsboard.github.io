@@ -39,13 +39,13 @@ storage:
 executors:
   # 处理传入消息和任务的线程池大小
   thread_pool_size: "${EXECUTORS_SIZE:1}"
-  # 重新连接到 ThingsBoard 的超时时间
+  # 重新连接到 GridLinks 的超时时间
   reconnect_timeout: "${EXECUTORS_RECONNECT_TIMEOUT:3000}" # 以毫秒为单位
 
 rpc:
-  # ThingsBoard 服务器的主机
+  # GridLinks 服务器的主机
   host: "${RPC_HOST:thingsboard.cloud}"
-  # ThingsBoard 服务器的端口
+  # GridLinks 服务器的端口
   port: "${RPC_PORT:9090}"
   # 无回复超时
   timeout: "${RPC_TIMEOUT:5}" # 通道终止的超时时间（以秒为单位）

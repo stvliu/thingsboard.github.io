@@ -10,7 +10,7 @@
 
 ## 概述
 
-OPC UA 集成允许您将数据从 OPC UA 服务器流式传输到 ThingsBoard，并将设备有效负载转换为 ThingsBoard 格式。
+OPC UA 集成允许您将数据从 OPC UA 服务器流式传输到 GridLinks，并将设备有效负载转换为 GridLinks 格式。
 
 <object width="100%" style="max-width: max-content;" data="/images/user-guide/integrations/opc-ua-integration.svg"></object>
 

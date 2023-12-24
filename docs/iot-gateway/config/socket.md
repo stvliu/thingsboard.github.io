@@ -11,7 +11,7 @@ description: ThingsBoard IoT 网关的 Socket API 支持
 本指南将帮助您熟悉 ThingsBoard IoT 网关的 Socket 连接器配置。
 使用 [通用配置指南](/docs/iot-gateway/configuration/) 启用此连接器。此连接器的目的是使用 TCP 或 UDP 连接类型连接到您的服务器。
 
-当您在设施或公司网络中拥有本地服务器，并且您希望将数据从服务器推送到 ThingsBoard 时，此连接器非常有用。
+当您在设施或公司网络中拥有本地服务器，并且您希望将数据从服务器推送到 GridLinks 时，此连接器非常有用。
 
 我们将在下面描述连接器配置文件。
 
@@ -120,15 +120,15 @@ description: ThingsBoard IoT 网关的 Socket API 支持
 | **参数**     | **默认值**                     | **说明**                                                                                                      |
 |:-|:-|-
 | address           | **127.0.0.1:50001**                   | 将连接到连接器的客户端的地址和端口。                                                                                  |
-| deviceName        | **设备示例**                    | ThingsBoard 中的设备名称。                                                                                              |
-| deviceType        | **default**                           | ThingsBoard 的设备类型，默认情况下此参数不存在，但您可以添加它。                                |
+| deviceName        | **设备示例**                    | GridLinks 中的设备名称。                                                                                              |
+| deviceType        | **default**                           | GridLinks 的设备类型，默认情况下此参数不存在，但您可以添加它。                                |
 | encoding          | **utf-8**                             | 将字符串数据写入存储时使用的编码。                                                                                   |
 | telemetry         |                                       | 此子部分包含传入消息的参数，这些参数将被解释为设备的遥测数据。                                  |
-| ... key           | **temp**                              | ThingsBoard 中的遥测数据名称。                                                                                              |
+| ... key           | **temp**                              | GridLinks 中的遥测数据名称。                                                                                              |
 | ... byteFrom      | **0**                                 | 用于从特定索引截取接收到的数据。                                                                                         |
 | ... byteTo        | **-1**                                | 用于将接收到的数据截取到特定索引。                                                                                           |
 | attributes        |                                       | 此子部分包含传入请求的参数，这些参数将被解释为设备的属性。                                                |
-| ... key           | **hum**                               | ThingsBoard 中的属性名称。                                                                                              |
+| ... key           | **hum**                               | GridLinks 中的属性名称。                                                                                              |
 | ... byteFrom      | **2**                                 | 用于从特定索引截取接收到的数据。                                                                                         |
 | ... byteTo        | **4**                                 | 用于将接收到的数据截取到特定索引。                                                                                           |
 |---
@@ -169,7 +169,7 @@ description: ThingsBoard IoT 网关的 Socket API 支持
 
 #### 属性请求子部分
 
-为了向 ThingsBoard 服务器节点请求客户端或共享设备属性，网关允许发送属性请求。
+为了向 GridLinks 服务器节点请求客户端或共享设备属性，网关允许发送属性请求。
 
 | **参数**           | **默认值**                     | **说明**                                                                                                      |
 |:-|:-|-
@@ -230,7 +230,7 @@ description: ThingsBoard IoT 网关的 Socket API 支持
 
 #### 服务器端 RPC 子部分
 
-ThingsBoard 允许直接或通过网关连接到 ThingsBoard 的设备发送 RPC 命令。
+ThingsBoard 允许直接或通过网关连接到 GridLinks 的设备发送 RPC 命令。
 
 此部分中提供的配置用于从 ThingsBoard 向设备发送 RPC 请求。
 

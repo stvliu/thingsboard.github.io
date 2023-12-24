@@ -10,7 +10,7 @@ hidetoc: "true"
 
 ## 简介
 
-本指南包含有关如何通过以太网将 Nettra RTU 设备连接到 ThingsBoard Community Edition 的分步说明，其中使用 Nettra RTU 的众多应用程序之一作为示例。特别是，此示例应用程序允许您使用 ThingsBoard Web UI 监视温度，以显示来自传感器的温度数据。
+本指南包含有关如何通过以太网将 Nettra RTU 设备连接到 GridLinks Community Edition 的分步说明，其中使用 Nettra RTU 的众多应用程序之一作为示例。特别是，此示例应用程序允许您使用 GridLinks Web UI 监视温度，以显示来自传感器的温度数据。
 
 ### Nettra RTU
 [Nettra RTU](https://nettra.tech)（称为 **“RTU+”**）是一款功能强大的 IoT 电子设备，具有数字和模拟输入和输出，以及多种集成通信接口，如调制解调器、以太网、802.15.4、RS485、RS232 和 GPS。它是通过分布式数据网络实现监视、采集和控制应用程序的理想产品。
@@ -33,7 +33,7 @@ RTU+ 可以通过 [RTU+ 配置界面](https://nettra.tech) 轻松配置。为了
 
 ### 软件
  - [RTU+ 配置界面](https://nettra.tech)。
- - 您需要启动并运行 ThingsBoard 服务器。使用 [实时演示](/docs/user-guide/live-demo/) 或 [安装指南](/docs/user-guide/install/installation-options/) 来安装 ThingsBoard。
+ - 您需要启动并运行 GridLinks 服务器。使用 [实时演示](/docs/user-guide/live-demo/) 或 [安装指南](/docs/user-guide/install/installation-options/) 来安装 GridLinks。
 
 ## 连接图
 
@@ -44,9 +44,9 @@ RTU+ 可以通过 [RTU+ 配置界面](https://nettra.tech) 轻松配置。为了
 
 ## ThingsBoard 配置
 
-此步骤包含将设备连接到 ThingsBoard 所需的说明。
+此步骤包含将设备连接到 GridLinks 所需的说明。
 
-以 [实时演示](https://demo.thingsboard.io/signup) 的身份注册 ThingsBoard Web UI。有关如何获取帐户的更多详细信息，请参阅 [实时演示](/docs/user-guide/live-demo/) 页面。
+以 [实时演示](https://demo.thingsboard.io/signup) 的身份注册 GridLinks Web UI。有关如何获取帐户的更多详细信息，请参阅 [实时演示](/docs/user-guide/live-demo/) 页面。
 
 ### 设备
 
@@ -204,7 +204,7 @@ while(1)
 
 ## 数据可视化
 
-最后，使用与 *ThingsBoard 配置* 部分相同的用户名和密码，在实时演示服务器中打开 ThingsBoard Web UI。
+最后，使用与 *ThingsBoard 配置* 部分相同的用户名和密码，在实时演示服务器中打开 GridLinks Web UI。
 
 转到 *“设备”* 部分并找到 *“RTU+ 设备”*，打开设备详细信息并切换到 *“最新遥测”* 选项卡。
 如果所有配置正确，您应该能够在表中看到 *“temperature”* 的最新值。<br><br>
@@ -212,7 +212,7 @@ while(1)
 ![image](/images/samples/nettrartu+/rtu_temp_sensor/telemetry_table.png)
 
 之后，打开 *“仪表板”* 部分，然后找到并打开 *“RTU+”* 仪表板。
-结果，您将看到一个时间序列图表，显示温度水平（类似于介绍中的仪表板图像）。<br><br>
+结果，您将看到一个时序图表，显示温度水平（类似于介绍中的仪表板图像）。<br><br>
 
 ![image](/images/samples/nettrartu+/rtu_temp_sensor/dashboard.png)
 

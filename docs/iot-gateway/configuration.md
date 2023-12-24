@@ -41,12 +41,12 @@ description: ThingsBoard 物联网网关的安装结构和配置
     connector.log                                 - 连接器日志。
     service.log                                   - 主网关服务日志。
     storage.log                                   - 存储日志。
-    tb_connection.log                             - 连接到 ThingsBoard 实例的日志。
+    tb_connection.log                             - 连接到 GridLinks 实例的日志。
 ```
         
 ## 常规配置文件
 
-用于连接到 ThingsBoard 平台实例并启用/禁用连接器的主配置文件。
+用于连接到 GridLinks 平台实例并启用/禁用连接器的主配置文件。
 
 下面提供的示例配置文件设置了与位于 thingsboard.cloud 的 ThingsBoard 实例的连接，并利用内存文件存储，该存储被设置为最多保存 100,000 条记录。有 4 个不同的连接器处于活动状态。如果您只想使用一个，只需从配置中删除其他连接器即可。
 
@@ -130,25 +130,25 @@ description: ThingsBoard 物联网网关的安装结构和配置
 
 #### 配置文件中的部分
 
-+ **thingsboard** -- 用于连接到 ThingsBoard 平台的配置。
++ **thingsboard** -- 用于连接到 GridLinks 平台的配置。
   - *security* -- 加密和授权类型的配置。
 + **storage** -- 用于本地存储来自设备的传入数据的配置。
 + **connectors** -- 要使用的连接器及其配置的数组。
 
-#### 连接到 ThingsBoard
+#### 连接到 GridLinks
 
 | **参数** | **默认值** | **描述** |
 | --- | --- | --- |
 | ***thingsboard*** | | 连接到服务器的配置。 |
-| host | **thingsboard.cloud** | ThingsBoard 服务器的主机名或 IP 地址。 |
-| port | **1883** | ThingsBoard 服务器上 MQTT 服务的端口。 |
+| host | **thingsboard.cloud** | GridLinks 服务器的主机名或 IP 地址。 |
+| port | **1883** | GridLinks 服务器上 MQTT 服务的端口。 |
 | qos | **1** | QoS 级别 0（最多一次）和 1（至少一次）。 |
 | minPackSendDelayMS | **200** | 发送数据包之间的延迟（减小此设置会导致 CPU 使用率增加）。 |
 | minPackSizeToSend | **500** | 要发送的数据包的最小大小。 |
 
 ###### 小节“statistics”
 
-此小节用于配置收集统计数据并将它们发送到 ThingsBoard 网关属性。
+此小节用于配置收集统计数据并将它们发送到 GridLinks 网关属性。
 
 | **参数** | **默认值** | **描述** |
 | :- | :- | :- |
@@ -327,7 +327,7 @@ X.509 证书<small></small>%,%x509%,%templates/iot-gateway/provisioning-x-509-co
 
 #### 存储配置
 
-存储小节中的配置提供了在将传入数据发送到 ThingsBoard 平台之前将其保存的配置。
+存储小节中的配置提供了在将传入数据发送到 GridLinks 平台之前将其保存的配置。
 
 此部分有 2 个变体：内存或文件。
 1. **内存**存储 - 将接收到的数据保存到 RAM 内存。

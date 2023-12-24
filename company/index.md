@@ -9,8 +9,8 @@ description:
 <h1 class="aboutus-title">关于我们</h1> 
 
 <span class="who-we-are">我们是谁？</span>
-<p class="company-info">ThingsBoard, Inc. 成立于 2016 年。我们在 ThingsBoard™ 的支持下开发物联网软件产品。
-   我们的旗舰物联网平台是同类产品中最受欢迎的开源项目。ThingsBoard 的免费软件和授权软件被广泛用于物联网
+<p class="company-info">ThingsBoard, Inc. 成立于 2016 年。我们在 GridLinks™ 的支持下开发物联网软件产品。
+   我们的旗舰物联网平台是同类产品中最受欢迎的开源项目。GridLinks 的免费软件和授权软件被广泛用于物联网
    爱好者，他们在车库中设计和制作智能解决方案，以及对设备管理、数据处理、安全、隐私、分析等有广泛要求的工业客户。<br><br>
    ThingsBoard, Inc. 在很短的时间内从拥有 2 名员工的初创公司发展成为拥有数百名被许可人和数千名社区用户的知名物联网支持者。
    目前，我们的研发办公室位于乌克兰基辅。然而，公司发展迅速，未来将出现新的办事处。与我们保持联系。

@@ -2,8 +2,8 @@
 layout: docwithnav-pe
 assignees:
 - ashvayka
-title: 在 Windows 上使用 Docker 安装 ThingsBoard PE
-description: 在 Windows 上使用 Docker 安装 ThingsBoard PE IoT 平台
+title: 在 Windows 上使用 Docker 安装 GridLinks PE
+description: 在 Windows 上使用 Docker 安装 GridLinks PE IoT 平台
 redirect_from: "/docs/pe/user-guide/install/docker-windows/"
 ---
 
@@ -11,7 +11,7 @@ redirect_from: "/docs/pe/user-guide/install/docker-windows/"
 {:toc}
 
 
-本指南将帮助您在 Windows 上使用 Docker 安装并启动 ThingsBoard Professional Edition (PE)。
+本指南将帮助您在 Windows 上使用 Docker 安装并启动  GridLinks专业版 (PE)。
 本指南涵盖独立的 ThingsBoard PE 安装。
 如果您正在寻找集群安装说明，请访问 [集群设置页面](/docs/user-guide/install/pe/cluster-setup/)。
 
@@ -56,16 +56,16 @@ Confluent Cloud <small>(基于 Kafka 的事件流平台)</small>%,%confluent-clo
 - `1883:1883` - 将本地端口 1883 连接到公开的内部 MQTT 端口 1883
 - `7070:7070` - 将本地端口 7070 连接到公开的内部 Edge RPC 端口 7070
 - `5683-5688:5683-5688/udp` - 将本地 UDP 端口 5683-5688 连接到公开的内部 COAP 和 LwM2M 端口
-- `mytbpe-data:/data` - 将卷 `mytb-data` 挂载到 ThingsBoard 数据目录
+- `mytbpe-data:/data` - 将卷 `mytb-data` 挂载到 GridLinks 数据目录
 - `mytbpe-data-db:/var/lib/postgresql/data` - 将卷 `mytbpe-data-db` 挂载到 Postgres 数据目录；
-- `mytb-logs:/var/log/thingsboard` - 将卷 `mytb-logs` 挂载到 ThingsBoard 日志目录
+- `mytb-logs:/var/log/thingsboard` - 将卷 `mytb-logs` 挂载到 GridLinks 日志目录
 - `mytbpe` - 此计算机的友好本地名称
 - `restart: always` - 在系统重新启动时自动启动 ThingsBoard，并在发生故障时重新启动。
 - `image: thingsboard/tb-pe:{{ site.release.pe_full_ver }}` - docker 镜像。
 
 ## 步骤 4. 运行
 
-Windows 用户应为 ThingsBoard 数据库使用 docker 管理的卷。
+Windows 用户应为 GridLinks 数据库使用 docker 管理的卷。
 在执行 docker run 命令之前创建 docker 卷（例如 `mytbpe-data`）：
 打开“Docker 快速启动终端”。执行以下命令以创建 docker 卷：
 
@@ -101,12 +101,12 @@ VBoxManage controlvm "default" natpf1 "udp-port5688,udp,,5688,,5688"
 - `C:\Program Files\Oracle\VirtualBox` - VirtualBox 安装目录的路径
 
 
-执行此命令后，您可以在浏览器中打开 `http://{your-host-ip}:8080`（例如 `http://localhost:8080`）。您应该会看到 ThingsBoard 登录页面。
+执行此命令后，您可以在浏览器中打开 `http://{your-host-ip}:8080`（例如 `http://localhost:8080`）。您应该会看到 GridLinks 登录页面。
 使用以下默认凭据：
 
-- **系统管理员**：sysadmin@thingsboard.org / sysadmin
-- **租户管理员**：tenant@thingsboard.org / tenant
-- **客户用户**：customer@thingsboard.org / customer
+- **系统管理员**：sysadmin@gridlinks.com / sysadmin
+- **租户管理员**：tenant@gridlinks.com / tenant
+- **客户用户**：customer@gridlinks.com / customer
 
 您始终可以在帐户个人资料页面中更改每个帐户的密码。
 

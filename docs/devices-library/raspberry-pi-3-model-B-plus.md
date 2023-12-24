@@ -1,6 +1,6 @@
 ---
 layout: devices-library-article
-title: 如何将 Raspberry Pi 3 Model B+ 连接到 ThingsBoard？
+title: 如何将 Raspberry Pi 3 Model B+ 连接到 GridLinks？
 category: 单板计算机
 chip: 博通 BCM2837B0
 connectivity: HTTP、MQTT、WIFI

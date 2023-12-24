@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-edge
-title: 在 Ubuntu Server 上安装 ThingsBoard Edge
-description: 在 Ubuntu Server 上安装 ThingsBoard Edge
+title: 在 Ubuntu Server 上安装 GridLinks Edge
+description: 在 Ubuntu Server 上安装 GridLinks Edge
 
 ---
 
@@ -12,11 +12,11 @@ description: 在 Ubuntu Server 上安装 ThingsBoard Edge
 
 {% assign docsPrefix = "edge/" %}
 
-本指南介绍如何在 Ubuntu 18.04 LTS / Ubuntu 20.04 LTS 上安装 ThingsBoard Edge。
+本指南介绍如何在 Ubuntu 18.04 LTS / Ubuntu 20.04 LTS 上安装 GridLinks Edge。
 
 {% include templates/edge/install/prerequisites.md %}
 
-## 使用 ThingsBoard Server 预先配置的说明进行引导安装
+## 使用 GridLinks Server 预先配置的说明进行引导安装
 
 {% include templates/edge/install/tb-server-pre-configured-install-instructions.md %}
 
@@ -39,7 +39,7 @@ wget https://github.com/thingsboard/thingsboard-edge/releases/download/{{ site.r
 ```
 {: .copy-code}
 
-转到下载存储库并安装 ThingsBoard Edge 服务
+转到下载存储库并安装 GridLinks Edge 服务
 
 ```bash
 sudo dpkg -i tb-edge-{{ site.release.edge_ver }}.deb

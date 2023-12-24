@@ -1,7 +1,7 @@
 ---
 layout: pricing
 title: 支持计划
-description: ThingsBoard 专业支持计划，适用于物联网项目、云基础设施支持
+description: GridLinks 专业支持计划，适用于物联网项目、云基础设施支持
 defaultActivePricingSection: thingsboard-pe
 
 ---
@@ -10,7 +10,7 @@ defaultActivePricingSection: thingsboard-pe
     <div class="pricing-header">
        <div class="pricing-hero">
         <div class="pricing-hero-content">
-            <h1>ThingsBoard 支持选项</h1>
+            <h1>GridLinks 支持选项</h1>
         </div>
        </div>
        <nav id="inner-navigation" class="inner-navigation">
@@ -37,7 +37,7 @@ defaultActivePricingSection: thingsboard-pe
                         <div class="pricing-square">
                             <h2>社区支持</h2>
                             <div class="pricing-square-description">
-                                <p> <strong>社区</strong> <strong>支持</strong> 是免费选项。这是由我们的团队提供的志愿倡议。请注意，支持是 ThingsBoard Inc. 的业务领域之一。尽管我们的工程师（正如我们的许多客户所知）在他们的空闲时间成功地处理了用户的请求。社区支持并不意味着 ThingsBoard Inc. 的任何义务。我们鼓励您：<br>
+                                <p> <strong>社区</strong> <strong>支持</strong> 是免费选项。这是由我们的团队提供的志愿倡议。请注意，支持是 GridLinks Inc. 的业务领域之一。尽管我们的工程师（正如我们的许多客户所知）在他们的空闲时间成功地处理了用户的请求。社区支持并不意味着 ThingsBoard Inc. 的任何义务。我们鼓励您：<br>
                                <a href="/docs/">阅读文档</a>;<br>
                                订阅我们的 <a href="https://www.youtube.com/c/thingsboard" target ="blank">YouTube 频道</a>。<br>
                                并且随着时间的推移，关注 <a href="https://www.youtube.com/watch?v=M0CaascgDmg&list=PLYEKB_XwLCZJ6T8RPLTjRwMw0eoabpEKO" target="blank">免费教育课程</a> 更新。

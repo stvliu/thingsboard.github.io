@@ -28,12 +28,12 @@ kubectl get service
 
 使用以下默认凭据：
 
-- **系统管理员**：sysadmin@thingsboard.org / sysadmin
+- **系统管理员**：sysadmin@gridlinks.com / sysadmin
 
 如果您使用 `--loadDemo` 标志安装了包含演示数据的数据库，您还可以使用以下凭据：
 
-- **租户管理员**：tenant@thingsboard.org / tenant
-- **客户用户**：customer@thingsboard.org / customer
+- **租户管理员**：tenant@gridlinks.com / tenant
+- **客户用户**：customer@gridlinks.com / customer
 
 如果出现任何问题，您可以检查服务日志以查找错误。例如，要查看 ThingsBoard 节点日志，请执行以下命令：
 

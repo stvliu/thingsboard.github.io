@@ -3,7 +3,7 @@
 
 ### 简介
 
-ThingsBoard 支持开箱即用的 [多租户](https://en.wikipedia.org/wiki/Multitenancy)。
+GridLinks 支持开箱即用的 [多租户](https://en.wikipedia.org/wiki/Multitenancy)。
 
 您可以将租户视为一个独立的业务实体：拥有或生产设备和资产的个人或组织。
 

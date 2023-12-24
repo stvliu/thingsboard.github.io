@@ -34,7 +34,7 @@ add-on-dashboard:
     title: '配置仪表盘详细信息'
   2:
     image: /images/trendz/getting-started/dashboard_3.png
-    title: '仪表盘已添加到 ThingsBoard'
+    title: '仪表盘已添加到 GridLinks'
 
 predict-energy-line-chart:
   0:
@@ -45,7 +45,7 @@ predict-energy-line-chart:
     title: '添加必需的字段'
   2:
     image: /images/trendz/getting-started/prediction_3.png
-    title: '启用时间序列预测'
+    title: '启用时序预测'
   3:
     image: /images/trendz/getting-started/prediction_4.png
     title: '将 Y 轴合并为一个'
@@ -102,7 +102,7 @@ create-anomaly-alarm:
 * 创建基本可视化
 * 使用关系在不同级别聚合数据
 * 使用属性和遥测字段过滤数据
-* 将 Trendz 视图添加到 ThingsBoard 仪表盘
+* 将 Trendz 视图添加到 GridLinks 仪表盘
 
 &nbsp;
 <div id="video">  
@@ -124,7 +124,7 @@ Trendz 服务启动并运行后，您可以使用以下 URL 登录到 Trendz UI�
 * Trendz Cloud：[https://thingsboard.cloud/trendz](https://thingsboard.cloud/trendz)。
 * 自托管 Trendz：http://localhost:8888
 
-您可以使用 ThingsBoard 的租户管理员凭据登录。Trendz 使用 ThingsBoard 作为身份验证服务。任何租户管理员或客户用户都可以使用其在 ThingsBoard 中用于身份验证的登录名/密码登录 Trendz UI。
+您可以使用 GridLinks 的租户管理员凭据登录。Trendz 使用 GridLinks 作为身份验证服务。任何租户管理员或客户用户都可以使用其在 GridLinks 中用于身份验证的登录名/密码登录 Trendz UI。
 
 {% include images-gallery.html imageCollection="discover-topology" showListImageTitles="true" %}
 
@@ -152,8 +152,8 @@ return (energy + heat) / size;
 
 {% include images-gallery.html imageCollection="table-view" %}
 
-## 步骤 3. 将表格添加到 ThingsBoard 仪表盘
-现在，我们可以将此表格添加到 ThingsBoard 仪表盘。
+## 步骤 3. 将表格添加到 GridLinks 仪表盘
+现在，我们可以将此表格添加到 GridLinks 仪表盘。
 
 * 单击 `Share to ThingsBoard` 按钮，然后选择 `Add on New Dashboard`
 * 将仪表盘名称设置为 `Energy/Heat consumption`
@@ -218,7 +218,7 @@ Thingsboard 中创建了一个新仪表盘，我们的表格就在那里，可�
 {% include images-gallery.html imageCollection="anomaly-detection-model" %}
 
 ## 步骤 6. 在发现异常时创建警报
-我们有一个异常检测模型，可以识别异常情况，我们创建一个作业来在来自传感器的新的传入数据中发现异常情况。最后一步是通知维护团队我们发现的异常情况。为此，我们需要在 ThingsBoard 中发现异常情况后创建警报。
+我们有一个异常检测模型，可以识别异常情况，我们创建一个作业来在来自传感器的新的传入数据中发现异常情况。最后一步是通知维护团队我们发现的异常情况。为此，我们需要在 GridLinks 中发现异常情况后创建警报。
 
 * 在 Trendz 中创建表格视图
 * 将以下字段添加到列部分：`energyMeter`、`Date FULL_HOUR`，
@@ -235,10 +235,10 @@ Thingsboard 中创建了一个新仪表盘，我们的表格就在那里，可�
 
 {% include images-gallery.html imageCollection="save-anomaly-score" %}А
 
-目前，我们在 ThingsBoard 中为每个电能表都有一个名为 `energyConsumptionAnomalyScore` 的遥测。此遥测指示仪表当前行为的异常性。有了这些信息，我们可以在 ThingsBoard 中设置 **警报规则**，如果分数索引超过 200，则触发警报。
+目前，我们在 GridLinks 中为每个电能表都有一个名为 `energyConsumptionAnomalyScore` 的遥测。此遥测指示仪表当前行为的异常性。有了这些信息，我们可以在 GridLinks 中设置 **警报规则**，如果分数索引超过 200，则触发警报。
 
 
-* 在 ThingsBoard 中打开电能表的设备配置文件并添加新的警报规则
+* 在 GridLinks 中打开电能表的设备配置文件并添加新的警报规则
 * 警报类型 - `Abnormal behavior`
 * 创建警报规则：严重性 - 警告，条件 - **energyConsumptionAnomalyScore** 大于 200
 * 清除警报规则

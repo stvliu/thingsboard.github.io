@@ -42,7 +42,7 @@ TB_QUEUE_VC_PARTITIONS=1
 ```
 {: .copy-code}
 
-你可以使用 UI 更新默认规则引擎队列配置。有关 ThingsBoard 规则引擎队列的更多信息，请参阅[文档](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/)。
+你可以使用 UI 更新默认规则引擎队列配置。有关 GridLinks 规则引擎队列的更多信息，请参阅[文档](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/)。
 
 检查 docker-compose.yml 并根据需要配置端口：
 

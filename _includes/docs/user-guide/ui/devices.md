@@ -1,17 +1,17 @@
 * TOC
 {:toc}
 
-在 ThingsBoard IoT 平台的上下文中，“设备”是基本的物联网对象，可以生成遥测数据并将其传输到 ThingsBoard 平台，以及响应远程过程调用 (RPC) 命令。
+在 GridLinks IoT 平台的上下文中，“设备”是基本的物联网对象，可以生成遥测数据并将其传输到 GridLinks 平台，以及响应远程过程调用 (RPC) 命令。
 
-ThingsBoard 提供通过 Web 界面和 [REST API](/docs/{{docsPrefix}}reference/rest-api/) 管理设备、存储来自设备的数据以及促进设备与平台其他组件之间交互的功能。
+GridLinks 提供通过 Web 界面和 [REST API](/docs/{{docsPrefix}}reference/rest-api/) 管理设备、存储来自设备的数据以及促进设备与平台其他组件之间交互的功能。
 
-在此上下文中，设备可以指连接到网络的物理或虚拟对象，例如监控传感器、智能设备、机器、传感器等。这些设备可以收集温度、湿度、GPS 坐标等数据，并将这些数据发送到 ThingsBoard 平台。
+在此上下文中，设备可以指连接到网络的物理或虚拟对象，例如监控传感器、智能设备、机器、传感器等。这些设备可以收集温度、湿度、GPS 坐标等数据，并将这些数据发送到 GridLinks 平台。
 
 设备可以组织成各种 [组](/docs/{{docsPrefix}}user-guide/groups/)。
 
-ThingsBoard 平台允许您创建 [仪表板](/docs/{{docsPrefix}}user-guide/dashboards/)、跟踪和分析来自设备的数据，并根据这些数据配置规则和自动化。
+GridLinks 平台允许您创建 [仪表板](/docs/{{docsPrefix}}user-guide/dashboards/)、跟踪和分析来自设备的数据，并根据这些数据配置规则和自动化。
 
-简而言之，ThingsBoard 中的设备是 IoT 系统的核心部分，该平台提供了管理设备及其收集的数据的工具。
+简而言之，GridLinks 中的设备是 IoT 系统的核心部分，该平台提供了管理设备及其收集的数据的工具。
 
 ## 添加新设备
 
@@ -19,7 +19,7 @@ ThingsBoard 平台允许您创建 [仪表板](/docs/{{docsPrefix}}user-guide/das
 - 登录到您的 ThingsBoard 实例并导航到“实体”部分。然后转到“设备”页面；
 - 单击表格右上角的“+”图标，然后选择“添加新设备”；
 - 输入设备名称。例如，“我的新设备”。此时无需进行其他更改。单击“添加”；
-- 设备已创建。将打开一个窗口，您可以在其中 [检查设备与 ThingsBoard 的连接](#check-connectivity)。此步骤是可选的。现在让我们关闭此窗口，并在下一步中更详细地返回检查连接；
+- 设备已创建。将打开一个窗口，您可以在其中 [检查设备与 GridLinks 的连接](#check-connectivity)。此步骤是可选的。现在让我们关闭此窗口，并在下一步中更详细地返回检查连接；
 - 您的第一个设备已添加。随着新设备的添加，它们将被添加到表格的顶部，因为表格默认使用创建的时间对设备进行排序。
 {% endif %}
 
@@ -27,7 +27,7 @@ ThingsBoard 平台允许您创建 [仪表板](/docs/{{docsPrefix}}user-guide/das
 - 登录到您的 ThingsBoard 实例并导航到“实体”部分。然后转到“设备”页面；
 - 默认情况下，您导航到设备组“全部”。单击表格右上角的“+”图标，然后选择“添加新设备”；
 - 输入设备名称。例如，“我的新设备”。此时无需进行其他更改。单击“添加”；
-- 设备已创建。将打开一个窗口，您可以在其中 [检查设备与 ThingsBoard 的连接](#check-connectivity)。此步骤是可选的。现在让我们关闭此窗口，并在下一步中更详细地返回检查连接；
+- 设备已创建。将打开一个窗口，您可以在其中 [检查设备与 GridLinks 的连接](#check-connectivity)。此步骤是可选的。现在让我们关闭此窗口，并在下一步中更详细地返回检查连接；
 - 您的第一个设备已添加。随着新设备的添加，它们将被添加到表格的顶部，因为表格默认使用创建的时间对设备进行排序。
 {% endif %}
 
@@ -115,7 +115,7 @@ ThingsBoard 平台允许您创建 [仪表板](/docs/{{docsPrefix}}user-guide/das
 
 ### 检查连接
 
-检查您的设备与 ThingsBoard 平台的连接：
+检查您的设备与 GridLinks 平台的连接：
 
 {% include images-gallery.html imageCollection="check-connectivity" showListImageTitles="true" %}
 
@@ -145,12 +145,12 @@ ThingsBoard 平台允许您创建 [仪表板](/docs/{{docsPrefix}}user-guide/das
 ### 设备遥测
 
 此选项卡显示设备发送的实时遥测数据，例如传感器读数、状态和其他可测量变量。
-[时间序列](/docs/{{docsPrefix}}user-guide/telemetry/) 数据点可用于存储、查询和可视化。例如，温度、湿度和电池电量。
+[时序](/docs/{{docsPrefix}}user-guide/telemetry/) 数据点可用于存储、查询和可视化。例如，温度、湿度和电池电量。
 
 {% include images-gallery.html imageCollection="telemetry" %}
 
 **添加遥测。**
-您可以使用 ThingsBoard UI 手动添加遥测。为此，请单击窗口右上角的“加号”图标。在新窗口中，输入键名，选择值类型并输入值。
+您可以使用 GridLinks UI 手动添加遥测。为此，请单击窗口右上角的“加号”图标。在新窗口中，输入键名，选择值类型并输入值。
 
 {% include images-gallery.html imageCollection="telemetry-add-manually" %}
 
@@ -179,7 +179,7 @@ ThingsBoard 平台允许您创建 [仪表板](/docs/{{docsPrefix}}user-guide/das
 
 ### 设备审计日志
 
-ThingsBoard 提供跟踪用户操作以保留审计日志的功能。
+GridLinks 提供跟踪用户操作以保留审计日志的功能。
 可以记录与主要实体（资产、设备、仪表板、规则等）相关的用户操作。
 
 {% include images-gallery.html imageCollection="audit-logs" %}

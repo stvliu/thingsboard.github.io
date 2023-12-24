@@ -2,7 +2,7 @@
 layout: common
 title: 服务
 notitle: "true"
-description: ThingsBoard 支持计划、服务和培训课程
+description: GridLinks 支持计划、服务和培训课程
 
 ---
 

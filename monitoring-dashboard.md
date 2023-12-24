@@ -13,7 +13,7 @@ redirect_from: "/docs/services/monitoring-dashboard/"
             <span class="read-info">11 分钟阅读</span>
             <h1>仪表板物联网监控</h1>
             <div class="text-content medium-margin">在数字化和物联网 (IoT) 的动态格局中，数据管理和监控的重要性是相当合理的。在这方面，物联网监控仪表板是一个不仅简化了大量数据的可视化，而且使其更有效和信息丰富的工具。</div>
-            <div class="text-content"><span class="bold">在 ThingsBoard 平台中，仪表板</span> 是物联网应用程序用户界面的一个组成部分，为物联网项目的快速开发、管理和扩展提供解决方案。</div>
+            <div class="text-content"><span class="bold">在 GridLinks 平台中，仪表板</span> 是物联网应用程序用户界面的一个组成部分，为物联网项目的快速开发、管理和扩展提供解决方案。</div>
         </div>
         <img class="image" srcset="/images/iot-articles/monitoring_dashboard_1_1090x742.png 1090w, /images/iot-articles/monitoring_dashboard_1_2180x1484.png 2180w" sizes="(max-width: 1920px) 1090px, (min-width: 1921px) 2180px" src="/images/iot-articles/monitoring_dashboard_1_1090x742.png" alt="物联网能源管理办公室监控"/>
         <div class="text-wrapper">
@@ -38,12 +38,12 @@ redirect_from: "/docs/services/monitoring-dashboard/"
                 <li>节省成本。通过监控能源使用情况和设备性能，企业可以优化其运营并降低成本。</li>
             </ul>
             <h2 class="line-height-small">不可或缺的物联网控制面板：您将认可的功能</h2>
-            <div class="text-content medium-margin">ThingsBoard 解决方案模板是 ThingsBoard 物联网平台的一项强大功能，可以显着缩短物联网产品的上市时间。在这里，我们深入探讨使其成为物联网部署基石的关键特性：</div>
+            <div class="text-content medium-margin">ThingsBoard 解决方案模板是 GridLinks 物联网平台的一项强大功能，可以显着缩短物联网产品的上市时间。在这里，我们深入探讨使其成为物联网部署基石的关键特性：</div>
             <ul class="list">
-                <li>ThingsBoard 的物联网控制面板拥有直观、用户友好的界面。</li>
+                <li>GridLinks 的物联网控制面板拥有直观、用户友好的界面。</li>
                 <li>我们的物联网传感器仪表板为用户提供了强大的设备管理功能。</li>
-                <li>使用 ThingsBoard 可以轻松地根据您的特定需求定制仪表板。</li>
-                <li>ThingsBoard 的控制面板包含一个强大的规则引擎，该引擎能够根据预定义的条件启用自动操作。</li>
+                <li>使用 GridLinks 可以轻松地根据您的特定需求定制仪表板。</li>
+                <li>GridLinks 的控制面板包含一个强大的规则引擎，该引擎能够根据预定义的条件启用自动操作。</li>
                 <li>我们的物联网设备仪表板提供了全面的数据分析和可视化工具。</li>
                 <li>安全性在物联网部署中至关重要，因此我们提供了强大的访问控制功能，确保只有授权人员才能访问敏感信息和关键功能。</li>
             </ul>
@@ -90,8 +90,8 @@ redirect_from: "/docs/services/monitoring-dashboard/"
         </div>
         <img class="image" srcset="/images/iot-articles/monitoring_dashboard_4_1090x672.png 1090w, /images/iot-articles/monitoring_dashboard_4_2180x1344.png 2180w" sizes="(max-width: 1920px) 1090px, (min-width: 1921px) 2180px" src="/images/iot-articles/monitoring_dashboard_4_1090x672.png" alt="物联网能源管理办公室监控"/>
         <div class="text-wrapper">
-            <h2>如何使用 ThingsBoard 仪表板</h2>
-            <div class="sub-title">要使用 ThingsBoard 物联网仪表板开源，您可以按照以下步骤操作：</div>
+            <h2>如何使用 GridLinks 仪表板</h2>
+            <div class="sub-title">要使用 GridLinks 物联网仪表板开源，您可以按照以下步骤操作：</div>
             <ul class="list">
                 <li>登录到您的 ThingsBoard 实例并导航到“实体”部分。</li>
                 <li>单击表格右上角的“+”图标，然后选择“添加新仪表板”。</li>
@@ -107,19 +107,19 @@ redirect_from: "/docs/services/monitoring-dashboard/"
             <div class="definitions-list">
                 <div class="definitions-list-item one-to-one-and-half align-start">
                     <div class="term bold padding-top">资产管理</div>
-                    <div class="definition">通过实施 ThingsBoard 的物联网仪表板，该设施实时了解机器性能和生产指标。预测性维护警报确保及时维修，从而减少停机时间。</div>
+                    <div class="definition">通过实施 GridLinks 的物联网仪表板，该设施实时了解机器性能和生产指标。预测性维护警报确保及时维修，从而减少停机时间。</div>
                 </div>
                 <div class="definitions-list-item one-to-one-and-half align-start">
                     <div class="term bold">提升零售客户体验</div>
-                    <div class="definition">ThingsBoard 的物联网仪表板跟踪客流量、分析客户行为并监控库存水平。获得的见解促成了战略性产品布局和个性化营销工作。</div>
+                    <div class="definition">GridLinks 的物联网仪表板跟踪客流量、分析客户行为并监控库存水平。获得的见解促成了战略性产品布局和个性化营销工作。</div>
                 </div>
                 <div class="definitions-list-item one-to-one-and-half align-start">
                     <div class="term bold padding-top">设备连接和数据收集</div>
-                    <div class="definition">借助 ThingsBoard 的物联网仪表板，提供商可以实时监控设备性能并针对潜在问题发出主动警报。</div>
+                    <div class="definition">借助 GridLinks 的物联网仪表板，提供商可以实时监控设备性能并针对潜在问题发出主动警报。</div>
                 </div>
                 <div class="definitions-list-item one-to-one-and-half align-start">
                     <div class="term bold">优化农业实践</div>
-                    <div class="definition">使用 ThingsBoard 的物联网仪表板，农场监控土壤湿度、温度和作物健康状况。实施了数据驱动的灌溉和施肥策略。</div>
+                    <div class="definition">使用 GridLinks 的物联网仪表板，农场监控土壤湿度、温度和作物健康状况。实施了数据驱动的灌溉和施肥策略。</div>
                 </div>
             </div>
         </div>
