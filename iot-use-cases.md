@@ -75,20 +75,20 @@ GridLinks物联网平台功能强大、可扩展且用户友好，它通过提�
         </div>
         <div class="dashboard-item">
             <div class="item-description">
-                <span class="item-heading">车队跟踪</span>
+                <span class="item-heading">车辆跟踪</span>
                 <p>GridLinks 平台允许通过各种传感器跟踪车辆状态和警报，实时绘制车辆路线，并同时使用可自定义的高质量小部件和仪表板浏览其传感器读取历史记录。</p>
-                <a class="read-more-button" href="/fleet-tracking/">车队跟踪案例<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="有关车队跟踪箭头的更多信息"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt=""><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt=""></a>
+                <a class="read-more-button" href="/fleet-tracking/">车辆跟踪案例<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="有关车辆跟踪箭头的更多信息"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt=""><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt=""></a>
             </div>
             <div class="item-image-container">
                 <a class="img-button" href="/fleet-tracking/">
                     <div class="overlay">
                         <div class="eye">
-                            <img src="/images/eye-icon.svg" alt="有关车队跟踪的更多信息">车队跟踪概述
+                            <img src="/images/eye-icon.svg" alt="有关车辆跟踪的更多信息">车辆跟踪概述
                         </div>
                     </div>
                     <div class="dashboard-frame">
                         <div class="frame-image">
-                            <img src="/images/usecases/fleet-tracking/video/fleet-tracking.png" alt="车队跟踪仪表板">
+                            <img src="/images/usecases/fleet-tracking/video/fleet-tracking.png" alt="车辆跟踪仪表板">
                         </div>
                         <div class="frame-video">
                             <video autoplay loop preload="auto" muted playsinline>
@@ -291,20 +291,20 @@ GridLinks物联网平台功能强大、可扩展且用户友好，它通过提�
         </div>
         <div class="dashboard-item">
             <div class="item-description">
-                <span class="item-heading">污染物管理</span>
-                <p>使用我们的解决方案优化污染物管理运营。简化流程，监控废物水平，并跟踪数据以实现高效和可持续的做法。</p>
-                <a class="read-more-button" href="/use-cases/waste-management/">污染物管理案例<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="有关污染物管理箭头的更多信息"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt=""><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt=""></a>
+                <span class="item-heading">垃圾管理</span>
+                <p>使用我们的解决方案优化垃圾管理运营。简化流程，监控垃圾等级，并跟踪数据以实现高效和可持续的做法。</p>
+                <a class="read-more-button" href="/use-cases/waste-management/">垃圾管理案例<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="有关垃圾管理箭头的更多信息"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt=""><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt=""></a>
             </div>
             <div class="item-image-container">
                 <a class="img-button" href="/use-cases/waste-management/">
                     <div class="overlay">
                         <div class="eye">
-                            <img src="/images/eye-icon.svg" alt="有关污染物管理的更多信息">污染物管理概述
+                            <img src="/images/eye-icon.svg" alt="有关垃圾管理的更多信息">垃圾管理概述
                         </div>
                     </div>
                     <div class="dashboard-frame">
                         <div class="frame-image">
-                            <img src="/images/solutions/waste_monitoring/waste-monitoring-1.png" alt="废物监测仪表板">
+                            <img src="/images/solutions/waste_monitoring/waste-monitoring-1.png" alt="垃圾监测仪表板">
                         </div>
                     </div>
                 </a>

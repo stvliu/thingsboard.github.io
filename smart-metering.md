@@ -71,7 +71,7 @@ GridLinks 物联网平台提供生产就绪的服务器基础设施，以连接�
 单击公寓级别以打开来自多个公寓设备的统计信息。
 您可以从我们的实时演示服务器导出仪表板并将其导入您的 ThingsBoard 实例。
 
-## ThingsBoard 优势
+## GridLinks 优势
 <section class="usecase-advantages">
     <div class="usecase-background">
         <div class="bottom-features1"></div><div class="bottom-features2"></div><div class="small11"></div><div class="small12"></div>

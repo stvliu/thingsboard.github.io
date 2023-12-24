@@ -32,7 +32,7 @@ LoRaWAN® 能够在很远的距离上进行加密无线传输，同时消耗极�
 
 要继续本指南，我们需要以下内容：  
 {{ prerequisites }}
-- [ThingsBoard 帐户]({{ thingsboardHost }}){: target="_blank"}
+- [GridLinks 帐户]({{ thingsboardHost }}){: target="_blank"}
 
 
 ## 设备连接

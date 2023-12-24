@@ -3,17 +3,17 @@
 
 {% include templates/solution-templates.md %}
 
-污染物管理模板代表了用于监控和控制废物容器满度的解决方案。借助此解决方案，您将能够监控垃圾箱的位置、其满度，还可以查看有关垃圾箱的统计信息。
+垃圾管理模板代表了用于监控和控制垃圾容器满度的解决方案。借助此解决方案，您将能够监控垃圾箱的位置、其满度，还可以查看有关垃圾箱的统计信息。
 
 {% include images-gallery.html imageCollection="solution-highlights" %}
 
 ### 仪表板
 
-作为此解决方案的一部分，我们创建了**污染物管理管理**仪表板，该仪表板显示来自废物传感器的的数据。
+作为此解决方案的一部分，我们创建了**垃圾管理管理**仪表板，该仪表板显示来自垃圾传感器的的数据。
 
-#### 污染物管理管理
+#### 垃圾管理管理
 
-污染物管理管理具有多个状态 - **主状态**和**垃圾箱状态**。
+垃圾管理管理具有多个状态 - **主状态**和**垃圾箱状态**。
 
 您可以使用**主状态**来：
 - 在交互式地图的帮助下修改所需垃圾箱的位置和装填；
@@ -33,12 +33,12 @@
 - 监控基本的垃圾和电池统计信息；
 - 控制有关电量和电池电量的通知系统。
 
-您可以随时使用仪表板开发[指南](/docs/{{docsPrefix}}user-guide/dashboards/)自定义“污染物管理管理”仪表板。
+您可以随时使用仪表板开发[指南](/docs/{{docsPrefix}}user-guide/dashboards/)自定义“垃圾管理管理”仪表板。
 
 
 ### 设备
 
-我们已经创建了 10 个废物监控传感器并为它们加载了一些演示数据。有关创建的设备及其凭据的列表，请参阅解决方案[说明](/docs/{{docsPrefix}}solution-templates/overview/#install-solution-template)。该解决方案期望传感器设备将上传满度等级和电池电量值。预期有效负载的最简单示例采用 JSON 格式：
+我们已经创建了 10 个垃圾监控传感器并为它们加载了一些演示数据。有关创建的设备及其凭据的列表，请参阅解决方案[说明](/docs/{{docsPrefix}}solution-templates/overview/#install-solution-template)。该解决方案期望传感器设备将上传满度等级和电池电量值。预期有效负载的最简单示例采用 JSON 格式：
 
 ```json
 {"fullLevel": 42, "batteryLevel": 77 }
@@ -49,5 +49,5 @@
 您可以在解决方案[说明](/docs/{{docsPrefix}}solution-templates/overview/#install-solution-template)中找到代表创建的设备发送数据的准确命令。有关连接真实设备的各种连接选项，请参阅[连接设备](/docs/{{docsPrefix}}getting-started-guides/connectivity/)。
 
 ### 警报
-警报是使用“废物传感器”<a href="/docs/pe/user-guide/device-profiles/" target="_blank">设备配置文件</a>中的两个<a href="https://thingsboard.io/docs/user-guide/device-profiles/#alarm-rules" target="_blank">警报规则</a>生成的。
-用户可以通过“编辑传感器”表单通过“污染物管理”仪表板打开和关闭警报以及配置警报阈值。
+警报是使用“垃圾传感器”<a href="/docs/pe/user-guide/device-profiles/" target="_blank">设备配置文件</a>中的两个<a href="https://thingsboard.io/docs/user-guide/device-profiles/#alarm-rules" target="_blank">警报规则</a>生成的。
+用户可以通过“编辑传感器”表单通过“垃圾管理”仪表板打开和关闭警报以及配置警报阈值。

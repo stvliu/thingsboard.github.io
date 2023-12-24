@@ -68,7 +68,7 @@ AQI 是根据以下污染物的传感器读数计算得出的：臭氧 (ppm)、P
     </div>
 </div>
 
-## ThingsBoard 优势
+## GridLinks 优势
 <section class="usecase-advantages">
     <div class="usecase-background">
         <div class="bottom-features1"></div><div class="bottom-features2"></div><div class="small11"></div><div class="small12"></div>

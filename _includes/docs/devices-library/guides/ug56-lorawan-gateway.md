@@ -19,7 +19,7 @@
 
 工业级设计
 先听后说
-网关车队
+
 
 免费嵌入式网络服务器
 多种回程连接
@@ -34,7 +34,7 @@ RU864/IN865/EU868/AU915/US915/KR920/AS923
 
 要继续本指南，我们需要以下内容：
 {{ prerequisites }}
-- [ThingsBoard 帐户]({{ thingsboardHost }}){: target="_blank"}
+- [GridLinks 帐户]({{ thingsboardHost }}){: target="_blank"}
 
 ## 网关连接
 

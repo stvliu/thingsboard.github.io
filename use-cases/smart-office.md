@@ -71,7 +71,7 @@ GridLinks 平台大幅缩短了智能办公解决方案的上市时间和开发�
 仪表板有多个状态。主状态显示设备列表、它们在办公室地图上的位置以及它们的警报列表。
 您可以通过单击表格行向下钻取到设备详细信息状态。设备详细信息特定于设备类型。
 
-## ThingsBoard 优势
+## GridLinks 优势
 <section class="usecase-advantages">
     <div class="usecase-background">
         <div class="bottom-features1"></div><div class="bottom-features2"></div><div class="small11"></div><div class="small12"></div>

@@ -42,7 +42,7 @@
 要继续本指南，我们需要以下内容：
 
 {{ prerequisites }}
-- [ThingsBoard 帐户]({{ thingsboardHost }}){: target="_blank"}
+- [GridLinks 帐户]({{ thingsboardHost }}){: target="_blank"}
 
 ## 网关连接
 

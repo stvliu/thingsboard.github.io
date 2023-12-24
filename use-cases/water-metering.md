@@ -85,7 +85,7 @@ GridLinks 平台大幅缩短了上市时间，并减少了创建水表计量解�
 
 由于实时演示仪表板是公开可用的，因此某些仪表板功能（例如创建设备的能力）已被禁用。
 
-## ThingsBoard 优势
+## GridLinks 优势
 <section class="usecase-advantages">
     <div class="usecase-background">
         <div class="bottom-features1"></div><div class="bottom-features2"></div><div class="small11"></div><div class="small12"></div>

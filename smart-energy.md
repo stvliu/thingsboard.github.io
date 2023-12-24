@@ -104,7 +104,7 @@ GridLinks 提供各种智能能源仪表板示例，提供实时数据可视化�
 单击警报或能量计行以打开计量器详细信息。
 您可以从我们的实时演示服务器导出仪表板并将其导入到您的 ThingsBoard 实例。
 
-## ThingsBoard 优势
+## GridLinks 优势
 <section class="usecase-advantages">
     <div class="usecase-background">
         <div class="bottom-features1"></div><div class="bottom-features2"></div><div class="small11"></div><div class="small12"></div>

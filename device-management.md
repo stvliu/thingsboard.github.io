@@ -19,7 +19,7 @@ redirect_from: "/docs/services/device-management/"
             <h2>什么是物联网设备管理？</h2>
             <div class="text-content medium-margin">物联网设备管理是从一个位置控制连接设备的所有方面。它包括传感器、仪表、PLC、连接设备、闭路电视摄像头、门户和处理器等设备。物联网设备管理平台支持的服务包括注册和配置、库存控制、远程配置和固件升级。</div>
             <div class="text-content medium-margin">从受管理的物联网设备收集位置和使用数据是设备管理的重要组成部分。然后分析此数据以进行维护、修理、优化或更换。随着越来越多的物联网设备集成到关键任务流程中，有效的成本管理变得越来越重要。</div>
-            <div class="text-content medium-margin">物联网设备管理系统是指与这些设备的设置、配置和维护相关的任务和相互关联的功能。这些任务包括设备设置、设备车队的管理和监控，以及在整个生命周期中管理设备。</div>
+            <div class="text-content medium-margin">物联网设备管理系统是指与这些设备的设置、配置和维护相关的任务和相互关联的功能。这些任务包括设备设置、设备车辆的管理和监控，以及在整个生命周期中管理设备。</div>
             <h2 class="line-height-small">使用物联网设备管理工具简化您的控制</h2>
             <div class="text-content medium-margin">良好的设备管理平台物联网必须提供简单的仪器来监控设备状态，如连接状态、数据包丢失、电池电量等。这些指标可用于在异常行为、设备故障或配置的事件发生时触发警报和通知。此外，能够监控设备数据流并分析历史和实时数据也很重要。</div>
             <div class="text-content medium-margin">ThingsBoard 设备管理支持各种直接通信 <a class="article-link" href="/docs/pe/api/">协议</a>，用于设备与物联网平台之间的交互 — MQTT、CoAP、HTTP、LWM2M、OPC-UA、Modbus 等。这些协议已经是行业标准。但是，我们确实支持其他选项 — SNMP、Kafka、TCP/UDP。</div>
@@ -135,7 +135,7 @@ redirect_from: "/docs/services/device-management/"
                 </div>
                 <div class="definitions-list-item one-to-one-and-half align-start">
                     <div class="term bold padding-top">智慧城市</div>
-                    <div class="definition">我们的解决方案已部署在智慧城市项目中，以管理各种物联网设备，例如交通传感器、污染物管理系统和智能照明系统。这有助于城市管理者更有效地监控和管理其基础设施。</div>
+                    <div class="definition">我们的解决方案已部署在智慧城市项目中，以管理各种物联网设备，例如交通传感器、垃圾管理系统和智能照明系统。这有助于城市管理者更有效地监控和管理其基础设施。</div>
                 </div>
                 <div class="definitions-list-item one-to-one-and-half align-start">
                     <div class="term bold">能源</div>

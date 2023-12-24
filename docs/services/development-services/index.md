@@ -2,7 +2,7 @@
 layout: development-services
 title: ᐉ Professional IoT Solution Development Services
 notitle: "true"
-description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to complex systems, ✔ including dashboards, ✔ device connections, and tailored ✔ system integration."
+description: "Discover GridLinks's premier IoT services:  ✔ From widgets to complex systems, ✔ including dashboards, ✔ device connections, and tailored ✔ system integration."
 
 ---
 <section class="hero light-text">

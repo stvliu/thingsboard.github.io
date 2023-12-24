@@ -21,7 +21,7 @@ EXXN IoT 网关是一款多功能设备，配备 ARM 处理器，可适应各种
 
 要继续本指南，我们需要以下内容：  
 {{ prerequisites }}
-- [ThingsBoard 帐户]({{thingsboardInstanceLink}}){: target="_blank"}  
+- [GridLinks 帐户]({{thingsboardInstanceLink}}){: target="_blank"}  
 
 ## 在 GridLinks 上创建设备
 

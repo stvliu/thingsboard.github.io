@@ -207,7 +207,7 @@ redirect_from: "/docs/services/iot-solutions/"
             <div class="detail-description">测量和控制各种设备和系统（例如智能电表、智能电网、太阳能电池板和电池）的能源消耗和生产</div>
         </div>
         <div class="detail">
-            <div class="detail-name"><a class="header-link" href="/fleet-tracking/">车队跟踪</a></div>
+            <div class="detail-name"><a class="header-link" href="/fleet-tracking/">车辆跟踪</a></div>
             <div class="detail-description">监视和优化车队中车辆的位置、速度、燃油消耗和维护</div>
         </div>
         <div class="detail">
@@ -231,8 +231,8 @@ redirect_from: "/docs/services/iot-solutions/"
             <div class="detail-description">跟踪和分析零售店中客户和员工的行为和偏好</div>
         </div>
         <div class="detail">
-            <div class="detail-name"><a class="header-link" href="/use-cases/waste-management/">污染物管理</a></div>
-            <div class="detail-description">减少产生的废物数量并提高废物收集和处置的效率</div>
+            <div class="detail-name"><a class="header-link" href="/use-cases/waste-management/">垃圾管理</a></div>
+            <div class="detail-description">减少产生的垃圾数量并提高垃圾收集和处置的效率</div>
         </div>
         <div class="detail">
             <div class="detail-name">能源管理系统 (BEMS)</div>

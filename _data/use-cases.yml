@@ -7,7 +7,7 @@
   link: /smart-farming/
   icon: /images/case-fam-icon.svg 
 - id: fleet-tracking
-  title: 车队定位
+  title: 车辆跟踪
   link: /fleet-tracking/
   icon: /images/case-trk-icon.svg
 - id: smart-metering
@@ -39,6 +39,6 @@
   link: /use-cases/smart-irrigation/
   icon: /images/smart-irrigation.svg
 - id: waste-management
-  title: 污染物管理
+  title: 垃圾管理
   link: /use-cases/waste-management/ 
   icon: /images/case-waste-icon.svg 

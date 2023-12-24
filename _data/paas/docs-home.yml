@@ -18,7 +18,7 @@ toc:
       path: /docs/paas/solution-templates/temperature-humidity-sensors/
     - title: 智能办公
       path: /docs/paas/solution-templates/smart-office/
-    - title: 车队跟踪
+    - title: 车辆跟踪
       path: /docs/paas/solution-templates/fleet-tracking/
     - title: 用水计量
       path: /docs/paas/solution-templates/water-metering/
@@ -28,7 +28,7 @@ toc:
       path: /docs/paas/solution-templates/air-quality-monitoring/
     - title: 智能灌溉
       path: /docs/paas/solution-templates/smart-irrigation/
-    - title: 污染物管理
+    - title: 垃圾管理
       path: /docs/paas/solution-templates/waste-management/
 - title: 关键概念
   section:

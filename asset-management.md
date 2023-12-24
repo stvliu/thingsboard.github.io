@@ -81,7 +81,7 @@ description: "Digital asset management system ✔Asset inventory management soft
         </div>
         <div class="text-wrapper">
             <h1>IoT Asset Management Dashboard Examples</h1>
-            <div class="text-content medium-margin">Explore a glimpse of the intuitive and insightful dashboards available through ThingsBoard's IoT asset management software. From real-time location tracking to comprehensive health monitoring, our dashboards empower users with actionable insights for streamlined asset management.</div>
+            <div class="text-content medium-margin">Explore a glimpse of the intuitive and insightful dashboards available through GridLinks's IoT asset management software. From real-time location tracking to comprehensive health monitoring, our dashboards empower users with actionable insights for streamlined asset management.</div>
         </div>
         <img class="image" srcset="/images/iot-articles/asset-management_2_1090x682.png 1090w, /images/iot-articles/asset-management_2_2180x1364.png 2180w" sizes="(max-width: 1920px) 1090px, (min-width: 1921px) 2180px" src="/images/iot-articles/asset-management_2_1090x682.png" alt="IoT solutions dashboard with widgets dark"/>
         <div class="text-wrapper">

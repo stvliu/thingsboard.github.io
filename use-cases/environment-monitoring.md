@@ -64,7 +64,7 @@ GridLinks 平台大幅缩短了环境监测解决方案的上市时间和创建�
 仪表板有两种状态。主状态显示传感器列表、它们在地图上的位置以及它们的警报列表。
 您可以通过单击表格行向下钻取到传感器详细信息状态。传感器详细信息状态允许浏览温度和湿度历史记录、更改传感器设置和位置。
 
-## ThingsBoard 优势
+## GridLinks 优势
 <section class="usecase-advantages">
     <div class="usecase-background">
         <div class="bottom-features1"></div><div class="bottom-features2"></div><div class="small11"></div><div class="small12"></div>

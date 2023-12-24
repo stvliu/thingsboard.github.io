@@ -94,7 +94,7 @@ GridLinks 平台极大地缩短了上市时间并减少了创建智能零售解�
 该平台提供生产就绪的服务器基础设施来连接您的物联网设备、存储、分析和共享收集的物联网数据。
 
 
-## ThingsBoard 优势
+## GridLinks 优势
 <section class="usecase-advantages">
     <div class="usecase-background">
         <div class="bottom-features1"></div><div class="bottom-features2"></div><div class="small11"></div><div class="small12"></div>

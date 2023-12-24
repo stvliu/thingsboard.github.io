@@ -52,7 +52,7 @@ GridLinks 平台大幅缩短了上市时间，并减少了创建智能农业解�
 单击警报或筒仓行以打开资产详细信息并访问曝气控制。
 您可以从我们的实时演示服务器导出仪表板并将其导入您的 ThingsBoard 实例。
 
-## ThingsBoard 优势
+## GridLinks 优势
 <section class="usecase-advantages">
     <div class="usecase-background">
         <div class="bottom-features1"></div><div class="bottom-features2"></div><div class="small11"></div><div class="small12"></div>

@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-paas
-title: 污染物管理模板
-description: 污染物管理模板概述
+title: 垃圾管理模板
+description: 垃圾管理模板概述
 solution-highlights:
     0:
         image: /images/solutions/waste_monitoring/waste-monitoring-1.png
