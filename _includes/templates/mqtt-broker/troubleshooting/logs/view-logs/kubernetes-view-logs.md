@@ -38,6 +38,6 @@ kubectl logs -f tb-broker-1 > tb-broker-1.log
 
 ```bash
 kubectl exec -it tb-broker-0 -- bash
-cat /var/log/thingsboard-mqtt-broker/thingsboard-mqtt-broker.log
+cat /var/log/gridlinks-mqtt-broker/thingsboard-mqtt-broker.log
 ```
 {: .copy-code}

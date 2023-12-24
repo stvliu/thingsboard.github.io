@@ -40,6 +40,6 @@
 '%}
 {% endif %}
 
-此外，您需要在服务器上配置 ThingsBoard **Edge**。
+此外，您需要在服务器上配置 GridLinks **Edge**。
 
 {% include images-gallery.liquid imageCollection=addEdge showListImageTitles="true" %}

@@ -281,7 +281,7 @@ redirect_to: "/pricing/"
     <div class="item" data-tag="h4" data-item-id="how-do-i-find-logs-tb" data-title="我的 GridLinks 实例日志在哪里？">
         <div class="container">
             <p>
-                ThingsBoard 日志存储在 <i>/var/log/thingsboard</i> 文件夹中。
+                GridLinks 日志存储在 <i>/var/log/gridlinks</i> 文件夹中。
                 请参阅 <a href="/docs/user-guide/install/config/#logging">配置页面</a> 以了解如何配置日志记录级别。
             </p>    
         </div>    

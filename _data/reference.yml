@@ -1,34 +1,34 @@
 bigheader: "Architecture"
 abstract: "Design docs, deployment scenarios and performance"
 toc:
-- title: Architecture Overview
+- title: 架构概览
   path: /docs/reference/
-- title: Monolithic architecture
+- title: 单体架构
   path: /docs/reference/monolithic/
-- title: Microservices architecture
+- title: 微服务架构
   path: /docs/reference/msa/
-- title: Deployment scenarios
+- title: 部署场景
   path: /docs/reference/iot-platform-deployment-scenarios/
-- title: GridLinks Performance
+- title: GridLinks 性能
   section:
-    - title: Data Collection Performance
+    - title: 数据收集性能
       path: /docs/reference/performance/
-#    - title: 20K IoT devices on single GridLinks server
+#    - title: 单个 GridLinks 服务器上有 20K IoT 设备
 #      path: /docs/reference/20k-devices-test/
-#    - title: 1M IoT devices on GridLinks cluster with Kubernetes and Amazon EC2
+#    - title: 使用 Kubernetes 和 Amazon EC2 的 GridLinks 集群上的 100 万个 IoT 设备
 #      path: /docs/reference/1m-devices-test/
-- title: Performance on AWS EC2
+- title: AWS EC2 上的性能
   path: /docs/reference/performance-aws-instances/
   new: true
-#    - title: Performance test methodology
+#    - title: 性能测试方法
 #      path: /docs/reference/performance/performance-test-methodology/
-#    - title: Setup AWS instances
+#    - title: 设置 AWS 实例
 #      path: /docs/reference/performance/setup-aws-instances/
-#- title: Performance tools
+#- title: 性能工具
 #  section:
 #    - title: VisualVM for Java JMX
 #      path: /docs/reference/performance/tools/java-jmx-monitoring/
 #    - title: PgAdmin for Postgres
 #      path: /docs/reference/performance/tools/postgres-pgadmin-monitoring/
-#    - title: Thingsboard performance charts
+#    - title: GridLinks 性能图表
 #      path: /docs/reference/performance/tools/thingsboard-performance-charts/

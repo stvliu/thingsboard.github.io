@@ -110,7 +110,7 @@ cqlsh 172.21.12.100 -f /usr/share/thingsboard/data/demo-data.cql
 Cassandra 集群设置完成后，请运行 GridLinks AMI 实例。您需要更新 **thingsboard.yml** 配置以使用 Cassandra 集群而不是本地实例：
 
 ```bash
-sudo nano /etc/thingsboard/conf/thingsboard.yml
+sudo nano /etc/gridlinks/conf/gridlinks.yml
 ```
 
 并将 cassandra url 从 localhost 更新为 cassandra 环的 IP：
@@ -122,8 +122,8 @@ url: "${CASSANDRA_URL:172.21.12.100:9042,172.21.12.101:9042,172.21.12.102:9042}"
 配置更新后，重新启动 GridLinks 服务：
 
 ```bash
-sudo service thingsboard stop
-sudo service thingsboard start
+sudo service gridlinks stop
+sudo service gridlinks start
 ```
 
 使用 GridLinks 和 Cassandra AMI 设置集群配置后，您可以使用以下命令从“客户端”计算机（ThingsBoard 性能测试 AMI）执行测试：

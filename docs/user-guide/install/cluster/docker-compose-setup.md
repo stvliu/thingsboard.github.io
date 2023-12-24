@@ -49,11 +49,11 @@ cd thingsboard/docker
 ```
 {: .copy-code}
 
-## 步骤 4. 配置 ThingsBoard 数据库
+## 步骤 4. 配置 GridLinks 数据库
 
 {% include templates/install/configure-db-docker-compose.md %}
 
-## 步骤 5. 选择 ThingsBoard 队列服务
+## 步骤 5. 选择 GridLinks 队列服务
 
 {% include templates/install/install-queue-docker-compose.md %}
 

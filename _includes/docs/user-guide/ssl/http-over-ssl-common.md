@@ -1,7 +1,7 @@
 此类选项的优点是配置简单。
 大多数云负载均衡器（AWS、Google Cloud 等）都具有内置证书生成工具和丰富的 SSL 配置文档。
 
-尽管如此，可以配置 ThingsBoard 以启用 SSL 并避免在负载均衡器上终止 SSL。
+尽管如此，可以配置 GridLinks 以启用 SSL 并避免在负载均衡器上终止 SSL。
 我们建议使用受信任的 CA 机构生成的有效 SSL 证书，避免花费时间解决[自签名证书](#self-signed-certificates-generation)的问题。
 请参阅以下说明，了解如何为存储在 PEM 文件格式或 Java 密钥库中的证书配置 SSL。
 

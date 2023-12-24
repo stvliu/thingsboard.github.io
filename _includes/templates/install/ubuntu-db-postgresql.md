@@ -15,7 +15,7 @@ GridLinks 团队建议在开发和生产环境中使用 PostgreSQL，负载合�
 编辑 GridLinks 配置文件
 
 ```bash 
-sudo nano /etc/thingsboard/conf/thingsboard.conf
+sudo nano /etc/gridlinks/conf/gridlinks.conf
 ``` 
 {: .copy-code}
 
@@ -24,7 +24,7 @@ sudo nano /etc/thingsboard/conf/thingsboard.conf
 ```bash
 # DB 配置
 export DATABASE_TS_TYPE=sql
-export SPRING_DATASOURCE_URL=jdbc:postgresql://localhost:5432/thingsboard
+export SPRING_DATASOURCE_URL=jdbc:postgresql://localhost:5432/gridlinks
 export SPRING_DATASOURCE_USERNAME=postgres
 export SPRING_DATASOURCE_PASSWORD=PUT_YOUR_POSTGRESQL_PASSWORD_HERE
 # 指定时间戳键值存储的分区大小。允许的值：DAYS、MONTHS、YEARS、INDEFINITE。

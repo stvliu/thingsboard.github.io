@@ -71,7 +71,7 @@ http(s)://host:port/api/customer/device/$DEVICE_NAME/claim
 为了重新声明设备，您可以向以下 URL 发送 DELETE 请求（不要忘记用正确的名称替换设备名称）：
 
 ```shell
-curl -X DELETE https://thingsboard.cloud/api/customer/device/$DEVICE_NAME/claim
+curl -X DELETE https://gridlinks.codingas.com/api/customer/device/$DEVICE_NAME/claim
 ```
 {: .copy-code}
 

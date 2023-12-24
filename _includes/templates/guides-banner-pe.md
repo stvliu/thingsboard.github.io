@@ -1,5 +1,5 @@
 {% if currentGuide != "GettingStartedGuides" %}
-- [入门指南](/docs/pe/guides/#AnchorIDGettingStartedGuides) - 这些指南提供了 ThingsBoard 主要功能的快速概述。旨在 15-30 分钟内完成。
+- [入门指南](/docs/pe/guides/#AnchorIDGettingStartedGuides) - 这些指南提供了 GirdLinks 主要功能的快速概述。旨在 15-30 分钟内完成。
 {% endif %}
 {% if currentGuide != "InstallationGuides" %}
 - [安装指南](/docs/user-guide/install/pe/installation-options/) - 了解如何在各种可用操作系统上设置 GridLinks。

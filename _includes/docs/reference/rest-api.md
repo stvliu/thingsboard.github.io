@@ -4,9 +4,9 @@
 ## 交互式文档
 
 {% if docsPrefix == "paas/" or docsPrefix == "pe/"  %}
-ThingsBoard REST API 交互式文档可通过 Swagger UI 获取。例如，您可以使用 **[Swagger UI 链接](https://thingsboard.cloud/swagger-ui.html)** 浏览 GridLinks云服务 API 文档。
+GridLinks REST API 交互式文档可通过 Swagger UI 获取。例如，您可以使用 **[Swagger UI 链接](https://gridlinks.codingas.com/swagger-ui.html)** 浏览 GridLinks云服务 API 文档。
 {% else %}
-ThingsBoard REST API 交互式文档可通过 Swagger UI 获取。例如，您可以使用 **[Swagger UI 链接](https://demo.thingsboard.io/swagger-ui.html)** 浏览社区版演示服务器 API 文档。
+GridLinks REST API 交互式文档可通过 Swagger UI 获取。例如，您可以使用 **[Swagger UI 链接](https://demo.thingsboard.io/swagger-ui.html)** 浏览社区版演示服务器 API 文档。
 {% endif %}
 
 {% if docsPrefix == "paas/" %}
@@ -26,7 +26,7 @@ http://YOUR_HOST:PORT/swagger-ui.html
 
 {% if docsPrefix == "pe/" or docsPrefix == "paas/" %}
 
-获取帐户最简单的方法是使用 [ThingsBoard Cloud](https://thingsboard.cloud/signup) 服务器。
+获取帐户最简单的方法是使用 [GridLinks Cloud](https://gridlinks.codingas.com/signup) 服务器。
 
 {% else %}
 

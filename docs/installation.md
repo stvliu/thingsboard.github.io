@@ -10,7 +10,7 @@ notitle: "true"
        <div class="install-hero">
           <div class="container">
             <div class="install-hero-content">
-                <h1>选择 ThingsBoard 产品</h1>
+                <h1>选择 GridLinks 产品</h1>
             </div>
             <div class="cards">
                 <a href="/docs/user-guide/install/installation-options/" class="card thingsboard-ce">

@@ -40,7 +40,7 @@ notitle: "true"
 </div>
 
 <div class="center" style="margin-bottom: 64px;">
-    <a target="_blank" href="https://thingsboard.cloud/dashboard/551d4ca0-8b54-11ec-98f9-ff45c37940c6?publicId=4978baf0-8a92-11ec-98f9-ff45c37940c6" class="button">查看实时演示</a>
+    <a target="_blank" href="https://gridlinks.codingas.com/dashboard/551d4ca0-8b54-11ec-98f9-ff45c37940c6?publicId=4978baf0-8a92-11ec-98f9-ff45c37940c6" class="button">查看实时演示</a>
 </div>
 
 实时仪表板是 [解决方案模板](/docs/paas/solution-templates/smart-retail) 的一部分，旨在让超市经理监控超市状态并对警报做出反应。它具有多种状态：

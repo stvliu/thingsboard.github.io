@@ -1,7 +1,7 @@
 执行以下命令启动 ThingsBoard：
 
 ```bash
-sudo service thingsboard start
+sudo service gridlinks start
 ```
 {: .copy-code}
 

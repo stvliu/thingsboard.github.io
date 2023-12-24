@@ -1,6 +1,6 @@
 要安装 RabbitMQ，请使用此 [说明](https://www.rabbitmq.com/install-debian.html)。
 
-配置 ThingsBoard 环境文件：
+配置 GridLinks 环境文件：
 
 ```text
 nano .env

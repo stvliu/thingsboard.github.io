@@ -83,11 +83,11 @@ Docker Compose 脚本支持三种部署模式。要设置部署模式，请将 `
   
 所有部署模式都支持单独的 JS 执行器、Redis 和不同的 [队列](/docs/user-guide/install/pe/cluster/docker-compose-setup/#step-8-choose-thingsboard-queue-service)。
 
-## 步骤 6. 配置 ThingsBoard 数据库
+## 步骤 6. 配置 GridLinks 数据库
 
 {% include templates/install/configure-db-docker-compose.md %}
 
-## 步骤 7. 选择 ThingsBoard 队列服务
+## 步骤 7. 选择 GridLinks 队列服务
 
 {% include templates/install/install-queue-docker-compose.md %}
 

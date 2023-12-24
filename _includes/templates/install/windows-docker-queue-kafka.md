@@ -52,7 +52,7 @@ services:
       TB_KAFKA_SERVERS: kafka:9092
     volumes:
       - mytb-data:/data
-      - mytb-logs:/var/log/thingsboard
+      - mytb-logs:/var/log/gridlinks
 volumes:
   mytb-data:
     external: true

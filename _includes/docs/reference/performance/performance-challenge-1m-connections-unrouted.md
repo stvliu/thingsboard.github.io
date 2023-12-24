@@ -196,7 +196,7 @@ services:
     restart: "always"
     volumes:
       - thingsboard-data:/data
-      - thingsboard-logs:/var/log/thingsboard
+      - thingsboard-logs:/var/log/gridlinks
     environment:
       DATABASE_TS_TYPE: "cassandra"
       DATABASE_TS_LATEST_TYPE: "cassandra" # this is a key difference
@@ -226,7 +226,7 @@ services:
       TB_QUEUE_RE_SQ_CONSUMER_PER_PARTITION: "false"
       ACTORS_SYSTEM_RULE_DISPATCHER_POOL_SIZE: "8"
       # Postgres connection
-      SPRING_DATASOURCE_URL: "jdbc:postgresql://localhost:5432/thingsboard"
+      SPRING_DATASOURCE_URL: "jdbc:postgresql://localhost:5432/gridlinks"
       SPRING_DATASOURCE_USERNAME: "postgres"
       SPRING_DATASOURCE_PASSWORD: "postgres"
       SPRING_DATASOURCE_MAXIMUM_POOL_SIZE: "25"

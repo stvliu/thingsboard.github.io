@@ -16,7 +16,7 @@ REST 客户端的版本取决于您正在使用的平台的版本。
 ```xml
 <dependencies>
     <dependency>
-        <groupId>org.thingsboard</groupId>
+        <groupId>com.gridlinks</groupId>
         <artifactId>rest-client</artifactId>
         <version>{{ site.release.pe_full_ver}}</version>
     </dependency>

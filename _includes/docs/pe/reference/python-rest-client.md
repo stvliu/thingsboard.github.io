@@ -396,7 +396,7 @@ wget https://github.com/thingsboard/thingsboard-python-rest-client/blob/master/e
 Now we can run the script and configure version control feature (Do not forget to put your values).  
 
 ```bash
-python3 configure_vcs_access.py -H YOUR_THINGSBOARD_HOST -p YOUR_THINGSBOARD_PORT -U YOUR_THINGSBOARD_USER_EMAIL -P YOUR_THINGSBOARD_USER_PASSWORD -r YOUR_REPOSITORY_URL -b DEFAULT_BRANCH -gu YOUR_VCS_USERNAME -gp YOUR_VCS_ACCESSTOKEN_OR_PASSWORD
+python3 configure_vcs_access.py -H YOUR_GRIDLINKS_HOST -p YOUR_THINGSBOARD_PORT -U YOUR_THINGSBOARD_USER_EMAIL -P YOUR_THINGSBOARD_USER_PASSWORD -r YOUR_REPOSITORY_URL -b DEFAULT_BRANCH -gu YOUR_VCS_USERNAME -gp YOUR_VCS_ACCESSTOKEN_OR_PASSWORD
 ```
 {:.copy-code}
 
@@ -428,7 +428,7 @@ wget https://raw.githubusercontent.com/thingsboard/thingsboard-python-rest-clien
 Now we can run the script and configure version control feature (Do not forget to put your values).  
 
 ```bash
-python3 configure_vcs_access.py -H YOUR_THINGSBOARD_HOST -p YOUR_THINGSBOARD_PORT -U YOUR_THINGSBOARD_USER_EMAIL -P YOUR_THINGSBOARD_USER_PASSWORD -r YOUR_REPOSITORY_URL -b DEFAULT_BRACH -gu YOUR_VCS_USERNAME -pk PATH_TO_YOUR_PRIVATE_KEY -pkp YOUR_PRIVATE_KEY_PASSWORD
+python3 configure_vcs_access.py -H YOUR_GRIDLINKS_HOST -p YOUR_THINGSBOARD_PORT -U YOUR_THINGSBOARD_USER_EMAIL -P YOUR_THINGSBOARD_USER_PASSWORD -r YOUR_REPOSITORY_URL -b DEFAULT_BRACH -gu YOUR_VCS_USERNAME -pk PATH_TO_YOUR_PRIVATE_KEY -pkp YOUR_PRIVATE_KEY_PASSWORD
 ```
 {:.copy-code}
 
@@ -466,7 +466,7 @@ wget https://raw.githubusercontent.com/thingsboard/thingsboard-python-rest-clien
 Now we can run our script and save our entities to the repository on version control system, we will publish to default branch with default settings to show minimal required configuration:
 
 ```bash
-python3 load_all_entities_to_vcs_pe.py -H YOUR_THINGSBOARD_HOST -p YOUR_THINGSBOARD_PORT -U YOUR_THINGSBOARD_USER_EMAIL -P YOUR_THINGSBOARD_USER_PASSWORD
+python3 load_all_entities_to_vcs_pe.py -H YOUR_GRIDLINKS_HOST -p YOUR_THINGSBOARD_PORT -U YOUR_THINGSBOARD_USER_EMAIL -P YOUR_THINGSBOARD_USER_PASSWORD
 ```
 
 In output message you will receive information about how many entities were saved.
@@ -506,7 +506,7 @@ wget https://raw.githubusercontent.com/thingsboard/thingsboard-python-rest-clien
 Now we can run our script and restore entities version and state from the repository on version control system:
 
 ```bash
-python3 load_all_entities_from_vcs_pe.py -H YOUR_THINGSBOARD_HOST -p YOUR_THINGSBOARD_PORT -U YOUR_THINGSBOARD_USER_EMAIL -P YOUR_THINGSBOARD_USER_PASSWORD -N YOUR_VERSION_NAME 
+python3 load_all_entities_from_vcs_pe.py -H YOUR_GRIDLINKS_HOST -p YOUR_THINGSBOARD_PORT -U YOUR_THINGSBOARD_USER_EMAIL -P YOUR_THINGSBOARD_USER_PASSWORD -N YOUR_VERSION_NAME 
 ```
 
 In output you will receive information about how many entities were loaded.

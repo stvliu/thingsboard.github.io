@@ -34,5 +34,5 @@ kubectl logs -f tb-node-1 > tb-node-1.log
 
 ```bash
 kubectl exec -it tb-node-0 -- bash
-cat /var/log/thingsboard/tb-node-0/thingsboard.log
+cat /var/log/gridlinks/tb-node-0/thingsboard.log
 ```

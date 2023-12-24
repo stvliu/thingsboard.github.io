@@ -17,7 +17,7 @@ OPC UA 集成允许您将数据从 OPC UA 服务器流式传输到 GridLinks，�
 
 ## OPC-UA 集成教程
 
-在本教程中，我们将配置 ThingsBoard 和 OPC-UA 之间的集成，以从 [OPC UA C++ 演示服务器](https://www.unified-automation.com/downloads/opc-ua-servers.html)获取空调数据，并允许用户使用集成下行链路功能开关任何空调。
+在本教程中，我们将配置 GridLinks 和 OPC-UA 之间的集成，以从 [OPC UA C++ 演示服务器](https://www.unified-automation.com/downloads/opc-ua-servers.html)获取空调数据，并允许用户使用集成下行链路功能开关任何空调。
 
 ## 先决条件
 

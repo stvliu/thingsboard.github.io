@@ -52,7 +52,7 @@ AQI 是根据以下污染物的传感器读数计算得出的：臭氧 (ppm)、P
 </div>
 
 <div class="center" style="margin-bottom: 64px;">
-    <a target="_blank" href="https://thingsboard.cloud/dashboard/ec564620-82b2-11ed-a624-8360a2a6cb0e?publicId=4978baf0-8a92-11ec-98f9-ff45c37940c6" class="button">查看实时演示</a>
+    <a target="_blank" href="https://gridlinks.codingas.com/dashboard/ec564620-82b2-11ed-a624-8360a2a6cb0e?publicId=4978baf0-8a92-11ec-98f9-ff45c37940c6" class="button">查看实时演示</a>
 </div>
 
 **管理仪表板**仪表板专为租户管理员设计，用于执行基本设备管理任务，并具有多个状态：

@@ -189,7 +189,7 @@ v1/gateway/rpc
 
 其中 **Device A** 和 **Device B** 是您的设备名称，**secretKey** 和 **durationMs** 是可选键。
 如果未指定 **secretKey**，则使用空字符串作为默认值。
-如果未指定 **durationMs**，则使用系统参数 **device.claim.duration**（在文件 **/etc/thingsboard/conf/thingsboard.yml** 中）。
+如果未指定 **durationMs**，则使用系统参数 **device.claim.duration**（在文件 **/etc/gridlinks/conf/gridlinks.yml** 中）。
 
 ## 协议定制
 

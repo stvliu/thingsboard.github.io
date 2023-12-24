@@ -40,7 +40,7 @@ docker run -it -v tb-pe-aws-integration-logs:/var/log/tb-aws-integration `
 
 - **重新连接、停止和启动命令**
 
-要重新连接到终端（以查看 ThingsBoard 日志），请运行：
+要重新连接到终端（以查看 GridLinks 日志），请运行：
 
 ```
 docker attach tb-pe-aws-integration

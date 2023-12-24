@@ -1,5 +1,5 @@
 {% if currentGuide != "GettingStartedGuides" %}
-- [入门指南](/docs/guides/#AnchorIDGettingStartedGuides) - 这些指南提供了 ThingsBoard 主要功能的快速概述。旨在 15-30 分钟内完成。
+- [入门指南](/docs/guides/#AnchorIDGettingStartedGuides) - 这些指南提供了 GirdLinks 主要功能的快速概述。旨在 15-30 分钟内完成。
 {% endif %}
 {% if currentGuide != "ConnectYourDevice" %}
 - [连接您的设备](/docs/guides/#AnchorIDConnectYourDevice) - 了解如何根据您的连接技术或解决方案连接设备。

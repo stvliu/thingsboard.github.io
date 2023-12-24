@@ -53,7 +53,7 @@ TIME [STATS_PRINTING_THREAD_NAME] INFO  o.t.m.b.q.k.s.TbKafkaConsumerStatsServic
 无论部署类型如何，TBMQ 日志都存储在以下目录中：
 
 ```bash
-/var/log/thingsboard-mqtt-broker
+/var/log/gridlinks-mqtt-broker
 ```
 
 不同的部署工具提供了不同的查看日志的方式：
@@ -83,10 +83,10 @@ Kubernetes 部署%,%kubernetes%,%templates/mqtt-broker/troubleshooting/logs/view
 
     <appender name="fileLogAppender"
               class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>/var/log/thingsboard-mqtt-broker/${TB_SERVICE_ID}/thingsboard-mqtt-broker.log</file>
+        <file>/var/log/gridlinks-mqtt-broker/${TB_SERVICE_ID}/thingsboard-mqtt-broker.log</file>
         <rollingPolicy
                 class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
-            <fileNamePattern>/var/log/thingsboard-mqtt-broker/${TB_SERVICE_ID}/thingsboard-mqtt-broker.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <fileNamePattern>/var/log/gridlinks-mqtt-broker/${TB_SERVICE_ID}/thingsboard-mqtt-broker.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
             <maxFileSize>100MB</maxFileSize>
             <maxHistory>30</maxHistory>
             <totalSizeCap>3GB</totalSizeCap>

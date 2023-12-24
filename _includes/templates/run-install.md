@@ -2,6 +2,6 @@
 
 ```bash
 # --loadDemo 选项将加载演示数据：用户、设备、资产、规则、小部件。
-sudo /usr/share/thingsboard/bin/install/install.sh --loadDemo
+sudo /usr/share/gridlinks/bin/install/install.sh --loadDemo
 ```
 {: .copy-code}

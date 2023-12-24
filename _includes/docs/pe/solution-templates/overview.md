@@ -1,7 +1,7 @@
 * TOC
 {:toc}
 
-ThingsBoard Cloud 提供便捷的物联网解决方案模板，以缩短物联网产品的上市时间。
+GridLinks Cloud 提供便捷的物联网解决方案模板，以缩短物联网产品的上市时间。
 模板包括交互式仪表板、处理逻辑、示例设备、用户以及所有其他必需的 [实体](/docs/paas/user-guide/entities-and-relations/)。
 您可以将模板视为完整的 PoC/MVP。
 

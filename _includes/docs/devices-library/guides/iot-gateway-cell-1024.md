@@ -6,7 +6,7 @@
  %}
  {% assign thingsboardInstanceLink = "https://demo.thingsboard.io" %}
 {% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}
-{% assign thingsboardInstanceLink = "https://thingsboard.cloud" %}
+{% assign thingsboardInstanceLink = "https://gridlinks.codingas.com" %}
 {% endif %}
 
 ## 简介

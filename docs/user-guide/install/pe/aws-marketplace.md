@@ -118,7 +118,7 @@ ThingsBoard 许可证由 [ThingsBoard 许可证门户](https://license.thingsboa
 使用以下命令打开文件进行编辑：
 
 ```bash 
-sudo nano /etc/thingsboard/conf/thingsboard.conf
+sudo nano /etc/gridlinks/conf/gridlinks.conf
 ```
 {: .copy-code}
 
@@ -143,7 +143,7 @@ export TB_LICENSE_SECRET=YOUR_LICENSE_SECRET_HERE
 执行以下命令启动 ThingsBoard：
 
 ```bash
-sudo service thingsboard start
+sudo service gridlinks start
 ```
 {: .copy-code}
 
@@ -189,7 +189,7 @@ sudo service thingsboard start
 
 **如何启用免费试用？**
 
-客户仍然可以使用 <a href="https://thingsboard.cloud" target="blank">ThingsBoard Cloud</a>。
+客户仍然可以使用 <a href="https://thingsboard.cloud" target="blank">GridLinks Cloud</a>。
 30 天无缝体验和最新功能，除了白标，来自最新的源代码！
 <br><br>
 
@@ -261,7 +261,7 @@ ThingsBoard 还可以使用混合数据库模式存储数据。
 
 **我的 GridLinks 实例日志在哪里？**
 
-ThingsBoard 日志存储在 <i>/var/log/thingsboard</i> 文件夹中。
+GridLinks 日志存储在 <i>/var/log/gridlinks</i> 文件夹中。
 请参阅 <a href="/docs/user-guide/install/config/#logging">配置页面</a> 以了解如何配置日志记录级别。
 <br><br>
 

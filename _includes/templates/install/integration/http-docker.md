@@ -45,7 +45,7 @@ docker run -it -v ~/.tb-pe-http-integration-logs:/var/log/tb-http-integration \
 
 - **重新附加、停止和启动命令**
 
-要重新附加到终端（以查看 ThingsBoard 日志），请运行：
+要重新附加到终端（以查看 GridLinks 日志），请运行：
 
 ```
 docker attach tb-pe-http-integration

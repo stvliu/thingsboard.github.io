@@ -225,7 +225,7 @@ chmod +x upgrade_1.0_1.0.2.sh
 #### Start the service
 
 ```bash
-sudo service thingsboard start
+sudo service gridlinks start
 ```
 {: .copy-code}
 
@@ -268,7 +268,7 @@ chmod +x upgrade_1.0.3_1.1.0.sh
 #### Start the service
 
 ```bash
-$ sudo service thingsboard start
+$ sudo service gridlinks start
 ```
 
 ## Upgrading to 1.2.0
@@ -310,7 +310,7 @@ chmod +x upgrade_1.1.0_1.2.0.sh
 #### Start the service
 
 ```bash
-sudo service thingsboard start
+sudo service gridlinks start
 ```
 {: .copy-code}
 
@@ -400,7 +400,7 @@ chmod +x upgrade_1.2.0_1.2.1.sh
 #### Start the service
 
 ```bash
-sudo service thingsboard start
+sudo service gridlinks start
 ```
 {: .copy-code}
 
@@ -490,7 +490,7 @@ chmod +x upgrade_1.2.1_1.2.2.sh
 #### Start the service
 
 ```bash
-sudo service thingsboard start
+sudo service gridlinks start
 ```
 {: .copy-code}
 
@@ -579,7 +579,7 @@ chmod +x upgrade_1.2.2_1.2.3.sh
 #### Start the service
 
 ```bash
-sudo service thingsboard start
+sudo service gridlinks start
 ```
 {: .copy-code}
 
@@ -652,7 +652,7 @@ thingsboard-installation-1-3-0-centos,CentOS,shell,resources/1.3.0/thingsboard-c
 {% include tabs.html %}
 
 **NOTE:** Package installer will ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.
-Please make sure that you set database.type parameter value (in the file **/etc/thingsboard/conf/thingsboard.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
+Please make sure that you set database.type parameter value (in the file **/etc/gridlinks/conf/gridlinks.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
  
 ```
 database:
@@ -661,14 +661,14 @@ database:
 
 Execute upgrade script:
 ```bash
-sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=1.2.3 
+sudo /usr/share/gridlinks/bin/install/upgrade.sh --fromVersion=1.2.3 
 ```
 {: .copy-code}
 
 #### Start the service
 
 ```bash
-sudo service thingsboard start
+sudo service gridlinks start
 ```
 {: .copy-code}
 
@@ -735,7 +735,7 @@ thingsboard-installation-1-3-1-centos,CentOS,shell,resources/1.3.1/thingsboard-c
 {% include tabs.html %}
 
 **NOTE:** Package installer may ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.  
-Please make sure that you set database.type parameter value (in the file **/etc/thingsboard/conf/thingsboard.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
+Please make sure that you set database.type parameter value (in the file **/etc/gridlinks/conf/gridlinks.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
  
 ```
 database:
@@ -744,14 +744,14 @@ database:
 
 Execute upgrade script:
 ```bash
-sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=1.3.0 
+sudo /usr/share/gridlinks/bin/install/upgrade.sh --fromVersion=1.3.0 
 ```
 {: .copy-code}
 
 #### Start the service
 
 ```bash
-sudo service thingsboard start
+sudo service gridlinks start
 ```
 {: .copy-code}
 
@@ -818,7 +818,7 @@ thingsboard-installation-1-4-0-centos,CentOS,shell,resources/1.4.0/thingsboard-c
 {% include tabs.html %}
 
 **NOTE:** Package installer will ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.
-Please make sure that you set database.type parameter value (in the file **/etc/thingsboard/conf/thingsboard.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
+Please make sure that you set database.type parameter value (in the file **/etc/gridlinks/conf/gridlinks.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
 
 ```
 database:
@@ -827,14 +827,14 @@ database:
 
 Execute upgrade script:
 ```bash
-sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=1.3.1
+sudo /usr/share/gridlinks/bin/install/upgrade.sh --fromVersion=1.3.1
 ```
 {: .copy-code}
 
 #### Start the service
 
 ```bash
-sudo service thingsboard start
+sudo service gridlinks start
 ```
 {: .copy-code}
 
@@ -903,7 +903,7 @@ thingsboard-installation-2-0-0-centos,CentOS,shell,resources/2.0.0/thingsboard-c
 {% include tabs.html %}
 
 **NOTE:** Package installer will ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.
-Please make sure that you set database.type parameter value (in the file **/etc/thingsboard/conf/thingsboard.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
+Please make sure that you set database.type parameter value (in the file **/etc/gridlinks/conf/gridlinks.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
  
 ```
 database:
@@ -912,14 +912,14 @@ database:
 
 Execute upgrade script:
 ```bash
-sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=1.4.0 
+sudo /usr/share/gridlinks/bin/install/upgrade.sh --fromVersion=1.4.0 
 ```
 {: .copy-code}
 
 #### Start the service
 
 ```bash
-sudo service thingsboard start
+sudo service gridlinks start
 ```
 {: .copy-code}
 
@@ -988,7 +988,7 @@ thingsboard-installation-2-0-1-centos,CentOS,shell,resources/2.0.1/thingsboard-c
 {% include tabs.html %}
 
 **NOTE:** Package installer will ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.
-Please make sure that you set database.type parameter value (in the file **/etc/thingsboard/conf/thingsboard.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
+Please make sure that you set database.type parameter value (in the file **/etc/gridlinks/conf/gridlinks.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
  
 ```
 database:
@@ -998,7 +998,7 @@ database:
 #### Start the service
 
 ```bash
-sudo service thingsboard start
+sudo service gridlinks start
 ```
 {: .copy-code}
 
@@ -1056,7 +1056,7 @@ thingsboard-installation-2-0-2-centos,CentOS,shell,resources/2.0.2/thingsboard-c
 {% include tabs.html %}
 
 **NOTE:** Package installer will ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.  
-Please make sure that you set database.type parameter value (in the file **/etc/thingsboard/conf/thingsboard.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
+Please make sure that you set database.type parameter value (in the file **/etc/gridlinks/conf/gridlinks.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
  
 ```
 database:
@@ -1066,7 +1066,7 @@ database:
 #### Start the service
 
 ```bash
-sudo service thingsboard start
+sudo service gridlinks start
 ```
 {: .copy-code}
 
@@ -1124,7 +1124,7 @@ thingsboard-installation-2-0-3-centos,CentOS,shell,resources/2.0.3/thingsboard-c
 {% include tabs.html %}
 
 **NOTE:** Package installer will ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.
-Please make sure that you set database.type parameter value (in the file **/etc/thingsboard/conf/thingsboard.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
+Please make sure that you set database.type parameter value (in the file **/etc/gridlinks/conf/gridlinks.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
 
 ```
 database:
@@ -1134,7 +1134,7 @@ database:
 #### Start the service
 
 ```bash
-sudo service thingsboard start
+sudo service gridlinks start
 ```
 {: .copy-code}
 
@@ -1192,7 +1192,7 @@ thingsboard-installation-2-1-0-centos,CentOS,shell,resources/2.1.0/thingsboard-c
 {% include tabs.html %}
 
 **NOTE:** Package installer will ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.
-Please make sure that you set database.type parameter value (in the file **/etc/thingsboard/conf/thingsboard.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
+Please make sure that you set database.type parameter value (in the file **/etc/gridlinks/conf/gridlinks.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
 
 ```
 database:
@@ -1202,7 +1202,7 @@ database:
 #### Start the service
 
 ```bash
-sudo service thingsboard start
+sudo service gridlinks start
 ```
 {: .copy-code}
 
@@ -1260,7 +1260,7 @@ thingsboard-installation-2-2-0-centos,CentOS,shell,resources/2.2.0/thingsboard-c
 {% include tabs.html %}
 
 **NOTE:** Package installer will ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.  
-Please make sure that you set **database.entities.type** and **database.ts.type** parameters values (in the file **/etc/thingsboard/conf/thingsboard.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
+Please make sure that you set **database.entities.type** and **database.ts.type** parameters values (in the file **/etc/gridlinks/conf/gridlinks.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
  
 ```
     database:
@@ -1272,14 +1272,14 @@ Please make sure that you set **database.entities.type** and **database.ts.type*
 
 Execute upgrade script:
 ```bash
-sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=2.0.0 
+sudo /usr/share/gridlinks/bin/install/upgrade.sh --fromVersion=2.0.0 
 ```
 {: .copy-code}
 
 #### Start the service
 
 ```bash
-sudo service thingsboard start
+sudo service gridlinks start
 ```
 {: .copy-code}
 
@@ -1349,7 +1349,7 @@ thingsboard-installation-2-3-0-centos,CentOS,shell,resources/2.3.0/thingsboard-c
 {% include tabs.html %}
 
 **NOTE:** Package installer will ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.  
-Please make sure that you set **database.entities.type** and **database.ts.type** parameters values (in the file **/etc/thingsboard/conf/thingsboard.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
+Please make sure that you set **database.entities.type** and **database.ts.type** parameters values (in the file **/etc/gridlinks/conf/gridlinks.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
  
 ```
     database:
@@ -1361,14 +1361,14 @@ Please make sure that you set **database.entities.type** and **database.ts.type*
 
 Execute upgrade script
 ```bash
-sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=2.2.0 
+sudo /usr/share/gridlinks/bin/install/upgrade.sh --fromVersion=2.2.0 
 ```
 {: .copy-code}
 
 #### Start the service
 
 ```bash
-sudo service thingsboard start
+sudo service gridlinks start
 ```
 {: .copy-code}
 

@@ -106,7 +106,7 @@ docker start tb-gateway
 docker pull thingsboard/tb-gateway
 docker stop tb-gateway
 docker rm tb-gateway
-docker run -it -v ~/.tb-gateway/logs:/var/log/thingsboard-gateway -v ~/.tb-gateway/extensions:/var/lib/thingsboard_gateway/extensions -v ~/.tb-gateway/config:/thingsboard-gateway/config --name tb-gateway --restart always thingsboard/tb-gateway
+docker run -it -v ~/.tb-gateway/logs:/var/log/gridlinks-gateway -v ~/.tb-gateway/extensions:/var/lib/thingsboard_gateway/extensions -v ~/.tb-gateway/config:/thingsboard-gateway/config --name tb-gateway --restart always thingsboard/tb-gateway
 ```
 {: .copy-code}
 

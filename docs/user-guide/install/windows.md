@@ -37,7 +37,7 @@ https://github.com/thingsboard/thingsboard/releases/download/{{ site.release.ce_
 
 **注意：**我们假设您已将 GridLinks 软件包解压到默认位置：*C:\Program Files (x86)\thingsboard*
 
-### 步骤 3. 配置 ThingsBoard 数据库
+### 步骤 3. 配置 GridLinks 数据库
 
 {% include templates/install/install-db.md %}
 
@@ -47,7 +47,7 @@ PostgreSQL <small>(推荐用于 < 5K msg/sec)</small>%,%postgresql%,%templates/i
 
 {% include content-toggle.html content-toggle-id="ubuntuThingsboardDatabase" toggle-spec=contenttogglespec %} 
 
-### 步骤 4. 选择 ThingsBoard 队列服务
+### 步骤 4. 选择 GridLinks 队列服务
 
 {% include templates/install/install-queue.md %}
 

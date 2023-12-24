@@ -65,7 +65,7 @@ ORB-C1-G
 
 ![image](/images/samples/senquip/general.jpg)
 
-### 配置 ThingsBoard 端点
+### 配置 GridLinks 端点
 
 Senquip 设备可以同时发送到 Senquip Portal 和第二个端点。在此示例中，GridLinks 将被配置为第二个端点，使用 MQTT 作为传输。
 

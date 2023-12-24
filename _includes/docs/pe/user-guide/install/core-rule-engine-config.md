@@ -2434,7 +2434,7 @@
 		<tr>
 			<td>spring.datasource.url</td>
 			<td>SPRING_DATASOURCE_URL</td>
-			<td>jdbc:postgresql://localhost:5432/thingsboard</td>
+			<td>jdbc:postgresql://localhost:5432/gridlinks</td>
 			<td> Database connection URL</td>
 		</tr>
 		<tr>

@@ -54,7 +54,7 @@ sudo rpm -Uvh tb-edge-{{ site.release.edge_ver }}.rpm
 {: .copy-code}
 
 
-### 步骤 4. 配置 ThingsBoard Edge
+### 步骤 4. 配置 GridLinks Edge
 
 {% include templates/edge/install/linux-configure-edge.md %}
 

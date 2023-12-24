@@ -39,7 +39,7 @@ sudo mkdir /etc/thingsboard-gateway
 
  - 创建日志目录：
 ```bash
-sudo mkdir /var/log/thingsboard-gateway
+sudo mkdir /var/log/gridlinks-gateway
 ```
 {: .copy-code}
 
@@ -54,7 +54,7 @@ sudo tar -xvzf configs.tar.gz -C /etc/thingsboard-gateway
 
 - 对于日志文件夹：
 ```bash
-sudo chown YOUR_USER:YOUR_USER -R /var/log/thingsboard-gateway
+sudo chown YOUR_USER:YOUR_USER -R /var/log/gridlinks-gateway
 ```
 {: .copy-code}
 

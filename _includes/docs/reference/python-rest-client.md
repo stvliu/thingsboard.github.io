@@ -298,7 +298,7 @@ wget https://github.com/thingsboard/thingsboard-python-rest-client/blob/master/e
 现在我们可以运行脚本并配置版本控制功能（不要忘记输入您的值）。
 
 ```bash
-python3 configure_vcs_access.py -H YOUR_THINGSBOARD_HOST -p YOUR_THINGSBOARD_PORT -U YOUR_THINGSBOARD_USER_EMAIL -P YOUR_THINGSBOARD_USER_PASSWORD -r YOUR_REPOSITORY_URL -b DEFAULT_BRANCH -gu YOUR_VCS_USERNAME -gp YOUR_VCS_ACCESSTOKEN_OR_PASSWORD
+python3 configure_vcs_access.py -H YOUR_GRIDLINKS_HOST -p YOUR_THINGSBOARD_PORT -U YOUR_THINGSBOARD_USER_EMAIL -P YOUR_THINGSBOARD_USER_PASSWORD -r YOUR_REPOSITORY_URL -b DEFAULT_BRANCH -gu YOUR_VCS_USERNAME -gp YOUR_VCS_ACCESSTOKEN_OR_PASSWORD
 ```
 {:.copy-code}
 
@@ -330,7 +330,7 @@ wget https://raw.githubusercontent.com/thingsboard/thingsboard-python-rest-clien
 现在我们可以运行脚本并配置版本控制功能（不要忘记输入您的值）。
 
 ```bash
-python3 configure_vcs_access.py -H YOUR_THINGSBOARD_HOST -p YOUR_THINGSBOARD_PORT -U YOUR_THINGSBOARD_USER_EMAIL -P YOUR_THINGSBOARD_USER_PASSWORD -r YOUR_REPOSITORY_URL -b DEFAULT_BRACH -gu YOUR_VCS_USERNAME -pk PATH_TO_YOUR_PRIVATE_KEY -pkp YOUR_PRIVATE_KEY_PASSWORD
+python3 configure_vcs_access.py -H YOUR_GRIDLINKS_HOST -p YOUR_THINGSBOARD_PORT -U YOUR_THINGSBOARD_USER_EMAIL -P YOUR_THINGSBOARD_USER_PASSWORD -r YOUR_REPOSITORY_URL -b DEFAULT_BRACH -gu YOUR_VCS_USERNAME -pk PATH_TO_YOUR_PRIVATE_KEY -pkp YOUR_PRIVATE_KEY_PASSWORD
 ```
 {:.copy-code}
 
@@ -366,7 +366,7 @@ wget https://raw.githubusercontent.com/thingsboard/thingsboard-python-rest-clien
 现在我们可以运行脚本并将我们的实体保存到版本控制系统中的存储库，我们将发布到默认分支，并使用默认设置来显示最小的必需配置：
 
 ```bash
-python3 load_all_entities_to_vcs_ce.py -H YOUR_THINGSBOARD_HOST -p YOUR_THINGSBOARD_PORT -U YOUR_THINGSBOARD_USER_EMAIL -P YOUR_THINGSBOARD_USER_PASSWORD
+python3 load_all_entities_to_vcs_ce.py -H YOUR_GRIDLINKS_HOST -p YOUR_THINGSBOARD_PORT -U YOUR_THINGSBOARD_USER_EMAIL -P YOUR_THINGSBOARD_USER_PASSWORD
 ```
 
 在输出消息中，您将收到有关保存了多少个实体的信息。
@@ -403,7 +403,7 @@ wget https://raw.githubusercontent.com/thingsboard/thingsboard-python-rest-clien
 现在我们可以运行脚本并从版本控制系统中的存储库还原实体版本和状态：
 
 ```bash
-python3 load_all_entities_from_vcs_ce.py -H YOUR_THINGSBOARD_HOST -p YOUR_THINGSBOARD_PORT -U YOUR_THINGSBOARD_USER_EMAIL -P YOUR_THINGSBOARD_USER_PASSWORD -N YOUR_VERSION_NAME 
+python3 load_all_entities_from_vcs_ce.py -H YOUR_GRIDLINKS_HOST -p YOUR_THINGSBOARD_PORT -U YOUR_THINGSBOARD_USER_EMAIL -P YOUR_THINGSBOARD_USER_PASSWORD -N YOUR_VERSION_NAME 
 ```
 
 在输出中，您将收到有关加载了多少个实体的信息。

@@ -56,7 +56,7 @@ sudo chown thingsboard:thingsboard /usr/share/thingsboard/extensions/trendz-tb-l
 * 重新启动 GridLinks 服务以应用更改
 
 ```
-sudo service thingsboard restart
+sudo service gridlinks restart
 ```
 
 导入原生 Trendz 小部件捆绑包

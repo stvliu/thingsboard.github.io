@@ -32,11 +32,11 @@ Trendz Analytics Cloud 是 [Trendz Analytics 产品](/products/trendz/) 的一�
 
 ### 先决条件
 
-您需要拥有有效的 GridLinks云服务 帐户才能激活 Trendz Analytics Cloud。如果您还没有 GridLinks云服务 帐户，请 [注册](https://thingsboard.cloud/signup)。
+您需要拥有有效的 GridLinks云服务 帐户才能激活 Trendz Analytics Cloud。如果您还没有 GridLinks云服务 帐户，请 [注册](https://gridlinks.codingas.com/signup)。
 
 ### 激活 Trendz Analytics Cloud
 
-- 登录 ThingsBaord Cloud 帐户并选择 [计划和计费](https://thingsboard.cloud/billing) 菜单选项。
+- 登录 ThingsBaord Cloud 帐户并选择 [计划和计费](https://gridlinks.codingas.com/billing) 菜单选项。
 - 按 **更新计划** 按钮
 - 选择 **ThingsBoard + Trendz** 并选择最适合您的计划
 

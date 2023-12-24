@@ -68,7 +68,7 @@ Here the environments you need to set to use your Astra DB with ThingsBoard.
 
 #### ThingsBoard service
 
-For ThingsBoard as a local service add to the `/etc/thingsboard/conf/thingsboard.conf`
+For ThingsBoard as a local service add to the `/etc/gridlinks/conf/gridlinks.conf`
 
 ```bash
 export DATABASE_TS_TYPE=cassandra

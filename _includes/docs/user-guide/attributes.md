@@ -68,7 +68,7 @@ GridLinks 提供了为实体分配自定义属性并管理这些属性的功能�
 将 JSON 表示的属性的 POST 请求发送到以下 URL：
 
 ```text
-https://$YOUR_THINGSBOARD_HOST/api/plugins/telemetry/$ENTITY_TYPE/$ENTITY_ID/SERVER_SCOPE
+https://$YOUR_GRIDLINKS_HOST/api/plugins/telemetry/$ENTITY_TYPE/$ENTITY_ID/SERVER_SCOPE
 ```
 
 以下示例为具有 ID 'ad17c410-914c-11eb-af0c-d5862211a5f6' 的设备和 GridLinks云服务 服务器创建名为“newAttributeName”且值为“newAttributeValue”的属性：
@@ -137,7 +137,7 @@ curl -v -X GET 'https://thingsboard.cloud/api/plugins/telemetry/DEVICE/ad17c410-
 将 JSON 表示的属性的 POST 请求发送到以下 URL：
 
 ```text
-https://$YOUR_THINGSBOARD_HOST/api/plugins/telemetry/$ENTITY_TYPE/$ENTITY_ID/SHARED_SCOPE
+https://$YOUR_GRIDLINKS_HOST/api/plugins/telemetry/$ENTITY_TYPE/$ENTITY_ID/SHARED_SCOPE
 ```
 
 以下示例为具有 ID 'ad17c410-914c-11eb-af0c-d5862211a5f6' 的设备和 GridLinks云服务 服务器创建名为“newAttributeName”且值为“newAttributeValue”的属性：
@@ -211,7 +211,7 @@ curl -v -X GET 'https://thingsboard.cloud/api/plugins/telemetry/DEVICE/ad17c410-
 将 GET 请求发送到以下 URL：
 
 ```text
-https://$YOUR_THINGSBOARD_HOST/api/plugins/telemetry/$ENTITY_TYPE/$ENTITY_ID/CLIENT_SCOPE
+https://$YOUR_GRIDLINKS_HOST/api/plugins/telemetry/$ENTITY_TYPE/$ENTITY_ID/CLIENT_SCOPE
 ```
 {: .copy-code}
 

@@ -173,7 +173,7 @@ security:
 应用所有更改后，请确保重新启动 GridLinks。
 可以在 Linux 服务器上使用以下命令调用 GridLinks 重新启动：
 ```bash
-$ sudo service thingsboard restart
+$ sudo service gridlinks restart
 ```
 
 之后，转到您的用户界面，以确保没有问题，按 **使用 Azure Active Directory 登录**。

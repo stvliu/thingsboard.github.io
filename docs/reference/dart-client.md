@@ -54,12 +54,12 @@ import 'package:thingsboard_client/thingsboard_client.dart';
 
 ### 基本用法
 
-以下示例代码演示了如何实例化 ThingsBoard 客户端、执行登录并获取当前登录用户的用户详细信息。
+以下示例代码演示了如何实例化 GridLinks 客户端、执行登录并获取当前登录用户的用户详细信息。
 
 ```dart
 import 'package:thingsboard_client/thingsboard_client.dart';
 
-// ThingsBoard REST API URL
+// GridLinks REST API URL
 const thingsBoardApiEndpoint = 'http://localhost:8080';
 
 void main() async {
@@ -98,7 +98,7 @@ void main() async {
 ```dart
 import 'package:thingsboard_client/thingsboard_client.dart';
 
-// ThingsBoard REST API URL
+// GridLinks REST API URL
 const thingsBoardApiEndpoint = 'http://localhost:8080';
 
 void main() async {
@@ -136,7 +136,7 @@ void main() async {
 ```dart
 import 'package:thingsboard_client/thingsboard_client.dart';
 
-// ThingsBoard REST API URL
+// GridLinks REST API URL
 const thingsBoardApiEndpoint = 'http://localhost:8080';
 
 void main() async {
@@ -174,7 +174,7 @@ void main() async {
 ```dart
 import 'package:thingsboard_client/thingsboard_client.dart';
 
-// ThingsBoard REST API URL
+// GridLinks REST API URL
 const thingsBoardApiEndpoint = 'http://localhost:8080';
 
 void main() async {
@@ -214,7 +214,7 @@ void main() async {
 ```dart
 import 'package:thingsboard_client/thingsboard_client.dart';
 
-// ThingsBoard REST API URL
+// GridLinks REST API URL
 const thingsBoardApiEndpoint = 'http://localhost:8080';
 
 void main() async {
@@ -282,7 +282,7 @@ void main() async {
 ```dart
 import 'package:thingsboard_client/thingsboard_client.dart';
 
-// ThingsBoard REST API URL
+// GridLinks REST API URL
 const thingsBoardApiEndpoint = 'http://localhost:8080';
 
 void main() async {
@@ -361,7 +361,7 @@ void main() async {
 ```dart
 import 'package:thingsboard_client/thingsboard_client.dart';
 
-// ThingsBoard REST API URL
+// GridLinks REST API URL
 const thingsBoardApiEndpoint = 'http://localhost:8080';
 
 void main() async {
@@ -426,7 +426,7 @@ import 'dart:math';
 
 import 'package:thingsboard_client/thingsboard_client.dart';
 
-// ThingsBoard REST API URL
+// GridLinks REST API URL
 const thingsBoardApiEndpoint = 'http://localhost:8080';
 
 void main() async {

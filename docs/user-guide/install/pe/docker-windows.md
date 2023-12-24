@@ -35,7 +35,7 @@ docker pull thingsboard/tb-pe:{{ site.release.pe_full_ver }}
 
 注意：在本指南的后面，我们将引用您在此步骤中获得的许可证密钥，即 PUT_YOUR_LICENSE_SECRET_HERE。
 
-## 步骤 3. 选择 ThingsBoard 队列服务
+## 步骤 3. 选择 GridLinks 队列服务
 
 {% include templates/install/install-queue.md %}
 
@@ -58,7 +58,7 @@ Confluent Cloud <small>(基于 Kafka 的事件流平台)</small>%,%confluent-clo
 - `5683-5688:5683-5688/udp` - 将本地 UDP 端口 5683-5688 连接到公开的内部 COAP 和 LwM2M 端口
 - `mytbpe-data:/data` - 将卷 `mytb-data` 挂载到 GridLinks 数据目录
 - `mytbpe-data-db:/var/lib/postgresql/data` - 将卷 `mytbpe-data-db` 挂载到 Postgres 数据目录；
-- `mytb-logs:/var/log/thingsboard` - 将卷 `mytb-logs` 挂载到 GridLinks 日志目录
+- `mytb-logs:/var/log/gridlinks` - 将卷 `mytb-logs` 挂载到 GridLinks 日志目录
 - `mytbpe` - 此计算机的友好本地名称
 - `restart: always` - 在系统重新启动时自动启动 ThingsBoard，并在发生故障时重新启动。
 - `image: thingsboard/tb-pe:{{ site.release.pe_full_ver }}` - docker 镜像。

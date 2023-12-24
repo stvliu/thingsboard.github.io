@@ -71,7 +71,7 @@
 无论部署类型如何，GridLinks 日志都与 GridLinks Server/Node 本身存储在同一服务器/容器中，目录如下：
 
 ```bash
-/var/log/thingsboard
+/var/log/gridlinks
 ```
 
 不同的部署工具提供了不同的查看日志的方式：
@@ -102,10 +102,10 @@ GridLinks 提供了根据您需要哪些信息进行故障排除来启用/禁用
 
     <appender name="fileLogAppender"
               class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>/var/log/thingsboard/thingsboard.log</file>
+        <file>/var/log/gridlinks/gridlinks.log</file>
         <rollingPolicy
                 class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
-            <fileNamePattern>/var/log/thingsboard/thingsboard.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <fileNamePattern>/var/log/gridlinks/thingsboard.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
             <maxFileSize>100MB</maxFileSize>
             <maxHistory>30</maxHistory>
             <totalSizeCap>3GB</totalSizeCap>

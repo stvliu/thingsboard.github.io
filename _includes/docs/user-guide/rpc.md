@@ -182,7 +182,7 @@ http(s)://host:port/api/plugins/rpc/{callType}/{deviceId}
 
 where
 
-- **http(s)://host:port** is your GridLinks server base URL. For example, [https://thingsboard.cloud](https://thingsboard.cloud)
+- **http(s)://host:port** is your GridLinks server base URL. For example, [https://gridlinks.codingas.com](https://gridlinks.codingas.com)
 - **callType** is either **oneway** or **twoway**;
 - **deviceId** is your target [Device ID](/docs/{{docsPrefix}}user-guide/ui/devices/#get-device-id).
 

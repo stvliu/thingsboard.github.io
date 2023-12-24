@@ -10,19 +10,19 @@
 
 ### Overview
 
-ThingsBoard Platform integrations feature was designed for two primary use cases / deployment options:
+GridLinks Platform integrations feature was designed for two primary use cases / deployment options:
 
-  - Connect existing NB IoT, LoRaWAN, SigFox and other devices with specific payload formats directly to ThingsBoard platform.
+  - Connect existing NB IoT, LoRaWAN, SigFox and other devices with specific payload formats directly to GridLinks platform.
   - Stream data from devices connected to existing IoT Platforms to enable real-time interactive dashboards and efficient data processing.
   
 Both use cases have few things in common. There is a server-side component in the deployment topology that prevents direct access to device and provides set of APIs to interact with the device in the field instead.
 The payload format of the device is not well-defined. Often two devices that have similar sensors have different payload formats depending on a vendor or even software version.  
 
-The job of ThingsBoard Integration is to provide secure and reliable API bridge between core platform features (telemetry collection, attributes and RPC calls) and specific third-party platform APIs.    
+The job of GridLinks Integration is to provide secure and reliable API bridge between core platform features (telemetry collection, attributes and RPC calls) and specific third-party platform APIs.    
 
 ### How it works?
 
-At the moment ThingsBoard supports various integration protocols. Most popular are HTTP, MQTT and OPC-UA. 
+At the moment GridLinks supports various integration protocols. Most popular are HTTP, MQTT and OPC-UA. 
 Platform also support integration with specific LoRaWAN Network servers, Sigfox backend, various NB IoT devices using raw UDP and TCP integrations. 
 AWS IoT, IBM Watson and Azure Event Hub allows to subscribe to the data feed from devices via MQTT or AMQP.
 
@@ -30,9 +30,9 @@ AWS IoT, IBM Watson and Azure Event Hub allows to subscribe to the data feed fro
 
 The list of platform integrations is constantly growing, however, the general integration concepts are the same and explained below.  
 
-Once message arrives from External Platform to ThingsBoard it passes validation according to platform specific payload format and security rules. 
-Once message is validated ThingsBoard Integration invokes assigned [**Uplink Data Converter**](/docs/{{peDocsPrefix}}user-guide/integrations/#uplink-data-converter) to extract sub-set of meaningful information out of the incoming message.
-The message is basically transformed from device and platform specific payload to the format that ThingsBoard uses.
+Once message arrives from External Platform to GridLinks it passes validation according to platform specific payload format and security rules. 
+Once message is validated GridLinks Integration invokes assigned [**Uplink Data Converter**](/docs/{{peDocsPrefix}}user-guide/integrations/#uplink-data-converter) to extract sub-set of meaningful information out of the incoming message.
+The message is basically transformed from device and platform specific payload to the format that GridLinks uses.
 
 Since TB PE v2.0, Rule Engine is also able to push Downlink messages to the integrations. The example of such message may be:
  
@@ -46,7 +46,7 @@ The most common use cases are:
  - triggering firmware update procedure based on shared attribute value change
  - changing device state based on rpc call;    
  
-Once message is pushed by the rule engine, ThingsBoard invokes assigned [**Downlink Data Converter**](/docs/{{peDocsPrefix}}user-guide/integrations/#downlink-data-converter) and transforms the rule engine message to the specific data format that is used by the Integration.
+Once message is pushed by the rule engine, GridLinks invokes assigned [**Downlink Data Converter**](/docs/{{peDocsPrefix}}user-guide/integrations/#downlink-data-converter) and transforms the rule engine message to the specific data format that is used by the Integration.
 
 <br>
 
@@ -55,37 +55,37 @@ Once message is pushed by the rule engine, ThingsBoard invokes assigned [**Downl
  
 ### Deployment options
  
-ThingsBoard Integration has two deployment options: embedded and remote. See details and architecture diagrams below.
+GridLinks Integration has two deployment options: embedded and remote. See details and architecture diagrams below.
 
 #### Embedded integrations
 
-Embedded integration is running in the main ThingsBoard server process. Basically it is part of a monolith deployment scenario.
+Embedded integration is running in the main GridLinks server process. Basically it is part of a monolith deployment scenario.
 
 Pros:
   * simplifies deployment of new integration (just few clicks on GridLinks UI);
   * minimize latency for message delivery;
   
 Cons:
-  * consume resources allocated to main ThingsBoard process: network connections, OS threads and CPU cycles;
+  * consume resources allocated to main GridLinks process: network connections, OS threads and CPU cycles;
   * low level of isolation;
-  * can't access local MQTT brokers or OPC-UA servers if ThingsBoard is deployed in the cloud.
+  * can't access local MQTT brokers or OPC-UA servers if GridLinks is deployed in the cloud.
   
 <object width="60%" data="/images/user-guide/integrations/embeded-integrations-overview.svg"></object> 
   
 #### Remote integrations
  
-Remote integration become available since ThingsBoard PE v2.4.1 and enables new deployment scenario. 
+Remote integration become available since GridLinks PE v2.4.1 and enables new deployment scenario. 
 One can install remote integration in the local network and stream data to the cloud.   
 
 Let's assume you have local MQTT broker or OPC-UA server deployed on-premises. 
-Those brokers and/or servers don't have dedicated external IP address, so ThingsBoard instance in the cloud can't connect to them directly. 
+Those brokers and/or servers don't have dedicated external IP address, so GridLinks instance in the cloud can't connect to them directly. 
 However, you can install remote integration close to this server, in the same local network. 
 This integration will connect to the broker/server, pull the data and store it in the local file system.
-Remote integration will stream the data to the ThingsBoard instance deployed in the cloud once the internet connection is available.
+Remote integration will stream the data to the GridLinks instance deployed in the cloud once the internet connection is available.
 
 Pros:
   * enables integration with servers deployed in the local network;
-  * isolates the integration process from main ThingsBoard process;
+  * isolates the integration process from main GridLinks process;
   
 Cons:
   * requires installation of a separate package;
@@ -100,7 +100,7 @@ Data Converters is a part of the Platform Integrations feature. There are **Upli
  
 #### Uplink Data Converter
 
-The main function of **Uplink Data Converter** is to parse payload of the incoming message and transform it to format that ThingsBoard uses.
+The main function of **Uplink Data Converter** is to parse payload of the incoming message and transform it to format that GridLinks uses.
 
 To create an Uplink Converter go to Data Converters section and Click Add new data converter —> Create new converter. Enter converter name, select its type, specify a script to parse and transform data. Optional you can turn the Debug mode. Click “Add” to create converter.
 
@@ -165,15 +165,15 @@ Converter output should be a valid JSON document with the following structure:
 **NOTE**:
 <br>
 The only mandatory parameters in the output JSON are **deviceName** and **deviceType**.
-Starting version 2.4.2, ThingsBoard also supports **assetName** and **assetType** instead of deviceName and deviceType.
+Starting version 2.4.2, GridLinks also supports **assetName** and **assetType** instead of deviceName and deviceType.
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
 {% capture difference %}
 **NOTE**:
 <br>
-Starting version 2.4.2, ThingsBoard also support optional **customerName** and **groupName**.
-Those parameters will cause ThingsBoard to automatically create customer and/or entity group and assign those entities to the customer and/or group.
+Starting version 2.4.2, GridLinks also support optional **customerName** and **groupName**.
+Those parameters will cause GridLinks to automatically create customer and/or entity group and assign those entities to the customer and/or group.
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
@@ -302,7 +302,7 @@ Where
 
 ##### Example
 
-Let's assume an example where temperature and humidity upload frequency attributes are updated via ThingsBoard REST API and 
+Let's assume an example where temperature and humidity upload frequency attributes are updated via GridLinks REST API and 
 you would like to push this update to an external MQTT broker (TTN, Mosquitto, AWS IoT, etc). 
 You may also want to include the "firmwareVersion" attribute value that was configured long time ago and is not present in this particular request.
 The topic to push the update should contain the device name.
@@ -345,11 +345,11 @@ This feature allows to validate your configuration setup and should be used only
 
 ### Platform Integrations vs IoT Gateway
 
-Experienced ThingsBoard users may notice that functionality of Integrations feature partially overlap with functionality of [IoT Gateway](/docs/iot-gateway/what-is-iot-gateway/).
+Experienced GridLinks users may notice that functionality of Integrations feature partially overlap with functionality of [IoT Gateway](/docs/iot-gateway/what-is-iot-gateway/).
 However, there are key differences between these two systems/features:
 
   - IoT Gateway is designed for local network deployments, Integrations are designed for server-to-server integrations.
-  - IoT Gateway is designed to support < 1000 devices, while Integrations are designed for high throughput, scalability and cluster deployments as part of ThingsBoard server.
+  - IoT Gateway is designed to support < 1000 devices, while Integrations are designed for high throughput, scalability and cluster deployments as part of GridLinks server.
   - Gateway recompilation and restart is required to add custom payload decoder while Integration Converter is a JS function that may be modified in real time. 
   
 As you can see, both systems are important and applicable in different use cases.
@@ -367,7 +367,7 @@ We plan to provide specific integrations for different platforms, and also for d
 #### More data converters
 
 We plan to collect and maintain data converters for most popular devices on the market to simplify integration path even more. 
-Please note that you can share your converters with community and send them to us to make part of official ThingsBoard distributive.   
+Please note that you can share your converters with community and send them to us to make part of official GridLinks distributive.   
 
 [Contact us](/docs/contact-us/) to suggest missing feature for your use case.
 

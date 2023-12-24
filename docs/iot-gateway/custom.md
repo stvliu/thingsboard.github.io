@@ -403,7 +403,7 @@ sudo python3 -c 'from thingsboard_gateway.gateway.tb_gateway_service import TBGa
 {: .copy-code}
 
 You can check a status of the IoT Gateway by watch the logs in a folder that you provide in logs.json file.  
-Default location of logs folder for the daemon - "/var/log/thingsboard-gateway/"  
+Default location of logs folder for the daemon - "/var/log/gridlinks-gateway/"  
 Default location of logs folder for Python module - "./logs/"  
 
 ### Step 6. Check a result in the ThingsBoard instance

@@ -554,7 +554,7 @@ sudo chown thingsboard:thingsboard /usr/share/thingsboard/extensions/*
 Restart Thingsboard service:
 
 ```bash
-sudo service thingsboard restart
+sudo service gridlinks restart
 ```
 
 **Once GridLinks was restarted you need to clear browser cache and refresh the web page to reload UI of Rule Nodes**

@@ -46,7 +46,7 @@ sudo dpkg -i tb-edge-{{ site.release.pe_edge_ver }}.deb
 ```
 {: .copy-code}
 
-### 步骤 4. 配置 ThingsBoard Edge
+### 步骤 4. 配置 GridLinks Edge
 
 {% include templates/edge/install/linux-configure-edge.md %}
 

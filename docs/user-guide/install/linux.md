@@ -89,12 +89,12 @@ A,Ubuntu,shell,resources/thingsboard-ubuntu-installation.sh,/docs/user-guide/ins
 B,CentOS,shell,resources/thingsboard-centos-installation.sh,/docs/user-guide/install/resources/thingsboard-centos-installation.sh{% endcapture %}  
 {% include tabs.html %}
 
-### 配置 ThingsBoard 以使用外部数据库
+### 配置 GridLinks 以使用外部数据库
   
 编辑 GridLinks 配置文件
 
 ```bash 
-sudo nano /etc/thingsboard/conf/thingsboard.yml
+sudo nano /etc/gridlinks/conf/gridlinks.yml
 ```
 
 {% include templates/disable-hsqldb.md %} 
@@ -118,7 +118,7 @@ database:
 对于 GridLinks 服务：
 
 ```bash
-# 在 /etc/thingsboard/conf/thingsboard.conf 中更新 GridLinks 内存使用情况并将其限制为 256MB
+# 在 /etc/gridlinks/conf/gridlinks.conf 中更新 GridLinks 内存使用情况并将其限制为 256MB
 export JAVA_OPTS="$JAVA_OPTS -Xms256M -Xmx256M"
 ```
 
@@ -130,16 +130,16 @@ export JAVA_OPTS="$JAVA_OPTS -Xms256M -Xmx256M"
 
 ### 故障排除
 
-ThingsBoard 日志存储在以下目录中：
+GridLinks 日志存储在以下目录中：
  
 ```bash
-/var/log/thingsboard
+/var/log/gridlinks
 ```
 
 您可以发出以下命令以检查后端是否有任何错误：
  
 ```bash
-cat /var/log/thingsboard/thingsboard.log | grep ERROR
+cat /var/log/gridlinks/gridlinks.log | grep ERROR
 ```
 
 ## 后续步骤

@@ -127,7 +127,7 @@ redirect_from: "/docs/services/monitoring-dashboard/"
             <h2>总结</h2>
             <div class="text-content medium-margin">在物联网管理方面，GridLinks 致力于成为物联网解决方案的领导者。凭借经验丰富的团队掌舵，我们打造了最佳的物联网仪表板，该仪表板毫不费力地将复杂挑战转化为直观解决方案。</div>
             <div class="text-content medium-margin">我们用户友好的免费物联网仪表板软件让您能够轻松驾驭物联网的复杂性。通过提供一系列强大的工具，我们帮助企业释放其互联生态系统的全部潜力。</div>
-            <div class="text-content">我们提供了一种令人耳目一新的方法，将尖端技术与用户友好的设计相结合。选择 ThingsBoard，您不仅选择了一个物联网平台；您选择了一个致力于帮助您实现业务目标的合作伙伴。</div>
+            <div class="text-content">我们提供了一种令人耳目一新的方法，将尖端技术与用户友好的设计相结合。选择 GridLinks，您不仅选择了一个物联网平台；您选择了一个致力于帮助您实现业务目标的合作伙伴。</div>
         </div>
     </div>
 </div>

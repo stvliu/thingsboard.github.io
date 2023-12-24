@@ -19,7 +19,7 @@ GridLinks 团队建议仅将 Timescale 数据库用于已经在生产中使用 T
 编辑 GridLinks 配置文件
 
 ```bash 
-sudo nano /etc/thingsboard/conf/thingsboard.conf
+sudo nano /etc/gridlinks/conf/gridlinks.conf
 ``` 
 {: .copy-code}
 
@@ -28,7 +28,7 @@ sudo nano /etc/thingsboard/conf/thingsboard.conf
 ```bash
 # DB 配置
 export DATABASE_TS_TYPE=timescale
-export SPRING_DATASOURCE_URL=jdbc:postgresql://localhost:5432/thingsboard
+export SPRING_DATASOURCE_URL=jdbc:postgresql://localhost:5432/gridlinks
 export SPRING_DATASOURCE_USERNAME=postgres
 export SPRING_DATASOURCE_PASSWORD=PUT_YOUR_POSTGRESQL_PASSWORD_HERE
 # 指定数据块存储的时间间隔。请注意，此值只能设置一次。

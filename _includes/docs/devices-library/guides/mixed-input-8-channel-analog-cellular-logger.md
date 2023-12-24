@@ -23,7 +23,7 @@ MI-8 提供带外壳和不带外壳两种型号，以支持定制包装解决方
 要继续本指南，我们需要以下内容：  
 {{ prerequisites }}
 {% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}
-- [GridLinks 帐户](https://thingsboard.cloud)
+- [GridLinks 帐户](https://gridlinks.codingas.com)
 {% else %}
 - [GridLinks 帐户](https://demo.thingsboard.io)
 {% endif %}

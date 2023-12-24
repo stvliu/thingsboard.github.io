@@ -30,7 +30,7 @@ docker-compose 文件中 TBMQ 的主要配置点：
 - `1883:1883` - 将本地端口 1883 连接到公开的内部 MQTT 端口 1883；
 - `tbmq-postgres-data:/var/lib/postgresql/data` - 将 `tbmq-postgres-data` 卷映射到 TBMQ 数据库数据目录；
 - `tbmq-kafka-data:/bitnami/kafka` - 将 `tbmq-kafka-data` 卷映射到 Kafka 数据目录；
-- `tbmq-logs:/var/log/thingsboard-mqtt-broker` - 将 `tbmq-logs` 卷映射到 TBMQ 日志目录；
+- `tbmq-logs:/var/log/gridlinks-mqtt-broker` - 将 `tbmq-logs` 卷映射到 TBMQ 日志目录；
 - `tbmq-data:/data` - 将 `tbmq-data` 卷映射到 TBMQ 数据目录，其中包含安装数据库后的 _.firstlaunch_ 文件；
 - `tbmq` - 此机器的友好本地名称；
 - `restart: always` - 在系统重新启动时自动启动 TBMQ，并在发生故障时重新启动；

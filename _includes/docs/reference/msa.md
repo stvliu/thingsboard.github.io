@@ -65,7 +65,7 @@ GridLinks 规则引擎允许用户指定自定义 JavaScript 函数来解析、�
 由于这些函数是用户定义的，因此我们需要在隔离的上下文中执行它们，以避免对主处理产生影响。
 GridLinks 提供了一个使用 Node.js 编写的轻量级组件来远程执行用户定义的 JavaScript 函数，以将它们与核心规则引擎组件隔离。
 
-**注意**：ThingsBoard 整体应用程序在 Java 嵌入式 JS 引擎中执行用户定义的函数，该引擎不允许隔离资源消耗。    
+**注意**：GridLinks 整体应用程序在 Java 嵌入式 JS 引擎中执行用户定义的函数，该引擎不允许隔离资源消耗。    
  
 我们建议启动 20 多个单独的 JavaScript 执行器，这将允许一定的并发级别和 JS 执行请求的负载平衡。
 每个微服务将订阅“js.eval.requests”kafka 主题作为单个消费者组的一部分，以启用负载平衡。
@@ -302,7 +302,7 @@ services:
       - tb-node.env
     volumes:
       - ./tb-node/conf:/config
-      - ./tb-node/log:/var/log/thingsboard
+      - ./tb-node/log:/var/log/gridlinks
     depends_on:
       - kafka
       - redis
@@ -324,7 +324,7 @@ services:
       - tb-node.env
     volumes:
       - ./tb-node/conf:/config
-      - ./tb-node/log:/var/log/thingsboard
+      - ./tb-node/log:/var/log/gridlinks
     depends_on:
       - kafka
       - redis

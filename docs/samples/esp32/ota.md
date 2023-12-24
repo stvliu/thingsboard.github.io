@@ -33,7 +33,7 @@ hidetoc: "true"
 - 任何带有 ESP32-PICO-D4 芯片的开发板。
   对于此示例，我们使用 [ESP32-PICO-KIT 迷你开发板](https://docs.espressif.com/projects/esp-idf/en/latest/get-started/get-started-pico-kit.html#overview)
     <img src="/images/samples/esp32/ota/esp32_board.png" width="400" alt="esp32 board">
-- ThingsBoard 应用程序中的帐户。您可以使用您自己的实例或 [ThingsBoard Cloud](https://thingsboard.cloud)
+- ThingsBoard 应用程序中的帐户。您可以使用您自己的实例或 [GridLinks Cloud](https://gridlinks.codingas.com)
   我们需要说明的是，此示例适用于 CE 和 PE，但我们使用 PE 云，因为它具有更多功能，并且在下一个示例中，我们将展示如何同时为多个设备执行大规模固件更新。
 
 ## GridLinks 配置

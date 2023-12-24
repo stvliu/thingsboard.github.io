@@ -41,7 +41,7 @@ docker run -it -p 5683:5683/udp -v tb-pe-coap-integration-logs:/var/log/tb-coap-
 
 - **重新连接、停止和启动命令**
 
-要重新连接到终端（以查看 ThingsBoard 日志），请运行：
+要重新连接到终端（以查看 GridLinks 日志），请运行：
 
 ```
 docker attach tb-pe-coap-integration

@@ -42,7 +42,7 @@ psql -U postgres -d postgres -h 127.0.0.1 -W
 执行创建数据库语句
 
 ```bash
-CREATE DATABASE thingsboard;
+CREATE DATABASE gridlinks;
 \q
 
 ```

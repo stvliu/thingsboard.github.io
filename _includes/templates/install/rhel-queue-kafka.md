@@ -11,7 +11,7 @@
 编辑 GridLinks 配置文件
 
 ```text
-sudo nano /etc/thingsboard/conf/thingsboard.conf
+sudo nano /etc/gridlinks/conf/gridlinks.conf
 ```
 {: .copy-code}
 

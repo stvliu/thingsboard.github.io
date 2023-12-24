@@ -401,7 +401,7 @@ thingsboard-download-3-6-1-centos,CentOS,shell,resources/3.6.1/thingsboard-cento
 * Stop ThingsBoard service if it is running.
 
 ```bash
-sudo service thingsboard stop
+sudo service gridlinks stop
 ```
 {: .copy-code}
 
@@ -420,14 +420,14 @@ Package installer may ask you to merge your thingsboard configuration. It is pre
 Execute regular upgrade script:
 
 ```bash
-sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.6.0
+sudo /usr/share/gridlinks/bin/install/upgrade.sh --fromVersion=3.6.0
 ```
 {: .copy-code}
 
 #### Start the service
 
 ```bash
-sudo service thingsboard start
+sudo service gridlinks start
 ```
 {: .copy-code}
 
@@ -503,7 +503,7 @@ thingsboard-download-3-6-centos,CentOS,shell,resources/3.6/thingsboard-centos-do
 * Stop ThingsBoard service if it is running.
 
 ```bash
-sudo service thingsboard stop
+sudo service gridlinks stop
 ```
 {: .copy-code}
 
@@ -522,14 +522,14 @@ Package installer may ask you to merge your thingsboard configuration. It is pre
 Execute regular upgrade script:
 
 ```bash
-sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.5.1
+sudo /usr/share/gridlinks/bin/install/upgrade.sh --fromVersion=3.5.1
 ```
 {: .copy-code}
 
 #### Start the service
 
 ```bash
-sudo service thingsboard start
+sudo service gridlinks start
 ```
 {: .copy-code}
 
@@ -605,7 +605,7 @@ thingsboard-download-3-5-1-centos,CentOS,shell,resources/3.5.1/thingsboard-cento
 * Stop ThingsBoard service if it is running.
 
 ```bash
-sudo service thingsboard stop
+sudo service gridlinks stop
 ```
 {: .copy-code}
 
@@ -624,14 +624,14 @@ Package installer may ask you to merge your thingsboard configuration. It is pre
 Execute regular upgrade script:
 
 ```bash
-sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.5.0
+sudo /usr/share/gridlinks/bin/install/upgrade.sh --fromVersion=3.5.0
 ```
 {: .copy-code}
 
 #### Start the service
 
 ```bash
-sudo service thingsboard start
+sudo service gridlinks start
 ```
 {: .copy-code}
 
@@ -709,7 +709,7 @@ thingsboard-download-3-5-centos,CentOS,shell,resources/3.5/thingsboard-centos-do
 * Stop ThingsBoard service if it is running.
 
 ```bash
-sudo service thingsboard stop
+sudo service gridlinks stop
 ```
 {: .copy-code}
 
@@ -728,14 +728,14 @@ Package installer may ask you to merge your thingsboard configuration. It is pre
 Execute regular upgrade script:
 
 ```bash
-sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.4.4
+sudo /usr/share/gridlinks/bin/install/upgrade.sh --fromVersion=3.4.4
 ```
 {: .copy-code}
 
 #### Start the service
 
 ```bash
-sudo service thingsboard start
+sudo service gridlinks start
 ```
 {: .copy-code}
 
@@ -813,7 +813,7 @@ thingsboard-download-3-4-4-centos,CentOS,shell,resources/3.4.4/thingsboard-cento
 * Stop ThingsBoard service if it is running.
 
 ```bash
-sudo service thingsboard stop
+sudo service gridlinks stop
 ```
 {: .copy-code}
 
@@ -832,7 +832,7 @@ Package installer may ask you to merge your thingsboard configuration. It is pre
 #### Start the service
 
 ```bash
-sudo service thingsboard start
+sudo service gridlinks start
 ```
 {: .copy-code}
 
@@ -893,7 +893,7 @@ thingsboard-download-3-4-3-centos,CentOS,shell,resources/3.4.3/thingsboard-cento
 * Stop ThingsBoard service if it is running.
 
 ```bash
-sudo service thingsboard stop
+sudo service gridlinks stop
 ```
 {: .copy-code}
 
@@ -912,7 +912,7 @@ Package installer may ask you to merge your thingsboard configuration. It is pre
 #### Start the service
 
 ```bash
-sudo service thingsboard start
+sudo service gridlinks start
 ```
 {: .copy-code}
 
@@ -973,7 +973,7 @@ thingsboard-download-3-4-2-centos,CentOS,shell,resources/3.4.2/thingsboard-cento
 * Stop ThingsBoard service if it is running.
 
 ```bash
-sudo service thingsboard stop
+sudo service gridlinks stop
 ```
 {: .copy-code}
 
@@ -992,14 +992,14 @@ Package installer may ask you to merge your thingsboard configuration. It is pre
 Execute regular upgrade script:
 
 ```bash
-sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.4.1
+sudo /usr/share/gridlinks/bin/install/upgrade.sh --fromVersion=3.4.1
 ```
 {: .copy-code}
 
 #### Start the service
 
 ```bash
-sudo service thingsboard start
+sudo service gridlinks start
 ```
 {: .copy-code}
 
@@ -1085,7 +1085,7 @@ thingsboard-download-3-4-1-centos,CentOS,shell,resources/3.4.1/thingsboard-cento
 * Stop ThingsBoard service if it is running.
 
 ```bash
-sudo service thingsboard stop
+sudo service gridlinks stop
 ```
 {: .copy-code}
 
@@ -1104,14 +1104,14 @@ Package installer may ask you to merge your thingsboard configuration. It is pre
 Execute regular upgrade script:
 
 ```bash
-sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.4.0
+sudo /usr/share/gridlinks/bin/install/upgrade.sh --fromVersion=3.4.0
 ```
 {: .copy-code}
 
 #### Start the service
 
 ```bash
-sudo service thingsboard start
+sudo service gridlinks start
 ```
 {: .copy-code}
 
@@ -1187,7 +1187,7 @@ thingsboard-download-3-4-centos,CentOS,shell,resources/3.4/thingsboard-centos-do
 * Stop ThingsBoard service if it is running.
 
 ```bash
-sudo service thingsboard stop
+sudo service gridlinks stop
 ```
 {: .copy-code}
 
@@ -1206,14 +1206,14 @@ Package installer may ask you to merge your thingsboard configuration. It is pre
 Execute regular upgrade script:
 
 ```bash
-sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.3.4
+sudo /usr/share/gridlinks/bin/install/upgrade.sh --fromVersion=3.3.4
 ```
 {: .copy-code}
 
 #### Start the service
 
 ```bash
-sudo service thingsboard start
+sudo service gridlinks start
 ```
 {: .copy-code}
 
@@ -1289,7 +1289,7 @@ thingsboard-download-3-3-4-1-centos,CentOS,shell,resources/3.3.4.1/thingsboard-c
 * Stop ThingsBoard service if it is running.
 
 ```bash
-sudo service thingsboard stop
+sudo service gridlinks stop
 ```
 {: .copy-code}
 
@@ -1308,7 +1308,7 @@ Package installer may ask you to merge your thingsboard configuration. It is pre
 #### Start the service
 
 ```bash
-sudo service thingsboard start
+sudo service gridlinks start
 ```
 {: .copy-code}
 
@@ -1369,7 +1369,7 @@ thingsboard-download-3-3-4-centos,CentOS,shell,resources/3.3.4/thingsboard-cento
 * Stop ThingsBoard service if it is running.
 
 ```bash
-sudo service thingsboard stop
+sudo service gridlinks stop
 ```
 {: .copy-code}
 
@@ -1388,14 +1388,14 @@ Package installer may ask you to merge your thingsboard configuration. It is pre
 Execute regular upgrade script:
 
 ```bash
-sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.3.3
+sudo /usr/share/gridlinks/bin/install/upgrade.sh --fromVersion=3.3.3
 ```
 {: .copy-code}
 
 #### Start the service
 
 ```bash
-sudo service thingsboard start
+sudo service gridlinks start
 ```
 {: .copy-code}
 
@@ -1468,7 +1468,7 @@ thingsboard-download-3-3-3-centos,CentOS,shell,resources/3.3.3/thingsboard-cento
 * Stop ThingsBoard service if it is running.
 
 ```bash
-$ sudo service thingsboard stop
+$ sudo service gridlinks stop
 ```
 
 {% capture tabspec %}thingsboard-installation-3-3-3
@@ -1482,13 +1482,13 @@ Execute regular upgrade script:
 
 ```bash
 # Execute regular upgrade script
-$ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.3.2
+$ sudo /usr/share/gridlinks/bin/install/upgrade.sh --fromVersion=3.3.2
 ```
 
 #### Start the service
 
 ```bash
-$ sudo service thingsboard start
+$ sudo service gridlinks start
 ```
 
 ### Windows {#windows-333}
@@ -1550,7 +1550,7 @@ thingsboard-download-3-3-2-centos,CentOS,shell,resources/3.3.2/thingsboard-cento
 * Stop ThingsBoard service if it is running.
 
 ```bash
-$ sudo service thingsboard stop
+$ sudo service gridlinks stop
 ```
 
 {% capture tabspec %}thingsboard-installation-3-3-2
@@ -1559,7 +1559,7 @@ thingsboard-installation-3-3-2-centos,CentOS,shell,resources/3.3.2/thingsboard-c
 {% include tabs.html %}
 
 **NOTE:** Package installer may ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.
-Please make sure that you set **database.ts.type** parameter value (in the file **/etc/thingsboard/conf/thingsboard.yml**) to "cassandra" instead of "sql" if you are using Cassandra database for timeseries data:
+Please make sure that you set **database.ts.type** parameter value (in the file **/etc/gridlinks/conf/gridlinks.yml**) to "cassandra" instead of "sql" if you are using Cassandra database for timeseries data:
 
 ```
 database:
@@ -1572,7 +1572,7 @@ Execute regular upgrade script:
 
 ```bash
 # Execute regular upgrade script
-$ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.3.1
+$ sudo /usr/share/gridlinks/bin/install/upgrade.sh --fromVersion=3.3.1
 ```
 
 #### Start the service
@@ -1580,7 +1580,7 @@ $ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.3.1
 {% include templates/redis-post-upgrade-notice.md %}
 
 ```bash
-$ sudo service thingsboard start
+$ sudo service gridlinks start
 ```
 
 ### Windows {#windows-332}
@@ -1649,7 +1649,7 @@ thingsboard-download-3-3-1-centos,CentOS,shell,resources/3.3.1/thingsboard-cento
 * Stop ThingsBoard service if it is running.
 
 ```bash
-$ sudo service thingsboard stop
+$ sudo service gridlinks stop
 ```
 
 {% capture tabspec %}thingsboard-installation-3-3-1
@@ -1658,7 +1658,7 @@ thingsboard-installation-3-3-1-centos,CentOS,shell,resources/3.3.1/thingsboard-c
 {% include tabs.html %}
 
 **NOTE:** Package installer may ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.
-Please make sure that you set **database.ts.type** parameter value (in the file **/etc/thingsboard/conf/thingsboard.yml**) to "cassandra" instead of "sql" if you are using Cassandra database for timeseries data:
+Please make sure that you set **database.ts.type** parameter value (in the file **/etc/gridlinks/conf/gridlinks.yml**) to "cassandra" instead of "sql" if you are using Cassandra database for timeseries data:
 
 ```
   database:
@@ -1670,7 +1670,7 @@ Please make sure that you set **database.ts.type** parameter value (in the file 
 Execute regular upgrade script:
 
 ```bash
-sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.3.0
+sudo /usr/share/gridlinks/bin/install/upgrade.sh --fromVersion=3.3.0
 ```
 {: .copy-code}
 
@@ -1681,7 +1681,7 @@ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.3.0
 {% include templates/redis-post-upgrade-notice.md %}
 
 ```bash
-sudo service thingsboard start
+sudo service gridlinks start
 ```
 {: .copy-code}
 
@@ -1756,7 +1756,7 @@ thingsboard-download-3-3-centos,CentOS,shell,resources/3.3/thingsboard-centos-do
 * Stop ThingsBoard service if it is running.
 
 ```bash
-$ sudo service thingsboard stop
+$ sudo service gridlinks stop
 ```
 
 {% capture tabspec %}thingsboard-installation-3-3
@@ -1765,7 +1765,7 @@ thingsboard-installation-3-3-centos,CentOS,shell,resources/3.3/thingsboard-cento
 {% include tabs.html %}
 
 **NOTE:** Package installer will ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.
-Please make sure that you set **database.ts.type** parameter value (in the file **/etc/thingsboard/conf/thingsboard.yml**) to "cassandra" instead of "sql" if you are using Cassandra database for timeseries data:
+Please make sure that you set **database.ts.type** parameter value (in the file **/etc/gridlinks/conf/gridlinks.yml**) to "cassandra" instead of "sql" if you are using Cassandra database for timeseries data:
 
 ```
   database:
@@ -1776,7 +1776,7 @@ Please make sure that you set **database.ts.type** parameter value (in the file 
 
 **NOTE**: If you were using MQTT over SSL instead of default MQTT, please make sure you have a proper configuration (**thingsboard.conf** and/or **thingsboard.yml**) of ports/addresses:
 
-**/etc/thingsboard/conf/thingsboard.conf**
+**/etc/gridlinks/conf/gridlinks.conf**
 
 ```
 export MQTT_SSL_ENABLED=true
@@ -1788,7 +1788,7 @@ export MQTT_BIND_PORT=1883
 ```
 {: .copy-code}
 
-**/etc/thingsboard/conf/thingsboard.yml**
+**/etc/gridlinks/conf/gridlinks.yml**
 
 ```
 transport:
@@ -1816,7 +1816,7 @@ transport:
 Execute regular upgrade script:
 
 ```bash
-sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.2.2
+sudo /usr/share/gridlinks/bin/install/upgrade.sh --fromVersion=3.2.2
 ```
 {: .copy-code}
 
@@ -1827,7 +1827,7 @@ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.2.2
 {% include templates/redis-post-upgrade-notice.md %}
 
 ```bash
-sudo service thingsboard start
+sudo service gridlinks start
 ```
 {: .copy-code}
 ### Windows {#windows-33}
@@ -1951,7 +1951,7 @@ thingsboard-download-3-2-2-centos,CentOS,shell,resources/3.2.2/thingsboard-cento
 * Stop ThingsBoard service if it is running.
 
 ```bash
-$ sudo service thingsboard stop
+$ sudo service gridlinks stop
 ```
 
 {% capture tabspec %}thingsboard-installation-3-2-2
@@ -1960,7 +1960,7 @@ thingsboard-installation-3-2-2-centos,CentOS,shell,resources/3.2.2/thingsboard-c
 {% include tabs.html %}
 
 **NOTE:** Package installer will ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.  
-Please make sure that you set **database.ts.type** parameter value (in the file **/etc/thingsboard/conf/thingsboard.yml**) to "cassandra" instead of "sql" if you are using Cassandra database for timeseries data:
+Please make sure that you set **database.ts.type** parameter value (in the file **/etc/gridlinks/conf/gridlinks.yml**) to "cassandra" instead of "sql" if you are using Cassandra database for timeseries data:
 
 ```
   database:
@@ -1972,7 +1972,7 @@ Please make sure that you set **database.ts.type** parameter value (in the file 
 Execute regular upgrade script:
 
 ```bash
-sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.2.1
+sudo /usr/share/gridlinks/bin/install/upgrade.sh --fromVersion=3.2.1
 ```
 {: .copy-code}
 
@@ -1983,7 +1983,7 @@ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.2.1
 {% include templates/redis-post-upgrade-notice.md %}
 
 ```bash
-sudo service thingsboard start
+sudo service gridlinks start
 ```
 {: .copy-code}
 
@@ -2066,7 +2066,7 @@ thingsboard-download-3-2-1-centos,CentOS,shell,resources/3.2.1/thingsboard-cento
 * Stop ThingsBoard service if it is running.
 
 ```bash
-$ sudo service thingsboard stop
+$ sudo service gridlinks stop
 ```
 
 {% capture tabspec %}thingsboard-installation-3-2-1
@@ -2075,7 +2075,7 @@ thingsboard-installation-3-2-1-centos,CentOS,shell,resources/3.2.1/thingsboard-c
 {% include tabs.html %}
 
 **NOTE:** Package installer will ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.
-Please make sure that you set **database.ts.type** parameter value (in the file **/etc/thingsboard/conf/thingsboard.yml**) to "cassandra" instead of "sql" if you are using Cassandra database for timeseries data:
+Please make sure that you set **database.ts.type** parameter value (in the file **/etc/gridlinks/conf/gridlinks.yml**) to "cassandra" instead of "sql" if you are using Cassandra database for timeseries data:
 
 ```
 database:
@@ -2087,7 +2087,7 @@ database:
 Execute regular upgrade script:
 
 ```bash
-sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.2.0
+sudo /usr/share/gridlinks/bin/install/upgrade.sh --fromVersion=3.2.0
 ```
 {: .copy-code}
 
@@ -2098,7 +2098,7 @@ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.2.0
 {% include templates/redis-post-upgrade-notice.md %}
 
 ```bash
-sudo service thingsboard start
+sudo service gridlinks start
 ```
 {: .copy-code}
 
@@ -2173,7 +2173,7 @@ thingsboard-download-3-2-centos,CentOS,shell,resources/3.2/thingsboard-centos-do
 * Stop ThingsBoard service if it is running.
 
 ```bash
-$ sudo service thingsboard stop
+$ sudo service gridlinks stop
 ```
 
 {% capture tabspec %}thingsboard-installation-3-2
@@ -2182,7 +2182,7 @@ thingsboard-installation-3-2-centos,CentOS,shell,resources/3.2/thingsboard-cento
 {% include tabs.html %}
 
 **NOTE:** Package installer will ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.  
-Please make sure that you set **database.ts.type** parameter value (in the file **/etc/thingsboard/conf/thingsboard.yml**) to "cassandra" instead of "sql" if you are using Cassandra database for timeseries data:
+Please make sure that you set **database.ts.type** parameter value (in the file **/etc/gridlinks/conf/gridlinks.yml**) to "cassandra" instead of "sql" if you are using Cassandra database for timeseries data:
 
 ```
   database:
@@ -2194,7 +2194,7 @@ Please make sure that you set **database.ts.type** parameter value (in the file 
 Execute regular upgrade script:
 
 ```bash
-sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.1.1
+sudo /usr/share/gridlinks/bin/install/upgrade.sh --fromVersion=3.1.1
 ```
 {: .copy-code}
 
@@ -2205,7 +2205,7 @@ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.1.1
 {% include templates/redis-post-upgrade-notice.md %}
 
 ```bash
-sudo service thingsboard start
+sudo service gridlinks start
 ```
 {: .copy-code}
 
@@ -2280,7 +2280,7 @@ thingsboard-download-3-1-1-centos,CentOS,shell,resources/3.1.1/thingsboard-cento
 * Stop ThingsBoard service if it is running.
 
 ```bash
-$ sudo service thingsboard stop
+$ sudo service gridlinks stop
 ```
 
 {% capture tabspec %}thingsboard-installation-3-1-1
@@ -2289,7 +2289,7 @@ thingsboard-installation-3-1-1-centos,CentOS,shell,resources/3.1.1/thingsboard-c
 {% include tabs.html %}
 
 **NOTE:** Package installer will ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.  
-Please make sure that you set **database.ts.type** parameter value (in the file **/etc/thingsboard/conf/thingsboard.yml**) to "cassandra" instead of "sql" if you are using Cassandra database for timeseries data:
+Please make sure that you set **database.ts.type** parameter value (in the file **/etc/gridlinks/conf/gridlinks.yml**) to "cassandra" instead of "sql" if you are using Cassandra database for timeseries data:
 
 ```
 database:
@@ -2301,7 +2301,7 @@ database:
 Execute regular upgrade script:
 
 ```bash
-sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.1.0
+sudo /usr/share/gridlinks/bin/install/upgrade.sh --fromVersion=3.1.0
 ```
 {: .copy-code}
 
@@ -2312,7 +2312,7 @@ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.1.0
 {% include templates/redis-post-upgrade-notice.md %}
 
 ```bash
-sudo service thingsboard start
+sudo service gridlinks start
 ```
 {: .copy-code}
 
@@ -2386,7 +2386,7 @@ thingsboard-download-3-1-centos,CentOS,shell,resources/3.1/thingsboard-centos-do
 * Stop ThingsBoard service if it is running.
 
 ```bash
-$ sudo service thingsboard stop
+$ sudo service gridlinks stop
 ```
 
 {% capture tabspec %}thingsboard-installation-3-1
@@ -2395,7 +2395,7 @@ thingsboard-installation-3-1-centos,CentOS,shell,resources/3.1/thingsboard-cento
 {% include tabs.html %}
 
 **NOTE:** Package installer will ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.  
-Please make sure that you set **database.ts.type** parameter value (in the file **/etc/thingsboard/conf/thingsboard.yml**) to "cassandra" instead of "sql" if you are using Cassandra database for timeseries data:
+Please make sure that you set **database.ts.type** parameter value (in the file **/etc/gridlinks/conf/gridlinks.yml**) to "cassandra" instead of "sql" if you are using Cassandra database for timeseries data:
 
 ```
   database:
@@ -2404,7 +2404,7 @@ Please make sure that you set **database.ts.type** parameter value (in the file 
       type: "${DATABASE_TS_TYPE:sql}" # cassandra, sql, or timescale (for hybrid mode, DATABASE_TS_TYPE value should be cassandra, or timescale)
 ```
 
-**NOTE**: Cassandra database does not support [advanced filters](/docs/user-guide/advanced-filters/). If you were using **Cassandra** database for timeseries data please make sure that **database.ts_latest.type** parameter value (in the file **/etc/thingsboard/conf/thingsboard.yml**) is "sql":
+**NOTE**: Cassandra database does not support [advanced filters](/docs/user-guide/advanced-filters/). If you were using **Cassandra** database for timeseries data please make sure that **database.ts_latest.type** parameter value (in the file **/etc/gridlinks/conf/gridlinks.yml**) is "sql":
 
 ```
   database:
@@ -2417,14 +2417,14 @@ and execute the following migration script:
 
 ```bash
 # Execute script to migrate latest timeseries data from Cassandra to PostgreSQL
-sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.0.1-cassandra
+sudo /usr/share/gridlinks/bin/install/upgrade.sh --fromVersion=3.0.1-cassandra
 ```
 {: .copy-code}
 
 Execute regular upgrade script:
 
 ```bash
-sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.0.1
+sudo /usr/share/gridlinks/bin/install/upgrade.sh --fromVersion=3.0.1
 ```
 {: .copy-code}
 
@@ -2435,7 +2435,7 @@ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.0.1
 {% include templates/redis-post-upgrade-notice.md %}
 
 ```bash
-sudo service thingsboard start
+sudo service gridlinks start
 ```
 {: .copy-code}
 
@@ -2532,7 +2532,7 @@ thingsboard-download-3-0-1-centos,CentOS,shell,resources/3.0.1/thingsboard-cento
 * Stop ThingsBoard service if it is running.
 
 ```bash
-$ sudo service thingsboard stop
+$ sudo service gridlinks stop
 ```
 
 {% capture tabspec %}thingsboard-installation-3-0-1
@@ -2541,7 +2541,7 @@ thingsboard-installation-3-0-1-centos,CentOS,shell,resources/3.0.1/thingsboard-c
 {% include tabs.html %}
 
 **NOTE:** Package installer will ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.  
-Please make sure that you set **database.ts.type** parameter value (in the file **/etc/thingsboard/conf/thingsboard.yml**) to "cassandra" instead of "sql" if you are using Cassandra database for timeseries data:
+Please make sure that you set **database.ts.type** parameter value (in the file **/etc/gridlinks/conf/gridlinks.yml**) to "cassandra" instead of "sql" if you are using Cassandra database for timeseries data:
 
 ```
   database:
@@ -2554,14 +2554,14 @@ Please make sure that you set **database.ts.type** parameter value (in the file 
 
 ```bash
 # Execute migration script from Cassandra to PostgreSQL
-sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=2.5.0-cassandra
+sudo /usr/share/gridlinks/bin/install/upgrade.sh --fromVersion=2.5.0-cassandra
 ```
 {: .copy-code}
 
 Otherwise execute regular upgrade script:
 
 ```bash
-sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=2.5.0
+sudo /usr/share/gridlinks/bin/install/upgrade.sh --fromVersion=2.5.0
 ```
 {: .copy-code}
 
@@ -2570,7 +2570,7 @@ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=2.5.0
 {% include templates/redis-post-upgrade-notice.md %}
 
 ```bash
-sudo service thingsboard start
+sudo service gridlinks start
 ```
 {: .copy-code}
 
@@ -2676,7 +2676,7 @@ thingsboard-download-3-0-centos,CentOS,shell,resources/3.0.0/thingsboard-centos-
 * Stop ThingsBoard service if it is running.
 
 ```bash
-$ sudo service thingsboard stop
+$ sudo service gridlinks stop
 ```
 
 {% capture tabspec %}thingsboard-installation-3-0
@@ -2685,7 +2685,7 @@ thingsboard-installation-3-0-centos,CentOS,shell,resources/3.0.0/thingsboard-cen
 {% include tabs.html %}
 
 **NOTE:** Package installer will ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.  
-Please make sure that you set **database.ts.type** parameter value (in the file **/etc/thingsboard/conf/thingsboard.yml**) to "cassandra" instead of "sql" if you are using Cassandra database for timeseries data:
+Please make sure that you set **database.ts.type** parameter value (in the file **/etc/gridlinks/conf/gridlinks.yml**) to "cassandra" instead of "sql" if you are using Cassandra database for timeseries data:
 
 ```
   database:
@@ -2698,14 +2698,14 @@ Please make sure that you set **database.ts.type** parameter value (in the file 
 
 ```bash
 # Execute migration script from Cassandra to PostgreSQL
-sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=2.5.0-cassandra
+sudo /usr/share/gridlinks/bin/install/upgrade.sh --fromVersion=2.5.0-cassandra
 ```
 {: .copy-code}
 
 Otherwise execute regular upgrade script:
 
 ```bash
-sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=2.5.0
+sudo /usr/share/gridlinks/bin/install/upgrade.sh --fromVersion=2.5.0
 ```
 {: .copy-code}
 
@@ -2714,7 +2714,7 @@ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=2.5.0
 {% include templates/redis-post-upgrade-notice.md %}
 
 ```bash
-sudo service thingsboard start
+sudo service gridlinks start
 ```
 {: .copy-code}
 
@@ -2804,7 +2804,7 @@ thingsboard-download-2-5-6-centos,CentOS,shell,resources/2.5.6/thingsboard-cento
 * Stop ThingsBoard service if it is running.
 
 ```bash
-$ sudo service thingsboard stop
+$ sudo service gridlinks stop
 ```
 
 {% capture tabspec %}thingsboard-installation-2-5-6
@@ -2819,7 +2819,7 @@ thingsboard-installation-2-5-6-centos,CentOS,shell,resources/2.5.6/thingsboard-c
 {% include templates/redis-post-upgrade-notice.md %}
 
 ```bash
-sudo service thingsboard start
+sudo service gridlinks start
 ```
 {: .copy-code}
 
@@ -2873,7 +2873,7 @@ thingsboard-download-2-5-5-centos,CentOS,shell,resources/2.5.5/thingsboard-cento
 * Stop ThingsBoard service if it is running.
 
 ```bash
-$ sudo service thingsboard stop
+$ sudo service gridlinks stop
 ```
 
 {% capture tabspec %}thingsboard-installation-2-5-5
@@ -2888,7 +2888,7 @@ thingsboard-installation-2-5-5-centos,CentOS,shell,resources/2.5.5/thingsboard-c
 {% include templates/redis-post-upgrade-notice.md %}
 
 ```bash
-sudo service thingsboard start
+sudo service gridlinks start
 ```
 {: .copy-code}
 
@@ -2941,7 +2941,7 @@ thingsboard-download-2-5-4-centos,CentOS,shell,resources/2.5.4/thingsboard-cento
 * Stop ThingsBoard service if it is running.
 
 ```bash
-$ sudo service thingsboard stop
+$ sudo service gridlinks stop
 ```
 
 {% capture tabspec %}thingsboard-installation-2-5-4
@@ -2956,7 +2956,7 @@ thingsboard-installation-2-5-4-centos,CentOS,shell,resources/2.5.4/thingsboard-c
 {% include templates/redis-post-upgrade-notice.md %}
 
 ```bash
-sudo service thingsboard start
+sudo service gridlinks start
 ```
 {: .copy-code}
 
@@ -3010,7 +3010,7 @@ thingsboard-download-2-5-3-centos,CentOS,shell,resources/2.5.3/thingsboard-cento
 * Stop ThingsBoard service if it is running.
 
 ```bash
-$ sudo service thingsboard stop
+$ sudo service gridlinks stop
 ```
 
 {% capture tabspec %}thingsboard-installation-2-5-3
@@ -3025,7 +3025,7 @@ thingsboard-installation-2-5-3-centos,CentOS,shell,resources/2.5.3/thingsboard-c
 {% include templates/redis-post-upgrade-notice.md %}
 
 ```bash
-sudo service thingsboard start
+sudo service gridlinks start
 ```
 {: .copy-code}
 
@@ -3079,7 +3079,7 @@ thingsboard-download-2-5-2-centos,CentOS,shell,resources/2.5.2/thingsboard-cento
 * Stop ThingsBoard service if it is running.
 
 ```bash
-$ sudo service thingsboard stop
+$ sudo service gridlinks stop
 ```
 
 {% capture tabspec %}thingsboard-installation-2-5-2
@@ -3101,7 +3101,7 @@ Please refer to the guides below that will describe how to upgrade your PostgreS
 {% include templates/redis-post-upgrade-notice.md %}
 
 ```bash
-sudo service thingsboard start
+sudo service gridlinks start
 ```
 {: .copy-code}
 
@@ -3165,7 +3165,7 @@ thingsboard-download-2-5-1-centos,CentOS,shell,resources/2.5.1/thingsboard-cento
 * Stop ThingsBoard service if it is running.
 
 ```bash
-$ sudo service thingsboard stop
+$ sudo service gridlinks stop
 ```
 
 {% capture tabspec %}thingsboard-installation-2-5-1
@@ -3184,7 +3184,7 @@ Please refer to the guides below that will describe how to upgrade your PostgreS
 
 Finally, execute upgrade script and specify your previous ThingsBoard version:
 ```bash
-sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=2.4.3
+sudo /usr/share/gridlinks/bin/install/upgrade.sh --fromVersion=2.4.3
 ```
 {: .copy-code}
 
@@ -3193,7 +3193,7 @@ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=2.4.3
 {% include templates/redis-post-upgrade-notice.md %}
 
 ```bash
-sudo service thingsboard start
+sudo service gridlinks start
 ```
 {: .copy-code}
 
@@ -3254,7 +3254,7 @@ thingsboard-download-2-5-centos,CentOS,shell,resources/2.5/thingsboard-centos-do
 * Stop ThingsBoard service if it is running.
 
 ```bash
-$ sudo service thingsboard stop
+$ sudo service gridlinks stop
 ```
 
 {% capture tabspec %}thingsboard-installation-2-5
@@ -3270,7 +3270,7 @@ Please refer to the guides below that will describe how to upgrade your PostgreS
  - [CentOS](https://gist.github.com/ShvaykaD/313745d31a9af6db3d6a01ec9f16aac8)
 
 **NOTE:** Package installer will ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.  
-Please make sure that you set **database.entities.type** and **database.ts.type** parameters values (in the file **/etc/thingsboard/conf/thingsboard.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
+Please make sure that you set **database.entities.type** and **database.ts.type** parameters values (in the file **/etc/gridlinks/conf/gridlinks.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
 
 ```
   database:
@@ -3307,7 +3307,7 @@ Please make sure that you set **database.entities.type** and **database.ts.type*
 
 Finally, execute upgrade script:
 ```bash
-sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=2.4.3
+sudo /usr/share/gridlinks/bin/install/upgrade.sh --fromVersion=2.4.3
 ```
 {: .copy-code}
 
@@ -3316,7 +3316,7 @@ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=2.4.3
 {% include templates/redis-post-upgrade-notice.md %}
 
 ```bash
-sudo service thingsboard start
+sudo service gridlinks start
 ```
 {: .copy-code}
 
@@ -3411,7 +3411,7 @@ thingsboard-download-2-4-3-centos,CentOS,shell,resources/2.4.3/thingsboard-cento
 * Stop ThingsBoard service if it is running.
 
 ```bash
-$ sudo service thingsboard stop
+$ sudo service gridlinks stop
 ```
 
 {% capture tabspec %}thingsboard-installation-2-4-3
@@ -3420,7 +3420,7 @@ thingsboard-installation-2-4-3-centos,CentOS,shell,resources/2.4.3/thingsboard-c
 {% include tabs.html %}
 
 **NOTE:** Package installer will ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.  
-Please make sure that you set **database.entities.type** and **database.ts.type** parameters values (in the file **/etc/thingsboard/conf/thingsboard.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
+Please make sure that you set **database.entities.type** and **database.ts.type** parameters values (in the file **/etc/gridlinks/conf/gridlinks.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
  
 ```
     database:
@@ -3432,7 +3432,7 @@ Please make sure that you set **database.entities.type** and **database.ts.type*
 
 Execute upgrade script:
 ```bash
-sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=2.4.2
+sudo /usr/share/gridlinks/bin/install/upgrade.sh --fromVersion=2.4.2
 ```
 {: .copy-code}
 
@@ -3441,7 +3441,7 @@ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=2.4.2
 {% include templates/redis-post-upgrade-notice.md %}
 
 ```bash
-sudo service thingsboard start
+sudo service gridlinks start
 ```
 {: .copy-code}
 
@@ -3511,7 +3511,7 @@ thingsboard-download-2-4-2-centos,CentOS,shell,resources/2.4.2.1/thingsboard-cen
 * Stop ThingsBoard service if it is running.
 
 ```bash
-$ sudo service thingsboard stop
+$ sudo service gridlinks stop
 ```
 
 {% capture tabspec %}thingsboard-installation-2-4-2
@@ -3520,7 +3520,7 @@ thingsboard-installation-2-4-2-centos,CentOS,shell,resources/2.4.2.1/thingsboard
 {% include tabs.html %}
 
 **NOTE:** Package installer will ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.  
-Please make sure that you set **database.entities.type** and **database.ts.type** parameters values (in the file **/etc/thingsboard/conf/thingsboard.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
+Please make sure that you set **database.entities.type** and **database.ts.type** parameters values (in the file **/etc/gridlinks/conf/gridlinks.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
  
 ```
     database:
@@ -3532,7 +3532,7 @@ Please make sure that you set **database.entities.type** and **database.ts.type*
 
 Execute upgrade script:
 ```bash
-sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=2.4.1 
+sudo /usr/share/gridlinks/bin/install/upgrade.sh --fromVersion=2.4.1 
 ```
 {: .copy-code}
 
@@ -3541,7 +3541,7 @@ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=2.4.1
 {% include templates/redis-post-upgrade-notice.md %}
 
 ```bash
-sudo service thingsboard start
+sudo service gridlinks start
 ```
 {: .copy-code}
 
@@ -3610,7 +3610,7 @@ thingsboard-download-2-4-1-centos,CentOS,shell,resources/2.4.1/thingsboard-cento
 * Stop ThingsBoard service if it is running.
 
 ```bash
-$ sudo service thingsboard stop
+$ sudo service gridlinks stop
 ```
 
 {% capture tabspec %}thingsboard-installation-2-4-1
@@ -3619,7 +3619,7 @@ thingsboard-installation-2-4-1-centos,CentOS,shell,resources/2.4.1/thingsboard-c
 {% include tabs.html %}
 
 **NOTE:** Package installer will ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.  
-Please make sure that you set **database.entities.type** and **database.ts.type** parameters values (in the file **/etc/thingsboard/conf/thingsboard.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
+Please make sure that you set **database.entities.type** and **database.ts.type** parameters values (in the file **/etc/gridlinks/conf/gridlinks.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
  
 ```
     database:
@@ -3631,7 +3631,7 @@ Please make sure that you set **database.entities.type** and **database.ts.type*
 
 Execute upgrade script:
 ```bash
-sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=2.4.0 
+sudo /usr/share/gridlinks/bin/install/upgrade.sh --fromVersion=2.4.0 
 ```
 {: .copy-code}
 
@@ -3640,7 +3640,7 @@ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=2.4.0
 {% include templates/redis-post-upgrade-notice.md %}
 
 ```bash
-sudo service thingsboard start
+sudo service gridlinks start
 ```
 {: .copy-code}
 
@@ -3709,7 +3709,7 @@ thingsboard-download-2-4-0-centos,CentOS,shell,resources/2.4.0/thingsboard-cento
 * Stop ThingsBoard service if it is running.
 
 ```bash
-$ sudo service thingsboard stop
+$ sudo service gridlinks stop
 ```
 
 {% capture tabspec %}thingsboard-installation-2-4-0
@@ -3718,7 +3718,7 @@ thingsboard-installation-2-4-0-centos,CentOS,shell,resources/2.4.0/thingsboard-c
 {% include tabs.html %}
 
 **NOTE:** Package installer will ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.  
-Please make sure that you set **database.entities.type** and **database.ts.type** parameters values (in the file **/etc/thingsboard/conf/thingsboard.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
+Please make sure that you set **database.entities.type** and **database.ts.type** parameters values (in the file **/etc/gridlinks/conf/gridlinks.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
  
 ```
     database:
@@ -3730,7 +3730,7 @@ Please make sure that you set **database.entities.type** and **database.ts.type*
 
 Execute upgrade script:
 ```bash
-sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=2.3.1 
+sudo /usr/share/gridlinks/bin/install/upgrade.sh --fromVersion=2.3.1 
 ```
 {: .copy-code}
 
@@ -3739,7 +3739,7 @@ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=2.3.1
 {% include templates/redis-post-upgrade-notice.md %}
 
 ```bash
-sudo service thingsboard start
+sudo service gridlinks start
 ```
 {: .copy-code}
 

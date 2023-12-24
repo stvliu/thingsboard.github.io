@@ -3,7 +3,7 @@
 
 ### 概述
 
-ThingsBoard 能够将二进制内容（文件）存储在数据库中。
+GridLinks 能够将二进制内容（文件）存储在数据库中。
 目前，它用于存储由 [生成报告节点](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#generate-report-node) 生成的报告文件。
 存储的文件由 [发送电子邮件节点](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/external-nodes/#send-email-node) 访问，以创建电子邮件附件。
 发送文件的另一种方法是 [REST API 调用节点](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/external-nodes/#rest-api-call-node)。

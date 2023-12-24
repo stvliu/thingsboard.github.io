@@ -73,7 +73,7 @@ sudo rpm -Uvh thingsboard-{{ site.release.pe_ver }}.rpm
 使用以下命令打开文件进行编辑：
 
 ```bash 
-sudo nano /etc/thingsboard/conf/thingsboard.conf
+sudo nano /etc/gridlinks/conf/gridlinks.conf
 ``` 
 {: .copy-code}
 
@@ -93,7 +93,7 @@ sudo nano /etc/thingsboard/conf/thingsboard.conf
 export TB_LICENSE_SECRET=YOUR_LICENSE_SECRET_HERE
 ``` 
 
-### 步骤 4. 配置 ThingsBoard 数据库
+### 步骤 4. 配置 GridLinks 数据库
 
 {% include templates/install/install-db.md %}
 
@@ -105,7 +105,7 @@ PostgreSQL <small>(推荐用于 < 5K msg/sec)</small>%,%postgresql%,%templates/i
 
 {% include content-toggle.html content-toggle-id="rhelThingsboardDatabase" toggle-spec=contenttogglespec %} 
 
-### 步骤 5. 选择 ThingsBoard 队列服务
+### 步骤 5. 选择 GridLinks 队列服务
 
 {% include templates/install/install-queue.md %}
 

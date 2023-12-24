@@ -119,7 +119,7 @@ ThingsBoard 许可证由 [ThingsBoard 许可证门户](https://license.thingsboa
 使用以下命令打开文件进行编辑：
 
 ```bash 
-sudo nano /etc/thingsboard/conf/thingsboard.conf
+sudo nano /etc/gridlinks/conf/gridlinks.conf
 ```
 {: .copy-code}
 
@@ -144,7 +144,7 @@ export TB_LICENSE_SECRET=YOUR_LICENSE_SECRET_HERE
 执行以下命令启动 ThingsBoard：
 
 ```bash
-sudo service thingsboard start
+sudo service gridlinks start
 ```
 {: .copy-code}
 

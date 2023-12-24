@@ -1,6 +1,6 @@
 [Apache Kafka](https://kafka.apache.org/) 是一个开源流处理软件平台。
 
-配置 ThingsBoard 环境文件：
+配置 GridLinks 环境文件：
 
 ```text
 nano .env

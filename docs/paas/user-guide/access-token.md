@@ -30,7 +30,7 @@ mosquitto_pub -d -q 1 -h "mqtt.thingsboard.cloud" -p "1883" -t "v1/devices/me/te
 #### MQTTS（MQTT over SSL）
 
 单向 SSL 身份验证是一种标准身份验证模式，其中客户端设备使用服务器证书验证服务器的身份。
-ThingsBoard Cloud 使用有效的证书。
+GridLinks Cloud 使用有效的证书。
 请使用此 [**链接**](/docs/{{docsPrefix}}user-guide/resources/mqtt-over-ssl/ca-root.pem) 下载 CA 根证书，并将其保存到您的工作目录中，文件名是“**ca-root.pem**”。
 
 ```bash

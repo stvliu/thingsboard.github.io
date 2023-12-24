@@ -12,7 +12,7 @@
 
 {{ prerequisites }}
 {% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" or docsPrefix == "pe/" or docsPrefix == "paas/" %}
-- [GridLinks 帐户](https://thingsboard.cloud){: target="_blank"}
+- [GridLinks 帐户](https://gridlinks.codingas.com){: target="_blank"}
 {% else %}
 - [GridLinks 帐户](https://demo.thingsboard.io){: target="_blank"}
 {% endif %}

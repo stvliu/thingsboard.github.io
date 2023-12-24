@@ -39,7 +39,7 @@ https://dist.thingsboard.io/tb-edge-windows-{{ site.release.pe_edge_ver }}.zip
 
 **注意：**我们假设您已将软件包解压到默认位置：*C:\Program Files (x86)\tb-edge*
 
-### 步骤 4. 配置 ThingsBoard Edge
+### 步骤 4. 配置 GridLinks Edge
 
 {% include templates/edge/install/windows-configure-edge.md %}
 

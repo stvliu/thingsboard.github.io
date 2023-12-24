@@ -122,7 +122,7 @@ services:
     restart: "always"
     volumes:
       - thingsboard-data:/data
-      - thingsboard-logs:/var/log/thingsboard
+      - thingsboard-logs:/var/log/gridlinks
     environment:
       DATABASE_TS_TYPE: "sql"
       TB_QUEUE_TYPE: "in-memory"
@@ -131,7 +131,7 @@ services:
       TB_QUEUE_RE_MAIN_PACK_PROCESSING_TIMEOUT_MS: "30000"
       TB_QUEUE_RE_MAIN_CONSUMER_PER_PARTITION: "false"
       # Postgres connection
-      SPRING_DATASOURCE_URL: "jdbc:postgresql://localhost:5432/thingsboard"
+      SPRING_DATASOURCE_URL: "jdbc:postgresql://localhost:5432/gridlinks"
       SPRING_DATASOURCE_USERNAME: "postgres"
       SPRING_DATASOURCE_PASSWORD: "postgres"
       # Java options for 4G instance and JMX enabled
@@ -385,7 +385,7 @@ services:
     restart: "always"
     volumes:
       - thingsboard-data:/data
-      - thingsboard-logs:/var/log/thingsboard
+      - thingsboard-logs:/var/log/gridlinks
     environment:
       DATABASE_TS_TYPE: "sql"
       TB_QUEUE_TYPE: "kafka"
@@ -396,7 +396,7 @@ services:
       HTTP_BIND_PORT: "8080"
       TB_QUEUE_RE_MAIN_PACK_PROCESSING_TIMEOUT_MS: "30000"
       # Postgres connection
-      SPRING_DATASOURCE_URL: "jdbc:postgresql://localhost:5432/thingsboard"
+      SPRING_DATASOURCE_URL: "jdbc:postgresql://localhost:5432/gridlinks"
       SPRING_DATASOURCE_USERNAME: "postgres"
       SPRING_DATASOURCE_PASSWORD: "postgres"
       # Java options for 8G instance and JMX enabled
@@ -655,7 +655,7 @@ services:
     restart: "always"
     volumes:
       - thingsboard-data:/data
-      - thingsboard-logs:/var/log/thingsboard
+      - thingsboard-logs:/var/log/gridlinks
     environment:
       DATABASE_TS_TYPE: "cassandra"
       DATABASE_TS_LATEST_TYPE: "sql"
@@ -679,7 +679,7 @@ services:
       HTTP_BIND_PORT: "8080"
       TB_QUEUE_RE_MAIN_PACK_PROCESSING_TIMEOUT_MS: "30000"
       # Postgres connection
-      SPRING_DATASOURCE_URL: "jdbc:postgresql://localhost:5432/thingsboard"
+      SPRING_DATASOURCE_URL: "jdbc:postgresql://localhost:5432/gridlinks"
       SPRING_DATASOURCE_USERNAME: "postgres"
       SPRING_DATASOURCE_PASSWORD: "postgres"
       # Cache specs
@@ -819,7 +819,7 @@ services:
     restart: "always"
     volumes:
       - thingsboard-data:/data
-      - thingsboard-logs:/var/log/thingsboard
+      - thingsboard-logs:/var/log/gridlinks
     environment:
       DATABASE_TS_TYPE: "cassandra"
       DATABASE_TS_LATEST_TYPE: "sql"
@@ -843,7 +843,7 @@ services:
       HTTP_BIND_PORT: "8080"
       TB_QUEUE_RE_MAIN_PACK_PROCESSING_TIMEOUT_MS: "30000"
       # Postgres connection
-      SPRING_DATASOURCE_URL: "jdbc:postgresql://localhost:5432/thingsboard"
+      SPRING_DATASOURCE_URL: "jdbc:postgresql://localhost:5432/gridlinks"
       SPRING_DATASOURCE_USERNAME: "postgres"
       SPRING_DATASOURCE_PASSWORD: "postgres"
       # Cache specs
@@ -1049,7 +1049,7 @@ services:
     restart: "always"
     volumes:
       - thingsboard-data:/data
-      - thingsboard-logs:/var/log/thingsboard
+      - thingsboard-logs:/var/log/gridlinks
     environment:
       DATABASE_TS_TYPE: "cassandra"
       DATABASE_TS_LATEST_TYPE: "sql"
@@ -1073,7 +1073,7 @@ services:
       HTTP_BIND_PORT: "8080"
       TB_QUEUE_RE_MAIN_PACK_PROCESSING_TIMEOUT_MS: "30000"
       # Postgres connection
-      SPRING_DATASOURCE_URL: "jdbc:postgresql://localhost:5432/thingsboard"
+      SPRING_DATASOURCE_URL: "jdbc:postgresql://localhost:5432/gridlinks"
       SPRING_DATASOURCE_USERNAME: "postgres"
       SPRING_DATASOURCE_PASSWORD: "postgres"
       # Cache specs

@@ -51,7 +51,7 @@ services:
       TB_QUEUE_VC_PARTITIONS: 1
     volumes:
       - ~/.mytb-data:/data
-      - ~/.mytb-logs:/var/log/thingsboard
+      - ~/.mytb-logs:/var/log/gridlinks
 ```
 {: .copy-code}
 

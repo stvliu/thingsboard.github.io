@@ -101,7 +101,7 @@ selfManagedPlan:
                                 <span>/month</span>
                             </h4>
                             <div class="row justify-content-center">
-                                <a class="btn-blue btn-pricing" href="https://thingsboard.cloud/signup">
+                                <a class="btn-blue btn-pricing" href="https://gridlinks.codingas.com/signup">
                                     Start Free
                                 </a>
                             </div>
@@ -124,7 +124,7 @@ selfManagedPlan:
                                 <span>/month</span>
                             </h4>
                             <div class="row justify-content-center">
-                                <a class="btn-blue btn-pricing" href="https://thingsboard.cloud/signup">
+                                <a class="btn-blue btn-pricing" href="https://gridlinks.codingas.com/signup">
                                     Get Started
                                 </a>
                             </div>
@@ -148,7 +148,7 @@ selfManagedPlan:
                                 <span>/month</span>
                             </h4>
                             <div class="row justify-content-center">
-                                <a class="btn-blue btn-pricing" href="https://thingsboard.cloud/signup">
+                                <a class="btn-blue btn-pricing" href="https://gridlinks.codingas.com/signup">
                                     Get Started
                                 </a>
                             </div>
@@ -172,7 +172,7 @@ selfManagedPlan:
                                 <span>/month</span>
                             </h4>
                             <div class="row justify-content-center">
-                                <a class="btn-blue btn-pricing" href="https://thingsboard.cloud/signup">
+                                <a class="btn-blue btn-pricing" href="https://gridlinks.codingas.com/signup">
                                     Get Started
                                 </a>
                             </div>
@@ -1145,7 +1145,7 @@ selfManagedPlan:
             <div class="container">
                 <p>
                     ThingsBoard Edge Community Edition is able to connect only to ThingsBoard Community Edition server.
-                    ThingsBoard Edge Professional Edition is able to connect only to  GridLinks专业版 server (it can be <a href="https://thingsboard.cloud" target="blank">ThingsBoard Cloud</a> or on-premise instances).
+                    ThingsBoard Edge Professional Edition is able to connect only to  GridLinks专业版 server (it can be <a href="https://gridlinks.codingas.com" target="blank">GridLinks Cloud</a> or on-premise instances).
                     ThingsBoard Edge Community Edition <b>can not</b> be connected to  GridLinks专业版 and vise-verse.
                 </p>    
             </div>
@@ -1165,7 +1165,7 @@ selfManagedPlan:
         <div class="item" data-tag="h4" data-item-id="trial-enable" data-title="How can I enable free trial?">
             <div class="container">
                 <p>
-                    Customer may <a href="https://thingsboard.cloud/signup" target="blank">signup on  GridLinks云服务</a> and get 30 days of free trial on Maker plan. 
+                    Customer may <a href="https://gridlinks.codingas.com/signup" target="blank">signup on  GridLinks云服务</a> and get 30 days of free trial on Maker plan. 
                     30 days of seamless experience and the newest features, except white-labeling!
                 </p>    
             </div>    
@@ -1199,15 +1199,15 @@ selfManagedPlan:
                 </p>    
             </div>    
         </div>
-        <h3 id="section3">ThingsBoard Cloud</h3>
-        <div class="item" data-tag="h4" data-item-id="what-is-cloud" data-title="What is ThingsBoard Cloud?">
+        <h3 id="section3">GridLinks Cloud</h3>
+        <div class="item" data-tag="h4" data-item-id="what-is-cloud" data-title="What is GridLinks Cloud?">
             <div class="container">
                 <p>
                 GridLinks云服务 is a fully managed, scalable, and fault-tolerant platform for your IoT applications with combined subscription plans based on a monthly fee which already includes hosting costs.
                 </p>  
             </div>    
         </div>
-        <div class="item" data-tag="h4" data-item-id="difference" data-title="What the difference between Pay-as-you-go option and ThingsBoard Cloud?">
+        <div class="item" data-tag="h4" data-item-id="difference" data-title="What the difference between Pay-as-you-go option and GridLinks Cloud?">
             <div class="container">
                 <p>
                 Pay-as-you-go subscription plans include license fees only with no hosing services, which means that you have to deploy ThingsBoard on an external cloud (AWS, Azure, GCP, etc), or on the local server (On-premise). This means you have to pay separately for the infrastructure and manage ThingsBoard PE server.

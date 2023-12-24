@@ -11,7 +11,7 @@ description: GridLinks云服务 使用条款
 <h2>请阅读这些条款和条件</h2> 
 
 <br>
-<p>这些服务条款，包括其特定于国家/地区的附录（<b>“TBCP 服务协议”</b>、<b>“TBCP 协议”</b>、<b>“协议”</b>）代表了对 GridLinks云服务 平台的访问和使用所适用的条款和条件，目前可以通过 URL：<a href="https://thingsboard.cloud">https://thingsboard.cloud</a> 默认或可能不时使用的其他配置的自定义域访问。本文件是接受这些条款的实体或个人（<b>“客户”</b>或<b>“您”</b>）与 GridLinks 实体（下称<b>“我们”</b>、<b>“我们的”</b>或<b>“ThingsBoard Cloud 平台”</b>）之间适用的具有法律约束力的协议，该实体列于下文第 2 段。通过使用 GridLinks Cloud 平台，客户确认并同意他们已阅读、理解并同意受条款的约束，并且您接触的所有附属用户或用户（<b>“最终用户”</b>）均受本服务条款的约束。</p>
+<p>这些服务条款，包括其特定于国家/地区的附录（<b>“TBCP 服务协议”</b>、<b>“TBCP 协议”</b>、<b>“协议”</b>）代表了对 GridLinks云服务 平台的访问和使用所适用的条款和条件，目前可以通过 URL：<a href="https://gridlinks.codingas.com">https://gridlinks.codingas.com</a> 默认或可能不时使用的其他配置的自定义域访问。本文件是接受这些条款的实体或个人（<b>“客户”</b>或<b>“您”</b>）与 GridLinks 实体（下称<b>“我们”</b>、<b>“我们的”</b>或<b>“ThingsBoard Cloud 平台”</b>）之间适用的具有法律约束力的协议，该实体列于下文第 2 段。通过使用 GridLinks Cloud 平台，客户确认并同意他们已阅读、理解并同意受条款的约束，并且您接触的所有附属用户或用户（<b>“最终用户”</b>）均受本服务条款的约束。</p>
 
 <p> <b>1. 提交和接受条款</b> </p> 
 <p> 1.1 客户对 GridLinks云服务 平台的使用受本文件所含条款和条件以及 GridLinks云服务 平台隐私政策、Stripe 服务条款以及不时采用并与 GridLinks云服务 平台集成的任何其他网站或服务政策或条件（统称为<b>“条款”</b>）的约束。</p>

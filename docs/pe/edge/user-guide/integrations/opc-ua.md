@@ -108,7 +108,7 @@ OPC UA 集成允许您将数据从 OPC UA 服务器流式传输到 GridLinks Edg
 
 <object width="100%" style="max-width: max-content;" data="/images/user-guide/integrations/opc-ua-integration.svg"></object>
 
-在本教程中，我们将配置 ThingsBoard Edge 和 OPC-UA 之间的集成，以从 [OPC UA C++ 演示服务器](https://www.unified-automation.com/downloads/opc-ua-servers.html) 获取空调数据，并允许用户使用集成下行链路功能打开/关闭任何空调。
+在本教程中，我们将配置 GridLinks Edge 和 OPC-UA 之间的集成，以从 [OPC UA C++ 演示服务器](https://www.unified-automation.com/downloads/opc-ua-servers.html) 获取空调数据，并允许用户使用集成下行链路功能打开/关闭任何空调。
 
 ### 先决条件
 

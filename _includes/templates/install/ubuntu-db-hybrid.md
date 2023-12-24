@@ -19,7 +19,7 @@ GridLinks 团队建议，如果您计划在生产环境中拥有 100 万台以�
 编辑 GridLinks 配置文件
 
 ```bash 
-sudo nano /etc/thingsboard/conf/thingsboard.conf
+sudo nano /etc/gridlinks/conf/gridlinks.conf
 ``` 
 {: .copy-code}
 
@@ -28,7 +28,7 @@ sudo nano /etc/thingsboard/conf/thingsboard.conf
 ```bash
 # DB Configuration 
 export DATABASE_TS_TYPE=cassandra
-export SPRING_DATASOURCE_URL=jdbc:postgresql://localhost:5432/thingsboard
+export SPRING_DATASOURCE_URL=jdbc:postgresql://localhost:5432/gridlinks
 export SPRING_DATASOURCE_USERNAME=postgres
 export SPRING_DATASOURCE_PASSWORD=PUT_YOUR_POSTGRESQL_PASSWORD_HERE
 ``` 

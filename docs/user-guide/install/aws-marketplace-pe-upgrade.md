@@ -151,7 +151,7 @@ $ sudo nano /usr/share/thingsboard/conf/thingsboard.yml
 Execute database upgrade using the following command:
 
 ```bash
-$ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=1.4.0
+$ sudo /usr/share/gridlinks/bin/install/upgrade.sh --fromVersion=1.4.0
 ```
 
 The output should be like:
@@ -184,13 +184,13 @@ In case of any **failures** during database upgrade **Please contact [support@th
 Execute the following command in order to start ThingsBoard service:
 
 ```bash
-$ sudo service thingsboard start
+$ sudo service gridlinks start
 ```
 
 You can issue the following command in order to check if there are any errors on the backend side:
 
 ```bash
-$ cat /var/log/thingsboard/thingsboard.log | grep ERROR
+$ cat /var/log/gridlinks/gridlinks.log | grep ERROR
 ```
 
 
@@ -312,7 +312,7 @@ $ sudo nano /usr/share/thingsboard/conf/thingsboard.yml
 Execute database upgrade using the following command:
 
 ```bash
-$ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=2.0.0
+$ sudo /usr/share/gridlinks/bin/install/upgrade.sh --fromVersion=2.0.0
 ```
 
 The output should be like:
@@ -340,13 +340,13 @@ In case of any **failures** during database upgrade **Please contact [support@th
 Execute the following command in order to start ThingsBoard service:
 
 ```bash
-$ sudo service thingsboard start
+$ sudo service gridlinks start
 ```
 
 You can issue the following command in order to check if there are any errors on the backend side:
 
 ```bash
-$ cat /var/log/thingsboard/thingsboard.log | grep ERROR
+$ cat /var/log/gridlinks/gridlinks.log | grep ERROR
 ```
 
 #### Install ThingsBoard Web Report Server
@@ -522,7 +522,7 @@ $ sudo nano /usr/share/thingsboard/conf/thingsboard.yml
 Execute database upgrade using the following command:
 
 ```bash
-$ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=2.0.0
+$ sudo /usr/share/gridlinks/bin/install/upgrade.sh --fromVersion=2.0.0
 ```
 
 The output should be like:
@@ -562,13 +562,13 @@ In case of any **failures** during database upgrade **Please contact [support@th
 Execute the following command in order to start ThingsBoard service:
 
 ```bash
-$ sudo service thingsboard start
+$ sudo service gridlinks start
 ```
 
 You can issue the following command in order to check if there are any errors on the backend side:
 
 ```bash
-$ cat /var/log/thingsboard/thingsboard.log | grep ERROR
+$ cat /var/log/gridlinks/gridlinks.log | grep ERROR
 ```
 
 ## Upgrading to ThingsBoard PE v.2.2.0
@@ -663,7 +663,7 @@ $ sudo nano /usr/share/thingsboard/conf/thingsboard.yml
 Execute database upgrade using the following command:
 
 ```bash
-$ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=2.0.0
+$ sudo /usr/share/gridlinks/bin/install/upgrade.sh --fromVersion=2.0.0
 ```
 
 The output should be like:
@@ -704,13 +704,13 @@ In case of any **failures** during database upgrade **Please contact [support@th
 Execute the following command in order to start ThingsBoard service:
 
 ```bash
-$ sudo service thingsboard start
+$ sudo service gridlinks start
 ```
 
 You can issue the following command in order to check if there are any errors on the backend side:
 
 ```bash
-$ cat /var/log/thingsboard/thingsboard.log | grep ERROR
+$ cat /var/log/gridlinks/gridlinks.log | grep ERROR
 ```
 
 #### Upgrade ThingsBoard Web Report Server to v.2.2.0
@@ -866,13 +866,13 @@ $ sudo nano /usr/share/thingsboard/conf/thingsboard.yml
 Execute the following command in order to start ThingsBoard service:
 
 ```bash
-$ sudo service thingsboard start
+$ sudo service gridlinks start
 ```
 
 You can issue the following command in order to check if there are any errors on the backend side:
 
 ```bash
-$ cat /var/log/thingsboard/thingsboard.log | grep ERROR
+$ cat /var/log/gridlinks/gridlinks.log | grep ERROR
 ```
 
 ## Upgrading to ThingsBoard PE v.2.3.0
@@ -1026,7 +1026,7 @@ and change ```database.entities.type``` and ```database.ts.type``` values from `
 Execute database upgrade using the following command:
 
 ```bash
-$ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=2.2.0
+$ sudo /usr/share/gridlinks/bin/install/upgrade.sh --fromVersion=2.2.0
 ```
 
 The output should be like:
@@ -1055,13 +1055,13 @@ In case of any **failures** during database upgrade **Please contact [support@th
 Execute the following command in order to start ThingsBoard service:
 
 ```bash
-$ sudo service thingsboard start
+$ sudo service gridlinks start
 ```
 
 You can issue the following command in order to check if there are any errors on the backend side:
 
 ```bash
-$ cat /var/log/thingsboard/thingsboard.log | grep ERROR
+$ cat /var/log/gridlinks/gridlinks.log | grep ERROR
 ```
 
 ## Upgrading to ThingsBoard PE v.2.3.1
@@ -1215,7 +1215,7 @@ and change ```database.entities.type``` and ```database.ts.type``` values from `
 Execute database upgrade using the following command:
 
 ```bash
-$ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=2.3.0
+$ sudo /usr/share/gridlinks/bin/install/upgrade.sh --fromVersion=2.3.0
 ```
 
 The output should be like:
@@ -1245,13 +1245,13 @@ In case of any **failures** during database upgrade **Please contact [support@th
 Execute the following command in order to start ThingsBoard service:
 
 ```bash
-$ sudo service thingsboard start
+$ sudo service gridlinks start
 ```
 
 You can issue the following command in order to check if there are any errors on the backend side:
 
 ```bash
-$ cat /var/log/thingsboard/thingsboard.log | grep ERROR
+$ cat /var/log/gridlinks/gridlinks.log | grep ERROR
 ```
 
 #### Upgrade ThingsBoard Web Report Server to v.2.3.1

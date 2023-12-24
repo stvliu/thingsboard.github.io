@@ -466,7 +466,7 @@ coap://coap.thingsboard.cloud/api/v1/$ACCESS_TOKEN/claim
 {% capture difference %}
 **请注意**
 <br>
-以上字段是可选的。如果未指定 **secretKey**，则使用空字符串作为默认值。如果未指定 **durationMs**，则使用系统参数 **device.claim.duration**（在文件 **/etc/thingsboard/conf/thingsboard.yml** 中）。
+以上字段是可选的。如果未指定 **secretKey**，则使用空字符串作为默认值。如果未指定 **durationMs**，则使用系统参数 **device.claim.duration**（在文件 **/etc/gridlinks/conf/gridlinks.yml** 中）。
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 

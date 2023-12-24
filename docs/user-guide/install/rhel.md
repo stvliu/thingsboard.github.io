@@ -62,7 +62,7 @@ sudo rpm -Uvh thingsboard-{{ site.release.ce_ver }}.rpm
 {: .copy-code}
 
 
-### 步骤 3. 配置 ThingsBoard 数据库
+### 步骤 3. 配置 GridLinks 数据库
 
 {% include templates/install/install-db.md %}
 
@@ -73,7 +73,7 @@ PostgreSQL <small>（推荐用于 < 5K msg/sec）</small>%,%postgresql%,%templat
 
 {% include content-toggle.html content-toggle-id="rhelThingsboardDatabase" toggle-spec=contenttogglespec %} 
 
-### 步骤 4. 选择 ThingsBoard 队列服务
+### 步骤 4. 选择 GridLinks 队列服务
 
 {% include templates/install/install-queue.md %}
 

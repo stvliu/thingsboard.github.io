@@ -95,7 +95,7 @@ services:
 - `8888:8888` - 将本地端口 8888 连接到公开的内部 HTTP 端口 8888
 - `~/.mytrendz-data:/data` - 将卷 `~/.mytrendz-data` 挂载到 Trendz 数据目录
 - `~/.mytrendz-data/db:/var/lib/postgresql/datad` - 将卷 `~/.mytrendz-data/db` 挂载到 Postgres 数据目录
-- `~/.mytrendz-logs:/var/log/thingsboard` - 将卷 `~/.mytrendz-logs` 挂载到 Trendz 日志目录
+- `~/.mytrendz-logs:/var/log/gridlinks` - 将卷 `~/.mytrendz-logs` 挂载到 Trendz 日志目录
 - `mytrendz` - 此计算机的友好本地名称
 - `--restart always` - 在系统重新启动时自动启动 Trendz，并在发生故障时重新启动。
 - `thingsboard/trendz:1.10.3-HF3` - Trendz docker 镜像

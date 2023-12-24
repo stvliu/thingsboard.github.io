@@ -140,7 +140,7 @@ curl -v -X POST -d '{"temperature":99}' http://localhost:8080/api/v1/$ACCESS_TOK
 {% endif %}
 {% if docsPrefix == "paas/" %}
 ```bash
-curl -v -X POST -d '{"temperature":99}' https://thingsboard.cloud/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
+curl -v -X POST -d '{"temperature":99}' https://gridlinks.codingas.com/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
 ```
 {: .copy-code}
 
@@ -178,7 +178,7 @@ curl -v -X POST -d '{"temperature":24}' http://localhost:8080/api/v1/$ACCESS_TOK
 {% endif %}
 {% if docsPrefix == "paas/" %}
 ```bash
-curl -v -X POST -d '{"temperature":24}' https://thingsboard.cloud/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
+curl -v -X POST -d '{"temperature":24}' https://gridlinks.codingas.com/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
 ```
 {: .copy-code}
 

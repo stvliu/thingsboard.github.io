@@ -1,6 +1,6 @@
 {% include templates/install/queue-confluent-cloud-config.md %}
 
-配置 ThingsBoard 环境文件：
+配置 GridLinks 环境文件：
 
 ```text
 nano .env

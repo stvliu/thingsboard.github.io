@@ -67,7 +67,7 @@ services:
       TB_QUEUE_VC_PARTITIONS: 1
     volumes:
       - ~/.mytbpe-data:/data
-      - ~/.mytbpe-logs:/var/log/thingsboard
+      - ~/.mytbpe-logs:/var/log/gridlinks
   postgres:
     restart: always
     image: "postgres:12"

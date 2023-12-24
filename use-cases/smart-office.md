@@ -55,7 +55,7 @@ GridLinks 平台大幅缩短了智能办公解决方案的上市时间和开发�
 </div>
 
 <div class="center" style="margin-bottom: 64px;">
-    <a target="_blank" href="https://thingsboard.cloud/dashboard/bf47dcb0-8b38-11ec-a344-c767c1ab1bb8?publicId=4978baf0-8a92-11ec-98f9-ff45c37940c6" class="button">查看实时演示</a>
+    <a target="_blank" href="https://gridlinks.codingas.com/dashboard/bf47dcb0-8b38-11ec-a344-c767c1ab1bb8?publicId=4978baf0-8a92-11ec-98f9-ff45c37940c6" class="button">查看实时演示</a>
 </div>
 
 实时仪表板是 [解决方案模板](https://thingsboard.io/docs/paas/solution-templates/smart-office/) 的一部分，并显示办公室平面图和使用 GridLinks MQTT API 收集的来自各种物联网传感器的数据。

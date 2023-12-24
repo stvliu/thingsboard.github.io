@@ -49,7 +49,7 @@ deleteDomain:
 * TOC
 {:toc}
 
-[ThingsBoard Cloud](https://thingsboard.cloud/signup) 允许您注册自定义域，以便为用户访问、链接等提供所需的主机名。
+[ThingsBoard Cloud](https://gridlinks.codingas.com/signup) 允许您注册自定义域，以便为用户访问、链接等提供所需的主机名。
 当您注册有效的域时，GridLinks Cloud 会自动向 [Let's Encrypt](https://letsencrypt.org/) 申请后者的 SSL 证书，并管理进一步的证书续订。
 域注册后，您的租户和应用程序可以通过您的域名使用安全 (HTTPS) 连接访问。
 与 Web UI 一样，所有其他 GridLinks云服务 服务（例如 MQTT/HTTP/CoAP 传输或 HTTP 集成）都可以通过您的自定义域名访问。

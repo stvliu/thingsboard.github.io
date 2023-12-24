@@ -119,7 +119,7 @@ docker start tb-gateway
 $ docker pull thingsboard/tb-gateway
 $ docker stop tb-gateway
 $ docker rm tb-gateway
-$ docker run -it -v %HOMEPATH%\tb-gateway\config:/thingsboard-gateway/config -v %HOMEPATH%\tb-gateway\extensions:/var/lib/thingsboard_gateway/extensions -v %HOMEPATH%\tb-gateway\logs:/var/log/thingsboard-gateway --name tb-gateway --restart always thingsboard/tb-gateway
+$ docker run -it -v %HOMEPATH%\tb-gateway\config:/thingsboard-gateway/config -v %HOMEPATH%\tb-gateway\extensions:/var/lib/thingsboard_gateway/extensions -v %HOMEPATH%\tb-gateway\logs:/var/log/gridlinks-gateway --name tb-gateway --restart always thingsboard/tb-gateway
 ```
 
 ## 构建本地 Docker 镜像

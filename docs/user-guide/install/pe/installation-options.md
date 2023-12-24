@@ -40,7 +40,7 @@ redirect_from: "/docs/pe/user-guide/install/installation-options/"
                             <div class="deployment-cards">
                                 <div class="deployment-cards-container">
                                     <div class="deployment-card-block">
-                                        <a href="https://thingsboard.cloud/signup">
+                                        <a href="https://gridlinks.codingas.com/signup">
                                             <span>
                                                 <div class="deployment-logo">
                                                     <img width="" src="/images/sign-pe-img.svg" title="实时演示" alt="实时演示">

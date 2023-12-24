@@ -37,7 +37,7 @@ description: GridLinks 物联网网关的安装结构和配置
     request                                       - 请求自定义连接器/转换器的文件夹。
     can                                           - CAN 自定义连接器/转换器的文件夹。
 
-/var/log/thingsboard-gateway                      - 日志文件夹。
+/var/log/gridlinks-gateway                      - 日志文件夹。
     connector.log                                 - 连接器日志。
     service.log                                   - 主网关服务日志。
     storage.log                                   - 存储日志。

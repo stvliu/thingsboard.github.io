@@ -294,7 +294,7 @@ v1/devices/me/claim
 ```
 
 **请注意**，上述字段是可选的。如果未指定 **secretKey**，则使用空字符串作为默认值。
-如果未指定 **durationMs**，则使用系统参数 **device.claim.duration**（在文件 **/etc/thingsboard/conf/thingsboard.yml** 中）。
+如果未指定 **durationMs**，则使用系统参数 **device.claim.duration**（在文件 **/etc/gridlinks/conf/gridlinks.yml** 中）。
 
 ## 设备预配
 

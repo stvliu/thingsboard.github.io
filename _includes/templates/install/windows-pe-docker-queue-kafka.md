@@ -53,7 +53,7 @@ services:
       TB_LICENSE_INSTANCE_DATA_FILE: /data/license.data
     volumes:
       - mytbpe-data:/data
-      - mytbpe-logs:/var/log/thingsboard
+      - mytbpe-logs:/var/log/gridlinks
   postgres:
     restart: always
     image: "postgres:12"

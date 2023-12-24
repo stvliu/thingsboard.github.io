@@ -56,7 +56,7 @@ https://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/telemetry
 {% if docsPrefix == "paas/" %}
 
 ```shell
-https://thingsboard.cloud/api/v1/$ACCESS_TOKEN/telemetry
+https://gridlinks.codingas.com/api/v1/$ACCESS_TOKEN/telemetry
 ```
 {: .copy-code}
 
@@ -128,7 +128,7 @@ https://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/attributes
 {% if docsPrefix == "paas/" %}
 
 ```shell
-https://thingsboard.cloud/api/v1/$ACCESS_TOKEN/attributes
+https://gridlinks.codingas.com/api/v1/$ACCESS_TOKEN/attributes
 ```
 {: .copy-code}
 
@@ -167,7 +167,7 @@ https://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/attributes?clientKeys=attribute
 {% if docsPrefix == "paas/" %}
 
 ```shell
-https://thingsboard.cloud/api/v1/$ACCESS_TOKEN/attributes?clientKeys=attribute1,attribute2&sharedKeys=shared1,shared2
+https://gridlinks.codingas.com/api/v1/$ACCESS_TOKEN/attributes?clientKeys=attribute1,attribute2&sharedKeys=shared1,shared2
 ```
 {: .copy-code}
 
@@ -214,7 +214,7 @@ https://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/attributes/updates
 {% if docsPrefix == "paas/" %}
 
 ```shell
-https://thingsboard.cloud/api/v1/$ACCESS_TOKEN/attributes/updates
+https://gridlinks.codingas.com/api/v1/$ACCESS_TOKEN/attributes/updates
 ```
 {: .copy-code}
 
@@ -261,7 +261,7 @@ https://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/rpc
 {% if docsPrefix == "paas/" %}
 
 ```shell
-https://thingsboard.cloud/api/v1/$ACCESS_TOKEN/rpc
+https://gridlinks.codingas.com/api/v1/$ACCESS_TOKEN/rpc
 ```
 {: .copy-code}
 
@@ -310,7 +310,7 @@ https://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/rpc/{$id}
 {% if docsPrefix == "paas/" %}
 
 ```shell
-https://thingsboard.cloud/api/v1/$ACCESS_TOKEN/rpc/{$id}
+https://gridlinks.codingas.com/api/v1/$ACCESS_TOKEN/rpc/{$id}
 ```
 {: .copy-code}
 
@@ -365,7 +365,7 @@ https://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/rpc
 {% if docsPrefix == "paas/" %}
 
 ```shell
-https://thingsboard.cloud/api/v1/$ACCESS_TOKEN/rpc
+https://gridlinks.codingas.com/api/v1/$ACCESS_TOKEN/rpc
 ```
 {: .copy-code}
 
@@ -426,7 +426,7 @@ https://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/claim
 {% if docsPrefix == "paas/" %}
 
 ```shell
-https://thingsboard.cloud/api/v1/$ACCESS_TOKEN/claim
+https://gridlinks.codingas.com/api/v1/$ACCESS_TOKEN/claim
 ```
 {: .copy-code}
 
@@ -444,7 +444,7 @@ https://thingsboard.cloud/api/v1/$ACCESS_TOKEN/claim
 **请注意**
 <br>
 上面的字段是可选的。如果未指定 **secretKey**，则使用空字符串作为默认值。
-如果未指定 **durationMs**，则使用系统参数 **device.claim.duration**（在文件 **/etc/thingsboard/conf/thingsboard.yml** 中）。
+如果未指定 **durationMs**，则使用系统参数 **device.claim.duration**（在文件 **/etc/gridlinks/conf/gridlinks.yml** 中）。
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
@@ -474,7 +474,7 @@ https://demo.thingsboard.io/api/v1/provision
 {% if docsPrefix == "paas/" %}
 
 ```shell
-https://thingsboard.cloud/api/v1/provision
+https://gridlinks.codingas.com/api/v1/provision
 ```
 {: .copy-code}
 {% endif %}
@@ -518,7 +518,7 @@ https://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/firmware?title=$TITLE&version=$
 {% if docsPrefix == "paas/" %}
 
 ```shell
-https://thingsboard.cloud/api/v1/$ACCESS_TOKEN/firmware?title=$TITLE&version=$VERSION
+https://gridlinks.codingas.com/api/v1/$ACCESS_TOKEN/firmware?title=$TITLE&version=$VERSION
 ```
 {: .copy-code}
 

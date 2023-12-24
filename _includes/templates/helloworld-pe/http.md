@@ -28,14 +28,14 @@ brew install curl
 用相应的值替换 $ACCESS_TOKEN。
 
 ```bash
-curl -v -X POST -d "{\"temperature\": 25}" https://thingsboard.cloud/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
+curl -v -X POST -d "{\"temperature\": 25}" https://gridlinks.codingas.com/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
 ```
 {: .copy-code}
 
 例如，$ACCESS_TOKEN 为 ABC123：
 
 ```bash
-curl -v -X POST -d "{\"temperature\": 25}" https://thingsboard.cloud/api/v1/ABC123/telemetry --header "Content-Type:application/json"
+curl -v -X POST -d "{\"temperature\": 25}" https://gridlinks.codingas.com/api/v1/ABC123/telemetry --header "Content-Type:application/json"
 ```
 {: .copy-code}
 

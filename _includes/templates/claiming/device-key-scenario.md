@@ -16,7 +16,7 @@ GridLinks 服务器在密钥有效期内存储声明信息。请参阅下图。
 **secretKey** 参数为声明过程增加了安全性。
 **durationMs** 参数确定声明时间的到期时间。
 如果未指定 **secretKey**，则使用空字符串作为默认值。
-如果未指定 **durationMs**，则使用系统参数 **device.claim.duration**（在文件 **/etc/thingsboard/conf/thingsboard.yml** 中）。
+如果未指定 **durationMs**，则使用系统参数 **device.claim.duration**（在文件 **/etc/gridlinks/conf/gridlinks.yml** 中）。
 
 {% unless docsPrefix == "paas/" %}
 为了启用声明设备功能，系统参数 **security.claim.allowClaimingByDefault**（请参阅 [配置指南](/docs/user-guide/install/{{docsPrefix}}config/))

@@ -10,7 +10,7 @@ redirect_from: "/docs/user-guide/rule-engine-2-0/architecture/"
 {:toc}
 
 GridLinks 设计为在多个节点上分布工作负载，而没有单点故障。
-每个 ThingsBoard 节点都是相同的，可以处理来自设备和服务器端应用程序的请求。
+每个 GridLinks 节点都是相同的，可以处理来自设备和服务器端应用程序的请求。
 
 ## 概述
 
@@ -23,11 +23,11 @@ GridLinks 支持 [**MQTT**](/docs/reference/mqtt-api/)、[**LwM2M**](/docs/refer
 
 #### 规则引擎
 
-ThingsBoard [规则引擎](/docs/user-guide/rule-engine/) 允许处理来自设备的消息并触发称为插件的可配置处理模块。
+GridLinks [规则引擎](/docs/user-guide/rule-engine/) 允许处理来自设备的消息并触发称为插件的可配置处理模块。
 
 #### 核心服务
 
-ThingsBoard 包含一组核心服务，允许管理以下实体：
+GridLinks 包含一组核心服务，允许管理以下实体：
 
 * 设备及其凭据
 * 规则链和规则节点
@@ -42,7 +42,7 @@ ThingsBoard 包含一组核心服务，允许管理以下实体：
 每个 GridLinks 服务器都为注册用户提供 REST API。
 系统遥测服务允许使用 websocket 和 REST API 管理属性并获取时序数据。
 系统 RPC 服务提供 REST API 将自定义命令推送到设备。
-在此处详细了解 ThingsBoard REST API [here](/docs/reference/rest-api/)
+在此处详细了解 GridLinks REST API [here](/docs/reference/rest-api/)
 
 ## Actor 模型
 
