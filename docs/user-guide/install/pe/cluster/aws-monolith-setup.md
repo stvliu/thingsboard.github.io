@@ -3,7 +3,7 @@ layout: docwithnav-pe
 assignees:
 - ashvayka
 title: 使用 AWS 基础设施的整体设置
-description: ThingsBoard IoT 平台整体设置，在 AWS EKS 中使用 Kubernetes
+description: GridLinks IoT 平台整体设置，在 AWS EKS 中使用 Kubernetes
 
 rdsSetup:
     0:

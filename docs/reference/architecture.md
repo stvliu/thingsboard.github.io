@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: GridLinks 架构
-description: ThingsBoard IoT 平台架构
+description: GridLinks IoT 平台架构
 redirect_from: "/docs/user-guide/rule-engine-2-0/architecture/"
 
 ---

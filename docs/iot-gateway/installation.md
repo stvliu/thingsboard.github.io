@@ -10,10 +10,10 @@ notitle: "true"
        <div class="install-options-hero">
           <div class="container">
             <div class="install-options-hero-content">
-                <h1>ThingsBoard IoT 网关安装选项</h1>
+                <h1> GridLinks 物联网网关安装选项</h1>
                 <div class="install-options-description">
                     <p>
-                        ThingsBoard IoT 网关旨在运行并利用大多数硬件，从诸如 Raspberry Pi 的单板计算机到用于 IoT 的强大边缘网关
+                        GridLinks IoT 网关旨在运行并利用大多数硬件，从诸如 Raspberry Pi 的单板计算机到用于 IoT 的强大边缘网关
                     </p>
                 </div>
             </div>

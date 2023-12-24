@@ -3,7 +3,7 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: 实时演示服务器
-description: ThingsBoard IoT 平台实时演示服务器
+description: GridLinks IoT 平台实时演示服务器
 
 ---
 

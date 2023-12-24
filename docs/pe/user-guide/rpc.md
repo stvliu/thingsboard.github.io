@@ -3,7 +3,7 @@ layout: docwithnav-pe
 assignees:
 - ashvayka
 title: 使用 RPC 功能
-description: 使用 RPC 功能从 ThingsBoard IoT 云端远程控制 IoT 设备
+description: 使用 RPC 功能从 GridLinks IoT 云端远程控制 IoT 设备
 
 tenant-profile-rpc:
     0:

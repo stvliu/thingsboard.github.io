@@ -30,7 +30,7 @@ GridLinks 提供大量设备连接选项。下图旨在提供现有选项的可�
 
 #### IoT 网关
 
-ThingsBoard IoT 网关有助于连接位于本地网络中且无法访问互联网或使用特定非 IP 协议的设备。
+ GridLinks 物联网网关有助于连接位于本地网络中且无法访问互联网或使用特定非 IP 协议的设备。
 IoT 网关支持 MQTT、OPC-UA、Modbus、BLE、HTTP、CAN、BACnet、ODBC、SNMP 和其他协议。
 网关将来自设备的数据转换为内部 ThingsBoard 格式，并通过 MQTT 上传到平台。
 有关更多信息，请参阅 [什么是 IoT 网关？](/docs/iot-gateway/what-is-iot-gateway/)。

@@ -3,7 +3,7 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: 短信提供商设置
-description: ThingsBoard IoT 平台短信提供商设置
+description: GridLinks IoT 平台短信提供商设置
 smsProviderSettings:
     0:
         image: /images/user-guide/ui/sms/sms-provider-settings-step-2-ce.png

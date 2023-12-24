@@ -8,11 +8,11 @@ description: 如何在 GridLinks IoT 网关上启用远程日志记录功能
 * TOC
 {:toc}
 
-本指南将帮助您在 GridLinks 平台实例上启用远程日志记录并从 ThingsBoard IoT 网关读取日志。
+本指南将帮助您在 GridLinks 平台实例上启用远程日志记录并从 GridLinks IoT 网关读取日志。
 
 出于本指南的目的，我们将使用以下内容：
 1. 本地安装的 GridLinks 平台实例（您可以在此处阅读如何安装：[此处](/docs/user-guide/install/installation-options/)）。
-2. ThingsBoard IoT 网关（您可以在此处阅读如何安装：[此处](/docs/iot-gateway/installation/)）。
+2. GridLinks IoT 网关（您可以在此处阅读如何安装：[此处](/docs/iot-gateway/installation/)）。
 
 ## 步骤 1. 激活远程日志记录并设置日志记录级别
 

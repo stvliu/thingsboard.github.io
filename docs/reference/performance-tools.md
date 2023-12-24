@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: 性能测试工具
-description: ThingsBoard IoT 平台数据收集性能测试工具
+description: GridLinks IoT 平台数据收集性能测试工具
 
 ---
 

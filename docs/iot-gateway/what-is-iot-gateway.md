@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-gw
-title: ThingsBoard IoT 网关是什么？
-description: ThingsBoard IoT 网关的功能和优势
+title: GridLinks IoT 网关是什么？
+description: GridLinks IoT 网关的功能和优势
 
 ---
 
@@ -13,7 +13,7 @@ GridLinks 是一个用于数据收集、处理、可视化和设备管理的开�
 
 #### 网关功能
 
-ThingsBoard IoT 网关提供以下功能：
+ GridLinks 物联网网关提供以下功能：
 
 - [**MQTT** 连接器](/docs/iot-gateway/config/mqtt/)，用于控制、配置和收集连接到外部 MQTT 代理的 IoT 设备的数据，使用现有协议。
 - [**OPC-UA** 连接器](/docs/iot-gateway/config/opc-ua/)，用于收集连接到 OPC-UA 服务器的 IoT 设备的数据。
@@ -38,7 +38,7 @@ ThingsBoard IoT 网关提供以下功能：
 #### 架构
 
 IoT 网关是一个软件组件，设计用于运行在支持 **Python 3.7+** 的基于 Linux 的微型计算机上。
-ThingsBoard IoT 网关的主要组件如下所示。
+ GridLinks 物联网网关的主要组件如下所示。
 
 **连接器**
 

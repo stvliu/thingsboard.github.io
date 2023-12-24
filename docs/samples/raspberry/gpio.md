@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: 使用 GridLinks 通过 MQTT 控制 Raspberry Pi GPIO
-description: ThingsBoard IoT 平台示例，用于通过 MQTT 控制 Raspberry Pi GPIO
+description: GridLinks IoT 平台示例，用于通过 MQTT 控制 Raspberry Pi GPIO
 
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: ESP8266 GPIO 控制通过 MQTT 使用 GridLinks
-description: ThingsBoard IoT 平台示例，用于通过 MQTT 控制 ESP8266 GPIO
+description: GridLinks IoT 平台示例，用于通过 MQTT 控制 ESP8266 GPIO
 
 ---
 

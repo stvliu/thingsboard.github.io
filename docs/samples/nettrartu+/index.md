@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: Nettra RTU 概述
-description: ThingsBoard IoT 平台硬件示例，适用于 Nettra RTU 设备。
+description: GridLinks IoT 平台硬件示例，适用于 Nettra RTU 设备。
 
 ---
 

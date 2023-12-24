@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: NodeMCU 概述
-description: ThingsBoard IoT 平台 NodeMCU 设备的硬件示例。
+description: GridLinks IoT 平台 NodeMCU 设备的硬件示例。
 
 ---
 

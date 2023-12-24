@@ -3,7 +3,7 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: 使用 OpenShift 进行集群设置
-description: ThingsBoard IoT 平台集群设置，附带 Kubernetes 和 OpenShift 指南
+description: GridLinks IoT 平台集群设置，附带 Kubernetes 和 OpenShift 指南
 
 ---
 

@@ -3,7 +3,7 @@ layout: docwithnav-pe
 assignees:
 - ashvayka
 title: 使用 GCP 基础设施的单体设置
-description: 在 GKE 中使用 Kubernetes 的 ThingsBoard IoT 平台单体设置
+description: 在 GKE 中使用 Kubernetes 的 GridLinks IoT 平台单体设置
 
 ---
 

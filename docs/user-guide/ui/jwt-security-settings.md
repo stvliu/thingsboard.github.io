@@ -3,7 +3,7 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: JWT 安全设置
-description: ThingsBoard IoT 平台 JWT 安全设置
+description: GridLinks IoT 平台 JWT 安全设置
 
 ---
 

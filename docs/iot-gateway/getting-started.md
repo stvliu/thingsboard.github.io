@@ -1,6 +1,6 @@
 ---
 layout: docwithnav-gw
-title: ThingsBoard IoT 网关入门
+title: GridLinks IoT 网关入门
 description: 配置 MQTT、OPC-UA 和 Modbus 连接器，以便在 Docker 容器中与各自的演示服务器建立连接并检索数据。
 
 ---
@@ -8,10 +8,10 @@ description: 配置 MQTT、OPC-UA 和 Modbus 连接器，以便在 Docker 容器
 * TOC
 {:toc}
 
-ThingsBoard IoT 网关是一个开源解决方案，旨在作为连接到 GridLinks 的传统和第三方系统中 IoT 设备的桥梁。
+ GridLinks 物联网网关是一个开源解决方案，旨在作为连接到 GridLinks 的传统和第三方系统中 IoT 设备的桥梁。
 
 本指南涵盖了初始 IoT 网关的安装和配置，我们将执行以下操作：
-- 使用 [ThingsBoard IoT 网关仪表板](#prerequisites) 创建新的网关设备；
+- 使用 [ GridLinks 物联网网关仪表板](#prerequisites) 创建新的网关设备；
 - 使用 Docker 命令启动网关；
 - 配置不同类型的连接器（[MQTT](/docs/iot-gateway/config/mqtt/)、[OPC-UA](/docs/iot-gateway/config/opc-ua/)、[Modbus](/docs/iot-gateway/config/modbus/))，以便连接到本地演示服务器并从中读取数据；
 - 在 GridLinks 上检查接收到的设备数据。
@@ -20,7 +20,7 @@ ThingsBoard IoT 网关是一个开源解决方案，旨在作为连接到 GridLi
 
 - 在启动网关设置之前，请确保 GridLinks 服务器已启动并正在运行。最简单的方法是利用 [实时演示](https://demo.thingsboard.io) 或 [GridLinks 云](https://thingsboard.cloud)。或者，您可以按照 [安装指南](/docs/user-guide/install/installation-options/) 中概述的步骤手动安装 GridLinks。
 - 在继续之前，请确保在您的机器上安装并正确配置了 Docker。如果您尚未安装 Docker，可以从 [Docker 官方网站](https://docs.docker.com/engine/install/) 下载并按照针对您特定操作系统的安装指南进行操作。
-- 如果您没有安装仪表板，可以下载网关小部件包 [此处](/docs/iot-gateway/resources/thingsboard-gateway-widget-bundle.json){:target="_blank" download="thingsboard-gateway-widget-bundle.json"} 的 JSON 文件和 ThingsBoard IoT 网关仪表板 [此处](/docs/iot-gateway/resources/thingsboard-gateways-dashboard.json){:target="_blank" download="thingsboard-gateways-dashboard.json"} 的 JSON 文件。您可以使用以下部分执行此操作：
+- 如果您没有安装仪表板，可以下载网关小部件包 [此处](/docs/iot-gateway/resources/thingsboard-gateway-widget-bundle.json){:target="_blank" download="thingsboard-gateway-widget-bundle.json"} 的 JSON 文件和 GridLinks IoT 网关仪表板 [此处](/docs/iot-gateway/resources/thingsboard-gateways-dashboard.json){:target="_blank" download="thingsboard-gateways-dashboard.json"} 的 JSON 文件。您可以使用以下部分执行此操作：
 
 ### （可选）导入网关小部件包和仪表板
 
@@ -41,7 +41,7 @@ ThingsBoard IoT 网关是一个开源解决方案，旨在作为连接到 GridLi
 
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=importWidgetsBundle %} 
 
-要导入 ThingsBoard IoT 网关仪表板，请按照以下步骤操作：
+要导入 GridLinks IoT 网关仪表板，请按照以下步骤操作：
 
 {% assign importGatewayDashboard = '
     ===
@@ -65,7 +65,7 @@ ThingsBoard IoT 网关是一个开源解决方案，旨在作为连接到 GridLi
 {% assign createNewGatewayDevice = '
     ===
         image: /images/gateway/dashboard/gateway-getting-started-1-ce.png,
-        title: 转到“**仪表板**”选项卡并打开“**ThingsBoard IoT 网关**”仪表板。
+        title: 转到“**仪表板**”选项卡并打开“** GridLinks 物联网网关**”仪表板。
     ===
         image: /images/gateway/dashboard/gateway-getting-started-2-ce.png,
         title: 单击“**+**”按钮，输入网关设备名称（例如，“我的新网关”），然后选择设备配置文件。
@@ -166,7 +166,7 @@ OPC-UA<small></small>%,%opcua%,%templates/iot-gateway/remote-creating-connector-
  - [**SNMP** 连接器](/docs/iot-gateway/config/snmp/)
  - [**自定义** 连接器](/docs/iot-gateway/custom/)
 
-有关 *ThingsBoard IoT 网关* 仪表板的更多信息，您可以在 [此处](/docs/iot-gateway/guides/how-to-enable-remote-configuration/) 阅读。
+有关 * GridLinks 物联网网关* 仪表板的更多信息，您可以在 [此处](/docs/iot-gateway/guides/how-to-enable-remote-configuration/) 阅读。
 
 ## 后续步骤
 

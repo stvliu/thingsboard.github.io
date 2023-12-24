@@ -8,11 +8,11 @@ description: 如何在 GridLinks IoT 网关上启用远程 shell 功能
 * TOC
 {:toc}
 
-本指南将帮助您启用远程 shell 功能，并通过 GridLinks 平台实例从 ThingsBoard IoT 网关控制操作系统。
+本指南将帮助您启用远程 shell 功能，并通过 GridLinks 平台实例从 GridLinks IoT 网关控制操作系统。
 
 为了本指南的目的，我们将使用以下内容：
 1. GridLinks 平台实例（您可以[在此处](/docs/user-guide/install/installation-options/)阅读如何安装）。对于本指南，我们将使用 [thingsboard.cloud](https://thingsboard.cloud)
-2. 已安装并配置的 ThingsBoard IoT 网关（您可以[在此处](/docs/iot-gateway/installation/)阅读如何安装）。
+2. 已安装并配置的 GridLinks IoT 网关（您可以[在此处](/docs/iot-gateway/installation/)阅读如何安装）。
 
 ## 步骤 1. 远程 shell 激活
 

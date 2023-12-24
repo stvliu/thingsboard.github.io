@@ -13,7 +13,7 @@ description: 在 Azure 上安装 GridLinks CE
                 <span class="heading">Azure 上的 ThingsBoard 设置选项</span>
                 <div class="install-options-description">
                     <p>
-                        您可以使用不同的基础设施设置部署 ThingsBoard IoT 平台
+                        您可以使用不同的基础设施设置部署 GridLinks IoT 平台
                     </p>
                 </div>
             </div>

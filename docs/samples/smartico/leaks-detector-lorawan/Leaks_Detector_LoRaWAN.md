@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: 泄漏检测器 LoRaWAN “Smartico L2-LR” 遥测数据上传
-description: ThingsBoard IoT 平台示例，用于通过泄漏检测器 LoRaWAN “Smartico L2-LR” 使用 MQTT 上传泄漏数据。
+description: GridLinks IoT 平台示例，用于通过泄漏检测器 LoRaWAN “Smartico L2-LR” 使用 MQTT 上传泄漏数据。
 hidetoc: "true"
 ---
 

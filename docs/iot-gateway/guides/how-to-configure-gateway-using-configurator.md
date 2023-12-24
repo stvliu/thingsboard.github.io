@@ -1,14 +1,14 @@
 ---
 layout: docwithnav-gw
-title: 如何使用配置器配置 ThingsBoard IoT 网关
-description: 如何使用配置器配置 ThingsBoard IoT 网关
+title: 如何使用配置器配置 GridLinks IoT 网关
+description: 如何使用配置器配置 GridLinks IoT 网关
 
 ---
 
 * TOC
 {:toc}
 
-本指南将帮助您使用配置器配置 ThingsBoard IoT 网关，尤其是当您使用 deb 软件包进行安装时。
+本指南将帮助您使用配置器配置 GridLinks IoT 网关，尤其是当您使用 deb 软件包进行安装时。
 
 ## 第 1 步 启动配置器
 
@@ -32,7 +32,7 @@ tb-gateway-configurator
 
 ## 第 3 步 启动网关
 
-最后，您可以使用以下命令启动 ThingsBoard IoT 网关：
+最后，您可以使用以下命令启动 GridLinks IoT 网关：
 ```bash
 thingsboard-gateway
 ```

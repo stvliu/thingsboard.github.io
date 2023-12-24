@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: 使用 Arduino UNO、ESP8266 和 DHT22 传感器通过 MQTT 上传温度
-description: ThingsBoard IoT 平台示例，使用 Arduino UNO、ESP8266 和 DHT22 传感器通过 MQTT 上传温度数据。
+description: GridLinks IoT 平台示例，使用 Arduino UNO、ESP8266 和 DHT22 传感器通过 MQTT 上传温度数据。
 
 ---
 

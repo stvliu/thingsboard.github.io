@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: Raspberry Pi 概述
-description: ThingsBoard IoT 平台硬件示例，适用于 Raspberry Pi 设备。
+description: GridLinks IoT 平台硬件示例，适用于 Raspberry Pi 设备。
 
 ---
 

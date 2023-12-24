@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: 水表脉冲传感器 LoRaWAN "Smartico P22-LR" 遥测数据上传
-description: ThingsBoard IoT 平台示例，用于通过脉冲传感器 LoRaWAN "Smartico P22-LR" 使用 MQTT 上传水表数据。
+description: GridLinks IoT 平台示例，用于通过脉冲传感器 LoRaWAN "Smartico P22-LR" 使用 MQTT 上传水表数据。
 hidetoc: "true"
 ---
 

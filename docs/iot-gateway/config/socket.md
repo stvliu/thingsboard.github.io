@@ -1,14 +1,14 @@
 ---
 layout: docwithnav-gw
 title: Socket 连接器配置
-description: ThingsBoard IoT 网关的 Socket API 支持
+description: GridLinks IoT 网关的 Socket API 支持
 
 ---
 
 * TOC
 {:toc}
 
-本指南将帮助您熟悉 ThingsBoard IoT 网关的 Socket 连接器配置。
+本指南将帮助您熟悉 GridLinks IoT 网关的 Socket 连接器配置。
 使用 [通用配置指南](/docs/iot-gateway/configuration/) 启用此连接器。此连接器的目的是使用 TCP 或 UDP 连接类型连接到您的服务器。
 
 当您在设施或公司网络中拥有本地服务器，并且您希望将数据从服务器推送到 GridLinks 时，此连接器非常有用。

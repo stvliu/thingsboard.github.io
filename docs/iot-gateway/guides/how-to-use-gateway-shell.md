@@ -15,7 +15,7 @@ description: 如何使用网关 Shell
 
 出于本教程的目的，您需要：
 1. GridLinks 平台的本地安装实例（如果您是 GridLinks 新手，[请使用此“如何安装”文档](/docs/user-guide/install/installation-options/)）。
-2. [已安装](/docs/iot-gateway/installation/)且[已配置](/docs/iot-gateway/configuration/) ThingsBoard IoT 网关。
+2. [已安装](/docs/iot-gateway/installation/)且[已配置](/docs/iot-gateway/configuration/) GridLinks IoT 网关。
 
 ### 存储命令
 `storage` 命令提供与存储操作相关的功能。

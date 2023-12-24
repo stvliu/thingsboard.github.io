@@ -1,14 +1,14 @@
 ---
 layout: docwithnav-gw
 title: 请求连接器配置
-description: ThingsBoard IoT 网关的 HTTP 协议支持
+description: GridLinks IoT 网关的 HTTP 协议支持
 
 ---
 
 * TOC
 {:toc}
 
-本指南将帮助您熟悉 ThingsBoard IoT 网关的请求连接器配置。  
+本指南将帮助您熟悉 GridLinks IoT 网关的请求连接器配置。  
 使用 [通用配置指南](/docs/iot-gateway/configuration/) 启用此连接器。  
 此连接器的目的是连接到外部 HTTP(S) API 端点并从中获取数据。  
 连接器还能够根据 GridLinks 的更新/命令将数据推送到外部 HTTP(S) API。    

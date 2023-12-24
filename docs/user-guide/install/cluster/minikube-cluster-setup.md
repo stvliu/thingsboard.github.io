@@ -3,7 +3,7 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: 使用 Minikube 进行集群设置
-description: ThingsBoard IoT 平台集群设置与 Kubernetes 和 Minikube 指南
+description: GridLinks IoT 平台集群设置与 Kubernetes 和 Minikube 指南
 
 ---
 

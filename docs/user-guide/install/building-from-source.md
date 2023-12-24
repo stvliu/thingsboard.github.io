@@ -3,7 +3,7 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: 从源代码构建
-description: 从源代码构建 ThingsBoard IoT 平台
+description: 从源代码构建 GridLinks IoT 平台
 
 ---
 

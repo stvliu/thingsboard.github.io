@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-gw
 title: Modbus Connector Configuration
-description: Modbus protocol support for ThingsBoard IoT Gateway
+description: Modbus protocol support for GridLinks IoT Gateway
 
 ---
 
@@ -15,7 +15,7 @@ generated after installing the new version and running Gateway in the new_modbus
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-This guide will help you to get familiar with Modbus connector configuration for ThingsBoard IoT Gateway.
+This guide will help you to get familiar with Modbus connector configuration for GridLinks IoT Gateway.
 Use [general configuration](/docs/iot-gateway/configuration/) to enable this connector.
 We will describe connector configuration file below.  
 
@@ -705,7 +705,7 @@ A list and description of the supported data types for reading/writing data.
 
 Explore guides related to main ThingsBoard features:
 
- - [Connect Modbus device](/docs/iot-gateway/guides/how-to-connect-modbus-device/) - how to connect Modbus device using ThingsBoard IoT Gateway
+ - [Connect Modbus device](/docs/iot-gateway/guides/how-to-connect-modbus-device/) - how to connect Modbus device using GridLinks IoT Gateway
  - [Data Visualization](/docs/user-guide/visualization/) - how to visualize collected data.
  - [Device attributes](/docs/user-guide/attributes/) - how to use device attributes.
  - [Telemetry data collection](/docs/user-guide/telemetry/) - how to collect telemetry data.

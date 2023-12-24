@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-gw
 title: MQTT Connector Configuration
-description: MQTT protocol support for ThingsBoard IoT Gateway
+description: MQTT protocol support for GridLinks IoT Gateway
 redirect_from: 
   - "/docs/iot-gateway/mqtt/"  
   - "/docs/iot-gateway/resources/mqtt-gui-extension-configuration.json"
@@ -11,7 +11,7 @@ redirect_from:
 * TOC
 {:toc}
 
-This guide will help you to get familiar with MQTT Connector configuration for ThingsBoard IoT Gateway.
+This guide will help you to get familiar with MQTT Connector configuration for GridLinks IoT Gateway.
 Use [general configuration](/docs/iot-gateway/configuration/) to enable this Connector. 
 The purpose of this Connector is to connect to external MQTT broker and subscribe to data feed from devices. 
 Connector is also able to push data to MQTT brokers based on the updates/commands from ThingsBoard. 

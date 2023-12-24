@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: 使用 Nettra RTU 通过 MQTT 上传温度
-description: 使用 Nettra RTU 通过 MQTT 上传温度的 ThingsBoard IoT 平台示例
+description: 使用 Nettra RTU 通过 MQTT 上传温度的 GridLinks IoT 平台示例
 hidetoc: "true"
 ---
 

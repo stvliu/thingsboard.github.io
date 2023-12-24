@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-gw
-title: ThingsBoard IoT 网关功能
-description: ThingsBoard IoT 网关功能
+title: GridLinks IoT 网关功能
+description: GridLinks IoT 网关功能
 notitle: true
 
 ---
@@ -16,5 +16,5 @@ notitle: true
 
 ## 后续步骤
 
- - [常规配置](/docs/iot-gateway/configuration/) - 如何配置 ThingsBoard IoT 网关。
+ - [常规配置](/docs/iot-gateway/configuration/) - 如何配置 GridLinks IoT 网关。
  - [自定义指南](/docs/iot-gateway/custom/) - 如何创建自定义连接器和转换器。

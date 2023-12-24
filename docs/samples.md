@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: 样例
-description: ThingsBoard IoT 平台硬件样例和教程
+description: GridLinks IoT 平台硬件样例和教程
 
 --- 
 

@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: Gas Shutoff Valve LoRaWAN “Smartico V-LR” 遥测数据上传
-description: ThingsBoard IoT 平台示例，使用 Gas Shutoff Valve LoRaWAN “Smartico V-LR” 通过 MQTT 上传阀门状态数据。
+description: GridLinks IoT 平台示例，使用 Gas Shutoff Valve LoRaWAN “Smartico V-LR” 通过 MQTT 上传阀门状态数据。
 hidetoc: "true"
 ---
 

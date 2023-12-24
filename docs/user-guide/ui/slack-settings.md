@@ -3,7 +3,7 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: Slack 设置
-description: ThingsBoard IoT 平台 Slack 设置
+description: GridLinks IoT 平台 Slack 设置
 slackProviderSettings:
     0:
         image: /images/user-guide/ui/slack/create-slack-api-token-1.png

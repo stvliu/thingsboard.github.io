@@ -3,7 +3,7 @@ layout: docwithnav-pe
 assignees:
 - amykolaichuk
 title: 使用 AKS 基础架构的整体设置
-description: ThingsBoard IoT 平台整体设置，在 Azure AKS 中使用 Kubernetes
+description: GridLinks IoT 平台整体设置，在 Azure AKS 中使用 Kubernetes
 
 ---
 

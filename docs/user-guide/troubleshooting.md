@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: 故障排除
-description: ThingsBoard IoT 平台故障排除
+description: GridLinks IoT 平台故障排除
 
 metrics-dashboards:
     0:

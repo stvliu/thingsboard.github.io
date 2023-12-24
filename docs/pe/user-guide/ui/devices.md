@@ -3,7 +3,7 @@ layout: docwithnav-pe
 assignees:
 - ashvayka
 title: 设备
-description: ThingsBoard IoT 设备管理
+description: GridLinks IoT 设备管理
 
 add-device:
     0:

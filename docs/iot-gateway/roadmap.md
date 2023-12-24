@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-gw
-title: ThingsBoard IoT 网关路线图
-description: ThingsBoard IoT 网关的架构
+title: GridLinks IoT 网关路线图
+description: GridLinks IoT 网关的架构
 
 ---
 

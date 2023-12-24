@@ -3,7 +3,7 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: Upgrade instructions
-description: ThingsBoard IoT platform upgrade instructions
+description: GridLinks IoT platform upgrade instructions
 
 ---
 

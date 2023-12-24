@@ -12,7 +12,7 @@ description: 如何使用远程转换器更新
 
 出于本教程的目的，您需要：
 1. GridLinks 平台的本地安装实例（如果您是 GridLinks 新手，[请使用此“如何安装”文档](/docs/user-guide/install/installation-options/)）。
-2. [已安装](/docs/iot-gateway/installation/)且[已配置](/docs/iot-gateway/configuration/) ThingsBoard IoT 网关。
+2. [已安装](/docs/iot-gateway/installation/)且[已配置](/docs/iot-gateway/configuration/) GridLinks IoT 网关。
 
 ## 步骤 1 在网关设备上创建共享属性
 

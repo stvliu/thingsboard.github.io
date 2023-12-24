@@ -16,7 +16,7 @@ description: 在 Google Cloud Platform 上安装 GridLinks CE
                 <h1>GCP 上的 ThingsBoard 设置选项</h1>
                 <div class="install-options-description">
                     <p>
-                        您可以使用不同的工具和平台部署 ThingsBoard IoT 平台
+                        您可以使用不同的工具和平台部署 GridLinks IoT 平台
                     </p>
                 </div>
             </div>

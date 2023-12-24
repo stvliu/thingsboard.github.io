@@ -1,5 +1,5 @@
 bigheader: "Installation"
-abstract: "Documentation for installation and configuration of ThingsBoard IoT Gateway."
+abstract: "Documentation for installation and configuration of GridLinks IoT Gateway."
 toc:
 - title: Installation options
   path: /docs/iot-gateway/installation/

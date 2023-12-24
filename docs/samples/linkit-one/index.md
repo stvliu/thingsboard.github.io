@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: LinkIt ONE 概述
-description: ThingsBoard IoT 平台硬件示例，适用于 LinkIt ONE 设备。
+description: GridLinks IoT 平台硬件示例，适用于 LinkIt ONE 设备。
 
 ---
 

@@ -16,7 +16,7 @@ description:
     </section>
     <section id="intro">
         <div class="main-div">
-            <h1>ThingsBoard IoT平台高级发行版</h1>
+            <h1>GridLinks物联网平台高级发行版</h1>
             <h2 class="sub-title clari">具有增值功能</h2>
         </div>
     </section>

@@ -1,7 +1,7 @@
 ---
 layout: use-case
 title: 智能灌溉解决方案
-description: ThingsBoard IoT 平台的灌溉管理、田地配置和数据可视化
+description: GridLinks IoT 平台的灌溉管理、田地配置和数据可视化
 notitle: "true"
 
 ---

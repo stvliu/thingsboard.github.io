@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: 超声波住宅智能燃气表 LoRaWAN “Smartico G-1.6” 遥测数据上传
-description: ThingsBoard IoT 平台示例，使用智能燃气表 LoRaWAN “Smartico G-1.6” 通过 MQTT 上传燃气数据。
+description: GridLinks IoT 平台示例，使用智能燃气表 LoRaWAN “Smartico G-1.6” 通过 MQTT 上传燃气数据。
 hidetoc: "true"
 ---
 

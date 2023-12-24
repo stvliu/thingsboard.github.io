@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: 使用 Android Things 和 ThingsBoard 控制 Raspberry Pi GPIO
-description: ThingsBoard IoT 平台示例，用于通过运行 Android Things 的 MQTT 控制 Raspberry Pi GPIO
+description: GridLinks IoT 平台示例，用于通过运行 Android Things 的 MQTT 控制 Raspberry Pi GPIO
 
 ---
 

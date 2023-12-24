@@ -3,7 +3,7 @@ layout: docwithnav-paas
 assignees:
 - stitenko
 title: Microsoft Teams 设置
-description: ThingsBoard IoT 平台 Microsoft Teams 设置
+description: GridLinks IoT 平台 Microsoft Teams 设置
 microsoft-teams-settings:
     0:
         image: /images/user-guide/ui/microsoft-teams/microsoft-teams-1-settings.png

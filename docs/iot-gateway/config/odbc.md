@@ -1,14 +1,14 @@
 ---
 layout: docwithnav-gw
 title: ODBC 连接器配置
-description: ThingsBoard IoT 网关的 ODBC 支持
+description: GridLinks IoT 网关的 ODBC 支持
 
 ---
 
 * TOC
 {:toc}
 
-本指南将帮助您熟悉 ThingsBoard IoT 网关的 ODBC 连接器配置。
+本指南将帮助您熟悉 GridLinks IoT 网关的 ODBC 连接器配置。
 使用 [常规配置](/docs/iot-gateway/configuration/) 启用此连接器。
 我们将在下面描述连接器配置文件。
 

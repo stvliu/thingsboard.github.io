@@ -3,7 +3,7 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: 邮件设置
-description: ThingsBoard IoT 平台邮件设置
+description: GridLinks IoT 平台邮件设置
 
 sendgrid-configuration:
     0:

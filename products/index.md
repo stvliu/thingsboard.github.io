@@ -30,7 +30,7 @@ notitle: "true"
     </a>
     <a href="/docs/iot-gateway/what-is-iot-gateway/" class="card gateway">
         <img src="/images/gateway-icon.svg" alt="网关">
-        <h5 class="title">ThingsBoard IoT 网关</h5>
+        <h5 class="title"> GridLinks 物联网网关</h5>
         <p>连接传统协议</p>
     </a>
     <a href="/products/license-server/" class="card license">

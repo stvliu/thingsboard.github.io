@@ -16,7 +16,7 @@ redirect_from: "/docs/pe/user-guide/install/cluster-setup/"
                 <h1> GridLinks专业版 集群设置选项</h1>
                 <div class="install-options-description">
                     <p>
-                        ThingsBoard IoT 可以使用不同的工具和平台进行引导
+                        GridLinks IoT 可以使用不同的工具和平台进行引导
                     </p>
                 </div>
             </div>

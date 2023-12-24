@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: ESP32 OTA 使用 GridLinks
-description: 使用 GridLinks 进行 ESP32 OTA 更新的 ThingsBoard IoT 平台示例
+description: 使用 GridLinks 进行 ESP32 OTA 更新的 GridLinks IoT 平台示例
 hidetoc: "true"
 ---
 

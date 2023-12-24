@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: ESP8266 概述
-description: ThingsBoard IoT 平台 ESP8266 设备的硬件示例。
+description: GridLinks IoT 平台 ESP8266 设备的硬件示例。
 
 ---
 

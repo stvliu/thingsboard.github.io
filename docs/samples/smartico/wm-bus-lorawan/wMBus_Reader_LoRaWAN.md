@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: 水表 wM-Bus Reader LoRaWAN "Smartico WM-LR" 遥测数据上传
-description: ThingsBoard IoT 平台示例，用于通过 wM-Bus Reader LoRaWAN "Smartico WM-LR" 使用 MQTT 上传水表数据。
+description: GridLinks IoT 平台示例，用于通过 wM-Bus Reader LoRaWAN "Smartico WM-LR" 使用 MQTT 上传水表数据。
 hidetoc: "true"
 ---
 

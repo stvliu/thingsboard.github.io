@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: Temperature and humidity upload over MQTT using Raspberry Pi, ESP32 with HTU21D, Xiaomi sensor and Bluetooth Low Energy
-description: ThingsBoard IoT Platform sample for Raspberry Pi, ESP32 with HTU21D, Xiaomi sensor and temperature/humidity monitor using Bluetooth Low Energy
+description: GridLinks IoT Platform sample for Raspberry Pi, ESP32 with HTU21D, Xiaomi sensor and temperature/humidity monitor using Bluetooth Low Energy
 hidetoc: "true"
 ---
 

@@ -4,7 +4,7 @@ assignees:
 - ashvayka
 title: GCP 集群设置
 notitle: "true"
-description: ThingsBoard IoT 平台 GCP 集群设置指南
+description: GridLinks IoT 平台 GCP 集群设置指南
 
 ---
 
@@ -16,7 +16,7 @@ description: ThingsBoard IoT 平台 GCP 集群设置指南
                 <h1>GCP 上的 ThingsBoard 设置选项</h1>
                 <div class="install-options-description">
                     <p>
-                        您可以使用不同的工具和平台部署 ThingsBoard IoT 平台
+                        您可以使用不同的工具和平台部署 GridLinks IoT 平台
                     </p>
                 </div>
             </div>

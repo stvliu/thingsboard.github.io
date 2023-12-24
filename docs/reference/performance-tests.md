@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: 如何重复测试
-description: ThingsBoard IoT 平台性能测试
+description: GridLinks IoT 平台性能测试
 
 ---
 

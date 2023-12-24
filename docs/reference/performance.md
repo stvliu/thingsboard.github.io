@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: ThingsBoard 数据收集性能
-description: ThingsBoard IoT 平台数据收集性能概述
+description: GridLinks IoT 平台数据收集性能概述
 
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: 使用 LinkIt ONE 和 ThingsBoard 上传和可视化 GPS 数据
-description: ThingsBoard IoT 平台示例，用于使用 LinkIt ONE 上传和可视化 GPS 数据
+description: GridLinks IoT 平台示例，用于使用 LinkIt ONE 上传和可视化 GPS 数据
 
 ---
 

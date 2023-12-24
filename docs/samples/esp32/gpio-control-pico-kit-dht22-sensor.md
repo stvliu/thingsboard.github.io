@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: ESP32 Pico Kit GPIO 控制和 DHT22 传感器监控，使用 GridLinks Arduino SDK
-description: ThingsBoard IoT 平台示例，用于 ESP32 Pico Kit GPIO 控制和温度/湿度监控，使用 GridLinks Arduino SDK
+description: GridLinks IoT 平台示例，用于 ESP32 Pico Kit GPIO 控制和温度/湿度监控，使用 GridLinks Arduino SDK
 hidetoc: "true"
 ---
 

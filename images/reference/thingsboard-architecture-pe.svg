@@ -921,7 +921,7 @@ opacity: 1;
 <path class="qmagic" d="M559 293C559 283.059 564.61 275 571.53 275H633.47C640.39 275 646 283.059 646 293V294C646 303.941 640.39 312 633.47 312H571.53C564.61 312 559 303.941 559 294V293Z" stroke="#1F8B4D" stroke-linecap="round" fill="#ffffff00"/>
 </a>
 
-<a xlink:href="https://thingsboard.io/docs/iot-gateway/what-is-iot-gateway/" target="_parent" xlink:title="What is ThingsBoard IoT Gateway?">
+<a xlink:href="https://thingsboard.io/docs/iot-gateway/what-is-iot-gateway/" target="_parent" xlink:title="What is GridLinks IoT Gateway?">
 <rect class="magic" x="171.5" y="298.5" width="103" height="36" rx="5.5" stroke-linecap="round" fill="#ffffff00"/>
 </a>
 <a xlink:href="https://thingsboard.io/docs/pe/reference/msa/#transport-microservices" target="_parent" xlink:title="Transport Microservices" >

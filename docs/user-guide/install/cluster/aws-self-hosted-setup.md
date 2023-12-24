@@ -3,7 +3,7 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: 使用 AWS EC2 实例进行自托管设置
-description: 使用 AWS EC2 实例进行 ThingsBoard IoT 平台自托管设置
+description: 使用 AWS EC2 实例进行 GridLinks IoT 平台自托管设置
 
 ---
 
