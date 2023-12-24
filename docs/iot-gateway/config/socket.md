@@ -230,7 +230,7 @@ description: GridLinks IoT 网关的 Socket API 支持
 
 #### 服务器端 RPC 子部分
 
-ThingsBoard 允许直接或通过网关连接到 GridLinks 的设备发送 RPC 命令。
+GridLinks 允许直接或通过网关连接到 GridLinks 的设备发送 RPC 命令。
 
 此部分中提供的配置用于从 GridLinks 向设备发送 RPC 请求。
 

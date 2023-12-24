@@ -105,7 +105,7 @@ notitle: "true"
                 <object data="/images/engine-icon.svg"></object>
                 <div>
                     <a class="title" href="/docs/pe/user-guide/rule-engine-2-0/overview/">数据处理</a>
-                    <p>ThingsBoard 允许您使用拖放规则链设计器定义应用程序逻辑。规则引擎是一个强大且可扩展的处理框架，它利用行业标准消息队列实现（如 Apache Kafka 或 AWS SQS）来确保数据持久性和保证数据处理。您可以使用规则引擎处理数据或将其推送到外部系统中进行进一步处理。</p>
+                    <p>GridLinks 允许您使用拖放规则链设计器定义应用程序逻辑。规则引擎是一个强大且可扩展的处理框架，它利用行业标准消息队列实现（如 Apache Kafka 或 AWS SQS）来确保数据持久性和保证数据处理。您可以使用规则引擎处理数据或将其推送到外部系统中进行进一步处理。</p>
                 </div>
             </div>
         </div>

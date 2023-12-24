@@ -261,7 +261,7 @@ TLS<small>推荐</small>%,%tls%,%templates/iot-gateway/ocpp-connector-tls-connec
 
 #### 服务器端 RPC 子部分
 
-ThingsBoard 允许将 RPC 命令发送到直接或通过网关连接到 GridLinks 的设备。
+GridLinks 允许将 RPC 命令发送到直接或通过网关连接到 GridLinks 的设备。
 
 此部分中提供的配置用于将 RPC 请求从 GridLinks 发送到充电点。
 

@@ -75,7 +75,7 @@ updateRootRuleChainEdge:
 copyAccessTokenDevice:
     0:
         image: /images/edge/use-cases/data-filtering/copy-access-token-item-1.png
-        title: '在ThingsBoard <b>Edge</b>实例中打开设备页面。'
+        title: '在GridLinks <b>Edge</b>实例中打开设备页面。'
     1:
         image: /images/edge/use-cases/data-filtering/copy-access-token-item-2.png
         title: '单击表格中的<b>车载监控系统</b>设备行以打开设备详细信息。'
@@ -86,7 +86,7 @@ copyAccessTokenDevice:
 verifyDeviceTelemetryEdge:
     0:
         image: /images/edge/use-cases/data-filtering/verify-device-telemetry-item-1.png
-        title: '在ThingsBoard <b>Edge</b>实例中打开设备页面。'
+        title: '在GridLinks <b>Edge</b>实例中打开设备页面。'
     1:
         image: /images/edge/use-cases/data-filtering/verify-device-telemetry-item-2.png
         title: '单击表格中的<b>车载监控系统</b>设备行以打开设备详细信息。'

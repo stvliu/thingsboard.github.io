@@ -3,7 +3,7 @@
 
 ### 概述
 
-ThingsBoard 允许您使用灵活的计划配置来安排各种类型的事件。
+GridLinks 允许您使用灵活的计划配置来安排各种类型的事件。
 ThingsBoard Scheduler 会根据计划触发已配置的计划事件。
 当触发计划事件时，将从具有与规则引擎消息类似结构的事件配置中生成 [规则引擎消息](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-engine-message)。
 然后将生成的邮件转发到 [规则引擎](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/re-getting-started/)，并从 [根规则链](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-chain) 开始处理。

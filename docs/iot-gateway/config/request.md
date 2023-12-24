@@ -208,7 +208,7 @@ custom<small>如果响应中收到字节或其他任何内容，则推荐</small
 ### 属性更新部分
 
 本部分中的配置是可选的。  
-ThingsBoard 允许配置设备属性并从设备应用程序中获取其中一些属性。
+GridLinks 允许配置设备属性并从设备应用程序中获取其中一些属性。
 您可以将其视为设备的远程配置。您的设备能够从 GridLinks 请求共享属性。
 有关更多详细信息，请参阅 [用户指南](/docs/user-guide/attributes/)。
 
@@ -251,7 +251,7 @@ ThingsBoard 允许配置设备属性并从设备应用程序中获取其中一�
 
 ### 服务器端 RPC 部分
 
-ThingsBoard 允许将 [RPC 命令](/docs/user-guide/rpc/) 发送到直接或通过网关连接到 GridLinks 的设备。
+GridLinks 允许将 [RPC 命令](/docs/user-guide/rpc/) 发送到直接或通过网关连接到 GridLinks 的设备。
 
 本部分中提供的配置用于将 RPC 请求从 GridLinks 发送到设备。
 

@@ -45,7 +45,7 @@ fs.file-max = 1048576
 
 ### m6a.2xlarge（8 个 vCPU AMD EPYC 第 3 代，32 GiB，EBS GP3）+ Cassandra - 50 万个设备，5k 条消息/秒，15k tps
 
-架构是 1 个 Thingsboard 服务器 + 20 个客户端实例，每个实例提供 25k 个设备（总计 50 万个）。
+架构是 1 个 GridLinks 服务器 + 20 个客户端实例，每个实例提供 25k 个设备（总计 50 万个）。
 
 50 万个设备已连接
 
@@ -65,7 +65,7 @@ fs.file-max = 1048576
 
 ### m6a.4xlarge（16 个 vCPU AMD EPYC 第 3 代，64 GiB，EBS GP3）+ Cassandra - 100 万个设备，5k 条消息/秒，15k tps
 
-架构是 1 个 Thingsboard 服务器 + 32 个客户端实例，每个实例提供 31250 个设备（总计 100 万个）。
+架构是 1 个 GridLinks 服务器 + 32 个客户端实例，每个实例提供 31250 个设备（总计 100 万个）。
 
 准备实例 `pt01` 示例。请参阅一次管理多个实例的特定脚本
 

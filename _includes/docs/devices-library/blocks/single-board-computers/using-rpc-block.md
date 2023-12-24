@@ -1,4 +1,4 @@
-ThingsBoard 允许您从服务器端应用程序向设备发送 [远程过程调用 (RPC)](/docs/{{page.docsPrefix}}user-guide/rpc/#server-side-rpc)，反之亦然。
+GridLinks 允许您从服务器端应用程序向设备发送 [远程过程调用 (RPC)](/docs/{{page.docsPrefix}}user-guide/rpc/#server-side-rpc)，反之亦然。
 基本上，此功能将使您能够向设备发送/从设备接收命令并接收命令执行结果。
 
 在本指南中，我们将配置 RPC 命令以立即获取 OrangePI 遥测数据。如果您使用导入的仪表板，则无需配置任何内容，因为在您的仪表板中可以看到以下小部件：

@@ -154,7 +154,7 @@
 
 <h1 style="font-size: 28px;">欢迎来到GridLinks设备库！</h1>
 
-设备库是指南和代码片段的集合，它们解释了如何将流行的物联网**开发板**连接到ThingsBoard平台。
+设备库是指南和代码片段的集合，它们解释了如何将流行的物联网**开发板**连接到GridLinks平台。
 我们有意专注于可编程设备的代码片段，以提高固件工程师的生产力。
 设备库是一个不断扩展的资源。我们鼓励我们的社区成员[贡献](/docs/{{page.docsPrefix}}devices-library/guidelines/)。
 

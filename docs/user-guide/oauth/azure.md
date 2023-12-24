@@ -9,7 +9,7 @@ description: OAuth 2.0 支持
 {:toc}
 
 ## 概述
-ThingsBoard 允许您为您的客户提供单点登录功能，并使用支持 **OAuth 2.0 协议** 的外部用户管理平台自动创建租户、客户或子客户。
+GridLinks 允许您为您的客户提供单点登录功能，并使用支持 **OAuth 2.0 协议** 的外部用户管理平台自动创建租户、客户或子客户。
 本指南仅适用于 **Azure Active Directory OAuth**。
 ## 情景描述
 

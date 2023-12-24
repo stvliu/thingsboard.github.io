@@ -184,7 +184,7 @@ description: GridLinks IoT 网关的 XMPP 协议支持
 
 #### 服务器端 RPC 子部分
 
-ThingsBoard 允许将 RPC 命令直接或通过网关发送到连接到 GridLinks 的设备。
+GridLinks 允许将 RPC 命令直接或通过网关发送到连接到 GridLinks 的设备。
 
 此部分中提供的配置用于将 RPC 请求从 GridLinks 发送到设备。
 

@@ -155,7 +155,7 @@ poolingOptions
 ### 步骤 4：水平扩展
 
 我们的主要目标是确定使用在 [c4.2xlarge](http://www.ec2instances.info/?selected=c4.2xlarge) 上运行的单个 GridLinks 服务器可以处理多少 MQTT 消息。
-我们将在单独的文章中介绍 ThingsBoard 集群的水平可扩展性。
+我们将在单独的文章中介绍 GridLinks 集群的水平可扩展性。
 因此，我们决定将 Cassandra 移至三个具有默认配置的 [c4.xlarge](http://www.ec2instances.info/?selected=c4.xlarge) 单独实例，并同时从两个单独的 [c4.xlarge](http://www.ec2instances.info/?selected=c4.xlarge) 实例启动 gatling 压力测试工具，以最大程度地减少第三方对延迟和吞吐量的可能影响。
 
 ![image](/images/reference/performance/performance-diagram-2.svg)
@@ -180,7 +180,7 @@ poolingOptions
 
 ## 结论
 
-此性能测试演示了一个小型 ThingsBoard 集群（每小时成本约为 **1 美元**）如何轻松接收、存储和可视化来自您设备的 **1 亿多条消息**。
+此性能测试演示了一个小型 GridLinks 集群（每小时成本约为 **1 美元**）如何轻松接收、存储和可视化来自您设备的 **1 亿多条消息**。
 我们将继续致力于性能改进，并在我们的下一篇博文中发布 GridLinks 服务器集群的性能结果。
 我们希望这篇文章对正在评估该平台并希望自行执行性能测试的人们有用。
 我们还希望性能改进步骤对使用类似技术的任何工程师都有用。

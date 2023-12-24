@@ -100,7 +100,7 @@ description:
                     <td><img src="/images/pe/checked.svg" alt="checked"></td>
                 </tr>    
                 <tr>
-                    <th>ThingsBoard 集群和基础设施规划，用于生产工作负载</th>
+                    <th>GridLinks 集群和基础设施规划，用于生产工作负载</th>
                     <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
                     <td><img src="/images/pe/checked.svg" alt="checked"></td>
                     <td><img src="/images/pe/checked.svg" alt="checked"></td>

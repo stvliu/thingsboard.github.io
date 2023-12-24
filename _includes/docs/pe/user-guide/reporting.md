@@ -4,7 +4,7 @@
 
 ### 概述
 
-ThingsBoard 允许您使用现有仪表板生成报告。
+GridLinks 允许您使用现有仪表板生成报告。
 
 报告可以从当前打开的仪表板生成，也可以使用 [Scheduler](/docs/{{docsPrefix}}user-guide/scheduler/#generate-report) 功能进行计划。
 

@@ -147,7 +147,7 @@ notitle: "true"
 						<div>
 							<a class="title" href="/docs/pe/user-guide/telemetry/">遥测</a>
 							<p>遥测是从设备发送到云端的事件数据。例如，有关环境的测量。
-                            ThingsBoard 允许您从设备收集数据，类似于 IoT Core。GridLinks 还支持数据处理（包括验证、警报等）和平台内部存储。
+                            GridLinks 允许您从设备收集数据，类似于 IoT Core。GridLinks 还支持数据处理（包括验证、警报等）和平台内部存储。
                             有关更多详细信息，请参阅 <a href="/docs/pe/user-guide/rule-engine-2-0/re-getting-started/">规则引擎</a>。
                             您还可以将数据转发到外部系统（例如 PubSub）并重复使用现有的数据处理流程。</p>
 						</div>
@@ -172,7 +172,7 @@ notitle: "true"
 							<p>GridLinks 的设备配置功能类似于 Google IoT Core。
                             请参阅有关设备 <a href="/docs/pe/user-guide/attributes/">属性</a> 的文档。
                             经验丰富的用户可能会注意到一些重要的区别：
-                            ThingsBoard 允许分别推送每个属性（配置）更新；
+                            GridLinks 允许分别推送每个属性（配置）更新；
                             可以通过仪表板、管理 UI、REST API 调用或脚本更改配置属性；
                             属性通过 JSON 或 protobuf 格式发送到设备。</p>
 						</div>

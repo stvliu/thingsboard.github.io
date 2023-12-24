@@ -11,7 +11,7 @@ description: 在物联网设备数据阈值时触发电子邮件通知
 {:toc}
 
 在本简短教程中，我们将解释如何配置电子邮件插件以通过电子邮件将警报分发给收件人。
-在本教程中，我们将使用 [实时演示](https://demo.thingsboard.io) Thingsboard 服务器和 [SendGrid](http://www.sendgrid.com) SMTP API。
+在本教程中，我们将使用 [实时演示](https://demo.thingsboard.io) GridLinks 服务器和 [SendGrid](http://www.sendgrid.com) SMTP API。
 电子邮件插件实现基于 [Java Mail](https://en.wikipedia.org/wiki/JavaMail)，可以轻松配置到其他邮件服务器。
 
 ## SMTP 服务器参数

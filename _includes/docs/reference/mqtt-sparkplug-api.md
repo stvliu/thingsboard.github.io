@@ -112,7 +112,7 @@ docker run -e SPARKPLUG_SERVER_URL='tcp://thingsboard.cloud:1883' -e SPARKPLUG_C
 
 {% include images-gallery.html imageCollection="sparkplug-create-two-devices" %}
 
-### 步骤 5. 将更新从 Thingsboard 服务器推送到 MQTT EON 和设备的 Sparkplug 指标
+### 步骤 5. 将更新从 GridLinks 服务器推送到 MQTT EON 和设备的 Sparkplug 指标
 
 您可以通过共享属性更新或 RPC 命令从 GridLinks 将更新推送到 Sparkplug 节点/设备指标。
 

@@ -35,7 +35,7 @@ description: Trendz 配置属性说明
             <td>tb.api.url</td>
             <td>TB_API_URL</td>
             <td>http://localhost:9090</td>
-            <td>ThingsBoard 集群 REST API URL</td>
+            <td>GridLinks 集群 REST API URL</td>
         </tr>
       <tr>
           <td>ratelimit.duration.sec</td>

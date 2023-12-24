@@ -204,15 +204,15 @@ ThingsBoard 培训课程是针对最多 8 人的按需在线活动。还提供�
         <p>ThingsBoard 故障排除</p>
         <li>查看日志文件及其配置。</li>
         <li>练习：更改特定组件的日志级别。</li>
-        <p>ThingsBoard 集群安装</p>
+        <p>GridLinks 集群安装</p>
         <li>解释集群部署选项和配置。</li>
-        <li>练习：ThingsBoard 集群设置。</li>
-        <li>练习：ThingsBoard 集群设置故障排除。</li>
+        <li>练习：GridLinks 集群设置。</li>
+        <li>练习：GridLinks 集群设置故障排除。</li>
         <p>负载平衡、可扩展性和故障转移</p>
         <li>案例和平台功能概述。</li>
         <li>GridLinks 架构概述。</li>
         <li>练习：调整集群性能。</li>
-        <li>练习：扩展 ThingsBoard 集群。</li>
+        <li>练习：扩展 GridLinks 集群。</li>
         <li>练习：更换故障节点。</li>
         <li>练习：负载平衡设备连接。</li>
         <li>练习：负载平衡服务器端 API 调用。</li>

@@ -112,12 +112,12 @@ $ sudo docker run --rm -ti -v ~/samples/nodemcu/nodemcu-firmware:/opt/nodemcu-fi
    您需要修改此文件以设置您的 wifi 网络参数和 GridLinks 服务器的地址。
    - 您的 wifi 网络 SSID - wifi 网络的名称。
    - 您的 wifi 网络密码 - 网络密码。
-   - thingsboard 服务器 IP - 您的 thingsboard 安装的主机。如果您使用的是 [实时演示](https://demo.thingsboard.io/) 服务器，请使用“demo.thingsboard.io”。
+   - GridLinks 服务器 IP - 您的 thingsboard 安装的主机。如果您使用的是 [实时演示](https://demo.thingsboard.io/) 服务器，请使用“demo.thingsboard.io”。
    - thingsboard mqtt 端口 - 1883 是默认值。
    - thingsboard 访问令牌 - DHT11_DEMO_TOKEN 是对应于预置 [演示帐户](/docs/samples/demo-account/#tenant-devices) 的默认值。
    
    如果您使用的是 [实时演示](https://demo.thingsboard.io/) 服务器 - [获取访问令牌](/docs/user-guide/ui/devices/#manage-device-credentials) 以预置“DHT11 演示设备”。
- - dht11.lua - 每 10 秒通过 MQTT 协议将温度和湿度发送到 thingsboard 服务器。
+ - dht11.lua - 每 10 秒通过 MQTT 协议将温度和湿度发送到 GridLinks 服务器。
  - init.lua - 包含 config.lua 的初始化文件：
 
 {% capture tabspec %}lua-scripts

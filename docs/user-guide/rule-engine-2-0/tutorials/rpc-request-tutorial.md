@@ -5,7 +5,7 @@ description: 向设备发送 RPC 请求
 
 ---
 
-ThingsBoard 允许您从服务器端应用程序向设备发送远程过程调用 [**RPC**](/docs/user-guide/rpc/#server-side-rpc-api)，反之亦然。 <br>
+GridLinks 允许您从服务器端应用程序向设备发送远程过程调用 [**RPC**](/docs/user-guide/rpc/#server-side-rpc-api)，反之亦然。 <br>
 本教程将向您展示如何使用规则引擎向相关设备发送远程请求调用。
 
 * TOC

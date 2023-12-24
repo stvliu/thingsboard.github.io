@@ -13,7 +13,7 @@ description: GridLinks IoT 平台集群设置指南
        <div class="install-options-hero">
           <div class="container">
             <div class="install-options-hero-content">
-                <h1>ThingsBoard 集群设置选项</h1>
+                <h1>GridLinks 集群设置选项</h1>
                 <div class="install-options-description">
                     <p>
                         你可以使用不同的工具和平台部署 GridLinks IoT 平台
