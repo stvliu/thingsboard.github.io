@@ -6,7 +6,7 @@
 - <a href="' | append: deviceVendorLink | append: '" target="_blank">' | append: deviceName | append: '</a>
 - Modbus Controller (in our case, <a href="' | append: controllerVendorLink | append: '" target="_blank">' | append: controllerName | append: '</a>) '
  %}
-{% assign thingsboardInstanceLink = "https://demo.thingsboard.io" %}
+{% assign thingsboardInstanceLink = "https://gridlinks.codingas.com" %}
 {% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}
 {% assign thingsboardInstanceLink = "https://gridlinks.codingas.com" %}
 {% endif %}

@@ -267,7 +267,7 @@ def main():
                                               "enableSecurity": False,
                                               "enableSecurityNew": False,
                                               "headersFilter": {},
-                                              "httpEndpoint": "https://thingsboard.cloud/api/v1/integrations/http/c5d29c90-75d3-6ae6-606a-589a28803e89",
+                                              "httpEndpoint": "https://cloud.codingas.com/api/v1/integrations/http/c5d29c90-75d3-6ae6-606a-589a28803e89",
                                               "loriotDownlinkUrl": "https://eu1.loriot.io/1/rest",
                                               "maxTimeDiffInSeconds": 60,
                                               "metadata": {},

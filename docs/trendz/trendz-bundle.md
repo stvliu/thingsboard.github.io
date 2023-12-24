@@ -99,7 +99,7 @@ sudo service gridlinks restart
   * 打开进行编辑
   * 切换到资源选项卡（左上角）
   * 更新到 Trendz 库的链接
-    * 在 GridLinks/Trendz 云的情况下，使用以下 URL - https://thingsboard.cloud/trendz/bundle/trendz-tb-lib.js
+    * 在 GridLinks/Trendz 云的情况下，使用以下 URL - https://cloud.codingas.com/trendz/bundle/trendz-tb-lib.js
   * 保存小部件
 * 导航到您的仪表板并刷新页面 - 问题应该已解决
 

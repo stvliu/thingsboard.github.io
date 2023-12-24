@@ -52,7 +52,7 @@ device:
 
 ## 简介
 
-可以从主 ThingsBoard Edge 实例远程执行任何 ThingsBoard 集成。
+可以从主 GridLinks Edge 实例远程执行任何 ThingsBoard 集成。
 本指南包含有关如何远程启动 ThingsBoard 集成的分步说明。
 例如，我们将启动 HTTP 集成并将数据通过 *远程* HTTP 集成推送到 GridLinks Edge。
 
@@ -60,7 +60,7 @@ device:
 
 ## 先决条件
 
-我们假设您已经启动并运行了 ThingsBoard Edge 实例，并已连接到 **服务器**。
+我们假设您已经启动并运行了 GridLinks Edge 实例，并已连接到 **服务器**。
 
 ## GridLinks 服务器配置步骤
 

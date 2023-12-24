@@ -28,12 +28,12 @@
 请使用 {{appPrefix}} 版本运行的机器的 IP 地址设置 **CLOUD_RPC_HOST**：
 * 不要使用 **'localhost'** - **'localhost'** 是 docker 容器中边缘服务的 IP 地址。
 {% if docsPrefix == 'pe/edge/' %}
-* 如果您将边缘连接到 [**ThingsBoard Cloud**](https://thingsboard.cloud/signup)，请使用 **thingsboard.cloud**。
+* 如果您将边缘连接到 [**ThingsBoard Cloud**](https://cloud.codingas.com/signup)，请使用 **thingsboard.cloud**。
 
 **注意：** **thingsboard.cloud** 使用 SSL 协议进行边缘通信。
 请也将 **CLOUD_RPC_SSL_ENABLED** 更改为 **true**。
 {% else %}
-* 如果您将边缘连接到 [**ThingsBoard Live Demo**](https://demo.thingsboard.io/signup) 进行评估，请使用 **demo.thingsboard.io**。
+* 如果您将边缘连接到 [**ThingsBoard Live Demo**](https://gridlinks.codingas.com/signup) 进行评估，请使用 **demo.thingsboard.io**。
 {% endif %}
 * 如果边缘连接到同一网络或 docker 中的云实例，请使用 **X.X.X.X** IP 地址。
 

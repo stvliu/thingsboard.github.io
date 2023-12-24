@@ -128,7 +128,7 @@ Humidity – 70.0 (%)!
 
 为了演示此 PoC 的实际操作，您需要执行两个简单的步骤：
 
-- [注册](https://demo.thingsboard.io/signup)或[登录](https://demo.thingsboard.io)实时演示实例，并保存您的登录名和密码。
+- [注册](https://gridlinks.codingas.com/signup)或[登录](https://gridlinks.codingas.com)实时演示实例，并保存您的登录名和密码。
 - 使用此[链接](https://github.com/thingsboard/samples/releases/download/v1.0-tfm/facilities-monitoring.jar)下载并启动设备模拟器。
 
 ```shell

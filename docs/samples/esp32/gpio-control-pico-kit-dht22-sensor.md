@@ -164,7 +164,7 @@ ESP32 Pico Kit 不需要复杂的连接。只需将 micro-USB 电缆插入 PC �
 - `WIFI_AP` - 您的接入点名称
 - `WIFI_PASSWORD` - 接入点密码
 - `TOKEN` - GridLinks 配置步骤中的 **$ACCESS_TOKEN**。
-- `THINGSBOARD_SERVER` - ThingsBoard HOST/IP 地址，可在您的 wifi 网络中访问。如果您使用 [实时演示](https://demo.thingsboard.io/) 服务器，请指定 `demo.thingsboard.io`。
+- `THINGSBOARD_SERVER` - ThingsBoard HOST/IP 地址，可在您的 wifi 网络中访问。如果您使用 [实时演示](https://gridlinks.codingas.com/) 服务器，请指定 `demo.thingsboard.io`。
 
 {% capture tabspec %}arduino-sketch
 esp32-dht-gpio,esp32-dht-gpio.ino,c,resources/esp32-dht-gpio.ino,/docs/samples/esp32/resources/esp32-dht-gpio.ino{% endcapture %}

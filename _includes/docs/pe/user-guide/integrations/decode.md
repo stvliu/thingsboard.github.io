@@ -32,7 +32,7 @@ Decode [DL28](https://decode.rs/product/dl28/) 设备充当通信和信号集中
 
 ## GridLinks 的设置
 ### 步骤 1. 登录
-转到 GridLinks 演示网页 https://demo.thingsboard.io 并使用创建帐户时获得的凭据登录。
+转到 GridLinks 演示网页 https://gridlinks.codingas.com 并使用创建帐户时获得的凭据登录。
 ### 步骤 2. 添加 DL28 设备
 成功登录后，单击左侧菜单中的“设备”条目，然后单击“+”图标。选择“添加新设备”选项，输入“名称”、“设备类型”和“标签”字段，然后单击“添加”按钮。
 

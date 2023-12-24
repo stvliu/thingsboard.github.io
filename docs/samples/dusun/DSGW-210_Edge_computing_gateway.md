@@ -24,7 +24,7 @@ DSGW-210 是具有多种协议和边缘计算功能的 IoT 网关。它为各种
 ### 块 1 GridLinks 配置
 GridLinks 中的配置步骤如下所示，这里以 ThingsBoard.cloud 中的示例服务器为例
 
-* [步骤 1.1] 注册并登录 [ThingsBoard PE](https://thingsboard.cloud/signup)
+* [步骤 1.1] 注册并登录 [ThingsBoard PE](https://cloud.codingas.com/signup)
 
 <img src="/images/samples/dusun/2.png" alt="Thingsboard login screen">
 

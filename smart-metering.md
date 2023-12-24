@@ -62,7 +62,7 @@ GridLinks 物联网平台提供生产就绪的服务器基础设施，以连接�
 </div>
 
 <div class="center" style="margin-bottom: 64px;">
-    <a target="_blank" href="https://demo.thingsboard.io/dashboard/3a1026e0-83f6-11e7-b56d-c7f326cba909?publicId=322a2330-7c36-11e7-835d-c7f326cba909" class="button">查看实时演示</a>
+    <a target="_blank" href="https://gridlinks.codingas.com/dashboard/3a1026e0-83f6-11e7-b56d-c7f326cba909?publicId=322a2330-7c36-11e7-835d-c7f326cba909" class="button">查看实时演示</a>
 </div>
 
 实时仪表板显示使用 GridLinks MQTT API 收集的来自多个智能电表和恒温器的实时数据。

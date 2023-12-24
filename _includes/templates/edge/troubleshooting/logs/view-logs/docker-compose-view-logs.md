@@ -41,7 +41,7 @@ docker compose logs -f tb-edge > tb-edge.log
 {% endcapture %}
 {% include templates/info-banner.md content=dockerComposeStandalone %}
 
-**注意：**您始终可以登录 ThingsBoard Edge 容器并在其中查看日志：
+**注意：**您始终可以登录 GridLinks Edge 容器并在其中查看日志：
 
 ```bash
 docker ps

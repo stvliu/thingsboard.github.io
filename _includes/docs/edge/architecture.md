@@ -2,10 +2,10 @@
 {:toc}
 
 {% if docsPrefix == 'pe/edge/' %}
-{% assign appPrefix = "ThingsBoard PE" %}
+{% assign appPrefix = "GridLinks专业版" %}
 {% assign cloudDocsPrefix = "pe/" %}
 {% else %}
-{% assign appPrefix = "ThingsBoard CE" %}
+{% assign appPrefix = "GridLinks社区版" %}
 {% endif %}
 
 ## 简介

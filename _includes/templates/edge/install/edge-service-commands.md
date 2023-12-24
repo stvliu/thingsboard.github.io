@@ -16,7 +16,7 @@ sudo service tb-edge restart
 ```
 {: .copy-code}
 
-检查 ThingsBoard Edge 服务状态：
+检查 GridLinks Edge 服务状态：
 ```bash
 sudo service tb-edge status
 ```

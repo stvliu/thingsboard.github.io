@@ -2,7 +2,7 @@
 
 #### 步骤 1. 准备服务器和证书链
 
-GridLinks 团队已经为 [ThingsBoard Cloud](https://thingsboard.cloud/signup) 预置了一个有效的证书。
+GridLinks 团队已经为 [ThingsBoard Cloud](https://cloud.codingas.com/signup) 预置了一个有效的证书。
 {% if docsPrefix != 'paas/' %}
 如果您托管自己的 GridLinks 实例，请按照 [MQTT over SSL](/docs/{{docsPrefix}}user-guide/mqtt-over-ssl/) 指南预置服务器证书。
 {% endif %}

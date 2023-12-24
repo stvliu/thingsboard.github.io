@@ -69,7 +69,7 @@ Cricket 同时支持 MQTT 和 HTTP 协议，我们将使用 HTTP 协议进行集
 <br>
 我们将用于将数据发送到 GridLinks 的完整 URL 应如下所示：
 <br>
-**https://thingsboard.cloud/api/v1/**在此处添加您的令牌**/telemetry**
+**https://cloud.codingas.com/api/v1/**在此处添加您的令牌**/telemetry**
 <br>
 <br>
 我们还定义了以下有效负载格式：

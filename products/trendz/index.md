@@ -173,7 +173,7 @@ selfManagedPlan:
             <div class="get-started-container">
                 <h3 class="header">Trendz 云</h3>
                 <p class="text">一旦您升级您的计划 - 您将在您的 Things Board 菜单中找到 Trendz Analytics 标签</p>
-                <a href="https://thingsboard.cloud/billing" class="link">升级您的 Things Board 计划</a>
+                <a href="https://cloud.codingas.com/billing" class="link">升级您的 Things Board 计划</a>
             </div>
             <div class="get-started-container">
                 <h3 class="header">Trendz 自托管</h3>

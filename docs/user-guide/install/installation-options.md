@@ -39,7 +39,7 @@ notitle: "true"
                             <div class="deployment-cards">
                                 <div class="deployment-cards-container">
                                     <div class="deployment-card-block">
-                                        <a href="https://demo.thingsboard.io/signup">
+                                        <a href="https://gridlinks.codingas.com/signup">
                                             <span>
                                                 <div class="deployment-logo">
                                                     <img width="" src="/images/sign-ce-img.svg" title="实时演示" alt="实时演示">

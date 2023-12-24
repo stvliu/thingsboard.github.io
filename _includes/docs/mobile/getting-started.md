@@ -2,15 +2,15 @@
 {% assign appPrefix = "ThingsBoard PE" %}
 {% assign appRepo = "https://github.com/thingsboard/flutter_thingsboard_pe_app.git" %}
 {% assign appProject = "flutter_thingsboard_pe_app" %}
-{% assign cloudApp = "[ThingsBoard Cloud](https://thingsboard.cloud/signup)" %}
+{% assign cloudApp = "[ThingsBoard Cloud](https://cloud.codingas.com/signup)" %}
 {% assign cloudEndpoint = "https://thingsboard.cloud" %}
 {% assign flutterAppVer = site.release.pe_flutter_app_ver %}
 {% else %}
 {% assign appPrefix = "ThingsBoard" %}
 {% assign appRepo = "https://github.com/thingsboard/flutter_thingsboard_app.git" %}
 {% assign appProject = "flutter_thingsboard_app" %}
-{% assign cloudApp = "[Live Demo](https://demo.thingsboard.io/signup)" %}
-{% assign cloudEndpoint = "https://demo.thingsboard.io" %}
+{% assign cloudApp = "[Live Demo](https://gridlinks.codingas.com/signup)" %}
+{% assign cloudEndpoint = "https://gridlinks.codingas.com" %}
 {% assign flutterAppVer = site.release.ce_flutter_app_ver %}
 {% endif %}
 

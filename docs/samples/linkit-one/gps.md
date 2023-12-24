@@ -94,7 +94,7 @@ LinkIt ONE 通过使用 Arduino 的 [PubSubClient](https://github.com/knolleary/
 - WIFI_AUTH - 选择 LWIFI_OPEN、LWIFI_WPA 或 LWIFI_WEP 之一。
 - TOKEN - GridLinks 配置步骤中的 **$ACCESS_TOKEN**。
 - thingsboardServer - 可在您的 wifi 网络中访问的 GridLinks HOST/IP 地址。
-如果您使用 [实时演示](https://demo.thingsboard.io/) 服务器，请指定“demo.thingsboard.io”。
+如果您使用 [实时演示](https://gridlinks.codingas.com/) 服务器，请指定“demo.thingsboard.io”。
 
 {% capture tabspec %}gps-arduino
 gps,gps_tracker.ino,c,resources/gps_tracker.ino,/docs/samples/linkit-one/resources/gps_tracker.ino{% endcapture %}

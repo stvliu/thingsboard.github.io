@@ -3,7 +3,7 @@
 为此，您可以使用以下代码。它包含此指南所需的所有功能。
 
 {% capture demoExample %}
-如果您想使用 [**demo.thingsboard.io**](https://demo.thingsboard.io)，请注意它对 MQTT 消息的大小有限制 - **每条消息 1024 字节**。
+如果您想使用 [**demo.thingsboard.io**](https://gridlinks.codingas.com)，请注意它对 MQTT 消息的大小有限制 - **每条消息 1024 字节**。
 
 在这种情况下，您可以降低分辨率、质量并裁剪编码后的照片。
 

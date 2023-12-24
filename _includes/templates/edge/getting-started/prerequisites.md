@@ -21,7 +21,7 @@
 {% endif %}
 {% if currentThingsBoardVersion == "ThingsBoard Community Edition" %}
 {% capture contenttogglespec %}
-实时演示<br><small>将 Edge 连接到 https://demo.thingsboard.io</small>%,%cloud%,%templates/edge/ce-cloud.md%br%
+实时演示<br><small>将 Edge 连接到 https://gridlinks.codingas.com</small>%,%cloud%,%templates/edge/ce-cloud.md%br%
 本地服务器<br><small>将 Edge 连接到本地实例</small>%,%on-premise%,%templates/edge/on-premise-cloud.md{% endcapture %}
 {% include content-toggle.html content-toggle-id="cloudType" toggle-spec=contenttogglespec %}
 {% endif %}

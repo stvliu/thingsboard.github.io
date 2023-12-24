@@ -30,7 +30,7 @@ description: 在 Ubuntu Server 上安装 GridLinks Edge
 
 {% include templates/edge/install/ubuntu-db-postgresql.md %}
 
-### 步骤 3. ThingsBoard Edge 服务安装
+### 步骤 3. GridLinks Edge 服务安装
 
 下载安装包。
 
@@ -54,7 +54,7 @@ sudo dpkg -i tb-edge-{{ site.release.pe_edge_ver }}.deb
 
 {% include templates/edge/install/run-edge-install.md %} 
 
-### 步骤 6. 重启 ThingsBoard Edge 服务
+### 步骤 6. 重启 GridLinks Edge 服务
 
 ```bash
 sudo service tb-edge restart

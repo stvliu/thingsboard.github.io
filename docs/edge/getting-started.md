@@ -6,7 +6,7 @@ description: GridLinks Edge 入门
 step1:
     0:
         image: /images/edge/getting-started/step-1-item-1.png 
-        title: '登录您的<b>ThingsBoard Edge</b>实例并单击“添加设备”按钮。'
+        title: '登录您的<b>GridLinks Edge</b>实例并单击“添加设备”按钮。'
     1:
         image: /images/edge/getting-started/step-1-item-2.png  
         title: '输入设备的名称，例如“我的新设备”。此时无需进行其他更改。单击“添加”以创建设备。'
@@ -32,10 +32,10 @@ step1:
 step2:
     0:
         image: /images/edge/getting-started/step-2-item-1.png
-        title: '登录您的<b>ThingsBoard Community Edition</b>实例并导航到设备页面。'
+        title: '登录您的<b>GridLinks社区版</b>实例并导航到设备页面。'
     1:
         image: /images/edge/getting-started/step-2-item-2.png  
-        title: '确认设备“我的新设备”已在 GridLinks Community Edition 云中创建。'
+        title: '确认设备“我的新设备”已在 GridLinks社区版 云中创建。'
     2:
         image: /images/edge/getting-started/step-2-item-3.png
         title: '选择“我的新设备”并导航到“关系”选项卡。'
@@ -54,7 +54,7 @@ step3:
 step4:
     0:
         image: /images/edge/getting-started/step-4-item-1.png
-        title: '在<b>ThingsBoard Community Edition</b>服务器上单击<b>添加仪表板</b>按钮。'
+        title: '在<b>GridLinks社区版</b>服务器上单击<b>添加仪表板</b>按钮。'
     1:
         image: /images/edge/getting-started/step-4-item-2.png
         title: '输入仪表板名称，例如“我的新仪表板”，然后单击“添加”以创建仪表板。'
@@ -98,7 +98,7 @@ step4:
 step5Server:
     0:
         image: /images/edge/getting-started/step-5-item-1.png
-        title: '在<b>ThingsBoard Community Edition</b>服务器上打开 Edge 实例页面。单击 Edge 实例的<b>仪表板</b>按钮以查看已分配给此 Edge 的仪表板。'
+        title: '在<b>GridLinks社区版</b>服务器上打开 Edge 实例页面。单击 Edge 实例的<b>仪表板</b>按钮以查看已分配给此 Edge 的仪表板。'
     1:
         image: /images/edge/getting-started/step-5-item-2.png
         title: '单击“+”图标并从列表中选择“我的新仪表板”。此仪表板将配置到 Edge。'
@@ -106,7 +106,7 @@ step5Server:
 step5Edge:
     0:
         image: /images/edge/getting-started/step-5-item-3.png
-        title: '在<b>ThingsBoard Edge</b> UI 中打开“仪表板”页面。打开“我的新仪表板”。'    
+        title: '在<b>GridLinks Edge</b> UI 中打开“仪表板”页面。打开“我的新仪表板”。'    
     1:
         image: /images/edge/getting-started/step-5-item-4.png
         title: '验证您是否看到在云中添加的相同小部件以及来自设备的温度读数。'
@@ -116,7 +116,7 @@ step5Edge:
 * TOC
 {:toc}
 
-{% assign currentThingsBoardVersion = "ThingsBoard Community Edition" %}
+{% assign currentThingsBoardVersion = "GridLinks社区版" %}
 
 ## 简介
 
@@ -125,23 +125,23 @@ step5Edge:
 {% assign docsPrefix = "edge/" %}
 {% include templates/edge/getting-started/prerequisites.md %}
 
-## 第 1 步。配置并连接设备
+## 第 1 步 配置并连接设备
 
 {% include templates/edge/getting-started/step-1.md %}
 
-## 第 2 步。从 GridLinks Edge 配置设备到 GridLinks Community Edition 服务器
+## 第 2 步 从 GridLinks Edge 配置设备到 GridLinks社区版 服务器
 
 {% include templates/edge/getting-started/step-2.md %}
 
-## 第 3 步。将数据从 GridLinks Edge 推送到 GridLinks Community Edition 服务器
+## 第 3 步 将数据从 GridLinks Edge 推送到 GridLinks社区版 服务器
 
 {% include templates/edge/getting-started/step-3.md %}
 
-## 第 4 步。创建并配置仪表板
+## 第 4 步 创建并配置仪表板
 
 {% include templates/edge/getting-started/step-4.md %}
 
-## 第 5 步。将仪表板配置到 GridLinks Edge
+## 第 5 步 将仪表板配置到 GridLinks Edge
 
 {% include templates/edge/getting-started/step-5.md %}
 

@@ -29,7 +29,7 @@ sudo systemctl restart postgresql-12.service
 ```
 {: .copy-code}
 
-连接到数据库以创建 ThingsBoard Edge DB：
+连接到数据库以创建 GridLinks Edge DB：
 
 ```bash
 psql -U postgres -d postgres -h 127.0.0.1 -W

@@ -10,10 +10,10 @@ notitle: "true"
        <div class="install-options-hero">
           <div class="container">
             <div class="install-options-hero-content">
-                <h1>ThingsBoard Edge 安装选项</h1>
+                <h1>GridLinks Edge 安装选项</h1>
                 <div class="install-options-description">
                     <p>
-                        ThingsBoard Edge 安装说明，适用于各种操作系统
+                        GridLinks Edge 安装说明，适用于各种操作系统
                     </p>
                 </div>
             </div>

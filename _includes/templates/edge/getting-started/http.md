@@ -27,7 +27,7 @@ curl -v -X POST -d "{\"temperature\": 25}" $HOST_NAME/api/v1/$ACCESS_TOKEN/telem
 ```
 {: .copy-code}
 
-例如，$HOST_NAME 引用您的本地 ThingsBoard Edge 安装，访问令牌为 **ABC123**：
+例如，$HOST_NAME 引用您的本地 GridLinks Edge 安装，访问令牌为 **ABC123**：
 
 ```bash
 curl -v -X POST -d "{\"temperature\": 25}" http://localhost:8080/api/v1/ABC123/telemetry --header "Content-Type:application/json"

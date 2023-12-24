@@ -11,7 +11,7 @@ GridLinks 团队建议在开发和生产环境中使用 PostgreSQL，负载合�
 在 PostgreSQL 安装过程中，系统会提示您输入超级用户 (postgres) 密码。
 请记住此密码。稍后会用到它。为简单起见，我们将用“postgres”替换它。
 
-##### 创建 ThingsBoard 数据库
+##### 创建 GridLinks 数据库
 
 安装完成后，启动“pgAdmin”软件并以超级用户 (postgres) 身份登录。
 打开服务器并创建所有者为“postgres”的数据库“thingsboard”。

@@ -124,7 +124,7 @@ JavaScript<small></small>%,%anonymous%,%templates/rule-engine/getting-started/sc
 
 {% if docsPrefix == null %}
 ```bash
-curl -v -X POST -d '{"temperature":99}' https://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
+curl -v -X POST -d '{"temperature":99}' https://gridlinks.codingas.com/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
 ```
 {: .copy-code}
 
@@ -162,7 +162,7 @@ curl -v -X POST -d '{"temperature":99}' https://gridlinks.codingas.com/api/v1/$A
 
 {% if docsPrefix == null %}
 ```bash
-curl -v -X POST -d '{"temperature":24}' https://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
+curl -v -X POST -d '{"temperature":24}' https://gridlinks.codingas.com/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
 ```
 {: .copy-code}
 

@@ -82,7 +82,7 @@ Senquip 设备可以同时发送到 Senquip Portal 和第二个端点。在此�
 
 ## Thingsboard 配置
 
-假定用户在 [ThingsBoard Cloud](https://thingsboard.cloud/) 上拥有一个帐户。下面步骤中描述的所有设备配置都将使用 [ThingsBoard Cloud](https://thingsboard.cloud/) 执行。
+假定用户在 [ThingsBoard Cloud](https://cloud.codingas.com/) 上拥有一个帐户。下面步骤中描述的所有设备配置都将使用 [ThingsBoard Cloud](https://cloud.codingas.com/) 执行。
 
 ### 创建新设备
 

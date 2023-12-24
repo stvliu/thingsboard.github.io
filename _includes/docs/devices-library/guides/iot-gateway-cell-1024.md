@@ -4,7 +4,7 @@
 - <a href="' | append: deviceVendorLink | append: '" target="_blank">' | append: deviceName | append: '</a>
 - 设备必须通过以太网、调制解调器或 WIFI 连接到互联网。 '
  %}
- {% assign thingsboardInstanceLink = "https://demo.thingsboard.io" %}
+ {% assign thingsboardInstanceLink = "https://gridlinks.codingas.com" %}
 {% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}
 {% assign thingsboardInstanceLink = "https://gridlinks.codingas.com" %}
 {% endif %}

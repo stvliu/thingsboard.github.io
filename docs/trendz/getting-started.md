@@ -121,7 +121,7 @@ create-anomaly-alarm:
 ## 步骤 1. 发现拓扑
 Trendz 服务启动并运行后，您可以使用以下 URL 登录到 Trendz UI：
 
-* Trendz Cloud：[https://thingsboard.cloud/trendz](https://thingsboard.cloud/trendz)。
+* Trendz Cloud：[https://cloud.codingas.com/trendz](https://cloud.codingas.com/trendz)。
 * 自托管 Trendz：http://localhost:8888
 
 您可以使用 GridLinks 的租户管理员凭据登录。Trendz 使用 GridLinks 作为身份验证服务。任何租户管理员或客户用户都可以使用其在 GridLinks 中用于身份验证的登录名/密码登录 Trendz UI。

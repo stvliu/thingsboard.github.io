@@ -46,7 +46,7 @@ RTU+ 可以通过 [RTU+ 配置界面](https://nettra.tech) 轻松配置。为了
 
 此步骤包含将设备连接到 GridLinks 所需的说明。
 
-以 [实时演示](https://demo.thingsboard.io/signup) 的身份注册 GridLinks Web UI。有关如何获取帐户的更多详细信息，请参阅 [实时演示](/docs/user-guide/live-demo/) 页面。
+以 [实时演示](https://gridlinks.codingas.com/signup) 的身份注册 GridLinks Web UI。有关如何获取帐户的更多详细信息，请参阅 [实时演示](/docs/user-guide/live-demo/) 页面。
 
 ### 设备
 
@@ -104,7 +104,7 @@ RTU+ 可以通过 [RTU+ 配置界面](https://nettra.tech) 轻松配置。为了
 3. 填入 ***MQTT*** 框，如下所示：
    <br><br>
    **Interfaz**：以太网 &nbsp;&nbsp; **Puerto**：1883<br>
-   **Servidor**：ThingsBoard HOST/IP 地址，可在您的本地网络中访问。如果您使用 [实时演示](https://demo.thingsboard.io/) 服务器，请指定 `demo.thingsboard.io`。<br>
+   **Servidor**：ThingsBoard HOST/IP 地址，可在您的本地网络中访问。如果您使用 [实时演示](https://gridlinks.codingas.com/) 服务器，请指定 `demo.thingsboard.io`。<br>
    **Usuario**：$RTU_DEMO_TOKEN（在 *设备* 小节中提供）<br>
    **Contraseña**：留空<br>
    **Client ID**：RTU+<br>
@@ -114,7 +114,7 @@ RTU+ 可以通过 [RTU+ 配置界面](https://nettra.tech) 轻松配置。为了
 4. 填入 ***时间同步*** 框，如下所示：
    <br><br>
    **Interfaz**：NTP 以太网<br>
-   **Servidor**：ThingsBoard HOST/IP 地址，可在您的本地网络中访问。如果您使用 [实时演示](https://demo.thingsboard.io/) 服务器，请指定 `demo.thingsboard.io`。<br>
+   **Servidor**：ThingsBoard HOST/IP 地址，可在您的本地网络中访问。如果您使用 [实时演示](https://gridlinks.codingas.com/) 服务器，请指定 `demo.thingsboard.io`。<br>
    **Frecuencia**：10<br>
    **Huso**：写下您的时区<br>
 

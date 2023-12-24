@@ -8,14 +8,14 @@ description: GridLinks 培训课程
 
 <h1 class="mainTitle">培训课程</h1>
 
-ThingsBoard 培训课程是 GridLinks 核心团队成员为贵公司的工程师提供的教育活动。GridLinks 教育课程的主要目标是：
+GridLinks 培训课程是 GridLinks 核心团队成员为贵公司的工程师提供的教育活动。GridLinks 教育课程的主要目标是：
 
 - 提升您对 GridLinks 平台的体验。
 - 让您熟悉平台功能、API 和集成。
 - 解决与您的案例相关的实际问题。
 - 缩短您的物联网产品或解决方案的上市时间。
 
-ThingsBoard 培训课程是针对最多 8 人的按需在线活动。还提供现场培训课程。[联系我们](/docs/contact-us/) 了解更多详情。
+GridLinks 培训课程是针对最多 8 人的按需在线活动。还提供现场培训课程。[联系我们](/docs/contact-us/) 了解更多详情。
 
 <br>
 
@@ -23,7 +23,7 @@ ThingsBoard 培训课程是针对最多 8 人的按需在线活动。还提供�
 
 <div class="service-info-blocks">
   <div class="card">
-    <h3 class="title">ThingsBoard 基础知识</h3>
+    <h3 class="title">GridLinks 基础知识</h3>
     <p class="sub-title">物联网和编程概念的基本理解</p>
     <p class="description">了解 GridLinks 平台如何帮助企业实施物联网案例并支持物联网解决方案。此培训课程将为您提供对 GridLinks 功能的基本了解，以及如何在您的物联网产品中使用这些功能。</p>
     <div class="card-bot">
@@ -59,7 +59,7 @@ ThingsBoard 培训课程是针对最多 8 人的按需在线活动。还提供�
   </div>
 
   <div class="card">
-    <h3 class="title">ThingsBoard 数据可视化</h3>
+    <h3 class="title">GridLinks 数据可视化</h3>
     <p class="sub-title">GridLinks 平台的基本概念</p>
     <p class="description">了解 GridLinks 平台如何帮助收集和可视化物联网数据，并利用这些知识来改善客户体验。此培训课程将为您提供对 GridLinks 可视化功能、窗口小部件自定义、用户角色和权限的深入了解。</p>
     <div class="card-bot">
@@ -181,7 +181,7 @@ ThingsBoard 培训课程是针对最多 8 人的按需在线活动。还提供�
   </div>
 
   <div class="card">
-    <h3 class="title">ThingsBoard 管理</h3>
+    <h3 class="title">GridLinks 管理</h3>
     <p class="sub-title">物联网和系统管理的基本理解</p>
     <p class="description">了解如何配置、监视和扩展您的 GridLinks 集群。此培训课程将为您提供对平台配置、故障排除和可扩展性的深入了解。我们还将涵盖安全性和负载平衡主题。</p>
     <div class="card-bot">
@@ -227,5 +227,5 @@ ThingsBoard 培训课程是针对最多 8 人的按需在线活动。还提供�
 
 <div class="bottom">
     <a href="/docs/contact-us/" class="contact-button">联系我们</a>
-    <p>联系我们加入 ThingsBoard 培训课程</p>
+    <p>联系我们加入 GridLinks 培训课程</p>
 </div>

@@ -70,7 +70,7 @@ mosquitto_pub -d -q 1 -h "YOUR_TB_HOST" -p "1883" \
 #### MQTTS（MQTT over TLS）
 
 单向 SSL 身份验证是一种标准身份验证模式，其中您的客户端设备使用服务器证书验证服务器的身份。
-GridLinks 团队已经为 [GridLinks Cloud](https://thingsboard.cloud/signup) 配置了有效证书。
+GridLinks 团队已经为 [GridLinks Cloud](https://cloud.codingas.com/signup) 配置了有效证书。
 {% if docsPrefix != 'paas/' %}
 如果您托管自己的 GridLinks 实例，请按照 [MQTT over SSL](/docs/{{docsPrefix}}user-guide/mqtt-over-ssl/) 指南配置服务器证书。
 {% endif %}

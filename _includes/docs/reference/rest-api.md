@@ -6,7 +6,7 @@
 {% if docsPrefix == "paas/" or docsPrefix == "pe/"  %}
 GridLinks REST API 交互式文档可通过 Swagger UI 获取。例如，您可以使用 **[Swagger UI 链接](https://gridlinks.codingas.com/swagger-ui.html)** 浏览 GridLinks云服务 API 文档。
 {% else %}
-GridLinks REST API 交互式文档可通过 Swagger UI 获取。例如，您可以使用 **[Swagger UI 链接](https://demo.thingsboard.io/swagger-ui.html)** 浏览社区版演示服务器 API 文档。
+GridLinks REST API 交互式文档可通过 Swagger UI 获取。例如，您可以使用 **[Swagger UI 链接](https://gridlinks.codingas.com/swagger-ui.html)** 浏览社区版演示服务器 API 文档。
 {% endif %}
 
 {% if docsPrefix == "paas/" %}

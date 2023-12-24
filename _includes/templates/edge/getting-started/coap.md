@@ -12,7 +12,7 @@ echo -n '{"temperature": 25}' | coap post coap://$HOST_NAME:$COAP_PORT/api/v1/$A
 ```
 {: .copy-code}
 
-例如，$HOST_NAME 引用您的本地 ThingsBoard Edge 安装，coap 端口为 **5683**，访问令牌为 **ABC123**：
+例如，$HOST_NAME 引用您的本地 GridLinks Edge 安装，coap 端口为 **5683**，访问令牌为 **ABC123**：
 
 ```bash
 echo -n '{"temperature": 25}' | coap post coap://localhost:5683/api/v1/ABC123/telemetry

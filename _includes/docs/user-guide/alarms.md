@@ -123,4 +123,4 @@ GridLinks 使用触发器、类型和开始时间的组合来识别警报。
 
 ### 如何使用 REST API 查询警报？
 
-GridLinks 提供 REST API 来管理和查询警报。有关更多详细信息，请参阅演示环境 [警报 REST API](https://demo.thingsboard.io/swagger-ui.html#/alarm-controller) 和通用 [REST API](/docs/{{docsPrefix}}reference/rest-api/) 文档。
+GridLinks 提供 REST API 来管理和查询警报。有关更多详细信息，请参阅演示环境 [警报 REST API](https://gridlinks.codingas.com/swagger-ui.html#/alarm-controller) 和通用 [REST API](/docs/{{docsPrefix}}reference/rest-api/) 文档。

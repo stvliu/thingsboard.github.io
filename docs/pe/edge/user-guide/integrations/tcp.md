@@ -100,7 +100,7 @@ downlinkTerminal:
 在本教程中，我们将使用：
 
 - ThingsBoard PE Edge；
-- TCP 集成，在外部运行并连接到云 ThingsBoard Edge 实例；
+- TCP 集成，在外部运行并连接到云 GridLinks Edge 实例；
 - **echo** 命令，用于显示一行文本，并将输出重定向到 **netcat** (**nc**) 实用程序；
 - **netcat** (**nc**) 实用程序，用于建立 TCP 连接，从那里接收数据并传输数据；
 

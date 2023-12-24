@@ -13,14 +13,14 @@
 可以从主 GridLinks 实例远程执行任何 ThingsBoard 集成。
 本指南包含有关如何远程启动 ThingsBoard 集成的分步说明。
 例如，我们将启动 MQTT 集成，该集成连接到本地 MQTT 代理并将数据推送到
-[thingsboard.cloud](https://thingsboard.cloud/signup)。
+[thingsboard.cloud](https://cloud.codingas.com/signup)。
 
 有关更多一般信息，请参阅 [部署选项](/docs/{{peDocsPrefix}}user-guide/integrations/#deployment-options)。
 
 ## 先决条件
 
 我们假设您已经在自己的 GridLinks PE v3.3.1+ 实例或
-[thingsboard.cloud](https://thingsboard.cloud/signup) 上拥有租户管理员帐户。
+[thingsboard.cloud](https://cloud.codingas.com/signup) 上拥有租户管理员帐户。
 
 ## GridLinks 配置步骤
 

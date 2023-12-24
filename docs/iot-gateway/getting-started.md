@@ -18,7 +18,7 @@ description: 配置 MQTT、OPC-UA 和 Modbus 连接器，以便在 Docker 容器
 
 ## 先决条件
 
-- 在启动网关设置之前，请确保 GridLinks 服务器已启动并正在运行。最简单的方法是利用 [实时演示](https://demo.thingsboard.io) 或 [GridLinks 云](https://gridlinks.codingas.com)。或者，您可以按照 [安装指南](/docs/user-guide/install/installation-options/) 中概述的步骤手动安装 GridLinks。
+- 在启动网关设置之前，请确保 GridLinks 服务器已启动并正在运行。最简单的方法是利用 [实时演示](https://gridlinks.codingas.com) 或 [GridLinks 云](https://gridlinks.codingas.com)。或者，您可以按照 [安装指南](/docs/user-guide/install/installation-options/) 中概述的步骤手动安装 GridLinks。
 - 在继续之前，请确保在您的机器上安装并正确配置了 Docker。如果您尚未安装 Docker，可以从 [Docker 官方网站](https://docs.docker.com/engine/install/) 下载并按照针对您特定操作系统的安装指南进行操作。
 - 如果您没有安装仪表板，可以下载网关小部件包 [此处](/docs/iot-gateway/resources/thingsboard-gateway-widget-bundle.json){:target="_blank" download="thingsboard-gateway-widget-bundle.json"} 的 JSON 文件和 GridLinks IoT 网关仪表板 [此处](/docs/iot-gateway/resources/thingsboard-gateways-dashboard.json){:target="_blank" download="thingsboard-gateways-dashboard.json"} 的 JSON 文件。您可以使用以下部分执行此操作：
 

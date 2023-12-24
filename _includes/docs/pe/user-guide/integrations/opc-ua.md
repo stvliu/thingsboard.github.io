@@ -23,7 +23,7 @@ OPC UA 集成允许您将数据从 OPC UA 服务器流式传输到 GridLinks，�
 
 {% include templates/integration/opc-ua/opc-ua-server-setup-steps.md %}
 
-## ThingsBoard 设置
+## GridLinks 设置
 
 ### 上行数据转换器
 

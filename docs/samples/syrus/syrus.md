@@ -19,7 +19,7 @@ hidetoc: "true"
 
 [Syrus 4G IoT 远程信息处理网关。](https://syrus.pegasusgateway.com/syrdocs/syrus4/getting-started/)
 
-[Thingsboard 注册](https://demo.thingsboard.io/signup)
+[Thingsboard 注册](https://gridlinks.codingas.com/signup)
 
 ## 为 Thingsboard 配置设备
 

@@ -218,7 +218,7 @@ DHT-22 GND (-) | VCC-
 - WIFI_AP - 您的接入点的名称
 - WIFI_PASSWORD - 接入点密码
 - TOKEN - GridLinks 配置步骤中的 **$ACCESS_TOKEN**。
-- thingsboardServer - 在您的 wifi 网络中可访问的 GridLinks HOST/IP 地址。如果您使用的是 [实时演示](https://demo.thingsboard.io/) 服务器，请指定“demo.thingsboard.io”。
+- thingsboardServer - 在您的 wifi 网络中可访问的 GridLinks HOST/IP 地址。如果您使用的是 [实时演示](https://gridlinks.codingas.com/) 服务器，请指定“demo.thingsboard.io”。
 
 {% capture tabspec %}arduino-sketch
 esp8266-dht-mqtt,esp8266-dht-mqtt.ino,c,resources/esp8266-dht-mqtt.ino,/docs/samples/esp8266/resources/esp8266-dht-mqtt.ino{% endcapture %}

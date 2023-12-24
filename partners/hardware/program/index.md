@@ -94,7 +94,7 @@ description:
                     <td><img src="/images/pe/checked.svg" alt="checked"></td>
                 </tr>      
                 <tr>
-                    <th>ThingsBoard 培训</th>
+                    <th>GridLinks 培训</th>
                     <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
                     <td><img src="/images/pe/checked.svg" alt="checked"></td>
                     <td><img src="/images/pe/checked.svg" alt="checked"></td>
@@ -153,7 +153,7 @@ description:
         <div class="item" data-tag="h4" data-title="谁有资格成为硬件合作伙伴？">
             <div class="container">
                 <p>
-                    我们欢迎硬件制造商和硬件经销商公司成为 GridLinks 合作伙伴。
+                    我们欢迎硬件制造商和硬件分销商公司成为 GridLinks 合作伙伴。
                 </p>
             </div>
         </div>

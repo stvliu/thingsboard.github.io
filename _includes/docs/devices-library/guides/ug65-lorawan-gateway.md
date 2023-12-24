@@ -3,7 +3,7 @@
 {% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}
 {% assign thingsboardHost = 'https://thingsboard.cloud' %}
 {% else %}
-{% assign thingsboardHost = 'https://demo.thingsboard.io' %}
+{% assign thingsboardHost = 'https://gridlinks.codingas.com' %}
 {% endif %}
 {% assign prerequisites = '
 - <a href="' | append: deviceVendorLink | append: '" target="_blank">' | append: deviceName | append: '</a>

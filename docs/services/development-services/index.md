@@ -1,8 +1,8 @@
 ---
 layout: development-services
-title: ᐉ Professional IoT Solution Development Services
+title: ᐉ 专业物联网解决方案开发服务
 notitle: "true"
-description: "Discover GridLinks's premier IoT services:  ✔ From widgets to complex systems, ✔ including dashboards, ✔ device connections, and tailored ✔ system integration."
+description: "探索GridLinks一流的物联网服务：✔ 从窗口小部件到复杂系统，✔ 包括仪表板，✔ 设备连接，以及定制的✔ 系统集成。"
 
 ---
 <section class="hero light-text">
@@ -10,8 +10,8 @@ description: "Discover GridLinks's premier IoT services:  ✔ From widgets to co
 <section id="first-screen">
     <div class="hero-container">
         <div id="hero-content">
-            <h1 id="cdu-title-h1" class="cdu-title">Development services</h1>
-            <h2 class="cdu-sub-title">We will create your custom IoT solution that perfectly suits your business</h2>
+            <h1 id="cdu-title-h1" class="cdu-title">开发服务</h1>
+            <h2 class="cdu-sub-title">我们将为您创建定制的物联网解决方案，完美地满足您的业务需求。</h2>
         </div>
         <div class="hero-image">
             <div class="image-wrapper-icon-laptop">
@@ -115,7 +115,7 @@ description: "Discover GridLinks's premier IoT services:  ✔ From widgets to co
         <div class="mvp">
             <div class="left-block">
                 <div class="section-title">
-                    最小值产品
+                    最小价值产品
                 </div>
                 <ul class="section-list">
                     <li>多层仪表板</li>
@@ -214,9 +214,9 @@ description: "Discover GridLinks's premier IoT services:  ✔ From widgets to co
                     <div class="logo">
                         <img src="/images/development-services/logo-asg-tech.svg" alt="logo asg tech"/>
                     </div>
-                    <div class="review-header">与 GridLinks 部门合作的非凡体验</div>
+                    <div class="review-header">与 GridLinks 团队合作的非凡体验</div>
                     <div class="review-body">
-                        <h6>我们很高兴分享我们与 GridLinks 开发部门合作的非凡体验，以进行定制部件开发。作为一家专门提供创新物联网解决方案的公司，与  GridLinks专业版 平台合作，我们寻求他们的专业知识来缩短我们的上市时间。从最初的估算到最终交付，GridLinks 的开发团队展示了卓越的专业精神和技术能力。</h6>
+                        <h6>我们很高兴分享我们与 GridLinks 开发团队合作的非凡体验，以进行定制小部件开发。作为一家专门提供创新物联网解决方案的公司，与 GridLinks平台 合作，我们寻求他们的专业知识来缩短我们的上市时间。从最初的估算到最终交付，GridLinks 的开发团队展示了卓越的专业精神和技术能力。</h6>
                     </div>
                     <a href="/docs/services/development-services/customers-full-reviews/#review-asg" class="full-review-link">阅读完整反馈</a>
                 </div>
@@ -226,7 +226,7 @@ description: "Discover GridLinks's premier IoT services:  ✔ From widgets to co
                     </div>
                     <div class="review-header">在项目中非常专业</div>
                     <div class="review-body">
-                        <h6>Thingsboard 团队在项目中非常专业。他们可以帮助您设计和实施您的想法，并非常注重细节。他们确保清楚地了解您的挑战，以便他们能够为您提供最佳方案，以便快速启动并运行您的项目。</h6>
+                        <h6>GridLinks 团队在项目中非常专业。他们可以帮助您设计和实施您的想法，并非常注重细节。他们确保清楚地了解您的挑战，以便他们能够为您提供最佳方案，以便快速启动并运行您的项目。</h6>
                     </div>
                     <a href="/docs/services/development-services/customers-full-reviews/#review-kalitec" class="full-review-link">阅读完整反馈</a>
                 </div>
@@ -246,7 +246,7 @@ description: "Discover GridLinks's premier IoT services:  ✔ From widgets to co
                     </div>
                     <div class="review-header">专业知识、对细节的关注和客户满意度</div>
                     <div class="review-body">
-                        <h6>我们发现 Thingsboard 套件是向客户展示我们的工业物联网数据的最佳工具。我们的分布式硬件解决方案旨在监控电子制造中的静电放电 (ESD) 条件。TB 软件堆栈的功能非常强大，文档使您可以轻松启动并运行。</h6>
+                        <h6>我们发现 GriLinks 套件是向客户展示我们的工业物联网数据的最佳工具。我们的分布式硬件解决方案旨在监控电子制造中的静电放电 (ESD) 条件。TB 软件堆栈的功能非常强大，文档使您可以轻松启动并运行。</h6>
                     </div>
                     <a href="/docs/services/development-services/customers-full-reviews/#review-ionatech" class="full-review-link">阅读完整反馈</a>
                 </div>

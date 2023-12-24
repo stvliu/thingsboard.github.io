@@ -1144,7 +1144,7 @@ selfManagedPlan:
         <div class="item" data-tag="h4" data-item-id="thingsboard-edge-compatibility" data-title="What ThingsBoard Edge compatibility means?">
             <div class="container">
                 <p>
-                    ThingsBoard Edge Community Edition is able to connect only to ThingsBoard Community Edition server.
+                    ThingsBoard Edge Community Edition is able to connect only to GridLinks社区版 server.
                     ThingsBoard Edge Professional Edition is able to connect only to  GridLinks专业版 server (it can be <a href="https://gridlinks.codingas.com" target="blank">GridLinks Cloud</a> or on-premise instances).
                     ThingsBoard Edge Community Edition <b>can not</b> be connected to  GridLinks专业版 and vise-verse.
                 </p>    

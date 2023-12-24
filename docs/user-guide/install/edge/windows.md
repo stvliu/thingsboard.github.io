@@ -28,7 +28,7 @@ description: 在 Windows 上安装 GridLinks Edge
 
 {% include templates/edge/install/windows-db-postgresql.md %}
 
-### 步骤 3. ThingsBoard Edge 服务安装
+### 步骤 3. GridLinks Edge 服务安装
 
 下载并解压软件包。
 
@@ -47,7 +47,7 @@ https://github.com/thingsboard/thingsboard-edge/releases/download/{{ site.releas
 
 {% include templates/edge/install/run-edge-install-windows.md %} 
 
-### 步骤 6. 启动 ThingsBoard Edge 服务
+### 步骤 6. 启动 GridLinks Edge 服务
 
 {% include templates/edge/install/windows-start-service.md %}
 

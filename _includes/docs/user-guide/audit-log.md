@@ -13,7 +13,7 @@ GridLinks 提供跟踪用户操作以保持审计日志的功能。
 
 ### REST API
 
-可以通过 [REST API](https://demo.thingsboard.io/swagger-ui.html#/audit-log-controller) 获取审计日志。
+可以通过 [REST API](https://gridlinks.codingas.com/swagger-ui.html#/audit-log-controller) 获取审计日志。
 有几个 API 调用允许获取与特定用户、实体、客户相关联的实体或使用页面链接获取所有记录。
 
 {% unless docsPrefix == "paas/" %}

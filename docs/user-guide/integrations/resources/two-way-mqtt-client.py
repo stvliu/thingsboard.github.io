@@ -1,10 +1,10 @@
 #
-# ThingsBoard, Inc. ("COMPANY") CONFIDENTIAL
+# GridLinks, Inc. ("COMPANY") CONFIDENTIAL
 #
-# Copyright 2016-2019 ThingsBoard, Inc. All Rights Reserved.
+# Copyright 2016-2019 GridLinks, Inc. All Rights Reserved.
 #
 # NOTICE: All information contained herein is, and remains
-# the property of ThingsBoard, Inc. and its suppliers,
+# the property of GridLinks, Inc. and its suppliers,
 # if any.  The intellectual and technical concepts contained
 # herein are proprietary to ThingsBoard, Inc.
 # and its suppliers and may be covered by U.S. and Foreign Patents,

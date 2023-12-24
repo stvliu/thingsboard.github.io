@@ -3,7 +3,7 @@
 {% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}
 {% assign thingsboardHost = 'https://thingsboard.cloud' %}
 {% else %}
-{% assign thingsboardHost = 'https://demo.thingsboard.io' %}
+{% assign thingsboardHost = 'https://gridlinks.codingas.com' %}
 {% endif %}
 {% assign officialManualLink = "https://resource.milesight-iot.com/milesight/document/ws202-user-guide-en.pdf" %}
 {% assign prerequisites = '

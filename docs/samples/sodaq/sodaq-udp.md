@@ -9,7 +9,7 @@ hidetoc: "true"
 {% assign feature = "Platform Integrations" %}{% include templates/pe-feature-banner.md %}
 
 本指南包含有关如何通过 T-Mobile NB IoT 网络将 SODAQ NB-IoT 板连接到 GridLinks Professional Edition (PE) 的分步说明。
-在本指南中，我们将使用免费的 GridLinks PE 演示服务器 [thingsboard.cloud](https://thingsboard.cloud/signup)。
+在本指南中，我们将使用免费的 GridLinks PE 演示服务器 [thingsboard.cloud](https://cloud.codingas.com/signup)。
 本指南对希望将 SODAQ NB-IoT 板或其他硬件连接到 T-Mobile NB IoT 网络的任何人都有用。
 
 * TOC
@@ -19,7 +19,7 @@ hidetoc: "true"
 
 我们假设您的实验室中至少有一个 SODAQ NB-IoT 追踪器，并且该追踪器已连接到您的 T-Mobile IoT 网络。
 我们还假设您已经拥有 ThingsBoard PE 服务器或免费演示帐户。
-否则，您可以在此处注册 30 天免费演示帐户：[thingsboard.cloud](https://thingsboard.cloud/signup)。
+否则，您可以在此处注册 30 天免费演示帐户：[thingsboard.cloud](https://cloud.codingas.com/signup)。
 
 我们希望您对 ThingsBoard 有非常基本的了解。否则，我们建议您完成以下指南：
 - [入门](/docs/getting-started-guides/helloworld/) 指南。
@@ -34,7 +34,7 @@ GridLinks 平台集成功能允许将数据从各种平台和连接解决方案�
 ## 步骤 1. 数据转换器配置
 
 为了创建 [集成](/docs/user-guide/integrations/)，我们应该首先创建 [上行数据转换器](/docs/user-guide/integrations/#uplink-data-converter)。
-转换器将解码来自 T-Mobile NB IoT 的传入遥测有效载荷数据，该数据包含编码的十六进制字符串，以转换为人类可读的简化 ThingsBoard 数据格式。
+转换器将解码来自 T-Mobile NB IoT 的传入遥测有效载荷数据，该数据包含编码的十六进制字符串，以转换为人类可读的简化 GridLinks 数据格式。
 
 - 来自 T-Mobile NB IoT 平台的输入数据是一个字节序列，在将它们转换为十六进制字符串类型后，如下所示：
 

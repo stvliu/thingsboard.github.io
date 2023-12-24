@@ -12,7 +12,7 @@ description: GridLinks IoT 平台实时演示服务器
 
 实时演示是一个单节点服务器，用于简化 GridLinks 平台的入门过程。
 
-您可以使用以下 URL 访问演示服务器 [**demo.thingsboard.io**](https://demo.thingsboard.io/signup)
+您可以使用以下 URL 访问演示服务器 [**demo.thingsboard.io**](https://gridlinks.codingas.com/signup)
 
 您需要填写注册表格，然后您将收到您专用租户的租户管理员帐户。
 

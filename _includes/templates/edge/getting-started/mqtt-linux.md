@@ -21,7 +21,7 @@ mosquitto_pub -d -q 1 -h "$HOST_NAME" -p "$MQTT_PORT" -t "v1/devices/me/telemetr
 {: .copy-code}
 
 
-例如，$HOST_NAME 引用本地 ThingsBoard Edge 安装，MQTT 端口为 **1883**，访问令牌为 **ABC123**：
+例如，$HOST_NAME 引用本地 GridLinks Edge 安装，MQTT 端口为 **1883**，访问令牌为 **ABC123**：
 
 ```bash
 mosquitto_pub -d -q 1 -h "localhost" -p "1883" -t "v1/devices/me/telemetry" -u "ABC123" -m {"temperature":25}

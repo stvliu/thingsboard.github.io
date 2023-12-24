@@ -149,24 +149,24 @@ step5Edge:
 {% assign docsPrefix = "pe/edge/" %}
 {% include templates/edge/getting-started/prerequisites.md %}
 
-## 第 1 步。配置设备
+## 第 1 步 配置设备
 
 {% assign cloudDocsPrefix = "pe/" %}
 {% include templates/edge/getting-started/step-1.md %}
 
-## 第 2 步。从 GridLinks Edge 将设备配置到 GridLinks Professional Edition 服务器
+## 第 2 步 从 GridLinks Edge 将设备配置到 GridLinks Professional Edition 服务器
 
 {% include templates/edge/getting-started/step-2.md %}
 
-## 第 3 步。将数据从 GridLinks Edge 推送到 GridLinks Professional Edition 服务器
+## 第 3 步 将数据从 GridLinks Edge 推送到 GridLinks Professional Edition 服务器
 
 {% include templates/edge/getting-started/step-3.md %}
 
-## 第 4 步。创建并配置仪表板
+## 第 4 步 创建并配置仪表板
 
 {% include templates/edge/getting-started/step-4.md %}
 
-## 第 5 步。将仪表板配置到 GridLinks Edge
+## 第 5 步 将仪表板配置到 GridLinks Edge
 
 {% include templates/edge/getting-started/step-5.md %}
 

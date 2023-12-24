@@ -10,5 +10,5 @@ CurrentVersion 110
 找到 Java 11！
 正在安装 Thingsboard Edge...
 ...
-ThingsBoard Edge 安装成功！
+GridLinks Edge 安装成功！
 ```

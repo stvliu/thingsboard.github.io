@@ -32,7 +32,7 @@ curl -v -X POST -d "{\"temperature\": 25}" $THINGSBOARD_HOST_NAME_AND_PORT/api/v
 例如，$THINGSBOARD_HOST_NAME_AND_PORT 引用实时演示服务器，$ACCESS_TOKEN 为 ABC123：
 
 ```bash
-curl -v -X POST -d "{\"temperature\": 25}" https://demo.thingsboard.io/api/v1/ABC123/telemetry --header "Content-Type:application/json"
+curl -v -X POST -d "{\"temperature\": 25}" https://gridlinks.codingas.com/api/v1/ABC123/telemetry --header "Content-Type:application/json"
 ```
 {: .copy-code}
 

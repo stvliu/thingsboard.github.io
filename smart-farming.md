@@ -43,7 +43,7 @@ GridLinks 平台大幅缩短了上市时间，并减少了创建智能农业解�
 </div>
 
 <div class="center" style="margin-bottom: 64px;">
-    <a target="_blank" href="https://demo.thingsboard.io/dashboard/1f9828d0-058e-11e7-87f7-bb0136cc33d0?publicId=963ab470-34c9-11e7-a7ce-bb0136cc33d0" class="button">查看实时演示</a>
+    <a target="_blank" href="https://gridlinks.codingas.com/dashboard/1f9828d0-058e-11e7-87f7-bb0136cc33d0?publicId=963ab470-34c9-11e7-a7ce-bb0136cc33d0" class="button">查看实时演示</a>
 </div>
 
 实时仪表板显示使用 GridLinks MQTT API 收集的温度、湿度和超声波传感器的数据。

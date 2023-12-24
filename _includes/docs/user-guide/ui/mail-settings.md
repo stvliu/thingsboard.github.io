@@ -142,7 +142,7 @@ SendGrid 配置非常简单直接。首先，您需要创建一个 [SendGrid](ht
 {% include images-gallery.html imageCollection="create-gmail-credentials" showListImageTitles="true" %}
 
 <br>
-**ㅤ4. 完成 ThingsBoard 设置设置**
+**ㅤ4. 完成 GridLinks 设置设置**
 
 返回 Thingsboard 门户，并将上一步中的 **客户端 ID** 和 **客户端密钥** 粘贴到相应的字段中。单击“保存”。
 
@@ -210,7 +210,7 @@ SendGrid 配置非常简单直接。首先，您需要创建一个 [SendGrid](ht
 {% include images-gallery.html imageCollection="add-api-permissions" showListImageTitles="true" %}
 
 <br>
-**ㅤ5. 完成 ThingsBoard 设置设置**
+**ㅤ5. 完成 GridLinks 设置设置**
 
 返回 ThingsBoard 门户，并将上一步中的 **客户端 ID**、**客户端密钥** 和 **目录（租户）ID** 粘贴到相应的字段中。单击“保存”。
 

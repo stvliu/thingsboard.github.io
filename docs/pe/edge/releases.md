@@ -20,7 +20,7 @@ description: GridLinks Edge 版本说明
 
 **热修复**版本，修复顺序 ID 偏移量的错误更新：
 
-* [#57](https://github.com/thingsboard/thingsboard-edge/issues/57) ThingsBoard Edge PE 与云断开连接；
+* [#57](https://github.com/thingsboard/thingsboard-edge/issues/57) GridLinks Edge PE 与云断开连接；
 * [#60](https://github.com/thingsboard/thingsboard-edge/issues/60) 边缘错误日志；
 
 ## v3.5.1（2023 年 6 月 1 日）{#v351}

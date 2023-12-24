@@ -13,7 +13,7 @@
 自定义集成**仅从主 GridLinks 实例远程执行**。它允许创建具有自定义配置的集成，该集成将使用任何传输协议与您的设备进行通信。
 
 本指南包含有关如何创建和启动 GridLinks 自定义集成的逐步说明。
-例如，我们将启动使用 TCP 传输协议从设备流式传输数据并将转换后的数据推送到 [thingsboard.cloud](https://thingsboard.cloud/signup) 的自定义集成。
+例如，我们将启动使用 TCP 传输协议从设备流式传输数据并将转换后的数据推送到 [thingsboard.cloud](https://cloud.codingas.com/signup) 的自定义集成。
 
 在开始之前，您可以在 [此处](https://github.com/thingsboard/remote-integration-example) 找到本指南中将使用的自定义集成示例的完整代码。
 

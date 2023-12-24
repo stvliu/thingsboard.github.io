@@ -1,13 +1,13 @@
 {% if docsPrefix == 'pe/' %}
-{% assign platformName = 'ThingsBoard PE' %}
+{% assign platformName = 'GridLinks PE' %}
 {% else %}
-{% assign platformName = 'ThingsBoard' %}
+{% assign platformName = 'GridLinks' %}
 {% endif %}
 
-{% if docsPrefix != 'pe/' %}
+<!-- {% if docsPrefix != 'pe/' %}
 <h3>对专业版感兴趣？在此处探索 GridLinks PE Edge 文档 <a style="pointer-events: all;" href="/docs/pe/edge/">此处</a>。</h3>
 <br>
-{% endif %}
+{% endif %} -->
 
 {{platformName}} **Edge** 使您能够利用边缘计算来分布数据处理和分析。
 

@@ -51,7 +51,7 @@ RTU-X 可以通过 [RTU-X 配置界面](http://wiki.nettra.tech/en/downloads)轻
 
 此步骤包含将设备连接到 GridLinks 所需的说明。
 
-以 [实时演示](https://demo.thingsboard.io/signup)的形式注册 GridLinks Web UI。有关如何获取帐户的更多详细信息，请参阅 [实时演示](https://thingsboard.io/docs/user-guide/install/installation-options/?ceInstallType=liveDemo)页面。
+以 [实时演示](https://gridlinks.codingas.com/signup)的形式注册 GridLinks Web UI。有关如何获取帐户的更多详细信息，请参阅 [实时演示](https://thingsboard.io/docs/user-guide/install/installation-options/?ceInstallType=liveDemo)页面。
 
 ### 设备
 

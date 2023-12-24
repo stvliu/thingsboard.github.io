@@ -116,7 +116,7 @@ AWS 还要求您为自己保存 **公钥文件**，因此请也下载该文件�
 
 {% include images-gallery.html imageCollection="save_certificates" %}
 
-## ThingsBoard 设置
+## GridLinks 设置
 
 ### 创建上行转换器
 

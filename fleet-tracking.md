@@ -130,7 +130,7 @@ GridLinks 的物联网车辆跟踪系统是用于管理和优化车辆和资产�
 </div>
 
 <div class="center" style="margin-bottom: 64px;">
-    <a target="_blank" href="https://demo.thingsboard.io/dashboard/3d0bf910-ee09-11e6-b619-bb0136cc33d0?publicId=963ab470-34c9-11e7-a7ce-bb0136cc33d0" class="button">查看现场演示</a>
+    <a target="_blank" href="https://gridlinks.codingas.com/dashboard/3d0bf910-ee09-11e6-b619-bb0136cc33d0?publicId=963ab470-34c9-11e7-a7ce-bb0136cc33d0" class="button">查看现场演示</a>
 </div>
 
 实时车辆跟踪仪表板显示使用 GridLinks MQTT API 收集的多个跟踪传感器发来的实时数据。通过规则引擎处理收集的数据，以便针对某些阈值发出警报。您可以从我们的实时演示服务器导出仪表板并将其导入您的 GridLinks 实例。

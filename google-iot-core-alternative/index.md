@@ -24,7 +24,7 @@ notitle: "true"
                         <p>Google Cloud 于 2023 年 8 月关闭了 IoT Core 服务。您可能想知道在哪里以及如何迁移。
                            GridLinks 是 Google IoT Cloud 的绝佳替代方案。
                            ThingsBoard 于 2016 年作为开源项目推出，现已发展成为一个成熟的平台，在全球拥有 1000 多个客户。</p>
-                        <p>ThingsBoard, Inc. 提供围绕该平台的托管服务、培训、支持和软件开发服务。
+                        <p>GridLinks, Inc. 提供围绕该平台的托管服务、培训、支持和软件开发服务。
                            我们还可以在您现有的 Google Cloud 基础架构中托管和管理一个私有平台实例。 </p>
                     </div>
                 </div>

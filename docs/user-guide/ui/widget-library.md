@@ -105,7 +105,7 @@ wl-digital-bundle:
 wl-edge-widgets-bundle:
     0:
         image: /images/user-guide/ui/widgets/widget-library/wl-edge-bundle-ce.png
-        title: '概述与指定 ThingsBoard Edge 实例相关的实体。'
+        title: '概述与指定 GridLinks Edge 实例相关的实体。'
 
 wl-entity-admin-bundle:
     0:

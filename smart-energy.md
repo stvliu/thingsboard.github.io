@@ -95,7 +95,7 @@ GridLinks 提供各种智能能源仪表板示例，提供实时数据可视化�
 </div>
 
 <div class="center" style="margin-bottom: 64px;">
-    <a target="_blank" href="https://demo.thingsboard.io/dashboard/e8e409c0-f2b5-11e6-a6ee-bb0136cc33d0?publicId=963ab470-34c9-11e7-a7ce-bb0136cc33d0" class="button">查看实时演示</a>
+    <a target="_blank" href="https://gridlinks.codingas.com/dashboard/e8e409c0-f2b5-11e6-a6ee-bb0136cc33d0?publicId=963ab470-34c9-11e7-a7ce-bb0136cc33d0" class="button">查看实时演示</a>
 </div>
 
 实时仪表板显示使用 GridLinks MQTT API 收集的来自多个智能电表的数据。

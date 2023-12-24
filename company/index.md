@@ -1,6 +1,6 @@
 ---
 layout: common
-title: 我们的公司
+title: 关于我们
 notitle: "true"
 description: 
 
@@ -9,11 +9,11 @@ description:
 <h1 class="aboutus-title">关于我们</h1> 
 
 <span class="who-we-are">我们是谁？</span>
-<p class="company-info">ThingsBoard, Inc. 成立于 2016 年。我们在 GridLinks™ 的支持下开发物联网软件产品。
-   我们的旗舰物联网平台是同类产品中最受欢迎的开源项目。GridLinks 的免费软件和授权软件被广泛用于物联网
+<p class="company-info">GridLinks, Inc. 成立于 2016 年。我们在 GridLinks™ 的支持下开发物联网软件产品。
+   我们的旗舰物联网平台是同类产品中最受欢迎的创新项目。GridLinks 的社区版软件和授权软件被广泛用于物联网
    爱好者，他们在车库中设计和制作智能解决方案，以及对设备管理、数据处理、安全、隐私、分析等有广泛要求的工业客户。<br><br>
-   ThingsBoard, Inc. 在很短的时间内从拥有 2 名员工的初创公司发展成为拥有数百名被许可人和数千名社区用户的知名物联网支持者。
-   目前，我们的研发办公室位于乌克兰基辅。然而，公司发展迅速，未来将出现新的办事处。与我们保持联系。
+   GridLinks, Inc. 在很短的时间内从拥有 2 名员工的初创公司发展成为拥有数百名被许可人和数千名社区用户的知名物联网支持者。
+   目前，我们的研发办公室位于中国广东省深圳市。然而，公司发展迅速，未来将出现新的办事处。与我们保持联系。
 </p>
 <div class="our-mission">
     <div class="our-mission-logos">
@@ -40,12 +40,12 @@ description:
 </div>
 <div class="company-contacts">
     <div class="company-contact">
-        <div class="phone">+1 212 334 4096</div>
+        <div class="phone">+86 13813800000</div>
     </div>
     <div class="company-contact">
-        <div class="address">美国纽约州纽约市杜安街 110 号，1C 套房，邮编 10007</div>
+        <div class="address">中国广东省深圳市福田区科技大厦10楼，邮编 518000</div>
     </div>
     <div class="company-contact">
-        <div class="mail"><a href="mailto:info@thingsboard.io">info@thingsboard.io</a></div>
+        <div class="mail"><a href="mailto:info@thingsboard.io">info@codingas.com</a></div>
     </div>
 </div>

@@ -41,7 +41,7 @@ FDQ-99900 MI-8 是一款紧凑型 24 位数据采集系统 (DAQ)，旨在测量�
 
 ### 创建 GridLinks 设备
 
-在浏览器中打开 [GridLinks Cloud 服务器](https://thingsboard.cloud/) 并登录。
+在浏览器中打开 [GridLinks Cloud 服务器](https://cloud.codingas.com/) 并登录。
 
 转到“**设备组**”选项卡 -> “**全部**”，然后单击“加号”按钮以添加新设备。
 

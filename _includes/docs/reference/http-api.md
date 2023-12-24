@@ -48,7 +48,7 @@ http(s)://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/telemetry
 如果您使用实时演示服务器，则命令如下所示：
 
 ```shell
-https://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/telemetry
+https://gridlinks.codingas.com/api/v1/$ACCESS_TOKEN/telemetry
 ```
 {: .copy-code}
 
@@ -120,7 +120,7 @@ http(s)://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/attributes
 如果您使用实时演示服务器，则命令如下所示：
 
 ```shell
-https://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/attributes
+https://gridlinks.codingas.com/api/v1/$ACCESS_TOKEN/attributes
 ```
 {: .copy-code}
 
@@ -159,7 +159,7 @@ http(s)://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/attributes?clientKeys=attr
 如果您使用实时演示服务器，则命令如下所示：
 
 ```shell
-https://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/attributes?clientKeys=attribute1,attribute2&sharedKeys=shared1,shared2
+https://gridlinks.codingas.com/api/v1/$ACCESS_TOKEN/attributes?clientKeys=attribute1,attribute2&sharedKeys=shared1,shared2
 ```
 {: .copy-code}
 
@@ -206,7 +206,7 @@ http(s)://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/attributes/updates
 如果您使用实时演示服务器，则命令如下所示：
 
 ```shell
-https://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/attributes/updates
+https://gridlinks.codingas.com/api/v1/$ACCESS_TOKEN/attributes/updates
 ```
 {: .copy-code}
 
@@ -253,7 +253,7 @@ http(s)://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/rpc
 如果您使用实时演示服务器，则命令如下所示：
 
 ```shell
-https://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/rpc
+https://gridlinks.codingas.com/api/v1/$ACCESS_TOKEN/rpc
 ```
 {: .copy-code}
 
@@ -302,7 +302,7 @@ http(s)://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/rpc/{$id}
 如果您使用实时演示服务器，则命令如下所示：
 
 ```shell
-https://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/rpc/{$id}
+https://gridlinks.codingas.com/api/v1/$ACCESS_TOKEN/rpc/{$id}
 ```
 {: .copy-code}
 
@@ -357,7 +357,7 @@ http(s)://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/rpc
 如果您使用实时演示服务器，则命令如下所示：
 
 ```shell
-https://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/rpc
+https://gridlinks.codingas.com/api/v1/$ACCESS_TOKEN/rpc
 ```
 {: .copy-code}
 
@@ -418,7 +418,7 @@ http(s)://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/claim
 如果您使用实时演示服务器，则命令如下所示：
 
 ```shell
-https://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/claim
+https://gridlinks.codingas.com/api/v1/$ACCESS_TOKEN/claim
 ```
 {: .copy-code}
 
@@ -466,7 +466,7 @@ http(s)://$THINGSBOARD_HOST_NAME/api/v1/provision
 如果您使用实时演示服务器，则命令如下所示：
 
 ```shell
-https://demo.thingsboard.io/api/v1/provision
+https://gridlinks.codingas.com/api/v1/provision
 ```
 {: .copy-code}
 
@@ -510,7 +510,7 @@ http(s)://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/firmware?title=$TITLE&vers
 如果您使用实时演示服务器，则命令如下所示：
 
 ```shell
-https://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/firmware?title=$TITLE&version=$VERSION
+https://gridlinks.codingas.com/api/v1/$ACCESS_TOKEN/firmware?title=$TITLE&version=$VERSION
 ```
 {: .copy-code}
 

@@ -32,7 +32,7 @@ description: 根据 IoT 传感器读数和可配置阈值触发电子邮件警�
 
 #### 步骤 1. 创建设备
 
-导航到 [设备](https://demo.thingsboard.io/devices) 页面，然后单击红色大“+”按钮。填写设备名称和说明，然后单击“添加”按钮。
+导航到 [设备](https://gridlinks.codingas.com/devices) 页面，然后单击红色大“+”按钮。填写设备名称和说明，然后单击“添加”按钮。
 
 ![image](/images/samples/alarms/add-device.png)
 
@@ -51,7 +51,7 @@ description: 根据 IoT 传感器读数和可配置阈值触发电子邮件警�
 
 #### 步骤 3. 创建“服务器机房监控”规则
 
-导航到 [规则](https://demo.thingsboard.io/rules) 页面，然后单击红色大“+”按钮。首先填写规则名称和说明。
+导航到 [规则](https://gridlinks.codingas.com/rules) 页面，然后单击红色大“+”按钮。首先填写规则名称和说明。
 
 ![image](/images/samples/alarms/add-rule.png)
 

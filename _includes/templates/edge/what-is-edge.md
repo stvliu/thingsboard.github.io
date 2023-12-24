@@ -1,43 +1,43 @@
 {% if docsPrefix == 'pe/edge/' %}
-{% assign appPrefix = "ThingsBoard PE" %}
+{% assign appPrefix = "GridLinks专业版" %}
 {% assign cloudDocsPrefix = "pe/" %}
 {% else %}
-{% assign appPrefix = "ThingsBoard CE" %}
+{% assign appPrefix = "GridLinks社区版" %}
 {% endif %}
 
-{% if docsPrefix != 'pe/' %}
-<h3>对专业版感兴趣？在此处探索 ThingsBoard PE Edge 文档 <a style="pointer-events: all;" href="/docs/pe/edge/">此处</a>。</h3>
-{% endif %}
+<!-- {% if docsPrefix != 'pe/' %}
+<h3>对专业版感兴趣？在此处探索 GridLinks PE Edge 文档 <a style="pointer-events: all;" href="/docs/pe/edge/">此处</a>。</h3>
+{% endif %} -->
 
 {% capture tb-open-source %}
-GridLinks 是一个开源物联网平台，提供了一套强大的功能，用于数据收集、处理、可视化和设备管理。
+GridLinks 是一个创新物联网平台，提供了一套强大的功能，用于数据收集、处理、可视化和设备管理。
 如果您是新平台用户，我们建议在继续使用 GridLinks Edge 之前阅读 [**什么是 GridLinks？**](/docs/getting-started-guides/what-is-thingsboard/)。
 {% endcapture %}
 {% include templates/info-banner.md content=tb-open-source %}
 
-**ThingsBoard Edge** 是 GridLinks 的一款强大的软件产品，旨在利用边缘计算。
+**GridLinks Edge** 是 GridLinks 的一款强大的软件产品，旨在利用边缘计算。
 
-{% if docsPrefix == 'pe/edge/' %}
-借助 ThingsBoard Edge，数据分析和管理被引入数据生成点 - 边缘。它与 GridLinks PE 无缝同步，无论它是 [云](https://thingsboard.cloud) 还是本地安装，都能满足您的业务需求。
+<!-- {% if docsPrefix == 'pe/edge/' %}
+借助 GridLinks Edge，数据分析和管理被引入数据生成点 - 边缘。它与 GridLinks PE 无缝同步，无论它是 [云](https://thingsboard.cloud) 还是本地安装，都能满足您的业务需求。
 
-ThingsBoard Edge PE 适用于 **单个** 租户和/或 **多个** 客户。
-因此，您无法在多个租户之间共享 ThingsBoard Edge，并且来自不同租户的设备无法连接到单个 ThingsBoard Edge。
+GridLinks Edge PE 适用于 **单个** 租户和/或 **多个** 客户。
+因此，您无法在多个租户之间共享 GridLinks Edge，并且来自不同租户的设备无法连接到单个 GridLinks Edge。
 在这种情况下，需要为每个租户配置单独的 GridLinks Edge 实例。
 {% else %}
-借助 ThingsBoard Edge，数据分析和管理被引入边缘，数据生成发生在边缘。它与 GridLinks CE 轻松同步，无论它是 [演示](https://demo.thingsboard.io/) 还是本地安装，都能满足您的业务需求。
+借助 GridLinks Edge，数据分析和管理被引入边缘，数据生成发生在边缘。它与 GridLinks CE 轻松同步，无论它是 [演示](https://gridlinks.codingas.com/) 还是本地安装，都能满足您的业务需求。
 
-ThingsBoard Edge CE 适用于 **单个** 租户和/或 **单个** 客户。在多个租户或客户之间共享 GridLinks Edge 是不可行的，并且来自不同租户或客户的设备无法连接到单个 ThingsBoard Edge。
-在这种情况下，需要为每个租户或客户配置多个 ThingsBoard Edge 实例。
-{% endif %}
+GridLinks Edge CE 适用于 **单个** 租户和/或 **单个** 客户。在多个租户或客户之间共享 GridLinks Edge 是不可行的，并且来自不同租户或客户的设备无法连接到单个 GridLinks Edge。
+在这种情况下，需要为每个租户或客户配置多个 GridLinks Edge 实例。
+{% endif %} -->
 
 <br>
 
 ![image](/images/edge/overview/edge_overview.svg)
 
-#### ThingsBoard Edge 的案例
+#### GridLinks Edge 的案例
 
 - **自动驾驶汽车**
-  边缘计算允许以最小的延迟收集、处理和响应道路事件。现代自动驾驶汽车会生成大量数据 - 每天从 5 TB 到 20 TB 不等。4G 或 5G 网络可能无法处理如此高的吞吐量，但 ThingsBoard Edge 可以过滤这些数据，在本地处理大部分数据，并且仅将其中一部分数据推送到云端。
+  边缘计算允许以最小的延迟收集、处理和响应道路事件。现代自动驾驶汽车会生成大量数据 - 每天从 5 TB 到 20 TB 不等。4G 或 5G 网络可能无法处理如此高的吞吐量，但 GridLinks Edge 可以过滤这些数据，在本地处理大部分数据，并且仅将其中一部分数据推送到云端。
 
 - **智能农业**
   即使现场的云连接目前较弱，也能快速响应筒仓曝气系统故障。
@@ -54,9 +54,9 @@ ThingsBoard Edge CE 适用于 **单个** 租户和/或 **单个** 客户。在�
 - **预测性维护**
   在更靠近设备的位置处理和存储来自边缘设备的数据，可以在本地分析大量数据。这允许在发生故障之前检测生产线中的变化，并且根据您的业务需求，仅将生产线的平均读数发送到云端。
 
-#### ThingsBoard Edge 的功能
+#### GridLinks Edge 的功能
 
-使用 **ThingsBoard Edge**，您可以获得：
+使用 **GridLinks Edge**，您可以获得：
 
 - **本地部署和存储**：在不连接到云端的情况下处理和存储来自本地（边缘）设备的数据。一旦连接恢复，即可将更新推送到云端。
 
@@ -76,9 +76,9 @@ ThingsBoard Edge CE 适用于 **单个** 租户和/或 **单个** 客户。在�
 
 ![image](/images/edge/overview/update_dashboard.svg)
 
-ThingsBoard Edge 继承了 {{appPrefix}} 的功能，为连接、管理和处理来自您设备的数据提供了相同的体验。
+GridLinks Edge 继承了 {{appPrefix}} 的功能，为连接、管理和处理来自您设备的数据提供了相同的体验。
 
-它支持以下 **ThingsBoard** 功能：
+它支持以下 **GridLinks** 功能：
 * [**属性**](/docs/{{cloudDocsPrefix}}user-guide/attributes/) - 为您的实体分配和管理自定义属性。
 * [**遥测**](/docs/{{cloudDocsPrefix}}user-guide/telemetry/) - 用于从您的设备收集时序数据的 API。
 * [**实体和关系**](/docs/{{cloudDocsPrefix}}user-guide/entities-and-relations/) - 建模物理世界对象（例如，设备和资产）以及它们之间的关系。
@@ -87,20 +87,20 @@ ThingsBoard Edge 继承了 {{appPrefix}} 的功能，为连接、管理和处理
 * [**RPC**](/docs/{{cloudDocsPrefix}}user-guide/rpc/) - 从边缘和云端向设备发送远程过程调用 (RPC)，反之亦然。
 * [**审计日志**](/docs/{{cloudDocsPrefix}}user-guide/audit-log/) - 跟踪用户活动。
 * [**API 限制**](/docs/{{cloudDocsPrefix}}user-guide/api-limits/) - 控制和限制来自单个主机的 API 请求数量。
-
+<!-- 
 {% if docsPrefix == 'pe/edge/' %}
-此外，Edge PE 支持以下 **ThingsBoard PE** 功能：
+此外，Edge PE 支持以下 **GridLinks PE** 功能：
 * [**集成**](/docs/user-guide/integrations/)
     * 将现有的 NB IoT、LoRaWAN、SigFox 和其他具有特定有效负载格式的设备直接连接到 GridLinks 平台。
     * 从连接到现有物联网平台的设备流式传输数据，以实现实时交互式仪表板和高效的数据处理。
 * [**白标**](/docs/pe/user-guide/white-labeling/) - 配置自定义菜单、徽标、配色方案、电子邮件服务器设置和客户电子邮件模板，以便与用户互动等。
 * [**调度程序**](/docs/pe/user-guide/scheduler/) - 以灵活的配置安排各种类型的事件。
 * [**实体组**](/docs/pe/user-guide/groups/) - 将实体组织成组，将角色分配给特定用户组，向特定用户组授予对特定设备组的特定权限。
-{% endif %}
+{% endif %} -->
 
 #### 项目路线图
 
-<p><a href="/docs/{{docsPrefix}}roadmap" class="button">ThingsBoard Edge 路线图</a></p>
+<p><a href="/docs/{{docsPrefix}}roadmap" class="button">GridLinks Edge 路线图</a></p>
 
 #### 后续步骤
 

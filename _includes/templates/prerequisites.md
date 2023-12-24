@@ -1,6 +1,6 @@
 ## 先决条件
 
-您需要启动并运行 GridLinks 服务器。最简单的方法是使用 [实时演示](https://demo.thingsboard.io/signup) 服务器。
+您需要启动并运行 GridLinks 服务器。最简单的方法是使用 [实时演示](https://gridlinks.codingas.com/signup) 服务器。
 
 另一种选择是使用 [安装指南](/docs/user-guide/install/installation-options/) 安装 GridLinks。**Windows** 用户应遵循此 [指南](/docs/user-guide/install/docker-windows/)。已安装 docker 的 **Linux** 用户应执行以下命令：
 

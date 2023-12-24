@@ -1,4 +1,4 @@
-本教程的目的是指导您了解 ThingsBoard Edge 最广泛使用的功能的基本用法。在整个教程中，您将学习如何：
+本教程的目的是指导您了解 GridLinks Edge 最广泛使用的功能的基本用法。在整个教程中，您将学习如何：
 
 - 将本地设备（例如传感器）连接到 GridLinks Edge；
 - 从 GridLinks Edge 将传感器配置到 {{currentThingsBoardVersion}} 服务器；

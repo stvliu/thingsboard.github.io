@@ -5,12 +5,12 @@ notitle: "true"
 description: GridLinks 分销商
 ---
 
-# ThingsBoard 分销商
+# GridLinks 分销商
 <p id="des">使用地图或查找器选择一个区域</p>
 
 <div style="margin: 0px -254px;"><object id="map" data="/images/partners/map-of-distributors.svg"></object></div>
 
-<div id="distributors">查找我们的本地经销商</div>
+<div id="distributors">查找我们的本地分销商</div>
 
 <div id="integratorsGrid">
 <div id="filterContainer">
@@ -32,7 +32,7 @@ description: GridLinks 分销商
 </select></p>
 <p><input class="buttonSearch" id="Search" type="button" value="查找" onClick="PushIndex(this.form)"></p>
 <hr noshade>
-<p><input class="buttonRe" id="Search" type="button" value="成为经销商" onClick="window.location.href='/docs/contact-us/'"></p>
+<p><input class="buttonRe" id="Search" type="button" value="成为分销商" onClick="window.location.href='/docs/contact-us/'"></p>
 </form>
 </div>
 <div id="integratorsContainer"></div>

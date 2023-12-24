@@ -40,7 +40,7 @@
     </tbody>
 </table>
 
-#### ThingsBoard 管理参数
+#### GridLinks 管理参数
 
 <table>
     <thead>

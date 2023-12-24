@@ -73,7 +73,7 @@ https://$YOUR_GRIDLINKS_HOST/api/plugins/telemetry/$ENTITY_TYPE/$ENTITY_ID/SERVE
 
 以下示例为具有 ID 'ad17c410-914c-11eb-af0c-d5862211a5f6' 的设备和 GridLinks云服务 服务器创建名为“newAttributeName”且值为“newAttributeValue”的属性：
 ```shell
-curl -v 'https://thingsboard.cloud/api/plugins/telemetry/DEVICE/ad17c410-914c-11eb-af0c-d5862211a5f6/SERVER_SCOPE' \
+curl -v 'https://cloud.codingas.com/api/plugins/telemetry/DEVICE/ad17c410-914c-11eb-af0c-d5862211a5f6/SERVER_SCOPE' \
 -H 'x-authorization: Bearer $YOUR_JWT_TOKEN_HERE' \
 -H 'content-type: application/json' \
 --data-raw '{"newAttributeName":"newAttributeValue"}'
@@ -83,7 +83,7 @@ curl -v 'https://thingsboard.cloud/api/plugins/telemetry/DEVICE/ad17c410-914c-11
 类似地，您可以使用以下命令获取所有服务器端属性：
 
 ```shell
-curl -v -X GET 'https://thingsboard.cloud/api/plugins/telemetry/DEVICE/ad17c410-914c-11eb-af0c-d5862211a5f6/values/attributes/SERVER_SCOPE' \
+curl -v -X GET 'https://cloud.codingas.com/api/plugins/telemetry/DEVICE/ad17c410-914c-11eb-af0c-d5862211a5f6/values/attributes/SERVER_SCOPE' \
   -H 'x-authorization: Bearer $YOUR_JWT_TOKEN_HERE' \
   -H 'content-type: application/json' \
 ```
@@ -142,7 +142,7 @@ https://$YOUR_GRIDLINKS_HOST/api/plugins/telemetry/$ENTITY_TYPE/$ENTITY_ID/SHARE
 
 以下示例为具有 ID 'ad17c410-914c-11eb-af0c-d5862211a5f6' 的设备和 GridLinks云服务 服务器创建名为“newAttributeName”且值为“newAttributeValue”的属性：
 ```shell
-curl -v 'https://thingsboard.cloud/api/plugins/telemetry/DEVICE/ad17c410-914c-11eb-af0c-d5862211a5f6/SHARED_SCOPE' \
+curl -v 'https://cloud.codingas.com/api/plugins/telemetry/DEVICE/ad17c410-914c-11eb-af0c-d5862211a5f6/SHARED_SCOPE' \
 -H 'x-authorization: Bearer $YOUR_JWT_TOKEN_HERE' \
 -H 'content-type: application/json' \
 --data-raw '{"newAttributeName":"newAttributeValue"}'
@@ -152,7 +152,7 @@ curl -v 'https://thingsboard.cloud/api/plugins/telemetry/DEVICE/ad17c410-914c-11
 类似地，您可以使用以下命令获取所有共享属性：
 
 ```shell
-curl -v -X GET 'https://thingsboard.cloud/api/plugins/telemetry/DEVICE/ad17c410-914c-11eb-af0c-d5862211a5f6/values/attributes/SHARED_SCOPE' \
+curl -v -X GET 'https://cloud.codingas.com/api/plugins/telemetry/DEVICE/ad17c410-914c-11eb-af0c-d5862211a5f6/values/attributes/SHARED_SCOPE' \
   -H 'x-authorization: Bearer $YOUR_JWT_TOKEN_HERE' \
   -H 'content-type: application/json' \
 ```
@@ -218,7 +218,7 @@ https://$YOUR_GRIDLINKS_HOST/api/plugins/telemetry/$ENTITY_TYPE/$ENTITY_ID/CLIEN
 以下示例获取具有 ID 'ad17c410-914c-11eb-af0c-d5862211a5f6' 的设备和 GridLinks云服务 服务器的所有属性：
 
 ```shell
-curl -v -X GET 'https://thingsboard.cloud/api/plugins/telemetry/DEVICE/ad17c410-914c-11eb-af0c-d5862211a5f6/values/attributes/CLIENT_SCOPE' \
+curl -v -X GET 'https://cloud.codingas.com/api/plugins/telemetry/DEVICE/ad17c410-914c-11eb-af0c-d5862211a5f6/values/attributes/CLIENT_SCOPE' \
   -H 'x-authorization: Bearer $YOUR_JWT_TOKEN_HERE' \
   -H 'content-type: application/json' \
 ```

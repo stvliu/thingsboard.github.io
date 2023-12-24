@@ -32,7 +32,7 @@ Efento NB-IoT 传感器可以与任何云平台集成。
 {% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}
 - [GridLinks 帐户](https://thingsboard.cloud)
 {% else %}
-- [GridLinks 帐户](https://demo.thingsboard.io)
+- [GridLinks 帐户](https://gridlinks.codingas.com)
 {% endif %}
 
 ## 在 GridLinks 上创建设备
