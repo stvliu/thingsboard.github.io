@@ -4,7 +4,7 @@
 ## Python REST Client
 
 The ThingsBoard Python REST API Client helps you interact with ThingsBoard REST API from your Python script.
-With Python Rest Client you can programmatically create assets, devices, customers, users and other entities and their relations in ThingsBoard.
+With Python Rest Client you can programmatically create assets, devices, customers, users and other entities and their relations in GridLinks.
 
 Source code of the Python REST API Client you can find [here](https://github.com/thingsboard/python_tb_rest_client).
 

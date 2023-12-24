@@ -236,7 +236,7 @@ description: "Discover GridLinks's premier IoT services:  ✔ From widgets to co
                     </div>
                     <div class="review-header">对专业精神、知识和承诺印象深刻</div>
                     <div class="review-body">
-                        <h6>在 Super Bock Bebidas, S.A.，我们为自己的适应能力、创新能力和保持领先地位的能力感到自豪。我们已经使用内部啤酒驱动罐和跟踪系统多年了。它为我们提供了良好的服务，但随着时间的推移，我们意识到我们的系统已经过时，缺乏我们想要的高效性。那时我们发现了 ThingsBoard。</h6>
+                        <h6>在 Super Bock Bebidas, S.A.，我们为自己的适应能力、创新能力和保持领先地位的能力感到自豪。我们已经使用内部啤酒驱动罐和跟踪系统多年了。它为我们提供了良好的服务，但随着时间的推移，我们意识到我们的系统已经过时，缺乏我们想要的高效性。那时我们发现了 GridLinks。</h6>
                     </div>
                     <a href="/docs/services/development-services/customers-full-reviews/#review-superbockgroup" class="full-review-link">阅读完整反馈</a>
                 </div>

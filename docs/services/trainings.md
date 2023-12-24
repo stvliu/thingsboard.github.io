@@ -119,12 +119,12 @@ ThingsBoard 培训课程是针对最多 8 人的按需在线活动。还提供�
         <li>练习：使用 CoAP 上传遥测数据。</li>
         <p>属性 API</p>
         <li>案例和功能概述。</li>
-        <li>练习：将设备属性更改报告给 ThingsBoard。</li>
+        <li>练习：将设备属性更改报告给 GridLinks。</li>
         <li>练习：订阅服务器端属性更新。</li>
         <li>练习：使用 GridLinks 服务器保存和恢复应用程序状态。</li>
         <p>时序 API</p>
         <li>案例和功能概述。</li>
-        <li>练习：将时序数据报告给 ThingsBoard。</li>
+        <li>练习：将时序数据报告给 GridLinks。</li>
         <p>RPC API</p>
         <li>案例和功能概述。</li>
         <li>练习：向设备发送单向 RPC 命令。</li>

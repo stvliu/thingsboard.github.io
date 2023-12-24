@@ -10,7 +10,7 @@ description: 从源代码构建 GridLinks IoT 平台
 * TOC
 {:toc}
 
-本指南将帮助您从源代码下载并构建 ThingsBoard。以下列出的说明已在 Ubuntu 20.04 LTS 和 CentOS 7/8 上进行了测试
+本指南将帮助您从源代码下载并构建 GridLinks。以下列出的说明已在 Ubuntu 20.04 LTS 和 CentOS 7/8 上进行了测试
 
 #### 所需工具
 

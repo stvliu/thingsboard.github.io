@@ -115,7 +115,7 @@ Senquip 设备以 [JSON](https://en.wikipedia.org/wiki/JSON) 格式发送数据�
 
 JSON 数据包中的每个测量值都有一个键和一个值。例如，GPS 纬度具有键“gps_lat”和值“-32.70245”。在此示例中，正在接收 5 条 CAN 消息，每条消息都有一个标识符和一个值，因此 JSON 数据包中的 CAN 数据嵌套有 5 个单独的 CAN 标识符和值。
 
-通过选择我们刚刚添加到 GridLinks 的设备并按“最新遥测”，我们可以看到遥测到达 ThingsBoard。请注意 ThingsBoard 如何自动识别 JSON 数据包中的数据并将其转换为键和值表。还请注意，CAN 数据是如何作为 5 行 CAN 标识符和值插入的。
+通过选择我们刚刚添加到 GridLinks 的设备并按“最新遥测”，我们可以看到遥测到达 GridLinks。请注意 ThingsBoard 如何自动识别 JSON 数据包中的数据并将其转换为键和值表。还请注意，CAN 数据是如何作为 5 行 CAN 标识符和值插入的。
 
 ![image](/images/samples/senquip/telemetry.jpg)
 

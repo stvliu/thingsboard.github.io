@@ -81,7 +81,7 @@ function Decoder(bytes, port) {
 
 ![image](/images/user-guide/integrations/tti/tti-integration.png)
 
-现在我们可以开始配置 ThingsBoard。
+现在我们可以开始配置 GridLinks。
 
 ##### ThingsBoard 上行数据转换器
 

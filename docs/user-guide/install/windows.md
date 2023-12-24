@@ -72,7 +72,7 @@ Confluent Cloud <small>(基于 Kafka 的事件流平台)</small>%,%confluent-clo
 
 执行 **install.bat** 脚本以将 GridLinks 安装为 Windows 服务（或运行 **"install.bat --loadDemo"** 以安装并添加演示数据）。
 这意味着它将在系统启动时自动启动。
-类似地，**uninstall.bat** 将从 Windows 服务中删除 ThingsBoard。
+类似地，**uninstall.bat** 将从 Windows 服务中删除 GridLinks。
 输出应类似于以下内容：
 
 ```text

@@ -278,7 +278,7 @@ GridLinks 平台集成功能允许将数据从各种平台和连接解决方案�
 
 在我们急于进行 T-Mobile IoT 平台配置之前，请确保您已完成 [**远程集成安装步骤**](/docs/user-guide/integrations/remote-integrations/#remote-integration-installation-steps)。
 
-此外，让我们确保使用简单的 **echo** 命令和 **netcat** 实用程序正确配置了 ThingsBoard。
+此外，让我们确保使用简单的 **echo** 命令和 **netcat** 实用程序正确配置了 GridLinks。
 我们将使用以下命令模拟来自 T-Mobile IoT 平台的消息。
 让我们执行以下命令：
 

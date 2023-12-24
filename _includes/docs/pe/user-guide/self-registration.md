@@ -55,7 +55,7 @@ GridLinks 自我注册功能允许租户为其客户配置注册页面，以便�
 ### 步骤 5. 邮件服务器设置
 
 以租户管理员身份登录到您的实例，然后导航至白标 —> 邮件服务器。
-使用您的 SMTP 服务器设置配置 ThingsBoard。如果您没有，最简单的方法是使用 [SendGrid](https://sendgrid.com/)。
+使用您的 SMTP 服务器设置配置 GridLinks。如果您没有，最简单的方法是使用 [SendGrid](https://sendgrid.com/)。
 在邮件设置 [指南](/docs/pe/user-guide/ui/mail-settings/) 中查看更多信息。
 
 不要忘记使用“发送测试邮件”按钮验证邮件服务器设置。

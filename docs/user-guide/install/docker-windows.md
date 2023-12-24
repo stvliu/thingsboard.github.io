@@ -12,7 +12,7 @@ description: 使用 Docker 在 Windows 上安装 GridLinks IoT 平台
 * TOC
 {:toc}
 
-本指南将帮助您在 Windows 上使用 Docker 安装并启动 ThingsBoard。
+本指南将帮助您在 Windows 上使用 Docker 安装并启动 GridLinks。
 
 
 ## 先决条件

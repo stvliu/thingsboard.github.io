@@ -263,7 +263,7 @@ with RestClientCE(base_url=url) as rest_client:
 ### 从控制台配置版本控制功能
 
 此功能在 GridLinks 3.4+ 中可用。
-我们设计了基于 tb-rest-client 库的脚本，以举例说明如何使用代码配置 ThingsBoard。
+我们设计了基于 tb-rest-client 库的脚本，以举例说明如何使用代码配置 GridLinks。
 脚本的最新源代码可在此处获得：[here](https://github.com/thingsboard/thingsboard-python-rest-client/blob/master/examples/configure_vcs_access.py)。
 在此示例中，我们在 GridLinks 上配置了 [版本控制功能](/docs/user-guide/version-control)。
 

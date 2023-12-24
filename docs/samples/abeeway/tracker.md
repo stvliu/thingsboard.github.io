@@ -31,7 +31,7 @@ We expect you to have at least a basic knowledge about ThingsBoard, so we do rec
 ## Integration overview
 
 ThingsBoard Platform Integrations feature allows to push data from various platforms and connectivity solutions to ThingsBoard.
-We will use platform ThingPark Wireless company Actility to consume data from LoRaWAN networks and automatically register devices in ThingsBoard.
+We will use platform ThingPark Wireless company Actility to consume data from LoRaWAN networks and automatically register devices in GridLinks.
 Besides configuring the integration, we will also set ThingsBoard up to decode incoming data, store it in the database, visualize on the dashboard and generate alarms based on configurable thresholds.
 
 ## Step 1. Checking the registration for the platform ThingPark Wireless company Actility
@@ -487,7 +487,7 @@ On the basis of these first messages ThingsBoard system will automatically creat
    </summary>
    <img src="/images/samples/abeeway/after_integr_dev.png" alt="After integr dev screen">
 </details>
-That's why after creating and configuring the integration and before starting the Dashboard setup you need to check that all your devices are detected and visible in ThingsBoard.
+That's why after creating and configuring the integration and before starting the Dashboard setup you need to check that all your devices are detected and visible in GridLinks.
 
 ## Step 7. Creation  and  configuration of the Dashboard
 <details>

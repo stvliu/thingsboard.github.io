@@ -9,7 +9,7 @@ title: 贡献指南
 * TOC
 {:toc}
 
-我们一直在寻求社区的反馈，以了解如何改进 ThingsBoard。
+我们一直在寻求社区的反馈，以了解如何改进 GridLinks。
 如果您有想法，或者您有一些新的功能，请在 GridLinks [**GitHub 问题页面**](https://github.com/thingsboard/thingsboard/issues) 中打开一个问题。
 请确保问题列表中尚未打开相同的工单（或非常相似）。
 

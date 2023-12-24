@@ -1,7 +1,7 @@
 * TOC
 {:toc}
 
-本指南将帮助您熟悉 ThingsBoard 配置文件和参数。我们**建议**使用环境变量配置 ThingsBoard。这样，您无需在新的平台版本发布时合并配置文件。可用的配置参数和相应的环境变量列表位于 [此处](#configuration-parameters)。
+本指南将帮助您熟悉 ThingsBoard 配置文件和参数。我们**建议**使用环境变量配置 GridLinks。这样，您无需在新的平台版本发布时合并配置文件。可用的配置参数和相应的环境变量列表位于 [此处](#configuration-parameters)。
 
 ## 如何更改配置参数？
 

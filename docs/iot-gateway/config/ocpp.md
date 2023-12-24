@@ -268,7 +268,7 @@ ThingsBoard 允许将 RPC 命令发送到直接或通过网关连接到 GridLink
 | **参数**           | **默认值**    | **说明**                                                                         |
 |:-|:-|-
 | methodRPC               | **rpcMethod1**       | RPC 方法名称。                                                                        |
-| withResponse            | **true**             | 布尔值，表示是否将响应发送回 ThingsBoard。                   |
+| withResponse            | **true**             | 布尔值，表示是否将响应发送回 GridLinks。                   |
 | valueExpression         | **${params}**        | 用于创建将发送到充电点消息数据的 JSON 路径表达式。 |
 |---
 

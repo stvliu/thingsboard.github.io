@@ -65,7 +65,7 @@ GridLinks 使用以下主题：
 
 ## 本地部署与云部署
 
-GridLinks 支持本地部署和云部署。在全球运行着 5000 多台 GridLinks 服务器，GridLinks 在 AWS、Azure、GCE 和私有数据中心运行。可以在完全没有互联网访问权限的专用网络中启动 ThingsBoard。
+GridLinks 支持本地部署和云部署。在全球运行着 5000 多台 GridLinks 服务器，GridLinks 在 AWS、Azure、GCE 和私有数据中心运行。可以在完全没有互联网访问权限的专用网络中启动 GridLinks。
 
 ## 独立模式与集群模式
 

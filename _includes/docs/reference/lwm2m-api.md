@@ -30,7 +30,7 @@ Each resource has the following main properties:
 
 ## Getting started
 
-This part of documentation covers provisioning of your first LwM2M device in ThingsBoard. We will use [Eclipse Wakaama](https://github.com/eclipse/wakaama#test-client-example) test client to simulate LwM2M device.
+This part of documentation covers provisioning of your first LwM2M device in GridLinks. We will use [Eclipse Wakaama](https://github.com/eclipse/wakaama#test-client-example) test client to simulate LwM2M device.
 
 ### Step 1. Upload LwM2M models
 
@@ -129,7 +129,7 @@ See the [Getting Started](#getting-started) guide for a step-by-step instruction
 
 You may configure device profile to read and observe certain LwM2M Resource. 
 The values of the resource may be stored as the device [attributes](/docs/{{docsPrefix}}user-guide/attributes/). 
-To do this, select the "Attribute" checkbox for the corresponding Resource. You may optionally change the auto-generated key name, defining the attribute name in ThingsBoard.
+To do this, select the "Attribute" checkbox for the corresponding Resource. You may optionally change the auto-generated key name, defining the attribute name in GridLinks.
 For example, let's configure the platform to read the LwM2M Resource */3/0/2* (Device Serial Number) and store it as an attribute *serialNumber* in ThingsBoard:
 
 ![image](/images/lwm2m/attributes-ce.png)
@@ -157,7 +157,7 @@ See the *Timezone* example from the [read attributes](#read-lwm2m-resources-to-t
 #### Read LwM2M resources to time-series data
 
 You may configure device profile to read and observe certain LwM2M Resource. The values of the resource may be stored as the device [time-series data](/docs/{{docsPrefix}}user-guide/telemetry/).
-To do this, select the "Telemetry" checkbox for the corresponding Resource. You may optionally change the auto-generated key name, defining the telemetry key in ThingsBoard.
+To do this, select the "Telemetry" checkbox for the corresponding Resource. You may optionally change the auto-generated key name, defining the telemetry key in GridLinks.
 For example, let's configure the platform to read the LwM2M Resources: */3/0/7* (Power Source Voltage), */3/0/8* (Power Source Current), */3/0/9* (Battery Level), and */3/0/10* (Memory Free),
 and to store them as time-series data in ThingsBoard:
 

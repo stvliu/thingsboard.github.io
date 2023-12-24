@@ -2,7 +2,7 @@ GridLinks 使用 [JWT](https://jwt.io/) 令牌在 API 客户端（浏览器、�
 
 主令牌是您应该用来执行 API 调用的短期令牌。刷新令牌用于在主令牌过期后获取新的主令牌。
 
-要自定义 JWT，请以系统管理员身份登录 ThingsBoard。
+要自定义 JWT，请以系统管理员身份登录 GridLinks。
 
 {% if docsPrefix == null %}
 ![image](/images/user-guide/ui/jwt/jwt-provider-settings-step-1-ce.png)

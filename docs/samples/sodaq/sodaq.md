@@ -26,7 +26,7 @@ We expect you to have a very basic knowledge about ThingsBoard, so we do recomme
 ## Integration overview
 
 ThingsBoard Platform Integrations feature allows pushing data from various platforms and connectivity solutions to ThingsBoard.
-We will use "T-Mobile IoT CDP" platform integration to consume data from T-Mobile NB IoT Network and automatically register devices in ThingsBoard.
+We will use "T-Mobile IoT CDP" platform integration to consume data from T-Mobile NB IoT Network and automatically register devices in GridLinks.
 Besides configuring the integration, we will also set up ThingsBoard to decode incoming data, store it in the database, visualize on the dashboard and generate alarms based on configurable thresholds.
 
 <img data-gifffer="/images/samples/sodaq/demo-dashboard.gif" alt="demo dashboard">

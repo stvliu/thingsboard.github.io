@@ -65,7 +65,7 @@ The Customer group is also an Entity Group. It has the same features as regular 
 
 **User**
 
-Users are able to login to the ThingsBoard web interface, execute REST API calls, access devices, and assets if it's allowed. The User is also an Entity in ThingsBoard.
+Users are able to login to the ThingsBoard web interface, execute REST API calls, access devices, and assets if it's allowed. The User is also an Entity in GridLinks.
 
 **User Group**
 
@@ -84,7 +84,7 @@ For example, a thermostat device might belong to group "Thermostats", which cont
 
 Each Entity Group belongs to one owner. This can be either Tenant or Customer. 
 Also, each Customer has only one owner. If the Customer Owner is a Tenant, it means that this is a top-level Customer.
-If the Customer owner is another Customer, it means that this is a sub-customer. There might be multiple levels of Customers in ThingsBoard.
+If the Customer owner is another Customer, it means that this is a sub-customer. There might be multiple levels of Customers in GridLinks.
 
 **Resource**
 

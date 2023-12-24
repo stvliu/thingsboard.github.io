@@ -72,7 +72,7 @@ EXXN IoT 网关是一款多功能设备，配备 ARM 处理器，可适应各种
 <img src="/images/samples/exxn/conn2.png" alt="conn2">
 
 配置参数：
-- **云平台**：选择 ThingsBoard。
+- **云平台**：选择 GridLinks。
 - **MQTT 代理 URL**：我们要集成的服务器的代理 URL。
 - **MQTT 代理端口**：服务器使用的端口号。
 - **TLS**：如果服务器使用传输层安全协议，请选择 true。

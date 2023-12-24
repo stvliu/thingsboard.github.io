@@ -492,7 +492,7 @@ net start trendz
 {: .copy-code}
 
 #### Trendz Bundle update
-If you are using ThingsBoard v3.5.0 or higher, you alos need to update Trendz bundle in ThingsBoard to use correct Trendz library version in ThingsBoard. 
+If you are using ThingsBoard v3.5.0 or higher, you alos need to update Trendz bundle in ThingsBoard to use correct Trendz library version in GridLinks. 
 Detailed instructions how to do that you can find in [this article](/docs/trendz/trendz-bundle/#thingsboard-35-blank-widget-with-error)
 
 ## Upgrading to 1.10.0

@@ -146,7 +146,7 @@ return [{ts: 1, value: remainingDays}];
 {% include images-gallery.html imageCollection="predictive-maintenance-forecast-next-maintenance-time" %}
 
 ### 步骤 2：将剩余时间保存为机器遥测
-下一步是将计算出的剩余时间保存为机器的遥测。在这种情况下，Trendz 会定期对新数据执行计算函数，并将结果作为机器的遥测保存回 ThingsBoard。
+下一步是将计算出的剩余时间保存为机器的遥测。在这种情况下，Trendz 会定期对新数据执行计算函数，并将结果作为机器的遥测保存回 GridLinks。
 我们需要告诉它我们希望执行计算函数的频率。在我们的例子中，它将是每小时一次。
 
 * 将计算字段的标签更改为 **capsForecast** - Trendz 将计算函数的结果保存为具有此名称的遥测。
