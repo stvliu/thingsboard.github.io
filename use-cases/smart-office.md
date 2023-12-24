@@ -1,7 +1,7 @@
 ---
 layout: use-case
-title: ThingsBoard 物联网智能办公解决方案
-description: ThingsBoard 物联网智能办公解决方案
+title: GridLinks 物联网智能办公解决方案
+description: GridLinks 物联网智能办公解决方案
 notitle: "true"
 
 ---
@@ -162,7 +162,7 @@ GridLinks 平台大幅缩短了智能办公解决方案的上市时间和开发�
 
 您可能会注意到物联网传感器的连接选项很多：直接连接到云、通过物联网网关、与第三方系统集成或 ThingsBoard Edge。
 如今，大多数智能办公项目都使用部署在办公现场的物联网网关。
-通常，此设备要么运行 [ThingsBoard 物联网网关](/docs/iot-gateway/what-is-iot-gateway/)，要么使用 [网关 API](/docs/reference/gateway-mqtt-api/)。
+通常，此设备要么运行 [GridLinks 物联网网关](/docs/iot-gateway/what-is-iot-gateway/)，要么使用 [网关 API](/docs/reference/gateway-mqtt-api/)。
 使用网关，客户可以优化硬件和连接成本。您可以通过 BLE 或其他技术将多个传感器连接到网关，并且只使用一个 WiFi 或有线连接模块。
 
 高级智能办公物联网解决方案也可能使用 LoRaWAN 或 SigFox 设备。

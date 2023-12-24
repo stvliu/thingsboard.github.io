@@ -85,7 +85,7 @@ description: "Digital asset management system ✔Asset inventory management soft
         </div>
         <img class="image" srcset="/images/iot-articles/asset-management_2_1090x682.png 1090w, /images/iot-articles/asset-management_2_2180x1364.png 2180w" sizes="(max-width: 1920px) 1090px, (min-width: 1921px) 2180px" src="/images/iot-articles/asset-management_2_1090x682.png" alt="IoT solutions dashboard with widgets dark"/>
         <div class="text-wrapper">
-            <h1>ThingsBoard Benefits:</h1>
+            <h1>GridLinks Benefits:</h1>
             <div class="text-content medium-margin">When choosing an asset inventory management software, ThingsBoard sets itself apart with a range of unique advantages tailored to meet our client's specific needs.</div>
             <h4 class="h4-left">Deep Industry Expertise</h4>
             <div class="text-content medium-margin">ThingsBoard boasts a team of experts with extensive knowledge in asset tracking. This specialized insight allows us to develop solutions that are tuned to the challenges faced by various industries.</div>

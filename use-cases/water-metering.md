@@ -1,7 +1,7 @@
 ---
 layout: use-case
-title: ThingsBoard 物联网水表计量解决方案
-description: ThingsBoard 物联网水表计量解决方案
+title: GridLinks 物联网水表计量解决方案
+description: GridLinks 物联网水表计量解决方案
 notitle: "true"
 
 ---

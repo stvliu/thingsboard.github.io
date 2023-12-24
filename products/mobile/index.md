@@ -8,7 +8,7 @@ description:
     <main>
         <h1><a href="/docs/mobile/">ThingsBoard 移动应用程序</a> 是一个基于 Flutter 的开源 <a href="https://github.com/thingsboard/flutter_thingsboard_app">项目</a></h1>
         <h2 class="second">以最少的编码工作量构建您自己的物联网移动应用程序</h2>
-        <h3 class="second" style="text-align: center">由 ThingsBoard 物联网平台提供支持</h3>
+        <h3 class="second" style="text-align: center">由 GridLinks 物联网平台提供支持</h3>
     </main>
 </section>
 

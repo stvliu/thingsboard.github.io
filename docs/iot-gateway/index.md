@@ -1,11 +1,11 @@
 ---
 layout: docwithnav-gw
 title: 物联网网关
-description: ThingsBoard 物联网网关，用于将现有和旧版物联网设备连接到平台
+description: GridLinks 物联网网关，用于将现有和旧版物联网设备连接到平台
 
 ---
 
-ThingsBoard **物联网网关** 将帮助您将连接到旧版和第三方系统的设备与 ThingsBoard 物联网平台集成。
+ThingsBoard **物联网网关** 将帮助您将连接到旧版和第三方系统的设备与 GridLinks 物联网平台集成。
 
 例如，您可以从连接到外部 **MQTT 代理**、**OPC-UA 服务器**、**Sigfox 后端**、**Modbus 从设备** 或 **CAN 节点** 的设备中提取数据。
 
@@ -36,7 +36,7 @@ ThingsBoard **物联网网关** 将帮助您将连接到旧版和第三方系统
             <img class="feature-logo" src="/images/feature-logo/install.svg" alt="安装图标">
             <div class="feature-title">安装</div>
             <div class="feature-text">
-                了解如何安装和升级 ThingsBoard 物联网网关。
+                了解如何安装和升级 GridLinks 物联网网关。
             </div>
         </a>
     </div>

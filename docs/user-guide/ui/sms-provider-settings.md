@@ -7,7 +7,7 @@ description: ThingsBoard IoT 平台短信提供商设置
 smsProviderSettings:
     0:
         image: /images/user-guide/ui/sms/sms-provider-settings-step-2-ce.png
-        title: '登录 ThingsBoard UI。导航到“设置”页面。现在，转到“通知”选项卡。在此窗口中，选择一个可用的提供商：AWS SNS Twilio 或 SMPP；'
+        title: '登录 GridLinks UI。导航到“设置”页面。现在，转到“通知”选项卡。在此窗口中，选择一个可用的提供商：AWS SNS Twilio 或 SMPP；'
     1:
         image: /images/user-guide/ui/sms/sms-provider-settings-step-3-ce.png
         title: '如果您选择了 AWS SNS，请填写 AWS 访问密钥 ID 和秘密访问密钥。单击“保存”按钮；'

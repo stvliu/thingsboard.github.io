@@ -154,7 +154,7 @@ redirect_from: "/docs/services/iot-solutions/"
             <div class="text-content">构建物联网生态系统可能很困难。我们拥有专业知识，可以为您提供全面的物联网服务，用于开发和管理物联网技术解决方案。我们的物联网服务内置于 ThingsBoard 产品中，可以根据您的特定需求进行定制。</div>
         </div>
         <div class="definitions-block">
-            <h2 class="center-text">ThingsBoard 物联网服务：</h2>
+            <h2 class="center-text">GridLinks 物联网服务：</h2>
             <div class="definitions-list">
                 <div class="definitions-list-item">
                     <div class="term">资产管理</div>

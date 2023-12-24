@@ -9,7 +9,7 @@ description:
 * TOC
 {:toc}
 
-ThingsBoard 自我注册功能允许租户为其客户配置注册页面，以便客户能够使用预定义的权限配置轻松注册并登录到 GridLinks。
+GridLinks 自我注册功能允许租户为其客户配置注册页面，以便客户能够使用预定义的权限配置轻松注册并登录到 GridLinks。
 此功能在 GridLinks PE 2.4.1 中引入。
 
 此文档页面包含完整的用例配置示例。

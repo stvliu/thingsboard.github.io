@@ -36,12 +36,12 @@ slackProviderSettings:
 thingsboardSystemAdminSettings:
     0:
         image: /images/user-guide/ui/slack/add-slack-api-token-sysadmin-1-pe.png
-        title: '以系统管理员身份登录你的 ThingsBoard UI。导航到“设置”页面，“通知”选项卡。在“Slack 设置”窗口中，将复制的 Slack API 令牌粘贴到“Slack API 令牌”行，然后点击“保存”。'
+        title: '以系统管理员身份登录你的 GridLinks UI。导航到“设置”页面，“通知”选项卡。在“Slack 设置”窗口中，将复制的 Slack API 令牌粘贴到“Slack API 令牌”行，然后点击“保存”。'
 
 thingsboardTenantAdminSettings:
     0:
         image: /images/user-guide/ui/slack/add-slack-api-token-tenant-admin-1-pe.png
-        title: '以租户管理员身份登录你的 ThingsBoard UI。导航到“设置”页面，“通知”选项卡。在“Slack 设置”窗口中，将复制的 Slack API 令牌粘贴到“Slack API 令牌”行，然后点击“保存”。'
+        title: '以租户管理员身份登录你的 GridLinks UI。导航到“设置”页面，“通知”选项卡。在“Slack 设置”窗口中，将复制的 Slack API 令牌粘贴到“Slack API 令牌”行，然后点击“保存”。'
 
 ---
 

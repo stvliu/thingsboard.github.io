@@ -101,7 +101,7 @@ redirect_from: "/docs/services/monitoring-dashboard/"
                 <li>添加并配置所有小部件后，别忘了保存您的仪表板。</li>
             </ul>
             <div class="text-content">有关如何使用物联网设备仪表板的更详细指南，您可以参考我们的 <a class="article-link" href="/docs/pe/user-guide/dashboards/">使用物联网仪表板</a> 指南。</div>
-            <h2>ThingsBoard 物联网仪表板的实际应用（案例研究）</h2>
+            <h2>GridLinks 物联网仪表板的实际应用（案例研究）</h2>
         </div>
         <div class="definitions-block">
             <div class="definitions-list">

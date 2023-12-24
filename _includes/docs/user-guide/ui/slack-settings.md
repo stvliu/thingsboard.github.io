@@ -21,14 +21,14 @@
 {% unless docsPrefix == 'paas/' %}
 ### 作为系统管理员配置 Slack 设置
 
-以系统管理员身份登录到您的 ThingsBoard UI。导航到“设置”页面，“通知”选项卡。在“Slack 设置”窗口中，将复制的 Slack API 令牌粘贴到“Slack API 令牌”行，然后单击“保存”。
+以系统管理员身份登录到您的 GridLinks UI。导航到“设置”页面，“通知”选项卡。在“Slack 设置”窗口中，将复制的 Slack API 令牌粘贴到“Slack API 令牌”行，然后单击“保存”。
 
 {% include images-gallery.html imageCollection="thingsboardSystemAdminSettings" %}
 {% endunless %}
 
 ### 作为租户管理员配置 Slack 设置
 
-以租户管理员身份登录到您的 ThingsBoard UI。导航到“设置”页面，“通知”选项卡。在“Slack 设置”窗口中，将复制的 Slack API 令牌粘贴到“Slack API 令牌”行，然后单击“保存”。
+以租户管理员身份登录到您的 GridLinks UI。导航到“设置”页面，“通知”选项卡。在“Slack 设置”窗口中，将复制的 Slack API 令牌粘贴到“Slack API 令牌”行，然后单击“保存”。
 
 {% include images-gallery.html imageCollection="thingsboardTenantAdminSettings" %}
 

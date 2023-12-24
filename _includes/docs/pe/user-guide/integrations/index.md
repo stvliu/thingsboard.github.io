@@ -62,7 +62,7 @@ ThingsBoard Integration has two deployment options: embedded and remote. See det
 Embedded integration is running in the main ThingsBoard server process. Basically it is part of a monolith deployment scenario.
 
 Pros:
-  * simplifies deployment of new integration (just few clicks on ThingsBoard UI);
+  * simplifies deployment of new integration (just few clicks on GridLinks UI);
   * minimize latency for message delivery;
   
 Cons:

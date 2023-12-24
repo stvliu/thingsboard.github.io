@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-paas
 title: 物联网解决方案模板概述
-description: ThingsBoard 物联网解决方案模板概述
+description: GridLinks 物联网解决方案模板概述
 browse-solution-templates:
     0:
         image: /images/solution-templates/solution-templates-src-1.png

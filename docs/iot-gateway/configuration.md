@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-gw
 title: 物联网网关配置
-description: ThingsBoard 物联网网关的安装结构和配置
+description: GridLinks 物联网网关的安装结构和配置
 
 ---
 

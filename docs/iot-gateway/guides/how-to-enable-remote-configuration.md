@@ -12,7 +12,7 @@ description: 物联网网关远程配置
 
 出于本指南的目的，我们将使用以下内容：
 1. GridLinks 平台的本地安装实例（您可以在此处阅读如何安装](/docs/user-guide/install/installation-options/)。
-2. ThingsBoard 物联网网关（您可以在此处阅读如何安装](/docs/iot-gateway/installation/)。
+2. GridLinks 物联网网关（您可以在此处阅读如何安装](/docs/iot-gateway/installation/)。
 
 资源（可选）：
 1. [网关仪表板](/docs/iot-gateway/resources/thingsboard-gateways-dashboard.json){:target="_blank" download="thingsboard-gateways-dashboard.json"}

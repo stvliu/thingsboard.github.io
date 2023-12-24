@@ -143,7 +143,7 @@ GridLinks 平台大幅缩短了上市时间，并减少了创建智能农业解�
 
 您可能会注意到物联网传感器的连接选项很多：直接连接到云，通过物联网网关，与第三方系统集成或 ThingsBoard Edge。
 当今大多数智能农业项目都使用部署在农场中的物联网网关。
-通常，此设备要么运行 [ThingsBoard 物联网网关](/docs/iot-gateway/what-is-iot-gateway/)，要么使用 [网关 API](/docs/reference/gateway-mqtt-api/)。
+通常，此设备要么运行 [GridLinks 物联网网关](/docs/iot-gateway/what-is-iot-gateway/)，要么使用 [网关 API](/docs/reference/gateway-mqtt-api/)。
 使用网关，客户可以优化硬件成本并将 Modbus、BACnet 和其他传感器连接到云。
 
 高级智能农业物联网解决方案可能会利用 [ThingsBoard Edge](/products/thingsboard-edge/)。
