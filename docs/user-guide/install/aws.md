@@ -13,7 +13,7 @@ description: GridLinks IoT 平台 AWS 集群设置指南
        <div class="install-options-hero">
           <div class="container">
             <div class="install-options-hero-content">
-                <h1>AWS 上的 ThingsBoard 设置选项</h1>
+                <h1>AWS 上的 GridLinks 设置选项</h1>
                 <div class="install-options-description">
                     <p>
                         您可以使用不同的基础设施设置部署 GridLinks IoT 平台

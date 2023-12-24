@@ -10,7 +10,7 @@ hidetoc: "true"
 * TOC
 {:toc}
 
-#### 通过 SSH 连接到你的 ThingsBoard PE AWS 实例
+#### 通过 SSH 连接到你的 GridLinks PE AWS 实例
 
 以下是一个参考示例命令：
 
@@ -18,7 +18,7 @@ hidetoc: "true"
 $ ssh -i <PRIVATE-KEY> ubuntu@<PUBLIC-DNS_NAME>
 ```
 
-或者转到 EC2 实例并找到你的 ThingsBoard PE 实例。
+或者转到 EC2 实例并找到你的 GridLinks PE 实例。
 然后选择 **操作 -> 连接**，并按照 **连接到你的实例** 对话框中提供的说明进行操作。
 
 #### 移除 HAProxy 负载均衡器的 docker 版本

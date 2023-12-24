@@ -26,7 +26,7 @@ LoRaWAN 技术用于将数据从燃气表 G-1.6 传输到 GridLinks 平台。这
 
 为了能够通过 MQTT 协议接收数据，您需要集成 [LoRaWAN 服务器和 Mosquitto MQTT 代理](https://www.chirpstack.io/application-server/integrations/mqtt/)。
 ## 步骤 1. 创建上行数据转换器。
-首先，您应该根据设备协议创建上行数据转换器。转换器将解码来自超声波住宅智能燃气表 LoRaWAN “Smartico G-1.6” 的传入遥测有效载荷数据，该数据包含在编码的 Base64 字符串中，转换为人类可读的、简化的 ThingsBoard 数据格式。导入包含上行数据转换器的 [uplink_gas_meter.json](/docs/samples/smartico/gas-meter-lorawan/resources/uplink_gas_meter.json) 文件。
+首先，您应该根据设备协议创建上行数据转换器。转换器将解码来自超声波住宅智能燃气表 LoRaWAN “Smartico G-1.6” 的传入遥测有效载荷数据，该数据包含在编码的 Base64 字符串中，转换为人类可读的、简化的 GridLinks 数据格式。导入包含上行数据转换器的 [uplink_gas_meter.json](/docs/samples/smartico/gas-meter-lorawan/resources/uplink_gas_meter.json) 文件。
 
 ![image](/images/samples/smartico/gas-meter-lorawan/convert.PNG)
 

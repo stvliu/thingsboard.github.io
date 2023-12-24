@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: 小部件图表
-description: ThingsBoard 小部件图表管理
+description: GridLinks 小部件图表管理
 
 charts-addwidget:
     0:

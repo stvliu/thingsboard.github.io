@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-pe
-title: ThingsBoard 不同 AWS 实例上的性能
-description: ThingsBoard 不同 AWS 实例上的性能结果
+title: GridLinks 不同 AWS 实例上的性能
+description: GridLinks 不同 AWS 实例上的性能结果
 
 postgres-only-1000:
     0:

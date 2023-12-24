@@ -12,7 +12,7 @@ redirect_from: "/docs/pe/user-guide/install/docker-windows/"
 
 
 本指南将帮助您在 Windows 上使用 Docker 安装并启动  GridLinks专业版 (PE)。
-本指南涵盖独立的 ThingsBoard PE 安装。
+本指南涵盖独立的 GridLinks PE 安装。
 如果您正在寻找集群安装说明，请访问 [集群设置页面](/docs/user-guide/install/pe/cluster-setup/)。
 
 ## 先决条件

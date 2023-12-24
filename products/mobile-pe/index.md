@@ -1,6 +1,6 @@
 ---
 layout: mobile-pe
-title: ThingsBoard PE 移动应用程序
+title: GridLinks PE 移动应用程序
 description:
 ---
 

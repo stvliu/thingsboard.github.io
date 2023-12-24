@@ -3,7 +3,7 @@ layout: docwithnav-paas
 assignees:
 - ashvayka
 title: 用户
-description: ThingsBoard 用户管理
+description: GridLinks 用户管理
 users-intro-pe:
     0:
         image: /images/user-guide/ui/users/pe/users-intro-pe.png

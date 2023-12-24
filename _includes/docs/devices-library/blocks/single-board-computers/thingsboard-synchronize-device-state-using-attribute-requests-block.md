@@ -4,7 +4,7 @@
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-为了在启动期间从 ThingsBoard 获取设备状态，我们在代码中提供了执行此操作的功能。
+为了在启动期间从 GridLinks 获取设备状态，我们在代码中提供了执行此操作的功能。
 
 示例代码的负责部分：
 
@@ -27,4 +27,4 @@ def main():
     ...
 ```
 
-为了让我们的回调能够接收数据，我们必须向 ThingsBoard 发送请求。此功能允许我们在重新启动后保持实际状态。
+为了让我们的回调能够接收数据，我们必须向 GridLinks 发送请求。此功能允许我们在重新启动后保持实际状态。

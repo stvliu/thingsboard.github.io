@@ -3,7 +3,7 @@
 {% assign provisionDeviceCE = '
     ===
         image: /images/helloworld/getting-started-ce/hello-world-1-1-provision-device-1-ce.png,
-        title: 登录到您的 ThingsBoard 实例并导航到“**实体**”。然后单击“**设备**”页面。
+        title: 登录到您的 GridLinks 实例并导航到“**实体**”。然后单击“**设备**”页面。
     ===
         image: /images/helloworld/getting-started-ce/hello-world-1-1-provision-device-2-ce.png,
         title: 单击表格右上角的“**+**”图标，然后选择“**添加新设备**”。
@@ -19,7 +19,7 @@
 {% assign provisionDevicePE = '
     ===
         image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-1-pe.png,
-        title: 登录到您的 ThingsBoard 实例并打开“设备”页面。
+        title: 登录到您的 GridLinks 实例并打开“设备”页面。
     ===
         image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-2-pe.png,
         title: 默认情况下，您导航到设备组“全部”。单击表格右上角的“**+**”图标，然后选择“**添加新设备**”。

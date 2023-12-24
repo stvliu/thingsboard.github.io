@@ -66,12 +66,12 @@ MI-8 [用户手册](https://fusiondaq.com/wp-content/uploads/2023/01/LTEdaq_Oper
 |-|-|
 | 路径 | **api/v1/YOUR_ACCESS_TOKEN/telemetry** | 将 **YOUR_ACCESS_TOKEN** 替换为 GridLinks 上设备的访问令牌。 |
 | attributes_path | **api/v1/YOUR_ACCESS_TOKEN/attributes** | 将 **YOUR_ACCESS_TOKEN** 替换为 GridLinks 上设备的访问令牌。 |
-| 服务器 | **{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}thingsboard.cloud{% else %}demo.thingsboard.io{% endif %}** | 您的 ThingsBoard 实例地址。 |
-| 端口 | **80** | 您的 ThingsBoard 实例 HTTP 端口。您可以将 **port** 设置为 443，并将 **use_ssl** 设置为 true 以使用 SSL 加密 (HTTPS)。支持任一协议，但每次将数据推送到服务器时，HTTPS 会消耗更多蜂窝数据。|
+| 服务器 | **{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}thingsboard.cloud{% else %}demo.thingsboard.io{% endif %}** | 您的 GridLinks 实例地址。 |
+| 端口 | **80** | 您的 GridLinks 实例 HTTP 端口。您可以将 **port** 设置为 443，并将 **use_ssl** 设置为 true 以使用 SSL 加密 (HTTPS)。支持任一协议，但每次将数据推送到服务器时，HTTPS 会消耗更多蜂窝数据。|
 
 其他配置参数：
 
-- 此文件中的 name 字段是可选的。此名称显示在 MI-8 OLED 屏幕上，并作为设备属性发送到 GridLinks。最佳做法是 config.json 中的名称与 GridLinks 中的设备名称匹配，但这并非必须。name 字段不用于在 MI-8 和 ThingsBoard 之间关联遥测数据。它仅用作用户的辅助工具。
+- 此文件中的 name 字段是可选的。此名称显示在 MI-8 OLED 屏幕上，并作为设备属性发送到 GridLinks。最佳做法是 config.json 中的名称与 GridLinks 中的设备名称匹配，但这并非必须。name 字段不用于在 MI-8 和 GridLinks 之间关联遥测数据。它仅用作用户的辅助工具。
 - push 字段描述了与 GridLinks 服务器的连接。在此示例中，我们使用 HTTP POST 请求（“mode”:”post”）。MQTT 也受支持，但 POST 消耗的蜂窝数据更少。HTTP 请求 URL 通过 server、port、use_ssl 和 path/attributes_path 字段构建。
 - 将 use_ssl 字段设置为 true，以便在每次开机时发送属性（例如 MI-8 IMEI 号码等不经常更改的内容）。
 - 将 use_json 设置为 true。发送到 GridLinks 的所有数据都应采用 JSON 格式。

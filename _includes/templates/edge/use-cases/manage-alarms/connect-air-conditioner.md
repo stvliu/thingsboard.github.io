@@ -18,9 +18,9 @@ GridLinks 支持不同的设备凭据。我们建议使用本指南中的默认�
 
 - 将 **YOUR_ACCESS_TOKEN** 替换为从上述步骤中复制的 **空调** 设备访问令牌。
 
-- 将 **YOUR_TB_EDGE_HOST** 替换为您的 ThingsBoard Edge 主机。例如，**localhost**。
+- 将 **YOUR_TB_EDGE_HOST** 替换为您的 GridLinks Edge 主机。例如，**localhost**。
 
-- 将 **YOUR_TB_EDGE_MQTT_PORT** 替换为您的 ThingsBoard Edge MQTT 端口。例如，**11883** 或 **1883**。
+- 将 **YOUR_TB_EDGE_MQTT_PORT** 替换为您的 GridLinks Edge MQTT 端口。例如，**11883** 或 **1883**。
 
 打开终端，转到包含 **mqtt-js.sh** 和 **cooler.js** 脚本的文件夹，并确保它可执行：
 ```shell

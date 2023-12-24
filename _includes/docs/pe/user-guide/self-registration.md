@@ -18,20 +18,20 @@ GridLinks 自我注册功能允许租户为其客户配置注册页面，以便�
 
 ### 步骤 1. 在云中安装 GridLinks
 
-我们需要一个正在运行的 ThingsBoard PE 实例，并启用白标功能。
-您可以使用 [安装说明](/docs/user-guide/install/pe/installation-options/)轻松部署您自己的 ThingsBoard PE 实例。
+我们需要一个正在运行的 GridLinks PE 实例，并启用白标功能。
+您可以使用 [安装说明](/docs/user-guide/install/pe/installation-options/)轻松部署您自己的 GridLinks PE 实例。
 请注意，您的实例应在云中运行，并已为其分配公共 IP 地址。
 
-### 步骤 2. 将 DNS 记录分配给您的 ThingsBoard IP 地址
+### 步骤 2. 将 DNS 记录分配给您的 GridLinks IP 地址
 
-我们还需要一个有效的 **DNS 名称** 来分配给您的 ThingsBoard 实例。
+我们还需要一个有效的 **DNS 名称** 来分配给您的 GridLinks 实例。
 如果您没有域名，可以使用任何域名注册商。
 如果您确实有域名，请联系您的系统管理员以颁发子域名，例如 iot.mycompany.com。
 
-### 步骤 3. 为您的 ThingsBoard 实例设置 HTTPS 访问
+### 步骤 3. 为您的 GridLinks 实例设置 HTTPS 访问
 
 请注意 [安装后步骤](/docs/user-guide/install/pe/ubuntu/#post-installation-steps) 中的 HAProxy 安装说明。
-它们适用于 Linux 发行版和 Docker。您可以轻松颁发有效的 Let's Encrypt 证书并为您的 ThingsBoard 实例设置 HTTPS。
+它们适用于 Linux 发行版和 Docker。您可以轻松颁发有效的 Let's Encrypt 证书并为您的 GridLinks 实例设置 HTTPS。
 
 ### 步骤 4. ReCAPTCHA v2
 
@@ -45,7 +45,7 @@ GridLinks 自我注册功能允许租户为其客户配置注册页面，以便�
 
 ### 先决条件摘要
 
-我们准备了一个运行在 DigitalOcean 上的 ThingsBoard 原型实例。
+我们准备了一个运行在 DigitalOcean 上的 GridLinks 原型实例。
 特定域名：srd.thingsboard.io（srd 代表“自我注册演示”）到服务器的 IP 地址：46.101.146.242。
 
 ![image](/images/user-guide/self-registration/digitalocean.png)

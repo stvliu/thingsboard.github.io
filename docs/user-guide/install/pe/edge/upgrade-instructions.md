@@ -2,7 +2,7 @@
 layout: docwithnav-pe-edge
 assignees:
 title: Upgrade instructions
-description: ThingsBoard PE Edge upgrade instructions
+description: GridLinks PE Edge upgrade instructions
 
 ---
 

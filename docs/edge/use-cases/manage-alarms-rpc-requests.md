@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-edge
 title: 管理边缘设备上的警报和 RPC 请求
-description: ThingsBoard Edge 案例 #1
+description: GridLinks Edge 案例 #1
 
 configureAlarmRules:
     0:
@@ -44,7 +44,7 @@ configureAlarmRules:
 configureAlarmRulesEdge:
     0:
         image: /images/edge/use-cases/manage-alarms/configure-rules-item-13.png
-        title: '登录到您的 ThingsBoard <b>Edge</b> 实例并打开设备配置文件页面。'
+        title: '登录到您的 GridLinks <b>Edge</b> 实例并打开设备配置文件页面。'
     1:
         image: /images/edge/use-cases/manage-alarms/configure-rules-item-14.png
         title: '验证 "edge thermostat" 也已配置到 edge。'
@@ -52,7 +52,7 @@ configureAlarmRulesEdge:
 provisionDevicesEdge:
     0:
         image: /images/edge/use-cases/manage-alarms/provision-devices-item-1.png
-        title: '登录到您的 ThingsBoard <b>Edge</b> 实例并打开设备页面。'
+        title: '登录到您的 GridLinks <b>Edge</b> 实例并打开设备页面。'
     1:
         image: /images/edge/use-cases/manage-alarms/provision-devices-item-2.png
         title: '单击表格右上角的 "添加设备" ("+") 图标。'
@@ -125,7 +125,7 @@ updateRootRuleChain:
 updateRootRuleChainEdge:
     0:
         image: /images/edge/use-cases/manage-alarms/update-root-item-11.png
-        title: '登录到您的 ThingsBoard <b>Edge</b> 实例并打开规则链页面。'
+        title: '登录到您的 GridLinks <b>Edge</b> 实例并打开规则链页面。'
     1:
         image: /images/edge/use-cases/manage-alarms/update-root-item-12.png
         title: '打开 "Edge root rule chain" 以验证更改。'

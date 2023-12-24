@@ -3,7 +3,7 @@ layout: docwithnav
 asiconees:
 - yefimov-andrey
 title: 别名
-description: ThingsBoard 别名
+description: GridLinks 别名
 
 single-alias:
  0:

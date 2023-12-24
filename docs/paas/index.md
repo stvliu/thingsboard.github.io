@@ -1,6 +1,6 @@
 ---
 layout: docwithnav-paas
-title: ThingsBoard Cloud
+title: GridLinks Cloud
 description: GridLinks云服务 文档 - 了解平台并在 GridLinks 上运行您的物联网项目
 ---
 

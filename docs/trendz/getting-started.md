@@ -1,12 +1,12 @@
 ---
 layout: docwithnav-trendz
 title: Trendz Analytics 入门
-description: ThingsBoard Trends - 物联网驱动的业务的商业智能和分析平台
+description: GridLinks Trends - 物联网驱动的业务的商业智能和分析平台
 
 discover-topology:
   0:
     image: /images/trendz/getting-started/topology1.png
-    title: "登录后，您应该点击 <b>发现拓扑</b> 按钮来发现 ThingsBoard 实体。"
+    title: "登录后，您应该点击 <b>发现拓扑</b> 按钮来发现 GridLinks 实体。"
   1:
     image: /images/trendz/getting-started/topology2.png
     title: '拓扑发现完成后，点击 <b>完成</b>'

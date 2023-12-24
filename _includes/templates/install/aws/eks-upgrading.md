@@ -1,4 +1,4 @@
-## 升级到新的 ThingsBoard 版本
+## 升级到新的 GridLinks 版本
 
 将本地更改与您在 [步骤 1](#step-1-clone-thingsboard-ce-k8s-scripts-repository)中使用的存储库中的最新发布分支合并。
 

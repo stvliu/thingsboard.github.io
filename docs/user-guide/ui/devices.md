@@ -95,7 +95,7 @@ check-connectivity:
         title: '选择消息传递协议和您的操作系统，然后复制命令；'
     2:
         image: /images/user-guide/ui/devices/ce/check-connectivity-3-ce.png
-        title: '通过终端执行命令，代表设备向 ThingsBoard 实例发送遥测数据。设备状态应从“不活动”变为“活动”，您应该看到已发布的“温度”读数。'
+        title: '通过终端执行命令，代表设备向 GridLinks 实例发送遥测数据。设备状态应从“不活动”变为“活动”，您应该看到已发布的“温度”读数。'
 
 copy-device-id:
     0:
@@ -156,4 +156,4 @@ audit-logs:
 version-control:
     0:
         image: /images/user-guide/ui/devices/ce/device-version-control-1-ce.png
-        title: 'ThingsBoard 版本控制服务提供使用 Git 导出和还原 ThingsBoard 实体的功能。'
+        title: 'ThingsBoard 版本控制服务提供使用 Git 导出和还原 GridLinks 实体的功能。'

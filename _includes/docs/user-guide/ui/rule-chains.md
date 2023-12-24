@@ -24,7 +24,7 @@
 
 ### 导出/导入规则链
 
-您可以将规则链[导出](#export-rule-chain)到 JSON 文件，并将其[导入](#import-rule-chain)到相同或其他 ThingsBoard 实例。
+您可以将规则链[导出](#export-rule-chain)到 JSON 文件，并将其[导入](#import-rule-chain)到相同或其他 GridLinks 实例。
 
 #### 导出规则链
 

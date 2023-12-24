@@ -11,7 +11,7 @@
           <td>zk.enabled</td>
           <td>ZOOKEEPER_ENABLED</td>
           <td>false</td>
-          <td>启用/禁用 zookeeper 发现服务。用于 ThingsBoard 集群</td>
+          <td>启用/禁用 zookeeper 发现服务。用于 GridLinks 集群</td>
         </tr>
         <tr>
           <td>zk.url</td>

@@ -1,7 +1,7 @@
 bigheader: "License Server Documentation"
 abstract: "ThingsBoard License Server is a proprietary billing solution."
 toc:
-- title: ThingsBoard License Server
+- title: GridLinks License Server
   path: /products/license-server/
 - title: Subscriptions
   path: /products/license-server/subscription/

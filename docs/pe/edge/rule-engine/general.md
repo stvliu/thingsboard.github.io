@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-pe-edge
-title: ThingsBoard Edge 规则引擎
-description: ThingsBoard Edge 规则引擎
+title: GridLinks Edge 规则引擎
+description: GridLinks Edge 规则引擎
 
 ---
 

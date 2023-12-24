@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-pe
-title: ThingsBoard PE Release Notes
-description: ThingsBoard architecture
+title: GridLinks PE Release Notes
+description: GridLinks architecture
 
 ---
 

@@ -31,7 +31,7 @@ Host tb
 ```
 {: .copy-code}
 
-要连接 ThingsBoard 实例，只需使用以下命令：
+要连接 GridLinks 实例，只需使用以下命令：
 ```bash
 ssh tb
 ```

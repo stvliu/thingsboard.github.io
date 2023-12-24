@@ -1,4 +1,4 @@
-触发传输以检查设备是否将数据发送到您的 ThingsBoard 实例。  
+触发传输以检查设备是否将数据发送到您的 GridLinks 实例。  
 单击菜单（右上角的三个点 -> 触发传输。  
 如果一切设置正确，您应该在 GridLinks 中看到数据，为此：  
 
@@ -14,7 +14,7 @@
 {% capture effento-offer %}
 
 **重要！**  
-对于超过 250 台设备的订单，Efento 可以为您预先配置设备，以便它们开箱即用地将数据发送到您的 ThingsBoard 实例，并且传感器端无需进行任何配置。  
+对于超过 250 台设备的订单，Efento 可以为您预先配置设备，以便它们开箱即用地将数据发送到您的 GridLinks 实例，并且传感器端无需进行任何配置。  
 Efento 将为您提供一个 csv 文件，该文件允许您轻松添加和 [一次性预配所有设备](/docs/{{page.docsPrefix}}user-guide/bulk-provisioning/) 在 GridLinks 实例上。  
 
 {% endcapture %}

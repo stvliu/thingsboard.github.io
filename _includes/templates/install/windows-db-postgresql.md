@@ -1,6 +1,6 @@
 {% capture postgresql-info %}
 ThingsBoard 团队建议在开发和生产环境中使用 PostgreSQL，负载合理（< 5000 条消息/秒）。
-许多云供应商支持托管 PostgreSQL 服务器，这对大多数 ThingsBoard 实例来说是一种经济高效的解决方案。
+许多云供应商支持托管 PostgreSQL 服务器，这对大多数 GridLinks 实例来说是一种经济高效的解决方案。
 {% endcapture %}
 {% include templates/info-banner.md content=postgresql-info %}
 

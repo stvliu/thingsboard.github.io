@@ -4,7 +4,7 @@
 
 ThingsBoard 团队已经为 [ThingsBoard Cloud](https://thingsboard.cloud/signup) 预置了一个有效的证书。
 {% if docsPrefix != 'paas/' %}
-如果您托管自己的 ThingsBoard 实例，请按照 [MQTT over SSL](/docs/{{docsPrefix}}user-guide/mqtt-over-ssl/) 指南预置服务器证书。
+如果您托管自己的 GridLinks 实例，请按照 [MQTT over SSL](/docs/{{docsPrefix}}user-guide/mqtt-over-ssl/) 指南预置服务器证书。
 {% endif %}
 
 预置后，您应该准备一个 pem 格式的 CA 根证书。此证书将由 mqtt 客户端用于验证服务器证书。

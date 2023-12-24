@@ -22,11 +22,11 @@ GridLinks 是一个开源物联网平台，提供了一套强大的功能，用�
 
 ThingsBoard Edge PE 适用于 **单个** 租户和/或 **多个** 客户。
 因此，您无法在多个租户之间共享 ThingsBoard Edge，并且来自不同租户的设备无法连接到单个 ThingsBoard Edge。
-在这种情况下，需要为每个租户配置单独的 ThingsBoard Edge 实例。
+在这种情况下，需要为每个租户配置单独的 GridLinks Edge 实例。
 {% else %}
 借助 ThingsBoard Edge，数据分析和管理被引入边缘，数据生成发生在边缘。它与 ThingsBoard CE 轻松同步，无论它是 [演示](https://demo.thingsboard.io/) 还是本地安装，都能满足您的业务需求。
 
-ThingsBoard Edge CE 适用于 **单个** 租户和/或 **单个** 客户。在多个租户或客户之间共享 ThingsBoard Edge 是不可行的，并且来自不同租户或客户的设备无法连接到单个 ThingsBoard Edge。
+ThingsBoard Edge CE 适用于 **单个** 租户和/或 **单个** 客户。在多个租户或客户之间共享 GridLinks Edge 是不可行的，并且来自不同租户或客户的设备无法连接到单个 ThingsBoard Edge。
 在这种情况下，需要为每个租户或客户配置多个 ThingsBoard Edge 实例。
 {% endif %}
 

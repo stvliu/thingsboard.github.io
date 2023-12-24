@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-mobile
-title: ThingsBoard 移动应用程序文档
-description: ThingsBoard 移动应用程序 - 您的物联网移动产品的起点
+title: GridLinks 移动应用程序文档
+description: GridLinks 移动应用程序 - 您的物联网移动产品的起点
 ---
 
 ThingsBoard 移动应用程序是一个基于 [Flutter](https://flutter.dev/) 的开源 [项目](https://github.com/thingsboard/flutter_thingsboard_app)。

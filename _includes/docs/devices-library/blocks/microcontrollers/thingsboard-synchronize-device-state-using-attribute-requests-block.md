@@ -1,4 +1,4 @@
-为了在启动期间从 ThingsBoard 获取设备状态，我们在代码中具有 [功能](/docs/{{page.docsPrefix}}reference/mqtt-api/#request-attribute-values-from-the-server) 来执行此操作。
+为了在启动期间从 GridLinks 获取设备状态，我们在代码中具有 [功能](/docs/{{page.docsPrefix}}reference/mqtt-api/#request-attribute-values-from-the-server) 来执行此操作。
 
 以下是代码示例的相关部分：
 
@@ -63,4 +63,4 @@ const Attribute_Request_Callback attribute_client_request_callback(CLIENT_ATTRIB
     }
 ...
 ```
-为了让我们的回调接收数据，我们必须向 ThingsBoard 发送请求。
+为了让我们的回调接收数据，我们必须向 GridLinks 发送请求。

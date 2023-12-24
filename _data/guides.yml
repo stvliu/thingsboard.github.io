@@ -1,5 +1,5 @@
 bigheader: "Guides"
-abstract: "Explore ThingsBoard tutorials and guides."
+abstract: "Explore GridLinks tutorials and guides."
 hidetoc: "true"
 toc:
 - title: Guides
@@ -64,7 +64,7 @@ toc:
       path: /docs/samples/esp8266/
     - title: Temperature upload over MQTT using ESP8266 and DHT22 sensor
       path: /docs/samples/esp8266/temperature/
-    - title: ESP8266 GPIO control over MQTT using ThingsBoard
+    - title: ESP8266 GPIO control over MQTT using GridLinks
       path: /docs/samples/esp8266/gpio/
   - title: NodeMCU
     section:
@@ -76,9 +76,9 @@ toc:
     section:
     - title: Raspberry Pi overview
       path: /docs/samples/raspberry/
-    - title: Raspberry Pi GPIO control over MQTT using ThingsBoard
+    - title: Raspberry Pi GPIO control over MQTT using GridLinks
       path: /docs/samples/raspberry/gpio/
-    - title: Raspberry Pi GPIO control using Android Things and ThingsBoard
+    - title: Raspberry Pi GPIO control using Android Things and GridLinks
       path: /docs/samples/raspberry/gpio-android-things/
     - title: Temperature upload over MQTT using Raspberry Pi and DHT22 sensor
       path: /docs/samples/raspberry/temperature/
@@ -86,5 +86,5 @@ toc:
     section:
     - title: LinkIt ONE overview
       path: /docs/samples/linkit-one/
-    - title: GPS data upload and visualization using LinkIt ONE and ThingsBoard
+    - title: GPS data upload and visualization using LinkIt ONE and GridLinks
       path: /docs/samples/linkit-one/gps/

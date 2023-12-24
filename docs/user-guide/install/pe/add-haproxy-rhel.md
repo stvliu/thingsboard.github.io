@@ -23,7 +23,7 @@ sudo firewall-cmd --reload
 
 ``` 
 
-### 步骤 1. 通过 SSH 连接到您的 ThingsBoard 实例
+### 步骤 1. 通过 SSH 连接到您的 GridLinks 实例
 
 以下是 AWS 的示例命令，仅供参考：
 

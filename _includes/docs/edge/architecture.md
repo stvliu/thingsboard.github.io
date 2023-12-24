@@ -10,12 +10,12 @@
 
 ## 简介
 
-本文概述了 ThingsBoard Edge 架构，包括一张图表、各种组件之间的数据流描述以及关键架构选择说明。
+本文概述了 GridLinks Edge 架构，包括一张图表、各种组件之间的数据流描述以及关键架构选择说明。
 
-ThingsBoard Edge 组件在单个 Java 虚拟机 (JVM) 内启动，并利用共享的 OS 资源。
+GridLinks Edge 组件在单个 Java 虚拟机 (JVM) 内启动，并利用共享的 OS 资源。
 您可以在受限环境中使用少至 256 或 512 MB 的 RAM 部署和运行 GridLinks Edge 进程。
 
-ThingsBoard Edge 设计为：
+GridLinks Edge 设计为：
 
 * **可扩展的**：在数千个边缘设备上分布计算和数据分析。
 * **稳健且高效的**：单个边缘设备可以处理多达 1000 个设备，具体取决于[案例](/docs/{{docsPrefix}}use-cases/overview/)和部署的硬件。
@@ -30,7 +30,7 @@ ThingsBoard Edge 设计为：
 
 ## 云管理器服务
 
-ThingsBoard **Edge** 通过 gRPC 协议与云端（{{appPrefix}}）通信，**云管理器**管理此连接。
+GridLinks **Edge** 通过 gRPC 协议与云端（{{appPrefix}}）通信，**云管理器**管理此连接。
 
 一方面，云管理器检查云队列中的新事件，并在它们可用时立即将它们推送到云端。
 
@@ -42,10 +42,10 @@ ThingsBoard **Edge** 通过 gRPC 协议与云端（{{appPrefix}}）通信，**�
 
 ## 传输组件
 
-ThingsBoard Edge 提供 MQTT、HTTP 和基于 CoAP 的 API，可用于您的设备应用程序/固件。
-每个协议 API 都由 ThingsBoard Edge 的“传输层”中的一个独立组件提供。
+GridLinks Edge 提供 MQTT、HTTP 和基于 CoAP 的 API，可用于您的设备应用程序/固件。
+每个协议 API 都由 GridLinks Edge 的“传输层”中的一个独立组件提供。
 
-ThingsBoard Edge 支持标准的 ThingsBoard CE/PE 设备通信协议：
+GridLinks Edge 支持标准的 GridLinks CE/PE 设备通信协议：
 
 * HTTP 传输组件提供此处所述的设备 API [here](/docs/{{docsPrefix}}reference/http-api/)；
 * MQTT 传输组件提供此处所述的设备 API [here](/docs/{{docsPrefix}}reference/mqtt-api/)，它还启用此处详细说明的网关 API [here](/docs/{{docsPrefix}}reference/gateway-mqtt-api/)；
@@ -55,26 +55,26 @@ ThingsBoard Edge 支持标准的 ThingsBoard CE/PE 设备通信协议：
 
 ## 规则引擎组件
 
-ThingsBoard Edge 规则引擎负责根据用户定义的逻辑和流程处理传入的消息。
+GridLinks Edge 规则引擎负责根据用户定义的逻辑和流程处理传入的消息。
 规则引擎利用 Actor System 为主要实体（例如规则链和规则节点）创建 actor。
 您可以在相应的[文档页面](/docs/{{docsPrefix}}rule-engine/general/)中了解有关边缘规则引擎的更多信息。
 
 ## 核心服务
 
-ThingsBoard Edge Core 处理[REST API](/docs/{{cloudDocsPrefix}}reference/rest-api/)调用和 WebSocket [订阅](/docs/{{cloudDocsPrefix}}user-guide/telemetry/#websocket-api)。
+GridLinks Edge Core 处理[REST API](/docs/{{cloudDocsPrefix}}reference/rest-api/)调用和 WebSocket [订阅](/docs/{{cloudDocsPrefix}}user-guide/telemetry/#websocket-api)。
 此外，它维护有关活动设备会话的最新信息并监视设备[连接状态](/docs/{{cloudDocsPrefix}}user-guide/device-connectivity-status/)。
-ThingsBoard Edge Core 利用 Actor System 为关键实体（包括租户和设备）实现 actor。
+GridLinks Edge Core 利用 Actor System 为关键实体（包括租户和设备）实现 actor。
 
-## ThingsBoard Edge Web UI
+## GridLinks Edge Web UI
 
-ThingsBoard Edge 包括一个使用 Express.js 框架开发的轻量级组件，用于托管静态 Web UI 内容。
+GridLinks Edge 包括一个使用 Express.js 框架开发的轻量级组件，用于托管静态 Web UI 内容。
 这些组件完全无状态，只需最少的配置。
 静态 Web UI 包含一个应用程序包；加载后，应用程序开始使用 GridLinks Edge Core 提供的 REST API 和 WebSockets API。
 
 ## 外部系统
 
-来自 ThingsBoard Edge 的消息可以通过规则引擎推送到外部系统。
-可以将数据传输到外部系统，处理该数据，然后将处理结果中继回 ThingsBoard Edge 以进行可视化。
+来自 GridLinks Edge 的消息可以通过规则引擎推送到外部系统。
+可以将数据传输到外部系统，处理该数据，然后将处理结果中继回 GridLinks Edge 以进行可视化。
 请查看规则引擎文档和指南以获取更多详细信息。
 
 #### 后续步骤

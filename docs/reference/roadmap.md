@@ -1,6 +1,6 @@
 ---
 layout: docwithnav
-title: ThingsBoard 路线图
+title: GridLinks 路线图
 description: GridLinks 架构
 
 ---

@@ -1,4 +1,4 @@
-在浏览器中打开平台实例或 ThingsBoard [云]({{thingsboardInstanceLink}}){:target="_blank"}，并以租户管理员身份登录。
+在浏览器中打开平台实例或 GridLinks [云]({{thingsboardInstanceLink}}){:target="_blank"}，并以租户管理员身份登录。
 
 {% assign deviceCreation = '
     ===

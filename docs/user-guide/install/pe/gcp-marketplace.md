@@ -28,7 +28,7 @@ redirect_from: "/docs/user-guide/install/pe/gcp2/"
 
 ![image](/images/user-guide/install/gcp-marketplace-pe/deploy.png)
 
-就是这样！您的 ThingsBoard 实例现已部署！完成后，您应该会看到：
+就是这样！您的 GridLinks 实例现已部署！完成后，您应该会看到：
 
 ![image](/images/user-guide/install/gcp-marketplace-pe/ssh.png)
 
@@ -36,7 +36,7 @@ redirect_from: "/docs/user-guide/install/pe/gcp2/"
 
 ### 步骤 2. 获取许可证密钥
 
-为了激活您的 ThingsBoard 实例，您需要获取许可证密钥。
+为了激活您的 GridLinks 实例，您需要获取许可证密钥。
 ThingsBoard 许可证由 [ThingsBoard 许可证门户](https://license.thingsboard.io/signup) 管理。
 
 请在 [ThingsBoard 许可证门户](https://license.thingsboard.io/signup) 上注册以获取许可证。

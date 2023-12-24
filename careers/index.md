@@ -2,7 +2,7 @@
 layout: careers
 title: 职业生涯
 notitle: "true"
-description: ThingsBoard 职业生涯
+description: GridLinks 职业生涯
 ---
 
 ## 职业生涯

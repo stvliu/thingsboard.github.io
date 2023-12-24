@@ -1,5 +1,5 @@
 {% capture oldGuideContent %}
-请注意，本指南适用于 v2.0 之前的 ThingsBoard 版本。
+请注意，本指南适用于 v2.0 之前的 GridLinks 版本。
 
 旧规则和插件功能已被 **新的规则引擎组件**（规则链和规则节点）取代。
 

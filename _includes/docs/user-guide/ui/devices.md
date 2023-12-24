@@ -16,7 +16,7 @@ GridLinks 平台允许您创建 [仪表板](/docs/{{docsPrefix}}user-guide/dashb
 ## 添加新设备
 
 {% if docsPrefix == null %}
-- 登录到您的 ThingsBoard 实例并导航到“实体”部分。然后转到“设备”页面；
+- 登录到您的 GridLinks 实例并导航到“实体”部分。然后转到“设备”页面；
 - 单击表格右上角的“+”图标，然后选择“添加新设备”；
 - 输入设备名称。例如，“我的新设备”。此时无需进行其他更改。单击“添加”；
 - 设备已创建。将打开一个窗口，您可以在其中 [检查设备与 GridLinks 的连接](#check-connectivity)。此步骤是可选的。现在让我们关闭此窗口，并在下一步中更详细地返回检查连接；
@@ -24,7 +24,7 @@ GridLinks 平台允许您创建 [仪表板](/docs/{{docsPrefix}}user-guide/dashb
 {% endif %}
 
 {% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
-- 登录到您的 ThingsBoard 实例并导航到“实体”部分。然后转到“设备”页面；
+- 登录到您的 GridLinks 实例并导航到“实体”部分。然后转到“设备”页面；
 - 默认情况下，您导航到设备组“全部”。单击表格右上角的“+”图标，然后选择“添加新设备”；
 - 输入设备名称。例如，“我的新设备”。此时无需进行其他更改。单击“添加”；
 - 设备已创建。将打开一个窗口，您可以在其中 [检查设备与 GridLinks 的连接](#check-connectivity)。此步骤是可选的。现在让我们关闭此窗口，并在下一步中更详细地返回检查连接；
@@ -186,6 +186,6 @@ GridLinks 提供跟踪用户操作以保留审计日志的功能。
 
 ### 版本控制
 
-ThingsBoard [版本控制](/docs/{{docsPrefix}}user-guide/version-control/) 服务提供使用 Git 导出和恢复 ThingsBoard 实体的功能。
+ThingsBoard [版本控制](/docs/{{docsPrefix}}user-guide/version-control/) 服务提供使用 Git 导出和恢复 GridLinks 实体的功能。
 
 {% include images-gallery.html imageCollection="version-control" %}

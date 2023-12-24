@@ -20,7 +20,7 @@ rateLimits:
 isolatedQueueConfiguration:
     0:
         image: /images/user-guide/tenant-profile/queue-tenant-profile-1-pe.png
-        title: '步骤 1. 打开租户配置文件菜单并添加新的租户配置文件。单击“隔离的 ThingsBoard RuleEngine”框，默认添加主队列，且无法重命名或删除。'
+        title: '步骤 1. 打开租户配置文件菜单并添加新的租户配置文件。单击“隔离的 GridLinks RuleEngine”框，默认添加主队列，且无法重命名或删除。'
     1:
         image: /images/user-guide/tenant-profile/queue-tenant-profile-2-pe.png
         title: '步骤 2. 如果需要添加新的自定义队列，请单击“添加队列”。'

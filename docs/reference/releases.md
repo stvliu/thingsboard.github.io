@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
-title: ThingsBoard Release Notes
-description: ThingsBoard architecture
+title: GridLinks Release Notes
+description: GridLinks architecture
 
 ---
 

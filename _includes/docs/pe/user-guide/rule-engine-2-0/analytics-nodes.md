@@ -1,6 +1,6 @@
 {% assign feature = "PE Analytics Nodes" %}{% include templates/pe-feature-banner.md %}
 
-Analytics Nodes 专门用于 ThingsBoard PE。用于分析流式或持久化数据。
+Analytics Nodes 专门用于 GridLinks PE。用于分析流式或持久化数据。
 
 * TOC
 {:toc}

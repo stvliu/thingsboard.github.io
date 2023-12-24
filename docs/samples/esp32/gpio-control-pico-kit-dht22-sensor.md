@@ -89,7 +89,7 @@ LED6 正极 | Pico 21 通过电阻 (68Ω - 100Ω)
 ## 配置仪表板
 
 使用此 [**链接**](/docs/samples/esp32/resources/esp32-dht22-temp-and-gpio-dashboard.json) 下载仪表板文件。
-使用导入/导出 [**说明**](/docs/user-guide/ui/dashboards/#dashboard-importexport) 将仪表板导入 ThingsBoard 实例。
+使用导入/导出 [**说明**](/docs/user-guide/ui/dashboards/#dashboard-importexport) 将仪表板导入 GridLinks 实例。
 
 ## 创建 ESP32 固件
 

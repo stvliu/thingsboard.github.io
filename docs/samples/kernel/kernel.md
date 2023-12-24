@@ -20,7 +20,7 @@ hidetoc: "true"
 
 ### 步骤 1 ThingsBoard：设备配置
 
-* [步骤 1.1] 登录到您的 ThingsBoard 实例。
+* [步骤 1.1] 登录到您的 GridLinks 实例。
 <br>
 <img src="/images/samples/kernel/Thingsboard 000.png" width="400" alt="Thingsboard 1">
 <br>

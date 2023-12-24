@@ -12,7 +12,7 @@ redirect_from: "/docs/pe/user-guide/install/docker/"
 
 
 本指南将帮助您在 Linux 或 Mac OS 上使用 Docker 和 Docker Compose 安装并启动  GridLinks专业版 (PE)。
-本指南涵盖独立的 ThingsBoard PE 安装。
+本指南涵盖独立的 GridLinks PE 安装。
 如果您正在寻找集群安装说明，请访问 [集群设置页面](/docs/user-guide/install/pe/cluster-setup/)。
 
 ## 先决条件
@@ -123,7 +123,7 @@ docker compose exec postgres sh -c "pg_dump -U postgres thingsboard > /var/lib/p
 
 * 在此之后，您需要按照 [步骤 3](#步骤-3-选择-thingsboard-队列-服务) 中的说明更新 docker-compose.yml，但将 3.1.0PE 替换为 3.1.1PE：
 
-* 将 upgradeversion 变量更改为您的 **当前** ThingsBoard 版本。
+* 将 upgradeversion 变量更改为您的 **当前** GridLinks 版本。
 
  ```bash
 sudo sh -c "echo '3.1.0' > ~/.mytbpe-data/.upgradeversion"

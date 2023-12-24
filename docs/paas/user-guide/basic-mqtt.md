@@ -3,7 +3,7 @@ layout: docwithnav-paas
 assignees:
 - ashvayka
 title: MQTT 基本认证
-description: ThingsBoard 基于 MQTT 的认证。
+description: GridLinks 基于 MQTT 的认证。
 options:
     0:
         image: /images/user-guide/basic-mqtt/client-id.png  

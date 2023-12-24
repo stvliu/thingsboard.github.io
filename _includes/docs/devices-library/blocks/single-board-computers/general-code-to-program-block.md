@@ -132,7 +132,7 @@
    | 变量名 | 默认值 | 说明 | 
    |-|-|
    | ACCESS_TOKEN | **TEST_TOKEN** | 您的设备访问令牌 |
-   | THINGSBOARD_SERVER | **{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}thingsboard.cloud{% else %}demo.thingsboard.io{% endif %}** | 您的 ThingsBoard 主机或 IP 地址。 |
+   | THINGSBOARD_SERVER | **{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}thingsboard.cloud{% else %}demo.thingsboard.io{% endif %}** | 您的 GridLinks 主机或 IP 地址。 |
    | THINGSBOARD_PORT | **1883** | GridLinks 服务器 MQTT 端口。对于本指南，可以是默认值。 |
 
 5. 单击 **Ctrl+O** 和 **Ctrl+X** 键保存文件。

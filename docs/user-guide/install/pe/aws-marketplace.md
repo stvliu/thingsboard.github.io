@@ -62,7 +62,7 @@ redirect_from: "/docs/user-guide/install/aws-marketplace-pe/"
 在继续之前，请确保您可以访问密钥文件。
 我们将在本指南的后面使用密钥文件。
 
-#### 步骤 3.5. 启动您的 ThingsBoard PE 实例
+#### 步骤 3.5. 启动您的 GridLinks PE 实例
 
 最后，单击“启动”按钮。
 
@@ -92,7 +92,7 @@ redirect_from: "/docs/user-guide/install/aws-marketplace-pe/"
 
 ### 步骤 4. 获取您的许可证密钥
 
-为了激活您的 ThingsBoard 实例，您需要获取许可证密钥。
+为了激活您的 GridLinks 实例，您需要获取许可证密钥。
 ThingsBoard 许可证由 [ThingsBoard 许可证门户](https://license.thingsboard.io/signup) 管理。
 
 请在 [ThingsBoard 许可证门户](https://license.thingsboard.io/signup) 上注册以获取您的许可证。
@@ -201,13 +201,13 @@ sudo service thingsboard start
     <li>AWS EC2 实例价格 - 我们认为 <a href="https://www.ec2instances.info/">ec2instances.info</a> 是比较价格的便捷资源。</li>
     <li>网络流量、磁盘空间和其他可选服务（Cloud Watch 或类似服务）的额外 EC2 成本</li>
 </ul>
-<p>示例 A：基于 t2.micro（具有 20 GB 磁盘）的 ThingsBoard PE 实例与 Maker 订阅计划的价格每月约为 20.5 美元：</p>
+<p>示例 A：基于 t2.micro（具有 20 GB 磁盘）的 GridLinks PE 实例与 Maker 订阅计划的价格每月约为 20.5 美元：</p>
 <ul>
     <li>每月 ThingsBoard PE Maker 订阅费为 10.00 美元</li>
     <li>1 个月 t2.micro 使用费为 8.468 美元</li>
     <li>每月 20 GB EBS 卷为 2.0 美元</li>
 </ul>
-<p>示例 B：基于 t2.medium（具有 100 GB 磁盘）的 ThingsBoard PE 实例与 Prototype 订阅计划的价格每月约为 142.872 美元：</p>
+<p>示例 B：基于 t2.medium（具有 100 GB 磁盘）的 GridLinks PE 实例与 Prototype 订阅计划的价格每月约为 142.872 美元：</p>
 <ul>
     <li>每月 ThingsBoard PE Prototype 订阅费为 99.00 美元</li>
     <li>1 个月 t2.medium 使用费为 33.872 美元</li>
@@ -259,7 +259,7 @@ ThingsBoard 还可以使用混合数据库模式存储数据。
 有关更多详细信息，请参阅官方许可证服务器 <a href="/products/license-server/">文档页面</a>。
 <br><br>
 
-**我的 ThingsBoard 实例日志在哪里？**
+**我的 GridLinks 实例日志在哪里？**
 
 ThingsBoard 日志存储在 <i>/var/log/thingsboard</i> 文件夹中。
 请参阅 <a href="/docs/user-guide/install/config/#logging">配置页面</a> 以了解如何配置日志记录级别。

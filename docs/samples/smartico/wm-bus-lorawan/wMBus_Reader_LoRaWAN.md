@@ -26,7 +26,7 @@ LoRaWAN 技术用于将数据从 wM-Bus Reader WM-LR 传输到 GridLinks 平台�
 
 要能够通过 MQTT 协议接收数据，您需要集成 [LoRaWAN 服务器和 Mosquitto MQTT 代理](https://www.chirpstack.io/application-server/integrations/mqtt/)。
 ## 步骤 1. 创建上行数据转换器。
-首先，您应该根据设备协议创建上行数据转换器。转换器将解码来自 wM-Bus Reader LoRaWAN “Smartico WM-LR” 的传入遥测有效载荷数据，该数据包含编码的 Base64 字符串，转换为人类可读的、简化的 ThingsBoard 数据格式。导入包含上行数据转换器的 [uplink_wmbus_reader.json](/docs/samples/smartico/wm-bus-lorawan/resources/uplink_wmbus_reader.json) 文件。
+首先，您应该根据设备协议创建上行数据转换器。转换器将解码来自 wM-Bus Reader LoRaWAN “Smartico WM-LR” 的传入遥测有效载荷数据，该数据包含编码的 Base64 字符串，转换为人类可读的、简化的 GridLinks 数据格式。导入包含上行数据转换器的 [uplink_wmbus_reader.json](/docs/samples/smartico/wm-bus-lorawan/resources/uplink_wmbus_reader.json) 文件。
 
 ![image](/images/samples/smartico/wm-bus-lorawan/converter.PNG)
 

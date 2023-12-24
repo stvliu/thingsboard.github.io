@@ -17,6 +17,6 @@
 https://thingsboard.io/...
 
 <!-- 可选信息（删除您想要包含的信息周围的注释标记） -->
-<!-- ThingsBoard 版本： -->
+<!-- GridLinks 版本： -->
 
 <!-- 其他信息： -->

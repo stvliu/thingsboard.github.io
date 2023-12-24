@@ -25,14 +25,14 @@ mosquitto_pub -d -q 1 -h "YOUR_TB_HOST" -p "1883" \
 单向 SSL 身份验证是一种标准身份验证模式，其中客户端设备使用服务器证书验证服务器的身份。
 ThingsBoard 团队已经为 [ThingsBoard Cloud](https://thingsboard.cloud/signup) 配置了有效证书。
 {% if docsPrefix != 'paas/' %}
-如果您托管自己的 ThingsBoard 实例，请按照 [MQTT over SSL](/docs/{{docsPrefix}}user-guide/mqtt-over-ssl/) 指南配置服务器证书。
+如果您托管自己的 GridLinks 实例，请按照 [MQTT over SSL](/docs/{{docsPrefix}}user-guide/mqtt-over-ssl/) 指南配置服务器证书。
 {% endif %}
 
 配置完成后，您应该准备一个 pem 格式的 CA 根证书。此证书将由 mqtt 客户端用于验证服务器证书。
 将 CA 根证书保存到您的工作目录中，文件名“**ca-root.pem**”。
 *mqtt.thingsboard.cloud* 的 CA 根证书示例位于 [此处](/docs/paas/user-guide/resources/mqtt-over-ssl/ca-root.pem)。
 
-现在，您可以使用 *ca-root.pem* 建立与 ThingsBoard 实例 (*YOUR_TB_HOST*) 的安全连接，并使用访问令牌 (*YOUR_ACCESS_TOKEN*) 对设备进行身份验证以上传遥测数据：
+现在，您可以使用 *ca-root.pem* 建立与 GridLinks 实例 (*YOUR_TB_HOST*) 的安全连接，并使用访问令牌 (*YOUR_ACCESS_TOKEN*) 对设备进行身份验证以上传遥测数据：
 
 ```bash
 mosquitto_pub --cafile ca-root.pem -d -q 1 -h "YOUR_TB_HOST" -p "8883" \

@@ -51,7 +51,7 @@ ThingsBoard 允许您为您的客户提供单点登录功能，并使用支持 *
     http://domain:port/login/oauth2/code/
 ```
 
-在域下，请指定您当前的 **域**，对于 **端口**，请指定端口以通过 HTTP 访问您的 ThingsBoard 实例。
+在域下，请指定您当前的 **域**，对于 **端口**，请指定端口以通过 HTTP 访问您的 GridLinks 实例。
 例如，我的域是 localhost，端口是默认的 GridLinks 安装端口 80。
 
 ![image](/images/user-guide/oauth-2-support/oauth0/Application-Details-2.png)

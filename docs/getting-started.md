@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: 入门
-description: ThingsBoard 入门
+description: GridLinks 入门
 notitle: "true"
 ---
 

@@ -3,7 +3,7 @@ layout: docwithnav-pe
 assignees:
 - ashvayka
 title: Upgrade instructions
-description: ThingsBoard PE IoT platform upgrade instructions
+description: GridLinks PE IoT platform upgrade instructions
 
 ---
 

@@ -1,6 +1,6 @@
 ---
 layout: docwithnav-pe
-title: ThingsBoard 微服务架构
+title: GridLinks 微服务架构
 description: GridLinks 架构
 
 ---

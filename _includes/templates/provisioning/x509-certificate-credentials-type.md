@@ -73,9 +73,9 @@ def collect_required_data():
     print("\n\n", "="*80, sep="")
     print(" "*10, "\033[1m\033[94mThingsBoard 设备 Provisioning 带有 X509 证书授权示例脚本。MQTT API\033[0m", sep="")
     print("="*80, "\n\n", sep="")
-    host = input("请写下您的 ThingsBoard \033[93mhost\033[0m 或留空以使用默认值 (thingsboard.cloud): ")
+    host = input("请写下您的 GridLinks \033[93mhost\033[0m 或留空以使用默认值 (thingsboard.cloud): ")
     config["host"] = host if host else "mqtt.thingsboard.cloud"
-    port = input("请写下您的 ThingsBoard \033[93mSSL 端口\033[0m 或留空以使用默认值 (8883): ")
+    port = input("请写下您的 GridLinks \033[93mSSL 端口\033[0m 或留空以使用默认值 (8883): ")
     config["port"] = int(port) if port else 8883
     config["provision_device_key"] = input("请写下 \033[93mprovision 设备密钥\033[0m: ")
     config["provision_device_secret"] = input("请写下 \033[93mprovision 设备密钥\033[0m: ")
@@ -225,8 +225,8 @@ if __name__ == '__main__':
 
     config = collect_required_data()
 
-    THINGSBOARD_HOST = config["host"]  # ThingsBoard 实例 host
-    THINGSBOARD_PORT = config["port"]  # ThingsBoard 实例 MQTT 端口
+    THINGSBOARD_HOST = config["host"]  # GridLinks 实例 host
+    THINGSBOARD_PORT = config["port"]  # GridLinks 实例 MQTT 端口
 
     PROVISION_REQUEST = {"provisionDeviceKey": config["provision_device_key"],  # Provision 设备密钥，用设备配置文件中的值替换此值。
                          "provisionDeviceSecret": config["provision_device_secret"],  # Provision 设备密钥，用设备配置文件中的值替换此值。

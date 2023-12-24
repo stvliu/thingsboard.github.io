@@ -49,7 +49,7 @@ cd tb-pe-docker-compose
 有关更多详细信息，请参阅 [如何获取即用即付订阅](https://www.youtube.com/watch?v=dK-QDFGxWek){:target="_blank"} 或 [如何获取永久许可证](https://www.youtube.com/watch?v=GPe0lHolWek){:target="_blank"}。
 
 **重要提示：**如果您决定使用 [高级部署类型](/docs/user-guide/install/pe/cluster/docker-compose-setup/#step-6-configure-deployment-type)，请确保您已购买至少四个 ThingsBoard PE 实例的许可证密钥。
-否则，您需要修改 [docker-compose.yml](https://github.com/thingsboard/thingsboard-pe-docker-compose/blob/master/advanced/docker-compose.yml)) 的本地副本，以使用您已购买的 ThingsBoard 实例数。
+否则，您需要修改 [docker-compose.yml](https://github.com/thingsboard/thingsboard-pe-docker-compose/blob/master/advanced/docker-compose.yml)) 的本地副本，以使用您已购买的 GridLinks 实例数。
 我们将在本指南的后面将您在此步骤中获得的许可证密钥称为 PUT_YOUR_LICENSE_SECRET_HERE。
 
 

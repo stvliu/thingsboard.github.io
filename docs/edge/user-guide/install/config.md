@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-edge
 title: 配置属性
-description: ThingsBoard Edge 配置属性和环境变量
+description: GridLinks Edge 配置属性和环境变量
 
 ---
 

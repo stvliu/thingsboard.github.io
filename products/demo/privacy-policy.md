@@ -1,7 +1,7 @@
 ---
 layout: plain
-title: ThingsBoard 演示服务器隐私政策
-description: ThingsBoard 演示服务器隐私政策
+title: GridLinks 演示服务器隐私政策
+description: GridLinks 演示服务器隐私政策
 
 ---
 

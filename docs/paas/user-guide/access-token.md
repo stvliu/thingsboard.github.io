@@ -3,7 +3,7 @@ layout: docwithnav-paas
 assignees:
 - ashvayka
 title: MQTT 的访问令牌身份验证
-description: 基于 ThingsBoard 访问令牌的身份验证。
+description: 基于 GridLinks 访问令牌的身份验证。
 
 ---
 

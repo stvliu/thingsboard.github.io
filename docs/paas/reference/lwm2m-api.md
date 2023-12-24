@@ -8,7 +8,7 @@ description: IoT 设备支持的 LwM2M API 参考
 upload-models:
     0:
         image: /images/lwm2m/upload-pe.png
-        title: '登录 ThingsBoard 实例并转到系统设置 -> 资源库，然后单击“+”按钮'
+        title: '登录 GridLinks 实例并转到系统设置 -> 资源库，然后单击“+”按钮'
     1:
         image: /images/lwm2m/upload-1-pe.png
         title: '上传资源模型文件'

@@ -2,7 +2,7 @@
 layout: docwithnav-license
 assignees:
 - ashvayka
-title: ThingsBoard 订阅计划定义
+title: GridLinks 订阅计划定义
 description: 按需付费支付模式的功能和优势
 
 ---

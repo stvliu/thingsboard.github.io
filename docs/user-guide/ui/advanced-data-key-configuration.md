@@ -3,7 +3,7 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: 高级数据键配置
-description: ThingsBoard 高级数据键配置
+description: GridLinks 高级数据键配置
 
 entity-table-example:
     0:

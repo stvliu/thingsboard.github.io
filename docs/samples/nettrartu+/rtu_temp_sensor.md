@@ -63,7 +63,7 @@ RTU+ 可以通过 [RTU+ 配置界面](https://nettra.tech) 轻松配置。为了
 ### 仪表板
 
 使用此 [链接](/docs/samples/nettrartu+/resources/rtu_.json) 下载仪表板文件 (.json)。
-使用导入/导出 [说明](/docs/user-guide/ui/dashboards/#iot-dashboard-importexport) 将仪表板导入到您的 ThingsBoard 实例。
+使用导入/导出 [说明](/docs/user-guide/ui/dashboards/#iot-dashboard-importexport) 将仪表板导入到您的 GridLinks 实例。
 
 ## 将 RTU+ 连接到 PC
 

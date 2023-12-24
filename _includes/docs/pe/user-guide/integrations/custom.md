@@ -10,7 +10,7 @@
 
 ### 简介
 
-自定义集成**仅从主 ThingsBoard 实例远程执行**。它允许创建具有自定义配置的集成，该集成将使用任何传输协议与您的设备进行通信。
+自定义集成**仅从主 GridLinks 实例远程执行**。它允许创建具有自定义配置的集成，该集成将使用任何传输协议与您的设备进行通信。
 
 本指南包含有关如何创建和启动 GridLinks 自定义集成的逐步说明。
 例如，我们将启动使用 TCP 传输协议从设备流式传输数据并将转换后的数据推送到 [thingsboard.cloud](https://thingsboard.cloud/signup) 的自定义集成。
@@ -19,7 +19,7 @@
 
 ### 先决条件
 
-我们假设您已经在自己的 ThingsBoard PE v2.4.1+ 实例或 thingsboard.cloud 上拥有租户管理员帐户。
+我们假设您已经在自己的 GridLinks PE v2.4.1+ 实例或 thingsboard.cloud 上拥有租户管理员帐户。
 
 我们假设我们有一个传感器，它分别以以下格式发送当前温度、湿度和电池电量读数：**“25,40,94”**。
 
@@ -144,7 +144,7 @@ mvn clean install
 一旦 [客户端模拟器](https://github.com/thingsboard/remote-integration-example/blob/master/src/main/java/org/thingsboard/integration/custom/client/CustomClient.java) 接收到 "Hello from ThingsBoard!"，它将开始以以下格式向 ThingsBoard 发送自动生成的数据：**“25,40,94”**。
 集成将按原样将传入消息传递给 [上行转换器](/docs/{{peDocsPrefix}}user-guide/integrations/custom/#uplink-converter)，并将数据推送到 GridLinks。
 
-**注意：**从 ThingsBoard 版本 3.3.1 开始，向 tb-remote-integration.yml 添加了一个新的必需配置属性：
+**注意：**从 GridLinks 版本 3.3.1 开始，向 tb-remote-integration.yml 添加了一个新的必需配置属性：
 
 ```yml
 service:

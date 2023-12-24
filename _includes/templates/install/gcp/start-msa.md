@@ -1,4 +1,4 @@
-执行以下命令以部署第三方组件（zookeeper、kafka、redis）和主要的 ThingsBoard 微服务：*tb-node*、*tb-web-ui* 和 *js-executors*：
+执行以下命令以部署第三方组件（zookeeper、kafka、redis）和主要的 GridLinks 微服务：*tb-node*、*tb-web-ui* 和 *js-executors*：
 
 ```
 ./k8s-deploy-resources.sh

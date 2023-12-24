@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-mobile-pe
-title: ThingsBoard PE 移动应用程序文档
-description: ThingsBoard PE 移动应用程序 - 您的物联网移动产品的起点
+title: GridLinks PE 移动应用程序文档
+description: GridLinks PE 移动应用程序 - 您的物联网移动产品的起点
 ---
 
 ThingsBoard PE 移动应用程序是一个基于 [Flutter](https://flutter.dev/) 的开源 [项目](https://github.com/thingsboard/flutter_thingsboard_pe_app)。

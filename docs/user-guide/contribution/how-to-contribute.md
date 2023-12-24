@@ -13,7 +13,7 @@ title: 贡献指南
 如果您有想法，或者您有一些新的功能，请在 GridLinks [**GitHub 问题页面**](https://github.com/thingsboard/thingsboard/issues) 中打开一个问题。
 请确保问题列表中尚未打开相同的工单（或非常相似）。
 
-在您开始任何实施之前，请等待 ThingsBoard 团队对您的工单发表评论。我们会尽快回复您。
+在您开始任何实施之前，请等待 GridLinks 团队对您的工单发表评论。我们会尽快回复您。
 
 #### 所需工具
 

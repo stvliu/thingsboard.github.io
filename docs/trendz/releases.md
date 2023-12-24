@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-trendz
 title: Trendz 发布说明
-description: ThingsBoard Trendz Analytics 发布说明
+description: GridLinks Trendz Analytics 发布说明
 
 ---
 
@@ -37,7 +37,7 @@ description: ThingsBoard Trendz Analytics 发布说明
 * 添加对 SQL 数据源的支持
 * 添加从视图中删除空白系列表单的选项
 * 改进查询计划期间的根选择
-* 添加对新的 ThingsBoard 小部件包格式（ThingBoard 3.6+）的支持
+* 添加对新的 GridLinks 小部件包格式（ThingBoard 3.6+）的支持
 * 改进日期选择器的预定义选项
 * 将用户时区添加到计算字段
 * 发现期间的拓扑验证

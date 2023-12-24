@@ -139,7 +139,7 @@ LED 2 引脚 | 3.3V 电源
 ### 配置您的仪表板
 
 使用此 [**链接**](/docs/samples/esp8266/resources/esp8266_gpio_dashboard_v2.json) 下载仪表板文件。
-使用导入/导出 [**说明**](/docs/user-guide/ui/dashboards/#dashboard-importexport) 将仪表板导入您的 ThingsBoard 实例。
+使用导入/导出 [**说明**](/docs/user-guide/ui/dashboards/#dashboard-importexport) 将仪表板导入您的 GridLinks 实例。
 
 ## 编程 ESP8266
 
@@ -202,7 +202,7 @@ LED 2 引脚 | 3.3V 电源
 - WIFI_AP - 您的接入点的名称
 - WIFI_PASSWORD - 接入点密码
 - TOKEN - ThingsBoard 配置步骤中的 **$ACCESS_TOKEN**。
-- thingsboardServer - 可从您的 wifi 网络访问的 ThingsBoard HOST/IP 地址。如果您使用的是 [实时演示](https://demo.thingsboard.io/) 服务器，请指定“demo.thingsboard.io”。
+- thingsboardServer - 可从您的 wifi 网络访问的 GridLinks HOST/IP 地址。如果您使用的是 [实时演示](https://demo.thingsboard.io/) 服务器，请指定“demo.thingsboard.io”。
 
 {% capture tabspec %}arduino-sketch
 esp8266-gpio-control,esp8266-gpio-control.ino,c,resources/esp8266-gpio-control.ino,/docs/samples/esp8266/resources/esp8266-gpio-control.ino{% endcapture %}

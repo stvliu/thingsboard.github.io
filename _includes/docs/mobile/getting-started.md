@@ -177,7 +177,7 @@ flutter run
 {% if docsPrefix != 'pe/' %}
 ## 实时演示应用程序
 
-为了熟悉常见的应用程序功能，请在 Google Play 和 App Store 上试用我们的 ThingsBoard Live 移动应用程序。
+为了熟悉常见的应用程序功能，请在 Google Play 和 App Store 上试用我们的 GridLinks Live 移动应用程序。
 
 <br>
 

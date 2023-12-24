@@ -3,7 +3,7 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: 演示帐户
-description: ThingsBoard 默认演示帐户
+description: GridLinks 默认演示帐户
 
 ---
 

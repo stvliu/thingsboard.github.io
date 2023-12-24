@@ -96,7 +96,7 @@ description: 从 Azure Marketplace 安装 GridLinks PE
 
 ### 步骤 4. 获取许可证密钥
 
-为了激活您的 ThingsBoard 实例，您需要获取许可证密钥。
+为了激活您的 GridLinks 实例，您需要获取许可证密钥。
 ThingsBoard 许可证由 [ThingsBoard 许可证门户](https://license.thingsboard.io/signup) 管理。
 
 请在 [ThingsBoard 许可证门户](https://license.thingsboard.io/signup) 上注册以获取许可证。

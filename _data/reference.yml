@@ -9,13 +9,13 @@ toc:
   path: /docs/reference/msa/
 - title: Deployment scenarios
   path: /docs/reference/iot-platform-deployment-scenarios/
-- title: ThingsBoard Performance
+- title: GridLinks Performance
   section:
     - title: Data Collection Performance
       path: /docs/reference/performance/
-#    - title: 20K IoT devices on single ThingsBoard server
+#    - title: 20K IoT devices on single GridLinks server
 #      path: /docs/reference/20k-devices-test/
-#    - title: 1M IoT devices on ThingsBoard cluster with Kubernetes and Amazon EC2
+#    - title: 1M IoT devices on GridLinks cluster with Kubernetes and Amazon EC2
 #      path: /docs/reference/1m-devices-test/
 - title: Performance on AWS EC2
   path: /docs/reference/performance-aws-instances/

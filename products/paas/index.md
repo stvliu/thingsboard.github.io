@@ -1,6 +1,6 @@
 ---
 layout: thingsboard-paas
-title: ThingsBoard Cloud
+title: GridLinks Cloud
 description:
 ---
 

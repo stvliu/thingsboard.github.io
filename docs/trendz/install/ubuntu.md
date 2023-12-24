@@ -69,10 +69,10 @@ sudo nano /etc/trendz/conf/trendz.conf
 ``` 
 {: .copy-code}
 
-添加将用于与 GridLinks 平台通信的 ThingsBoard REST API URL。在大多数情况下，当 Trendz 与 GridLinks 安装在同一服务器上时，API_URL 将是 **http://localhost:8080**。否则，您应该使用 GridLinks 域名。
+添加将用于与 GridLinks 平台通信的 GridLinks REST API URL。在大多数情况下，当 Trendz 与 GridLinks 安装在同一服务器上时，API_URL 将是 **http://localhost:8080**。否则，您应该使用 GridLinks 域名。
 
 ```bash
-# Trendz 将使用的 ThingsBoard URL
+# Trendz 将使用的 GridLinks URL
 export TB_API_URL=http://localhost:8080
 ```
 {: .copy-code}

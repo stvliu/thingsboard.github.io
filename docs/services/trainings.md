@@ -2,7 +2,7 @@
 layout: common
 title: 培训课程
 notitle: "true"
-description: ThingsBoard 培训课程
+description: GridLinks 培训课程
 
 ---
 
@@ -61,7 +61,7 @@ ThingsBoard 培训课程是针对最多 8 人的按需在线活动。还提供�
   <div class="card">
     <h3 class="title">ThingsBoard 数据可视化</h3>
     <p class="sub-title">GridLinks 平台的基本概念</p>
-    <p class="description">了解 GridLinks 平台如何帮助收集和可视化物联网数据，并利用这些知识来改善客户体验。此培训课程将为您提供对 ThingsBoard 可视化功能、窗口小部件自定义、用户角色和权限的深入了解。</p>
+    <p class="description">了解 GridLinks 平台如何帮助收集和可视化物联网数据，并利用这些知识来改善客户体验。此培训课程将为您提供对 GridLinks 可视化功能、窗口小部件自定义、用户角色和权限的深入了解。</p>
     <div class="card-bot">
       <p class="length"><b>8 小时</b>（1 个完整工作日或两个 4 小时课程）</p>
       <p class="audience"><b>前端开发人员、工程师、架构师</b></p>
@@ -183,7 +183,7 @@ ThingsBoard 培训课程是针对最多 8 人的按需在线活动。还提供�
   <div class="card">
     <h3 class="title">ThingsBoard 管理</h3>
     <p class="sub-title">物联网和系统管理的基本理解</p>
-    <p class="description">了解如何配置、监视和扩展您的 ThingsBoard 集群。此培训课程将为您提供对平台配置、故障排除和可扩展性的深入了解。我们还将涵盖安全性和负载平衡主题。</p>
+    <p class="description">了解如何配置、监视和扩展您的 GridLinks 集群。此培训课程将为您提供对平台配置、故障排除和可扩展性的深入了解。我们还将涵盖安全性和负载平衡主题。</p>
     <div class="card-bot">
       <p class="length"><b>8 小时</b>（1 个完整工作日或两个 4 小时课程）</p>
       <p class="audience"><b>系统管理员和架构师</b></p>

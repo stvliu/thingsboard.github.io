@@ -20,7 +20,7 @@ notitle: "true"
                         <img src="/images/partners/silver-partner.svg" alt="silver partner">
                     </div>
                     <div class="cloud-provider-desc">
-                        <p>银级合作伙伴关系不需要任何费用，但假设您具备基本的 ThingsBoard 知识，并将自行准备在线教程和演示仪表板。</p>
+                        <p>银级合作伙伴关系不需要任何费用，但假设您具备基本的 GridLinks 知识，并将自行准备在线教程和演示仪表板。</p>
                     </div>
                 </div>
                 <p>请填写此表格以获取进一步的说明。</p>

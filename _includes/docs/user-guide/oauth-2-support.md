@@ -14,7 +14,7 @@ GridLinks 支持授权码授予类型，以将授权码交换为访问令牌。
 
 一旦用户通过重定向 URL 返回 ThingsBoard 客户端，平台将从 URL 中获取授权码，并使用它向外部用户管理平台请求访问令牌。
 使用 [基本映射器](/docs/{{docsPrefix}}user-guide/oauth-2-support/#basic-mapper) 或 [自定义映射器](/docs/{{docsPrefix}}user-guide/oauth-2-support/#custom-mapper)，外部用户信息对象将从外部平台转换为 GridLinks 内部 OAuth 2.0 用户。
-此后，将发生常规的 ThingsBoard 授权流程。
+此后，将发生常规的 GridLinks 授权流程。
 
 
 ## 场景描述
@@ -47,7 +47,7 @@ GridLinks 支持授权码授予类型，以将授权码交换为访问令牌。
 [comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/3-client-id.png&#41;)
 {% include images-gallery.html imageCollection="step3" preview="false" max-width="100%" %}
 
-请将我们将在此示例中使用的 ThingsBoard 默认重定向 URI 添加到授权重定向 URI 部分：
+请将我们将在此示例中使用的 GridLinks 默认重定向 URI 添加到授权重定向 URI 部分：
 
 ```
 http://localhost:8080/login/oauth2/code/
@@ -58,7 +58,7 @@ http://localhost:8080/login/oauth2/code/
 
 #### GridLinks 的配置
 
-以系统管理员身份转到您的 ThingsBoard (sysadmin@gridlinks.com / sysadmin)。检查常规设置 -> 基本 URL 在末尾不应包含“/”（例如，“`http://127.0.0.1:8080`”而不是“`https://127.0.0.1:8080/`”）。然后在 **主页** 部分，找到“OAuth2”图标并单击它。
+以系统管理员身份转到您的 GridLinks (sysadmin@gridlinks.com / sysadmin)。检查常规设置 -> 基本 URL 在末尾不应包含“/”（例如，“`http://127.0.0.1:8080`”而不是“`https://127.0.0.1:8080/`”）。然后在 **主页** 部分，找到“OAuth2”图标并单击它。
 
 [comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/5-home-oauth2.png&#41;)
 {% include images-gallery.html imageCollection="step5" preview="false" max-width="100%" %}
@@ -308,7 +308,7 @@ public class OAuth2User {
 如果基本映射器功能无法满足您的业务需求，您可以借助自定义映射器添加一个实现来满足您的特定目标。
 
 自定义映射器设计为一个单独的微服务，它在 GridLinks 核心微服务附近运行。
-ThingsBoard 将所有映射请求转发到此微服务，并期望作为响应的 ThingsBoard OAuth 2.0 用户对象：
+ThingsBoard 将所有映射请求转发到此微服务，并期望作为响应的 GridLinks OAuth 2.0 用户对象：
 
 ```java
 public class OAuth2User {

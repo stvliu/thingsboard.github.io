@@ -2,7 +2,7 @@
 layout: iot-article
 title: ᐉ IoT 能源管理与监控
 notitle: "true"
-description: "IoT 能源管理 ✔IoT 能源监控 ⚫ ThingsBoard ➤ 使用 GridLinks IoT 平台进行智能能源监控和数据可视化"
+description: "IoT 能源管理 ✔IoT 能源监控 ⚫ GridLinks ➤ 使用 GridLinks IoT 平台进行智能能源监控和数据可视化"
 ---
 
 <section class="hero light-text"></section>

@@ -60,7 +60,7 @@ description: 配置 MQTT、OPC-UA 和 Modbus 连接器，以便在 Docker 容器
 
 ## 步骤 1. 在 GridLinks 上创建新的网关设备
 
-首先，我们必须将网关设备添加到您的 ThingsBoard 实例。您可以使用以下步骤执行此操作：
+首先，我们必须将网关设备添加到您的 GridLinks 实例。您可以使用以下步骤执行此操作：
 
 {% assign createNewGatewayDevice = '
     ===

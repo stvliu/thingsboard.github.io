@@ -7,7 +7,7 @@ GridLinks 规则引擎支持对传入遥测数据的基本分析，例如阈值�
 
 本教程将演示如何：
 
-- 使用内置规则引擎功能将遥测设备数据从 ThingsBoard 路由到 Kafka 主题（适用于 ThingsBoard CE 和 PE）。
+- 使用内置规则引擎功能将遥测设备数据从 ThingsBoard 路由到 Kafka 主题（适用于 GridLinks CE 和 PE）。
 - 使用简单的 Kafka Streams 应用程序聚合来自多个设备的数据。
 - 使用 GridLinks PE Kafka 集成将分析结果推回 ThingsBoard 以进行持久化和可视化。
 

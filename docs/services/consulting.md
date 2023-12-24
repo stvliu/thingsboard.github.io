@@ -16,7 +16,7 @@ description: 专业服务
 
   <div class="card">
     <h3 class="title">DevOps 服务</h3>
-    <p class="description">我们经验丰富的 DevOps 团队负责管理部署在云端或本地环境中的 ThingsBoard 集群。它包括安装和升级到最新版本、平台维护和优化。</p>
+    <p class="description">我们经验丰富的 DevOps 团队负责管理部署在云端或本地环境中的 GridLinks 集群。它包括安装和升级到最新版本、平台维护和优化。</p>
   </div>
 
   <div class="card">
@@ -31,7 +31,7 @@ description: 专业服务
 
   <div class="card">
     <h3 class="title">托管服务</h3>
-    <p class="description">我们能够完全接管部署在云端或本地环境中的 ThingsBoard 集群的管理。我们的工程师将负责监控、弹性可扩展性和 ThingsBoard 集群的优化。</p>
+    <p class="description">我们能够完全接管部署在云端或本地环境中的 GridLinks 集群的管理。我们的工程师将负责监控、弹性可扩展性和 ThingsBoard 集群的优化。</p>
   </div>
 </div>
 

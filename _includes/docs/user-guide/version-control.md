@@ -6,9 +6,9 @@
 
 ## 功能概述
 
-ThingsBoard 版本控制服务提供使用 Git 导出和恢复 ThingsBoard 实体的功能。
+ThingsBoard 版本控制服务提供使用 Git 导出和恢复 GridLinks 实体的功能。
 作为租户管理员，您可以使用 UI 或 REST API 配置对 Git 存储库的访问。
-作为平台用户，您可以导出单个或多个 ThingsBoard 实体，浏览版本历史记录并将实体恢复到特定版本。
+作为平台用户，您可以导出单个或多个 GridLinks 实体，浏览版本历史记录并将实体恢复到特定版本。
 
 当多个工程师设计相同的规则链或仪表板时，此功能可改善用户体验并简化 CI/CD。它还允许您轻松地在租户或平台实例之间克隆解决方案。
 
@@ -16,8 +16,8 @@ ThingsBoard 版本控制服务提供使用 Git 导出和恢复 ThingsBoard 实�
 
 #### 实体外部 ID
 
-每个 ThingsBoard 实体都有“id”字段，它是特定 ThingsBoard 环境中实体的唯一标识符。
-每个可导出的 ThingsBoard 实体都包含新的“externalId”字段。
+每个 GridLinks 实体都有“id”字段，它是特定 ThingsBoard 环境中实体的唯一标识符。
+每个可导出的 GridLinks 实体都包含新的“externalId”字段。
 该字段用于在多个环境之间导入和导出时标识相同的实体。
 “id”和“externalId”字段都是 [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier) 类型。
 
@@ -44,14 +44,14 @@ ThingsBoard 版本控制服务提供使用 Git 导出和恢复 ThingsBoard 实�
 任何时候执行导出和导入操作时，都会使用“externalId”来查找要更新的正确实体。
 请参阅下面的示例。
 
-假设您有一个开发 ThingsBoard 实例，并导出一个名为“仪表板 1”且 ID 为“4864b750-da7d-11ec-a496-97fa2815d2fe”的仪表板。
+假设您有一个开发 GridLinks 实例，并导出一个名为“仪表板 1”且 ID 为“4864b750-da7d-11ec-a496-97fa2815d2fe”的仪表板。
 然后，存储库将具有一个具有以下完整名称和路径的单个文件：
 
 ```bash
 dashboard/4864b750-da7d-11ec-a496-97fa2815d2fe.json
 ```
 
-假设您已将仪表板“D1”导入到生产 ThingsBoard 实例。“externalId”字段在您首次将实体导入到新的 ThingsBoard 实例时设置。
+假设您已将仪表板“D1”导入到生产 GridLinks 实例。“externalId”字段在您首次将实体导入到新的 GridLinks 实例时设置。
 在这种情况下，生产环境中的仪表板实体将具有不同的 ID，但仪表板的“externalId”将设置为相同的“4864b750-da7d-11ec-a496-97fa2815d2fe”。
 
 {% if docsPrefix != 'ce/' %}
@@ -72,7 +72,7 @@ dashboard/4864b750-da7d-11ec-a496-97fa2815d2fe.json
 
 #### 可扩展性
 
-ThingsBoard 版本控制服务可用作整体 ThingsBoard 实例的一部分，或作为单独的微服务以实现水平可扩展性。
+ThingsBoard 版本控制服务可用作整体 GridLinks 实例的一部分，或作为单独的微服务以实现水平可扩展性。
 版本控制服务的每个实例负责处理集群中租户的特定分区(s)的同步任务。
 每个“提交”API 调用可能需要一些时间。不支持在同一租户范围内同时进行“提交”API 调用。
 如果“提交”API 调用正在进行中并且新的“提交”API 调用到达，系统将取消“提交”API 调用。

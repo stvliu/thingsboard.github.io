@@ -2,7 +2,7 @@
 layout: iot-article
 title: ᐉ 仪表板物联网监控
 notitle: "true"
-description: "仪表板物联网监控 ✔ 物联网控制面板 ⚫ ThingsBoard ➤ 提供创建和管理仪表板的功能 ✔ 具有大量小部件"
+description: "仪表板物联网监控 ✔ 物联网控制面板 ⚫ GridLinks ➤ 提供创建和管理仪表板的功能 ✔ 具有大量小部件"
 redirect_from: "/docs/services/monitoring-dashboard/"
 ---
 
@@ -47,7 +47,7 @@ redirect_from: "/docs/services/monitoring-dashboard/"
                 <li>我们的物联网设备仪表板提供了全面的数据分析和可视化工具。</li>
                 <li>安全性在物联网部署中至关重要，因此我们提供了强大的访问控制功能，确保只有授权人员才能访问敏感信息和关键功能。</li>
             </ul>
-            <div class="text-content">有关 ThingsBoard 解决方案模板的详细概述，您可以参考 <a class="article-link" href="/docs/pe/solution-templates/overview/">物联网解决方案模板概述</a>。</div>
+            <div class="text-content">有关 GridLinks 解决方案模板的详细概述，您可以参考 <a class="article-link" href="/docs/pe/solution-templates/overview/">物联网解决方案模板概述</a>。</div>
             <h2>物联网监控仪表板让您的业务目标得以实现</h2>
             <div class="text-content medium-margin">实现切实的业务目标需要一种战略方法。物联网仪表板应用程序作为这项工作中的关键环节，为物联网实施期间遇到的常见挑战提供了切实可行的解决方案：</div>
         </div>
@@ -93,7 +93,7 @@ redirect_from: "/docs/services/monitoring-dashboard/"
             <h2>如何使用 GridLinks 仪表板</h2>
             <div class="sub-title">要使用 GridLinks 物联网仪表板开源，您可以按照以下步骤操作：</div>
             <ul class="list">
-                <li>登录到您的 ThingsBoard 实例并导航到“实体”部分。</li>
+                <li>登录到您的 GridLinks 实例并导航到“实体”部分。</li>
                 <li>单击表格右上角的“+”图标，然后选择“添加新仪表板”。</li>
                 <li>输入您的物联网网络仪表板的名称。此时无需进行其他更改。</li>
                 <li>在免费创建物联网仪表板后，您可以开始向其中添加小部件。</li>

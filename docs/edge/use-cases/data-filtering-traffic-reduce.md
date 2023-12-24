@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-edge
 title: 数据过滤和流量减少
-description: ThingsBoard Edge案例#2
+description: GridLinks Edge案例#2
 
 provisionDevicesEdge:
     0:

@@ -55,7 +55,7 @@ description: 在仪表板上添加 Trandz 小部件
 在您的网站上添加 iFrame，其 URL 为 **http://{TRENDZ_URL}/viewMode/{VIEW_ID}?jwt={JWT_TOKEN}**。其中：
 * TRENDZ_URL - Trendz 服务的 URL
 * VIEW_ID - Trendz 中保存的可视化的 ID
-* JWT_TOKEN - 应用于在 GridLinks 中进行身份验证的 ThingsBoard JWT 令牌
+* JWT_TOKEN - 应用于在 GridLinks 中进行身份验证的 GridLinks JWT 令牌
 
 ## 视图被阻止的问题
 

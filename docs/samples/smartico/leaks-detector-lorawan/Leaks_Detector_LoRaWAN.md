@@ -26,7 +26,7 @@ LoRaWAN 技术用于将数据从泄漏检测器 L2-LR 传输到 GridLinks 平台
 
 为了能够通过 MQTT 协议接收数据，您需要集成 [LoRaWAN 服务器和 Mosquitto MQTT 代理](https://www.chirpstack.io/application-server/integrations/mqtt/)。
 ## 步骤 1. 创建上行数据转换器。
-首先，您应该根据设备协议创建上行数据转换器。转换器将解码来自泄漏检测器 LoRaWAN “Smartico L2-LR” 的传入遥测有效载荷数据，该数据包含编码的 Base64 字符串，以转换为人类可读的、简化的 ThingsBoard 数据格式。导入包含上行数据转换器的 [uplink_leaks_detector.json](/docs/samples/smartico/leaks-detector-lorawan/resources/uplink_leaks_detector.json) 文件。
+首先，您应该根据设备协议创建上行数据转换器。转换器将解码来自泄漏检测器 LoRaWAN “Smartico L2-LR” 的传入遥测有效载荷数据，该数据包含编码的 Base64 字符串，以转换为人类可读的、简化的 GridLinks 数据格式。导入包含上行数据转换器的 [uplink_leaks_detector.json](/docs/samples/smartico/leaks-detector-lorawan/resources/uplink_leaks_detector.json) 文件。
 
 ![image](/images/samples/smartico/leaks-detector-lorawan/uplink.PNG)
 

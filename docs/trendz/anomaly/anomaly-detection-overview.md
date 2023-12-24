@@ -3,7 +3,7 @@ layout: docwithnav-trendz
 assignees:
 - vparomskiy
 title: 异常检测系统 — 概念和示例
-description: 什么是异常检测系统？✔ 异常检测示例 ⚫ ThingsBoard ➤ 有关时序数据中异常检测的完整指南
+description: 什么是异常检测系统？✔ 异常检测示例 ⚫ GridLinks ➤ 有关时序数据中异常检测的完整指南
 
 scoreVsIndexExample:
     0:

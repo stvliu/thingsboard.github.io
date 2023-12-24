@@ -1,6 +1,6 @@
 ---
 layout: thingsboard-edge
-title: ThingsBoard Edge
+title: GridLinks Edge
 description: 综合软件解决方案，用于边缘计算，在数据创建源头提供数据分析和管理。
 ---
 
@@ -83,7 +83,7 @@ description: 综合软件解决方案，用于边缘计算，在数据创建源�
         <div id="background">
             <div class="main3"></div><div class="small8"></div>
         </div>
-        <h3>更多关于 ThingsBoard Edge 的优势</h3>
+        <h3>更多关于 GridLinks Edge 的优势</h3>
         <div class="cards row">
             <div class="col-lg-6">
                 <div class="block">

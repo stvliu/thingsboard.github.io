@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-pe-edge
 title: Edge 版本说明
-description: ThingsBoard Edge 版本说明
+description: GridLinks Edge 版本说明
 
 ---
 

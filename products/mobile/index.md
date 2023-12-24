@@ -1,6 +1,6 @@
 ---
 layout: mobile
-title: ThingsBoard 移动应用程序
+title: GridLinks 移动应用程序
 description:
 ---
 

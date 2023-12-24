@@ -2,7 +2,7 @@
 layout: iot-article
 title: ᐉ 物联网设备管理平台
 notitle: "true"
-description: "物联网设备管理 ✔ 物联网设备控制 ⚫ ThingsBoard ➤ 帮助组织使用 REST API 或 Web UI 更好地控制和获取所有类型的设备数据"
+description: "物联网设备管理 ✔ 物联网设备控制 ⚫ GridLinks ➤ 帮助组织使用 REST API 或 Web UI 更好地控制和获取所有类型的设备数据"
 redirect_from: "/docs/services/device-management/"
 ---
 <section class="hero light-text"></section>

@@ -2,7 +2,7 @@
 layout: iot-article
 title: 物联网解决方案 ᐉ 物联网服务
 notitle: "true"
-description: "物联网服务 ✔ 物联网解决方案 ⚫ ThingsBoard ➤ 我们的产品具有可扩展性 ✔ 容错性 ✔ 性能，因此您永远不会丢失数据"
+description: "物联网服务 ✔ 物联网解决方案 ⚫ GridLinks ➤ 我们的产品具有可扩展性 ✔ 容错性 ✔ 性能，因此您永远不会丢失数据"
 redirect_from: "/docs/services/iot-solutions/"
 ---
 <section class="hero light-text"></section>
@@ -151,7 +151,7 @@ redirect_from: "/docs/services/iot-solutions/"
                 <li>具有成本效益的操作</li>
                 <li>提高工作安全性</li>
             </ul>
-            <div class="text-content">构建物联网生态系统可能很困难。我们拥有专业知识，可以为您提供全面的物联网服务，用于开发和管理物联网技术解决方案。我们的物联网服务内置于 ThingsBoard 产品中，可以根据您的特定需求进行定制。</div>
+            <div class="text-content">构建物联网生态系统可能很困难。我们拥有专业知识，可以为您提供全面的物联网服务，用于开发和管理物联网技术解决方案。我们的物联网服务内置于 GridLinks 产品中，可以根据您的特定需求进行定制。</div>
         </div>
         <div class="definitions-block">
             <h2 class="center-text">GridLinks 物联网服务：</h2>
@@ -251,7 +251,7 @@ redirect_from: "/docs/services/iot-solutions/"
             <div class="text-content small-margin">如果您想知道为什么您应该在众多物联网服务产品中选择 ThingsBoard，我们有一些理由。</div>
             <div class="text-content medium-margin">作为一家一站式物联网服务公司，我们为客户提供构建端到端物联网解决方案所需的一整套组件。换句话说，我们从设备管理开始，到将物联网系统集成到业务工作流中，在每个阶段都为他们提供支持。其中包括流程自动化、警报、通知等。</div>
             <div class="text-content medium-margin">在 GridLinks，我们确保您可以通过我们简单透明的解决方案来管理您的设备、收集数据并自动化您的业务流程。我们提供我们的边缘和网关产品来处理复杂、离线和边缘计算场景。所有组件都相互集成且易于配置。</div>
-            <div class="text-content">物联网解决方案从未如此易于实施。立即联系 ThingsBoard 团队！</div>
+            <div class="text-content">物联网解决方案从未如此易于实施。立即联系 GridLinks 团队！</div>
         </div>
     </div>
 </div>

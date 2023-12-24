@@ -21,15 +21,15 @@ description: 使用 Docker 在 Windows 上安装 GridLinks IoT 平台
 
 ## 运行
 
-根据所使用的数据库，有三种类型的 ThingsBoard 单实例 docker 镜像：
+根据所使用的数据库，有三种类型的 GridLinks 单实例 docker 镜像：
 
-* [thingsboard/tb-postgres](https://hub.docker.com/r/thingsboard/tb-postgres/) - 带有 PostgreSQL 数据库的 ThingsBoard 单实例。
+* [thingsboard/tb-postgres](https://hub.docker.com/r/thingsboard/tb-postgres/) - 带有 PostgreSQL 数据库的 GridLinks 单实例。
 
     适用于至少有 1GB RAM 和最小负载（每秒几条消息）的小型服务器的推荐选项。建议使用 2-4GB。
-* [thingsboard/tb-cassandra](https://hub.docker.com/r/thingsboard/tb-cassandra/) - 带有 Cassandra 数据库的 ThingsBoard 单实例。
+* [thingsboard/tb-cassandra](https://hub.docker.com/r/thingsboard/tb-cassandra/) - 带有 Cassandra 数据库的 GridLinks 单实例。
 
     性能最佳且推荐的选项，但至少需要 6GB RAM。建议使用 8GB。
-* [thingsboard/tb](https://hub.docker.com/r/thingsboard/tb/) - 带有嵌入式 HSQLDB 数据库的 ThingsBoard 单实例。
+* [thingsboard/tb](https://hub.docker.com/r/thingsboard/tb/) - 带有嵌入式 HSQLDB 数据库的 GridLinks 单实例。
 
     **注意：**不建议用于任何评估或生产用途，仅用于开发目的和自动测试。
 

@@ -173,6 +173,6 @@ Spring Actuator 可以使用 Prometheus 公开一些内部状态指标。
     </div>
 </section>
 
-如果您的问题无法通过上述任何指南来解答，请随时联系 ThingsBoard 团队。
+如果您的问题无法通过上述任何指南来解答，请随时联系 GridLinks 团队。
 
 <a class="button" href="/docs/contact-us/">联系我们</a>

@@ -67,7 +67,7 @@ RTU-X 可以通过 [RTU-X 配置界面](http://wiki.nettra.tech/en/downloads)轻
 ### 仪表板
 
 使用此 [链接](/docs/samples/nettrartu-x/resources/rtu_x_dashboard.json)下载仪表板文件 (.json)。
-使用导入/导出 [说明](https://thingsboard.io/docs/user-guide/dashboards/#import-dashboard)将仪表板导入到您的 ThingsBoard 实例。
+使用导入/导出 [说明](https://thingsboard.io/docs/user-guide/dashboards/#import-dashboard)将仪表板导入到您的 GridLinks 实例。
 
 ## 将 RTU-X 连接到 PC
 

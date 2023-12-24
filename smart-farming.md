@@ -1,7 +1,7 @@
 ---
 layout: use-case
 title: ᐉ 智能农业和农业物联网解决方案
-description: 物联网农业 ✔ 智能农业 ✔ 农业中的物联网传感器 ⚫ ThingsBoard ➤ 为您的智能农业和农业解决方案节省高达 90% 的开发时间
+description: 物联网农业 ✔ 智能农业 ✔ 农业中的物联网传感器 ⚫ GridLinks ➤ 为您的智能农业和农业解决方案节省高达 90% 的开发时间
 notitle: "true"
 
 ---
@@ -50,7 +50,7 @@ GridLinks 平台大幅缩短了上市时间，并减少了创建智能农业解�
 收集的数据通过规则引擎进行处理，以在某些阈值上发出警报。
 主仪表板显示筒仓资产的位置、相应的警报和实时数据提要。
 单击警报或筒仓行以打开资产详细信息并访问曝气控制。
-您可以从我们的实时演示服务器导出仪表板并将其导入您的 ThingsBoard 实例。
+您可以从我们的实时演示服务器导出仪表板并将其导入您的 GridLinks 实例。
 
 ## GridLinks 优势
 <section class="usecase-advantages">
@@ -141,7 +141,7 @@ GridLinks 平台大幅缩短了上市时间，并减少了创建智能农业解�
 
 <object width="100%" style="max-width: max-content; margin: 32px 0" data="/images/iot-use-cases/smart-farming.svg"></object>
 
-您可能会注意到物联网传感器的连接选项很多：直接连接到云，通过物联网网关，与第三方系统集成或 ThingsBoard Edge。
+您可能会注意到物联网传感器的连接选项很多：直接连接到云，通过物联网网关，与第三方系统集成或 GridLinks Edge。
 当今大多数智能农业项目都使用部署在农场中的物联网网关。
 通常，此设备要么运行 [GridLinks 物联网网关](/docs/iot-gateway/what-is-iot-gateway/)，要么使用 [网关 API](/docs/reference/gateway-mqtt-api/)。
 使用网关，客户可以优化硬件成本并将 Modbus、BACnet 和其他传感器连接到云。

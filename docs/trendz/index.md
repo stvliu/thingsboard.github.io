@@ -3,7 +3,7 @@ layout: docwithnav-trendz
 assignees:
 - vparomskiy
 title: Trendz Analytics
-description: ThingsBoard Trends - Business Intelligence and Analytics Platform for Iot powered Business
+description: GridLinks Trends - Business Intelligence and Analytics Platform for Iot powered Business
 ---
 
 欢迎来到 Trendz Analytics 文档主页！

@@ -2,7 +2,7 @@
 layout: docwithnav-pe
 assignees:
 - ashvayka
-title: ThingsBoard 表达式语言 (TBEL)
+title: GridLinks 表达式语言 (TBEL)
 ---
 
 {% assign docsPrefix = "pe/" %}

@@ -32,8 +32,8 @@
   icon: /images/thingsboard-e-icon.svg
   path: /docs/edge/
 # - title: PE边缘计算
-#   fulltitle: ThingsBoard PE边缘计算
-#   description: ThingsBoard PE边缘计算文档
+#   fulltitle: GridLinks PE边缘计算
+#   description: GridLinks PE边缘计算文档
 #   tag: edge-pe
 #   icon: /images/thingsboard-e-icon.svg
 #   path: /docs/pe/edge/
@@ -66,7 +66,7 @@
 #   docsPrefix: /docs/mobile/
 #   getStarted: /docs/mobile/getting-started/
 # - title: PE移动应用
-#   fulltitle: ThingsBoard PE移动应用
+#   fulltitle: GridLinks PE移动应用
 #   description: PE移动应用文档
 #   tag: mobile-pe
 #   icon: /images/tb-pe-mobile-icon.svg

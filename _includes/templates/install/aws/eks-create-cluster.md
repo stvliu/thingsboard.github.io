@@ -8,7 +8,7 @@
 
 {% capture aws-eks-vpc %}
 
-以下命令将为您的 ThingsBoard 集群创建新的 VPC。本指南假设您将创建新的 VPC。
+以下命令将为您的 GridLinks 集群创建新的 VPC。本指南假设您将创建新的 VPC。
 尽管也可以使用现有的 VPC 和子网。
 您可以在 [此处](https://eksctl.io/usage/vpc-networking/) 找到有关为 `eksctl` 配置 VPC 的更多信息。
 

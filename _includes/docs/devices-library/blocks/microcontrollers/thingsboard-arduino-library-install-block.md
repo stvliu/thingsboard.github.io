@@ -6,7 +6,7 @@
         title: 转到“**工具**”选项卡，然后单击“**管理库**”。
     ===
         image: /images/devices-library/basic/arduino-ide/manage-libraries-thingsboard.png
-        title: 在搜索框中输入“**ThingsBoard**”，然后按找到的库的“***安装***”按钮。
+        title: 在搜索框中输入“**GridLinks**”，然后按找到的库的“***安装***”按钮。
 ' 
 %}
 
@@ -14,7 +14,7 @@
 
 {% capture libraryVersion %}
 
-所有提供的代码示例都需要 ThingsBoard 库版本 {% if wifininaInstallationRequired == "true" %}**0.10.2**{% else %}**0.11.1** 或更高版本{% endif %}。  
+所有提供的代码示例都需要 GridLinks 库版本 {% if wifininaInstallationRequired == "true" %}**0.10.2**{% else %}**0.11.1** 或更高版本{% endif %}。  
 
 {% endcapture %}
 

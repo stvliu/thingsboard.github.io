@@ -34,7 +34,7 @@ export SPRING_DATASOURCE_PASSWORD=PUT_YOUR_POSTGRESQL_PASSWORD_HERE
 ``` 
 {: .copy-code}
 
-您可以选择添加以下参数，以重新配置 ThingsBoard 实例以连接到外部 Cassandra 节点：
+您可以选择添加以下参数，以重新配置 GridLinks 实例以连接到外部 Cassandra 节点：
 
 ```bash
 export CASSANDRA_CLUSTER_NAME=Thingsboard Cluster

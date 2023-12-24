@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-trendz
 title: Upgrade instructions
-description: ThingsBoard Trendz Analytics upgrade instructions
+description: GridLinks Trendz Analytics upgrade instructions
 
 ---
 

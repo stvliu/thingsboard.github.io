@@ -2,7 +2,7 @@
 layout: docwithnav-edge
 assignees:
 title: Upgrade instructions
-description: ThingsBoard Edge upgrade instructions
+description: GridLinks Edge upgrade instructions
 
 ---
 

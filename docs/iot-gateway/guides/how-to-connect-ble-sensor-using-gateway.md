@@ -168,9 +168,9 @@ TBGatewayService(config_file_path)
 
 ## 步骤 5. 检查 ThingsBoard 上的信息
 
-检查您已在 [常规配置指南](/docs/iot-gateway/configuration/) 中配置的 ThingsBoard 实例中的数据。
+检查您已在 [常规配置指南](/docs/iot-gateway/configuration/) 中配置的 GridLinks 实例中的数据。
 
-- 前往您的 ThingsBoard 实例并登录。
+- 前往您的 GridLinks 实例并登录。
 - 转到“设备”选项卡。“温度和湿度传感器”应该在那里。
 <br>
 ![](/images/gateway/temp-hum-sensor.png)

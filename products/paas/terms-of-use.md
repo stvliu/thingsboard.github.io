@@ -11,7 +11,7 @@ description: GridLinks云服务 使用条款
 <h2>请阅读这些条款和条件</h2> 
 
 <br>
-<p>这些服务条款，包括其特定于国家/地区的附录（<b>“TBCP 服务协议”</b>、<b>“TBCP 协议”</b>、<b>“协议”</b>）代表了对 GridLinks云服务 平台的访问和使用所适用的条款和条件，目前可以通过 URL：<a href="https://thingsboard.cloud">https://thingsboard.cloud</a> 默认或可能不时使用的其他配置的自定义域访问。本文件是接受这些条款的实体或个人（<b>“客户”</b>或<b>“您”</b>）与 ThingsBoard 实体（下称<b>“我们”</b>、<b>“我们的”</b>或<b>“ThingsBoard Cloud 平台”</b>）之间适用的具有法律约束力的协议，该实体列于下文第 2 段。通过使用 GridLinks Cloud 平台，客户确认并同意他们已阅读、理解并同意受条款的约束，并且您接触的所有附属用户或用户（<b>“最终用户”</b>）均受本服务条款的约束。</p>
+<p>这些服务条款，包括其特定于国家/地区的附录（<b>“TBCP 服务协议”</b>、<b>“TBCP 协议”</b>、<b>“协议”</b>）代表了对 GridLinks云服务 平台的访问和使用所适用的条款和条件，目前可以通过 URL：<a href="https://thingsboard.cloud">https://thingsboard.cloud</a> 默认或可能不时使用的其他配置的自定义域访问。本文件是接受这些条款的实体或个人（<b>“客户”</b>或<b>“您”</b>）与 GridLinks 实体（下称<b>“我们”</b>、<b>“我们的”</b>或<b>“ThingsBoard Cloud 平台”</b>）之间适用的具有法律约束力的协议，该实体列于下文第 2 段。通过使用 GridLinks Cloud 平台，客户确认并同意他们已阅读、理解并同意受条款的约束，并且您接触的所有附属用户或用户（<b>“最终用户”</b>）均受本服务条款的约束。</p>
 
 <p> <b>1. 提交和接受条款</b> </p> 
 <p> 1.1 客户对 GridLinks云服务 平台的使用受本文件所含条款和条件以及 GridLinks云服务 平台隐私政策、Stripe 服务条款以及不时采用并与 GridLinks云服务 平台集成的任何其他网站或服务政策或条件（统称为<b>“条款”</b>）的约束。</p>
@@ -28,7 +28,7 @@ description: GridLinks云服务 使用条款
 
 <br>
 <p> <b>2. 服务提供</b> </p> 
-<p> 2.1 您签订合同的 ThingsBoard 法律实体是 GridLinks, Inc.（称为<b>“ThingsBoard”</b>）</p>
+<p> 2.1 您签订合同的 GridLinks 法律实体是 GridLinks, Inc.（称为<b>“ThingsBoard”</b>）</p>
 
 <p>2.2 您必须在 GridLinks Cloud 平台上注册为客户才能访问和使用服务。</p>
 
@@ -36,7 +36,7 @@ description: GridLinks云服务 使用条款
 
 <p>2.4 服务中的功能可能因不同的地区和国家而异。ThingsBoard 不保证或声明服务或其功能或功能将在所有国家和地区或对所有用户可用，特别是对于当时处于<a href="https://home.treasury.gov/policy-issues/financial-sanctions/specially-designated-nationals-list-data-formats-data-schemas" target="_blank">制裁名单</a>下的客户。ThingsBoard, Inc. 可以自行决定限制、拒绝或创建不同级别的访问和使用服务，以针对不同的用户。</p>
 
-<p>2.5 ThingsBoard 可能会终止或修改 TBCP 服务或其某些功能。除非用相同功能的服务或组件替换，否则我们将在终止服务或相关功能之前至少提前 12（十二）个月通知客户。
+<p>2.5 GridLinks 可能会终止或修改 TBCP 服务或其某些功能。除非用相同功能的服务或组件替换，否则我们将在终止服务或相关功能之前至少提前 12（十二）个月通知客户。
 </p> 
 
 <br>

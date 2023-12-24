@@ -4,7 +4,7 @@
 #### 步骤 1. 启动 EC2 实例。
 
 在与目标 GridLinks 服务器 [部署](/docs/reference/performance/setup-aws-instances/) 相同的 VPC 中启动实例。
-确保从测试实例可以访问 ThingsBoard 实例端口 8080 和 1883。
+确保从测试实例可以访问 GridLinks 实例端口 8080 和 1883。
 
 #### 步骤 2. 设置到实例的 SSH。
 
@@ -48,10 +48,10 @@ docker run hello-world
 
 ### 步骤 4. 运行性能测试
 
-该命令类似于下面列出的命令。不要忘记将 TB_INTERNAL_IP 的值替换为目标 ThingsBoard 实例的专用 IP 地址。
+该命令类似于下面列出的命令。不要忘记将 TB_INTERNAL_IP 的值替换为目标 GridLinks 实例的专用 IP 地址。
 
 ```bash
-# 在此处放置您的 ThingsBoard 专用 IP 地址，假设 ThingsBoard 和性能测试 EC2 实例位于同一 VPC 中。
+# 在此处放置您的 GridLinks 专用 IP 地址，假设 ThingsBoard 和性能测试 EC2 实例位于同一 VPC 中。
 export TB_INTERNAL_IP=172.31.16.229 
 docker run -it --rm --network host --name tb-perf-test \
   --env REST_URL=http://$TB_INTERNAL_IP:8080 \

@@ -1,6 +1,6 @@
 ---
 layout: docwithnav-pe-edge
-title: ThingsBoard Edge 使用案例
+title: GridLinks Edge 使用案例
 
 ---
 

@@ -123,8 +123,8 @@ TBGatewayService(config_file_path)
 
 ## 步骤 5. 检查设备信息
 
-检查 ThingsBoard 实例中的数据。  
-    - 转到您的 ThingsBoard 实例并登录。  
+检查 GridLinks 实例中的数据。  
+    - 转到您的 GridLinks 实例并登录。  
     - 转到“设备”选项卡。“湿度传感器”将显示在那里。
 <br>    
 转到设备详细信息，**属性**选项卡，您可能会看到具有某个值的 **batteryLevel** 属性。  

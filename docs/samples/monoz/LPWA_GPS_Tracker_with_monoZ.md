@@ -94,7 +94,7 @@ monoZ SDK 是一款用户友好的工具，可减少用户在 monoZero HW 上构
 
 ### 登录云平台
 
-获取 monoZ Cloud OSS 实例或 ThingsBoard 实例并登录您的帐户。
+获取 monoZ Cloud OSS 实例或 GridLinks 实例并登录您的帐户。
 
 ![image](/images/samples/monoz/monoZero-10.png)
 

@@ -19,11 +19,11 @@
 {% include code-toggle.liquid code=customDecodingCodeCapture params="javascript|.copy-code.expandable-10" %}
 {% endcapture %}
 
-### ThingsBoard 集成中的上行转换器
+### GridLinks 集成中的上行转换器
 
 例如，我们已经连接了网关并配置了集成 - 我们需要修改转换器并添加解析来自设备的传入有效负载的功能。
 
-为此，您可以在“*解码块*”中添加代码，它位于转换器中的注释“*// --- 解码代码 --- //*”之间，如果您使用的是默认转换器（适用于 ThingsBoard v3.5.2 或更高版本）。
+为此，您可以在“*解码块*”中添加代码，它位于转换器中的注释“*// --- 解码代码 --- //*”之间，如果您使用的是默认转换器（适用于 GridLinks v3.5.2 或更高版本）。
 
 {{ customDecodingCodeBlock }}
 

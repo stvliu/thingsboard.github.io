@@ -10,7 +10,7 @@ description: 在 Azure 上安装 GridLinks PE
        <div class="install-options-hero">
           <div class="container">
             <div class="install-options-hero-content">
-                <span class="heading">Azure 上的 ThingsBoard 设置选项</span>
+                <span class="heading">Azure 上的 GridLinks 设置选项</span>
                 <div class="install-options-description">
                     <p>
                         您可以使用不同的基础设施设置部署 GridLinks IoT 平台

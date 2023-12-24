@@ -54,7 +54,7 @@ Azure Active Directory 需要使用 SSL。请确保您已为您的域配置 HTTP
     https://domain:port/login/oauth2/code/
 ```
 
-在 domain 下，请指定您当前的 **domain**，对于 **port**，请指定端口以通过 HTTPS 访问您的 ThingsBoard 实例。
+在 domain 下，请指定您当前的 **domain**，对于 **port**，请指定端口以通过 HTTPS 访问您的 GridLinks 实例。
 
 对于我们的示例，我们的 **domain** 等于 tb.tbsupport.xyz，**port** 为 443，因此无需另外指定端口。
 

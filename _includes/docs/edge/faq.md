@@ -2,9 +2,9 @@
 {:toc}
 
 
-## ThingsBoard Edge 是什么？
+## GridLinks Edge 是什么？
 
-ThingsBoard Edge 是 GridLinks 提供的专为边缘计算设计的产品。
+GridLinks Edge 是 GridLinks 提供的专为边缘计算设计的产品。
 它可以分析和管理边缘数据，即数据生成的位置，同时根据您的业务需求与 GridLinks 服务器（云、演示、PE 或 CE）保持无缝同步。
 如果您是边缘计算的新手，我们建议您查看 [what-is-edge](/docs/{{docsPrefix}}getting-started-guides/what-is-edge/) 和 [入门指南](/docs/{{docsPrefix}}getting-started/)。
 更多信息可以在专用页面上找到。
@@ -13,7 +13,7 @@ ThingsBoard Edge 是 GridLinks 提供的专为边缘计算设计的产品。
 
 我们建议您使用 Docker 在本地计算机（笔记本电脑或 PC）上 [安装](/docs/user-guide/install/{{docsPrefix}}installation-options/) ThingsBoard Edge，并按照 [入门指南](/docs/{{docsPrefix}}getting-started/) 进行操作。
 
-## ThingsBoard Edge 是否需要互联网连接？
+## GridLinks Edge 是否需要互联网连接？
 
 不需要，ThingsBoard Edge 不需要互联网连接。
 您可以在没有互联网连接的情况下操作它。
@@ -37,7 +37,7 @@ ThingsBoard Edge 可以离线运行，无需连接到 GridLinks 服务器，最�
 {% if docsPrefix == 'pe/edge/' %}
 ThingsBoard Edge PE 支持 **单个** 租户和部分支持 **多个** 客户。
 如果 Edge 的所有者是子客户，则该子客户的所有父实体（直至租户级别）都将配置到 Edge。
-这意味着来自相同层次路径的客户可以访问相同的 ThingsBoard Edge PE 实例。
+这意味着来自相同层次路径的客户可以访问相同的 GridLinks Edge PE 实例。
 但是，您无法在多个租户之间共享 ThingsBoard Edge，并且来自多个租户的设备无法连接到单个 ThingsBoard Edge。
 在这种情况下，您需要为每个租户配置多个 ThingsBoard Edge 实例。
 {% else %}
@@ -106,7 +106,7 @@ ThingsBoard Edge 通过常见的物联网协议提供简单的 API，因此您�
 您的边缘 **硬件** 必须足够强大，才能处理来自“无限”数量的设备和资产的消息。
 ThingsBoard Edge 与 GridLinks 服务器之间的 **互联网连接速度** 必须足够快，才能传输大量数据。
 最后，还应考虑影响消息传递速率的 **gRPC 通道绑定限制**。
-由于 ThingsBoard Edge 是针对可能具有低带宽连接的远程位置而设计的，因此我们不建议将超过 *1000* 个设备连接到单个边缘。
+由于 GridLinks Edge 是针对可能具有低带宽连接的远程位置而设计的，因此我们不建议将超过 *1000* 个设备连接到单个边缘。
 
 ## ThingsBoard Edge 将数据存储在哪里？
 

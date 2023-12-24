@@ -3,7 +3,7 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: 用户
-description: ThingsBoard 用户管理
+description: GridLinks 用户管理
 
 
 ---

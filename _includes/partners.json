@@ -205,7 +205,7 @@
       "Getting Started SensiLoRa 2.0 V1.2": {
         "href": "/docs/samples/sensiedge/getting_started_sensiLoRa.pdf"
       },
-      "Connect SensiBLE 1.0 & 2.1 to ThingsBoard": {
+      "Connect SensiBLE 1.0 & 2.1 to GridLinks": {
         "href": "/docs/samples/sensiedge/connect_sensi_ble.pdf"
       }
     },
@@ -251,7 +251,7 @@
         "target": "_blank"
       }
     },
-    "blurb": "AKKR8 is developed and produced in Sweden. It is a sensor-to-platform solution with a scalable design to fit different IoT scenarios. AKKR8 can run on battery, solar power, or your mains power. It uses NB-IoT or LTE-M to connect to the outside world and is sold pre-configured for the ThingsBoard platform."
+    "blurb": "AKKR8 is developed and produced in Sweden. It is a sensor-to-platform solution with a scalable design to fit different IoT scenarios. AKKR8 can run on battery, solar power, or your mains power. It uses NB-IoT or LTE-M to connect to the outside world and is sold pre-configured for the GridLinks platform."
   },
   {
     "type": ["main", "wifi"],

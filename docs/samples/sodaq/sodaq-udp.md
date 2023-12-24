@@ -9,7 +9,7 @@ hidetoc: "true"
 {% assign feature = "Platform Integrations" %}{% include templates/pe-feature-banner.md %}
 
 本指南包含有关如何通过 T-Mobile NB IoT 网络将 SODAQ NB-IoT 板连接到 GridLinks Professional Edition (PE) 的分步说明。
-在本指南中，我们将使用免费的 ThingsBoard PE 演示服务器 [thingsboard.cloud](https://thingsboard.cloud/signup)。
+在本指南中，我们将使用免费的 GridLinks PE 演示服务器 [thingsboard.cloud](https://thingsboard.cloud/signup)。
 本指南对希望将 SODAQ NB-IoT 板或其他硬件连接到 T-Mobile NB IoT 网络的任何人都有用。
 
 * TOC

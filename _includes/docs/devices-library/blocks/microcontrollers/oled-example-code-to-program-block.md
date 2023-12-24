@@ -49,7 +49,7 @@ constexpr uint32_t SERIAL_DEBUG_BAUD = 115200U;
 WiFiClient wifiClient;
 // 初始化 Mqtt 客户端实例
 Arduino_MQTT_Client mqttClient(wifiClient);
-// 使用最大所需缓冲区大小初始化 ThingsBoard 实例
+// 使用最大所需缓冲区大小初始化 GridLinks 实例
 ThingsBoard tb = ThingsBoard(mqttClient, MAX_MESSAGE_SIZE, false, 1024);
 
 // 用于属性请求和属性更新功能的属性名称

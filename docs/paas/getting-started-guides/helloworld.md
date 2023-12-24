@@ -41,7 +41,7 @@ step2:
 step31:
     0:
         image: /images/user-guide/dashboards/overview/create-dashboard-1-pe.png
-        title: '登录到您的 ThingsBoard 实例并通过屏幕左侧的主菜单导航到“仪表板”页面。默认情况下，您导航到仪表板组“全部”；'
+        title: '登录到您的 GridLinks 实例并通过屏幕左侧的主菜单导航到“仪表板”页面。默认情况下，您导航到仪表板组“全部”；'
     1:
         image: /images/user-guide/dashboards/overview/create-dashboard-2-pe.png
         title: '单击屏幕右上角的“+”号，然后从下拉菜单中选择“创建新仪表板”；'

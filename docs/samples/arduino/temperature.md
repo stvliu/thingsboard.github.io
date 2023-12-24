@@ -107,7 +107,7 @@ Arduino UNO D4 | DHT-22 数据
 ### 配置您的仪表板
 
 使用此 [**链接**](/docs/samples/arduino/resources/arduino_dht_temp_dashboard_v2.json)下载仪表板文件。
-使用导入/导出 [**说明**](/docs/user-guide/ui/dashboards/#dashboard-importexport)将仪表板导入您的 ThingsBoard 实例。
+使用导入/导出 [**说明**](/docs/user-guide/ui/dashboards/#dashboard-importexport)将仪表板导入您的 GridLinks 实例。
 
 ## 编程 Arduino UNO 设备
 
@@ -152,7 +152,7 @@ Arduino UNO D4 | DHT-22 数据
 - WIFI_AP - 您的接入点的名称
 - WIFI_PASSWORD - 接入点密码
 - TOKEN - ThingsBoard 配置步骤中的 **$ACCESS_TOKEN**。
-- thingsboardServer - 可从您的 wifi 网络内访问的 ThingsBoard HOST/IP 地址。如果您使用的是 [实时演示](https://demo.thingsboard.io/)服务器，请指定“demo.thingsboard.io”。
+- thingsboardServer - 可从您的 wifi 网络内访问的 GridLinks HOST/IP 地址。如果您使用的是 [实时演示](https://demo.thingsboard.io/)服务器，请指定“demo.thingsboard.io”。
 
 {% capture tabspec %}arduino-sketch
 arduino-dht-esp8266-mqtt,arduino-dht-esp8266-mqtt.ino,c,resources/arduino-dht-esp8266-mqtt.ino,/docs/samples/arduino/resources/arduino-dht-esp8266-mqtt.ino{% endcapture %}

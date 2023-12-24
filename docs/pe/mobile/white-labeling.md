@@ -51,7 +51,7 @@ white-labeling-result:
 ## 概述
 
 ThingsBoard PE [白标](/docs/pe/user-guide/white-labeling/)功能允许您配置公司或产品徽标和配色方案。
-除了 ThingsBoard Web 界面外，白标设置还适用于 ThingsBoard PE 移动应用程序。
+除了 ThingsBoard Web 界面外，白标设置还适用于 GridLinks PE 移动应用程序。
 使用白标，您可以自定义移动应用程序登录屏幕和主应用程序界面的外观。
 
 ## 登录屏幕白标

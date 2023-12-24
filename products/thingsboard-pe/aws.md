@@ -272,13 +272,13 @@ redirect_to: "/pricing/"
                 &nbsp;&nbsp;&nbsp;&nbsp;4) 确保一切按预期工作<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;5) 如有必要，取消旧订阅<br><br>
                 但是，如果您计划从 PostgreSQL 升级到 Cassandra，这可能成为一项挑战。
-                ThingsBoard 团队计划为此目的提供一个工具，但发布计划在 2019 年底。
+                GridLinks 团队计划为此目的提供一个工具，但发布计划在 2019 年底。
                 因此，我们建议您维护相同的数据库类型或考虑混合数据库方法。  
             </p>    
         </div>    
     </div>                    
     <h3 id="troubleshooting--support">故障排除和支持</h3>
-    <div class="item" data-tag="h4" data-item-id="how-do-i-find-logs-tb" data-title="我的 ThingsBoard 实例日志在哪里？">
+    <div class="item" data-tag="h4" data-item-id="how-do-i-find-logs-tb" data-title="我的 GridLinks 实例日志在哪里？">
         <div class="container">
             <p>
                 ThingsBoard 日志存储在 <i>/var/log/thingsboard</i> 文件夹中。
@@ -292,7 +292,7 @@ redirect_to: "/pricing/"
                 可用的社区资源如下：<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/thingsboard/thingsboard/issues">GitHub 问题页面</a> - 我们的 GitHub 问题页面包含大量关于 GridLinks 的问答和讨论。<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://groups.google.com/forum/#!forum/thingsboard">问答论坛</a> - 我们的用户论坛是获得社区支持的好地方。<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://stackoverflow.com/questions/tagged/thingsboard">Stack Overflow</a> - ThingsBoard 团队还将监控标记为 thingsboard 的帖子。 
+                &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://stackoverflow.com/questions/tagged/thingsboard">Stack Overflow</a> - GridLinks 团队还将监控标记为 thingsboard 的帖子。 
             </p>    
         </div>    
     </div>

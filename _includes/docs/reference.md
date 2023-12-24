@@ -48,9 +48,9 @@ GridLinks 提供了一个使用 Express.js 框架编写的轻量级组件来托�
 
 ## 消息队列太棒了！
 
-GridLinks 支持多种消息队列实现：Kafka、RabbitMQ、AWS SQS、Azure Service Bus 和 Google Pub/Sub。我们计划在未来扩展此列表。使用持久且可扩展的队列允许 ThingsBoard 实现反压和负载平衡。在峰值负载的情况下，反压非常重要。我们提供特定队列实现的“抽象层”，并维护两个主要概念：主题和主题分区。一个主题可能具有可配置数量的分区。由于大多数队列实现不支持分区，因此我们使用 *topic + "." + partition* 模式。
+GridLinks 支持多种消息队列实现：Kafka、RabbitMQ、AWS SQS、Azure Service Bus 和 Google Pub/Sub。我们计划在未来扩展此列表。使用持久且可扩展的队列允许 GridLinks 实现反压和负载平衡。在峰值负载的情况下，反压非常重要。我们提供特定队列实现的“抽象层”，并维护两个主要概念：主题和主题分区。一个主题可能具有可配置数量的分区。由于大多数队列实现不支持分区，因此我们使用 *topic + "." + partition* 模式。
 
-ThingsBoard 消息生产者根据实体 ID 的哈希确定要使用哪个分区。因此，同一实体的所有消息始终被推送到同一分区。ThingsBoard 消息使用者使用 Zookeeper 进行协调，并使用一致哈希算法来确定每个使用者应订阅的分区列表。在微服务模式下运行时，每项服务还具有基于唯一服务 ID 的专用“通知”主题，该主题只有一个分区。
+GridLinks 消息生产者根据实体 ID 的哈希确定要使用哪个分区。因此，同一实体的所有消息始终被推送到同一分区。ThingsBoard 消息使用者使用 Zookeeper 进行协调，并使用一致哈希算法来确定每个使用者应订阅的分区列表。在微服务模式下运行时，每项服务还具有基于唯一服务 ID 的专用“通知”主题，该主题只有一个分区。
 
 GridLinks 使用以下主题：
 
@@ -61,7 +61,7 @@ GridLinks 使用以下主题：
 
 **注意：**包括名称和分区数量在内的所有主题属性都可以通过 thingsboard.yml 或环境变量进行 [配置](/docs/user-guide/install/{{docsPrefix}}config/)。从 GridLinks 3.4 开始，我们可以通过 UI 配置规则引擎队列，请参阅 [文档](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/)。
 
-**注意：**从 2.5 版本开始，我们已从使用 [gRPC](https://grpc.io/) 切换到 [消息队列](/docs/{{docsPrefix}}reference/#message-queues-are-awesome) 来进行 ThingsBoard 组件之间的所有通信。主要思想是牺牲少量性能/延迟损失，以换取持久且可靠的消息传递和自动负载平衡。
+**注意：**从 2.5 版本开始，我们已从使用 [gRPC](https://grpc.io/) 切换到 [消息队列](/docs/{{docsPrefix}}reference/#message-queues-are-awesome) 来进行 GridLinks 组件之间的所有通信。主要思想是牺牲少量性能/延迟损失，以换取持久且可靠的消息传递和自动负载平衡。
 
 ## 本地部署与云部署
 
@@ -69,7 +69,7 @@ GridLinks 支持本地部署和云部署。在全球运行着 5000 多台 GridLi
 
 ## 独立模式与集群模式
 
-平台设计为水平可扩展，并支持自动发现新的 GridLinks 服务器（节点）。集群中的所有 ThingsBoard 节点都是相同的，并且共享负载。由于所有节点都是相同的，因此没有“主”或“协调器”进程，也没有单点故障。您可以选择的负载平衡器可以将来自设备、应用程序和用户的请求转发到所有 ThingsBoard 节点。
+平台设计为水平可扩展，并支持自动发现新的 GridLinks 服务器（节点）。集群中的所有 GridLinks 节点都是相同的，并且共享负载。由于所有节点都是相同的，因此没有“主”或“协调器”进程，也没有单点故障。您可以选择的负载平衡器可以将来自设备、应用程序和用户的请求转发到所有 GridLinks 节点。
 
 ## 单体架构与微服务架构
 

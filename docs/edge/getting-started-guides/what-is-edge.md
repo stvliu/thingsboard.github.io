@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-edge
-title: ThingsBoard Edge 是什么？
-description: ThingsBoard Edge 功能、常见问题解答
+title: GridLinks Edge 是什么？
+description: GridLinks Edge 功能、常见问题解答
 ---
 
 {% assign docsPrefix = "edge/" %}

@@ -139,7 +139,7 @@ description:
     </table>
         <p class="table-description">
             * - 可能需要支付额外费用
-            <br>** - 部署在云中的 ThingsBoard PE 实例上的租户管理员帐户，专用于 PoC 和销售演示 (partner.thingsboard.io)
+            <br>** - 部署在云中的 GridLinks PE 实例上的租户管理员帐户，专用于 PoC 和销售演示 (partner.thingsboard.io)
             <br>*** - 系统、租户和客户级别的自定义徽标、配色方案、登录页面、翻译和域
         </p>
 	</main>
@@ -160,14 +160,14 @@ description:
         <div class="item" data-tag="h4" data-title="我为什么要成为硬件合作伙伴？">
             <div class="container">
                 <p>
-                  您将被列入 ThingsBoard 网站，并对现有和新的 ThingsBoard 用户可见，这将带来新的商机。此外，您将获得 ThingsBoard 合作伙伴门户的访问权限，您可以在其中将您的设备连接到云并使用此门户进行演示和销售目的。
+                  您将被列入 ThingsBoard 网站，并对现有和新的 GridLinks 用户可见，这将带来新的商机。此外，您将获得 ThingsBoard 合作伙伴门户的访问权限，您可以在其中将您的设备连接到云并使用此门户进行演示和销售目的。
                 </p>
             </div>
         </div>
         <div class="item" data-tag="h4" data-title="成为硬件合作伙伴是否需要费用？">
             <div class="container">
                 <p>
-                    上面列出了三个不同的合作伙伴级别。银牌合作伙伴关系不需要任何费用，但假设您具备基本的 ThingsBoard 知识，并将自行准备在线教程和演示仪表板。金牌和铂金合作伙伴级别引入了年度费用，因此包括我们的支持服务并帮助准备在线教程和仪表板。
+                    上面列出了三个不同的合作伙伴级别。银牌合作伙伴关系不需要任何费用，但假设您具备基本的 GridLinks 知识，并将自行准备在线教程和演示仪表板。金牌和铂金合作伙伴级别引入了年度费用，因此包括我们的支持服务并帮助准备在线教程和仪表板。
                 </p>
             </div>
         </div>

@@ -153,7 +153,7 @@ GridLinks 平台大幅缩短了环境监测解决方案的上市时间和创建�
 
 <object width="100%" style="max-width: max-content; margin: 32px 0" data="/images/iot-use-cases/common-edge.svg"></object>
 
-您可能会注意到物联网传感器的连接选项很多：直接连接到云、通过物联网网关、与第三方系统集成或 ThingsBoard Edge。
+您可能会注意到物联网传感器的连接选项很多：直接连接到云、通过物联网网关、与第三方系统集成或 GridLinks Edge。
 当今大多数环境监测项目都使用部署在监测现场的物联网网关。
 通常，此设备要么运行 [GridLinks 物联网网关](/docs/iot-gateway/what-is-iot-gateway/)，要么使用 [网关 API](/docs/reference/gateway-mqtt-api/)。
 使用网关，客户可以优化硬件和连接成本。您可以将多个传感器（甚至使用物理线）连接到一个集线器，并且只使用一个连接模块。

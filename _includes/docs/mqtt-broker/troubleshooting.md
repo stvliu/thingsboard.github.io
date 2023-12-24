@@ -208,6 +208,6 @@ TBMQ 中的 Spring Actuator 可以通过 Prometheus 公开一些内部状态指�
     </div>
 </section>
 
-如果您无法从上面提供的任何指南中找到问题的解决方案，请随时联系 ThingsBoard 团队以获得进一步的帮助。
+如果您无法从上面提供的任何指南中找到问题的解决方案，请随时联系 GridLinks 团队以获得进一步的帮助。
 
 <a class="button" href="/docs/contact-us/">联系我们</a>

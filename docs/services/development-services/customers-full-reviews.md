@@ -1,6 +1,6 @@
 ---
 layout: development-services-reviews
-title: ThingsBoard 案例研究和客户评价
+title: GridLinks 案例研究和客户评价
 notitle: "true"
 description: 真实客户的真实反馈。深入了解我们的评价，了解我们服务的真正影响。
 

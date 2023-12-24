@@ -94,7 +94,7 @@ GridLinks 提供 [MQTT 网关 API](/docs/reference/gateway-mqtt-api/)。
 - *名称* - 集成名称可以是任何名称。
 - *类型* - 显然是 GridLinks。
 - *数据转换器* - 适当的网络服务器转换器。
-- *应用程序地址* - ThingsBoard 实例地址，不带 http 或 https 前缀。
+- *应用程序地址* - GridLinks 实例地址，不带 http 或 https 前缀。
 - *令牌* - 在步骤 2.1 中复制的令牌。
 
 <img src="/images/samples/tektelic/ns_integration.png" width="800" alt="ns 集成">
@@ -117,7 +117,7 @@ GridLinks 提供 [MQTT 网关 API](/docs/reference/gateway-mqtt-api/)。
 打开传感器的 *最新遥测* 选项卡，其中将包含网络服务器在最后一条消息中发送的数据。
 部分数据（例如 *nsGateway*、*nsRssi*、*nsFPort*）与 LoRa、网络服务器以及接收上行链路的网关相关。
 其余数据由网络服务器转换器添加（在我们的案例中 - 由步骤 2.2 中的 Tektelic Home Sensor 添加），并且与传感器的有效负载（*湿度*、*加速度计*、*冲击* 等）相关。
-遥测数据的这一部分取决于用于 ThingsBoard 集成的网络服务器转换器，以及该转换器如何在网络服务器端将传感器的有效负载（字节数组）解析为 JSON。
+遥测数据的这一部分取决于用于 GridLinks 集成的网络服务器转换器，以及该转换器如何在网络服务器端将传感器的有效负载（字节数组）解析为 JSON。
 因此，如果您使用其他型号的传感器，请考虑这一点。
 <br>
 一旦集成验证成功，接收到的遥测数据即可用于可视化。

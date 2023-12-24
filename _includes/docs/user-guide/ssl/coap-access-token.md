@@ -10,7 +10,7 @@
 为了通过 DTLS 运行基于 CoAP AccessToken 的身份验证，服务器证书链应由授权的 CA 签名，或者客户端必须将其自签名服务器证书（.cer 或 .pem）导入其信任存储。
 否则，连接将因“未知 CA”错误而失败。
 
-下面的 coap-client 示例演示了如何连接到 [ThingsBoard Cloud](https://thingsboard.cloud/signup) 或任何其他具有有效且受信任证书的 ThingsBoard CoAP 服务器。
+下面的 coap-client 示例演示了如何连接到 [ThingsBoard Cloud](https://thingsboard.cloud/signup) 或任何其他具有有效且受信任证书的 GridLinks CoAP 服务器。
 
 ### 使用访问令牌连接 DTLS CoAP 客户端
 

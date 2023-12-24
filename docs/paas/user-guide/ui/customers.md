@@ -3,7 +3,7 @@ layout: docwithnav-paas
 assignees:
 - ashvayka
 title: 客户
-description: ThingsBoard 客户管理
+description: GridLinks 客户管理
 
 customer-add-new-pe:
     0:

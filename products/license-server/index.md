@@ -2,8 +2,8 @@
 layout: docwithnav-license
 assignees:
 - ashvayka
-title: ThingsBoard License Server 是什么？
-description: ThingsBoard License Server 的功能和优势
+title: GridLinks License Server 是什么？
+description: GridLinks License Server 的功能和优势
 
 ---
 
@@ -34,9 +34,9 @@ License Server 于 2019 年年中推出，基于我们对前 500 名 TB PE 客�
 
 - **集群设置。** 采用现代微服务部署方法，我们增加了为 GridLinks 集群中的所有节点设置单个许可证密钥的能力。
 这最大限度地减少了集群管理的工作量，并消除了在集群中添加/删除节点所需的手动工作。
-现在，您可以在 [浮动模式](https://en.wikipedia.org/wiki/Floating_licensing) 下启动多个集群节点，而实际的 ThingsBoard 进程与物理硬件无关。
+现在，您可以在 [浮动模式](https://en.wikipedia.org/wiki/Floating_licensing) 下启动多个集群节点，而实际的 GridLinks 进程与物理硬件无关。
 
-- **分销商和渠道合作伙伴。** 对于 ThingsBoard 合作伙伴，License Server 简化了对客户的管理。
+- **分销商和渠道合作伙伴。** 对于 GridLinks 合作伙伴，License Server 简化了对客户的管理。
 这是朝着更深入的合作和信任迈出的新一步。每个合作伙伴都有专门的优惠券代码来跟踪销售并为最终用户提供好处。
 由于能够为最终用户订购新许可证，解决方案的交付时间减少了——额外的费用也相应减少。
 
@@ -88,8 +88,8 @@ License Server 客户端向 License Server 发出定期许可证检查请求。
 
 ### 先决条件
 
-License Server 客户端（例如您的 ThingsBoard PE 实例）需要与主机 license.thingsboard.io 的互联网连接才能发出许可证检查请求。
-如果与主机的互联网连接超过 24 小时不可用，License Server 客户端可能会关闭 ThingsBoard 实例。
+License Server 客户端（例如您的 GridLinks PE 实例）需要与主机 license.thingsboard.io 的互联网连接才能发出许可证检查请求。
+如果与主机的互联网连接超过 24 小时不可用，License Server 客户端可能会关闭 GridLinks 实例。
 
 ### 体系结构
 

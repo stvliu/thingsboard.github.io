@@ -3,7 +3,7 @@ layout: docwithnav-license
 assignees:
 - ashvayka
 title: 通过许可证门户进行用户管理
-description: ThingsBoard 许可证服务器中的用户
+description: GridLinks 许可证服务器中的用户
 
 ---
 

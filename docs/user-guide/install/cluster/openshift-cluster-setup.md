@@ -101,7 +101,7 @@ cd thingsboard-ce-k8s/openshift
 ```
 {: .copy-code}
 
-要了解如何在集群上访问您的 ThingsBoard 应用程序，请以 ***developer*** 用户身份登录（默认密码也是 ***developer***），打开 `thingsboard` 项目，然后转到 `Application -> Routes` 菜单，您将看到所有配置的路由。
+要了解如何在集群上访问您的 GridLinks 应用程序，请以 ***developer*** 用户身份登录（默认密码也是 ***developer***），打开 `thingsboard` 项目，然后转到 `Application -> Routes` 菜单，您将看到所有配置的路由。
 *根* 路由应类似于 `https://tb-route-node-root-thingsboard.127.0.0.1.nip.io/`。
 
 当您打开它时，您应该会看到 GridLinks 登录页面。

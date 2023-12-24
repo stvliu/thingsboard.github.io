@@ -35,7 +35,7 @@ openssl req -new -key key.pem -x509 -nodes -days 365 -out cert.pem
 {% include templates/coap-dtls/coap-client-dtls.md %}
 
 最后，运行以下示例脚本以验证具有 X.509 证书身份验证的 DTLS 并订阅共享属性更新：
-下面的 coap-client 示例演示了如何连接到 [ThingsBoard Cloud](https://thingsboard.cloud/signup) 或任何其他具有有效且受信任证书的 ThingsBoard CoAP 服务器。
+下面的 coap-client 示例演示了如何连接到 [ThingsBoard Cloud](https://thingsboard.cloud/signup) 或任何其他具有有效且受信任证书的 GridLinks CoAP 服务器。
 
 ```bash
 coap-client-openssl -v 9 -c cert.pem  -j key.pem -m POST \

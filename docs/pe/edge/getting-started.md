@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-pe-edge
-title: ThingsBoard PE Edge 入门
-description: ThingsBoard PE Edge 入门
+title: GridLinks PE Edge 入门
+description: GridLinks PE Edge 入门
 
 step1:
     0:
@@ -46,7 +46,7 @@ step2:
 step3:
     0:
         image: /images/pe/edge/getting-started/step-3-item-1.png
-        title: '在您的 ThingsBoard <b>Edge</b> 实例中导航到“规则链”页面，然后打开“Edge 根规则链”。'
+        title: '在您的 GridLinks <b>Edge</b> 实例中导航到“规则链”页面，然后打开“Edge 根规则链”。'
     1:
         image: /images/pe/edge/getting-started/step-3-item-2.png
         title: '<b>推送到云</b>规则节点将在温度时序数据存储在本地数据库后将其传输到云。'

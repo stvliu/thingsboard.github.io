@@ -16,7 +16,7 @@ FDQ-99900 MI-8 是一款紧凑型 24 位数据采集系统 (DAQ)，旨在测量�
 MI-8 提供带外壳和不带外壳两种型号，以支持定制包装解决方案。例如，无外壳（OEM）配置通常与支持传感器和硬件一起安装到 IP-67 等级 NEMA 外壳中。  
 
 在本指南中，我们将学习如何 [在 Thingsboard 上创建设备](#create-device-on-thingsboard)。  
-在此之后，我们将 [配置并连接设备](#connect-device-to-thingsboard)，并 [检查 ThingsBoard 上的数据](#check-data-on-thingsboard)。  
+在此之后，我们将 [配置并连接设备](#connect-device-to-thingsboard)，并 [检查 GridLinks 上的数据](#check-data-on-thingsboard)。  
 
 ### 先决条件
 
@@ -38,7 +38,7 @@ MI-8 提供带外壳和不带外壳两种型号，以支持定制包装解决方
 
 {% include /docs/devices-library/blocks/ready-to-go-devices/mixed-input-8-channel-analog-cellular-logger-configuration-block.md %}
 
-## 检查 ThingsBoard 上的数据
+## 检查 GridLinks 上的数据
 
 {% include /docs/devices-library/blocks/ready-to-go-devices/mixed-input-8-channel-analog-cellular-logger-check-data-block.md %}
 

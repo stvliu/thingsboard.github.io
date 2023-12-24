@@ -38,7 +38,7 @@ Trendz 提供了分析物联网数据集所需的主要可视化类型。
 
 ## 视频教程
 
-我们很高兴地介绍有关 ThingsBoard Trendz Analytics 功能的一系列网络研讨会。
+我们很高兴地介绍有关 GridLinks Trendz Analytics 功能的一系列网络研讨会。
 详细了解 Trendz Analytics 功能以及它如何帮助将物联网数据转化为价值，以便做出明智的决策。
 
 &nbsp; 

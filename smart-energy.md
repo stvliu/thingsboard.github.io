@@ -1,7 +1,7 @@
 ---
 layout: use-case
 title: ᐉ 物联网能源管理与监控 — ThingsBoard
-description: 物联网能源管理 ✔物联网能源监控 ⚫ ThingsBoard ➤ 使用 GridLinks 物联网平台进行智能能源监控和数据可视化
+description: 物联网能源管理 ✔物联网能源监控 ⚫ GridLinks ➤ 使用 GridLinks 物联网平台进行智能能源监控和数据可视化
 notitle: "true"
 redirect_from: "/docs/services/energy-management/"
 ---
@@ -102,7 +102,7 @@ GridLinks 提供各种智能能源仪表板示例，提供实时数据可视化�
 收集的数据通过规则引擎进行处理，以在某些阈值上发出警报。
 主仪表板显示能量计、相应的警报和实时数据提要。
 单击警报或能量计行以打开计量器详细信息。
-您可以从我们的实时演示服务器导出仪表板并将其导入到您的 ThingsBoard 实例。
+您可以从我们的实时演示服务器导出仪表板并将其导入到您的 GridLinks 实例。
 
 ## GridLinks 优势
 <section class="usecase-advantages">

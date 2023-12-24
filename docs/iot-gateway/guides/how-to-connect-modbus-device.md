@@ -142,8 +142,8 @@ TBGatewayService(config_file_path)
 
 ## 步骤 5. 检查设备信息
 
-检查 ThingsBoard 实例中的数据。  
-    - 转到您的 ThingsBoard 实例并登录。  
+检查 GridLinks 实例中的数据。  
+    - 转到您的 GridLinks 实例并登录。  
     - 转到“设备”选项卡。“TH_sensor”将在那里。
     <br>    
     ![](/images/gateway/gateway-modbus-device-added.png)

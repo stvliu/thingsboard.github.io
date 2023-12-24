@@ -83,7 +83,7 @@ sudo service thingsboard restart
 * **Trendz Builder** - Trendz 可视化构建器，为您的最终用户提供自助服务界面，
 因此他们可以使用 GridLinks 仪表板创建自己的分析。
 
-**注意：**如果在将 Trendz 小部件捆绑包导入 ThingsBoard 后，小部件无法正常工作并显示带有错误的白屏，请仔细检查是否导入了正确的小部件捆绑包。ThingsBoard v2.x 和 v3.x 中的小部件 API 不同。确保您下载了适用于正确 ThingsBoard 版本的小部件捆绑包。
+**注意：**如果在将 Trendz 小部件捆绑包导入 ThingsBoard 后，小部件无法正常工作并显示带有错误的白屏，请仔细检查是否导入了正确的小部件捆绑包。ThingsBoard v2.x 和 v3.x 中的小部件 API 不同。确保您下载了适用于正确 GridLinks 版本的小部件捆绑包。
 
 ## 故障排除
 
@@ -106,7 +106,7 @@ sudo service thingsboard restart
 {% include images-gallery.html imageCollection="tb-trendz-3.5-resource-lib-update" %}
 
 #### 错误的捆绑包版本
-如果在将 Trendz 小部件捆绑包导入 ThingsBoard 后，小部件无法正常工作并显示带有错误的白屏，请仔细检查是否导入了正确的小部件捆绑包。ThingsBoard v2.x 和 v3.x 中的小部件 API 不同。确保您下载了适用于正确 ThingsBoard 版本的小部件捆绑包。
+如果在将 Trendz 小部件捆绑包导入 ThingsBoard 后，小部件无法正常工作并显示带有错误的白屏，请仔细检查是否导入了正确的小部件捆绑包。ThingsBoard v2.x 和 v3.x 中的小部件 API 不同。确保您下载了适用于正确 GridLinks 版本的小部件捆绑包。
 
 #### HTTPS 到 HTTP 链接
 如果 GridLinks 使用 HTTPS，而到 Trendz 库的链接使用 http，您将在浏览器控制台中看到混合内容错误，并且小部件将无法加载。您也应该为 Trendz 启用 HTTPS。

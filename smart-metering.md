@@ -1,7 +1,7 @@
 ---
 layout: use-case
 title: ᐉ 解决方案 - 智能电表解决方案
-description: 物联网智能计量解决方案 ✔ 智能电表数据可视化 ⚫ ThingsBoard ➤ 远程监控和记录能源消耗
+description: 物联网智能计量解决方案 ✔ 智能电表数据可视化 ⚫ GridLinks ➤ 远程监控和记录能源消耗
 notitle: "true"
 
 ---
@@ -69,7 +69,7 @@ GridLinks 物联网平台提供生产就绪的服务器基础设施，以连接�
 收集的数据通过规则引擎处理，以在某些阈值上发出警报。
 主仪表板显示多个区域，并允许用户从区域向下钻取到建筑物和公寓级别。
 单击公寓级别以打开来自多个公寓设备的统计信息。
-您可以从我们的实时演示服务器导出仪表板并将其导入您的 ThingsBoard 实例。
+您可以从我们的实时演示服务器导出仪表板并将其导入您的 GridLinks 实例。
 
 ## GridLinks 优势
 <section class="usecase-advantages">

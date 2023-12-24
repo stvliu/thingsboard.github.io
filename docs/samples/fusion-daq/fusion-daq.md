@@ -95,7 +95,7 @@ Things board 遥测（传感器数据）请求发送到 http://thingsboard.cloud
 ### 在 GridLinks 中验证 MI-8 连接
 
 此时，MI-8 应已配置好并准备好与 GridLinks 通信。
-返回您的 ThingsBoard 实例，然后导航到“设备组”，然后导航到“全部”。
+返回您的 GridLinks 实例，然后导航到“设备组”，然后导航到“全部”。
 单击刚刚与 MI-8 关联的设备，然后导航到“最新遥测”选项卡。
 一旦 MI-8 启动并能够建立蜂窝连接，所有在活动 MI-8 触发器中配置的传感器值 [参见操作手册](https://fusiondaq.com/wp-content/uploads/2023/01/LTEdaq_OperatingManual-1.pdf) 都应存在。
 请注意，GPS 值仅在第一次 GPS 定位后才传输，具体取决于上次定位以来经过了多长时间以及 MI-8 移动了多远。

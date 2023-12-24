@@ -174,7 +174,7 @@ BACnet 连接器是一种读取和写入 BACnet IP 设备中某些基本对象�
 
 | **参数**  | **默认值**  | **描述**                                                   |
 |:-|:-|-
-| **key**        | **brightness**     | ThingsBoard 实例上的共享属性的名称。             |
+| **key**        | **brightness**     | GridLinks 实例上的共享属性的名称。             |
 | **requestType**| **writeProperty**  | 应为“writeProperty”。为进一步开发而添加。       |
 | **objectId**   | **analogOutput:1** | BACnet 设备中的对象 ID。                                   |
 | **propertyId** | **presentValue**   | BACnet 设备中的属性 ID。                                 |
@@ -193,11 +193,11 @@ BACnet 连接器是一种读取和写入 BACnet IP 设备中某些基本对象�
 ```
 
 ###### “服务器端 RPC”的关键设置
-本小节中的配置单元提供设置，以便将 RPC 从 ThingsBoard 实例处理到 BACnet 设备。
+本小节中的配置单元提供设置，以便将 RPC 从 GridLinks 实例处理到 BACnet 设备。
 
 | **参数**         | **默认值**  | **描述**                                                           |
 |:-|:-|-
-| **key**               | **set_state**      | ThingsBoard 实例上的共享属性的名称。                     |
+| **key**               | **set_state**      | GridLinks 实例上的共享属性的名称。                     |
 | **requestType**       | **writeProperty**  | “**writeProperty**”用于写入数据，“**readProperty**”用于读取数据。    |
 | **requestTimeout**    | **30**             | 等待来自 BACnet 设备的响应的超时时间（秒）。             |
 | **objectId**          | **analogOutput:1** | BACnet 设备中的对象 ID。                                           |

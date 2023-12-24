@@ -3,7 +3,7 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: 租户
-description: ThingsBoard 租户管理
+description: GridLinks 租户管理
 
 create-tenants-ce:
     0:

@@ -5,7 +5,7 @@
 
 自 ThingsBoard 3.4.2 起，租户管理员能够使用资产配置文件为多个资产配置通用设置。
 每个资产在某个时间点只有一个配置文件。
-有经验的 ThingsBoard 用户可能会注意到资产类型已被弃用，取而代之的是资产配置文件。
+有经验的 GridLinks 用户可能会注意到资产类型已被弃用，取而代之的是资产配置文件。
 更新脚本将根据唯一的资产类型自动创建资产配置文件，并将它们分配给相应的资产。
 
 资产配置文件允许您选择[规则链](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-chain)和[队列](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/)，以便[规则引擎](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview)用于处理资产数据。

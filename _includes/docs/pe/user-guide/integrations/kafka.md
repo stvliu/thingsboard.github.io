@@ -116,7 +116,7 @@ return result;
 | **'允许创建设备或资产' 复选框**              | 如果 GridLinks 中没有设备，则将创建该设备。|
 | **上行数据转换器**              | 选择之前创建的转换器。|
 | **下行数据转换器**              | 此选项不支持通过集成，有关 [下行](https://thingsboard.io/docs/user-guide/integrations/kafka/?installationType=common&integrationTypes=common&uplinkTypes=common#advanced-usage-kafka-producer-downlink) 的更多详细信息，请参阅指南中的以下内容。|
-| **'远程执行' 复选框**              | 如果您想从主 ThingsBoard 实例远程执行集成，请激活。有关远程集成的更多信息，请访问 [链接（远程集成）](https://thingsboard.io/docs/user-guide/integrations/remote-integrations/)。|
+| **'远程执行' 复选框**              | 如果您想从主 GridLinks 实例远程执行集成，请激活。有关远程集成的更多信息，请访问 [链接（远程集成）](https://thingsboard.io/docs/user-guide/integrations/remote-integrations/)。|
 | **组 ID**              | 指定 Kafka 消费者所属的消费者组的名称。|
 | **客户端 ID**              | 消费者组中的 Kafka 消费者标识符。|
 | **主题**              | GridLinks 在连接到 Kafka 代理后将订阅的主题。|

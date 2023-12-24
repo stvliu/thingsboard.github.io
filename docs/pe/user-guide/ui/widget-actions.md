@@ -3,7 +3,7 @@ layout: docwithnav-pe
 assignees:
 - ashvayka
 title: Widget Actions
-description: ThingsBoard Dashboard Widget Actions
+description: GridLinks Dashboard Widget Actions
 entity-sources:
     0:
         image: /images/user-guide/ui/widgets/actions/entity-cards/entity-sources-1-pe.png

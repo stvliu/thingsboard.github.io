@@ -15,7 +15,7 @@
             <td>license.instance_data_file</td>
             <td>TB_LICENSE_INSTANCE_DATA_FILE</td>
             <td>instance-license.data</td>
-            <td>实例数据是自动生成的，用于标识特定的 ThingsBoard 实例。<br>
+            <td>实例数据是自动生成的，用于标识特定的 GridLinks 实例。<br>
                 实例数据会定期更新并存储到指定的文件中，该文件可以设置为绝对路径或相对路径。<br>
                 如果您使用绝对路径，请确保 thingsboard 进程有权访问实例数据文件。</td>
         </tr>

@@ -26,7 +26,7 @@ LoRaWAN 技术用于将数据从气阀 V-LR 传输到 GridLinks 平台。这是�
 
 要能够通过 MQTT 协议接收数据，您需要集成 [LoRaWAN 服务器和 Mosquitto MQTT 代理](https://www.chirpstack.io/application-server/integrations/mqtt/)。
 ## 步骤 1. 创建上行数据转换器。
-首先，您应该根据设备协议创建上行数据转换器。转换器将解码来自 Gas Shutoff Valve LoRaWAN “Smartico V-LR” 的传入遥测有效载荷数据，其中包含编码的 Base64 字符串，以转换为人类可读的、简化的 ThingsBoard 数据格式。导入包含上行数据转换器的 [uplink_gas_valve.json](/docs/samples/smartico/gas-valve-lorawan/resources/uplink_gas_valve.json) 文件。
+首先，您应该根据设备协议创建上行数据转换器。转换器将解码来自 Gas Shutoff Valve LoRaWAN “Smartico V-LR” 的传入遥测有效载荷数据，其中包含编码的 Base64 字符串，以转换为人类可读的、简化的 GridLinks 数据格式。导入包含上行数据转换器的 [uplink_gas_valve.json](/docs/samples/smartico/gas-valve-lorawan/resources/uplink_gas_valve.json) 文件。
 
 ![image](/images/samples/smartico/gas-valve-lorawan/converter.PNG)
 

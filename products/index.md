@@ -1,7 +1,7 @@
 ---
 layout: common
 title: 产品
-description: ThingsBoard 产品
+description: GridLinks 产品
 notitle: "true"
 ---
 

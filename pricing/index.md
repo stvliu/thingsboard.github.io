@@ -1,7 +1,7 @@
 ---
 layout: pricing
 title: Pricing
-description: ThingsBoard Products Pricing
+description: GridLinks Products Pricing
 defaultActivePricingSection: thingsboard-pe-options
 
 

@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-edge
 title: 故障排除
-description: ThingsBoard Edge 故障排除
+description: GridLinks Edge 故障排除
 
 ---
 

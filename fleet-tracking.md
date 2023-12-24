@@ -248,7 +248,7 @@ ThingsBoard 的车辆管理物联网解决方案经过精心打造，可提供�
       <div class="block">
         <div>
           <a class="title">增强车辆维护</a>
-          <p>实施预测性维护协议，利用 ThingsBoard 的分析功能，从而减少停机时间和延长车辆寿命。</p>
+          <p>实施预测性维护协议，利用 GridLinks 的分析功能，从而减少停机时间和延长车辆寿命。</p>
         </div>
       </div>
     </div>
@@ -256,7 +256,7 @@ ThingsBoard 的车辆管理物联网解决方案经过精心打造，可提供�
       <div class="block">
         <div>
           <a class="title">智能驾驶员绩效监控</a>
-          <p>实施预测性维护协议，利用 ThingsBoard 的分析功能，从而减少停机时间和延长车辆寿命。</p>
+          <p>实施预测性维护协议，利用 GridLinks 的分析功能，从而减少停机时间和延长车辆寿命。</p>
         </div>
       </div>
     </div>
@@ -264,7 +264,7 @@ ThingsBoard 的车辆管理物联网解决方案经过精心打造，可提供�
       <div class="block">
         <div>
           <a class="title">增强车辆维护</a>
-          <p>成功构建和管理复杂的租户制车辆解决方案，证明 ThingsBoard 可针对各种客户需求进行调整。</p>
+          <p>成功构建和管理复杂的租户制车辆解决方案，证明 GridLinks 可针对各种客户需求进行调整。</p>
         </div>
       </div>
     </div>

@@ -42,7 +42,7 @@ ThingsBoard 允许您为您的客户提供单点登录功能，并使用支持 *
     http://domain:port/login/oauth2/code/
 ```
 
-在 domain 下，请指定您当前的 **domain**，在 **port** 中，请指定端口以通过 HTTP 访问您的 ThingsBoard 实例。
+在 domain 下，请指定您当前的 **domain**，在 **port** 中，请指定端口以通过 HTTP 访问您的 GridLinks 实例。
 
 对于我们的示例，我们的 **domain** 等于 tb.tbsupport.xyz，**port** 为 80，因此无需另外指定端口。
 

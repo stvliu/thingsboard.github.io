@@ -47,8 +47,8 @@ docker run -it -e host=thingsboard.cloud -e port=1883 -e accessToken=ACCESS_TOKE
 
 | **ENV** | **说明** |
 |:-|-
-| host | ThingsBoard 实例主机。 |
-| port | ThingsBoard 实例端口。 |
+| host | GridLinks 实例主机。 |
+| port | GridLinks 实例端口。 |
 | accessToken | 网关访问令牌。 |
 | caCert | CA 文件的路径。 |
 | privateKey | 私钥文件的路径。 |
@@ -89,7 +89,7 @@ docker stop tb-gateway
 ```
 {: .copy-code}
 
-**使用 [本指南](/docs/iot-gateway/configuration/) 配置网关以与您的 ThingsBoard 实例配合使用：**
+**使用 [本指南](/docs/iot-gateway/configuration/) 配置网关以与您的 GridLinks 实例配合使用：**
 
 在进行更改后启动容器：
 

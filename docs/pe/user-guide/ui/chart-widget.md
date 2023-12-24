@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-pe
 title: Chart Widgets
-description: ThingsBoard Chart Widgets management
+description: GridLinks Chart Widgets management
 
 charts-addwidget:
     0:

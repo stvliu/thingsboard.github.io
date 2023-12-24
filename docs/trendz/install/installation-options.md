@@ -2,8 +2,8 @@
 layout: docwithnav-trendz
 assignees:
 - vparomskiy
-title: ThingsBoard Trendz Analytics 安装选项
-description: ThingsBoard Trendz Analytics 安装说明，适用于各种操作系统
+title: GridLinks Trendz Analytics 安装选项
+description: GridLinks Trendz Analytics 安装说明，适用于各种操作系统
 notitle: "true"
 ---
 

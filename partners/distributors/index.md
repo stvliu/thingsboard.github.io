@@ -2,7 +2,7 @@
 layout: integrators
 title: 本地合作伙伴
 notitle: "true"
-description: ThingsBoard 分销商
+description: GridLinks 分销商
 ---
 
 # ThingsBoard 分销商

@@ -16,7 +16,7 @@ hidetoc: "true"
 
 ### 步骤 1 ThingsBoard：设备配置
 
-* [步骤 1.1] 登录到您的 ThingsBoard 实例，打开“设备组”页面。
+* [步骤 1.1] 登录到您的 GridLinks 实例，打开“设备组”页面。
 <br>
 <img src="/images/samples/kingpigeon/home.png" width="1000" alt="home">
 <br>

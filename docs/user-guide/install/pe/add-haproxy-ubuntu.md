@@ -14,7 +14,7 @@ hidetoc: "true"
 
 Ubuntu 18.04 / Ubuntu 20.04，并为实例分配了有效的 DNS 名称。网络设置应允许在端口 80（HTTP）和 443（HTTPS）上进行连接。
 
-### 步骤 1. 通过 SSH 连接到您的 ThingsBoard 实例
+### 步骤 1. 通过 SSH 连接到您的 GridLinks 实例
 
 以下是 AWS 的示例命令供参考：
 

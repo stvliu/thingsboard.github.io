@@ -1,6 +1,6 @@
 ---
 layout: docwithnav-edge
-title: ThingsBoard Edge 安装选项
+title: GridLinks Edge 安装选项
 notitle: "true"
 
 ---
