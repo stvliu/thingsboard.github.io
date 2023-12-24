@@ -1165,7 +1165,7 @@ selfManagedPlan:
         <div class="item" data-tag="h4" data-item-id="trial-enable" data-title="How can I enable free trial?">
             <div class="container">
                 <p>
-                    Customer may <a href="https://thingsboard.cloud/signup" target="blank">signup on  GridLinks专业版 Cloud</a> and get 30 days of free trial on Maker plan. 
+                    Customer may <a href="https://thingsboard.cloud/signup" target="blank">signup on  GridLinks云服务</a> and get 30 days of free trial on Maker plan. 
                     30 days of seamless experience and the newest features, except white-labeling!
                 </p>    
             </div>    
