@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-paas
-title: Reporting
-description: Reporting Guide
+title: 报告
+description: 报告指南
 redirect_from: "/docs/user-guide/reporting/"
 ---
 

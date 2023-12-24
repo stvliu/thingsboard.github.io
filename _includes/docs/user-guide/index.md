@@ -1,32 +1,32 @@
-The ThingsBoard **Guides** can help you to get familiar with ThingsBoard platform.
+ThingsBoard **指南**可以帮助您熟悉 ThingsBoard 平台。
 
-#### Contents
+#### 内容
 
-[**Getting Started**](/docs/{{docsPrefix}}getting-started-guides/what-is-thingsboard/)
-: Provides overview of the platform functionality and classical Hello World guide.
+[**入门**](/docs/{{docsPrefix}}getting-started-guides/what-is-thingsboard/)
+: 提供平台功能概述和经典的 Hello World 指南。
 
 {% unless docsPrefix == 'paas/' %}
-[**Installation guide**](/docs/user-guide/install/{{docsPrefix}}installation-options/)
-: Covers ThingsBoard platform installation in a single-node or cluster mode.
+[**安装指南**](/docs/user-guide/install/{{docsPrefix}}installation-options/)
+: 介绍 ThingsBoard 平台在单节点或集群模式下的安装。
 {% endunless %}
 
-[**Working with device attributes**](/docs/{{docsPrefix}}user-guide/attributes/)
-: Describes device attributes feature and related use cases.
+[**使用设备属性**](/docs/{{docsPrefix}}user-guide/attributes/)
+: 介绍设备属性功能和相关用例。
 
-[**Working with telemetry data**](/docs/{{docsPrefix}}user-guide/telemetry/)
-: Describes telemetry data collection feature and related use cases.
+[**使用遥测数据**](/docs/{{docsPrefix}}user-guide/telemetry/)
+: 介绍遥测数据收集功能和相关用例。
 
-[**Using RPC capabilities**](/docs/{{docsPrefix}}user-guide/rpc/)
-: Provides overview of ThingsBoard RPC functionality.
+[**使用 RPC 功能**](/docs/{{docsPrefix}}user-guide/rpc/)
+: 提供 ThingsBoard RPC 功能概述。
 
-[**Rule engine**](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/)
-: Describes rule engine features and capabilities.
+[**规则引擎**](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/)
+: 介绍规则引擎功能和能力。
 
-[**Data visualization**](/docs/{{docsPrefix}}user-guide/visualization/)
-: Covers data visualization capabilities: Widgets & Dashboards.
+[**数据可视化**](/docs/{{docsPrefix}}user-guide/visualization/)
+: 介绍数据可视化功能：小部件和仪表板。
 
-[**Customization**](/docs/{{docsPrefix}}user-guide/customization/)
-: Contain links and tips for platform customization.
+[**自定义**](/docs/{{docsPrefix}}user-guide/customization/)
+: 包含平台自定义的链接和提示。
 
 **Web UI**
-: Describes various web UI features.  
+: 介绍各种 Web UI 功能。

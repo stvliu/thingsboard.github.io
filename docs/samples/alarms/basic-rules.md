@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
-title: Alarms based on sensor readings
-description: Triggering email alarms based on IoT sensor readings and configurable thresholds
+title: 基于传感器读数的警报
+description: 根据 IoT 传感器读数和可配置阈值触发电子邮件警报
 
 ---
 
@@ -10,63 +10,62 @@ description: Triggering email alarms based on IoT sensor readings and configurab
 * TOC
 {:toc}
 
-This tutorial will demonstrate how to configure Rule that will generate Alarm when certain device reports temperature or humidity that exceeds certain thresholds.
+本教程将演示如何配置规则，当某些设备报告的温度或湿度超过某些阈值时，该规则将生成警报。
 
-Let's assume that we have devices that are able to report humidity and temperature values. 
-We have one device per room (zone) in the building or other facility and we want to specify different rules based on zone type.
+我们假设我们有能够报告湿度和温度值的设备。我们在建筑物或其他设施的每个房间（区域）中有一个设备，并且我们希望根据区域类型指定不同的规则。
 
-## Assumptions
+## 假设
 
-We assume you have already configured email plugin that will distribute generated alarms to recipients. You can follow previous [tutorial](/docs/samples/alarms/mail/) to do this. 
+我们假设您已经配置了将生成的警报分发给收件人的电子邮件插件。您可以按照之前的 [教程](/docs/samples/alarms/mail/) 来执行此操作。
 
-## How it works?
+## 工作原理？
 
-We will provision simple rule that filters incoming data using:
- 
- - "Message type" filter to react on telemetry data.
- - "Device Attributes" filter to process data from a device that has certain room type as a server side attribute.
- - "Device Telemetry" filter to detect humidity and temperature values that are out of pre-configured range.
+我们将提供一个简单的规则，使用以下内容过滤传入的数据：
 
-## Device provisioning
+- “消息类型”过滤器对遥测数据做出反应。
+- “设备属性”过滤器处理来自具有某些房间类型作为服务器端属性的设备的数据。
+- “设备遥测”过滤器检测超出预配置范围的湿度和温度值。
 
-Let's create a Device and provision certain server-side attributes: ZoneId and ZoneType.
+## 设备配置
 
-#### Step 1. Create Device
+让我们创建一个设备并配置某些服务器端属性：ZoneId 和 ZoneType。
 
-Navigate to [devices](https://demo.thingsboard.io/devices) page and click on big red "+" button. Populate device name and description and click "Add" button.
+#### 步骤 1. 创建设备
+
+导航到 [设备](https://demo.thingsboard.io/devices) 页面，然后单击红色大“+”按钮。填写设备名称和说明，然后单击“添加”按钮。
 
 ![image](/images/samples/alarms/add-device.png)
 
-#### Step 2. Provision ZoneID and ZoneType attributes
+#### 步骤 2. 配置 ZoneID 和 ZoneType 属性
 
-Open device card that you have created. Navigate to "Attributes" tab and select "Server" attributes scope.
+打开您创建的设备卡。导航到“属性”选项卡，然后选择“服务器”属性范围。
 
 ![image](/images/samples/alarms/server-attributes-table.png)
 
-Click on the highlighted "+" button. Add two attributes "ZoneId" and "ZoneType" as shown below. We will use them later in the rule filters.
+单击突出显示的“+”按钮。如下所示添加两个属性“ZoneId”和“ZoneType”。我们将在规则过滤器中使用它们。
 
 ![image](/images/samples/alarms/zone-id.png)
 ![image](/images/samples/alarms/zone-type.png)
 
-## Rule configuration
+## 规则配置
 
-#### Step 3. Create "Server Room Monitoring" Rule
+#### 步骤 3. 创建“服务器机房监控”规则
 
-Navigate to [rules](https://demo.thingsboard.io/rules) page and click on big red "+" button. Populate rule name and description first.
+导航到 [规则](https://demo.thingsboard.io/rules) 页面，然后单击红色大“+”按钮。首先填写规则名称和说明。
 
 ![image](/images/samples/alarms/add-rule.png)
 
-Our rule will contain three filters as described in "[how it works](#how-it-works)" section.
+我们的规则将包含三个过滤器，如“[工作原理](#how-it-works)”部分所述。
 
-#### Step 4. Message type filter
+#### 步骤 4. 消息类型过滤器
 
-Add filter based on message type (see image below).
+根据消息类型添加过滤器（参见下图）。
 
 ![image](/images/samples/alarms/msg-filter.png)
 
-#### Step 5. Attributes filter
+#### 步骤 5. 属性过滤器
 
-Add filter based on the server-side attributes (see image below).
+根据服务器端属性添加过滤器（参见下图）。
 
 ```javascript
 typeof ss.ZoneType !== 'undefined' && ss.ZoneType === 'Server Room'
@@ -74,7 +73,7 @@ typeof ss.ZoneType !== 'undefined' && ss.ZoneType === 'Server Room'
 
 ![image](/images/samples/alarms/attributes-filter.png)
 
-#### Step 6. Telemetry filter
+#### 步骤 6. 遥测过滤器
 
 ```javascript
 (
@@ -88,60 +87,60 @@ typeof ss.ZoneType !== 'undefined' && ss.ZoneType === 'Server Room'
 )
 ```
 
-Add filter based on the sensor reading (see image below).
+根据传感器读数添加过滤器（参见下图）。
 
 ![image](/images/samples/alarms/telemetry-filter.png)
 
-#### Step 7. Alarm Processor
+#### 步骤 7. 警报处理器
 
-Let's add simple processor that will generate and save alarm to the database based on templates below.
+让我们添加一个简单的处理器，它将根据以下模板生成警报并将其保存到数据库。
 
-Alarm ID:
+警报 ID：
 
 ```text
-[$date.get('yyyy-MM-dd HH:mm')] $ss.get('ZoneId') HVAC malfunction detected!
+[$date.get('yyyy-MM-dd HH:mm')] $ss.get('ZoneId') 检测到 HVAC 故障！
 ```
 
-Alarm Body:
+警报正文：
 
 ```text
-[$date.get('yyyy-MM-dd HH:mm:ss')] $ss.get('ZoneId') HVAC malfunction detected. 
-Temperature - $temperature.valueAsString (°C). 
-Humidity - $humidity.valueAsString (%)!
+[$date.get('yyyy-MM-dd HH:mm:ss')] $ss.get('ZoneId') 检测到 HVAC 故障。
+温度 - $temperature.valueAsString (°C)。
+湿度 - $humidity.valueAsString (%)！
 ```
 
 ![image](/images/samples/alarms/add-processor.png)
 
-**NOTE** Alarm Id is a unique identifier. If there will be multiple events that match filters, alarms will be de-duplicated based on the Alarm Id. 
-An email will be sent once per alarm. 
+**注意** 警报 ID 是一个唯一标识符。如果有多个事件与过滤器匹配，警报将根据警报 ID 进行去重。
 
-In our case, we use a timestamp that is truncated to minutes to make sure that we will send an email once per minute or less frequently. 
+每警报发送一封电子邮件。
 
-#### Step 8. Rule Action
+在我们的案例中，我们使用截断到分钟的时间戳，以确保每分钟或更少频率发送一封电子邮件。
 
-Select "SendGrid Email Plugin" from previous [tutorial](/docs/samples/alarms/mail/) and click on "Create" button.
-Don't forget to replace "thingsboard@gmail.com" with your email address.
+#### 步骤 8. 规则操作
+
+从之前的 [教程](/docs/samples/alarms/mail/) 中选择“SendGrid 电子邮件插件”，然后单击“创建”按钮。不要忘记将“thingsboard@gmail.com”替换为您的电子邮件地址。
 
 ![image](/images/samples/alarms/add-action.png)
 
-#### Step 9. Save and Activate Rule
+#### 步骤 9. 保存并激活规则
 
-Once a rule is saved successfully, don't forget to activate it by clicking on "Activate" button (see image below).
+成功保存规则后，不要忘记通过单击“激活”按钮激活它（参见下图）。
 
 ![image](/images/samples/alarms/activate-rule.png)
 
-## Dry run
+## 试运行
 
-Let's check our configuration by publishing some telemetry data. We will use access token from the device that we have created in the [first step](#step1-create-device).
- 
+让我们通过发布一些遥测数据来检查我们的配置。我们将使用我们在 [第一步](#step1-create-device) 中创建的设备的访问令牌。
+
 ```shell
 mosquitto_pub -d -h "demo.thingsboard.io" -t "v1/devices/me/telemetry" -u "$YOUR_ACCESS_TOKEN" -m "{'temperature':42, 'humidity':74}"
 ```
 
-## Troubleshooting
+## 故障排除
 
-If you have configured something wrong, you should see errors logged on the corresponding tab:
+如果您配置错误，您应该会看到相应选项卡上记录的错误：
 
 ![image](/images/samples/alarms/rule-events.png)
 
-If there is no error in the rule, but you can't see the email - check errors in the target plugin.
+如果规则中没有错误，但您看不到电子邮件 - 请检查目标插件中的错误。

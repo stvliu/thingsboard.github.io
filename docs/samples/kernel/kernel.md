@@ -1,148 +1,147 @@
 ---
 layout: docwithnav
-title: PLC KERNEL and ThingsBoard
-description: PLC KERNEL Monitoring with ThingsBoard PE Platform
+title: PLC KERNEL 和 ThingsBoard
+description: 使用 ThingsBoard PE 平台监控 PLC KERNEL
 hidetoc: "true"
 ---
 
 * TOC
 {:toc}
 
-## Intro/Short summary
+## 简介/简要摘要
 
-This article contains instructions on how to configure ThingsBoard PE platform and connect KERNEL devices. ThingsBoard PE platform is an open-source IoT platform for data collection, processing, visualization, and device management. It enables device connectivity via industry standard MQTT protocol. ThingsBoard combines scalability, fault-tolerance and performance so you will never lose your data.
+本文包含有关如何配置 ThingsBoard PE 平台和连接 KERNEL 设备的说明。ThingsBoard PE 平台是一个用于数据收集、处理、可视化和设备管理的开源物联网平台。它通过行业标准 MQTT 协议实现设备连接。ThingsBoard 结合了可扩展性、容错性和性能，因此您永远不会丢失数据。
 
-## Note
+## 注意
 
-This procedure applies to all KERNEL PLCs with the ARM microprocessor equipped with an Ethernet port.
+此过程适用于所有配备以太网端口的 ARM 微处理器的 KERNEL PLC。
 
-## Integration flow:
+## 集成流程：
 
-### Step 1 ThingsBoard : Device configuration
+### 步骤 1 ThingsBoard：设备配置
 
-* [Step 1.1] Login to your ThingsBoard instance.
+* [步骤 1.1] 登录到您的 ThingsBoard 实例。
 <br>
 <img src="/images/samples/kernel/Thingsboard 000.png" width="400" alt="Thingsboard 1">
 <br>
 <br>
 
-* [Step 1.2] Open "Device Groups" page.
+* [步骤 1.2] 打开“设备组”页面。
 <br>
 <img src="/images/samples/kernel/Thingsboard 002.png" width="1000" alt="Thingsboard 2">
 <br>
 <br>
 
-* [Step 1.3] Navigate to default Device group “ALL”.
+* [步骤 1.3] 导航到默认设备组“全部”。
 <br>
 <img src="/images/samples/kernel/Thingsboard 003.png" width="1000" alt="Thingsboard 3">
 <br>
 <br>
 
-* [Step 1.4] Click on the "+" icon in the top right corner of the table and then select "Add Device".
+* [步骤 1.4] 单击表格右上角的“+”图标，然后选择“添加设备”。
 <br>
 <img src="/images/samples/kernel/Thingsboard 004.png" width="1000" alt="Thingsboard 4">
 <br>
 <br>
 
-* [Step 1.4a] Input device name. For example, "PLC KERNEL Device". No other changes are required at this time. Click "Add" to add the device.
+* [步骤 1.4a] 输入设备名称。例如，“PLC KERNEL 设备”。此时无需进行其他更改。单击“添加”以添加设备。
 <br>
 <br>
 
-* [Step 1.5] Now your device should be listed first, since the table sorts devices using the time of the creation by default.
+* [步骤 1.5] 现在您的设备应首先列出，因为表格默认按创建的时间对设备进行排序。
 <br>
 <img src="/images/samples/kernel/Thingsboard 005.png" width="1000" alt="Thingsboard ">
 <br>
 <br>
 
 
-### Step 2 LogiPaint configuration
+### 步骤 2 LogiPaint 配置
 
-To connect the PLC KERNEL device you need to get the device credentials first. ThingsBoard supports various device credentials. We recommend using the default auto-generated credentials which is an access token for this guide.
+要连接 PLC KERNEL 设备，您首先需要获取设备凭据。ThingsBoard 支持各种设备凭据。我们建议使用本指南中默认自动生成的凭据，即访问令牌。
 
-* [Step 2.1] Click on the device row in the table to open device details.
+* [步骤 2.1] 单击表格中的设备行以打开设备详细信息。
 <br>
 <img src="/images/samples/kernel/Thingsboard 006.png" width="1000" alt="Thingsboard 6">
 <br>
 <br>
 
-* [Step 2.2] Click "Copy access token". Token will be copied to your clipboard. Save it to a safe place.
+* [步骤 2.2] 单击“复制访问令牌”。令牌将复制到您的剪贴板。将其保存在安全的地方。
 <br>
 <img src="/images/samples/kernel/Thingsboard 007.png" width="1000" alt="Thingsboard 7">
 <br>
 <br>
 
-* [Step 2.3] Open "LogicPaint".
+* [步骤 2.3] 打开“LogicPaint”。
 <br>
 <img src="/images/samples/kernel/LogicPaint 000.jpg" width="1000" alt="LogicPaint 0">
 <br>
 <br>
 
-* [Step 2.4] Connect PLC KERNEL to PC (via Serial).
+* [步骤 2.4] 将 PLC KERNEL 连接到 PC（通过串行）。
 <br>
 <br>
 
-* [Step 2.5] Open menu “File” >> “Show Ethernet Port Configuration”.
+* [步骤 2.5] 打开菜单“文件”>>“显示以太网端口配置”。
 <br>
 <img src="/images/samples/kernel/LogicPaint 001.png" width="1000" alt="LogicPaint 1">
 <br>
 <br>
 
-* [Step 2.6] Press the button “MQTT Configuration” :
+* [步骤 2.6] 按“MQTT 配置”按钮：
 <br>
 <img src="/images/samples/kernel/LogicPaint 002.png" width="1000" alt="LogicPaint 2">
 <br>
 <br>
 
-* [Step 2.7] Paste the copied access token into the indicated box :
+* [步骤 2.7] 将复制的访问令牌粘贴到指示的框中：
 <br>
 <img src="/images/samples/kernel/LogicPaint 003.png" width="1000" alt="LogicPaint 3">
 <br>
 <br>
 
-* [Step 2.8] Enter the following fields :
+* [步骤 2.8] 输入以下字段：
 <br>
 <img src="/images/samples/kernel/Table 000.png" width="1000" alt="Table 0">
 <br>
 <br>
 
-* [Step 2.9] Add a slot for each value that needs to be monitored :
+* [步骤 2.9] 为每个需要监控的值添加一个槽：
 <br>
 <img src="/images/samples/kernel/Table 001.png" width="1000" alt="Table 1">
 <br>
 <br>
 
-* [Step 2.10] Close the 2 open windows with the CLOSE button.
+* [步骤 2.10] 使用关闭按钮关闭 2 个打开的窗口。
 <br>
 <br>
 
-* [Step 2.11] Finally compile and send the application to the KERNEL PLC with the "Compile + Send Application" button.
+* [步骤 2.11] 最后，使用“编译 + 发送应用程序”按钮编译并向 KERNEL PLC 发送应用程序。
 <br>
 <br>
 
-* [Step 2.12] Once you have successfully published the “temperature” readings, you should immediately see them in the Device Telemetry Tab.
-Click on the device row in the table to open device details :
+* [步骤 2.12] 成功发布“温度”读数后，您应该立即在设备遥测选项卡中看到它们。单击表格中的设备行以打开设备详细信息：
 <br>
 <img src="/images/samples/kernel/Thingsboard 006.png" width="1000" alt="Thingsboard 6">
 <br>
 <br>
 
-* [Step 2.13] Navigate to the “Latest telemetry” tab :
+* [步骤 2.13] 导航到“最新遥测”选项卡：
 <br>
 <img src="/images/samples/kernel/Thingsboard 008.png" width="1000" alt="Thingsboard 8">
 <br>
 <br>
 
-### Step 3 Create dashboard
+### 步骤 3 创建仪表板
 
-Finally, the only thing left to do, is create a Dashboard according to your needs.
-Dashboards are used to collect and display the data set. Data visualization is achieved through a large variety of widgets.
-Explore guides related to main ThingsBoard features:
+最后，唯一要做的事情是根据您的需要创建一个仪表板。
+仪表板用于收集和显示数据集。数据可视化是通过各种小部件实现的。
+探索与 ThingsBoard 主要功能相关的指南：
 
- - [Create Dashboard](/docs/getting-started-guides/helloworld/#step-3-create-dashboard) - how to create a new dashboard.
- - [Working with IoT dashboards](/docs/user-guide/dashboards/) - how to work with dashboards.
+- [创建仪表板](/docs/getting-started-guides/helloworld/#step-3-create-dashboard) - 如何创建新仪表板。
+- [使用物联网仪表板](/docs/user-guide/dashboards/) - 如何使用仪表板。
 <br>
 <br>
 
-## Next steps
+## 后续步骤
 
 {% assign currentGuide = "HardwareSamples" %}{% include templates/guides-banner.md %}

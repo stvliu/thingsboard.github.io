@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-mqtt-broker
-title: What is TBMQ?
-description: TBMQ key features, architecture, etc.
+title: TBMQ 是什么？
+description: TBMQ 的主要功能、架构等。
 ---
 
 {% include docs/mqtt-broker/getting-started-guides/what-is-thingsboard-mqtt-broker.md %}

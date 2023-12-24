@@ -1,15 +1,14 @@
-Sometimes you can experience growing latency of message processing inside the rule-engine. Here are the steps you can take to discover the reason for the issue:
-- Check if there are timeouts in [Rule Engine Statistics Dashboard](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-engine-statistics). Timeouts in rule-nodes slow down the processing of the queue and can lead to latency.
+有时您可能会遇到规则引擎内消息处理延迟不断增加的情况。以下是可以采取的步骤来找出问题的原因：
+- 检查 [规则引擎统计信息仪表板](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-engine-statistics) 中是否存在超时。规则节点中的超时会减慢队列的处理速度，并可能导致延迟。
 
-- [Check CPU usage](#cpumemory-usage) for the following services:
-    - ThingsBoard services (tb-nodes, tb-rule-engine and tb-core nodes, transport nodes). High CPU load on some services means that you need to scale up that part of the system.
-    - PostgreSQL and pgpool (if you are in <b>high-availability</b> mode). High load on Postgres can lead to slow processing of all Postgres-related rule-nodes (saving attributes, reading attributes etc), and the system in general.
-    - Cassandra (if you are using Cassandra as storage for timeseries data). High load on Cassandra can lead to slow processing of all Cassandra-related rule-nodes (saving timeseries etc).
-    - Queue. Regardless of the queue type, make sure that it always has enough resources.
+- 检查以下服务的 [CPU 使用情况](#cpumemory-usage)：
+    - ThingsBoard 服务（tb-nodes、tb-rule-engine 和 tb-core 节点、传输节点）。某些服务上的高 CPU 负载意味着您需要扩展该部分系统。
+    - PostgreSQL 和 pgpool（如果您处于<b>高可用性</b>模式）。Postgres 上的高负载可能导致所有与 Postgres 相关的规则节点（保存属性、读取属性等）以及整个系统的处理速度变慢。
+    - Cassandra（如果您使用 Cassandra 作为时序数据存储）。Cassandra 上的高负载可能导致所有与 Cassandra 相关的规则节点（保存时序等）的处理速度变慢。
+    - 队列。无论队列类型如何，请确保它始终有足够的资源。
 
-- Check [consumer-group lag](#consumer-group-message-lag-for-kafka-queue) (if you are using Kafka as queue).
+- 检查 [消费者组滞后](#consumer-group-message-lag-for-kafka-queue)（如果您使用 Kafka 作为队列）。
 
-- Enable [Message Pack Processing Log](#message-pack-processing-log). It will allow you to see the name of the slowest rule-node.
+- 启用 [消息包处理日志](#message-pack-processing-log)。它将允许您看到最慢的规则节点的名称。
 
-- Separate your use-cases by different queues. If some group of your devices should be processed separately from other devices, you should [configure](/docs/{{docsPrefix}}user-guide/device-profiles/#queue-name) the separate rule-engine queue for this group. Also, you can just separate messages based on some logic to different queues inside of the Root rule-engine. By doing this you guaranty that slow processing of one use-case will not affect the processing of the other use-case.
-
+- 通过不同的队列分离您的用例。如果您的某些设备组应与其他设备分开处理，则应为此组 [配置](/docs/{{docsPrefix}}user-guide/device-profiles/#queue-name) 单独的规则引擎队列。此外，您还可以根据某些逻辑将消息分离到根规则引擎内的不同队列中。通过这样做，您可以保证一个用例的处理速度慢不会影响另一个用例的处理。

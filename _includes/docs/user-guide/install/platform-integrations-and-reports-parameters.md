@@ -1,7 +1,7 @@
 <table>
     <thead>
         <tr>
-            <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
+            <td style="width: 25%"><b>参数</b></td><td style="width: 30%"><b>环境变量</b></td><td style="width: 15%"><b>默认值</b></td><td style="width: 30%"><b>说明</b></td>
         </tr>
     </thead>
     <tbody>
@@ -9,7 +9,7 @@
           <td>integrations.statistics.enabled</td>
           <td>INTEGRATIONS_STATISTICS_ENABLED</td>
           <td>true</td>
-          <td>Enable/disable integrations statistics</td>
+          <td>启用/禁用集成统计信息</td>
       </tr>
       <tr>
           <td>integrations.statistics.persist_frequency</td>
@@ -51,7 +51,7 @@
           <td>integrations.rpc.ssl.enabled</td>
           <td>INTEGRATIONS_RPC_SSL_ENABLED</td>
           <td>false</td>
-          <td>Enable/disable SSL support</td>
+          <td>启用/禁用 SSL 支持</td>
       </tr>
       <tr>
           <td>integrations.rpc.ssl.cert</td>
@@ -69,17 +69,17 @@
           <td>integrations.rpc.client_max_keep_alive_time_sec</td>
           <td>INTEGRATIONS_RPC_CLIENT_MAX_KEEP_ALIVE_TIME_SEC</td>
           <td>300</td>
-          <td>Disconnect a client if no keepalive ping received in the specified time</td>
+          <td>如果在指定时间内未收到保持活动 ping，则断开客户端连接</td>
       </tr>
     </tbody>
 </table>
 
-#### Reports parameters
+#### 报告参数
 
 <table>
     <thead>
         <tr>
-            <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
+            <td style="width: 25%"><b>参数</b></td><td style="width: 30%"><b>环境变量</b></td><td style="width: 15%"><b>默认值</b></td><td style="width: 30%"><b>说明</b></td>
         </tr>
     </thead>
     <tbody>
@@ -93,7 +93,7 @@
           <td>reports.rate_limits.enabled</td>
           <td>REPORTS_TENANT_RATE_LIMITS_ENABLED</td>
           <td>false</td>
-          <td>Enable/disable reports tenant rate limits</td>
+          <td>启用/禁用报告租户速率限制</td>
       </tr>
       <tr>
           <td>reports.rate_limits.configuration</td>
@@ -105,7 +105,7 @@
           <td>reports.scheduler.min_interval</td>
           <td>REPORTS_SCHEDULER_MIN_INTERVAL_IN_SEC</td>
           <td>60</td>
-          <td>Minimum interval between subsequent scheduler events. Applicable for timer based events</td>
+          <td>后续调度程序事件之间的最小间隔。适用于基于计时器的事件</td>
       </tr>
     </tbody>
 </table>

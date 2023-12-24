@@ -3,89 +3,89 @@
 * TOC
 {:toc}
 
-## Overview
+## 概述
 
-Tuya is a cloud platform that connects a range of devices via the IoT. After integrating Tuya with the ThingsBoard, you can connect, manage, communicate, process and visualize data from your devices in the ThingsBoard IoT platform.
+涂鸦是一个云平台，通过物联网连接一系列设备。将涂鸦与 ThingsBoard 集成后，您可以在 ThingsBoard IoT 平台中连接、管理、通信、处理和可视化设备数据。
 
-## Tuya Integration Tutorial
+## 涂鸦集成教程
 
-In this tutorial we will use a real device - Smart Plug. 
+在本教程中，我们将使用一个真实设备 - 智能插头。
 
-Also, you can use a [**virtual device**](https://developer.tuya.com/en/docs/iot/manage-virtual-devices?id=Ka4725tiyfhg0). Virtual devices help you to perform cloud development without an actual IoT device.
+此外，您还可以使用 [**虚拟设备**](https://developer.tuya.com/en/docs/iot/manage-virtual-devices?id=Ka4725tiyfhg0)。虚拟设备可帮助您在没有实际 IoT 设备的情况下执行云开发。
 
-### Prerequisites
+### 先决条件
 
-The first step is to install the smart device control application (Smart Life, Tuya Smart, or other) on your mobile device and register your Smart Plug device in the application.
+第一步是在您的移动设备上安装智能设备控制应用程序（Smart Life、涂鸦智能或其他）并在应用程序中注册您的智能插头设备。
 
 {% include images-gallery.html imageCollection="tuya-application-add-device" %}
 
-### Tuya setup
+### 涂鸦设置
 
-#### Create cloud project
+#### 创建云项目
 
-The next step is to register an account on [Tuya](https://www.tuya.com/) and create cloud project.
+下一步是在 [涂鸦](https://www.tuya.com/) 上注册一个帐户并创建云项目。
 
 {% include images-gallery.html imageCollection="tuya-create-cloud-project" showListImageTitles="true" %}
 
-#### Enable Tuya message service
+#### 启用涂鸦消息服务
 
-Enable the message service to timely receive messages about device registration, data reporting, and status change.
+启用消息服务以及时接收有关设备注册、数据报告和状态更改的消息。
 
 {% include images-gallery.html imageCollection="tuya-message-service-enable" showListImageTitles="true" %}
 
-#### Link Tuya App Account
+#### 链接涂鸦应用帐户
 
-You need to link your devices to this project using your Smart Life app account.
+您需要使用 Smart Life 应用帐户将您的设备链接到此项目。
 
 {% include images-gallery.html imageCollection="tuya-add-smart-life-app" showListImageTitles="true" %}
 
 <br>
-**Note:**
+**注意：**
 <br>
-Make sure you enabled Messaging rule (filter) to receive uplinks. The very basic filter (statusReport) should be sufficient for testing purposes
+确保您启用了消息传递规则（过滤器）以接收上行链路。最基本过滤器（statusReport）应足以用于测试目的
 
 {% include images-gallery.html imageCollection="tuya-enable-rules-environment" showListImageTitles="true" %}
 
-## Tuya Integration Configuration
+## 涂鸦集成配置
 
-### Uplink Converter
+### 上行链路转换器
 
-Before setting up a **Tuya integration**, you need to create an **Uplink Converter** which is a script for parsing and transforming the data received by Tuya integration to a format that ThingsBoard can consume.
+在设置 **涂鸦集成** 之前，您需要创建一个 **上行链路转换器**，这是一个用于解析和转换涂鸦集成接收的数据的脚本，使其成为 ThingsBoard 可以使用的一种格式。
 
-To create an **Uplink Converter**, go to the **Data Converters** section and click **Add new data converter —> Create new converter**, name it **"Tuya Uplink Converter"** and select type **Uplink**. Use debug mode for now.
+要创建 **上行链路转换器**，请转到 **数据转换器** 部分，然后单击 **添加新的数据转换器 —> 创建新的转换器**，将其命名为 **“涂鸦上行链路转换器”** 并选择类型 **上行链路**。现在使用调试模式。
 
 {% capture difference %}
-**NOTE**
+**注意**
 <br>
-Although the Debug mode is very useful for development and troubleshooting, leaving it enabled in production mode may tremendously increase the disk space, used by the database, because all the debugging data is stored there. It is highly recommended to turn the Debug mode off when debugging is done.
+尽管调试模式对于开发和故障排除非常有用，但在生产模式下启用它可能会极大地增加数据库使用的磁盘空间，因为所有调试数据都存储在那里。强烈建议在完成调试后关闭调试模式。
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-**Choose device payload type to for decoder configuration:**
+**选择设备有效负载类型以进行解码器配置：**
 
 {% include templates/tbel-vs-js.md %}
 
 {% capture tuyauplink %}
-TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/tuya/tuya-uplink-tbel.md%br%
+TBEL<small>推荐</small>%,%accessToken%,%templates/integration/tuya/tuya-uplink-tbel.md%br%
 JavaScript<small></small>%,%anonymous%,%templates/integration/tuya/tuya-uplink-java.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="tuyauplink" toggle-spec=tuyauplink %}
 
-### Downlink Converter
+### 下行链路转换器
 
-The Downlink converter transforming outgoing RPC message and then the Integration sends it to your device.
+下行链路转换器转换传出的 RPC 消息，然后集成将其发送到您的设备。
 
-Create another converter with the name **"Tuya Downlink Converter"** and type **Downlink**. To see events - enable Debug.
+使用名称 **“涂鸦下行链路转换器”** 和类型 **下行链路** 创建另一个转换器。要查看事件 - 启用调试。
 
 {% capture tuyadownlink %}
-TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/tuya/tuya-downlink-tbel.md%br%
+TBEL<small>推荐</small>%,%accessToken%,%templates/integration/tuya/tuya-downlink-tbel.md%br%
 JavaScript<small></small>%,%anonymous%,%templates/integration/tuya/tuya-downlink-java.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="tuyadownlink" toggle-spec=tuyadownlink %}
 
-### Tuya Integration Setup
+### 涂鸦集成设置
 
-Go to **Integrations** section and click Add new integration button. Name it **Tuya Integration**, select type **Tuya**;
+转到 **集成** 部分，然后单击添加新集成按钮。将其命名为 **涂鸦集成**，选择类型 **涂鸦**；
 
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/tuya/tuya-create-integration-1-pe.png)
@@ -94,7 +94,7 @@ Go to **Integrations** section and click Add new integration button. Name it **T
 ![image](/images/user-guide/integrations/tuya/tuya-create-integration-1-pe.png)
 {% endif %}
 
-In this step, you can select the recently created **Tuya Uplink Converter** or create a new uplink data converter;
+在此步骤中，您可以选择最近创建的 **涂鸦上行链路转换器** 或创建一个新的上行链路数据转换器；
 
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/tuya/tuya-create-integration-2-pe.png)
@@ -103,7 +103,7 @@ In this step, you can select the recently created **Tuya Uplink Converter** or c
 ![image](/images/user-guide/integrations/tuya/tuya-create-integration-2-pe.png)
 {% endif %}
 
-Add **Tuya Downlink Converter** to the integration or create a new downlink data converter;
+将 **涂鸦下行链路转换器** 添加到集成或创建一个新的下行链路数据转换器；
 
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/tuya/tuya-create-integration-3-pe.png)
@@ -112,15 +112,15 @@ Add **Tuya Downlink Converter** to the integration or create a new downlink data
 ![image](/images/user-guide/integrations/tuya/tuya-create-integration-3-pe.png)
 {% endif %}
 
-In the last step, fill in the following fields:
+在最后一步，填写以下字段：
 
-- **Region** - specify your region;
+- **区域** - 指定您的区域；
 
-- **Environment:** choose **PROD** or **TEST**. Choose **PROD** for real devices. Select **TEST** if you want to connect a [**virtual device**](https://developer.tuya.com/en/docs/iot/manage-virtual-devices?id=Ka4725tiyfhg0) to Thingsboard and test its operation before you buy it.
+- **环境：** 选择 **PROD** 或 **TEST**。对于真实设备，选择 **PROD**。如果您想将 [**虚拟设备**](https://developer.tuya.com/en/docs/iot/manage-virtual-devices?id=Ka4725tiyfhg0) 连接到 Thingsboard 并在其购买之前测试其操作，请选择 **TEST**。
 
-- **Access Id** and **Access Key** is an authorization certificate distributed by Tuya. Paste previously copied **Access Id** and **Access Key** into the integration. 
+- **访问 ID** 和 **访问密钥** 是涂鸦分发的授权证书。将先前复制的 **访问 ID** 和 **访问密钥** 粘贴到集成中。
 
-Click "Add" to create an integration.
+单击“添加”以创建集成。
 
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/tuya/tuya-create-integration-4-pe.png)
@@ -129,9 +129,9 @@ Click "Add" to create an integration.
 ![image](/images/user-guide/integrations/tuya/tuya-create-integration-4-pe.png)
 {% endif %}
 
-### Rule Chain configuration
+### 规则链配置
 
-When integration configured and ready to use, we need to go to **Rule Chains**, choose **"Root Rule Chain"** and here create rule node **Integration Downlink**. Input some name here, choose earlier created Tuya integration, and tap **Add**.
+当集成配置好并准备就绪时，我们需要转到 **规则链**，选择 **“根规则链”**，然后在此处创建规则节点 **集成下行链路**。在此处输入一些名称，选择较早创建的涂鸦集成，然后点击 **添加**。
 
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/tuya/tuya-rule-chain-downlink-1-pe.png)
@@ -140,7 +140,7 @@ When integration configured and ready to use, we need to go to **Rule Chains**, 
 ![image](/images/user-guide/integrations/tuya/tuya-rule-chain-downlink-1-pe.png)
 {% endif %}
 
-After these steps, we need to tap on a right grey circle of rule node **message type switch** and drag this circle to left side of **Integration Downlink**. In pop-up window add **"RPC Request to Device"** linl, and tap "Add". Save the Root Rule Chain.
+完成这些步骤后，我们需要点击规则节点 **消息类型开关** 的右侧灰色圆圈，并将此圆圈拖动到 **集成下行链路** 的左侧。在弹出窗口中添加 **“RPC 请求到设备”** linl，然后点击“添加”。保存根规则链。
 
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/tuya/tuya-rule-chain-downlink-2-pe.png)
@@ -149,11 +149,11 @@ After these steps, we need to tap on a right grey circle of rule node **message 
 ![image](/images/user-guide/integrations/tuya/tuya-rule-chain-downlink-2-pe.png)
 {% endif %}
 
-### Uplink message
+### 上行链路消息
 
-Once ThingsBoard **Tuya Integration** has been created, you must disconnect Smart Plug from power and reconnect. The device will send an uplink message with telemetry and attributes to the integration
+创建 ThingsBoard **涂鸦集成** 后，您必须断开智能插头与电源的连接，然后重新连接。设备将向集成发送带有遥测和属性的上行链路消息
 
-Go to **Device Groups** -> **All** you should find your device  provisioned by the Integration. In my case it is - **SmartPlug268970**.
+转到 **设备组** -> **全部**，您应该找到由集成配置的设备。在我的案例中，它是 - **SmartPlug268970**。
 
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/tuya/tuya-integration-create-device-pe.png)
@@ -162,13 +162,13 @@ Go to **Device Groups** -> **All** you should find your device  provisioned by t
 ![image](/images/user-guide/integrations/tuya/tuya-integration-create-device-pe.png)
 {% endif %}
 
-### Tuya Smart Plug Dashboard
+### 涂鸦智能插头仪表板
 
-To visualize the Smart Plug data and test RPC commands, we will create the **Tuya Smart Plug** dashboard.
+为了可视化智能插头数据并测试 RPC 命令，我们将创建 **涂鸦智能插头** 仪表板。
 
-- Download the [**tuya_smart_plug_dashboard.json**](/docs/user-guide/resources/tuya_smart_plug_dashboard.json) file
-- Go to the **Dashboard groups** tab. Create dashboard group - **Smart Plug** and go to it.
-- To import this JSON file, click the `import` button at the upper right corner of the dashboard group page and drag the previously downloaded file into the window. Tap **Import**.
+- 下载 [**tuya_smart_plug_dashboard.json**](/docs/user-guide/resources/tuya_smart_plug_dashboard.json) 文件
+- 转到 **仪表板组** 选项卡。创建仪表板组 - **智能插头** 并转到该组。
+- 要导入此 JSON 文件，请单击仪表板组页面右上角的 `import` 按钮，并将先前下载的文件拖动到窗口中。点击 **导入**。
 
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/tuya/tuya-dashboard-1-pe.png)
@@ -177,8 +177,8 @@ To visualize the Smart Plug data and test RPC commands, we will create the **Tuy
 ![image](/images/user-guide/integrations/tuya/tuya-dashboard-1-pe.png)
 {% endif %}
 
-- Open the **Tuya Smart Plug** dashboard
-- **Enter edit mode**, click **Entity aliases** button and add your device to **smartPlug** alias
+- 打开 **涂鸦智能插头** 仪表板
+- **进入编辑模式**，单击 **实体别名** 按钮，并将您的设备添加到 **smartPlug** 别名
 
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/tuya/tuya-alias-1-pe.png)
@@ -188,9 +188,9 @@ To visualize the Smart Plug data and test RPC commands, we will create the **Tuy
 {% endif %}
 
 {% capture difference %}
-**NOTE:**
+**注意：**
 <br>
-timeseries data keys of your device may differ from those presented. If necessary, you will need to replace them, according to the documentation for your device (for each widget).
+您设备的时间序列数据键可能与显示的键不同。如有必要，您需要根据设备的文档（对于每个小部件）替换它们。
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
@@ -202,7 +202,7 @@ timeseries data keys of your device may differ from those presented. If necessar
 {% endif %}
 
 <br>
-If you have everything configured correctly, you will see Smart Plug status light (on/off) and telemetry for the last hour: voltage, power, and current.
+如果您已正确配置所有内容，您将看到智能插头状态指示灯（开/关）和过去一小时的遥测：电压、功率和电流。
 
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/tuya/tuya-dashboard-2-pe.png)
@@ -211,7 +211,7 @@ If you have everything configured correctly, you will see Smart Plug status ligh
 ![image](/images/user-guide/integrations/tuya/tuya-dashboard-2-pe.png)
 {% endif %}
 
-Smart Plug status light is green. Try to switch off the Smart Plug by clicking on the **On/Off Round switch**
+智能插头状态指示灯为绿色。尝试通过单击 **开/关圆形开关** 关闭智能插头
 
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/tuya/tuya-dashboard-3-pe.png)
@@ -220,7 +220,7 @@ Smart Plug status light is green. Try to switch off the Smart Plug by clicking o
 ![image](/images/user-guide/integrations/tuya/tuya-dashboard-3-pe.png)
 {% endif %}
 
-The Smart Plug status indicator turns grey. Power consumption stops.
+智能插头状态指示灯变为灰色。功耗停止。
 
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/tuya/tuya-dashboard-4-pe.png)
@@ -229,6 +229,6 @@ The Smart Plug status indicator turns grey. Power consumption stops.
 ![image](/images/user-guide/integrations/tuya/tuya-dashboard-4-pe.png)
 {% endif %}
 
-## Next steps
+## 后续步骤
 
 {% assign currentGuide = "ConnectYourDevice" %}{% include templates/multi-project-guides-banner.md %}

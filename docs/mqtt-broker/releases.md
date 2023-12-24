@@ -1,155 +1,155 @@
 ---
 layout: docwithnav-mqtt-broker
-title: TBMQ Release Notes
-description: TBMQ Releases
+title: TBMQ 发行说明
+description: TBMQ 发行版
 
 ---
 
 * TOC
 {:toc}
 
-## v1.2.1 (December 13, 2023)
+## v1.2.1（2023 年 12 月 13 日）
 
-Minor release with the following features and improvements.
+次要版本，具有以下功能和改进。
 
-**Main features:**
+**主要功能：**
 
-* [#84](https://github.com/thingsboard/tbmq/pull/84) MQTT 5: Payload format and Content types;
-* [#86](https://github.com/thingsboard/tbmq/pull/86) Client sessions limits.
+* [#84](https://github.com/thingsboard/tbmq/pull/84) MQTT 5：有效负载格式和内容类型；
+* [#86](https://github.com/thingsboard/tbmq/pull/86) 客户端会话限制。
 
-**Improvements:**
+**改进：**
 
-* Core and install scripts:
+* 核心和安装脚本：
 
-  * [#87](https://github.com/thingsboard/tbmq/pull/87) Installation scripts enhancements.
+  * [#87](https://github.com/thingsboard/tbmq/pull/87) 安装脚本增强。
 
-## v1.2.0 (November 21, 2023)
+## v1.2.0（2023 年 11 月 21 日）
 
-Minor release with the following features, improvements, and bug fixes.
+次要版本，具有以下功能、改进和错误修复。
 
-**Main features:**
+**主要功能：**
 
-* [#73](https://github.com/thingsboard/tbmq/pull/73) Redis cache support;
-* [#76](https://github.com/thingsboard/tbmq/pull/76) Client sessions advanced filtering;
-* [#12aac735e7](https://github.com/thingsboard/tbmq/commit/12aac735e7) MQTT client credentials advanced filtering;
-* [#80](https://github.com/thingsboard/tbmq/pull/80) Shared subscriptions management.
+* [#73](https://github.com/thingsboard/tbmq/pull/73) Redis 缓存支持；
+* [#76](https://github.com/thingsboard/tbmq/pull/76) 客户端会话高级过滤；
+* [#12aac735e7](https://github.com/thingsboard/tbmq/commit/12aac735e7) MQTT 客户端凭据高级过滤；
+* [#80](https://github.com/thingsboard/tbmq/pull/80) 共享订阅管理。
 
-**Improvements:**
+**改进：**
 
-* Core:
+* 核心：
 
-  * [Performance improvements](/docs/mqtt-broker/reference/3m-throughput-single-node-performance-test/) for message processing. See:
-  [#e0c66d3052](https://github.com/thingsboard/tbmq/commit/e0c66d3052), [#03409f7f18](https://github.com/thingsboard/tbmq/commit/03409f7f18), [#a1dd722deb](https://github.com/thingsboard/tbmq/commit/a1dd722deb), 
-  [#3af40bb504](https://github.com/thingsboard/tbmq/commit/3af40bb504), [#55ff71bea8](https://github.com/thingsboard/tbmq/commit/55ff71bea8), 
-  [#5f11148025](https://github.com/thingsboard/tbmq/commit/5f11148025), [#79db26751c](https://github.com/thingsboard/tbmq/commit/79db26751c) commits;
-  * [#d437200ba1](https://github.com/thingsboard/tbmq/commit/d437200ba1) Added possibility to buffer messages before sending to subscribers;
-  * [#a091e31963](https://github.com/thingsboard/tbmq/commit/a091e31963) Delete Kafka consumer group API.
+  * [性能改进](/docs/mqtt-broker/reference/3m-throughput-single-node-performance-test/) 用于消息处理。请参阅：
+  [#e0c66d3052](https://github.com/thingsboard/tbmq/commit/e0c66d3052)，[#03409f7f18](https://github.com/thingsboard/tbmq/commit/03409f7f18)，[#a1dd722deb](https://github.com/thingsboard/tbmq/commit/a1dd722deb)，
+  [#3af40bb504](https://github.com/thingsboard/tbmq/commit/3af40bb504)，[#55ff71bea8](https://github.com/thingsboard/tbmq/commit/55ff71bea8)，
+  [#5f11148025](https://github.com/thingsboard/tbmq/commit/5f11148025)，[#79db26751c](https://github.com/thingsboard/tbmq/commit/79db26751c) 提交；
+  * [#d437200ba1](https://github.com/thingsboard/tbmq/commit/d437200ba1) 在发送给订阅者之前添加缓冲消息的可能性；
+  * [#a091e31963](https://github.com/thingsboard/tbmq/commit/a091e31963) 删除 Kafka 消费者组 API。
 
-* UI:
+* UI：
 
-  * [#78](https://github.com/thingsboard/tbmq/pull/78) Migrate to Angular 15;
-  * [#9231eaafc9](https://github.com/thingsboard/tbmq/commit/9231eaafc9) Added Kafka management pages;
-  * [#25289016b5](https://github.com/thingsboard/tbmq/commit/25289016b5) Sidebar menu optimization;
-  * [#7a685d5e00](https://github.com/thingsboard/tbmq/commit/7a685d5e00) Added option to disconnect/remove several client sessions;
-  * [#ed1f9ffd39](https://github.com/thingsboard/tbmq/commit/ed1f9ffd39) Management of shared subscriptions;
-  * [#06b881694f](https://github.com/thingsboard/tbmq/commit/06b881694f) Shared subscriptions advanced filtering;
-  * [#6b1ee03d8d](https://github.com/thingsboard/tbmq/commit/6b1ee03d8d), [#7a685d5e00](https://github.com/thingsboard/tbmq/commit/7a685d5e00) Client sessions advanced filtering;
-  * [#f229a35c5d](https://github.com/thingsboard/tbmq/commit/f229a35c5d), [#38532959f5](https://github.com/thingsboard/tbmq/commit/38532959f5) MQTT client credentials advanced filtering;
-  * [#3334cb4666](https://github.com/thingsboard/tbmq/commit/3334cb4666), [#c42b8f3b63](https://github.com/thingsboard/tbmq/commit/c42b8f3b63) New form for client credentials creation;
-  * [#7ba4996cbe](https://github.com/thingsboard/tbmq/commit/7ba4996cbe) Added filter buttons from Home page for sessions and client credentials;
-  * [#971cdb8b27](https://github.com/thingsboard/tbmq/commit/971cdb8b27), [#9ff6a349d6](https://github.com/thingsboard/tbmq/commit/9ff6a349d6) Added check connectivity window after creation of client credentials;
-  * [#702e98b673](https://github.com/thingsboard/tbmq/commit/702e98b673), [#f7efffbe42](https://github.com/thingsboard/tbmq/commit/f7efffbe42) Getting started guide on Home page updates;
-  * [#7019da05ff](https://github.com/thingsboard/tbmq/commit/7019da05ff), [#340853add6](https://github.com/thingsboard/tbmq/commit/340853add6) Monitoring charts minor updates.
+  * [#78](https://github.com/thingsboard/tbmq/pull/78) 迁移到 Angular 15；
+  * [#9231eaafc9](https://github.com/thingsboard/tbmq/commit/9231eaafc9) 添加了 Kafka 管理页面；
+  * [#25289016b5](https://github.com/thingsboard/tbmq/commit/25289016b5) 侧边栏菜单优化；
+  * [#7a685d5e00](https://github.com/thingsboard/tbmq/commit/7a685d5e00) 添加了断开连接/删除多个客户端会话的选项；
+  * [#ed1f9ffd39](https://github.com/thingsboard/tbmq/commit/ed1f9ffd39) 共享订阅的管理；
+  * [#06b881694f](https://github.com/thingsboard/tbmq/commit/06b881694f) 共享订阅高级过滤；
+  * [#6b1ee03d8d](https://github.com/thingsboard/tbmq/commit/6b1ee03d8d)，[#7a685d5e00](https://github.com/thingsboard/tbmq/commit/7a685d5e00) 客户端会话高级过滤；
+  * [#f229a35c5d](https://github.com/thingsboard/tbmq/commit/f229a35c5d)，[#38532959f5](https://github.com/thingsboard/tbmq/commit/38532959f5) MQTT 客户端凭据高级过滤；
+  * [#3334cb4666](https://github.com/thingsboard/tbmq/commit/3334cb4666)，[#c42b8f3b63](https://github.com/thingsboard/tbmq/commit/c42b8f3b63) 创建客户端凭据的新表单；
+  * [#7ba4996cbe](https://github.com/thingsboard/tbmq/commit/7ba4996cbe) 为会话和客户端凭据添加了主页上的筛选按钮；
+  * [#971cdb8b27](https://github.com/thingsboard/tbmq/commit/971cdb8b27)，[#9ff6a349d6](https://github.com/thingsboard/tbmq/commit/9ff6a349d6) 在创建客户端凭据后添加了检查连接窗口；
+  * [#702e98b673](https://github.com/thingsboard/tbmq/commit/702e98b673)，[#f7efffbe42](https://github.com/thingsboard/tbmq/commit/f7efffbe42) 主页上的入门指南更新；
+  * [#7019da05ff](https://github.com/thingsboard/tbmq/commit/7019da05ff)，[#340853add6](https://github.com/thingsboard/tbmq/commit/340853add6) 监控图表次要更新。
 
-**Bug fixes:**
+**错误修复：**
 
-* Core:
+* 核心：
 
-  * [#70](https://github.com/thingsboard/tbmq/pull/70) Fixed shared subscriptions processing with QoS 0 ("AT_MOST_ONCE");
-  * [#eae45b9781](https://github.com/thingsboard/tbmq/commit/eae45b9781) Start processing shared subscriptions for persistent clients without additional subscribe message;
-  * [#0303a0e3f6](https://github.com/thingsboard/tbmq/commit/0303a0e3f6) Fixed issue for persistent clients and shared subscriptions: 
-  Application - corrected qos change for existing subscription, Device - stop receiving stored messages twice on client connect if it sends subscribe.
+  * [#70](https://github.com/thingsboard/tbmq/pull/70) 修复了 QoS 0（“AT_MOST_ONCE”）的共享订阅处理；
+  * [#eae45b9781](https://github.com/thingsboard/tbmq/commit/eae45b9781) 开始处理持久性客户端的共享订阅，而无需额外的订阅消息；
+  * [#0303a0e3f6](https://github.com/thingsboard/tbmq/commit/0303a0e3f6) 修复了持久性客户端和共享订阅的问题：
+  应用程序 - 更正了现有订阅的 qos 更改，设备 - 如果发送订阅，则在客户端连接时停止接收存储的消息两次。
 
-* UI:
+* UI：
 
-  * [#77](https://github.com/thingsboard/tbmq/pull/77) Fix user logout when changing password on Profile page on "Skip" button hit;
-  * [#25108bf9db](https://github.com/thingsboard/tbmq/commit/25108bf9db) Fixed loading animation in Home page for inactive browser tab;
-  * [#7901fedae9](https://github.com/thingsboard/tbmq/commit/7901fedae9), [#fe01288420](https://github.com/thingsboard/tbmq/commit/fe01288420) MQTT client credentials authorization topic rules bug fixes.
+  * [#77](https://github.com/thingsboard/tbmq/pull/77) 修复了在点击“跳过”按钮时，在个人资料页面上更改密码时用户注销；
+  * [#25108bf9db](https://github.com/thingsboard/tbmq/commit/25108bf9db) 修复了非活动浏览器选项卡的主页中的加载动画；
+  * [#7901fedae9](https://github.com/thingsboard/tbmq/commit/7901fedae9)，[#fe01288420](https://github.com/thingsboard/tbmq/commit/fe01288420) MQTT 客户端凭据授权主题规则错误修复。
 
-## v1.1.0 (September 12, 2023)
+## v1.1.0（2023 年 9 月 12 日）
 
-Minor release with the following features, improvements, and bug fixes.
+次要版本，具有以下功能、改进和错误修复。
 
-**Main features:**
+**主要功能：**
 
-* [#53](https://github.com/thingsboard/tbmq/pull/53) MQTT over WebSockets;
-* [#63](https://github.com/thingsboard/tbmq/pull/63) MQTT 5 message expiry;
-* [#66](https://github.com/thingsboard/tbmq/pull/66) MQTT 5 topic alias;
-* [#68](https://github.com/thingsboard/tbmq/pull/68) UI: New Home page.
+* [#53](https://github.com/thingsboard/tbmq/pull/53) MQTT over WebSockets；
+* [#63](https://github.com/thingsboard/tbmq/pull/63) MQTT 5 消息过期；
+* [#66](https://github.com/thingsboard/tbmq/pull/66) MQTT 5 主题别名；
+* [#68](https://github.com/thingsboard/tbmq/pull/68) UI：新主页。
 
-**Improvements:**
+**改进：**
 
-* Core:
+* 核心：
   
-  * [#57](https://github.com/thingsboard/tbmq/pull/57) Additional validation for entities to protect from XSS;
-  * Introduced a dedicated thread pool for Application shared subscriptions processing, corrected stats for the number of active shared subscriptions processors;
-  * Time-series controller API calls improved validation;
-  * MQTT client credentials and Application shared subscription entities search by 'contains'.
+  * [#57](https://github.com/thingsboard/tbmq/pull/57) 针对实体的额外验证以防止 XSS；
+  * 引入了用于处理应用程序共享订阅的专用线程池，更正了活动共享订阅处理器数量的统计信息；
+  * 时间序列控制器 API 调用改进了验证；
+  * MQTT 客户端凭据和应用程序共享订阅实体按“包含”搜索。
 
-* UI:
+* UI：
 
-  * Introduced responsive design for the Home page;
-  * Extended config card on the Home page with parameters related to WebSocket listeners;
-  * Sorting capabilities on the config card;
-  * Possibility to view Kafka topics and Kafka consumer groups widgets in full-screen mode on the Home page;
-  * Added last timestamps to charts on the Home page;
-  * Added upgrade info and link to the version card on the Home page;
-  * New quick links to the documentation on the Home page;
-  * Option to skip changing the default password on the first user login;
-  * Quality of Service level displayed with respective number.
+  * 为主页引入了响应式设计；
+  * 使用与 WebSocket 侦听器相关的参数扩展了主页上的配置卡；
+  * 配置卡上的排序功能；
+  * 可以在主页上全屏查看 Kafka 主题和 Kafka 消费者组小部件；
+  * 在主页上添加了图表上的最后时间戳；
+  * 在主页上添加了升级信息和版本卡链接；
+  * 主页上快速链接到文档的新链接；
+  * 选项可在首次用户登录时跳过更改默认密码；
+  * 服务质量级别显示为相应数字。
 
-**Bug fixes:**
+**错误修复：**
 
-* Core:
+* 核心：
 
-  * [#52](https://github.com/thingsboard/tbmq/pull/52) Spring CORS configuration issue;
-  * Deny deletion of own sysadmin user by API.
+  * [#52](https://github.com/thingsboard/tbmq/pull/52) Spring CORS 配置问题；
+  * 通过 API 拒绝删除自己的 sysadmin 用户。
 
-* UI:
+* UI：
   
-  * Fixed making multiple same fetch requests on Home page loading;
-  * Tooltip display fix for graphs on the Monitoring page;
-  * Full-screen issue on the Monitoring page.
+  * 修复了主页加载时发出多个相同的获取请求；
+  * 修复了监控页面上图表上的工具提示显示；
+  * 修复了监控页面上的全屏问题。
 
-## v1.0.1 (July 07, 2023)
+## v1.0.1（2023 年 7 月 07 日）
 
-Patch release with the following improvements and bug fixes.
+补丁版本，具有以下改进和错误修复。
 
-**Improvements:**
+**改进：**
 
-* Installation:
+* 安装：
 
-  * Added script for easy installation and running of TBMQ in monolithic mode.
+  * 添加了用于轻松安装和运行单片模式下 TBMQ 的脚本。
 
-* UI:
+* UI：
 
-  * Home page. Getting Started new procedure;
-  * Home page. Tooltips improvements;
-  * Home page. Kafka topics & Consumer Groups switching tabs animation correction;
-  * Monitoring page. Chart legend interaction improvement;
-  * MQTT client credentials form hint improvement;
-  * New toast with default password info on User creation.
+  * 主页。入门新程序；
+  * 主页。工具提示改进；
+  * 主页。Kafka 主题和消费者组切换选项卡动画更正；
+  * 监控页面。图表图例交互改进；
+  * MQTT 客户端凭据表单提示改进；
+  * 用户创建时带有默认密码信息的新提示。
 
-**Bug fixes:**
+**错误修复：**
 
-* Core:
+* 核心：
 
-  * [#41](https://github.com/thingsboard/tbmq/pull/41) Keep Alive value of 0 fix.
+  * [#41](https://github.com/thingsboard/tbmq/pull/41) 保持活动值为 0 的修复。
 
-* UI:
+* UI：
 
-  * Monitoring page. Sessions and Subscriptions graphs are not showing values in cluster mode.
+  * 监控页面。会话和订阅图表在集群模式下不显示值。
 
-## v1.0.0 (June 28, 2023)
+## v1.0.0（2023 年 6 月 28 日）
 
-Initial release. See [GitHub](https://github.com/thingsboard/tbmq#tbmq) for more info.
+初始版本。有关更多信息，请参阅 [GitHub](https://github.com/thingsboard/tbmq#tbmq)。

@@ -1,58 +1,58 @@
 ---
 layout: docwithnav
-title: Validate incoming telemetry
-description: Validate incoming telemetry
+title: 验证传入遥测数据
+description: 验证传入遥测数据
 ---
 
 * TOC
 {:toc}
 
-## Use case
+## 使用案例
 
-Let's assume your device is using DHT22 sensor to collect and push temperature readings to ThingsBoard.
-DHT22 sensor is good for -40 to 80°C temperature readings.
+假设你的设备使用 DHT22 传感器收集温度读数并将其推送到 ThingsBoard。
+DHT22 传感器适用于 -40 至 80°C 的温度读数。
 
-In this tutorial we will configure ThingsBoard Rule Engine to store all temperature within -40 to 80°C range and will discard all other readings.
-Although this scenario is fictional, you will learn how to define JS functions to validate incoming data and use this knowledge in real-life applications.
+在本教程中，我们将配置 ThingsBoard 规则引擎以存储 -40 至 80°C 范围内的所有温度，并将丢弃所有其他读数。
+尽管此场景是虚构的，但你将学习如何定义 JS 函数来验证传入数据，并在实际应用中使用此知识。
 
-## Prerequisites
+## 先决条件
 
-We assume you have completed the following guides and reviewed the articles listed below:
+我们假设你已完成以下指南并阅读了以下文章：
 
-  * [Getting Started](/docs/getting-started-guides/helloworld/) guide.
-  * [Rule Engine Overview](/docs/user-guide/rule-engine-2-0/overview/).
+  * [入门](/docs/getting-started-guides/helloworld/) 指南。
+  * [规则引擎概述](/docs/user-guide/rule-engine-2-0/overview/)。
 
-## Step 1: Adding temperature validation node
+## 步骤 1：添加温度验证节点
 
-We will modify default rule chain and will add [**filter**](/docs/user-guide/rule-engine-2-0/filter-nodes/#script-filter-node) rule node with temperature validation script.
-We will place this rule node between default "message type switch" and "save timeseries" rule nodes.
-Please note that we have removed irrelevant rule nodes from the root rule chain as well.
+我们将修改默认规则链，并将添加带有温度验证脚本的 [**filter**](/docs/user-guide/rule-engine-2-0/filter-nodes/#script-filter-node) 规则节点。
+我们将此规则节点放在默认“消息类型开关”和“保存时序”规则节点之间。
+请注意，我们还从根规则链中删除了不相关的规则节点。
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/validation/rule-chain.png)
 
-Let's assume the data that arrive to a system may or may not have the "temperature" field.
-We will treat all data that does not have "temperature" field as valid. In order to do this we will use the following function
+假设到达系统的的数据可能具有或不具有“temperature”字段。
+我们将所有不具有“temperature”字段的数据视为有效数据。为了做到这一点，我们将使用以下函数
 
 ```javascript
 return typeof msg.temperature === 'undefined' || (msg.temperature >= -40 && msg.temperature <= 80);
 ```
 
-## Step 2: Validation script debugging
+## 步骤 2：验证脚本调试
 
-Let's check that our script is correct by using built-in "Test filter function" button
+让我们通过使用内置的“测试过滤器函数”按钮来检查我们的脚本是否正确
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/validation/node-config.png)
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/validation/test-function.png)
 
-You can check few more cases when temperature is not set or it exceeded the specified thresholds.
+当温度未设置或超过指定阈值时，你可以检查更多情况。
 
-## TL;DR
+## 摘要
 
-Download and import attached json [**file**](/docs/user-guide/resources/validation-rule-chain.json) with a rule chain from this tutorial. Don't forget to mark new rule chain as "root".
+下载并导入附加的 json [**文件**](/docs/user-guide/resources/validation-rule-chain.json) 和本教程中的规则链。不要忘记将新规则链标记为“根”。
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/make-root.png)
 
-## Next steps
+## 后续步骤
 
 {% assign currentGuide = "DataProcessing" %}{% include templates/guides-banner.md %}

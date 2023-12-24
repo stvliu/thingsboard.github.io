@@ -3,56 +3,56 @@
 {% assign peDocsPrefix = docsPrefix %}
 {% endif %}
 
-{% assign feature = "Platform Integrations" %}{% include templates/pe-feature-banner.md %}
+{% assign feature = "平台集成" %}{% include templates/pe-feature-banner.md %}
 
-* TOC 
+* TOC
 {:toc}
 
-## Overview
+## 概述
 
-Azure Event Hub Integration allows to stream data from Azure Event Hub to ThingsBoard and converts device payloads to the ThingsBoard format.
+Azure Event Hub 集成允许将数据从 Azure Event Hub 流式传输到 ThingsBoard，并将设备有效负载转换为 ThingsBoard 格式。
 
  ![image](/images/user-guide/integrations/azure-event-hub-integration.svg)
  
-## Create Azure IoT Hub
+## 创建 Azure IoT 中心
 
-You had registered in Azure. For now, you need to create IoT hub. Here you will create devices and do some other operations. Let's do this step by step:
+您已在 Azure 中注册。现在，您需要创建 IoT 中心。您将在其中创建设备并执行其他操作。我们按部就班地进行：
 
-1) In Azure Portal we should click on the **Create a resource** button to create IoT Hub
+1) 在 Azure 门户中，我们应单击 **创建资源** 按钮以创建 IoT 中心
 
-2) In search field lets write **Iot Hub** and choose same item in list
+2) 在搜索字段中，让我们编写 **Iot Hub** 并从列表中选择相同的项目
 
-3) For next lets click on Create
+3) 接下来，让我们单击创建
 
-4) On this page click **Create new** and specify Resource Group and IoT hub name, click **Review + create**, on the next page click **Create**
+4) 在此页面上，单击 **新建** 并指定资源组和 IoT 中心名称，单击 **查看 + 创建**，在下一页上单击 **创建**
 
-5) Wait for deployment process and then click **Go to resource**
+5) 等待部署过程，然后单击 **转到资源**
 
 {% include images-gallery.html imageCollection="create_eventhub" preview="false" %}
 
-## Create Device in IoT Hub
+## 在 IoT 中心创建设备
 
-First step done and now we go to create Device
+第一步已完成，现在我们转到创建设备
 
-1) In Context Menu click for **Iot devices** tab
+1) 在上下文菜单中，单击 **Iot 设备** 选项卡
 
-2) Here you should click on **New** button
+2) 在此处，您应单击 **新建** 按钮
 
-3) In pop-up window just specify **Device ID** and click **Save**
+3) 在弹出窗口中，只需指定 **设备 ID**，然后单击 **保存**
 
-4) Great! You have new own device
+4) 太棒了！您拥有新的设备
 
 {% include images-gallery.html imageCollection="create_device" preview="false" %}
 
-## Create Uplink Converter
+## 创建上行转换器
 
-Before creating the integration, you need to create an Uplink converter in Data converters. Uplink is necessary in order to convert the incoming data from the device into the required format for displaying them in ThingsBoard. Click on the “plus” and on “Create new converter”. To view the events, enable Debug. In the function decoder field, specify a script to parse and transform data.
+在创建集成之前，您需要在数据转换器中创建上行转换器。上行对于将来自设备的传入数据转换为在 ThingsBoard 中显示它们所需的格式是必要的。单击“加号”和“创建新转换器”。要查看事件，请启用调试。在函数解码器字段中，指定一个脚本来解析和转换数据。
 
-**NOTE** Although the Debug mode is very useful for development and troubleshooting, leaving it enabled in production mode may tremendously increase the disk space, used by the database, because all the debugging data is stored there. It is highly recommended to turn the Debug mode off when done debugging.
+**注意** 尽管调试模式对于开发和故障排除非常有用，但在生产模式下启用它可能会极大地增加数据库使用的磁盘空间，因为所有调试数据都存储在那里。强烈建议在完成调试后关闭调试模式。
 
 {% include images-gallery.html imageCollection="uplink_converter" preview="false" %}
 
-**You can use our example of the Uplink converter:**
+**您可以使用我们的上行转换器示例：**
 ```javascript
 var data = decodeToJson(payload);
 var deviceName = data.devName;
@@ -81,27 +81,27 @@ return result;
 ```
 
 
-## Create Integration in Thingsboard
+## 在 Thingsboard 中创建集成
 
-At this time, we have own IoT hub with Device
+此时，我们拥有带有设备的 IoT 中心
 
-1) Now in Azure Portal you have to choose **Built-in endpoints** in menu and copy **Event Hub-compatible endpoint**
+1) 现在，您必须在 Azure 门户中选择菜单中的 **内置端点** 并复制 **与 Event Hub 兼容的端点**
 
-2) Go to the Thingsboard and choose **Integrations** in menu
+2) 转到 Thingsboard 并选择菜单中的 **集成**
 
-3) Click on **'plus'** and in pop-up we have to enter Name, choose type **Azure Event Hub**, choose uplink converter and paste in field Connection String copied **Event Hub-compatible endpoint**
+3) 单击 **'加号'**，在弹出窗口中，我们必须输入名称，选择类型 **Azure Event Hub**，选择上行转换器，然后粘贴到字段连接字符串中，复制 **与 Event Hub 兼容的端点**
 
-4) [Optional] Click on **Check connection** button to check correctly copied connection string
+4) [可选] 单击 **检查连接** 按钮以检查正确复制的连接字符串
 
-5) Click **Add** and see your created integration
+5) 单击 **添加** 并查看您创建的集成
 
 {% include images-gallery.html imageCollection="integration" preview="false" %}
 
-## Test it up!
+## 测试一下！
 
-For now, we ready to test our integration. So we have to go to Rule Chain (tab in Thingsboard menu), choose one of your rule chains and do next steps:
+现在，我们准备测试我们的集成。因此，我们必须转到规则链（Thingsboard 菜单中的选项卡），选择您的一个规则链并执行以下步骤：
 
-1) In field Search Nodes type 'gen' and find in the menu **generator**. Drag it on the Canvas. In pop-up specify **name** of Generator, **number of messages** and generate function, you can use our example. Next click 'Add' 
+1) 在字段搜索节点中键入 'gen'，并在菜单中找到 **生成器**。将其拖到画布上。在弹出窗口中，指定生成器的 **名称**、**消息数** 和生成函数，您可以使用我们的示例。接下来，单击“添加”
 
 {% include images-gallery.html imageCollection="generator" preview="false" %}
 
@@ -119,43 +119,43 @@ var msgType = "POST_TELEMETRY_REQUEST";
 return { msg: msg, metadata: metadata, msgType: msgType };
 ```
 
-2) This is a time to find device **Primary key**. Go to azure portal, tap on **Iot Devices** , tap on your device and see **Primary key** field. Copy it
+2) 现在是时候找到设备 **主密钥** 了。转到 Azure 门户，点击 **Iot 设备**，点击您的设备并查看 **主密钥** 字段。复制它
 
 {% include images-gallery.html imageCollection="primary_key" preview="false" %}
 
-3) Now we need to find another rule node. So type in Search Nodes 'iot' and choose **azure iot hub** in menu. Drag it to the Canvas. In pop-up you need to specify a name, instead of <device_id> type your device name, same Device ID and add to credentials Primary Key that we have copied. Also, if you need to see events - click on Debug mode.
+3) 现在我们需要找到另一个规则节点。因此，在搜索节点中键入 'iot' 并选择菜单中的 **azure iot hub**。将其拖到画布上。在弹出窗口中，您需要指定一个名称，而不是 <device_id> 键入您的设备名称，相同的设备 ID，并将我们复制的主密钥添加到凭据中。此外，如果您需要查看事件，请单击调试模式。
 
 {% include images-gallery.html imageCollection="iot_rule_node" preview="false" %}
 
-4) If it looks like on the photo - nice. Click **Add** and go on
+4) 如果它看起来像照片 - 不错。单击 **添加** 并继续
 
-5) Last steps: connect **generator** to **azure iot hub**. Click on the gray circle of **generator** and drag it to left gray circle of **azure iot hub**. In pop-up menu you need to choose 'Success', click Add and smile
+5) 最后一步：将 **生成器** 连接到 **azure iot hub**。单击 **生成器** 的灰色圆圈，然后将其拖动到 **azure iot hub** 的左侧灰色圆圈。在弹出菜单中，您需要选择“成功”，单击添加并微笑
 
-6) All ready, lets save Canvas and go to the integration.
+6) 一切就绪，让我们保存画布并转到集成。
 
 {% include images-gallery.html imageCollection="generator_iot_rule_chain" preview="false" %}
 
-Looks nice if you see type 'Uplink' in 'Events' of your integration and message that we have typed looks same as here
+如果您在集成的“事件”中看到类型“上行”以及我们键入的消息看起来与此处相同，那就太好了
 
 {% include images-gallery.html imageCollection="event_uplink" preview="false" %}
 
-Use the Dashboards to work with data. Dashboards are a modern format for collecting and visualizing data sets. Visibility of data presentation is achieved through a variety of widgets.
+使用仪表板处理数据。仪表板是收集和可视化数据集的现代格式。通过各种小部件实现数据呈现的可见性。
 
-ThingsBoard has examples of several types of dashboards that you can use. You can find them in **Solution templates** tab.
+ThingsBoard 有几种类型的仪表板示例，您可以使用它们。您可以在 **解决方案模板** 选项卡中找到它们。
 
 {% include images-gallery.html imageCollection="solution_templates" %}
 
-## Advanced usage: Create Downlink Converter
+## 高级用法：创建下行转换器
 
-Downlink uses for send a message to device. For example information that message from device have been received
+下行用于向设备发送消息。例如，设备消息已接收到的信息
 
-1) At first, lets find IoT Hub name. You can go to Azure portal, choose **Built-in endpoints** and copy value of **Event Hub-compatible name** - there is **IoT hub name**
+1) 首先，让我们找到 IoT 中心名称。您可以转到 Azure 门户，选择 **内置端点** 并复制 **与 Event Hub 兼容的名称** 的值 - 这里有 **IoT 中心名称**
 
-2) You need to do same steps like when was creating Uplink, but choose Downlink and specify another function. When Downlink Converter have done, you should go to integration and specify this **converter** and add the name of **IoT hub** to corresponding field
+2) 您需要执行与创建上行时相同的步骤，但选择下行并指定另一个函数。完成下行转换器后，您应该转到集成并指定此 **转换器**，并将 **IoT 中心** 的名称添加到相应字段
 
 {% include images-gallery.html imageCollection="downlink_first_part" preview="false" %}
 
-Simple example of the Downlink conveter:
+下行转换器的简单示例：
 ```javascript
 var result = {
 
@@ -171,48 +171,47 @@ var result = {
 
 return result;
 ```
-**NOTE** *If you used another name of device (not TB-D-01) you have to specify in the Downlink converter your device name for **deviceId** field*
+**注意** *如果您使用了其他设备名称（不是 TB-D-01），则必须在下行转换器中为 **deviceId** 字段指定您的设备名称*
 
-**Ok, downlink converter ready, integration ready, Let's test it:**
+**好的，下行转换器已准备就绪，集成已准备就绪，让我们测试一下：**
 
-1) After test of uplink, integration have created the device inside Thingsboard, and we need to know for which Rule Chain it connected.
-Just go to the Device groups in Thingsboard menu choose **All** and find the device with the name that we have used in the uplink.
+1) 在测试上行后，集成已在 Thingsboard 中创建了设备，我们需要知道它连接了哪个规则链。
+只需转到 Thingsboard 菜单中的设备组，选择 **全部**，然后找到我们在上行中使用的名称的设备。
 
 {% include images-gallery.html imageCollection="device_groups_all" preview="false" %}
 
-2) Find the name of necessary rule chain in Rule Chain tabs of Thingsboard menu. 
+2) 在 Thingsboard 菜单的规则链选项卡中找到必要的规则链的名称。
 
-3) In 'Search nodes' field type 'down' and choose in the menu **integration downlink**, drag it to the Canvas. In pop-up you need to specify the name of rule node and choose our integration
+3) 在“搜索节点”字段中键入“down”，然后在菜单中选择 **集成下行**，将其拖动到画布上。在弹出窗口中，您需要指定规则节点的名称并选择我们的集成
 
-4) Click on left gray circle of **message type switch** node and drag it to gray circle of our downlink rule node. Here choose **Attributes update** and click 'Add'
+4) 单击 **消息类型开关** 节点的左侧灰色圆圈，然后将其拖动到我们的下行规则节点的灰色圆圈。在此处选择 **属性更新**，然后单击“添加”
 
 {% include images-gallery.html imageCollection="downlink_rule_node" preview="false" %}
 
-5) Great. Save Canvas and lets go to 'Device groups' -> 'All' and choose our device. Switch to **Attributes** in 'Entity attributes scope' list choose **Shared attributes**. 
-   Tap on 'plus' to create new. Specify in pop-up the key of attribute, type of value and some value.
+5) 太棒了。保存画布，让我们转到“设备组”->“全部”，然后选择我们的设备。切换到“实体属性范围”列表中的 **属性**，选择 **共享属性**。
+   点击“加号”创建新的。在弹出窗口中指定属性的键、值类型和一些值。
 
-6) Tap 'Add' and go to the Integration to check the result of downlink.
+6) 点击“添加”，然后转到集成以检查下行的结果。
 
 {% include images-gallery.html imageCollection="device_last_part" preview="false" %}
 
-How you can see, we have a message that Downlink successfully received by Integration and sent to Azure Event Hub.
-To check it in Azure IoT Hub we need to go to Azure Portal, choose **IoT devices** menu tab and see **Cloud to Device Message Count** number. 
+如您所见，我们收到一条消息，表明集成已成功接收下行并发送到 Azure Event Hub。要在 Azure IoT 中心中检查它，我们需要转到 Azure 门户，选择 **IoT 设备** 菜单选项卡并查看 **云到设备消息计数** 编号。
 
 {% include images-gallery.html imageCollection="downlink_result" preview="false" %}
 
-## Advanced usage: Check Downlink using Azure IoT Hub integration
+## 高级用法：使用 Azure IoT Hub 集成检查下行
 
-There is a simple explanation how to see your downlinks in Azure IoT Hub Integration.
-Just look this images to understand how we make simple downlink check for Azure Event Hub
+有一个简单的解释说明如何在 Azure IoT Hub 集成中查看您的下行。
+只需查看这些图像即可了解我们如何对 Azure Event Hub 执行简单下行检查
 
 {% include images-gallery.html imageCollection="advanced_testing" preview="false" %}
 
-*You can familiarize with Azure Iot Hub using next Link:* [Azure IoT Hub Integration](/docs/{{peDocsPrefix}}user-guide/integrations/azure-iot-hub)
+*您可以使用以下链接熟悉 Azure Iot Hub：* [Azure IoT Hub 集成](/docs/{{peDocsPrefix}}user-guide/integrations/azure-iot-hub)
 
-## Conclusion
+## 结论
 
-**That's it! Good luck in configuring of you IoT devices and dashboards!**
+**就是这样！祝您配置 IoT 设备和仪表板好运！**
 
-## Next steps
+## 后续步骤
 
 {% assign currentGuide = "ConnectYourDevice" %}{% include templates/multi-project-guides-banner.md %}

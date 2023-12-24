@@ -2,54 +2,51 @@
 layout: docwithnav-trendz
 assignees:
 - vparomskiy
-title: Data Filtering
-description: How to filter and clear dataset in Trendz Analytics 
+title: 数据过滤
+description: 如何在 Trendz Analytics 中过滤和清除数据集
 ---
 
 * TOC
 {:toc}
 
-To get better results during analysis it is required to filter data from noisy sources or we want to focus on a concrete subset of entities. 
-Drag-n-drop fields that you want to filter on into **Filter** section and apply the required filter. 
+为了在分析过程中获得更好的结果，需要从嘈杂的源中过滤数据，或者我们希望关注实体的具体子集。
+将要过滤的字段拖放到 **过滤器** 部分，并应用所需的过滤器。
 
-You can apply filters even on fields that are not used for actual data visualization. For example, during energy consumption analysis, we want to filter out all 
-empty apartments and focus on apartments located on the second and third floors. Here is how our config will look like:
+您甚至可以对未用于实际数据可视化的字段应用过滤器。例如，在能耗分析期间，我们希望过滤掉所有空置公寓，并关注位于二楼和三楼的公寓。以下是我们的配置示例：
 
 ![image](/images/trendz/filter-example.png)
 
 
-## Filter Options
+## 过滤器选项
 
-You can filter by any field that is present in the ThingsBoard:
-* Asset/Device Name 
-* Asset/Device Label 
-* Asset/Device Owner (Customer) 
-* Attribute
-* Telemetry field
+您可以通过 ThingsBoard 中存在的任何字段进行过滤：
+* 资产/设备名称
+* 资产/设备标签
+* 资产/设备所有者（客户）
+* 属性
+* 遥测字段
 
 
-## Filter types and conditions:
+## 过滤器类型和条件：
 
-Filter support following field types:
-* Numeric
-* Text 
-* Boolean
-* Date 
+过滤器支持以下字段类型：
+* 数字
+* 文本
+* 布尔值
+* 日期
 
-To change filter condition - click on the filter field and select the required option:
+要更改过滤器条件，请单击过滤器字段并选择所需的选项：
 
 ![image](/images/trendz/filter-dialog.png)
 
-## Filter by hierarchy (relation)
+## 按层次结构（关系）过滤
 
-If you have relations configured between assets/device then you can filter by hierarchy. 
+如果您在资产/设备之间配置了关系，则可以按层次结构进行过滤。
 
-For example you have Buildings and each building has relation to Apartments. If you need to focus on apartments only 
-from 1 Building - you should drop Building name into **Filter** section and selected required building. As the result 
-view will contains only apartments from selected building.
+例如，您有建筑物，每个建筑物与公寓有关系。如果您只需要关注来自 1 栋建筑物的公寓，则应将建筑物名称拖放到 **过滤器** 部分并选择所需的建筑物。结果视图将仅包含来自所选建筑物的公寓。
 
-Same logic work if you want to filter asset/devices by customer that they belongs to.
+如果您想按资产/设备所属的客户进行过滤，则相同的逻辑也适用。
 
-## Next Steps
+## 后续步骤
 
 {% assign currentGuide = "Filtering" %}{% include templates/trndz-guides-banner.md %}

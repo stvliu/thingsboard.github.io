@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-mqtt-broker
-title: Cluster setup using Docker Compose
-description: Cluster setup using Docker Compose
+title: 使用 Docker Compose 进行集群设置
+description: 使用 Docker Compose 进行集群设置
 
 ---
 
@@ -9,24 +9,24 @@ description: Cluster setup using Docker Compose
 {:toc}
 
 
-This guide will help you to set up TBMQ in cluster mode using Docker Compose.
+本指南将帮助您使用 Docker Compose 在集群模式下设置 TBMQ。
 
-### Prerequisites
+### 先决条件
 
-- [Install Docker](https://docs.docker.com/engine/installation/)
+- [安装 Docker](https://docs.docker.com/engine/installation/)
 
 {% include templates/install/docker-install-note.md %}
 
-### Step 1. Pull TBMQ Image
+### 步骤 1. 拉取 TBMQ 镜像
 
-Make sure your have [logged in](https://docs.docker.com/engine/reference/commandline/login/) to docker hub using command line.
+确保您已使用命令行[登录](https://docs.docker.com/engine/reference/commandline/login/)docker 中心。
 
 ```bash
 docker pull thingsboard/tbmq-node:{{ site.release.broker_full_ver }}
 ```
 {: .copy-code}
 
-### Step 2. Clone TBMQ repository
+### 步骤 2. 克隆 TBMQ 存储库
 
 ```bash
 git clone -b {{ site.release.broker_branch }} https://github.com/thingsboard/tbmq.git
@@ -34,107 +34,104 @@ cd tbmq/docker
 ```
 {: .copy-code}
 
-### Step 3. Installation
+### 步骤 3. 安装
 
-Execute the following command to create necessary volumes for all the services and to update the haproxy config in the created volume.
+执行以下命令为所有服务创建必要的卷，并在创建的卷中更新 haproxy 配置。
 
 ```bash
 ./scripts/docker-create-volumes.sh
 ```
 {: .copy-code}
 
-Execute the following command to run installation:
+执行以下命令运行安装：
 
 ```bash
 ./scripts/docker-install-tbmq.sh
 ```
 {: .copy-code}
 
-### Step 4. Running
+### 步骤 4. 运行
 
-Execute the following command to start services:
+执行以下命令启动服务：
 
 ```bash
 ./scripts/docker-start-services.sh
 ```
 {: .copy-code}
 
-After a while when all services will be successfully started you can make requests to `http://{your-host-ip}:8083` 
-in you browser (e.g. **http://localhost:8083**) and connect clients using MQTT protocol on 1883 port.
+一段时间后，当所有服务成功启动后，您可以在浏览器中向 `http://{your-host-ip}:8083` 发出请求（例如 **http://localhost:8083**），并使用 MQTT 协议在 1883 端口连接客户端。
 
 {% include templates/mqtt-broker/login.md %}
 
-### Step 5. Logs, stop and start commands
+### 步骤 5. 日志、停止和启动命令
 
-In case of any issues you can examine service logs for errors.
-For example to see TBMQ logs execute the following command:
+如果出现任何问题，您可以检查服务日志以查找错误。
+例如，要查看 TBMQ 日志，请执行以下命令：
 
 ```bash
 docker compose logs -f tbmq1
 ```
 {: .copy-code}
 
-Or use the following command to see the state of all the containers.
+或者使用以下命令查看所有容器的状态。
 ```bash
 docker compose ps
 ```
 {: .copy-code}
-Use next command to inspect the logs of all running services.
+使用下一个命令检查所有正在运行的服务的日志。
 ```bash
 docker compose logs -f
 ```
 {: .copy-code}
-See [docker compose logs](https://docs.docker.com/compose/reference/logs/) command reference for more details.
+有关更多详细信息，请参阅 [docker compose logs](https://docs.docker.com/compose/reference/logs/) 命令参考。
 
-Execute the following command to stop services:
+执行以下命令停止服务：
 
 ```bash
 ./scripts/docker-stop-services.sh
 ```
 {: .copy-code}
 
-Execute the following command to stop and completely remove deployed docker containers:
+执行以下命令停止并完全删除已部署的 docker 容器：
 
 ```bash
 ./scripts/docker-remove-services.sh
 ```
 {: .copy-code}
 
-In case you want to remove docker volumes for all the containers, execute the following command.
-**Note:** it will remove all your data, so be careful before executing it.
+如果您想删除所有容器的 docker 卷，请执行以下命令。
+**注意：**它将删除您的所有数据，因此在执行之前请务必小心。
 
 ```bash
 ./scripts/docker-remove-volumes.sh
 ```
 {: .copy-code}
 
-It could be useful to update logs (enable DEBUG/TRACE logs) in runtime or change TBMQ or Haproxy configs. In order to do
-this you need to make changes, for example, to the
-_haproxy.cfg_ or _logback.xml_ file.
-Afterward, execute the next command to apply the changes for the container:
+在运行时更新日志（启用 DEBUG/TRACE 日志）或更改 TBMQ 或 Haproxy 配置可能很有用。为了
+为此，您需要对 _haproxy.cfg_ 或 _logback.xml_ 文件进行更改，例如。
+之后，执行下一个命令以对容器应用更改：
 
 ```bash
 ./scripts/docker-refresh-config.sh
 ```
 {: .copy-code}
 
-### Upgrading
+### 升级
 
 {% include templates/mqtt-broker/install/migration.md %}
 
-In case you would like to upgrade, please pull the recent changes from the latest release branch:
+如果您想升级，请从最新的发行版分支中提取最近的更改：
 
 ```bash
 git pull origin {{ site.release.broker_branch }}
 ```
 {: .copy-code}
 
-**Note**: Make sure custom changes of yours if available are not lost during the merge process. 
-Make sure `TBMQ_VERSION` in .env file is set to the target version (e.g., set it to {{ site.release.broker_full_ver }} if you are upgrading to the latest).
+**注意：**确保在合并过程中不会丢失您可用的自定义更改。确保 .env 文件中的 `TBMQ_VERSION` 设置为目标版本（例如，如果您要升级到最新版本，请将其设置为 {{ site.release.broker_full_ver }}）。
 
 {% include templates/mqtt-broker/install/upgrade-hint.md %}
 
-After that execute the following commands:
+之后执行以下命令：
 
 ```bash
 ./scripts/docker-stop-services.sh
@@ -143,13 +140,12 @@ After that execute the following commands:
 ```
 {: .copy-code}
 
-Where `FROM_VERSION` - from which version upgrade should be started. 
-See [Upgrade Instructions](/docs/mqtt-broker/install/upgrade-instructions/) for valid `fromVersion` values.
+其中 `FROM_VERSION` - 从哪个版本开始升级。有关有效的 `fromVersion` 值，请参阅 [升级说明](/docs/mqtt-broker/install/upgrade-instructions/)。
 
-### Generate certificate for HTTPS
+### 生成 HTTPS 证书
 
-We are using HAproxy for proxying traffic to containers and for web UI by default we are using 8083 and 443 ports. 
-For using HTTPS with a valid certificate, execute these commands:
+我们使用 HAproxy 将流量代理到容器，默认情况下，我们使用 8083 和 443 端口进行 Web UI。
+要使用具有有效证书的 HTTPS，请执行以下命令：
 
 ```bash
 docker exec haproxy-certbot certbot-certonly --domain your_domain --email your_email
@@ -157,8 +153,8 @@ docker exec haproxy-certbot haproxy-refresh
 ```
 {: .copy-code}
 
-**Note**: Valid certificate is used only when you visit web UI by domain in URL.
+**注意：**仅当您通过 URL 中的域访问 Web UI 时，才会使用有效的证书。
 
-### Next steps
+### 后续步骤
 
 {% assign currentGuide = "InstallationGuides" %}{% include templates/mqtt-broker-guides-banner.md %}

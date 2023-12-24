@@ -2,97 +2,97 @@
 layout: docwithnav-paas
 assignees:
 - ashvayka
-title: Mail Settings
-description: ThingsBoard IoT platform mail settings
+title: 邮件设置
+description: ThingsBoard IoT 平台邮件设置
 
 sendgrid-configuration:
     0:
         image: /images/user-guide/ui/mail/sendgrid-welcome.png
-        title: 'Once you create your account, you will be forwarded to the welcome page. Click "Start" button;'
+        title: '创建帐户后，您将被转发到欢迎页面。单击“开始”按钮；'
     1:
         image: /images/user-guide/ui/mail/sendgrid-smtp-relay.png
-        title: 'Go to the "Email API" section -> "Integration Guide" page and choose a setup method - "SMTP Relay";'
+        title: '转到“电子邮件 API”部分 -> “集成指南”页面，然后选择设置方法 - “SMTP 中继”；'
     2:
         image: /images/user-guide/ui/mail/sendgrid-token.png
-        title: 'Create an API key: enter the API key name and generate it.'
+        title: '创建 API 密钥：输入 API 密钥名称并生成它。'
 
 gmail-generate-an-app-password:
     0:
         image: /images/user-guide/ui/mail/gmail-generate-an-app-password-1.png
-        title: 'Go to your Google Account and navigate to the "Security" page. Then select "2-Step Verification" tab;'
+        title: '转到您的 Google 帐户并导航到“安全”页面。然后选择“两步验证”选项卡；'
     1:
         image: /images/user-guide/ui/mail/gmail-generate-an-app-password-2.png
-        title: 'At the bottom of the page, select "App passwords";'
+        title: '在页面底部，选择“应用密码”；'
     2:
         image: /images/user-guide/ui/mail/gmail-generate-an-app-password-3.png
-        title: 'Click on the "Select app" and select "Other" app in the drop-down menu;'
+        title: '单击“选择应用”并在下拉菜单中选择“其他”应用；'
     3:
         image: /images/user-guide/ui/mail/gmail-generate-an-app-password-4.png
-        title: 'Enter app name and click "Generate" button;'
+        title: '输入应用名称并单击“生成”按钮；'
     4:
         image: /images/user-guide/ui/mail/gmail-generate-an-app-password-5.png
-        title: 'Copy and save app password.'
+        title: '复制并保存应用密码。'
 
 create-gmail-project:
     0:
         image: /images/user-guide/ui/mail/gmail-with-oauth2-1-pe.png
-        title: 'Input “Project name” and “Location”. Then click “Create”. New project is created.'
+        title: '输入“项目名称”和“位置”。然后单击“创建”。创建新项目。'
 
 create-gmail-credentials:
     0:
         image: /images/user-guide/ui/mail/gmail-with-oauth2-2-pe.png
-        title: 'Select created project and navigate to the "APIs & Services" page;'
+        title: '选择创建的项目并导航到“API 和服务”页面；'
     1:
         image: /images/user-guide/ui/mail/gmail-with-oauth2-3-pe.png
-        title: 'Click on the "Credentials" tab, then click on the "Create Credentials" button and select "OAuth client ID";'
+        title: '单击“凭据”选项卡，然后单击“创建凭据”按钮并选择“OAuth 客户端 ID”；'
     2:
         image: /images/user-guide/ui/mail/gmail-with-oauth2-4-pe.png
-        title: 'In a "Create OAuth client ID" window select application type - "Web application" and input the name of your OAuth2 client. Then, in the "Authorized redirect URIs" section, click the "+ Add URI" button and paste the previously copied "Redirect URI template". Click "Create";'
+        title: '在“创建 OAuth 客户端 ID”窗口中选择应用程序类型 - “Web 应用程序”并输入 OAuth2 客户端的名称。然后，在“授权的重定向 URI”部分，单击“+ 添加 URI”按钮并粘贴先前复制的“重定向 URI 模板”。单击“创建”；'
     3:
         image: /images/user-guide/ui/mail/gmail-with-oauth2-5-pe.png
-        title: 'Save created client ID and client secret for future steps.'
+        title: '保存创建的客户端 ID 和客户端密钥以备将来使用。'
 
 azure-portal:
     0:
         image: /images/user-guide/ui/mail/microsoft-azure-with-oauth2-1-pe.png
-        title: 'Sign in to the Azure portal and select Azure Active Directory;'
+        title: '登录 Azure 门户并选择 Azure Active Directory；'
     1:
         image: /images/user-guide/ui/mail/microsoft-azure-with-oauth2-2-pe.png
-        title: 'Under "Manage" select "App registrations" then click "New registration";'
+        title: '在“管理”下选择“应用注册”，然后单击“新建注册”；'
     2:
         image: /images/user-guide/ui/mail/microsoft-azure-with-oauth2-3-pe.png
-        title: 'Input a name for your application and enter the previously copied "Redirect URI template". Click "Register";'
+        title: '输入应用程序的名称并输入先前复制的“重定向 URI 模板”。单击“注册”；'
     3:
         image: /images/user-guide/ui/mail/microsoft-azure-with-oauth2-4-pe.png
-        title: 'After application is created you can find "Client ID" and "Directory (tenant) ID" on "Overview" page. Save them for future steps.'
+        title: '创建应用程序后，您可以在“概述”页面上找到“客户端 ID”和“目录（租户）ID”。将它们保存以备将来使用。'
 
 azure-portal-2:
     0:
         image: /images/user-guide/ui/mail/microsoft-azure-with-oauth2-5-pe.png
-        title: 'Select "Certificates & secrets" > "Client secrets" > click "New client secret" button;'
+        title: '选择“证书和密钥”>“客户端密钥”>单击“新建客户端密钥”按钮；'
     1:
         image: /images/user-guide/ui/mail/microsoft-azure-with-oauth2-6-pe.png
-        title: 'Add a description for your client secret. Select an expiration for the secret or specify a custom lifetime. Click "Add";'
+        title: '为您的客户端密钥添加说明。为密钥选择到期时间或指定自定义生命周期。单击“添加”；'
     2:
         image: /images/user-guide/ui/mail/microsoft-azure-with-oauth2-7-pe.png
-        title: 'Save client secret value for future step.'
+        title: '保存客户端密钥值以备将来使用。'
 
 add-api-permissions:
     0:
         image: /images/user-guide/ui/mail/microsoft-azure-with-oauth2-api-permissions-1-pe.png
-        title: 'In the Azure portal go to “API permissions” page and click “Add a permission” button;'
+        title: '在 Azure 门户中转到“API 权限”页面并单击“添加权限”按钮；'
     1:
         image: /images/user-guide/ui/mail/microsoft-azure-with-oauth2-api-permissions-2-pe.png
-        title: 'Select an API - "Microsoft Graph";'
+        title: '选择 API - “Microsoft Graph”；'
     2:
         image: /images/user-guide/ui/mail/microsoft-azure-with-oauth2-api-permissions-3-pe.png
-        title: 'Select type of permissions - "Delegated permissions";'
+        title: '选择权限类型 - “委派权限”；'
     3:
         image: /images/user-guide/ui/mail/microsoft-azure-with-oauth2-api-permissions-4-pe.png
-        title: 'Search and check the box “SMTP.Send” permission. Then click “Add permissions” button;'
+        title: '搜索并选中“SMTP.Send”权限。然后单击“添加权限”按钮；'
     4:
         image: /images/user-guide/ui/mail/microsoft-azure-with-oauth2-api-permissions-5-pe.png
-        title: 'Permissions is updated.'
+        title: '权限已更新。'
 
 ---
 

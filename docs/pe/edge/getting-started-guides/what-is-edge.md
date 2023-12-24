@@ -1,8 +1,8 @@
 ---
 layout: docwithnav-pe-edge
-title: What is ThingsBoard PE Edge?
-description: ThingsBoard PE Edge features, FAQ
-redirect_from: 
+title: ThingsBoard PE Edge 是什么？
+description: ThingsBoard PE Edge 功能、常见问题解答
+redirect_from:
   - "/docs/paas/edge/getting-started-guides/what-is-edge/"
 ---
 

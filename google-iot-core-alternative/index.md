@@ -1,6 +1,6 @@
 ---
 layout: common
-title: ThingsBoard is a Google IoT Core alternative
+title: ThingsBoard 是 Google IoT Core 的替代方案
 description:
 notitle: "true"
 ---
@@ -8,7 +8,7 @@ notitle: "true"
 <section id="google-iot-core-alternative">
     <section class="intro">
         <main>
-            <h1>ThingsBoard as a Google IoT Core alternative</h1>
+            <h1>ThingsBoard 作为 Google IoT Core 的替代方案</h1>
             <h2 class="clari"></h2>
         </main>
     </section>
@@ -21,11 +21,11 @@ notitle: "true"
                 </div>
                 <div class="block" style="padding-top: 160px; ">
                     <div>
-                        <p>Google Cloud shut down the IoT Core service in August 2023. You might be wondering where and how to migrate. 
-                           ThingsBoard is an excellent alternative to Google IoT Cloud. 
-                           Launched in 2016 as an open-source project, ThingsBoard has grown to a mature platform with 1000+ customers worldwide.</p>
-                        <p>ThingsBoard, Inc. provides managed services, training, support, and software development services around the platform. 
-                           We may also host and manage a private platform instance in your existing Google Cloud infrastructure. </p>
+                        <p>Google Cloud 于 2023 年 8 月关闭了 IoT Core 服务。您可能想知道在哪里以及如何迁移。
+                           ThingsBoard 是 Google IoT Cloud 的绝佳替代方案。
+                           ThingsBoard 于 2016 年作为开源项目推出，现已发展成为一个成熟的平台，在全球拥有 1000 多个客户。</p>
+                        <p>ThingsBoard, Inc. 提供围绕该平台的托管服务、培训、支持和软件开发服务。
+                           我们还可以在您现有的 Google Cloud 基础架构中托管和管理一个私有平台实例。 </p>
                     </div>
                 </div>
             </div>
@@ -37,11 +37,11 @@ notitle: "true"
             <div class="features-top">
                 <div class="block">
                     <div>
-                        <h2>Features comparison</h2>
-                        <p>Google IoT Core acts as an MQTT Broker and provides Device Registry and Pub/Sub integration. 
-                           ThingsBoard provides an alternative implementation to Google IoT Core features with similar and, in some cases, identical APIs.
-                           Our platform is much more than a <a href="/docs/reference/msa/">scalable</a> service to accept and route telemetry.
-                           ThingsBoard brings full IoT application enablement capabilities. See the feature comparison table below: </p>
+                        <h2>功能比较</h2>
+                        <p>Google IoT Core 充当 MQTT 代理，并提供设备注册表和 Pub/Sub 集成。
+                           ThingsBoard 为 Google IoT Core 功能提供替代实现，具有相似且在某些情况下相同的 API。
+                           我们的平台不仅仅是一个 <a href="/docs/reference/msa/">可扩展</a> 服务，用于接受和路由遥测。
+                           ThingsBoard 带来了完整的 IoT 应用程序启用功能。请参阅下表中的功能比较：</p>
                     </div>
                 </div>
             </div>
@@ -59,69 +59,69 @@ notitle: "true"
                         <tr>
                             <td></td>
                             <th>Google<br>IoT Core</th>
-                            <th>ThingsBoard<br>Professional Edition</th>
+                            <th>ThingsBoard<br>专业版</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <th>Asset/Device Management and Data Collection</th>
+                            <th>资产/设备管理和数据收集</th>
                             <td><img src="/images/pe/checked.svg" alt="data collection checked"></td>
                             <td><img src="/images/pe/checked.svg" alt="data collection checked"></td>
                         </tr>
                         <tr>
-                            <th>MQTT, HTTP transports</th>
+                            <th>MQTT、HTTP 传输</th>
                             <td><img src="/images/pe/checked.svg" alt="data collection checked"></td>
                             <td><img src="/images/pe/checked.svg" alt="data collection checked"></td>
                         </tr>
                         <tr>
-                            <th>Pub/Sub Integration</th>
+                            <th>Pub/Sub 集成</th>
                             <td><img src="/images/pe/checked.svg" alt="data collection checked"></td>
                             <td><img src="/images/pe/checked.svg" alt="data collection checked"></td>
                         </tr>
                         <tr>
-                            <th>Commands to devices</th>
+                            <th>向设备发送命令</th>
                             <td><img src="/images/pe/checked.svg" alt="data collection checked"></td>
                             <td><img src="/images/pe/checked.svg" alt="data collection checked"></td>
                         </tr>
                         <tr>
-                            <th>Scalability</th>
+                            <th>可扩展性</th>
                             <td><img src="/images/pe/checked.svg" alt="checked"></td>
                             <td><img src="/images/pe/checked.svg" alt="checked"></td>
                         </tr>
                         <tr>
-                            <th><a href="/docs/user-guide/rbac/">User management and RBAC<img src="/images/pe/help-black18.svg" alt="help"></a></th>
+                            <th><a href="/docs/user-guide/rbac/">用户管理和 RBAC<img src="/images/pe/help-black18.svg" alt="help"></a></th>
                             <td><img src="/images/pe/unchecked.svg" alt="unchacked"></td>
                             <td><img src="/images/pe/checked.svg" alt="checked"></td>
                         </tr>
                         <tr>
-                            <th><a href="/docs/pe/user-guide/dashboards/">Real-time, customizable dashboards<img src="/images/pe/help-black18.svg" alt="help"></a></th>
+                            <th><a href="/docs/pe/user-guide/dashboards/">实时、可自定义的仪表板<img src="/images/pe/help-black18.svg" alt="help"></a></th>
                             <td><img src="/images/pe/unchecked.svg" alt="unchacked"></td>
                             <td><img src="/images/pe/checked.svg" alt="checked"></td>
                         </tr>
                         <tr>
-                            <th><a href="/docs/user-guide/white-labeling/">White-labeled branded IoT solutions<img src="/images/pe/help-black18.svg" alt="help"></a></th>
+                            <th><a href="/docs/user-guide/white-labeling/">白标品牌 IoT 解决方案<img src="/images/pe/help-black18.svg" alt="help"></a></th>
                             <td><img src="/images/pe/unchecked.svg" alt="unchacked"></td>
                             <td><img src="/images/pe/checked.svg" alt="checked"></td>
                         </tr>
                         <tr>
-                            <th><a href="/docs/pe/user-guide/ota-updates/">OTA updates support<img src="/images/pe/help-black18.svg" alt="help"></a></th>
+                            <th><a href="/docs/pe/user-guide/ota-updates/">OTA 更新支持<img src="/images/pe/help-black18.svg" alt="help"></a></th>
                             <td><img src="/images/pe/unchecked.svg" alt="unchacked"></td>
                             <td><img src="/images/pe/checked.svg" alt="checked"></td>
                         </tr>
                         <tr>
-                            <th><a href="/docs/pe/getting-started-guides/connectivity/">Additional LWM2M and SNMP transports<img src="/images/pe/help-black18.svg" alt="help"></a></th>
+                            <th><a href="/docs/pe/getting-started-guides/connectivity/">其他 LWM2M 和 SNMP 传输<img src="/images/pe/help-black18.svg" alt="help"></a></th>
                             <td><img src="/images/pe/unchecked.svg" alt="unchacked"></td>
                             <td><img src="/images/pe/checked.svg" alt="checked"></td>
                         </tr>
                         <tr>
-                            <th><a href="/docs/user-guide/integrations/">NB-IoT, SigFox, LoRaWAN and other integrations<img src="/images/pe/help-black18.svg" alt="help"></a></th>
+                            <th><a href="/docs/user-guide/integrations/">NB-IoT、SigFox、LoRaWAN 和其他集成<img src="/images/pe/help-black18.svg" alt="help"></a></th>
                             <td><img src="/images/pe/unchecked.svg" alt="unchacked"></td>
                             <td><img src="/images/pe/checked.svg" alt="checked"></td>
                         </tr>
                     </tbody>
             </table>
         </main>
-        <p>Learn more about ThingsBoard features <a href="/docs/pe/getting-started-guides/what-is-thingsboard/">here</a>.</p>
+        <p>在此处 <a href="/docs/pe/getting-started-guides/what-is-thingsboard/">了解有关 ThingsBoard 功能的更多信息</a>。</p>
     </section>
 
     <section class="bottom-features">
@@ -129,38 +129,38 @@ notitle: "true"
             <div class="background">
 				<div class="bottom-features1"></div><div class="bottom-features2"></div><div class="small11"></div><div class="small12"></div><div class="bottom-features3"></div><div class="small13"></div><div class="small14"></div><div class="small15"></div>
 			</div>
-            <h3>Key concepts</h3>
-            <p>See mapping of the key IoT Core concepts to ThingsBoard features documentation below:</p>
+            <h3>关键概念</h3>
+            <p>请参阅下面将 IoT Core 的关键概念映射到 ThingsBoard 功能文档：</p>
             <div class="row cards">
                 <div class="col-lg-6">
 					<div class="block">
 						<div>
-							<a class="title" href="/docs/pe/user-guide/ui/devices/">Device</a>
-							<p>ThingsBoard supports provisioning and management of <a href="/docs/pe/user-guide/ui/devices/">devices</a> similar to Google IoT Core. 
-                            However, IoT application is not only about devices. ThingsBoard supports other <a href="/docs/pe/user-guide/entities-and-relations/">entities and relations</a> between them.
-                            The relations model enables advanced use cases and business logic. For example, you may configure relations between assets, devices, customers, etc.</p>
+							<a class="title" href="/docs/pe/user-guide/ui/devices/">设备</a>
+							<p>ThingsBoard 支持类似于 Google IoT Core 的设备配置和管理。
+                            但是，IoT 应用程序不仅仅是设备。ThingsBoard 支持其他 <a href="/docs/pe/user-guide/entities-and-relations/">实体和关系</a>。
+                            关系模型支持高级用例和业务逻辑。例如，您可以在资产、设备、客户等之间配置关系。</p>
 						</div>
 					</div>
 				</div>
                 <div class="col-lg-6">
 					<div class="block">
 						<div>
-							<a class="title" href="/docs/pe/user-guide/telemetry/">Telemetry</a>
-							<p>Telemetry is the event data sent from the device to the cloud. For example, measurements about the environment. 
-                            ThingsBoard allows you to collect data from devices similar to IoT Core. ThingsBoard also enables data processing (including validation, alerting, etc.) and storage inside the platform.
-                            See <a href="/docs/pe/user-guide/rule-engine-2-0/re-getting-started/">Rule Engine</a> for more details.
-                            You may also forward the data to external systems (e.g., PubSub) and reuse your existing data processing flow.</p>
+							<a class="title" href="/docs/pe/user-guide/telemetry/">遥测</a>
+							<p>遥测是从设备发送到云端的事件数据。例如，有关环境的测量。
+                            ThingsBoard 允许您从设备收集数据，类似于 IoT Core。ThingsBoard 还支持数据处理（包括验证、警报等）和平台内部存储。
+                            有关更多详细信息，请参阅 <a href="/docs/pe/user-guide/rule-engine-2-0/re-getting-started/">规则引擎</a>。
+                            您还可以将数据转发到外部系统（例如 PubSub）并重复使用现有的数据处理流程。</p>
 						</div>
 					</div>
 				</div>
                 <div class="col-lg-6">
 					<div class="block">
 						<div>
-							<a class="title" href="/docs/pe/user-guide/device-connectivity-status/">Device state</a>
-							<p>ThingsBoard monitors device <a href="/docs/pe/user-guide/device-connectivity-status/">connectivity status</a>
-                            and allows devices to upload their state via the client <a href="/docs/pe/user-guide/attributes/#client-side-attributes">attributes</a> feature.
-                            You can configure the platform to raise alerts when devices are offline or change state. 
-                            ThingsBoard also allows you to distribute over-the-air <a href="/docs/pe/user-guide/ota-updates/">firmware and software updates</a> and monitor the update process. 
+							<a class="title" href="/docs/pe/user-guide/device-connectivity-status/">设备状态</a>
+							<p>ThingsBoard 监视设备 <a href="/docs/pe/user-guide/device-connectivity-status/">连接状态</a>
+                            并允许设备通过客户端 <a href="/docs/pe/user-guide/attributes/#client-side-attributes">属性</a> 功能上传其状态。
+                            您可以将平台配置为在设备离线或更改状态时发出警报。
+                            ThingsBoard 还允许您分发无线 <a href="/docs/pe/user-guide/ota-updates/">固件和软件更新</a> 并监视更新过程。
                             </p>
 						</div>
 					</div>
@@ -168,57 +168,56 @@ notitle: "true"
                 <div class="col-lg-6">
 					<div class="block">
 						<div>
-							<a class="title" href="/docs/pe/user-guide/attributes/">Device configuration</a>
-							<p>ThingsBoard capabilities of device configuration as similar to Google IoT Core. 
-                            See docs about device <a href="/docs/pe/user-guide/attributes/">attributes</a>.
-                            Experienced users may notice a few important differences: 
-                            ThingsBoard allows to push each attribute(configuration) update separately; 
-                            One may change configuration attributes via Dashboard, Admin UI, REST API call, or script; 
-                            Attributes are sent to the device via JSON or protobuf format.</p>
+							<a class="title" href="/docs/pe/user-guide/attributes/">设备配置</a>
+							<p>ThingsBoard 的设备配置功能类似于 Google IoT Core。
+                            请参阅有关设备 <a href="/docs/pe/user-guide/attributes/">属性</a> 的文档。
+                            经验丰富的用户可能会注意到一些重要的区别：
+                            ThingsBoard 允许分别推送每个属性（配置）更新；
+                            可以通过仪表板、管理 UI、REST API 调用或脚本更改配置属性；
+                            属性通过 JSON 或 protobuf 格式发送到设备。</p>
 						</div>
 					</div>
 				</div>
                 <div class="col-lg-6">
 					<div class="block">
 						<div>
-							<a class="title" href="/docs/pe/user-guide/device-provisioning/">Device registry and device manager</a>
-							<p>ThingsBoard provides flexible interfaces for registering, monitoring, and configuring devices: 
-                            Dashboards, Admin Web UI, REST API, <a href="/docs/pe/user-guide/bulk-provisioning/">CSV upload</a>, and automatic <a href="/docs/pe/user-guide/device-provisioning/">provisioning</a>. 
-                            The platform gives you much more flexibility on how to add, group and control devices. 
-                            You can register devices under different tenants or assign devices to different customers. 
-                            End users are able to <a href="/docs/pe/user-guide/claiming-devices/">claim devices</a> during the 
-                            <a href="/docs/pe/user-guide/self-registration/">self-registration</a> process. 
-                            ThingsBoard has all the required built-in instruments to enable complex use cases.</p>
+							<a class="title" href="/docs/pe/user-guide/device-provisioning/">设备注册表和设备管理器</a>
+							<p>ThingsBoard 提供了用于注册、监视和配置设备的灵活界面：
+                            仪表板、管理 Web UI、REST API、<a href="/docs/pe/user-guide/bulk-provisioning/">CSV 上传</a> 和自动 <a href="/docs/pe/user-guide/device-provisioning/">配置</a>。
+                            该平台为您提供了更多关于如何添加、分组和控制设备的灵活性。
+                            您可以在不同的租户下注册设备或将设备分配给不同的客户。
+                            最终用户能够在 <a href="/docs/pe/user-guide/self-registration/">自助注册</a> 过程中 <a href="/docs/pe/user-guide/claiming-devices/">声明设备</a>。
+                            ThingsBoard 具有所有必需的内置工具来支持复杂用例。</p>
 						</div>
 					</div>
 				</div>
                 <div class="col-lg-6">
 					<div class="block">
 						<div>
-							<a class="title" href="/docs/pe/getting-started-guides/connectivity/">Publishing over MQTT and HTTP</a>
-							<p>A central IoT Core point is an MQTT broker that allows data exchange between devices and the cloud. 
-                            ThingsBoard also acts like an MQTT broker, but there are a few differences. 
-                            With ThingsBoard, you are not limited by static topic name patterns and can define any wildcard topic filters for your needs.
-                            The platform accepts JSON or protobuf payloads.
-                            ThingsBoard supports <a href="/docs/pe/user-guide/access-token/">access tokens</a>,
-                            <a href="/docs/pe/user-guide/basic-mqtt/">basic MQTT credentials</a> or
-                            <a href="/docs/pe/user-guide/certificates/">X.509 certificates</a>.
+							<a class="title" href="/docs/pe/getting-started-guides/connectivity/">通过 MQTT 和 HTTP 发布</a>
+							<p>IoT Core 的中心点是一个 MQTT 代理，它允许设备和云端之间进行数据交换。
+                            ThingsBoard 也充当 MQTT 代理，但有一些区别。
+                            使用 ThingsBoard，您不受静态主题名称模式的限制，并且可以根据需要定义任何通配符主题过滤器。
+                            该平台接受 JSON 或 protobuf 有效负载。
+                            ThingsBoard 支持 <a href="/docs/pe/user-guide/access-token/">访问令牌</a>、
+                            <a href="/docs/pe/user-guide/basic-mqtt/">基本 MQTT 凭据</a> 或
+                            <a href="/docs/pe/user-guide/certificates/">X.509 证书</a>。
 
-                            In addition to MQTT and HTTP support, devices can natively communicate with the platform using other protocols like CoAP, LwM2M, and SNMP. 
-                            You may also use our <a href="/docs/iot-gateway/what-is-iot-gateway/">IoT Gateway</a> to integrate devices connected to legacy and third-party systems via BLE, CAN, Modbus, OPC-UA, BACnet, ODBC, etc.
+                            除了支持 MQTT 和 HTTP 之外，设备还可以使用其他协议（如 CoAP、LwM2M 和 SNMP）与平台进行本地通信。
+                            您还可以使用我们的 <a href="/docs/iot-gateway/what-is-iot-gateway/">IoT 网关</a> 通过 BLE、CAN、Modbus、OPC-UA、BACnet、ODBC 等将连接到旧版和第三方系统的设备集成在一起。
 
-                            ThingsBoard also has built-in integrations with external systems like SigFox, LoRaWAN, NB IoT, etc. 
-                            You may find a list of all available integrations <a href="/docs/user-guide/integrations/">here</a>.</p>
+                            ThingsBoard 还内置了与 SigFox、LoRaWAN、NB IoT 等外部系统的集成。
+                            您可以在 <a href="/docs/user-guide/integrations/">此处</a> 找到所有可用集成的列表。</p>
 						</div>
 					</div>
 				</div>
                 <div class="col-lg-6">
 					<div class="block">
 						<div>
-							<a class="title" href="/docs/pe/user-guide/rpc/">Send commands to and from devices</a>
-							<p>You may send commands to and from devices with the ThingsBoard <a href="/docs/pe/user-guide/rpc/">RPC</a> feature. 
-                            The commands can be persisted or not, one-way or two-way, and you can configure retry and failure policies for different command types.
-                            Commands may be triggered by the user via the dashboard, via REST API, or based on events received by the platform.</p>
+							<a class="title" href="/docs/pe/user-guide/rpc/">向设备发送命令并从设备接收命令</a>
+							<p>您可以使用 ThingsBoard <a href="/docs/pe/user-guide/rpc/">RPC</a> 功能向设备发送命令并从设备接收命令。
+                            命令可以是持久的或非持久的，单向的或双向的，并且您可以为不同类型的命令配置重试和失败策略。
+                            命令可以由用户通过仪表板、通过 REST API 或基于平台收到的事件触发。</p>
 						</div>
 					</div>
 				</div>
@@ -227,8 +226,9 @@ notitle: "true"
     </section>
     <section class="bottom">
         <main>
-            <a href="/docs/contact-us/" class="try-pe">Contact us</a>
+            <a href="/docs/contact-us/" class="try-pe">联系我们</a>
         </main>
     </section>
 
 </section>
+```

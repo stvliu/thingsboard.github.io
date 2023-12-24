@@ -1,9 +1,9 @@
 ---
 layout: devices-library-article
-title: How to connect Arduino Nano RP2040 Connect to ThingsBoard?
-category: Microcontrollers
+title: 如何将 Arduino Nano RP2040 Connect 连接到 ThingsBoard？
+category: 微控制器
 chip: RP2040
-connectivity: HTTP, MQTT, WIFI, Bluetooth
+connectivity: HTTP, MQTT, WIFI, 蓝牙
 vendor: Arduino
 deviceImageFileName: arduino-nano-rp2040-connect.jpg
 ---

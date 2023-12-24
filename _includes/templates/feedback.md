@@ -1,4 +1,4 @@
-## Your feedback
- 
-Don't hesitate to star ThingsBoard on **[github](https://github.com/thingsboard/thingsboard)** to help us spread the word.
-If you have any questions about this sample - post it on the **[issues](https://github.com/thingsboard/thingsboard/issues)**.
+## 您的反馈
+
+不要犹豫，在 **[github](https://github.com/thingsboard/thingsboard)** 上为 ThingsBoard 加星，以帮助我们传播信息。
+如果您对本示例有任何疑问，请将其发布在 **[问题](https://github.com/thingsboard/thingsboard/issues)** 上。

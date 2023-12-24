@@ -1,14 +1,14 @@
 ---
 layout: mobile-pe
-title: ThingsBoard PE Mobile Application
+title: ThingsBoard PE 移动应用程序
 description:
 ---
 
 <section id="intro">
     <main>
-        <h1><a href="/docs/pe/mobile/">ThingsBoard PE Mobile Application</a> is an open-source <a href="https://github.com/thingsboard/flutter_thingsboard_pe_app">project</a> based on Flutter</h1>
-        <h2 class="second">Build your own advanced IoT mobile application with minimum coding efforts</h2>
-        <h2 class="second">Powered by ThingsBoard PE IoT Platform</h2>
+        <h1><a href="/docs/pe/mobile/">ThingsBoard PE 移动应用程序</a> 是一个基于 Flutter 的开源 <a href="https://github.com/thingsboard/flutter_thingsboard_pe_app">项目</a></h1>
+        <h2 class="second">以最少的编码工作构建您自己的高级 IoT 移动应用程序</h2>
+        <h2 class="second">由 ThingsBoard PE IoT 平台提供支持</h2>
     </main>
 </section>
 
@@ -19,9 +19,9 @@ description:
                 <div class="main1"></div><div class="small1"></div><div class="small2"></div><div class="small3"></div>
             </div>
             <div class="block">
-                <div class="feature-des"><h2>Home screen with flexible navigation</h2>
-                    <p>Browse everything from home screen. Use Platform to configure dashboard icons, order and visibility.</p>
-                    <a class="read-more-button" href="/docs/pe/mobile/customize-dashboards/">Read more<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
+                <div class="feature-des"><h2>具有灵活导航功能的主屏幕</h2>
+                    <p>从主屏幕浏览所有内容。使用平台配置仪表板图标、顺序和可见性。</p>
+                    <a class="read-more-button" href="/docs/pe/mobile/customize-dashboards/">阅读更多<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
                 </div>
                 <div class="preview">
                     <div class="mobile-frame ios">
@@ -57,9 +57,9 @@ description:
                         </div>
                     </div>
                 </div>
-                <div class="feature-des"><h2>White-labeling</h2>
-                    <p>Rebrand your mobile app interface with your company or product logo and color scheme using ThingsBoard PE <a href="/docs/pe/user-guide/white-labeling/">white-labeling</a> feature.</p>
-                    <a class="read-more-button" href="/docs/pe/mobile/white-labeling/">Read more<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
+                <div class="feature-des"><h2>白标</h2>
+                    <p>使用 ThingsBoard PE <a href="/docs/pe/user-guide/white-labeling/">白标</a> 功能，使用您的公司或产品徽标和配色方案重新设计您的移动应用程序界面。</p>
+                    <a class="read-more-button" href="/docs/pe/mobile/white-labeling/">阅读更多<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
                 </div>
             </div>
         </div>
@@ -73,9 +73,9 @@ description:
                 <div class="main2"></div><img src="/images/grid.svg" alt="grid"><div class="small4"></div><div class="small5"></div>
             </div>
             <div class="block dark">
-                <div class="feature-des"><h2>Self-registration</h2>
-                    <p>Setup sign-up page for your customers using ThingsBoard PE <a href="/docs/pe/user-guide/self-registration/">self-registration</a> feature.</p>
-                    <a class="read-more-button" href="/docs/pe/mobile/self-registration/">Read more<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
+                <div class="feature-des"><h2>自助注册</h2>
+                    <p>使用 ThingsBoard PE <a href="/docs/pe/user-guide/self-registration/">自助注册</a> 功能为您的客户设置注册页面。</p>
+                    <a class="read-more-button" href="/docs/pe/mobile/self-registration/">阅读更多<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
                 </div>
                 <div class="preview">
                     <div class="mobile-frame ios">
@@ -111,9 +111,9 @@ description:
                         </div>
                     </div>
                 </div>
-                <div class="feature-des"><h2>Simple and convenient alarms management</h2>
-                    <p>Manage alarms in one place. Navigate to related dashboards configurable from the Platform.</p>
-                    <a class="read-more-button" href="/docs/pe/mobile/alarm-dashboard/">Read more<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
+                <div class="feature-des"><h2>简单方便的告警管理</h2>
+                    <p>在一个地方管理告警。导航到可从平台配置的相关仪表板。</p>
+                    <a class="read-more-button" href="/docs/pe/mobile/alarm-dashboard/">阅读更多<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
                 </div>
             </div>
         </div>
@@ -127,9 +127,9 @@ description:
                 <div class="main3"></div><div class="small6"></div><div class="small7"></div><div class="small8"></div>
             </div>
             <div class="block">
-                <div class="feature-des"><h2>Structured devices navigation</h2>
-                    <p>Browse devices grouped by their type and online status. On ThingsBoard, assign device specific dashboard and image.</p>
-                    <a class="read-more-button" href="/docs/pe/mobile/customize-devices/">Read more<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
+                <div class="feature-des"><h2>结构化的设备导航</h2>
+                    <p>按设备类型和在线状态浏览设备。在 ThingsBoard 上，分配特定于设备的仪表板和图像。</p>
+                    <a class="read-more-button" href="/docs/pe/mobile/customize-devices/">阅读更多<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
                 </div>
                 <div class="preview">
                     <div class="mobile-frame ios">
@@ -165,9 +165,9 @@ description:
                         </div>
                     </div>
                 </div>
-                <div class="feature-des"><h2>Rich set of mobile actions</h2>
-                    <p>Use mobile device to take photo, scan QR code, update location and more within dashboard. Extend the action with your own processing logic using ThingsBoard.</p>
-                    <a class="read-more-button" href="/docs/pe/mobile/mobile-actions/">Read more<img class="arrow first" src="/images/pe/read-more-arrow.svg"alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
+                <div class="feature-des"><h2>丰富的移动操作集</h2>
+                    <p>使用移动设备在仪表板中拍照、扫描二维码、更新位置等。使用 ThingsBoard 使用您自己的处理逻辑扩展操作。</p>
+                    <a class="read-more-button" href="/docs/pe/mobile/mobile-actions/">阅读更多<img class="arrow first" src="/images/pe/read-more-arrow.svg"alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
                 </div>
             </div>
             <div class="background bottom">
@@ -179,6 +179,6 @@ description:
 
 <section id="bottom">
     <main>
-        <a href="/docs/pe/mobile/getting-started/" class="getting-started">Getting started</a>
+        <a href="/docs/pe/mobile/getting-started/" class="getting-started">入门</a>
     </main>
 </section>

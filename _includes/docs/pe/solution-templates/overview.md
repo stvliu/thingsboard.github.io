@@ -1,35 +1,34 @@
-
-* TOC 
+* TOC
 {:toc}
-  
-ThingsBoard Cloud provides convenient IoT solution templates to reduce time-to-market for your IoT products.
-The template includes interactive dashboards, processing logic, sample devices, users and all other required [entities](/docs/paas/user-guide/entities-and-relations/). 
-You can treat template as a complete PoC/MVP. 
 
-This guide covers basic operations with solution templates.
+ThingsBoard Cloud 提供便捷的物联网解决方案模板，以缩短物联网产品的上市时间。
+模板包括交互式仪表板、处理逻辑、示例设备、用户以及所有其他必需的 [实体](/docs/paas/user-guide/entities-and-relations/)。
+您可以将模板视为完整的 PoC/MVP。
+
+本指南介绍了解决方案模板的基本操作。
 
 {% include templates/solution-templates.md %}
 
-## Browse solution templates
+## 浏览解决方案模板
 
-As a tenant administrator, you may perform the following actions over solution templates
+作为租户管理员，您可以对解决方案模板执行以下操作
 
 {% include images-gallery.html imageCollection="browse-solution-templates" showListImageTitles="true" %}
 
-## Install solution template
+## 安装解决方案模板
 
 {% include images-gallery.html imageCollection="install-solution-template" showListImageTitles="true" %}
 
-## Remove solution template
+## 删除解决方案模板
 
-Navigate to the "Solution templates" menu item. Locate the template and use "Delete" button. 
-This will delete all [entities](/docs/paas/user-guide/entities-and-relations/) that were created during the installation. 
-Please note that entities that you might have created through the solution dashboard (users, devices, etc) will not be deleted automatically.  
+导航到“解决方案模板”菜单项。找到模板并使用“删除”按钮。
+这将删除安装期间创建的所有 [实体](/docs/paas/user-guide/entities-and-relations/)。
+请注意，您可能通过解决方案仪表板创建的实体（用户、设备等）不会自动删除。
 
 {% include images-gallery.html imageCollection="remove-solution-template" %}
 
-## Connect real devices
+## 连接真实设备
 
-The template instruction includes information about the payload that solution expects to receive from device to function properly. 
-The instruction also contains sample commands to push the data. Those commands use valid credentials of the auto-generated devices.
-We recommend to use those commands to get familiar with the solution. Use [How to connect your device?](/docs/paas/getting-started-guides/connectivity/) guide afterwards.
+模板说明包括有关解决方案期望从设备接收的有效负载的信息，以便正常运行。
+说明还包含用于推送数据的示例命令。这些命令使用自动生成设备的有效凭据。
+我们建议使用这些命令来熟悉解决方案。之后使用 [如何连接您的设备？](/docs/paas/getting-started-guides/connectivity/) 指南。

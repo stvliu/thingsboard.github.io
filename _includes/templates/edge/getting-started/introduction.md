@@ -1,8 +1,8 @@
-The aim of this tutorial is to guide you through the fundamental usage of the most widely-used features of ThingsBoard Edge. Throughout this tutorial, you will learn how to:
+本教程的目的是指导您了解 ThingsBoard Edge 最广泛使用的功能的基本用法。在整个教程中，您将学习如何：
 
-- Connect local devices, such as sensors, to ThingsBoard Edge;
-- Provision sensors from ThingsBoard Edge to the {{currentThingsBoardVersion}} server;
-- Transmit data from sensors to ThingsBoard Edge and further propagate this data to the {{currentThingsBoardVersion}} server;
-- Construct real-time end-user dashboards in the cloud and provision them to the Edge.
+- 将本地设备（例如传感器）连接到 ThingsBoard Edge；
+- 从 ThingsBoard Edge 将传感器配置到 {{currentThingsBoardVersion}} 服务器；
+- 将数据从传感器传输到 ThingsBoard Edge，并进一步将此数据传播到 {{currentThingsBoardVersion}} 服务器；
+- 在云中构建实时最终用户仪表板并将其配置到 Edge。
 
-To maintain simplicity, we will connect and visualize data from a temperature sensor.
+为了保持简单，我们将连接和可视化来自温度传感器的数据。

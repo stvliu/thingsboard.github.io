@@ -1,21 +1,18 @@
-**TBMQ** is an industry-ready MQTT broker developed and distributed under the ThingsBoard umbrella that facilitates MQTT client connectivity, 
-message publishing, and distribution among subscribers.
+**TBMQ** 是一个行业就绪的 MQTT 代理，由 ThingsBoard 开发和分发，它促进了 MQTT 客户端连接、消息发布以及在订阅者之间分发。
 
-TBMQ is a scalable, fault-tolerant broker with the capacity to handle **4M+** concurrent client connections, 
-supporting a minimum of [3M messages per second throughput](/docs/mqtt-broker/reference/3m-throughput-single-node-performance-test/) per single cluster node with low latency delivery.
-In the cluster mode, its capabilities are further enhanced, enabling it to support more than [100M concurrently connected clients](/docs/mqtt-broker/reference/100m-connections-performance-test/).
+TBMQ 是一个可扩展的、容错的代理，能够处理 **4M+** 个并发客户端连接，支持每个集群节点每秒至少 [3M 条消息的吞吐量](/docs/mqtt-broker/reference/3m-throughput-single-node-performance-test/)，延迟交付。在集群模式下，它的功能进一步增强，能够支持超过 [100M 个并发连接的客户端](/docs/mqtt-broker/reference/100m-connections-performance-test/)。
 
-You can refer to the TBMQ documentation to set up the broker and understand its primary features, including the MQTT protocol.
+你可以参考 TBMQ 文档来设置代理并了解它的主要功能，包括 MQTT 协议。
 
 <div class="doc-features row mt-4">
     <div class="col-12 col-sm-6 col-lg col-xxl-6 col-4xl mb-4">
         <a class="feature-card" href="/docs/mqtt-broker/getting-started-guides/what-is-thingsboard-mqtt-broker/">
             <img class="feature-logo" src="/images/feature-logo/thingsboard-logo.svg" alt="Thingsboard logo">
-            <div class="feature-title">What is TBMQ?</div>
+            <div class="feature-title">什么是 TBMQ？</div>
             <div class="feature-text">
                 <ul>
-                    <li>Features</li>
-                    <li>Architecture</li>
+                    <li>功能</li>
+                    <li>架构</li>
                 </ul>
             </div>
         </a>
@@ -23,27 +20,27 @@ You can refer to the TBMQ documentation to set up the broker and understand its 
     <div class="col-12 col-sm-6 col-lg col-xxl-6 col-4xl mb-4">
         <a class="feature-card" href="/docs/mqtt-broker/getting-started/">
             <img class="feature-logo" src="/images/feature-logo/getting-started.svg" alt="Getting started icon">
-            <div class="feature-title">Getting started</div>
+            <div class="feature-title">开始使用</div>
             <div class="feature-text">
-                Learn how to use TBMQ.
+                了解如何使用 TBMQ。
             </div>
         </a>
     </div>
     <div class="col-12 col-sm-6 col-lg col-xxl-6 col-4xl mb-4">
         <a class="feature-card" href="/docs/mqtt-broker/install/installation-options/">
             <img class="feature-logo" src="/images/feature-logo/install.svg" alt="Install icon">
-            <div class="feature-title">Installation</div>
+            <div class="feature-title">安装</div>
             <div class="feature-text">
-                Learn how to install and upgrade TBMQ.
+                了解如何安装和升级 TBMQ。
             </div>
         </a>
     </div>
     <div class="col-12 col-sm-6 col-lg col-xxl-6 col-4xl mb-4">
         <a class="feature-card" href="/docs/mqtt-broker/faq/">
             <img class="feature-logo" src="/images/feature-logo/faq.svg" alt="Question icon">
-            <div class="feature-title">FAQ</div>
+            <div class="feature-title">常见问题解答</div>
             <div class="feature-text">
-                Get answers to the most common questions.
+                获取最常见问题的答案。
             </div>
         </a>
     </div>
@@ -51,9 +48,9 @@ You can refer to the TBMQ documentation to set up the broker and understand its 
     <div class="col-12 col-sm-6 mb-4">
         <a class="feature-card" href="/docs/mqtt-broker/install/config/">
             <img class="feature-logo" src="/images/feature-logo/configuration.svg" alt="Gear icon">
-            <div class="feature-title">Configuration</div>
+            <div class="feature-title">配置</div>
             <div class="feature-text">
-                Configuration of TBMQ.
+                TBMQ 的配置。
             </div>
         </a>
     </div>
@@ -62,7 +59,7 @@ You can refer to the TBMQ documentation to set up the broker and understand its 
             <img class="feature-logo" src="/images/feature-logo/api.svg" alt="Api documentation icon">
             <div class="feature-title">API</div>
             <div class="feature-text">
-                Learn client connectivity and server-side broker specific API.
+                了解客户端连接和服务器端代理特定 API。
             </div>
         </a>
     </div>

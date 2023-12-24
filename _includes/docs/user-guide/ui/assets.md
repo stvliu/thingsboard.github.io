@@ -1,48 +1,46 @@
-
-Thingsboard support following asset management features using Web UI and [REST API](/docs/{{docsPrefix}}reference/rest-api/).
+Thingsboard 支持使用 Web UI 和 [REST API](/docs/{{docsPrefix}}reference/rest-api/) 以下资产管理功能。
 
 * TOC
 {:toc}
 
-## Add and delete assets
+## 添加和删除资产
 
-Tenant administrator is able to register new assets or delete them from Thingsboard.
+租户管理员能够注册新资产或从 Thingsboard 中删除资产。
 
 ![image](/images/user-guide/ui/assets.png)
 
-## Get Asset Id
-  
-Tenant administrator and customer users are able to copy asset id to clipboard using "Copy Asset Id" button.
+## 获取资产 ID
 
- ![image](/images/user-guide/ui/asset-id.png)
+租户管理员和客户用户能够使用“复制资产 ID”按钮将资产 ID 复制到剪贴板。
 
-## Assign assets to customers
+![image](/images/user-guide/ui/asset-id.png)
 
-Tenant administrator is able to assign assets to certain [customer](/docs/{{docsPrefix}}user-guide/ui/customers/).
-This will allow Customer users to fetch asset data using REST APIs or Web UI.
- 
- ![image](/images/user-guide/ui/assign-asset-to-customer.png)
+## 将资产分配给客户
 
-## Manage asset attributes
+租户管理员能够将资产分配给某些 [客户](/docs/{{docsPrefix}}user-guide/ui/customers/)。
+这将允许客户用户使用 REST API 或 Web UI 获取资产数据。
 
-Tenant administrator and customer users are able to manage asset server-side [attributes](/docs/{{docsPrefix}}user-guide/attributes).
+![image](/images/user-guide/ui/assign-asset-to-customer.png)
 
- ![image](/images/user-guide/ui/asset-attributes.png)
+## 管理资产属性
 
-## Browse asset alarms
+租户管理员和客户用户能够管理资产服务器端 [属性](/docs/{{docsPrefix}}user-guide/attributes)。
 
-Tenant administrator and customer users are able to browse asset [alarms](/docs/{{docsPrefix}}user-guide/alarms).
+![image](/images/user-guide/ui/asset-attributes.png)
 
- ![image](/images/user-guide/ui/asset-alarms.png)
- 
-## Browse asset events
-  
-Tenant administrator and customer users are able to browse events related to particular asset using "Events" tab.
-Lifecycle events and statistics are coming soon.
+## 浏览资产警报
 
-## Manage asset relations
- 
-Tenant administrator and customer users are able to manage asset [relations](/docs/{{docsPrefix}}user-guide/entities-and-relations).
+租户管理员和客户用户能够浏览资产 [警报](/docs/{{docsPrefix}}user-guide/alarms)。
 
- ![image](/images/user-guide/ui/asset-relations.png)
- 
+![image](/images/user-guide/ui/asset-alarms.png)
+
+## 浏览资产事件
+
+租户管理员和客户用户能够使用“事件”选项卡浏览与特定资产相关的事件。
+生命周期事件和统计信息即将推出。
+
+## 管理资产关系
+
+租户管理员和客户用户能够管理资产 [关系](/docs/{{docsPrefix}}user-guide/entities-and-relations)。
+
+![image](/images/user-guide/ui/asset-relations.png)

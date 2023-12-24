@@ -10,9 +10,9 @@ hidetoc: "true"
 </div>
 <div id="contact-us-thanks" class="center">
     <div class="thanks-content">
-        <p class="thank-you">Thank you for getting in touch!</p>
-        <p>We appreciate you contacting us and will try to respond as soon as possible.<br>Have a great day!</p>
-        <a class="homepage" href="/">Homepage</a>
+        <p class="thank-you">感谢您与我们联系！</p>
+        <p>感谢您与我们联系，我们将尽快回复您。<br>祝您愉快！</p>
+        <a class="homepage" href="/">主页</a>
     </div>
 </div>
 <script type="text/javascript">

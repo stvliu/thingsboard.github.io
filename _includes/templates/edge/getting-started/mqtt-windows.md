@@ -1,6 +1,5 @@
+为 [Chrome](https://www.google.com/chrome/) 安装 [MQTTBox](https://chrome.google.com/webstore/detail/mqttbox/kaajoficamnjijhkeomgfljpicifbkaf) 插件。使用以下列出的说明：
 
-Install [MQTTBox](https://chrome.google.com/webstore/detail/mqttbox/kaajoficamnjijhkeomgfljpicifbkaf) plugin for [Chrome](https://www.google.com/chrome/). Use the instructions listed below:
- 
 {% include images-gallery.html imageCollection="mqttWindows" showListImageTitles="true" %}
 
 <br>

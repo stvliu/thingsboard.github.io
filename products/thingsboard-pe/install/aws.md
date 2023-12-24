@@ -30,42 +30,42 @@ notitle: "true"
                         </p>
                     </div>
                 </div>
-                <p>Please fill this form to get deployment instructions.</p>
+                <p>请填写此表格以获取部署说明。</p>
                 <div class="form-section">
                     <div class="form-element first half ml-field-first_name ml-validate-required">
                         <label for="fields[first_name]">
                             <input type="text" name="fields[first_name]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
-                            <p>First name*</p>
+                            <p>名字*</p>
                         </label>
                     </div>
                     <div class="form-element half ml-field-last_name ml-validate-required">
                         <label for="fields[last_name]">
                             <input type="text" name="fields[last_name]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
-                            <p>Last name*</p>
+                            <p>姓氏*</p>
                         </label>
                     </div>
                     <div class="form-element first half ml-field-email ml-validate-required ml-validate-email">
                         <label for="fields[email]">
                             <input type="email" name="fields[email]" class="form-control" value="" autocomplete="email" x-autocompletetype="email" spellcheck="false" autocapitalize="off" autocorrect="off">
-                            <p>Email Address*</p>
+                            <p>电子邮件地址*</p>
                         </label>
                     </div>
                     <div class="form-element half ml-field-company ml-validate-required">
                         <label for="fields[company]">
                             <input type="text" name="fields[company]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
-                            <p>Company*</p>
+                            <p>公司*</p>
                         </label>
                     </div>
                     <div class="form-element first half ml-field-phone">
                         <label for="fields[phone]">
                             <input type="text" name="fields[phone]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
-                            <p>Phone Number</p>
+                            <p>电话号码</p>
                         </label>
                     </div>
                 </div>
                 <input type="hidden" name="ml-submit" value="1" />
                 <button class="button" type="submit" class="primary">
-                    Submit
+                    提交
                 </button>
                 <button disabled="disabled" style="display: none;" type="button" class="loading">
                     <img src="https://static.mailerlite.com/images/rolling@2x.gif" width="20" height="20" style="width: 20px; height: 20px;" alt="rolling">
@@ -94,42 +94,42 @@ notitle: "true"
                         </p>
                     </div>
                 </div>
-                <p>Please fill this form to get deployment instructions.</p>
+                <p>请填写此表格以获取部署说明。</p>
                 <div class="form-section">
                     <div class="form-element first half ml-field-first_name ml-validate-required">
                         <label for="fields[first_name]">
                             <input type="text" name="fields[first_name]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
-                            <p>First name*</p>
+                            <p>名字*</p>
                         </label>
                     </div>
                     <div class="form-element half ml-field-last_name ml-validate-required">
                         <label for="fields[last_name]">
                             <input type="text" name="fields[last_name]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
-                            <p>Last name*</p>
+                            <p>姓氏*</p>
                         </label>
                     </div>
                     <div class="form-element first half ml-field-email ml-validate-required ml-validate-email">
                         <label for="fields[email]">
                             <input type="email" name="fields[email]" class="form-control" value="" autocomplete="email" x-autocompletetype="email" spellcheck="false" autocapitalize="off" autocorrect="off">
-                            <p>Email Address*</p>
+                            <p>电子邮件地址*</p>
                         </label>
                     </div>
                     <div class="form-element half ml-field-company ml-validate-required">
                         <label for="fields[company]">
                             <input type="text" name="fields[company]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
-                            <p>Company*</p>
+                            <p>公司*</p>
                         </label>
                     </div>
                     <div class="form-element first half ml-field-phone">
                         <label for="fields[phone]">
                             <input type="text" name="fields[phone]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
-                            <p>Phone Number</p>
+                            <p>电话号码</p>
                         </label>
                     </div>
                 </div>
                 <input type="hidden" name="ml-submit" value="1" />
                 <button class="button" type="submit" class="primary">
-                    Submit
+                    提交
                 </button>
                 <button disabled="disabled" style="display: none;" type="button" class="loading">
                     <img src="https://static.mailerlite.com/images/rolling@2x.gif" width="20" height="20" style="width: 20px; height: 20px;" alt="rolling">
@@ -158,42 +158,42 @@ notitle: "true"
                         </p>
                     </div>
                 </div>
-                <p>Please fill this form to get deployment instructions.</p>
+                <p>请填写此表格以获取部署说明。</p>
                 <div class="form-section">
                     <div class="form-element first half ml-field-first_name ml-validate-required">
                         <label for="fields[first_name]">
                             <input type="text" name="fields[first_name]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
-                            <p>First name*</p>
+                            <p>名字*</p>
                         </label>
                     </div>
                     <div class="form-element half ml-field-last_name ml-validate-required">
                         <label for="fields[last_name]">
                             <input type="text" name="fields[last_name]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
-                            <p>Last name*</p>
+                            <p>姓氏*</p>
                         </label>
                     </div>
                     <div class="form-element first half ml-field-email ml-validate-required ml-validate-email">
                         <label for="fields[email]">
                             <input type="email" name="fields[email]" class="form-control" value="" autocomplete="email" x-autocompletetype="email" spellcheck="false" autocapitalize="off" autocorrect="off">
-                            <p>Email Address*</p>
+                            <p>电子邮件地址*</p>
                         </label>
                     </div>
                     <div class="form-element half ml-field-company ml-validate-required">
                         <label for="fields[company]">
                             <input type="text" name="fields[company]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
-                            <p>Company*</p>
+                            <p>公司*</p>
                         </label>
                     </div>
                     <div class="form-element first half ml-field-phone">
                         <label for="fields[phone]">
                             <input type="text" name="fields[phone]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
-                            <p>Phone Number</p>
+                            <p>电话号码</p>
                         </label>
                     </div>
                 </div>
                 <input type="hidden" name="ml-submit" value="1" />
                 <button class="button" type="submit" class="primary">
-                    Submit
+                    提交
                 </button>
                 <button disabled="disabled" style="display: none;" type="button" class="loading">
                     <img src="https://static.mailerlite.com/images/rolling@2x.gif" width="20" height="20" style="width: 20px; height: 20px;" alt="rolling">
@@ -222,42 +222,42 @@ notitle: "true"
                         </p>
                     </div>
                 </div>
-                <p>Please fill this form to get deployment instructions.</p>
+                <p>请填写此表格以获取部署说明。</p>
                 <div class="form-section">
                     <div class="form-element first half ml-field-first_name ml-validate-required">
                         <label for="fields[first_name]">
                             <input type="text" name="fields[first_name]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
-                            <p>First name*</p>
+                            <p>名字*</p>
                         </label>
                     </div>
                     <div class="form-element half ml-field-last_name ml-validate-required">
                         <label for="fields[last_name]">
                             <input type="text" name="fields[last_name]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
-                            <p>Last name*</p>
+                            <p>姓氏*</p>
                         </label>
                     </div>
                     <div class="form-element first half ml-field-email ml-validate-required ml-validate-email">
                         <label for="fields[email]">
                             <input type="email" name="fields[email]" class="form-control" value="" autocomplete="email" x-autocompletetype="email" spellcheck="false" autocapitalize="off" autocorrect="off">
-                            <p>Email Address*</p>
+                            <p>电子邮件地址*</p>
                         </label>
                     </div>
                     <div class="form-element half ml-field-company ml-validate-required">
                         <label for="fields[company]">
                             <input type="text" name="fields[company]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
-                            <p>Company*</p>
+                            <p>公司*</p>
                         </label>
                     </div>
                     <div class="form-element first half ml-field-phone">
                         <label for="fields[phone]">
                             <input type="text" name="fields[phone]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
-                            <p>Phone Number</p>
+                            <p>电话号码</p>
                         </label>
                     </div>
                 </div>
                 <input type="hidden" name="ml-submit" value="1" />
                 <button class="button" type="submit" class="primary">
-                    Submit
+                    提交
                 </button>
                 <button disabled="disabled" style="display: none;" type="button" class="loading">
                     <img src="https://static.mailerlite.com/images/rolling@2x.gif" width="20" height="20" style="width: 20px; height: 20px;" alt="rolling">
@@ -286,42 +286,42 @@ notitle: "true"
                         </p>
                     </div>
                 </div>
-                <p>Please fill this form to get deployment instructions.</p>
+                <p>请填写此表格以获取部署说明。</p>
                 <div class="form-section">
                     <div class="form-element first half ml-field-first_name ml-validate-required">
                         <label for="fields[first_name]">
                             <input type="text" name="fields[first_name]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
-                            <p>First name*</p>
+                            <p>名字*</p>
                         </label>
                     </div>
                     <div class="form-element half ml-field-last_name ml-validate-required">
                         <label for="fields[last_name]">
                             <input type="text" name="fields[last_name]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
-                            <p>Last name*</p>
+                            <p>姓氏*</p>
                         </label>
                     </div>
                     <div class="form-element first half ml-field-email ml-validate-required ml-validate-email">
                         <label for="fields[email]">
                             <input type="email" name="fields[email]" class="form-control" value="" autocomplete="email" x-autocompletetype="email" spellcheck="false" autocapitalize="off" autocorrect="off">
-                            <p>Email Address*</p>
+                            <p>电子邮件地址*</p>
                         </label>
                     </div>
                     <div class="form-element half ml-field-company ml-validate-required">
                         <label for="fields[company]">
                             <input type="text" name="fields[company]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
-                            <p>Company*</p>
+                            <p>公司*</p>
                         </label>
                     </div>
                     <div class="form-element first half ml-field-phone">
                         <label for="fields[phone]">
                             <input type="text" name="fields[phone]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
-                            <p>Phone Number</p>
+                            <p>电话号码</p>
                         </label>
                     </div>
                 </div>
                 <input type="hidden" name="ml-submit" value="1" />
                 <button class="button" type="submit" class="primary">
-                    Submit
+                    提交
                 </button>
                 <button disabled="disabled" style="display: none;" type="button" class="loading">
                     <img src="https://static.mailerlite.com/images/rolling@2x.gif" width="20" height="20" style="width: 20px; height: 20px;" alt="rolling">

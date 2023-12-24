@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-pe
-title: Scheduler
-description: Scheduler Guide
+title: 调度程序
+description: 调度程序指南
 redirect_from: "/docs/user-guide/scheduler/"
 
 ---

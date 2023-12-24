@@ -2,91 +2,91 @@
 layout: docwithnav-trendz
 assignees:
 - vparomskiy
-title: Test calculated fields
-description: Test calculated fields
+title: 测试计算字段
+description: 测试计算字段
 ---
 
 * TOC
 {:toc}
 
-The Calculate Tester is a tool that allows you to debug the code of the Calculate Fields. To open the Calculate Tester window, you need to click on the **Test** button in the Calculate field settings.
+计算测试器是一个工具，允许您调试计算字段的代码。要打开计算测试器窗口，您需要单击计算字段设置中的 **测试** 按钮。
 
 ![image](/images/trendz/test-calculated-open.png)
 
-The layout is divided into four sections:
+布局分为四个部分：
 
-* **Preview**: This section displays a visualization, just like in the non-tester mode.
-* **Function**: This field serves as the input area for the Calculation Field code, just like in the non-tester mode.
-* **Input**: Here you can view and modify the input data values.
-* **Output**: The resulting output data after the calculation will be shown here, along with any logs if the "Function" field contains any console.log() statements.
+* **预览**：此部分显示可视化，就像在非测试器模式中一样。
+* **函数**：此字段用作计算字段代码的输入区域，就像在非测试器模式中一样。
+* **输入**：您可以在此处查看和修改输入数据值。
+* **输出**：计算后的结果输出数据将显示在此处，以及任何日志（如果“函数”字段包含任何 console.log() 语句）。
 
 ![image](/images/trendz/test-calculated-details.png)
 
-#### Preview
-This part is just a smaller copy of the main visualization. It is not dependent on test data; it is based solely on real data. 
-This means that changes to the telemetry value in the Input field will not affect it. Changes can only be seen if you change the Formula itself.
-The Preview will be updated if you click on the "Build" or "Get real data" button. However, in the second case, if you have changed the input data, it will also be overwritten.
+#### 预览
+此部分只是主可视化的较小副本。它不依赖于测试数据；它仅基于真实数据。
+这意味着输入字段中遥测值的变化不会影响它。只有在您更改公式本身时才能看到更改。
+如果您单击“构建”或“获取真实数据”按钮，将更新预览。但是，在第二种情况下，如果您更改了输入数据，它也将被覆盖。
 
-#### Input
-The input data helps you understand what data is involved in the calculation and gives you the opportunity to change it for tests.
-The initial input data can be obtained or updated by clicking either the 'Test' or 'Get real data' button. 
-But we recommend that you first request real data, and then test it. So the list of input data will be more complete. Also, "Get real data" in some cases can give a more full list of logs when it comes to the "Row" object.
+#### 输入
+输入数据可帮助您了解计算中涉及哪些数据，并让您有机会更改它以进行测试。
+可以通过单击“测试”或“获取真实数据”按钮来获取或更新初始输入数据。
+但我们建议您先请求真实数据，然后再进行测试。因此，输入数据列表将更加完整。此外，“获取真实数据”在某些情况下可以提供更完整的日志，当涉及到“行”对象时。
 
-Main fields
+主要字段
 
-* startTs - Start of time period
-  * type - number/unix format
-  * example - 1677621600000
-* endTs - End of time period
-    * type - number/unix format
-    * example - 1685566799999
-* groupBy - Grouping by time. The value is "null" when the visualization does not contain a RAW date field or calculate field is butch type.
-    * type - `"week" | "day", "hour" | "minute" | "null"`
-    * example - "week"
-* row - An object where keys represent the names of the visualization fields for a single iteration. This can be visualized as one row in a table, but this object is also accessible for other chart types. However, it is not available for batch calculated fields. To refer to a specific row, use square brackets with the key name (row['key name']).
-  * type - `{[key]: string | number}`
-  * example - `{"CalculatedSUM": 100,    "GR greenhouseUNIQ": "London",    "consumptionWaterSUM": 2684}`
-* telemetry - These are aggregated or raw values (depending on the type of Calculated Field), used in the formula.
-  * for simple fields
-    * type  - `string | number`
-    * example - `"sum(GR water meter.consumptionWater)": 100`
-  * for batch fields
-    * type  - `Array<{ts: number, value: number | string}>`
-    * example - `"none(GR water meter.consumptionWater)": [{"ts": 1677621600000, "value": 100 }, … ]`
+* startTs - 时间段的开始
+  * 类型 - 数字/unix 格式
+  * 示例 - 1677621600000
+* endTs - 时间段的结束
+    * 类型 - 数字/unix 格式
+    * 示例 - 1685566799999
+* groupBy - 按时间分组。当可视化不包含原始日期字段或计算字段为批处理类型时，该值为“null”。
+    * 类型 - `"week" | "day", "hour" | "minute" | "null"`
+    * 示例 - “周”
+* row - 一个对象，其中键表示单个迭代的可视化字段的名称。这可以可视化为表中的一行，但此对象也可用于其他图表类型。但是，它不适用于批处理计算字段。要引用特定行，请使用带有键名的方括号（row['key name']）。
+  * 类型 - `{[key]: string | number}`
+  * 示例 - `{"CalculatedSUM": 100,    "GR greenhouseUNIQ": "London",    "consumptionWaterSUM": 2684}`
+* telemetry - 这些是公式中使用的聚合值或原始值（取决于计算字段的类型）。
+  * 对于简单字段
+    * 类型  - `string | number`
+    * 示例 - `"sum(GR water meter.consumptionWater)": 100`
+  * 对于批处理字段
+    * 类型  - `Array<{ts: number, value: number | string}>`
+    * 示例 - `"none(GR water meter.consumptionWater)": [{"ts": 1677621600000, "value": 100 }, … ]`
 
-In the Input, you can change the values for the tests, but you cannot change the keys.
+在输入中，您可以更改测试的值，但不能更改键。
 
-Pressing **Get real data** again will overwrite the current changes.
+再次按 **获取真实数据** 将覆盖当前更改。
 
 
-#### Example for simple Calculated Field
+#### 简单计算字段的示例
 
 ![image](/images/trendz/test-calculated-simple-field.png)
 
-#### Example for batch Calculated Field
+#### 批处理计算字段的示例
 
 ![image](/images/trendz/test-calculated-batch-field.png)
 
-#### Function
-More details on how to write a function for the Calculated Field can be found in the corresponding section of the documentation. 
-This field is the same. It is only worth recalling that you can work with aggregated data or with raw data. In the second option, you need to enable the **batch** mode by activating the corresponding checkbox.
+#### 函数
+有关如何为计算字段编写函数的更多详细信息，请参阅文档的相应部分。
+此字段是相同的。值得注意的是，您可以使用聚合数据或原始数据。在第二个选项中，您需要通过激活相应的复选框来启用 **批处理** 模式。
 
-#### Output
-This is a non-editable field that has two modes:
+#### 输出
+这是一个不可编辑的字段，有两种模式：
 
-* **Output data**:  you can see the calculation results. This is the value that the function returns at the end. For non-batch Calculate Fields, this will be a simple value (number or string), and for batch ones, it will be an array of objects similar to Input Data.
+* **输出数据**：您可以看到计算结果。这是函数最后返回的值。对于非批处理计算字段，这将是一个简单值（数字或字符串），对于批处理字段，它将是一个类似于输入数据的对象数组。
 
 ![image](/images/trendz/test-calculated-output.png)
 
-* **Logs**: logs are displayed, similar to those displayed in the browser console, if any console.log() is present in the "Formula" field.
+* **日志**：显示日志，类似于浏览器控制台中显示的日志（如果“公式”字段中存在任何 console.log()）。
 
 ![image](/images/trendz/test-calculated-logs.png)
 
 
-Output data and logs updated after clicking the **Test** button. The logs are also updated when you click on **Get real data**, which sometimes makes it possible to make them more complete than the **Test** button.
+单击 **测试** 按钮后，输出数据和日志会更新。当您单击 **获取真实数据** 时，日志也会更新，这有时可以使它们比 **测试** 按钮更完整。
 
-When you are satisfied with the calculation results, don't forget to click the **Save** button. Afterward, the new function will be available in the Calculate Field.
+当您对计算结果满意时，不要忘记单击 **保存** 按钮。之后，新函数将在计算字段中可用。
 
-## Next Steps
+## 后续步骤
 
 {% assign currentGuide = "CalculatedFields" %}{% include templates/trndz-guides-banner.md %}

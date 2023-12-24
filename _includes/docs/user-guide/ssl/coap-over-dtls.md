@@ -1,21 +1,20 @@
 * TOC
 {:toc}
 
-ThingsBoard provides the ability to run CoAP server over DTLS. Both one-way and two-way DTLS are supported.
-DTLS provisioning requires valid [ECDSA](https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm) certificates. 
-ECDSA keys are smaller than RSA keys and thus more preferable for constrained devices. 
-See comparison [article](https://sectigostore.com/blog/ecdsa-vs-rsa-everything-you-need-to-know/) for more details.
-We recommend to use valid SSL certificates generated using trusted CA authorities and avoid spending time on resolving issues with [self-signed certificates](#self-signed-certificates-generation).
-See instructions below on how to configure SSL for certificates stored in PEM file format or Java Keystore.
+ThingsBoard 提供了通过 DTLS 运行 CoAP 服务器的功能。支持单向和双向 DTLS。
+DTLS 预置需要有效的 [ECDSA](https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm) 证书。
+ECDSA 密钥比 RSA 密钥小，因此更适合受限设备。有关更多详细信息，请参阅比较 [文章](https://sectigostore.com/blog/ecdsa-vs-rsa-everything-you-need-to-know/)。
+我们建议使用由受信任的 CA 机构生成的有效 SSL 证书，避免花费时间解决 [自签名证书](#self-signed-certificates-generation) 的问题。
+请参阅以下说明，了解如何为存储在 PEM 文件格式或 Java 密钥库中的证书配置 SSL。
 
 
-### SSL configuration using PEM certificates file
+### 使用 PEM 证书文件进行 SSL 配置
 
 {% assign sinceVersion = "3.3.2" %}
 {% include templates/since.md %}
 
-Configure the following environment variables via [configuration](/docs/user-guide/install/{{docsPrefix}}config/) file, docker-compose or kubernetes scripts.
-We will use **thingsboard.conf** for example:
+通过 [配置](/docs/user-guide/install/{{docsPrefix}}config/) 文件、docker-compose 或 kubernetes 脚本配置以下环境变量。
+例如，我们将使用 **thingsboard.conf**：
 
 ```bash
 ...
@@ -27,34 +26,34 @@ export COAP_DTLS_PEM_KEY_PASSWORD=secret
 ...
 ```
 
-where:
+其中：
 
-* COAP_DTLS_ENABLED - Enable/disable SSL support;
-* COAP_DTLS_CREDENTIALS_TYPE -  Server credentials type. PEM - pem certificate file; KEYSTORE - java keystore;
-* COAP_DTLS_PEM_CERT - Path to the server certificate file. Holds server certificate or certificate chain, may also include server private key;
-* COAP_DTLS_PEM_KEY - Path to the server certificate private key file. Optional by default. Required if the private key is not present in server certificate file;
-* COAP_DTLS_PEM_KEY_PASSWORD - Optional server certificate private key password.
+* COAP_DTLS_ENABLED - 启用/禁用 SSL 支持；
+* COAP_DTLS_CREDENTIALS_TYPE - 服务器凭据类型。PEM - pem 证书文件；KEYSTORE - java 密钥库；
+* COAP_DTLS_PEM_CERT - 服务器证书文件的路径。保存服务器证书或证书链，也可能包括服务器私钥；
+* COAP_DTLS_PEM_KEY - 服务器证书私钥文件的路径。默认情况下是可选的。如果服务器证书文件中不存在私钥，则需要；
+* COAP_DTLS_PEM_KEY_PASSWORD - 可选服务器证书私钥密码。
 
-After completing the setup, start or restart the ThingsBoard server.
+完成设置后，启动或重新启动 ThingsBoard 服务器。
 
 {% include templates/ssl/pem_files_location.md %}
 
 
-### Additional configuration properties
+### 其他配置属性
 
-You may configure following additional environment variables via [configuration](/docs/user-guide/install/{{docsPrefix}}config/) file, docker-compose or kubernetes scripts.
+您可以通过 [配置](/docs/user-guide/install/{{docsPrefix}}config/) 文件、docker-compose 或 kubernetes 脚本配置以下其他环境变量。
 
-* COAP_DTLS_BIND_ADDRESS - the bind address for the secure CoAP server. Default value *0.0.0.0* indicates all interfaces;
-* COAP_DTLS_BIND_PORT - the bind port for the secure CoAP server. Default value is *5684*;
-* TB_COAP_X509_DTLS_SKIP_VALIDITY_CHECK_FOR_CLIENT_CERT - Skip certificate validity check for client certificates. Default value is *false*.
-* TB_COAP_X509_DTLS_SESSION_INACTIVITY_TIMEOUT - Maximum inactivity time of DTLS session in milliseconds. Default value is *86400000* which corresponds to one day.
-* TB_COAP_X509_DTLS_SESSION_REPORT_TIMEOUT - Frequency of periodic cleanup of inactive sessions. Default value is *1800000* which corresponds to 30 minutes.
+* COAP_DTLS_BIND_ADDRESS - 安全 CoAP 服务器的绑定地址。默认值 *0.0.0.0* 表示所有接口；
+* COAP_DTLS_BIND_PORT - 安全 CoAP 服务器的绑定端口。默认值为 *5684*；
+* TB_COAP_X509_DTLS_SKIP_VALIDITY_CHECK_FOR_CLIENT_CERT - 跳过客户端证书的证书有效性检查。默认值为 *false*。
+* TB_COAP_X509_DTLS_SESSION_INACTIVITY_TIMEOUT - DTLS 会话的最大非活动时间（以毫秒为单位）。默认值为 *86400000*，对应于一天。
+* TB_COAP_X509_DTLS_SESSION_REPORT_TIMEOUT - 定期清理非活动会话的频率。默认值为 *1800000*，对应于 30 分钟。
 
 {% include docs/user-guide/ssl/self-signed-ecc.md %}
 
-## Client Examples
+## 客户端示例
 
-See following resources:
+请参阅以下资源：
 
-- [Access Token based authentication](/docs/{{docsPrefix}}user-guide/ssl/coap-access-token/) for example of **one-way SSL** connection;
-- [X.509 Certificate based authentication](/docs/{{docsPrefix}}user-guide/ssl/coap-x509-certificates/) for example of **two-way SSL** connection.
+- [基于访问令牌的身份验证](/docs/{{docsPrefix}}user-guide/ssl/coap-access-token/)，了解 **单向 SSL** 连接的示例；
+- [基于 X.509 证书的身份验证](/docs/{{docsPrefix}}user-guide/ssl/coap-x509-certificates/)，了解 **双向 SSL** 连接的示例。

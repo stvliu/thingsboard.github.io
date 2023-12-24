@@ -1,21 +1,19 @@
-#### Install and configure tools 
+#### 安装和配置工具
 
-To deploy ThingsBoard on GKE cluster you'll need to install
-[`kubectl`](https://kubernetes.io/docs/tasks/tools/) and [`gcloud`](https://cloud.google.com/sdk/downloads) tools.
-See [before you begin](https://cloud.google.com/kubernetes-engine/docs/how-to/creating-a-zonal-cluster#before_you_begin) guide for more info.
+要在 GKE 集群上部署 ThingsBoard，您需要安装 [`kubectl`](https://kubernetes.io/docs/tasks/tools/) 和 [`gcloud`](https://cloud.google.com/sdk/downloads) 工具。有关更多信息，请参阅 [在开始之前](https://cloud.google.com/kubernetes-engine/docs/how-to/creating-a-zonal-cluster#before_you_begin) 指南。
 
-Create new Google Cloud Platform project (recommended) or choose existing one. 
+创建新的 Google Cloud Platform 项目（推荐）或选择现有项目。
 
-Make sure you have selected correct project by executing the following command:
+通过执行以下命令确保您已选择正确的项目：
 
 ```bash
 gcloud init
 ```
 {: .copy-code}
 
-#### Enable GCP services
+#### 启用 GCP 服务
 
-Enable the GKE and SQL services for your project by executing the following command:
+通过执行以下命令为您的项目启用 GKE 和 SQL 服务：
 
 ```bash
 gcloud services enable container.googleapis.com sql-component.googleapis.com sqladmin.googleapis.com

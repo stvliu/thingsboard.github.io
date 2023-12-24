@@ -1,34 +1,34 @@
 ---
 layout: docwithnav
-title: ThingsBoard Roadmap
-description: ThingsBoard architecture
+title: ThingsBoard 路线图
+description: ThingsBoard 架构
 
 ---
 
-The product roadmap listed below covers only main features and does not cover small improvements and bug fixes.
+下面列出的产品路线图仅涵盖主要功能，不涵盖小的改进和错误修复。
 
 ## ThingsBoard CE
 
 ### v3.7
 
-* Migration to JDK 17.
-* Alarm rules:
-  * refactoring to separate entity;
-  * simplified configuration;
-  * support of more complex conditions;
-* Notification system:
-  Support of push notifications to mobile apps.
-* "Housekeeping" service to improve handling of long-running maintenance and administration tasks;
-* Optimization of the attributes table;
-* Separate entity to store queue statistics;
-* New widgets and rule nodes;
+* 迁移到 JDK 17。
+* 警报规则：
+  * 重构为单独的实体；
+  * 简化配置；
+  * 支持更复杂的条件；
+* 通知系统：
+  支持向移动应用程序推送通知。
+* “家务”服务，以改进对长期运行的维护和管理任务的处理；
+* 优化属性表；
+* 单独的实体来存储队列统计信息；
+* 新的小部件和规则节点；
 
-See active development in progress [here](https://github.com/thingsboard/thingsboard/tree/{{ site.release.branch_major_next }}) and work on latest release bug fixes [here](https://github.com/thingsboard/thingsboard/tree/master).
+请参阅此处正在进行的积极开发 [here](https://github.com/thingsboard/thingsboard/tree/{{ site.release.branch_major_next }})，并在此处处理最新版本的错误修复 [here](https://github.com/thingsboard/thingsboard/tree/master)。
 
-### Upcoming releases
+### 即将发布的版本
 
-* Support of revocable API keys instead of JWT tokens for programmatic REST API access;
-* Improvements to IoT Gateway;
-* Ability to save dashboard parameters (time intervals, etc) per user;
-* JavaScript Device/Gateway SDK;
-* Single sign on;
+* 支持可撤销的 API 密钥，而不是用于编程 REST API 访问的 JWT 令牌；
+* 改进 IoT 网关；
+* 能够为每个用户保存仪表板参数（时间间隔等）；
+* JavaScript 设备/网关 SDK；
+* 单点登录；

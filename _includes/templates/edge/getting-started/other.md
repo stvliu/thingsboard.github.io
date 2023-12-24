@@ -1,6 +1,6 @@
-ThingsBoard supports many other protocols. 
-Please explore [Connectivity Diagram](/docs/getting-started-guides/connectivity/) to find solution that matches your use case.
+ThingsBoard 支持许多其他协议。
+请浏览 [连接图](/docs/getting-started-guides/connectivity/) 以找到与您的用例相匹配的解决方案。
 
-**Note:** We recommend to start exploring the platform capabilities with simulated devices that are connected over MQTT.
+**注意：**我们建议通过连接到 MQTT 的模拟设备开始探索平台功能。
 
 <br>

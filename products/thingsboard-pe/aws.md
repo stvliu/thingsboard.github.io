@@ -33,7 +33,7 @@ redirect_to: "/pricing/"
                         <div class="price">$10</div>
                         <div>/month</div>
                         <div class="price-desc">for software + <a href="javascript:void(0);" onClick="openAwsFaqNode('what-is-the-total-cost-of-ownership-tco-for-my-tb-pe-instance')">AWS usage fees</a></div>
-                        <p><a href="/products/thingsboard-pe/install/aws/?instance=maker" class="button">Try it now</a></p>
+                        <p><a href="/products/thingsboard-pe/install/aws/?instance=maker" class="button">立即试用</a></p>
                     </div>
                 </td>
                 <td>
@@ -41,7 +41,7 @@ redirect_to: "/pricing/"
                         <div class="price">$99</div>
                         <div>/month</div>
                         <div class="price-desc">for software + <a href="javascript:void(0);" onClick="openAwsFaqNode('what-is-the-total-cost-of-ownership-tco-for-my-tb-pe-instance')">AWS usage fees</a></div>
-                        <p><a href="/products/thingsboard-pe/install/aws/?instance=prototype" class="button">Try it now</a></p>
+                        <p><a href="/products/thingsboard-pe/install/aws/?instance=prototype" class="button">立即试用</a></p>
                     </div>
                 </td>
                 <td>
@@ -49,7 +49,7 @@ redirect_to: "/pricing/"
                         <div class="price">$199</div>
                         <div>/month</div>
                         <div class="price-desc">for software + <a href="javascript:void(0);" onClick="openAwsFaqNode('what-is-the-total-cost-of-ownership-tco-for-my-tb-pe-instance')">AWS usage fees</a></div>
-                        <p><a href="/products/thingsboard-pe/install/aws/?instance=startup" class="button">Try it now</a></p>
+                        <p><a href="/products/thingsboard-pe/install/aws/?instance=startup" class="button">立即试用</a></p>
                     </div>
                 </td>
                 <td>
@@ -57,7 +57,7 @@ redirect_to: "/pricing/"
                         <div class="price">$299</div>
                         <div>/month</div>
                         <div class="price-desc">for software + <a href="javascript:void(0);" onClick="openAwsFaqNode('what-is-the-total-cost-of-ownership-tco-for-my-tb-pe-instance')">AWS usage fees</a></div>
-                        <p><a href="/products/thingsboard-pe/install/aws/?instance=business" class="button">Try it now</a></p>           
+                        <p><a href="/products/thingsboard-pe/install/aws/?instance=business" class="button">立即试用</a></p>           
                     </div>
                 </td>
                 <td>
@@ -65,248 +65,242 @@ redirect_to: "/pricing/"
                         <div class="price">$500</div>
                         <div>/month</div>
                         <div class="price-desc">for software + <a href="javascript:void(0);" onClick="openAwsFaqNode('what-is-the-total-cost-of-ownership-tco-for-my-tb-pe-instance')">AWS usage fees</a></div>
-                        <p><a href="/products/thingsboard-pe/install/aws/?instance=enterprise" class="button">Try it now</a></p>
+                        <p><a href="/products/thingsboard-pe/install/aws/?instance=enterprise" class="button">立即试用</a></p>
                     </div>
                 </td>
             </tr>
             <tr class="yearly-sub">
                 <td></td>
-                <td colspan="5"><div class="yearly-sub-cell">Save up to 18% on yearly subscription</div></td>
+                <td colspan="5"><div class="yearly-sub-cell">年度订阅可节省高达 18%</div></td>
             </tr>
             <tr>
-                <td>Devices and Assets</td>
-                <td>up to 10</td>
-                <td>up to 100</td>
-                <td>up to 500</td>
-                <td>up to 1,000</td>
-                <td>Unlimited<sup>*</sup></td>
+                <td>设备和资产</td>
+                <td>最多 10 个</td>
+                <td>最多 100 个</td>
+                <td>最多 500 个</td>
+                <td>最多 1,000 个</td>
+                <td>无限<sup>*</sup></td>
             </tr>
             <tr>
-                <td>White-labeling</td>
-                <td>Not available</td>
-                <td><b>Advanced<sup>**</sup></b></td>
-                <td><b>Advanced<sup>**</sup></b></td>
-                <td><b>Advanced<sup>**</sup></b></td>
-                <td><b>Advanced<sup>**</sup></b></td>
+                <td>白标</td>
+                <td>不可用</td>
+                <td><b>高级<sup>**</sup></b></td>
+                <td><b>高级<sup>**</sup></b></td>
+                <td><b>高级<sup>**</sup></b></td>
+                <td><b>高级<sup>**</sup></b></td>
             </tr>            
             <tr>
-                <td>Customers, Users and Dashboards</td>
-                <td colspan="5">Unlimited<sup>*</sup></td>
+                <td>客户、用户和仪表板</td>
+                <td colspan="5">无限<sup>*</sup></td>
             </tr>
             <tr>
-                <td>Data points or Messages</td>
-                <td colspan="5">Unlimited<sup>*</sup></td>
+                <td>数据点或消息</td>
+                <td colspan="5">无限<sup>*</sup></td>
             </tr>
             <tr>
-                <td>Dashboards</td>
-                <td colspan="5">Unlimited<sup>*</sup></td>            
+                <td>仪表板</td>
+                <td colspan="5">无限<sup>*</sup></td>            
             </tr>
             <tr>
-                <td>Integrations</td>
-                <td colspan="5">Unlimited<sup>*</sup></td>
+                <td>集成</td>
+                <td colspan="5">无限<sup>*</sup></td>
             </tr>
             <tr>
-                <td>API Calls</td>
-                <td colspan="5">Unlimited<sup>*</sup></td>
+                <td>API 调用</td>
+                <td colspan="5">无限<sup>*</sup></td>
             </tr>
             <tr>
-                <td>Scheduler Events</td>
-                <td colspan="5">Unlimited<sup>*</sup></td>
+                <td>调度程序事件</td>
+                <td colspan="5">无限<sup>*</sup></td>
             </tr>
             <tr>
-                <td>Support</td>
-                <td colspan="2">Community</td>
-                <td>Email support within 72 hours</td>
-                <td>Email support within 48 hours</td>
-                <td>Email support within 24 hours</td>
+                <td>支持</td>
+                <td colspan="2">社区</td>
+                <td>72 小时内提供电子邮件支持</td>
+                <td>48 小时内提供电子邮件支持</td>
+                <td>24 小时内提供电子邮件支持</td>
             </tr>
             <tr>
-                <td>Recommended AWS Instance</td>
+                <td>推荐的 AWS 实例</td>
                 <td>t2.micro</td>
                 <td>t2.medium</td>
                 <td>m5.large</td>
                 <td>m5.xlarge</td>
-                <td>m5.xlarge cluster</td>
+                <td>m5.xlarge 集群</td>
             </tr>
             <tr>
-                <td>Recommended DB</td>
-                <td colspan="2">Co-located PostgreSQL</td>
-                <td>Co-located PostgreSQL or Amazon RDS for PostgreSQL or external Cassandra DB</td>
-                <td colspan="2">Cassandra Cluster</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td class="note" colspan="5">* - Platform does not introduce any software limits, limited by the hardware or network capacity only</td>
+                <td>推荐的数据库</td>
+                <td colspan="2">共置 PostgreSQL</td>
+                <td>共置 PostgreSQL 或 Amazon RDS for PostgreSQL 或外部 Cassandra 数据库</td>
+                <td colspan="2">Cassandra 集群</td>
             </tr>
             <tr>
                 <td></td>
-                <td class="note" colspan="5">** - Custom logos, color schemes, login pages, translations and domains on a system, tenant and customer levels</td>
+                <td class="note" colspan="5">* - 平台不引入任何软件限制，仅受硬件或网络容量限制</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="note" colspan="5">** - 系统、租户和客户级别的自定义徽标、配色方案、登录页面、翻译和域</td>
             </tr>
         </tbody>
     </table>
     <div class="bottom-background"></div>
 </div>
 
-## Frequently asked questions
+## 常见问题
 
 <br>
 
 <div class="pi-accordion">
-    <h3 id="trial--billing">Trial &amp; Billing</h3>    
-    <div class="item" data-tag="h4" data-item-id="what-does-free-trial-mean" data-title="How can I enable free trial?">
+    <h3 id="trial--billing">试用和计费</h3>    
+    <div class="item" data-tag="h4" data-item-id="what-does-free-trial-mean" data-title="如何启用免费试用？">
         <div class="container">
             <p>
-                We recommend to use ThingsBoard Professional Edition Live Demo for the seamless experience and the newest features from the latest source code! 
-                Note that this is a shared environment with hardware and software limitations introduced to host multiple trial tenants on the same server instance(s).  
+                我们建议使用 ThingsBoard Professional Edition 实时演示，以获得无缝体验和最新源代码中的最新功能！
+                请注意，这是一个共享环境，引入了硬件和软件限制，以便在同一服务器实例上托管多个试用租户。  
             </p>    
         </div>    
     </div>
-    <div class="item" data-tag="h4" data-item-id="what-does-hourly-charges-mean" data-title="What does &quot;hourly charges&quot; mean?">
+    <div class="item" data-tag="h4" data-item-id="what-does-hourly-charges-mean" data-title="“按小时计费”是什么意思？">
         <div class="container">
             <p>
-                AWS is going to charge you for each hour the server is running. Most of the servers are running 24/7, because they need to be able to constantly serve requests from devices or users. 
-                However, if you are using this server for a development purposes can stop the server to save time in the end of the work day.
+                AWS 将对服务器运行的每个小时收取费用。大多数服务器 24/7 运行，因为它们需要能够不断地为设备或用户提供服务。
+                但是，如果您将此服务器用于开发目的，可以在工作日结束时停止服务器以节省时间。
             </p>    
         </div>    
     </div>
-    <div class="item" data-tag="h4" data-item-id="what-is-the-total-cost-of-ownership-tco-for-my-tb-pe-instance" data-title="What is the Total Cost of Ownership (TCO) for my TB PE instance? ">
+    <div class="item" data-tag="h4" data-item-id="what-is-the-total-cost-of-ownership-tco-for-my-tb-pe-instance" data-title="我的 TB PE 实例的总拥有成本 (TCO) 是多少？">
         <div class="container">
-            <p>The typical total cost of ownership consists of:</p>
+            <p>典型的总拥有成本包括：</p>
             <ul>
-                <li>TB License fee - see pricing above</li>
-                <li>AWS EC2 instance price - we believe <a href="https://www.ec2instances.info/">ec2instances.info</a> is a convenient resource to compare prices.</li>
-                <li>Additional EC2 costs for network traffic, disk space and other optional services (Cloud Watch or similar)</li>
+                <li>TB 许可费 - 见上文定价</li>
+                <li>AWS EC2 实例价格 - 我们认为 <a href="https://www.ec2instances.info/">ec2instances.info</a> 是一个比较价格的便捷资源。</li>
+                <li>网络流量、磁盘空间和其他可选服务（Cloud Watch 或类似服务）的额外 EC2 成本</li>
             </ul>            
-            <p>Example A: The price for TB PE Maker instance based on t2.micro with 20 GB disk will cost approximately $20.5 per month:</p>            
+            <p>示例 A：基于 t2.micro 且磁盘为 20 GB 的 TB PE Maker 实例的费用约为每月 20.5 美元：</p>            
             <ul>
-                <li>$10.08 for 720 hours of TB PE Maker license fee</li>
-                <li>$8.468 for 1 month of t2.micro usage</li>
-                <li>$2.0 for 20 GB of EBS volume per month</li>
+                <li>720 小时的 TB PE Maker 许可费为 10.08 美元</li>
+                <li>1 个月 t2.micro 使用费为 8.468 美元</li>
+                <li>每月 20 GB EBS 卷为 2.0 美元</li>
             </ul>             
-            <p>Example B: The price for TB PE Prototype instance based on t2.medium with 100 GB disk will cost approximately $143.862 per month:</p>            
+            <p>示例 B：基于 t2.medium 且磁盘为 100 GB 的 TB PE Prototype 实例的费用约为每月 143.862 美元：</p>            
             <ul>
-                <li>$99.99 for 720 hours of TB PE Maker license fee</li>
-                <li>$33.872 for 1 month of t2.medium usage</li>
-                <li>$10.0 for 100 GB of EBS volume per month</li>
+                <li>720 小时的 TB PE Maker 许可费为 99.99 美元</li>
+                <li>1 个月 t2.medium 使用费为 33.872 美元</li>
+                <li>每月 100 GB EBS 卷为 10.0 美元</li>
             </ul>
-            <p>All prices are in USD.</p>
+            <p>所有价格均以美元计。</p>
         </div>    
     </div>
-    <div class="item" data-tag="h4" data-item-id="what-saving-options-are-available" data-title="What saving options are available?">
+    <div class="item" data-tag="h4" data-item-id="what-saving-options-are-available" data-title="有哪些节省选项？">
         <div class="container">
             <p>
-                Save up to 18% on a yearly TB PE AWS marketplace license or deploy TB PE on premises for additional savings. Additional AWS EC2 infrastructure savings are available for reserved EC2 instances. See <a href="https://aws.amazon.com/marketplace/help/buyer-annual-subscription">AWS FAQ</a> for more details.
+                在年度 TB PE AWS 市场许可证上节省高达 18%，或在本地部署 TB PE 以节省更多费用。预留 EC2 实例可节省额外的 AWS EC2 基础设施费用。有关更多详细信息，请参阅 <a href="https://aws.amazon.com/marketplace/help/buyer-annual-subscription">AWS 常见问题解答</a>。
             </p>    
         </div>    
     </div>
-    <h3 id="installation--configuration">Installation &amp; Configuration</h3>
-    <div class="item" data-tag="h4" data-item-id="how-do-i-install-tb-pe-on-aws" data-title="How to install TB PE on AWS Marketplace?">
+    <h3 id="installation--configuration">安装和配置</h3>
+    <div class="item" data-tag="h4" data-item-id="how-do-i-install-tb-pe-on-aws" data-title="如何在 AWS 市场上安装 TB PE？">
         <div class="container">
             <p>
-                See <a href="/docs/user-guide/install/pe/aws-marketplace/">official documentation page</a> for more details.
+                有关更多详细信息，请参阅 <a href="/docs/user-guide/install/pe/aws-marketplace/">官方文档页面</a>。
             </p>    
         </div>    
     </div>
-    <div class="item" data-tag="h4" data-item-id="how-do-i-ssh-tb-pe-on-aws" data-title="How to connect to my new TB PE instance using SSH?">
+    <div class="item" data-tag="h4" data-item-id="how-do-i-ssh-tb-pe-on-aws" data-title="如何使用 SSH 连接到我的新 TB PE 实例？">
         <div class="container">
             <p>
-                See <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html">official documentation page</a> for more details.
+                有关更多详细信息，请参阅 <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html">官方文档页面</a>。
             </p>    
         </div>    
     </div>
-    <div class="item" data-tag="h4" data-item-id="how-do-i-putty-tb-pe-on-aws" data-title="How to connect to my new TB PE instance using PuTTY?">
+    <div class="item" data-tag="h4" data-item-id="how-do-i-putty-tb-pe-on-aws" data-title="如何使用 PuTTY 连接到我的新 TB PE 实例？">
         <div class="container">
             <p>
-                See <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html">official documentation page</a> for more details.
+                有关更多详细信息，请参阅 <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html">官方文档页面</a>。
             </p>    
         </div>    
     </div>            
-    <div class="item" data-tag="h4" data-item-id="how-do-i-https-tb-pe-on-aws" data-title="How to enable HTTPS?">
+    <div class="item" data-tag="h4" data-item-id="how-do-i-https-tb-pe-on-aws" data-title="如何启用 HTTPS？">
         <div class="container">
             <p>
-                Step 1. Find out your new instance <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">external IP</a> address 
-                or assign <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP</a> address.<br>
-                Step 2. Assign valid domain name system (DNS) record to your external IP address for first step.<br>
-                Step 3. Connect to your instance using SSH or PuTTY using instructions from the previous questions above.<br>
-                Step 4. Execute the following commands:<br><br>
+                步骤 1. 找到您的新实例 <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">外部 IP</a> 地址或分配 <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">弹性 IP</a> 地址。<br>
+                步骤 2. 将有效的域名系统 (DNS) 记录分配给第一步中的外部 IP 地址。<br>
+                步骤 3. 使用上述前几个问题中的说明，使用 SSH 或 PuTTY 连接到您的实例。<br>
+                步骤 4. 执行以下命令：<br><br>
                 &nbsp;&nbsp;&nbsp;&nbsp;sudo certbot-certonly --domain <b>smth.yourcompany.com</b> --email <b>support@yourcompany.com</b><br>
                 &nbsp;&nbsp;&nbsp;&nbsp;sudo haproxy-refresh<br><br>
-                where <b>smth.yourcompany.com</b> is your DNS name from the second step<br>
-                and <b>support@yourcompany.com</b> is your email to get notifications from <a href="https://certbot.eff.org/">certbot</a>.   
+                其中 <b>smth.yourcompany.com</b> 是第二步中的 DNS 名称<br>
+                <b>support@yourcompany.com</b> 是您的电子邮件，用于从 <a href="https://certbot.eff.org/">certbot</a> 获取通知。   
             </p>    
         </div>    
     </div>
-    <div class="item" data-tag="h4" data-item-id="how-do-i-configure-tb-pe-on-aws" data-title="How do I configure my TB PE instance?">
+    <div class="item" data-tag="h4" data-item-id="how-do-i-configure-tb-pe-on-aws" data-title="如何配置我的 TB PE 实例？">
         <div class="container">
             <p>
-                See <a href="/docs/user-guide/install/config/">official documentation page</a> for more details.
+                有关更多详细信息，请参阅 <a href="/docs/user-guide/install/config/">官方文档页面</a>。
             </p>    
         </div>    
     </div>    
-    <h3 id="upgrades--data migration">Upgrades & Data Migration</h3>
-    <div class="item" data-tag="h4" data-item-id="how-do-i-upgrade-tb" data-title="How do I get software updates for my TB PE instance?">
+    <h3 id="upgrades--data migration">升级和数据迁移</h3>
+    <div class="item" data-tag="h4" data-item-id="how-do-i-upgrade-tb" data-title="如何为我的 TB PE 实例获取软件更新？">
         <div class="container">
             <p>
-                You will receive an email notification about new software versions once it becomes available. This email notification will contain a link to  
-                <a href="/docs/user-guide/install/aws-marketplace-pe-upgrade/">official documentation page</a> with the upgrade instructions.
+                一旦有新软件版本可用，您将收到一封电子邮件通知。此电子邮件通知将包含指向 <a href="/docs/user-guide/install/aws-marketplace-pe-upgrade/">官方文档页面</a> 的链接，其中包含升级说明。
             </p>    
         </div>    
     </div>
-    <div class="item" data-tag="h4" data-item-id="how-do-i-backup-db" data-title="How do I backup my database?">
+    <div class="item" data-tag="h4" data-item-id="how-do-i-backup-db" data-title="如何备份我的数据库？">
         <div class="container">
             <p>
-                Depending on your instance type and configuration, ThingsBoard may store data in SQL or NoSQL databases. 
-                ThingsBoard may also store data using hybrid database mode. 
-                Please review <a href="/docs/reference/#sql-vs-nosql-vs-hybrid-database-approach">architecture docs</a> for more info on available database types.
-                Once you figure out the database type(s) you are using in your instance, you can review official <a href="https://www.postgresql.org/docs/9.1/backup.html">PostgreSQL</a> 
-                or <a href="https://docs.datastax.com/en/cassandra/3.0/cassandra/operations/opsBackupRestore.html">Cassandra</a> documentation. 
-                There is also planty of docs and tools in the web how you can backup and restore your DB.  
+                根据您的实例类型和配置，ThingsBoard 可能会将数据存储在 SQL 或 NoSQL 数据库中。
+                ThingsBoard 还可以使用混合数据库模式存储数据。
+                请查看 <a href="/docs/reference/#sql-vs-nosql-vs-hybrid-database-approach">架构文档</a> 以获取有关可用数据库类型的更多信息。
+                一旦您弄清楚了在实例中使用的数据库类型，您就可以查看官方 <a href="https://www.postgresql.org/docs/9.1/backup.html">PostgreSQL</a> 或 <a href="https://docs.datastax.com/en/cassandra/3.0/cassandra/operations/opsBackupRestore.html">Cassandra</a> 文档。
+                网络上还有大量文档和工具，介绍了如何备份和还原数据库。  
             </p>    
         </div>    
     </div>
-    <div class="item" data-tag="h4" data-item-id="how-do-i-upgrade-instance-type" data-title="How do I upgrade my instance type?">
+    <div class="item" data-tag="h4" data-item-id="how-do-i-upgrade-instance-type" data-title="如何升级我的实例类型？">
         <div class="container">
             <p>
-                Let's assume your number of devices is constantly growing and you decide to upgrade to new instance type. 
-                It is relatively easy to upgrade while you plan to use the same database type. Just execute the following steps:<br><br>
-                &nbsp;&nbsp;&nbsp;&nbsp;1) stop your instance and backup your database<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;2) start a new subscription with a new instance type<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;3) restore the database backup on the instance with a new subscription<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;4) ensure everything is working as expected<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;5) cancel old subscription if needed<br><br>
-                However, if you plan to upgrade from PostgreSQL to Cassandra this may become a challenge. 
-                ThingsBoard team is planning to have a tool for this purpose but the release is scheduled for the end of 2019. 
-                So, we recommend to maintain the same database type or consider a hybrid database approach.  
+                假设您的设备数量不断增长，您决定升级到新的实例类型。
+                如果您计划使用相同的数据库类型，则升级相对容易。只需执行以下步骤：<br><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;1) 停止您的实例并备份您的数据库<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;2) 使用新的实例类型启动新的订阅<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;3) 在具有新订阅的实例上还原数据库备份<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;4) 确保一切按预期工作<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;5) 如有必要，取消旧订阅<br><br>
+                但是，如果您计划从 PostgreSQL 升级到 Cassandra，这可能成为一项挑战。
+                ThingsBoard 团队计划为此目的提供一个工具，但发布计划在 2019 年底。
+                因此，我们建议您维护相同的数据库类型或考虑混合数据库方法。  
             </p>    
         </div>    
     </div>                    
-    <h3 id="troubleshooting--support">Troubleshooting &amp; Support</h3>
-    <div class="item" data-tag="h4" data-item-id="how-do-i-find-logs-tb" data-title="Where is my ThingsBoard instance logs?">
+    <h3 id="troubleshooting--support">故障排除和支持</h3>
+    <div class="item" data-tag="h4" data-item-id="how-do-i-find-logs-tb" data-title="我的 ThingsBoard 实例日志在哪里？">
         <div class="container">
             <p>
-                ThingsBoard logs are stored in the <i>/var/log/thingsboard</i> folder. 
-                See <a href="/docs/user-guide/install/config/#logging">configuration page</a> to find out how to configure logging levels.
+                ThingsBoard 日志存储在 <i>/var/log/thingsboard</i> 文件夹中。
+                请参阅 <a href="/docs/user-guide/install/config/#logging">配置页面</a> 以了解如何配置日志记录级别。
             </p>    
         </div>    
     </div>
-    <div class="item" data-tag="h4" data-item-id="how-do-i-get-free-help-tb" data-title="How do I get help from community?">
+    <div class="item" data-tag="h4" data-item-id="how-do-i-get-free-help-tb" data-title="如何从社区获得帮助？">
         <div class="container">
             <p>
-                Available community resources are listed below:<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/thingsboard/thingsboard/issues">GitHub issues page</a> - Our GitHub issues page contains a lot of Q&A and discussions about ThingsBoard.<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://groups.google.com/forum/#!forum/thingsboard">Q&A forum</a> - Our user forum is a great place to go for community support.<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://stackoverflow.com/questions/tagged/thingsboard">Stack Overflow</a> - The ThingsBoard team will also monitor posts tagged thingsboard. 
+                可用的社区资源如下：<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/thingsboard/thingsboard/issues">GitHub 问题页面</a> - 我们的 GitHub 问题页面包含大量关于 ThingsBoard 的问答和讨论。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://groups.google.com/forum/#!forum/thingsboard">问答论坛</a> - 我们的用户论坛是获得社区支持的好地方。<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://stackoverflow.com/questions/tagged/thingsboard">Stack Overflow</a> - ThingsBoard 团队还将监控标记为 thingsboard 的帖子。 
             </p>    
         </div>    
     </div>
-    <div class="item" data-tag="h4" data-item-id="how-do-i-get-free-help-tb" data-title="How do I get professional support?">
+    <div class="item" data-tag="h4" data-item-id="how-do-i-get-free-help-tb" data-title="如何获得专业支持？">
         <div class="container">
             <p>
-                Please review ThingsBoard professional <a href="/docs/services/support/">support plans</a> and <a href="/docs/contact-us/">contact us</a>. 
+                请查看 ThingsBoard 专业 <a href="/docs/services/support/">支持计划</a> 并 <a href="/docs/contact-us/">联系我们</a>。
             </p>    
         </div>    
     </div>                            
 </div>
-
-
-

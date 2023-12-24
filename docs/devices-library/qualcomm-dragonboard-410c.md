@@ -1,9 +1,9 @@
 ---
 layout: devices-library-article
-title: How to connect Qualcomm DragonBoard 410C to ThingsBoard?
-category: Single-board computers
+title: 如何将 Qualcomm DragonBoard 410C 连接到 ThingsBoard？
+category: 单板计算机
 chip: Qualcomm SnapDragon 410
-connectivity: WIFI, Bluetooth, GPS
+connectivity: WIFI、蓝牙、GPS
 vendor: Qualcomm
 deviceImageFileName: qualcomm-dragonboard-410c.png
 

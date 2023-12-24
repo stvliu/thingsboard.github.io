@@ -1,341 +1,343 @@
 ---
 layout: docwithnav-trendz
-title: Trendz Release Notes
-description: ThingsBoard Trendz Analytics Release Notes
+title: Trendz 发布说明
+description: ThingsBoard Trendz Analytics 发布说明
 
 ---
 
 * TOC
 {:toc}
 
-## v1.10.3-HF3 (November, 2023)
-
-**Improvements:**
-
-* Improve query planner based on relation graph
-* Add transactional topology refresh
-* Add load balancing option for data queries
-* Improve calculated scripts error logging
-* Re-use time zone from browser time window
-* Optional multi-root items loading
-* Apply selected sorting for exported data
-* Add trend line for line charts
-
-**Bug fixes:**
-
-* Fix tooltips and units in views
-* Fix field load ordering process
-* Fix heatmap export for multiple fields
-* Fix time synchronization between ThingsBoard dashboard and Trendz view
-* Fix Business Entities sorting after topology discovery
-* Fix chart background color when exporting as image
-
-## v1.10.3 (September, 2023)
-
-**Improvements:**
-
-* Add support of SQL datasources
-* Add option to remove blank series form view
-* Improve root selection during query planing
-* Add support of new ThingsBoard widget bundle format (ThingBoard 3.6+)
-* Improve predefined options to date picker
-* Add user timezone to calculated field
-* Topology validation during discovery
-
-**Bug fixes:**
-
-* Fix trend-line calculation for scatter plot
-* Fix blank view during report generation
-* Fix delta aggregation
-
-## v1.10.2 (August, 2023)
-
-**Improvements:**
-
-* Add Python script support for calculated fields (Beta)
-* Add Python script support for forecast models (Beta)
-* Add support of multivariable prediction models
-* Add new forecast models: Prophet, ARIMA, SARIMAX
-* Add widget auto-refresh in rela-time on the ThingsBoard dashboard
-* Add white labeling settings
-* Add dark mode
-* Manual set axis min/max ranges
-
-**Bug fixes:**
-
-* Fix discovery process for fields with special characters
-* Fix blank Trendz widget on export to PDF
-* Fix delta aggregation for calculated fields
-* Fix Trendz bundle update process to the latest version
-
-## v1.10.1 (May, 2023)
-
-**Improvements:**
-* Add the ability to schedule anomalies autodiscovery
-* Add debug instruments for developing calculated fields
-* Migrate simple calculated field computation into the backend JS engine
-* Update widget bundle to ThingsBoard v3.5
-* Add prediction support for calculated fields
-* Case-insensitive search for view fields
-* Add top-N limit for table, pie, and bar charts
-* Add groupBy as the input parameter for a calculated field
-* Add the ability to display separately the chart and table of the Anomaly View
-* Anomaly calendar - add full range view mode
-* Add unit into chart label and tooltip
-* Add user details menu
-
-**Bug fixes:**
-* Clear cached storage on logout
-* Fix responsive layout for calendar heatmap
-* Fix background job authorization error
-* Fix the model change for the Anomaly view
-* Fix view title text size autoscaling
-* Fix authentication by the token in URL
-* Fix time formatting in exported data
-* Fix the merging process in the chart options editor
-* Fix date picker positioning for widgets
-
-## v1.10.0 (February, 2023)
-
-**Improvements:**
-* New Trendz UI design
-* Grouping visualizations into collections
-* New Card template with sparkline and comparison 
-* Add units into formatting function
-* Configurable axis ranges
-
-**Bug fixes:**
-
-* Fix title editor
-* Fix heatmap NaN error
-* Fix cached report race condition in clustered setup
-* Fix caching of non-timeseries fields
-
-## v1.9.2-HF2 (December, 2022)
-
-**Improvements:**
- * Add support of the latest ThingsBoard API version
-
-**Bug fixes:**
-
- * Fix anomaly field fetching
- * Fix date field formatting inside tables
- * Fix Count aggregation in batch calculation fields
- * Fix direct view sharing on the dashboard
- * Fix formatting for duration percent fields
- * Fix cells color for a heatmap when range value is blank
- * Fix date formatting in CSV export
-
-## v1.9.2 (November, 2022)
-
-**Improvements:**
-
- * Add alarm report
- * Manual color ranges for heat maps
- * Manual color settings for the calendar
- * Add anomaly review widget for thingsbard
- * Add row click event for bar charts and heatmaps
- * Improve authentication for background tasks
- * Add scheduled task status in the views table
- * Add white labeling options for Trendz UI
- * Improve UI responsiveness for large topologies
- * Support for native data export in ThingsBoard dashboards
- 
-
-**Bug fixes:**
-
- * Resolve formatting issues in CSV data export
- * Fix sorting issues in the table view
+## v1.10.3-HF3（2023 年 11 月）
+
+**改进：**
+
+* 基于关系图改进查询计划程序
+* 添加事务性拓扑刷新
+* 为数据查询添加负载均衡选项
+* 改进计算脚本错误日志记录
+* 从浏览器时间窗口重新使用时区
+* 可选的多根项目加载
+* 应用所选排序以导出数据
+* 为折线图添加趋势线
+
+**错误修复：**
+
+* 修复视图中的工具提示和单位
+* 修复字段加载顺序过程
+* 修复多个字段的热图导出
+* 修复 ThingsBoard 仪表板和 Trendz 视图之间的时间同步
+* 修复拓扑发现后的业务实体排序
+* 修复导出为图像时的图表背景颜色
+
+## v1.10.3（2023 年 9 月）
+
+**改进：**
+
+* 添加对 SQL 数据源的支持
+* 添加从视图中删除空白系列表单的选项
+* 改进查询计划期间的根选择
+* 添加对新的 ThingsBoard 小部件包格式（ThingBoard 3.6+）的支持
+* 改进日期选择器的预定义选项
+* 将用户时区添加到计算字段
+* 发现期间的拓扑验证
+
+**错误修复：**
+
+* 修复散点图的趋势线计算
+* 修复报告生成期间的空白视图
+* 修复增量聚合
+
+## v1.10.2（2023 年 8 月）
+
+**改进：**
+
+* 为计算字段添加 Python 脚本支持（Beta）
+* 为预测模型添加 Python 脚本支持（Beta）
+* 添加对多变量预测模型的支持
+* 添加新的预测模型：Prophet、ARIMA、SARIMAX
+* 在 ThingsBoard 仪表板上以相对时间自动刷新小部件
+* 添加白标设置
+* 添加暗模式
+* 手动设置轴的最小/最大范围
 
+**错误修复：**
+
+* 修复具有特殊字符的字段的发现过程
+* 修复导出为 PDF 时空白的 Trendz 小部件
+* 修复计算字段的增量聚合
+* 修复 Trendz 包更新过程以获取最新版本
+
+## v1.10.1（2023 年 5 月）
+
+**改进：**
+* 添加安排异常自动发现的功能
+* 为开发计算字段添加调试工具
+* 将简单的计算字段计算迁移到后端 JS 引擎
+* 将小部件包更新到 ThingsBoard v3.5
+* 为计算字段添加预测支持
+* 视图字段的不区分大小写搜索
+* 为表格、饼图和条形图添加前 N 个限制
+* 将 groupBy 添加为计算字段的输入参数
+* 添加单独显示异常视图的图表和表格的功能
+* 异常日历 - 添加全范围视图模式
+* 将单位添加到图表标签和工具提示
+* 添加用户详细信息菜单
+
+**错误修复：**
+* 注销时清除缓存存储
+* 修复日历热图的响应式布局
+* 修复后台作业授权错误
+* 修复异常视图的模型更改
+* 修复视图标题文本大小自动缩放
+* 修复通过 URL 中的令牌进行身份验证
+* 修复导出数据中的时间格式
+* 修复图表选项编辑器中的合并过程
+* 修复小部件的日期选择器定位
+
+## v1.10.0（2023 年 2 月）
+
+**改进：**
+* 新的 Trendz UI 设计
+* 将可视化分组到集合中
+* 带有火花线和比较的新卡片模板
+* 将单位添加到格式化函数中
+* 可配置的轴范围
+
+**错误修复：**
+
+* 修复标题编辑器
+* 修复热图 NaN 错误
+* 修复群集设置中缓存的报告竞争条件
+* 修复非时间序列字段的缓存
 
-## v1.9.1 (July, 2022)
+## v1.9.2-HF2（2022 年 12 月）
 
-**Improvements:**
+**改进：**
+* 添加对最新 ThingsBoard API 版本的支持
+
+**错误修复：**
+
+* 修复异常字段获取
+* 修复表格中的日期字段格式
+* 修复批量计算字段中的计数聚合
+* 修复仪表板上的直接视图共享
+* 修复持续时间百分比字段的格式
+* 修复范围值为空时热图的单元格颜色
+* 修复 CSV 导出中的日期格式
+
+## v1.9.2（2022 年 11 月）
 
- * Preview mode for large reports
- * Add linear regression for scatter plots
- * Use user timezone for scheduled tasks
- * Update native library for ThingsBoard 3.4+
- 
-
-**Bug fixes:**
+**改进：**
 
- * Fix delta aggregation
- * Fix individual local dates for fields
- * Fix the horizontal bar zoom
- * Avoid report double loading
- * Fix scroll inside views
- * Fix date-time label formatting
+* 添加警报报告
+* 热图的手动颜色范围
+* 日历的手动颜色设置
+* 为 thingsbard 添加异常审查小部件
+* 为条形图和热图添加行单击事件
+* 改进后台任务的身份验证
+* 在视图表中添加计划任务状态
+* 为 Trendz UI 添加白标选项
+* 改进大型拓扑的 UI 响应能力
+* 支持在 ThingsBoard 仪表板中原生数据导出
 
-## v1.9.0 (April, 2022)
 
-**Improvements:**
+**错误修复：**
 
- * Add configurable fill gaps strategy
- * Add view templates
- * Save computed metrics as telemetry in ThingsBoard
- * Support of Alarm fields for reporting
- * Support of Anomaly fields for reporting
- * Combine multiple fields in a pie chart 
- * Save state and calculated fields for reuse
- * Implement multi-root related items loading
- * Switch to the javascript engine for state and calculated fields
- * Improve time series prediction models
- * Support interval time window from ThingsBoard
- * Improve performance for large datasets
- * Update native library for ThingsBoard 3.3+
- * Autorefresh filter values inside reports
- * Update resources path to allow hosting of Trendz & Thingsboard on the same domain
- * Configurable tooltip type for bar/line charts
- * Collect measurements during report build
- * Host ThingsBoard widget library resources inside Trendz service
+* 解决 CSV 数据导出中的格式问题
+* 修复表格视图中的排序问题
 
-## v1.8.2 (December, 2021)
 
-Security update for resolving [CVE-2021-44228](https://nvd.nist.gov/vuln/detail/CVE-2021-44228) vulnerability. 
+## v1.9.1（2022 年 7 月）
 
- * Dependencies to log4j-core removed. 
- * Dependencies to log4j API version updated to version 2.15  
+**改进：**
 
-## v1.8.0 (August, 2021)
+* 大型报告的预览模式
+* 为散点图添加线性回归
+* 使用用户时区进行计划任务
+* 为 ThingsBoard 3.4+ 更新本机库
 
-**Improvements:**
 
- * Add persistent cache for states, simple and calculated fields
- * Add view report short term cache
- * Scheduled field cache refresh
- * Add native widget bundle for ThingsBoard
- * Change rendering engine for views that uses canvas
- * Add simplified REST API for 3rd party services
- * Add date click event for calendar view
- * Add row click event for tables
- * Add field changed event for switch config
- * Save state & calculated fields configuration
- * Improve query partitioning
- * Improve anomalies loading time
- * Add option for loading raw telemetry instead of partitioning
- * Add preview/edit links for views added on the dashboard
- * Add option for mark field as hidden in view
- 
+**错误修复：**
 
-**Bug fixes:**
+* 修复增量聚合
+* 修复字段的单独本地日期
+* 修复水平条形图缩放
+* 避免报告重复加载
+* 修复视图中的滚动
+* 修复日期时间标签格式
 
- * Table - fix total row when first field is not static
- * Clear duplicates when anomaly detection model cloned
- * Fix state duration percent calculation
- * Fix interval formatting issue on horizontal charts
- * Fix not valid JWT token storage
- * Fix deadlock in batch field calculation
+## v1.9.0（2022 年 4 月）
 
+**改进：**
 
-## v1.7.0 (April, 2021)
+* 添加可配置的填充间隙策略
+* 添加视图模板
+* 将计算的指标作为遥测数据保存在 ThingsBoard 中
+* 支持报告的警报字段
+* 支持报告的异常字段
+* 在饼图中组合多个字段
+* 保存状态和计算字段以供重复使用
+* 实现与状态和计算字段相关的多根加载
+* 切换到状态和计算字段的 javascript 引擎
+* 改进时间序列预测模型
+* 支持 ThingsBoard 的间隔时间窗口
+* 改进大型数据集的性能
+* 为 ThingsBoard 3.3+ 更新本机库
+* 自动刷新报告中的过滤器值
+* 将资源路径更新为允许在同一域上托管 Trendz 和 Thingsboard
+* 条形图/折线图的可配置工具提示类型
+* 在报告构建期间收集测量值
+* 将 ThingsBoard 小部件库资源托管在 Trendz 服务中
 
-**Improvements:**
+## v1.8.2（2021 年 12 月）
 
- * Add automated anomaly detection for assets and devices
- * Switch from in-memory DB to PostgreSQL
- * Add configuration Import/Export to file
- * Configure default sort order for reports
- * Table widget - add fit columns options
+安全更新，用于解决 [CVE-2021-44228](https://nvd.nist.gov/vuln/detail/CVE-2021-44228) 漏洞。
 
+* 删除对 log4j-core 的依赖。
+* 将对 log4j API 版本的依赖更新到版本 2.15
 
-**Bug fixes:**
+## v1.8.0（2021 年 8 月）
 
- * Fix state overlapping issue
- * Fix duration formatting for states
- * Fix filtering for text fields
+**改进：**
 
+* 为状态、简单字段和计算字段添加持久缓存
+* 添加视图报告短期缓存
+* 计划字段缓存刷新
+* 添加 ThingsBoard 的本机小部件包
+* 更改使用画布的视图的渲染引擎
+* 为第三方服务添加简化的 REST API
+* 为日历视图添加日期单击事件
+* 为表格添加行单击事件
+* 为开关配置添加字段更改事件
+* 保存状态和计算字段配置
+* 改进查询分区
+* 改进异常加载时间
+* 添加加载原始遥测数据而不是分区的选项
+* 为仪表板中添加的视图添加预览/编辑链接
+* 添加将字段标记为视图中隐藏的选项
 
-## v1.6.0 (January, 2021)
 
-**Improvements:**
+**错误修复：**
 
- * Support ThingsBoard Filtering API
- * Add Calendar heatmap widget
- * Configure Filter visibility
- * Support of row-click events in ThingsBoard dashboards
- * Access to rquest start/end time in calculated fields
- * Add support for Centos 8
- * Improve Fourier Transformation prediction model
- * Other performance improvements
+* 修复第一个字段不是静态时表格的总行
+* 克隆异常检测模型时清除重复项
+* 修复状态持续时间百分比计算
+* 修复水平图表上的间隔格式问题
+* 修复无效的 JWT 令牌存储
+* 修复批量字段计算中的死锁
 
 
-**Bug fixes:**
+## v1.7.0（2021 年 4 月）
 
- * Fix state duration rounding problems
- * Fix data duplication in reports
- * Fix data double loading
- * Fix label formatting for states and calculated fields
+**改进：**
 
-## v1.5.1 (September, 2020)
+* 添加资产和设备的自动异常检测
+* 从内存数据库切换到 PostgreSQL
+* 将配置导入/导出到文件
+* 配置报告的默认排序顺序
+* 表格小部件 - 添加适合列选项
 
-**Bug fixes:**
 
- * Fix total row calculation for tables
- * Validate filtering options
- * Fix query partitioning for duplicated intervals
+**错误修复：**
 
-## v1.5.0 (August, 2020)
+* 修复状态重叠问题
+* 修复状态的持续时间格式
+* 修复文本字段的过滤
 
-**Improvements:**
 
- * Add White-Labeling options
- * Support of built-in and custom Themes for visualizations 
- * Configurable palette colors for charts and heatmaps
- * Configurable font size
- * Individual decimal points for each field
- * Configurable visualization toolbar
- * Show/Hide Total column for tables
- * Change legend position
- * Configurable stroke types for charts
- * Widget Bundle: take time from ThingsBoard dashboard 
- * Widget Bundle: support multi-value filters via ThingsBoard aliases 
- * Configurable axis position and labels
+## v1.6.0（2021 年 1 月）
 
-**Bug fixes:**
+**改进：**
 
- * Fix for timezone precessing 
- * Remove redundant scroll for embedded visualizations
- * Fix for empty heatmap/bar chart with single series
- * Fix for topology rediscovery process
- * Fix sorting of date fields
+* 支持 ThingsBoard 过滤 API
+* 添加日历热图小部件
+* 配置过滤器可见性
+* 支持 ThingsBoard 仪表板中的行单击事件
+* 访问计算字段中的请求开始/结束时间
+* 添加对 Centos 8 的支持
+* 改进傅里叶变换预测模型
+* 其他性能改进
 
 
-## v1.4.1 (June, 2020)
+**错误修复：**
 
+* 修复时区处理问题
+* 删除嵌入式可视化的冗余滚动
+* 修复具有单个系列的空热图/条形图
+* 修复拓扑重新发现过程
+* 修复日期字段的排序
 
-**Improvements:**
 
- * ThingsBoard v3.x support
- * Apply decimal points for visualizations
- * Change order of fields loading
- * Remove empty series from visualization
- * Reuse saved date grouping
- * User User API for entity fetching
- * Fill gaps in loaded data
- * Add Label field into topology
+## v1.5.1（2020 年 9 月）
 
+**错误修复：**
 
-**Bug fixes:**
+* 修复表格的总行计算
+* 验证过滤选项
+* 修复重复间隔的查询分区
 
- * Fix infinit canceled tasks
- * Clear removed relations after topology rediscovery
- * ThingsBoard public user authentication
- * Not valid Count aggregation for streams
- * Fix bar height detection
- 
+## v1.5.0（2020 年 8 月）
 
-## v1.4.0 (April, 2020)
+**改进：**
 
-**Improvements:**
+* 添加白标选项
+* 支持可视化的内置和自定义主题
+* 图表和热图的可配置调色板颜色
+* 可配置的字体大小
+* 每个字段的单独小数点
+* 可配置的可视化工具栏
+* 显示/隐藏表格的总列
+* 更改图例位置
+* 图表的可配置笔划类型
+* 小部件包：从 ThingsBoard 仪表板获取时间
+* 小部件包：通过 ThingsBoard 别名支持多值过滤器
+* 可配置的轴位置和标签
 
- * Timeseries forecast
- * State fields
- * Cache and reuse data streams
- * Remove redundant points form analysis
- * Enable horizontal bars
+**错误修复：**
 
-**Bug fixes:**
+* 修复时区处理
+* 删除嵌入式可视化的冗余滚动
+* 修复具有单个系列的空热图/条形图
+* 修复拓扑重新发现过程
+* 修复日期字段的排序
 
- * Fix TB connection leaks
- * Fix subcustomer fetching
+
+## v1.4.1（2020 年 6 月）
+
+
+**改进：**
+
+* ThingsBoard v3.x 支持
+* 应用可视化的十进制点
+* 更改字段加载顺序
+* 从可视化中删除空系列
+* 重用保存的日期分组
+* 用于实体获取的用户用户 API
+* 填充加载数据中的空白
+* 将标签字段添加到拓扑中
+
+
+**错误修复：**
+
+* 修复无限取消的任务
+* 拓扑重新发现后清除已删除的关系
+* ThingsBoard 公共用户身份验证
+* 流的不有效计数聚合
+* 修复条形图高度检测
+
+
+## v1.4.0（2020 年 4 月）
+
+**改进：**
+
+* 时间序列预测
+* 状态字段
+* 缓存和重用数据流
+* 从分析中删除冗余点
+* 启用水平条形图
+
+**错误修复：**
+
+* 修复 TB 连接泄漏
+* 修复子客户获取

@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-paas
-title: FAQ
-description: ThingsBoard FAQ
+title: 常见问题解答
+description: ThingsBoard 常见问题解答
 
 ---
 

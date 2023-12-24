@@ -1,23 +1,21 @@
 ---
 layout: docwithnav
-title: Raspberry Pi GPIO control over MQTT using ThingsBoard
-description: ThingsBoard IoT Platform sample for Raspberry Pi GPIO control over MQTT
+title: 使用 ThingsBoard 通过 MQTT 控制 Raspberry Pi GPIO
+description: ThingsBoard IoT 平台示例，用于通过 MQTT 控制 Raspberry Pi GPIO
 
 ---
 
 * TOC
 {:toc}
 
-## Introduction
+## 简介
 {% include templates/what-is-thingsboard.md %}
 
-This sample application will allow you to control GPIO of your Raspberry Pi device using ThingsBoard web UI. We will observe GPIO control using Led connected to one of the pins.
-The purpose of this application is to demonstrate ThingsBoard [RPC capabilities](/docs/user-guide/rpc/).
+此示例应用程序允许您使用 ThingsBoard Web UI 控制 Raspberry Pi 设备的 GPIO。我们将观察连接到其中一个引脚的 LED 来控制 GPIO。此应用程序的目的是演示 ThingsBoard [RPC 功能](/docs/user-guide/rpc/)。
 
-Raspberry Pi will use simple application written in Python that will connect to ThingsBoard server via [MQTT](https://en.wikipedia.org/wiki/MQTT) and listen to RPC commands.
-Current GPIO state and GPIO control widget is visualized using built-in customizable dashboard. 
+Raspberry Pi 将使用用 Python 编写的简单应用程序，该应用程序将通过 [MQTT](https://en.wikipedia.org/wiki/MQTT)连接到 ThingsBoard 服务器并侦听 RPC 命令。当前 GPIO 状态和 GPIO 控制小部件使用内置的可自定义仪表板进行可视化。
 
-The video below demonstrates the final result of this tutorial.
+下面的视频演示了本教程的最终结果。
 
 <br>
 <br>
@@ -31,83 +29,83 @@ The video below demonstrates the final result of this tutorial.
 
 {% include templates/prerequisites.md %}
 
-## List of hardware and pinouts
+## 硬件和引脚列表
 
- - [Raspberry Pi](https://en.wikipedia.org/wiki/Raspberry_Pi) - we will use Raspberry Pi 3 Model B but you can use any other model.
- 
- - Led and corresponding resistor 
+- [Raspberry Pi](https://en.wikipedia.org/wiki/Raspberry_Pi) - 我们将使用 Raspberry Pi 3 Model B，但您可以使用任何其他型号。
 
- - 2 female-to-male jumper wires
+- LED 和相应的电阻
 
-## Wiring schema
+- 2 根母对公跳线
 
- Since our application will allow controlling the state of all available GPIO pins, we recommend attaching some LEDs to those pins for visibility.
- You can use this [basic instruction](https://www.raspberrypi.org/documentation/usage/gpio/) or [another one](https://projects.drogon.net/raspberry-pi/gpio-examples/tux-crossing/gpio-examples-1-a-single-led/) to wire some LEDs.
+## 接线图
 
-## Programming the Raspberry Pi
+由于我们的应用程序允许控制所有可用 GPIO 引脚的状态，因此我们建议将一些 LED 连接到这些引脚以提高可见性。
+您可以使用此 [基本说明](https://www.raspberrypi.org/documentation/usage/gpio/)或 [另一个说明](https://projects.drogon.net/raspberry-pi/gpio-examples/tux-crossing/gpio-examples-1-a-single-led/)来连接一些 LED。
 
-### MQTT library installation
+## 编程 Raspberry Pi
 
-The following command will install MQTT Python library:
+### 安装 MQTT 库
+
+以下命令将安装 MQTT Python 库：
 
 ```bash
 sudo pip install paho-mqtt
 ```
 
-### Application source code
+### 应用程序源代码
 
-Our application consists of a single python script that is well documented. 
-You will need to modify **THINGSBOARD_HOST** constant to match your ThingsBoard server installation IP address or hostname.
-Use "demo.thingsboard.io" if you are using [live demo](https://demo.thingsboard.io/) server.
+我们的应用程序由一个记录良好的 Python 脚本组成。
 
-The value of **ACCESS_TOKEN** constant corresponds to sample Raspberry Pi device in pre-provisioned [demo data](/docs/samples/demo-account/#tenant-devices).
-If you are using [live demo](https://demo.thingsboard.io/) server - [get the access token](/docs/user-guide/ui/devices/#manage-device-credentials) for pre-provisioned "Raspberry Pi Demo Device".
+您需要修改 **THINGSBOARD_HOST** 常量以匹配您的 ThingsBoard 服务器安装 IP 地址或主机名。
+如果您使用的是 [实时演示](https://demo.thingsboard.io/)服务器，请使用“demo.thingsboard.io”。
+
+**ACCESS_TOKEN** 常量值对应于预置 [演示数据](/docs/samples/demo-account/#tenant-devices)中的示例 Raspberry Pi 设备。
+如果您使用的是 [实时演示](https://demo.thingsboard.io/)服务器 - [获取访问令牌](/docs/user-guide/ui/devices/#manage-device-credentials)以预置“Raspberry Pi 演示设备”。
 
 {% capture tabspec %}python-script
 gpio,gpio.py,python,resources/gpio.py,/docs/samples/raspberry/resources/gpio.py{% endcapture %}
 {% include tabs.html %}
 
-### Running the application
+### 运行应用程序
 
-This simple command will launch the application:
+此简单命令将启动应用程序：
 
 ```bash
 python gpio.py
 ```
 
-## Data visualization
+## 数据可视化
 
-In order to simplify this guide, we have included "Raspberry PI GPIO Demo Dashboard" to the [demo data](/docs/samples/demo-account/#dashboards) that is available in each ThingsBoard installation. 
-You still can modify this dashboard: tune, add, delete widgets, etc.
-You can access this dashboard by logging in as a tenant administrator. Use
+为了简化本指南，我们已将“Raspberry PI GPIO 演示仪表板”包含在每个 ThingsBoard 安装中可用的 [演示数据](/docs/samples/demo-account/#dashboards)中。
+您仍然可以修改此仪表板：调整、添加、删除小部件等。
+您可以通过以租户管理员身份登录来访问此仪表板。使用
 
- - login: tenant@thingsboard.org
- - password: tenant
- 
-in case of local ThingsBoard installation.
- 
-Once logged in, open **Dashboards->Raspberry PI GPIO Demo Dashboard** page. You should observe demo dashboard with GPIO control and status panel for your device. 
-Now you can switch status of GPIOs using control panel. As a result, you will see LEDs status change on the device and on the status panel.
+- 登录名：tenant@thingsboard.org
+- 密码：tenant
 
-Below is the screenshot of the "Raspberry PI GPIO Demo Dashboard".  
+在本地 ThingsBoard 安装的情况下。
 
- ![image](/images/samples/raspberry/gpio/dashboard.png)
- 
-## See Also
+登录后，打开 **仪表板->Raspberry PI GPIO 演示仪表板** 页面。您应该观察到设备的 GPIO 控制和状态面板的演示仪表板。
+现在，您可以使用控制面板切换 GPIO 的状态。结果，您将看到设备和状态面板上的 LED 状态发生变化。
 
-Browse other [samples](/docs/samples) or explore guides related to main ThingsBoard features:
+以下是“Raspberry PI GPIO 演示仪表板”的屏幕截图。
 
- - [Device attributes](/docs/user-guide/attributes/) - how to use device attributes.
- - [Telemetry data collection](/docs/user-guide/telemetry/) - how to collect telemetry data.
- - [Using RPC capabilities](/docs/user-guide/rpc/) - how to send commands to/from devices.
- - [Rule Engine](/docs/user-guide/rule-engine/) - how to use rule engine to analyze data from devices.
- - [Data Visualization](/docs/user-guide/visualization/) - how to visualize collected data.
- 
+![image](/images/samples/raspberry/gpio/dashboard.png)
+
+## 另请参阅
+
+浏览其他 [示例](/docs/samples)或探索与 ThingsBoard 主要功能相关的指南：
+
+- [设备属性](/docs/user-guide/attributes/) - 如何使用设备属性。
+- [遥测数据收集](/docs/user-guide/telemetry/) - 如何收集遥测数据。
+- [使用 RPC 功能](/docs/user-guide/rpc/) - 如何向设备发送/从设备接收命令。
+- [规则引擎](/docs/user-guide/rule-engine/) - 如何使用规则引擎分析来自设备的数据。
+- [数据可视化](/docs/user-guide/visualization/) - 如何可视化收集的数据。
+
 {% include templates/feedback.md %}
-  
+
 {% include socials.html %}
 
-## Next steps
+## 后续步骤
 
 {% assign currentGuide = "HardwareSamples" %}{% include templates/guides-banner.md %}
-

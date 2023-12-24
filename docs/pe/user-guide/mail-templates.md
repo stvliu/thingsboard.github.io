@@ -2,7 +2,7 @@
 layout: docwithnav-pe
 assignees:
 - stitenko
-title: Mail Templates
+title: 邮件模板
 description:
 redirect_from: "/docs/user-guide/mail-templates/"
 

@@ -2,67 +2,66 @@
 layout: docwithnav-trendz
 assignees:
 - vparomskiy
-title: Card
-description: Trendz Card
+title: 卡片
+description: Trendz 卡片
 ---
 
 * TOC
 {:toc}
 
 
-Card widget allows visualizing the single important metrics and monitors its dynamics.
+卡片小部件允许可视化单个重要指标并监控其动态。
 
-## Video Tutorial
+## 视频教程
 
-&nbsp; 
-  
-<div id="video">  
+&nbsp;
+
+<div id="video">
     <div id="video_wrapper">
         <iframe src="https://www.youtube.com/embed/ZXORc5nipgg" frameborder="0" allowfullscreen></iframe>
     </div>
 </div>
 
 
-## Simple Card
+## 简单卡片
 
-For creating simple Card view:
+若要创建简单卡片视图：
 
-* drag and drop the field that you would like to monitor in the **Main Value** column;
-* select required aggregation type
+* 将您想要在“**主值**”列中监控的字段拖放；
+* 选择所需的聚合类型
 
 ![image](/images/trendz/card-simple.png)
 
 ![image](/images/trendz/card-simple-view.png)
 
-## Compare with other value
+## 与其他值比较
 
-We can compare main value with another one. For example we have required amount of products that should be produced, saved as telemetry of the device.
-And we ant compare it with how many products already produced.
+我们可以将主值与另一个值进行比较。例如，我们有需要生产的产品数量，将其保存为设备遥测。
+并且我们希望将其与已经生产的产品数量进行比较。
 
-* Add the value for comparison in the **Compared value** column;
+* 在“**比较值**”列中添加要比较的值；
 
 ![image](/images/trendz/card-compare.png)
 
 ![image](/images/trendz/card-compare-view.png)
 
-The compared value will present the difference between these two figures in percentage.
+比较值将以百分比的形式显示这两个数字之间的差异。
 
-## Compare with previous interval
+## 与前一个间隔比较
 
-We can also compare current value with the previous interval. If we want show how much coffee beans consumed in 
-this month compared to the previous month:
+我们还可以将当前值与前一个间隔进行比较。如果我们想显示本月与上个月相比消耗了多少咖啡豆：
 
-* For the field in the **Compared value** section enable **Local Date**
-* Select **Prev Month** time range
-* For the main view time range set **This Month**
+* 对于“**比较值**”部分中的字段，启用“**本地日期**”
+* 选择“**上个月**”时间范围
+* 对于主视图时间范围，设置“**本月**”
 
 ![image](/images/trendz/card-local-config.png)
 
 ![image](/images/trendz/card-local.png)
 
-The compared value will present the difference between these two figures in percentage.
+比较值将以百分比的形式显示这两个数字之间的差异。
 
-## Card title
+## 卡片标题
 
-While creating the card you can give it a meaningful name for quick navigation. 
-To do that, open the setting section in the right bottom corner and add Name in the Title section.
+在创建卡片时，您可以为其命名一个有意义的名称，以便快速导航。
+为此，请打开右下角的设置部分，并在“标题”部分中添加名称。

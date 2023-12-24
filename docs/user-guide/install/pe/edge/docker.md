@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-pe-edge
-title: Installing ThingsBoard Edge using Docker (Linux or Mac OS)
-description: Installing ThingsBoard Edge using Docker (Linux or Mac OS)
+title: 使用 Docker 安装 ThingsBoard Edge（Linux 或 Mac OS）
+description: 使用 Docker 安装 ThingsBoard Edge（Linux 或 Mac OS）
 
 ---
 
@@ -12,41 +12,41 @@ description: Installing ThingsBoard Edge using Docker (Linux or Mac OS)
 
 {% assign docsPrefix = "pe/edge/" %}
 
-This guide will help you to install and start ThingsBoard Edge using Docker on Linux or Mac OS.
+本指南将帮助您在 Linux 或 Mac OS 上使用 Docker 安装并启动 ThingsBoard Edge。
 
 {% include templates/edge/install/prerequisites.md %}
 
-### Docker installation
+### Docker 安装
 
-- [Install Docker CE](https://docs.docker.com/engine/install/){:target="_blank"}
-- [Install Docker Compose](https://docs.docker.com/compose/install/){:target="_blank"}
+- [安装 Docker CE](https://docs.docker.com/engine/install/){:target="_blank"}
+- [安装 Docker Compose](https://docs.docker.com/compose/install/){:target="_blank"}
 
 {% include templates/install/docker-install-note.md %}
 
-## Guided Installation Using ThingsBoard Server Pre-configured Instructions
+## 使用 ThingsBoard 服务器预配置说明进行引导安装
 
 {% include templates/edge/install/tb-server-pre-configured-install-instructions.md %}
 
 {% include templates/edge/install/manual-install-instructions-intro.md %}
 
-### Step 1. Pull ThingsBoard Edge Images
+### 步骤 1. 拉取 ThingsBoard Edge 镜像
 
 {% include templates/edge/install/pull-images.md %}
 
-### Step 2. Running ThingsBoard Edge
+### 步骤 2. 运行 ThingsBoard Edge
 
 {% include templates/edge/install/docker-images-location.md %}
 
 {% include templates/edge/install/copy-edge-credentials.md %}
 
-Create docker compose file for ThingsBoard Edge service:
+为 ThingsBoard Edge 服务创建 docker compose 文件：
 
 ```text
 nano docker-compose.yml
 ```
 {: .copy-code}
 
-Add the following lines to the yml file:
+将以下行添加到 yml 文件：
 
 ```yml
 version: '3.0'
@@ -96,27 +96,24 @@ mkdir -p ~/.mytb-edge-data && sudo chown -R 799:799 ~/.mytb-edge-data
 {: .copy-code}
 
 
-**NOTE**: Replace directory `~/.mytb-edge-data` and `~/.mytb-edge-logs` with directories you’re planning to use in `docker-compose.yml`.
+**注意**：将目录 `~/.mytb-edge-data` 和 `~/.mytb-edge-logs` 替换为计划在 `docker-compose.yml` 中使用的目录。
 
 {% assign serviceName = "tbedge" %}
 {% include templates/install/docker/docker-compose-up.md %}
 
-### Step 3. Open ThingsBoard Edge UI
+### 步骤 3. 打开 ThingsBoard Edge UI
 
 {% include templates/edge/install/open-edge-ui.md %}
 
-### Step 4. Detaching, stop and start commands
+### 步骤 4. 分离、停止和启动命令
 
 {% assign serviceFullName = "ThingsBoard Edge" %}
 {% include templates/install/docker/detaching-stop-start-commands.md %}
 
-## Troubleshooting
+## 故障排除
 
 {% include templates/edge/install/docker-troubleshooting.md %}
 
-## Next Steps
+## 后续步骤
 
 {% include templates/edge/install/next-steps.md %}
-
-
-

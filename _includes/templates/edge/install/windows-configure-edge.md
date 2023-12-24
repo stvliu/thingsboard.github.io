@@ -4,19 +4,19 @@
 {% assign appPrefix = "ThingsBoard" %}
 {% endif %}
 
-Open the Notepad or other editor as administrator user (right click on the app icon and select "Run as administrator").  
-Open the following file for editing (select "All Files" instead of "Text Documents" in file choosing dialog, the encoding is UTF-8):
+以管理员用户身份打开记事本或其他编辑器（右键单击应用程序图标并选择“以管理员身份运行”）。
+打开以下文件进行编辑（在文件选择对话框中选择“所有文件”而不是“文本文档”，编码为 UTF-8）：
 
 ```text 
 C:\Program Files (x86)\tb-edge\conf\tb-edge.yml
 ``` 
 {: .copy-code}
 
-##### Database configuration
+##### 数据库配置
 
-In the file "tb-edge.yml" from the previous step locate "# SQL DAO Configuration" block. 
+在上一步骤的“tb-edge.yml”文件中找到“# SQL DAO Configuration”块。
 
-Don't forget to **replace YOUR_POSTGRES_PASSWORD_HERE** with your real postgres user password:
+别忘了用你的真实 postgres 用户密码替换 **YOUR_POSTGRES_PASSWORD_HERE**：
 
 ```yml
 # SQL DAO Configuration
@@ -34,23 +34,23 @@ spring:
     username: "${SPRING_DATASOURCE_USERNAME:postgres}"
     password: "${SPRING_DATASOURCE_PASSWORD:YOUR_POSTGRES_PASSWORD_HERE}"
 ``` 
-##### Configure cloud connectivity
+##### 配置云连接
 
 {% include templates/edge/install/copy-edge-credentials.md %}
 
-Locate "# Cloud configuration" block and replace **PUT_YOUR_EDGE_KEY_HERE** and **PUT_YOUR_EDGE_SECRET_HERE** with Edge **key and secret** respectively. 
+找到“# Cloud configuration”块，并分别用 Edge **密钥和密码**替换 **PUT_YOUR_EDGE_KEY_HERE** 和 **PUT_YOUR_EDGE_SECRET_HERE**。
 
-Please replace **PUT_YOUR_CLOUD_IP** with an IP address of the machine where {{appPrefix}} version is running:
+请用 {{appPrefix}} 版本正在运行的机器的 IP 地址替换 **PUT_YOUR_CLOUD_IP**：
 {% if docsPrefix == 'pe/edge/' %}
-* Use **thingsboard.cloud** in case you are connecting edge to [**ThingsBoard Cloud**](https://thingsboard.cloud/signup).
+* 如果你要将 edge 连接到 [**ThingsBoard Cloud**](https://thingsboard.cloud/signup)，请使用 **thingsboard.cloud**。
 
-**NOTE**: **thingsboard.cloud** uses SSL protocol for edge communication. 
-Please change **CLOUD_RPC_SSL_ENABLED** to **true** as well.
+**注意**：**thingsboard.cloud** 使用 SSL 协议进行 edge 通信。
+请也将 **CLOUD_RPC_SSL_ENABLED** 改为 **true**。
 {% else %}
-* Use **demo.thingsboard.io** if you are connecting edge to [**ThingsBoard Live Demo**](https://demo.thingsboard.io/signup) for evaluation.
+* 如果你要将 edge 连接到 [**ThingsBoard Live Demo**](https://demo.thingsboard.io/signup) 进行评估，请使用 **demo.thingsboard.io**。
 {% endif %}
-* Use **localhost** in case edge is running on the same machine where cloud instance is running. 
-* Use **X.X.X.X** IP address in case edge is connecting to the cloud instance in the same network or in the docker.
+* 如果 edge 在与云实例相同的机器上运行，请使用 **localhost**。
+* 如果 edge 连接到同一网络或 docker 中的云实例，请使用 **X.X.X.X** IP 地址。
 
 {% if docsPrefix == 'pe/edge/' %}
 ```yml
@@ -61,7 +61,7 @@ cloud:
     rpc:
       host: "${CLOUD_RPC_HOST:PUT_YOUR_CLOUD_IP}"
       ssl:
-        # Set to 'true' if using thingsboard.cloud or if you have configured a TLS connection on your Server; set to 'false' otherwise.
+        # 如果使用 thingsboard.cloud 或在服务器上配置了 TLS 连接，则设置为 'true'；否则设置为 'false'。
         enabled: "${CLOUD_RPC_SSL_ENABLED:true/false}" 
 ```
 {% else %}
@@ -76,9 +76,9 @@ cloud:
 {% endif %}
 
 {% capture local-deployment %}
-If ThingsBoard Edge is set to run on the same machine where the **{{appPrefix}}** server is operating, you need to update additional configuration parameters to prevent port collision between the ThingsBoard server and ThingsBoard Edge.
+如果 ThingsBoard Edge 设置为在运行 **{{appPrefix}}** 服务器的同一台机器上运行，则需要更新其他配置参数，以防止 ThingsBoard 服务器和 ThingsBoard Edge 之间发生端口冲突。
 
-Please locate and change next parameters in ThingsBoard Edge configuration file (**C:\Program Files (x86)\tb-edge\conf\tb-edge.yml**):
+请在 ThingsBoard Edge 配置文件（**C:\Program Files (x86)\tb-edge\conf\tb-edge.yml**）中找到并更改以下参数：
 <br>
 <br>**...**
 <br>**port: "${HTTP_BIND_PORT:18080}"**
@@ -93,7 +93,7 @@ Please locate and change next parameters in ThingsBoard Edge configuration file 
 <br>**bind_port: "${INTEGRATIONS_RPC_PORT:19090}"**
 <br>**...**
 {% endif %}
-Ensure that the ports listed above (18080, 11883, 15683) are not being used by any other application.
+确保上面列出的端口（18080、11883、15683）未被任何其他应用程序使用。
 
 {% endcapture %}
 {% include templates/info-banner.md content=local-deployment %}

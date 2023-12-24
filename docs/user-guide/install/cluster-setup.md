@@ -2,9 +2,9 @@
 layout: docwithnav
 assignees:
 - ashvayka
-title: Cluster setup
+title: 集群设置
 notitle: "true"
-description: ThingsBoard IoT platform cluster setup guide
+description: ThingsBoard IoT 平台集群设置指南
 
 ---
 
@@ -13,10 +13,10 @@ description: ThingsBoard IoT platform cluster setup guide
        <div class="install-options-hero">
           <div class="container">
             <div class="install-options-hero-content">
-                <h1>ThingsBoard Cluster setup options</h1>
+                <h1>ThingsBoard 集群设置选项</h1>
                 <div class="install-options-description">
                     <p>
-                        You may deploy ThingsBoard IoT Platform using different tools and platforms
+                        你可以使用不同的工具和平台部署 ThingsBoard IoT 平台
                     </p>
                 </div>
             </div>

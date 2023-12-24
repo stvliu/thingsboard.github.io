@@ -1,47 +1,45 @@
 ---
 layout: docwithnav-gw
-title: How to use remote converter update
-description: How to use remote converter update
+title: 如何使用远程转换器更新
+description: 如何使用远程转换器更新
 
 ---
 
 * TOC
 {:toc}
 
-"Remote converter update" allows you to remotely update the configuration of a converter by utilizing a shared attribute.
-This guide will help you to use this feature for updating your converters configuration remotely.
+“远程转换器更新”允许您通过利用共享属性来远程更新转换器的配置。本指南将帮助您使用此功能来远程更新转换器配置。
 
-For the purpose of this tutorial, you need:  
-1. Locally installed instance of ThingsBoard platform (In case you are new with ThingsBoard [use this 'how to install' documentation](/docs/user-guide/install/installation-options/)).
-2. [Installed](/docs/iot-gateway/installation/) and [configured](/docs/iot-gateway/configuration/) ThingsBoard IoT Gateway. 
+出于本教程的目的，您需要：
+1. ThingsBoard 平台的本地安装实例（如果您是 ThingsBoard 新手，[请使用此“如何安装”文档](/docs/user-guide/install/installation-options/)）。
+2. [已安装](/docs/iot-gateway/installation/)且[已配置](/docs/iot-gateway/configuration/) ThingsBoard IoT 网关。
 
-## Step 1 Create shared attribute on the gateway device
+## 步骤 1 在网关设备上创建共享属性
 
-You have to create a shared attribute on the gateway device using the following 
-format `<Connector Name>:<Converter Class Name>` as a key and write converter configuration as a value.
+您必须使用以下格式在网关设备上创建共享属性，即以“<Connector Name>:<Converter Class Name>”作为键，并将转换器配置写为值。
 
-For example:
+例如：
 ![](/images/gateway/remote-converter-update-create-shared-attr.png)
 
-On the screenshot above we created shared attribute for remote updating MQTT default JSON converter configuration.
+在上面的屏幕截图中，我们为远程更新 MQTT 默认 JSON 转换器配置创建了共享属性。
 
-## Step 2 Update provided shared attribute
+## 步骤 2 更新提供的共享属性
 
-For getting new converter configuration update, you have to provide shared attribute with new configuration.
-For example:
+要获取新的转换器配置更新，您必须提供具有新配置的共享属性。
+例如：
 ![](/images/gateway/remote-converter-update-shared-attr.png)
 
-## Step 3 Logs
+## 步骤 3 日志
 
-If the above steps were well done, you will see the following gateway logs:
+如果上述步骤完成得很好，您将看到以下网关日志：
 ![](/images/gateway/remote-converter-update-logs.png)
 
-## Next steps
+## 后续步骤
 
-Explore guides related to main ThingsBoard features:
+探索与 ThingsBoard 主要功能相关的指南：
 
- - [Data Visualization](/docs/user-guide/visualization/) - how to visualize collected data.
- - [Device attributes](/docs/user-guide/attributes/) - how to use device attributes.
- - [Telemetry data collection](/docs/user-guide/telemetry/) - how to collect telemetry data.
- - [Using RPC capabilities](/docs/user-guide/rpc/) - how to send commands to/from devices.
- - [Rule Engine](/docs/user-guide/rule-engine/) - how to use rule engine to analyze data from devices.
+- [数据可视化](/docs/user-guide/visualization/) - 如何可视化收集的数据。
+- [设备属性](/docs/user-guide/attributes/) - 如何使用设备属性。
+- [遥测数据收集](/docs/user-guide/telemetry/) - 如何收集遥测数据。
+- [使用 RPC 功能](/docs/user-guide/rpc/) - 如何向设备发送/从设备接收命令。
+- [规则引擎](/docs/user-guide/rule-engine/) - 如何使用规则引擎来分析来自设备的数据。

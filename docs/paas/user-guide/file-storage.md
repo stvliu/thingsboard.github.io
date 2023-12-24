@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-paas
-title: File Storage
-description: File Storage Guide
+title: 文件存储
+description: 文件存储指南
 ---
 
 {% assign docsPrefix = "paas/" %}

@@ -1,56 +1,53 @@
+**TBMQ** 代表一个开源 MQTT 消息代理。它能够处理超过 **4M** 个并发客户端连接，
+支持每个集群节点每秒至少 [3M 条消息吞吐量](/docs/mqtt-broker/reference/3m-throughput-single-node-performance-test/)，延迟低。
+在集群模式下，它的功能进一步增强，
+使其能够支持超过 [100M 个并发连接的客户端](/docs/mqtt-broker/reference/100m-connections-performance-test/)。
 
-**TBMQ** represents an open-source MQTT message broker. It has the capacity to handle more than **4M** concurrent client connections, 
-supporting a minimum of [3M messages per second throughput](/docs/mqtt-broker/reference/3m-throughput-single-node-performance-test/) per single cluster node 
-with low latency delivery. 
-In the cluster mode, its capabilities are further enhanced, 
-enabling it to support more than [100M concurrently connected clients](/docs/mqtt-broker/reference/100m-connections-performance-test/).
+在 ThingsBoard 公司，我们对各种物联网需求和用例的专业知识和理解使我们能够辨别
+我们的客户开发其解决方案的两个主要场景。
+第一个场景需要大量设备生成大量消息，这些消息被特定应用程序使用，从而形成扇入模式。相反，第二个场景涉及大量设备订阅特定更新或通知，
+导致需要大量传出数据的少数传入请求，称为扇出模式。
+认识到这些场景，我们有目的地设计 TBMQ 以使其非常适合两者。
 
-Within the ThingsBoard company, our expertise and understanding of diverse IoT requirements and use cases have enabled us to discern
-two primary scenarios in which our clients develop their solutions. 
-The first scenario entails numerous devices generating a substantial volume of messages that are consumed by specific applications, 
-resulting in a fan-in pattern. Conversely, the second scenario involves numerous devices subscribing to specific updates or notifications, 
-leading to a few incoming requests that necessitate a high volume of outgoing data, known as a fan-out pattern. 
-Acknowledging these scenarios, we purposefully designed TBMQ to be exceptionally well-suited for both.
+此尖端解决方案使用 Java 实现，利用了突出的开源技术（例如 Kafka）开发，
+这确保了平台的低延迟消息传递、数据持久性和水平可扩展性。
 
-Implemented in Java, this cutting-edge solution is developed utilizing prominent open-source technologies such as Kafka, 
-which ensures low-latency message delivery, data durability, and horizontal scalability of the platform.
+从 2018 年开始，启动了一个积极而持续的开发过程，导致该代理集成到 2021 年的商业应用程序中。
+在生产环境中成功部署后，在 2023 年初确定应该提供代理的公共版本。
 
-Commencing in 2018, an active and continuous development process was initiated, leading to the integration of the broker into commercial applications as of 2021. 
-Following its successful deployment in production environments, it was determined in early 2023 that a public version of the broker should be made available.
+#### TBMQ 功能
 
-#### TBMQ Features
-
-- Clean & persistent sessions
-- Quality of Service (QoS) 0
+- 清洁和持久会话
+- 服务质量 (QoS) 0
 - QoS 1
 - QoS 2
-- Retained messages
-- Last Will and Testament
-- Keep Alive & Client Takeover
-- Transmission Control Protocol (TCP) / Secure Sockets Layer (SSL) connection support
-- Username and password authentication support
-- X.509 certificate chain authentication support
-- Wildcard subscriptions
-- MQTT Ordered Topic guarantees for QoS 1 and QoS 2
-- Session & message expiry intervals
-- Multi-server node cluster (Cluster)
-- Access control (ACL) based on client ID, username or X.509 certificate chain
-- REST query support for clients' status and subscriptions
-- Rate limits of incoming messages per client
+- 保留消息
+- 遗嘱和遗言
+- 保持活动和客户端接管
+- 传输控制协议 (TCP)/安全套接字层 (SSL) 连接支持
+- 用户名和密码身份验证支持
+- X.509 证书链身份验证支持
+- 通配符订阅
+- MQTT 有序主题保证 QoS 1 和 QoS 2
+- 会话和消息到期间隔
+- 多服务器节点集群（集群）
+- 基于客户端 ID、用户名或 X.509 证书链的访问控制 (ACL)
+- 对客户端状态和订阅的 REST 查询支持
+- 每个客户端的传入消息速率限制
 - MQTT 5 [*](https://github.com/thingsboard/tbmq#tbmq)
 
 
-#### Architecture
+#### 架构
 
-TBMQ is designed to be:
+TBMQ 被设计为：
 
-* **scalable**: the platform is horizontally scalable and built using the leading open-source technologies;
-* **fault-tolerant**: there is no single point of failure, and every node in the cluster is identical, ensuring high availability and fault tolerance;
-* **robust and efficient**: depending on the use case, a single server node can handle millions of clients and hundreds of thousands of messages per second, making it highly efficient;
-* **durable**: the broker ensures data durability, preventing data loss.
+* **可扩展的**：该平台是水平可扩展的，并使用领先的开源技术构建；
+* **容错的**：没有单点故障，集群中的每个节点都是相同的，确保了高可用性和容错性；
+* **健壮且高效的**：根据用例，单个服务器节点可以处理数百万个客户端和每秒数十万条消息，使其高效；
+* **持久的**：代理确保数据持久性，防止数据丢失。
 
-See [**TBMQ Architecture**](/docs/mqtt-broker/architecture) for more details.
+有关更多详细信息，请参阅 [**TBMQ 架构**](/docs/mqtt-broker/architecture)。
 
-#### Ready to get started?
+#### 准备开始了吗？
 
-<p><a href="/docs/mqtt-broker/getting-started/" class="button">Hello World Application</a></p>
+<p><a href="/docs/mqtt-broker/getting-started/" class="button">Hello World 应用程序</a></p>

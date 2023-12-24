@@ -1,10 +1,10 @@
 ---
 layout: devices-library-article
-title: How to connect Lenovo Leez SBC P710 to ThingsBoard?
-category: Single-board computers
-chip: Allwinner H5
-connectivity: Ethernet, WIFI, Bluetooth
-vendor: Lenovo
+title: 如何将 Lenovo Leez SBC P710 连接到 ThingsBoard？
+category: 单板计算机
+chip: 全志 H5
+connectivity: 以太网、WIFI、蓝牙
+vendor: 联想
 deviceImageFileName: lenovo-leez-sbc-p710.jpg
 docsPrefix: pe/
 ---

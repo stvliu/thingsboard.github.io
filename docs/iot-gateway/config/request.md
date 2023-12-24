@@ -1,32 +1,32 @@
 ---
 layout: docwithnav-gw
-title: Request Connector Configuration
-description: HTTP protocol support for ThingsBoard IoT Gateway
+title: 请求连接器配置
+description: ThingsBoard IoT 网关的 HTTP 协议支持
 
 ---
 
 * TOC
 {:toc}
 
-This guide will help you to get familiar with Request Connector configuration for ThingsBoard IoT Gateway.  
-Use [general configuration guide](/docs/iot-gateway/configuration/) to enable this Connector.  
-The purpose of this Connector is to connect to external HTTP(S) API endpoints and get data from them.  
-Connector is also able to push data to external HTTP(S) API based on the updates/commands from ThingsBoard.    
+本指南将帮助您熟悉 ThingsBoard IoT 网关的请求连接器配置。  
+使用 [通用配置指南](/docs/iot-gateway/configuration/) 启用此连接器。  
+此连接器的目的是连接到外部 HTTP(S) API 端点并从中获取数据。  
+连接器还能够根据 ThingsBoard 的更新/命令将数据推送到外部 HTTP(S) API。    
 
-This connector is useful when you have some HTTP(S) API endpoints in your device or some data in external resource and you would like to push this data to the ThingsBoard.    
+当您的设备中有一些 HTTP(S) API 端点或外部资源中有一些数据，并且您想将这些数据推送到 ThingsBoard 时，此连接器非常有用。    
 
-We will describe connector configuration file below.  
+我们将在下面描述连接器配置文件。  
 
-## Connector configuration: request.json
+## 连接器配置: request.json
 
-Connector configuration is a JSON file that contains information about how to connect to external API endpoints, what urls to use when reading data and how to process the data.  
-Let's review the format of the configuration file using example below.    
+连接器配置是一个 JSON 文件，其中包含有关如何连接到外部 API 端点、读取数据时要使用哪些 URL 以及如何处理数据的信息。  
+让我们使用下面的示例来查看配置文件的格式。    
 
-<b>Example of Request Connector config file.</b>
+<b>请求连接器配置文件示例。</b>
 
-Example listed below will connect to server on a localhost with 5000 port.  
-Connector will use basic HTTP authorization using username and password.  
-Then, connector will read data from a list of endpoints using urls from mapping section. See more info in a description below.  
+下面列出的示例将连接到具有 5000 端口的本地主机上的服务器。  
+连接器将使用用户名和密码的基本 HTTP 授权。  
+然后，连接器将使用映射部分中的 URL 从端点列表中读取数据。有关更多信息，请参见下面的说明。  
 
 {% capture requestConf %}
 {
@@ -150,84 +150,84 @@ Then, connector will read data from a list of endpoints using urls from mapping 
 {% include code-toggle.liquid code=requestConf params="conf|.copy-code.expandable-20" %}
 
 
-### General section
+### 常规部分
 
-| **Parameter** | **Default value**                 | **Description**                                           |
-|:-|:-|-
-| host          | **http://127.0.0.1:5000**         | Domain address or ip of the server.                       |
-| SSLVerify     | **true**                          | Verify or no SSL certificate on the server if available.  |
+| **参数** | **默认值** | **说明** |
+|:-|:-|:-|
+| host | **http://127.0.0.1:5000** | 服务器的域名地址或 IP。 |
+| SSLVerify | **true** | 如果可用，验证服务器上的 SSL 证书。 |
 |---
 
 
-### Security section
+### 安全部分
 
-This section provides configuration for client authorization at the external server.
- 
+本部分提供了外部服务器上客户端授权的配置。
+
 {% capture requestconnectorsecuritytogglespec %}
-Basic<small>Recommended</small>%,%username%,%templates/iot-gateway/request-connector-basic-security-config.md%br%
-Anonymous<small>No security</small>%,%anonymous%,%templates/iot-gateway/request-connector-anonymous-security-config.md{% endcapture %}
+基本<small>推荐</small>%,%username%,%templates/iot-gateway/request-connector-basic-security-config.md%br%
+匿名<small>无安全</small>%,%anonymous%,%templates/iot-gateway/request-connector-anonymous-security-config.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="requestConnectorCredentialsConfig" toggle-spec=requestconnectorsecuritytogglespec %}
 
 
-### Mapping section
+### 映射部分
 
-This configuration section contains array of objects with endpoints that the gateway will try to read after connecting to the server.  
-Also this section contains settings about processing incoming messages (converter).  
-After request, each response from that url is analyzed to extract device name, type and data (attributes and/or timeseries values).  
-By default, the gateway uses Json converter, but it is possible to provide custom converter. See [example](https://github.com/thingsboard/thingsboard-gateway/blob/master/thingsboard_gateway/extensions/request/custom_request_uplink_converter.py) in the source code.  
+此配置部分包含一个对象数组，其中包含网关在连接到服务器后尝试读取的端点。  
+此部分还包含有关处理传入消息（转换器）的设置。  
+请求后，将分析来自该 URL 的每个响应以提取设备名称、类型和数据（属性和/或时序值）。  
+默认情况下，网关使用 Json 转换器，但可以提供自定义转换器。请参阅源代码中的 [示例](https://github.com/thingsboard/thingsboard-gateway/blob/master/thingsboard_gateway/extensions/request/custom_request_uplink_converter.py)。  
 
-**Note**: You can specify multiple mapping objects inside the array.
+**注意**：您可以在数组中指定多个映射对象。
 
-| **Parameter**     | **Default value**                     | **Description**                                                   |
-|:-|:-|-
-| url               | **getdata**                           | Url address for sending request.                                  |
-| httpMethod        | **GET**                               | HTTP method for request (**GET**, **POST** etc.).                 |
-| httpHeaders       | **{ "ACCEPT": "application/json" }**  | Object contains additional HTTP headers for request.              |
-| allowRedirects    | **true**                              | Allow request redirection.                                        |
-| timeout           | **0.5**                               | Timeout for request.                                              |
-| scanPeriod        | **5**                                 | Rescan rate.                                                      |
+| **参数** | **默认值** | **说明** |
+|:-|:-|:-|
+| url | **getdata** | 用于发送请求的 URL 地址。 |
+| httpMethod | **GET** | 请求的 HTTP 方法（**GET**、**POST** 等）。 |
+| httpHeaders | **{ "ACCEPT": "application/json" }** | 对象包含请求的其他 HTTP 头。 |
+| allowRedirects | **true** | 允许请求重定向。 |
+| timeout | **0.5** | 请求超时。 |
+| scanPeriod | **5** | 重新扫描速率。 |
 |---
 
 
-#### Converter subsection
+#### 转换器子部分
 
-This subsection contains configuration for processing incoming messages.  
+此子部分包含有关处理传入消息的配置。  
 
-Types of request converters:  
-1. json -- Default converter  
-2. custom -- Custom converter (You can write it by yourself, and it will use to convert incoming data from the response.)  
+请求转换器的类型：  
+1. json -- 默认转换器  
+2. custom -- 自定义转换器（您可以自己编写，它将用于转换响应中的传入数据。）  
 
 {% capture requestconvertertypespec %}
-json<small>Recommended if json will be received in response</small>%,%json%,%templates/iot-gateway/request-converter-json-config.md%br%
-custom<small>Recommended if bytes or anything else will be received in response</small>%,%custom%,%templates/iot-gateway/request-converter-custom-config.md{% endcapture %}
+json<small>如果响应中收到 json，则推荐</small>%,%json%,%templates/iot-gateway/request-converter-json-config.md%br%
+custom<small>如果响应中收到字节或其他任何内容，则推荐</small>%,%custom%,%templates/iot-gateway/request-converter-custom-config.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="RequestConverterTypeConfig" toggle-spec=requestconvertertypespec %}
 
 
-### Attribute update section
+### 属性更新部分
 
-Configuration in this section are optional.  
-ThingsBoard allows to provision device attributes and fetch some of them from the device application.
-You can treat this as a remote configuration for devices. Your devices are able to request shared attributes from ThingsBoard.
-See [user guide](/docs/user-guide/attributes/) for more details.
+本部分中的配置是可选的。  
+ThingsBoard 允许配置设备属性并从设备应用程序中获取其中一些属性。
+您可以将其视为设备的远程配置。您的设备能够从 ThingsBoard 请求共享属性。
+有关更多详细信息，请参阅 [用户指南](/docs/user-guide/attributes/)。
 
-The "**attributeRequests**" configuration allows configuring the format of the corresponding attribute request and response messages. 
+“**attributeRequests**”配置允许配置相应属性请求和响应消息的格式。
 
-| **Parameter**                 | **Default value**                                     | **Description**                                                                                    |
-|:-|:-|-
-| httpMethod                    | **GET**                                               | HTTP method for request (**GET**, **POST** etc.).                                                  |
-| httpHeaders                   | **{ "CONTENT-TYPE": "application/json" }**            | Object contains additional HTTP headers for request.                                               |
-| timeout                       | **0.5**                                               | Timeout for request.                                                                               |
-| tries                         | **3**                                                 | Count of tries to send data                                                                        |
-| allowRedirects                | **true**                                              | Allow request redirection.                                                                         |
-| deviceNameFilter              | **SD.\***                                             | Regular expression device name filter, uses to determine, which function to execute.               |
-| attributeFilter               | **send_data**                                         | Regular expression attribute name filter, uses to determine, which function to execute.            |
-| requestUrlExpression          | **sensor/${deviceName}/${attributeKey}**              | JSON-path expression uses for creating url address to send a message.                              |
-| valueExpression               | **{\\"${attributeKey}\\":\\"${attributeValue}\\"}**   | JSON-path expression uses for creating the message data that will send to url.                     |
+| **参数** | **默认值** | **说明** |
+|:-|:-|:-|
+| httpMethod | **GET** | 请求的 HTTP 方法（**GET**、**POST** 等）。 |
+| httpHeaders | **{ "CONTENT-TYPE": "application/json" }** | 对象包含请求的其他 HTTP 头。 |
+| timeout | **0.5** | 请求超时。 |
+| tries | **3** | 发送数据的次数 |
+| allowRedirects | **true** | 允许请求重定向。 |
+| deviceNameFilter | **SD.\*** | 正则表达式设备名称过滤器，用于确定要执行哪个函数。 |
+| attributeFilter | **send_data** | 正则表达式属性名称过滤器，用于确定要执行哪个函数。 |
+| requestUrlExpression | **sensor/${deviceName}/${attributeKey}** | JSON 路径表达式用于创建发送消息的 URL 地址。 |
+| valueExpression | **{\\"${attributeKey}\\":\\"${attributeValue}\\"}** | JSON 路径表达式用于创建将发送到 URL 的消息数据。 |
 |---
 
-The **attributeUpdates** section will look like:
+**attributeUpdates** 部分将如下所示：
 
 ```json
 
@@ -249,31 +249,32 @@ The **attributeUpdates** section will look like:
 
 ```
 
-### Server side RPC section
+### 服务器端 RPC 部分
 
-ThingsBoard allows sending [RPC commands](/docs/user-guide/rpc/) to the device that is connected to ThingsBoard directly or via Gateway.
- 
-Configuration, provided in this section uses for sending RPC requests from ThingsBoard to device.
+ThingsBoard 允许将 [RPC 命令](/docs/user-guide/rpc/) 发送到直接或通过网关连接到 ThingsBoard 的设备。
 
-| **Parameter**                 | **Default value**                                                 | **Description**                                                                       |
-|:-|:-|-
-| deviceNameFilter              | **SmartMeter.\***                                                 | Regular expression device name filter, uses to determine, which function to execute.  |
-| methodFilter                  | **echo**                                                          | Regular expression method name filter, uses to determine, which function to execute.  |
-| requestUrlExpression          | **sensor/${deviceName}/request/${methodName}/${requestId}**       | JSON-path expression, uses to create url address to send RPC request.                 |
-| responseTimeout               | **0.5**                                                           | Timeout for request.                                                                  |
-| httpMethod                    | **GET**                                                           | HTTP method for request (**GET**, **POST** etc.).                                     |
-| valueExpression               | **${params}**                                                     | JSON-path expression, uses for creating data for sending to the external endpoint.    |
-| timeout                       | **0.5**                                                           | Timeout for request.                                                                  |
-| tries                         | **3**                                                             | Count of tries to send data                                                           |
-| httpHeaders                   | **{ "CONTENT-TYPE": "application/json" }**                        | Object contains additional HTTP headers for request.                                  |
+本部分中提供的配置用于将 RPC 请求从 ThingsBoard 发送到设备。
+
+| **参数** | **默认值** | **说明** |
+|:-|:-|:-|
+| deviceNameFilter | **SmartMeter.\*** | 正则表达式设备名称过滤器，用于确定要执行哪个函数。 |
+| methodFilter | **echo** | 正则表达式方法名称过滤器，用于确定要执行哪个函数。 |
+| requestUrlExpression | **sensor/${deviceName}/request/${methodName}/${requestId}** | JSON 路径表达式，用于创建发送 RPC 请求的 URL 地址。 |
+| responseTimeout | **0.5** | 请求超时。 |
+| httpMethod | **GET** | 请求的 HTTP 方法（**GET**、**POST** 等）。 |
+| valueExpression | **${params}** | JSON 路径表达式，用于创建要发送到外部端点的数据。 |
+| timeout | **0.5** | 请求超时。 |
+| tries | **3** | 发送数据的次数 |
+| httpHeaders | **{ "CONTENT-TYPE": "application/json" }** | 对象包含请求的其他 HTTP 头。 |
 |---
 
 {% capture rpc_variants %}
-**There are 2 types of the RPC calls:**  
-1. With reply, after sending request the gateway will wait for response and send it to ThingsBoard.
-2. With no reply, after sending request the gateway will not wait for response.
+**有 2 种类型的 RPC 调用：**
 
-Examples for both methods provided below.
+1. 带有回复，在发送请求后，网关将等待响应并将其发送到 ThingsBoard。
+2. 无回复，在发送请求后，网关不会等待响应。
+
+下面提供了两种方法的示例。
 
 {% endcapture %}
 {% include templates/info-banner.md content=rpc_variants %}
@@ -306,12 +307,12 @@ Examples for both methods provided below.
   ]
 ```
 
-## Next steps
+## 后续步骤
 
-Explore guides related to main ThingsBoard features:
+探索与 ThingsBoard 主要功能相关的指南：
 
- - [Data Visualization](/docs/user-guide/visualization/) - how to visualize collected data.
- - [Device attributes](/docs/user-guide/attributes/) - how to use device attributes.
- - [Telemetry data collection](/docs/user-guide/telemetry/) - how to collect telemetry data.
- - [Using RPC capabilities](/docs/user-guide/rpc/) - how to send commands to/from devices.
- - [Rule Engine](/docs/user-guide/rule-engine/) - how to use rule engine to analyze data from devices.
+- [数据可视化](/docs/user-guide/visualization/) - 如何可视化收集的数据。
+- [设备属性](/docs/user-guide/attributes/) - 如何使用设备属性。
+- [遥测数据收集](/docs/user-guide/telemetry/) - 如何收集遥测数据。
+- [使用 RPC 功能](/docs/user-guide/rpc/) - 如何向设备发送/从设备接收命令。
+- [规则引擎](/docs/user-guide/rule-engine/) - 如何使用规则引擎分析来自设备的数据。

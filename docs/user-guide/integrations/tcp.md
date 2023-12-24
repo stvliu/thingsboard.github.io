@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-pe
-title: TCP Integration
-description: TCP Integration Guide
+title: TCP 集成
+description: TCP 集成指南
 debug:
     0:
         image: /images/downlink/debug.png

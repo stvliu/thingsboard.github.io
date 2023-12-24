@@ -1,19 +1,17 @@
-ThingsBoard is able to use various messaging systems/brokers for storing the messages and communication between ThingsBoard services. How to choose the right queue implementation?
- 
-**In Memory** queue implementation is not suitable for any sort of cluster deployments.
+ThingsBoard 能够使用各种消息系统/代理来存储消息和 ThingsBoard 服务之间的通信。如何选择正确的队列实现？
 
- * **Kafka** is recommended for production deployments and used by default. This queue is used on the most of ThingsBoard production environments now. 
-It is useful for both on-prem and private cloud deployments. It is also useful if you like to stay independent from your cloud provider.
-However, some providers also have managed services for Kafka. See AWS [MSK](https://aws.amazon.com/msk/) for example.
+**内存**队列实现不适用于任何类型的集群部署。
 
- * **RabbitMQ** is recommended if you don't have much load and you already have experience with this messaging system.
+* **Kafka** 推荐用于生产部署，并且默认使用。此队列现在用于大多数 ThingsBoard 生产环境。它对本地部署和私有云部署都很有用。如果您希望保持独立于云提供商，它也很有用。但是，一些提供商也为 Kafka 提供托管服务。例如，请参阅 AWS [MSK](https://aws.amazon.com/msk/)。
 
- * **AWS SQS** is a fully managed message queuing service from AWS. Useful if you plan to deploy ThingsBoard on AWS.
+* **RabbitMQ** 推荐用于负载不大的情况，并且您已经拥有此消息系统的经验。
 
- * **Google Pub/Sub** is a fully managed message queuing service from Google. Useful if you plan to deploy ThingsBoard on Google Cloud.  
+* **AWS SQS** 是 AWS 的全托管消息队列服务。如果您计划在 AWS 上部署 ThingsBoard，则很有用。
 
- * **Azure Service Bus** is a fully managed message queuing service from Azure. Useful if you plan to deploy ThingsBoard on Azure.
- 
- * **Confluent Cloud** is a fully managed streaming platform based on Kafka. Useful for a cloud agnostic deployments.
+* **Google Pub/Sub** 是 Google 的全托管消息队列服务。如果您计划在 Google Cloud 上部署 ThingsBoard，则很有用。
 
-See corresponding architecture [page](/docs/reference/#message-queues-are-awesome) and rule engine [page](/docs/user-guide/rule-engine-2-5/queues/) for more details.
+* **Azure Service Bus** 是 Azure 的全托管消息队列服务。如果您计划在 Azure 上部署 ThingsBoard，则很有用。
+
+* **Confluent Cloud** 是一个基于 Kafka 的全托管流媒体平台。适用于云无关的部署。
+
+有关更多详细信息，请参阅相应的架构[页面](/docs/reference/#message-queues-are-awesome)和规则引擎[页面](/docs/user-guide/rule-engine-2-5/queues/)。

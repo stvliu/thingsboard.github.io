@@ -2,9 +2,9 @@
 layout: docwithnav-pe
 assignees:
 - ashvayka
-title: AWS cluster setup
+title: AWS 集群设置
 notitle: "true"
-description: ThingsBoard IoT platform  AWS cluster setup guide
+description: ThingsBoard IoT 平台 AWS 集群设置指南
 
 ---
 
@@ -13,10 +13,10 @@ description: ThingsBoard IoT platform  AWS cluster setup guide
        <div class="install-options-hero">
           <div class="container">
             <div class="install-options-hero-content">
-                <h1>ThingsBoard Setup options on AWS</h1>
+                <h1>AWS 上的 ThingsBoard 设置选项</h1>
                 <div class="install-options-description">
                     <p>
-                        You may deploy ThingsBoard IoT Platform using different tools and platforms
+                        您可以使用不同的工具和平台部署 ThingsBoard IoT 平台
                     </p>
                 </div>
             </div>
@@ -30,7 +30,7 @@ description: ThingsBoard IoT platform  AWS cluster setup guide
                                        <a href="/docs/user-guide/install/pe/aws-marketplace/">
                                            <span>
                                                <div class="deployment-logo">
-                                                   <img width="" src="/images/install/cloud/amazon_ec2.svg" title="Self-hosted setup using AWS Marketplace" alt="AWS Marketplace">
+                                                   <img width="" src="/images/install/cloud/amazon_ec2.svg" title="使用 AWS Marketplace 的自托管设置" alt="AWS Marketplace">
                                                 </div>
                                            </span>
                                        </a>
@@ -39,7 +39,7 @@ description: ThingsBoard IoT platform  AWS cluster setup guide
                                         <a href="/docs/user-guide/install/pe/cluster/aws-eks-setup/">
                                             <span>
                                                 <div class="deployment-logo">
-                                                    <img width="" src="/images/install/cloud/eks.svg" title="Cluster setup with Kubernetes on AWS EKS" alt="AWS EKS K8S cluster">
+                                                    <img width="" src="/images/install/cloud/eks.svg" title="在 AWS EKS 上使用 Kubernetes 的集群设置" alt="AWS EKS K8S 集群">
                                                  </div>
                                             </span>
                                         </a>

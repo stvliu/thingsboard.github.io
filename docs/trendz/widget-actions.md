@@ -2,38 +2,38 @@
 layout: docwithnav-trendz
 assignees:
 - vparomskiy
-title: Trendz widget actions 
-description: Trendz widget actions 
+title: Trendz 小部件操作
+description: Trendz 小部件操作
 
 ---
 
 * TOC
 {:toc}
 
-#### Configure OnRowClock action
-Trendz Table view support onRowClick action. You can configure what should happen when user click on a Row in a table. 
-For example, you can save entity to the Dashboard state alias or open new dashboard state.
+#### 配置 OnRowClock 操作
+Trendz 表视图支持 onRowClick 操作。您可以配置用户在表中单击行时应发生的情况。
+例如，您可以将实体保存到仪表板状态别名或打开新的仪表板状态。
 
-To enable row click event:
-* Add Trendz Table View on ThingsBoard dashboard.
-* Open widget edit mode and switch to **Actions** tab.
-* Press **Add action** button.
-* In **Action source** field select **On row click**.
-* Proceed standard widget action configuration. 
+若要启用行单击事件：
+* 在 ThingsBoard 仪表板上添加 Trendz 表视图。
+* 打开小部件编辑模式并切换到 **操作** 选项卡。
+* 按 **添加操作** 按钮。
+* 在 **操作源** 字段中选择 **行单击**。
+* 继续标准小部件操作配置。
 
-Each row has multiple fields from on or multiple devices/assets. It means that 1 row can be connected with multiple items. 
-If you want to use 'onRowClick' action - you need to define what item is selected when row clicked.
-* Open **View Settings** in Trendz View edit mode.
-* Open **View Mode fields** section.
-* Select required Device/Asset type in **Row click entity** dropdown.
-* Save changes.
+每行都有来自一个或多个设备/资产的多个字段。这意味着 1 行可以与多个项目连接。
+如果您想使用“onRowClick”操作 - 您需要定义单击行时选择哪个项目。
+* 在 Trendz 视图编辑模式中打开 **视图设置**。
+* 打开 **视图模式字段** 部分。
+* 在 **行单击实体** 下拉列表中选择所需的设备/资产类型。
+* 保存更改。
 
-#### Configure Date selected action
+#### 配置所选日期操作
 
-#### Configure Switch Field action
+#### 配置切换字段操作
 
 ![image](/images/trendz/trndz_dashboard_time.png)
 
-## Next Steps
+## 后续步骤
 
 {% assign currentGuide = "EmbedVisualizations" %}{% include templates/trndz-guides-banner.md %}

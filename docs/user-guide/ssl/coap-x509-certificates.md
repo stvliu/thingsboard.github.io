@@ -2,8 +2,8 @@
 layout: docwithnav
 assignees:
 - ashvayka
-title: X.509 Certificate Based Authentication for CoAP over DTLS
-description: ThingsBoard  X.509 Certificate based authentication for CoAP over DTLS.
+title: 基于 DTLS 的 CoAP 的 X.509 证书认证
+description: ThingsBoard 基于 DTLS 的 CoAP 的 X.509 证书认证。
 
 ---
 

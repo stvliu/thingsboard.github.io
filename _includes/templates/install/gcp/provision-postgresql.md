@@ -1,6 +1,6 @@
-#### 5.1 Prerequisites
+#### 5.1 先决条件
 
-Enable service networking to allow your K8S cluster connect to the DB instance:
+启用服务网络，以允许 K8S 集群连接到数据库实例：
 
 ```bash
 gcloud services enable servicenetworking.googleapis.com --project=$GCP_PROJECT
@@ -20,17 +20,17 @@ gcloud services vpc-peerings connect \
 ```
 {: .copy-code}
 
-#### 5.2 Create database server instance
+#### 5.2 创建数据库服务器实例
 
-Create the PostgreSQL instance with database version "**PostgreSQL 12**" and the following recommendations:
+使用数据库版本“**PostgreSQL 12**”和以下建议创建 PostgreSQL 实例：
 
-* use the same region where your K8S cluster **GCP_REGION** is located;
-* use the same VPC network where your K8S cluster **GCP_REGION** is located;
-* use private IP address to connect to your instance and disable public IP address;
-* use highly available DB instance for production and single zone instance for development clusters;
-* use at least 2 vCPUs and 7.5 GB RAM, which is sufficient for most of the workloads. You may scale it later if needed;
+* 使用 K8S 集群 **GCP_REGION** 所在的同一区域；
+* 使用 K8S 集群 **GCP_REGION** 所在的同一 VPC 网络；
+* 使用专用 IP 地址连接到实例并禁用公共 IP 地址；
+* 使用高可用性数据库实例进行生产，使用单一区域实例进行开发集群；
+* 使用至少 2 个 vCPU 和 7.5 GB RAM，这足以满足大多数工作负载。如果需要，您以后可以扩展它；
 
-Execute the following command:
+执行以下命令：
 
 ```bash
 
@@ -42,9 +42,9 @@ gcloud beta sql instances create $TB_DATABASE_NAME \
 ```
 {: .copy-code}
 
-Alternatively, you may follow [this](https://cloud.google.com/sql/docs/postgres/create-instance) guide to configure your database.
+或者，您可以按照[此](https://cloud.google.com/sql/docs/postgres/create-instance)指南配置数据库。
 
-Note your IP address (**YOUR_DB_IP_ADDRESS**) from command output. Successful command output should look similar to this:
+从命令输出中记下您的 IP 地址 (**YOUR_DB_IP_ADDRESS**) 。成功的命令输出应类似于以下内容：
 
 ```text
 Created [https://sqladmin.googleapis.com/sql/v1beta4/projects/YOUR_PROJECT_ID/instances/thingsboard-db].
@@ -52,9 +52,9 @@ NAME            DATABASE_VERSION  LOCATION       TIER              PRIMARY_ADDRE
 tb-db           POSTGRES_12       us-central1-f  db-custom-2-7680  35.192.189.68    -                RUNNABLE
 ```
 
-#### 5.3 Set database password
+#### 5.3 设置数据库密码
 
-Set password for your new database server instance:
+为您的新数据库服务器实例设置密码：
 
 ```bash
 gcloud sql users set-password postgres \
@@ -63,14 +63,14 @@ gcloud sql users set-password postgres \
 ```
 {: .copy-code}
 
-where:
+其中：
 
-* *thingsboard* is the name of your database. You may input a different name. We will refer to it later in this guide using **YOUR_DB_NAME**;
-* *secret* is the password. You **should** input a different password. We will refer to it later in this guide using **YOUR_DB_PASSWORD**;
+* *thingsboard* 是您的数据库的名称。您可以输入不同的名称。我们将在本指南的后面使用 **YOUR_DB_NAME** 来引用它；
+* *secret* 是密码。您**应该**输入不同的密码。我们将在本指南的后面使用 **YOUR_DB_PASSWORD** 来引用它；
 
-#### 5.4 Create database
+#### 5.4 创建数据库
 
-Create "thingsboard" database inside your postgres database server instance:
+在您的 postgres 数据库服务器实例中创建“thingsboard”数据库：
 
 ```bash
 gcloud sql databases create thingsboard --instance=$TB_DATABASE_NAME

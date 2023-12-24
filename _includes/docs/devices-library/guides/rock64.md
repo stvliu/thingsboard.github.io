@@ -1,53 +1,52 @@
-
-{% assign deviceName = page.title | remove: "How to connect " | remove: "to ThingsBoard?" %}
+{% assign deviceName = page.title | remove: "如何连接 " | remove: "到 ThingsBoard？" %}
 {% assign prerequisites = "
 - " | append: deviceName | append: "
-- [tb-mqtt-client library](https://pypi.org/project/tb-mqtt-client/)
+- [tb-mqtt-client 库](https://pypi.org/project/tb-mqtt-client/)
 - [python ≥ 3.7](https://www.python.org/)
 - [Adafruit-Blinka](https://pypi.org/project/Adafruit-Blinka/) "
  %}
 
-## Introduction
+## 简介
 
 ![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
-The Rock64 is a single-board computer designed to provide a powerful and efficient computing solution in a small form factor.
- It is built around a Rockchip RK3328 quad-core ARM Cortex-A53 processor, which offers reliable performance and energy efficiency.
- The board features 1GB, 2GB, or 4GB of LPDDR3 RAM, as well as a microSD card slot for expandable storage.
- The board also has a USB 3.0 port, a USB 2.0 port, and a 40-pin GPIO header, allowing it to interface with a variety of peripherals and sensors.
-The Rock64 runs a variety of operating systems, including Debian, Ubuntu, and Android, which makes it an excellent choice for developers, hobbyists, and DIY enthusiasts looking to build anything from media centers to home automation systems.
- Its compact form factor, powerful performance, and versatile connectivity make it a valuable addition to any project that requires a reliable and efficient computing solution.
+Rock64 是一款单板计算机，旨在以小巧的外形提供强大而高效的计算解决方案。
+它围绕 Rockchip RK3328 四核 ARM Cortex-A53 处理器构建，该处理器提供可靠的性能和能源效率。
+该板具有 1GB、2GB 或 4GB LPDDR3 RAM，以及一个用于可扩展存储的 microSD 卡插槽。
+该板还具有一个 USB 3.0 端口、一个 USB 2.0 端口和一个 40 针 GPIO 接头，使其能够与各种外围设备和传感器连接。
+Rock64 运行各种操作系统，包括 Debian、Ubuntu 和 Android，这使其成为希望构建从媒体中心到家庭自动化系统等任何内容的开发人员、业余爱好者和 DIY 爱好者的绝佳选择。
+其紧凑的外形、强大的性能和多功能的连接性使其成为任何需要可靠且高效的计算解决方案的项目的宝贵补充。
 
 {% include /docs/devices-library/blocks/basic/introduction-block.md %}
 
-## Create device on ThingsBoard
+## 在 ThingsBoard 上创建设备
 
 {% include /docs/devices-library/blocks/basic/thingsboard-create-device-block.md %}
 
-## Install required libraries and tools
+## 安装所需的库和工具
 
 {% include /docs/devices-library/blocks/single-board-computers/install-required-libraries-and-tools-block.md %}
 
-## Connect device to ThingsBoard
+## 将设备连接到 ThingsBoard
 
 {% include /docs/devices-library/blocks/basic/thingsboard-provide-device-access-token-block.md %}
 
 {% include /docs/devices-library/blocks/single-board-computers/general-code-to-program-block.md %}
 
-## Synchronize device state using client and shared attribute requests
+## 使用客户端和共享属性请求同步设备状态
 {% include /docs/devices-library/blocks/single-board-computers/thingsboard-synchronize-device-state-using-attribute-requests-block.md %}
 
-## Check data on ThingsBoard
+## 在 ThingsBoard 上检查数据
 
 {% include /docs/devices-library/blocks/single-board-computers/check-data-on-thingsboard-block.md %}
 
-## Control device using shared attributes
+## 使用共享属性控制设备
 
 {% include /docs/devices-library/blocks/single-board-computers/update-shared-attributes-block.md %}
 
-## Control device using RPC
+## 使用 RPC 控制设备
 
 {% include /docs/devices-library/blocks/single-board-computers/using-rpc-block.md %}
 
-## Conclusion
+## 结论
 
 {% include /docs/devices-library/blocks/basic/conclusion-block.md %}

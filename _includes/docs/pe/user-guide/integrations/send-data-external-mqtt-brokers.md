@@ -3,255 +3,249 @@
 {% assign peDocsPrefix = docsPrefix %}
 {% endif %}
 
-{% assign feature = "Platform Integrations" %}{% include templates/pe-feature-banner.md %}
+{% assign feature = "平台集成" %}{% include templates/pe-feature-banner.md %}
 
-This tutorial will show how to send data to external MQTT broker using knob control widget.
+本教程将演示如何使用旋钮控制小部件将数据发送到外部 MQTT 代理。
 
 * TOC
 {:toc}
 
-## Use case
+## 使用案例
 
-Let's assume your device is controlling temperature and you would like to use it as an external MQTT
- broker with the help of Thingsboard. 
+假设你的设备正在控制温度，你想借助 Thingsboard 将其用作外部 MQTT 代理。
 
-In this tutorial we will configure ThingsBoard Rule Engine to automatically send messages using MQTT
- protocol. You can use this tutorial as a basis for much more complex tasks. 
- 
- MQTT Integration allows to convert existing protocols and payload formats to ThingsBoard message format and is useful 
- in several deployment scenarios: 
- 
-  - stream device and/or asset data from external system, IoT platform or connectivity provider back-end.
-  - stream device and/or asset data from your custom application running in the cloud.
-  - connect the existing device with custom MQTT based protocol to ThingsBoard.
-  
- Please review the integration diagram to learn more. 
- 
-  ![image](/images/user-guide/integrations/mqtt-integration.svg)
+在本教程中，我们将配置 ThingsBoard 规则引擎以使用 MQTT 协议自动发送消息。你可以将本教程作为更复杂任务的基础。
 
-## Prerequisites 
+MQTT 集成允许将现有协议和有效负载格式转换为 ThingsBoard 消息格式，在多种部署场景中很有用：
 
-We assume you have completed the following guides and reviewed the articles listed below:
+- 将设备和/或资产数据从外部系统、物联网平台或连接提供商后端流式传输回来。
+- 从在云中运行的自定义应用程序流式传输设备和/或资产数据。
+- 将具有基于 MQTT 的自定义协议的现有设备连接到 ThingsBoard。
 
-  * [Getting Started](/docs/{{docsPrefix}}getting-started-guides/helloworld/) guide.
-  * [Rule Engine Overview](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/).
-  * [MQTT Integration](/docs/{{peDocsPrefix}}user-guide/integrations/mqtt/).
-  * [Data converters](/docs/{{peDocsPrefix}}user-guide/integrations/#data-converters).
+请查看集成图以了解更多信息。
 
-## Model definition
-  
-We will operate with Temperature sensor device that has name "Thermostat-A" and type "thermostat" which will be
-automatically created in the process of integration work.
+![image](/images/user-guide/integrations/mqtt-integration.svg)
+
+## 先决条件
+
+我们假设你已经完成了以下指南并阅读了下面列出的文章：
+
+* [入门](/docs/{{docsPrefix}}getting-started-guides/helloworld/) 指南。
+* [规则引擎概述](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/)。
+* [MQTT 集成](/docs/{{peDocsPrefix}}user-guide/integrations/mqtt/)。
+* [数据转换器](/docs/{{peDocsPrefix}}user-guide/integrations/#data-converters)。
+
+## 模型定义
+
+我们将使用名称为“Thermostat-A”且类型为“thermostat”的温度传感器设备，该设备将在集成工作过程中自动创建。
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/mqtt-downlink-device.png)
 
-## Getting started
+## 开始
 
-### Creating converters
+### 创建转换器
 
-In order for integration to work, downlink and uplink converters should be created.
+为了使集成正常工作，应创建下行和上行转换器。
 
-- Go to **Data Converters** -> **Add new Data Converter** -> **Import Converter** 
+- 转到 **数据转换器** -> **添加新数据转换器** -> **导入转换器**
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/import_new_converter.png)
 
-- Import following files: [**uplink converter**](/docs/user-guide/resources/sensor_uplink_converter.json),
- [**downlink converter**](/docs/user-guide/resources/sensor_downlink_converter.json).
+- 导入以下文件：[**上行转换器**](/docs/user-guide/resources/sensor_uplink_converter.json)，
+[**下行转换器**](/docs/user-guide/resources/sensor_downlink_converter.json)。
 
-You can check them like this:
+你可以这样检查它们：
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/mqtt-downlink-check-converters.png)
 
-Uplink converter should look like this:
+上行转换器应如下所示：
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/mqtt-downlink-uplink-converter.png) 
+![image](/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/mqtt-downlink-uplink-converter.png)
 
-Downlink converter should look like this:
+下行转换器应如下所示：
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/mqtt-downlink-downlink-converter.png)
 
 
-### Creating integration
+### 创建集成
 
-For integration to work a remote server should be used. In this case you can use iot.eclipse.org for your MQTT data.
-Integration should look like this:
+为了使集成正常工作，应使用远程服务器。在这种情况下，你可以将 iot.eclipse.org 用于你的 MQTT 数据。集成应如下所示：
 
-- Go to **Integrations** -> **Add new Integration**
+- 转到 **集成** -> **添加新集成**
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/add-new-integration.png)
 
-- Fill in the fields with the input data shown in the following table: 
+- 使用下表中所示的输入数据填写字段：
 
 <table style="width: 25%">
   <thead>
       <tr>
-          <td><b>Field</b></td><td><b>Input Data</b></td>
+          <td><b>字段</b></td><td><b>输入数据</b></td>
       </tr>
   </thead>
   <tbody>
       <tr>
-          <td>Name</td>
-          <td>Thermostat MQTT integration</td>
+          <td>名称</td>
+          <td>Thermostat MQTT 集成</td>
       </tr>
       <tr>
-          <td>Type</td>
+          <td>类型</td>
           <td>MQTT</td>
       </tr>
       <tr>
-          <td>Debug mode</td>
-          <td>False</td>
+          <td>调试模式</td>
+          <td>否</td>
       </tr>
       <tr>
-          <td>Uplink data converter</td>
-          <td>Sensor Uplink Converter</td>
+          <td>上行数据转换器</td>
+          <td>传感器上行转换器</td>
       </tr>
       <tr>
-          <td>Downlink data converter</td>
-          <td>Sensor Downlink Converter</td>
+          <td>下行数据转换器</td>
+          <td>传感器下行转换器</td>
       </tr>
       <tr>
-          <td>Host</td>
+          <td>主机</td>
           <td>iot.eclipse.org</td>
       </tr>
       <tr>
-          <td>Port</td>
+          <td>端口</td>
           <td>1883</td>
       </tr>
       <tr>
-          <td>Connection timeout(sec)</td>
+          <td>连接超时（秒）</td>
           <td>10</td>
       </tr>
       <tr>
-          <td>Client ID</td>
-          <td>(empty)</td>
+          <td>客户端 ID</td>
+          <td>（空）</td>
       </tr>
       <tr>
-          <td>Clean session</td>
-          <td>True</td>
+          <td>清除会话</td>
+          <td>是</td>
       </tr>
       <tr>
-          <td>Enable SSL</td>
-          <td>False</td>
+          <td>启用 SSL</td>
+          <td>否</td>
       </tr>
       <tr>
-          <td>Credentials</td>
-          <td>Anonymous</td>
+          <td>凭据</td>
+          <td>匿名</td>
       </tr>
       <tr>
-          <td>Topic filters</td>
+          <td>主题过滤器</td>
           <td>devices/Thermostat-A/temperature/latest</td>
       </tr>
       <tr>
           <td>QOS</td>
-          <td>At most once</td>
+          <td>最多一次</td>
       </tr>
       <tr>
-          <td>Topic filters</td>
+          <td>主题过滤器</td>
           <td>devices/Thermostat-A/temperature/settings/</td>
       </tr>
       <tr>
                 <td>QOS</td>
-           <td>At most once</td>
+           <td>最多一次</td>
       </tr>
       <tr>
-         <td>Downlink topic pattern</td>
+         <td>下行主题模式</td>
          <td>${topic}</td>
       </tr>
       <tr>
-          <td>Description</td>
-          <td>(empty)</td>
+          <td>说明</td>
+          <td>（空）</td>
       </tr>
       <tr>
-          <td>Metadata</td>
-          <td>(empty)</td>
+          <td>元数据</td>
+          <td>（空）</td>
       </tr>
    </tbody>
 </table> 
 
-- After filling all fields click the **ADD** button. 
+- 填写所有字段后，单击 **添加** 按钮。
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/mqtt-downlink-create-integration-1.png)
 ![image](/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/mqtt-downlink-create-integration-2.png)
 
-### Setting up dashboard
+### 设置仪表板
 
-Download and [**import**](/docs/{{docsPrefix}}user-guide/ui/dashboards/#dashboard-import) attached
-json [**file**](/docs/user-guide/resources/temperature_control_dashboard.json) with a dashboard for this tutorial.
+下载并[**导入**](/docs/{{docsPrefix}}user-guide/ui/dashboards/#dashboard-import) 附加的
+json [**文件**](/docs/user-guide/resources/temperature_control_dashboard.json) 作为本教程的仪表板。
 
-### Turning on device emulator
+### 打开设备模拟器
 
-In order for widget to work without a real device, emulator should be turned on.
+为了使小部件在没有真实设备的情况下工作，应打开模拟器。
 
-First, you should check if node, npm and npm module mqtt are installed by using following commands:
+首先，你应使用以下命令检查是否已安装 node、npm 和 npm 模块 mqtt：
 
 ```bash
-#to display node version
+#显示 node 版本
 node -v
-#to display npm version
+#显示 npm 版本
 npm -v
-#to display npm mqtt module version
+#显示 npm mqtt 模块版本
 npm list mqtt 
 ```
 
-If you don't have npm, you can install it from  [here](https://www.npmjs.com/package/npm),
-and npm MQTT module with following command:
+如果你没有 npm，可以从 [此处](https://www.npmjs.com/package/npm) 安装它，并使用以下命令安装 npm MQTT 模块：
 
 ```bash
 sudo npm install mqtt --save
 ```
 
-and node from [here](https://nodejs.org/en/download/).
+并从 [此处](https://nodejs.org/en/download/) 下载 node。
 
-Download the [**file**](/docs/user-guide/resources/mqtt-downlink-virtual-device.js) and run it with following 
-command to launch device emulator: 
+下载 [**文件**](/docs/user-guide/resources/mqtt-downlink-virtual-device.js) 并使用以下
+命令运行它以启动设备模拟器：
 
 ```bash
 node mqtt-downlink-virtual-device.js
 ```
 
-Note: device emulator should be put in the folder where node-modules is situated.
+注意：应将设备模拟器放在 node-modules 所在的文件夹中。
 
 
-### Work demonstration
+### 工作演示
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/mqtt-downlink-work-demonstration.png) 
 
-Using a control widget (in this case, a knob) leads to value change on the dashboard.
+使用控制小部件（在本例中，为旋钮）会导致仪表板上的值发生变化。
 
-Dashboard can be found [**here**](/docs/user-guide/resources/temperature_control_dashboard.json) and
-imported like [**this**](/docs/{{docsPrefix}}user-guide/ui/dashboards/#dashboard-import).
+仪表板可以在 [**此处**](/docs/user-guide/resources/temperature_control_dashboard.json) 找到，
+并像 [**这样**](/docs/{{docsPrefix}}user-guide/ui/dashboards/#dashboard-import) 导入。
 
-## Message Flow
+## 消息流
 
-In this section, we explain the purpose of each node in this tutorial. 
+在本节中，我们将解释本教程中每个节点的用途。
 
-### Modifying rule chain
+### 修改规则链
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/mqtt-downlink-root-rule-chain.png) 
 
-  * **Node A**: Originator attributes enrichment node
+  * **节点 A**：发起者属性扩充节点
       
-    * Puts client attribute deviceName into metadata
+    * 将客户端属性 deviceName 放入元数据
     
    ![image](/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/mqtt-downlink-node-A.png) 
     
-  * **Node B**: Script Transformation Node
+  * **节点 B**：脚本转换节点
       
-     * Puts deviceName from metadata to message parameters
+     * 将元数据中的 deviceName 放入消息参数
      
     ![image](/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/mqtt-downlink-node-B.png)
 
-  * **Node C**: Integration Downlink node
+  * **节点 C**：集成下行节点
   
-    * Sends message to integration
+    * 将消息发送到集成
     
     ![image](/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/mqtt-downlink-node-C.png) 
 
-You can download and [**import**](/docs/{{docsPrefix}}user-guide/ui/rule-chains/#rule-chains-importexport) attached
- json [**file**](/docs/user-guide/resources/mqtt-downlink-root-rule-chain.json) with a rule chain for this tutorial.
- It should be marked as root.
- 
+你可以下载并 [**导入**](/docs/{{docsPrefix}}user-guide/ui/rule-chains/#rule-chains-importexport) 附加的
+json [**文件**](/docs/user-guide/resources/mqtt-downlink-root-rule-chain.json) 作为本教程的规则链。
+它应标记为根。
 
-## Next steps
+
+## 后续步骤
 
 {% assign currentGuide = "DataProcessing" %}{% include templates/multi-project-guides-banner.md %}

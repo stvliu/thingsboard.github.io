@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-edge
-title: Troubleshooting
-description: ThingsBoard Edge troubleshooting
+title: 故障排除
+description: ThingsBoard Edge 故障排除
 
 ---
 

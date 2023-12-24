@@ -1,22 +1,22 @@
-#### RabbitMQ Installation
+#### RabbitMQ 安装
 
-For installation RabbitMQ you can use [official docs](https://www.rabbitmq.com/install-debian.html), or our instruction bellow:
+有关安装 RabbitMQ，您可以使用 [官方文档](https://www.rabbitmq.com/install-debian.html)，或按照以下说明进行操作：
 
-Since RabbitMQ is written in Erlang, you need to install Erlang before you can use RabbitMQ:
+由于 RabbitMQ 是用 Erlang 编写的，因此在使用 RabbitMQ 之前，您需要安装 Erlang：
 
 ```text
 sudo apt-get install erlang
 ```
 {: .copy-code}
 
-Install the rabbitmq-server package:
+安装 rabbitmq-server 软件包：
 
 ```text
 sudo apt-get install rabbitmq-server
 ```
 {: .copy-code}
 
-Start the Server:
+启动服务器：
 
 ```text
 sudo systemctl start rabbitmq-server.service
@@ -24,9 +24,7 @@ sudo systemctl enable rabbitmq-server.service
 ```
 {: .copy-code}
 
-By default, RabbitMQ creates a user named "guest" with a password "guest". 
-You can also create your own administrator account on RabbitMQ server using following commands.
-Don’t forget to replace "PUT_YOUR_USER_NAME" like: "admin" and "PUT_YOUR_PASSWORD" with your **own user name and password:**
+默认情况下，RabbitMQ 会创建一个名为“guest”的用户，密码为“guest”。您还可以使用以下命令在 RabbitMQ 服务器上创建自己的管理员帐户。不要忘记将“PUT_YOUR_USER_NAME”替换为“admin”，将“PUT_YOUR_PASSWORD”替换为您的**自己的用户名和密码：**
 
 ```text
 sudo rabbitmqctl add_user PUT_YOUR_USER_NAME PUT_YOUR_PASSWORD 
@@ -35,16 +33,16 @@ sudo rabbitmqctl set_permissions -p / PUT_YOUR_USER_NAME ".*" ".*" ".*"
 ```
 {: .copy-code}
 
-##### ThingsBoard Configuration
+##### ThingsBoard 配置
 
-Edit ThingsBoard configuration file
+编辑 ThingsBoard 配置文件
 
 ```text
 sudo nano /etc/thingsboard/conf/thingsboard.conf
 ```
 {: .copy-code}
 
-Add the following lines to the configuration file. Don't forget to replace "YOUR_USERNAME" and "YOUR_PASSWORD" with your **real user credentials**, "localhost" and "5672" with your **real RabbitMQ host and port**:
+将以下行添加到配置文件中。不要忘记将“YOUR_USERNAME”和“YOUR_PASSWORD”替换为您的**真实用户凭据**，将“localhost”和“5672”替换为您的**真实 RabbitMQ 主机和端口**：
 
 ```bash
 export TB_QUEUE_TYPE=rabbitmq

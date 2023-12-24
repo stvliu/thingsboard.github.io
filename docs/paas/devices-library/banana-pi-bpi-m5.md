@@ -1,9 +1,9 @@
 ---
 layout: devices-library-article
-title: How to connect Banana Pi BPI-M5 to ThingsBoard?
-category: Single-board computers
+title: 如何将 Banana Pi BPI-M5 连接到 ThingsBoard？
+category: 单板计算机
 chip: Rockchip RK3328
-connectivity: Ethernet, WIFI, Bluetooth
+connectivity: 以太网、WIFI、蓝牙
 vendor: Banana Pi
 deviceImageFileName: banana-pi-bpi-m5.jpg
 docsPrefix: paas/

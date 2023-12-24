@@ -1,77 +1,77 @@
 ---
 layout: plain
-title: ThingsBoard Demo Server Privacy Policy
-description: ThingsBoard Demo Server Privacy Policy
+title: ThingsBoard 演示服务器隐私政策
+description: ThingsBoard 演示服务器隐私政策
 
 ---
 
 <br>
-<p style="text-align: center; font-size: 1.5em; font-weight: bold;">PRIVACY POLICY</p>
+<p style="text-align: center; font-size: 1.5em; font-weight: bold;">隐私政策</p>
 
-Your privacy is important to us, and so is being transparent about how we collect, use, and share information about you. This policy is intended to help you understand:
+您的隐私对我们很重要，我们也希望透明地说明我们如何收集、使用和共享您的信息。本政策旨在帮助您了解：
 
-<p style="text-align: center; font-size: 1.17em; font-weight: bold;">What information we collect</p>
+<p style="text-align: center; font-size: 1.17em; font-weight: bold;">我们收集哪些信息</p>
 
-- Name, email address, phone number, physical address
-- Name of the company, job title and other professional details like job role, industry, etc.
-- Billing details for clients engaged in a business relationship
-- Opinions and other information submitted via our websites, surveys or other channels (for ex: LinkedIn, Twitter, FB & others)
-- We also may collect additional information that is related to you such as your computer’s operating system, browser, and your use of and activities on our websites
-- When registering, subscribing or ordering on our site, as appropriate, you may be asked to enter your: name, e-mail address, mailing address, phone number or credit card information. You may, however, visit our site anonymously.
-- The content you provide through our products: The Services include the Thingsboard Demo, Thingsboard PE Demo, platforms you use, where we collect and store content that you add to the service. This content includes any information about you that you may choose to include.
-- Information you provide through our support channels: The Services also include customer support, where you may choose to submit information regarding a problem you are experiencing with a Service. Whether you designate yourself as a technical contact, open a support ticket, speak to one of our representatives directly or otherwise engage with our support team, you will be asked to provide contact information, a summary of the problem you are experiencing, and any other documentation, screenshots or information that would be helpful in resolving the issue.
+- 姓名、电子邮件地址、电话号码、物理地址
+- 公司名称、职务和其他专业详细信息，如工作角色、行业等。
+- 与客户建立业务关系的账单详细信息
+- 通过我们的网站、调查或其他渠道（例如：LinkedIn、Twitter、FB 等）提交的意见和其他信息
+- 我们还可能收集与您相关的一些其他信息，例如您计算机的操作系统、浏览器以及您对我们网站的使用和活动
+- 在我们的网站上注册、订阅或订购时，可能会要求您输入您的姓名、电子邮件地址、邮寄地址、电话号码或信用卡信息。但是，您可以匿名访问我们的网站。
+- 您通过我们的产品提供的内容：服务包括 Thingsboard 演示、Thingsboard PE 演示、您使用的平台，我们收集并存储您添加到服务中的内容。此内容包括您可能选择包含的任何有关您的信息。
+- 您通过我们的支持渠道提供的信息：服务还包括客户支持，您可以在其中选择提交有关您在使用服务时遇到的问题的信息。无论您是将自己指定为技术联系人、打开支持工单、直接与我们的代表交谈还是以其他方式与我们的支持团队互动，您都将被要求提供联系信息、您遇到的问题的摘要以及任何其他文档、屏幕截图或有助于解决问题的信息。
 
-<p style="text-align: center; font-size: 1.17em; font-weight: bold;">How we use the information we collect</p>
+<p style="text-align: center; font-size: 1.17em; font-weight: bold;">我们如何使用我们收集的信息</p>
 
-How we use the information we collect depends in part on which Services you use, how you use them, and any preferences you have communicated to us. Below are the specific purposes for which we use the information we collect about you:
+我们使用我们收集的信息的方式部分取决于您使用哪些服务、您如何使用它们以及您向我们传达的任何偏好。以下是我们使用我们收集的有关您的信息来实现的具体目的：
 
-- To personalize your experience - your information helps us to better respond to your individual needs
-- To improve our website - we continually strive to improve our website offerings based on the information and feedback we receive from you
-- To improve customer service - your information helps us to more effectively respond to your customer service requests and support needs
-- To process transactions - Your information, whether public or private, will not be sold, exchanged, transferred, or given to any other company for any reason whatsoever, without your consent, other than for the express purpose of delivering the purchased product or service requested.
-- To send periodic emails - The email address you provide for registration, subscription or order, may be used to send you information and updates pertaining to your order, in addition to receiving occasional company news, updates, related product or service information, etc.
-- To comply with applicable laws, safety, and property, and respond to lawful requests from public authorities
-- If you post content on our social media channels, your participation may be shared on our website or our channels
+- 个性化您的体验 - 您的信息有助于我们更好地满足您的个人需求
+- 改进我们的网站 - 我们不断努力根据我们从您那里收到的信息和反馈来改进我们的网站产品
+- 改进客户服务 - 您的信息有助于我们更有效地响应您的客户服务请求和支持需求
+- 处理交易 - 您的信息，无论是公开的还是私有的，都不会在未经您同意的情况下出售、交换、转让或出于任何原因提供给任何其他公司，除非是为了明确的目的交付您购买的产品或服务。
+- 发送定期电子邮件 - 您在注册、订阅或订购时提供的电子邮件地址可用于向您发送有关您订单的信息和更新，此外还可以接收公司新闻、更新、相关产品或服务信息等。
+- 遵守适用的法律、安全和财产，并回应公共当局的合法请求
+- 如果您在我们的社交媒体渠道上发布内容，您的参与可能会在我们的网站或我们的渠道上分享
 
-We generally retain information for so long as it is relevant to serve you. Data may persist in copies made for backup purposes.
+我们通常会保留信息，只要它与为您服务相关。数据可能会保留在为备份目的而制作的副本中。
 
-Thignsboard will respect your wishes not to receive marketing communications. You can change your marketing preferences at any time by contacting us at support@thingsboard.io
+Thingsboard 将尊重您不接收营销信息的要求。您可以随时通过 support@thingsboard.io 联系我们来更改您的营销偏好
 
-<p style="text-align: center; font-size: 1.17em; font-weight: bold;">How to delete your information?</p>
+<p style="text-align: center; font-size: 1.17em; font-weight: bold;">如何删除您的信息？</p>
 
-If you subscribe to our newsletter, you can opt out at any time by using the unsubscribe links at the bottom of our emails.
-Our Services give you the ability to delete all personal information from within the Service. 
-You can completely delete your account and data by clicking 'Delete Account' button which is available on the User Profile Page. Please note, however, that we may need to retain certain information for record keeping purposes, to complete transactions or to comply with our legal obligations.
+如果您订阅了我们的时事通讯，您可以随时使用我们电子邮件底部的取消订阅链接选择退出。
+我们的服务使您能够从服务中删除所有个人信息。
+您可以通过点击用户个人资料页面上提供的“删除帐户”按钮来完全删除您的帐户和数据。但是，请注意，我们可能需要出于记录保存目的、完成交易或遵守我们的法律义务而保留某些信息。
 
-<p style="text-align: center; font-size: 1.17em; font-weight: bold;">How we store and secure the information we collect</p>
+<p style="text-align: center; font-size: 1.17em; font-weight: bold;">我们如何存储和保护我们收集的信息</p>
 
-We implement a variety of security measures to maintain the safety of your personal information when you place an order or enter, submit, or access your personal information.
+当您下订单或输入、提交或访问您的个人信息时，我们会实施各种安全措施来维护您的个人信息的安全性。
 
-We offer the use of a secure server. All supplied sensitive/credit information is transmitted via Secure Socket Layer (SSL) technology and then encrypted into our Payment gateway providers database only to be accessible by those authorized with special access rights to such systems, and are required to?keep the information confidential.
+我们提供安全服务器的使用。所有提供的敏感/信用卡信息均通过安全套接字层 (SSL) 技术传输，然后加密到我们的支付网关提供商数据库，只有获得此类系统特殊访问权限的授权人员才能访问，并且需要？对信息保密。
 
-After a transaction, your private information (credit cards, social security numbers, financials, etc.) will not be stored on our servers.
+交易完成后，您的私人信息（信用卡、社会保险号、财务信息等）将不会存储在我们的服务器上。
 
-<p style="text-align: center; font-size: 1.17em; font-weight: bold;">How we use cookies?</p>
+<p style="text-align: center; font-size: 1.17em; font-weight: bold;">我们如何使用 Cookie？</p>
 
-Thignsboard Web site and our third-party partners, such as our advertising and analytics partners, use cookies and other tracking technologies (e.g., web beacons, device identifiers and pixels) to provide functionality and to recognize you across different Services and devices.
-To opt-out of our use of cookies, you can instruct your browser, by changing its options, to stop accepting cookies or to prompt you before accepting a cookie from websites you visit. 
+Thingsboard 网站和我们的第三方合作伙伴，例如我们的广告和分析合作伙伴，使用 Cookie 和其他跟踪技术（例如，网络信标、设备标识符和像素）来提供功能并跨不同服务和设备识别您。
+要选择退出我们对 Cookie 的使用，您可以通过更改浏览器的选项来指示您的浏览器停止接受 Cookie 或在您访问的网站接受 Cookie 之前提示您。
 
-<p style="text-align: center; font-size: 1.17em; font-weight: bold;">Do we disclose any information to outside parties?</p>
+<p style="text-align: center; font-size: 1.17em; font-weight: bold;">我们是否向外部方披露任何信息？</p>
 
-We do not sell, trade, or otherwise transfer to outside parties your personally identifiable information. This does not include trusted third parties who assist us in operating our website, conducting our business, or servicing you, so long as those parties agree to keep this information confidential. We may also release your information when we believe release is appropriate to comply with the law, enforce our site policies, or protect ours or others rights, property, or safety. However, non-personally identifiable visitor information may be provided to other parties for marketing, advertising, or other uses.
+我们不会向外部方出售、交易或以其他方式转让您的个人身份信息。这不包括帮助我们运营网站、开展业务或为您提供服务的值得信赖的第三方，只要这些第三方同意对这些信息保密。我们还可能在认为发布是适当的以遵守法律、执行我们的网站政策或保护我们或他人的权利、财产或安全时发布您的信息。但是，非个人身份访问者信息可能会提供给其他方用于营销、广告或其他用途。
 
-<p style="text-align: center; font-size: 1.17em; font-weight: bold;">Our policy towards children</p>
+<p style="text-align: center; font-size: 1.17em; font-weight: bold;">我们对儿童的政策</p>
 
-The Services are not directed to individuals under 16. We do not knowingly collect personal information from children under 16. If we become aware that a child under 16 has provided us with personal information, we will take steps to delete such information. If you become aware that a child has provided us with personal information, please contact our support services
+服务不针对 16 岁以下的个人。我们不会故意收集 16 岁以下儿童的个人信息。如果我们得知 16 岁以下的儿童向我们提供了个人信息，我们将采取措施删除此类信息。如果您得知儿童向我们提供了个人信息，请与我们的支持服务联系
 
-<p style="text-align: center; font-size: 1.17em; font-weight: bold;">Your Consent</p>
+<p style="text-align: center; font-size: 1.17em; font-weight: bold;">您的同意</p>
 
-By using our site, you consent to our online privacy policy.
+使用我们的网站，即表示您同意我们的在线隐私政策。
 
-<p style="text-align: center; font-size: 1.17em; font-weight: bold;">Changes to our privacy policy</p>
+<p style="text-align: center; font-size: 1.17em; font-weight: bold;">我们的隐私政策变更</p>
 
-If we decide to change our privacy policy, we will post those changes on this page.
+如果我们决定更改我们的隐私政策，我们将在本页面上发布这些更改。
 
-<p style="text-align: center; font-size: 1.17em; font-weight: bold;">Contacting us</p>
+<p style="text-align: center; font-size: 1.17em; font-weight: bold;">联系我们</p>
 
-If there are any questions regarding this privacy policy you may contact us using the information available on the following [web page](https://thingsboard.io/company/).
+如果您对本隐私政策有任何疑问，您可以使用以下 [网页](https://thingsboard.io/company/) 上提供的信息与我们联系。

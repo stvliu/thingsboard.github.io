@@ -2,46 +2,47 @@
 layout: docwithnav-trendz
 assignees:
 - vparomskiy
-title: Business Entities
-description: Business Entities 
+title: 业务实体
+description: 业务实体
 ---
 
-This guide describes how Trendz uses entities from ThingsBoard, like asset, device, relation, etc.
+本指南介绍 Trendz 如何使用 ThingsBoard 中的实体，例如资产、设备、关系等。
 
 * TOC
 {:toc}
 
-## Business Entities Topology
-Let's assume that we have a Smart Building solution. Our topology contains Buildings, Apartments and different Meters that are connected with each other using relations.
-Here is how our topology will look like:
+## 业务实体拓扑
+
+假设我们有一个智能建筑解决方案。我们的拓扑包含建筑物、公寓和不同的仪表，它们通过关系相互连接。
+以下是我们的拓扑结构：
 
 ![image](/images/reference/pe-demo/smart-metering-model.svg)
 
 
-In fact, Trendz operates with this topology as with the flat table that has columns for all attributes/telemetry from all Devices/Assets in this topology.
-The Relation between entities used to join fields from different Business Entities.
+事实上，Trendz 将此拓扑用作具有此拓扑中所有设备/资产的所有属性/遥测的列的平面表。
+实体之间的关系用于连接来自不同业务实体的字段。
 
-## How it works
+## 工作原理
 
-Now let's check how Trendz resolves data from ThingsBoard using following report: we are using only 2 fields from Smart Building topology: 
+现在让我们检查 Trendz 如何使用以下报告从 ThingsBoard 解析数据：我们仅使用智能建筑拓扑中的 2 个字段：
 
-- `building name` that belongs to the Building Asset
-- `energy` telemetry, that belongs to the Energy Meter Device
-- aggregation type `SUM`
-- time range - last month
+- 属于建筑资产的“建筑名称”
+- 属于能量表设备的“能量”遥测
+- 聚合类型“SUM”
+- 时间范围 - 上个月
 
 
-* Trendz will find all available buildings in the ThingsBoard. 
-* Then all Apartments for each Building.
-* Finally, all Energy Meters that belong to the apartment.
-* After that, for all Energy Meters for each building, Trendz will load all energy telemetry for the last month 
-* Trendz aggregates all loaded telemetry using `SUM` aggregation. 
-* As a result we can see how much energy was consumed by each building.
+* Trendz 将找到 ThingsBoard 中所有可用的建筑物。
+* 然后为每个建筑找到所有公寓。
+* 最后，找到属于公寓的所有能量表。
+* 之后，对于每个建筑的所有能量表，Trendz 将加载上个月的所有能量遥测
+* Trendz 使用“SUM”聚合聚合所有加载的遥测。
+* 结果我们可以看到每栋建筑消耗了多少能量。
 
-It is not an exact algorithm description and there are a lot of optimizations performed in the background. But it allows to understand how much complexity handled inside Trendz, so you can focus on analytics but not on data fetching.
+这不是一个确切的算法描述，并且在后台执行了许多优化。但它可以理解 Trendz 内部处理了多少复杂性，因此您可以专注于分析，而不是数据获取。
 
-## Aggregate telemetry and groups
-The Next important step is to define how data should be aggregated. Here are supported aggregation types:
+## 聚合遥测和组
+下一步是定义如何聚合数据。以下是支持的聚合类型：
 * AVG
 * SUM
 * MIN
@@ -50,19 +51,19 @@ The Next important step is to define how data should be aggregated. Here are sup
 * COUNT
 * UNIQ
 
-For changing aggregation type - just click on the field and select required value.
+要更改聚合类型 - 只需单击该字段并选择所需的值。
 ![image](/images/trendz/field-aggregation.png)
 
 
-## Work with pulse output telemetry
-Water meter is a good example of a device with pulse output - telemetry value always growing and during analysis, we want to convert it into delta values.
-Here is an example chart for such telemetry:
+## 使用脉冲输出遥测
+水表是一个具有脉冲输出的设备的一个很好的例子 - 遥测值总是增长，在分析过程中，我们希望将其转换为增量值。
+以下是此类遥测的示例图表：
 
 ![image](/images/trendz/pulse-before.png)
 
-Let's apply **DELTA** aggregation for this field and see how our data will look like:
+让我们为此字段应用**DELTA**聚合，看看我们的数据会是什么样子：
 
 ![image](/images/trendz/pulse-after.png)
 
-Trendz automatically computes delta for this field for defined time ranges with required granularity.
-In case when **DELTA** aggregation applied for multiple devices - Trendz will apply **SUM** aggregation to the aggregate group - as the result, we can see total consumption on different levels (city, building, etc.)
+Trendz 会自动计算此字段的增量，以所需的粒度定义时间范围。
+当**DELTA**聚合应用于多个设备时 - Trendz 将**SUM**聚合应用于聚合组 - 结果是，我们可以在不同级别（城市、建筑等）上看到总消耗量

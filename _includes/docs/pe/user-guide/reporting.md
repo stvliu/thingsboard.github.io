@@ -2,19 +2,19 @@
 {:toc}
 
 
-### Overview
+### 概述
 
-ThingsBoard allows you to generate reports using existing dashboards.
+ThingsBoard 允许您使用现有仪表板生成报告。
 
-Reports can be generated either from the currently opened dashboard or scheduled using the [Scheduler](/docs/{{docsPrefix}}user-guide/scheduler/#generate-report) capabilities.
+报告可以从当前打开的仪表板生成，也可以使用 [Scheduler](/docs/{{docsPrefix}}user-guide/scheduler/#generate-report) 功能进行计划。
 
 <br>
 
 ![image](/images/user-guide/reporting.svg)
 
-### Video tutorial
+### 视频教程
 
-See video tutorial below for step-by-step instruction how to use this feature.
+请参阅下面的视频教程，了解如何逐步使用此功能。
 
 <br>
 <div id="video">  
@@ -23,78 +23,78 @@ See video tutorial below for step-by-step instruction how to use this feature.
     </div>
 </div> 
 
-### Reports Server
+### 报告服务器
 
-The Reports Server is a standalone service used to generate reports by rendering dashboards in a headless browser.
+报告服务器是一个独立的服务，用于通过在无头浏览器中呈现仪表板来生成报告。
 
-On each generate report request, ThingsBoard node sends a request to the Reports Server using the configured endpoint URL.
+在每次生成报告请求时，ThingsBoard 节点使用配置的端点 URL 向报告服务器发送请求。
 
-The Reports Server opens a web page with the target dashboard URL in the headless browser and waits until the page renders,
-then it captures the dashboard web page into the specified format (*PDF \| PNG \| JPEG*) and sends the captured data as a response to ThingsBoard.
+报告服务器在无头浏览器中打开一个带有目标仪表板 URL 的网页并等待页面呈现，
+然后它将仪表板网页捕获到指定格式（*PDF \| PNG \| JPEG*）中，并将捕获的数据作为对 ThingsBoard 的响应发送。
 
 {% if docsPrefix == 'pe/' %}
-The system administrator can configure the Reports Server endpoint URL using [thingsboard.yml](/docs/user-guide/install/pe/config/).
+系统管理员可以使用 [thingsboard.yml](/docs/user-guide/install/pe/config/) 配置报告服务器端点 URL。
 
-The following is a sample configuration:
+以下是一个示例配置：
 
 ```yaml
-# Reports parameters
+# 报告参数
 reports:
   server:
     endpointUrl: "${REPORTS_SERVER_ENDPOINT_URL:http://localhost:8383}"
 ```
 {% endif %}
 
-### Generate Report from Dashboard
+### 从仪表板生成报告
 
-The Tenant Administrator or Customer User can generate a report from the currently opened dashboard.
+租户管理员或客户用户可以从当前打开的仪表板生成报告。
 
-- Click the **Export Dashboard** button located at the right side of the dashboard toolbar
+- 单击位于仪表板工具栏右侧的 **导出仪表板** 按钮
 
 ![image](/images/user-guide/ui/reporting-export-dashboard-button.png)
 
-- In the expanded drop-down menu, select the desired dashboard export option
+- 在展开的下拉菜单中，选择所需的仪表板导出选项
 
 ![image](/images/user-guide/ui/reporting-export-dashboard-options.png)
 
-- The report generation will start.
+- 报告生成将开始。
 
 ![image](/images/user-guide/ui/reporting-export-dashboard-progress.png)
 
-- And finally, the report file will be automatically downloaded in the format selected.
+- 最后，报告文件将以所选格式自动下载。
 
-### Generate Report by schedule
+### 按计划生成报告
 
-Report generation can be invoked by a schedule using the [**Generate Report** Scheduler Event](/docs/{{docsPrefix}}user-guide/scheduler/#generate-report).
+可以使用 [**生成报告** 调度程序事件](/docs/{{docsPrefix}}user-guide/scheduler/#generate-report) 通过计划调用报告生成。
 
-### Generate Report Rule Chain
+### 生成报告规则链
 
-Scheduled reports generation is supported by the default **Root Rule Chain** of ThingsBoard PE.
-By default, a message of type **Generate Report** is routed to the **Generate Report Rule Chain**.
+ThingsBoard PE 的默认 **根规则链** 支持计划报告生成。
+默认情况下，类型为 **生成报告** 的消息会路由到 **生成报告规则链**。
 
 ![image](/images/user-guide/ui/reporting-pe-root-rule-chain-switch.png)
 
-The **Generate Report Rule Chain** has a [**Generate Report** Rule Node](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#generate-report-node)
-that performs the report generation according to the report configuration retrieved from the message body.
+**生成报告规则链** 有一个 [**生成报告** 规则节点](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#generate-report-node)，
+它根据从消息正文中检索到的报告配置执行报告生成。
 
-If the message body has a field ```sendEmail``` and its value is set to ```true```,
-the message with a report file reference in the ```attachments``` field of the metadata will be routed to the email related Rule Nodes.
-The Email Rule Nodes will prepare the email message with a report file in the attachments and send it to the configured recipients.
+如果消息正文有一个字段 ```sendEmail```，并且其值设置为 ```true```，
+则元数据中 ```attachments``` 字段中带有报告文件引用的消息将被路由到与电子邮件相关的规则节点。
+电子邮件规则节点将准备带有附件中报告文件的电子邮件消息并将其发送给配置的收件人。
 
 ![image](/images/user-guide/ui/reporting-generate-report-rule-chain.png)
 
-### Reports Widget
+### 报告小部件
 
-ThingsBoard provides access to the generated report files via the **Reports** Widget that is a part of the **Files** Widgets Bundle.
+ThingsBoard 通过 **报告** 小部件（它是 **文件** 小部件包的一部分）提供对生成的报告文件的访问。
 
 ![image](/images/user-guide/ui/reporting-reports-widget.png)
  
-The widget has the ability to filter the reports using the time range component.
+该小部件能够使用时间范围组件过滤报告。
 
-Also, the widget has the ability to search the reports by name.
+此外，该小部件能够按名称搜索报告。
 
-Each report can be downloaded by clicking on the **Download file** button.
+可以通过单击 **下载文件** 按钮下载每个报告。
 
-## Next steps
+## 后续步骤
 
 {% assign currentGuide = "AdvancedFeatures" %}{% include templates/multi-project-guides-banner.md %}

@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-gw
-title: How to use built-in GET/SET RPC methods
-description: How to use built-in GET/SET RPC methods
+title: 如何使用内置 GET/SET RPC 方法
+description: 如何使用内置 GET/SET RPC 方法
 
 ---
 
@@ -9,12 +9,11 @@ description: How to use built-in GET/SET RPC methods
 {:toc}
 
 
-This guide will help you use the OPC-UA Connector example's built-in GET/SET RPC methods.
+本指南将帮助您使用 OPC-UA Connector 示例的内置 GET/SET RPC 方法。
 
 
-Every telemetry and attribute parameter has **GET** and **SET** RPC methods out of the box, so you don't need to configure
-it manually.
-For example, if you have some telemetry parameter:
+每个遥测和属性参数都开箱即用地具有 **GET** 和 **SET** RPC 方法，因此您无需手动配置它。
+例如，如果您有一些遥测参数：
 ```json
 "timeseries": [
   {
@@ -23,16 +22,16 @@ For example, if you have some telemetry parameter:
   }
 ]
 ```
-To get temperature telemetry current value:
+要获取温度遥测的当前值：
 ```bash
 get ns=3;i=1001
 ```
-Response:
+响应：
 ```json
 {"get": 25.34, "code": 200}
 ```
 
-To set temperature telemetry value:
+要设置温度遥测值：
 ```bash
 set ns=3;i=1001 23
 ```
@@ -41,12 +40,12 @@ set ns=3;i=1001 23
 ![image](/images/gateway/gateway-opc-ua-rpc-1.png)
 {: refdef}
 <br>
-To set new value (T3000) for **"model"** attribute, run the query:
+要为 **“model”** 属性设置新值 (T3000)，请运行查询：
 ```bash
 set ns=3;i=1008; T3000
 ```
 
-Response:
+响应：
 ```json
 {"success":"true","code": 200}
 ```

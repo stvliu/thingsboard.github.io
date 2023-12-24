@@ -1,9 +1,9 @@
 ---
 layout: devices-library-article
-title: How to connect OrangePI 2G IoT to ThingsBoard?
-category: Single-board computers
-chip: Allwinner H6
-connectivity: HTTP, MQTT, GSM/GPRS
+title: 如何将 OrangePI 2G IoT 连接到 ThingsBoard？
+category: 单板计算机
+chip: 全志 H6
+connectivity: HTTP、MQTT、GSM/GPRS
 vendor: Orange Pi
 deviceImageFileName: orangepi2giot.png
 ---

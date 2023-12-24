@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-edge
-title: Provision Asset from cloud to edge
-description: Provision Asset from cloud to edge
+title: 从云端到边缘配置资产
+description: 从云端到边缘配置资产
 
 edgeAssets:
     0:
@@ -12,14 +12,14 @@ edgeAssets:
 
 ![image](/images/coming-soon.jpg)
 
-#### Assets management
+#### 资产管理
 
-Please use 'Edge Assets' icon to navigate to assets that are *'assigned'* to specific edge entity.
-User is able to assign to edge any asset that he has access to.
+请使用“边缘资产”图标导航到分配给特定边缘实体的资产。
+用户可以将自己有权访问的任何资产分配给边缘。
 
 {% include images-gallery.html imageCollection="edgeAssets" %}
 
-### Next Steps
+### 后续步骤
 
 {% assign currentGuide = "ProvisionAssetFromCloudToEdge" %}
 {% assign docsPrefix = "edge/" %}

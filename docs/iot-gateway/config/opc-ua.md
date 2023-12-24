@@ -2,8 +2,8 @@
 layout: docwithnav-gw
 assignees:
 - ashvayka
-title: OPC-UA Connector Configuration
-description: OPC-UA protocol support for ThingsBoard IoT Gateway
+title: OPC-UA 连接器配置
+description: ThingsBoard IoT 网关的 OPC-UA 协议支持
 
 ---
 
@@ -11,24 +11,24 @@ description: OPC-UA protocol support for ThingsBoard IoT Gateway
 {:toc}
 
 {% capture difference %}
-**From Gateway version 3.1 we added a new OPC-UA connector based on the AsyncIO library. 
-Note that the connector is in the early beta, so it can have bugs. 
-Also, it is not recommended to use it in production mode for now.
-For enabling it, use the type of connector "opcua_asyncio".**
+**从网关版本 3.1 开始，我们添加了一个基于 AsyncIO 库的新 OPC-UA 连接器。
+请注意，该连接器处于早期测试阶段，因此可能存在错误。
+此外，目前不建议在生产模式下使用它。
+要启用它，请使用连接器类型 “opcua_asyncio”。**
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-This guide will help you to get familiar with OPC-UA connector configuration for ThingsBoard IoT Gateway.
-Use [general configuration](/docs/iot-gateway/configuration/) to enable this extension.
-We will describe connector configuration file below.
+本指南将帮助您熟悉 ThingsBoard IoT 网关的 OPC-UA 连接器配置。
+使用 [常规配置](/docs/iot-gateway/configuration/) 来启用此扩展。
+我们将在下面描述连接器配置文件。
 
-<b>Example of OPC-UA Connector config file.</b>
+<b>OPC-UA 连接器配置文件示例。</b>
 
 {% capture opcuaConf %}
 
 {
   "server": {
-    "name": "OPC-UA Default Server",
+    "name": "OPC-UA 默认服务器",
     "url": "localhost:4840/freeopcua/server/",
     "timeoutInMillis": 5000,
     "scanPeriodInMillis": 5000,
@@ -79,26 +79,26 @@ We will describe connector configuration file below.
 {% endcapture %}
 {% include code-toggle.liquid code=opcuaConf params="conf|.copy-code.expandable-20" %}
 
-## Section "server"
+## “server” 部分
 
-Configuration in this section uses for connecting to OPC-UA server.  
+此部分中的配置用于连接到 OPC-UA 服务器。
 
-| **Parameter**                 | **Default value**                    | **Description**                                                                                                                                                        |
+| **参数**                 | **默认值**                    | **说明**                                                                                                                                                        |
 |:-|:-|-
-| name                          | **OPC-UA Default Server**            | Name of connector to server.                                                                                                                                           |
-| host                          | **localhost:4840/freeopcua/server/** | Hostname or ip address of OPC-UA server.                                                                                                                               |
-| timeoutInMillis               | **5000**                             | Timeout in seconds for connecting to OPC-UA server.                                                                                                                    |
-| scanPeriodInMillis            | **5000**                             | Period to rescan the server.                                                                                                                                           |
-| disableSubscriptions          | **false**                            | If true - the gateway will subscribe to interesting nodes and wait for data update and if false - the gateway will rescan OPC-UA server every **scanPeriodInMillis**   |
-| subCheckPeriodInMillis        | **100**                              | Period to check the subscriptions in the OPC-UA server.                                                                                                                |
-| showMap                       | **true**                             | Show nodes on scanning **true** or **false**.                                                                                                                          |
-| security                      | **Basic128Rsa15**                    | Security policy (**Basic128Rsa15**, **Basic256**, **Basic256Sha256**)                                                                                                  |
+| name                          | **OPC-UA 默认服务器**            | 连接到服务器的名称。                                                                                                                                           |
+| host                          | **localhost:4840/freeopcua/server/** | OPC-UA 服务器的主机名或 IP 地址。                                                                                                                               |
+| timeoutInMillis               | **5000**                             | 连接到 OPC-UA 服务器的超时时间（以秒为单位）。                                                                                                                    |
+| scanPeriodInMillis            | **5000**                             | 重新扫描服务器的周期。                                                                                                                                           |
+| disableSubscriptions          | **false**                            | 如果为 true - 网关将订阅感兴趣的节点并等待数据更新，如果为 false - 网关将每 **scanPeriodInMillis** 重新扫描 OPC-UA 服务器   |
+| subCheckPeriodInMillis        | **100**                              | 检查 OPC-UA 服务器中的订阅的周期。                                                                                                                |
+| showMap                       | **true**                             | 扫描时显示节点 **true** 或 **false**。                                                                                                                          |
+| security                      | **Basic128Rsa15**                    | 安全策略（**Basic128Rsa15**、**Basic256**、**Basic256Sha256**）                                                                                                  |
 |---
 
 <br>
-**Let's look an example.**
+**我们来看一个示例。**
 <br>
-In this example uses the Prosys OPC UA Simulation Server to demonstrate how to configure the OPC-UA connector.
+此示例使用 Prosys OPC UA 模拟服务器来演示如何配置 OPC-UA 连接器。
 <br>
 
 {:refdef: style="text-align: left;"}
@@ -106,15 +106,15 @@ In this example uses the Prosys OPC UA Simulation Server to demonstrate how to c
 {: refdef}
 
 
-On the main **"Status"** tab, copy connection address (UA TCP).
+在 **“状态”** 主选项卡上，复制连接地址（UA TCP）。
 
-To connect your OPC UA server to ThingsBoard, in the OPC-UA Connector configuration file (opcua.json), replace the "url" value with the copied connection address.
+要将 OPC UA 服务器连接到 ThingsBoard，请在 OPC-UA 连接器配置文件 (opcua.json) 中，将 “url” 值替换为复制的连接地址。
 
-Our **server** section would look like this:
+我们的 **server** 部分将如下所示：
 
 ```json
   "server": {
-    "name": "OPC-UA Default Server",
+    "name": "OPC-UA 默认服务器",
     "url": "localhost:53530/OPCUA/SimulationServer",
     "timeoutInMillis": 5000,
     "scanPeriodInMillis": 5000,
@@ -128,50 +128,50 @@ Our **server** section would look like this:
 ![image](/images/gateway/opc-ua-configuration-1.png)
 {: refdef}
 
-### Subsection "identity"
-There are several types available for this subsection:  
+### “identity” 子部分
+此子部分有几种类型可用：  
 1. anonymous  
 2. username  
 3. cert.PEM  
 
 {% capture identityopcuatogglespec %}
-<b>anonymous</b><br> <small>(recommended if all servers in the local network)</small>%,%anonymous%,%templates/iot-gateway/opcua-identity-anonymous-config.md%br%
-<b>username</b><br> <small>(recommended as basic level of security)</small>%,%username%,%templates/iot-gateway/opcua-identity-username-config.md%br%
-<b>cert.PEM</b><br> <small>(recommended as better level of security)</small>%,%certpem%,%templates/iot-gateway/opcua-identity-certpem-config.md%br%{% endcapture %}
+<b>anonymous</b><br> <small>(推荐用于本地网络中的所有服务器)</small>%,%anonymous%,%templates/iot-gateway/opcua-identity-anonymous-config.md%br%
+<b>username</b><br> <small>(推荐作为基本级别的安全性)</small>%,%username%,%templates/iot-gateway/opcua-identity-username-config.md%br%
+<b>cert.PEM</b><br> <small>(推荐作为更高级别的安全性)</small>%,%certpem%,%templates/iot-gateway/opcua-identity-certpem-config.md%br%{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="opcuaIdentityConfig" toggle-spec=identityopcuatogglespec %}
 
-## Section "mapping"
-This configuration section contains array of nodes that the gateway will subscribe to after connecting to the OPC-UA server and settings about processing data from these nodes.
+## “mapping” 部分
+此配置部分包含网关在连接到 OPC-UA 服务器后将订阅的节点数组，以及有关处理来自这些节点的数据的设置。
 
-| **Parameter**                 | **Default value**                    | **Description**                                                                       |
+| **参数**                 | **默认值**                    | **说明**                                                                       |
 |:-|:-|-
-| deviceNodePattern             | **Root\\.Objects\\.Device1**                     | Regular expression, uses for looking the node for a current device.                   |
-| deviceNamePattern             | **Device ${Root\\.Objects\\.Device1\\.serialNumber}**           | Path to variable with device name, uses for looking the device name in some variable.              |
+| deviceNodePattern             | **Root\\.Objects\\.Device1**                     | 用于查找当前设备的节点的正则表达式。                   |
+| deviceNamePattern             | **Device ${Root\\.Objects\\.Device1\\.serialNumber}**           | 具有设备名称的变量的路径，用于在某个变量中查找设备名称。              |
 |---
 
-This part of configuration will look like:  
+配置的这一部分将如下所示：  
 
 ```json
         "deviceNodePattern": "Root\\.Objects\\.Device1",
         "deviceNamePattern": "Device ${Root\\.Objects\\.Device1\\.serialNumber}",
 ```
 
-***Optionally, you can add in this section parameter "converter" for using custom converter.***
+***您可以选择在此部分中添加 “converter” 参数以使用自定义转换器。***
 <br>
 <br><br>
-**Let's look an example.**
+**我们来看一个示例。**
 
-Specify **deviceNodePattern** as on our test server. In this example it is **"Root\\.Objects\\.Simulation"**.
+将 **deviceNodePattern** 指定为我们的测试服务器上的内容。在此示例中，它是 **“Root\\.Objects\\.Simulation”**。
 
-**deviceNamePattern** specify as **"Device OPC-UA"**.
+将 **deviceNamePattern** 指定为 **“Device OPC-UA”**。
 
 {:refdef: style="text-align: left;"}
 ![image](/images/gateway/opc-ua-simulation-server-2.png)
 {: refdef}
 
 <br>
-In this example, the **mapping** section would look like this:
+在此示例中，**mapping** 部分将如下所示：
 
 ```json
         "deviceNodePattern": "Root\\.Objects\\.Simulation",
@@ -182,34 +182,34 @@ In this example, the **mapping** section would look like this:
 ![image](/images/gateway/opc-ua-configuration-2.png)
 {: refdef}
 
-After running **ThingsBoard IoT gateway**, you see the new device **Device OPC-UA** in your ThingsBoard instance.
+运行 **ThingsBoard IoT 网关** 后，您将在 ThingsBoard 实例中看到新设备 **Device OPC-UA**。
 
 {:refdef: style="text-align: left;"}
 ![image](/images/gateway/gateway-opc-ua-attributes-1.png)
 {: refdef}
 
-### Subsection "attributes"
-This subsection contains configurations for variables of the object, that will be interpreted as attributes for the device.
+### “attributes” 子部分
+此子部分包含对象变量的配置，这些变量将被解释为设备的属性。
 
-| **Parameter**   | **Default value**           | **Description**                                                                                      |
+| **参数**   | **默认值**           | **说明**                                                                                      |
 |:-|:-|-
-| key             | **CertificateNumber**       | Tag, that will interpreted as attribute for ThingsBoard platform instance.                           |
-| path            | **${ns=2;i=5}**             | Name of the variable in the OPC-UA object, uses for looking the value in some variable. ** \* **     |
+| key             | **CertificateNumber**       | 将被解释为 ThingsBoard 平台实例的属性的标记。                           |
+| path            | **${ns=2;i=5}**             | OPC-UA 对象中变量的名称，用于在某个变量中查找值。 ** \* **     |
 |---
 
 {% capture difference %}
 <br>
-**If you don't specify the "key" parameter, the node name will use instead**  
+**如果您未指定 “key” 参数，则将使用节点名称**  
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-** \* ** You can put here some expression for search like:
-1. Full path to node - **${Root\\.Objects\\.Device1\\.TemperatureAndHumiditySensor\\.CertificateNumber}**
-2. Relative path from device object - **${TemperatureAndHumiditySensor\\.CertificateNumber}** 
-3. Some regular expression to search - **${Root\\.Objects\\.Device\\d\*\\.TemperatureAndHumiditySensor\\.CertificateNumber}**
-4. Namespace identifier and node identifier - **${ns=2;i=5}**
+** \* ** 您可以在此处放置一些要搜索的表达式，例如：
+1. 完整节点路径 - **${Root\\.Objects\\.Device1\\.TemperatureAndHumiditySensor\\.CertificateNumber}**
+2. 相对于设备对象的相对路径 - **${TemperatureAndHumiditySensor\\.CertificateNumber}** 
+3. 要搜索的一些正则表达式 - **${Root\\.Objects\\.Device\\d\*\\.TemperatureAndHumiditySensor\\.CertificateNumber}**
+4. 命名空间标识符和节点标识符 - **${ns=2;i=5}**
 
-This part of configuration will look like:  
+配置的这一部分将如下所示：  
 
 ```json
         "attributes": [
@@ -221,16 +221,16 @@ This part of configuration will look like:
 ```
 
 <br>
-**Let's look an example.**
+**我们来看一个示例。**
 <br>
-In the "path" line set the NodeId value taken from our test server.
+在 “path” 行中设置从我们的测试服务器获取的 NodeId 值。
 <br>
 
 {:refdef: style="text-align: left;"}
 ![image](/images/gateway/opc-ua-simulation-server-3.png)
 {: refdef}
 
-In this example, the **attributes** section would look like this:
+在此示例中，**attributes** 部分将如下所示：
 
 ```json
         "attributes": [
@@ -249,28 +249,28 @@ In this example, the **attributes** section would look like this:
 ![image](/images/gateway/opc-ua-configuration-3.png)
 {: refdef}
 
-You must see the attributes you sent to ThingsBoard in the **Attributes** section of your device.:
+您必须在设备的 **属性** 部分中看到发送到 ThingsBoard 的属性：
 
 {:refdef: style="text-align: left;"}
 ![image](/images/gateway/gateway-opc-ua-attributes-2.png)
 {: refdef}
 
-### Subsection "timeseries"
-This subsection contains configurations for variables of the object, that will be interpreted as telemetry for the device.
+### “timeseries” 子部分
+此子部分包含对象变量的配置，这些变量将被解释为设备的遥测数据。
 
-| **Parameter**   | **Default value**           | **Description**                                                                   |
+| **参数**   | **默认值**           | **说明**                                                                   |
 |:-|:-|-
-| key             | **temperature °C**                                                             | Tag, that will interpreted as telemetry for ThingsBoard platform instance.        |
-| path            | **${Root\\.Objects\\.Device1\\.TemperatureAndHumiditySensor\\.Temperature}**   | Name of the variable in the OPC-UA object, uses for looking the value in some variable. ** \* ** |
+| key             | **temperature °C**                                                             | 将被解释为 ThingsBoard 平台实例的遥测数据的标记。        |
+| path            | **${Root\\.Objects\\.Device1\\.TemperatureAndHumiditySensor\\.Temperature}**   | OPC-UA 对象中变量的名称，用于在某个变量中查找值。 ** \* ** |
 |---
 
-** \* ** You can put here some expression for search like:
-1. Full path to node - **${Root\\.Objects\\.Device1\\.TemperatureAndHumiditySensor\\.Temperature}**
-2. Relative path from device object - **${TemperatureAndHumiditySensor\\.Temperature}** 
-3. Some regular expression to search - **${Root\\.Objects\\.Device\\d\*\\.TemperatureAndHumiditySensor\\.Temperature}**
-4. Namespace identifier and node identifier - **${ns=2;i=5}**
+** \* ** 您可以在此处放置一些要搜索的表达式，例如：
+1. 完整节点路径 - **${Root\\.Objects\\.Device1\\.TemperatureAndHumiditySensor\\.Temperature}**
+2. 相对于设备对象的相对路径 - **${TemperatureAndHumiditySensor\\.Temperature}** 
+3. 要搜索的一些正则表达式 - **${Root\\.Objects\\.Device\\d\*\\.TemperatureAndHumiditySensor\\.Temperature}**
+4. 命名空间标识符和节点标识符 - **${ns=2;i=5}**
 
-This part of configuration will look like:  
+配置的这一部分将如下所示：  
 
 ```json
         "timeseries": [
@@ -282,16 +282,16 @@ This part of configuration will look like:
 ```
 
 <br>
-**Let's look an example.**
+**我们来看一个示例。**
 
-Replace "path" value to the "NodeId" value, relative path from device object or Display Name identifier, taken from our test server.
+将 “path” 值替换为从我们的测试服务器获取的 “NodeId” 值、相对于设备对象的相对路径或显示名称标识符。
 <br>
 
 {:refdef: style="text-align: left;"}
 ![image](/images/gateway/opc-ua-simulation-server-4.png)
 {: refdef}
 
-In this example, the **timeseries** section would look like this:
+在此示例中，**timeseries** 部分将如下所示：
 
 ```json
         "timeseries": [
@@ -314,22 +314,22 @@ In this example, the **timeseries** section would look like this:
 ![image](/images/gateway/opc-ua-configuration-4.png)
 {: refdef}
 
-You must see the telemetry you sent to ThingsBoard in the **Latest telemetry** section of your device:
+您必须在设备的 **最新遥测数据** 部分中看到发送到 ThingsBoard 的遥测数据：
 
 {:refdef: style="text-align: left;"}
 ![image](/images/gateway/gateway-opc-ua-attributes-3.png)
 {: refdef}
 
-### Subsection "rpc_methods"
-This subsection contains configuration for RPC request from ThingsBoard platform instance.
+### “rpc_methods” 子部分
+此子部分包含来自 ThingsBoard 平台实例的 RPC 请求的配置。
 
-| **Parameter**         | **Default value**                 | **Description**                                                                                    |
+| **参数**         | **默认值**                 | **说明**                                                                                    |
 |:-|:-|-
-| method                | **multiply**                      | Name of method on OPC-UA server.                                                                   |
-| arguments             | **[2,4]**                         | Arguments for the method (if this parameter doesn't exist, arguments will take from rpc request).  |
+| method                | **multiply**                      | OPC-UA 服务器上的方法名称。                                                                   |
+| arguments             | **[2,4]**                         | 方法的参数（如果此参数不存在，则参数将从 rpc 请求中获取）。  |
 |---
 
-This part of configuration will look like:  
+配置的这一部分将如下所示：  
 
 ```json
         "rpc_methods": [
@@ -341,21 +341,20 @@ This part of configuration will look like:
 ```
 
 {% capture methodFilterOptions %}
-Also, every telemetry and attribute parameter has built-in GET and SET RPC methods out of the box, so you don’t need to configure
-it manually. See [the guide](/docs/iot-gateway/guides/how-to-use-get-set-rpc-methods).
+此外，每个遥测数据和属性参数都内置了 GET 和 SET RPC 方法，因此您无需手动配置它。请参阅 [指南](/docs/iot-gateway/guides/how-to-use-get-set-rpc-methods)。
 {% endcapture %}
 {% include templates/info-banner.md content=methodFilterOptions %}
 
-### Subsection "attributes_updates"
-This subsection contains configuration for attribute updates request from ThingsBoard platform instance.
+### “attributes_updates” 子部分
+此子部分包含来自 ThingsBoard 平台实例的属性更新请求的配置。
 
-| **Parameter**             | **Default value**                                            | **Description**                                                                               |
+| **参数**             | **默认值**                                            | **说明**                                                                               |
 |:-|:-|-
-| attributeOnThingsBoard    | **deviceName**                                               | Name of server side argument.                                                                 |
-| attributeOnDevice         | **Root\\.Objects\\.Device1\\.serialNumber**                     | Name of variable that will change itself value with a value from attribute update request.    |
+| attributeOnThingsBoard    | **deviceName**                                               | 服务器端参数的名称。                                                                 |
+| attributeOnDevice         | **Root\\.Objects\\.Device1\\.serialNumber**                     | 将使用属性更新请求中的值更改其自身值的可变变量的名称。    |
 |---
 
-This part of configuration will look like:  
+配置的这一部分将如下所示：  
 
 ```json
         "attributes_updates": [
@@ -366,19 +365,19 @@ This part of configuration will look like:
         ]
 ```
 
-**Let’s look an example.**
+**我们来看一个示例。**
 
-Suppose you want to set the value of the **"deviceName"** attribute. Currently, the attribute hasn't any value.
+假设您想设置 **“deviceName”** 属性的值。目前，该属性没有任何值。
 
-In the OPC-UA Connector configuration file (opcua.json) change **"attributeOnDevice"** value to the full path to the node "deviceName".
+在 OPC-UA 连接器配置文件 (opcua.json) 中，将 **“attributeOnDevice”** 值更改为节点 “deviceName” 的完整路径。
 
-In this example it is **"Root\\.Objects\\.Simulation\\.deviceName"**.
+在此示例中，它是 **“Root\\.Objects\\.Simulation\\.deviceName”**。
 
 {:refdef: style="text-align: left;"}
 ![image](/images/gateway/gateway-opc-ua-attributes-updates-2.png)
 {: refdef}
 
-Our **attributes_updates** section would look like this:
+我们的 **attributes_updates** 部分将如下所示：
 
 ```json
   "attributes_updates": [
@@ -393,9 +392,9 @@ Our **attributes_updates** section would look like this:
 ![image](/images/gateway/gateway-opc-ua-attributes-updates-1.png)
 {: refdef}
 
-Go to **"Shared attributes"** and create a new one for your device in the ThingsBoard instance.
+转到 **“共享属性”** 并为 ThingsBoard 实例中的设备创建一个新属性。
 
-Specify the key name - deviceName, value type - String, string value - Device OPC-UA.
+指定键名 - deviceName、值类型 - 字符串、字符串值 - Device OPC-UA。
 
 {:refdef: style="text-align: left;"}
 ![image](/images/gateway/gateway-opc-ua-attributes-updates-3.png)
@@ -405,19 +404,19 @@ Specify the key name - deviceName, value type - String, string value - Device OP
 ![image](/images/gateway/gateway-opc-ua-attributes-updates-4.png)
 {: refdef}
 
-Now go to OPC UA server and make sure the value of the deviceName node is updated.
+现在转到 OPC UA 服务器并确保 deviceName 节点的值已更新。
 
 {:refdef: style="text-align: left;"}
 ![image](/images/gateway/gateway-opc-ua-attributes-updates-5.png)
 {: refdef}
 
-## Next steps
+## 后续步骤
 
-Explore guides related to main ThingsBoard features:
- - [How to connect OPC-UA server to the gateway](/docs/iot-gateway/guides/how-to-connect-opcua-server/)
- - [ThingsBoard IoT Gateway Features](/docs/iot-gateway/features/)
- - [Data Visualization](/docs/user-guide/visualization/) - how to visualize collected data.
- - [Device attributes](/docs/user-guide/attributes/) - how to use device attributes.
- - [Telemetry data collection](/docs/user-guide/telemetry/) - how to collect telemetry data.
- - [Using RPC capabilities](/docs/user-guide/rpc/) - how to send commands to/from devices.
- - [Rule Engine](/docs/user-guide/rule-engine/) - how to use rule engine to analyze data from devices.
+探索与 ThingsBoard 主要功能相关的指南：
+ - [如何将 OPC-UA 服务器连接到网关](/docs/iot-gateway/guides/how-to-connect-opcua-server/)
+ - [ThingsBoard IoT 网关功能](/docs/iot-gateway/features/)
+ - [数据可视化](/docs/user-guide/visualization/) - 如何可视化收集到的数据。
+ - [设备属性](/docs/user-guide/attributes/) - 如何使用设备属性。
+ - [遥测数据收集](/docs/user-guide/telemetry/) - 如何收集遥测数据。
+ - [使用 RPC 功能](/docs/user-guide/rpc/) - 如何向/从设备发送命令。
+ - [规则引擎](/docs/user-guide/rule-engine/) - 如何使用规则引擎分析来自设备的数据。

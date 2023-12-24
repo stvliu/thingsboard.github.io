@@ -2,18 +2,18 @@
 layout: docwithnav
 assignees:
 - ashvayka
-title: Telemetry Plugin Action
+title: 遥测插件操作
 
 ---
 
-## Overview
+## 概述
 
-This component allows forwarding incoming attributes and timeseries requests to telemetry plugin. 
+此组件允许将传入的属性和时序请求转发到遥测插件。
 
-## Configuration
+## 配置
 
-There is no specific configuration for this component.
+此组件没有特定配置。
 
-## Example
+## 示例
 
-As a system administrator, you are able to review action example inside **Rules->System Telemetry Rule->Actions->Telemetry Plugin Action**.
+作为系统管理员，您可以在 **规则->系统遥测规则->操作->遥测插件操作** 中查看操作示例。

@@ -2,50 +2,50 @@
 layout: docwithnav-trendz
 assignees:
 - vparomskiy
-title: Custom Python models
-description: Batch Calculated Fields
+title: 自定义 Python 模型
+description: 批量计算字段
 
 
 python-prediction-basic-example:
   0:
     image: /images/trendz/python-predict-univariable-barview.png
-    title: 'Create bar chart'
+    title: '创建条形图'
   1:
     image: /images/trendz/python-predict-univariable-enable.png
-    title: 'Enable prediction and select Custom model'
+    title: '启用预测并选择自定义模型'
   2:
     image: /images/trendz/python-predict-univariable-sources.png
-    title: 'Write python code for timeseries forecasting'
+    title: '编写用于时间序列预测的 Python 代码'
   3:
     image: /images/trendz/python-predict-univariable-result.png
-    title: 'Bar chart with historical data and forecast for the next 14 days'
+    title: '条形图，其中包含历史数据和未来 14 天的预测'
 ---
 
 
 * TOC
 {:toc}
 
-You can add new prediction models into Trendz by writing a custom Python code. This code will be executed on the server side and will have access to the whole input dataset that includes required telemetries and attributes data.
-You can import required Python libraries and use them in your code to forecast required metric based on input data. 
+您可以通过编写自定义 Python 代码将新的预测模型添加到 Trendz。此代码将在服务器端执行，并且可以访问整个输入数据集，其中包括必需的遥测和属性数据。
+您可以导入必需的 Python 库并在代码中使用它们，以根据输入数据预测必需的指标。
 
-## Enable Custom prediction model
-Once you added required telemetry or calculated fields into Trendz view, you can tell Trendz that it should use custom prediction model for this field. 
-To do that you need to open `Field settings` dialog and select `Custom` option in the `Prediction method` dropdown:
+## 启用自定义预测模型
+将必需的遥测或计算字段添加到 Trendz 视图后，您可以告诉 Trendz 它应为此字段使用自定义预测模型。
+为此，您需要打开“字段设置”对话框，然后在“预测方法”下拉列表中选择“自定义”选项：
 
-## Define input dataset
-By default, you will have only original telemetry data in the input dataset. But you can add additional telemetries and attributes into the input dataset by selecting them in `Selected fields for prediction` section. 
-Just start typing the name of telemetry or attribute and select required field from the dropdown list.
+## 定义输入数据集
+默认情况下，输入数据集中只有原始遥测数据。但是，您可以通过在“用于预测的选定字段”部分中选择它们，将其他遥测和属性添加到输入数据集中。
+只需开始键入遥测或属性的名称，然后从下拉列表中选择必需的字段。
 
-## Basic univariable python model example
-In this example we will show how to predict water consumption based on historical data. 
+## 基本单变量 Python 模型示例
+在此示例中，我们将展示如何根据历史数据预测用水量。
 
-* Create Bar chart view in Trendz
-* Add `Date` field into X-axis section
-* Add `consumption` telemetry into the Y-axis section
-* Add `Sensor` device name into filter section and select required device
-* Enable `Prediction` checkbox and select `Custom` option in the `Prediction method` dropdown
-* Set prediction time range for next 14 days
-* Write following code into the `Model function` section:
+* 在 Trendz 中创建条形图视图
+* 将“日期”字段添加到 X 轴部分
+* 将“消耗”遥测添加到 Y 轴部分
+* 将“传感器”设备名称添加到筛选部分并选择必需的设备
+* 启用“预测”复选框，然后在“预测方法”下拉列表中选择“自定义”选项
+* 将预测时间范围设置为未来 14 天
+* 将以下代码写入“模型函数”部分：
 
 ```python
 import pandas as pd
@@ -71,22 +71,22 @@ print(f"result: {outputY}")
 return outputY
 ```
 
-Now you can build view to see the result of your prediction model.
+现在，您可以构建视图以查看预测模型的结果。
 
 {% include images-gallery.html imageCollection="python-prediction-basic-example" %}
 
 
-## Multivariable python model example
-In this example we will show how to predict heat consumption based on historical consumption, environment temperature .
+## 多变量 Python 模型示例
+在此示例中，我们将展示如何根据历史消耗量和环境温度预测热量消耗量。
 
-* Create Bar chart view in Trendz
-* Add `Date` field into X-axis section
-* Add `consumption` telemetry into the Y-axis section
-* Add `Sensor` device name into filter section and select required device
-* Enable `Prediction` checkbox and select `Custom` option in the `Prediction method` dropdown
-* Set prediction time range for next 14 days
-* Add `temperature` field into **Selected fields for prediction**
-* Write following code into the `Model function` section:
+* 在 Trendz 中创建条形图视图
+* 将“日期”字段添加到 X 轴部分
+* 将“消耗”遥测添加到 Y 轴部分
+* 将“传感器”设备名称添加到筛选部分并选择必需的设备
+* 启用“预测”复选框，然后在“预测方法”下拉列表中选择“自定义”选项
+* 将预测时间范围设置为未来 14 天
+* 将“温度”字段添加到**用于预测的选定字段**
+* 将以下代码写入“模型函数”部分：
 
 ```python
 import pandas as pd
@@ -148,6 +148,6 @@ print(f"result: {outputY}")
 return outputY
 ```
 
-## Next Steps
+## 后续步骤
 
 {% assign currentGuide = "CalculatedFields" %}{% include templates/trndz-guides-banner.md %}

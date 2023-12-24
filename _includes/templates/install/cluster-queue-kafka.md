@@ -1,13 +1,13 @@
-[Apache Kafka](https://kafka.apache.org/) is an open-source stream-processing software platform.
+[Apache Kafka](https://kafka.apache.org/) 是一个开源流处理软件平台。
 
-Configure ThingsBoard environment file:
+配置 ThingsBoard 环境文件：
 
 ```text
 nano .env
 ```
 {: .copy-code}
 
-Check following line:
+检查以下行：
 
 ```bash
 TB_QUEUE_TYPE=kafka

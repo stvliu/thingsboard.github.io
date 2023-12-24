@@ -1,18 +1,18 @@
-**ThingsBoard includes In Memory Queue service and use it by default without extra settings.**
+**ThingsBoard 包含内存队列服务，默认情况下使用它，无需额外设置。**
 
 ```text
 nano tb-node.env
 ```
 {: .copy-code}
 
-Add the following line to the file.
+将以下行添加到文件中。
 
 ```bash
 TB_QUEUE_TYPE=in-memory
 ```
 {: .copy-code}
 
-Check docker-compose.yml and configure ports if you need:
+检查 docker-compose.yml 并根据需要配置端口：
 
 ```bash
 nano docker-compose.yml

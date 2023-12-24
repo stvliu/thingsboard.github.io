@@ -3,7 +3,7 @@ layout: docwithnav
 assignees:
 - ashvayka
 title: MQTT over SSL
-description: Launching ThingsBoard with secure MQTT protocol to connect your IoT devices and projects.
+description: 使用安全 MQTT 协议启动 ThingsBoard 以连接您的物联网设备和项目。
 
 ---
 

@@ -1,14 +1,14 @@
-{% assign feature = "Platform Integrations" %}{% include templates/pe-feature-banner.md %}
+{% assign feature = "平台集成" %}{% include templates/pe-feature-banner.md %}
 
-## Overview
+## 概述
 
-IBM Watson IoT Integration allows to stream data from IBM Watson IoT to ThingsBoard and converts device payloads to the ThingsBoard format.
+IBM Watson IoT 集成允许将数据从 IBM Watson IoT 流式传输到 ThingsBoard，并将设备有效负载转换为 ThingsBoard 格式。
 
  ![image](/images/user-guide/integrations/ibm-watson-integration.svg)
  
-## Video tutorial
+## 视频教程
  
-See video tutorial below for step-by-step instruction how to setup IBM Watson IoT Integration.
+请参阅下面的视频教程，了解如何设置 IBM Watson IoT 集成。
 
 <br>
 <div id="video">  
@@ -18,6 +18,6 @@ See video tutorial below for step-by-step instruction how to setup IBM Watson Io
 </div> 
 
 
-## Next steps
+## 后续步骤
 
 {% assign currentGuide = "ConnectYourDevice" %}{% include templates/multi-project-guides-banner.md %}

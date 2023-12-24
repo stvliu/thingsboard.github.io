@@ -2,27 +2,27 @@
 layout: docwithnav
 assignees:
 - ashvayka
-title: Self-hosted setup using AWS EC2 instance
-description: ThingsBoard IoT platform self-hosted setup with AWS EC2 instance
+title: 使用 AWS EC2 实例进行自托管设置
+description: 使用 AWS EC2 实例进行 ThingsBoard IoT 平台自托管设置
 
 ---
 
 * TOC
 {:toc}
 
-This guide will help you to setup ThingsBoard in AWS EC2 instance. 
+本指南将帮助您在 AWS EC2 实例中设置 ThingsBoard。
 
-## Prerequisites
+## 先决条件
 
-You need to have admin access to ec2 resourse in your AWS account.
+您需要具有对 AWS 帐户中 ec2 资源的管理员访问权限。
 
-### Step 1. Create EC2 instance
+### 步骤 1. 创建 EC2 实例
 
-Create EC2 instance ([Amazon user guide](https://docs.aws.amazon.com/efs/latest/ug/gs-step-one-create-ec2-resources.html)) and choose Ubuntu Server 20.04 LTS. We recommend this distribution and OS version for our product.
+创建 EC2 实例（[Amazon 用户指南](https://docs.aws.amazon.com/efs/latest/ug/gs-step-one-create-ec2-resources.html)）并选择 Ubuntu Server 20.04 LTS。我们为我们的产品推荐此发行版和操作系统版本。
 
-### Step 2. Configure your security group for the instance.
+### 步骤 2. 为实例配置安全组。
 
-You need to open TCP 22,80,443,1883 and UDP 5683 ports in inbound rules.
+您需要在入站规则中打开 TCP 22,80,443,1883 和 UDP 5683 端口。
 
 
-After that, you can start installation from this [guide](/docs/user-guide/install/ubuntu/).
+之后，您可以从此 [指南](/docs/user-guide/install/ubuntu/) 开始安装。

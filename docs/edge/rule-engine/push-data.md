@@ -1,12 +1,12 @@
 ---
 layout: docwithnav-edge
-title: Push data from edge to cloud and vice versa
-description: Push data from edge to cloud and vice versa
+title: 将数据从边缘推送到云端，反之亦然
+description: 将数据从边缘推送到云端，反之亦然
 ---
 
 ![image](/images/coming-soon.jpg)
 
-#### Next Steps
+#### 后续步骤
 
 {% assign currentGuide = "PushDataFromEdgeToCloudAndViseVersa" %}
 {% assign docsPrefix = "edge/" %}

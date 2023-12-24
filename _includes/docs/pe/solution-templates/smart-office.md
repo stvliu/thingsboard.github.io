@@ -1,62 +1,59 @@
-
-* TOC 
+* TOC
 {:toc}
 
 {% include templates/solution-templates.md %}
 
-Smart Office template represents a basic work space monitoring and management solution.
-With this template you get an interactive dashboard with the ability to control HVAC system, 
-and have a high-level report of key metrics necessary for effective and proactive office management.
+智能办公室模板代表基本工作空间监控和管理解决方案。
+使用此模板，您可以获得一个交互式仪表板，能够控制 HVAC 系统，并获得有效和主动的办公室管理所需的关键指标的高级报告。
 
 {% include images-gallery.html imageCollection="solution-highlights" %}
 
-### Dashboard
+### 仪表板
 
-As part of this solution, we have created the "Smart Office" dashboard that displays data from multiple devices. You may use the dashboard to:
+作为此解决方案的一部分，我们创建了“智能办公室”仪表板，该仪表板显示来自多个设备的数据。您可以使用仪表板来：
 
-* observe office sensors and their location;
-* browse indoor temperature and power consumption history;
-* monitor temperature alarms;
-* control HVAC (requires connected device);
-* observe specific details for each sensor.
+* 观察办公室传感器及其位置；
+* 浏览室内温度和功耗历史记录；
+* 监控温度警报；
+* 控制 HVAC（需要连接的设备）；
+* 观察每个传感器的具体细节。
 
-The dashboard has multiple states. The main state displays the list of the devices, their location on the office map as well as the list of their alarms.
-You may drill down to the device details state by clicking on the table row. The device details are specific to the device type.
+仪表板有多个状态。主状态显示设备列表、它们在办公室地图上的位置以及它们的警报列表。
+您可以通过单击表格行来向下钻取到设备详细信息状态。设备详细信息特定于设备类型。
 
-You may always customize the "Smart Office" dashboard using dashboard development [guide](/docs/{{docsPrefix}}user-guide/dashboards/).
+您始终可以使用仪表板开发[指南](/docs/{{docsPrefix}}user-guide/dashboards/)自定义“智能办公室”仪表板。
 
-### Devices
+### 设备
 
-We have already created "Office" asset and 4 devices related to it. We have also loaded demo data for those devices. 
-See solution [instructions](/docs/{{docsPrefix}}solution-templates/overview/#install-solution-template) for the list of created devices and their credentials.
+我们已经创建了“办公室”资产和与之相关的 4 个设备。我们还为这些设备加载了演示数据。有关创建的设备及其凭据的列表，请参阅解决方案[说明](/docs/{{docsPrefix}}solution-templates/overview/#install-solution-template)。
 
-Solution expects specific telemetry from each device based on its type.
-You may find payload examples below.
+解决方案根据每种设备的类型期望来自每种设备的特定遥测。
+您可以在下面找到有效载荷示例。
 
-**Energy meter**
+**能量表**
 
 
-Payload example:
+有效载荷示例：
 
 ```json
 {"voltage":  220, "frequency":  60, "amperage": 16, "power": 3000, "energy": 300 }
 ```
 {: .copy-code}
 
-**Water meter**
+**水表**
 
 
-Payload example:
+有效载荷示例：
 
 ```json
 {"water": 2.3, "voltage": 3.9 }
 ```
 {: .copy-code}
 
-**Smart sensor**
+**智能传感器**
 
 
-Payload example:
+有效载荷示例：
 
 ```json
 {"co2": 500, "tvoc": 0.3, "temperature": 22.5, "humidity": 50, "occupancy": true}
@@ -67,7 +64,7 @@ Payload example:
 **HVAC**
 
 
-Payload example:
+有效载荷示例：
 
 ```json
 {"airFlow": 300, "targetTemperature": 21.5, "enabled": true}
@@ -75,12 +72,11 @@ Payload example:
 {: .copy-code}
 
 
-HVAC device also accepts commands from the dashboard to enable/disable air conditioning as well as set target temperature.
-The commands are sent using the platform [RPC API](/docs/{{docsPrefix}}user-guide/rpc/). 
+HVAC 设备还接受来自仪表板的命令以启用/禁用空调以及设置目标温度。
+这些命令使用平台[RPC API](/docs/{{docsPrefix}}user-guide/rpc/)发送。
 
-You may find the exact commands to send data on behalf of created devices in the solution [instructions](/docs/{{docsPrefix}}solution-templates/overview/#install-solution-template).
-See [connecting devices](/docs/{{docsPrefix}}getting-started-guides/connectivity/) for various connectivity options to connect real devices.
+您可以在解决方案[说明](/docs/{{docsPrefix}}solution-templates/overview/#install-solution-template)中找到代表创建的设备发送数据的准确命令。有关连接真实设备的各种连接选项，请参阅[连接设备](/docs/{{docsPrefix}}getting-started-guides/connectivity/)。
 
-### Alarms
+### 警报
 
-Alarms are generated using two Alarm rules in the "smart-sensor" [device profile](/docs/{{docsPrefix}}user-guide/device-profiles/).
+警报是使用“智能传感器”[设备配置文件](/docs/{{docsPrefix}}user-guide/device-profiles/)中的两个警报规则生成的。

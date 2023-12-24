@@ -1,22 +1,22 @@
-Using Cassandra is an optional step. 
-We recommend to use Cassandra if you plan to insert more than 5K data points per second or would like to optimize storage space.
+使用 Cassandra 是一个可选步骤。
+如果您计划每秒插入超过 5K 个数据点或希望优化存储空间，我们建议您使用 Cassandra。
 
-##### Provision additional node groups
+##### 配置其他节点组
 
-Provision additional node groups that will be hosting Cassandra instances. 
-You may change the machine type. At least 4 vCPUs and 16GB of RAM is recommended.
+配置将托管 Cassandra 实例的其他节点组。
+您可以更改机器类型。建议至少使用 4 个 vCPU 和 16GB RAM。
 
-We will create **3** separate node pools with **1** node per zone. 
-Since we plan to use ebs disks, we don't want k8s to launch a pod in the zone where the corresponding disk is not available.
-Those zones will have the same node label. We will use this label to target deployment of our stateful set.
+我们将创建 **3** 个单独的节点池，每个可用区 **1** 个节点。
+由于我们计划使用 ebs 磁盘，我们不希望 k8s 在相应磁盘不可用的可用区中启动 pod。
+这些可用区将具有相同的节点标签。我们将使用此标签来定位有状态集的部署。
 
-Deploy **3** nodes of type **m5.xlarge** in different zones. You may change the zones to correspond to your region:
+在不同的可用区中部署 **3** 个 **m5.xlarge** 类型的节点。您可以更改可用区以对应您的区域：
 
 ```bash
 eksctl create nodegroup --config-file=<path> --include='cassandra-*'
 ```
 {: .copy-code}
 
-{% assign tbCassandraRegionComments = ". Don't forget to replace *YOUR_AWS_REGION* with the name of your AWS region. " %}
+{% assign tbCassandraRegionComments = ". 别忘了将 *YOUR_AWS_REGION* 替换为您的 AWS 区域的名称。 " %}
 {% assign tbCassandraRegion = "YOUR_AWS_REGION" %}
 {% include templates/install/cassandra-k8s-common.md %}

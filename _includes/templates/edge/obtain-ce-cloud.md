@@ -1,4 +1,4 @@
-The easiest way is to use [Live Demo](https://demo.thingsboard.io/signup){:target="_blank"} server.
+最简单的方法是使用 [实时演示](https://demo.thingsboard.io/signup){:target="_blank"} 服务器。
 
-Alternatively, you can install the ThingsBoard Community Edition server on-premise. 
-For installation guidance, please refer to [Install CE](/docs/user-guide/install/installation-options/){:target="_blank"}.
+或者，您可以在本地安装 ThingsBoard 社区版服务器。
+有关安装指南，请参阅 [安装 CE](/docs/user-guide/install/installation-options/){:target="_blank"}。

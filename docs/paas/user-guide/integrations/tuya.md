@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-paas
-title: Tuya Integration
-description: Tuya Integration Guide
+title: Tuya 集成
+description: Tuya 集成指南
 
 tuya-application-add-device:
     0:
@@ -24,67 +24,67 @@ tuya-application-add-device:
 tuya-create-cloud-project:
     0:
         image: /images/user-guide/integrations/tuya/tuya-create-cloud-project-1.png
-        title: 'Go to the "Cloud" tab -> "Development". Click the "Create Cloud Project" button'
+        title: '转到“云”选项卡 -> “开发”。单击“创建云项目”按钮'
     1:
         image: /images/user-guide/integrations/tuya/tuya-create-cloud-project-2.png
-        title: 'In a pop-up window, fill required fields and click "Create"'
+        title: '在弹出窗口中，填写必填字段，然后单击“创建”'
     2:
         image: /images/user-guide/integrations/tuya/tuya-create-cloud-project-3.png
-        title: 'Make additional settings in the “Authorize API Services” window and click "Authorize"'
+        title: '在“授权 API 服务”窗口中进行其他设置，然后单击“授权”'
     3:
         image: /images/user-guide/integrations/tuya/tuya-create-cloud-project-4.png
-        title: 'Fill in the required fields in the "Project configuration" window, then click "Create"'
+        title: '在“项目配置”窗口中填写必填字段，然后单击“创建”'
     4:
         image: /images/user-guide/integrations/tuya/tuya-create-cloud-project-5.png
-        title: 'Now your cloud project is created. In this window, remember the Access ID and Access Secret values. These values will be needed during the Tuya Integration setup.'
+        title: '现在，您的云项目已创建。在此窗口中，记住访问 ID 和访问密钥值。在 Tuya 集成设置期间需要这些值。'
 
 tuya-message-service-enable:
     0:
         image: /images/user-guide/integrations/tuya/tuya-message-service-enable-1.png
-        title: 'Go to the "Cloud" tab -> "Message Service"'
+        title: '转到“云”选项卡 -> “消息服务”'
     1:
         image: /images/user-guide/integrations/tuya/tuya-message-service-enable-2.png
-        title: 'Toggle to enable Message Service'
+        title: '切换以启用消息服务'
     2:
         image: /images/user-guide/integrations/tuya/tuya-message-service-enable-3.png
-        title: 'In the pop-up window, set up the messaging service. Configure the settings for "Message Service Type" and "Alert Contact". Click "Ok"'
+        title: '在弹出窗口中，设置消息服务。配置“消息服务类型”和“警报联系人”的设置。单击“确定”'
     3:
         image: /images/user-guide/integrations/tuya/tuya-message-service-enable-4.png
-        title: 'Message Service enabled'
+        title: '消息服务已启用'
 
 tuya-add-smart-life-app:
     0:
         image: /images/user-guide/integrations/tuya/tuya-add-smart-life-app-1.png
-        title: 'Go to "Cloud" tab -> "Development". Select your project'
+        title: '转到“云”选项卡 -> “开发”。选择您的项目'
     1:
         image: /images/user-guide/integrations/tuya/tuya-add-smart-life-app-2.png
-        title: 'Navigate to the "Devices" tab -> select the "Link Tuya App Account" tab. Click "Add App Account"'
+        title: '导航到“设备”选项卡 -> 选择“链接 Tuya 应用帐户”选项卡。单击“添加应用帐户”'
     2:
         image: /images/user-guide/integrations/tuya/tuya-add-smart-life-app-3.png
-        title: 'Scan the QR code with Smart Life App to authorize'
+        title: '使用 Smart Life 应用扫描二维码进行授权'
     3:
         image: /images/user-guide/integrations/tuya/tuya-add-smart-life-app-4.png
-        title: 'In the pop-up window, set up the device linking method and select device permission: read, read/write or read/write/manage". Click "Ok"'
+        title: '在弹出窗口中，设置设备链接方法并选择设备权限：读取、读取/写入或读取/写入/管理”。单击“确定”'
     4:
         image: /images/user-guide/integrations/tuya/tuya-add-smart-life-app-5.png
-        title: 'Now your devices under the mobile app account have been added to the project'
+        title: '现在，移动应用帐户下的设备已添加到项目中'
     5:
         image: /images/user-guide/integrations/tuya/tuya-add-smart-life-app-6.png
-        title: 'Navigate to the "All Devices" tab. You can see your device added to the project'
+        title: '导航到“所有设备”选项卡。您可以看到添加到项目中的设备'
 
 tuya-enable-rules-environment:
     0:
         image: /images/user-guide/integrations/tuya/tuya-enable-rules-environment-1-pe.png
-        title: 'Navigate to the "Message Service" tab. Click the "Create Messaging Rules" button;'
+        title: '导航到“消息服务”选项卡。单击“创建消息规则”按钮；'
     1:
         image: /images/user-guide/integrations/tuya/tuya-enable-rules-environment-2-pe.png
-        title: 'Click the "Add Message Filtering Rule" button;'
+        title: '单击“添加消息过滤规则”按钮；'
     2:
         image: /images/user-guide/integrations/tuya/tuya-enable-rules-environment-3-pe.png
-        title: 'Add new message filtering rule and click "Release Rule" button;'
+        title: '添加新的消息过滤规则，然后单击“发布规则”按钮；'
     3:
         image: /images/user-guide/integrations/tuya/tuya-enable-rules-environment-5-pe.png
-        title: 'Enable the messaging rule.'
+        title: '启用消息规则。'
 
 ---
 {% assign docsPrefix = "paas/" %}

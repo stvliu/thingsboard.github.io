@@ -1,10 +1,10 @@
-### DNS issues
+### DNS 问题
 
 {% include templates/troubleshooting/dns-issues.md %}
 
-### Database issues
+### 数据库问题
 
-**NOTE** If you see errors related to edge is not able to connect to database, for example
+**注意** 如果你看到与 edge 无法连接到数据库相关的错误，例如
 
 ```bash
 Caused by: org.postgresql.util.PSQLException: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
@@ -37,7 +37,7 @@ mytbedge_1_f5648ad89a6e | 	... 131 common frames omitted
 mytbedge_1_f5648ad89a6e | pg_ctl: could not send stop signal (PID: 10): No such process
 ```
 
-Stop and remove containers:
+停止并删除容器：
 
 ```bash
 docker compose stop
@@ -46,20 +46,20 @@ docker compose rm
 {: .copy-code}
 
 {% capture dockerComposeStandalone %}
-If you still rely on Docker Compose as docker-compose (with a hyphen) here is the list of the above commands:
+如果你仍然依赖 Docker Compose 作为 docker-compose（带连字符），以下是上述命令的列表：
 <br>**docker-compose stop**
 <br>**docker-compose rm**
 {% endcapture %}
 {% include templates/info-banner.md content=dockerComposeStandalone %}
 
-Remove **postmaster.pid** file:
+删除 **postmaster.pid** 文件：
 
 ```bash
 sudo rm -rf ~/.mytb-edge-data/db/postmaster.pid
 ```
 {: .copy-code}
 
-Start containers again:
+再次启动容器：
 
 ```bash
 docker compose up -d
@@ -68,7 +68,7 @@ docker compose logs -f mytbedge
 {: .copy-code}
 
 {% capture dockerComposeStandalone %}
-If you still rely on Docker Compose as docker-compose (with a hyphen) here is the list of the above commands:
+如果你仍然依赖 Docker Compose 作为 docker-compose（带连字符），以下是上述命令的列表：
 <br>**docker-compose up -d**
 <br>**docker-compose logs -f mytbedge**
 {% endcapture %}

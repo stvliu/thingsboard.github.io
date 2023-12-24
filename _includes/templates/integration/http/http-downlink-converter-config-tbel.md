@@ -6,14 +6,14 @@
 {% endif %}
 
 <br>
-Add a converter to the integration. You can customize a downlink according to your configuration.
-Let’s consider an example where we send an attribute update message. So we should change code in the downlink encoder function under line **//downlink data** input:
+将转换器添加到集成。您可以根据配置自定义下行链路。
+我们考虑一个发送属性更新消息的示例。因此，我们应该在 **//downlink data** 输入下更改下行链路编码器函数中的代码：
 
 ```ruby
 data: JSON.stringify(msg)
 ```
 {: .copy-code}
-where **msg** is the message that we receive and send back to the device.
+其中 **msg** 是我们接收并发送回设备的消息。
 
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/http/http-create-downlink-tbel-2-pe.png)
@@ -23,7 +23,7 @@ where **msg** is the message that we receive and send back to the device.
 {% endif %}
 
 <br>
-An example of downlink converter:
+下行链路转换器的示例：
 
 ```ruby
 // Encode downlink data from incoming Rule Engine message

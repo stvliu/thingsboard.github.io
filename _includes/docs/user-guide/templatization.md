@@ -1,26 +1,26 @@
 * TOC
 {:toc}
 
-Templatization is the process of using predefined templates to dynamically insert or substitute values into text.
-These templates serve as placeholders for variables that can be filled in later with actual data. 
+模板化是使用预定义模板动态插入或替换文本中值的进程。
+这些模板用作变量的占位符，以后可以用实际数据填充这些变量。
 
-In the context of rule engine, templates are used to extract data from incoming messages during runtime. 
-This is particularly helpful in the rule node configuration, where templatization allows for dynamic configuration by replacing static values in the configuration fields with real-time values from the incoming messages. 
-This enables more flexible and automated handling of data, making it easier to perform conditional operations based on varying inputs.
+在规则引擎的上下文中，模板用于在运行时从传入的消息中提取数据。
+这在规则节点配置中特别有用，模板化允许通过用传入消息中的实时值替换配置字段中的静态值来进行动态配置。
+这使得数据处理更加灵活和自动化，从而更容易根据不同的输入执行条件操作。
 
-## Syntax
+## 语法
 
-Templates start with a dollar sign (`$`), followed by brackets with a key name inside.
-Square brackets (`[]`) are used for message keys, while curly brackets (`{}`) are used for message metadata keys.
-For example: 
-- `$[messageKey]` - will extract value of `messageKey` from incoming message.
-- `${metadataKey}` - will extract value of `metadataKey` from incoming message metadata.
+模板以美元符号 (`$`) 开头，后跟带有键名的括号。
+方括号 (`[]`) 用于消息键，而花括号 (`{}`) 用于消息元数据键。
+例如：
+- `$[messageKey]` - 将从传入消息中提取 `messageKey` 的值。
+- `${metadataKey}` - 将从传入消息元数据中提取 `metadataKey` 的值。
 
-In the example above, `messageKey` and `metadataKey` represent any key name that may exist within the message or its metadata.
+在上面的示例中，`messageKey` 和 `metadataKey` 表示可能存在于消息或其元数据中的任何键名。
 
-## Example
+## 示例
 
-Let's review an example. First JSON is message, second is message metadata:
+我们来看一个示例。第一个 JSON 是消息，第二个是消息元数据：
 
 ```json
 {
@@ -39,25 +39,25 @@ Let's review an example. First JSON is message, second is message metadata:
 }
 ```
 
-Assume, we detected an unusually high wind speed and want to send this telemetry reading to some external REST API. 
-Every reading needs to be associated with specific device and location - this information is available only in real-time. 
-We can use templates extract necessary data and to construct URL for sending data:
+假设我们检测到异常高的风速，并希望将此遥测读数发送到某个外部 REST API。
+每次读数都需要与特定设备和位置相关联 - 此信息仅在实时可用。
+我们可以使用模板提取必要的数据并构建用于发送数据的 URL：
 
-`example-base-url.com/report-reading?location=$[location]&deviceName=${deviceName}` 
+`example-base-url.com/report-reading?location=$[location]&deviceName=${deviceName}`
 
-This template will be resolved to: 
+此模板将解析为：
 
 `example-base-url.com/report-reading?location=riverside&deviceName=weather1`
 
-Templates are ideal for scenarios where the specific values aren't known at the time of configuration but will become available at runtime.
+模板非常适合在配置时不知道具体值但在运行时会知道具体值的情况下使用。
 
-## Notes
+## 注释
 
-- Templates can be combined with regular text. For example: "Fuel tanks are filled to `$[fuelLevel]`%".
-- You can access nested keys in JSON object using dot notation: `$[object.key]`.
-- If specified key is missing or value associated with that key is an object or an array, then template string will be returned unchanged.
+- 模板可以与常规文本组合使用。例如：“油箱已加满至 `$[fuelLevel]`%”。
+- 您可以使用点符号访问 JSON 对象中的嵌套键：`$[object.key]`.
+- 如果指定的键不存在或与该键关联的值是对象或数组，则模板字符串将保持不变。
 
-To illustrate written above let's review an example. Here's content of a message:
+为了说明上面写的内容，我们来看一个示例。这是一个消息的内容：
 ```json
 {
     "number": 123.45,
@@ -70,9 +70,9 @@ To illustrate written above let's review an example. Here's content of a message
     "null": null
 }
 ```
-Here's a table with comparison between templates and extracted values:
+这是一个比较模板和提取值的表格：
 
-| **Template**       | **Extracted value** |
+| **模板**       | **提取值** |
 |--------------------|---------------------|
 | $[number]          | 123.45              |
 | $[string]          | text                |

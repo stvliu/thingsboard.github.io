@@ -1,21 +1,20 @@
 ---
 layout: docwithnav
-title: Install HAProxy Load Balancer for ThingsBoard on CentOS/RHEL
-description: Install HAProxy Load Balancer for ThingsBoard on CentOS/RHEL
+title: 在 CentOS/RHEL 上安装 ThingsBoard 的 HAProxy 负载均衡器
+description: 在 CentOS/RHEL 上安装 ThingsBoard 的 HAProxy 负载均衡器
 hidetoc: "true"
 ---
 
-This guide describes how to install HAProxy with Let's Encrypt
-as a service. This is possible in case you are hosting ThingsBoard in the cloud and have a valid DNS name assigned to your instance.
+本指南介绍如何将 HAProxy 与 Let's Encrypt 一起安装为一项服务。如果您将 ThingsBoard 托管在云中并且为您的实例分配了有效的 DNS 名称，则可以这样做。
 
 * TOC
 {:toc}
 
-### Prerequisites
+### 先决条件
 
-RHEL/CentOS 7/8 with valid DNS name assigned to the instance. Network settings should allow connections on Port 80 (HTTP) and 443 (HTTPS).
+RHEL/CentOS 7/8，并为实例分配了有效的 DNS 名称。网络设置应允许在端口 80（HTTP）和 443（HTTPS）上进行连接。
 
-In order to open 80 and 443 ports execute the following command:
+要打开 80 和 443 端口，请执行以下命令：
 
 ```bash
 sudo firewall-cmd --zone=public --add-port=80/tcp --permanent
@@ -24,19 +23,19 @@ sudo firewall-cmd --reload
 
 ``` 
 
-### Step 1. Connect to your ThingsBoard instance over SSH
+### 步骤 1. 通过 SSH 连接到您的 ThingsBoard 实例
 
-Below is example command for AWS as a reference:
+以下是 AWS 的示例命令，仅供参考：
 
 ```bash
 $ ssh -i <PRIVATE-KEY> ubuntu@<PUBLIC_DNS_NAME>
 ```
 
-or consult your cloud vendor for different options.
+或咨询您的云供应商以获取不同的选项。
 
-### Step 2. Install HAProxy Load Balancer package
+### 步骤 2. 安装 HAProxy 负载均衡器软件包
 
-- For **RHEL/CentOS 7** the following command will ensure the Cheese repo is enabled:
+- 对于 **RHEL/CentOS 7**，以下命令将确保启用 Cheese 存储库：
 
 ```bash
 sudo yum -y install http://www.nosuchhost.net/~cheese/fedora/packages/epel-7/x86_64/cheese-release-7-1.noarch.rpm
@@ -45,7 +44,7 @@ sudo yum-config-manager --enable cheese
 ```
 {: .copy-code}
 
-- For **RHEL/CentOS 8** the following command will ensure the PowerTools repo is enabled:
+- 对于 **RHEL/CentOS 8**，以下命令将确保启用 PowerTools 存储库：
 
 ```bash
 sudo dnf config-manager --enable powertools
@@ -53,7 +52,7 @@ sudo dnf config-manager --enable powertools
 ```
 {: .copy-code}
 
-Execute the following commands to install HAProxy package:
+执行以下命令以安装 HAProxy 软件包：
 
 ```bash
 sudo yum install gcc pcre-devel openssl-devel readline-devel systemd-devel tar lua lua-devel make -y
@@ -72,9 +71,9 @@ rm -rf ~/haproxy-src
 ```
 {: .copy-code}
 
-Execute the following commands to create haproxy SystemD Unit File:
+执行以下命令以创建 haproxy SystemD 单元文件：
 
-(copy-paste full text of the command as-is)
+（复制粘贴命令的全文，保持原样）
 
 ```bash
 cat <<'EOT' | sudo tee /etc/systemd/system/haproxy.service
@@ -95,26 +94,26 @@ EOT
 ```
 {: .copy-code}
 
-Execute the following commands to create haproxy SystemD Environment File:
+执行以下命令以创建 haproxy SystemD 环境文件：
 
-(copy-paste full text of the command as-is)
+（复制粘贴命令的全文，保持原样）
 
 ```bash
 cat <<EOT | sudo tee /etc/sysconfig/haproxy
-# Command line options to pass to HAProxy at startup
-# The default is:
+# 在启动时传递给 HAProxy 的命令行选项
+# 默认值为：
 CLI_OPTIONS="-Ws"
 
-# Specify an alternate configuration file. The default is:
+# 指定备用配置文件。默认值为：
 CONFIG_FILE=/etc/haproxy/haproxy.cfg
 
-# File used to track process IDs. The default is:
+# 用于跟踪进程 ID 的文件。默认值为：
 PID_FILE=/var/run/haproxy.pid
 EOT
 ```
 {: .copy-code}
 
-Execute the following commands to configure haproxy service:
+执行以下命令以配置 haproxy 服务：
 
 ```bash
 sudo systemctl daemon-reload
@@ -123,9 +122,9 @@ sudo systemctl enable haproxy
 ```
 {: .copy-code}
 
-### Step 3. Install Certbot package
+### 步骤 3. 安装 Certbot 软件包
 
-**RHEL 7 ONLY** - Enable the optional channel:
+**仅限 RHEL 7** - 启用可选频道：
 
 ```bash
 sudo yum -y install yum-utils
@@ -133,18 +132,18 @@ sudo yum-config-manager --enable rhui-REGION-rhel-server-extras rhui-REGION-rhel
 ```
 {: .copy-code}
 
-Execute the following commands to install Certbot package:
+执行以下命令以安装 Certbot 软件包：
 
 ```bash
 sudo yum -y install ca-certificates certbot
 ```
 {: .copy-code}
 
-### Step 4. Install default self-signed certificate
+### 步骤 4. 安装默认自签名证书
 
-Execute the following commands to install default self-signed certificate:
- 
-(copy-paste full text of the command as-is)
+执行以下命令以安装默认自签名证书：
+
+（复制粘贴命令的全文，保持原样）
 
 ```bash
 cat <<EOT | sudo tee /usr/bin/haproxy-default-cert
@@ -173,7 +172,7 @@ if [ ! -e \${CERTS_D_DIR} ]; then
 fi
 
 
-# Check if default.pem has been created
+# 检查是否已创建 default.pem
 if [ ! -e \${DEFAULT_PEM} ]; then
   openssl genrsa -des3 -passout pass:\${PASSWORD} -out \${KEY} 2048 &> /dev/null
   sleep 1
@@ -191,7 +190,7 @@ EOT
 ```
 {: .copy-code}
 
-Execute the following commands:
+执行以下命令：
 
 ```bash
 sudo chmod +x /usr/bin/haproxy-default-cert
@@ -199,11 +198,11 @@ touch ~/.rnd
 sudo haproxy-default-cert
 ```
 
-### Step 5. Configure HAProxy Load Balancer
+### 步骤 5. 配置 HAProxy 负载均衡器
 
-Execute the following command to create HAProxy Load Balancer configuration file: 
-                                                                                                                                                                                  
-(copy-paste full text of the command as-is)
+执行以下命令以创建 HAProxy 负载均衡器配置文件：
+
+（复制粘贴命令的全文，保持原样）
 
 ```bash
 cat <<EOT | sudo tee /etc/haproxy/haproxy.cfg
@@ -273,11 +272,11 @@ EOT
 ```
 {: .copy-code}
 
-### Step 6. Configure Certbot with Let’s Encrypt
+### 步骤 6. 使用 Let's Encrypt 配置 Certbot
 
-Execute the following commands to create Certbot with Let’s Encrypt configuration and helper files: 
-                                                                                                  
-(copy-paste full text of the command as-is)
+执行以下命令以创建 Certbot 与 Let's Encrypt 配置和帮助程序文件：
+
+（复制粘贴命令的全文，保持原样）
 
 ```bash
 sudo mkdir -p /usr/local/etc/letsencrypt \
@@ -342,11 +341,11 @@ sudo chmod +x /usr/bin/haproxy-refresh /usr/bin/certbot-certonly /usr/bin/certbo
 ```
 {: .copy-code}
 
-### Step 7. Install certificates auto renewal cron job
+### 步骤 7. 安装证书自动续订 cron 作业
 
-Execute the following command to create certificates auto renewal cron job: 
+执行以下命令以创建证书自动续订 cron 作业：
 
-(copy-paste full text of the command as-is)
+（复制粘贴命令的全文，保持原样）
 
 ```bash
 cat <<EOT | sudo tee /etc/cron.d/certbot
@@ -365,26 +364,26 @@ EOT
 ```
 {: .copy-code}
 
-### Step 8. Restart HAProxy Load Balancer
+### 步骤 8. 重启 HAProxy 负载均衡器
 
-Finally restart HAProxy Load Balancer service in order changes take effect:
+最后，重新启动 HAProxy 负载均衡器服务，以便更改生效：
 
 ```bash
 sudo service haproxy restart
 ```
 {: .copy-code}
 
-### Step 9. Execute command to get generate certificate using Let's Encrypt
+### 步骤 9. 执行命令以使用 Let's Encrypt 生成证书
 
-Don't forget to replace **your_domain** and **your_email** before executing the command below: 
+别忘了在执行以下命令之前替换 **your_domain** 和 **your_email**：
 
 ```bash
 sudo certbot-certonly --domain your_domain --email your_email
 ```
 
-### Step 10. Refresh HAProxy configuration
+### 步骤 10. 刷新 HAProxy 配置
 
-Finally restart HAProxy:
+最后，重新启动 HAProxy：
 
 ```bash
 sudo haproxy-refresh

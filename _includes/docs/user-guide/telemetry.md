@@ -1,34 +1,30 @@
-
 * TOC
 {:toc}
 
-ThingsBoard provides a rich set of features related to time-series data:
+ThingsBoard 提供了一套与时间序列数据相关的丰富功能：
 
- - **Collect** data from devices using various [protocols and integrations](/docs/{{docsPrefix}}getting-started-guides/connectivity/);
- - **Store** time series data in SQL (PostgreSQL) or NoSQL (Cassandra or Timescale) databases;
- - **Query** the latest time series data values or all data within the specified time range with flexible aggregation;
- - **Subscribe** to data updates using [WebSockets](#websocket-api) for visualization or real-time analytics;
- - **Visualize** time series data using configurable and highly customizable widgets and [dashboards](/docs/{{docsPrefix}}user-guide/dashboards/);
- - **Filter and analyze** data using flexible [Rule Engine](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/re-getting-started/);
- - **Generate [alarms](/docs/{{docsPrefix}}user-guide/alarms/)** based on collected data;
- - **Forward** data to external systems using [External Rule Nodes](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/external-nodes/) (e.g. Kafka or RabbitMQ Rule Nodes).
+- 使用各种 [协议和集成](/docs/{{docsPrefix}}getting-started-guides/connectivity/) 从设备 **收集** 数据；
+- 将时间序列数据存储在 SQL (PostgreSQL) 或 NoSQL (Cassandra 或 Timescale) 数据库中；
+- 使用灵活的聚合查询指定时间范围内的最新时间序列数据值或所有数据；
+- 使用 [WebSockets](#websocket-api) **订阅** 数据更新，以便进行可视化或实时分析；
+- 使用可配置且高度可定制的小部件和 [仪表板](/docs/{{docsPrefix}}user-guide/dashboards/) **可视化** 时间序列数据；
+- 使用灵活的 [规则引擎](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/re-getting-started/) **过滤和分析** 数据；
+- 基于收集的数据生成 [警报](/docs/{{docsPrefix}}user-guide/alarms/)；
+- 使用 [外部规则节点](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/external-nodes/)（例如 Kafka 或 RabbitMQ 规则节点）将数据 **转发** 到外部系统。
 
-This guide provides an overview of the features listed above, and some useful links to get more details.
+本指南概述了上面列出的功能，并提供了一些有用的链接以获取更多详细信息。
 
-## Data points
+## 数据点
 
-ThingsBoard internally treats time-series data as timestamped key-value pairs. We call single timestamped key-value pair a **data point**. 
-Flexibility and simplicity of the key-value format allow easy and seamless integration with almost any IoT device on the market. 
-Key is always a string and is basically a data point key name, while the value can be either string, boolean, double, integer or JSON.
+ThingsBoard 在内部将时间序列数据视为带时间戳的键值对。我们将单个带时间戳的键值对称为 **数据点**。键值格式的灵活性和简单性允许与市场上几乎任何物联网设备轻松无缝地集成。键始终是字符串，基本上是数据点键名，而值可以是字符串、布尔值、双精度、整数或 JSON。
 
 {% capture internal_data_format %}
-Examples below use **internal** data format. The device itself may upload data using **various protocols and data formats**. 
-See [Time-series data upload API](/docs/{{docsPrefix}}user-guide/telemetry/#time-series-data-upload-api) for more details.
+以下示例使用 **内部** 数据格式。设备本身可以使用 **各种协议和数据格式** 上传数据。有关更多详细信息，请参阅 [时间序列数据上传 API](/docs/{{docsPrefix}}user-guide/telemetry/#time-series-data-upload-api)。
 {% endcapture %}
 {% include templates/info-banner.md content=internal_data_format %}
 
 
-The following JSON contains 5 data points: temperature (double), humidity (integer), hvacEnabled (boolean), hvacState (string) and configuration (JSON):  
+以下 JSON 包含 5 个数据点：温度 (double)、湿度 (integer)、hvacEnabled (boolean)、hvacState (string) 和配置 (JSON)：
 
 ```json
 {
@@ -45,8 +41,7 @@ The following JSON contains 5 data points: temperature (double), humidity (integ
 ```
 {: .copy-code}
 
-You may notice that the JSON listed above does not have a timestamp information. In such case, ThingsBoard uses current server timestamp. 
-However, you may include timestamp information into the message. See example below:
+您可能注意到上面列出的 JSON 没有时间戳信息。在这种情况下，ThingsBoard 使用当前服务器时间戳。但是，您可以在消息中包含时间戳信息。请参阅以下示例：
 
 ```json
 {
@@ -60,131 +55,105 @@ However, you may include timestamp information into the message. See example bel
 {: .copy-code}
 
 
-## Time-series data upload API
+## 时间序列数据上传 API
 
-You may use built-in transport protocol implementations:
+您可以使用内置的传输协议实现：
 
-- [MQTT API reference](/docs/{{docsPrefix}}reference/mqtt-api/#telemetry-upload-api)
-- [CoAP API reference](/docs/{{docsPrefix}}reference/coap-api/#telemetry-upload-api)
-- [HTTP API reference](/docs/{{docsPrefix}}reference/http-api/#telemetry-upload-api)
-- [LwM2M API reference](/docs/{{docsPrefix}}reference/lwm2m-api/#telemetry-upload-api)
+- [MQTT API 参考](/docs/{{docsPrefix}}reference/mqtt-api/#telemetry-upload-api)
+- [CoAP API 参考](/docs/{{docsPrefix}}reference/coap-api/#telemetry-upload-api)
+- [HTTP API 参考](/docs/{{docsPrefix}}reference/http-api/#telemetry-upload-api)
+- [LwM2M API 参考](/docs/{{docsPrefix}}reference/lwm2m-api/#telemetry-upload-api)
 
-Most of the protocols above support JSON, Protobuf or own data format. For other protocols, please review ["How to connect your device?"](/docs/{{docsPrefix}}getting-started-guides/connectivity/) guide.
+以上大多数协议支持 JSON、Protobuf 或自己的数据格式。对于其他协议，请查看 ["如何连接您的设备？"](https://thingsboard.io/docs/{{docsPrefix}}getting-started-guides/connectivity/) 指南。
 
-## Data visualization
+## 数据可视化
 
-We assume you have already pushed time-series data to ThingsBoard. Now you may use it in your dashboards. 
-We recommend [dashboards overview](/docs/{{docsPrefix}}user-guide/dashboards/) to get started.
-Once you are familiar how to create dashboards and configure data sources,
-you may use widgets to visualize either latest values or real-time changes and historical values.
-Good examples of widgets that visualize latest values are [digital](/docs/{{docsPrefix}}user-guide/ui/widget-library/#digital-gauges) and [analog](/docs/{{docsPrefix}}user-guide/ui/widget-library/#analog-gauges) gauges, or [cards](/docs/{{docsPrefix}}user-guide/ui/widget-library/#cards).
-[Charts](/docs/{{docsPrefix}}user-guide/ui/widget-library/#charts) are used to visualize historical and real-time values and [maps](/docs/{{docsPrefix}}user-guide/ui/widget-library/#maps-widgets) to visualize movement of devices and assets.
+我们假设您已经将时间序列数据推送到 ThingsBoard。现在您可以在仪表板中使用它。我们建议您阅读 [仪表板概述](/docs/{{docsPrefix}}user-guide/dashboards/) 以开始使用。一旦您熟悉如何创建仪表板和配置数据源，您就可以使用小部件可视化最新值或实时变化和历史值。可视化最新值的小部件的良好示例是 [数字](/docs/{{docsPrefix}}user-guide/ui/widget-library/#digital-gauges) 和 [模拟](/docs/{{docsPrefix}}user-guide/ui/widget-library/#analog-gauges) 仪表，或 [卡片](/docs/{{docsPrefix}}user-guide/ui/widget-library/#cards)。[图表](/docs/{{docsPrefix}}user-guide/ui/widget-library/#charts) 用于可视化历史和实时值，[地图](/docs/{{docsPrefix}}user-guide/ui/widget-library/#maps-widgets) 用于可视化设备和资产的移动。
 
-You may also use [input widgets](/docs/{{docsPrefix}}user-guide/ui/widget-library/#input-widgets) to allow dashboard users to input new time-series values using the dashboards.
+您还可以使用 [输入小部件](/docs/{{docsPrefix}}user-guide/ui/widget-library/#input-widgets) 允许仪表板用户使用仪表板输入新的时间序列值。
 
-## Data storage
+## 数据存储
 
 {% if docsPrefix == "paas/" %}
 
-ThingsBoard Cloud stores time-series data in the Cassandra database with replication factor of 3. 
-The on-prem installation of ThingsBoard support storage of time-series data in SQL (PostgreSQL) or NoSQL (Cassandra or Timescale) databases.
+ThingsBoard Cloud 将时间序列数据存储在具有 3 个副本因子的 Cassandra 数据库中。ThingsBoard 的本地安装支持将时间序列数据存储在 SQL (PostgreSQL) 或 NoSQL (Cassandra 或 Timescale) 数据库中。
 
 {% else %}
 
-System administrator is able to configure ThingsBoard to store time-series data in SQL (PostgreSQL) or NoSQL (Cassandra or Timescale) databases.
-Using SQL storage is recommended for small environments with less than 5000 [data points](#data-points) per second.
-Storing data in Cassandra makes sense when you have either high throughput or high availability requirements for your solution.
+系统管理员可以将 ThingsBoard 配置为将时间序列数据存储在 SQL (PostgreSQL) 或 NoSQL (Cassandra 或 Timescale) 数据库中。建议将 SQL 存储用于每秒少于 5000 个 [数据点](#数据点) 的小型环境。当您对解决方案有高吞吐量或高可用性要求时，将数据存储在 Cassandra 中才有意义。
 
-See [SQL vs NoSQL vs Hybrid](/docs/{{docsPrefix}}reference/#sql-vs-nosql-vs-hybrid-database-approach) for more information.
+有关更多信息，请参阅 [SQL 与 NoSQL 与混合](/docs/{{docsPrefix}}reference/#sql-vs-nosql-vs-hybrid-database-approach)。
 
 {% endif %}
 
-## Data retention
+## 数据保留
 
 {% if docsPrefix == "paas/" %}
 
-ThingsBoard Cloud stores data with configurable time-to-live (TTL) parameter. 
-The value of the parameter is part of the [Subscription](/products/paas/subscription/) plan.
-You may overwrite the default value in the "Save Timeseries" rule node or using "TTL" metadata field of your message.
-This allows you to optimize storage consumption. The maximum allowed value of TTL is 5 years.
-For example, you may store "raw" data for 3 month and aggregated data for 3 years.
+ThingsBoard 使用可配置的生存时间 (TTL) 参数存储数据。该参数的值是 [订阅](/products/paas/subscription/) 计划的一部分。您可以在“保存时间序列”规则节点中或使用消息的“TTL”元数据字段覆盖默认值。这允许您优化存储消耗。TTL 的最大允许值为 5 年。例如，您可以将“原始”数据存储 3 个月，将聚合数据存储 3 年。
 
 {% else %}
 
-Data retention policy and configuration depends on the chosen [storage](#data-storage).
+数据保留策略和配置取决于所选的 [存储](#数据存储)。
 
-Cassandra supports time-to-live(TTL) parameter for each inserted row.
-That is why, you may [configure](/docs/user-guide/install/{{docsPrefix}}config/) default TTL parameter on a system level, using 'TS_KV_TTL' environment variable.
-You may overwrite the default value in the "Save Timeseries" rule node or using "TTL" metadata field of your message.
-This allows you to optimize storage consumption. The maximum allowed value of TTL is 5 years.
-For example, you may store "raw" data for 3 month and aggregated data for 3 years.
+Cassandra 支持每个插入行的生存时间 (TTL) 参数。这就是为什么您可以使用“TS_KV_TTL”环境变量在系统级别配置默认 TTL 参数的原因。您可以在“保存时间序列”规则节点中或使用消息的“TTL”元数据字段覆盖默认值。这允许您优化存储消耗。TTL 的最大允许值为 5 年。例如，您可以将“原始”数据存储 3 个月，将聚合数据存储 3 年。
 
-PostgreSQL and Timescale does not support time-to-live(TTL) parameter for each inserted row.
-That is why, you may only [configure](/docs/user-guide/install/{{docsPrefix}}config/) periodic time-series data cleanup routine using 'SQL_TTL_*' environment variables. 
+PostgreSQL 和 Timescale 不支持每个插入行的生存时间 (TTL) 参数。这就是为什么您只能使用“SQL_TTL_*”环境变量配置定期时间序列数据清理例程的原因。
 {% endif %}
 
-## Data durability
+## 数据持久性
 
-The device that sends message with time-series data to ThingsBoard will receive confirmation 
-once the message is successfully stored into the Rule Engine [Queue](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/) 
-that is configured for particular device [profile](/docs/{{docsPrefix}}user-guide/device-profiles/#queue-name).
+将带有时间序列数据的消息发送到 ThingsBoard 的设备将在消息成功存储到为特定设备 [配置文件](/docs/{{docsPrefix}}user-guide/device-profiles/#queue-name) 配置的规则引擎 [队列](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/) 后收到确认。
 
-As a tenant administrator, you may configure [processing strategy](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/#queue-processing-strategy) for the queue.
-You may configure the queue either to reprocess or ignore the failures of the message processing. 
-This allows granular control on the level of durability for the time-series data and all other messages processed by the rule engine. 
+作为租户管理员，您可以为队列配置 [处理策略](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/#queue-processing-strategy)。您可以将队列配置为重新处理或忽略消息处理的失败。这允许对时间序列数据和规则引擎处理的所有其他消息的持久性级别进行细粒度控制。
 
-## Rule engine
+## 规则引擎
 
-The [Rule Engine](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/re-getting-started/) is responsible for processing all sorts of incoming data and event.
-You may find most popular scenarios of using attributes within rule engine below:
+[规则引擎](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/re-getting-started/) 负责处理各种传入数据和事件。您可以在下面找到使用规则引擎中属性的最常见场景：
 
-**Generate alarms based on the logical expressions against time-series values**
+**根据针对时间序列值的逻辑表达式生成警报**
 
-Use [alarm rules](/docs/{{docsPrefix}}user-guide/device-profiles/#alarm-rules) to configure most common alarm conditions via UI
-or use [filter nodes](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/filter-nodes/) to configure more specific use cases via custom JS functions.
+使用 [警报规则](/docs/{{docsPrefix}}user-guide/device-profiles/#alarm-rules) 通过 UI 配置最常见的警报条件，或使用 [过滤器节点](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/filter-nodes/) 通过自定义 JS 函数配置更具体的使用案例。
 
-**Modify incoming time-series data before they are stored in the database**
+**在将传入时间序列数据存储到数据库之前修改它们**
 
-Use [message type switch](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/filter-nodes/#message-type-switch-node) rule node to filter messages that contain "Post telemetry" request.
-Then, use [transformation rule nodes](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/transformation-nodes/) to modify a particular message.
+使用 [消息类型开关](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/filter-nodes/#message-type-switch-node) 规则节点过滤包含“发布遥测”请求的消息。然后，使用 [转换规则节点](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/transformation-nodes/) 修改特定消息。
 
-**Calculate delta between previous and current time-series value**
+**计算前一个和当前时间序列值之间的增量**
 
-Use [calculate delta](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/enrichment-nodes/#calculate-delta) rule node to calculate power, water and other consumption based on smart-meter readings.
+使用 [计算增量](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/enrichment-nodes/#calculate-delta) 规则节点根据智能电表读数计算功率、水和其他消耗。
 
-**Fetch previous time-series values to analyze incoming telemetry from device**
+**获取以前的时间序列值以分析来自设备的传入遥测**
 
-Use [originator telemetry](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/enrichment-nodes/#originator-telemetry) rule node to enrich incoming time-series data message with previous time-series data of the device.
+使用 [发起者遥测](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/enrichment-nodes/#originator-telemetry) 规则节点使用设备的先前时间序列数据丰富传入的时间序列数据消息。
 
-**Fetch attribute values to analyze incoming telemetry from device**
+**获取属性值以分析来自设备的传入遥测**
 
-Use [enrichment](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/enrichment-nodes/) rule nodes to enrich incoming telemetry message with attributes of the device, related asset, customer or tenant.
-This is extremely powerful technique that allows to modify processing logic and parameters based on settings stored in the attributes.
+使用 [丰富](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/enrichment-nodes/) 规则节点使用设备、相关资产、客户或租户的属性丰富传入遥测消息。这是一种非常强大的技术，允许根据存储在属性中的设置修改处理逻辑和参数。
 
-**Use analytics rule nodes to aggregate data for related assets**
+**使用分析规则节点聚合相关资产的数据**
 
 {% if docsPrefix == "paas/" or docsPrefix == "pe/" %}
-Use [analytics](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/analytics-nodes/) rule nodes to aggregate data from multiple devices or assets.
+使用 [分析](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/analytics-nodes/) 规则节点聚合来自多个设备或资产的数据。
 {% else %}
-Use [analytics](/docs/pe/user-guide/rule-engine-2-0/analytics-nodes/) rule nodes to aggregate data from multiple devices or assets.
+使用 [分析](/docs/pe/user-guide/rule-engine-2-0/analytics-nodes/) 规则节点聚合来自多个设备或资产的数据。
 {% endif %}
 
-Useful to calculate total water consumption for the building/district based on data from multiple water meters.     
+根据来自多个水表的的数据计算建筑/区域的总用水量非常有用。
 
-## Data Query REST API
+## 数据查询 REST API
 
-ThingsBoard provides following REST API to fetch entity data:
+ThingsBoard 提供以下 REST API 来获取实体数据：
 
 {% capture api_note %}
-**NOTE:** The API is available via Swagger UI. Please review the general [REST API](/docs/{{docsPrefix}}reference/rest-api/) documentation for more details.
-The API is backward compatible with TB v1.0+ and this is the main reason why API call URLs contain "plugin".
+**注意：**API 可通过 Swagger UI 使用。有关更多详细信息，请查看常规 [REST API](/docs/{{docsPrefix}}reference/rest-api/) 文档。API 向后兼容 TB v1.0+，这就是 API 调用 URL 包含“插件”的主要原因。
 {% endcapture %}
 {% include templates/info-banner.md content=api_note %}
 
-##### Get time-series data keys for specific entity
+##### 获取特定实体的时间序列数据键
 
-You can fetch list of all time-series *data keys* for particular *entity type* and *entity id* using GET request to the following URL  
- 
+您可以使用对以下 URL 的 GET 请求获取特定 *实体类型* 和 *实体 ID* 的所有时间序列 *数据键* 列表
+
 ```shell
 http(s)://host:port/api/plugins/telemetry/{entityType}/{entityId}/keys/timeseries
 ```
@@ -195,12 +164,12 @@ A,get-telemetry-keys.sh,shell,resources/get-telemetry-keys.sh,/docs/{{docsPrefix
 B,get-telemetry-keys-result.json,json,resources/get-telemetry-keys-result.json,/docs/{{docsPrefix}}user-guide/resources/get-telemetry-keys-result.json{% endcapture %}
 {% include tabs.html %}
 
-Supported entity types are: TENANT, CUSTOMER, USER, DASHBOARD, ASSET, DEVICE, ALARM, ENTITY_VIEW
+支持的实体类型为：TENANT、CUSTOMER、USER、DASHBOARD、ASSET、DEVICE、ALARM、ENTITY_VIEW
 
-##### Get latest time-series data values for specific entity
+##### 获取特定实体的最新时间序列数据值
 
-You can fetch list of latest values for particular *entity type* and *entity id* using GET request to the following URL  
- 
+您可以使用对以下 URL 的 GET 请求获取特定 *实体类型* 和 *实体 ID* 的最新值列表
+
 ```shell
 http(s)://host:port/api/plugins/telemetry/{entityType}/{entityId}/values/timeseries?keys=key1,key2,key3
 ```
@@ -211,77 +180,80 @@ A,get-latest-telemetry-values.sh,shell,resources/get-latest-telemetry-values.sh,
 B,get-latest-telemetry-values-result.json,json,resources/get-latest-telemetry-values-result.json,/docs/{{docsPrefix}}user-guide/resources/get-latest-telemetry-values-result.json{% endcapture %}
 {% include tabs.html %}
 
-Supported entity types are: TENANT, CUSTOMER, USER, DASHBOARD, ASSET, DEVICE, ALARM, ENTITY_VIEW
+支持的实体类型为：TENANT、CUSTOMER、USER、DASHBOARD、ASSET、DEVICE、ALARM、ENTITY_VIEW
 
-##### Get historical time-series data values for specific entity
+##### 获取特定实体的历史时间序列数据值
 
-You can also fetch list of historical values for particular *entity type* and *entity id* using GET request to the following URL  
- 
+您还可以使用对以下 URL 的 GET 请求获取特定 *实体类型* 和 *实体 ID* 的历史值列表
+
 ```shell
 http(s)://host:port/api/plugins/telemetry/{entityType}/{entityId}/values/timeseries?keys=key1,key2,key3&startTs=1479735870785&endTs=1479735871858&interval=60000&limit=100&agg=AVG
 ```
 {: .copy-code}
 
-The supported parameters are described below:
+下面描述了支持的参数：
 
- - **keys** - comma-separated list of telemetry keys to fetch.
- - **startTs** - Unix timestamp that identifies the start of the interval in milliseconds.
- - **endTs** - Unix timestamp that identifies the end of the interval in milliseconds.
- - **interval** - the aggregation interval, in milliseconds.
- - **agg** - the aggregation function. One of MIN, MAX, AVG, SUM, COUNT, NONE.
- - **limit** - the max amount of data points to return or intervals to process.
+ - **keys** - 要获取的遥测键的逗号分隔列表。
+ - **startTs** - 以毫秒为单位标识间隔开始的 Unix 时间戳。
+ - **endTs** - 以毫秒为单位标识间隔结束的 Unix 时间戳。
+ - **interval** - 聚合间隔，以毫秒为单位。
+ - **agg** - 聚合函数。MIN、MAX、AVG、SUM、COUNT、NONE 之一。
+ - **limit** - 要返回的数据点或要处理的间隔的最大数量。
 
-ThingsBoard will use *startTs*, *endTs*, and *interval* to identify aggregation partitions or sub-queries and execute asynchronous queries to DB that leverage built-in aggregation functions.
+ThingsBoard 将使用 *startTs*、*endTs* 和 *interval* 来标识聚合分区或子查询，并执行异步查询到利用内置聚合函数的数据库。
 
 {% capture tabspec %}get-telemetry-values
 A,get-telemetry-values.sh,shell,resources/get-telemetry-values.sh,/docs/{{docsPrefix}}user-guide/resources/get-telemetry-values.sh
 B,get-telemetry-values-result.json,json,resources/get-telemetry-values-result.json,/docs/{{docsPrefix}}user-guide/resources/get-telemetry-values-result.json{% endcapture %}
 {% include tabs.html %}
 
-Supported entity types are: TENANT, CUSTOMER, USER, DASHBOARD, ASSET, DEVICE, ALARM, ENTITY_VIEW
+支持的实体类型为：TENANT、CUSTOMER、USER、DASHBOARD、ASSET、DEVICE、ALARM、ENTITY_VIEW
 
 ## WebSocket API
 
-WebSockets are actively used by Thingsboard Web UI. WebSocket API duplicates REST API functionality and provides the ability to subscribe to device data changes.
-You can open a WebSocket connection to a telemetry service using the following URL
+WebSocket 被 Thingsboard Web UI 积极使用。WebSocket API 复制了 REST API 的功能，并提供了订阅设备数据更改的能力。
+
+您可以使用以下 URL 打开到遥测服务的 WebSocket 连接
 
 ```shell
 ws(s)://host:port/api/ws/plugins/telemetry?token=$JWT_TOKEN
 ```
 {: .copy-code}
 
-Once opened, you can send 
+打开后，您可以发送
 
-[subscription commands](https://github.com/thingsboard/thingsboard/blob/release-3.6/application/src/main/java/org/thingsboard/server/service/ws/telemetry/cmd/TelemetryPluginCmdsWrapper.java) 
-and receive 
-[subscription updates](https://github.com/thingsboard/thingsboard/blob/release-3.6/application/src/main/java/org/thingsboard/server/service/ws/telemetry/sub/TelemetrySubscriptionUpdate.java):
+[订阅命令](https://github.com/thingsboard/thingsboard/blob/release-3.6/application/src/main/java/org/thingsboard/server/service/ws/telemetry/cmd/TelemetryPluginCmdsWrapper.java)
 
-where 
+并接收
 
- - **cmdId** - unique command id (within corresponding WebSocket connection)
- - **entityType** - unique entity type. Supported entity types are: TENANT, CUSTOMER, USER, DASHBOARD, ASSET, DEVICE, ALARM
- - **entityId** - unique entity identifier
- - **keys** - a comma-separated list of data keys
- - **timeWindow** - fetch interval for time series subscriptions, in milliseconds. Data will be fetch within following interval **[now()-timeWindow, now()]**
- - **startTs** - start time of fetch interval for historical data query, in milliseconds.
- - **endTs** - end time of fetch interval for historical data query, in milliseconds.
- 
-#### Example 
+[订阅更新](https://github.com/thingsboard/thingsboard/blob/release-3.6/application/src/main/java/org/thingsboard/server/service/ws/telemetry/sub/TelemetrySubscriptionUpdate.java)：
 
-Change values of the following variables : 
+其中
 
- - **token** - to the JWT token which you can get using the [following link](/docs/{{docsPrefix}}reference/rest-api/#rest-api-auth).
+ - **cmdId** - 唯一命令 ID（在相应的 WebSocket 连接中）
+ - **entityType** - 唯一实体类型。支持的实体类型为：TENANT、CUSTOMER、USER、DASHBOARD、ASSET、DEVICE、ALARM
+ - **entityId** - 唯一实体标识符
+ - **keys** - 数据键的逗号分隔列表
+ - **timeWindow** - 时间序列订阅的获取间隔，以毫秒为单位。数据将在以下间隔内获取 **[now()-timeWindow, now()]**
+ - **startTs** - 历史数据查询的获取间隔的开始时间，以毫秒为单位。
+ - **endTs** - 历史数据查询的获取间隔的结束时间，以毫秒为单位。
 
- - **entityId** - to your device id.
- 
- In case of live-demo server : 
- 
- - replace **host:port** with **demo-thingsboard.io** and choose secure connection - **wss://**
- 
- In case of local installation :
- 
- - replace **host:port** with **127.0.0.1:8080** and choose **ws://**
- 
+#### 示例
+
+更改以下变量的值：
+
+ - **token** - 您可以使用 [以下链接](/docs/{{docsPrefix}}reference/rest-api/#rest-api-auth) 获取的 JWT 令牌。
+
+ - **entityId** - 到您的设备 ID。
+
+在实时演示服务器的情况下：
+
+ - 将 **host:port** 替换为 **demo-thingsboard.io** 并选择安全连接 - **wss://**
+
+在本地安装的情况下：
+
+ - 将 **host:port** 替换为 **127.0.0.1:8080** 并选择 **ws://**
+
 {% capture tabspec %}web-socket
 A,web-socket.html,html,resources/web-socket.html,/docs/{{docsPrefix}}user-guide/resources/web-socket.html{% endcapture %}  
 {% include tabs.html %}

@@ -1,23 +1,22 @@
-
-Start edge service:
+启动边缘服务：
 ```bash
 sudo service tb-edge start
 ```
 {: .copy-code}
 
-Stop edge service:
+停止边缘服务：
 ```bash
 sudo service tb-edge stop
 ```
 {: .copy-code}
 
-Restart edge service:
+重启边缘服务：
 ```bash
 sudo service tb-edge restart
 ```
 {: .copy-code}
 
-Check status of ThingsBoard Edge service:
+检查 ThingsBoard Edge 服务状态：
 ```bash
 sudo service tb-edge status
 ```

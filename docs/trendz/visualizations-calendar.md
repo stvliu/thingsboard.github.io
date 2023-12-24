@@ -2,43 +2,42 @@
 layout: docwithnav-trendz
 assignees:
 - vparomskiy
-title: Calendar heatmap
-description: Trendz Calendar 
+title: 日历热力图
+description: Trendz 日历
 ---
 
 * TOC
 {:toc}
 
-Heatmap Calendar widget shows quick overview how metric changed over a year with day by day breakdown.
+热力图日历小部件显示了指标在一年内如何变化的快速概览，并按天进行细分。
 
 ![image](/images/trendz/calendar_heatmap.png)
 
-## Single field configuration
+## 单字段配置
 
-Add required metric into **Value** section and press **Build Report** button. You can add telemetry, state or calculated field.
+将所需指标添加到 **值** 部分，然后按 **生成报告** 按钮。您可以添加遥测、状态或计算字段。
 
-Each cell in calendar has specific color that depends on value for that day. If there is no value - cell would be blank. 
-You can change color schema and View Settings.
+日历中的每个单元格都有特定的颜色，具体取决于该天的值。如果没有值，单元格将为空白。
+您可以更改颜色方案和视图设置。
 
-## Multiple fields
+## 多个字段
 
-You can add multiple fields into **Value** section. In this case you can switch between fields using radio button.
+您可以在 **值** 部分中添加多个字段。在这种情况下，您可以使用单选按钮在字段之间切换。
 
 ![image](/images/trendz/calendar_heatmap_multiple.png)
 
-## Select date action
+## 选择日期操作
 
-Trendz calendar view supports date click events. Is is useful when you want to select date of interest and drill down for further analysis.
+Trendz 日历视图支持日期点击事件。当您想选择感兴趣的日期并向下钻取以进行进一步分析时，这非常有用。
 
-For example you can create a dashboard in ThingsBoard that contains multiple widgets. All widgets take time range from the dashboard.
-By configuring date click event on the calendar widget you can set required time range on the dashboard, so all other widgets would automatically update 
-and show data for the selected date.
+例如，您可以在 ThingsBoard 中创建一个包含多个小部件的仪表板。所有小部件都从仪表板获取时间范围。
+通过在日历小部件上配置日期点击事件，您可以在仪表板上设置所需的时间范围，以便所有其他小部件自动更新并显示所选日期的数据。
 
-* Add Trendz calendar view on the ThingsBoard dashboard
-* Open widget edit mode and switch to **Actions** tab.
-* Press **Add action** button.
-* In **Action source** field select **date-selected**.
-* In **Type** field select **Custom action** and use following function
+* 在 ThingsBoard 仪表板上添加 Trendz 日历视图
+* 打开小部件编辑模式并切换到 **操作** 选项卡。
+* 按 **添加操作** 按钮。
+* 在 **操作源** 字段中选择 **date-selected**。
+* 在 **类型** 字段中选择 **自定义操作** 并使用以下函数
 
 ```javascript
 var newTimeRange = {
@@ -71,18 +70,18 @@ var params = {
 // open new dashboard state        
 widgetContext.stateController.updateState('consumption_details', additionalParams.params);
 ```
- 
-With this custom action we will change dashboard time range to selected date and navigate to new dashboard state with name **consumption_details**.
 
-## Switch field action
+通过此自定义操作，我们将仪表板时间范围更改为所选日期，并导航到名称为 **consumption_details** 的新仪表板状态。
 
-Switch field selector activated when multiple fields are added to the **Value** section. In this cae user can select from the widget what field is shown.
-Trendz View trigger special event when user switch fields. You can trigger required action when switch event triggered.
+## 切换字段操作
 
-* Add Trendz calendar view on the ThingsBoard dashboard
-* Open widget edit mode and switch to **Actions** tab.
-* Press **Add action** button.
-* In **Action source** field select **changed-radio-button**.
-* Proceed standard widget action configuration. 
+当将多个字段添加到 **值** 部分时，将激活切换字段选择器。在这种情况下，用户可以选择小部件中显示的字段。
+当用户切换字段时，Trendz 视图会触发特殊事件。您可以在触发切换事件时触发所需的操作。
 
-You can find name of the field that was selected in **additionalParams.radioButton** property.
+* 在 ThingsBoard 仪表板上添加 Trendz 日历视图
+* 打开小部件编辑模式并切换到 **操作** 选项卡。
+* 按 **添加操作** 按钮。
+* 在 **操作源** 字段中选择 **changed-radio-button**。
+* 继续标准小部件操作配置。
+
+您可以在 **additionalParams.radioButton** 属性中找到所选字段的名称。

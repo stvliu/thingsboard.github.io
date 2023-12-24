@@ -1,6 +1,6 @@
 {% capture connectivityContent %}
-ThingsBoard provides a lot of device connectivity options. The diagram below is designed to provide a visual overview of existing options and help you to choose the correct option for your devices. 
-In case you have not found out how to connect your device using the diagram or something is not clear, please [contact us](/docs/contact-us/) and help us to improve this guide.
+ThingsBoard 提供大量设备连接选项。下图旨在提供现有选项的可视化概述，并帮助您为设备选择正确的选项。
+如果您没有找到如何使用该图连接设备，或者某些内容不清楚，请 [联系我们](/docs/contact-us/) 并帮助我们改进本指南。
 {% endcapture %}
 {% include templates/info-banner.md content=connectivityContent %}
 
@@ -11,45 +11,45 @@ In case you have not found out how to connect your device using the diagram or s
 {% assign peDocsPrefix = docsPrefix %}
 {% endif %}
 
-#### Connecting well-known devices
+#### 连接知名设备
 
-You can check the [Devices library](/docs/{{docsPrefix}}devices-library) section to explore how to connect widely used devices to ThingsBoard.
+您可以查看 [设备库](/docs/{{docsPrefix}}devices-library) 部分，以了解如何将广泛使用的设备连接到 ThingsBoard。
 
-#### Built-in transport protocols
+#### 内置传输协议
 
-The built-in transport protocol implementations are applicable for devices that communicate over those protocols and are able to connect directly to ThingsBoard.
+内置传输协议实现适用于通过这些协议通信并能够直接连接到 ThingsBoard 的设备。
 
-- [MQTT API reference](/docs/{{docsPrefix}}reference/mqtt-api)
-- [MQTT Sparkplug API reference](/docs/{{docsPrefix}}reference/mqtt-sparkplug-api)
-- [CoAP API reference](/docs/{{docsPrefix}}reference/coap-api)
-- [HTTP API reference](/docs/{{docsPrefix}}reference/http-api)
-- [LwM2M API reference](/docs/{{docsPrefix}}reference/lwm2m-api)
-- [SNMP API reference](/docs/{{docsPrefix}}reference/snmp-api)
+- [MQTT API 参考](/docs/{{docsPrefix}}reference/mqtt-api)
+- [MQTT Sparkplug API 参考](/docs/{{docsPrefix}}reference/mqtt-sparkplug-api)
+- [CoAP API 参考](/docs/{{docsPrefix}}reference/coap-api)
+- [HTTP API 参考](/docs/{{docsPrefix}}reference/http-api)
+- [LwM2M API 参考](/docs/{{docsPrefix}}reference/lwm2m-api)
+- [SNMP API 参考](/docs/{{docsPrefix}}reference/snmp-api)
 
-Most of the protocols above support JSON, Protobuf or own data format. This is the best option for new devices when you have control over the firmware.
+上述大多数协议支持 JSON、Protobuf 或自己的数据格式。当您控制固件时，这是新设备的最佳选择。
 
-#### IoT Gateway
+#### IoT 网关
 
-ThingsBoard IoT Gateway helps to connect devices that are located in the local network and do not have access to the internet or use specific non-IP protocols.
-IoT Gateway supports MQTT, OPC-UA, Modbus, BLE, HTTP, CAN, BACnet, ODBC, SNMP and other protocols.
-The gateway converts the data from devices to internal ThingsBoard format and upload it over MQTT to the platform.
-See [What is IoT Gateway?](/docs/iot-gateway/what-is-iot-gateway/) for more info.
+ThingsBoard IoT 网关有助于连接位于本地网络中且无法访问互联网或使用特定非 IP 协议的设备。
+IoT 网关支持 MQTT、OPC-UA、Modbus、BLE、HTTP、CAN、BACnet、ODBC、SNMP 和其他协议。
+网关将来自设备的数据转换为内部 ThingsBoard 格式，并通过 MQTT 上传到平台。
+有关更多信息，请参阅 [什么是 IoT 网关？](/docs/iot-gateway/what-is-iot-gateway/)。
 
 #### LoRaWAN
 
-It is possible to integrate ChirpStack network server with ThingsBoard Community Edition using this [guide](https://www.chirpstack.io/application-server/integrations/thingsboard/).
+可以使用本 [指南](https://www.chirpstack.io/application-server/integrations/thingsboard/) 将 ChirpStack 网络服务器与 ThingsBoard 社区版集成。
 
-[ThingsBoard PE](/products/thingsboard-pe/) supports ChirpStack and many other network servers via [Integrations](/docs/{{peDocsPrefix}}user-guide/integrations/).
-For example: [TheThingsStack](/docs/{{peDocsPrefix}}user-guide/integrations/ttn/), [TheThingsIndustries](/docs/{{peDocsPrefix}}user-guide/integrations/tti/),
-[LORIOT](/docs/{{peDocsPrefix}}user-guide/integrations/loriot/),
-[Actility ThingPark](/docs/{{peDocsPrefix}}user-guide/integrations/thingpark/) or any other network server that supports the [webhooks](/docs/{{peDocsPrefix}}user-guide/integrations/http/) or [mqtt](/docs/{{peDocsPrefix}}user-guide/integrations/mqtt/).
-Big advantage of ThingsBoard PE integrations is the ability to define custom [data converter](/docs/{{peDocsPrefix}}user-guide/integrations/#data-converters) functions.
+[ThingsBoard PE](/products/thingsboard-pe/) 通过 [集成](/docs/{{peDocsPrefix}}user-guide/integrations/) 支持 ChirpStack 和许多其他网络服务器。
+例如：[TheThingsStack](/docs/{{peDocsPrefix}}user-guide/integrations/ttn/)、[TheThingsIndustries](/docs/{{peDocsPrefix}}user-guide/integrations/tti/)、
+[LORIOT](/docs/{{peDocsPrefix}}user-guide/integrations/loriot/)、
+[Actility ThingPark](/docs/{{peDocsPrefix}}user-guide/integrations/thingpark/) 或任何其他支持 [webhook](/docs/{{peDocsPrefix}}user-guide/integrations/http/) 或 [mqtt](/docs/{{peDocsPrefix}}user-guide/integrations/mqtt/) 的网络服务器。
+ThingsBoard PE 集成的巨大优势在于能够定义自定义 [数据转换器](/docs/{{peDocsPrefix}}user-guide/integrations/#data-converters) 函数。
 
 #### Sigfox
 
-[ThingsBoard PE](/products/thingsboard-pe/) supports Sigfox [integration](/docs/{{peDocsPrefix}}user-guide/integrations/sigfox/) out-of-the-box.
+[ThingsBoard PE](/products/thingsboard-pe/) 开箱即用地支持 Sigfox [集成](/docs/{{peDocsPrefix}}user-guide/integrations/sigfox/)。
 
-#### NB IoT and other protocols
+#### NB IoT 和其他协议
 
-[ThingsBoard PE](/products/thingsboard-pe/) supports many [Integrations](/docs/{{peDocsPrefix}}user-guide/integrations/) that cover most of the devices on the market.
-Please [contact us](/docs/contact-us/) if you need help to connect your device.
+[ThingsBoard PE](/products/thingsboard-pe/) 支持许多 [集成](/docs/{{peDocsPrefix}}user-guide/integrations/)，涵盖了市场上大多数设备。
+如果您需要帮助连接设备，请 [联系我们](/docs/contact-us/)。

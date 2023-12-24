@@ -2,28 +2,28 @@
 layout: docwithnav-pe
 assignees:
 - ashvayka
-title: Microservices setup using GCP infrastructure 
-description: ThingsBoard IoT platform microservices setup with Kubernetes in GKE
+title: 使用 GCP 基础设施设置微服务
+description: 在 GKE 中使用 Kubernetes 设置 ThingsBoard IoT 平台微服务
 
 ---
 
 * TOC
 {:toc}
 
-This guide will help you to set up ThingsBoard in microservices mode in GKE. 
+本指南将帮助您在 GKE 中以微服务模式设置 ThingsBoard。
 
-## Prerequisites
+## 先决条件
 
 {% include templates/install/gcp/gke-prerequisites.md %}
 
-### Pull ThingsBoard PE images from docker hub
+### 从 Docker 中心提取 ThingsBoard PE 镜像
 
 {% assign checkoutMode = "microservices" %}
 {% include templates/install/dockerhub/checkout.md %}
 
-## Step 1. Clone ThingsBoard PE K8S scripts repository
+## 步骤 1. 克隆 ThingsBoard PE K8S 脚本存储库
 
-Clone the repository and change the working directory to GCP scripts.
+克隆存储库并将工作目录更改为 GCP 脚本。
 
 ```bash
 git clone -b release-{{ site.release.ver }} https://github.com/thingsboard/thingsboard-pe-k8s.git --depth 1
@@ -31,75 +31,74 @@ cd thingsboard-pe-k8s/gcp/microservices
 ```
 {: .copy-code}
 
-## Step 2. Define environment variables
+## 步骤 2. 定义环境变量
 
 {% assign tbClusterName = "tb-pe-msa" %}
 {% include templates/install/gcp/env-variables-msa.md %}
 
-## Step 3. Configure and create GKE cluster
+## 步骤 3. 配置并创建 GKE 集群
 
 {% include templates/install/gcp/regional-gke-cluster.md %}
 
-## Step 4. Update the context of kubectl
+## 步骤 4. 更新 kubectl 的上下文
 
 {% include templates/install/gcp/update-kubectl-region.md %}
 
-## Step 5. Provision Databases
+## 步骤 5. 配置数据库
 
-### Step 5.1 Google Cloud SQL (PostgreSQL) Instance
+### 步骤 5.1 Google Cloud SQL（PostgreSQL）实例
 
 {% include templates/install/gcp/provision-postgresql.md %}
 
-### Step 5.2 Cassandra (optional)
+### 步骤 5.2 Cassandra（可选）
 
 {% include templates/install/gcp/configure-cassandra.md %}
 
-## Step 6. Configure license key
+## 步骤 6. 配置许可证密钥
 
 {% include templates/install/k8s-license-secret.md %}
 
-## Step 7. Installation
+## 步骤 7. 安装
 
 {% include templates/install/gcp/install.md %}
 
-## Step 8. Starting
+## 步骤 8. 启动
 
 {% include templates/install/gcp/start-msa.md %}
 
-## Step 9. Configure Load Balancers
+## 步骤 9. 配置负载均衡器
 
-### 9.1 Configure HTTP(S) Load Balancer
+### 9.1 配置 HTTP(S) 负载均衡器
 
 {% include templates/install/gcp/http-lb.md %}
 
-### 9.2. Configure MQTT Load Balancer (Optional)
+### 9.2. 配置 MQTT 负载均衡器（可选）
 
 {% assign tbServicesFile = "transport/tb-mqtt-transport.yml" %}
 {% include templates/install/gcp/configure-mqtt.md %}
 
-### 9.3. Configure CoAP Load Balancer (Optional)
+### 9.3. 配置 CoAP 负载均衡器（可选）
 
 {% assign tbServicesFile = "transport/tb-coap-transport.yml" %}
 {% include templates/install/gcp/configure-coap.md %}
 
-### 9.4. Configure LwM2M Load Balancer (Optional)
+### 9.4. 配置 LwM2M 负载均衡器（可选）
 
 {% assign tbServicesFile = "transport/tb-lwm2m-transport.yml" %}
 {% include templates/install/gcp/configure-lwm2m.md %}
 
-### 9.5. Configure Edge Load Balancer (Optional)
+### 9.5. 配置 Edge 负载均衡器（可选）
 
 {% include templates/install/k8s-configure-edge-load-balancer.md %}
 
-## Step 10. Using
+## 步骤 10. 使用
 
 {% include templates/install/gcp/using.md %}
 
-## Upgrading
+## 升级
 
 {% include templates/install/gcp/upgrading-msa.md %}
 
-## Next steps
+## 后续步骤
 
 {% assign currentGuide = "InstallationGuides" %}{% include templates/guides-banner.md %}
-

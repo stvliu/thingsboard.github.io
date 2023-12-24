@@ -1,11 +1,11 @@
-| **Parameter**             | **Example value**                            | **Description**                                                                |
+| **参数**             | **示例值**                            | **描述**                                                                |
 |:-|:-
-| *deviceName*              | **DEVICE_NAME**                              | Device name in ThingsBoard.                                                    |
-| *provisionDeviceKey*      | **PUT_PROVISION_KEY_HERE**                   | Provisioning device key, you should take it from configured device profile.    |
-| *provisionDeviceSecret*   | **PUT_PROVISION_SECRET_HERE**                | Provisioning device secret, you should take it from configured device profile. | 
+| *deviceName*              | **DEVICE_NAME**                              | ThingsBoard 中的设备名称。                                                    |
+| *provisionDeviceKey*      | **PUT_PROVISION_KEY_HERE**                   | プロビジョニング デバイス キー。構成されたデバイス プロファイルから取得する必要があります。    |
+| *provisionDeviceSecret*   | **PUT_PROVISION_SECRET_HERE**                | プロビジョニング デバイス シークレット。構成されたデバイス プロファイルから取得する必要があります。 | 
 |-
 
-Provisioning request data example:
+プロビジョニング要求データの例:
  
 ```json
 {
@@ -16,7 +16,7 @@ Provisioning request data example:
 ```
 {: .copy-code}
 
-Provisioning response example:
+プロビジョニング応答の例:
 
 ```json
 {
@@ -27,7 +27,7 @@ Provisioning response example:
 ```
 {: .copy-code}
 
-### MQTT Example script
+### MQTT の例スクリプト
 
 ```python
 from paho.mqtt.client import Client
@@ -42,11 +42,11 @@ RESULT_CODES = {
     }
 
 
-THINGSBOARD_HOST = "mqtt.thingsboard.cloud"  # ThingsBoard instance host
-THINGSBOARD_PORT = 1883  # ThingsBoard instance MQTT port
+THINGSBOARD_HOST = "mqtt.thingsboard.cloud"  # ThingsBoard インスタンスのホスト
+THINGSBOARD_PORT = 1883  # ThingsBoard インスタンスの MQTT ポート
 
-PROVISION_DEVICE_KEY = "PUT_PROVISION_KEY_HERE"  # Provision device key, replace this value with your value from device profile.
-PROVISION_DEVICE_SECRET = "PUT_PROVISION_SECRET_HERE"  # Provision device secret, replace this value with your value from device profile.
+PROVISION_DEVICE_KEY = "PUT_PROVISION_KEY_HERE"  # プロビジョニング デバイス キー。この値をデバイス プロファイルの値に置き換えます。
+PROVISION_DEVICE_SECRET = "PUT_PROVISION_SECRET_HERE"  # プロビジョニング デバイス シークレット。この値をデバイス プロファイルの値に置き換えます。
 
 
 PROVISION_REQUEST = {"provisionDeviceKey": PROVISION_DEVICE_KEY,
@@ -68,29 +68,29 @@ class ProvisionClient(Client):
         self.on_message = self.__on_message
         self.__provision_request = provision_request
 
-    def __on_connect(self, client, userdata, flags, rc):  # Callback for connect
+    def __on_connect(self, client, userdata, flags, rc):  # 接続のコールバック
         if rc == 0:
-            print("[Provisioning client] Connected to ThingsBoard ")
-            client.subscribe(self.PROVISION_RESPONSE_TOPIC)  # Subscribe to provisioning response topic
+            print("[プロビジョニング クライアント] ThingsBoard に接続しました ")
+            client.subscribe(self.PROVISION_RESPONSE_TOPIC)  # プロビジョニング応答トピックを購読します
             provision_request = dumps(self.__provision_request)
-            print("[Provisioning client] Sending provisioning request %s" % provision_request)
-            client.publish(self.PROVISION_REQUEST_TOPIC, provision_request)  # Publishing provisioning request topic
+            print("[プロビジョニング クライアント] プロビジョニング要求 %s を送信しています" % provision_request)
+            client.publish(self.PROVISION_REQUEST_TOPIC, provision_request)  # プロビジョニング要求トピックを公開します
         else:
-            print("[Provisioning client] Cannot connect to ThingsBoard!, result: %s" % RESULT_CODES[rc])
+            print("[プロビジョニング クライアント] ThingsBoard に接続できません! 結果: %s" % RESULT_CODES[rc])
 
     def __on_message(self, client, userdata, msg):
         decoded_payload = msg.payload.decode("UTF-8")
-        print("[Provisioning client] Received data from ThingsBoard: %s" % decoded_payload)
+        print("[プロビジョニング クライアント] ThingsBoard からデータを受信しました: %s" % decoded_payload)
         decoded_message = loads(decoded_payload)
         provision_device_status = decoded_message.get("status")
         if provision_device_status == "SUCCESS":
             self.__save_credentials(decoded_message["credentialsValue"])
         else:
-            print("[Provisioning client] Provisioning was unsuccessful with status %s and message: %s" % (provision_device_status, decoded_message["errorMsg"]))
+            print("[プロビジョニング クライアント] プロビジョニングはステータス %s とメッセージ: %s で失敗しました" % (provision_device_status, decoded_message["errorMsg"]))
         self.disconnect()
 
     def provision(self):
-        print("[Provisioning client] Connecting to ThingsBoard (provisioning client)")
+        print("[プロビジョニング クライアント] ThingsBoard に接続しています (プロビジョニング クライアント)")
         self.__clean_credentials()
         self.connect(self._host, self._port, 60)
         self.loop_forever()
@@ -101,9 +101,9 @@ class ProvisionClient(Client):
         if client_credentials:
             new_client = Client()
             new_client.username_pw_set(client_credentials)
-            print("[Provisioning client] Read credentials from file.")
+            print("[プロビジョニング クライアント] ファイルから資格情報を取得しました。")
         else:
-            print("[Provisioning client] Cannot read credentials from file!")
+            print("[プロビジョニング クライアント] ファイルから資格情報を読み取れません!")
         return new_client
 
     @staticmethod
@@ -126,28 +126,28 @@ class ProvisionClient(Client):
         open("credentials", "w").close()
 
 
-def on_tb_connected(client, userdata, flags, rc):  # Callback for connect with received credentials
+def on_tb_connected(client, userdata, flags, rc):  # 受信した資格情報で接続するためのコールバック
     if rc == 0:
-        print("[ThingsBoard client] Connected to ThingsBoard with credentials: %s" % client._username)
+        print("[ThingsBoard クライアント] 資格情報: %s で ThingsBoard に接続しました" % client._username)
     else:
-        print("[ThingsBoard client] Cannot connect to ThingsBoard!, result: %s" % RESULT_CODES[rc])
+        print("[ThingsBoard クライアント] ThingsBoard に接続できません! 結果: %s" % RESULT_CODES[rc])
 
 
 if __name__ == '__main__':
     provision_client = ProvisionClient(THINGSBOARD_HOST, THINGSBOARD_PORT, PROVISION_REQUEST)
-    provision_client.provision()  # Request provisioned data
-    tb_client = provision_client.get_new_client()  # Getting client with provisioned data
+    provision_client.provision()  # プロビジョニングされたデータを要求します
+    tb_client = provision_client.get_new_client()  # プロビジョニングされたデータでクライアントを取得します
     if tb_client:
-        tb_client.on_connect = on_tb_connected  # Setting callback for connect
+        tb_client.on_connect = on_tb_connected  # 接続のコールバックを設定します
         tb_client.connect(THINGSBOARD_HOST, THINGSBOARD_PORT, 60)
-        tb_client.loop_forever()  # Starting infinity loop
+        tb_client.loop_forever()  # 無限ループを開始します
     else:
-        print("Client was not created!")
+        print("クライアントが作成されませんでした!")
 ```
 {: .copy-code}
 
 
-### HTTP Example script
+### HTTP の例スクリプト
 
 {% highlight python %}
 from requests import post
@@ -166,9 +166,9 @@ if __name__ == '__main__':
 {% endhighlight %}
 {: .copy-code}
 
-### CoAP Example script
+### CoAP の例スクリプト
 
-To communicate with ThingsBoard we will use asyncio and aiocoap modules, so we should install it: <br><br>
+ThingsBoard と通信するには asyncio と aiocoap モジュールを使用するため、インストールする必要があります: <br><br>
 
 <b>pip3 install asyncio aiocoap --user</b>
 

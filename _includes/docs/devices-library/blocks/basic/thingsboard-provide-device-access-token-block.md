@@ -1,21 +1,22 @@
-To connect your device, you'll first need to get its credentials. While ThingsBoard supports a variety of device credentials, for this guide, we will use the default auto-generated credentials, which is an access token.  
+要连接设备，首先需要获取其凭据。虽然 ThingsBoard 支持各种设备凭据，但本指南将使用默认自动生成的凭据，即访问令牌。
+
 {% assign provisionDeviceCE = '
     ===
         image: /images/helloworld/getting-started-ce/hello-world-2-1-connect-device-1-ce.png,
-        title: Click on the device row in the table to open device details.
+        title: 单击表中的设备行以打开设备详细信息。
     ===
         image: /images/helloworld/getting-started-ce/hello-world-2-1-connect-device-2-ce.png,
-        title: Click "**Copy access token**". The token will be copied to your clipboard. Please save it in a safe place.
+        title: 单击“**复制访问令牌**”。令牌将复制到剪贴板。请将其保存在安全的地方。
     '
 %}
 
 {% assign provisionDevicePE = '
     ===
         image: /images/helloworld/getting-started-pe/hello-world-2-1-connect-device-1-pe.png,
-        title: Click on the device row in the table to open device details.
+        title: 单击表中的设备行以打开设备详细信息。
     ===
         image: /images/helloworld/getting-started-pe/hello-world-2-1-connect-device-2-pe.png,
-        title: Click "**Copy access token**". The token will be copied to your clipboard. Please save it in a safe place.
+        title: 单击“**复制访问令牌**”。令牌将复制到剪贴板。请将其保存在安全的地方。
     '
 %}
 
@@ -23,4 +24,4 @@ To connect your device, you'll first need to get its credentials. While ThingsBo
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=provisionDevicePE %}
 {% else %}  
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=provisionDeviceCE %}
-{% endif %} 
+{% endif %}

@@ -1,17 +1,14 @@
+以管理员身份启动 Windows shell（命令提示符）。将目录更改为 ThingsBoard Edge 安装目录。
 
-Launch windows shell (Command Prompt) as Administrator. Change directory to your ThingsBoard Edge installation directory.
-
-Execute **install.bat** script to install ThingsBoard Edge as a Windows service.
-This means it will be automatically started on system startup. 
-Similar, **uninstall.bat** will remove ThingsBoard Edge from Windows services.
-The output should be similar to this one:
+执行 **install.bat** 脚本以将 ThingsBoard Edge 安装为 Windows 服务。
+这意味着它将在系统启动时自动启动。类似地，**uninstall.bat** 将从 Windows 服务中删除 ThingsBoard Edge。输出应类似于以下内容：
 
   ```text
 C:\Program Files (x86)\tb-edge\install.bat
-Detecting Java version installed.
+正在检测已安装的 Java 版本。
 CurrentVersion 110
-Java 11 found!
-Installing Thingsboard Edge...
+找到 Java 11！
+正在安装 Thingsboard Edge...
 ...
-ThingsBoard Edge installed successfully!
+ThingsBoard Edge 安装成功！
 ```

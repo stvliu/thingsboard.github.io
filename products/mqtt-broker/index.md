@@ -5,7 +5,4 @@ description:
 
 ---
 
-<p>TBMQ documentation can help you set up TBMQ.</p>
-
-
-
+<p>TBMQ 文档可以帮助您设置 TBMQ。</p>

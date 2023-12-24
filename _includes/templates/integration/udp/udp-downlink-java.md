@@ -1,17 +1,16 @@
-You can use our example of Downlink Converter,
-or write your own according to your configuration:
+您可以使用我们的下行链路转换器示例，或根据您的配置编写自己的转换器：
 
 ```javascript
-// Result object with encoded downlink payload
+// 带有编码下行链路有效负载的结果对象
 var result = {
 
-    // downlink data content type: JSON, TEXT or BINARY (base64 format)
+    // 下行链路数据内容类型：JSON、TEXT 或 BINARY（base64 格式）
     contentType: "JSON",
 
-    // downlink data
+    // 下行链路数据
     data: JSON.stringify(msg),
 
-    // Optional metadata object presented in key/value format
+    // 以键/值格式呈现的可选元数据对象
     metadata: {}
 
 };

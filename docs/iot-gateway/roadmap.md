@@ -1,11 +1,11 @@
 ---
 layout: docwithnav-gw
-title: ThingsBoard IoT Gateway Roadmap
-description: Architecture of ThingsBoard IoT Gateway
+title: ThingsBoard IoT 网关路线图
+description: ThingsBoard IoT 网关的架构
 
 ---
 
-The Gateway project is currently in active development stage and you should expect following major features in next releases:
+网关项目目前处于积极开发阶段，您应该期待在下一版本中看到以下主要功能：
 
-- DLMS/COSEM Connector;
-- GPIO support.
+- DLMS/COSEM 连接器；
+- GPIO 支持。

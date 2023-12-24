@@ -1,17 +1,17 @@
-Now copy & paste the following script to the Decoder function section:
+现在将以下脚本复制并粘贴到解码器函数部分：
 
 ```javascript
-// Decode an uplink message from a buffer
-// payload - array of bytes
-// metadata - key/value object
+// 从缓冲区解码上行消息
+// payload - 字节数组
+// metadata - 键/值对象
 
-/** Decoder **/
+/** 解码器 **/
 
-// decode payload to JSON
+// 将有效负载解码为 JSON
 var data = decodeToJson(payload);
 
 var deviceName = data.devId;
-var deviceType = 'Tuya device';
+var deviceType = 'Tuya 设备';
 
 var telemetry = [];
 if (data.status != null) {
@@ -41,17 +41,17 @@ var result = {
 
 return result;
 
-/** Helper functions **/
+/** 辅助函数 **/
 
 function decodeToString(payload) {
    return String.fromCharCode.apply(String, payload);
 }
 
 function decodeToJson(payload) {
-   // covert payload to string.
+   // 将有效负载转换为字符串。
    var str = decodeToString(payload);
 
-   // parse string to JSON
+   // 将字符串解析为 JSON
    var data = JSON.parse(str);
    return data;
 }

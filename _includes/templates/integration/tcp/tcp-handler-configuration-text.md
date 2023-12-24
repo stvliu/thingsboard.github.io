@@ -1,6 +1,6 @@
 ![image](/images/user-guide/integrations/tcp/tcp-handler-configuration-text.png)
 
-To parse payload properly, please make sure that next values are set:
-- **Max Frame Length** - the maximum length of the decoded frame. An exception will be thrown if the length of the frame exceeds this value; Leave it by default for this demo - **128**; 
-- **Strip Delimiter** - whether the decoded frame should strip out the delimiter or not. Please check it to drop newline delimiter from the payload;
-- **Message Separator** - specify it to **System Line Separator** - in this case newline symbol will be used as delimiter;
+要正确解析有效负载，请确保设置以下值：
+- **最大帧长度** - 解码帧的最大长度。如果帧的长度超过此值，将引发异常；对于此演示，请将其保留为默认值 - **128**；
+- **剥离定界符** - 解码帧是否应剥离定界符。请检查它以从有效负载中删除换行符定界符；
+- **消息分隔符** - 将其指定为 **系统换行符** - 在这种情况下，换行符符号将用作定界符；

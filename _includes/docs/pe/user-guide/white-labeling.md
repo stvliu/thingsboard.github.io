@@ -1,34 +1,34 @@
-{% assign feature = "White Labeling" %}{% include templates/pe-feature-banner.md %}
+{% assign feature = "白标" %}{% include templates/pe-feature-banner.md %}
 
 * TOC
 {:toc}
 
-## Introduction
+## 简介
 
-ThingsBoard web interface allows you to configure your company or product logo and color scheme in a few clicks with zero coding efforts and no service restart required.
+ThingsBoard Web 界面允许您通过单击几下配置您的公司或产品徽标和配色方案，而无需任何编码工作，也不需要重新启动服务。
 
 {% if docsPrefix == "pe/" %}
-Sysadmin, Tenant and Customer Administrators can configure color scheme, icon, favicon and custom translation of system components and end-user dashboard elements.
-But only System and Tenant Administrators are able to set up customer email templates to interact with the users.
+系统管理员、租户和客户管理员可以配置配色方案、图标、网站图标以及系统组件和最终用户仪表板元素的自定义翻译。
+但只有系统和租户管理员才能设置客户电子邮件模板以与用户互动。
 
-By default, the Tenant inherits the Sysadmin UI configuration, and the Customer inherits the Tenant UI configuration. But Tenant and Customer Administrators are able to set up their own White Labeling configuration.
+默认情况下，租户继承系统管理员 UI 配置，客户继承租户 UI 配置。但租户和客户管理员能够设置他们自己的白标配置。
 {% endif %}
 {% if docsPrefix == "paas/" %}
-Tenant and Customer Administrators can configure color scheme, icon, favicon and custom translation of system components and end-user dashboard elements.
-But only Tenant Administrator are able to set up customer email templates to interact with the users.
+租户和客户管理员可以配置配色方案、图标、网站图标以及系统组件和最终用户仪表板元素的自定义翻译。
+但只有租户管理员才能设置客户电子邮件模板以与用户互动。
 
-By default, the Customer inherits the Tenant UI configuration. But the Customer Administrator are able to set up their own White Labeling configuration.
+默认情况下，客户继承租户 UI 配置。但客户管理员能够设置他们自己的白标配置。
 {% endif %}
 
-## White labeling settings
+## 白标设置
 
-To configure your company or product logo and color scheme, go to the "White Labeling" page.
+要配置您的公司或产品徽标和配色方案，请转到“白标”页面。
 
 {% include images-gallery.html imageCollection="white-labeling-default" %}
 
-In the "General" tab you can set or change the following options:
+在“常规”选项卡中，您可以设置或更改以下选项：
 
- - Application title - you can specify custom the page's title, which is displayed in the browser tab;
+- 应用程序标题 - 您可以指定自定义页面标题，该标题显示在浏览器选项卡中；
 
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/white-labeling/application-title.png)
@@ -37,7 +37,7 @@ In the "General" tab you can set or change the following options:
 ![image](/images/user-guide/white-labeling/application-title-paas.png)
 {% endif %}
 
- - Favicon (website icon) - you can change the default website icon to your own;
+- 网站图标（网站图标） - 您可以将默认网站图标更改为您自己的图标；
 
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/white-labeling/website-icon.png)
@@ -46,7 +46,7 @@ In the "General" tab you can set or change the following options:
 ![image](/images/user-guide/white-labeling/website-icon-paas.png)
 {% endif %}
 
- - Logo - you can change the standard logo in the upper left corner to your company logo;
+- 徽标 - 您可以将左上角的标准徽标更改为您的公司徽标；
 
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/white-labeling/logo.png)
@@ -55,33 +55,33 @@ In the "General" tab you can set or change the following options:
 ![image](/images/user-guide/white-labeling/logo-paas.png)
 {% endif %}
 
- - Logo height - you can resize the logo;
- - Primary palette - you can customize the background color and font color by choosing one of the suggested UI design options or customizing an existing one;
+- 徽标高度 - 您可以调整徽标大小；
+- 主调色板 - 您可以通过选择建议的 UI 设计选项之一或自定义现有选项来自定义背景颜色和字体颜色；
 
 ![image](/images/user-guide/white-labeling/primary-palette.png)
 
- - Accent palette - you can customize the color for some elements, for example for a toggle;
+- 强调色调色板 - 您可以自定义某些元素的颜色，例如切换按钮；
 
 ![image](/images/user-guide/white-labeling/accent-palette.png)
 
- - Advanced CSS - you can stylize any elements of the ThingsBoard user interface as you wish. We will talk more about this functionality [below](#advanced-css);
- - Show/hide platform name and version - by checking this option, the name of the platform and its current version will be displayed in the lower left corner.
+- 高级 CSS - 您可以根据需要设置 ThingsBoard 用户界面的任何元素的样式。我们将在 [下面](#高级-css) 详细介绍此功能；
+- 显示/隐藏平台名称和版本 - 选中此选项后，平台名称及其当前版本将显示在左下角。
 
 ![image](/images/user-guide/white-labeling/show-platform-name-and-version.png)
 
-Final look of our customize user interface:
+自定义用户界面的最终外观：
 
 {% include images-gallery.html imageCollection="white-labeling-custom" %}
 
-## Advanced CSS
+## 高级 CSS
 
-Using CSS, you can stylize any elements of the ThingsBoard user interface as you wish. Such elements can be background, icons, fonts, etc.
+使用 CSS，您可以根据需要设置 ThingsBoard 用户界面的任何元素的样式。此类元素可以是背景、图标、字体等。
 
-To use CSS in your UI design, do the following:
+要在 UI 设计中使用 CSS，请执行以下操作：
 
 {% include images-gallery.html imageCollection="advanced-css-1" showListImageTitles="true" %}
 
-CSS code example for customize icons color and scroll color:
+自定义图标颜色和滚动颜色的 CSS 代码示例：
 
 ```css
 /*icon color*/
@@ -112,11 +112,11 @@ ng-component::-webkit-scrollbar-thumb {
 {: .copy-code}
 
 <br>
-Let's also add a gradient to the left menu.
+我们还为左侧菜单添加一个渐变。
 
 {% include images-gallery.html imageCollection="advanced-css-2" showListImageTitles="true" %}
 
-An example of CSS code to customize the appearance of the sidebar menu:
+自定义侧边栏菜单外观的 CSS 代码示例：
 
 ```css
 /*menu gradient*/
@@ -127,11 +127,11 @@ An example of CSS code to customize the appearance of the sidebar menu:
 ```
 {: .copy-code}
 
-Using the functionality described in this documentation, you can customize the appearance of the ThingsBoard UI according to your preferences.
+使用本说明文档中描述的功能，您可以根据自己的喜好自定义 ThingsBoard UI 的外观。
 
-## Video tutorial
+## 视频教程
 
-Watch the detailed video tutorial with examples of how you can configure the white labeling to suit your needs.
+观看详细的视频教程，其中包含有关如何配置白标以满足您需求的示例。
 
 <br>
 <div id="video">  
@@ -141,8 +141,8 @@ Watch the detailed video tutorial with examples of how you can configure the whi
 </div> 
 
 <br>
-[Contact us](/docs/contact-us/) to suggest missing feature for your use case.
+[联系我们](/docs/contact-us/) 以建议您用例中缺少的功能。
 
-## Next steps
+## 后续步骤
 
 {% assign currentGuide = "AdvancedFeatures" %}{% include templates/multi-project-guides-banner.md %}

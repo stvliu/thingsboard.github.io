@@ -1,7 +1,7 @@
-The Server UI can be accessed through the following URL: [Live Demo](https://demo.thingsboard.io/signup){:target="_blank"}.
-Please log in using your **Live Demo** tenant credentials. 
-Throughout this tutorial, we will refer to this URL as **SERVER_URL**.
+可以通过以下 URL 访问服务器 UI：[实时演示](https://demo.thingsboard.io/signup){:target="_blank"}。
+请使用您的 **实时演示**租户凭据登录。
+在整个教程中，我们将此 URL 称为 **SERVER_URL**。
 
-The ThingsBoard **Edge** UI is accessible at `http://localhost:8080`.
-You can log in using your **Live Demo** tenant credentials.
-This URL will be referred to as **EDGE_URL** in the subsequent sections of the tutorial.
+ThingsBoard **Edge** UI 可在 `http://localhost:8080` 访问。
+您可以使用您的 **实时演示**租户凭据登录。
+此 URL 在本教程的后续部分中将称为 **EDGE_URL**。

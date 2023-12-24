@@ -1,13 +1,13 @@
-| **Parameter**                 | **Default value**                     | **Description**                                                                                                               |
+| **参数** | **默认值** | **说明** |
 |:-|:-|-
-| deviceName                    | **Gateway**                           | Device name                                                                                                                   |
-| deviceType                    | **default**                           | Device type                                                                                                                   |
-| type                          | **serial**                            | Type of connection may be **tcp**, **udp** or **serial**.                                                                     |
-| method                        | **rtu**                               | Type of application data unit - **rtu** or **ascii**                                                                          |
-| port                          | **/dev/ttyUSB0**                      | Serial port for connection.                                                                                                   |
-| baudrate                      | **19200**                             | Baudrate for The baud rate to use for the serial device.                                                                      |
-| byteOrder                     | **BIG**                               | Order of bytes to read.                                                                                                       |
-| unitId                        | **0**                                 | Unit id of the device                                                                                                         |
-| pollPeriod                    | **5000**                              | Period in milliseconds for check the attributes and the telemetry.                                                            |
-| sendDataToThingsBoard         | **false**                             | If set to TRUE, Gateway make autoconfiguration and every <pollPeriod> ms send values to ThingsBoard                           |
+| deviceName | **Gateway** | 设备名称 |
+| deviceType | **default** | 设备类型 |
+| type | **serial** | 连接类型可以是 **tcp**、**udp** 或 **serial**。 |
+| method | **rtu** | 应用数据单元类型 - **rtu** 或 **ascii** |
+| port | **/dev/ttyUSB0** | 用于连接的串口。 |
+| baudrate | **19200** | 要用于串行设备的波特率。 |
+| byteOrder | **BIG** | 要读取的字节顺序。 |
+| unitId | **0** | 设备的单元 ID |
+| pollPeriod | **5000** | 检查属性和遥测的毫秒数周期。 |
+| sendDataToThingsBoard | **false** | 如果设置为 TRUE，网关会进行自动配置，并且每 <pollPeriod> 毫秒向 ThingsBoard 发送值 |
 |---

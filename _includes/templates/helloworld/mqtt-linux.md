@@ -1,11 +1,11 @@
-Install mqtt client for **Ubuntu**:
+安装 **Ubuntu** 的 mqtt 客户端：
 
 ```bash
 sudo apt-get install mosquitto-clients
 ```
 {: .copy-code}
 
-Install cURL for **macOS**:
+安装 **macOS** 的 cURL：
 
 ```bash
 brew install mosquitto-clients
@@ -13,28 +13,28 @@ brew install mosquitto-clients
 {: .copy-code}
 
 
-Replace $THINGSBOARD_HOST_NAME and $ACCESS_TOKEN with corresponding values.
+用相应的值替换 $THINGSBOARD_HOST_NAME 和 $ACCESS_TOKEN。
 
 ```bash
 mosquitto_pub -d -q 1 -h "$THINGSBOARD_HOST_NAME" -p "1883" -t "v1/devices/me/telemetry" -u "$ACCESS_TOKEN" -m {"temperature":25}
 ```
 {: .copy-code}
 
-For example, $THINGSBOARD_HOST_NAME reference live demo server, $ACCESS_TOKEN is ABC123:
+例如，$THINGSBOARD_HOST_NAME 引用实时演示服务器，$ACCESS_TOKEN 是 ABC123：
 
 ```bash
 mosquitto_pub -d -q 1 -h "demo.thingsboard.io" -p "1883" -t "v1/devices/me/telemetry" -u "ABC123" -m {"temperature":25}
 ```
 {: .copy-code}
 
-For example, $THINGSBOARD_HOST_NAME reference your local installation, $ACCESS_TOKEN is ABC123:
+例如，$THINGSBOARD_HOST_NAME 引用你的本地安装，$ACCESS_TOKEN 是 ABC123：
 
 ```bash
 mosquitto_pub -d -q 1 -h "localhost" -p "1883" -t "v1/devices/me/telemetry" -u "ABC123" -m {"temperature":25}
 ```
 {: .copy-code}
 
-Successful output should look similar to this one:
+成功的输出应类似于以下内容：
 
 ```text
 Client mosqpub|xxx sending CONNECT
@@ -45,7 +45,6 @@ Client mosqpub|xxx sending DISCONNECT
 ```
 
 {% capture difference %}
-**Note:** Since ThingsBoard 3.2, you are able to use basic MQTT credentials (combination of client id, username and password) 
-and customize **topic names** and **payload type** using Device Profile. See more info [here](/docs/user-guide/device-profiles/#mqtt-transport-type).
+**注意：**自 ThingsBoard 3.2 起，你可以使用基本 MQTT 凭据（客户端 ID、用户名和密码的组合）并使用设备配置文件自定义**主题名称**和**有效负载类型**。更多信息请参阅[此处](/docs/user-guide/device-profiles/#mqtt-transport-type)。
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}

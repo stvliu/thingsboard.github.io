@@ -1,323 +1,311 @@
 * TOC
 {:toc}
 
-## Introduction
+## 简介
 
-Alias is a reference to a single entity or group of entities that are used in the widgets. Alias may be static or dynamic.  
-To create a dashboard, you first need to create aliases to define the data from which the entities will be used. 
-Aliases can be as easy as referring to a single device or as complicated as creating a complex search query for 
-specific assets from a list. 
+别名是对小部件中使用的单个实体或实体组的引用。别名可以是静态的或动态的。
+要创建仪表板，首先需要创建别名来定义将从中使用实体的数据。
+别名可以像引用单个设备一样简单，也可以像为列表中的特定资产创建复杂的搜索查询一样复杂。
 
-**In this tutorial, aliases will be used on a system according to the scheme shown below and all devices have "temperature" generated values coming to them:**
+**在本教程中，别名将根据以下所示的方案用于系统，并且所有设备都有“温度”生成值进入它们：**
 
 <object width="60%" data="/images/user-guide/ui/alias-scheme.svg"></object>
 
-## Alias types
+## 别名类型
 
-### Single entity
+### 单个实体
 
-This alias allows choosing a single entity. It can be a device, asset, entity view, tenant, customer, dashboard, 
-data converter, scheduler event, blob entity, or current customer.  
-In the example, an alias was created that filters one device, which in this case is Thermometer 1.  
+此别名允许选择单个实体。它可以是设备、资产、实体视图、租户、客户、仪表板、数据转换器、调度程序事件、blob 实体或当前客户。
+在示例中，创建了一个别名来过滤一个设备，在本例中是温度计 1。
 
-Let's learn how to add a Single entity alias:
-1. Enter dashboard editing mode.
-2. In the upper right corner of the window, click the "Entity alias" icon.
-3. In the opened Entity aliases window, click the "Add alias" button on the left side of the dialog box.
-4. In the opened dialog _Add alias_, enter a name for the alias, select a _Single entity_ filter type.
-From the Type drop-down menu, Select the _Device_ and enter the name of the needed device (start typing it and it will be found automatically).
-5. After configuring the alias, click the "Add" button in the lower right corner. 
-6. We can now see that a new alias has been added. Click "Save" in the lower right corner of the dialog box. 
+让我们学习如何添加单个实体别名：
+1. 进入仪表板编辑模式。
+2. 在窗口的右上角，单击“实体别名”图标。
+3. 在打开的实体别名窗口中，单击对话框左侧的“添加别名”按钮。
+4. 在打开的对话框_添加别名_中，输入别名的名称，选择_单个实体_过滤器类型。
+从类型下拉菜单中，选择_设备_并输入所需设备的名称（开始输入它，它将自动找到）。
+5. 配置别名后，单击右下角的“添加”按钮。
+6. 我们现在可以看到已添加了一个新别名。单击对话框右下角的“保存”。
 
 {% include images-gallery.html imageCollection="single-alias" %}
 <br>
 
-Let's use an added alias in a widget:
-1. Click the "Add new widget" icon in the center of the screen.
-2. In the opened widget bundles selection, click "Cards system". There select the _Entities table_ widget.
-3. Input data source: Entity type, select alias name from the list, and add telemetry.
-4. Click the "Add" button in the lower right corner of the dialog box.
-5. Widget with alias that filters one device has been added.
-6. Don't forget to save all the changes by clicking on the big orange checkmark in the lower right corner of the screen.
+让我们在小部件中使用添加的别名：
+1. 单击屏幕中央的“添加新小部件”图标。
+2. 在打开的小部件捆绑选择中，单击“卡系统”。在那里选择_实体表_小部件。
+3. 输入数据源：实体类型，从列表中选择别名名称，并添加遥测。
+4. 单击对话框右下角的“添加”按钮。
+5. 已添加过滤一个设备的别名的小部件，在本例中是设备 D 和设备 E。
+6. 不要忘记通过单击屏幕右下角的大橙色复选标记来保存所有更改。
 
 {% include images-gallery.html imageCollection="single-alias-1" %}
 
 
-### Entity list
+### 实体列表
 
-This alias allows choosing several entities manually without entering a query, which can be devices, assets, entity 
-views, tenants, customers, dashboards, data converters, scheduler events, blob entities, or customers.
-In this example, an alias was created that filters a list of multiple devices.  
+此别名允许手动选择多个实体，而无需输入查询，这些实体可以是设备、资产、实体视图、租户、客户、仪表板、数据转换器、调度程序事件、blob 实体或客户。
+在此示例中，创建了一个别名来过滤多个设备的列表。
 
-Let's learn how to add an Entity list alias:
-1. Enter dashboard editing mode.
-2. In the upper right corner of the window, click the "Entity alias" icon.
-3. In the opened Entity aliases window, click the "Add alias" button on the left side of the dialog box.
-4. In the opened dialog _Add alias_, enter a name for the alias, select an _Entity list_ filter type.
-   From the Type drop-down menu, Select the _Device_ and input names of the individual devices (start typing it and it will be found automatically).
-5. After configuring the alias, click the "Add" button in the lower right corner.
-6. We can now see that a new alias has been added. Click "Save" in the lower right corner of the dialog box.
+让我们学习如何添加实体列表别名：
+1. 进入仪表板编辑模式。
+2. 在窗口的右上角，单击“实体别名”图标。
+3. 在打开的实体别名窗口中，单击对话框左侧的“添加别名”按钮。
+4. 在打开的对话框_添加别名_中，输入别名的名称，选择_实体列表_过滤器类型。
+从类型下拉菜单中，选择_设备_并输入各个设备的名称（开始输入它，它将自动找到）。
+5. 配置别名后，单击右下角的“添加”按钮。
+6. 我们现在可以看到已添加了一个新别名。单击对话框右下角的“保存”。
 
 {% include images-gallery.html imageCollection="entity-list" %}
 <br>
 
-Now let's use the added alias in a widget:
-1. Click the "Add new widget" icon in the center of the screen.
-2. In the opened widget bundles selection, click "Cards system". There select the _Entities table_ widget.
-3. Input data source: Entity type, select the name of the created alias from the list, and add telemetry.
-4. Click the "Add" button in the lower right corner of the dialog box.
-5. Widget with alias that filters a list of several devices, which in this case are Device D and Device E, has been added.
-6. Don't forget to save all the changes by clicking on the big orange checkmark in the lower right corner of the screen.
+现在让我们在小部件中使用添加的别名：
+1. 单击屏幕中央的“添加新小部件”图标。
+2. 在打开的小部件捆绑选择中，单击“卡系统”。在那里选择_实体表_小部件。
+3. 输入数据源：实体类型，从列表中选择已创建别名的名称，并添加遥测。
+4. 单击对话框右下角的“添加”按钮。
+5. 已添加过滤多个设备列表的别名的小部件，在本例中是设备 D 和设备 E。
+6. 不要忘记通过单击屏幕右下角的大橙色复选标记来保存所有更改。
 
 {% include images-gallery.html imageCollection="entity-list-1" %}
 
 
-### Entity name
+### 实体名称
 
-This alias allows choosing one or more entity names that begin with an entered query, which can be devices, 
-assets, entity views, tenants, customers, dashboards, data converters, scheduler events, blob entities, or customers.  
-In this example, an alias was created to filter devices that start with "Compressor".
+此别名允许选择一个或多个以输入查询开头的实体名称，这些实体可以是设备、资产、实体视图、租户、客户、仪表板、数据转换器、调度程序事件、blob 实体或客户。
+在此示例中，创建了一个别名来过滤以“压缩机”开头的设备。
 
-Let's learn how to add an Entity name alias:
-1. Enter dashboard editing mode.
-2. In the upper right corner of the window, click the "Entity alias" icon.
-3. In the opened Entity aliases window, click the "Add alias" button on the left side of the dialog box.
-4. In the opened dialog _Add alias_, enter a name for the alias, select the filter type _Entity name_.
-   From the Type drop-down menu, Select the _Device_ and enter a name, or just the beginning of the name, by which devices will be filtered.
-5. After configuring the alias, click the "Add" button in the lower right corner.
-6. We can now see that a new alias has been added. Click "Save" in the lower right corner of the dialog box.
+让我们学习如何添加实体名称别名：
+1. 进入仪表板编辑模式。
+2. 在窗口的右上角，单击“实体别名”图标。
+3. 在打开的实体别名窗口中，单击对话框左侧的“添加别名”按钮。
+4. 在打开的对话框_添加别名_中，输入别名的名称，选择过滤器类型_实体名称_。
+从类型下拉菜单中，选择_设备_并输入名称或名称的开头，设备将按此名称进行过滤。
+5. 配置别名后，单击右下角的“添加”按钮。
+6. 我们现在可以看到已添加了一个新别名。单击对话框右下角的“保存”。
 
 {% include images-gallery.html imageCollection="entity-name" %}
 <br>
 
-Now let's use the added alias in a widget:
-1. Click the "Add new widget" icon in the center of the screen.
-2. In the opened widget bundles selection, click "Cards system". There select the _Entities table_ widget.
-3. Input data source: Entity type, select the name of the created alias from the list, and add telemetry.
-4. Click the "Add" button in the lower right corner of the dialog box.
-5. Widget with alias that filters devices, which names start with ‘Device’, has been added.
-6. Don't forget to save all the changes by clicking on the big orange checkmark in the lower right corner of the screen.
+现在让我们在小部件中使用添加的别名：
+1. 单击屏幕中央的“添加新小部件”图标。
+2. 在打开的小部件捆绑选择中，单击“卡系统”。在那里选择_实体表_小部件。
+3. 输入数据源：实体类型，从列表中选择已创建别名的名称，并添加遥测。
+4. 单击对话框右下角的“添加”按钮。
+5. 已添加过滤以“设备”开头的设备的别名的小部件。
+6. 不要忘记通过单击屏幕右下角的大橙色复选标记来保存所有更改。
 
 {% include images-gallery.html imageCollection="entity-name-1" %}
 
 
-### Entity from dashboard state
+### 仪表板状态的实体
 
-This alias allows choosing entity(-ies) from dashboard state which can be device, asset, entity view, tenant, customer,
-dashboard, data converter, scheduler event, blob entity or current customer. It is used for filtering data for other dashboard states.  
-For example, if Time series widget is created on a [root dashboard state](/docs/{{docsPrefix}}user-guide/dashboards/#states) with several entities displayed on it, and you'd like to create a dashboard state which will display
-a widget with the entity you clicked on, you need to use this alias. 
+此别名允许从仪表板状态中选择实体（-ies），这些实体可以是设备、资产、实体视图、租户、客户、仪表板、数据转换器、调度程序事件、blob 实体或当前客户。它用于过滤其他仪表板状态的数据。
+例如，如果在[根仪表板状态](/docs/{{docsPrefix}}user-guide/dashboards/#states)上创建了时间序列小部件，并在其上显示了多个实体，并且您想创建一个仪表板状态来显示一个小部件与您单击的实体，您需要使用此别名。
 
-**The following example uses an alias after creating an alias for group entities.**
+**以下示例在为组实体创建别名后使用别名。**
 
-Let's learn how to add an _Entity from dashboard state_ alias:
-1. Enter dashboard editing mode.
-2. In the upper right corner of the window, click the "Entity alias" icon. 
-3. In the opened Entity aliases window, click the "Add alias" button on the left side of the dialog box.
-4. In the opened dialog _Add alias_, enter a name for the alias, select an _Entity from dashboard state_ filter type.
-5. Click "Add" in the lower right corner of the dialog box.
-6. After adding both aliases, click "Save" in the lower right corner of the dialog box.
+让我们学习如何添加_仪表板状态的实体_别名：
+1. 进入仪表板编辑模式。
+2. 在窗口的右上角，单击“实体别名”图标。
+3. 在打开的实体别名窗口中，单击对话框左侧的“添加别名”按钮。
+4. 在打开的对话框_添加别名_中，输入别名的名称，选择_仪表板状态的实体_过滤器类型。
+5. 单击对话框右下角的“添加”。
+6. 添加两个别名后，单击对话框右下角的“保存”。
 
 {% include images-gallery.html imageCollection="entity-from-dashboard-state" %}
 <br>
 
-Now let's use an added alias in a widget and add a [state](/docs/{{docsPrefix}}user-guide/dashboards/#states) to see how this alias works:
-1. Click the "Add new widget" icon in the center of the screen.
-2. In the opened widget bundles selection, click "Cards system". There select the Entity table widget.
-3. Input data source: Entity type, _Entity list_ alias and add telemetry. Click "Add" in the lower right corner to add a widget.
-4. After adding the widget, click layers icon in the top left corner of the dashboard to create a new state.
-In the opened dialog window, click a "+" icon to add a new state.
-5. Enter state's name and click "Add".
-6. Now you see a list with two states: root one, and the one that has been just created. Click "Save" in the lower right of the dialog.
+现在让我们在小部件中使用添加的别名并添加一个[状态](/docs/{{docsPrefix}}user-guide/dashboards/#states)以查看此别名如何工作：
+1. 单击屏幕中央的“添加新小部件”图标。
+2. 在打开的小部件捆绑选择中，单击“卡系统”。在那里选择实体表小部件。
+3. 输入数据源：实体类型、_实体列表_别名并添加遥测。单击右下角的“添加”以添加小部件。
+4. 添加小部件后，单击仪表板左上角的图层图标以创建新状态。
+在打开的对话框窗口中，单击“+”图标以添加新状态。
+5. 输入状态的名称并单击“添加”。
+6. 现在您会看到一个包含两个状态的列表：根状态和刚刚创建的状态。单击对话框右下方的“保存”。
 
 {% include images-gallery.html imageCollection="entity-from-dashboard-state-1" %}
 <br>
 
-Time to add an action to a root dashboard widget and perform it using an Entity from dashboard state alias on the widget in the created state:
-1. In the root dashboard state, enter widget Edit mode by clicking the "pencil" icon in the upper right corner of it to enter an Edit mode of the widget.
-2. Move to the Action cell and click a "+" icon to add a new action.
-3. In the Add widget dialog, select an [action source](/docs/{{docsPrefix}}user-guide/ui/widget-actions/#action-sources) which is responsible for each entity separately (action cell button, on row click etc.)
-4. Enter the name of the action.
-5. If necessary, select the icon representing the button to perform the action.
-6. Select the _Navigate to new dashboard state_ action type and set newly created state as a target dashboard state. Click "Add" to add a new action to the widget.
-7. After successfully adding the action, click big orange tick mark in the upper right of the screen to apply the changes.
-8. Then, go to the created state by selecting it from the drop-down menu by clicking layers icon in the upper right corner.
-9. Click the "Add new widget" icon in the center of the screen. In the opened widget bundles selection, click "Cards system". There select the _Entities table_ widget.
-10. Input data source: Entity type and Select the _Entity from dashboard state_ alias. Click "Add" in the lower right corner.
-11. After adding the widget, click a big tick icon in the lower right corner of the screen to save all applied changes.
+现在是向根仪表板小部件添加操作并使用仪表板状态别名在创建的状态中的小部件上执行它的时间：
+1. 在根仪表板状态中，通过单击右上角的“铅笔”图标进入小部件编辑模式以进入小部件的编辑模式。
+2. 转到操作单元格并单击“+”图标以添加新操作。
+3. 在添加小部件对话框中，选择负责每个实体的操作源（操作单元格按钮、单击行等）。
+4. 输入操作的名称。
+5. 如果需要，选择表示执行操作的按钮的图标。
+6. 选择_导航到新仪表板状态_操作类型并将新创建的状态设置为目标仪表板状态。单击“添加”将新操作添加到小部件。
+7. 成功添加操作后，单击屏幕右上角的大橙色勾号应用更改。
+8. 然后，通过单击右上角的图层图标从下拉菜单中选择它来转到创建的状态。
+9. 单击屏幕中央的“添加新小部件”图标。在打开的小部件捆绑选择中，单击“卡系统”。在那里选择_实体表_小部件。
+10. 输入数据源：实体类型并选择_仪表板状态的实体_别名。单击右下角的“添加”。
+11. 添加小部件后，单击屏幕右下角的大勾号图标以保存所有应用的更改。
 
-By clicking a button opposite needed entity, you will be transitioned to an inner state that shows a widget with entity from dashboard's state details.
+通过单击所需实体对面的按钮，您将过渡到内部状态，该状态显示具有仪表板状态详细信息的小部件。
 
 {% include images-gallery.html imageCollection="entity-from-dashboard-state-2" %}
 
-### Asset type
 
-This alias allows choosing assets of entered type (and, if needed) names of which begin with an entered query. This alias filters assets of type ‘field’ and with name starting with ‘Build’.
+### 资产类型
 
-Let's learn how to add an Asset type alias and use it in a widget:
-1. Enter dashboard editing mode.
-2. In the upper right corner of the window, click the "Entity alias" icon.
-3. In the opened Entity aliases window, click the "Add alias" button on the left side of the dialog box.
-4. In the opened dialog _Add alias_, enter a name for the alias, select a _Asset type_ filter type.
-5. Select asset type from the drop-down menu and enter the beginning of the asset name. Click "Add" in the lower right corner of the dialog box.
-6. After the alias has been added, click "Save" in the lower right corner of the dialog box.
-7. Click the "Add new widget" icon in the center of the screen.
-8. In the opened widget bundles selection, click "Cards system". There select the _Entities table_ widget.
-9. Input data source: Entity type, _Asset type_ alias and click "Add" in the lower right corner to add a widget.
-10. After adding the widget, click a big tick icon in the lower right corner of the screen to save all applied changes.
+此别名允许选择输入类型的资产（如果需要），其名称以输入查询开头。此别名过滤类型为“字段”且名称以“构建”开头的资产。
+
+让我们学习如何添加资产类型别名并在小部件中使用它：
+1. 进入仪表板编辑模式。
+2. 在窗口的右上角，单击“实体别名”图标。
+3. 在打开的实体别名窗口中，单击对话框左侧的“添加别名”按钮。
+4. 在打开的对话框_添加别名_中，输入别名的名称，选择_资产类型_过滤器类型。
+5. 从下拉菜单中选择资产类型并输入资产名称的开头。单击对话框右下角的“添加”。
+6. 添加别名后，单击对话框右下角的“保存”。
+7. 单击屏幕中央的“添加新小部件”图标。
+8. 在打开的小部件捆绑选择中，单击“卡系统”。在那里选择_实体表_小部件。
+9. 输入数据源：实体类型、_资产类型_别名并单击右下角的“添加”以添加小部件。
+10. 添加小部件后，单击屏幕右下角的大勾号图标以保存所有应用的更改。
 
 {% include images-gallery.html imageCollection="asset-type-alias" %}
 <br>
 
- 
-### Device type
 
-This alias allows choosing devices of entered type (and, if needed) names of which begin with an entered query. This alias filters devices of type ‘Device’.
+### 设备类型
 
-Let's learn how to add a Device types alias and use it in a widget:
-1. Enter dashboard editing mode.
-2. In the upper right corner of the window, click the "Entity alias" icon.
-3. In the opened Entity aliases window, click the "Add alias" button on the left side of the dialog box.
-4. In the opened dialog _Add alias_, enter a name for the alias, select a _Device types_ filter type. 
-5. Choose previously created device type from the drop-down menu and click "Add" in the lower right corner of the dialog box.
-6. After the alias has been added, click "Save" in the lower right corner of the dialog box.
-7. Click the "Add new widget" icon in the center of the screen.
-8. In the opened widget bundles selection, click "Cards system". There select the _Entities table_ widget.
-9. Input data source: Entity type, _Device types_ alias and add telemetry. Click "Add" in the lower right corner to add a widget.
-10. After adding the widget, click a big tick icon in the lower right corner of the screen to save all applied changes.
+此别名允许选择输入类型的设备（如果需要），其名称以输入查询开头。此别名过滤类型为“设备”的设备。
+
+让我们学习如何添加设备类型别名并在小部件中使用它：
+1. 进入仪表板编辑模式。
+2. 在窗口的右上角，单击“实体别名”图标。
+3. 在打开的实体别名窗口中，单击对话框左侧的“添加别名”按钮。
+4. 在打开的对话框_添加别名_中，输入别名的名称，选择_设备类型_过滤器类型。
+5. 从下拉菜单中选择先前创建的设备类型，然后单击对话框右下角的“添加”。
+6. 添加别名后，单击对话框右下角的“保存”。
+7. 单击屏幕中央的“添加新小部件”图标。
+8. 在打开的小部件捆绑选择中，单击“卡系统”。在那里选择_实体表_小部件。
+9. 输入数据源：实体类型、_设备类型_别名并添加遥测。单击右下角的“添加”以添加小部件。
+10. 添加小部件后，单击屏幕右下角的大勾号图标以保存所有应用的更改。
 
 {% include images-gallery.html imageCollection="device-type-alias" %}
 <br>
- 
- 
-### Entity view type
 
-This alias allows choosing entity views of entered type (and, if needed) names of which begin with an entered query. 
-An entity views called 'Compressor LK-45 Entity View' and 'Compressor ZX-77 Entity View' was created with a type 'Compressors Entity View Type' which provides access to 'Power' timeseries from Compressor LK-45 and Compressor ZX-77.
-This alias filters entity Views of type ‘Compressors Entity View Type’ and with name starting with ‘Compressor’.
 
-Let's learn how to add an Entity view type alias and use it in a widget:
-1. Enter dashboard editing mode.
-2. In the upper right corner of the window, click the "Entity alias" icon.
-3. In the opened Entity aliases window, click the "Add alias" button on the left side of the dialog box.
-4. In the opened dialog _Add alias_, enter a name for the alias, select an _Entity view types_ filter type.
-5. Choose previously created entity view type from the drop-down menu and enter the beginning of an entity view name. Click "Add" in the lower right corner of the dialog box.
-6. After the alias has been added, click "Save" in the lower right corner of the dialog box.
-7. Click the "Add new widget" icon in the center of the screen.
-8. From the drop-down Select widget menu, select a Cards bundle. In the cell “Latest values”, pick a _Entities table_ widget.
-9. Select the _Entity view type_ alias and add telemetry. Click "Add" in the lower right corner to add a widget.
-10. After adding the widget, click a big tick icon in the lower right corner of the screen to save all applied changes.
+### 实体视图类型
+
+此别名允许选择输入类型的实体视图（如果需要），其名称以输入查询开头。创建了一个名为“压缩机 LK-45 实体视图”和“压缩机 ZX-77 实体视图”的实体视图，类型为“压缩机实体视图类型”，该类型提供对压缩机 LK-45 和压缩机 ZX-77 的“功率”时间序列的访问。
+此别名过滤类型为“压缩机实体视图类型”且名称以“压缩机”开头的实体视图。
+
+让我们学习如何添加实体视图类型别名并在小部件中使用它：
+1. 进入仪表板编辑模式。
+2. 在窗口的右上角，单击“实体别名”图标。
+3. 在打开的实体别名窗口中，单击对话框左侧的“添加别名”按钮。
+4. 在打开的对话框_添加别名_中，输入别名的名称，选择_实体视图类型_过滤器类型。
+5. 从下拉菜单中选择先前创建的实体视图类型并输入实体视图名称的开头。单击对话框右下角的“添加”。
+6. 添加别名后，单击对话框右下角的“保存”。
+7. 单击屏幕中央的“添加新小部件”图标。
+8. 从下拉菜单选择小部件菜单中，选择卡片包。在单元格“最新值”中，选择_实体表_小部件。
+9. 选择_实体视图类型_别名并添加遥测。单击右下角的“添加”以添加小部件。
+10. 添加小部件后，单击屏幕右下角的大勾号图标以保存所有应用的更改。
 
 {% include images-gallery.html imageCollection="entity-view-type" %}
 <br>
 
-### Api Usage State
 
-There is an API Usage layout in the main menu of the TB platform. API Usage shows full statistics on the platform.  
-_Api Usage State_ alias allows fetching only the data you need from the user dashboard statistics.
+### API 使用状态
 
-Let's learn how to add an Api Usage State alias and use it in a widget:
-1. Enter dashboard editing mode.
-2. In the upper right corner of the window, click the "Entity alias" icon.
-3. In the opened Entity aliases window, click the "Add alias" button on the left side of the dialog box.
-4. In the opened dialog _Add alias_, enter a name for the alias, select a _Api Usage State_ filter type.
-5. After the alias has been added, click "Save" in the lower right corner of the dialog box.
-6. Click the "Add new widget" icon in the center of the screen.
-7. In the opened widget bundles selection, click "Cards system". There select the _Entities table_ widget.
-8. Input data source: Entity type, _Api Usage State_ alias and add telemetry that fetches statistics from an API usage state. Click "Add" in the lower right corner to add a widget.
-9. After adding the widget, click a big tick icon in the lower right corner of the screen to save all applied changes.
+TB 平台的主菜单中有一个 API 使用布局。API 使用情况显示平台的完整统计信息。
+_API 使用状态_别名允许仅从用户仪表板统计信息中获取您需要的数据。
+
+让我们学习如何添加 API 使用状态别名并在小部件中使用它：
+1. 进入仪表板编辑模式。
+2. 在窗口的右上角，单击“实体别名”图标。
+3. 在打开的实体别名窗口中，单击对话框左侧的“添加别名”按钮。
+4. 在打开的对话框_添加别名_中，输入别名的名称，选择_API 使用状态_过滤器类型。
+5. 添加别名后，单击对话框右下角的“保存”。
+6. 单击屏幕中央的“添加新小部件”图标。
+7. 在打开的小部件捆绑选择中，单击“卡系统”。在那里选择_实体表_小部件。
+8. 输入数据源：实体类型、_API 使用状态_别名并添加从 API 使用状态中获取统计信息的遥测。单击右下角的“添加”以添加小部件。
+9. 添加小部件后，单击屏幕右下角的大勾号图标以保存所有应用的更改。
 
 {% include images-gallery.html imageCollection="api-usage-state" %}
 
 
-### Relations query
+### 关系查询
 
-This alias allows choosing entities which are related to specified originator up to specified level and in specified 
-direction.
+此别名允许选择与指定发起者相关联的实体，直至指定级别和指定方向。
 
-In the example alias filters entities that have any relation from Asset ‘District A’ up to relation level 2.
+在示例别名中，过滤具有来自资产“区域 A”的任何关系的实体，直至关系级别 2。
 
-Let's learn how to add a Relations query alias and use it in a widget:
-1. Enter dashboard editing mode.
-2. In the upper right corner of the window, click the "Entity alias" icon.
-3. In the opened Entity aliases window, click the "Add alias" button on the left side of the dialog box.
-4. In the opened dialog _Add alias_, enter a name for the alias, select a _Relations query_ filter type.
-5. Select the _Asset_ type and choose an asset. Set direction to "From" and max relation level 2.
-6. Click "Add" in the lower right corner of the dialog box.
-7. After the alias has been added, click "Save" in the lower right corner of the dialog box.
-8. Click the "Add new widget" icon in the center of the screen.
-9. In the opened widget bundles selection, click "Cards system". There select the _Entities table_ widget.
-10. Input data source: Entity type, _Relations query_ alias and add telemetry. Click "Add" in the lower right corner to add a widget.
-11. After adding the widget, click a big tick icon in the lower right corner of the screen to save all applied changes.
+让我们学习如何添加关系查询别名并在小部件中使用它：
+1. 进入仪表板编辑模式。
+2. 在窗口的右上角，单击“实体别名”图标。
+3. 在打开的实体别名窗口中，单击对话框左侧的“添加别名”按钮。
+4. 在打开的对话框_添加别名_中，输入别名的名称，选择_关系查询_过滤器类型。
+5. 选择_资产_类型并选择资产。将方向设置为“从”并将最大关系级别设置为 2。
+6. 单击对话框右下角的“添加”。
+7. 添加别名后，单击对话框右下角的“保存”。
+8. 单击屏幕中央的“添加新小部件”图标。
+9. 在打开的小部件捆绑选择中，单击“卡系统”。在那里选择_实体表_小部件。
+10. 输入数据源：实体类型、_关系查询_别名并添加遥测。单击右下角的“添加”以添加小部件。
+11. 添加小部件后，单击屏幕右下角的大勾号图标以保存所有应用的更改。
 
 {% include images-gallery.html imageCollection="relations-query" %}
 
 
-### Asset search query
+### 资产搜索查询
 
-This alias allows choosing assets of specified type which are related to specified originator up to specified level and
-in specified direction.  
-This alias filters assets with types ‘field’ that have any relation to Device ‘Compressor ZX-77’ with relation level 2.
+此别名允许选择与指定发起者相关联的指定类型的资产，直至指定级别和指定方向。
+此别名过滤具有与设备“压缩机 ZX-77”的任何关系的类型为“字段”的资产，关系级别为 2。
 
-Let's learn how to add an Asset search query alias and use it in a widget:
-1. Enter dashboard editing mode.
-2. In the upper right corner of the window, click the "Entity alias" icon.
-3. In the opened Entity aliases window, click the "Add alias" button on the left side of the dialog box.
-4. In the opened dialog _Add alias_, enter a name for the alias, select a _Asset search query_ filter type.
-5. Select the _Device_ type and choose a device. Set direction to "To" and max relation level 2. Input asset type.
-6. Click "Add" in the lower right corner of the dialog box.
-7. After the alias has been added, click "Save" in the lower right corner of the dialog box.
-8. Click the "Add new widget" icon in the center of the screen.
-9. In the opened widget bundles selection, click "Cards system". There select the _Entities table_ widget.
-10. Input data source: Entity type, _Asset search query_ alias and add telemetry. Click "Add" in the lower right corner to add a widget.
-11. After adding the widget, click a big tick icon in the lower right corner of the screen to save all applied changes.
+让我们学习如何添加资产搜索查询别名并在小部件中使用它：
+1. 进入仪表板编辑模式。
+2. 在窗口的右上角，单击“实体别名”图标。
+3. 在打开的实体别名窗口中，单击对话框左侧的“添加别名”按钮。
+4. 在打开的对话框_添加别名_中，输入别名的名称，选择_资产搜索查询_过滤器类型。
+5. 选择_设备_类型并选择设备。将方向设置为“到”并将最大关系级别设置为 2。输入资产类型。
+6. 单击对话框右下角的“添加”。
+7. 添加别名后，单击对话框右下角的“保存”。
+8. 单击屏幕中央的“添加新小部件”图标。
+9. 在打开的小部件捆绑选择中，单击“卡系统”。在那里选择_实体表_小部件。
+10. 输入数据源：实体类型、_资产搜索查询_别名并添加遥测。单击右下角的“添加”以添加小部件。
+11. 添加小部件后，单击屏幕右下角的大勾号图标以保存所有应用的更改。
 
 {% include images-gallery.html imageCollection="asset-search-query" %}
 
-### Device search query
 
-This alias allows choosing devices of specified type which are related to specified originator up to specified level
-and in specified direction.  
-This alias filters devices with types ‘Device’ that have any relation from Asset ‘Building A’ up to relation level 1.
+### 设备搜索查询
 
-Let's learn how to add a Device search query alias and use it in a widget:
-1. Enter dashboard editing mode.
-2. In the upper right corner of the window, click the "Entity alias" icon.
-3. In the opened Entity aliases window, click the "Add alias" button on the left side of the dialog box.
-4. In the opened dialog _Add alias_, enter a name for the alias, select a _Device search query_ filter type.
-5. Select the _Asset_ type and choose an asset. Set direction to "From" and max relation level 1. Input device type.
-6. Click "Add" in the lower right corner of the dialog box.
-7. After the alias has been added, click "Save" in the lower right corner of the dialog box.
-8. Click the "Add new widget" icon in the center of the screen.
-9. From the drop-down Select widget menu, select a Cards bundle. In the cell "Latest values", pick a _Entities table_ widget.
-10. Select the _Device search query_ alias and add telemetry. Click "Add" in the lower right of the dialog.
-11. After adding the widget, click a big tick icon in the lower right corner of the screen to save all applied changes.
+此别名允许选择与指定发起者相关联的指定类型的设备，直至指定级别和指定方向。
+此别名过滤具有来自资产“建筑 A”的任何关系的类型为“设备”的设备，直至关系级别 1。
+
+让我们学习如何添加设备搜索查询别名并在小部件中使用它：
+1. 进入仪表板编辑模式。
+2. 在窗口的右上角，单击“实体别名”图标。
+3. 在打开的实体别名窗口中，单击对话框左侧的“添加别名”按钮。
+4. 在打开的对话框_添加别名_中，输入别名的名称，选择_设备搜索查询_过滤器类型。
+5. 选择_资产_类型并选择资产。将方向设置为“从”并将最大关系级别设置为 1。输入设备类型。
+6. 单击对话框右下角的“添加”。
+7. 添加别名后，单击对话框右下角的“保存”。
+8. 单击屏幕中央的“添加新小部件”图标。
+9. 从下拉菜单选择小部件菜单中，选择卡片包。在单元格“最新值”中，选择_实体表_小部件。
+10. 选择_设备搜索查询_别名并添加遥测。单击对话框右下角的“添加”。
+11. 添加小部件后，单击屏幕右下角的大勾号图标以保存所有应用的更改。
 
 {% include images-gallery.html imageCollection="device-search-query" %}
 
-### Entity view search query
 
-This alias allows choosing entity views of specified type which are related to specified originator up to specified level and in specified direction.  
-An entity view called 'Compressor ZX-77 Entity View' which has 'contains' relation to it from Compressor ZX-77 was created with a type 'Compressors Entity View Type
-' which provides access to 'Power' timeseries from Compressor ZX-77.  
-This alias filters entity views with types ‘Compressors Entity View Type’ that have any relation from device ‘Compressor ZX-77’ up to
-relation level 1.
+### 实体视图搜索查询
 
-Let's learn how to add a Device search query alias and use it in a widget:
-1. Enter dashboard editing mode.
-2. In the upper right corner of the window, click the "Entity alias" icon.
-3. In the opened Entity aliases window, click the "Add alias" button on the left side of the dialog box.
-4. In the opened dialog _Add alias_, enter a name for the alias, select an _Entity view search query_ filter type.
-5. Select the _Device_ type and choose an asset. Set direction to "From" and max relation level 1. Input entity view type.
-6. Click "Add" in the lower right corner of the dialog box.
-7. After the alias has been added, click "Save" in the lower right corner of the dialog box.
-8. Click the "Add new widget" icon in the center of the screen.
-9. From the drop-down Select widget menu, select a Cards bundle. In the cell "Latest values", pick a _Entities table_ widget.
-10. Select the _Entity view search query_ alias and add telemetry. Click "Add" in the lower right of the dialog.
-11. After adding the widget, click a big tick icon in the lower right corner of the screen to save all applied changes.
+此别名允许选择与指定发起者相关联的指定类型的实体视图，直至指定级别和指定方向。
+创建了一个名为“压缩机 ZX-77 实体视图”的实体视图，该实体视图与压缩机 ZX-77 具有“包含”关系，类型为“压缩机实体视图类型”，该类型提供对压缩机 ZX-77 的“功率”时间序列的访问。
+此别名过滤具有来自设备“压缩机 ZX-77”的任何关系的类型为“压缩机实体视图类型”的实体视图，直至关系级别 1。
+
+让我们学习如何添加设备搜索查询别名并在小部件中使用它：
+1. 进入仪表板编辑模式。
+2. 在窗口的右上角，单击“实体别名”图标。
+3. 在打开的实体别名窗口中，单击对话框左侧的“添加别名”按钮。
+4. 在打开的对话框_添加别名_中，输入别名的名称，选择_实体视图搜索查询_过滤器类型。
+5. 选择_设备_类型并选择资产。将方向设置为“从”并将最大关系级别设置为 1。输入实体视图类型。
+6. 单击对话框右下角的“添加”。
+7. 添加别名后，单击对话框右下角的“保存”。
+8. 单击屏幕中央的“添加新小部件”图标。
+9. 从下拉菜单选择小部件菜单中，选择卡片包。在单元格“最新值”中，选择_实体表_小部件。
+10. 选择_实体视图搜索查询_别名并添加遥测。单击对话框右下角的“添加”。
+11. 添加小部件后，单击屏幕右下角的大勾号图标以保存所有应用的更改。
 
 {% include images-gallery.html imageCollection="entity-view-search-query" %}
-
- 
-
-

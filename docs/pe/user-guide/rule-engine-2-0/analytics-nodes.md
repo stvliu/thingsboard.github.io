@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-pe
-title: Analytics Nodes
-description: Rule Engine 2.0 Analytics Nodes
+title: 分析节点
+description: 规则引擎 2.0 分析节点
 redirect_from: "/docs/user-guide/rule-engine-2-0/pe/analytics-nodes"
 
 ---

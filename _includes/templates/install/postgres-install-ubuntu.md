@@ -1,16 +1,16 @@
-Instructions listed below will help you to install PostgreSQL.
+以下列出的说明将帮助您安装 PostgreSQL。
 
 ```bash
-# install **wget** if not already installed:
+# 如果尚未安装，安装 **wget**：
 sudo apt install -y wget
 
-# import the repository signing key:
+# 导入存储库签名密钥：
 wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
 
-# add repository contents to your system:
+# 将存储库内容添加到您的系统：
 echo "deb https://apt.postgresql.org/pub/repos/apt/ $(lsb_release -cs)-pgdg main" | sudo tee  /etc/apt/sources.list.d/pgdg.list
 
-# install and launch the postgresql service:
+# 安装并启动 postgresql 服务：
 sudo apt update
 sudo apt -y install postgresql-15
 sudo service postgresql start

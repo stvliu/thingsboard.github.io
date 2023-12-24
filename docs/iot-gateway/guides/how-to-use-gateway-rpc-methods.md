@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-gw
-title: Service RPC Methods
-description: Service RPC Methods
+title: 服务 RPC 方法
+description: 服务 RPC 方法
 
 ---
 
@@ -10,72 +10,75 @@ description: Service RPC Methods
 {:toc}
 
 
-This guide explains how to use RPC API in ThingsBoard IoT Gateway.  
+本指南解释了如何在 ThingsBoard IoT 网关中使用 RPC API。
 
-For the purpose of this tutorial, you need:  
-1. Locally installed instance of ThingsBoard platform (In case you are new with ThingsBoard [use this 'how to install' documentation](/docs/user-guide/install/installation-options/)).
-2. [Installed](/docs/iot-gateway/installation/) and [configured](/docs/iot-gateway/configuration/) ThingsBoard IoT Gateway. 
+为了本教程的目的，您需要：
 
-## Step 1. Create a dashboard to use RPC API in ThingsBoard IoT Gateway
+1. 本地安装的 ThingsBoard 平台实例（如果您是 ThingsBoard 新手，[使用此“如何安装”文档](/docs/user-guide/install/installation-options/)）。
+2. [已安装](/docs/iot-gateway/installation/) 和 [已配置](/docs/iot-gateway/configuration/) ThingsBoard IoT 网关。
 
-To use the debug terminal we have to add **RPC debug terminal** widget from **Control widget** bundle.<br>
-To do this we use following steps:
+## 步骤 1. 创建一个仪表板以在 ThingsBoard IoT 网关中使用 RPC API
 
-  - Open **Dashboards** tab;
+要使用调试终端，我们必须从 **控制小部件** 包中添加 **RPC 调试终端** 小部件。<br>
+为此，我们执行以下步骤：
+
+  - 打开 **仪表板** 选项卡；
   <br><br>
   ![](/images/gateway/service-rpc-methods-1.png)
 
-  - Add a new dashboard;
+  - 添加一个新仪表板；
   <br><br>
   ![](/images/gateway/service-rpc-methods-2.png)
 
-  - Open created dashboard, enter edit mode by clicking **pencil** button in the bottom right corner and click "**Add new widget**" button;
+  - 打开创建的仪表板，通过单击右下角的 **铅笔** 按钮进入编辑模式，然后单击“**添加新小部件**”按钮；
   <br><br>
   ![](/images/gateway/service-rpc-methods-3.png)
 
-  - Select widget bundle - "**Control widgets**";
+  - 选择小部件包 - “**控制小部件**”；
   <br><br>
   ![](/images/gateway/service-rpc-methods-4.png)
 
-  - Scroll down and select **RPC debug terminal** widget;
+  - 向下滚动并选择 **RPC 调试终端** 小部件；
   <br><br>
   ![](/images/gateway/service-rpc-methods-5.png)
 
-  - We haven't specify the entity type for the widget so we will **create a new one**;
+  - 我们尚未为小部件指定实体类型，因此我们将 **创建一个新实体**；
   <br><br>
   ![](/images/gateway/service-rpc-methods-6.png)
 
-  - Fill in required fields and same the entity. **Gateway** - is our gateway device;
+  - 填写必填字段并保存实体。**网关** - 是我们的网关设备；
   <br><br>
   ![](/images/gateway/service-rpc-methods-7.png)
 
-  - Apply all changes;
+  - 应用所有更改；
   <br><br>
   ![](/images/gateway/service-rpc-methods-8.png)
 
-  - The connected widget looks like (Connection setups automatically).<br>
-  Now you can use Debug Terminal to send RPC requests to the gateway.
+  - 连接的小部件如下所示（自动进行连接设置）。<br>
+  现在，您可以使用调试终端向网关发送 RPC 请求。
   <br><br>
   ![](/images/gateway/service-rpc-methods-9.png)
 
-## Step 2. Gateway RPC methods 
+## 步骤 2. 网关 RPC 方法
 
-To send RPC requests to the gateway the one should use **RPC Debug Terminal** from **Control widgets** bundle.  
-ThingsBoard IoT gateway has several RPC methods, which called from WEB UI, available by default.  
-The list of OOTB methods will be extended within upcoming releases.
+要向网关发送 RPC 请求，应该从 **控制小部件** 包中使用 **RPC 调试终端**。
 
-### gateway_ping RPC method
+ThingsBoard IoT 网关有几种 RPC 方法，默认情况下可从 WEB UI 调用。
 
-**gateway_ping RPC method** is used to check connection to the gateway and RPC processing status.
-Every command with prefix "**gateway_**" will be interpreted as a command to general gateway service and not as an RPC request to the connector or device.
-Command:  
+OOTB 方法列表将在即将发布的版本中扩展。
+
+### gateway_ping RPC 方法
+
+**gateway_ping RPC 方法** 用于检查与网关的连接和 RPC 处理状态。
+以“**gateway_**”为前缀的每个命令都将被解释为对通用网关服务的命令，而不是对连接器或设备的 RPC 请求。
+命令：
 
 ```bash
 gateway_ping
 ```
 {: .copy-code}
 
-The response is:  
+响应是：
 
 ```json
 {
@@ -84,23 +87,23 @@ The response is:
 }
 ```
 
-![Gateway RPC ping method](/images/gateway/gateway-rpc-ping.png)
+![网关 RPC ping 方法](/images/gateway/gateway-rpc-ping.png)
 
-### gateway_devices RPC method
+### gateway_devices RPC 方法
 
-**gateway_devices RPC method** is used to list devices connected through the gateway with info about the type of connector used.
-This method returns object in “resp” with **key-value** parameters, where:
-key — is a device name
-value — identifies the connector
+**gateway_devices RPC 方法** 用于列出通过网关连接的设备，并提供有关所用连接器类型的信息。
+此方法在“resp”中返回带有 **键值** 参数的对象，其中：
+键 — 是设备名称
+值 — 标识连接器
 
-Command:
+命令：
 
 ```bash
 gateway_devices
 ```
 {: .copy-code}
 
-Returns object like:
+返回类似对象：
 
 ```json
 {
@@ -111,58 +114,58 @@ Returns object like:
 }
 ```
 
-![Gateway RPC devices method](/images/gateway/gateway-rpc-devices.png)
+![网关 RPC 设备方法](/images/gateway/gateway-rpc-devices.png)
 
 
-### gateway_restart RPC method
+### gateway_restart RPC 方法
 
-**gateway_restart RPC method** is used to schedule restart action, e.g. ```bash gateway_restart 60``` set up the restart of the gateway service in 60 seconds.
-This method uses seconds as measuring unit.
+**gateway_restart RPC 方法** 用于安排重新启动操作，例如 ```bash gateway_restart 60``` 在 60 秒内设置网关服务的重新启动。
+此方法使用秒作为测量单位。
 
-**Note:** The response will be returned after adding the task to the gateway scheduler.
+**注意：**在将任务添加到网关计划程序后，将返回响应。
 
-Command:  
+命令：
 
 ```bash
 gateway_restart 60
 ```
 {: .copy-code}
 
-The response is:  
+响应是：
 
 ```json
 {"success": true}
 ```
 
-![Gateway RPC restart method](/images/gateway/gateway-rpc-restart.png)
+![网关 RPC 重新启动方法](/images/gateway/gateway-rpc-restart.png)
 
-### gateway_reboot RPC method
+### gateway_reboot RPC 方法
 
-**gateway_reboot RPC method** is used to schedule rebooting of the gateway device (hardware?), e. g. ```bash gateway_reboot 60``` set up the reboot of the gateway device in one minute.
-**Take into account: this method available if you start the gateway service as a python module instead of daemon approach and the user that is running the gateway has reboot permissions.** 
-Command:  
+**gateway_reboot RPC 方法** 用于安排网关设备（硬件？）的重新启动，例如 ```bash gateway_reboot 60``` 在一分钟内设置网关设备的重新启动。
+**请注意：如果您将网关服务作为 Python 模块而不是守护程序方法启动，并且运行网关的用户具有重新启动权限，则此方法可用。**
+命令：
 
 ```bash
 gateway_reboot 60
 ```
 {: .copy-code}
 
-The response is:  
+响应是：
 
 ```json
 {"success": true}
 ```
 
-**Notate:** The response will be returned after adding the task to the gateway scheduler.  
+**注意：**在将任务添加到网关计划程序后，将返回响应。
 
-![Gateway RPC reboot method](/images/gateway/gateway-rpc-reboot.png)
+![网关 RPC 重新启动方法](/images/gateway/gateway-rpc-reboot.png)
 
-## Next steps
+## 后续步骤
 
-Explore guides related to main ThingsBoard features:
+探索与 ThingsBoard 主要功能相关的指南：
 
- - [Data Visualization](/docs/user-guide/visualization/) - how to visualize collected data.
- - [Device attributes](/docs/user-guide/attributes/) - how to use device attributes.
- - [Telemetry data collection](/docs/user-guide/telemetry/) - how to collect telemetry data.
- - [Using RPC capabilities](/docs/user-guide/rpc/) - how to send commands to/from devices.
- - [Rule Engine](/docs/user-guide/rule-engine/) - how to use rule engine to analyze data from devices.
+- [数据可视化](/docs/user-guide/visualization/) - 如何可视化收集的数据。
+- [设备属性](/docs/user-guide/attributes/) - 如何使用设备属性。
+- [遥测数据收集](/docs/user-guide/telemetry/) - 如何收集遥测数据。
+- [使用 RPC 功能](/docs/user-guide/rpc/) - 如何向设备发送/从设备接收命令。
+- [规则引擎](/docs/user-guide/rule-engine/) - 如何使用规则引擎分析来自设备的数据。

@@ -1,19 +1,18 @@
 * TOC
 {:toc}
 
-## ThingsBoard services
+## ThingsBoard 服务
 
-ThingsBoard is designed to be:
+ThingsBoard 设计为：
 
-* **scalable**: horizontally scalable platform, build using leading open-source technologies.
-* **fault-tolerant**: no single-point-of-failure, every node in the cluster is identical.
-* **robust and efficient**: single server node can handle tens or even hundreds thousands of devices depending on use-case. 
-ThingsBoard cluster can handle millions of devices.
-* **durable**: never lose your data. ThingsBoard supports various queue implementations to provide extremely high message durability.
-* **customizable**: adding new functionality is easy with customizable widgets and rule engine nodes.
+* **可扩展的**：水平可扩展平台，使用领先的开源技术构建。
+* **容错的**：没有单点故障，集群中的每个节点都是相同的。
+* **健壮且高效的**：单个服务器节点可以处理数万甚至数十万台设备，具体取决于用例。ThingsBoard 集群可以处理数百万台设备。
+* **持久的**：永不丢失数据。ThingsBoard 支持各种队列实现，以提供极高的消息持久性。
+* **可定制的**：通过可定制的小部件和规则引擎节点，轻松添加新功能。
 
 
-The diagram below shows key system components and interfaces they provide. Let's walk through them.
+下图显示了关键系统组件及其提供的接口。我们来了解一下它们。
 
 
 {% if docsPrefix == null %}
@@ -24,118 +23,83 @@ The diagram below shows key system components and interfaces they provide. Let's
 {% endif %}
 
 
-**ThingsBoard Transports**
- 
-ThingsBoard provides [MQTT](/docs/{{docsPrefix}}reference/mqtt-api/), [HTTP](/docs/{{docsPrefix}}reference/http-api/), [CoAP](/docs/{{docsPrefix}}reference/coap-api/) and [LwM2M](/docs/{{docsPrefix}}reference/lwm2m-api/) based APIs that are available for your device applications/firmware. 
-Each of the protocol APIs are provided by a separate server component and is part of ThingsBoard "Transport Layer". 
-MQTT Transport also provides [Gateway APIs](/docs/{{docsPrefix}}reference/gateway-mqtt-api/) to be used by gateways that represent multiple connected devices and/or sensors.
+**ThingsBoard 传输**
 
-Once the Transport receives the message from device, it is parsed and pushed to durable [Message Queue](/docs/{{docsPrefix}}reference/#message-queues-are-awesome). 
-The message delivery is acknowledged to device only after corresponding message is acknowledged by the message queue.
+ThingsBoard 提供 [MQTT](/docs/{{docsPrefix}}reference/mqtt-api/)、[HTTP](/docs/{{docsPrefix}}reference/http-api/)、[CoAP](/docs/{{docsPrefix}}reference/coap-api/) 和 [LwM2M](/docs/{{docsPrefix}}reference/lwm2m-api/) 基于 API，可用于您的设备应用程序/固件。每个协议 API 由单独的服务器组件提供，并且是 ThingsBoard “传输层”的一部分。MQTT 传输还提供 [网关 API](/docs/{{docsPrefix}}reference/gateway-mqtt-api/)，供代表多个连接设备和/或传感器的网关使用。
 
-**ThingsBoard Core**
+一旦传输从设备收到消息，它就会被解析并推送到持久的 [消息队列](/docs/{{docsPrefix}}reference/#message-queues-are-awesome)。只有在消息队列确认相应消息后，才会向设备确认消息传递。
 
-ThingsBoard Core is responsible for handling [REST API](/docs/{{docsPrefix}}reference/rest-api/) calls and WebSocket [subscriptions](/docs/{{docsPrefix}}user-guide/telemetry/#websocket-api).
-It is also responsible for storing up to date information about active device sessions and monitoring device [connectivity state](/docs/{{docsPrefix}}user-guide/device-connectivity-status/).
-ThingsBoard Core uses Actor System under the hood to implement actors for main entities: tenants and devices. 
-Platform nodes can join the cluster, where each node is responsible for certain partitions of the incoming messages.
+**ThingsBoard 核心**
 
-**ThingsBoard Rule Engine**
+ThingsBoard 核心负责处理 [REST API](/docs/{{docsPrefix}}reference/rest-api/) 调用和 WebSocket [订阅](/docs/{{docsPrefix}}user-guide/telemetry/#websocket-api)。它还负责存储有关活动设备会话的最新信息并监视设备 [连接状态](/docs/{{docsPrefix}}user-guide/device-connectivity-status/)。ThingsBoard 核心在后台使用 Actor 系统来实现主要实体的 actor：租户和设备。平台节点可以加入集群，其中每个节点负责传入消息的某些分区。
 
-ThingsBoard Rule Engine is the heart of the system and is responsible for processing incoming [messages](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-engine-message).
-Rule Engine uses Actor System under the hood to implement actors for main entities: rule chains and rule nodes.
-Rule Engine nodes can join the cluster, where each node is responsible for certain partitions of the incoming messages.
+**ThingsBoard 规则引擎**
 
-Rule Engine subscribes to incoming data feed from queue(s) and acknowledge the message only once it is processed. 
-There are multiple strategies available that control the order or message processing and the criteria of message acknowledgement.
-See [submit strategies](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/#queue-submit-strategy) and [processing strategies](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/#queue-processing-strategy)
-for more details.
+ThingsBoard 规则引擎是系统的核心，负责处理传入的 [消息](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-engine-message)。规则引擎在后台使用 Actor 系统来实现主要实体的 actor：规则链和规则节点。规则引擎节点可以加入集群，其中每个节点负责传入消息的某些分区。
 
-ThingsBoard Rule Engine may operate in two modes: shared and isolated. In shared mode, rule engine process messages that belong to multiple tenants.
-In isolated mode Rule Engine may be configured to process messages for tenants of specific tenant profile only. 
+规则引擎订阅来自队列的传入数据提要，并且仅在处理消息后才确认消息。有多种策略可用于控制消息处理的顺序和消息确认的标准。有关更多详细信息，请参阅 [提交策略](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/#queue-submit-strategy) 和 [处理策略](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/#queue-processing-strategy)。
+
+ThingsBoard 规则引擎可以在两种模式下运行：共享和隔离。在共享模式下，规则引擎处理属于多个租户的消息。在隔离模式下，可以将规则引擎配置为仅处理特定租户配置文件的租户的消息。
 
 **ThingsBoard Web UI**
 
-ThingsBoard provides a lightweight component written using Express.js framework to host static web ui content. 
-Those components are completely stateless and no much configuration available. 
-The static web UI contains application bundle. Once it is loaded, the application starts using the REST API and WebSockets API provided by ThingsBoard Core.  
- 
-## Message Queues are awesome!
+ThingsBoard 提供了一个使用 Express.js 框架编写的轻量级组件来托管静态 Web UI 内容。这些组件完全无状态，并且没有太多可用的配置。静态 Web UI 包含应用程序包。加载后，应用程序开始使用 ThingsBoard 核心提供的 REST API 和 WebSockets API。
 
-ThingsBoard supports multiple message queue implementations: Kafka, RabbitMQ, AWS SQS, Azure Service Bus and Google Pub/Sub. We plan to extend this list in the future.
-Using durable and scalable queues allow ThingsBoard to implement back-pressure and load balancing. Back-pressure is extremely important in case of peak loads.  
-We provide "abstraction layer" over specific queue implementations and maintain two main concepts: topic and topic partition. 
-One topic may have configurable number of partitions. Since most of the queue implementations does not support partitions, we use *topic + "." + partition* pattern.
-  
-ThingsBoard message Producers determines which partition to use based on the hash of entity id. 
-Thus, all messages for the same entity are always pushed to the same partition.
-ThingsBoard message Consumers coordinate using Zookeeper and use consistent-hash algorithm to determine list of partitions that each Consumer should subscribe to.
-While running in microservices mode, each service also has the dedicated "Notifications" topic based on the unique service id that has only one partition.      
-   
-ThingsBoard uses following topics:
 
- * **tb_transport.api.requests**: to send generic API calls to check device credentials from Transport to ThingsBoard Core.
- * **tb_transport.api.responses**: to receive device credentials verification results from ThingsBoard Core to Transport.
- * **tb_core**: to push messages from Transport or Rule Engine to ThingsBoard Core. Messages include session lifecycle events, attribute and RPC subscriptions, etc.
- * **tb_rule_engine**: to push messages from Transport or ThingsBoard Core to Rule Engine. Messages include incoming telemetry, device states, entity lifecycle events, etc.
- 
-**Note:** All topic properties including names and number of partitions are [configurable](/docs/user-guide/install/{{docsPrefix}}config/) via thingsboard.yml or environment variables. 
-Since ThingsBoard 3.4 we can configure Rule Engine queues by the UI, see the [documentation](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/).
+## 消息队列太棒了！
 
-**Note:** Starting version 2.5 we have switched from using [gRPC](https://grpc.io/) to  [Message Queues](/docs/{{docsPrefix}}reference/#message-queues-are-awesome)
-for all communication between ThingsBoard components. 
-The main idea was to sacrifice small performance/latency penalties in favor of persistent and reliable message delivery and automatic load balancing.  
+ThingsBoard 支持多种消息队列实现：Kafka、RabbitMQ、AWS SQS、Azure Service Bus 和 Google Pub/Sub。我们计划在未来扩展此列表。使用持久且可扩展的队列允许 ThingsBoard 实现反压和负载平衡。在峰值负载的情况下，反压非常重要。我们提供特定队列实现的“抽象层”，并维护两个主要概念：主题和主题分区。一个主题可能具有可配置数量的分区。由于大多数队列实现不支持分区，因此我们使用 *topic + "." + partition* 模式。
 
-## On-premise vs cloud deployments
+ThingsBoard 消息生产者根据实体 ID 的哈希确定要使用哪个分区。因此，同一实体的所有消息始终被推送到同一分区。ThingsBoard 消息使用者使用 Zookeeper 进行协调，并使用一致哈希算法来确定每个使用者应订阅的分区列表。在微服务模式下运行时，每项服务还具有基于唯一服务 ID 的专用“通知”主题，该主题只有一个分区。
 
-ThingsBoard supports both on-premise and cloud deployments. 
-With more then 5000 ThingsBoard servers running all over the world, ThingsBoard is running in production on AWS, Azure, GCE and private data centers.
-It is possible to launch ThingsBoard in the private network with no internet access at all.
+ThingsBoard 使用以下主题：
 
-## Standalone vs cluster mode
+* **tb_transport.api.requests**：将通用 API 调用发送到检查设备凭据的传输到 ThingsBoard 核心。
+* **tb_transport.api.responses**：从 ThingsBoard 核心接收设备凭据验证结果到传输。
+* **tb_core**：将消息从传输或规则引擎推送到 ThingsBoard 核心。消息包括会话生命周期事件、属性和 RPC 订阅等。
+* **tb_rule_engine**：将消息从传输或 ThingsBoard 核心推送到规则引擎。消息包括传入遥测、设备状态、实体生命周期事件等。
 
-Platform is designed to be horizontally scalable and supports automatic discovery of new ThingsBoard servers (nodes). 
-All ThingsBoard nodes inside cluster are identical and are sharing the load. 
-Since all nodes are identical there is no "master" or "coordinator" processes and there is no single point of failure. 
-The load balancer of your choice may forward request from devices, applications and users to all ThingsBoard nodes.
+**注意：**包括名称和分区数量在内的所有主题属性都可以通过 thingsboard.yml 或环境变量进行 [配置](/docs/user-guide/install/{{docsPrefix}}config/)。从 ThingsBoard 3.4 开始，我们可以通过 UI 配置规则引擎队列，请参阅 [文档](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/)。
 
-## Monolithic vs microservices architecture
+**注意：**从 2.5 版本开始，我们已从使用 [gRPC](https://grpc.io/) 切换到 [消息队列](/docs/{{docsPrefix}}reference/#message-queues-are-awesome) 来进行 ThingsBoard 组件之间的所有通信。主要思想是牺牲少量性能/延迟损失，以换取持久且可靠的消息传递和自动负载平衡。
 
-Starting ThingsBoard v2.2, it is possible to run the platform as a monolithic application or as a set of microservices. 
-Supporting both options requires some additional programming efforts, however, is critical due to back-ward compatibility with variety of existing installations.
+## 本地部署与云部署
 
-Approximately 80% of the platform installations are still using monolithic mode due to minimum support efforts, knowledge and hardware resources to do the setup and low maintenance efforts.
+ThingsBoard 支持本地部署和云部署。在全球运行着 5000 多台 ThingsBoard 服务器，ThingsBoard 在 AWS、Azure、GCE 和私有数据中心运行。可以在完全没有互联网访问权限的专用网络中启动 ThingsBoard。
 
-However, if you do need high availability or would like to scale to millions of devices, then microservices is a way to go.
-There are also some challenges that are solved with microservices architecture and applicable for more complex deployments and usage scenarios. 
-For example, running a multi-tenant deployments where one need more granular isolation to protect from:
+## 独立模式与集群模式
 
-* unpredictable load spikes;
-* unpredictable rule chain misconfiguration;
-* single devices opening 1000s of concurrent connections due to firmware bugs;
-* and many other cases.
- 
-Please follow the links listed below to learn more and choose the right architecture and deployment option:
+平台设计为水平可扩展，并支持自动发现新的 ThingsBoard 服务器（节点）。集群中的所有 ThingsBoard 节点都是相同的，并且共享负载。由于所有节点都是相同的，因此没有“主”或“协调器”进程，也没有单点故障。您可以选择的负载平衡器可以将来自设备、应用程序和用户的请求转发到所有 ThingsBoard 节点。
 
-* [**monolithic**](/docs/{{docsPrefix}}reference/monolithic): Learn more about deployment, configuring and running ThingsBoard platform in a monolythic mode.  
-* [**microservices**](/docs/{{docsPrefix}}reference/msa): Learn more about deployment, configuring and running ThingsBoard platform in a microservices mode.
- 
+## 单体架构与微服务架构
 
-## SQL vs NoSQL vs Hybrid database approach
+从 ThingsBoard v2.2 开始，可以将平台作为单体应用程序或一组微服务运行。支持这两个选项需要一些额外的编程工作，但是，由于向后兼容各种现有安装，因此至关重要。
 
-ThingsBoard uses database to store 
-[entities](/docs/{{docsPrefix}}user-guide/entities-and-relations/) (devices, assets, customers, dashboards, etc) and 
-[telemetry](/docs/{{docsPrefix}}user-guide/telemetry/) data (attributes, timeseries sensor readings, statistics, events). 
-Platform supports three database options at the moment:
+大约 80% 的平台安装仍然使用单体模式，因为支持工作、知识和硬件资源最少，可以进行设置和维护工作。
 
-* **SQL** - Stores all entities and telemetry in SQL database. ThingsBoard authors recommend to use PostgreSQL and this is the main SQL database that ThingsBoard supports. 
-It is possible to use HSQLDB for local development purposes. **We do not recommend to use HSQLDB** for anything except running tests and launching dev instance that has minimum possible load.
-* **NoSQL (Deprecated)** - Stores all entities and telemetry in NoSQL database. ThingsBoard authors recommend to use Cassandra and this is the only NoSQL database that ThingsBoard supports at the moment.
-Please note that this option is deprecated in favor of Hybrid approach due to many limitations of NoSQL for transactions and "joins" that are required to enable advanced search over IoT entities.
-* **Hybrid (PostgreSQL + Cassandra)** - Stores all entities in PostgreSQL database and timeseries data in Cassandra database. 
-* **Hybrid (PostgreSQL + TimescaleDB)** - Stores all entities in PostgreSQL database and timeseries data in Timescale database. 
+但是，如果您确实需要高可用性或希望扩展到数百万台设备，那么微服务就是实现这一目标的方法。还有一些挑战可以通过微服务架构来解决，并且适用于更复杂的部署和使用场景。例如，运行多租户部署，其中需要更精细的隔离来保护：
 
-It is possible to configure this options using **thingsboard.yml** file. See database [configuration](/docs/user-guide/install/{{docsPrefix}}config/) page for more details.
+* 不可预测的负载高峰；
+* 不可预测的规则链配置错误；
+* 由于固件错误，单个设备打开 1000 多个并发连接；
+* 以及许多其他情况。
+
+请按照下面列出的链接了解更多信息并选择正确的架构和部署选项：
+
+* [**单体**](/docs/{{docsPrefix}}reference/monolithic)：了解以单体模式部署、配置和运行 ThingsBoard 平台的更多信息。
+* [**微服务**](/docs/{{docsPrefix}}reference/msa)：了解以微服务模式部署、配置和运行 ThingsBoard 平台的更多信息。
+
+
+## SQL 与 NoSQL 与混合数据库方法
+
+ThingsBoard 使用数据库来存储 [实体](/docs/{{docsPrefix}}user-guide/entities-and-relations/)（设备、资产、客户、仪表板等）和 [遥测](/docs/{{docsPrefix}}user-guide/telemetry/) 数据（属性、时序传感器读数、统计数据、事件）。平台目前支持三种数据库选项：
+
+* **SQL** - 将所有实体和遥测存储在 SQL 数据库中。ThingsBoard 作者建议使用 PostgreSQL，这是 ThingsBoard 支持的主要 SQL 数据库。可以将 HSQLDB 用于本地开发目的。**我们不建议使用 HSQLDB**，除了运行测试和启动具有最小可能负载的开发实例之外。
+* **NoSQL（已弃用）** - 将所有实体和遥测存储在 NoSQL 数据库中。ThingsBoard 作者建议使用 Cassandra，这是 ThingsBoard 目前支持的唯一 NoSQL 数据库。请注意，由于 NoSQL 在事务和“连接”方面的许多限制，此选项已被弃用，这些限制对于启用对物联网实体的高级搜索是必需的。
+* **混合（PostgreSQL + Cassandra）** - 将所有实体存储在 PostgreSQL 数据库中，将时序数据存储在 Cassandra 数据库中。
+* **混合（PostgreSQL + TimescaleDB）** - 将所有实体存储在 PostgreSQL 数据库中，将时序数据存储在 Timescale 数据库中。
+
+可以使用 **thingsboard.yml** 文件配置此选项。有关更多详细信息，请参阅数据库 [配置](/docs/user-guide/install/{{docsPrefix}}config/) 页面。
 
 ```yaml
 database:
@@ -147,7 +111,6 @@ database:
 
 ```
 
-## Programming languages and third-party
+## 编程语言和第三方
 
-ThingsBoard back-end is written in Java, but we also have some micro-services based on Node.js. ThingsBoard front-end is a SPA based on Angular 9 framework. 
-See [monolithic](/docs/{{docsPrefix}}reference/monolithic) and [microservices](/docs/{{docsPrefix}}reference/monolithic) pages for more details about third-party components used.  
+ThingsBoard 后端是用 Java 编写的，但我们也有一些基于 Node.js 的微服务。ThingsBoard 前端是基于 Angular 9 框架的 SPA。有关所用第三方组件的更多详细信息，请参阅 [单体](/docs/{{docsPrefix}}reference/monolithic) 和 [微服务](/docs/{{docsPrefix}}reference/monolithic) 页面。

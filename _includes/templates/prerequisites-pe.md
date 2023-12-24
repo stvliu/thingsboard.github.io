@@ -1,5 +1,3 @@
-## Prerequisites
+## 先决条件
 
-You will need to have access to ThingsBoard Professional Edition. 
-The easiest way is to use [ThingsBoard Cloud](https://thingsboard.cloud/signup) server. 
-The alternative option is to install ThingsBoard using [Installation Guide](/docs/user-guide/install/pe/installation-options/). 
+您需要访问 ThingsBoard Professional Edition。最简单的方法是使用 [ThingsBoard Cloud](https://thingsboard.cloud/signup) 服务器。另一种选择是使用 [安装指南](/docs/user-guide/install/pe/installation-options/) 安装 ThingsBoard。

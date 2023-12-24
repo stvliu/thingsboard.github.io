@@ -1,21 +1,21 @@
-#### Kafka Installation
+#### Kafka 安装
 
-[Apache Kafka](https://kafka.apache.org/) is an open-source stream-processing software platform.
+[Apache Kafka](https://kafka.apache.org/) 是一个开源流处理软件平台。
 
-##### Install Kafka
+##### 安装 Kafka
 
-We recommend to use Kafka in Docker container, use this [instruction](https://github.com/wurstmeister/kafka-docker) for installing.
+我们建议在 Docker 容器中使用 Kafka，使用此 [说明](https://github.com/wurstmeister/kafka-docker) 进行安装。
 
-##### ThingsBoard Configuration
+##### ThingsBoard 配置
 
-Edit ThingsBoard configuration file
+编辑 ThingsBoard 配置文件
 
 ```text
 sudo nano /etc/thingsboard/conf/thingsboard.conf
 ```
 {: .copy-code}
 
-Add the following line to the configuration file. **Don't forget** to replace "localhost:9092" with your real Kafka bootstrap servers:
+将以下行添加到配置文件中。**别忘了**将“localhost:9092”替换为你的真实 Kafka 引导服务器：
 
 ```bash
 export TB_QUEUE_TYPE=kafka

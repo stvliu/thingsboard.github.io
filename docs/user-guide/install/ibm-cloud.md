@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
-title: Installing ThingsBoard CE on IBM Cloud
-description: Installing ThingsBoard CE on IBM Cloud
+title: 在 IBM Cloud 上安装 ThingsBoard CE
+description: 在 IBM Cloud 上安装 ThingsBoard CE
 
 ---
 

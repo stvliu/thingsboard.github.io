@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
-title: RPC Reply With data from Related Device
-description: RPC Reply With data from Related Device
+title: RPC 回复与相关设备的数据
+description: RPC 回复与相关设备的数据
 
 ---
 
@@ -9,183 +9,179 @@ description: RPC Reply With data from Related Device
 {:toc}
 
 
-In this tutorial, we will explain how to work with **RPC call reply** Rule Node and also how to:
+在本教程中，我们将解释如何使用 **RPC 调用回复** 规则节点，以及如何：
 
-- Create and connect different Rule Chains using **Rule Chain** node
-- Filter messages using **Script** node
-- Transform incoming messages with **Script** node
-- Fetch attributes of related entities with **Related Attributes** node
-- Process RPC Calls from devices with **RPC call reply** node
-- Log Message with **Log** node
+- 使用 **规则链** 节点创建和连接不同的规则链
+- 使用 **脚本** 节点过滤消息
+- 使用 **脚本** 节点转换传入的消息
+- 使用 **相关属性** 节点获取相关实体的属性
+- 使用 **RPC 调用回复** 节点处理来自设备的 RPC 调用
+- 使用 **日志** 节点记录消息
 
 
-## Intro
-We have 2 devices - Controller and Thermostat. We want to initiate RPC call from Controller and request related Thermostat current temperature value.
-RPC call will have 2 properties:
+## 简介
+我们有 2 个设备 - 控制器和恒温器。我们希望从控制器发起 RPC 调用并请求相关恒温器的当前温度值。
+RPC 调用将具有 2 个属性：
 
-- method: **getTemperature**
-- params: **empty array**
+- 方法：**getTemperature**
+- 参数：**空数组**
 
-## Model definition
-There is a room where 2 devices are installed: Thermostat and Controller. 
+## 模型定义
+有一个房间安装了 2 个设备：恒温器和控制器。
 
-- The Thermostat is represented as Device with the name **Thermostat A** and type **Thermostat**. 
-- The Controller is represented as Device with name **Controller A** and type **Controller**. 
-- Create relation from **Controller A** to **Thermostat A** via relation **Thermostat**
-- Add the attribute, with server scope, to the device **Thermostat A**. 
-    - Attribute name: **temperature**
-    - Attribute value: **52**
-    
-We want to initiate RPC request from **Controller A** and ask the latest temperature of the Thermostat in the same room (**Thermostat A**)
+- 恒温器表示为名称为 **恒温器 A** 和类型为 **恒温器** 的设备。
+- 控制器表示为名称为 **控制器 A** 和类型为 **控制器** 的设备。
+- 通过关系 **恒温器** 从 **控制器 A** 创建到 **恒温器 A** 的关系。
+- 将属性（具有服务器范围）添加到设备 **恒温器 A**。
+    - 属性名称：**温度**
+    - 属性值：**52**
+
+我们希望从 **控制器 A** 发起 RPC 请求，并询问同一房间（**恒温器 A**）中恒温器的最新温度
 <br>
 <br>
 
-## Configure Rule Chain
+## 配置规则链
 
-### Create new Rule Chain **Related thermostat temperature**
+### 创建新的规则链 **相关恒温器温度**
 
-Go to **Rule Chains** -> **Add new Rule Chain** 
+转到 **规则链** -> **添加新的规则链**
 
-Configuration:
+配置：
 
-- Name : **Related thermostat temperature**
+- 名称：**相关恒温器温度**
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-reply/create-chain.png)
 
-New Rule Chain is created. Press **Edit** button and configure Chain.
+创建新的规则链。按 **编辑** 按钮并配置链。
 
-##### Add **Related attributes** node
-Add **Related attributes** node and connect it to the **Input** node.
- 
-This node will load **temperature** attribute of related Thermostat and save it in Message metadata with name **temp**.
+##### 添加 **相关属性** 节点
+添加 **相关属性** 节点并将其连接到 **输入** 节点。
 
-Configuration:
+此节点将加载相关恒温器的 **温度** 属性，并将其保存在消息元数据中，名称为 **temp**。
 
-- Name: **get related temperature**
-- Direction: **From**
-- Max relation level: **1**
-- Relation type : **Thermostat**
-- Entity type : **Device**
-- Latest telemetry : **false**
-- Source attribute : **temperature**
-- Target attribute : **temp**
+配置：
+
+- 名称：**获取相关温度**
+- 方向：**从**
+- 最大关系级别：**1**
+- 关系类型：**恒温器**
+- 实体类型：**设备**
+- 最新遥测：**false**
+- 源属性：**温度**
+- 目标属性：**temp**
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-reply/get-related.png)
 
-##### Add **Transform Script** node 
-Add **Transform Script** node and connect it to the **Related attributes** node.
+##### 添加 **转换脚本** 节点
+添加 **转换脚本** 节点并将其连接到 **相关属性** 节点。
 
-This node will transform an original message into RPC reply message. **RPC call reply** node sends Message payload as the response 
-to the request, so we need to construct proper payload in Transformation node.
+此节点将原始消息转换为 RPC 回复消息。**RPC 调用回复** 节点将消息有效负载作为对请求的响应发送，因此我们需要在转换节点中构建适当的有效负载。
 
-Configuration:
+配置：
 
-- Name: **build response**
-- Script: {% highlight javascript %} msg = {"temperature" : metadata.temp} return {msg: msg, msgType: msgType}; {% endhighlight %}
+- 名称：**构建响应**
+- 脚本：{% highlight javascript %} msg = {"temperature" : metadata.temp} return {msg: msg, msgType: msgType}; {% endhighlight %}
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-reply/transform.png)
 
-##### Add **RPC call reply** node
-**RPC call reply** node takes RPC request ID from message metadata. This ID used to identify incoming RPC call. 
+##### 添加 **RPC 调用回复** 节点
+**RPC 调用回复** 节点从消息元数据中获取 RPC 请求 ID。此 ID 用于标识传入的 RPC 调用。
 
-This node takes message payload and sends it as the response to the Message Originator.
+此节点获取消息有效负载并将其作为对消息发起者的响应发送。
 
-Configuration:
+配置：
 
-- Name : **send response**
-- Request ID : **requestId**
+- 名称：**发送响应**
+- 请求 ID：**requestId**
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-reply/reply.png)
 
 <br>
 <br>
 
-This Rule chain is ready and we should save it. Here is how **Related thermostat temperature** Rule Chain should look like:
+此规则链已准备就绪，我们应该保存它。以下是 **相关恒温器温度** 规则链的外观：
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-reply/rpc-chain-view.png)
 
 
-### Connect Rule Chains
-Now we will connect our new chain with the **Root Chain**. 
-We want to route incoming RPC requests with **method** property equals **getTemperature** to our new rule chain (**Related thermostat temperature**).
+### 连接规则链
+现在，我们将把我们的新链与 **根链** 连接起来。我们希望将具有 **方法** 属性等于 **getTemperature** 的传入 RPC 请求路由到我们的新规则链（**相关恒温器温度**）。
 
-Let's return to the **Root Rule Chain**, press **Edit** button and make required changes.
+让我们返回 **根规则链**，按 **编辑** 按钮并进行必要的更改。
 
-##### Add **Filter Script** node 
-Add **Filter Script** node and connect it to the **Message Type Switch** node with relation type **RPC Request**.
+##### 添加 **过滤脚本** 节点
+添加 **过滤脚本** 节点并将其连接到具有关系类型 **RPC 请求** 的 **消息类型开关** 节点。
 
-Configuration:
+配置：
 
-- Name : filter getTemperature
-- Script: {% highlight javascript %} return msg.method === 'getTemperature'; {% endhighlight %}
+- 名称：filter getTemperature
+- 脚本：{% highlight javascript %} return msg.method === 'getTemperature'; {% endhighlight %}
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-reply/root-filter.png)
 
-After this, all incoming messages with Message Type **RPC Request** will be routed to this node. 
-Inside this node, function will filter only allowed RPC requests with **method** = **getTemperature**
+此后，所有具有消息类型 **RPC 请求** 的传入消息都将被路由到此节点。
+在此节点内，函数将仅过滤具有 **方法** = **getTemperature** 的允许的 RPC 请求
 
-##### Add **Rule Chain** node
-Add **Rule Chain** node with **True** relation type to the previous *Filter Script* node (**filter getTemperature**).
+##### 添加 **规则链** 节点
+将具有 **True** 关系类型的 **规则链** 节点添加到前面的 *过滤脚本* 节点（**filter getTemperature**）。
 
-Configuration:
+配置：
 
-- Rule Chain: **Related thermostat temperature**
+- 规则链：**相关恒温器温度**
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-reply/connect-Rule-Chain.png)
 
-Now, all messages that satisfy configured filter will be routed to **Related thermostat temperature** Rule Chain
+现在，满足配置的过滤条件的所有消息都将被路由到 **相关恒温器温度** 规则链
 
-##### Log unknown request
-We also want to log all other RPC requests if they are unknown. We need to add **Log** node with relation type **False** 
-to the **Filter Script** node (**filter getTemperature**). 
+##### 记录未知请求
+如果未知，我们还希望记录所有其他 RPC 请求。我们需要将具有关系类型 **False** 的 **日志** 节点添加到 **过滤脚本** 节点（**filter getTemperature**）。
 
-All incoming RPC requests with **method** NOT EQUALS  **getTemperature** will be passed from **Filter Script** to the **Log** node.
+具有 **方法** 不等于 **getTemperature** 的所有传入 RPC 请求都将从 **过滤脚本** 传递到 **日志** 节点。
 
-Configuration:
+配置：
 
-- Name : log others
-- Script : {% highlight javascript %} return 'Unexpected RPC call request message:\n' + JSON.stringify(msg) + '\metadata:\n' + JSON.stringify(metadata); {% endhighlight %}
+- 名称：log others
+- 脚本：{% highlight javascript %} return 'Unexpected RPC call request message:\n' + JSON.stringify(msg) + '\metadata:\n' + JSON.stringify(metadata); {% endhighlight %}
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-reply/log-unexpected.png)
 
 <br>
 <br>
 
-Changes in the **Root Rule Chain** are finished and we should save it. Here is how **Root Rule Chain** should look like:
+**根规则链** 中的更改已完成，我们应该保存它。以下是 **根规则链** 的外观：
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-reply/root-chain-view.png)
 
 
-## Verify configuration
-Configuration is finished and we can verify that Rule Chain works as we expect. 
+## 验证配置
+配置已完成，我们可以验证规则链按预期工作。
 
-We will use REST RPC API for emulating **Controller A** device.
+我们将使用 REST RPC API 来模拟 **控制器 A** 设备。
 
-For sending HTTP request, we will use **curl** utility.
- 
+对于发送 HTTP 请求，我们将使用 **curl** 实用程序。
 
-For triggering RPC request, we need to:
 
-- Take **Controller A** device API token. We can copy token from Device page. In this tutorial it is **IAkHBb9N7kKD9ieLRMFN** but it is unique and you need to copy your device token.
+对于触发 RPC 请求，我们需要：
+
+- 获取 **控制器 A** 设备 API 令牌。我们可以从设备页面复制令牌。在本教程中，它是 **IAkHBb9N7kKD9ieLRMFN**，但它是唯一的，您需要复制您的设备令牌。
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-reply/copy-token.png)
 
-- Make **POST** request to the Thingsboard URL - http://localhost:8080/api/v1/**$ACCESS_TOKEN**/rpc 
-with content type = **application/json** and payload <code>{"method": "getTemperature", "params":{}}</code>
+- 向 Thingsboard URL - http://localhost:8080/api/v1/**$ACCESS_TOKEN**/rpc 发出 **POST** 请求，内容类型 = **application/json**，有效负载为 <code>{"method": "getTemperature", "params":{}}</code>
 
 {% highlight bash%}
 curl -X POST -d '{"method": "getTemperature", "params":{}}' http://localhost:8080/api/v1/IAkHBb9N7kKD9ieLRMFN/rpc --header "Content-Type:application/json"
 {% endhighlight %}
 
-Response:
+响应：
 {% highlight bash %}
 {"temperature":"52"}
 {% endhighlight %}
 
-It is expected result. **Controller A** sends RPC call to the Thingsboard with method **getTemperature**. 
-Message was routed via configured Rule Chain and attribute of the related thermostat were fetched and returned in the response.
+这是预期的结果。**控制器 A** 向 Thingsboard 发送 RPC 调用，方法为 **getTemperature**。
+消息通过配置的规则链路由，并且相关恒温器的属性被获取并在响应中返回。
 
-If we try to submit request with unknown method we will see message in the Thingsboard log file:
+如果我们尝试提交具有未知方法的请求，我们将在 Thingsboard 日志文件中看到消息：
 {% highlight bash %}
 curl -X POST -d '{"method": "UNKNOWN", "params":{}}' http://localhost:8080/api/v1/IAkHBb9N7kKD9ieLRMFN/rpc --header "Content-Type:application/json"
 {% endhighlight %}
@@ -198,6 +194,6 @@ curl -X POST -d '{"method": "UNKNOWN", "params":{}}' http://localhost:8080/api/v
 
 <br>
 <br>
-For more details how RPC works in the Thignsboard, please read [RPC capabilities](/docs/user-guide/rpc/#server-side-rpc-api) Article.
+有关 RPC 在 Thignsboard 中的工作方式的更多详细信息，请阅读 [RPC 功能](/docs/user-guide/rpc/#server-side-rpc-api) 文章。
 <br>
 <br>

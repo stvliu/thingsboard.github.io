@@ -1,7 +1,7 @@
-Comment '# HSQLDB DAO Configuration' block.
- 
+注释“# HSQLDB DAO 配置”块。
+
 ```text
-# HSQLDB DAO Configuration
+# HSQLDB DAO 配置
 #spring:
 #  data:
 #    jpa:

@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
-title: Trip animation widget
-description: Trip animation widget guide
+title: 行程动画小部件
+description: 行程动画小部件指南
 redirect_from: "/docs/user-guide/ui/widgets/trip-animation-widget/"
 advanced-settings-key-name:
     0:

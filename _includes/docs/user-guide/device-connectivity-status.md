@@ -1,39 +1,34 @@
 * TOC
 {:toc}
 
-## Feature Overview
+## 功能概述
 
-ThingsBoard Device State service is responsible for monitoring the device connectivity state and triggering the device connectivity events 
-that are pushed to the [**Rule Engine**](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/re-getting-started/). As a platform user, you are able to define how to react to these events. 
+ThingsBoard 设备状态服务负责监控设备连接状态并触发设备连接事件，这些事件被推送到 [**规则引擎**](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/re-getting-started/)。作为平台用户，您可以定义如何对这些事件做出反应。
 
-Supported events are:
+支持的事件有：
 
- - **Connect event** - triggered when a device connects to ThingsBoard. Relevant in the case of session-based transports like MQTT.
- It is also triggered for HTTP transport, but in this case, it will be triggered on each HTTP request;
- - **Disconnect event** - triggered when the device disconnects from ThingsBoard. Relevant in the case of session-based transports like MQTT. 
- It is also triggered for HTTP transport, but in this case, it will be triggered on each HTTP request;
- - **Activity event** - triggered when a device pushes telemetry, attribute update, or RPC command;
- - **Inactivity event** - triggered when a device was inactive for a certain period of time. 
- Please note that this event may be triggered even without disconnect event from the device. Typically, means that there were no activity events triggered for a while.
+- **连接事件** - 当设备连接到 ThingsBoard 时触发。适用于基于会话的传输，如 MQTT。它也会为 HTTP 传输触发，但在这种情况下，它将在每次 HTTP 请求时触发；
+- **断开连接事件** - 当设备从 ThingsBoard 断开连接时触发。适用于基于会话的传输，如 MQTT。它也会为 HTTP 传输触发，但在这种情况下，它将在每次 HTTP 请求时触发；
+- **活动事件** - 当设备推送遥测、属性更新或 RPC 命令时触发；
+- **非活动事件** - 当设备在一段时间内处于非活动状态时触发。请注意，即使没有来自设备的断开连接事件，此事件也可能会触发。通常，这意味着一段时间内没有触发活动事件。
 
-Device State service is responsible for maintaining the following [server-side](/docs/{{docsPrefix}}user-guide/attributes/#attribute-types) attributes:
+设备状态服务负责维护以下 [服务器端](/docs/{{docsPrefix}}user-guide/attributes/#attribute-types) 属性：
 
- - **active** - represents current device state, either true or false;
- - **lastConnectTime** - represents the last time device was connected to ThingsBoard, number of milliseconds since January 1, 1970, 00:00:00 GMT;
- - **lastDisconnectTime** - represents the last time device was disconnected from ThingsBoard, number of milliseconds since January 1, 1970, 00:00:00 GMT;
- - **lastActivityTime** - represents the last time device pushed telemetry, attribute update, or RPC command, number of milliseconds since January 1, 1970, 00:00:00 GMT;
- - **inactivityAlarmTime** - represents the last time inactivity event was triggered, number of milliseconds since January 1, 1970, 00:00:00 GMT.
+- **active** - 表示当前设备状态，为 true 或 false；
+- **lastConnectTime** - 表示设备上次连接到 ThingsBoard 的时间，自 1970 年 1 月 1 日 00:00:00 GMT 以来经过的毫秒数；
+- **lastDisconnectTime** - 表示设备上次从 ThingsBoard 断开连接的时间，自 1970 年 1 月 1 日 00:00:00 GMT 以来经过的毫秒数；
+- **lastActivityTime** - 表示设备上次推送遥测、属性更新或 RPC 命令的时间，自 1970 年 1 月 1 日 00:00:00 GMT 以来经过的毫秒数；
+- **inactivityAlarmTime** - 表示上次触发非活动事件的时间，自 1970 年 1 月 1 日 00:00:00 GMT 以来经过的毫秒数。
 
-## Configuration
+## 配置
 
-Device State service uses a global configuration parameter for inactivity timeout. 
-This parameter is defined in **thingsboard.yml** (state.defaultInactivityTimeoutInSec) and by default it is set to 600 seconds (10 minutes).
-A user can overwrite this parameter for an individual device by setting the "inactivityTimeout" server-side attribute (value is set in milliseconds).
+设备状态服务使用全局配置参数来设置非活动超时。
+此参数在 **thingsboard.yml** (state.defaultInactivityTimeoutInSec) 中定义，默认设置为 600 秒（10 分钟）。
+用户可以通过设置“inactivityTimeout”服务器端属性（值以毫秒为单位）来覆盖单个设备的此参数。
 
-Device State service uses a global configuration parameter to detect inactivity events.
-This parameter is defined in **thingsboard.yml** (state.defaultStateCheckIntervalInSec) and by default it is set to 60 seconds (1 minute).
+设备状态服务使用全局配置参数来检测非活动事件。
+此参数在 **thingsboard.yml** (state.defaultStateCheckIntervalInSec) 中定义，默认设置为 60 秒（1 分钟）。
 
-## Next steps
+## 后续步骤
 
 {% assign currentGuide = "AdvancedFeatures" %}{% include templates/multi-project-guides-banner.md %}
-

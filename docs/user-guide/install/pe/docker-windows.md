@@ -2,8 +2,8 @@
 layout: docwithnav-pe
 assignees:
 - ashvayka
-title: Installing ThingsBoard PE using Docker (Windows)
-description: Installing ThingsBoard PE IoT Platform using Docker (Windows)
+title: 在 Windows 上使用 Docker 安装 ThingsBoard PE
+description: 在 Windows 上使用 Docker 安装 ThingsBoard PE IoT 平台
 redirect_from: "/docs/pe/user-guide/install/docker-windows/"
 ---
 
@@ -11,63 +11,63 @@ redirect_from: "/docs/pe/user-guide/install/docker-windows/"
 {:toc}
 
 
-This guide will help you to install and start ThingsBoard Professional Edition (PE) using Docker on Windows. 
-This guide covers standalone ThingsBoard PE installation.
-If you are looking for a cluster installation instruction, please visit [cluster setup page](/docs/user-guide/install/pe/cluster-setup/).  
+本指南将帮助您在 Windows 上使用 Docker 安装并启动 ThingsBoard Professional Edition (PE)。
+本指南涵盖独立的 ThingsBoard PE 安装。
+如果您正在寻找集群安装说明，请访问 [集群设置页面](/docs/user-guide/install/pe/cluster-setup/)。
 
-## Prerequisites
+## 先决条件
 
-- [Install Docker Toolbox for Windows](https://docs.docker.com/toolbox/toolbox_install_windows/)
+- [为 Windows 安装 Docker Toolbox](https://docs.docker.com/toolbox/toolbox_install_windows/)
 
- 
-## Step 1. Pull ThingsBoard PE Image
+
+## 步骤 1. 拉取 ThingsBoard PE 镜像
 
 ```bash
 docker pull thingsboard/tb-pe:{{ site.release.pe_full_ver }}
 ```
 {: .copy-code}
 
-## Step 2. Obtain the license key 
+## 步骤 2. 获取许可证密钥
 
-We assume you have already chosen your subscription plan or decided to purchase a perpetual license. 
-If not, please navigate to [pricing](/pricing/) page to select the best license option for your case and get your license. 
-See [How-to get pay-as-you-go subscription](https://www.youtube.com/watch?v=dK-QDFGxWek){:target="_blank"} or [How-to get perpetual license](https://www.youtube.com/watch?v=GPe0lHolWek){:target="_blank"} for more details.
+我们假设您已经选择了订阅计划或决定购买永久许可证。
+如果没有，请导航至 [定价](/pricing/) 页面，为您的案例选择最佳许可证选项并获取许可证。
+有关更多详细信息，请参阅 [如何获取即用即付订阅](https://www.youtube.com/watch?v=dK-QDFGxWek){:target="_blank"} 或 [如何获取永久许可证](https://www.youtube.com/watch?v=GPe0lHolWek){:target="_blank"}。
 
-Note: We will reference the license key you have obtained during this step as PUT_YOUR_LICENSE_SECRET_HERE later in this guide.
+注意：在本指南的后面，我们将引用您在此步骤中获得的许可证密钥，即 PUT_YOUR_LICENSE_SECRET_HERE。
 
-## Step 3. Choose ThingsBoard queue service
+## 步骤 3. 选择 ThingsBoard 队列服务
 
 {% include templates/install/install-queue.md %}
 
 {% capture contenttogglespecqueue %}
-In Memory <small>(built-in and default)</small>%,%inmemory%,%templates/install/windows-pe-docker-queue-in-memory.md%br%
-Kafka <small>(recommended for on-prem, production installations)</small>%,%kafka%,%templates/install/windows-pe-docker-queue-kafka.md%br%
-AWS SQS <small>(managed service from AWS)</small>%,%aws-sqs%,%templates/install/windows-pe-docker-queue-aws-sqs.md%br%
-Google Pub/Sub <small>(managed service from Google)</small>%,%pubsub%,%templates/install/windows-pe-docker-queue-pub-sub.md%br%
-Azure Service Bus <small>(managed service from Azure)</small>%,%service-bus%,%templates/install/windows-pe-docker-queue-service-bus.md%br%
-RabbitMQ <small>(for small on-prem installations)</small>%,%rabbitmq%,%templates/install/windows-pe-docker-queue-rabbitmq.md%br%
-Confluent Cloud <small>(Event Streaming Platform based on Kafka)</small>%,%confluent-cloud%,%templates/install/windows-pe-docker-queue-confluent-cloud.md{% endcapture %}
+内存 <small>(内置且为默认)</small>%,%inmemory%,%templates/install/windows-pe-docker-queue-in-memory.md%br%
+Kafka <small>(推荐用于本地生产安装)</small>%,%kafka%,%templates/install/windows-pe-docker-queue-kafka.md%br%
+AWS SQS <small>(AWS 托管服务)</small>%,%aws-sqs%,%templates/install/windows-pe-docker-queue-aws-sqs.md%br%
+Google Pub/Sub <small>(Google 托管服务)</small>%,%pubsub%,%templates/install/windows-pe-docker-queue-pub-sub.md%br%
+Azure 服务总线 <small>(Azure 托管服务)</small>%,%service-bus%,%templates/install/windows-pe-docker-queue-service-bus.md%br%
+RabbitMQ <small>(适用于小型本地安装)</small>%,%rabbitmq%,%templates/install/windows-pe-docker-queue-rabbitmq.md%br%
+Confluent Cloud <small>(基于 Kafka 的事件流平台)</small>%,%confluent-cloud%,%templates/install/windows-pe-docker-queue-confluent-cloud.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="ubuntuThingsboardQueue" toggle-spec=contenttogglespecqueue %} 
 
-Where: 
-    
-- `8080:8080`            - connect local port 8080 to exposed internal HTTP port 8080
-- `1883:1883`            - connect local port 1883 to exposed internal MQTT port 1883
-- `7070:7070`            - connect local port 7070 to exposed internal Edge RPC port 7070
-- `5683-5688:5683-5688/udp`            - connect local UDP ports 5683-5688 to exposed internal COAP and LwM2M ports 
-- `mytbpe-data:/data`   - mounts the volume `mytb-data` to ThingsBoard data directory
-- `mytbpe-data-db:/var/lib/postgresql/data`   - mounts the volume `mytbpe-data-db` to Postgres data directory;
-- `mytb-logs:/var/log/thingsboard`   - mounts the volume `mytb-logs` to ThingsBoard logs directory
-- `mytbpe`             - friendly local name of this machine
-- `restart: always`        - automatically start ThingsBoard in case of system reboot and restart in case of failure.
-- `image: thingsboard/tb-pe:{{ site.release.pe_full_ver }}`          - docker image.
+其中：
 
-## Step 4. Running
+- `8080:8080` - 将本地端口 8080 连接到公开的内部 HTTP 端口 8080
+- `1883:1883` - 将本地端口 1883 连接到公开的内部 MQTT 端口 1883
+- `7070:7070` - 将本地端口 7070 连接到公开的内部 Edge RPC 端口 7070
+- `5683-5688:5683-5688/udp` - 将本地 UDP 端口 5683-5688 连接到公开的内部 COAP 和 LwM2M 端口
+- `mytbpe-data:/data` - 将卷 `mytb-data` 挂载到 ThingsBoard 数据目录
+- `mytbpe-data-db:/var/lib/postgresql/data` - 将卷 `mytbpe-data-db` 挂载到 Postgres 数据目录；
+- `mytb-logs:/var/log/thingsboard` - 将卷 `mytb-logs` 挂载到 ThingsBoard 日志目录
+- `mytbpe` - 此计算机的友好本地名称
+- `restart: always` - 在系统重新启动时自动启动 ThingsBoard，并在发生故障时重新启动。
+- `image: thingsboard/tb-pe:{{ site.release.pe_full_ver }}` - docker 镜像。
 
-Windows users should use docker managed volume for ThingsBoard DataBase. 
-Create docker volume (for ex. `mytbpe-data`) before executing docker run command:
-Open "Docker Quickstart Terminal". Execute the following command to create docker volume:
+## 步骤 4. 运行
+
+Windows 用户应为 ThingsBoard 数据库使用 docker 管理的卷。
+在执行 docker run 命令之前创建 docker 卷（例如 `mytbpe-data`）：
+打开“Docker 快速启动终端”。执行以下命令以创建 docker 卷：
 
 ``` 
 docker volume create mytbpe-data
@@ -80,7 +80,7 @@ docker volume create mytbpe-logs
 {% assign serviceName = "tbpe" %}
 {% include templates/install/docker/docker-compose-up.md %}
 
-In order to get access to necessary resources from external IP/Host on Windows machine, please execute the following commands:
+为了从 Windows 计算机上的外部 IP/主机访问必要的资源，请执行以下命令：
 
 ``` 
 set PATH=%PATH%;"C:\Program Files\Oracle\VirtualBox"
@@ -95,30 +95,30 @@ VBoxManage controlvm "default" natpf1 "udp-port5687,udp,,5687,,5687"
 VBoxManage controlvm "default" natpf1 "udp-port5688,udp,,5688,,5688"
 ```
 {: .copy-code}
-    
-Where: 
-    
-- `C:\Program Files\Oracle\VirtualBox`            - path to your VirtualBox installation directory
+
+其中：
+
+- `C:\Program Files\Oracle\VirtualBox` - VirtualBox 安装目录的路径
 
 
-After executing this command you can open `http://{your-host-ip}:8080` in you browser (for ex. `http://localhost:8080`). You should see ThingsBoard login page.
-Use the following default credentials:
+执行此命令后，您可以在浏览器中打开 `http://{your-host-ip}:8080`（例如 `http://localhost:8080`）。您应该会看到 ThingsBoard 登录页面。
+使用以下默认凭据：
 
-- **System Administrator**: sysadmin@thingsboard.org / sysadmin
-- **Tenant Administrator**: tenant@thingsboard.org / tenant
-- **Customer User**: customer@thingsboard.org / customer
-    
-You can always change passwords for each account in account profile page.
+- **系统管理员**：sysadmin@thingsboard.org / sysadmin
+- **租户管理员**：tenant@thingsboard.org / tenant
+- **客户用户**：customer@thingsboard.org / customer
 
-## Detaching, stop and start commands
+您始终可以在帐户个人资料页面中更改每个帐户的密码。
+
+## 分离、停止和启动命令
 
 {% assign serviceName = "tbpe" %}
 {% assign serviceFullName = "ThingsBoard PE" %}
 {% include templates/install/docker/detaching-stop-start-commands.md %}
 
-## Upgrading
+## 升级
 
-In case when database upgrade is needed, execute the following commands:
+如果需要数据库升级，请执行以下命令：
 
 ```bash
 $ docker compose stop tb-node
@@ -127,19 +127,19 @@ $ docker compose start mytbpe
 ```
 
 {% capture dockerComposeStandalone %}
-If you still rely on Docker Compose as docker-compose (with a hyphen) here is the list of the above commands:
+如果您仍然依赖 Docker Compose 作为 docker-compose（带连字符），以下是上述命令的列表：
 <br>**docker-compose stop tb-node**
 <br>**docker-compose run mytbpe upgrade-tb.sh**
 <br>**docker-compose start mytbpe**
 {% endcapture %}
 {% include templates/info-banner.md content=dockerComposeStandalone %}
 
-## Troubleshooting
+## 故障排除
 
-### DNS issues
+### DNS 问题
 
 {% include templates/troubleshooting/dns-issues-windows.md %}
 
-## Next steps
+## 后续步骤
 
 {% assign currentGuide = "InstallationGuides" %}{% include templates/guides-banner.md %}

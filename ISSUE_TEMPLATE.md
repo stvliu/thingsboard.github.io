@@ -1,22 +1,22 @@
-<!-- Thanks for filing an issue! Before submitting, please fill in the following information. -->
+<!-- 感谢您提交问题！在提交之前，请填写以下信息。 -->
 
-<!--Required Information-->
+<!-- 必填信息 -->
 
-**This is a...** 
-<!-- choose one by changing [ ] to [x] -->
-- [ ] Feature Request
-- [ ] Bug Report
+**这是...**
+<!-- 通过将 [ ] 更改为 [x] 选择一个 -->
+- [ ] 功能请求
+- [ ] 错误报告
 
-**Problem:**
-
-
-**Proposed Solution:**
+**问题：**
 
 
-**Page to Update:**
+**建议的解决方案：**
+
+
+**要更新的页面：**
 https://thingsboard.io/...
 
-<!--Optional Information (remove the comment tags around information you would like to include)-->
-<!--ThingsBoard Version:-->
+<!-- 可选信息（删除您想要包含的信息周围的注释标记） -->
+<!-- ThingsBoard 版本： -->
 
-<!--Additional Information:-->
+<!-- 其他信息： -->

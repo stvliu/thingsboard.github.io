@@ -1,25 +1,25 @@
 ---
 layout: docwithnav
-title: IoT Video Tutorials
+title: IoT 视频教程
 
 ---
 
 * TOC
 {:toc}
 
-The ThingsBoard Youtube [channel](https://www.youtube.com/channel/UCDb9fsV-YR4JmnipAMGsVAQ/videos) provides useful video tutorials covering various features of the ThingsBoard platform.
-We recommend to subscribe to this channel in order to receive the latest updates. Some of the video tutorials are listed below.
-Non-video tutorials are available on the [Samples](/docs/samples/) page.
+ThingsBoard Youtube [频道](https://www.youtube.com/channel/UCDb9fsV-YR4JmnipAMGsVAQ/videos) 提供有用的视频教程，涵盖 ThingsBoard 平台的各种功能。
+我们建议订阅此频道以接收最新更新。下面列出了一些视频教程。
+非视频教程可在 [示例](/docs/samples/) 页面上找到。
 
 <br>
 
-## Data Modeling
+## 数据建模
 
-#### Getting started guide
+#### 入门指南
 
-This video tutorial will give you a brief introduction to the ThingsBoard platform and a hands-on part to help you to get started. 
+本视频教程将简要介绍 ThingsBoard 平台，并提供动手部分来帮助您入门。
 
-You will learn how to provision a new Device, collect data using MQTT and visualize it on a real-time dashboard.
+您将学习如何配置新设备、使用 MQTT 收集数据并在实时仪表板上对其进行可视化。
 
 <br>
 <div id="video">  
@@ -28,15 +28,15 @@ You will learn how to provision a new Device, collect data using MQTT and visual
     </div>
 </div>
 
-#### Working with users, devices and dashboards
+#### 使用用户、设备和仪表板
 
-This video tutorial will cover the basic operations that can be done with Devices, Customers, and Dashboards. 
+本视频教程将介绍可以使用设备、客户和仪表板执行的基本操作。
 
-You will learn how to:
+您将学习如何：
 
- - create customer entities 
- - assign different devices and dashboards to each customer.
- - create a simple IoT Application that allows users to visualize the temperature data.  
+ - 创建客户实体
+ - 将不同的设备和仪表板分配给每个客户。
+ - 创建一个简单的物联网应用程序，允许用户可视化温度数据。  
 
 <div id="video">  
     <div id="video_wrapper">
@@ -45,15 +45,15 @@ You will learn how to:
 </div>
 
 
-#### Device data management using ThingsBoard
+#### 使用 ThingsBoard 进行设备数据管理
 
-This video tutorial will cover the basic operations that can be done with the device attributes to implement practical device management use cases.
+本视频教程将介绍可以使用设备属性执行的基本操作，以实现实用的设备管理用例。
 
-You will learn how to:
+您将学习如何：
 
- - upload static and semi-static information from the device using client-side attributes. 
- - manage the device application behavior using shared attributes. 
- - visualize the attributes data using the attributes card widget.
+ - 使用客户端属性从设备上传静态和半静态信息。
+ - 使用共享属性管理设备应用程序行为。
+ - 使用属性卡小部件可视化属性数据。
 
 <div id="video">  
     <div id="video_wrapper">
@@ -61,15 +61,15 @@ You will learn how to:
     </div>
 </div>
 
-#### End User IoT dashboards (before TB v1.4)
+#### 最终用户物联网仪表板（TB v1.4 之前）
 
-This video tutorial will cover the basic operations with Devices, Customers, and Dashboards.
+本视频教程将介绍设备、客户和仪表板的基本操作。
 
-You will learn how to:
+您将学习如何：
 
--   create customer entities
--   assign different devices and dashboards to each customer.
--   create a simple IoT Application that visualize the temperature data for the users.
+-   创建客户实体
+-   将不同的设备和仪表板分配给每个客户。
+-   创建一个简单的物联网应用程序，为用户可视化温度数据。
 
 <div id="video">  
     <div id="video_wrapper">
@@ -77,13 +77,13 @@ You will learn how to:
     </div>
 </div><br>
 
-## Device Connection Demos
+## 设备连接演示
 
-#### Temperature upload from ESP8266 and DHT22 using Thingsboard
+#### 使用 Thingsboard 从 ESP8266 和 DHT22 上传温度
 
-This video tutorial shows a demo about how to upload the temperature and humidity data from ESP8266 and DHT22 over MQTT using Arduino SDK and Thingsboard.  
+本视频教程演示了如何使用 Arduino SDK 和 Thingsboard 通过 MQTT 从 ESP8266 和 DHT22 上传温度和湿度数据。
 
-For more details and source code reference, please refer to the tutorial documentation in the related links. 
+有关更多详细信息和源代码参考，请参阅相关链接中的教程文档。
 
 <br>
 <div id="video">  
@@ -91,13 +91,13 @@ For more details and source code reference, please refer to the tutorial documen
         <iframe src="https://www.youtube.com/embed/S8JNPYsdT_M" frameborder="0" allowfullscreen></iframe>
     </div>
 </div><br>
-Related Links: <a href="https://blog.thingsboard.io/2016/12/temperature-upload-over-mqtt-using_21.html">Tutorial Documentation
+相关链接：<a href="https://blog.thingsboard.io/2016/12/temperature-upload-over-mqtt-using_21.html">教程文档
 
-#### ESP8266 GPIO control using Thingsboard
+#### 使用 Thingsboard 控制 ESP8266 GPIO
 
-This video tutorial showsa demo about how to control ESP8266 GPIO over MQTT using Arduino SDK and Thingsboard 
+本视频教程演示了如何使用 Arduino SDK 和 Thingsboard 通过 MQTT 控制 ESP8266 GPIO
 
-For more details and source code reference, please refer to the tutorial documentation in the related links. 
+有关更多详细信息和源代码参考，请参阅相关链接中的教程文档。
 
 <br>
 <div id="video">  
@@ -105,13 +105,13 @@ For more details and source code reference, please refer to the tutorial documen
         <iframe src="https://www.youtube.com/embed/NGU_MJd7fk8" frameborder="0" allowfullscreen></iframe>
     </div>
 </div><br>
-Related Links: <a href="https://blog.thingsboard.io/2017/01/esp8266-gpio-control-over-mqtt-using.html">Tutorial documentation
+相关链接：<a href="https://blog.thingsboard.io/2017/01/esp8266-gpio-control-over-mqtt-using.html">教程文档
 
-#### Temperature upload from Raspberry Pi and DHT22 using Thingsboard
+#### 使用 Thingsboard 从 Raspberry Pi 和 DHT22 上传温度
 
-This video tutorial shows a demo about how to upload the temperature and humidity data from Raspberry Pi and DHT22 over MQTT using Python and Thingsboard 
+本视频教程演示了如何使用 Python 和 Thingsboard 通过 MQTT 从 Raspberry Pi 和 DHT22 上传温度和湿度数据
 
-For more details and source code reference, please refer to the tutorial documentation in the related links. 
+有关更多详细信息和源代码参考，请参阅相关链接中的教程文档。
 
 <br>
 <div id="video">  
@@ -119,11 +119,11 @@ For more details and source code reference, please refer to the tutorial documen
         <iframe src="https://www.youtube.com/embed/-26bxb90tt0" frameborder="0" allowfullscreen></iframe>
     </div>
 </div><br>
-Related Links: <a href="https://blog.thingsboard.io/2017/01/temperature-upload-over-mqtt-using.html">Tutorial documentation
+相关链接：<a href="https://blog.thingsboard.io/2017/01/temperature-upload-over-mqtt-using.html">教程文档
 
-#### Raspberry Pi GPIO control using Thingsboard
-This video tutorial shows a demo about how to contro Raspberry Pi GPIO over MQTT using Python and Thingsboard. 
-For more details and source code reference, please refer to the tutorial documentation in the related links. 
+#### 使用 Thingsboard 控制 Raspberry Pi GPIO
+本视频教程演示了如何使用 Python 和 Thingsboard 通过 MQTT 控制 Raspberry Pi GPIO。
+有关更多详细信息和源代码参考，请参阅相关链接中的教程文档。
 
 <br>
 <div id="video">  
@@ -131,23 +131,23 @@ For more details and source code reference, please refer to the tutorial documen
         <iframe src="https://www.youtube.com/embed/SRnYjoS3M0Y" frameborder="0" allowfullscreen></iframe>
     </div>
 </div><br>
-Related Links:<br>
-<a href="https://blog.thingsboard.io/2016/12/raspberry-pi-gpio-control-over-mqtt.html">Raspberry Pi GPIO control over MQTT using Python and Thingsboard Tutorial documentation
+相关链接：<br>
+<a href="https://blog.thingsboard.io/2016/12/raspberry-pi-gpio-control-over-mqtt.html">使用 Python 和 Thingsboard 通过 MQTT 控制 Raspberry Pi GPIO 教程文档
 <br>
-<a href="https://blog.thingsboard.io/2017/01/raspberry-pi-gpio-control-using-android.html">Raspberry Pi GPIO control using Android Things and Thingsboard tutorial documentation
+<a href="https://blog.thingsboard.io/2017/01/raspberry-pi-gpio-control-using-android.html">使用 Android Things 和 Thingsboard 控制 Raspberry Pi GPIO 教程文档
 
 
-## Visualization
+## 可视化
 
-#### Dashboard development guide, Part 1 of 3: Visualizing Assets data using Maps and Tables
+#### 仪表板开发指南，第 1/3 部分：使用地图和表格可视化资产数据
 
-This video tutorial, part 1, will show you how to create a new dashboard and visualize data from the asset attributes.
+本视频教程第 1 部分将向您展示如何创建新仪表板并可视化资产属性中的数据。
 
-You will learn how to:
+您将学习如何：
 
-- create assets and devices and define their relationships. 
-- add the [server attributes](/docs/user-guide/attributes/#attribute-types) and create a new dashboard.
-- visualize data from the asset attributes using "Entities Table" and "Map" widgets.
+- 创建资产和设备并定义它们的关系。
+- 添加 [服务器属性](/docs/user-guide/attributes/#attribute-types) 并创建一个新仪表板。
+- 使用“实体表”和“地图”小部件可视化资产属性中的数据。
 
 <div id="video">  
     <div id="video_wrapper">
@@ -156,17 +156,17 @@ You will learn how to:
 </div>
 
 
-#### Dashboard development guide, Part 2 of 3: Dashboard states, Aliases and Widget actions
+#### 仪表板开发指南，第 2/3 部分：仪表板状态、别名和小部件操作
 
-This video tutorial, part 2, will cover the basic operations that can be done with dashboard states and actions. Also, it will give you an introduction to entity aliases and the image map widget.
+本视频教程第 2 部分将介绍可以使用仪表板状态和操作执行的基本操作。此外，它还将向您介绍实体别名和图像地图小部件。
 
-You will learn how to:
+您将学习如何：
 
-- add and configure new dashboard states.
-- create various aliases.
-- visualize the attributes data using the Image Map widget.
-- create actions in different widgets in order to navigate between states.
-- visualize the telemetry data using Analogue and Digital gauges and the Timeseries widget.
+- 添加和配置新的仪表板状态。
+- 创建各种别名。
+- 使用图像地图小部件可视化属性数据。
+- 在不同小部件中创建操作以便在状态之间导航。
+- 使用模拟和数字仪表以及时序小部件可视化遥测数据。
 
 <div id="video">  
     <div id="video_wrapper">
@@ -175,16 +175,16 @@ You will learn how to:
 </div>
 
 
-#### Dashboard development guide, Part 3 of 3: Remote Device control and Alarm management
+#### 仪表板开发指南，第 3/3 部分：远程设备控制和警报管理
 
-This video tutorial, part 3, will cover the usage of the device control widget and the basic operations that be done with rules and alarms.
+本视频教程第 3 部分将介绍设备控制小部件的使用以及可以使用规则和警报执行的基本操作。
 
-You will learn how to:
+您将学习如何：
 
-- add and use the Knob Control widget.
-- create alarm rules.
-- handle alarms using the Alarms widget.
-- make a dashboard public.
+- 添加并使用旋钮控制小部件。
+- 创建警报规则。
+- 使用警报小部件处理警报。
+- 公开仪表板。
 
 <div id="video">  
     <div id="video_wrapper">
@@ -193,16 +193,16 @@ You will learn how to:
 </div><br>
 
 
-#### Widget configuration guide, Part 1 of 3: Basic Settings
+#### 小部件配置指南，第 1/3 部分：基本设置
 
-This video tutorial, part 1, will cover the basic settings you need to configure a widget in a dashboard.
+本视频教程第 1 部分将介绍在仪表板中配置小部件时需要进行的基本设置。
 
-You will learn how to:
+您将学习如何：
 
-- create a widget and modify its layout and properties.
-- add a title and enable/disable the widget full screen and shadow.
-- change widget color, title style and widget font style.
-- configure Legend settings and the mobile mode.
+- 创建小部件并修改其布局和属性。
+- 添加标题并启用/禁用小部件全屏和阴影。
+- 更改小部件颜色、标题样式和小部件字体样式。
+- 配置图例设置和移动模式。
 
 <div id="video">  
     <div id="video_wrapper">
@@ -211,15 +211,15 @@ You will learn how to:
 </div><br>
 
 
-#### Widget configuration guide, Part 2 of 3: Latest Values Map Widget
+#### 小部件配置指南，第 2/3 部分：最新值地图小部件
 
-This video tutorial, part 2, will show you how to display your devices with the latest telemetry data on the ¨Latest Values Map¨ widget and modify the widget properties.
+本视频教程第 2 部分将向您展示如何在“最新值地图”小部件上显示具有最新遥测数据的设备并修改小部件属性。
 
-You will learn how to:
+您将学习如何：
 
-- create the Map widget, based on latitude and longitude, and customize the Map widget layout and properties.
-- change the map provider.
-- add a custom label, color and/or marker image.
+- 基于纬度和经度创建地图小部件，并自定义地图小部件的布局和属性。
+- 更改地图提供商。
+- 添加自定义标签、颜色和/或标记图像。
 
 
 <div id="video">  
@@ -229,14 +229,14 @@ You will learn how to:
 </div><br>
 
 
-#### Widget configuration guide, Part 3 of 3: Time Series Map Widget
-This video tutorial, part 3, will show you how to display your devices with the latest telemetry data on the ¨Time Series Map¨ widget and modify the widget properties.
+#### 小部件配置指南，第 3/3 部分：时序地图小部件
+本视频教程第 3 部分将向您展示如何在“时序地图”小部件上显示具有最新遥测数据的设备并修改小部件属性。
 
-You will learn how to:
+您将学习如何：
 
-- create the Map widget, based on latitude and longitude, and customize the Map widget layout and properties.
-- change the map provider.
-- add a custom label, color and/or marker image. 
+- 基于纬度和经度创建地图小部件，并自定义地图小部件的布局和属性。
+- 更改地图提供商。
+- 添加自定义标签、颜色和/或标记图像。 
 
 <div id="video">  
     <div id="video_wrapper">
@@ -244,17 +244,17 @@ You will learn how to:
     </div>
 </div><br>
 
-## ThingsBoard Professional Edition (PE) Features 
+## ThingsBoard 专业版 (PE) 功能
 
-#### ThingsBoard PE: White Labeling Guide
-ThingsBoard Professional Edition web interface allows you to configure your company or product logo and color scheme in 2 minutes with zero coding efforts and no service restart required. 
+#### ThingsBoard PE：白标指南
+ThingsBoard 专业版网络界面允许您在 2 分钟内配置公司或产品徽标和配色方案，无需任何编码工作，也无需重新启动服务。
 
-In this video tutorial, you will learn the configuration options that are available:
+在本视频教程中，您将了解可用的配置选项：
 
-- Configure color scheme, icon, and favicon on System Administrator level.
-- Tenant and Customer Administrator UI inherits configuration changes by default. 
-- Tenant and Customer Administrators are able to set up their own white-labeling configuration. 
-- System and Tenant Administrator are able to set up custom email server settings and customer email templates to interact with the users.
+- 在系统管理员级别配置配色方案、图标和 favicon。
+- 租户和客户管理员 UI 默认继承配置更改。
+- 租户和客户管理员能够设置自己的白标配置。
+- 系统和租户管理员能够设置自定义电子邮件服务器设置和客户电子邮件模板以与用户互动。
 
 <div id="video">  
     <div id="video_wrapper">
@@ -263,15 +263,15 @@ In this video tutorial, you will learn the configuration options that are availa
 </div><br>
 
 
-#### ThingsBoard PE: Entity Groups Configuration Guide
-ThingsBoard Professional Editions allows you to configure multiple custom Device & Asset Groups. Each entity (device or asset) may belong to multiple groups at the same time. The special group “All” always contains all devices that belong to a specific tenant account. This video tutorial will show you how to configure entity groups
+#### ThingsBoard PE：实体组配置指南
+ThingsBoard 专业版允许您配置多个自定义设备和资产组。每个实体（设备或资产）可以同时属于多个组。特殊组“全部”始终包含属于特定租户帐户的所有设备。本视频教程将向您展示如何配置实体组
 
-You will learn how to:
+您将学习如何：
 
- - configure different columns to visualize a specific telemetry or any attribute value for each entity group.
- - perform a group of operations, such as assigning devices to a customer, adding devices to a group or removing devices from a group. 
- - configure the display settings.
- - define custom actions to be available for each entity: opening a dashboard or sending RPC call ... etc. 
+- 配置不同的列以可视化每个实体组的特定遥测或任何属性值。
+- 执行一组操作，例如将设备分配给客户、将设备添加到组或从组中删除设备。
+- 配置显示设置。
+- 定义可用于每个实体的自定义操作：打开仪表板或发送 RPC 调用等。
 
 <div id="video">  
     <div id="video_wrapper">
@@ -279,17 +279,17 @@ You will learn how to:
     </div>
 </div>
 <br>
-Related Links: <a href="https://gist.github.com/Terny22/987074fc7e43ee75c83973363436c1d0"> Thermostat emulator
+相关链接：<a href="https://gist.github.com/Terny22/987074fc7e43ee75c83973363436c1d0">恒温器模拟器
 <br>
 
-#### ThingsBoard PE: CSV/XLS data export
-In this video tutorial, you will see how ThingsBoard Professional Edition allows you to export data from widgets to CSV or XLS. This functionality is available almost in any widget if it is applicable to the widget type. The list of columns in the exported data set corresponds to the list of parameters you configure in the data set configuration. 
+#### ThingsBoard PE：CSV/XLS 数据导出
+在本视频教程中，您将看到 ThingsBoard 专业版如何允许您将数据从小部件导出到 CSV 或 XLS。此功能几乎适用于任何小部件（如果适用于小部件类型）。导出数据集中的列列表对应于您在数据集配置中配置的参数列表。
 
-You will learn how to:
+您将学习如何：
 
- - enable data export
- - export data from widgets to CSV or XLS
-  
+- 启用数据导出
+- 将数据从小部件导出到 CSV 或 XLS
+
 <div id="video">  
     <div id="video_wrapper">
         <iframe src="https://www.youtube.com/embed/TzQ21MP8tNs" frameborder="0" allowfullscreen></iframe>
@@ -297,15 +297,15 @@ You will learn how to:
 </div><br>
 
 
-#### ThingsBoard PE: AWS IoT Integration Configuration Guide
+#### ThingsBoard PE：AWS IoT 集成配置指南
 
-AWS IoT Integration allows to stream data from AWS IoT Backend to ThingsBoard Professional Edition and converts device payloads to the ThingsBoard format. This video tutorial will show you how to configure AWS IoT Integration.
+AWS IoT 集成允许将数据从 AWS IoT 后端流式传输到 ThingsBoard 专业版，并将设备有效负载转换为 ThingsBoard 格式。本视频教程将向您展示如何配置 AWS IoT 集成。
 
-You will learn how to:
+您将学习如何：
 
- - configure AWS IoT credentials.
- - create a certificate and policy.  
- - use converters and the decoder function.
+- 配置 AWS IoT 凭据。
+- 创建证书和策略。
+- 使用转换器和解码器函数。
 
 
 <div id="video">  
@@ -314,24 +314,24 @@ You will learn how to:
     </div>
 </div><br>
 
-## Integration
+## 集成
 
 
-####  ThingsBoard PE: Data Converters Configuration Guide
+#### ThingsBoard PE：数据转换器配置指南
 
-Data Converters are a part of the Platform Integration feature. ThingsBoard uses two types of data converters:
+数据转换器是平台集成功能的一部分。ThingsBoard 使用两种类型的数据转换器：
 
- - Uplink data converters: to parse the payload of the incoming message and transform it to the same format used by ThingsBoard. 
- - Downlink data converters: to transform the incoming rule engine message and its metadata to the format that is used by the corresponding Integration.
+- 上行数据转换器：解析传入消息的有效负载并将其转换为 ThingsBoard 使用的相同格式。
+- 下行数据转换器：将传入的规则引擎消息及其元数据转换为相应集成使用的格式。
 
-This video tutorial will show you how to configure data converters.
+本视频教程将向您展示如何配置数据转换器。
 
 
-You will learn how to:
+您将学习如何：
 
- - create a data converter and use the decoder function.
- - use the data converter in an integration example. 
- 
+- 创建数据转换器并使用解码器函数。
+- 在集成示例中使用数据转换器。
+
 <div id="video">  
     <div id="video_wrapper">
         <iframe src="https://www.youtube.com/embed/CojStpYCTGI" frameborder="0" allowfullscreen></iframe>
@@ -339,14 +339,14 @@ You will learn how to:
 </div><br>
 
 
-#### ThingsBoard PE: SigFox Integration Configuration Guide
-Sigfox Integration allows to stream data from Sigfox Backend to ThingsBoard Professional Edition and converts binary device payloads to the ThingsBoard format. This video tutorial will show you how to configure SigFox Integration
+#### ThingsBoard PE：SigFox 集成配置指南
+Sigfox 集成允许将数据从 Sigfox 后端流式传输到 ThingsBoard 专业版，并将二进制设备有效负载转换为 ThingsBoard 格式。本视频教程将向您展示如何配置 SigFox 集成
 
 
-You will learn how to:
+您将学习如何：
 
- - add SigFox Integration and enable security.
- - use converters and the decoder function.
+- 添加 SigFox 集成并启用安全性。
+- 使用转换器和解码器函数。
 
 <div id="video">  
     <div id="video_wrapper">
@@ -354,19 +354,19 @@ You will learn how to:
     </div>
 </div><br>
 
-#### ThingsBoard PE: HTTP Integration Configuration Guide 
-ThingsBoard Professional Edition HTTP Integration allows to convert existing protocols and payload formats to ThingsBoard message format and it is useful in several deployment scenarios, such as: 
+#### ThingsBoard PE：HTTP 集成配置指南
+ThingsBoard 专业版 HTTP 集成允许将现有协议和有效负载格式转换为 ThingsBoard 消息格式，并且在以下几种部署场景中很有用：
 
- - stream device and/or asset data from an external system, IoT platform or connectivity provider backend.
- - stream device and/or asset data from your custom application running in the cloud.
- - connect the existing device that uses a custom HTTP-based protocol to ThingsBoard. 
+- 从外部系统、IoT 平台或连接提供商后端流式传输设备和/或资产数据。
+- 从在云中运行的自定义应用程序流式传输设备和/或资产数据。
+- 将使用自定义基于 HTTP 的协议的现有设备连接到 ThingsBoard。
 
-This video tutorial will show you how to configure HTTP Integration.
+本视频教程将向您展示如何配置 HTTP 集成。
 
-You will learn how to:
+您将学习如何：
 
- - add HTTP Integration and enable security.
- - use converters and the decoder function.
+- 添加 HTTP 集成并启用安全性。
+- 使用转换器和解码器函数。
 
 <div id="video">  
     <div id="video_wrapper">
@@ -374,14 +374,14 @@ You will learn how to:
     </div>
 </div><br>
 
-#### ThingsBoard PE: IBM Watson IoT Integration Configuration Guide 
-IBM Watson IoT Integration allows to stream data from IBM Watson IoT to ThingsBoard Professional Edition and converts device payloads to the ThingsBoard format. This video tutorial will show you how to configure IBM Wastson Integration
+#### ThingsBoard PE：IBM Watson IoT 集成配置指南
+IBM Watson IoT 集成允许将数据从 IBM Watson IoT 流式传输到 ThingsBoard 专业版，并将设备有效负载转换为 ThingsBoard 格式。本视频教程将向您展示如何配置 IBM Wastson 集成
 
-You will learn how to:
+您将学习如何：
 
- - prepare the IBM Watson platform for integration with ThingsBoard 
- - add IBM Watson Integration and set up security.
- - use converters and the decoder function.
+- 为 IBM Watson 平台准备与 ThingsBoard 集成
+- 添加 IBM Watson 集成并设置安全性。
+- 使用转换器和解码器函数。
 
 <div id="video">  
     <div id="video_wrapper">
@@ -389,14 +389,14 @@ You will learn how to:
     </div>
 </div><br>
 
-#### ThingsBoard PE: Azure Event Hub Integration Configuration Guide
-Azure Event Hub Integration allows to stream data from Azure Event Hub to ThingsBoard Professional Edition and converts device payloads to the ThingsBoard format. This video tutorial will show you how to configure Azure Event Hub Integration.
+#### ThingsBoard PE：Azure Event Hub 集成配置指南
+Azure Event Hub 集成允许将数据从 Azure Event Hub 流式传输到 ThingsBoard 专业版，并将设备有效负载转换为 ThingsBoard 格式。本视频教程将向您展示如何配置 Azure Event Hub 集成。
 
-You will learn how to:
+您将学习如何：
 
- - prepare the Azure Event Hub platform for integration with ThingsBoard 
- - add Azure Event Hub Integration and enable security.
- - use converters and the decoder function.
+- 为 Azure Event Hub 平台准备与 ThingsBoard 集成
+- 添加 Azure Event Hub 集成并启用安全性。
+- 使用转换器和解码器函数。
 
 <div id="video">  
     <div id="video_wrapper">
@@ -405,26 +405,26 @@ You will learn how to:
 </div><br>
 
 
-#### ThingsBoard PE: MQTT Integration Configuration Guide
-ThingsBoard Professional Edition MQTT Integration allows to convert existing protocols and payload formats to ThingsBoard message format and it is useful in several deployment scenarios, such as: 
+#### ThingsBoard PE：MQTT 集成配置指南
+ThingsBoard 专业版 MQTT 集成允许将现有协议和有效负载格式转换为 ThingsBoard 消息格式，并且在以下几种部署场景中很有用：
 
-- stream device and/or asset data from an external system, IoT platform or connectivity provider backend.
-- stream device and/or asset data from your custom application running in the cloud.
-- connect the existing device that uses a custom MQTT-based protocol to ThingsBoard.
+- 从外部系统、IoT 平台或连接提供商后端流式传输设备和/或资产数据。
+- 从在云中运行的自定义应用程序流式传输设备和/或资产数据。
+- 将使用自定义基于 MQTT 的协议的现有设备连接到 ThingsBoard。
 
-This video tutorial will show you how to configure MQTT Integration.
+本视频教程将向您展示如何配置 MQTT 集成。
 
-You will learn how to:
+您将学习如何：
 
- - add MQTT Integration and enable security.
- - use converters and the decoder function.
- 
+- 添加 MQTT 集成并启用安全性。
+- 使用转换器和解码器函数。
+
 <div id="video">  
     <div id="video_wrapper">
         <iframe src="https://www.youtube.com/embed/OPkE5FXGPrs" frameborder="0" allowfullscreen></iframe>
     </div>
 </div><br>
 
-## Next steps
+## 后续步骤
 
 {% assign currentGuide = "Common State" %}{% include templates/guides-banner.md %}

@@ -2,8 +2,8 @@
 layout: docwithnav
 asiconees:
 - yefimov-andrey
-title: Aliases
-description: ThingsBoard Aliases
+title: 别名
+description: ThingsBoard 别名
 
 single-alias:
  0:
@@ -440,7 +440,3 @@ entity-view-search-query:
   image: /images/user-guide/ui/alias/entity-view-search-query-8-ce.png
  8:
   image: /images/user-guide/ui/alias/entity-view-search-query-9-ce.png
-
----
-
-{% include docs/user-guide/ui/aliases.md %}

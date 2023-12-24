@@ -1,13 +1,13 @@
 ---
 layout: docwithnav-edge
-title: Provision Rule Chains from cloud to edge
-description: Provision Rule Chains from cloud to edge
+title: 从云端到边缘配置规则链
+description: 从云端到边缘配置规则链
 
 ---
 
 ![image](/images/coming-soon.jpg)
 
-#### Next Steps
+#### 后续步骤
 
 {% assign currentGuide = "ProvisionRuleChainFromCloudToEdge" %}
 {% assign docsPrefix = "edge/" %}

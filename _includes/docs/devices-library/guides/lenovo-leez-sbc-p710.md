@@ -1,52 +1,51 @@
-
-{% assign deviceName = page.title | remove: "How to connect " | remove: "to ThingsBoard?" %}
+{% assign deviceName = page.title | remove: "如何连接 " | remove: "到 ThingsBoard？" %}
 {% assign prerequisites = "
 - " | append: deviceName | append: "
-- [tb-mqtt-client library](https://pypi.org/project/tb-mqtt-client/)
+- [tb-mqtt-client 库](https://pypi.org/project/tb-mqtt-client/)
 - [python ≥ 3.7](https://www.python.org/)
 - [Adafruit-Blinka](https://pypi.org/project/Adafruit-Blinka/) "
  %}
 
-## Introduction
+## 简介
 
 ![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
-The Lenovo Leez SBC P710 is a single-board computer designed for makers and developers.  
- It features an Allwinner H5 quad-core ARM Cortex-A53 processor, 2GB DDR3 RAM, 16GB eMMC flash storage, and a Mali-450MP4 GPU.  
- It also includes Gigabit Ethernet, Wi-Fi 802.11ac, and Bluetooth 4.  
-2 for connectivity, as well as a variety of ports for peripherals and expansion.  
+联想 Leez SBC P710 是一款专为创客和开发人员设计的单板计算机。
+它采用全志 H5 四核 ARM Cortex-A53 处理器、2GB DDR3 RAM、16GB eMMC 闪存和 Mali-450MP4 GPU。
+它还包括千兆以太网、Wi-Fi 802.11ac 和蓝牙 4。
+2 用于连接，以及各种用于外围设备和扩展的端口。
 
 
 {% include /docs/devices-library/blocks/basic/introduction-block.md %}
 
-## Create device on ThingsBoard
+## 在 ThingsBoard 上创建设备
 
 {% include /docs/devices-library/blocks/basic/thingsboard-create-device-block.md %}
 
-## Install required libraries and tools
+## 安装所需的库和工具
 
 {% include /docs/devices-library/blocks/single-board-computers/install-required-libraries-and-tools-block.md %}
 
-## Connect device to ThingsBoard
+## 将设备连接到 ThingsBoard
 
 {% include /docs/devices-library/blocks/basic/thingsboard-provide-device-access-token-block.md %}
 
 {% include /docs/devices-library/blocks/single-board-computers/general-code-to-program-block.md %}
 
-## Synchronize device state using client and shared attribute requests
+## 使用客户端和共享属性请求同步设备状态
 {% include /docs/devices-library/blocks/single-board-computers/thingsboard-synchronize-device-state-using-attribute-requests-block.md %}
 
-## Check data on ThingsBoard
+## 在 ThingsBoard 上检查数据
 
 {% include /docs/devices-library/blocks/single-board-computers/check-data-on-thingsboard-block.md %}
 
-## Control device using shared attributes
+## 使用共享属性控制设备
 
 {% include /docs/devices-library/blocks/single-board-computers/update-shared-attributes-block.md %}
 
-## Control device using RPC
+## 使用 RPC 控制设备
 
 {% include /docs/devices-library/blocks/single-board-computers/using-rpc-block.md %}
 
-## Conclusion
+## 结论
 
 {% include /docs/devices-library/blocks/basic/conclusion-block.md %}

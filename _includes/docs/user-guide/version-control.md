@@ -4,121 +4,119 @@
 {% assign sinceVersion = "3.4" %}
 {% include templates/since.md %}
 
-## Feature Overview
+## 功能概述
 
-ThingsBoard Version Control service provides the ability to export and restore ThingsBoard Entities using Git.
-As a Tenant administrator, you can configure access to the Git repository using UI or REST API.
-As a platform user, you can export single or multiple ThingsBoard Entities, browse version history and restore entities to the specific version.
+ThingsBoard 版本控制服务提供使用 Git 导出和恢复 ThingsBoard 实体的功能。
+作为租户管理员，您可以使用 UI 或 REST API 配置对 Git 存储库的访问。
+作为平台用户，您可以导出单个或多个 ThingsBoard 实体，浏览版本历史记录并将实体恢复到特定版本。
 
-This feature improves user experience when multiple engineers design the same Rule Chain or Dashboard and simplifies CI/CD. 
-It also allows you to easily clone the solution between tenants or platform instances. 
+当多个工程师设计相同的规则链或仪表板时，此功能可改善用户体验并简化 CI/CD。它还允许您轻松地在租户或平台实例之间克隆解决方案。
 
-## Architecture
+## 架构
 
-#### Entity External ID
+#### 实体外部 ID
 
-Every ThingsBoard entity has the "id" field, which is the unique identifier of the entity in scope of a particular ThingsBoard environment.
-Every exportable ThingsBoard entity contains new filed "externalId". 
-The field is used to identify the same Entity in case of import and export between multiple environments.
-Both "id" and "externalId" fields is of type [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
+每个 ThingsBoard 实体都有“id”字段，它是特定 ThingsBoard 环境中实体的唯一标识符。
+每个可导出的 ThingsBoard 实体都包含新的“externalId”字段。
+该字段用于在多个环境之间导入和导出时标识相同的实体。
+“id”和“externalId”字段都是 [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier) 类型。
 
-The "externalId" is also used to automatically substitute entity ids in the rule chains (rule nodes) and dashboards (aliases and widget actions).
-So, if you decide to import rule chain that is referencing some devices or assets, make sure you have exported/imported the corresponding devices or assets as well.
+“externalId”还用于在规则链（规则节点）和仪表板（别名和窗口小部件操作）中自动替换实体 ID。
+因此，如果您决定导入引用某些设备或资产的规则链，请确保您也导出了/导入了相应的设备或资产。
 
-#### Exportable Entities and settings
+#### 可导出实体和设置
 
 {% if docsPrefix == 'ce/' %}
-Initial release of this feature supports following entities: Device, Asset, Entity View, Customer, Dashboard, Widget Bundle, Rule Chain.
+此功能的初始版本支持以下实体：设备、资产、实体视图、客户、仪表板、窗口小部件包、规则链。
 {% else %}
-Initial release of this feature supports following entities: Device, Asset, Entity View, Customer, Dashboard, Widget Bundle, Rule Chain, Entity group, Role, Converter and Integration.
+此功能的初始版本支持以下实体：设备、资产、实体视图、客户、仪表板、窗口小部件包、规则链、实体组、角色、转换器和集成。
 {% endif %}
 
-We intentionally omit support of the User entity, since user email is unique in scope of the platform instance. It seems wrong to export user emails and credentials to Git.
+我们有意省略对用户实体的支持，因为用户电子邮件在平台实例的范围内是唯一的。将用户电子邮件和凭据导出到 Git 似乎是错误的。
 
-While exporting the entity, we store the JSON representation of the entity in Git. It is also possible to export entity attributes, relations and credentials (device only).
+在导出实体时，我们将实体的 JSON 表示形式存储在 Git 中。还可以导出实体属性、关系和凭据（仅限设备）。
 
-#### Repository structure
+#### 存储库结构
 
-When you first export the entity to Git, the entity "id" is used to name the file inside git repository. 
-Then, when you import entities from Git to ThingsBoard, the "id" from the file name becomes "externalId" of the entity.
-The "externalId" is unique in scope of Tenant. So, you may import/export entities between tenants of the same platform instance, or between different instances.
-Any time you perform export and import operations, the "externalId" is used to find the right entity to update.
-See example below.
+当您首次将实体导出到 Git 时，实体“id”用于命名 git 存储库中的文件。
+然后，当您将实体从 Git 导入到 ThingsBoard 时，文件名中的“id”将变为实体的“externalId”。
+“externalId”在租户范围内是唯一的。因此，您可以在同一平台实例的不同租户之间或不同实例之间导入/导出实体。
+任何时候执行导出和导入操作时，都会使用“externalId”来查找要更新的正确实体。
+请参阅下面的示例。
 
-Let's assume you have a development ThingsBoard instance and exported a single dashboard with the name "Dashboard 1" and id "4864b750-da7d-11ec-a496-97fa2815d2fe". 
-Then the repository will have a single file with the following full name and path:
+假设您有一个开发 ThingsBoard 实例，并导出一个名为“仪表板 1”且 ID 为“4864b750-da7d-11ec-a496-97fa2815d2fe”的仪表板。
+然后，存储库将具有一个具有以下完整名称和路径的单个文件：
 
 ```bash
 dashboard/4864b750-da7d-11ec-a496-97fa2815d2fe.json
 ```
 
-Let's assume you have imported the dashboard "D1" to the production ThingsBoard instance. The "externalId" filed is set when you first import the entity to the new ThingsBoard instance. 
-In such a case, the dashboard entity in production environment will have different id, but the "externalId" of the dashboard will be set to the same "4864b750-da7d-11ec-a496-97fa2815d2fe".
+假设您已将仪表板“D1”导入到生产 ThingsBoard 实例。“externalId”字段在您首次将实体导入到新的 ThingsBoard 实例时设置。
+在这种情况下，生产环境中的仪表板实体将具有不同的 ID，但仪表板的“externalId”将设置为相同的“4864b750-da7d-11ec-a496-97fa2815d2fe”。
 
 {% if docsPrefix != 'ce/' %}
-Customer hierarchy is stored in the 'hierarchy' folder which is recursive and similar to the 'Customer hierarchy' page in the UI.
-Entity groups are stored in the 'groups' folder. Each group has 'id.json' file which stores group entity and 'id_entities.json' file which stores list of entity ids in the group. 
-Reserved group 'All' does not contain the 'id_entities.json' file because group 'All' contains all entities.
+客户层级存储在“hierarchy”文件夹中，该文件夹是递归的，类似于 UI 中的“客户层级”页面。
+实体组存储在“groups”文件夹中。每个组都有一个“id.json”文件，用于存储组实体，还有一个“id_entities.json”文件，用于存储组中的实体 ID 列表。保留组“All”不包含“id_entities.json”文件，因为组“All”包含所有实体。
 {% endif %}
 
 {% include images-gallery.html imageCollection="gitRepoStructure" %}
 
 
-#### Sync strategy
+#### 同步策略
 
-Platform supports two sync strategies for export to Git: Merge and Overwrite. 
-"Merge" is the default sync strategy which simply appends the selected entities to the repository. This strategy is useful when you want to save one or multiple files without deleting all other files from the repository.
-"Overwrite" strategy completely rewrite the corresponding repository files. This strategy is useful when you want to completely synchronize the list of entities (e.g. Dashboards) in your instance and your Git repository. 
-All entities that were previously save to the Git but are not present in your platform instance will be deleted from the Git repository in the corresponding commit.
+平台支持两种导出到 Git 的同步策略：合并和覆盖。
+“合并”是默认同步策略，它只是将选定的实体附加到存储库。当您想保存一个或多个文件而不删除存储库中的所有其他文件时，此策略很有用。
+“覆盖”策略完全重写相应的存储库文件。当您想完全同步实例中的实体列表（例如仪表板）和 Git 存储库时，此策略很有用。
+以前保存到 Git 但不在平台实例中的所有实体都将在相应的提交中从 Git 存储库中删除。
 
 
-#### Scalability
+#### 可扩展性
 
-ThingsBoard Version Control service is available as part of a monolithic ThingsBoard instance or as a separate microservice for horizontal scalability.
-Every instance of the Version Control service is responsible for handling synchronization tasks for the specific partition(s) of the Tenants in the cluster.
-Each "commit" API call may take some time. Concurrent "commit" API calls in scope of the same Tenant are not supported. 
-The system will cancel the "commit" API call if it is in progress and the new "commit" API call arrives.
+ThingsBoard 版本控制服务可用作整体 ThingsBoard 实例的一部分，或作为单独的微服务以实现水平可扩展性。
+版本控制服务的每个实例负责处理集群中租户的特定分区(s)的同步任务。
+每个“提交”API 调用可能需要一些时间。不支持在同一租户范围内同时进行“提交”API 调用。
+如果“提交”API 调用正在进行中并且新的“提交”API 调用到达，系统将取消“提交”API 调用。
 
-## Usage
+## 用法
 
-#### Git Settings configuration
+#### Git 设置配置
 
-As a Tenant administrator, you can navigate to **System Settings -> Git settings** page. The page allows you to provision Git repository URL, default branch name and authentication settings.
-We expect you to provide URL to the empty Git repository.
+作为租户管理员，您可以导航到**系统设置 -> Git 设置**页面。该页面允许您配置 Git 存储库 URL、默认分支名称和身份验证设置。
+我们希望您提供指向空 Git 存储库的 URL。
 
 {% include images-gallery.html imageCollection="gitConfiguration" %}
 
-#### Export to Git
+#### 导出到 Git
 
-##### Single Entity Export
+##### 单个实体导出
 
-Navigate to entity details and open the 'Version Control' tab. 
-Rule Chains and Dashboards have built-in version control button and popup widget to the corresponding editors.
-See screenshots below.
+导航到实体详细信息并打开“版本控制”选项卡。
+规则链和仪表板具有内置的版本控制按钮和弹出窗口小部件，可用于相应的编辑器。
+请参阅下面的屏幕截图。
 
 {% include images-gallery.html imageCollection="singleEntityExport" %}
 
-##### Multiple Entity Export
+##### 多个实体导出
 
-Navigate to version control page. You may select one or more entity types to restore. By default, all entity types are selected.
+导航到版本控制页面。您可以选择一个或多个实体类型进行恢复。默认情况下，所有实体类型都被选中。
 
 {% include images-gallery.html imageCollection="multipleEntityExport" %}
 
-##### Auto-commit
+##### 自动提交
 
-Auto-commit is a useful feature to automatically commit the Dashboard and Rule Chains when we save the entity via UI or REST API call. 
-The auto-commit happens asynchronously to improve UI experience. 
-The auto-commit does not happen when you assign entity to the customer (change entity owner). 
-In such case you should commit all entities of the specific entity type with the overwrite strategy.
+自动提交是一项有用的功能，可让我们通过 UI 或 REST API 调用保存实体时自动提交仪表板和规则链。
+自动提交异步发生以改善 UI 体验。
+当您将实体分配给客户（更改实体所有者）时，不会发生自动提交。
+在这种情况下，您应该使用覆盖策略提交特定实体类型的所有实体。
 
 {% include images-gallery.html imageCollection="autoCommitConfiguration" %}
 
-#### Restore from Git
+#### 从 Git 恢复
 
-Navigate to version control page. Select the commit and specify restore settings.
+导航到版本控制页面。选择提交并指定恢复设置。
 
 {% include images-gallery.html imageCollection="gitRestore" %}
 
-## Next steps
+## 后续步骤
 
 {% assign currentGuide = "AdvancedFeatures" %}{% include templates/multi-project-guides-banner.md %}

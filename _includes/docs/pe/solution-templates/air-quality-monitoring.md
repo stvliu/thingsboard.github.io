@@ -1,83 +1,72 @@
-
-* TOC 
+* TOC
 {:toc}
 
 {% include templates/solution-templates.md %}
 
-AIR Quality Monitoring template represents a solution for general air pollution monitoring and device management. With this template, you will be able to monitor pollutants such as: Ozone, PM2.5, PM10, CO, SO2, and NO2 of specific regions using pollution measuring stations and determine AQI based on them.
+空气质量监测模板表示用于一般空气污染监测和设备管理的解决方案。使用此模板，您将能够使用污染测量站监测特定区域的污染物，例如：臭氧、PM2.5、PM10、CO、SO2 和 NO2，并根据它们确定 AQI。
 
 {% include images-gallery.html imageCollection="solution-highlights" %}
 
-### Dashboard
+### 仪表板
 
-As part of this solution, we have created 2 dashboards that display data from multiple sensors - **Public Air Quality Monitoring Dashboard** and **Administration Air Quality Monitoring Dashboard**.
+作为此解决方案的一部分，我们创建了 2 个显示来自多个传感器的仪表板 - **公共空气质量监测仪表板** 和 **管理空气质量监测仪表板**。
 
-#### Public Dashboard
+#### 公共仪表板
 
-The **Public Air Quality Monitoring Dashboard** has multiple states - **City state** and  **Sensor state**.
+**公共空气质量监测仪表板** 具有多个状态 - **城市状态** 和 **传感器状态**。
 
-You may use the **City state** to:
-- monitor the AQI which is calculated based on the main pollutants; 
-- work with an Interactive map of air pollution monitoring stations with color-coded markers which are depending on the AQI level;
-- control the temperature and humidity of the location or a specific sensor;
-- see History section of AQI level in the current, weekly, and monthly range;
-
-<br>
-To switch to the **Sensor state**, click on one of the markers on the map (you can switch to other sensors by clicking on other device markers).
+您可以使用 **城市状态** 来：
+- 监测根据主要污染物计算的 AQI；
+- 使用交互式空气污染监测站地图，其中彩色标记取决于 AQI 水平；
+- 控制位置或特定传感器的温度和湿度；
+- 查看当前、每周和每月的 AQI 水平历史记录部分；
 
 <br>
-You may use the **Sensor state** to:
-- monitor the AQI of the specific sensor;
-- observe a section of specific pollutants: PM2.5, PM10, NO2, CO, SO2, and O3. Click on one of these tiles, and a pop-up will appear, which will display a description, general recommendations, as well as its statistics for this pollutant.
-- see the history of a specific sensor with AQI level in the current, weekly, and monthly range;
-
-#### Administration Dashboard
-
-The **Administration Dashboard** has multiple states too - **Main state** and  **Sensor state**.
-
-You may use the **Main state** to:
-- see the list of all existing sensors, general information, and statuses about them;
-- create, edit and delete sensors;
-- browse and clear alarms from air monitoring sensor;
-- set rules for the sensor’s alarm based on parameters such as Battery Level(in percent) and duration of no connection (in hours);
-- observe the placement of sensors using markers;
+要切换到 **传感器状态**，请单击地图上的一个标记（您可以通过单击其他设备标记切换到其他传感器）。
 
 <br>
-To switch to the **Sensor state**, click on one of the items from the sensors list.
+您可以使用 **传感器状态** 来：
+- 监测特定传感器的 AQI；
+- 观察特定污染物的部分：PM2.5、PM10、NO2、CO、SO2 和 O3。单击其中一个图块，将出现一个弹出窗口，其中将显示描述、一般建议以及该污染物的统计数据。
+- 查看具有当前、每周和每月范围的 AQI 水平的特定传感器的历史记录；
+
+#### 管理仪表板
+
+**管理仪表板** 也有多个状态 - **主状态** 和 **传感器状态**。
+
+您可以使用 **主状态** 来：
+- 查看所有现有传感器、一般信息和有关它们的状况的列表；
+- 创建、编辑和删除传感器；
+- 浏览和清除空气监测传感器的警报；
+- 根据电池电量（百分比）和无连接持续时间（小时）等参数设置传感器警报的规则；
+- 使用标记观察传感器的放置；
 
 <br>
-You may use the **Sensor state** to:
-- control of all information belonging to a specific sensor;
-- view the sensor’s details and edit them, such as sensor id, label, and placement;
-- view the sensor’s measures, such as connectivity status, battery level, AQI, and pollutants;
-- track on the chart the current battery level of the sensor;
-- view the sensor’s placement in the interactive map with the ability to change the place manually;
-- browse and clear alarms from current air monitoring sensor;
-- track on the chart the connectivity statuses.
+要切换到 **传感器状态**，请单击传感器列表中的一个项目。
 
-You may always customize the "AIR Quality Monitoring" dashboard using dashboard development [guide](/docs/{{docsPrefix}}user-guide/dashboards/).
+<br>
+您可以使用 **传感器状态** 来：
+- 控制属于特定传感器的所有信息；
+- 查看传感器的详细信息并对其进行编辑，例如传感器 ID、标签和位置；
+- 查看传感器的测量值，例如连接状态、电池电量、AQI 和污染物；
+- 在图表上跟踪传感器的当前电池电量；
+- 在交互式地图中查看传感器的放置，并能够手动更改位置；
+- 浏览和清除当前空气监测传感器的警报；
+- 在图表上跟踪连接状态。
 
-### Devices
+您始终可以使用仪表板开发 [指南](/docs/{{docsPrefix}}user-guide/dashboards/) 自定义“空气质量监测”仪表板。
 
-We have already created five air quality monitoring sensors and loaded some demo data for them. See solution [instructions](/docs/{{docsPrefix}}solution-templates/overview/#install-solution-template) for the list of created devices and their credentials. **The solution expects that the sensor device will upload all pollution values, temperature, humidity, and battery level. The most simple example of the expected payload is in JSON format:**
+### 设备
+
+我们已经创建了五个空气质量监测传感器并为它们加载了一些演示数据。有关创建的设备及其凭据的列表，请参阅解决方案 [说明](/docs/{{docsPrefix}}solution-templates/overview/#install-solution-template)。**该解决方案期望传感器设备上传所有污染值、温度、湿度和电池电量。预期有效负载的最简单示例采用 JSON 格式：**
 
 ```json
 {"temperature": 42, "humidity": 73, "pm25": 24.4, "pm10": 30, "no2": 13, "co": 2.8, "so2": 7, "o3": 0.164, "batteryLevel": 77 }
 ```
 {: .copy-code}
 
-You may find the exact commands to send data on behalf of created devices in the solution [instructions](/docs/{{docsPrefix}}solution-templates/overview/#install-solution-template).
-See [connecting devices](/docs/{{docsPrefix}}getting-started-guides/connectivity/) for various connectivity options to connect real devices.
+您可以在解决方案 [说明](/docs/{{docsPrefix}}solution-templates/overview/#install-solution-template) 中找到代表创建的设备发送数据的准确命令。有关连接真实设备的各种连接选项，请参阅 [连接设备](/docs/{{docsPrefix}}getting-started-guides/connectivity/)。
 
-### Alarms
-Alarms are generated using two <a href="https://thingsboard.io/docs/user-guide/device-profiles/#alarm-rules" target="_blank">Alarm rules</a> in the
-"AIR Sensor" <a href="/docs/pe/user-guide/device-profiles/" target="_blank">device profile</a>.
-User may turn alarms on and off as well as configure the alarm thresholds via the "Air Quality Monitoring" dashboard using "Edit Sensor" form.
-
-
-
-
-
-
-
-
+### 警报
+警报使用两个 <a href="https://thingsboard.io/docs/user-guide/device-profiles/#alarm-rules" target="_blank">警报规则</a> 在“空气传感器”<a href="/docs/pe/user-guide/device-profiles/" target="_blank">设备配置文件</a> 中生成。
+用户可以通过“编辑传感器”表单使用“空气质量监测”仪表板打开和关闭警报以及配置警报阈值。

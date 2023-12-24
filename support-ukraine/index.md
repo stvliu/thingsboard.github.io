@@ -1,44 +1,44 @@
 ---
 layout: use-case
-title: Support Ukraine
+title: 支持乌克兰
 notitle: "true"
 description:
 
 ---
 
-# Stop the WAR
+# 停止战争
 
-## ThingsBoard statement on the war in Ukraine
+## ThingsBoard 关于乌克兰战争的声明
 
-Russia has begun a large-scale military attack on Ukraine on the orders of Russian President Vladimir Putin.
+俄罗斯应俄罗斯总统弗拉基米尔·普京的命令，对乌克兰发动了大规模军事袭击。
 
-As you may know, ThingsBoard was created by several Ukrainian software engineers in 2016. 
-Although we have more than 100 contributors worldwide, the core team of ThingsBoard is in Ukraine. 
-We will never forget who started this war.
-Ukrainians are a peaceful nation that never attacked anyone. 
-Don't believe the russian propaganda.
+您可能知道，ThingsBoard 由几位乌克兰软件工程师于 2016 年创建。
+尽管我们在全球拥有 100 多位贡献者，但 ThingsBoard 的核心团队在乌克兰。
+我们永远不会忘记是谁发起了这场战争。
+乌克兰是一个和平的国家，从未攻击过任何人。
+不要相信俄罗斯的宣传。
 
-## Message to our users and clients from the civilized world
+## 来自文明世界对我们的用户和客户的信息
 
-Thank you for all the support and help that you have already provided.
+感谢您已经提供的所有支持和帮助。
 
-The company's main priority is to continue providing high-quality products and support to our clients.
-We have several other engineers outside Ukraine, and most of our team re-assemble in the western part of our country. 
-Our support, development and sales teams are fully operational. We host all our servers outside Ukraine in AWS regions (US).
+该公司的首要任务是继续向我们的客户提供高质量的产品和支持。
+我们在乌克兰境外还有其他几位工程师，我们的大部分团队重新聚集在我国西部。
+我们的支持、开发和销售团队全面运作。我们在 AWS 区域（美国）境外托管所有服务器。
 
-We support the Ukrainian army and volunteer organizations as much as we can. We ask you to do the same:
+我们尽最大努力支持乌克兰军队和志愿者组织。我们请您也这样做：
 
-<a style="margin: 10px 10px 10px 0;" href="https://war.ukraine.ua/support-ukraine/" class="button">Support Ukraine</a>
+<a style="margin: 10px 10px 10px 0;" href="https://war.ukraine.ua/support-ukraine/" class="button">支持乌克兰</a>
 
-## Message to our users and clients from Russia
+## 来自俄罗斯对我们的用户和客户的信息
 
-We expect you to protest against the war!
-You are responsible for this madness because you allowed your leader to do this.
-Unfortunately, we can't block you from using open-source version of our products.
-However, we will stop sales of our licenses to russian companies asap.
+我们希望您抗议战争！
+您应对这种疯狂负责，因为您允许您的领导人这样做。
+不幸的是，我们无法阻止您使用我们产品的开源版本。
+但是，我们将尽快停止向俄罗斯公司销售我们的许可证。
 
-Don't believe your government.
-See photos of the mass destruction of civilians and your young soldiers who were sent to the war against their will.
-You have the power to stop this madness.
+不要相信你的政府。
+看看平民大规模毁灭的照片，以及那些被违背意愿送去参战的年轻士兵。
+你有能力阻止这种疯狂。
 
 {: style="text-align: center;"}

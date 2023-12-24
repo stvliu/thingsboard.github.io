@@ -2,7 +2,7 @@
 layout: docwithnav-pe
 assignees:
 - ikulikov
-title: Widgets Development Guide Before 3.0
+title: 3.0 之前的 Widget 开发指南
 
 ---
 

@@ -1,31 +1,31 @@
-{% assign feature = "Platform Integrations" %}{% include templates/pe-feature-banner.md %}
+{% assign feature = "平台集成" %}{% include templates/pe-feature-banner.md %}
 
 * TOC
 {:toc}
 
-## Kafka Integration
+## Kafka 集成
 
-[Apache Kafka](https://kafka.apache.org/) — is an open-source distributed software message broker under the Apache foundation. It is written in the Java and Scala programming languages.
+[Apache Kafka](https://kafka.apache.org/) — 是 Apache 基金会下的开源分布式软件消息代理。它使用 Java 和 Scala 编程语言编写。
 
-Designed as a distributed, horizontally scalable system that provides capacity growth both with an increase in the number and load from the sources, and the number of subscriber systems. Subscribers can be combined into groups. Supports the ability to temporarily store data for subsequent batch processing.
+设计为分布式、水平可扩展系统，可随着源的数量和负载以及订阅者系统数量的增加而实现容量增长。订阅者可以组合成组。支持暂时存储数据以供后续批处理的能力。
 
-In some scenarios, Kafka can be used instead of a message queue, in cases where there is no stable connection between the device and an instance.
+在某些情况下，可以在设备与实例之间没有稳定连接的情况下，将 Kafka 用作消息队列的替代。
 
 ![image](/images/user-guide/integrations/kafka/Kafka_main.png)
 
-## Required environment
-Before you start setting up the integration, you should already have a prepared Broker Kafka server. This is either a local installation or a cloud solution. If you haven't installed Kafka Broker yet, there is an example of basic installation of Kafka Broker locally on [our site](https://thingsboard.io/docs/user-guide/install/pe/ubuntu/?ubuntuThingsboardQueue=kafka#step-5-choose-thingsboard-queue-service). If you need to use a cloud solution, then you can consider [Kafka Confluent](https://www.confluent.io/), on the basis of which examples will be built in this guide.
+## 所需环境
+在开始设置集成之前，您应该已经准备好了 Broker Kafka 服务器。这可以是本地安装或云解决方案。如果您尚未安装 Kafka Broker，可以在 [我们的网站](https://thingsboard.io/docs/user-guide/install/pe/ubuntu/?ubuntuThingsboardQueue=kafka#step-5-choose-thingsboard-queue-service) 上找到在本地基本安装 Kafka Broker 的示例。如果您需要使用云解决方案，那么您可以考虑 [Kafka Confluent](https://www.confluent.io/)，本指南中的示例将基于此构建。
 
-## Create Uplink Converter
+## 创建上行转换器
 
-Before creating the integration, you need to create an Uplink converter in Data converters. Uplink is necessary in order to convert the incoming data from the device into the required format for displaying them in ThingsBoard. Click on the **“plus”** and on **“Create new converter”**. To view the events, enable Debug. In the function decoder field, specify a script to parse and transform data.
+在创建集成之前，您需要在数据转换器中创建一个上行转换器。上行对于将来自设备的传入数据转换为在 ThingsBoard 中显示它们所需的格式是必要的。单击 **“加号”** 和 **“创建新转换器”**。要查看事件，请启用调试。在函数解码器字段中，指定一个脚本来解析和转换数据。
 
 {% capture kafka_please_note %}
-**Note:** While debug mode is very useful for development and troubleshooting, leaving it enabled in production mode can significantly increase the disk space used by the database since all debug data is stored there. After debugging is complete, it is highly recommended turning off debug mode.
+**注意：**虽然调试模式对于开发和故障排除非常有用，但在生产模式下启用它可能会显著增加数据库使用的磁盘空间，因为所有调试数据都存储在那里。在调试完成后，强烈建议关闭调试模式。
 {% endcapture %}
 {% include templates/info-banner.md content=kafka_please_note %}
 
-Let’s review sample uplink message from Kafka:
+让我们回顾一下来自 Kafka 的示例上行消息：
 ```json
 {
   "EUI"  : "43T1YH-REE",
@@ -37,25 +37,25 @@ Let’s review sample uplink message from Kafka:
   "serial"  : "230165HRT"
 }
 ```
-**EUI** is responsible for the name of the device. The **"data"** is a telemetry concatenation by two characters, where the first value **"3d"** - temperature, **"1f"** - humidity, **"00"** - fan speed, **"59"** - pressure.
+**EUI** 负责设备的名称。**“data”** 是通过两个字符进行遥测连接，其中第一个值 **“3d”** - 温度，**“1f”** - 湿度，**“00”** - 风扇速度，**“59”** - 压力。
 
-You can use the following code, copy it to the decoder function section:
+您可以使用以下代码，将其复制到解码器函数部分：
 
 ```js
-// Decode an uplink message from a buffer
-// payload - array of bytes
-// metadata - key/value object
-/** Decoder **/
-// decode payload to JSON
+// 解码来自缓冲区的上行消息
+// payload - 字节数组
+// metadata - 键/值对象
+/** 解码器 **/
+// 将有效负载解码为 JSON
 var payloadJson = decodeToJson(payload);
-// Use EUI as unique device name.
+// 使用 EUI 作为唯一的设备名称。
 var deviceName = payloadJson.EUI;
-// Specify the device type. Use one data converter per device type or application.
+// 指定设备类型。每个设备类型或应用程序使用一个数据转换器。
 var deviceType = 'Monitoring-sensor';
-// Optionally, add the customer name and device group to automatically create them in ThingsBoard and assign new device to it.
+// 可选，添加客户名称和设备组以在 ThingsBoard 中自动创建它们并将新设备分配给它们。
 // var customerName = 'customer';
 // var groupName = 'thermostat devices';
-// Result object with device/asset attributes/telemetry data
+// 结果对象，包含设备/资产属性/遥测数据
 var result = {
    deviceName: deviceName,
    deviceType: deviceType,
@@ -76,15 +76,15 @@ var result = {
        }
    }
 };
-/** Helper functions **/
+/** 辅助函数 **/
 function decodeToString(payload) {
    return String.fromCharCode.apply(String, payload);
 }
 
 function decodeToJson(payload) {
-   // covert payload to string.
+   // 将有效负载转换为字符串。
    var str = decodeToString(payload);
-   // parse string to JSON
+   // 将字符串解析为 JSON
    var data = JSON.parse(str);
    return data;
 }
@@ -99,65 +99,66 @@ return result;
 
 {% include images-gallery.html imageCollection="Create Uplink Converter" %}
 
-You can change the parameters and decoder code when creating a converter or editing. If the converter has already been created, click the pencil icon to edit it. Copy the sample converter configuration (or use your own configuration) and paste it into the decoder function. Then save the changes by clicking the checkmark icon.
+在创建转换器或编辑时，您可以更改参数和解码器代码。如果转换器已经创建，请单击铅笔图标进行编辑。复制示例转换器配置（或使用您自己的配置）并将其粘贴到解码器函数中。然后单击复选标记图标保存更改。
 
-## Create Integration
+## 创建集成
 
-After creating the Uplink converter, it is possible to create an integration. 
-At this stage, you need to set the parameters to establish a connection between ThingsBoard and Kafka Broker. After the connection is established, the integration will be transmitting all received data to the Uplink converter for processing and subsequent transfer to Rule Chain according to the Device profile specified in the Device.
+在创建上行转换器后，就可以创建集成。
 
-|**Field**|**Description**|
+在此阶段，您需要设置参数以在 ThingsBoard 和 Kafka Broker 之间建立连接。建立连接后，集成将把所有接收到的数据传输到上行转换器进行处理，然后根据设备中指定的设备配置文件将其传输到规则链。
+
+|**字段**|**说明**|
 |:-|:-|-
-| **Name**              | The name of your integration.|
-| **Type**              | Choose Kafka type.|
-| **'Enable' Checkbox**              | Enable / Disable Integration.|
-| **'Debug Mode' Checkbox**              | Enable during integration debugging.|
-| **Allow create devices or assets**              | If there was no device in ThingsBoard, the device will be created.|
-| **Uplink data converter**              | Select the previously created converter.|
-| **Downlink data converter**              | This option is not supported through the integration, More details about [Downlink](https://thingsboard.io/docs/user-guide/integrations/kafka/?installationType=common&integrationTypes=common&uplinkTypes=common#advanced-usage-kafka-producer-downlink) below in the guide.|
-| **'Execute remotely' Checkbox**              | Activate if you want to execute integration remotely from main ThingsBoard instance. For more information on remote integration follow the [link (Remote Integrations)](https://thingsboard.io/docs/user-guide/integrations/remote-integrations/).|
-| **Group ID**              | Specifies the name of the consumer group to which the Kafka consumer belongs.|
-| **Client ID**              | An Kafka consumer identifier in a consumer group.|
-| **Topics**              | Topics that ThingsBoard will subscribe to after connecting to the Kafka broker.|
-| **Bootstrap servers**              | Host and port pair that is the address of the Kafka broker to which the Kafka client first connects for bootstrapping.|
-| **Poll interval**              | Duration in milliseconds between polling of the messages if no new messages arrive.|
-| **Auto create topics**              | Set **Enable** if need topics to be created automatically|
-| **Other properties**              | Any other additional properties could be provided for kafka broker connection..|
-| **Metadata**              | Metadata is a key-value map with some integration specific fields. For example, you can put device type.|
+| **名称**              | 集成的名称。|
+| **类型**              | 选择 Kafka 类型。|
+| **'启用' 复选框**              | 启用/禁用集成。|
+| **'调试模式' 复选框**              | 在集成调试期间启用。|
+| **'允许创建设备或资产' 复选框**              | 如果 ThingsBoard 中没有设备，则将创建该设备。|
+| **上行数据转换器**              | 选择之前创建的转换器。|
+| **下行数据转换器**              | 此选项不支持通过集成，有关 [下行](https://thingsboard.io/docs/user-guide/integrations/kafka/?installationType=common&integrationTypes=common&uplinkTypes=common#advanced-usage-kafka-producer-downlink) 的更多详细信息，请参阅指南中的以下内容。|
+| **'远程执行' 复选框**              | 如果您想从主 ThingsBoard 实例远程执行集成，请激活。有关远程集成的更多信息，请访问 [链接（远程集成）](https://thingsboard.io/docs/user-guide/integrations/remote-integrations/)。|
+| **组 ID**              | 指定 Kafka 消费者所属的消费者组的名称。|
+| **客户端 ID**              | 消费者组中的 Kafka 消费者标识符。|
+| **主题**              | ThingsBoard 在连接到 Kafka 代理后将订阅的主题。|
+| **引导服务器**              | 主机和端口对，它是 Kafka 客户端首次连接以进行引导的 Kafka 代理的地址。|
+| **轮询间隔**              | 如果没有新消息到达，则轮询消息之间的持续时间（以毫秒为单位）。|
+| **自动创建主题**              | 如果需要自动创建主题，请设置 **启用**|
+| **其他属性**              | 可以为 kafka 代理连接提供任何其他附加属性。|
+| **元数据**              | 元数据是一个键值映射，其中包含一些集成特定字段。例如，您可以放置设备类型。|
 |---
 
 {% capture integrationTypes %}
-Kafka<br><small>Common/Docker </small>%,%common%,%templates/integration/kafka/kafka-common-and-docker-integration%br%
-Confluent Cloud<br><small>Cloud solution</small>%,%confluent%,%/templates/integration/kafka/kafka-confluent-integration{% endcapture %}
+Kafka<br><small>通用/Docker </small>%,%common%,%templates/integration/kafka/kafka-common-and-docker-integration%br%
+Confluent Cloud<br><small>云解决方案</small>%,%confluent%,%/templates/integration/kafka/kafka-confluent-integration{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="integrationTypes" toggle-spec=integrationTypes %}
 
-## Send test Uplink message from
+## 从发送测试上行消息
 
 {% capture uplinkTypes %}
-Kafka<br><small>Common/Docker </small>%,%common%,%templates/integration/kafka/kafka-common-and-docker-send-msg%br%
-Confluent Cloud<br><small>Cloud solution</small>%,%confluent%,%/templates/integration/kafka/kafka-confluent-send-msg{% endcapture %}
+Kafka<br><small>通用/Docker </small>%,%common%,%templates/integration/kafka/kafka-common-and-docker-send-msg%br%
+Confluent Cloud<br><small>云解决方案</small>%,%confluent%,%/templates/integration/kafka/kafka-confluent-send-msg{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="uplinkTypes" toggle-spec=uplinkTypes %}
 
-## Advanced Usage: Kafka Producer (Downlink)
+## 高级用法：Kafka 生产者（下行）
 
-To get functionality such as Kafka Producer, you need to use the [Kafka Rule Node](https://thingsboard.io/docs/pe/user-guide/rule-engine-2-0/external-nodes/#kafka-node) in which you can specify Bootstrap servers, Topic and other parameters to connect to the Kafka broker, you can find more details in the corresponding [guide](https://thingsboard.io/docs/pe/user-guide/rule-engine-2-0/external-nodes/#kafka-node) .
+要获得诸如 Kafka 生产者之类的功能，您需要使用 [Kafka 规则节点](https://thingsboard.io/docs/pe/user-guide/rule-engine-2-0/external-nodes/#kafka-node)，您可以在其中指定引导服务器、主题和其他参数以连接到 Kafka 代理，您可以在相应的 [指南](https://thingsboard.io/docs/pe/user-guide/rule-engine-2-0/external-nodes/#kafka-node) 中找到更多详细信息。
 
-If it is not possible to send commands directly to devices to manage from ThingsBoard, but only through a broker, then in this case you can use the Kafka Downlink Rule Node. Let's consider a small example with its Node, suppose the data came from the broker and passed the converter and, according to the config of Device Profile, were directed to the custom Rule Chain ("Monitoring-sensor") and at the end of all processing, we will send a response about success or failure back to the broker ( you can change the response to commands to control your device, etc.)
+如果无法直接向设备发送命令以从 ThingsBoard 进行管理，而只能通过代理发送，那么在这种情况下，您可以使用 Kafka 下行规则节点。让我们考虑一个带有其节点的小示例，假设数据来自代理并通过转换器，并且根据设备配置文件的配置，被定向到自定义规则链（“Monitoring-sensor”），并且在所有处理结束时，我们将发送一个关于成功或失败的响应回到代理（您可以将响应更改为命令以控制您的设备等）。
 
 {% include images-gallery.html imageCollection="kafka_confluent_downlink" %}
 
-Сheck whether the message has been transmitted, you can see in the Events tab of Kafka Rule Node with enable Debug Mode:
+检查消息是否已传输，您可以在启用调试模式的 Kafka 规则节点的事件选项卡中看到：
 
 {% include images-gallery.html imageCollection="kafka_confluent_downlink_result" %}
 
 {% capture kafka_note_downnlink %}
-**Note**: Using the same broker topic for uplink and downlink connections can lead to data loops.
+**注意：**对上行和下行连接使用相同的代理主题可能会导致数据循环。
 {% endcapture %}
 
 {% include templates/info-banner.md content=kafka_note_downnlink %}
 
-## Next steps
+## 后续步骤
 
 {% assign currentGuide = "ConnectYourDevice" %}{% include templates/multi-project-guides-banner.md %}

@@ -1,1 +1,1 @@
-In Memory queue is built-in and enabled by default. No additional configuration steps required.
+内存队列是内置的，默认情况下已启用。无需其他配置步骤。

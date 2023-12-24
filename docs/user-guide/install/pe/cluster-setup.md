@@ -2,9 +2,9 @@
 layout: docwithnav-pe
 assignees:
 - ashvayka
-title: ThingsBoard Professional Edition cluster setup guide
+title: ThingsBoard Professional Edition 集群设置指南
 notitle: "true"
-description: ThingsBoard Professional Edition cluster setup guide
+description: ThingsBoard Professional Edition 集群设置指南
 redirect_from: "/docs/pe/user-guide/install/cluster-setup/"
 ---
 
@@ -13,10 +13,10 @@ redirect_from: "/docs/pe/user-guide/install/cluster-setup/"
        <div class="install-options-hero">
           <div class="container">
             <div class="install-options-hero-content">
-                <h1>ThingsBoard Professional Edition Cluster setup options</h1>
+                <h1>ThingsBoard Professional Edition 集群设置选项</h1>
                 <div class="install-options-description">
                     <p>
-                        ThingsBoard IoT can be bootstrapped using different tools and platforms
+                        ThingsBoard IoT 可以使用不同的工具和平台进行引导
                     </p>
                 </div>
             </div>

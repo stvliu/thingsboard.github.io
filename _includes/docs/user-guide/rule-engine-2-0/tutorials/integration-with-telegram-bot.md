@@ -1,186 +1,186 @@
 * TOC
 {:toc}
 
-## Overview
+## 概述
 
-Telegram provides a possibility to create Telegram Bots, which are considered as third-party applications. 
-So, In this tutorial, we are going to demonstrate how you can create a Telegram Bot<br>
-and configure your ThingsBoard rule engine to be able to send notifications to Telegram App using Rest API Call extension.
+Telegram 提供创建 Telegram 机器人的可能性，这些机器人被视为第三方应用程序。
+因此，在本教程中，我们将演示如何创建 Telegram 机器人<br>
+并配置 ThingsBoard 规则引擎，以便能够使用 Rest API 调用扩展向 Telegram 应用发送通知。
 
-## Use case
+## 使用案例
 
-This tutorial is based on the [create & clear alarms](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/#use-case) tutorial and it's use case. 
-We will reuse the rule chains from above mentioned tutorial and will add few more rule nodes to integrate with Telegram   
+本教程基于 [创建和清除警报](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/#use-case) 教程及其用例。
+我们将重用上述教程中的规则链，并将添加更多规则节点以与 Telegram 集成
 
-Let's assume your device is using DHT22 sensor to collect and push temperature readings to ThingsBoard. 
-DHT22 sensor is good for -40 to 80°C temperature readings.We want to generate Alarms if temperature is out of good range and send notifications to Telegram App when the alarm was created.
+假设您的设备使用 DHT22 传感器将温度读数收集并推送到 ThingsBoard。
+DHT22 传感器适用于 -40 至 80°C 的温度读数。如果温度超出正常范围，我们希望生成警报，并在创建警报时向 Telegram 应用发送通知。
 
-In this tutorial we will configure ThingsBoard Rule Engine to: 
+在本教程中，我们将配置 ThingsBoard 规则引擎以：
 
-- Send a message notification to the user if the alarm was created.
+- 如果创建了警报，则向用户发送消息通知。
 
-- Add current alarm type and it originator to the message body using Script Transform node.
+- 使用脚本转换节点将当前警报类型及其发起者添加到消息正文。
 
-## Prerequisites 
+## 先决条件
 
-We assume you have completed the following guides and reviewed the articles listed below:
+我们假设您已完成以下指南并阅读了以下列出的文章：
 
-  * [Getting Started](/docs/{{docsPrefix}}getting-started-guides/helloworld/) guide.
-  * [Rule Engine Overview](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/).
-  * [Create & clear alarms](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/) guide.
+  * [入门](/docs/{{docsPrefix}}getting-started-guides/helloworld/) 指南。
+  * [规则引擎概述](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/)。
+  * [创建和清除警报](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/) 指南。
 
-## Message flow  
+## 消息流
 
-In this section, we explain the purpose of each node in this tutorial:
+在本节中，我们将解释本教程中每个节点的用途：
 
-- Node A: [**Transform Script**](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/transformation-nodes/#script-transformation-node) node.
-  - This node will be used to creating a body of the Telegram message notification.  
-- Node B: [**REST API Call**](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/external-nodes/#rest-api-call-node) node.
-  - This node will send Telegram message payload to the configured REST endpoint. In our case, it is Telegram REST API.
+- 节点 A：[**转换脚本**](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/transformation-nodes/#script-transformation-node) 节点。
+  - 此节点将用于创建 Telegram 消息通知的正文。
+- 节点 B：[**REST API 调用**](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/external-nodes/#rest-api-call-node) 节点。
+  - 此节点将 Telegram 消息有效负载发送到配置的 REST 端点。在我们的例子中，它是 Telegram REST API。
 
-## Creation of the Telegram Bot
+## 创建 Telegram 机器人
 
-[The BotFather](https://telegram.me/botfather) is the main bot that will help you to [create](https://core.telegram.org/bots#6-botfather) new bots and change their settings.
+[BotFather](https://telegram.me/botfather) 是一个主要机器人，它将帮助您[创建](https://core.telegram.org/bots#6-botfather) 新机器人并更改其设置。
 
-Once the creation of the bot is finished, you can generate an authorization token for your new bot. 
-The token is a string that looks like this - **'110201543:AAHdqTcvCH1vGWJxfSeofSAs0K5PALDsaw'** that is required to authorize the bot. 
-    
-Prerequisites :
+完成机器人的创建后，您可以为您的新机器人生成授权令牌。
+令牌是一个类似于此的字符串 - **'110201543:AAHdqTcvCH1vGWJxfSeofSAs0K5PALDsaw'**，需要授权机器人。
 
- - ThingsBoard is up and running
- - Telegram Bot is created
+先决条件：
 
-### Getting the Chat ID
+- ThingsBoard 正在运行
+- 创建了 Telegram 机器人
 
-In the next step, we need to retrieve a Chat ID. The Chat ID is needed to send messages via the HTTP API. 
+### 获取聊天 ID
 
-There are several ways to get the Chat ID:
+在下一步中，我们需要检索聊天 ID。聊天 ID 是通过 HTTP API 发送消息所必需的。
 
- - First of all, you need send some message to your Bot:
- 
-    - in the private chat; 
-    
+有几种方法可以获取聊天 ID：
+
+- 首先，您需要向您的机器人发送一些消息：
+
+    - 在私人聊天中；
+
        ![image](/images/gateway/telegram-bot/private-msg-to-bot.png)    
-    
-    - in the group where your Bot was added as a member.
-    
+
+    - 在将您的机器人添加为成员的群组中。
+
        ![image](/images/gateway/telegram-bot/msg-to-bot-in-chat.png)    
       
-    <br> where **ThingsBoard_Bot** is name of the Telegram bot.
+    <br>其中 **ThingsBoard_Bot** 是 Telegram 机器人的名称。
 
- - Next, open your web browser and enter the following URL:
+- 接下来，打开您的网络浏览器并输入以下 URL：
 
 ```bash
 https://api.telegram.org/bot"YOUR_BOT_TOKEN"/getUpdates
 
-"YOUR_BOT_TOKEN" has to be replaced by the authentication token of your bot, e.g.:
+"YOUR_BOT_TOKEN" 必须替换为您的机器人的身份验证令牌，例如：
 
 https://api.telegram.org/bot110201543:AAHdqTcvCH1vGWJxfSeofSAs0K5PALDsaw/getUpdates
 ```
 
 
 
-From the outcoming data you can find field **'id'**. This is the so-called chat_id. 
+从输出数据中，您可以找到字段 **'id'**。这就是所谓的 chat_id。
 
- - First option:
+- 第一个选项：
 
 ![image](/images/gateway/telegram-bot/first-option.png)
 
- - Second option:
+- 第二个选项：
 
 ![image](/images/gateway/telegram-bot/second-option.png)
 
-After that, you can start to configure Rule engine to use Rest API Call extension.
+之后，您可以开始配置规则引擎以使用 Rest API 调用扩展。
 
-## Configure Rule Chains
+## 配置规则链
 
-In this tutorial, we used Rule Chains from [create & clear alarms](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/) tutorial.
-We modified Rule Chain **Create & Clear Alarms** by adding nodes that was described above in the section [Message flow](#message-flow)<br>
- and renamed this rule chain to: **Create/Clear Alarms & send notifications to Telegram**.
+在本教程中，我们使用了 [创建和清除警报](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/) 教程中的规则链。
+我们通过添加上面 [消息流](#message-flow) 部分中描述的节点来修改规则链 **创建和清除警报**<br>
+并将此规则链重命名为：**创建/清除警报并向 Telegram 发送通知**。
 
-<br>The following screenshots show how the above Rule Chains should look like:
- 
-  - **Create/Clear Alarms & send notifications to Telegram:**
+<br>以下屏幕截图显示了上述规则链应如何显示：
+
+  - **创建/清除警报并向 Telegram 发送通知：**
 
 ![image](/images/gateway/telegram-bot/send-to-telegram-chain.png)
 
- - **Root Rule Chain:**
+- **根规则链：**
 
 ![image](/images/gateway/telegram-bot/root-rule-chain.png)
 
+<br>
+
+
+以下部分向您展示如何从头开始修改此规则链。
 <br> 
 
+### 修改 **创建/清除警报和发送电子邮件**
 
-The following section shows you how to modify this rule chain from scratch.
-<br> 
+#### 添加所需节点
 
-### Modify **Create/Clear Alarm & Send Email**
+在此规则链中，您将创建 2 个节点，如下面的部分中所述：
 
-#### Adding the required nodes
+##### 节点 A：**转换脚本**
 
-In this rule chain, you will create 2 nodes as it will be explained in the following sections:
- 
-##### Node A: **Transform Script**
+- 添加 **转换脚本** 节点，并使用关系类型 **已创建** 将其连接到 **创建警报** 节点。
+ <br>此节点将用于创建消息通知的正文。
+ <br>正文模板必须具有 2 个参数：
 
-- Add the **Transform Script** node and connect it to the **Create Alarm** node with a relation type **Created**.
- <br>This node will use for creating a body of the message notification.
- <br>Body Template must have 2 parameters: 
-  
-   - chat_id;
-  
-   -  text.
-  
-   this is an example of the outbound message:
-  
+   - chat_id；
+
+   -  text。
+
+   这是一个出站消息的示例：
+
 ```json
 {"chat_id" : "PUT YOUR CHOSEN CHAT_ID", "text" : "SOME MESSAGE YOU WANT TO RECEIVE"}
 ```
-  
- - To do this use the following script: 
- 
+
+  - 为此，请使用以下脚本：
+
  {% highlight javascript %}
  var newMsg ={};
  newMsg.text = '"' +  msg.name + '"' + " alarm was created for device: " + '"' + metadata.deviceName + '"';
  newMsg.chat_id = 337878729; //has to be replaced by the actual chat id
  return {msg: newMsg, metadata: metadata, msgType: msgType};{% endhighlight %}
       
-- Enter the Name field as **New telegram message**.  
-  
+- 将名称字段输入为 **新电报消息**。
+
 ![image](/images/gateway/telegram-bot/transform-script.png)
    
-##### Node B: **REST API Call**
-- Add the **REST API Call** node and connect it to the **Transform Script** node with a relation type **Success**.
-  <br>This node will send full Message payload to the configured REST endpoint. In our case, it is the Telegram REST API.
-  <br>At the scope of this tutorial, we will use **'/sendMessage'** action path to refer to Telegram Bot API to send a message.
+##### 节点 B：**REST API 调用**
+- 添加 **REST API 调用** 节点，并使用关系类型 **成功** 将其连接到 **转换脚本** 节点。
+  <br>此节点将完整的 Message 有效负载发送到配置的 REST 端点。在我们的例子中，它是 Telegram REST API。
+  <br>在本教程的范围内，我们将使用 **'/sendMessage'** 操作路径来引用 Telegram 机器人 API 以发送消息。
 
   
-- Fill in the fields with the input data shown in the following table: 
-  
+- 使用下表中所示的输入数据填写字段：
+
   <table style="width: 25%">
     <thead>
         <tr>
-            <td><b>Field</b></td><td><b>Input Data</b></td>
+            <td><b>字段</b></td><td><b>输入数据</b></td>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td>Name</td>
-            <td>REST API telegram Call</td>
+            <td>名称</td>
+            <td>REST API 电报调用</td>
         </tr>
         <tr>
-            <td>Endpoint URL pattern</td>
+            <td>端点 URL 模式</td>
             <td>https://api.telegram.org/bot"YOUR_BOT_TOKEN"/sendMessage</td>
         </tr>
         <tr>
-            <td>Request method</td>
+            <td>请求方法</td>
             <td>POST</td>
         </tr>
         <tr>
-            <td>Header</td>
-            <td>Content-Type</td>
+            <td>标题</td>
+            <td>内容类型</td>
         </tr>
         <tr>
-            <td>Value</td>
+            <td>值</td>
             <td>application/json</td>
         </tr>
      </tbody>
@@ -189,56 +189,56 @@ In this rule chain, you will create 2 nodes as it will be explained in the follo
 ![image](/images/gateway/telegram-bot/rest-api-telegram-node.png)
 
 
-## Post telemetry and verify
+## 发布遥测并验证
 
-For posting device telemetry we will use the Rest APIs, [Telemetry upload APIs](/docs/{{docsPrefix}}reference/http-api/#telemetry-upload-api). For this we will need to
-copy device access token from then device **Thermostat Home**. 
+对于发布设备遥测，我们将使用 Rest API，[遥测上传 API](/docs/{{docsPrefix}}reference/http-api/#telemetry-upload-api)。为此，我们需要
+从设备 **Thermostat Home** 复制设备访问令牌。
 
 ![image](/images/gateway/telegram-bot/copy-token.png)
 
 
-Lets post temperature = 99. Alarm should be created:
+让我们发布温度 = 99。应该创建警报：
 
 {% highlight bash %}
 curl -v -X POST -d '{"temperature":99}' http://localhost:8080/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
 
-**you need to replace $ACCESS_TOKEN with actual device token**
+**您需要将 $ACCESS_TOKEN 替换为实际设备令牌**
 {% endhighlight %}
 
-You should understand that message won't be sent to the Telegram App when the alarm was updated, only in the case when the alarm will be created. 
+您应该明白，当警报更新时，不会向 Telegram 应用发送消息，只有在创建警报时才会发送消息。
 
-Finally, we can see that the message was received with the correct values:
+最后，我们可以看到消息已收到正确的值：
 
-- first option:
+- 第一个选项：
 
 ![image](/images/gateway/telegram-bot/msg-received-first-way.png)
 
 
-- second option: 
+- 第二个选项：
 
 ![image](/images/gateway/telegram-bot/msg-received-second-way.png)
 
 
-Also, you can:
+您还可以：
 
-  - configure Alarm Details function in the Create and Clear Alarm nodes.
+  - 在创建和清除警报节点中配置警报详细信息功能。
 
-  - configure the Dashboard by adding an alarm widget to visualize the alarms.
+  - 通过添加警报小部件来配置仪表板以可视化警报。
 
-  - define other additional logic for alarm processing, for example, sending an email.
+  - 定义警报处理的其他附加逻辑，例如发送电子邮件。
 
-Please refer to the links under the **See Also** section to see how to do this.
+请参阅 **另请参阅** 部分下的链接，了解如何执行此操作。
 
 <br>
 
-## See Also
+## 另请参阅
 
-- [Create & Clear Alarms: alarm details:](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms-with-details/#step-2-createupdate-alarm) guide - to learn how to configure Alarm Details function in Alarm nodes.
+- [创建和清除警报：警报详细信息：](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms-with-details/#step-2-createupdate-alarm) 指南 - 了解如何在警报节点中配置警报详细信息功能。
 
-- [Create & Clear Alarms: configure dashboard](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms-with-details/#configure-device-and-dashboard) guide - to learn how to add an Alarm widget to the dashboard.
+- [创建和清除警报：配置仪表板](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms-with-details/#configure-device-and-dashboard) 指南 - 了解如何将警报小部件添加到仪表板。
 
-- [Send Email](/docs/user-guide/rule-engine-2-0/tutorials/send-email/) tutorial.
+- [发送电子邮件](/docs/user-guide/rule-engine-2-0/tutorials/send-email/) 教程。
 
-## Next steps
+## 后续步骤
 
 {% assign currentGuide = "HardwareSamples" %}{% include templates/multi-project-guides-banner.md %}

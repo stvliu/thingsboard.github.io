@@ -4,37 +4,37 @@
 
 {% else %}
 
-{% include templates/_errorthrower.md missing_block='overview' purpose='states, in one or two sentences, the purpose of this document' %}
+{% include templates/_errorthrower.md missing_block='overview' purpose='说明此文档的目的是什么，用一两句话即可' %}
 
 {% endif %}
 
 
-* TOC
+* 目录
 {: toc}
 
 
 {% if objectives %}
 
-### Objectives
+### 目标
 
 {{ objectives }}
 
 {% else %}
 
-{% include templates/_errorthrower.md missing_block='objectives' heading='Objectives' purpose='lists the objectives for this tutorial.' %}
+{% include templates/_errorthrower.md missing_block='objectives' heading='目标' purpose='列出本教程的目标。' %}
 
 {% endif %}
 
 
 {% if prerequisites %}
 
-### Before you begin
+### 开始之前
 
 {{ prerequisites }}
 
 {% else %}
 
-{% include templates/_errorthrower.md missing_block='prerequisites' heading='Before you begin' purpose='lists action prerequisites and knowledge prerequisites' %}
+{% include templates/_errorthrower.md missing_block='prerequisites' heading='开始之前' purpose='列出操作先决条件和知识先决条件' %}
 
 {% endif %}
 
@@ -45,14 +45,14 @@
 
 {% else %}
 
-{% include templates/_errorthrower.md missing_block='lessoncontent' purpose='provides the lesson content for this tutorial.' %}
+{% include templates/_errorthrower.md missing_block='lessoncontent' purpose='提供本教程的课程内容。' %}
 
 {% endif %}
 
 
 {% if cleanup %}
 
-### Cleaning up
+### 清理
 
 {{ cleanup }}
 
@@ -61,7 +61,7 @@
 
 {% if whatsnext %}
 
-### What's next
+### 后续步骤
 
 {{ whatsnext }}
 

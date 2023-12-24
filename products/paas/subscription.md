@@ -2,301 +2,301 @@
 layout: docwithnav-paas
 assignees:
 - ashvayka
-title: ThingsBoard Cloud Subscription plans definition
-description: Features and advantages of subscription payment model
+title: ThingsBoard Cloud 订阅计划定义
+description: 订阅付款模式的功能和优势
 
 ---
 
-ThingsBoars Cloud provides subscription plans based on the **pay-as-you-go** model. 
-Main characteristics of the subscription plan are: [entity limits](/docs/user-guide/tenant-profiles/#entity-limits), [api limits](/docs/user-guide/tenant-profiles/#api-limits--usage), [white-labeling](#white-labeling) and the level of support you get.   
+ThingsBoars Cloud 基于 **按需付费** 模式提供订阅计划。
+订阅计划的主要特点是：[实体限制](/docs/user-guide/tenant-profiles/#entity-limits)、[api 限制](/docs/user-guide/tenant-profiles/#api-limits--usage)、[白标](/docs/user-guide/white-labeling/) 和您获得的支持级别。
 
 
-### Entity Limits
+### 实体限制
 
-Please see table below to compare the entity limits of the subscription plans.
+请参阅下表比较订阅计划的实体限制。
 
 <table>
   <thead>
       <tr>
-          <td><b>Parameter name</b></td>
-          <td><b>Maker</b></td>
-          <td><b>Prototype</b></td>
-          <td><b>Startup</b></td>
-          <td><b>Business</b></td>
-          <td><b>Description</b></td>
+          <td><b>参数名称</b></td>
+          <td><b>创客</b></td>
+          <td><b>原型</b></td>
+          <td><b>初创</b></td>
+          <td><b>企业</b></td>
+          <td><b>说明</b></td>
       </tr>
   </thead>
   <tbody>
       <tr>
-          <td>Devices</td>
+          <td>设备</td>
           <td>30</td>
           <td>100</td>
           <td>500</td>
           <td>1000</td>
-          <td>Maximum number of devices</td>
+          <td>设备的最大数量</td>
       </tr>
       <tr>
-          <td>Assets</td>
+          <td>资产</td>
           <td>30</td>
           <td>100</td>
           <td>500</td>
           <td>1000</td>
-          <td>Maximum number of assets</td>
+          <td>资产的最大数量</td>
       </tr>
       <tr>
-          <td>Customers</td>
+          <td>客户</td>
           <td>2</td>
           <td>50</td>
           <td>100</td>
           <td>500</td>
-          <td>Maximum number of customers</td>
+          <td>客户的最大数量</td>
       </tr>
       <tr>
-          <td>Users</td>
+          <td>用户</td>
           <td>5</td>
           <td>50</td>
           <td>100</td>
           <td>500</td>
-          <td>Maximum number of users</td>
+          <td>用户最大数量</td>
       </tr>
       <tr>
-          <td>Dashboards</td>
+          <td>仪表板</td>
           <td>25</td>
           <td>100</td>
           <td>200</td>
           <td>500</td>
-          <td>Maximum number of dashboards</td>
+          <td>仪表板的最大数量</td>
       </tr>
       <tr>
-          <td>Rule chains</td>
+          <td>规则链</td>
           <td>5</td>
           <td>20</td>
           <td>50</td>
           <td>100</td>
-          <td>Maximum number of rule chains</td>
+          <td>规则链的最大数量</td>
       </tr>
       <tr>
-          <td>Integrations</td>
+          <td>集成</td>
           <td>1</td>
           <td>5</td>
           <td>10</td>
           <td>20</td>
-          <td>Maximum number of integrations</td>
+          <td>集成的最大数量</td>
       </tr>
       <tr>
-          <td>Converters</td>
+          <td>转换器</td>
           <td>5</td>
           <td>25</td>
           <td>50</td>
           <td>100</td>
-          <td>Maximum number of converters</td>
+          <td>转换器的最大数量</td>
       </tr>
       <tr>
-          <td>Scheduler events</td>
+          <td>调度程序事件</td>
           <td>5</td>
           <td>20</td>
           <td>50</td>
           <td>100</td>
-          <td>Maximum number of scheduler events</td>
+          <td>调度程序事件的最大数量</td>
       </tr>            
   </tbody>
 </table>
 
 
-### API Limits
+### API 限制
 
-Please see table below to compare the API limits of the subscription plans. The values are monthly API limits, unless stated otherwise.
+请参阅下表比较订阅计划的 API 限制。除非另有说明，否则这些值是每月 API 限制。
 
 <table>
   <thead>
       <tr>
-          <td><b>Parameter name</b></td>
-          <td><b>Maker</b></td>
-          <td><b>Prototype</b></td>
-          <td><b>Startup</b></td>
-          <td><b>Business</b></td>
-          <td><b>Description</b></td>
+          <td><b>参数名称</b></td>
+          <td><b>创客</b></td>
+          <td><b>原型</b></td>
+          <td><b>初创</b></td>
+          <td><b>企业</b></td>
+          <td><b>说明</b></td>
       </tr>
   </thead>
   <tbody>
       <tr>
-          <td>Transport messages</td>
+          <td>传输消息</td>
           <td>5M</td>
           <td>50M</td>
           <td>250M</td>
           <td>500M</td>
-          <td>Total number of messages received by any of the Transports (MQTT, HTTP, CoAP, etc) or Integrations.</td>
+          <td>任何传输（MQTT、HTTP、CoAP 等）或集成接收的消息总数。</td>
       </tr>
       <tr>
-          <td>Transport data points</td>
+          <td>传输数据点</td>
           <td>10M</td>
           <td>100M</td>
           <td>500M</td>
           <td>1B</td>
-          <td>Total number of key-value pairs that your telemetry or attribute transport messages contain.</td>
+          <td>遥测或属性传输消息包含的键值对总数。</td>
       </tr>
       <tr>
-          <td>Rule Engine executions</td>
+          <td>规则引擎执行</td>
           <td>25M</td>
           <td>250M</td>
           <td>1B</td>
           <td>2B</td>
-          <td>Total number of any execution of the rule node.<br> Processing of a single telemetry message may cause multiple Rule Engine executions.<br> The platform will also count periodic messages produced by Generator nodes, etc.</td>
+          <td>规则节点的任何执行的总数。<br>处理单个遥测消息可能导致多个规则引擎执行。<br>该平台还将计算由生成器节点等产生的周期性消息。</td>
       </tr>
       <tr>
-          <td>JavaScript executions</td>
+          <td>JavaScript 执行</td>
           <td>1M</td>
           <td>10M</td>
           <td>50M</td>
           <td>100M</td>
-          <td>Total number of any execution of user defined functions. For example, processing of the “Script” filter or transformation node, invocation of the data converter, etc.</td>
+          <td>用户定义函数的任何执行的总数。例如，处理“脚本”过滤器或转换节点、调用数据转换器等。</td>
       </tr>
       <tr>
-          <td>Default storage TTL</td>
-          <td>60 days</td>
-          <td>180 days</td>
-          <td>365 days</td>
-          <td>365 days</td>
-          <td>Default value of the "time to live" parameter that is used to store time-series data.<br>
-          You may overwrite the default value in the "Save Timeseries" rule node or using "TTL" metadata field of your message.<br>
-          This allows you to optimize storage consumption. The maximum allowed value of TTL is 5 years. <br>
-          For example, you may store "raw" data for 3 month and aggregated data for 3 years.
+          <td>默认存储 TTL</td>
+          <td>60 天</td>
+          <td>180 天</td>
+          <td>365 天</td>
+          <td>365 天</td>
+          <td>用于存储时间序列数据的“生存时间”参数的默认值。<br>
+          您可以在“保存时间序列”规则节点中覆盖默认值，或使用消息的“TTL”元数据字段。<br>
+          这允许您优化存储消耗。TTL 的最大允许值为 5 年。 <br>
+          例如，您可以将“原始”数据存储 3 个月，并将聚合数据存储 3 年。
           </td>
       </tr>      
       <tr>
-          <td>Data point storage days</td>
+          <td>数据点存储天数</td>
           <td>300M</td>
           <td>10B</td>
           <td>100B</td>
           <td>200B</td>
-          <td>Data points storage days are calculated for all time-series data points that are stored to the database.<br>
-          Platform multiplies number of data points by the number of days those data points will be stored.<br> 
-          The TTL parameter is used to extract amount of days to store the data. For example, if you store 1M data points for 30 days, this is 30M storage data point days. </td>
+          <td>数据点存储天数是针对存储到数据库的所有时间序列数据点计算的。<br>
+          平台将数据点数量乘以这些数据点将存储的天数。<br> 
+          TTL 参数用于提取存储数据的日期数量。例如，如果您将 1M 个数据点存储 30 天，则这是 30M 个存储数据点天。 </td>
       </tr>
       <tr>
-          <td>Alarms TTL</td>
-          <td>60 days</td>
-          <td>180 days</td>
-          <td>365 days</td>
-          <td>365 days</td>
-          <td>How many days to store alarms in the database.</td>
+          <td>警报 TTL</td>
+          <td>60 天</td>
+          <td>180 天</td>
+          <td>365 天</td>
+          <td>365 天</td>
+          <td>在数据库中存储警报的天数。</td>
       </tr>
       <tr>
           <td>RPC TTL</td>
-          <td>60 days</td>
-          <td>180 days</td>
-          <td>365 days</td>
-          <td>365 days</td>
-          <td>How many days to store persistent RPC in the database.</td>
+          <td>60 天</td>
+          <td>180 天</td>
+          <td>365 天</td>
+          <td>365 天</td>
+          <td>在数据库中存储持久性 RPC 的天数。</td>
       </tr>
       <tr>
-          <td>Alarms</td>
+          <td>警报</td>
           <td>200</td>
           <td>4K</td>
           <td>20K</td>
           <td>40K</td>
-          <td>Total number of alarms created per month.</td>
+          <td>每月创建的警报总数。</td>
       </tr>
       <tr>
-          <td>Emails</td>
+          <td>电子邮件</td>
           <td>100</td>
           <td>2K</td>
           <td>10K</td>
           <td>40K</td>
-          <td>Total number of emails sent.</td>
+          <td>发送的电子邮件总数。</td>
       </tr>
       <tr>
-          <td>SMS</td>
+          <td>短信</td>
           <td>0</td>
           <td>100</td>
           <td>500</td>
           <td>1000</td>
-          <td>Total number of SMS sent.</td>
+          <td>发送的短信总数。</td>
       </tr>          
   </tbody>
 </table>
 
-where "**K**" means 1 thousand, "**M**" means 1 million, "**B**" means 1 billion.
+其中“**K**”表示 1 千，“**M**”表示 1 百万，“**B**”表示 10 亿。
 
-### Rate Limits
+### 速率限制
 
 <table>
   <thead>
       <tr>
-          <td><b>Parameter name</b></td>
-          <td><b>Maker</b></td>
-          <td><b>Prototype</b></td>
-          <td><b>Startup</b></td>
-          <td><b>Business</b></td>
-          <td><b>Description</b></td>
+          <td><b>参数名称</b></td>
+          <td><b>创客</b></td>
+          <td><b>原型</b></td>
+          <td><b>初创</b></td>
+          <td><b>企业</b></td>
+          <td><b>说明</b></td>
       </tr>
   </thead>
   <tbody>
       <tr>
-          <td>All Transport messages (Tenant)</td>
-          <td>200/sec<br>but no more then 6K/min<br>but no more then 140K/hour</td>
-          <td>2K/sec<br>but no more then 60K/min<br>but no more then 1.4M/hour</td>
-          <td>10K/sec<br>but no more then 300K/min<br>but no more then 6M/hour</td>
-          <td>20K/sec<br>but no more then 600K/min<br>but no more then 12M/hour</td>
-          <td>Total number of messages received by any of the transport microservices for all devices that belong to the tenant</td>
+          <td>所有传输消息（租户）</td>
+          <td>200/秒<br>但不得超过 6K/分钟<br>但不得超过 140K/小时</td>
+          <td>2K/秒<br>但不得超过 60K/分钟<br>但不得超过 1.4M/小时</td>
+          <td>10K/秒<br>但不得超过 300K/分钟<br>但不得超过 6M/小时</td>
+          <td>20K/秒<br>但不得超过 600K/分钟<br>但不得超过 12M/小时</td>
+          <td>租户所属的所有设备的任何传输微服务接收的消息总数</td>
       </tr>
       <tr>
-          <td>Telemetry Transport messages (Tenant)</td>
-          <td>100/sec<br>but no more then 3K/min<br>but no more then 70K/hour</td>
-          <td>1K/sec<br>but no more then 30K/min<br>but no more then 700K/hour</td>
-          <td>5K/sec<br>but no more then 150K/min<br>but no more then 3.5M/hour</td>
-          <td>10K/sec<br>but no more then 300K/min<br>but no more then 7M/hour</td>
-          <td>Total number of telemetry messages received by any of the transport microservices for all devices that belong to the tenant</td>
+          <td>遥测传输消息（租户）</td>
+          <td>100/秒<br>但不得超过 3K/分钟<br>但不得超过 70K/小时</td>
+          <td>1K/秒<br>但不得超过 30K/分钟<br>但不得超过 700K/小时</td>
+          <td>5K/秒<br>但不得超过 150K/分钟<br>但不得超过 3.5M/小时</td>
+          <td>10K/秒<br>但不得超过 300K/分钟<br>但不得超过 7M/小时</td>
+          <td>租户所属的所有设备的任何传输微服务接收的遥测消息总数</td>
       </tr>
       <tr>
-          <td>Telemetry Transport data points (Tenant)</td>
-          <td>200/sec<br>but no more then 6K/min<br>but no more then 140K/hour</td>
-          <td>2K/sec<br>but no more then 60K/min<br>but no more then 1.4M/hour</td>
-          <td>10K/sec<br>but no more then 300K/min<br>but no more then 7M/hour</td>
-          <td>20K/sec<br>but no more then 600K/min<br>but no more then 14M/hour</td>
-          <td>Total number of telemetry data points received by any of the transport microservices for all devices that belong to the tenant</td>
+          <td>遥测传输数据点（租户）</td>
+          <td>200/秒<br>但不得超过 6K/分钟<br>但不得超过 140K/小时</td>
+          <td>2K/秒<br>但不得超过 60K/分钟<br>但不得超过 1.4M/小时</td>
+          <td>10K/秒<br>但不得超过 300K/分钟<br>但不得超过 7M/小时</td>
+          <td>20K/秒<br>但不得超过 600K/分钟<br>但不得超过 14M/小时</td>
+          <td>租户所属的所有设备的任何传输微服务接收的遥测数据点总数</td>
       </tr>            
       <tr>
-          <td>All Transport messages (Device)</td>
-          <td>20/sec<br>but no more then 600/min<br>but no more then 14K/hour</td>
-          <td>20/sec<br>but no more then 600/min<br>but no more then 14K/hour</td>
-          <td>20/sec<br>but no more then 600/min<br>but no more then 14K/hour</td>
-          <td>20/sec<br>but no more then 600/min<br>but no more then 14K/hour</td>
-          <td>Total number of messages received by any of the transport microservices for each device separately</td>
+          <td>所有传输消息（设备）</td>
+          <td>20/秒<br>但不得超过 600/分钟<br>但不得超过 14K/小时</td>
+          <td>20/秒<br>但不得超过 600/分钟<br>但不得超过 14K/小时</td>
+          <td>20/秒<br>但不得超过 600/分钟<br>但不得超过 14K/小时</td>
+          <td>20/秒<br>但不得超过 600/分钟<br>但不得超过 14K/小时</td>
+          <td>每个设备分别接收的任何传输微服务接收的消息总数</td>
       </tr>
       <tr>
-          <td>Telemetry Transport messages (Device)</td>
-          <td>10/sec<br>but no more then 300/min<br>but no more then 7K/hour</td>
-          <td>10/sec<br>but no more then 300/min<br>but no more then 7K/hour</td>
-          <td>10/sec<br>but no more then 300/min<br>but no more then 7K/hour</td>
-          <td>10/sec<br>but no more then 300/min<br>but no more then 7K/hour</td>
-          <td>Total number of telemetry messages received by any of the transport microservices for each device separately</td>
+          <td>遥测传输消息（设备）</td>
+          <td>10/秒<br>但不得超过 300/分钟<br>但不得超过 7K/小时</td>
+          <td>10/秒<br>但不得超过 300/分钟<br>但不得超过 7K/小时</td>
+          <td>10/秒<br>但不得超过 300/分钟<br>但不得超过 7K/小时</td>
+          <td>10/秒<br>但不得超过 300/分钟<br>但不得超过 7K/小时</td>
+          <td>每个设备分别接收的任何传输微服务接收的遥测消息总数</td>
       </tr>
       <tr>
-          <td>Telemetry Transport data points (Device)</td>
-          <td>20/sec<br>but no more then 600/min<br>but no more then 14K/hour</td>
-          <td>20/sec<br>but no more then 600/min<br>but no more then 14K/hour</td>
-          <td>20/sec<br>but no more then 600/min<br>but no more then 14K/hour</td>
-          <td>20/sec<br>but no more then 600/min<br>but no more then 14K/hour</td>
-          <td>Total number of telemetry data points received by any of the transport microservices for each device separately</td>
+          <td>遥测传输数据点（设备）</td>
+          <td>20/秒<br>但不得超过 600/分钟<br>但不得超过 14K/小时</td>
+          <td>20/秒<br>但不得超过 600/分钟<br>但不得超过 14K/小时</td>
+          <td>20/秒<br>但不得超过 600/分钟<br>但不得超过 14K/小时</td>
+          <td>20/秒<br>但不得超过 600/分钟<br>但不得超过 14K/小时</td>
+          <td>每个设备分别接收的任何传输微服务接收的遥测数据点总数</td>
       </tr>
       <tr>
-          <td>Rule Engine executions per message</td>
+          <td>每条消息的规则引擎执行</td>
           <td>20</td>
           <td>30</td>
           <td>40</td>
           <td>50</td>
-          <td>Maximum number of rule node executions to process particular message</td>
+          <td>处理特定消息的规则节点执行的最大数量</td>
       </tr>      
   </tbody>
 </table>
 
-where "**K**" means 1 thousand, "**M**" means 1 million, "**B**" means 1 billion.
+其中“**K**”表示 1 千，“**M**”表示 1 百万，“**B**”表示 10 亿。
 
-### White-labeling
+### 白标
 
-ThingsBoard web interface allows you to configure your company or product logo and color scheme in 2 minutes with zero coding efforts and no service restart required. 
-See feature [documentation](/docs/user-guide/white-labeling/) for more details. ThingsBoard Cloud extends white-labeling feature with ability to configure own domain name easily. 
-See [managing domain](/products/paas/domains/) for more details. 
+ThingsBoard Web 界面允许您在 2 分钟内配置公司或产品徽标和配色方案，无需任何编码工作，也无需重新启动服务。
+有关更多详细信息，请参阅功能[文档](/docs/user-guide/white-labeling/)。ThingsBoard Cloud 扩展了白标功能，可以轻松配置自己的域名。
+有关更多详细信息，请参阅[管理域](/products/paas/domains/)。
 
-The white-labeling feature is available for **Prototype** and **Startup** subscription plans. 
+白标功能适用于**原型**和**初创**订阅计划。

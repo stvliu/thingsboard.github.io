@@ -1,9 +1,9 @@
 ---
 layout: devices-library-article
-title: How to connect PINE A64 to ThingsBoard?
-category: Single-board computers
-chip: Allwinner A64
-connectivity: Ethernet, WIFI, Bluetooth
+title: 如何将 PINE A64 连接到 ThingsBoard？
+category: 单板计算机
+chip: 全志 A64
+connectivity: 以太网、WIFI、蓝牙
 vendor: PINE64
 deviceImageFileName: pine-a64.jpg
 docsPrefix: paas/

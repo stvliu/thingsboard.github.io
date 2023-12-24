@@ -1,45 +1,45 @@
-### Create device profile
+### 创建设备配置文件
 
-Before you add an Efento sensor to the platform you need to create a new Device profile for Efento device.
+在将 Efento 传感器添加到平台之前，您需要为 Efento 设备创建一个新的设备配置文件。
 
 {% assign deviceProfileCreationPE = '
     ===
         image: /images/devices-library/ready-to-go-devices/wireless-open-close-sensor/create-device-profile.png,
-        title: Log in to your administrator account and navigate to <b>Device profiles</b> section. Click on the <b>+</b> icon in the upper right corner to add a new profile. Select <b>Create new device profile</b>.
+        title: 登录您的管理员帐户并导航到<b>设备配置文件</b>部分。单击右上角的<b>+</b>图标以添加新配置文件。选择<b>创建新设备配置文件</b>。
     ===
         image: /images/devices-library/ready-to-go-devices/wireless-open-close-sensor/configure-device-profile-name.png,
-        title: Fill up the profile name (mandatory) and configure optional settings (Rule chain, Queue Name, Description). Once you are ready press <b>Next: Transport configuration</b> button.
+        title: 填写配置文件名称（必填）并配置可选设置（规则链、队列名称、说明）。准备就绪后，按<b>下一步：传输配置</b>按钮。
     ===
         image: /images/devices-library/ready-to-go-devices/wireless-open-close-sensor/device-profile-select-transport.png,
-        title: From the dropdown menu in the <b>Transport type</b> field select <b>CoAP</b> and from the dropdown menu in <b>CoAP device type</b> field select <b>Efento NB-IoT</b>, press <b>Add</b> button to save.
+        title: 从<b>传输类型</b>字段的下拉菜单中选择<b>CoAP</b>，从<b>CoAP 设备类型</b>字段的下拉菜单中选择<b>Efento NB-IoT</b>，按<b>添加</b>按钮保存。
     ===
         image: /images/devices-library/ready-to-go-devices/wireless-open-close-sensor/check-device-profile-created.png,
-        title: Once the profile is ready you will see it on the list in the <b>Device profiles</b> section. If you plan to use your ThingsBoard instance only with Efento sensors you can set the profile as default.
+        title: 配置文件准备就绪后，您将在<b>设备配置文件</b>部分的列表中看到它。如果您计划仅将 ThingsBoard 实例与 Efento 传感器一起使用，则可以将该配置文件设置为默认值。
 '
 %}
 
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=deviceProfileCreationPE %}
 
-Configuration of the “Alarm rules” and “Device provisioning” tabs is optional.  
-If you want to learn more about these features please refer to the [documentation](/docs/getting-started-guides/helloworld/){:target="_blank"}.  
+“报警规则”和“设备配置”选项卡的配置是可选的。  
+如果您想了解有关这些功能的更多信息，请参阅[文档](/docs/getting-started-guides/helloworld/){:target="_blank"}。  
 
-### Create a device
+### 创建设备
 
-In order to save a data from the sensor we should also create a device on ThingsBoard.  
+为了保存来自传感器的数据，我们还应该在 ThingsBoard 上创建一个设备。  
 
 {% assign deviceCreationPE = '
     ===
         image: /images/devices-library/ready-to-go-devices/wireless-open-close-sensor/create-device.png,
-        title: Go to the <b>Device groups</b> section of ThingsBoard. You can either create a new device group or use the default one (<b>All</b>). Click on the <b>+</b> icon in the upper right corner to add a new device.
+        title: 转到 ThingsBoard 的<b>设备组</b>部分。您可以创建一个新的设备组或使用默认设备组（<b>全部</b>）。单击右上角的<b>+</b>图标以添加新设备。
     ===
         image: /images/devices-library/ready-to-go-devices/wireless-open-close-sensor/configure-device-with-transport.png,
-        title: Name the device, in the <b>Transport type field</b> select <b>CoAP</b>. Choose <b>Select existing profile</b> option and add the profile you have recently created for Efento sensors. Press <b>Next: Credentials</b> button.
+        title: 命名设备，在<b>传输类型字段</b>中选择<b>CoAP</b>。选择<b>选择现有配置文件</b>选项，并添加您最近为 Efento 传感器创建的配置文件。按<b>下一步：凭据</b>按钮。
     ===
         image: /images/devices-library/ready-to-go-devices/wireless-open-close-sensor/configure-device-create-credentials.png,
-        title: Select <b>Add credential</b> and in the <b>Access token</b> field set the new access token, which will be used by a sensor to validate in the platform. Note that the token must be unique for each sensor. Configuration of the token is optional. Press <b>Add</b> button to save.
+        title: 选择<b>添加凭据</b>，并在<b>访问令牌</b>字段中设置新的访问令牌，该令牌将由传感器用于在平台中验证。请注意，每个传感器令牌必须是唯一的。令牌配置是可选的。按<b>添加</b>按钮保存。
     ===
         image: /images/devices-library/ready-to-go-devices/wireless-open-close-sensor/check-device-created.png,
-        title: Once the device is added, it appears within group <b>All</b> list in <b>Device groups</b> section.
+        title: 添加设备后，它将出现在<b>设备组</b>部分的组<b>全部</b>列表中。
 '
 %}
 

@@ -1,6 +1,6 @@
 ---
 layout: docwithnav-gw
-title: IoT Gateway Installation options
+title: IoT 网关安装选项
 notitle: "true"
 
 ---
@@ -10,10 +10,10 @@ notitle: "true"
        <div class="install-options-hero">
           <div class="container">
             <div class="install-options-hero-content">
-                <h1>ThingsBoard IoT Gateway installation options</h1>
+                <h1>ThingsBoard IoT 网关安装选项</h1>
                 <div class="install-options-description">
                     <p>
-                        ThingsBoard IoT Gateway is designed to run and utilize on majority of hardware, from single-board computers like Raspberry Pi to powerful Edge Gateways for IoT
+                        ThingsBoard IoT 网关旨在运行并利用大多数硬件，从诸如 Raspberry Pi 的单板计算机到用于 IoT 的强大边缘网关
                     </p>
                 </div>
             </div>
@@ -27,7 +27,7 @@ notitle: "true"
                                         <a href="/docs/iot-gateway/install/deb-installation/">
                                             <span>
                                                 <div class="deployment-logo">
-                                                    <img width="" src="/images/install/platform/ubuntu.svg" title="Ubuntu" alt="Ubuntu logo">
+                                                    <img width="" src="/images/install/platform/ubuntu.svg" title="Ubuntu" alt="Ubuntu 徽标">
                                                  </div>
                                             </span>
                                         </a>
@@ -36,7 +36,7 @@ notitle: "true"
                                         <a href="/docs/iot-gateway/install/rpm-installation/">
                                             <span>
                                                 <div class="deployment-logo">
-                                                    <img width="" src="/images/install/platform/centos-redhat.svg" title="CentOS/RHEL" alt="CentOS/RHEL logo">
+                                                    <img width="" src="/images/install/platform/centos-redhat.svg" title="CentOS/RHEL" alt="CentOS/RHEL 徽标">
                                                  </div>
                                             </span>
                                         </a>
@@ -45,7 +45,7 @@ notitle: "true"
                                         <a href="/docs/iot-gateway/install/deb-installation/">
                                             <span>
                                                 <div class="deployment-logo">
-                                                    <img width="" src="/images/install/platform/rpi3.svg" title="Raspberry Pi 3" alt="Raspberry Pi 3 logo">
+                                                    <img width="" src="/images/install/platform/rpi3.svg" title="Raspberry Pi 3" alt="Raspberry Pi 3 徽标">
                                                  </div>
                                             </span>
                                         </a>
@@ -54,7 +54,7 @@ notitle: "true"
                                         <a href="/docs/iot-gateway/install/docker-windows/">
                                             <span>
                                                 <div class="deployment-logo">
-                                                    <img width="" src="/images/install/platform/docker-windows.svg" title="Docker (Windows)" alt="Docker (Windows) logo">
+                                                    <img width="" src="/images/install/platform/docker-windows.svg" title="Docker (Windows)" alt="Docker (Windows) 徽标">
                                                  </div>
                                             </span>
                                         </a>
@@ -63,7 +63,7 @@ notitle: "true"
                                         <a href="/docs/iot-gateway/install/docker-installation/">
                                             <span>
                                                 <div class="deployment-logo">
-                                                    <img width="" src="/images/install/platform/docker-linux-macos.svg" title="Docker (Linux or Mac OS)" alt="Docker (Linux or Mac OS) logo">
+                                                    <img width="" src="/images/install/platform/docker-linux-macos.svg" title="Docker (Linux 或 Mac OS)" alt="Docker (Linux 或 Mac OS) 徽标">
                                                  </div>
                                             </span>
                                         </a>
@@ -72,7 +72,7 @@ notitle: "true"
                                         <a href="/docs/iot-gateway/install/pip-installation/">
                                             <span>
                                                 <div class="deployment-logo">
-                                                    <img width="" src="/images/install/platform/python-img.svg" title="PIP" alt="Python logo">
+                                                    <img width="" src="/images/install/platform/python-img.svg" title="PIP" alt="Python 徽标">
                                                  </div>
                                             </span>
                                         </a>

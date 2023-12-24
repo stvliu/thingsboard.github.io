@@ -1,79 +1,77 @@
 ---
 layout: use-case
-title: IoT smart office solutions with ThingsBoard
-description: IoT smart office solutions with ThingsBoard
+title: ThingsBoard 物联网智能办公解决方案
+description: ThingsBoard 物联网智能办公解决方案
 notitle: "true"
 
 ---
 
 {% include usecase-nav.html usecase="smart-office" %}
 
-<h1 class="usecase-title">Smart office solutions</h1>
+<h1 class="usecase-title">智能办公解决方案</h1>
 
-ThingsBoard platform dramatically reduces time to market and efforts to create smart office solutions.
-Platform is widely used for:
+ThingsBoard 平台大幅缩短了智能办公解决方案的上市时间和开发工作。
+该平台广泛用于：
 
-  - smart energy management;
-  - access logging and control;
-  - indoor tracking of employees;
-  - occupancy of meeting and lavatory rooms;
-  - indoor air quality and HVAC monitoring;
+  - 智能能源管理；
+  - 访问日志记录和控制；
+  - 员工室内跟踪；
+  - 会议室和盥洗室的占用情况；
+  - 室内空气质量和 HVAC 监控；
 
-Save up to 90% of development time for your smart office solution by utilizing the following platform benefits:
+通过利用以下平台优势，可为您的智能办公解决方案节省高达 90% 的开发时间：
 
-  - Reliable and fault-tolerant data collection from your IoT devices and sensors;
-  - Powerful rule engine to process collected data and produce alarms and valuable insights;
-  - Advanced and flexible visualization for real-time and historical data;
-  - Customizable end-user dashboards to share the monitoring results;
-  - On-premises and cloud deployment options;
-  - Remote control and OTA updates for your IoT devices;
-  - Customizable mobile applications with minimum coding efforts;
+  - 从您的物联网设备和传感器可靠且容错地收集数据；
+  - 功能强大的规则引擎，可处理收集的数据并产生警报和有价值的见解；
+  - 先进且灵活的可视化，用于实时和历史数据；
+  - 可自定义的最终用户仪表板，用于共享监控结果；
+  - 本地和云部署选项；
+  - 物联网设备的远程控制和 OTA 更新；
+  - 最小编码工作量的可自定义移动应用程序；
 
-The platform provides production-ready server infrastructure to connect your IoT devices, store, analyze and share collected IoT data;
+该平台提供生产就绪的服务器基础设施，用于连接您的物联网设备、存储、分析和共享收集的物联网数据；
 
-## Smart office template
+## 智能办公模板
 
-Smart Office [template](https://thingsboard.io/docs/paas/solution-templates/smart-office/) represents a basic work space monitoring and management solution. 
-With this layout you get an interactive dashboard with the ability to control HVAC system, 
-and have a high-level report of key metrics necessary for effective and proactive office management.
+智能办公 [模板](https://thingsboard.io/docs/paas/solution-templates/smart-office/) 代表了一个基本的工作空间监控和管理解决方案。
+使用此布局，您将获得一个交互式仪表板，能够控制 HVAC 系统，并获得有效和主动办公管理所需的关键指标的高级报告。
 
 <div class="usecase-carousel owl-carousel owl-theme">
     <div>
-        <img class="item-image" src="/images/usecases/smart-office/so1.png" alt="smart office 1">
+        <img class="item-image" src="/images/usecases/smart-office/so1.png" alt="智能办公 1">
     </div>
     <div>
-        <img class="item-image" src="/images/usecases/smart-office/so2.png" alt="smart office 2">
+        <img class="item-image" src="/images/usecases/smart-office/so2.png" alt="智能办公 2">
     </div>
     <div>
-        <img class="item-image" src="/images/usecases/smart-office/so3.png" alt="smart office 3">
+        <img class="item-image" src="/images/usecases/smart-office/so3.png" alt="智能办公 3">
     </div>
     <div>
-        <img class="item-image" src="/images/usecases/smart-office/so4.png" alt="smart office 4">
+        <img class="item-image" src="/images/usecases/smart-office/so4.png" alt="智能办公 4">
     </div>
     <div>
-        <img class="item-image" src="/images/usecases/smart-office/so5.png" alt="smart office 5">
+        <img class="item-image" src="/images/usecases/smart-office/so5.png" alt="智能办公 5">
     </div>
 </div>
 
 <div class="center" style="margin-bottom: 64px;">
-    <a target="_blank" href="https://thingsboard.cloud/dashboard/bf47dcb0-8b38-11ec-a344-c767c1ab1bb8?publicId=4978baf0-8a92-11ec-98f9-ff45c37940c6" class="button">View live demo</a>
+    <a target="_blank" href="https://thingsboard.cloud/dashboard/bf47dcb0-8b38-11ec-a344-c767c1ab1bb8?publicId=4978baf0-8a92-11ec-98f9-ff45c37940c6" class="button">查看实时演示</a>
 </div>
 
-The live dashboard is part of the [solution template](https://thingsboard.io/docs/paas/solution-templates/smart-office/) 
-and displays office floor plan and data from various IoT sensors that is collected using ThingsBoard MQTT API.
+实时仪表板是 [解决方案模板](https://thingsboard.io/docs/paas/solution-templates/smart-office/) 的一部分，并显示办公室平面图和使用 ThingsBoard MQTT API 收集的来自各种物联网传感器的数据。
 
-You may use the dashboard to:
+您可以使用仪表板来：
 
-* observe office sensors and their location;
-* browse indoor temperature and power consumption history;
-* monitor temperature alarms;
-* control HVAC (requires connected device);
-* observe specific details for each sensor.
+* 观察办公室传感器及其位置；
+* 浏览室内温度和功耗历史记录；
+* 监控温度警报；
+* 控制 HVAC（需要连接的设备）；
+* 观察每个传感器的具体细节。
 
-The dashboard has multiple states. The main state displays the list of the devices, their location on the office map as well as the list of their alarms.
-You may drill down to the device details state by clicking on the table row. The device details are specific to the device type.
+仪表板有多个状态。主状态显示设备列表、它们在办公室地图上的位置以及它们的警报列表。
+您可以通过单击表格行向下钻取到设备详细信息状态。设备详细信息特定于设备类型。
 
-## ThingsBoard advantages
+## ThingsBoard 优势
 <section class="usecase-advantages">
     <div class="usecase-background">
         <div class="bottom-features1"></div><div class="bottom-features2"></div><div class="small11"></div><div class="small12"></div>
@@ -81,102 +79,102 @@ You may drill down to the device details state by clicking on the table row. The
     <div class="cards row">
         <div class="col-lg-6">
             <div class="block">
-                <img src="/images/microservices-icon.svg" alt="Microservice icon">
+                <img src="/images/microservices-icon.svg" alt="微服务图标">
                 <div>
-                    <a class="title" href="/docs/reference/msa/">Scalability and high availability</a>
-                    <p>ThingsBoard supports high-availability deployments on cloud and on-premises data centers using K8S or bare-metal deployments. 
-                        Platform components are horizontally scalable. ThingsBoard has production deployments supporting more then 500 000 devices connected.</p>
+                    <a class="title" href="/docs/reference/msa/">可扩展性和高可用性</a>
+                    <p>ThingsBoard 支持使用 K8S 或裸机部署在云和本地数据中心上的高可用性部署。
+                        平台组件是水平可扩展的。ThingsBoard 的生产部署支持连接超过 500,000 台设备。</p>
                 </div>
             </div>
         </div>
         <div class="col-lg-6">
             <div class="block">
-                <img src="/images/telemetry-icon.svg" alt="Telemetry icon">
+                <img src="/images/telemetry-icon.svg" alt="遥测图标">
                 <div>
-                    <a class="title" href="/docs/getting-started-guides/connectivity/">Connectivity</a>
-                    <p>Connect devices directly to the platform via the following built-in protocols: HTTP, CoAP, MQTT, LwM2M, and SNMP. 
-                        Connect devices in your local network to the cloud using ThingsBoard Gateway via Modbus, BLE, BACnet, OPC-UA, and other protocols.</p>
+                    <a class="title" href="/docs/getting-started-guides/connectivity/">连接性</a>
+                    <p>通过以下内置协议将设备直接连接到平台：HTTP、CoAP、MQTT、LwM2M 和 SNMP。
+                        使用 ThingsBoard 网关通过 Modbus、BLE、BACnet、OPC-UA 和其他协议将本地网络中的设备连接到云。</p>
                 </div>
             </div>
         </div>
         <div class="col-lg-6">
             <div class="block">
-                <img src="/images/integration-icon.svg" alt="Integration icon">
+                <img src="/images/integration-icon.svg" alt="集成图标">
                 <div>
-                    <a class="title" href="/docs/user-guide/integrations/">LoRaWAN & SigFox Support</a>
-                    <p>Connect LoRaWAN devices via integrations with standard network servers like TTN, LORIOT, ChirpStack, Actility, etc. Connect SigFox devices via integrations with the SigFox backend.</p>
+                    <a class="title" href="/docs/user-guide/integrations/">LoRaWAN 和 SigFox 支持</a>
+                    <p>通过与标准网络服务器（如 TTN、LORIOT、ChirpStack、Actility 等）的集成连接 LoRaWAN 设备。通过与 SigFox 后端的集成连接 SigFox 设备。</p>
                 </div>
             </div>
         </div>
         <div class="col-lg-6">
             <div class="block">
-                <img src="/images/security-icon.svg" alt="Security icon">
+                <img src="/images/security-icon.svg" alt="安全图标">
                 <div>
-                    <a class="title" href="/docs/pe/user-guide/ssl/http-over-ssl/">Security</a>
-                    <p>ThingsBoard supports industry-standard encryption algorithms like RSA and ECDSA to ensure the data is secure during transfer via TLS(TCP) and DTLS (UDP).</p>
+                    <a class="title" href="/docs/pe/user-guide/ssl/http-over-ssl/">安全</a>
+                    <p>ThingsBoard 支持行业标准加密算法（如 RSA 和 ECDSA），以确保数据在通过 TLS(TCP) 和 DTLS (UDP) 传输期间的安全。</p>
                 </div>
             </div>
         </div>
         <div class="col-lg-6">
             <div class="block">
-                <img src="/images/engine-icon.svg" alt="Gear icon">
+                <img src="/images/engine-icon.svg" alt="齿轮图标">
                 <div>
-                    <a class="title" href="/docs/pe/user-guide/rule-engine-2-0/overview/">Data processing</a>
-                    <p>ThingsBoard allows you to define application logic with drag-n-drop rule chain designer. The Rule Engine is a robust and scalable processing framework that leverages industry-standard message queue implementations like Apache Kafka or AWS SQS to ensure data durability and guarantee data processing. You are free to process data with the Rule engine or push it to further processing in external systems.</p>
+                    <a class="title" href="/docs/pe/user-guide/rule-engine-2-0/overview/">数据处理</a>
+                    <p>ThingsBoard 允许您使用拖放规则链设计器定义应用程序逻辑。规则引擎是一个强大且可扩展的处理框架，它利用行业标准消息队列实现（如 Apache Kafka 或 AWS SQS）来确保数据持久性和保证数据处理。您可以使用规则引擎处理数据或将其推送到外部系统中进行进一步处理。</p>
                 </div>
             </div>
         </div>
         <div class="col-lg-6">
             <div class="block">
-                <img src="/images/visualization-icon.svg" alt="Data visualization icon">
+                <img src="/images/visualization-icon.svg" alt="数据可视化图标">
                 <div>
-                    <a class="title" href="/docs/user-guide/dashboards/">Data visualization</a>
-                    <p>Visualize collected data using rich interactive dashboards. Develop multi-state interactive dashboards with zero coding efforts and built-in charts, gauges, maps, tables, and control widgets. Customize every dashboard aspect using advanced widget settings or even custom widget bundles. Low latency updates are possible with embedded web-sockets support.</p>
+                    <a class="title" href="/docs/user-guide/dashboards/">数据可视化</a>
+                    <p>使用丰富的交互式仪表板可视化收集的数据。使用零编码工作量和内置图表、仪表、地图、表格和控制小部件开发多状态交互式仪表板。使用高级小部件设置甚至自定义小部件包自定义每个仪表板方面。通过嵌入式 Web 套接字支持，可以实现低延迟更新。</p>
                 </div>
             </div>
         </div>
         <div class="col-lg-6">
             <div class="block">
-                <img src="/images/device-icon.svg" alt="Device icon">
+                <img src="/images/device-icon.svg" alt="设备图标">
                 <div>
-                    <a class="title" href="/docs/mobile/">Mobile application</a>
-                    <p>Build your own IoT mobile application with minimum coding efforts using ThingsBoard Mobile Application, an open-source project based on Flutter. Leverage a built-in set of mobile actions to take a photo, scan QR code, update location, and more directly within the dashboard.</p>
+                    <a class="title" href="/docs/mobile/">移动应用程序</a>
+                    <p>使用 ThingsBoard 移动应用程序（一个基于 Flutter 的开源项目）以最少的编码工作量构建您自己的物联网移动应用程序。利用内置的一组移动操作，可以在仪表板中直接拍照、扫描二维码、更新位置等。</p>
                 </div>
             </div>
         </div>
         <div class="col-lg-6">
             <div class="block">
-                <img src="/images/tenancy-icon.svg" alt="Tenancy icon">
+                <img src="/images/tenancy-icon.svg" alt="多租户图标">
                 <div>
-                    <a class="title" href="/docs/user-guide/entities-and-relations/">Multi-tenancy</a>
-                    <p>ThingsBoard provides UI and API to manage tenants, customers, users, devices, and assets. Single tenant may have multiple tenant administrators and millions of devices and customers. It also offers out-of-the-box support of OTA updates for your smart meters.</p>
+                    <a class="title" href="/docs/user-guide/entities-and-relations/">多租户</a>
+                    <p>ThingsBoard 提供 UI 和 API 来管理租户、客户、用户、设备和资产。单个租户可能有多个租户管理员和数百万台设备和客户。它还开箱即用地支持智能电表的 OTA 更新。</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-## Smart office solution overview
+## 智能办公解决方案概述
 
-The diagram below identifies data flow and integration points for a typical smart office solution that uses the ThingsBoard platform to collect and analyze data from IoT sensors.
+下图标识了使用 ThingsBoard 平台收集和分析物联网传感器数据的典型智能办公解决方案的数据流和集成点。
 
 <object width="100%" style="max-width: max-content; margin: 32px 0" data="/images/iot-use-cases/common-edge.svg"></object>
 
-You may notice plenty of connectivity options for the IoT sensors: direct connection to the cloud, through the IoT Gateway, integration with a third-party system or ThingsBoard Edge.
-Most of the smart office projects today use IoT Gateway deployed at the office site. 
-Usually this device is either running [ThingsBoard IoT Gateway](/docs/iot-gateway/what-is-iot-gateway/) or using [Gateway API](/docs/reference/gateway-mqtt-api/).
-Using the gateway, customers optimize hardware and connectivity cost. You may connect multiple sensors via BLE or other technology to a gateway and use only one WiFi or wired connectivity module.
+您可能会注意到物联网传感器的连接选项很多：直接连接到云、通过物联网网关、与第三方系统集成或 ThingsBoard Edge。
+如今，大多数智能办公项目都使用部署在办公现场的物联网网关。
+通常，此设备要么运行 [ThingsBoard 物联网网关](/docs/iot-gateway/what-is-iot-gateway/)，要么使用 [网关 API](/docs/reference/gateway-mqtt-api/)。
+使用网关，客户可以优化硬件和连接成本。您可以通过 BLE 或其他技术将多个传感器连接到网关，并且只使用一个 WiFi 或有线连接模块。
 
-Advanced smart-office IoT solutions may use LoRaWAN or SigFox devices as well.
+高级智能办公物联网解决方案也可能使用 LoRaWAN 或 SigFox 设备。
 
-The platform supports industry-standard encryption algorithms and device credentials types. ThingsBoard stores data in the fault-tolerant and reliable Cassandra database.
-The Rule Engine enables forwarding incoming data to various analytics systems, such as Apache Spark or Hadoop, using Kafka or other Message buses.
+该平台支持行业标准加密算法和设备凭据类型。ThingsBoard 将数据存储在容错且可靠的 Cassandra 数据库中。
+规则引擎支持使用 Kafka 或其他消息总线将传入数据转发到各种分析系统，例如 Apache Spark 或 Hadoop。
 
-## Learn more
+## 了解更多
 <div class="usecases-bottom-nav">
-    <a href="/docs/getting-started-guides/helloworld/" class="button">Getting started</a>
-    <a href="/industries/smart-energy/" class="button">Customers feedback</a>
-    <a href="/docs/#platform-features" class="button">Platform features</a>
-    <a href="/docs/reference/" class="button">Architecture</a>
-    <a href="/docs/contact-us/" class="button">Contact us</a>
+    <a href="/docs/getting-started-guides/helloworld/" class="button">入门</a>
+    <a href="/industries/smart-energy/" class="button">客户反馈</a>
+    <a href="/docs/#platform-features" class="button">平台功能</a>
+    <a href="/docs/reference/" class="button">架构</a>
+    <a href="/docs/contact-us/" class="button">联系我们</a>
 </div>

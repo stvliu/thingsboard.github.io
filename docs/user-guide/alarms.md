@@ -2,8 +2,8 @@
 layout: docwithnav
 assignees:
 - ashvayka
-title: Working with IoT device alarms
-description: IoT device alarm management using ThingsBoard alarms feature
+title: 使用物联网设备警报
+description: 使用 ThingsBoard 警报功能进行物联网设备警报管理
 entityAlarms:
     0:
         image: /images/user-guide/alarms/alarm-entity-details-CE.png

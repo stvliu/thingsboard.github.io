@@ -1,39 +1,38 @@
-
 * TOC
 {:toc}
 
-## Getting started
+## 入门
 
-##### HTTP basics
+##### HTTP 基础知识
 
-[HTTP](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol) is a general-purpose network protocol that can be used in IoT applications. 
-You can find more information about HTTP [here](https://www.w3.org/Protocols/rfc2616/rfc2616.txt).
-HTTP protocol is TCP based and uses request-response model.  
+[HTTP](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol) 是一种通用网络协议，可用于物联网应用。
+您可以在 [此处](https://www.w3.org/Protocols/rfc2616/rfc2616.txt) 找到有关 HTTP 的更多信息。
+HTTP 协议基于 TCP，并使用请求-响应模型。
 
-ThingsBoard server nodes act as an HTTP Server that supports both HTTP and HTTPS protocols.
+ThingsBoard 服务器节点充当支持 HTTP 和 HTTPS 协议的 HTTP 服务器。
 
-##### Client libraries setup
+##### 客户端库设置
 
-You can find HTTP client libraries for different programming languages on the web. Examples in this article will be based on [curl](https://en.wikipedia.org/wiki/CURL).
-In order to setup this tool, you can use instructions in our [Hello World](/docs/{{docsPrefix}}getting-started-guides/helloworld/) guide.
+您可以在网络上找到适用于不同编程语言的 HTTP 客户端库。本文中的示例将基于 [curl](https://en.wikipedia.org/wiki/CURL)。
+为了设置此工具，您可以使用我们的 [Hello World](/docs/{{docsPrefix}}getting-started-guides/helloworld/) 指南中的说明。
 
-##### HTTP Authentication and error codes
+##### HTTP 身份验证和错误代码
 
-We will use *access token* device credentials in this article and they will be referred to later as **$ACCESS_TOKEN**.
-The application needs to include **$ACCESS_TOKEN** as a path parameter in each HTTP request.
-Possible error codes and their reasons:
+我们将在本文中使用 *访问令牌* 设备凭据，稍后将它们称为 **$ACCESS_TOKEN**。
+应用程序需要在每个 HTTP 请求中将 **$ACCESS_TOKEN** 作为路径参数包含在内。
+可能的错误代码及其原因：
 
-* **400 Bad Request** - Invalid URL, request parameters or body.
-* **401 Unauthorized** - Invalid **$ACCESS_TOKEN**.
-* **404 Not Found** - Resource not found.
+* **400 Bad Request** - 无效的 URL、请求参数或正文。
+* **401 Unauthorized** - 无效的 **$ACCESS_TOKEN**。
+* **404 Not Found** - 未找到资源。
 
 {% include templates/api/key-value-format.md %}
 
-Using custom binary format or some serialization framework is also possible. See [protocol customization](#protocol-customization) for more details.
+也可以使用自定义二进制格式或某些序列化框架。有关更多详细信息，请参阅 [协议自定义](#protocol-customization)。
 
-## Telemetry upload API
+## 遥测上传 API
 
-In order to publish telemetry data to ThingsBoard server node, send POST request to the following URL:
+为了将遥测数据发布到 ThingsBoard 服务器节点，请向以下 URL 发送 POST 请求：
 
 {% if docsPrefix == null or docsPrefix == "pe/" %}
 ```shell
@@ -41,12 +40,12 @@ http(s)://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/telemetry
 ```
 {: .copy-code}
 
-Where
-- **$THINGSBOARD_HOST_NAME** - the hostname or IP address your platform is running on;
-- **$ACCESS_TOKEN** - device access token.
+其中
+- **$THINGSBOARD_HOST_NAME** - 平台运行的主机名或 IP 地址；
+- **$ACCESS_TOKEN** - 设备访问令牌。
 {% endif %}
 {% if docsPrefix == null %}
-If you use live demo server, the command will look like this:
+如果您使用实时演示服务器，则命令如下所示：
 
 ```shell
 https://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/telemetry
@@ -61,51 +60,51 @@ https://thingsboard.cloud/api/v1/$ACCESS_TOKEN/telemetry
 ```
 {: .copy-code}
 
-Where **$ACCESS_TOKEN** - device access token.
+其中 **$ACCESS_TOKEN** - 设备访问令牌。
 
 {% endif %}
 
-The simplest supported data formats are:
+最简单的支持的数据格式是：
 
 ```json
 {"key1":"value1", "key2":"value2"}
 ```
 
-or
+或
 
 ```json
 [{"key1":"value1"}, {"key2":"value2"}]
 ```
 
-In this case, the server-side timestamp will be assigned to uploaded data!
+在这种情况下，服务器端时间戳将被分配给上传的数据！
 
-In case your device is able to get the client-side timestamp, you can use following format:
+如果您的设备能够获取客户端时间戳，则可以使用以下格式：
 
 ```json
 {"ts":1451649600512, "values":{"key1":"value1", "key2":"value2"}}
 ```
 
-In the example above, we assume that "1451649600512" is a [unix timestamp](https://en.wikipedia.org/wiki/Unix_time) with milliseconds precision.
-For example, the value '1451649600512' corresponds to 'Fri, 01 Jan 2016 12:00:00.512 GMT'
+在上面的示例中，我们假设 "1451649600512" 是具有毫秒精度的 [unix 时间戳](https://en.wikipedia.org/wiki/Unix_time)。
+例如，值 '1451649600512' 对应于 'Fri, 01 Jan 2016 12:00:00.512 GMT'
 
 {% capture tabspec %}http-telemetry-upload
-A,Example,shell,resources/http-telemetry.sh,/docs/reference/resources/http-telemetry.sh
+A,示例,shell,resources/http-telemetry.sh,/docs/reference/resources/http-telemetry.sh
 B,telemetry-data-as-object.json,json,resources/telemetry-data-as-object.json,/docs/reference/resources/telemetry-data-as-object.json
 C,telemetry-data-as-array.json,json,resources/telemetry-data-as-array.json,/docs/reference/resources/telemetry-data-as-array.json
 D,telemetry-data-with-ts.json,json,resources/telemetry-data-with-ts.json,/docs/reference/resources/telemetry-data-with-ts.json{% endcapture %}
 {% include tabs.html %}
 
-## Attributes API
+## 属性 API
 
-ThingsBoard attributes API allows devices to
+ThingsBoard 属性 API 允许设备
 
-* Upload [client-side](/docs/{{docsPrefix}}user-guide/attributes/#attribute-types) device attributes to the server.
-* Request [client-side](/docs/{{docsPrefix}}user-guide/attributes/#attribute-types) and [shared](/docs/{{docsPrefix}}user-guide/attributes/#attribute-types) device attributes from the server.
-* Subscribe to [shared](/docs/{{docsPrefix}}user-guide/attributes/#attribute-types) device attributes from the server.
- 
-##### Publish attribute update to the server
+* 将 [客户端](/docs/{{docsPrefix}}user-guide/attributes/#attribute-types) 设备属性上传到服务器。
+* 从服务器请求 [客户端](/docs/{{docsPrefix}}user-guide/attributes/#attribute-types) 和 [共享](/docs/{{docsPrefix}}user-guide/attributes/#attribute-types) 设备属性。
+* 订阅来自服务器的 [共享](/docs/{{docsPrefix}}user-guide/attributes/#attribute-types) 设备属性。
 
-In order to publish client-side device attributes to ThingsBoard server node, send POST request to the following URL:
+##### 将属性更新发布到服务器
+
+为了将客户端设备属性发布到 ThingsBoard 服务器节点，请向以下 URL 发送 POST 请求：
 
 {% if docsPrefix == null or docsPrefix == "pe/" %}
 ```shell
@@ -113,12 +112,12 @@ http(s)://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/attributes
 ```
 {: .copy-code}
 
-Where
-- **$THINGSBOARD_HOST_NAME** - the hostname or IP address your platform is running on;
-- **$ACCESS_TOKEN** - device access token.
+其中
+- **$THINGSBOARD_HOST_NAME** - 平台运行的主机名或 IP 地址；
+- **$ACCESS_TOKEN** - 设备访问令牌。
 {% endif %}
 {% if docsPrefix == null %}
-If you use live demo server, the command will look like this:
+如果您使用实时演示服务器，则命令如下所示：
 
 ```shell
 https://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/attributes
@@ -133,18 +132,18 @@ https://thingsboard.cloud/api/v1/$ACCESS_TOKEN/attributes
 ```
 {: .copy-code}
 
-Where **$ACCESS_TOKEN** - device access token.
+其中 **$ACCESS_TOKEN** - 设备访问令牌。
 
 {% endif %}
 
 {% capture tabspec %}http-attributes-upload
-A,Example,shell,resources/http-attributes-publish.sh,/docs/reference/resources/http-attributes-publish.sh
+A,示例,shell,resources/http-attributes-publish.sh,/docs/reference/resources/http-attributes-publish.sh
 C,new-attributes-values.json,json,resources/new-attributes-values.json,/docs/reference/resources/new-attributes-values.json{% endcapture %}
 {% include tabs.html %}
 
-##### Request attribute values from the server
+##### 从服务器请求属性值
 
-In order to request client-side or shared device attributes to ThingsBoard server node, send GET request to the following URL:
+为了向 ThingsBoard 服务器节点请求客户端或共享设备属性，请向以下 URL 发送 GET 请求：
 
 {% if docsPrefix == null or docsPrefix == "pe/" %}
 ```shell
@@ -152,12 +151,12 @@ http(s)://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/attributes?clientKeys=attr
 ```
 {: .copy-code}
 
-Where
-- **$THINGSBOARD_HOST_NAME** - the hostname or IP address your platform is running on;
-- **$ACCESS_TOKEN** - device access token.
+其中
+- **$THINGSBOARD_HOST_NAME** - 平台运行的主机名或 IP 地址；
+- **$ACCESS_TOKEN** - 设备访问令牌。
 {% endif %}
 {% if docsPrefix == null %}
-If you use live demo server, the command will look like this:
+如果您使用实时演示服务器，则命令如下所示：
 
 ```shell
 https://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/attributes?clientKeys=attribute1,attribute2&sharedKeys=shared1,shared2
@@ -172,26 +171,26 @@ https://thingsboard.cloud/api/v1/$ACCESS_TOKEN/attributes?clientKeys=attribute1,
 ```
 {: .copy-code}
 
-Where **$ACCESS_TOKEN** - device access token.
+其中 **$ACCESS_TOKEN** - 设备访问令牌。
 
 {% endif %}
 
 {% capture tabspec %}http-attributes-request
-A,Example,shell,resources/http-attributes-request.sh,/docs/reference/resources/http-attributes-request.sh
-B,Result,json,resources/attributes-response.json,/docs/reference/resources/attributes-response.json{% endcapture %}
+A,示例,shell,resources/http-attributes-request.sh,/docs/reference/resources/http-attributes-request.sh
+B,结果,json,resources/attributes-response.json,/docs/reference/resources/attributes-response.json{% endcapture %}
 {% include tabs.html %}
 
 {% capture difference %}
-**Please note**
+**请注意**
 <br>
-the intersection of client-side and shared device attribute keys is a bad practice! 
-However, it is still possible to have same keys for client, shared or even server-side attributes.
+客户端和共享设备属性键的交集是一种不好的做法！
+但是，客户端、共享甚至服务器端属性仍然可以使用相同的键。
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-##### Subscribe to attribute updates from the server
+##### 订阅来自服务器的属性更新
 
-In order to subscribe to shared device attribute changes, send GET request with optional "timeout" request parameter to the following URL:
+为了订阅共享设备属性的更改，请向以下 URL 发送带有可选的 "timeout" 请求参数的 GET 请求：
 
 {% if docsPrefix == null or docsPrefix == "pe/" %}
 ```shell
@@ -199,12 +198,12 @@ http(s)://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/attributes/updates
 ```
 {: .copy-code}
 
-Where
-- **$THINGSBOARD_HOST_NAME** - the hostname or IP address your platform is running on;
-- **$ACCESS_TOKEN** - device access token.
+其中
+- **$THINGSBOARD_HOST_NAME** - 平台运行的主机名或 IP 地址；
+- **$ACCESS_TOKEN** - 设备访问令牌。
 {% endif %}
 {% if docsPrefix == null %}
-If you use live demo server, the command will look like this:
+如果您使用实时演示服务器，则命令如下所示：
 
 ```shell
 https://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/attributes/updates
@@ -219,26 +218,26 @@ https://thingsboard.cloud/api/v1/$ACCESS_TOKEN/attributes/updates
 ```
 {: .copy-code}
 
-Where **$ACCESS_TOKEN** - device access token.
+其中 **$ACCESS_TOKEN** - 设备访问令牌。
 
 {% endif %}
 
-Once shared attribute will be changed by one of the server-side components (REST API or Rule Chain) the client will receive the following update: 
+一旦共享属性被服务器端组件之一（REST API 或规则链）更改，客户端将收到以下更新：
 
 {% capture tabspec %}http-attributes-subscribe
-A,Example,shell,resources/http-attributes-subscribe.sh,/docs/reference/resources/http-attributes-subscribe.sh
-B,Result,json,resources/attributes-response.json,/docs/reference/resources/attributes-response.json{% endcapture %}
+A,示例,shell,resources/http-attributes-subscribe.sh,/docs/reference/resources/http-attributes-subscribe.sh
+B,结果,json,resources/attributes-response.json,/docs/reference/resources/attributes-response.json{% endcapture %}
 {% include tabs.html %}
 
-## JSON value support
+## JSON 值支持
 
 {% include templates/api/json.md %}
 
 ## RPC API
 
-### Server-side RPC
+### 服务器端 RPC
 
-In order to subscribe to RPC commands from the server, send GET request with optional "timeout" request parameter to the following URL:
+为了订阅来自服务器的 RPC 命令，请向以下 URL 发送带有可选的 "timeout" 请求参数的 GET 请求：
 
 {% if docsPrefix == null or docsPrefix == "pe/" %}
 ```shell
@@ -246,12 +245,12 @@ http(s)://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/rpc
 ```
 {: .copy-code}
 
-Where
-- **$THINGSBOARD_HOST_NAME** - the hostname or IP address your platform is running on;
-- **$ACCESS_TOKEN** - device access token.
+其中
+- **$THINGSBOARD_HOST_NAME** - 平台运行的主机名或 IP 地址；
+- **$ACCESS_TOKEN** - 设备访问令牌。
 {% endif %}
 {% if docsPrefix == null %}
-If you use live demo server, the command will look like this:
+如果您使用实时演示服务器，则命令如下所示：
 
 ```shell
 https://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/rpc
@@ -266,12 +265,12 @@ https://thingsboard.cloud/api/v1/$ACCESS_TOKEN/rpc
 ```
 {: .copy-code}
 
-Where **$ACCESS_TOKEN** - device access token.
+其中 **$ACCESS_TOKEN** - 设备访问令牌。
 
 {% endif %}
 
-Once subscribed, a client may receive rpc request or a timeout message if there are no requests to a particular device.
-An example of RPC request body is shown below:
+订阅后，客户端可能会收到 rpc 请求或超时消息（如果没有对特定设备的请求）。
+RPC 请求正文的示例如下：
 
 ```json
 {
@@ -284,13 +283,13 @@ An example of RPC request body is shown below:
 }
 ```
 
-where 
+其中
 
- - **id** - request id, integer request identifier
- - **method** - RPC method name, string
- - **params** - RPC method params, custom json object 
+ - **id** - 请求 id，整数请求标识符
+ - **method** - RPC 方法名称，字符串
+ - **params** - RPC 方法参数，自定义 json 对象
 
-and can reply to them using POST request to the following URL:
+并可以使用 POST 请求回复它们，网址如下：
 
 {% if docsPrefix == null or docsPrefix == "pe/" %}
 ```shell
@@ -300,7 +299,7 @@ http(s)://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/rpc/{$id}
 
 {% endif %}
 {% if docsPrefix == null %}
-If you use live demo server, the command will look like this:
+如果您使用实时演示服务器，则命令如下所示：
 
 ```shell
 https://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/rpc/{$id}
@@ -317,32 +316,32 @@ https://thingsboard.cloud/api/v1/$ACCESS_TOKEN/rpc/{$id}
 
 {% endif %}
 
-where **$id** is an integer request identifier.
+其中 **$id** 是整数请求标识符。
 <br>
 <br>
-**Let’s look at an example:**
+**我们来看一个例子：**
 
-- Use **RPC debug terminal** dashboard;
+- 使用 **RPC 调试终端** 仪表板；
 
-- Subscribe to RPC commands from the server. To do this, in the first terminal window send GET request with observe flag;
+- 订阅来自服务器的 RPC 命令。为此，在第一个终端窗口中发送带有观察标志的 GET 请求；
 
-- Send an RPC request "connect" to the device;
+- 向设备发送 RPC 请求 "connect"；
 
-- In the second terminal window simulate send a response from the device to the server;
+- 在第二个终端窗口中模拟从设备向服务器发送响应；
 
-- You should receive a response from the device: {"result":"ok"}
+- 您应该收到来自设备的响应：{"result":"ok"}
 
 {% include images-gallery.html imageCollection="server-side-rpc" %}
 
 {% capture tabspec %}http-rpc-from-server
-A,Example Subscribe,shell,resources/http-rpc-subscribe.sh,/docs/reference/resources/http-rpc-subscribe.sh
-B,Example Reply,shell,resources/http-rpc-reply.sh,/docs/reference/resources/http-rpc-reply.sh
-C,Reply Body,shell,resources/rpc-response.json,/docs/reference/resources/rpc-response.json{% endcapture %}
+A,示例订阅,shell,resources/http-rpc-subscribe.sh,/docs/reference/resources/http-rpc-subscribe.sh
+B,示例回复,shell,resources/http-rpc-reply.sh,/docs/reference/resources/http-rpc-reply.sh
+C,回复正文,shell,resources/rpc-response.json,/docs/reference/resources/rpc-response.json{% endcapture %}
 {% include tabs.html %}
 
-### Client-side RPC
+### 客户端 RPC
 
-In order to send RPC commands to the server, send POST request to the following URL:
+为了向服务器发送 RPC 命令，请向以下 URL 发送 POST 请求：
 
 {% if docsPrefix == null or docsPrefix == "pe/" %}
 ```shell
@@ -350,12 +349,12 @@ http(s)://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/rpc
 ```
 {: .copy-code}
 
-Where
-- **$THINGSBOARD_HOST_NAME** - the hostname or IP address your platform is running on;
-- **$ACCESS_TOKEN** - device access token.
+其中
+- **$THINGSBOARD_HOST_NAME** - 平台运行的主机名或 IP 地址；
+- **$ACCESS_TOKEN** - 设备访问令牌。
 {% endif %}
 {% if docsPrefix == null %}
-If you use live demo server, the command will look like this:
+如果您使用实时演示服务器，则命令如下所示：
 
 ```shell
 https://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/rpc
@@ -370,40 +369,40 @@ https://thingsboard.cloud/api/v1/$ACCESS_TOKEN/rpc
 ```
 {: .copy-code}
 
-Where **$ACCESS_TOKEN** - device access token.
+其中 **$ACCESS_TOKEN** - 设备访问令牌。
 
 {% endif %}
 
-Both request and response body should be valid JSON documents. The content of the documents is specific to the rule node that will handle your request.
+请求和响应正文都应该是有效的 JSON 文档。文档的内容取决于将处理您请求的规则节点。
 <br>
 <br>
-**Let's look at an example:**
+**我们来看一个例子：**
 
-- Add two nodes to the Rule Chain: "script" and "rpc call reply";
+- 向规则链添加两个节点："脚本" 和 "rpc 调用回复"；
 
-- In the **script** node enter the function:
+- 在 **脚本** 节点中输入函数：
 
 ```shell
 return {msg: {time:String(new Date())}, metadata: metadata, msgType: msgType};
 ```
 {: .copy-code}
-- Send request to the server;
+- 向服务器发送请求；
 
-- You should receive a response from the server.
+- 您应该收到来自服务器的响应。
 
 {% include images-gallery.html imageCollection="client-side-rpc" %}
 
 {% capture tabspec %}http-rpc-from-client
-A,Example Request,shell,resources/http-rpc-from-client.sh,/docs/reference/resources/http-rpc-from-client.sh
+A,示例请求,shell,resources/http-rpc-from-client.sh,/docs/reference/resources/http-rpc-from-client.sh
 B,rpc-client-request.json,shell,resources/rpc-client-request.json,/docs/reference/resources/rpc-client-request.json
-C,Response Body,shell,resources/rpc-server-response.json,/docs/reference/resources/rpc-server-response.json{% endcapture %}  
+C,响应正文,shell,resources/rpc-server-response.json,/docs/reference/resources/rpc-server-response.json{% endcapture %}  
 {% include tabs.html %}
 
-## Claiming devices
+## 声明设备
 
-Please see the corresponding article to get more information about the [Claiming devices](/docs/{{docsPrefix}}user-guide/claiming-devices) feature.
+请参阅相应文章以获取有关 [声明设备](/docs/{{docsPrefix}}user-guide/claiming-devices) 功能的更多信息。
 
-In order to initiate claiming device, send POST request to the following URL:
+为了启动声明设备，请向以下 URL 发送 POST 请求：
 
 {% if docsPrefix == null or docsPrefix == "pe/" %}
 ```shell
@@ -411,12 +410,12 @@ http(s)://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/claim
 ```
 {: .copy-code}
 
-Where
-- **$THINGSBOARD_HOST_NAME** - the hostname or IP address your platform is running on;
-- **$ACCESS_TOKEN** - device access token.
+其中
+- **$THINGSBOARD_HOST_NAME** - 平台运行的主机名或 IP 地址；
+- **$ACCESS_TOKEN** - 设备访问令牌。
 {% endif %}
 {% if docsPrefix == null %}
-If you use live demo server, the command will look like this:
+如果您使用实时演示服务器，则命令如下所示：
 
 ```shell
 https://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/claim
@@ -431,29 +430,29 @@ https://thingsboard.cloud/api/v1/$ACCESS_TOKEN/claim
 ```
 {: .copy-code}
 
-Where **$ACCESS_TOKEN** - device access token.
+其中 **$ACCESS_TOKEN** - 设备访问令牌。
 
 {% endif %}
 
-The supported data format is:
+支持的数据格式为：
 
 ```json
 {"secretKey":"value", "durationMs":60000}
 ```
 
 {% capture difference %}
-**Please note**
+**请注意**
 <br>
-that the above fields are optional. In case the **secretKey** is not specified, the empty string as a default value is used.
-In case the **durationMs** is not specified, the system parameter **device.claim.duration** is used (in the file **/etc/thingsboard/conf/thingsboard.yml**).
+上面的字段是可选的。如果未指定 **secretKey**，则使用空字符串作为默认值。
+如果未指定 **durationMs**，则使用系统参数 **device.claim.duration**（在文件 **/etc/thingsboard/conf/thingsboard.yml** 中）。
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-## Device provisioning
+## 设备配置
 
-Please see the corresponding article to get more information about the [Device provisioning](/docs/{{docsPrefix}}user-guide/device-provisioning) feature.
+请参阅相应文章以获取有关 [设备配置](/docs/{{docsPrefix}}user-guide/device-provisioning) 功能的更多信息。
 
-In order to initiate device provisioning, send POST request to the following URL:
+为了启动设备配置，请向以下 URL 发送 POST 请求：
 
 {% if docsPrefix == null or docsPrefix == "pe/" %}
 ```shell
@@ -461,10 +460,10 @@ http(s)://$THINGSBOARD_HOST_NAME/api/v1/provision
 ```
 {: .copy-code}
 
-Where **$THINGSBOARD_HOST_NAME** - the hostname or IP address your platform is running on;
+其中 **$THINGSBOARD_HOST_NAME** - 平台运行的主机名或 IP 地址；
 {% endif %}
 {% if docsPrefix == null %}
-If you use live demo server, the command will look like this:
+如果您使用实时演示服务器，则命令如下所示：
 
 ```shell
 https://demo.thingsboard.io/api/v1/provision
@@ -480,7 +479,7 @@ https://thingsboard.cloud/api/v1/provision
 {: .copy-code}
 {% endif %}
 
-The supported data format is:
+支持的数据格式为：
 
 ```json
 {
@@ -490,10 +489,10 @@ The supported data format is:
 }
 ```
 
-## Firmware API
+## 固件 API
 
-When ThingsBoard initiates the firmware update over HTTP it sets the fw_title, fw_version, fw_checksum, fw_checksum_algorithm shared attributes.
-To receive the shared attribute updates, the device has to GET request
+当 ThingsBoard 通过 HTTP 启动固件更新时，它会设置 fw_title、fw_version、fw_checksum、fw_checksum_algorithm 共享属性。
+为了接收共享属性更新，设备必须 GET 请求
 
 {% if docsPrefix == null or docsPrefix == "pe/" %}
 ```shell
@@ -501,14 +500,14 @@ http(s)://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/firmware?title=$TITLE&vers
 ```
 {: .copy-code}
 
-Where
-- **$THINGSBOARD_HOST_NAME** - the hostname or IP address your platform is running on;
-- **$ACCESS_TOKEN** - the device access token;  
-- **$TITLE** - the firmware title;  
-- **$VERSION** - the version of the target firmware.
+其中
+- **$THINGSBOARD_HOST_NAME** - 平台运行的主机名或 IP 地址；
+- **$ACCESS_TOKEN** - 设备访问令牌；  
+- **$TITLE** - 固件标题；  
+- **$VERSION** - 目标固件的版本。
 {% endif %}
 {% if docsPrefix == null %}
-If you use live demo server, the command will look like this:
+如果您使用实时演示服务器，则命令如下所示：
 
 ```shell
 https://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/firmware?title=$TITLE&version=$VERSION
@@ -523,17 +522,17 @@ https://thingsboard.cloud/api/v1/$ACCESS_TOKEN/firmware?title=$TITLE&version=$VE
 ```
 {: .copy-code}
 
-Where
-- **$ACCESS_TOKEN** - the device access token;
-- **$TITLE** - the firmware title;
-- **$VERSION** - the version of the target firmware.
+其中
+- **$ACCESS_TOKEN** - 设备访问令牌；
+- **$TITLE** - 固件标题；
+- **$VERSION** - 目标固件的版本。
 
 {% endif %}
 
-## Protocol customization
+## 协议定制
 
-HTTP transport can be fully customized for specific use-case by changing the corresponding [module](https://github.com/thingsboard/thingsboard/tree/master/transport/http).
+HTTP 传输可以通过更改相应的 [模块](https://github.com/thingsboard/thingsboard/tree/master/transport/http) 来完全定制以满足特定用例。
 
-## Next steps
+## 后续步骤
 
 {% assign currentGuide = "ConnectYourDevice" %}{% include templates/multi-project-guides-banner.md %}

@@ -1,129 +1,129 @@
 ---
 layout: docwithnav-pe
-title: Installing ThingsBoard PE from Azure Marketplace
-description: Installing ThingsBoard PE from Azure Marketplace
+title: 从 Azure Marketplace 安装 ThingsBoard PE
+description: 从 Azure Marketplace 安装 ThingsBoard PE
 
 ---
 
-This guide describes how to install ThingsBoard Professional Edition from Azure Marketplace. 
-Using this guide you will install [BYOL](https://docs.microsoft.com/en-us/azure/marketplace/marketplace-faq-publisher-guide#pricing-and-payment) version of the product.
-Basically, you get the license directly from ThingsBoard, Inc, but purchase corresponding server instances and infrastructure from Azure.
+本指南介绍如何从 Azure Marketplace 安装 ThingsBoard Professional Edition。
+使用本指南，您将安装产品的 [BYOL](https://docs.microsoft.com/en-us/azure/marketplace/marketplace-faq-publisher-guide#pricing-and-payment) 版本。
+基本上，您可以直接从 ThingsBoard, Inc 获取许可证，但从 Azure 购买相应的服务器实例和基础设施。
 
 * TOC
 {:toc}
 
-### Prerequisites
+### 先决条件
 
-- Active [Microsoft Azure](https://azure.microsoft.com){:target="_blank"} account.
+- 有效的 [Microsoft Azure](https://azure.microsoft.com){:target="_blank"} 帐户。
 
-### Step 1. Subscribe to ThingsBoard PE BYOL
+### 步骤 1. 订阅 ThingsBoard PE BYOL
 
-Open [ThingsBoard Professional Edition BYOL](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/things-board.tb-pe-byol) product page from Azure Marketplace.
+从 Azure Marketplace 打开 [ThingsBoard Professional Edition BYOL](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/things-board.tb-pe-byol) 产品页面。
 
-- Click the **GET IT NOW** button
+- 单击 **立即获取** 按钮
 
 ![image](/images/user-guide/install/azure-marketplace/get-it-now.png)
 
-- Review and accept terms of use and privacy policy. Click the "Continue" button.
+- 查看并接受使用条款和隐私政策。单击“继续”按钮。
 
 ![image](/images/user-guide/install/azure-marketplace/continue.png)
 
-- You will be redirected to Azure Portal. Click the "Create" button to deploy your instance.
+- 您将被重定向到 Azure 门户。单击“创建”按钮以部署您的实例。
 
 ![image](/images/user-guide/install/azure-marketplace/create.png)
 
-### Step 2. General configuration
+### 步骤 2. 常规配置
 
-- You will be redirected to "Create a virtual machine" dialog with tons of setting. 
-No worries, we are going to leave most of them with default values.
+- 您将被重定向到“创建虚拟机”对话框，其中包含大量设置。
+不用担心，我们将保留其中大多数的默认值。
 
-###### Step 2.1 Basics 
+###### 步骤 2.1 基础知识
 
-- Create new "Resource group", e.g. "thingsboard";
-- Add recognizable virtual machine name, e.g. "ThingsBoardPE-PROD";
-- Choose Region from available regions list;
-- Configure "Administrator Account" to be "SSH public key". Username **must** be ubuntu; See [official Azure Docs](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/ssh-from-windows) on how to generate the keys.
-- Click the "Next: Disks" button. 
- 
+- 创建新的“资源组”，例如“thingsboard”；
+- 添加可识别的虚拟机名称，例如“ThingsBoardPE-PROD”；
+- 从可用区域列表中选择区域；
+- 将“管理员帐户”配置为“SSH 公钥”。用户名 **必须** 为 ubuntu；请参阅 [Azure 官方文档](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/ssh-from-windows) 以了解如何生成密钥。
+- 单击“下一步：磁盘”按钮。
+
 ![image](/images/user-guide/install/azure-marketplace/config-basics.png)
 
-###### Step 2.2 Disks
+###### 步骤 2.2 磁盘
 
-- We suggest to leave this as-is, but you can optionally add new disks here;
-- Click the "Next: Networking" button.
+- 我们建议保持原样，但您也可以在此处添加新磁盘；
+- 单击“下一步：网络”按钮。
 
 ![image](/images/user-guide/install/azure-marketplace/config-disks.png)
 
-###### Step 2.3 Networking
+###### 步骤 2.3 网络
 
-- Leave all settings as-is; 
-- Make sure This VM uses preconfigured network security group;
-- Click the "Next: Management" button.
+- 保留所有设置不变；
+- 确保此虚拟机使用预配置的网络安全组；
+- 单击“下一步：管理”按钮。
 
 ![image](/images/user-guide/install/azure-marketplace/config-networking.png)
 
-###### Step 2.3 Management, Advanced, Tags
+###### 步骤 2.3 管理、高级、标签
 
-- Leave all settings as-is on all three tabs;
-- Click the "Next" button until you reach "Review + create" tab.
- 
-###### Step 2.4 Review + create
+- 在所有三个选项卡上保留所有设置不变；
+- 单击“下一步”按钮，直到到达“查看 + 创建”选项卡。
 
-- Review the final product details;
-- Make sure your name, email address and phone number is correct;
-- Click the "Create" button to start the deployment.
+###### 步骤 2.4 查看 + 创建
+
+- 查看最终产品详细信息；
+- 确保您的姓名、电子邮件地址和电话号码正确无误；
+- 单击“创建”按钮以开始部署。
 
 ![image](/images/user-guide/install/azure-marketplace/config-review.png)
 
-- Once deployment is started it may take up to 30 minutes (but usually less then 5 minutes) to complete;
+- 部署启动后，可能需要长达 30 分钟（但通常不到 5 分钟）才能完成；
 
 ![image](/images/user-guide/install/azure-marketplace/launch-progress.png)
 
-- Once your deployment is complete, click the "Go to resource" button.
+- 部署完成后，单击“转到资源”按钮。
 
 ![image](/images/user-guide/install/azure-marketplace/launch-completed.png)
 
-### Step 3. Review created resource
+### 步骤 3. 查看创建的资源
 
-You will be navigated to the resource overview page. 
-We should use this page to copy the external IP address of your instance. 
-Please copy this IP address to a safe place. 
-We will use it in our next steps. 
+您将导航到资源概览页面。
+我们应该使用此页面复制实例的外部 IP 地址。
+请将此 IP 地址复制到安全的地方。
+我们将在后续步骤中使用它。
 
-**As an example**, on the image below, the IP address is highlighted and set to "40.121.179.240" 
+**例如**，在下图中，IP 地址突出显示并设置为“40.121.179.240”
 
 ![image](/images/user-guide/install/azure-marketplace/resource-overview.png)
 
-### Step 4. Obtain your license secret
+### 步骤 4. 获取许可证密钥
 
-In order to activate your ThingsBoard instance you will need to get the license secret. 
-ThingsBoard Licenses are managed by [ThingsBoard License Portal](https://license.thingsboard.io/signup).   
+为了激活您的 ThingsBoard 实例，您需要获取许可证密钥。
+ThingsBoard 许可证由 [ThingsBoard 许可证门户](https://license.thingsboard.io/signup) 管理。
 
-Please register on [ThingsBoard License Portal](https://license.thingsboard.io/signup) to get your license. 
-See [How-to get pay-as-you-go subscription](https://www.youtube.com/watch?v=dK-QDFGxWek){:target="_blank"} or [How-to get perpetual license](https://www.youtube.com/watch?v=GPe0lHolWek){:target="_blank"} for more details.
- 
-Please save your license secret to a safe place. We will use them later in this guide.
+请在 [ThingsBoard 许可证门户](https://license.thingsboard.io/signup) 上注册以获取许可证。
+有关更多详细信息，请参阅 [如何获取即用即付订阅](https://www.youtube.com/watch?v=dK-QDFGxWek){:target="_blank"} 或 [如何获取永久许可证](https://www.youtube.com/watch?v=GPe0lHolWek){:target="_blank"}。
 
-### Step 5. Configure your license secret
+请将您的许可证密钥保存到安全的地方。我们将在本指南的后面部分使用它们。
 
-Once you get the license secret, you should put it to the thingsboard configuration file. 
+### 步骤 5. 配置许可证密钥
 
-#### Step 5.1. Connect to your Thingsboard Instance over SSH
+获取许可证密钥后，您应该将其放入 thingsboard 配置文件中。
 
-Please use the [official Azure guide](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/ssh-from-windows) on how to connect to Azure VM using SSH keys. 
+#### 步骤 5.1. 通过 SSH 连接到您的 Thingsboard 实例
 
-Note: You will need to use instance Public IP (see [Step 3](/docs/user-guide/install/pe/cluster/azure-from-markeplace/#step-3-review-created-resource)) and the key file (see [Step 2.1](/docs/user-guide/install/pe/cluster/azure-from-markeplace/#step-21-basics))
+请使用 [Azure 官方指南](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/ssh-from-windows) 了解如何使用 SSH 密钥连接到 Azure VM。
 
-#### Step 5.2. Put License Secret to thingsboard configuration file
+注意：您需要使用实例公共 IP（请参阅 [步骤 3](/docs/user-guide/install/pe/cluster/azure-from-markeplace/#step-3-review-created-resource)）和密钥文件（请参阅 [步骤 2.1](/docs/user-guide/install/pe/cluster/azure-from-markeplace/#step-21-basics)）
 
-Open the file for editing using the following command:
+#### 步骤 5.2. 将许可证密钥放入 thingsboard 配置文件
+
+使用以下命令打开文件进行编辑：
 
 ```bash 
 sudo nano /etc/thingsboard/conf/thingsboard.conf
-``` 
+```
 {: .copy-code}
 
-Locate the following configuration block:
+找到以下配置块：
 
 ```bash
 # License secret obtained from ThingsBoard License Portal (https://license.thingsboard.io)
@@ -131,7 +131,7 @@ Locate the following configuration block:
 # export TB_LICENSE_SECRET=
 ```
 
-and put your license secret. Please don't forget to uncomment the export statement. See example below: 
+并放入您的许可证密钥。请不要忘记取消注释 export 语句。请参阅以下示例：
 
 ```bash
 # License secret obtained from ThingsBoard License Portal (https://license.thingsboard.io)
@@ -139,9 +139,9 @@ and put your license secret. Please don't forget to uncomment the export stateme
 export TB_LICENSE_SECRET=YOUR_LICENSE_SECRET_HERE
 ```
 
-### Step 6. Launch ThingsBoard service
+### 步骤 6. 启动 ThingsBoard 服务
 
-Execute the following command to start ThingsBoard:
+执行以下命令启动 ThingsBoard：
 
 ```bash
 sudo service thingsboard start
@@ -149,43 +149,42 @@ sudo service thingsboard start
 {: .copy-code}
 
 {% capture 90-sec-ui %}
-Please allow up to 120 seconds for the Web UI to start. This is applicable only for slow machines with 1-2 CPUs or 1-2 GB RAM.{% endcapture %}
+请允许长达 120 秒的时间来启动 Web UI。这仅适用于具有 1-2 个 CPU 或 1-2 GB RAM 的慢速机器。{% endcapture %}
 {% include templates/info-banner.md content=90-sec-ui %}
 
-### Step 7. Connect to Thingsboard UI
+### 步骤 7. 连接到 Thingsboard UI
 
-Now you can open this link in your browser:
+现在您可以在浏览器中打开此链接：
 
 - http://PUBLIC_IP_ADDRESS/login
 
-In this example:
+在此示例中：
 
 - http://40.121.179.240/login
 
-Use this login to connect as system Administrator 
+使用此登录名以系统管理员身份连接
 
 - **sysadmin@thingsboard.org**
 
-Default password for System Administrator is: 
+系统管理员的默认密码是：
 
--  **sysadmin**
+- **sysadmin**
 
-Now you can proceed to the next steps.
+现在您可以继续执行后续步骤。
 
-### Post-installation steps
+### 安装后步骤
 
-**Configure HAProxy to enable HTTPS**
+**配置 HAProxy 以启用 HTTPS**
 
- * Step 1. Assign valid domain name system (DNS) record to your instance external IP address.
- * Step 2. Connect to your instance using SSH or PuTTY using instructions from the previous questions above.
- * Step 3. Execute the following commands:
- ```bash
+* 步骤 1. 将有效的域名系统 (DNS) 记录分配给您的实例外部 IP 地址。
+* 步骤 2. 使用上述先前问题中的说明，使用 SSH 或 PuTTY 连接到您的实例。
+* 步骤 3. 执行以下命令：
+```bash
  sudo certbot-certonly --domain smth.yourcompany.com --email support@yourcompany.com
  sudo haproxy-refresh
  ```
-    where **smth.yourcompany.com** is your DNS name from the second step
-    and **support@yourcompany.com** is your email to get notifications from [certbot](https://certbot.eff.org/).
+其中 **smth.yourcompany.com** 是您从第二步获得的 DNS 名称，**support@yourcompany.com** 是您从 [certbot](https://certbot.eff.org/) 获取通知的电子邮件。
 
-### Next steps
+### 后续步骤
 
 {% assign currentGuide = "InstallationGuides" %}{% include templates/guides-banner.md %}

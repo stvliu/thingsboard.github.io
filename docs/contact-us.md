@@ -1,6 +1,6 @@
 ---
 layout: common
-title: Contact us
+title: 联系我们
 notitle: "true"
 ---
 <script type="text/javascript">
@@ -62,7 +62,7 @@ notitle: "true"
     }
 
 </script>
-<h1 class="contact-us-title">Contact Us</h1>
+<h1 class="contact-us-title">联系我们</h1>
 <div class="background">
     <div class="main1"></div><div class="small1"></div><div class="small2"></div><div class="small3"></div><div class="small4"></div>
 </div>
@@ -71,56 +71,56 @@ notitle: "true"
         <div class="form-section">
             <div class="form-element first half">
                 <label for="first-name">
-                    <input class="form-control" value="" placeholder="Enter First Name" name="first-name" type="text" size="40" maxlength="50">
-                    <p>First Name*</p>
+                    <input class="form-control" value="" placeholder="输入名字" name="first-name" type="text" size="40" maxlength="50">
+                    <p>名字*</p>
                 </label>
             </div>
             <div class="form-element half">
                 <label for="last-name">
-                    <input class="form-control" value="" placeholder="Enter Last Name" name="last-name" type="text" size="40" maxlength="50">
-                    <p>Last Name*</p>
+                    <input class="form-control" value="" placeholder="输入姓氏" name="last-name" type="text" size="40" maxlength="50">
+                    <p>姓氏*</p>
                 </label>
             </div>
             <div class="form-element first half">
                 <label for="email">
-                    <input class="form-control" value="" placeholder="Enter Email" name="email" type="email" size="40" maxlength="80">
-                    <p>Email Address*</p>
+                    <input class="form-control" value="" placeholder="输入邮箱" name="email" type="email" size="40" maxlength="80">
+                    <p>邮箱地址*</p>
                 </label>
             </div>
             <div class="form-element half">
                 <label for="company">
-                    <input class="form-control" value="" placeholder="Enter Company" name="company" type="text" size="40" maxlength="80">
-                    <p>Company*</p>
+                    <input class="form-control" value="" placeholder="输入公司" name="company" type="text" size="40" maxlength="80">
+                    <p>公司*</p>
                 </label>
             </div>
             <div class="form-element">
                 <label for="subject" class="select-label">
                     <select class="form-control select" name="subject">
-                        <option value="" disabled selected>Select Subject</option>
-                        <option value="Technical Support">Technical Support</option>
-                        <option value="ThingsBoard Products">ThingsBoard Products</option>
-                        <option value="Deployment Options">Deployment Options</option>
-                        <option value="Training">Training</option>
-                        <option value="Professional Services">Professional Services</option>
-                        <option value="Partnership">Partnership</option>
-                        <option value="Press or Analyst Inquiry">Press or Analyst Inquiry</option>
-                        <option value="General Feedback">General Feedback</option>
-                        <option value="Other">Other</option>
+                        <option value="" disabled selected>选择主题</option>
+                        <option value="Technical Support">技术支持</option>
+                        <option value="ThingsBoard Products">ThingsBoard 产品</option>
+                        <option value="Deployment Options">部署选项</option>
+                        <option value="Training">培训</option>
+                        <option value="Professional Services">专业服务</option>
+                        <option value="Partnership">合作伙伴关系</option>
+                        <option value="Press or Analyst Inquiry">新闻或分析师咨询</option>
+                        <option value="General Feedback">一般反馈</option>
+                        <option value="Other">其他</option>
                     </select>
-                    <p>Subject*</p>
+                    <p>主题*</p>
                 </label>
             </div>
             <div class="form-element">
                 <label for="message">
-                    <textarea class="form-control text-area" placeholder="Enter Message" name="message" cols="50" rows="4" maxlength="3000"></textarea>
-                    <p class="text-area-label">Message*</p>
+                    <textarea class="form-control text-area" placeholder="输入信息" name="message" cols="50" rows="4" maxlength="3000"></textarea>
+                    <p class="text-area-label">信息*</p>
                 </label>
             </div>
             <input type="hidden" name="_next" value="/docs/contact-us-thanks/">
             <input type="text" name="_gotcha" style="display:none">
         </div>
         <div class="submit-button-container">
-             <input class="button" value="Submit" type="submit">
+             <input class="button" value="提交" type="submit">
         </div>
     </fieldset>
 </form>

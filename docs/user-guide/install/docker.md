@@ -2,8 +2,8 @@
 layout: docwithnav
 assignees:
 - ashvayka
-title: Installing ThingsBoard using Docker (Linux or Mac OS)
-description: Installing ThingsBoard IoT Platform using Docker (Linux or Mac OS)
+title: 使用 Docker 安装 ThingsBoard（Linux 或 Mac OS）
+description: 使用 Docker 安装 ThingsBoard IoT 平台（Linux 或 Mac OS）
 
 ---
 
@@ -12,57 +12,57 @@ description: Installing ThingsBoard IoT Platform using Docker (Linux or Mac OS)
 * TOC
 {:toc}
 
-This guide will help you to install and start ThingsBoard using Docker on Linux or Mac OS.
+本指南将帮助您在 Linux 或 Mac OS 上使用 Docker 安装并启动 ThingsBoard。
 
 
-## Prerequisites
+## 先决条件
 
 {% include templates/install/docker-install.md %}
 
 {% include templates/install/docker-install-note.md %}
 
-## Running
+## 运行
 
-Depending on the database used there are three type of ThingsBoard single instance docker images:
+根据所使用的数据库，有三种类型的 ThingsBoard 单实例 docker 镜像：
 
-* [thingsboard/tb-postgres](https://hub.docker.com/r/thingsboard/tb-postgres/) - single instance of ThingsBoard with PostgreSQL database.
+* [thingsboard/tb-postgres](https://hub.docker.com/r/thingsboard/tb-postgres/) - 带有 PostgreSQL 数据库的 ThingsBoard 单实例。
 
-    Recommended option for small servers with at least 1GB of RAM and minimum load (few messages per second). 2-4GB is recommended.
-* [thingsboard/tb-cassandra](https://hub.docker.com/r/thingsboard/tb-cassandra/) - single instance of ThingsBoard with Cassandra database. 
+    推荐用于至少有 1GB RAM 和最小负载（每秒几条消息）的小型服务器。建议使用 2-4GB。
+* [thingsboard/tb-cassandra](https://hub.docker.com/r/thingsboard/tb-cassandra/) - 带有 Cassandra 数据库的 ThingsBoard 单实例。
 
-    The most performant and recommended option but requires at least 4GB of RAM. 8GB is recommended.  
-* [thingsboard/tb](https://hub.docker.com/r/thingsboard/tb/) - single instance of ThingsBoard with embedded HSQLDB database. 
+    性能最佳且推荐使用，但至少需要 4GB RAM。建议使用 8GB。
+* [thingsboard/tb](https://hub.docker.com/r/thingsboard/tb/) - 带有嵌入式 HSQLDB 数据库的 ThingsBoard 单实例。
 
-    **Note:** Not recommended for any evaluation or production usage and is used only for development purposes and automatic tests. 
+    **注意：** 不建议用于任何评估或生产用途，仅用于开发目的和自动测试。
 
-In this instruction `thingsboard/tb-postgres` image will be used. You can choose any other images with different databases (see above).
+在本说明中，将使用 `thingsboard/tb-postgres` 镜像。您可以选择具有不同数据库的任何其他镜像（见上文）。
 
-## Choose ThingsBoard queue service
+## 选择 ThingsBoard 队列服务
 
 {% include templates/install/install-queue.md %}
 
 {% capture contenttogglespecqueue %}
-In Memory <small>(built-in and default)</small>%,%inmemory%,%templates/install/docker-queue-in-memory.md%br%
-Kafka <small>(recommended for on-prem, production installations)</small>%,%kafka%,%templates/install/docker-queue-kafka.md%br%
-AWS SQS <small>(managed service from AWS)</small>%,%aws-sqs%,%templates/install/docker-queue-aws-sqs.md%br%
-Google Pub/Sub <small>(managed service from Google)</small>%,%pubsub%,%templates/install/docker-queue-pub-sub.md%br%
-Azure Service Bus <small>(managed service from Azure)</small>%,%service-bus%,%templates/install/docker-queue-service-bus.md%br%
-RabbitMQ <small>(for small on-prem installations)</small>%,%rabbitmq%,%templates/install/docker-queue-rabbitmq.md%br%
-Confluent Cloud <small>(Event Streaming Platform based on Kafka)</small>%,%confluent-cloud%,%templates/install/docker-queue-confluent-cloud.md{% endcapture %}
+内存 <small>（内置且默认）</small>%,%inmemory%,%templates/install/docker-queue-in-memory.md%br%
+Kafka <small>（推荐用于本地、生产安装）</small>%,%kafka%,%templates/install/docker-queue-kafka.md%br%
+AWS SQS <small>（AWS 托管服务）</small>%,%aws-sqs%,%templates/install/docker-queue-aws-sqs.md%br%
+Google Pub/Sub <small>（Google 托管服务）</small>%,%pubsub%,%templates/install/docker-queue-pub-sub.md%br%
+Azure 服务总线 <small>（Azure 托管服务）</small>%,%service-bus%,%templates/install/docker-queue-service-bus.md%br%
+RabbitMQ <small>（适用于小型本地安装）</small>%,%rabbitmq%,%templates/install/docker-queue-rabbitmq.md%br%
+Confluent Cloud <small>（基于 Kafka 的事件流平台）</small>%,%confluent-cloud%,%templates/install/docker-queue-confluent-cloud.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="ubuntuThingsboardQueue" toggle-spec=contenttogglespecqueue %} 
 
-Where: 
+其中：
 
-- `8080:9090`            - connect local port 8080 to exposed internal HTTP port 9090
-- `1883:1883`            - connect local port 1883 to exposed internal MQTT port 1883
-- `7070:7070`            - connect local port 7070 to exposed internal Edge RPC port 7070
-- `5683-5688:5683-5688/udp`            - connect local UDP ports 5683-5688 to exposed internal COAP and LwM2M ports 
-- `~/.mytb-data:/data`   - mounts the host's dir `~/.mytb-data` to ThingsBoard DataBase data directory
-- `~/.mytb-logs:/var/log/thingsboard`   - mounts the host's dir `~/.mytb-logs` to ThingsBoard logs directory
-- `mytb`             - friendly local name of this machine
-- `restart: always`        - automatically start ThingsBoard in case of system reboot and restart in case of failure.
-- `image: thingsboard/tb-postgres`          - docker image, can be also `thingsboard/tb-cassandra` or `thingsboard/tb`
+- `8080:9090`            - 将本地端口 8080 连接到公开的内部 HTTP 端口 9090
+- `1883:1883`            - 将本地端口 1883 连接到公开的内部 MQTT 端口 1883
+- `7070:7070`            - 将本地端口 7070 连接到公开的内部 Edge RPC 端口 7070
+- `5683-5688:5683-5688/udp`            - 将本地 UDP 端口 5683-5688 连接到公开的内部 COAP 和 LwM2M 端口
+- `~/.mytb-data:/data`   - 将主机的目录 `~/.mytb-data` 挂载到 ThingsBoard 数据库数据目录
+- `~/.mytb-logs:/var/log/thingsboard`   - 将主机的目录 `~/.mytb-logs` 挂载到 ThingsBoard 日志目录
+- `mytb`             - 此机器的友好本地名称
+- `restart: always`        - 在系统重新启动时自动启动 ThingsBoard，并在发生故障时重新启动。
+- `image: thingsboard/tb-postgres`          - docker 镜像，也可以是 `thingsboard/tb-cassandra` 或 `thingsboard/tb`
 
 {% include templates/install/docker/docker-create-folders-sudo-explained.md %}
 
@@ -72,19 +72,19 @@ mkdir -p ~/.mytb-logs && sudo chown -R 799:799 ~/.mytb-logs
 ```
 {: .copy-code}
 
-**NOTE**: Replace directory `~/.mytb-data` and `~/.mytb-logs` with directories you're planning to use in `docker-compose.yml`.
+**注意：** 将目录 `~/.mytb-data` 和 `~/.mytb-logs` 替换为计划在 `docker-compose.yml` 中使用的目录。
 
 {% assign serviceName = "tb" %}
 {% include templates/install/docker/docker-compose-up-and-ui-credentials.md %}
 
-## Detaching, stop and start commands
+## 分离、停止和启动命令
 
 {% assign serviceFullName = "ThingsBoard" %}
 {% include templates/install/docker/detaching-stop-start-commands.md %}
 
-## Upgrading
+## 升级
 
-In order to update to the latest image, execute the following commands:
+要更新到最新镜像，请执行以下命令：
 
 ```
 docker pull thingsboard/tb-postgres
@@ -95,14 +95,14 @@ docker compose up
 ```
 {: .copy-code}
 
-**NOTE**: if you use different database change image name in all commands from `thingsboard/tb-postgres` to `thingsboard/tb-cassandra` or `thingsboard/tb` correspondingly.
- 
-**NOTE**: replace host's directory `~/.mytb-data` with directory used during container creation. 
+**注意：** 如果您使用不同的数据库，请在所有命令中将镜像名称从 `thingsboard/tb-postgres` 更改为 `thingsboard/tb-cassandra` 或 `thingsboard/tb`。
 
-**NOTE**: if you have used one database and want to try another one, then remove the current docker container using `docker-compose rm` command and use different directory for `~/.mytb-data` in `docker-compose.yml`.
+**注意：** 将主机的目录 `~/.mytb-data` 替换为在创建容器时使用的目录。
+
+**注意：** 如果您已经使用了一个数据库，并且想尝试另一个数据库，那么使用 `docker-compose rm` 命令删除当前的 docker 容器，并在 `docker-compose.yml` 中为 `~/.mytb-data` 使用不同的目录。
 
 {% capture dockerComposeStandalone %}
-If you still rely on Docker Compose as docker-compose (with a hyphen) here is the list of the above commands:
+如果您仍然依赖 Docker Compose 作为 docker-compose（带连字符），以下是上述命令的列表：
 <br>**docker pull thingsboard/tb-postgres**
 <br>**docker-compose stop**
 <br>**docker run -it -v ~/.mytb-data:/data --rm thingsboard/tb-postgres upgrade-tb.sh**
@@ -111,12 +111,12 @@ If you still rely on Docker Compose as docker-compose (with a hyphen) here is th
 {% endcapture %}
 {% include templates/info-banner.md content=dockerComposeStandalone %}
 
-## Troubleshooting
+## 故障排除
 
-### DNS issues
+### DNS 问题
 
 {% include templates/troubleshooting/dns-issues.md %}
 
-## Next steps
+## 后续步骤
 
 {% assign currentGuide = "InstallationGuides" %}{% include templates/guides-banner.md %}

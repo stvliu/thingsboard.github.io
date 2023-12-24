@@ -2,8 +2,8 @@
 layout: docwithnav-trendz
 assignees:
 - ashvayka
-title: Installing ThingsBoard Trendz Analytics using Docker (Windows)
-description: Installing ThingsBoard Trendz Analytics using Docker (Windows)
+title: 使用 Docker 在 Windows 上安装 ThingsBoard Trendz Analytics
+description: 使用 Docker 在 Windows 上安装 ThingsBoard Trendz Analytics
 
 ---
 
@@ -11,33 +11,33 @@ description: Installing ThingsBoard Trendz Analytics using Docker (Windows)
 {:toc}
 
 
-This guide will help you to install and start Trendz Analytics using Docker on Windows. 
+本指南将帮助您在 Windows 上使用 Docker 安装并启动 Trendz Analytics。
 
-## Prerequisites
+## 先决条件
 
-- [Install Docker Toolbox for Windows](https://docs.docker.com/toolbox/toolbox_install_windows/)
+- [为 Windows 安装 Docker Toolbox](https://docs.docker.com/toolbox/toolbox_install_windows/)
 
-## Step 1. Obtain the license key 
+## 步骤 1. 获取许可证密钥
 
-We assume you have already chosen subscription plan for Trendz and have license key. If not, please get your [Free Trial license](/pricing/?section=trendz-options&product=trendz-self-managed&solution=trendz-pay-as-you-go) before you proceed.
-See [How-to get pay-as-you-go subscription](https://www.youtube.com/watch?v=dK-QDFGxWek){:target="_blank"} for more details.
+我们假设您已经为 Trendz 选择了订阅计划并拥有许可证密钥。如果没有，请在继续之前获取您的 [免费试用许可证](/pricing/?section=trendz-options&product=trendz-self-managed&solution=trendz-pay-as-you-go)。
+有关更多详细信息，请参阅 [如何获取即用即付订阅](https://www.youtube.com/watch?v=dK-QDFGxWek){:target="_blank"}。
 
-Note: We will reference the license key you have obtained during this step as PUT_YOUR_LICENSE_SECRET_HERE guide.
+注意：我们将在此步骤中获得的许可证密钥称为 PUT_YOUR_LICENSE_SECRET_HERE 指南。
 
-## Step 2. Running Trendz service
+## 步骤 2. 运行 Trendz 服务
 
-##### Docker Compose setup
+##### Docker Compose 设置
 
-Make sure your have [logged in](https://docs.docker.com/engine/reference/commandline/login/) to docker hub using command line.
+确保您已使用命令行 [登录](https://docs.docker.com/engine/reference/commandline/login/) 到 docker 中心。
 
-Create docker compose file for Trendz Analytics service:
+为 Trendz Analytics 服务创建 docker compose 文件：
 
 ```text
 docker-compose.yml
 ```
 {: .copy-code}
 
-Add the following line to the yml file. Don't forget to replace “PUT_YOUR_LICENSE_SECRET_HERE” with your **license secret obtained on the first step**
+将以下行添加到 yml 文件。不要忘记用 **第一步获得的许可证密钥** 替换“PUT_YOUR_LICENSE_SECRET_HERE”
 
 ```yml
 
@@ -93,24 +93,23 @@ volumes:
 ```
 {: .copy-code}
 
-Where: 
-    
-- `TB_API_URL` - url for connecting to ThingsBoard Rest API (for example http://10.5.0.11:8080). Note that ThingsBoard IP address should be resolvable from Trendz docker container
-- `PUT_YOUR_LICENSE_SECRET_HERE` - placeholder for your license secret obtained on the first step
-- `8888:8888`            - connect local port 8888 to exposed internal HTTP port 8888
-- `mytrendz-data:/data`   - mounts the volume `mytrendz-data` to Trendz data directory
-- `mytrendz-data/db:/var/lib/postgresql/datad`   - mounts the volume `mytrendz-data/db` to Postgres data directory
-- `mytrendz-logs:/var/log/trendz`   - mounts the volume `mytrendz-logs` to Trendz logs directory
-- `mytrendz`             - friendly local name of this machine
-- `--restart always`        - automatically start Trendz in case of system reboot and restart in case of failure.
-- `thingsboard/trendz:1.10.3-HF3`          - Trendz docker image
-- `thingsboard/trendz-python-executor:1.10.3`          - Trendz python script executor docker image
-- `SCRIPT_ENGINE_RUNTIME_TIMEOUT`          - Python script execution timeout
-    
-##### Setup Docker volumes    
-    
-Windows users should use docker managed volume for Trendz DataBase. Create docker volume (for ex. `mytrendz-data`) before 
-executing docker run command: Open “Docker Quickstart Terminal”. Execute the following command to create docker volume:
+其中：
+
+- `TB_API_URL` - 用于连接到 ThingsBoard Rest API 的 URL（例如 http://10.5.0.11:8080）。请注意，Trendz docker 容器应该能够解析 ThingsBoard IP 地址
+- `PUT_YOUR_LICENSE_SECRET_HERE` - 第一步获得的许可证密钥的占位符
+- `8888:8888` - 将本地端口 8888 连接到公开的内部 HTTP 端口 8888
+- `mytrendz-data:/data` - 将卷 `mytrendz-data` 挂载到 Trendz 数据目录
+- `mytrendz-data/db:/var/lib/postgresql/datad` - 将卷 `mytrendz-data/db` 挂载到 Postgres 数据目录
+- `mytrendz-logs:/var/log/trendz` - 将卷 `mytrendz-logs` 挂载到 Trendz 日志目录
+- `mytrendz` - 此计算机的友好本地名称
+- `--restart always` - 在系统重新启动时自动启动 Trendz，并在发生故障时重新启动。
+- `thingsboard/trendz:1.10.3-HF3` - Trendz docker 镜像
+- `thingsboard/trendz-python-executor:1.10.3` - Trendz python 脚本执行器 docker 镜像
+- `SCRIPT_ENGINE_RUNTIME_TIMEOUT` - Python 脚本执行超时
+
+##### 设置 Docker 卷
+
+Windows 用户应使用 docker 管理的卷作为 Trendz 数据库。在执行 docker run 命令之前创建 docker 卷（例如 `mytrendz-data`）：打开“Docker 快速启动终端”。执行以下命令以创建 docker 卷：
 
 ```yml
 docker volume create mytrendz-data
@@ -119,46 +118,45 @@ docker volume create mytrendz-logs
 ```
 {: .copy-code}
 
-**NOTE**: replace directory ~/.mytrendz-data and ~/.mytrendz-logs with directories you’re planning to used in docker-compose.yml.
+**注意**：将目录 ~/.mytrendz-data 和 ~/.mytrendz-logs 替换为计划在 docker-compose.yml 中使用的目录。
 
-##### Running service
+##### 运行服务
 
 {% assign serviceName = "trendz" %}
 {% include templates/install/docker/docker-compose-up.md %}
 
-In order to get access to necessary resources from external IP/Host on Windows machine, please execute the following commands:
+为了从 Windows 机器上的外部 IP/主机访问必要的资源，请执行以下命令：
 
 ```yml
 set PATH=%PATH%;"C:\Program Files\Oracle\VirtualBox"
 VBoxManage controlvm "default" natpf1 "tcp-port8888,tcp,,8888,,8888"  
 ```
-{: .copy-code}    
+{: .copy-code}
 
-Where 
+其中
 
-- `C:\Program Files\Oracle\VirtualBox`          - path to your VirtualBox installation directory
-    
-After executing this command you can open `http://{your-host-ip}:8888` in you browser (for ex. `http://localhost:8888`). You should see Trendz login page.
-   
-##### Authentication
+- `C:\Program Files\Oracle\VirtualBox` - VirtualBox 安装目录的路径
 
-For first authentication you need to use **Tenant Administrator** credentials from your **ThingsBoard**
+执行此命令后，您可以在浏览器中打开 `http://{your-host-ip}:8888`（例如 `http://localhost:8888`）。您应该会看到 Trendz 登录页面。
 
-Trendz uses ThingsBoard as an authentication service. During first sign in ThingsBoard service should be also available 
-to validate credentials.
+##### 身份验证
 
-## Detaching, stop and start commands
+首次身份验证，您需要使用 **ThingsBoard** 中的 **租户管理员** 凭据
+
+Trendz 使用 ThingsBoard 作为身份验证服务。在首次登录期间，ThingsBoard 服务也应该可用以验证凭据。
+
+## 分离、停止和启动命令
 
 {% assign serviceName = "trendz" %}
 {% assign serviceFullName = "Trendz" %}
 {% include templates/install/docker/detaching-stop-start-commands.md %}
 
-## Troubleshooting
+## 故障排除
 
-### DNS issues
+### DNS 问题
 
 {% include templates/troubleshooting/dns-issues-windows.md %}
 
-## Next steps
+## 后续步骤
 
 {% assign currentGuide = "InstallationOptions" %}{% include templates/trndz-guides-banner.md %}

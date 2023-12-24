@@ -1,82 +1,72 @@
-
-* TOC 
+* TOC
 {:toc}
 
 {% include templates/solution-templates.md %}
 
-The Smart Irrigation template represents a generic field irrigation solution, to provision fields and related devices.
+智能灌溉模板表示通用田地灌溉解决方案，用于配置田地和相关设备。
 
 {% include images-gallery.html imageCollection="solution-highlights" %}
 
-### Dashboard
+### 仪表板
 
-As part of this solution, we have created the Smart Irrigation dashboard that displays data from multiple soil moisture sensors. This dashboard contains 2 states - **Main state** and  **Field state**.
+作为此解决方案的一部分，我们创建了智能灌溉仪表板，该仪表板显示来自多个土壤湿度传感器的数据。此仪表板包含 2 个状态 - **主状态** 和 **田地状态**。
 
-You may use the **Main state** to:
-- monitor the average soil moisture value of existing fields on the interactive map;
-- monitor the fields of the relevant soil crops in the list and add new fields as needed;
-- set limit values for each field for applying irrigation;
-- monitor soil moisture history in real-time using a graph;
-- monitor Alarms that occur when the established conditions are not met;
-
-<br>
-In order to go to **Field state**, click on the row of the desired sensor in the Field section or choose the needed field on the interactive map.
+您可以使用 **主状态** 来：
+- 在交互式地图上监控现有田地的平均土壤湿度值；
+- 监控列表中相关土壤作物的田地并根据需要添加新田地；
+- 为每个田地设置施加灌溉的限制值；
+- 使用图表实时监控土壤湿度历史记录；
+- 监控在未满足既定条件时发生的警报；
 
 <br>
-You may use the **Field state** to:
-- monitor irrigation status;
-- set and edit the inclusion schedule and conditions under which irrigation will work;
-- view statistics on soil moisture;
-- monitor Alarms that have occurred;
-- manage soil moisture level sensors and view them on an interactive map;
-- view irrigation tasks.
+为了进入 **田地状态**，请单击田地部分中所需传感器的行或在交互式地图上选择所需的田地。
 
-You may always customize the "Smart Irrigation" dashboard using dashboard development [guide](/docs/{{docsPrefix}}user-guide/dashboards/).
+<br>
+您可以使用 **田地状态** 来：
+- 监控灌溉状态；
+- 设置和编辑灌溉将起作用的包含时间表和条件；
+- 查看土壤湿度统计数据；
+- 监控已发生的警报；
+- 管理土壤湿度水平传感器并在交互式地图上查看它们；
+- 查看灌溉任务。
 
-### Devices
+您始终可以使用仪表板开发 [指南](/docs/{{docsPrefix}}user-guide/dashboards/) 自定义“智能灌溉”仪表板。
 
-We have already created multiple devices and loaded some demo data for them. See solution <a href="https://thingsboard.io/docs/paas/solution-templates/overview/#install-solution-template">instructions</a> for the list of created devices and their credentials.
+### 设备
 
-#### SI Water Meter
-The profile is configured to raise alarms if the value of "battery" telemetry is below a configurable threshold. Warning alarm is raised when the value is below 30.
-The device also uploads the "pulseCounter" which is used to calculate water consumption. Sample device payload:
+我们已经创建了多个设备并为它们加载了一些演示数据。有关创建的设备及其凭据的列表，请参阅解决方案 <a href="https://thingsboard.io/docs/paas/solution-templates/overview/#install-solution-template">说明</a>。
+
+#### SI 水表
+如果“电池”遥测值低于可配置阈值，则配置文件被配置为发出警报。当值低于 30 时，会发出警告警报。
+该设备还上传用于计算耗水量的“脉冲计数器”。示例设备有效负载：
 
 ```json
 {"battery": 99, "pulseCounter": 123000}
 ```
 {: .copy-code}
 
-#### SI Soil Moisture Sensor
-The profile is configured to raise alarms if the value of "battery" telemetry is below a configurable threshold. Warning alarm is raised when the value is below 30.
-The device also uploads the "moisture" level. Sample device payload:
+#### SI 土壤湿度传感器
+如果“电池”遥测值低于可配置阈值，则配置文件被配置为发出警报。当值低于 30 时，会发出警告警报。
+该设备还上传“湿度”水平。示例设备有效负载：
 ```json
 {"battery": 99, "moisture": 57}
 ```
 {: .copy-code}
 
-#### SI Smart Valve
-The profile is configured to raise alarms if the value of "battery" telemetry is below a configurable threshold. Warning alarm is raised when the value is below 30. Sample device payload:
+#### SI 智能阀门
+如果“电池”遥测值低于可配置阈值，则配置文件被配置为发出警报。当值低于 30 时，会发出警告警报。示例设备有效负载：
 ```json
 {"battery": 99}
 ```
 {: .copy-code}
 
-The device also accepts the RPC command to enable or disable the water flow. Sample RPC command:
+该设备还接受启用或禁用水流的 RPC 命令。示例 RPC 命令：
 ```json
 {"method": "TURN_ON", "params": {}}
 ```
 {: .copy-code}
 
-You may find the exact commands to send data on behalf of created devices in the solution [instructions](/docs/{{docsPrefix}}solution-templates/overview/#install-solution-template).
-See [connecting devices](/docs/{{docsPrefix}}getting-started-guides/connectivity/) for various connectivity options to connect real devices.
+您可以在解决方案 [说明](/docs/{{docsPrefix}}solution-templates/overview/#install-solution-template) 中找到代表创建的设备发送数据的准确命令。有关连接真实设备的各种连接选项，请参阅 [连接设备](/docs/{{docsPrefix}}getting-started-guides/connectivity/)。
 
-### Alarms
-User may turn alarms on and off as well as configure the alarm thresholds via the "Smart Irrigation" dashboard.
-
-
-
-
-
-
-
-
+### 警报
+用户可以通过“智能灌溉”仪表板打开和关闭警报以及配置警报阈值。

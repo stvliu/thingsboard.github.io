@@ -1,52 +1,49 @@
 ---
 layout: docwithnav-gw
-title: How to configure ThingsBoard IoT Gateway using Configurator
-description: How to configure ThingsBoard IoT Gateway using Configurator
+title: 如何使用配置器配置 ThingsBoard IoT 网关
+description: 如何使用配置器配置 ThingsBoard IoT 网关
 
 ---
 
 * TOC
 {:toc}
 
-This guide will help you to configure your ThingsBoard IoT Gateway using Configurator, especially
-if you used installation via deb package.
+本指南将帮助您使用配置器配置 ThingsBoard IoT 网关，尤其是当您使用 deb 软件包进行安装时。
 
-## Step 1 Starting Configurator
+## 第 1 步 启动配置器
 
-To start configuring Gateway you have to start your terminal and launch Configurator using the next command:
+要开始配置网关，您必须启动终端并使用以下命令启动配置器：
 ```bash
 tb-gateway-configurator
 ```
 {: .copy-code}
 
-If you have correctly installed the gateway, you will see the following:
+如果您已正确安装网关，您将看到以下内容：
 
 ![](/images/gateway/gateway-cli.png)
 
-## Step 2 Configuring
+## 第 2 步 配置
 
-Answering questions to be displayed in turn using your option (You can use the default value which
-displays in the input field).
+回答依次显示的问题，使用您的选项（您可以使用输入字段中显示的默认值）。
 
-**NOTE**: Default value is taken from **/etc/thingsboard-gateway/config/tb_gateway.yaml** and all your configuration via
-CLI will be saved there.
+**注意**：默认值取自 **/etc/thingsboard-gateway/config/tb_gateway.yaml**，您通过 CLI 进行的所有配置都将保存在此处。
 
 ![](/images/gateway/gateway-cli-questions.png)
 
-## Step 3 Starting Gateway
+## 第 3 步 启动网关
 
-Finally, you can start your ThingsBoard IoT gateway with the following command:
+最后，您可以使用以下命令启动 ThingsBoard IoT 网关：
 ```bash
 thingsboard-gateway
 ```
 {: .copy-code}
 
-## Next steps
+## 后续步骤
 
-Explore guides related to the main ThingsBoard features:
+探索与 ThingsBoard 主要功能相关的指南：
 
- - [Data Visualization](/docs/user-guide/visualization/) - how to visualize collected data.
- - [Device attributes](/docs/user-guide/attributes/) - how to use device attributes.
- - [Telemetry data collection](/docs/user-guide/telemetry/) - how to collect telemetry data.
- - [Using RPC capabilities](/docs/user-guide/rpc/) - how to send commands to/from devices.
- - [Rule Engine](/docs/user-guide/rule-engine/) - how to use rule engine to analyze data from devices.
+- [数据可视化](/docs/user-guide/visualization/) - 如何可视化收集的数据。
+- [设备属性](/docs/user-guide/attributes/) - 如何使用设备属性。
+- [遥测数据收集](/docs/user-guide/telemetry/) - 如何收集遥测数据。
+- [使用 RPC 功能](/docs/user-guide/rpc/) - 如何向设备发送/从设备接收命令。
+- [规则引擎](/docs/user-guide/rule-engine/) - 如何使用规则引擎分析来自设备的数据。

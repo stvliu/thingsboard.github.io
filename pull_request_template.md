@@ -1,12 +1,12 @@
-## PR description
+## PR 描述
 
-The documentation updated for ...
+已更新 ... 的文档
 
-## Link checker
+## 链接检查器
 
-The links will be checked by the build agent automatically once you create or update your PR.
+一旦你创建或更新你的 PR，链接将由构建代理自动检查。
 
-You can use the following command to check the broken links locally.
+你可以使用以下命令在本地检查损坏的链接。
 
 ```bash
 docker run --rm -it --network=host --name=linkchecker ghcr.io/linkchecker/linkchecker --check-extern --no-warnings http://0.0.0.0:4000/

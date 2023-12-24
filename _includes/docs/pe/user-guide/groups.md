@@ -1,59 +1,59 @@
 * TOC
 {:toc}
 
-## Introduction
+## 简介
 
-ThingsBoard allows you to configure multiple custom Entity Groups.
-You can create an entity group for the devices, assets, entity views, customers, users, dashboards and edge instances
-Each entity may belong to multiple groups simultaneously.
-Special group "All" always contains all entities that belong to specific tenant account.
+ThingsBoard 允许您配置多个自定义实体组。
+您可以为设备、资产、实体视图、客户、用户、仪表板和边缘实例创建实体组
+每个实体可以同时属于多个组。
+特殊组“全部”始终包含属于特定租户帐户的所有实体。
 
-For each entity group, ThingsBoard user may configure different columns to visualize specific telemetry or attributes values.
-ThingsBoard user may also define custom actions to be present for each entity: open dashboard or send RPC call, etc.
-Bulk operations to delete entities, add them to the group or remove are also supported.
+对于每个实体组，ThingsBoard 用户可以配置不同的列来可视化特定的遥测或属性值。
+ThingsBoard 用户还可以定义要为每个实体显示的自定义操作：打开仪表板或发送 RPC 调用等。
+还支持删除实体、将它们添加到组或删除它们的批量操作。
 
-## Create new entity group
+## 创建新的实体组
 
-In this tutorial, we will create an entity group for devices.
-The steps below are identical for any entities.
+在本教程中，我们将为设备创建一个实体组。
+以下步骤对于任何实体都是相同的。
 
 {% include images-gallery.html imageCollection="create-entity-group-1" showListImageTitles="true" %}
 
-You can share an entity group during the process of creating a group. Let’s create another group and share it with your customer.
+您可以在创建组的过程中共享实体组。让我们创建另一个组并与您的客户共享。
 
 {% include images-gallery.html imageCollection="create-entity-group-2" showListImageTitles="true" %}
 
-## Entity group configuration
+## 实体组配置
 
-### Edit general information
+### 编辑一般信息
 
-You can edit the general information of the entity group. For example, you can change the group name, firmware and software for your entity group.
+您可以编辑实体组的一般信息。例如，您可以更改实体组的组名称、固件和软件。
 
-Let’s see how to do this:
+让我们看看如何做到这一点：
 
 {% include images-gallery.html imageCollection="edit-entity-group-1" showListImageTitles="true" %}
 
-### Columns configuration
+### 列配置
 
-You can add, delete, move columns, change their title and type.
-You can also use a special style function and content function for column cell.
+您可以添加、删除、移动列，更改它们的标题和类型。
+您还可以对列单元格使用特殊样式函数和内容函数。
 
-For this example, we have device group with two devices that post temperature values.
-This group has 4 columns which display devices data: "Created time", "Name", "Device profile", and "Label". 
+对于此示例，我们有一个包含两个设备的设备组，这些设备会发布温度值。
+此组有 4 列显示设备数据：“创建时间”、“名称”、“设备配置文件”和“标签”。
 
-Let's **add** a new column that will display temperature values for each device.
+让我们**添加**一个新列，该列将显示每个设备的温度值。
 
 {% include images-gallery.html imageCollection="column-configuration-add" showListImageTitles="true" %}
 
-Now let's **delete** the "Label" column from this device group.
+现在让我们从这个设备组中**删除**“标签”列。
 
 {% include images-gallery.html imageCollection="column-configuration-delete" showListImageTitles="true" %}
 
-Now let's **set a style function** for the "Temperature" column so that when the temperature value is greater than or equal to 45, the values turn orange, and if the temperature value is less than 45, the values turn blue.
+现在让我们为“温度”列**设置样式函数**，以便当温度值大于或等于 45 时，值变为橙色，如果温度值小于 45，则值变为蓝色。
 
 {% include images-gallery.html imageCollection="column-configuration-style function" showListImageTitles="true" %}
 
-Style function:
+样式函数：
 
 ```javascript
 return value >= 45 ? {
@@ -66,62 +66,62 @@ return value >= 45 ? {
 ```
 {: .copy-code}
 
-Let's **set a content function** to display the symbol "℃" after the temperature value of the device.
+让我们**设置内容函数**，以便在设备的温度值后显示符号“℃”。
 
 {% include images-gallery.html imageCollection="column-configuration-content function" showListImageTitles="true" %}
 
-Content function:
+内容函数：
 
 ```javascript
 return value ? value + ' ℃' : '-';
 ```
 {: .copy-code}
 
-You can also **move** columns according to your preference.
+您还可以根据自己的喜好**移动**列。
 
 {% include images-gallery.html imageCollection="column-configuration-move" showListImageTitles="true" %}
 
-### Entity group display setting
+### 实体组显示设置
 
-On the "Settings" tab, you can enable/disable the following function: search entity, add new entity, delete entity, and manage entity's credentials.
-You can also configure pagination and select the action that will open entity details.
+在“设置”选项卡上，您可以启用/禁用以下功能：搜索实体、添加新实体、删除实体和管理实体的凭据。
+您还可以配置分页并选择将打开实体详细信息的操作。
 
-To go to the group settings, you need to:
+要转到组设置，您需要：
 
 {% include images-gallery.html imageCollection="setting" showListImageTitles="true" %}
 
-### Entity group actions configuration
+### 实体组操作配置
 
-Actions allow quickly and easily configure the navigating to the selected dashboard, or create custom action.
-For example, let's create an action to quickly go to the dashboard with full information about thermometers.
+操作允许快速轻松地配置导航到所选仪表板，或创建自定义操作。
+例如，让我们创建一个操作以快速转到包含有关温度计的完整信息的仪表板。
 
 {% include images-gallery.html imageCollection="action-configuration" showListImageTitles="true" %}
 
-### Batch operations
+### 批量操作
 
-Over each entity of the group, you can perform operations such as: change the owner of the entity, move it to another group, add or remove an entity from the group.
+对于组的每个实体，您可以执行以下操作：更改实体的所有者、将其移动到另一个组、将实体添加到组或从组中删除实体。
 
 {% include images-gallery.html imageCollection="batch-operations" showListImageTitles="true" %}
 
-## Delete entity group
+## 删除实体组
 
-You can delete an entity group along with all its entities using one of the following ways:
+您可以使用以下方式之一删除实体组及其所有实体：
 
-First way:
+第一种方式：
 
 {% include images-gallery.html imageCollection="delete-entity-group-1" showListImageTitles="true" %}
 
-Second way:
+第二种方式：
 
 {% include images-gallery.html imageCollection="delete-entity-group-2" showListImageTitles="true" %}
 
-You and your customers can also delete multiple entity groups at once.
+您和您的客户还可以一次删除多个实体组。
 
 {% include images-gallery.html imageCollection="delete-entity-group-3" showListImageTitles="true" %}
 
-## Video tutorial
+## 视频教程
 
-Watch the detailed video tutorial with examples of how you can configure the entity group to suit your needs.
+观看详细的视频教程，其中包含有关如何配置实体组以满足您需求的示例。
 
 <br>
 <div id="video">
@@ -130,6 +130,6 @@ Watch the detailed video tutorial with examples of how you can configure the ent
     </div>
 </div>
 
-## Next steps
+## 后续步骤
 
 {% assign currentGuide = "AdvancedFeatures" %}{% include templates/multi-project-guides-banner.md %}

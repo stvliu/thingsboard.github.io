@@ -2,21 +2,21 @@
 layout: docwithnav
 assignees:
 - ashvayka
-title: SMS Provider Settings
-description: ThingsBoard IoT platform SMS provider settings
+title: 短信提供商设置
+description: ThingsBoard IoT 平台短信提供商设置
 smsProviderSettings:
     0:
         image: /images/user-guide/ui/sms/sms-provider-settings-step-2-ce.png
-        title: 'Login to ThingsBoard UI. Navigate to the "Settings" page. Now, go to the "Notificatons" tab. In this window, choose one of the available providers: AWS SNS Twilio or SMPP;'
+        title: '登录 ThingsBoard UI。导航到“设置”页面。现在，转到“通知”选项卡。在此窗口中，选择一个可用的提供商：AWS SNS Twilio 或 SMPP；'
     1:
         image: /images/user-guide/ui/sms/sms-provider-settings-step-3-ce.png
-        title: 'If you have chosen AWS SNS, populate AWS Access Key ID and Secret access key. Click "Save" button;'
+        title: '如果您选择了 AWS SNS，请填写 AWS 访问密钥 ID 和秘密访问密钥。单击“保存”按钮；'
     2:
         image: /images/user-guide/ui/sms/sms-provider-settings-step-4-ce.png
-        title: 'If you have chosen Twilio, populate the Twilio account SID and Token. Specify phone number that will be used as a "sender". Click "Save" button;'
+        title: '如果您选择了 Twilio，请填写 Twilio 帐户 SID 和令牌。指定将用作“发件人”的电话号码。单击“保存”按钮；'
     3:
         image: /images/user-guide/ui/sms/sms-provider-settings-step-5-ce.png
-        title: 'If you have chosen SMPP, Populate System ID and Password. Specify SMPP version, SMPP host and port. Click "Save" button.'
+        title: '如果您选择了 SMPP，请填写系统 ID 和密码。指定 SMPP 版本、SMPP 主机和端口。单击“保存”按钮。'
 
 ---
 

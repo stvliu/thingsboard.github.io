@@ -1,50 +1,50 @@
 ---
-position: Middle UI/UX designer
+position: 中级 UI/UX 设计师
 tag:
-location: Kyiv, Ukraine
+location: 乌克兰基辅
 dateString:
 layout: career
 ---
-##### We’re looking for a Middle UI/UX designer to join our team on the full-time basis in the Kyiv office.
-##### ThingsBoard, Inc. is a US corporation founded in 2016 with RnD center in Kyiv, Ukraine. We are the main contributor and maintainer of ThingsBoard open-source IoT Platform. We deliver and constantly improve scalable, robust and affordable IoT Platform that dramatically reduces time-to-market for life-changing IoT solutions. We also help companies to deliver great IoT products based on ThingsBoard.
+##### 我们正在寻找一名中级 UI/UX 设计师，全职加入我们在基辅办公室的团队。
+##### ThingsBoard, Inc. 是一家成立于 2016 年的美国公司，在乌克兰基辅设有研发中心。我们是 ThingsBoard 开源物联网平台的主要贡献者和维护者。我们提供并不断改进可扩展、强大且价格合理的物联网平台，可大幅缩短改变生活的物联网解决方案的上市时间。我们还帮助公司基于 ThingsBoard 提供出色的物联网产品。
 
-### Requirements:
-2+ years experience with UI/UX design, understanding of the methodologies and processes (portfolio proving this experience);
+### 要求：
+2 年以上 UI/UX 设计经验，了解方法论和流程（证明此经验的作品集）；
 
-Experience with Figmа;
+Figmа 经验；
 
-Experience with design of the data visualization tools: charts, maps, infographics;
+数据可视化工具设计经验：图表、地图、信息图表；
 
-Understanding of composition, layout, grid, typography, color, and how these elements influence a design;
+了解构图、布局、网格、字体、颜色以及这些元素如何影响设计；
 
-Understanding the phases of human-centered design, user interface design and development, and contemporary user interface design conventions;
+了解以人为本的设计、用户界面设计和开发以及当代用户界面设计惯例的各个阶段；
 
-Skills in dynamic prototyping & low fidelity prototyping tools;
+动态原型设计和低保真原型设计工具方面的技能；
 
-Clear-minded ability to translate functional requirements into mockups;
+将功能要求转化为模型的清晰思维能力；
 
-Self-motivation and time management;
+自我激励和时间管理；
 
-Experience in Material Design;
+精通 Material Design；
 
-English level - Intermediate or higher.
+英语水平 - 中级或以上。
 
-### Responsibilities:
-Design of the new platform features, dashboards, widgets, and APIs;
+### 职责：
+设计新平台功能、仪表板、小部件和 API；
 
-Day-to-day communication with software engineers.
+与软件工程师进行日常沟通。
 
-### We offer:
-Full-time office work with flexible work hours;
+### 我们提供：
+带灵活工作时间的全职办公室工作；
 
-Working on an open-source IoT platform that has thousands of installations all over the world and 13000+ stars on GitHub;
+在一个拥有数千个全球安装量和 GitHub 上拥有 13000 多颗星的开源物联网平台上工作；
 
-A high-professional team without bureaucracy and management overhead with 13+ years of experience;
+一个拥有 13 年以上经验、没有官僚主义和管理开销的高度专业团队；
 
-Career growth opportunities and regular salary review;
+职业发展机会和定期薪酬审查；
 
-Medical Insurance;
+医疗保险；
 
-Corporate events (birthdays, holidays, etc.);
+公司活动（生日、节日等）；
 
-Comfortable office and fridge with free beverages.
+舒适的办公室和提供免费饮料的冰箱。

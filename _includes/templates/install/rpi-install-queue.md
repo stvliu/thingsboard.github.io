@@ -1,1 +1,1 @@
-ThingsBoard uses queue services for API calls between micro-services and able to use next queue services: In Memory (default), AWS SQS, Google Pub/Sub or Azure Service Bus.  
+ThingsBoard 使用队列服务在微服务之间进行 API 调用，并且能够使用以下队列服务：内存（默认）、AWS SQS、Google Pub/Sub 或 Azure Service Bus。

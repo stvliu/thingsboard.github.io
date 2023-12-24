@@ -1,12 +1,12 @@
 ---
 layout: careers
-title: Careers
+title: 职业生涯
 notitle: "true"
-description: ThingsBoard Careers
+description: ThingsBoard 职业生涯
 ---
 
-## Careers
-## We welcome smart and communicable individuals to join our team in the Kyiv office.
+## 职业生涯
+## 我们欢迎聪明且善于沟通的人才加入我们在基辅的团队。
 
 <hr>
 <div id="carsGrid">
@@ -37,39 +37,39 @@ description: ThingsBoard Careers
 </div>
 
 <div id="about">
-<p class="title">About Us:</p>
-<h5>ThingsBoard, Inc. is a US corporation founded in 2016 with RnD center in Kyiv, Ukraine. We are main contributor and maintainer of ThingsBoard open-source IoT Platform.<br>
-<br>We deliver and constantly improve scalable, robust and affordable IoT Platform that dramatically reduces time-to-market for life-changing IoT solutions. We also help companies to deliver great IoT products based on ThingsBoard.</h5>
+<p class="title">关于我们：</p>
+<h5>ThingsBoard, Inc. 是一家成立于 2016 年的美国公司，在乌克兰基辅设有研发中心。我们是 ThingsBoard 开源物联网平台的主要贡献者和维护者。<br>
+<br>我们提供并不断改进可扩展、强大且价格合理的物联网平台，可大幅缩短改变生活的物联网解决方案的上市时间。我们还帮助公司基于 ThingsBoard 提供出色的物联网产品。</h5>
 </div>
 
-<h2>How do we work:</h2>
+<h2>我们的工作方式：</h2>
 <div id="advanGrid">
     <div>
       <img class="advanImg" src="/images/careers/schedule_icon.svg" alt="schedule icon">
-      <h5>Comfortable and flexible working schedule</h5>
+      <h5>舒适且灵活的工作时间</h5>
     </div>
     <div>
       <img class="advanImg" src="/images/careers/support_icon.svg" alt="support icon">
-      <h5>A high-professional team without bureaucracy</h5>
+      <h5>一支没有官僚主义的高专业团队</h5>
     </div>
     <div>
       <img class="advanImg" src="/images/careers/target_icon.svg" alt="target icon">
-      <h5>Career growth opportunities and regular salary review</h5>
+      <h5>职业发展机会和定期薪酬审查</h5>
     </div>
     <div>
       <img class="advanImg" src="/images/careers/vacation_icon.svg" alt="vacation icon">
-      <h5>Team buildings, corporate events, paid vacations and sick leaves</h5>
+      <h5>团队建设、公司活动、带薪休假和病假</h5>
     </div>
     <div>
       <img class="advanImg" src="/images/careers/sweet_icon.svg" alt="sweet icon">
-      <h5>Unlimited beverages, fruits and sweets</h5>
+      <h5>无限量饮料、水果和甜点</h5>
     </div>
     <div>
       <img class="advanImg" src="/images/careers/english_icon.svg" alt="english icon">
-      <h5>Free English classes</h5>
+      <h5>免费英语课程</h5>
     </div>
     <div>
       <img class="advanImg" src="/images/careers/medical_icon.svg" alt="medical icon">
-      <h5>Medical Insurance</h5>
+      <h5>医疗保险</h5>
     </div>
 </div>

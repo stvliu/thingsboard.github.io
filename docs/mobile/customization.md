@@ -1,6 +1,6 @@
 ---
 layout: docwithnav-mobile
-title: Customize ThingsBoard Mobile Application
+title: 自定义 ThingsBoard 移动应用程序
 
 ---
 

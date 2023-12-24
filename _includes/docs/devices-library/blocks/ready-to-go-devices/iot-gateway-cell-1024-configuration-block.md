@@ -1,56 +1,55 @@
-
 {% assign gatewayConfiguration = '
     ===
         image: /images/devices-library/ready-to-go-devices/iot-gateway-cell-1024/conn1.png,  
-        title: Open a Browser to the administration web of Cell 1024 using the URL: https://[IP_DEVICE] and go to the "<b>Cloud</b>" tab.
+        title: 打开浏览器，使用 URL：https://[IP_DEVICE] 访问 Cell 1024 的管理 Web，然后转到“<b>云</b>”选项卡。
     ===
         image: /images/devices-library/ready-to-go-devices/iot-gateway-cell-1024/conn2.png,
-        title: Activate the Cloud control and configure all the parameters to connect the device to the specific ThingsBoard platform via MQTT.
+        title: 激活云控制并配置所有参数，以便通过 MQTT 将设备连接到特定的 ThingsBoard 平台。
     ===
         image: /images/devices-library/ready-to-go-devices/iot-gateway-cell-1024/conn3.png,
-        title: Click "<b>Save configuration</b>" button.
+        title: 单击“<b>保存配置</b>”按钮。
 '
 %}  
 
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=gatewayConfiguration %}
 
-| Configuration parameters | Description |
+| 配置参数 | 说明 |
 |-|-|
-|**Cloud Platform**| Select ThingsBoard. |
-|**MQTT broker URL**| URL to de Broker of the server we want to integrate to. |
-|**MQTT broker port**| Number of the port used by the server. |
-|**TLS**| Select true if the server use the Transport Layer Security protocol. |
-|**Connection Type**| Select 'Access Token' option. We will use an Access token previously created in ThingsBoard. |
-|**Access Token**| Indicate the Access token previously copied in ThingsBoard. |
+|**云平台**| 选择 ThingsBoard。 |
+|**MQTT 代理 URL**| 要集成的服务器的代理 URL。 |
+|**MQTT 代理端口**| 服务器使用的端口号。 |
+|**TLS**| 如果服务器使用传输层安全协议，请选择 true。 |
+|**连接类型**| 选择“访问令牌”选项。我们将使用之前在 ThingsBoard 中创建的访问令牌。 |
+|**访问令牌**| 指示之前在 ThingsBoard 中复制的访问令牌。 |
 
 {% capture provisioningIsComing %}
-**Note**
+**注意**
 
-Currently, the IoT EXXN Gateways use the 'Access Token' integration method.  
-EXXN team is working on a Pre-Provisioning integration method that will eliminate the need to copy this Access token on the device.  
+目前，IoT EXXN 网关使用“访问令牌”集成方法。  
+EXXN 团队正在研究一种预置集成方法，该方法将无需在设备上复制此访问令牌。  
 
 {% endcapture %}
 {% include templates/info-banner.md content=provisioningIsComing %}
 
-To verify that the device is connected correctly to ThingsBoard, go to the **Device groups** menu -> **All** devices, select your device.  
-In the **device details** select **client attributes** tab and check if the client attributes have been communicated to the device.  
+要验证设备是否已正确连接到 ThingsBoard，请转到 **设备组** 菜单 -> **所有** 设备，选择您的设备。  
+在 **设备详细信息** 中选择 **客户端属性** 选项卡，然后检查是否已将客户端属性传达给设备。  
 
 {% assign checkConnection = '
     ===
         image: /images/devices-library/ready-to-go-devices/iot-gateway-cell-1024/exxn-client-attributes-device-1.png,
-        title: If you did everything is correct, we will see client attributes like the <i>serial_number</i>, <i>last_reboot</i>, <i>device_model</i>, etc.
+        title: 如果一切正确，我们将看到客户端属性，如<i>serial_number</i>、<i>last_reboot</i>、<i>device_model</i> 等。
 '
 %}
 
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=checkConnection %}
 
-The EXXN IoT Gateway will connect to ThingsBoard using the MQTT API.  
-We have previously covered how to configure the device to connect to ThingsBoard.  
-Now, we will show the steps to configure the device in ThingsBoard in order to monitor data and manage the device.  
+EXXN IoT 网关将使用 MQTT API 连接到 ThingsBoard。  
+我们之前已经介绍了如何配置设备以连接到 ThingsBoard。  
+现在，我们将展示在 ThingsBoard 中配置设备以监视数据和管理设备的步骤。  
 
-In order to configure the datalogger options of the EXXN IoT Gateway, we should create a new JSON "**Shared Attribute**" for the Device with the key "**config**".  
+为了配置 EXXN IoT 网关的数据记录器选项，我们应该为具有键“**config**”的设备创建一个新的 JSON“**共享属性**”。  
 
-We will use the following JSON:
+我们将使用以下 JSON：
 
 ```json
 {
@@ -63,7 +62,7 @@ We will use the following JSON:
     "sensor_list": [
       {
         "id": "system_monitor",
-        "description": "CPU usage (%), disk free (MB), memory available (MB)",
+        "description": "CPU 使用率（%）、磁盘可用空间（MB）、可用内存（MB）",
         "model": "sys_mon",
         "storage_device": "/dev/mmcblk0p2",
         "measures": [
@@ -78,7 +77,7 @@ We will use the following JSON:
       },
       {
         "id": "temp_sc0",
-        "description": "Temperature of the small cell #0",
+        "description": "小蜂窝 #0 的温度",
         "model": "ds18b20",
         "name": "sc0",
         "address": "28-01212e9c95be",
@@ -92,7 +91,7 @@ We will use the following JSON:
       },
       {
         "id": "temp_sc1",
-        "description": "Temperature of the small cell #1",
+        "description": "小蜂窝 #1 的温度",
         "model": "ds18b20",
         "name": "sc1",
         "address": "28-01212e96afff",
@@ -106,7 +105,7 @@ We will use the following JSON:
       },
       {
         "id": "fan_rpm",
-        "description": "Fan tachometer monitor",
+        "description": "风扇转速表监视器",
         "model": "tachometer",
         "name": "fan",
         "gpio": 22,
@@ -120,7 +119,7 @@ We will use the following JSON:
       },
       {
         "id": "temp_hum",
-        "description": "Temperature (celsius degrees), humidity (%)",
+        "description": "温度（摄氏度）、湿度（%）",
         "model": "cwt_th01s",
         "name": "th",
         "config_params": {
@@ -140,7 +139,7 @@ We will use the following JSON:
       },
       {
         "id": "gpio_monitor",
-        "description": "GPIOs configuration and monitoring",
+        "description": "GPIO 配置和监视",
         "model": "gpio_mon",
         "name": "gpio",
         "measures": [
@@ -179,7 +178,7 @@ We will use the following JSON:
       },
       {
         "id": "energy_meter",
-        "description": "Voltage (V), Current (A), Active Power (KWh), Power Factor",
+        "description": "电压（V）、电流（A）、有功功率（KWh）、功率因数",
         "model": "ddm18sd",
         "config_params": {
           "port": "/dev/ttyS1",
@@ -204,20 +203,19 @@ We will use the following JSON:
 ```
 {: .copy-code}
 
-All the information to configure the device correctly through this JSON File can be found in the EXXN IoT Gateway Manual.
+通过此 JSON 文件正确配置设备的所有信息都可以在 EXXN IoT 网关手册中找到。
 
 {% assign configureTheGateway = "
     ===
         image: /images/devices-library/ready-to-go-devices/iot-gateway-cell-1024/exxn-shared-attributes-device-1.png,
-        title: Go to device'" | append: 's <b>attributes</b> tab in the device details. Add a new "<b>Shared attribute</b>" with the key "<b>config</b>" of type <b>JSON</b>.
+        title: 转到设备详细信息中的设备“<b>属性</b>”选项卡。添加一个键为“<b>config</b>”、类型为<b>JSON</b> 的新“<b>共享属性</b>”。
     ===
         image: /images/devices-library/ready-to-go-devices/iot-gateway-cell-1024/ennx-config-json.png,
-        title: Expand the content of the attribute to full screen for ease of writing it. Paste the contents of the device configuration file into the attribute value.
+        title: 展开属性的内容以全屏显示，以便轻松编写。将设备配置文件的内容粘贴到属性值中。
     ===
         image: /images/devices-library/ready-to-go-devices/iot-gateway-cell-1024/exxn-shared-attributes-device-2.png,
-        title: Click "<b>Add</b>" attribute.
+        title: 单击“<b>添加</b>”属性。
 '
 %}
 
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=configureTheGateway %}
-

@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-mqtt-broker
-title: TBMQ API reference
-description: TBMQ API reference
+title: TBMQ API 参考
+description: TBMQ API 参考
 
 ---
 

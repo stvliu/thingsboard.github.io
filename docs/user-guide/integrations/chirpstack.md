@@ -1,37 +1,37 @@
 ---
 layout: docwithnav-pe 
-title: ChirpStack Integration 
-description: ChirpStack Integration Guide 
+title: ChirpStack 集成 
+description: ChirpStack 集成指南 
 
 uplink:
     0:
         image: /images/chirpstack/create-uplink.png
-        title: Create uplink converter
+        title: 创建上行转换器
 
 api-keys:
     0:
         image: /images/chirpstack/chirpstack-api-keys.png
-        title: Open API keys
+        title: 打开 API 密钥
     1:
         image: /images/chirpstack/chirpstack-api-keys-2.png
-        title: Create API key
+        title: 创建 API 密钥
     2:
         image: /images/chirpstack/chirpstack-api-keys-3.png
-        title: Copy created API key
+        title: 复制创建的 API 密钥
 
 integration:
     0:
         image: /images/chirpstack/create-integration.png
-        title: Create integration
+        title: 创建集成
 
 chirpstack_integration:
     0:
         image: /images/chirpstack/chirpstack-create-integration.png
-        title: Create integration
+        title: 创建集成
 
     1:
         image: /images/chirpstack/chirpstack-integration-created.png
-        title: Set integration name and endpoint url
+        title: 设置集成名称和端点 URL
 
 uplink_message:
     0:
@@ -40,15 +40,15 @@ uplink_message:
 device_groups:
     0:
         image: /images/chirpstack/groups-created-device.png
-        title: Device **Device_1** was created 
+        title: 设备 **Device_1** 已创建 
 
 uplink_events:
     0:
         image: /images/chirpstack/converter-in-event.png
-        title: Example of incoming data to converter from ChirpStack
+        title: ChirpStack 到转换器的传入数据示例
     1:
         image: /images/chirpstack/converter-out-event.png
-        title: Example of outgoing data from converter 
+        title: 转换器发出的传出数据示例 
 
 downlink:
     0:
@@ -57,33 +57,33 @@ downlink:
 downlink_rule_chain:
     0:
         image: /images/chirpstack/import-downlink-rule-chain.png
-        title: Import downlink rule-chain 
+        title: 导入下行规则链 
     1:
         image: /images/chirpstack/imported-rule-chain.png
-        title: Open integration downlink rule node configuration by pressing on pencil
+        title: 按下铅笔打开集成下行规则节点配置
     2:
         image: /images/chirpstack/edit-integration-downlink-rule-node.png
-        title: Select your integration from the list, save rule node by pressing 
+        title: 从列表中选择集成，按下保存规则节点 
     3:
         image: /images/chirpstack/save-rule-chain.png
-        title: Save rule chain by pressing on checkmark
+        title: 按下复选标记保存规则链
 
 root_rule_chain:
     0:
         image: /images/chirpstack/add-check-relation-node.png
-        title: Add check relation rule-node
+        title: 添加检查关系规则节点
     1:
         image: /images/chirpstack/configure-check-relation-node.png
-        title: Configure check relation rule-node
+        title: 配置检查关系规则节点
     2:
         image: /images/chirpstack/add-rule-chain-node.png
-        title: Add rule-chain rule node, set the newly imported rule chain and save it by pressing on pencil icon
+        title: 添加规则链规则节点，设置新导入的规则链，按下铅笔图标保存
     3:
         image: /images/chirpstack/add-relation-to-rule-chain-node.png
-        title: Add **"True"** relation to rule-chain node from check relation rule-node
+        title: 从检查关系规则节点向规则链节点添加 **“True”** 关系
     4:
         image: /images/chirpstack/save-root-rule-chain.png
-        title: Save root rule-chain
+        title: 保存根规则链
                                 
 shared_attributes:
     0:
@@ -92,10 +92,10 @@ shared_attributes:
 downlink_events:
     0:
         image: /images/chirpstack/event_in.png
-        title: Example of input to downlink converter
+        title: 下行转换器输入示例
     1:
         image: /images/chirpstack/event_out.png
-        title: Example of output from downlink converter
+        title: 下行转换器输出示例
 
 downlink_integration_event:
     0:
@@ -103,4 +103,3 @@ downlink_integration_event:
 ---
 {% assign docsPrefix = "pe/" %}
 {% include docs/pe/user-guide/integrations/chirpstack.md %}
-

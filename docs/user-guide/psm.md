@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
-title: PSM and eDRX support
-description: PSM and eDRX support
+title: PSM 和 eDRX 支持
+description: PSM 和 eDRX 支持
 
 ---
 

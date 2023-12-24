@@ -1,57 +1,50 @@
-{% assign deviceName = page.title | remove: "How to connect " | remove: "to ThingsBoard?" %}
+{% assign deviceName = page.title | remove: "如何连接 " | remove: "到 ThingsBoard？" %}
 {% assign prerequisites = "
 - " | append: deviceName | append: "
-- [tb-mqtt-client library](https://pypi.org/project/tb-mqtt-client/)
+- [tb-mqtt-client 库](https://pypi.org/project/tb-mqtt-client/)
 - [python ≥ 3.7](https://www.python.org/)
 - [Adafruit-Blinka](https://pypi.org/project/Adafruit-Blinka/) "
  %}
 
-## Introduction
+## 简介
 ![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
-BeagleBone Black is a low-cost, community-supported development platform suitable for both professionals and hobbyists. 
-Boot into Linux in less than 10 seconds and start developing your projects with just one USB cable.
-The BeagleBone Black is the latest addition to the BeagleBoard.org family and, like its predecessors, is aimed at the 
-open source development community, early adopters, and anyone interested in a low-cost ARM Cortex-A8-based processor. 
-It was equipped with a minimal set of features to allow the user to experience the power of the processor, and is not 
-intended as a full-fledged development platform, as many functions and interfaces provided by the processor are not 
-available with the BeagleBone Black through the embedded system. It is not a complete product designed to perform any 
-specific function. This is the basis for experiments and learning to program the processor and access peripheral devices 
-by creating your own software and hardware. It also offers access to many interfaces and allows the use of additional 
-expansion boards to add many different combinations of functions. The user can also design his own board or add his own 
-circuits.
+BeagleBone Black 是一个低成本、社区支持的开发平台，适合专业人士和业余爱好者。
+在不到 10 秒的时间内启动 Linux，只需一根 USB 电缆即可开始开发项目。
+BeagleBone Black 是 BeagleBoard.org 系列的最新产品，与它的前辈一样，面向开源开发社区、早期采用者以及任何对低成本 ARM Cortex-A8 处理器感兴趣的人。
+它配备了一组最少的功能，使用户能够体验处理器的强大功能，并不打算成为一个成熟的开发平台，因为处理器提供的许多功能和接口都无法通过嵌入式系统在 BeagleBone Black 上使用。它不是旨在执行任何特定功能的完整产品。这是进行实验和学习如何对处理器进行编程以及通过创建自己的软件和硬件来访问外围设备的基础。它还提供了对许多接口的访问，并允许使用其他扩展板来添加许多不同的功能组合。用户还可以设计自己的电路板或添加自己的电路。
 
 {% include /docs/devices-library/blocks/basic/introduction-block.md %}
 
-## Create device on ThingsBoard
+## 在 ThingsBoard 上创建设备
 
 {% include /docs/devices-library/blocks/basic/thingsboard-create-device-block.md %}
 
-## Install required libraries and tools
+## 安装所需的库和工具
 
 {% include /docs/devices-library/blocks/single-board-computers/install-required-libraries-and-tools-block.md %}
 
-## Connect device to ThingsBoard
+## 将设备连接到 ThingsBoard
 
 {% include /docs/devices-library/blocks/basic/thingsboard-provide-device-access-token-block.md %}
 
 {% include /docs/devices-library/blocks/single-board-computers/general-code-to-program-block.md %}
 
-## Synchronize device state using client and shared attribute requests
+## 使用客户端和共享属性请求同步设备状态
 
 {% include /docs/devices-library/blocks/single-board-computers/thingsboard-synchronize-device-state-using-attribute-requests-block.md %}
 
-## Check data on ThingsBoard
+## 在 ThingsBoard 上检查数据
 
 {% include /docs/devices-library/blocks/single-board-computers/check-data-on-thingsboard-block.md %}
 
-## Control device using shared attributes
+## 使用共享属性控制设备
 
 {% include /docs/devices-library/blocks/single-board-computers/update-shared-attributes-block.md %}
 
-## Control device using RPC
+## 使用 RPC 控制设备
 
 {% include /docs/devices-library/blocks/single-board-computers/using-rpc-block.md %}
 
-## Conclusion
+## 结论
 
 {% include /docs/devices-library/blocks/basic/conclusion-block.md %}

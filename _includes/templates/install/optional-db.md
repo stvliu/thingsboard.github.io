@@ -1,3 +1,3 @@
-**NOTE:** This is an **optional** step. 
-It is required only for production usage. 
-You can use embedded HSQLDB for platform evaluation or development
+**注意：**这是 **可选** 步骤。
+仅在生产使用时需要。
+您可以使用嵌入式 HSQLDB 进行平台评估或开发

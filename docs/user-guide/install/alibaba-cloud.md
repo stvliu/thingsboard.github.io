@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
-title: Installing ThingsBoard CE on Alibaba Cloud
-description: Installing ThingsBoard CE on Alibaba Cloud
+title: 在阿里云上安装 ThingsBoard CE
+description: 在阿里云上安装 ThingsBoard CE
 
 ---
 

@@ -1,20 +1,20 @@
 ---
 layout: docwithnav-mobile-pe
-title: Customize device icons in ThingsBoard PE Mobile Application
+title: 在 ThingsBoard PE 移动应用程序中自定义设备图标
 
 device-image:
  0:
   image: /images/mobile/pe/device-image-1.png
-  title: 'Upload desired image to <b>Device profile image</b> field'
+  title: '将所需图像上传到<b>设备配置文件图像</b>字段'
  1:
   image: /images/mobile/pe/device-image-2.png
-  title: 'Upload desired image to <b>Device profile image</b> field'
+  title: '将所需图像上传到<b>设备配置文件图像</b>字段'
  2:
   image: /images/mobile/pe/device-image-3.png
-  title: 'New image will be displayed as a device icon in the devices screen instead of default placeholder'
+  title: '新图像将显示为设备屏幕中的设备图标，而不是默认占位符'
  3:
   image: /images/mobile/pe/device-image-4.png
-  title: 'New image will be displayed as a device icon in the all devices screen instead of default placeholder'
+  title: '新图像将显示为所有设备屏幕中的设备图标，而不是默认占位符'
 
 ---
 

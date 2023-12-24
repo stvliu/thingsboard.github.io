@@ -1,101 +1,100 @@
 * TOC
 {:toc}
 
-ThingsBoard rule engine supports basic analysis of incoming telemetry data, for example, threshold crossing.
-The idea behind rule engine is to provide functionality to route data from IoT Devices to different plugins, based on device attributes or the data itself.   
-However, most of the real-life use cases also require the support of advanced analytics: machine learning, predictive analytics, etc.
-  
-This tutorial will demonstrate how you can:
+ThingsBoard 规则引擎支持对传入遥测数据的基本分析，例如阈值越界。
+规则引擎背后的理念是提供功能，根据设备属性或数据本身，将数据从物联网设备路由到不同的插件。
+但是，大多数实际用例还需要高级分析的支持：机器学习、预测分析等。
 
- - route telemetry device data from ThingsBoard to Kafka topic using the built-in rule engine capabilities (works for both ThingsBoard CE and PE).
- - aggregate data from multiple devices using a simple Kafka Streams application.
- - push results of the analytics back to ThingsBoard for persistence and visualization using ThingsBoard PE Kafka Integration.
+本教程将演示如何：
 
-The analytics in this tutorial is, of course, quite simple, but our goal is to highlight the integration steps.
+- 使用内置规则引擎功能将遥测设备数据从 ThingsBoard 路由到 Kafka 主题（适用于 ThingsBoard CE 和 PE）。
+- 使用简单的 Kafka Streams 应用程序聚合来自多个设备的数据。
+- 使用 ThingsBoard PE Kafka 集成将分析结果推回 ThingsBoard 以进行持久化和可视化。
+
+当然，本教程中的分析非常简单，但我们的目标是突出集成步骤。
 
 ![image](/images/samples/analytics/kafka-streams/kafka-streams-example.svg)
 
-Let's assume we have a large number of solar panels which include a number of solar modules. 
-ThingsBoard is used to collect, store and visualize anomaly telemetry from these solar modules in each panels.
+假设我们有大量太阳能电池板，其中包括许多太阳能模块。
+ThingsBoard 用于收集、存储和可视化来自每个电池板中这些太阳能模块的异常遥测数据。
 
-We calculated anomaly by comparing value produced from a solar module with the average valued produced by all modules of the same panel and standard **deviation** of the same value.
+我们通过将太阳能模块产生的值与同一电池板的所有模块产生的平均值以及相同值的标准**偏差**进行比较来计算异常。
 
 ![image](/images/user-guide/integrations/kafka/deviation.png)
 
-We will analyze real-time data from multiple devices using [Kafka Streams](https://kafka.apache.org/documentation/streams/) job with 30 seconds window (configurable).
+我们将使用具有 30 秒窗口（可配置）的 [Kafka Streams](https://kafka.apache.org/documentation/streams/) 作业分析来自多个设备的实时数据。
 
-In order to store and visualize the results of the analytics, we are going to create three virtual solar module devices for each solar panel. 
+为了存储和可视化分析结果，我们将为每个太阳能电池板创建三个虚拟太阳能模块设备。
 
-### Prerequisites
+### 先决条件
 
-The following services must be up and running:
+以下服务必须启动并运行：
 
-* ThingsBoard PE v2.4.2+ [instance](/docs/user-guide/install/pe/installation-options/)
-* Kafka [server](https://kafka.apache.org/23/documentation/streams/quickstart#quickstart_streams_download)
+* ThingsBoard PE v2.4.2+ [实例](/docs/user-guide/install/pe/installation-options/)
+* Kafka [服务器](https://kafka.apache.org/23/documentation/streams/quickstart#quickstart_streams_download)
 
-### Step 1. Rule Chain configuration
+### 步骤 1. 规则链配置
 
-During this step we will configure three generator nodes that will produce simulated data for testing during development. 
-Typically, you don't need them in production, but it is very useful for debugging. We will generate data for 3 modules and one panel. 
-Two of those modules will produce the same value and one module will produce much lower value. 
-Of course, you should replace this with real data produced by real devices. This is just an example.
+在此步骤中，我们将配置三个生成器节点，这些节点将在开发期间生成模拟数据以进行测试。
+通常，您在生产中不需要它们，但它们对于调试非常有用。我们将为 3 个模块和 1 个电池板生成数据。
+其中两个模块将产生相同的值，一个模块将产生低得多的值。
+当然，您应该用真实设备产生的真实数据替换此数据。这只是一个示例。
 
-Let's create three devices with type "solar-module". If you are using ThingsBoard PE, you cna put them to new "Solar Modules" group.
+让我们创建三个类型为“solar-module”的设备。如果您使用的是 ThingsBoard PE，您可以将它们放入新的“Solar Modules”组中。
 
-![image](/images/samples/analytics/kafka-streams/solar-module-devices.png) 
+![image](/images/samples/analytics/kafka-streams/solar-module-devices.png)
 
-Now, let's create three device simulators to push data directly to our local Kafka broker. 
-The simulated data will be pushed to the Kafka Rule Node, which is responsible for pushing data to Kafka topic. 
-Let's configure Kafka Rule Node first. We will use local Kafka server (localhost:9092) and topic "solar-module-raw".   
+现在，让我们创建三个设备模拟器，以便将数据直接推送到我们的本地 Kafka 代理。
+模拟数据将被推送到 Kafka 规则节点，该节点负责将数据推送到 Kafka 主题。
+让我们首先配置 Kafka 规则节点。我们将使用本地 Kafka 服务器 (localhost:9092) 和主题“solar-module-raw”。
 
 ![image](/images/samples/analytics/kafka-streams/add-kafka-rule-node.png)
 
-Now, let's add "generator" node for the first module. We will configure generator to constantly "produce" 5 watts. 
+现在，让我们为第一个模块添加“generator”节点。我们将配置生成器以持续“产生”5 瓦。
 
 ![image](/images/samples/analytics/kafka-streams/add-module1-simulator-rule-node.png)
 
-Add "generator" node for the second module. We will configure generator to constantly "produce" 5 watts as well. 
+为第二个模块添加“generator”节点。我们将配置生成器以持续“产生”5 瓦。
 
-Now, let's add "generator" node for the third module. We will configure generator to constantly "produce" 3.5 watts which simulates module degradation. 
+现在，让我们为第三个模块添加“generator”节点。我们将配置生成器以持续“产生”3.5 瓦，模拟模块退化。
 
 ![image](/images/samples/analytics/kafka-streams/add-module3-simulator-rule-node.png)
 
-The result rule chain should look similar to this one:
+结果规则链应类似于以下内容：
 
 ![image](/images/samples/analytics/kafka-streams/simulator-rule-chain.png)
 
-You can also download the rule chain [JSON file](/docs/samples/analytics/resources/solar_module_simulator.json) and [import](/docs/{{docsPrefix}}user-guide/ui/rule-chains/#rule-import) it to your project.
+您还可以下载规则链 [JSON 文件](/docs/samples/analytics/resources/solar_module_simulator.json) 并将其 [导入](/docs/{{docsPrefix}}user-guide/ui/rule-chains/#rule-import) 到您的项目中。
 
-Once the rule chain is imported, you should check the debug output of the Kafka node. If your Kafka is up and running at localhost, you should see similar debug messages. 
-Notice the absence of errors in debug log:   
+导入规则链后，您应该检查 Kafka 节点的调试输出。如果您的 Kafka 在 localhost 上启动并运行，您应该会看到类似的调试消息。
+注意调试日志中没有错误：
 
 ![image](/images/samples/analytics/kafka-streams/check-no-errors.png)
 
-### Step 2. Launch Kafka Streams application.
+### 步骤 2. 启动 Kafka Streams 应用程序。
 
-During this step we will download and launch sample application that analyze raw data from "solar-module-raw" 
-and produce valuable insights about module degradations. 
-The sample application calculates total amount of energy produced by each module in the panel within the time window (configurable). 
-Then application calculates average power produced by module for each panel and it's deviation within the same time window.
-Once this is done, the app compares each module values with the average and if the difference is bigger then the deviation, we treat this as anomaly. 
-  
-The results of anomaly calculations are pushed to the "anomalies-topic". 
-ThingsBoard subscribed to this topic using Kafka Integration, generate alarms and store anomalies to the database.
+在此步骤中，我们将下载并启动示例应用程序，该应用程序分析来自“solar-module-raw”的原始数据，并生成有关模块退化的有价值的见解。
+示例应用程序计算电池板中每个模块在时间窗口（可配置）内产生的总能量。
+然后，应用程序计算每个电池板的模块产生的平均功率及其在相同时间窗口内的偏差。
+完成后，应用程序将每个模块值与平均值进行比较，如果差异大于偏差，我们将此视为异常。
+
+异常计算的结果被推送到“anomalies-topic”。
+ThingsBoard 使用 Kafka 集成订阅此主题，生成警报并将异常存储到数据库。
 
 
-#### Download the sample application
+#### 下载示例应用程序
 
-Feel free to grab the [code from the ThingsBoard repository](https://github.com/thingsboard/kafka-streams-example) and build the project with maven:
+随时从 [ThingsBoard 存储库](https://github.com/thingsboard/kafka-streams-example) 获取 [代码](https://github.com/thingsboard/kafka-streams-example) 并使用 maven 构建项目：
 
 ```bash
 mvn clean install
 ```
 
-Go ahead and add that maven project to your favorite IDE. 
+继续并将该 maven 项目添加到您喜欢的 IDE。
 
-#### Dependencies review
+#### 依赖项审查
 
-Main dependencies that are used in the project:
+项目中使用的主要依赖项：
 
 ```xml
 <dependencies>
@@ -109,9 +108,9 @@ Main dependencies that are used in the project:
 </dependencies>
 ```
 
-#### Source code review
+#### 源代码审查
 
-The Kafka Streams Application logic is concentrated mainly in the [SolarConsumer](https://github.com/thingsboard/kafka-streams-example/blob/master/src/main/java/org/thingsboard/kafka/SolarConsumer.java) class.
+Kafka Streams 应用程序逻辑主要集中在 [SolarConsumer](https://github.com/thingsboard/kafka-streams-example/blob/master/src/main/java/org/thingsboard/kafka/SolarConsumer.java) 类中。
 
 ```java
 private static Properties getProperties() {

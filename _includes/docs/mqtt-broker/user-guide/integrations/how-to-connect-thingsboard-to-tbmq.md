@@ -1,97 +1,97 @@
-{% assign feature = "Platform Integrations" %}{% include templates/pe-feature-banner.md %}
+{% assign feature = "平台集成" %}{% include templates/pe-feature-banner.md %}
 
 * TOC
 {:toc}
 
-**TBMQ** is an industry-ready MQTT broker developed and distributed under the ThingsBoard umbrella that facilitates MQTT client connectivity, message publishing, and distribution among subscribers.
+**TBMQ** 是在 ThingsBoard 保护伞下开发和分发的面向行业的 MQTT 代理，它促进了 MQTT 客户端连接、消息发布以及在订阅者之间分发消息。
 
-In this guide, we integrate the TBMQ with the ThingsBoard using MQTT integration. 
-We utilize TBMQ client credentials with the type **APPLICATION** to connect ThingsBoard integration as an APPLICATION client.
-APPLICATION clients specialize in subscribing to topics with high message rates. 
-The messages will be persisted when the client is offline and will be delivered once it goes online, ensuring the availability of crucial data. 
-Read more about the APPLICATION client [here](https://thingsboard.io/docs/mqtt-broker/user-guide/mqtt-client-type/).
+在本指南中，我们使用 MQTT 集成将 TBMQ 与 ThingsBoard 集成。
+我们利用类型为 **APPLICATION** 的 TBMQ 客户端凭据将 ThingsBoard 集成连接为 APPLICATION 客户端。
+APPLICATION 客户端专门用于订阅具有高消息速率的主题。
+当客户端处于离线状态时，消息将被保留，并且一旦客户端上线，消息将被传递，从而确保关键数据的可用性。
+[此处](https://thingsboard.io/docs/mqtt-broker/user-guide/mqtt-client-type/)详细了解 APPLICATION 客户端。
 
-ThingsBoard MQTT Integration acts as an MQTT client. It subscribes to topics and converts the received data into telemetry and attribute updates. 
-In case of a downlink message, MQTT integration converts it to the device-suitable format and pushes it to TBMQ. 
-Pay attention: TBMQ should be either co-located with the ThingsBoard instance or deployed in the cloud and have a valid DNS name or static IP address. 
-ThingsBoard instance that is running in the cloud can’t connect to the TBMQ deployed in the local area network with no internet connection.
+ThingsBoard MQTT 集成充当 MQTT 客户端。它订阅主题并将接收到的数据转换为遥测和属性更新。
+在有下行消息的情况下，MQTT 集成会将其转换为适合设备的格式并将其推送到 TBMQ。
+请注意：TBMQ 应与 ThingsBoard 实例位于同一位置或部署在云中，并具有有效的 DNS 名称或静态 IP 地址。
+在云中运行的 ThingsBoard 实例无法连接到没有互联网连接的本地局域网中部署的 TBMQ。
 
-### Prerequisites
+### 先决条件
 
-In this tutorial, we will use:
+在本教程中，我们将使用：
 
- - The instance of [ThingsBoard Professional Edition](https://thingsboard.io/docs/user-guide/install/pe/installation-options/) installed locally;
- - [TBMQ](https://thingsboard.io/docs/mqtt-broker/install/installation-options/) installed locally and accessible by ThingsBoard PE instance;
- - mosquitto_pub MQTT client to send messages.
+- 本地安装的 [ThingsBoard Professional Edition](https://thingsboard.io/docs/user-guide/install/pe/installation-options/) 实例；
+- 本地安装且 ThingsBoard PE 实例可访问的 [TBMQ](https://thingsboard.io/docs/mqtt-broker/install/installation-options/)；
+- mosquitto_pub MQTT 客户端来发送消息。
 
-### TBMQ setup
+### TBMQ 设置
 
-First, we need to create TBMQ client credentials to use them for connecting ThingsBoard integration to TBMQ.
+首先，我们需要创建 TBMQ 客户端凭据，以便将 ThingsBoard 集成连接到 TBMQ。
 
-To do this, login to your TBMQ user interface and follow the next steps.
+为此，请登录到 TBMQ 用户界面并按照以下步骤操作。
 
 {% include images-gallery.html imageCollection="create-client-credentials" showListImageTitles="true" %}
 
 {% capture difference %}
-**Please note**:
+**请注意**：
 <br>
-The "SECURITY_MQTT_BASIC_ENABLED" environment variable must be set to "true".
+必须将 "SECURITY_MQTT_BASIC_ENABLED" 环境变量设置为 "true"。
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-Now you can proceed to the next step - configuration of ThingsBoard integration.
+现在，您可以继续执行下一步 - 配置 ThingsBoard 集成。
 
-### ThingsBoard setup
+### ThingsBoard 设置
 
-In this example, we will use the MQTT integration to connect the ThingsBoard to TBMQ.
-Before setting up an MQTT integration, you need to create uplink converter.
+在本示例中，我们将使用 MQTT 集成将 ThingsBoard 连接到 TBMQ。
+在设置 MQTT 集成之前，您需要创建上行转换器。
 
-#### Uplink Converter
+#### 上行转换器
 
-The purpose of the decoder function is to parse the incoming data and metadata to a format that ThingsBoard can consume.
+解码器函数的目的是将传入的数据和元数据解析为 ThingsBoard 可以使用的格式。
 
-To create uplink converter, go to the "Integrations center" section -> "Data converters" page and click on the "plus" icon. Name it "TBMQ Uplink Converter" and select type "Uplink". Paste the decoder script below into the decoder functions section. Click "Add".
+要创建上行转换器，请转到 "集成中心" 部分 -> "数据转换器" 页面，然后单击 "加号" 图标。将其命名为 "TBMQ 上行转换器"，然后选择类型 "上行"。将以下解码器脚本粘贴到解码器函数部分。单击 "添加"。
 
 {% include images-gallery.html imageCollection="create-uplink-converter" %}
 
-In our example, use the following script for the decoder function section:
+在我们的示例中，对解码器函数部分使用以下脚本：
 
 {% include templates/tbel-vs-js.md %}
 
 {% capture mqttuplinkconverterconfig %}
-TBEL<small>Recommended</small>%,%accessToken%,%templates/mqtt-broker/user-guide/integrations/mqtt/tbmq-uplink-converter-config-tbel.md%br%
+TBEL<small>推荐</small>%,%accessToken%,%templates/mqtt-broker/user-guide/integrations/mqtt/tbmq-uplink-converter-config-tbel.md%br%
 JavaScript<small></small>%,%anonymous%,%templates/mqtt-broker/user-guide/integrations/mqtt/tbmq-uplink-converter-config-javascript.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="mqttuplinkconverterconfig" toggle-spec=mqttuplinkconverterconfig %}
 
-#### MQTT Integration Setup
+#### MQTT 集成设置
 
-Now create an integration.
+现在创建一个集成。
 
 {% include images-gallery.html imageCollection="create-integration" showListImageTitles="true" %}
 
-Now go to the "Sessions" page in the TBMQ UI. Upon successful establishment of the connection between ThingsBoard and TBMQ, we will see a new session and its status - "Connected".
+现在转到 TBMQ UI 中的 "会话" 页面。在 ThingsBoard 和 TBMQ 之间成功建立连接后，我们将看到一个新会话及其状态 - "已连接"。
 
 {% include images-gallery.html imageCollection="successful-connection-tbmq-to-thingsboard" %}
 
-And on the "Topics" page of the "Kafka Management" menu section you will see a name of Kafka topic (which corresponds to the client ID specified in the MQTT integration), number of partitions, replication factor and size of the topic.
+在 "Kafka 管理" 菜单部分的 "主题" 页面上，您将看到 Kafka 主题的名称（对应于 MQTT 集成中指定的客户端 ID）、分区数、复制因子和主题大小。
 
 {% include images-gallery.html imageCollection="tbmq-home-page" %}
 
-#### Send Uplink message
+#### 发送上行消息
 
-Now let's simulate the device sending a temperature reading to TBMQ. 
+现在让我们模拟设备向 TBMQ 发送温度读数。
 
-Open the terminal and execute the following command to send a message with temperature readings in a simple format: *`{"value":25.1}`* to the topic "tb/mqtt-integration-tutorial/sensors/SN-001/temperature":
+打开终端并执行以下命令，将带有简单格式的温度读数消息 *`{"value":25.1}`* 发送到主题 "tb/mqtt-integration-tutorial/sensors/SN-001/temperature"：
 
 ```shell
 mosquitto_pub -h $THINGSBOARD_MQTT_BROKER_HOST_NAME -p 1883 -q 1 -t "tb/mqtt-integration-tutorial/sensors/SN-001/temperature" -m '{"value":25.1}' -u "username" -P "password"
 ```
 {: .copy-code}
 
-Replace the `$THINGSBOARD_MQTT_BROKER_HOST_NAME` with the correct public IP address or DNS name of the broker, `username` and `password` values according to the specified ones in the provisioned credentials.
+根据已配置凭据中指定的值，将 `$THINGSBOARD_MQTT_BROKER_HOST_NAME` 替换为代理的正确公有 IP 地址或 DNS 名称，将 `username` 和 `password` 替换为相应的值。
 
-Use the following command for our example:
+对我们的示例使用以下命令：
 
 ```shell
 mosquitto_pub -h localhost -p 1883 -q 1 -t "tb/mqtt-integration-tutorial/sensors/SN-001/temperature" -m '{"value":25.1}' -u "tb-pe" -P "secret"
@@ -100,15 +100,15 @@ mosquitto_pub -h localhost -p 1883 -q 1 -t "tb/mqtt-integration-tutorial/sensors
 
 ![image](/images/mqtt-broker/user-guide/integrations/how-to-connect-tbqm-to-thingsboard/tbmq-uplink-message-1.png)
 
-After you sent uplink message, go to your integration in ThingsBoard UI and navigate to the "Events" tab. There you'll see the message consumed by the "MQTT Integration".
+发送上行消息后，转到 ThingsBoard UI 中的集成并导航到 "事件" 选项卡。您将在其中看到 "MQTT 集成" 使用的消息。
 
 {% include images-gallery.html imageCollection="tbmq-integration-events" %}
 
-Go to the "Entities" section -> "Devices" page. You should find a SN-001 device provisioned by the integration.
-Click on the device, go to "Latest Telemetry" tab to see "temperature" key and its value (25.1) there.
+转到 "实体" 部分 -> "设备" 页面。您应该找到由集成配置的 SN-001 设备。
+单击设备，转到 "最新遥测" 选项卡，以查看 "temperature" 密钥及其值 (25.1)。
 
 {% include images-gallery.html imageCollection="tbmq-create-device" %}
 
-### Next steps
+### 后续步骤
 
 {% assign currentGuide = "TBIntegrationGuide" %}{% include templates/mqtt-broker-guides-banner.md %}

@@ -1,7 +1,7 @@
 {% capture tb_3_3_3_upgrade_note %}
-**Important note before upgrading to ThingsBoard 3.3.3**
+**在升级到 ThingsBoard 3.3.3 之前的重要说明**
 
-ThingsBoard UI was migrated to Angular 12. You need to re-build your custom widgets and rule nodes (which use UI) on Angular 12.
+ThingsBoard UI 已迁移到 Angular 12。您需要在 Angular 12 上重新构建自定义小部件和规则节点（使用 UI）。
 
 {% endcapture %}
 {% include templates/info-banner.md content=tb_3_3_3_upgrade_note %}

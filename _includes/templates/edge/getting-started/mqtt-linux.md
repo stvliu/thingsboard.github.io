@@ -1,11 +1,11 @@
-Install mqtt client for **Ubuntu**:
+**Ubuntu** 安装 mqtt 客户端：
 
 ```bash
 sudo apt-get install mosquitto-clients
 ```
 {: .copy-code}
 
-Install cURL for **macOS**:
+**macOS** 安装 cURL：
 
 ```bash
 brew install mosquitto-clients
@@ -13,7 +13,7 @@ brew install mosquitto-clients
 {: .copy-code}
 
 
-Replace $HOST_NAME, $MQTT_PORT and $ACCESS_TOKEN with corresponding values.
+用相应的值替换 $HOST_NAME、$MQTT_PORT 和 $ACCESS_TOKEN。
 
 ```bash
 mosquitto_pub -d -q 1 -h "$HOST_NAME" -p "$MQTT_PORT" -t "v1/devices/me/telemetry" -u "$ACCESS_TOKEN" -m {"temperature":25}
@@ -21,14 +21,14 @@ mosquitto_pub -d -q 1 -h "$HOST_NAME" -p "$MQTT_PORT" -t "v1/devices/me/telemetr
 {: .copy-code}
 
 
-For example, $HOST_NAME reference your local ThingsBoard Edge installation, MQTT port is **1883** and access token is **ABC123**:
+例如，$HOST_NAME 引用本地 ThingsBoard Edge 安装，MQTT 端口为 **1883**，访问令牌为 **ABC123**：
 
 ```bash
 mosquitto_pub -d -q 1 -h "localhost" -p "1883" -t "v1/devices/me/telemetry" -u "ABC123" -m {"temperature":25}
 ```
 {: .copy-code}
 
-Successful output should look similar to this one:
+成功的输出应类似于以下内容：
 
 ```text
 Client mosqpub|xxx sending CONNECT
@@ -38,7 +38,6 @@ Client mosqpub|xxx received PUBACK (Mid: 1)
 Client mosqpub|xxx sending DISCONNECT
 ```
 
-**Note:** Since ThingsBoard 3.2, you are able to use basic MQTT credentials (combination of client id, user name and password ) 
-and customize **topic names** and **payload type** using Device Profile. See more info [here](/docs/user-guide/device-profiles/#mqtt-transport-type).
+**注意：**自 ThingsBoard 3.2 起，您可以使用基本 MQTT 凭据（客户端 ID、用户名和密码的组合）并使用设备配置文件自定义**主题名称**和**有效负载类型**。在此处查看更多信息：[此处](/docs/user-guide/device-profiles/#mqtt-transport-type)。
 
 <br>

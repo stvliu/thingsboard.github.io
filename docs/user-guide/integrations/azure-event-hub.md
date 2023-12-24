@@ -1,9 +1,9 @@
 ---
 layout: docwithnav-pe
-title: Azure Event Hub Integration
-description: Azure Event Hub Integration Guide 
-create_eventhub: 
-    0: 
+title: Azure Event Hub 集成
+description: Azure Event Hub 集成指南
+create_eventhub:
+    0:
         image: /images/azure-event-hub/create_a_resource.png
     1:
         image: /images/azure-event-hub/select_iot_hub.png
@@ -33,23 +33,23 @@ uplink_converter:
         image: /images/azure-event-hub/create_uplink_converter.png
 
 integration:
-    0: 
+    0:
         image: /images/azure-event-hub/built_in_endpoints.png
     1:
         image: /images/azure-event-hub/event_hub_compatible_endpoint.png
-    2: 
+    2:
         image: /images/azure-event-hub/create_integration_tb.png
     3:
         image: /images/azure-event-hub/check_connection.png
 
 generator:
-    0: 
+    0:
         image: /images/azure-event-hub/rule_chain_generator.png
 
 primary_key:
-    0: 
+    0:
         image: /images/azure-event-hub/your_devices.png
-    1: 
+    1:
         image: /images/azure-event-hub/primary_key.png
 
 iot_rule_node:
@@ -79,7 +79,6 @@ device_groups_all:
         image: /images/azure-event-hub/device_groups_all_device profile.png
     1:
         image: /images/azure-event-hub/device_profiles_rule_chain.png
-        
 
 downlink_rule_node:
     0:

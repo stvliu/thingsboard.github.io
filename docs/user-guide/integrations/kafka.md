@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-pe
-title: Kafka Integration
-description: Kafka Integration guide
+title: Kafka 集成
+description: Kafka 集成指南
 Kafka main:
     0:
         image: /images/user-guide/integrations/kafka/Kafka_main.png
@@ -9,10 +9,10 @@ Kafka main:
 Create Uplink Converter:
     0:
         image: /images/user-guide/integrations/kafka/kafka_uplink_edit.png
-        title: Edit Kafka Uplink decoder.
+        title: 编辑 Kafka 上行解码器。
     1:
         image: /images/user-guide/integrations/kafka/kafka_uplink_test_decoder.png
-        title: Test decoder function.
+        title: 测试解码器功能。
 
 Kafka_Integration_add:
     0:

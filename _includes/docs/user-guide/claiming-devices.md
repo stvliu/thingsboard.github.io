@@ -1,56 +1,56 @@
 * TOC
 {:toc}
 
-## Use Case description
+## 用例说明
 
-As a Tenant, I would like to pre-provision my devices via script or UI. My customers purchase devices directly from me or through the distributors.
-I would like my customers to claim their devices based on the QR code or similar technique, once they get physical access to the device.
+作为租户，我想通过脚本或 UI 预置备我的设备。我的客户直接从我这里或通过分销商购买设备。
+我希望我的客户在获得设备的物理访问权限后，根据二维码或类似技术声明他们的设备。
 
-Once device is claimed, the customer becomes its owner and customer users may access device data as well as control the device.   
+一旦设备被声明，客户就成为其所有者，客户用户可以访问设备数据并控制设备。
 
-## Device Claiming scenarios
- 
-ThingsBoard User can claim the device if they "know" the device Name and Secret Key. 
-The Secret Key is optional, always has an expiration time, and may also change over time. 
+## 设备声明场景
 
-The Secret Key may be provisioned in two different ways:
+如果 ThingsBoard 用户“知道”设备名称和密钥，则他们可以声明该设备。
+密钥是可选的，始终具有到期时间，并且也可能随着时间的推移而更改。
 
-1. *Device-side key* scenario - Device contains **expirationTime** server attribute with expiration timestamp. The device sends claiming request to ThingsBoard with claiming data and only after this customer is able to claim device by using device claiming widget.   
-2. *Server-side key* scenario - Device contains **claimingData** server attribute with claiming data and customer claim device using claim device widget.  
+密钥可以通过两种不同的方式预置备：
 
-See below for more details.
+1. *设备端密钥* 场景 - 设备包含带有到期时间戳的 **expirationTime** 服务器属性。设备向 ThingsBoard 发送带有声明数据的声明请求，只有在此之后，客户才能使用设备声明小部件声明设备。
+2. *服务器端密钥* 场景 - 设备包含带有声明数据的 **claimingData** 服务器属性，客户使用声明设备小部件声明设备。
+
+有关更多详细信息，请参见下文。
 
 {% capture claimingscenariotogglespec %}
-Claiming using <b>device-side</b> key scenario%,%deviceside%,%templates/claiming/device-key-scenario.md%br%
-Claiming using <b>server-side</b> key scenario%,%serverside%,%templates/claiming/server-key-scenario.md%br%{%endcapture%}
+使用<b>设备端</b>密钥场景声明%,%deviceside%,%templates/claiming/device-key-scenario.md%br%
+使用<b>服务器端</b>密钥场景声明%,%serverside%,%templates/claiming/server-key-scenario.md%br%{%endcapture%}
 {% include content-toggle.html content-toggle-id="claimingscenario" toggle-spec=claimingscenariotogglespec %}
 
 
-## Device Claiming Permissions in PE
+## PE 中的设备声明权限
 
-It is important to know that in the case of the PE version the user that is trying to claim the specific device must have the necessary permissions to do so.
-In this case, the needed permission is the following:
+重要的是要知道，在 PE 版本的情况下，尝试声明特定设备的用户必须具有必要的权限才能这样做。
+在这种情况下，所需的权限如下：
 
-- **Resource: Device**
-- **Operation: Claim devices**
+- **资源：设备**
+- **操作：声明设备**
 
-Let's add the above permission for a custom claiming user group.
+让我们为自定义声明用户组添加上述权限。
 
 {% include images-gallery.html imageCollection="device-claiming-permissions-in-pe-carousel" showListImageTitles="true" %} 
 
-## Device Claiming Widget
+## 设备声明小部件
 
 {% include images-gallery.html imageCollection="device-claiming-widget-carousel" showListImageTitles="true" %} 
 
-## Device Claiming API Request
+## 设备声明 API 请求
 
-The Claiming Request is sent as a POST request to the following URL:
+声明请求作为 POST 请求发送到以下 URL：
 
 ```shell
 http(s)://host:port/api/customer/device/$DEVICE_NAME/claim
 ```
 
-The supported data format is:
+支持的数据格式为：
 
 ```json
 {
@@ -58,24 +58,24 @@ The supported data format is:
 }
 ```
 
-**Note:** the message does not contain **durationMs** parameter and the **secretKey** parameter is optional.
+**注意：**消息不包含 **durationMs** 参数，**secretKey** 参数是可选的。
 
-Whenever claiming is succeed the device is being assigned to the specific customer. The **claimingAllowed** attribute is automatically deleted in case the system parameter **allowClaimingByDefault** is **false**.
+只要声明成功，设备就会被分配给特定的客户。如果系统参数 **allowClaimingByDefault** 为 **false**，则 **claimingAllowed** 属性将自动删除。
 
-In addition, there is a possibility to reclaim the device, which means the device will be unassigned from the customer. The **claimingAllowed** attribute will appear again in case the **allowClaimingByDefault** is **false**. 
+此外，还可以重新声明设备，这意味着设备将从客户处取消分配。如果 **allowClaimingByDefault** 为 **false**，则 **claimingAllowed** 属性将再次出现。
 
-See the following for more details regarding the above steps. 
+有关上述步骤的更多详细信息，请参见以下内容。
 
-## Device Reclaiming API Request
+## 设备重新声明 API 请求
 
-In order to reclaim the device, you can send DELETE request to the following URL (Don't forget to replace device name with the correct name):
+为了重新声明设备，您可以向以下 URL 发送 DELETE 请求（不要忘记用正确的名称替换设备名称）：
 
 ```shell
 curl -X DELETE https://thingsboard.cloud/api/customer/device/$DEVICE_NAME/claim
 ```
 {: .copy-code}
 
-You will receive the response like the following one:
+您将收到如下响应：
 
 ```json
 {
@@ -84,27 +84,27 @@ You will receive the response like the following one:
 }
 ```
 
-## Python example scripts
+## Python 示例脚本
 
-In this section you may get examples of code for claiming device feature.  
-We will use **tb-mqtt-client** python module to connect and claim device.  
-You are able to install it using the following command:  
+在本节中，您可以获得声明设备功能的代码示例。
+我们将使用 **tb-mqtt-client** python 模块来连接和声明设备。
+您可以使用以下命令安装它：
 
 ```bash
 pip3 install tb-mqtt-client --user
 ```
 {: .copy-code}
 
-### Basic claiming example
+### 基本声明示例
 
-Let's assume we have a device on tenant level and configured customer, like it is described above.  
-At the moment, we want to connect the device and send claiming request to assign it to customer.  
+假设我们在租户级别有一个设备并配置了客户，如上所述。
+目前，我们希望连接设备并发送声明请求以将其分配给客户。
 
-Case description:
-We have a device on ThingsBord with a name **Test claiming device**.  
-The device has access token credentials - **Eypdinl1gUF5fSerOPJF**.  
+案例说明：
+我们在 ThingsBord 上有一个名为 **测试声明设备** 的设备。
+该设备具有访问令牌凭据 - **Eypdinl1gUF5fSerOPJF**。
 
-We should [download the script](/docs/{{docsPrefix}}user-guide/resources/claiming-device/basic_claiming_example.py) above and run it to send claiming request to the server.  
+我们应该[下载脚本](/docs/{{docsPrefix}}user-guide/resources/claiming-device/basic_claiming_example.py)以上并运行它以向服务器发送声明请求。
 
 ```python
 
@@ -158,8 +158,8 @@ if __name__ == '__main__':
 ```
 {: .copy-code}
 
-Then we are able to use [Device Claiming Widget](#device-claiming-widget).
+然后我们可以使用[设备声明小部件](#device-claiming-widget)。
 
-## Next steps
+## 后续步骤
 
 {% assign currentGuide = "AdvancedFeatures" %}{% include templates/guides-banner.md %}

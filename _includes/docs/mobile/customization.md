@@ -1,18 +1,18 @@
 {% if docsPrefix == 'pe/' %}
-{% assign appPrefix = "ThingsBoard PE" %}
+{% assign appPrefix = "物联网平台 PE" %}
 {% else %}
-{% assign appPrefix = "ThingsBoard" %}
+{% assign appPrefix = "物联网平台" %}
 {% endif %}
 
-{{appPrefix}} Mobile Application allows you to perform the following customizations **without code changes**:
+{{appPrefix}} 移动应用程序允许您执行以下自定义操作，**无需更改代码**：
 
-- **[Customize home screen](/docs/{{docsPrefix}}mobile/customize-dashboards)**
-- **[Customize device icons](/docs/{{docsPrefix}}mobile/customize-devices)**
-- **[Setup device details dashboard](/docs/{{docsPrefix}}mobile/device-dashboard)**
-- **[Setup alarm details dashboard](/docs/{{docsPrefix}}mobile/alarm-dashboard)**
-- **[Configure mobile actions](/docs/{{docsPrefix}}mobile/mobile-actions)**
-- **[Configure OAuth 2.0](/docs/{{docsPrefix}}mobile/oauth2)**
+- **[自定义主页](/docs/{{docsPrefix}}mobile/customize-dashboards)**
+- **[自定义设备图标](/docs/{{docsPrefix}}mobile/customize-devices)**
+- **[设置设备详细信息仪表板](/docs/{{docsPrefix}}mobile/device-dashboard)**
+- **[设置警报详细信息仪表板](/docs/{{docsPrefix}}mobile/alarm-dashboard)**
+- **[配置移动操作](/docs/{{docsPrefix}}mobile/mobile-actions)**
+- **[配置 OAuth 2.0](/docs/{{docsPrefix}}mobile/oauth2)**
 {% if docsPrefix == 'pe/' %}
-- **[Configure white-labeling](/docs/pe/mobile/white-labeling)**
-- **[Configure self-registration](/docs/pe/mobile/self-registration)**
+- **[配置白标](/docs/pe/mobile/white-labeling)**
+- **[配置自助注册](/docs/pe/mobile/self-registration)**
 {% endif %}

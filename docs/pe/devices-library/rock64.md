@@ -1,9 +1,9 @@
 ---
 layout: devices-library-article
-title: How to connect Rock64 to ThingsBoard?
-category: Single-board computers
+title: 如何将 Rock64 连接到 ThingsBoard？
+category: 单板计算机
 chip: Rockchip RK3328
-connectivity: Ethernet
+connectivity: 以太网
 vendor: PINE64
 deviceImageFileName: rock64.jpg
 docsPrefix: pe/

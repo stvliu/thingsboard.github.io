@@ -1,7 +1,6 @@
-Anonymous connection type is the simplest option. It is useful for testing purpose but not recommended in production
-solution.
+匿名连接类型是最简单的选项。它对于测试目的很有用，但不建议在生产解决方案中使用。
 
-Security subsection in configuration file will look like this: 
+配置文件中的安全子部分将如下所示：
 
 ```yaml
     "security": []

@@ -1,19 +1,17 @@
 {% capture difference %}
 <br>
-**Don't forget to create shared attribute `blinkingPeriod` on your device.** 
+**别忘了在设备上创建共享属性 `blinkingPeriod`。**
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-Also, we can change the period of the blinking using [shared attribute](/docs/{{page.docsPrefix}}user-guide/attributes/#shared-attributes) update functionality.
+此外，我们可以使用 [共享属性](/docs/{{page.docsPrefix}}user-guide/attributes/#shared-attributes) 更新功能来更改闪烁周期。
 
-This type of attribute is available only for Devices. It is similar to the Server-side attributes but has one important 
-difference. The device firmware/application may request the value of the shared attribute(s) or subscribe to the updates 
-of the attribute(s). The most common use case of shared attributes is to store device settings.
+此类属性仅适用于设备。它类似于服务器端属性，但有一个重要的区别。设备固件/应用程序可以请求共享属性的值或订阅属性的更新。共享属性最常见的用例是存储设备设置。
 
-In order to run the code of this part of the guide, we recommend using Python 3.9 or above.  
+为了运行本指南此部分的代码，我们建议使用 Python 3.9 或更高版本。
 
 
-If you haven’t installed Python, please, follow next steps:  
+如果你尚未安装 Python，请按照以下步骤操作：
 
 ```bash
 sudo apt update
@@ -36,7 +34,7 @@ sudo apt-get install -y python3 git python3-pip
 ```
 {:.copy-code}
 
-Also, we will need Adafruit-Blinka library. Please, use the following command to install it:  
+此外，我们将需要 Adafruit-Blinka 库。请使用以下命令安装它：
 
 ```bash
 pip3 install Adafruit-Blinka
@@ -44,9 +42,7 @@ pip3 install Adafruit-Blinka
 {:.copy-code}
 
 
-For now, we are ready to write our code. In this part, we use new packages for blinking our LED in the `blink` function.
-Also, we use the `attibute_callback` function, which will be called when we change the value of our shared attribute. And 
-finally, we bind our callback to subscriber in the `main` function.
+现在，我们准备编写代码了。在本部分中，我们在 `blink` 函数中使用新软件包来闪烁 LED。此外，我们使用 `attibute_callback` 函数，该函数将在我们更改共享属性的值时调用。最后，我们在 `main` 函数中将回调绑定到订阅者。
 
 ```python
 import digitalio
@@ -54,18 +50,18 @@ import board
 
 ...
 
-# default blinking period
+# 默认闪烁周期
 period = 1.0
 
-# callback function that will call when we will change value of our Shared Attribute
+# 当我们更改共享属性的值时将调用的回调函数
 def attribute_callback(client, result):
     print(client, result)
-    # make sure that you paste YOUR shared attribute name
+    # 确保粘贴你的共享属性名称
     period = result.get('blinkingPeriod', 1.0)
 
 def main():
     ...
-    # make sure that you paste YOUR shared attribute name
+    # 确保粘贴你的共享属性名称
     sub_id_1 = client.subscribe_to_attribute("blinkingPeriod", attribute_callback)
     sub_id_2 = client.subscribe_to_all_attributes(attribute_callback)
     led = digitalio.DigitalInOut(board.PD14)
@@ -77,7 +73,6 @@ def main():
     time.sleep(period)
 ```
 
-Also, if you are using the imported dashboard, you can change the blinking period using the following widget, which you 
-can see in the bottom right corner of the dashboard:
+此外，如果你使用导入的仪表板，可以使用以下小部件更改闪烁周期，你可以在仪表板的右下角看到该小部件：
 
 ![](/images/devices-library/basic/single-board-computers/attribute-update-widget.png)

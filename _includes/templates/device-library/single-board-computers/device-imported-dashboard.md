@@ -1,8 +1,6 @@
-### Import dashboard
+### 导入仪表板
 
-You are able to import a dashboard in JSON format. To import a dashboard, you should go to the Dashboard group and click
- on the “+” button in the upper right corner of the page and choose “Import dashboard”. The dashboard import window 
-should pop up, and you will be prompted to upload the JSON file and click “Import”.
+您可以导入 JSON 格式的仪表板。要导入仪表板，您应转到仪表板组，然后单击页面右上角的“+”按钮，并选择“导入仪表板”。仪表板导入窗口应弹出，系统将提示您上传 JSON 文件并单击“导入”。
 
 {% assign importingDashboardCE = '
     ===
@@ -30,13 +28,15 @@ should pop up, and you will be prompted to upload the JSON file and click “Imp
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=importingDashboardCE %}
 {% endif %}
 
-Below, you can find the dashboard JSON file:
+以下，您可以找到仪表板 JSON 文件：
 
-[Check and control device data dashboard](/docs/devices-library/resources/dashboards/minicomputers/dashboard.json){:target="_blank" download="dashboard.json"}
+[检查和控制设备数据仪表板](/docs/devices-library/resources/dashboards/minicomputers/dashboard.json){:target="_blank" download="dashboard.json"}
 
-After importing, we should choose an entity alias for our device.  
-To do this - we need to press the pen icon and select entity aliases, select alias "My device" and open it for editing by pressing the pen icon.    
-Then, choose a device with name My device from dropdown list and save entity alias. Now, you should be able to see the data from the device. 
+导入后，我们应为我们的设备选择一个实体别名。
 
-If you did everything right, you have to see the following dashboard:
+要执行此操作 - 我们需要按笔图标并选择实体别名，选择别名“我的设备”并按笔图标将其打开进行编辑。
+
+然后，从下拉列表中选择名称为“我的设备”的设备，并保存实体别名。现在，您应能够看到来自设备的数据。
+
+如果您正确执行了所有操作，则您必须看到以下仪表板：
 ![](/images/devices-library/basic/single-board-computers/minicomputer-dashboard.png)

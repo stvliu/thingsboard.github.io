@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-pe
-title: ThingsBoard Microservices architecture
-description: ThingsBoard architecture
+title: ThingsBoard 微服务架构
+description: ThingsBoard 架构
 
 ---
 

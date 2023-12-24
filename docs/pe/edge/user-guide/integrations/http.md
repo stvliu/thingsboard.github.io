@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-pe-edge
-title: HTTP Integration
-description: HTTP integration guide
+title: HTTP 集成
+description: HTTP 集成指南
 
 addConverter:
     0:
@@ -24,16 +24,16 @@ addIntegration:
 assignIntegration:
     0:
         image: /images/pe/edge/integrations/http/assign-integration-step-1.png
-        title: 'Add <b>edgeBaseUrl</b> attribute to Edge and set value as your Edge <b>IP:port</b>'
+        title: '将 <b>edgeBaseUrl</b> 属性添加到 Edge 并将值设置为您的 Edge <b>IP:port</b>'
     1:
         image: /images/pe/edge/integrations/http/assign-integration-step-2.png
-        title: 'Click <b>Manage Integrations</b> button of Edge entity'
+        title: '单击 Edge 实体的 <b>管理集成</b> 按钮'
     2:
         image: /images/pe/edge/integrations/http/assign-integration-step-3.png
-        title: 'Assign Integration to the Edge'
+        title: '将集成分配给 Edge'
     3:
         image: /images/pe/edge/integrations/http/assign-integration-step-4.png
-        title: 'Login to your <b>ThingsBoard Edge</b> instance and open Integrations page - placeholder is going to be replaced by attribute value'
+        title: '登录到您的 <b>ThingsBoard Edge</b> 实例并打开集成页面 - 占位符将被属性值替换'
 
 sendUplink:
     0:
@@ -86,42 +86,42 @@ downlinkTerminal:
 {% assign integrationUrl = "http" %}
 {% include templates/edge/integrations/edge-pe-reference.md %}
 
-## Overview
+## 概述
 
-HTTP Integration allows converting existing protocols and payload formats to ThingsBoard Edge message format and is useful in several deployment scenarios: 
+HTTP 集成允许将现有协议和有效负载格式转换为 ThingsBoard Edge 消息格式，并且在多种部署场景中很有用：
 
- - stream device and/or asset data from external system, IoT platform or connectivity provider back-end.
- - stream device and/or asset data from your custom application running in the cloud.
- - connect the existing device with custom HTTP based protocol to ThingsBoard Edge.
+- 将设备和/或资产数据从外部系统、物联网平台或连接提供商后端流式传输回 ThingsBoard Edge。
+- 从在云中运行的自定义应用程序流式传输设备和/或资产数据。
+- 将具有基于 HTTP 的自定义协议的现有设备连接到 ThingsBoard Edge。
 
-## Create Converter templates
+## 创建转换器模板
 
-Converter and Integration templates are created on the **Cloud**, so please log in as Tenant administrator to cloud instance.
+转换器和集成模板在 **云** 上创建，因此请以租户管理员身份登录云实例。
 
-### Uplink Converter template
+### 上行转换器模板
 
-Before creating the Integration template, you need to create an Uplink and Downlink converter templates in **Converters templates** page. 
-Uplink is necessary in order to convert the incoming data from the device into the required format for displaying them in ThingsBoard Edge. 
-Click on the 'plus' and on 'Create new converter'. To view the events, enable Debug. 
-In the function decoder field, specify a script to parse and transform data.
+在创建集成模板之前，您需要在 **转换器模板** 页面中创建上行和下行转换器模板。
+上行对于将来自设备的传入数据转换为在 ThingsBoard Edge 中显示它们所需的格式是必要的。
+单击“加号”和“创建新转换器”。要查看事件，请启用调试。
+在函数解码器字段中，指定一个脚本来解析和转换数据。
 
 {% include images-gallery.html imageCollection="addConverter" %}
 
 {% include templates/edge/integrations/debug-mode-info.md %}
 
-**Example for the Uplink converter:**
+**上行转换器的示例：**
 
 ```ruby
-// Decode an uplink message from a buffer
-// payload - array of bytes
-// metadata - key/value object
-/** Decoder **/
-// decode payload to string
+// 从缓冲区解码上行消息
+// payload - 字节数组
+// metadata - 键/值对象
+/** 解码器 **/
+// 将有效负载解码为字符串
 // var payloadStr = decodeToString(payload);
-// decode payload to JSON
+// 将有效负载解码为 JSON
 var data = decodeToJson(payload);
 var deviceName = data.deviceName;
-// Result object with device attributes/telemetry data
+// 具有设备属性/遥测数据的 Result 对象
 var result = {
    deviceName: deviceName,
    deviceType: 'default',
@@ -132,14 +132,14 @@ var result = {
        temperature: data.temperature
    }
 };
-/** Helper functions **/
+/** 帮助器函数 **/
 function decodeToString(payload) {
    return String.fromCharCode.apply(String, payload);
 }
 function decodeToJson(payload) {
-   // covert payload to string.
+   // 将有效负载转换为字符串。
    var str = decodeToString(payload);
-   // parse string to JSON
+   // 将字符串解析为 JSON
    var data = JSON.parse(str);
    return data;
 }
@@ -147,40 +147,40 @@ return result;
 ```
 {: .copy-code}
 
-You can change the decoder function while creating the converter or after creating it. 
-If the converter has already been created, then click on the 'pencil' icon to edit it.
-Copy the configuration example for the converter (or your own configuration) and insert it into the decoder function. 
-Save changes by clicking on the 'checkmark' icon.
+您可以在创建转换器时或在创建转换器后更改解码器函数。
+如果转换器已经创建，则单击“铅笔”图标进行编辑。
+复制转换器的配置示例（或您自己的配置）并将其插入解码器函数。
+通过单击“复选标记”图标保存更改。
 
 {% include images-gallery.html imageCollection="modifyConverter" %}
 
-### Downlink Converter template
+### 下行转换器模板
 
-Create Downlink in **Converter templates** page as well. To see events select **Debug** checkbox.
+同样在 **转换器模板** 页面中创建下行。要查看事件，请选择 **调试** 复选框。
 
 {% include images-gallery.html imageCollection="addDownlink" %}
 
-You can customize a downlink according to your configuration.
-Let’s consider an example where we send an attribute update message.
-An example of downlink converter:
+您可以根据您的配置自定义下行。
+让我们考虑一个我们发送属性更新消息的示例。
+下行转换器的示例：
 
 ```ruby
-// Encode downlink data from incoming Rule Engine message
+// 从传入的规则引擎消息对下行数据进行编码
 
-// msg - JSON message payload downlink message json
-// msgType - type of message, for ex. 'ATTRIBUTES_UPDATED', 'POST_TELEMETRY_REQUEST', etc.
-// metadata - list of key-value pairs with additional data about the message
-// integrationMetadata - list of key-value pairs with additional data defined in Integration executing this converter
+// msg - JSON 消息有效负载下行消息 json
+// msgType - 消息类型，例如 'ATTRIBUTES_UPDATED'、'POST_TELEMETRY_REQUEST' 等。
+// metadata - 包含有关消息的其他数据的键值对列表
+// integrationMetadata - 在执行此转换器的集成中定义的其他数据的键值对列表
 
 var result = {
 
-    // downlink data content type: JSON, TEXT or BINARY (base64 format)
+    // 下行数据内容类型：JSON、TEXT 或 BINARY（base64 格式）
     contentType: "JSON",
 
-    // downlink data
+    // 下行数据
     data: JSON.stringify(msg),
 
-    // Optional metadata object presented in key/value format
+    // 以键/值格式显示的可选元数据对象
     metadata: {
     }
 };
@@ -189,37 +189,37 @@ return result;
 ```
 {: .copy-code}
 
-## Create Integration template 
+## 创建集成模板
 
-Now that the Uplink and Downlink converter templates have been created, it is possible to create an integration.
+现在已经创建了上行和下行转换器模板，就可以创建集成。
 
 {% include images-gallery.html imageCollection="addIntegration" %}
 
 
-## Modify Edge Root Rule chain for Downlinks
+## 修改下行的 Edge 根规则链
 
-We can send a downlink message to the device from Rule chain using the rule node.
-To be able to send downlink over integration we need to modify **'Edge Root Rule chain'** on the cloud.
-For example, create an **integration downlink** node and set the **'Attributes updated'** link to it.
-When changes are made to device attribute, the downlink message will be sent to the integration.
+我们可以使用规则节点从规则链向设备发送下行消息。
+为了能够通过集成发送下行，我们需要修改云上的 **“Edge 根规则链”**。
+例如，创建一个 **集成下行** 节点并将 **“属性已更新”** 链接到它。
+当对设备属性进行更改时，下行消息将被发送到集成。
 
 {% include images-gallery.html imageCollection="downlinkRule" %}
 
-## Assign Integration to Edge
+## 将集成分配给 Edge
 
-Once converter and integration templates are created, we can assign Integration template to Edge. 
-Because we are using placeholder **$\{\{edgeBaseUrl\}\}** in the integration configuration, we need to add attribute **edgeBaseUrl** to edge first.
-You need to provide **IP address** and **port** of your *Edge* instance as **edgeBaseUrl** attribute.
-Once attribute added, we are ready to assign integration and verify that it's added.
+一旦创建了转换器和集成模板，我们就可以将集成模板分配给 Edge。
+因为我们在集成配置中使用占位符 **$\{\{edgeBaseUrl\}\}**，所以我们需要首先将属性 **edgeBaseUrl** 添加到 Edge。
+您需要提供您的 *Edge* 实例的 **IP 地址** 和 **端口** 作为 **edgeBaseUrl** 属性。
+添加属性后，我们就可以分配集成并验证是否已添加。
 
 {% include images-gallery.html imageCollection="assignIntegration" showListImageTitles="true" %}
 
-## Send uplink message
+## 发送上行消息
 
-To send an uplink message, you need HTTP endpoint URL from the integration.  
-Let's log in to ThingsBoard **Edge** and go to the **Integrations** page. Find your HTTP integration and click on it. There you can find the HTTP endpoint URL. Click on the icon to copy the url.
+要发送上行消息，您需要来自集成的 HTTP 端点 URL。
+让我们登录 ThingsBoard **Edge** 并转到 **集成** 页面。找到您的 HTTP 集成并单击它。您可以在其中找到 HTTP 端点 URL。单击图标复制 URL。
 
-Use this command to send the message. Replace $DEVICE_NAME and $YOUR_HTTP_ENDPOINT_URL with corresponding values.
+使用此命令发送消息。用相应的数值替换 $DEVICE_NAME 和 $YOUR_HTTP_ENDPOINT_URL。
 
 ```ruby
 curl -v -X POST -d "{\"deviceName\":\"$DEVICE_NAME\",\"temperature\":33,\"model\":\"test\"}" $YOUR_HTTP_ENDPOINT_URL -H "Content-Type:application/json"
@@ -228,37 +228,37 @@ curl -v -X POST -d "{\"deviceName\":\"$DEVICE_NAME\",\"temperature\":33,\"model\
 
 {% include images-gallery.html imageCollection="sendUplink" %}
 
-The created device with data can be seen in the section **Device groups -> All** on the Edge:
+可以在 Edge 上的 **设备组 -> 全部** 部分中看到具有数据的已创建设备：
 
 {% include images-gallery.html imageCollection="device" %}
 
-Received data can be viewed in the Uplink converter. In the **'In'** and **'Out'** blocks of the Events tab:
+可以在上行转换器中查看接收到的数据。在事件选项卡的 **“输入”** 和 **“输出”** 块中：
 
 {% include images-gallery.html imageCollection="converterEvents" %}
 
-## Send downlink message
+## 发送下行消息
 
-Now let's check downlink functionality. Let's add **firmware** shared attribute:
+现在让我们检查一下下行功能。让我们添加 **固件** 共享属性：
 
 {% include images-gallery.html imageCollection="addSharedAttribute" %}
 
-To make sure that downlink message sent to integration you can check 'Events' tab of integration:
+要确保发送到集成的下行消息，您可以检查集成的“事件”选项卡：
 
 {% include images-gallery.html imageCollection="downlinkMessage" %}
 
-Now we'll need to send again message to HTTP integration and see downlink response.
-Please use the same command that was used before (Replace $DEVICE_NAME and $YOUR_HTTP_ENDPOINT_URL with corresponding values):
+现在我们需要再次向 HTTP 集成发送消息并查看下行响应。
+请使用之前使用过的命令（用相应的数值替换 $DEVICE_NAME 和 $YOUR_HTTP_ENDPOINT_URL）：
 
 ```ruby
 curl -v -X POST -d "{\"deviceName\":\"$DEVICE_NAME\",\"temperature\":33,\"model\":\"test\"}" $YOUR_HTTP_ENDPOINT_URL -H "Content-Type:application/json"
 ```
 {: .copy-code}
 
-An example of sent message and a response from ThingsBoard Edge in the terminal:
+终端中发送的消息和来自 ThingsBoard Edge 的响应示例：
 
 {% include images-gallery.html imageCollection="downlinkTerminal" %}
 
-## Next steps
+## 后续步骤
 
 {% assign docsPrefix = "pe/edge/" %}
 {% include templates/edge/guides-banner-edge.md %}

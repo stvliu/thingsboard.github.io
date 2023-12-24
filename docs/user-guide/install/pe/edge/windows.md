@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-pe-edge
-title: Installing ThingsBoard Edge on Windows
-description: Installing ThingsBoard Edge on Windows
+title: 在 Windows 上安装 ThingsBoard Edge
+description: 在 Windows 上安装 ThingsBoard Edge
 ---
 
 * TOC
@@ -13,98 +13,97 @@ description: Installing ThingsBoard Edge on Windows
 
 {% include templates/install/windows-warning-note.md %}
 
-This guide describes how to install ThingsBoard Edge on Windows machine.
-Instructions below are provided for Windows 10/8.1/8/7 32-bit/64-bit.
+本指南介绍如何在 Windows 机器上安装 ThingsBoard Edge。
+以下说明适用于 Windows 10/8.1/8/7 32 位/64 位。
 
 {% include templates/edge/install/prerequisites.md %}
 
-## Installation and Configuration
+## 安装和配置
 
-### Step 1. Install Java 11 (OpenJDK) 
+### 步骤 1. 安装 Java 11 (OpenJDK)
 
 {% include templates/install/windows-java-install.md %}
 
-### Step 2. Configure PostgreSQL
+### 步骤 2. 配置 PostgreSQL
 
 {% include templates/edge/install/windows-db-postgresql.md %}
 
-### Step 3. ThingsBoard Edge service installation
+### 步骤 3. ThingsBoard Edge 服务安装
 
-Download and extract the package.
+下载并解压软件包。
 
 ```bash
 https://dist.thingsboard.io/tb-edge-windows-{{ site.release.pe_edge_ver }}.zip
 ```
 {: .copy-code}
 
-**Note:** We assume you have unzipped package to default location: *C:\Program Files (x86)\tb-edge*
+**注意：**我们假设您已将软件包解压到默认位置：*C:\Program Files (x86)\tb-edge*
 
-### Step 4. Configure ThingsBoard Edge
+### 步骤 4. 配置 ThingsBoard Edge
 
 {% include templates/edge/install/windows-configure-edge.md %}
 
-### Step 5. Run installation script
+### 步骤 5. 运行安装脚本
 
 {% include templates/edge/install/run-edge-install-windows.md %} 
 
-### Step 6. Start ThingsBoard Edge service
+### 步骤 6. 启动 ThingsBoard Edge 服务
 
 {% include templates/edge/install/windows-start-service.md %}
 
-### Step 7. Open ThingsBoard Edge UI
+### 步骤 7. 打开 ThingsBoard Edge UI
 
 {% include templates/edge/install/open-edge-ui.md %} 
 
-## Troubleshooting
+## 故障排除
 
-The log files are located in **logs** folder ("C:\Program Files (x86)\tb-edge\logs" in our case).
+日志文件位于 **logs** 文件夹中（在本例中为“C:\Program Files (x86)\tb-edge\logs”）。
 
-The **tb-edge.log** file should contain following line:
+**tb-edge.log** 文件应包含以下行：
 
 ```text
 YYYY-MM-DD HH:mm:ss,sss [main] INFO  o.t.server.TbEdgeApplication - Started TbEdgeApplication in x.xxx seconds (JVM running for x.xxx)
 ```
 
-In case of any unclear errors, use general [troubleshooting guide](/docs/user-guide/troubleshooting/#getting-help) or [contact us](/docs/contact-us/).
+如果出现任何不明确的错误，请使用通用 [故障排除指南](/docs/user-guide/troubleshooting/#getting-help) 或 [联系我们](/docs/contact-us/)。
 
-## Windows firewall settings
+## Windows 防火墙设置
 
-In order to have external access to ThingsBoard Web UI and device connectivity (HTTP, MQTT, CoAP)
-you need to create a new inbound rule with Windows Firewall with Advanced Security.
- 
-- Open "Windows Firewall" from "Control Panel":
+为了能够从外部访问 ThingsBoard Web UI 和设备连接（HTTP、MQTT、CoAP），您需要使用高级安全性的 Windows 防火墙创建一个新的入站规则。
+
+- 从“控制面板”中打开“Windows 防火墙”：
 
 ![image](/images/user-guide/install/windows/windows7-firewall-1.png)
 
-- Click "Advanced settings" on the left panel:
+- 在左侧面板中单击“高级设置”：
 
 ![image](/images/user-guide/install/windows/windows7-firewall-2.png)
 
-- Select "Inbound Rules" on the left panel, then click "New Rule..." on the right "Actions" panel:
+- 在左侧面板中选择“入站规则”，然后在右侧“操作”面板中单击“新建规则...”：
 
 ![image](/images/user-guide/install/windows/windows7-firewall-3.png)
 
-- Now new "New Inbound Rule Wizard" window will open. On the first step "Rule Type" select "Port" option: 
+- 现在将打开新的“新建入站规则向导”窗口。在第一个步骤“规则类型”中选择“端口”选项：
 
 ![image](/images/user-guide/install/windows/windows7-firewall-4.png)
 
-- On the "Protocol and Ports" step select "TCP" protocol and enter port list **8080, 1883, 5683** in the "Specific local ports" field:
+- 在“协议和端口”步骤中选择“TCP”协议，并在“特定本地端口”字段中输入端口列表 **8080、1883、5683**：
 
 ![image](/images/user-guide/install/windows/windows7-firewall-5.png)
 
-- On the "Action" step leave "Allow the connection" option selected:
+- 在“操作”步骤中，保持“允许连接”选项处于选中状态：
 
 ![image](/images/user-guide/install/windows/windows7-firewall-6.png)
 
-- On the "Profile" step select Windows network profiles when to apply this rule:
+- 在“配置文件”步骤中，选择要应用此规则的 Windows 网络配置文件：
 
 ![image](/images/user-guide/install/windows/windows7-firewall-7.png)
 
-- Finally, give the name to this rule (for ex. "ThingsBoard Service Networking") and click "Finish".
+- 最后，为该规则命名（例如“ThingsBoard 服务网络”），然后单击“完成”。
 
 ![image](/images/user-guide/install/windows/windows7-firewall-8.png)
 
 
-## Next Steps
+## 后续步骤
 
 {% include templates/edge/install/next-steps.md %}

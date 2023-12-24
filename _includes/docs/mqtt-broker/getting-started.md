@@ -1,28 +1,26 @@
-
 * TOC
 {:toc}
 
-### Introduction
+### 简介
 
-The goal of this tutorial is to showcase the fundamental usage of [TBMQ](/docs/mqtt-broker/getting-started-guides/what-is-thingsboard-mqtt-broker/). 
-Through this tutorial, you will gain knowledge and proficiency in the following areas:
+本教程的目的是展示 [TBMQ](/docs/mqtt-broker/getting-started-guides/what-is-thingsboard-mqtt-broker/) 的基本用法。
+通过本教程，您将获得以下领域的知识和技能：
 
-* Establishing connections between MQTT clients and the broker.
-* Publishing MQTT messages.
-* Subscribing to topics to receive published messages.
-* Configuring authentication and authorization mechanisms for MQTT clients.
+* 在 MQTT 客户端和代理之间建立连接。
+* 发布 MQTT 消息。
+* 订阅主题以接收已发布的消息。
+* 为 MQTT 客户端配置身份验证和授权机制。
 
-For more comprehensive information regarding the architecture of TBMQ, navigate to the following [document](/docs/mqtt-broker/architecture/).
-This resource will provide you with detailed insights into the underlying structure and design principles of the broker,
-allowing you to develop a deeper understanding of its inner functionalities.
+有关 TBMQ 架构的更全面信息，请导航至以下 [文档](/docs/mqtt-broker/architecture/)。
+此资源将为您提供对代理的基础结构和设计原理的详细见解，让您能够更深入地了解其内部功能。
 
-### Installing TBMQ
+### 安装 TBMQ
 
-To obtain detailed instructions on how to install TBMQ on different platforms, we recommend exploring the
-[**Installation options**](/docs/mqtt-broker/install/installation-options) documentation. 
-This resource will provide you with step-by-step guidance tailored to various deployment scenarios.
+要获取有关如何在不同平台上安装 TBMQ 的详细说明，我们建议您查阅
+[**安装选项**](/docs/mqtt-broker/install/installation-options) 文档。
+此资源将为您提供针对各种部署场景的逐步指导。
 
-Follow the below instructions depending on your system for quick TBMQ installation.
+根据您的系统，按照以下说明快速安装 TBMQ。
 
 {% capture contenttogglespec %}
 Linux & Mac OS%,%linuxmacos%,%templates/mqtt-broker/install/linux-macos/linux-macos.md%br%
@@ -30,91 +28,91 @@ Windows%,%windows%,%templates/mqtt-broker/install/windows/windows.md{% endcaptur
 
 {% include content-toggle.html content-toggle-id="tbmqGettingStartedInstallation" toggle-spec=contenttogglespec %}
 
-Once the installation process is complete for local deployment, you can access TBMQ UI by visiting the following URL: **http://localhost:8083**. 
-Wait patiently until the services are up and running. To log in, utilize the following default credentials.
+本地部署的安装过程完成后，您可以访问以下 URL 来访问 TBMQ UI：**http://localhost:8083**。
+耐心等待服务启动并运行。要登录，请使用以下默认凭据。
 
-**Username:**
+**用户名：**
 ```text
 sysadmin@thingsboard.org
 ```
 {: .copy-code}
 
-**Password:**
+**密码：**
 ```text
 sysadmin
 ```
 {: .copy-code}
 
-### Configure client authentication & authorization
+### 配置客户端身份验证和授权
 
-In order to secure the connection to the broker we should enable Basic or TLS authentication.
-In this tutorial, we will focus on the [Basic](/docs/mqtt-broker/security/#basic-authentication) authentication type.
-For this, we have set `SECURITY_MQTT_BASIC_ENABLED` environment variable to `true` in the `docker-compose.yml` downloaded in the previous step.
+为了保护与代理的连接，我们应该启用基本或 TLS 身份验证。
+在本教程中，我们将重点介绍 [基本](/docs/mqtt-broker/security/#basic-authentication) 身份验证类型。
+为此，我们在上一步下载的 `docker-compose.yml` 中将 `SECURITY_MQTT_BASIC_ENABLED` 环境变量设置为 `true`。
 
-Once Basic authentication is enabled, it is necessary to create MQTT Client Credentials of type `Basic` to authenticate and validate the connecting client.
+启用基本身份验证后，有必要创建类型为“基本”的 MQTT 客户端凭据来验证连接的客户端。
 
-* Navigate to "Credentials" tab, click "+" in the top right corner of the table.
-* Input credentials name. For example, "Getting Started Credentials".
-* Input "username" and "password" with chosen values. For example, use `username` and `password` values respectively.
-* Authorization rules are set to allow publishing/subscribing to any topic by default.
-* Click "Add" to save credentials.
+* 导航到“凭据”选项卡，单击表格右上角的“+”。
+* 输入凭据名称。例如，“入门凭据”。
+* 输入“用户名”和“密码”以及所选值。例如，分别使用 `username` 和 `password` 值。
+* 默认情况下，授权规则允许发布/订阅任何主题。
+* 单击“添加”以保存凭据。
 
 {% include images-gallery.html imageCollection="broker-mqtt-creds-creation" %}
 
-A wider range of authentication methods can be found within the [security guide](/docs/mqtt-broker/security/), offering enhanced options for ensuring secure access.
+可以在 [安全指南](/docs/mqtt-broker/security/) 中找到更广泛的身份验证方法，为确保安全访问提供了增强的选项。
 
-### Publishing and Subscribing to Topics
+### 发布和订阅主题
 
-Now, let's proceed with publishing messages and subscribing to topics to observe the flow of messages. In this tutorial, 
-we will utilize [Mosquitto](https://mosquitto.org/) clients for this purpose. 
+现在，让我们继续发布消息并订阅主题以观察消息流。在本教程中，
+我们将为此目的使用 [Mosquitto](https://mosquitto.org/) 客户端。
 
-Please refer to the following links to learn how to [publish messages](https://mosquitto.org/man/mosquitto_pub-1.html) to a topic and
-[subscribe](https://mosquitto.org/man/mosquitto_sub-1.html) to topic filters in order to receive messages.
+请参阅以下链接以了解如何将消息 [发布](https://mosquitto.org/man/mosquitto_pub-1.html) 到主题以及
+[订阅](https://mosquitto.org/man/mosquitto_sub-1.html) 主题过滤器以接收消息。
 
-#### Subscribe to topic
+#### 订阅主题
 
-To subscribe to the **sensors/temperature** topic and start receiving messages from TBMQ, you can utilize the following command:
+要订阅 **sensors/temperature** 主题并开始从 TBMQ 接收消息，您可以使用以下命令：
 
 ```bash
 mosquitto_sub -d -h $THINGSBOARD_MQTT_BROKER_HOST_NAME -p 1883 -t sensors/temperature -q 1 -u username -P password -i tbmq_dev
 ```
 {: .copy-code}
 
-**Note**, replace the **$THINGSBOARD_MQTT_BROKER_HOST_NAME** with the correct public IP address or DNS name of the broker, 
-`username` and `password` values according to the specified ones in the provisioned credentials.
-Kindly replicate the aforementioned process for publishing the message below.
+**注意**，将 **$THINGSBOARD_MQTT_BROKER_HOST_NAME** 替换为代理的正确公共 IP 地址或 DNS 名称，
+`username` 和 `password` 值根据已配置凭据中的指定值。
+请复制上述过程以发布以下消息。
 
-Use the following command for local deployment:
+对本地部署使用以下命令：
 ```bash
 mosquitto_sub -d -h localhost -p 1883 -t sensors/temperature -q 1 -u username -P password -i tbmq_dev
 ```
 {: .copy-code}
 
-Upon successful establishment of the connection, we can proceed to examine the session information within the UI.
+在成功建立连接后，我们可以继续检查 UI 中的会话信息。
 
 {% include images-gallery.html imageCollection="broker-sessions" %}
 
-#### Publish message
+#### 发布消息
 
-To publish a message to TBMQ for the topic **sensors/temperature**, you can utilize the following command:
+要将消息发布到 TBMQ 以获取主题 **sensors/temperature**，您可以使用以下命令：
 
 ```bash
 mosquitto_pub -d -h $THINGSBOARD_MQTT_BROKER_HOST_NAME -p 1883 -t sensors/temperature -m 32 -q 1 -u username -P password
 ```
 {: .copy-code}
 
-Use the following command for local deployment:
+对本地部署使用以下命令：
 ```bash
 mosquitto_pub -d -h localhost -p 1883 -t sensors/temperature -m 32 -q 1 -u username -P password
 ```
 {: .copy-code}
 
-#### Result
+#### 结果
 
-You should receive and observe the published message for the subscribed client.
+您应该收到并观察已订阅客户端的已发布消息。
 
 ![image](/images/mqtt-broker/getting-started/broker-pub-sub.png)
 
-### Next Steps
+### 后续步骤
 
 {% assign currentGuide = "GettingStartedGuide" %}{% include templates/mqtt-broker-guides-banner.md %}

@@ -2,20 +2,20 @@
 layout: docwithnav
 assignees:
 - ashvayka
-title: Message Type Filter
+title: 消息类型过滤器
 
 ---
 
-## Overview
+## 概述
 
-This component allows filtering incoming messages by type. 
-This filter is very efficient. 
-We recommend using this filter in almost every rule to quickly ignore irrelevant messages. 
+此组件允许按类型过滤传入消息。
+此过滤器非常高效。
+我们建议在几乎每个规则中使用此过滤器以快速忽略不相关消息。
 
-## Configuration
+## 配置
 
-You are able to select multiple types: "Get Attributes", "Post Attributes", "Post Telemetry" and "RPC Request". 
+您可以选择多种类型：“获取属性”、“发布属性”、“发布遥测”和“RPC 请求”。
 
-## Example
+## 示例
 
-As a system administrator, you are able to review filter example inside **Rules->System Telemetry Rule->Filters->Message Telemetry Filter**.
+作为系统管理员，您可以在 **规则->系统遥测规则->过滤器->消息遥测过滤器** 中查看过滤器示例。

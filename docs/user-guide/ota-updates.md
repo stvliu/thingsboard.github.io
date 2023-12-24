@@ -2,14 +2,13 @@
 layout: docwithnav
 assignees:
 - ashvayka
-title: Over-the-air firmware and software updates
-description: IoT device firmware updates
- 
+title: 无线固件和软件更新
+description: IoT 设备固件更新
+
 createFirmware:
     0:
         image: /images/user-guide/firmware/add-firmware-ce.png  
-        title: 'You have to enter title and version; select type and device profile (this field we define what type of device this firmware will be available; 
-                choose file contains firmware. Optionally add checksum algorithm and checksum.'
+        title: '您必须输入标题和版本；选择类型和设备配置文件（此字段中，我们定义此固件将可用的设备类型；选择包含固件的文件。可以选择性地添加校验和算法和校验和。'
 
 listFirmware:
     0:
@@ -28,13 +27,13 @@ listFirmware:
 deviceFirmware:
     0:
         image: /images/user-guide/firmware/device-firmware-ce.png
-        title: 'Go to the Device page and open needed device details to edit its information.'
+        title: '转到设备页面并打开所需的设备详细信息以编辑其信息。'
     1:
         image: /images/user-guide/firmware/device-firmware-1-ce.png
-        title: "From the drop-down menu select firmware that you&#39;d like to assign to this device."
+        title: "从下拉菜单中选择您要分配给此设备的固件。"
     3:
         image: /images/user-guide/firmware/device-firmware-2-ce.png
-        title: 'After selecting firmware, apply changes by clicking the orange check mark in the right corner of the page.'
+        title: '选择固件后，单击页面右上角的橙色复选标记应用更改。'
     4:
         image: /images/user-guide/firmware/device-firmware-3-ce.png
         title: '.'
@@ -42,13 +41,13 @@ deviceFirmware:
 fw-deviceprofile:
     0:
         image: /images/user-guide/firmware/fw-deviceprofile-ce.png
-        title: 'Go to the Device profile page and open needed device profile details to edit its information.'
+        title: '转到设备配置文件页面并打开所需的设备配置文件详细信息以编辑其信息。'
     1:
         image: /images/user-guide/firmware/fw-deviceprofile-1-ce.png
-        title: "From the drop-down menu select firmware that you&#39;d like to assign to this device profile."
+        title: "从下拉菜单中选择您要分配给此设备配置文件的固件。"
     2:
         image: /images/user-guide/firmware/fw-deviceprofile-2-ce.png
-        title: 'After selecting firmware, apply changes by clicking the orange check mark in the right corner of the page.'
+        title: '选择固件后，单击页面右上角的橙色复选标记应用更改。'
 
 fw-attributes:
     0:
@@ -58,11 +57,10 @@ fw-attributes:
 fw-dashboard:
     0:
         image: /images/user-guide/firmware/fw-dashboard-ce.png
-        title: 'Monitor and track the firmware status of your device in the Firmware dashboard. 
-                You can see a list of all devices with full information about their firmware. Use the tabs on the right side of the page to see more detailed status information.'
+        title: '在固件仪表板中监视和跟踪设备的固件状态。您可以看到所有设备的列表，其中包含有关其固件的完整信息。使用页面右侧的选项卡查看更详细的状态信息。'
     1:
         image: /images/user-guide/firmware/fw-dashboard-2-ce.png
-        title: 'Find out more about the firmware status of specific devices by clicking the buttons next to the device names.'
+        title: '通过单击设备名称旁边的按钮，详细了解特定设备的固件状态。'
 
 fw-status:
     0:
@@ -75,10 +73,10 @@ fw-status:
 sw-dashboard:
     0:
         image: /images/user-guide/firmware/sw-dashboard-1-ce.png
-        title: 'Monitor and track the software status of your device in the Software dashboard.'
+        title: '在软件仪表板中监视和跟踪设备的软件状态。'
     1:
         image: /images/user-guide/firmware/sw-dashboard-2-ce.png
-        title: 'Find out more about the software status of specific devices by clicking the buttons next to the device names.'
+        title: '通过单击设备名称旁边的按钮，详细了解特定设备的软件状态。'
 
 fw-http-updated:
     0:
@@ -98,13 +96,13 @@ fw-coap-updated:
 fw-devicegroup:
     0:
         image: /images/user-guide/firmware/fw-devicegroup-pe.png
-        title: 'Go to the Device group page and open preferred device group details to edit its information.'
+        title: '转到设备组页面并打开首选设备组详细信息以编辑其信息。'
     1:
         image: /images/user-guide/firmware/fw-devicegroup-1-pe.png
-        title: "From the drop-down menu select OTA package that you would like to assign to this device."
+        title: "从下拉菜单中选择您要分配给此设备的 OTA 包。"
     3:
         image: /images/user-guide/firmware/fw-devicegroup-2-pe.png
-        title: 'After selecting firmware, apply changes by clicking the orange check mark in the right corner of the page.'
+        title: '选择固件后，单击页面右上角的橙色复选标记应用更改。'
     4:
         image: /images/user-guide/firmware/fw-devicegroup-3-pe.png
         title: '.'

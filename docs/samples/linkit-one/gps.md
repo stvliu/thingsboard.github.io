@@ -1,139 +1,147 @@
 ---
 layout: docwithnav
-title: GPS data upload and visualization using LinkIt ONE and ThingsBoard
-description: ThingsBoard IoT Platform sample for GPS data upload and visualization using LinkIt ONE
+title: 使用 LinkIt ONE 和 ThingsBoard 上传和可视化 GPS 数据
+description: ThingsBoard IoT 平台示例，用于使用 LinkIt ONE 上传和可视化 GPS 数据
 
 ---
 
 * TOC
 {:toc}
 
-## Introduction
+## 简介
 {% include templates/what-is-thingsboard.md %}
 
-This sample application shows the capability to track GPS location of LinkIt ONE device and perform further visualization on the map. 
-It performs collection of latitude and longitude values produced by GPS module. 
-Collected data is pushed to ThingsBoard for storage and visualization.
-The purpose of this application is to demonstrate ThingsBoard data collection API and visualization capabilities.
+此示例应用程序展示了跟踪 LinkIt ONE 设备的 GPS 位置并在地图上执行进一步可视化的功能。
+它执行 GPS 模块产生的纬度和经度值的收集。
+收集的数据被推送到 ThingsBoard 以进行存储和可视化。
+此应用程序的目的是演示 ThingsBoard 数据收集 API 和可视化功能。
 
-The GPS module is a built-in module of [LinkIt ONE](https://wiki.seeedstudio.com/LinkIt_ONE/). 
-LinkIt ONE pushes data to ThingsBoard server via MQTT protocol by using [PubSubClient](https://github.com/knolleary/pubsubclient) library for Arduino.
-Data is visualized using the map widget which is a part of a customizable dashboard. 
-The application that is running on LinkIt ONE is written using Arduino SDK which is quite simple and easy to understand.
+GPS 模块是 [LinkIt ONE](https://wiki.seeedstudio.com/LinkIt_ONE/) 的内置模块。
+LinkIt ONE 通过使用 Arduino 的 [PubSubClient](https://github.com/knolleary/pubsubclient) 库通过 MQTT 协议将数据推送到 ThingsBoard 服务器。
+数据使用地图小部件进行可视化，该小部件是可自定义仪表板的一部分。
+在 LinkIt ONE 上运行的应用程序使用 Arduino SDK 编写，非常简单易懂。
 
-Once you complete this sample/tutorial, you will see your device GPS and battery data on the following dashboard.
+完成此示例/教程后，您将在以下仪表板上看到您的设备 GPS 和电池数据。
 
 ![image](/images/samples/linkit-one/gps/dashboard.png)
 
 {% include templates/prerequisites.md %}
 
-This tutorial was prepared for Windows OS users. However, it is possible to run it on other OS (Linux or MacOS).
- 
-## List of hardware
+本教程专为 Windows 操作系统用户编写。
+但是，可以在其他操作系统（Linux 或 MacOS）上运行它。
 
- - [LinkIt One](https://www.seeedstudio.com/LinkIt-ONE-p-2017.html) 
-   
-   GPS and WIFI Antenna are shipped with a board.
- 
+## 硬件清单
+
+- [LinkIt One](https://www.seeedstudio.com/LinkIt-ONE-p-2017.html)
+
+   GPS 和 WIFI 天线与电路板一起发货。
+
 {% include templates/thingsboard-configuration.md %}
 
-### Provision your device
+### 配置您的设备
 
-This step contains instructions that are necessary to connect your device to ThingsBoard.
+此步骤包含将您的设备连接到 ThingsBoard 所需的说明。
 
-Open ThingsBoard Web UI (http://localhost:8080) in browser and login as tenant administrator
+在浏览器中打开 ThingsBoard Web UI (http://localhost:8080) 并以租户管理员身份登录
 
- - login: tenant@thingsboard.org
- - password: tenant
- 
-Go to "Devices" section. Click "+" button and create a device with the name "LinkIt One Demo Device". 
+- 登录名：tenant@thingsboard.org
+- 密码：tenant
+
+转到“设备”部分。
+单击“+”按钮并创建一个名为“LinkIt One Demo Device”的设备。
 
 ![image](/images/samples/linkit-one/gps/device.png)
 
-Once device created, open its details and click "Manage credentials".
+创建设备后，打开其详细信息并单击“管理凭据”。
 
-Copy auto-generated access token from the "Access token" field. Please save this device token. It will be referred to later as **$ACCESS_TOKEN**.
+从“访问令牌”字段复制自动生成的访问令牌。
+请保存此设备令牌。
+它将在后面称为 **$ACCESS_TOKEN**。
 
 ![image](/images/samples/linkit-one/gps/credentials.png)
 
 
-Click "Copy Device ID" in device details to copy your device id to the clipboard.
-Paste your device id to some place, this value will be used in further steps.
+在设备详细信息中单击“复制设备 ID”以将您的设备 ID 复制到剪贴板。
+将您的设备 ID 粘贴到某个地方，此值将在后续步骤中使用。
 
-### Provision your dashboard
+### 配置您的仪表板
 
-Download the dashboard file using this [**link**](/docs/samples/linkit-one/resources/linkit_one_gps_dashboard_v2.json). 
-Use import/export [**instructions**](/docs/user-guide/ui/dashboards/#dashboard-importexport) to import the dashboard to your ThingsBoard instance.
+使用此 [**链接**](/docs/samples/linkit-one/resources/linkit_one_gps_dashboard_v2.json) 下载仪表板文件。
+使用导入/导出 [**说明**](/docs/user-guide/ui/dashboards/#dashboard-importexport) 将仪表板导入您的 ThingsBoard 实例。
 
-## Programming the LinkIt One device
+## 编程 LinkIt One 设备
 
-If you already familiar with basics of LinkIt One programming using Arduino IDE you can skip the following step and proceed with step 2.
+如果您已经熟悉使用 Arduino IDE 编程 LinkIt One 的基础知识，则可以跳过以下步骤并继续执行步骤 2。
 
-### Step 1. LinkIt ONE and Arduino IDE setup.
+### 步骤 1. LinkIt ONE 和 Arduino IDE 设置。
 
-In order to start programming LinkIt One device, you will need Arduino IDE installed and all related libraries. Please follow this [guide](https://github.com/MediaTek-Labs) in order to install the Arduino IDE and LinkIt One SDK:
+为了开始编程 LinkIt One 设备，您需要安装 Arduino IDE 和所有相关库。
+请按照此 [指南](https://github.com/MediaTek-Labs) 安装 Arduino IDE 和 LinkIt One SDK：
 
-### Step 2. PubSubClient library installation.
+### 步骤 2. PubSubClient 库安装。
 
-Open Arduino IDE and go to **Sketch -> Include Library -> Manage Libraries**. Find PubSubClient by Nick O'Leary and install it. 
+打开 Arduino IDE 并转到 **草图 -> 包含库 -> 管理库**。
+找到 Nick O'Leary 的 PubSubClient 并安装它。
 
-**Note** that this tutorial was tested with PubSubClient 2.6.
+**注意**本教程使用 PubSubClient 2.6 进行了测试。
 
-Download and open **gps_tracker.ino** sketch. 
+下载并打开 **gps_tracker.ino** 草图。
 
-**Note** You need to edit following constants and variables in the sketch:
+**注意**您需要在草图中编辑以下常量和变量：
 
- - WIFI_AP - name of your access point
- - WIFI_PASSWORD - access point password
- - WIFI_AUTH - choose one of LWIFI_OPEN, LWIFI_WPA, or LWIFI_WEP.
- - TOKEN - the **$ACCESS_TOKEN** from ThingsBoard configuration step.
- - thingsboardServer - ThingsBoard HOST/IP address that is accessible within your wifi network. Specify "demo.thingsboard.io" if you are using [live demo](https://demo.thingsboard.io/) server.
+- WIFI_AP - 您的接入点的名称
+- WIFI_PASSWORD - 接入点密码
+- WIFI_AUTH - 选择 LWIFI_OPEN、LWIFI_WPA 或 LWIFI_WEP 之一。
+- TOKEN - ThingsBoard 配置步骤中的 **$ACCESS_TOKEN**。
+- thingsboardServer - 可在您的 wifi 网络中访问的 ThingsBoard HOST/IP 地址。
+如果您使用 [实时演示](https://demo.thingsboard.io/) 服务器，请指定“demo.thingsboard.io”。
 
 {% capture tabspec %}gps-arduino
 gps,gps_tracker.ino,c,resources/gps_tracker.ino,/docs/samples/linkit-one/resources/gps_tracker.ino{% endcapture %}
 {% include tabs.html %}
 
-Connect your LinkIt One device via USB cable and select Serial Debug COM port in Arduino IDE. Compile and Upload your sketch to the device using "Upload" button.
+通过 USB 电缆连接您的 LinkIt One 设备并在 Arduino IDE 中选择串行调试 COM 端口。
+使用“上传”按钮编译并上传草图到设备。
 
-After application will be uploaded and started it will try to connect to ThingsBoard node using mqtt client and upload "latitude" and "longitude" attributes once per second.
+应用程序上传并启动后，它将尝试使用 mqtt 客户端连接到 ThingsBoard 节点，并每秒上传一次“纬度”和“经度”属性。
 
-## Troubleshooting
+## 故障排除
 
-When the application is running you can connect your device to Serial Debug COM port in Arduino IDE and open "Serial Monitor" in order to view debug information produced by serial output.
+应用程序运行时，您可以将您的设备连接到 Arduino IDE 中的串行调试 COM 端口并打开“串行监视器”以查看串行输出产生的调试信息。
 
-## Data visualization
+## 数据可视化
 
-Finally, open ThingsBoard Web UI. You can access this dashboard by logging in as a tenant administrator. Use
+最后，打开 ThingsBoard Web UI。
+您可以通过以租户管理员身份登录来访问此仪表板。
+使用
 
- - login: tenant@thingsboard.org
- - password: tenant
+- 登录名：tenant@thingsboard.org
+- 密码：tenant
 
-in case of local ThingsBoard installation.
-  
-Go to **"Devices"** section and locate **"LinkIt One Demo Device"**, open device details and switch to **"Attributes"** tab. 
-If all is configured correctly you should be able to see *"latitude"*, *"longitude"* and battery status attributes and their latest values in the table.
+在本地 ThingsBoard 安装的情况下。
+
+转到 **“设备”** 部分并找到 **“LinkIt One Demo Device”**，打开设备详细信息并切换到 **“属性”** 选项卡。
+如果所有配置正确，您应该能够在表中看到 *“纬度”*、*“经度”* 和电池状态属性及其最新值。
 
 ![image](/images/samples/linkit-one/gps/attributes.png)
 
-After, open **"Dashboards"** section then locate and open **"LinkIt One GPS Tracking Demo Dashboard"**. 
-As a result, you will see the map widget with a pointer indicating your device location and a battery level widget (similar to dashboard image in the introduction).
+之后，打开 **“仪表板”** 部分，然后找到并打开 **“LinkIt One GPS 跟踪演示仪表板”**。
+因此，您将看到一个地图小部件，其中包含一个指示您设备位置的指针和一个电池电量小部件（类似于简介中的仪表板图像）。
 
-## See also
+## 另请参阅
 
-Browse other [samples](/docs/samples) or explore guides related to main ThingsBoard features:
+浏览其他 [示例](/docs/samples) 或探索与 ThingsBoard 主要功能相关的指南：
 
- - [Device attributes](/docs/user-guide/attributes/) - how to use device attributes.
- - [Telemetry data collection](/docs/user-guide/telemetry/) - how to collect telemetry data.
- - [Using RPC capabilities](/docs/user-guide/rpc/) - how to send commands to/from devices.
- - [Rule Engine](/docs/user-guide/rule-engine/) - how to use rule engine to analyze data from devices.
- - [Data Visualization](/docs/user-guide/visualization/) - how to visualize collected data.
+- [设备属性](/docs/user-guide/attributes/) - 如何使用设备属性。
+- [遥测数据收集](/docs/user-guide/telemetry/) - 如何收集遥测数据。
+- [使用 RPC 功能](/docs/user-guide/rpc/) - 如何向设备发送/从设备接收命令。
+- [规则引擎](/docs/user-guide/rule-engine/) - 如何使用规则引擎分析来自设备的数据。
+- [数据可视化](/docs/user-guide/visualization/) - 如何可视化收集的数据。
 
 {% include templates/feedback.md %}
- 
+
 {% include socials.html %}
 
-## Next steps
+## 后续步骤
 
 {% assign currentGuide = "HardwareSamples" %}{% include templates/guides-banner.md %}
-
-

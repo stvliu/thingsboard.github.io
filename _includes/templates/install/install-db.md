@@ -1,1 +1,1 @@
-ThingsBoard is able to use SQL or hybrid database approach. See corresponding architecture [page](/docs/reference/#sql-vs-nosql-vs-hybrid-database-approach) for more details.  
+ThingsBoard 能够使用 SQL 或混合数据库方法。有关更多详细信息，请参阅相应的架构 [页面](/docs/reference/#sql-vs-nosql-vs-hybrid-database-approach)。

@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-pe-edge
-title: FAQ
-description: ThingsBoard Edge FAQ
+title: 常见问题解答
+description: ThingsBoard Edge 常见问题解答
 
 ---
 

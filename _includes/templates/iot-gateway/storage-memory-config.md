@@ -1,15 +1,15 @@
 |---
-| **Parameter**            | **Default value**                            | **Description**                                                |
+| **参数**            | **默认值**                            | **说明**                                                |
 |:-|:-|-
-| type                     | **memory**                                   | Storage type (Saving data to RAM, no save to hard drive).      |
-| read_records_count       | **10**                                       | Count of messages to get from storage and send to ThingsBoard. |
-| max_records_count *      | **100**                                      | Maximum count of data in storage before send to ThingsBoard.   |
+| 类型                     | **内存**                                   | 存储类型（将数据保存到 RAM，不保存到硬盘）。      |
+| 读取记录数       | **10**                                       | 从存储中获取并发送到 ThingsBoard 的消息数。 |
+| 最大记录数 *      | **100**                                      | 在发送到 ThingsBoard 之前存储中的最大数据量。   |
 |---
 
 
-\* -- If receive data when storage has already counted, described in this parameter, new data will lose.
+\* -- 如果在存储已计数时收到数据，如该参数中所述，新数据将丢失。
 
-Storage section of configuration file will look like:
+配置文件的存储部分将如下所示：
 
 ```json
 ...

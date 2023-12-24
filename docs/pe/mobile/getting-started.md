@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-mobile-pe
-title: Getting started with ThingsBoard PE Mobile Application
-description: ThingsBoard PE Mobile Application - starting point for your IoT mobile product
+title: ThingsBoard PE 移动应用程序入门
+description: ThingsBoard PE 移动应用程序 - 物联网移动产品的起点
 
 ---
 

@@ -5,20 +5,19 @@ hidetoc: "true"
 
 ---
 
-<h4 class="text-center pt-2 pb-2" style="width: 100%">Trendz Analytics Demo Request</h4>
+<h4 class="text-center pt-2 pb-2" style="width: 100%">Trendz Analytics 演示请求</h4>
 <div style="display: flex;">
     <div style="width: 50%; margin: 30px 10px 0;">
         <div class="pricing-square-description">
-            <p>Create interactive visual analytics and discover trends, patterns and
-                insight from your data:</p>
+            <p>创建交互式可视化分析并从数据中发现趋势、模式和见解：</p>
         </div>
         <ul>
-            <li class="pricing-square-item">One-click integration with ThingsBoard</li>
-            <li class="pricing-square-item">Self-service analytics</li>
-            <li class="pricing-square-item">Data clear and filtering</li>
-            <li class="pricing-square-item">Advanced visualizations</li>
-            <li class="pricing-square-item">Share and collaborate visualization</li>
-            <li class="pricing-square-item">Keep your data secure</li>
+            <li class="pricing-square-item">一键集成 ThingsBoard</li>
+            <li class="pricing-square-item">自助服务分析</li>
+            <li class="pricing-square-item">数据清除和过滤</li>
+            <li class="pricing-square-item">高级可视化</li>
+            <li class="pricing-square-item">共享和协作可视化</li>
+            <li class="pricing-square-item">确保数据安全</li>
         </ul>
     </div>
     <div style="width: 50%; margin: 0 10px 0;">

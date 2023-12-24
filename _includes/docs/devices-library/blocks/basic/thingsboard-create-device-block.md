@@ -1,34 +1,34 @@
-For simplicity, we will provide the device manually using the UI.
+为简单起见，我们将使用 UI 手动提供设备。
 
 {% assign provisionDeviceCE = '
     ===
         image: /images/helloworld/getting-started-ce/hello-world-1-1-provision-device-1-ce.png,
-        title: Login to your ThingsBoard instance and navigate to the "**Entities**". Then click the "**Devices**" page.
+        title: 登录到您的 ThingsBoard 实例并导航到“**实体**”。然后单击“**设备**”页面。
     ===
         image: /images/helloworld/getting-started-ce/hello-world-1-1-provision-device-2-ce.png,
-        title: Click on the "**+**" icon in the top right corner of the table and then select "**Add new device**".
+        title: 单击表格右上角的“**+**”图标，然后选择“**添加新设备**”。
     ===
         image: /images/helloworld/getting-started-ce/hello-world-1-1-provision-device-3-ce.png,
-        title: Input device name. For example, "*My Device*". No other changes required at this time. Click "**Add**" to add the device.
+        title: 输入设备名称。例如，“*我的设备*”。此时无需其他更改。单击“**添加**”以添加设备。
     ===
         image: /images/helloworld/getting-started-ce/hello-world-1-1-provision-device-4-ce.png,
-        title: Your device has been added.
+        title: 您的设备已添加。
     '
 %}
 
 {% assign provisionDevicePE = '
     ===
         image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-1-pe.png,
-        title: Log in to your ThingsBoard instance and open the Devices page.
+        title: 登录到您的 ThingsBoard 实例并打开“设备”页面。
     ===
         image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-2-pe.png,
-        title: By default, you navigate to the device group “All”. Click on the "**+**" icon in the top right corner of the table and then select "**Add new device**".
+        title: 默认情况下，您导航到设备组“全部”。单击表格右上角的“**+**”图标，然后选择“**添加新设备**”。
     ===
         image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-3-pe.png,
-        title: Input device name. For example, "My Device". No other changes are required at this time. Click "**Add**" to add the device.
+        title: 输入设备名称。例如，“我的设备”。此时无需其他更改。单击“**添加**”以添加设备。
     ===
         image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-4-pe.png,
-        title: Your first device has been added.
+        title: 您的第一个设备已添加。
     '
 %}
 
@@ -36,4 +36,4 @@ For simplicity, we will provide the device manually using the UI.
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=provisionDevicePE %}
 {% else %}  
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=provisionDeviceCE %}
-{% endif %} 
+{% endif %}

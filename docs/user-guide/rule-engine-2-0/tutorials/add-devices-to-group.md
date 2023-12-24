@@ -1,104 +1,93 @@
 ---
 layout: docwithnav
-title: Add & remove devices to group dynamically
-description: Add & remove devices to group
+title: 动态添加和删除设备到组
+description: 添加和删除设备到组
 
 ---
 
-{% assign feature = "Device & Asset Groups" %}{% include templates/pe-feature-banner.md %}
+{% assign feature = "设备和资产组" %}{% include templates/pe-feature-banner.md %}
 
-This tutorial will show how to dynamically add & remove device from the device group based on incoming data from device. 
+本教程将演示如何根据设备发来的数据动态添加和删除设备到设备组。
 
 * TOC
 {:toc}
 
-## Use case
+## 使用案例
 
-Let's assume your device is reporting temperature readings to ThingsBoard and you would like to visualize devices that have reported temperature > 50°C. 
+假设你的设备向 ThingsBoard 报告温度读数，你想可视化报告温度 > 50°C 的设备。
 
-In this tutorial we will configure ThingsBoard Rule Engine to automatically update "High temperature devices" group members based on incoming temperature readings from the device.
-You can use this tutorial as a basis for much more complex filtering.
+在本教程中，我们将配置 ThingsBoard 规则引擎根据设备发来的温度读数自动更新“高温设备”组成员。你可以将本教程作为更复杂过滤的基础。
 
-## Prerequisites 
+## 先决条件
 
-We assume you have completed the following guides and reviewed the articles listed below:
+我们假设你已经完成以下指南并阅读了下面列出的文章：
 
-  * [Getting Started](/docs/getting-started-guides/helloworld/) guide.
-  * [Rule Engine Overview](/docs/user-guide/rule-engine-2-0/overview/).
+  * [入门](/docs/getting-started-guides/helloworld/) 指南。
+  * [规则引擎概述](/docs/user-guide/rule-engine-2-0/overview/)。
 
-## Model definition
+## 模型定义
 
-We will operate with Temperature sensor device that has name "Sensor A" and type "DHT22".
+我们将使用名称为“传感器 A”且类型为“DHT22”的温度传感器设备。
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/groups/add-device.png)
 
-## Message Flow
+## 消息流
 
-In this section, we explain the purpose of each node in this tutorial. 
+在本节中，我们将解释本教程中每个节点的用途。
 
-### Root rule chain
+### 根规则链
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/groups/root-rule-chain.png)
 
-  * **Node A**: Rule Chain node
+  * **节点 A**：规则链节点
 
-    * We modify the default root rule chain to forward all telemetry to new "Add device to group" rule chain
+    * 我们修改默认根规则链，将所有遥测数据转发到新的“将设备添加到组”规则链
 
-### New "Add device to group" rule chain
+### 新的“将设备添加到组”规则链
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/groups/rule-chain.png)
 
-  * **Node B**: Script filter node
+  * **节点 B**：脚本过滤器节点
 
-    * Checks that the incoming message from device contains temperature readings
-    * If message from device contains temperature readings it is forwarded to Node C
+    * 检查来自设备的传入消息是否包含温度读数
+    * 如果来自设备的消息包含温度读数，则将其转发到节点 C
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/groups/has-temperature-node.png)
 
-  * **Node C**: Script filter node
+  * **节点 C**：脚本过滤器节点
 
-    * Checks that the incoming message temperature is > 50°C
-    * If temperature > 50°C message is forwarded to Node D
-    * If temperature <= 50°C message is forwarded to Node E
+    * 检查传入消息的温度是否 > 50°C
+    * 如果温度 > 50°C，则将消息转发到节点 D
+    * 如果温度 <= 50°C，则将消息转发到节点 E
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/groups/high-temperature-node.png)
 
-  * **Node D**: Add to Group node
+  * **节点 D**：添加到组节点
 
-    * Adds device to the group
-    * Constructs group name by substituting deviceType metadata value
-    * Automatically creates device group if needed
+    * 将设备添加到组
+    * 通过替换 deviceType 元数据值来构造组名
+    * 在需要时自动创建设备组
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/groups/add-group-node.png)
 
-  * **Node E**: Remove from Group node
+  * **节点 E**：从组中移除节点
 
-    * Removes device from the group
-    * Constructs group name by substituting deviceType metadata value
+    * 从组中移除设备
+    * 通过替换 deviceType 元数据值来构造组名
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/groups/remove-group-node.png)
 
 
-## Configuring the Rule Chain
+## 配置规则链
 
-Download and [**import**](/docs/user-guide/ui/rule-chains/#rule-chains-importexport) attached json [**file**](/docs/user-guide/rule-engine-2-0/pe/tutorials/add_device_to_group.json) as a new "Add device to group" rule chain. 
-Please note that all nodes have debug enabled. This affects performance. Create Node A as shown on the image above in the root rule chain to forward telemetry to new rule chain.
+下载并[**导入**](/docs/user-guide/ui/rule-chains/#rule-chains-importexport)附加的 json [**文件**](/docs/user-guide/rule-engine-2-0/pe/tutorials/add_device_to_group.json) 作为新的“将设备添加到组”规则链。请注意，所有节点都启用了调试。这会影响性能。在根规则链中创建节点 A，如上图所示，将遥测数据转发到新的规则链。
 
-## Validating the flow
+## 验证流程
 
-[Publish](/docs/getting-started-guides/helloworld/#pushing-data-from-the-device) temperature readings on behalf of the new device and observe new group automatically created: 
+[发布](/docs/getting-started-guides/helloworld/#pushing-data-from-the-device) 新设备的温度读数，并观察自动创建的新组：
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/groups/results.png)   
 
-## Next steps
+## 后续步骤
 
 {% assign currentGuide = "DataProcessing" %}{% include templates/guides-banner.md %}
-
-
- 
-
-
-
-
-
-

@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
-title: Rule Node Development Guide
-description: Create custom Rule nodes
+title: 规则节点开发指南
+description: 创建自定义规则节点
 
 ---
 

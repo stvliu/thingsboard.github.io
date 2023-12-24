@@ -1,66 +1,66 @@
 ---
 layout: docwithnav-edge
-title: Edge Management Overview
-description: Edge Management Overview
+title: 边缘管理概述
+description: 边缘管理概述
 ---
 
 ![image](/images/coming-soon.jpg)
 
-### Synchronization architecture
+### 同步架构
 
-ThingsBoard Edge and ThingsBoard CE/PE cloud are communicating over gRPC protocol.
+ThingsBoard Edge 和 ThingsBoard CE/PE 云通过 gRPC 协议进行通信。
 
-Messages serialized using Protocol Buffers (ProtoBuf).
+使用 Protocol Buffers (ProtoBuf) 序列化消息。
 
-All messages that are pushed from ThingsBoard Edge to ThingsBoard CE/PE cloud are going to be stored in the local PostgreSQL table (**cloud_event table**) prior sending.
-In this way ThingsBoard Edge is able to operate without connectivity to the cloud.
-Once the connection established ThingsBoard Edge will push all messages in the local **cloud_event** table to the cloud and mark ones that are successfully transferred to the cloud.
+从 ThingsBoard Edge 推送到 ThingsBoard CE/PE 云的所有消息都将存储在本地 PostgreSQL 表（**cloud_event 表**）中，然后再发送。
+通过这种方式，ThingsBoard Edge 能够在没有连接到云的情况下运行。
+一旦建立连接，ThingsBoard Edge 将把本地 **cloud_event** 表中的所有消息推送到云，并标记成功传输到云的消息。
 
-All messages that are pushed from ThingsBoard CE/PE cloud to ThingsBoard Edge are going to be stored in the cloud PostgreSQL table (**edge_event table**) prior sending.
-Once the connection established ThingsBoard CE/PE cloud will push all messages in the cloud **edge_event** table to the edge and mark ones that are successfully transferred to the edge.
+从 ThingsBoard CE/PE 云推送到 ThingsBoard Edge 的所有消息都将存储在云 PostgreSQL 表（**edge_event 表**）中，然后再发送。
+一旦建立连接，ThingsBoard CE/PE 云将把云 **edge_event** 表中的所有消息推送到边缘，并标记成功传输到边缘的消息。
 
-User is able to see list of transferred messages from the cloud to edge using **Downlinks** tab of **Edge** entity.
+用户可以使用 **Edge** 实体的 **下行链路** 选项卡查看从云到边缘传输的消息列表。
 
 ![image](/images/edge/sync/downlink-events.png)
 
-##### Force synchronization procedure
+##### 强制同步过程
 
-In case of network outage, or some other communication problem ThingsBoard Edge could become out of sync from the cloud.
-User is able to force synchronization process by clicking on the **Sync Edge** button:
+在网络中断或其他一些通信问题的情况下，ThingsBoard Edge 可能会与云不同步。
+用户可以通过单击 **同步边缘** 按钮强制执行同步过程：
 
 ![image](/images/edge/sync/sync-button.png)
 
-### Device management on edge
+### 边缘设备管理
 
-**Device** entity could be created directly on the edge and pushed to the cloud in case connection established.
+**设备** 实体可以直接在边缘创建，并在建立连接的情况下推送到云。
 
-In case Edge connected to ThingsBoard **CE** any tenant administrator user is able to create device entities on the edge.
+如果 Edge 连接到 ThingsBoard **CE**，任何租户管理员用户都可以在边缘创建设备实体。
 
-In case Edge connected to ThingsBoard **PE** any user that has **DEVICE** write operation is able to create device entities on the edge.
+如果 Edge 连接到 ThingsBoard **PE**，任何具有 **DEVICE** 写操作的用户都可以在边缘创建设备实体。
 
-Once device created on the edge this device is going to be pushed for the creation on the cloud.
+在边缘创建设备后，该设备将被推送到云中进行创建。
 
-If Edge connected to ThingsBoard **CE** a newly created device will be *'assigned'* to the edge automatically.
+如果 Edge 连接到 ThingsBoard **CE**，新创建的设备将自动*'分配'*给边缘。
 
-If Edge connected to ThingsBoard **PE** a newly created device:
-- will be created on the cloud
-- new device entity group will be created, with specific name template: **[Edge] ${NAME_OF_EDGE} All**.
-- a newly created device will be added to group above
-- group above will be *'assigned'* to the edge automatically.
+如果 Edge 连接到 ThingsBoard **PE**，新创建的设备：
+- 将在云中创建
+- 将创建新的设备实体组，具有特定的名称模板：**[Edge] ${NAME_OF_EDGE} All**。
+- 新创建的设备将添加到上面的组中
+- 上面的组将自动*'分配'*给边缘。
 
-### Entities management on cloud
+### 云上的实体管理
 
-At the moment ThingsBoard Edge is not able to create any entity locally, except **Device** entity.
-To be able to use other entities on the edge, User must *'assign'* these entities to the edge prior usage.
+目前，ThingsBoard Edge 除了 **Device** 实体外，还无法在本地创建任何实体。
+为了能够在边缘使用其他实体，用户必须在使用前将这些实体*'分配'*给边缘。
 
-User can *'assign'* specific entities to the edge using **Edge** entity card.
+用户可以使用 **Edge** 实体卡将特定实体*'分配'*给边缘。
 
-Once you'll assign any entity to specific edge this entity will be pushed to the edge event queue.
-If connection between edge and cloud is active then assigned entity will be created on the edge instantly.
-If at the moment edge not connected to the cloud then entity will be created once connection established.
+一旦您将任何实体分配给特定边缘，该实体将被推送到边缘事件队列。
+如果边缘和云之间的连接处于活动状态，则分配的实体将立即在边缘创建。
+如果目前边缘未连接到云，则将在建立连接后创建实体。
 
 
-#### Next Steps
+#### 后续步骤
 
 {% assign currentGuide = "EdgeManagementOverview" %}
 {% assign docsPrefix = "edge/" %}

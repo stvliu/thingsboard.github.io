@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-pe 
-title: LORIOT Integration 
-description: LORIOT Integration Guide 
+title: LORIOT 集成 
+description: LORIOT 集成指南 
 register:
     0:
         image: /images/user-guide/integrations/loriot/loriot_register.png 
@@ -181,4 +181,3 @@ solution_templates:
 ---
 {% assign docsPrefix = "pe/" %}
 {% include docs/pe/user-guide/integrations/loriot.md %}
-

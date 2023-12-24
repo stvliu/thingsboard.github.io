@@ -1,25 +1,24 @@
 ---
 layout: docwithnav-gw
-title: OCPP Connector Configuration
-description: OCPP protocol support for ThingsBoard IoT Gateway
+title: OCPP 连接器配置
+description: ThingsBoard IoT 网关的 OCPP 协议支持
 
 ---
 
 * TOC
 {:toc}
 
-This guide will help you to get familiar with MQTT Connector configuration for ThingsBoard IoT Gateway.
-Use [general configuration](/docs/iot-gateway/configuration/) to enable this Connector.
-The purpose of this connector is to communicate between Charge Point and Central System using OCPP protocol.
+本指南将帮助您熟悉 ThingsBoard IoT 网关的 MQTT 连接器配置。
+使用 [常规配置](/docs/iot-gateway/configuration/) 启用此连接器。
+此连接器的目的是使用 OCPP 协议在充电点和中央系统之间进行通信。
 
-We will describe connector configuration file below.
+我们将在下面描述连接器配置文件。
 
-## Connector configuration: ocpp.json
-Connector configuration is a JSON file that contains information about how to connect to Charge Points, how to process
-the data and other service features. Let’s review the format of the configuration file using example below.
+## 连接器配置：ocpp.json
+连接器配置是一个 JSON 文件，其中包含有关如何连接到充电点、如何处理数据以及其他服务功能的信息。让我们使用下面的示例来回顾配置文件的格式。
 
 
-<b>Example of OCPP Connector config file.</b>
+<b>OCPP 连接器配置文件示例。</b>
 
 {% capture ocppConf %}
 {
@@ -91,40 +90,40 @@ the data and other service features. Let’s review the format of the configurat
 {% endcapture %}
 {% include code-toggle.liquid code=ocppConf params="conf|.copy-code.expandable-20" %}
 
-### Section "centralSystem"
+### “centralSystem” 部分
 
-This configuration section using for configure Gateway as a Central System.
+此配置部分用于将网关配置为中央系统。
 
-| **Parameter**     | **Default value**      | **Description**                                     |
+| **参数**     | **默认值**      | **说明**                                     |
 |:-|:-|-
-| name              | **Central System**     | Central System name. |
-| host              | **127.0.0.1**          | Central System hostname or ip address. |
-| port              | **9000**               | Central System port. |
+| name              | **Central System**     | 中央系统名称。 |
+| host              | **127.0.0.1**          | 中央系统主机名或 IP 地址。 |
+| port              | **9000**               | 中央系统端口。 |
 |---
 
-#### Connection subsection
+#### 连接子部分
 
-This configuration subsection using for configure connection type between Central System and Charge Point.
-You can choose the next connection type:
+此配置子部分用于配置中央系统和充电点之间的连接类型。
+您可以选择以下连接类型：
 
 {% capture ocppconnectorconnectiontogglespec %}
-Insecure<small>No security</small>%,%insecure%,%templates/iot-gateway/ocpp-connector-insecure-connection-config.md%br%
-TLS<small>Recommended</small>%,%tls%,%templates/iot-gateway/ocpp-connector-tls-connection-config.md{% endcapture %}
+不安全<small>无安全</small>%,%insecure%,%templates/iot-gateway/ocpp-connector-insecure-connection-config.md%br%
+TLS<small>推荐</small>%,%tls%,%templates/iot-gateway/ocpp-connector-tls-connection-config.md{% endcapture %}
 {% include content-toggle.html content-toggle-id="ocppConnectorConnectionConfig" toggle-spec=ocppconnectorconnectiontogglespec %} 
 
-#### Security subsection
+#### 安全子部分
 
-Security subsection provides configuration for Charge Point authorization at Central System.
-You can choose the next security type:
+安全子部分提供中央系统中充电点授权的配置。
+您可以选择以下安全类型：
 
 {% capture ocppconnectorsecuritytogglespec %}
-Anonymous<small>No security</small>%,%anonymous%,%templates/iot-gateway/ocpp-connector-anonymous-security-config.md%br%
-Basic<small>Recommended</small>%,%basic%,%templates/iot-gateway/ocpp-connector-basic-security-config.md%br%
-Token<small>Recommended</small>%,%token%,%templates/iot-gateway/ocpp-connector-token-security-config.md{% endcapture %}
+匿名<small>无安全</small>%,%anonymous%,%templates/iot-gateway/ocpp-connector-anonymous-security-config.md%br%
+基本<small>推荐</small>%,%basic%,%templates/iot-gateway/ocpp-connector-basic-security-config.md%br%
+令牌<small>推荐</small>%,%token%,%templates/iot-gateway/ocpp-connector-token-security-config.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="ocppConnectorSecurityConfig" toggle-spec=ocppconnectorsecuritytogglespec %}
 
-**Note** You can combine _basic_ and _token_ security types. Security subsection in configuration file will look like this:
+**注意** 您可以组合 _basic_ 和 _token_ 安全类型。配置文件中的安全子部分将如下所示：
 
 ```json
     "security": [
@@ -146,22 +145,22 @@ Token<small>Recommended</small>%,%token%,%templates/iot-gateway/ocpp-connector-t
     ]
 ```
 
-### Section "chargePoints"
+### “chargePoints” 部分
 
-This subsection contains general settings for the Charge Points and subsections for processing data.
+此子部分包含充电点的常规设置和处理数据的子部分。
 
-| **Parameter**        | **Default value**      | **Description**                                                                                                                        |
+| **参数**        | **默认值**      | **说明**                                                                                                                        |
 |:-|:-|-
-| idRegexpPattern      | **charge_points/CP_1** | Regular expression, uses for looking the Charge Point for a current device.                                                            |
-| deviceNameExpression | **${Vendor} ${Model}** | Simple JSON expression, uses for looking device name in the incoming message (parameter “Vendor + Model” will be used as device name). |
-| deviceTypeExpression | **${Model}**           | Simple JSON expression, uses for looking device type in the incoming message (parameter “Model” will be used as device type).          |
-| attributes           |                        | Array of objects for processing device attributes.                                                                                     |
-| timeseries           |                        | Array of objects for processing device telemetry.                                                                                      |
-| attributeUpdates     |                        | Array of objects for processing attributeUpdate requests from ThingsBoard.                                                             |
-| serverSideRpc        |                        | Array of objects for processing RPC requests from ThingsBoard.                                                                         |
+| idRegexpPattern      | **charge_points/CP_1** | 正则表达式，用于查找当前设备的充电点。                                                            |
+| deviceNameExpression | **${Vendor} ${Model}** | 简单 JSON 表达式，用于查找传入消息中的设备名称（参数“Vendor + Model”将用作设备名称）。 |
+| deviceTypeExpression | **${Model}**           | 简单 JSON 表达式，用于查找传入消息中的设备类型（参数“Model”将用作设备类型）。          |
+| attributes           |                        | 用于处理设备属性的对象数组。                                                                                     |
+| timeseries           |                        | 用于处理设备遥测的对象数组。                                                                                      |
+| attributeUpdates     |                        | 用于处理来自 ThingsBoard 的 attributeUpdate 请求的对象数组。                                                             |
+| serverSideRpc        |                        | 用于处理来自 ThingsBoard 的 RPC 请求的对象数组。                                                                         |
 |---
 
-This part of configuration will look like:
+配置的这一部分将如下所示：
 
 ```json
   "chargePoints": [
@@ -185,19 +184,19 @@ This part of configuration will look like:
   ]
 ```
 
-#### Subsection attributes
+#### 子部分属性
 
-This subsection contains general settings for the processing data interpreted as attributes.
+此子部分包含要解释为设备属性的处理数据的常规设置。
 
-| **Parameter**           | **Default value**                            | **Description**                                                                                                                       |
+| **参数**           | **默认值**                            | **说明**                                                                                                                       |
 |:-|:-|-
-| attributes              |                                              | This subsection contains parameters of the incoming message, to be interpreted as attributes for the device.                          |
-| ... messageTypeFilter   | **MeterValues,**                             | List of allowed message types divided by comma.                                                                                       |
-| ... key                 | **temp**                                     | Attribute name, to be sent to ThingsBoard instance.                                                                                   |
-| ... value               | **${meter_value[:].sampled_value[:].value}** | Simple JSON expression, uses for looking value in the incoming message, to be sent to ThingsBoard instance as value of key parameter. |
+| attributes              |                                              | 此子部分包含传入消息的参数，这些参数将解释为设备的属性。                          |
+| ... messageTypeFilter   | **MeterValues,**                             | 以逗号分隔的允许的消息类型列表。                                                                                       |
+| ... key                 | **temp**                                     | 要发送到 ThingsBoard 实例的属性名称。                                                                                   |
+| ... value               | **${meter_value[:].sampled_value[:].value}** | 简单 JSON 表达式，用于查找传入消息中的值，并将其作为 key 参数的值发送到 ThingsBoard 实例。 |
 |---
 
-This subsection in configuration file looks like:
+配置文件中的此子部分如下所示：
 
 ```json
       "attributes": [
@@ -214,19 +213,19 @@ This subsection in configuration file looks like:
       ]
 ```
 
-#### Subsection timeseries
+#### 子部分时序
 
-This subsection contains general settings for the processing data interpreted as timeseries.
+此子部分包含要解释为时序的处理数据的常规设置。
 
-| **Parameter**           | **Default value**                            | **Description**                                                                                                                       |
+| **参数**           | **默认值**                            | **说明**                                                                                                                       |
 |:-|:-|-
-| timeseries              |                                              | This subsection contains parameters of the incoming message, to be interpreted as telemetry for the device.                           |
-| ... messageTypeFilter   | **MeterValues,**                             | List of allowed message types divided by comma.                                                                                       |
-| ... key                 | **temp**                                     | Telemetry name, to be sent to ThingsBoard instance.                                                                                   |
-| ... value               | **${meter_value[:].sampled_value[:].value}** | Simple JSON expression, uses for looking value in the incoming message, to be sent to ThingsBoard instance as value of key parameter. |
+| timeseries              |                                              | 此子部分包含传入消息的参数，这些参数将解释为设备的遥测。                           |
+| ... messageTypeFilter   | **MeterValues,**                             | 以逗号分隔的允许的消息类型列表。                                                                                       |
+| ... key                 | **temp**                                     | 要发送到 ThingsBoard 实例的遥测名称。                                                                                   |
+| ... value               | **${meter_value[:].sampled_value[:].value}** | 简单 JSON 表达式，用于查找传入消息中的值，并将其作为 key 参数的值发送到 ThingsBoard 实例。 |
 |---
 
-This subsection in configuration file looks like:
+配置文件中的此子部分如下所示：
 
 ```json
       "timeseries": [
@@ -238,22 +237,19 @@ This subsection in configuration file looks like:
       ]
 ```
 
-#### Attribute updates subsection
+#### 属性更新子部分
 
-This configuration section is optional. ThingsBoard allows provisioning device attributes and fetch some of them from 
-the device application. You can treat this as a remote configuration for devices. Your devices are able to request 
-shared attributes from ThingsBoard. See user guide for more details.
+此配置部分是可选的。ThingsBoard 允许配置设备属性并从设备应用程序中获取其中一些属性。您可以将其视为设备的远程配置。您的设备能够从 ThingsBoard 请求共享属性。有关更多详细信息，请参阅用户指南。
 
-The “attributeUpdates” configuration allows configuring the format of the corresponding attribute data that will be 
-sending to the Charge Point.
+“attributeUpdates”配置允许配置将发送到充电点的相应属性数据格式。
 
-| **Parameter**           | **Default value**                               | **Description**                                                                         |
+| **参数**           | **默认值**                               | **说明**                                                                         |
 |:-|:-|-
-| attributeOnThingsBoard  | **sharedName**                                  | Shared attribute name.                                                                  |
-| valueExpression         | **{\"${attributeKey}\":\"${attributeValue}\"}** | JSON-path expression uses for creating the message data that will send to Charge Point. |
+| attributeOnThingsBoard  | **sharedName**                                  | 共享属性名称。                                                                  |
+| valueExpression         | **{\"${attributeKey}\":\"${attributeValue}\"}** | 用于创建将发送到充电点消息数据的 JSON 路径表达式。 |
 |---
 
-This section in configuration file looks like: 
+配置文件中的此部分如下所示：
 ```json
 "attributeUpdates": [
   {
@@ -263,20 +259,20 @@ This section in configuration file looks like:
 ]
 ```
 
-#### Server side RPC subsection
+#### 服务器端 RPC 子部分
 
-ThingsBoard allows sending RPC commands to the device that is connected to ThingsBoard directly or via Gateway.
+ThingsBoard 允许将 RPC 命令发送到直接或通过网关连接到 ThingsBoard 的设备。
 
-Configuration, provided in this section uses for sending RPC requests from ThingsBoard to Charge Point.
+此部分中提供的配置用于将 RPC 请求从 ThingsBoard 发送到充电点。
 
-| **Parameter**           | **Default value**    | **Description**                                                                         |
+| **参数**           | **默认值**    | **说明**                                                                         |
 |:-|:-|-
-| methodRPC               | **rpcMethod1**       | RPC method name.                                                                        |
-| withResponse            | **true**             | Boolean value that means as send or not response back to ThingsBoard.                   |
-| valueExpression         | **${params}**        | JSON-path expression uses for creating the message data that will send to Charge Point. |
+| methodRPC               | **rpcMethod1**       | RPC 方法名称。                                                                        |
+| withResponse            | **true**             | 布尔值，表示是否将响应发送回 ThingsBoard。                   |
+| valueExpression         | **${params}**        | 用于创建将发送到充电点消息数据的 JSON 路径表达式。 |
 |---
 
-This subsection in configuration file looks like:
+配置文件中的此子部分如下所示：
 
 ```json
 "serverSideRpc": [
@@ -288,12 +284,12 @@ This subsection in configuration file looks like:
 ]
 ```
 
-## Next steps
+## 后续步骤
 
-Explore guides related to main ThingsBoard features:
+探索与 ThingsBoard 主要功能相关的指南：
 
- - [Data Visualization](/docs/user-guide/visualization/) - how to visualize collected data.
- - [Device attributes](/docs/user-guide/attributes/) - how to use device attributes.
- - [Telemetry data collection](/docs/user-guide/telemetry/) - how to collect telemetry data.
- - [Using RPC capabilities](/docs/user-guide/rpc/) - how to send commands to/from devices.
- - [Rule Engine](/docs/user-guide/rule-engine/) - how to use rule engine to analyze data from devices.
+- [数据可视化](/docs/user-guide/visualization/) - 如何可视化收集到的数据。
+- [设备属性](/docs/user-guide/attributes/) - 如何使用设备属性。
+- [遥测数据收集](/docs/user-guide/telemetry/) - 如何收集遥测数据。
+- [使用 RPC 功能](/docs/user-guide/rpc/) - 如何向设备发送/从设备接收命令。
+- [规则引擎](/docs/user-guide/rule-engine/) - 如何使用规则引擎分析来自设备的数据。

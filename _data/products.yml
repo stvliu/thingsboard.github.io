@@ -16,8 +16,8 @@
   guides: /docs/pe/guides/
   getStarted: /docs/pe/getting-started-guides/helloworld/
   docsPrefix: /docs/pe/
-- title: 云平台
-  fulltitle: ThingsBoard云平台
+- title: 云服务
+  fulltitle: ThingsBoard云服务
   description: ThingsBoard文档
   tag: paas
   icon: /images/thingsboard-c-icon.svg

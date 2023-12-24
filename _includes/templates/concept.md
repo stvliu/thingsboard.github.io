@@ -4,7 +4,7 @@
 
 {% else %}
 
-{% include templates/_errorthrower.md missing_block='overview' purpose='provides an overview of this concept.' %}
+{% include templates/_errorthrower.md missing_block='overview' purpose='提供此概念的概述。' %}
 
 {% endif %}
 
@@ -17,16 +17,15 @@
 
 {% else %}
 
-{% include templates/_errorthrower.md missing_block='body' purpose='supplies the body of the page content.' %}
+{% include templates/_errorthrower.md missing_block='body' purpose='提供页面内容的主体。' %}
 
 {% endif %}
 
 
 {% if whatsnext %}
 
-### What's next
+### 后续步骤
 
 {{ whatsnext }}
 
 {% endif %}
-

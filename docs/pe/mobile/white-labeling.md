@@ -1,108 +1,105 @@
 ---
 layout: docwithnav-mobile-pe
-title: Configure white-labeling in ThingsBoard PE Mobile Application
+title: 在 ThingsBoard PE 移动应用程序中配置白标
 
 login-white-labeling:
  0:
   image: /images/mobile/pe/white-labeling-1.png
-  title: 'For tenant level settings input domain in the <b>Domain name</b> field'
+  title: '对于租户级别设置，在<b>域名</b>字段中输入域名'
  1:
   image: /images/mobile/pe/white-labeling-2.png
-  title: 'Enter base url in the <b>Base URL</b> field (includes protocol scheme <b>http</b> or <b>https</b> and port if it differs from standard one <b>80</b> or <b>443</b>)'
+  title: '在<b>基本 URL</b>字段中输入基本 URL（包括协议方案<b>http</b>或<b>https</b>以及端口，如果它不同于标准端口<b>80</b>或<b>443</b>）'
  2:
   image: /images/mobile/pe/white-labeling-3.png
-  title: 'Upload desired logo image to the <b>Logo</b> field'
+  title: '将所需的徽标图像上传到<b>徽标</b>字段'
  3:
   image: /images/mobile/pe/white-labeling-4.png
-  title: 'Specify your logo height if necessary in the <b>Logo height</b> field'
+  title: '在<b>徽标高度</b>字段中指定徽标高度（如果需要）'
  4:
   image: /images/mobile/pe/white-labeling-5.png
-  title: 'Select primary color palette in the <b>Primary palette</b> field'
+  title: '在<b>主调色板</b>字段中选择主调色板'
  5:
   image: /images/mobile/pe/white-labeling-6.png
-  title: 'Click <b>Save</b> button to apply changes'
+  title: '单击<b>保存</b>按钮以应用更改'
 
 login-white-labeling-result:
  0:
   image: /images/mobile/pe/white-labeling-7.png
-  title: 'You should see your logo image on the top of the login form. Buttons and background should be colored according to the selected color palette.'
+  title: '您应该在登录表单顶部看到您的徽标图像。按钮和背景应根据所选调色板进行着色。'
 
 white-labeling:
  0:
   image: /images/mobile/pe/white-labeling-8.png
-  title: 'Upload desired logo image to the <b>Logo</b> field'
+  title: '将所需的徽标图像上传到<b>徽标</b>字段'
  1:
   image: /images/mobile/pe/white-labeling-9.png
-  title: 'Select primary color palette in the <b>Primary palette</b> field'
+  title: '在<b>主调色板</b>字段中选择主调色板'
  2:
   image: /images/mobile/pe/white-labeling-10.png
-  title: 'Click <b>Save</b> button to apply changes'
+  title: '单击<b>保存</b>按钮以应用更改'
 
 white-labeling-result:
  0:
   image: /images/mobile/pe/white-labeling-11.png
-  title: 'You should see your logo image on the top bar of the home screen. Buttons and icons should be colored according to the selected color palette.'
+  title: '您应该在主屏幕的顶部栏中看到您的徽标图像。按钮和图标应根据所选调色板进行着色。'
 
 ---
 
 * TOC
 {:toc}
 
-## Overview
+## 概述
 
-ThingsBoard PE [white-labeling](/docs/pe/user-guide/white-labeling/) feature allows you to configure your company or product logo and color scheme.
-In addition to the ThingsBoard web interface, the white-label settings also apply to the ThingsBoard PE Mobile app.
-Using white-labeling you can customize look of mobile app login screen and main app interface.
+ThingsBoard PE [白标](/docs/pe/user-guide/white-labeling/)功能允许您配置公司或产品徽标和配色方案。
+除了 ThingsBoard Web 界面外，白标设置还适用于 ThingsBoard PE 移动应用程序。
+使用白标，您可以自定义移动应用程序登录屏幕和主应用程序界面的外观。
 
-## Login screen white-labeling
+## 登录屏幕白标
 
-As a System or Tenant administrator you can configure app login screen logo and color palette in the **Login White Labeling** form.
+作为系统或租户管理员，您可以在 **登录白标** 表单中配置应用程序登录屏幕徽标和调色板。
 
 {% capture login_white_labeling_levels %}
-**Note:**  By default system level login white-labeling is applied (configured by System administrator). Each tenant can override these settings by specifying
-**Domain name** in the **Login White Labeling** form.
-In this case tenant level settings will be applied according to the domain name of api endpoint configured in the mobile app
-(value of **thingsBoardApiEndpoint** constant in **lib/constants/app_constants.dart**).
+**注意：** 默认情况下，应用系统级别的登录白标（由系统管理员配置）。每个租户都可以通过在 **登录白标** 表单中指定 **域名** 来覆盖这些设置。
+在这种情况下，将根据移动应用程序中配置的 API 端点的域名应用租户级别设置（**lib/constants/app_constants.dart** 中 **thingsBoardApiEndpoint** 常量值）。
 {% endcapture %}
 {% include templates/info-banner.md content=login_white_labeling_levels %}
 
-To configure login screen white-labeling perform the following steps:
+要配置登录屏幕白标，请执行以下步骤：
 
-1. Go to **White Labeling** -> **Login White Labeling** through the main menu on the left of the screen;
-2. For tenant level settings input domain in the **Domain name** field;
-3. Enter base url in the **Base URL** field (includes protocol scheme **http** or **https** and port if it differs from standard one **80** or **443**); 
-4. Upload desired logo image to the **Logo** field;
-5. Specify your logo height if necessary in the **Logo height** field;
-6. Select primary color palette in the **Primary palette** field;
-7. Click **Save** button to apply changes;
+1. 通过屏幕左侧的主菜单转到 **白标** -> **登录白标**；
+2. 对于租户级别设置，在 **域名** 字段中输入域名；
+3. 在 **基本 URL** 字段中输入基本 URL（包括协议方案 **http** 或 **https** 以及端口，如果它不同于标准端口 **80** 或 **443**）；
+4. 将所需的徽标图像上传到 **徽标** 字段；
+5. 在 **徽标高度** 字段中指定徽标高度（如果需要）；
+6. 在 **主调色板** 字段中选择主调色板；
+7. 单击 **保存** 按钮以应用更改；
 
 {% include images-gallery.html imageCollection="login-white-labeling" %}
 
-To verify your login white-labeling setup run the mobile app.
-You should see your logo image on the top of the login form. Buttons and background should be colored according to the selected color palette. 
+要验证您的登录白标设置，请运行移动应用程序。
+您应该在登录表单顶部看到您的徽标图像。按钮和背景应根据所选调色板进行着色。
 
 {% include images-gallery.html imageCollection="login-white-labeling-result" %}
 
-## Main application interface white-labeling
+## 主应用程序界面白标
 
-As a System or Tenant administrator you can configure main app interface logo and color palette in the **White Labeling** form.
+作为系统或租户管理员，您可以在 **白标** 表单中配置主应用程序界面徽标和调色板。
 
 {% capture app_white_labeling_levels %}
-**Note**: By default system level white-labeling is applied (configured by System administrator). Each tenant can override these settings
-in the **White Labeling** form.
+**注意：** 默认情况下，应用系统级别的白标（由系统管理员配置）。每个租户都可以在 **白标** 表单中覆盖这些设置。
 {% endcapture %}
 {% include templates/info-banner.md content=app_white_labeling_levels %}
 
-To configure main app interface white-labeling perform the following steps:
+要配置主应用程序界面白标，请执行以下步骤：
 
-1. Go to **White Labeling** -> **White Labeling** through the main menu on the left of the screen;
-2. Upload desired logo image to the **Logo** field;
-3. Select primary color palette in the **Primary palette** field;
-4. Click **Save** button to apply changes;
+1. 通过屏幕左侧的主菜单转到 **白标** -> **白标**；
+2. 将所需的徽标图像上传到 **徽标** 字段；
+3. 在 **主调色板** 字段中选择主调色板；
+4. 单击 **保存** 按钮以应用更改；
 
 {% include images-gallery.html imageCollection="white-labeling" %}
 
-To verify your white-labeling setup run the mobile app and perform login.
-You should see your logo image on the top bar of the home screen. Buttons and icons should be colored according to the selected color palette.
+要验证您的白标设置，请运行移动应用程序并执行登录。
+您应该在主屏幕的顶部栏中看到您的徽标图像。按钮和图标应根据所选调色板进行着色。
 
 {% include images-gallery.html imageCollection="white-labeling-result" %}

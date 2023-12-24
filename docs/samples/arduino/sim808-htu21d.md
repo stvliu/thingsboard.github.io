@@ -1,178 +1,176 @@
 ---
 layout: docwithnav
-title: Humidity and temperature upload over HTTP using Arduino UNO, SIM808 Shield and HTU21D sensor
-description: ThingsBoard IoT Platform sample for humidity and temperature data upload over HTTP using Arduino UNO, SIM808 GSM shield and HTU21D sensor.
+title: 使用 Arduino UNO、SIM808 Shield 和 HTU21D 传感器通过 HTTP 上传湿度和温度
+description: 使用 Arduino UNO、SIM808 GSM shield 和 HTU21D 传感器通过 HTTP 上传湿度和温度数据的物联网平台示例。
 
 ---
 
 * TOC
 {:toc}
 
-## Introduction
+## 简介
 
 {% include templates/what-is-thingsboard.md %}
 
-This sample application performs collection of humidity and temperature values produced by [HTU21D sensor](https://www.sparkfun.com/products/13763) and further visualization on the real-time web dashboard.
-Collected data is pushed via HTTP to ThingsBoard server for storage and visualization.
-The purpose of this application is to demonstrate ThingsBoard [data collection API](/docs/user-guide/telemetry/) and [visualization capabilities](/docs/user-guide/visualization/).
+此示例应用程序执行由 [HTU21D 传感器](https://www.sparkfun.com/products/13763)产生的湿度和温度值的收集，并在实时网络仪表板上进一步显示。
+收集的数据通过 HTTP 推送到物联网平台服务器进行存储和显示。此应用程序的目的是演示物联网平台 [数据收集 API](/docs/user-guide/telemetry/)和 [可视化功能](/docs/user-guide/visualization/)。
 
-The HTU21D sensor is connected to [Arduino UNO](https://en.wikipedia.org/wiki/Arduino).
-Arduino UNO connects to the Internet using [SIM808 GSM shield](https://www.elecrow.com/wiki/index.php?title=SIM808_GPRS/GSM%2BGPS_Shield_v1.1).
-Arduino UNO pushes data to ThingsBoard server via HTTP protocol by using [Arduino ThingsBoard SDK](https://github.com/thingsboard/ThingsBoard-Arduino-MQTT-SDK).
-Data is visualized using built-in customizable dashboard.
-The application that is running on Arduino UNO is written using Arduino SDK which is quite simple and easy to understand.
+HTU21D 传感器连接到 [Arduino UNO](https://en.wikipedia.org/wiki/Arduino)。
+Arduino UNO 使用 [SIM808 GSM shield](https://www.elecrow.com/wiki/index.php?title=SIM808_GPRS/GSM%2BGPS_Shield_v1.1)连接到互联网。
+Arduino UNO 通过使用 [Arduino 物联网平台 SDK](https://github.com/thingsboard/ThingsBoard-Arduino-MQTT-SDK)通过 HTTP 协议将数据推送到物联网平台服务器。
+数据使用内置的可自定义仪表板进行可视化。在 Arduino UNO 上运行的应用程序使用 Arduino SDK 编写，非常简单易懂。
 
-Once you complete this sample/tutorial, you will see your sensor data on the following dashboard.
+完成此示例/教程后，您将在以下仪表板上看到传感器数据。
 
 ![image](/images/samples/arduino/sim808-htu21d/dashboard.png)
 
 {% include templates/prerequisites.md %}
 
-## List of hardware
+## 硬件清单
 
- - Arduino UNO
+- Arduino UNO
 
    ![image](/images/samples/arduino/sim808-htu21d/arduino-uno-pinout.png)
 
- - [HTU21D sensor](https://www.sparkfun.com/products/13763)
+- [HTU21D 传感器](https://www.sparkfun.com/products/13763)
 
    ![image](/images/samples/arduino/sim808-htu21d/htu21d.jpg)
 
- - [SIM808 GSM shield](https://www.elecrow.com/wiki/index.php?title=SIM808_GPRS/GSM%2BGPS_Shield_v1.1)
+- [SIM808 GSM shield](https://www.elecrow.com/wiki/index.php?title=SIM808_GPRS/GSM%2BGPS_Shield_v1.1)
 
    ![image](/images/samples/arduino/sim808-htu21d/sim808_shield.jpg)
 
-## Wiring
+## 接线
 
-### SIM808 shield connection
+### SIM808 shield 连接
 
-Simply connect SIM808 shield on top of your Arduino.
+只需将 SIM808 shield 连接到 Arduino 上方。
 
-### HTU21D connection
+### HTU21D 连接
 
-Connect HTU21D in following manner:
+按照以下方式连接 HTU21D：
 
 * VCC - Arduino 3.3V
 * GND - Arduino GND
 * SDA - Arduino A5
 * SCL - Arduino A4
 
-## Complete wiring
+## 完成接线
 
-Double-check that your wiring follows schematics below:
+仔细检查您的接线是否遵循以下示意图：
 
    ![image](/images/samples/arduino/sim808-htu21d/arduino-uno-sim808-htu21d.png)
 
-The complete setup will look like that:
+完整的设置如下所示：
 
    ![image](/images/samples/arduino/sim808-htu21d/arduino-uno-sim808-htu21d-photo.png)
 
-## Device provisioning
+## 设备配置
 
-This step contains instructions that are necessary to connect your device to ThingsBoard.
+此步骤包含将设备连接到物联网平台所需的说明。
 
-Open ThingsBoard Web UI (http://localhost:8080) in browser and login as tenant administrator.
-If you loaded the demo data during TB installation, the next credentials can be used:
+在浏览器中打开物联网平台 Web UI (http://localhost:8080) 并以租户管理员身份登录。
+如果您在安装物联网平台期间加载了演示数据，则可以使用以下凭据：
 
- - login: tenant@thingsboard.org
- - password: tenant
+- 登录名：tenant@thingsboard.org
+- 密码：tenant
 
-Go to "Devices" section. Click "+" button and create a device with the name "Arduino UNO Demo Device". Set "Device type" to "default".
+转到“设备”部分。单击“+”按钮，并创建一个名为“Arduino UNO 演示设备”的设备。将“设备类型”设置为“default”。
 
 ![image](/images/samples/arduino/sim808-htu21d/device.png)
 
-Once device created, open its details and click "Manage credentials".
+创建设备后，打开其详细信息并单击“管理凭据”。
 
-Copy auto-generated access token from the "Access token" field. Please save this device token. It will be referred to later as **$ACCESS_TOKEN**.
+从“访问令牌”字段复制自动生成的访问令牌。请保存此设备令牌。它将在后面称为 **$ACCESS_TOKEN**。
 
 ![image](/images/samples/arduino/sim808-htu21d/credentials.png)
 
-## Provision your dashboard
+## 配置您的仪表板
 
-Download the dashboard file using this [**link**](/docs/samples/arduino/resources/arduino_uno_with_sim808_shield_and_htu21d_sensor_dashboard.json).
-Use import/export [**instructions**](/docs/user-guide/ui/dashboards/#dashboard-importexport) to import the dashboard to your ThingsBoard instance.
+使用此 [**链接**](/docs/samples/arduino/resources/arduino_uno_with_sim808_shield_and_htu21d_sensor_dashboard.json)下载仪表板文件。
+使用导入/导出 [**说明**](/docs/user-guide/ui/dashboards/#dashboard-importexport)将仪表板导入您的物联网平台实例。
 
-## Creating Arduino firmware
+## 创建 Arduino 固件
 
-If you already familiar with basics of Arduino UNO programming using Arduino IDE you can skip the following step and proceed with step 2.
+如果您已经熟悉使用 Arduino IDE 对 Arduino UNO 进行编程的基础知识，则可以跳过以下步骤并继续执行步骤 2。
 
-### Step 1. Arduino UNO and Arduino IDE setup.
-In order to start programming the Arduino UNO device, you will need Arduino IDE and all related software installed.
+### 步骤 1. Arduino UNO 和 Arduino IDE 设置。
+为了开始对 Arduino UNO 设备进行编程，您需要安装 Arduino IDE 和所有相关软件。
 
-Download and install [Arduino IDE](https://www.arduino.cc/en/Main/Software).
+下载并安装 [Arduino IDE](https://www.arduino.cc/en/Main/Software)。
 
-To learn how to connect your Uno board to the computer and upload your first sketch please follow this [guide](https://www.arduino.cc/en/Guide/ArduinoUno).
+要了解如何将 Uno 板连接到计算机并上传您的第一个草图，请按照此 [指南](https://www.arduino.cc/en/Guide/ArduinoUno)进行操作。
 
-### Step 2. Install Arduino ThingsBoard SDK and dependencies
+### 步骤 2. 安装 Arduino 物联网平台 SDK 和依赖项
 
-To simplify application development, install the ThingsBoard Arduino SDK and its dependencies from standard Arduino library repository:
+为了简化应用程序开发，请从标准 Arduino 库存储库安装物联网平台 Arduino SDK 及其依赖项：
 
-1. Proceed to **Sketch -> Include Library...** submenu. Select **Manage Libraries**.
+1. 进入 **草图 -> 包含库...** 子菜单。选择 **管理库**。
 
-1. Find and install **ThingsBoard Arduino SDK** and **PubSubClient by Nick O'Leary** libraries.
+1. 查找并安装 **ThingsBoard Arduino SDK** 和 **Nick O'Leary 的 PubSubClient** 库。
 
    ![image](/images/samples/arduino/sim808-htu21d/install-tb-arduino.png)
 
-1. Install **ArduinoJSON** library **v6.9.1** or higher. <span style="color:red">Avoid installing beta releases of the ArduinoJson library</span>.
+1. 安装 **ArduinoJSON** 库 **v6.9.1** 或更高版本。 <span style="color:red">避免安装 ArduinoJson 库的测试版</span>。
 
    ![image](/images/samples/arduino/sim808-htu21d/do-not-use-beta-version-arduinojson.png)
 
-1. Install **ArduinoHttpClient** library.
+1. 安装 **ArduinoHttpClient** 库。
 
    ![image](/images/samples/arduino/sim808-htu21d/install-http-arduino.png)
 
-From now on, you can use ThingsBoard SDK right from Arduino IDE.
+从现在开始，您可以直接从 Arduino IDE 使用物联网平台 SDK。
 
-### Step 3. Install HTU21D library
+### 步骤 3. 安装 HTU21D 库
 
-Use SparkFun HTU21D library, as shown in the screenshot below.
+使用 SparkFun HTU21D 库，如下面的屏幕截图所示。
 
 ![image](/images/samples/arduino/sim808-htu21d/install-htu21d.png)
 
-### Step 4. Install SIM808 driver
+### 步骤 4. 安装 SIM808 驱动程序
 
-The SIM808 is support by the TinyGSM driver, which can be installed as described below.
+SIM808 受 TinyGSM 驱动程序支持，可以按照以下说明进行安装。
 
 ![image](/images/samples/arduino/sim808-htu21d/install-tinygsm.png)
 
-### Step 5. Prepare and upload a sketch.
+### 步骤 5. 准备并上传草图。
 
-Download and open **arduino_htu21d_sim808_http.ino** sketch.
+下载并打开 **arduino_htu21d_sim808_http.ino** 草图。
 
-**Note** You need to edit following constants and variables in the sketch:
+**注意** 您需要在草图中编辑以下常量和变量：
 
-- `apn` - GPRS access point name. Consult your cellular network provider to get more information.
-- `user` - GPRS access point user. Consult your cellular network provider to get more information.
-- `pass` - GPRS access point password. Consult your cellular network provider to get more information.
-- `TOKEN` - the **$ACCESS_TOKEN** from ThingsBoard configuration step.
-- `THINGSBOARD_SERVER` - ThingsBoard HOST/IP address that is accessible from within your wifi network. Specify "demo.thingsboard.io" if you are using [live demo](https://demo.thingsboard.io/) server.
-- `THINGSBOARD_PORT` - HTTP port to connect to. Change it if necessary.
+- `apn` - GPRS 接入点名称。咨询您的蜂窝网络提供商以获取更多信息。
+- `user` - GPRS 接入点用户。咨询您的蜂窝网络提供商以获取更多信息。
+- `pass` - GPRS 接入点密码。咨询您的蜂窝网络提供商以获取更多信息。
+- `TOKEN` - 物联网平台配置步骤中的 **$ACCESS_TOKEN**。
+- `THINGSBOARD_SERVER` - 可从您的 wifi 网络访问的物联网平台主机/IP 地址。如果您使用的是 [实时演示](https://demo.thingsboard.io/)服务器，请指定“demo.thingsboard.io”。
+- `THINGSBOARD_PORT` - 要连接的 HTTP 端口。如有必要，请更改它。
 
 {% capture tabspec %}arduino-sketch
 arduino_uno_sim808_htu21d_http,arduino_uno_sim808_htu21d_http.ino,c,resources/arduino_uno_sim808_htu21d_http.ino,/docs/samples/arduino/resources/arduino_uno_sim808_htu21d_http.ino{% endcapture %}
 {% include tabs.html %}
 
-Connect your Arduino UNO device via USB cable and select "Arduino/Genuino Uno" port in Arduino IDE. Compile and Upload your sketch to the device using "Upload" button.
+通过 USB 电缆连接您的 Arduino UNO 设备，并在 Arduino IDE 中选择“Arduino/Genuino Uno”端口。使用“上传”按钮编译并上传草图到设备。
 
-After application will be uploaded and started it will try to connect to ThingsBoard node using HTTP and upload "humidity" and "temperature" timeseries data once per second.
+应用程序上传并启动后，它将尝试使用 HTTP 连接到物联网平台节点，并每秒上传一次“湿度”和“温度”时序数据。
 
-## Troubleshooting
+## 故障排除
 
-When the application is running you can select "Arduino/Genuino Uno" port in Arduino IDE and open "Serial Monitor" in order to view debug information produced by serial output.
+当应用程序正在运行时，您可以在 Arduino IDE 中选择“Arduino/Genuino Uno”端口，并打开“串行监视器”以查看串行输出产生的调试信息。
 
-## Data visualization
+## 数据可视化
 
-Finally, open ThingsBoard Web UI. You can access this dashboard by logging in as a tenant administrator. Use
+最后，打开物联网平台 Web UI。您可以使用租户管理员身份登录来访问此仪表板。使用
 
- - login: tenant@thingsboard.org
- - password: tenant
+- 登录名：tenant@thingsboard.org
+- 密码：tenant
 
-in case of local ThingsBoard installation.
+在本地安装物联网平台的情况下。
 
-Go to **"Devices"** section and locate **"Arduino UNO Demo Device"**, open device details and switch to **"Latest telemetry"** tab.
-If all is configured correctly you should be able to see latest values of *humidity* and *temperature* in the table.
+转到 **“设备”** 部分并找到 **“Arduino UNO 演示设备”**，打开设备详细信息并切换到 **“最新遥测”** 选项卡。
+如果所有配置正确，您应该能够在表中看到 *湿度* 和 *温度* 的最新值。
 
 ![image](/images/samples/arduino/sim808-htu21d/telemetry.png)
 
-After, open **"Dashboards"** section then locate and open **"dashboard  Arduino Uno with SIM808 Shield and HTU21D sensor"**.
-As a result, you will see two time-series charts and digital gauges displaying humidity and temperature level (similar to dashboard image in the introduction).
+之后，打开 **“仪表板”** 部分，然后找到并打开 **“仪表板 Arduino Uno 与 SIM808 Shield 和 HTU21D 传感器”**。
+因此，您将看到两个时序图和数字仪表，显示湿度和温度水平（类似于简介中的仪表板图像）。

@@ -9,15 +9,15 @@ description: Trendz Rest API
 * TOC
 {:toc}
 
-Trendz provides simple Rest API for downloading view report data.
+Trendz 提供简单的 Rest API，用于下载视图报告数据。
 
-* Create Table View in Trendz that contains all required fields.
-* Copy Link to that View and extract View ID. It is a UUID string in the last part of the link
-* Execute HTTP POST request:
+* 在 Trendz 中创建包含所有必需字段的表格视图。
+* 复制该视图的链接并提取视图 ID。它是链接最后部分的 UUID 字符串
+* 执行 HTTP POST 请求：
 
-**URL**: http://localhost:8888/apiTrendz/publicApi/buildReport?jwt=YYYYYYY
+**URL**：http://localhost:8888/apiTrendz/publicApi/buildReport?jwt=YYYYYYY
 
-**Body**: 
+**正文**：
 
 ```json
 {
@@ -28,38 +28,38 @@ Trendz provides simple Rest API for downloading view report data.
 }
 ```
 
-Where
+其中
 
-* `viewConfigId` - View ID that should be executed. Required parameter
-* `rangeStartTs` - Start of the time range for the report in milliseconds. Optional parameter. If blank, system will take time range from the saved View. 
-* `rangeEndTs` - End of the time range for the report in milliseconds. Optional parameter. If blank, system will take time range from the saved View. 
-* `filters` - Custom filters that overrides filters in the saved View. Optional parameter. 
-* `jwt` - JWT token for request authentication.
+* `viewConfigId` - 应执行的视图 ID。必需参数
+* `rangeStartTs` - 报告的开始时间范围（以毫秒为单位）。可选参数。如果为空，系统将从保存的视图中获取时间范围。
+* `rangeEndTs` - 报告的结束时间范围（以毫秒为单位）。可选参数。如果为空，系统将从保存的视图中获取时间范围。
+* `filters` - 覆盖保存的视图中的过滤器的自定义过滤器。可选参数。
+* `jwt` - 用于请求身份验证的 JWT 令牌。
 
-## Authorization
+## 授权
 
-All requests should contain jwt token for authorization. It should be added as query parameter or in HTTP Headers. 
-In both cases parameter name is `jwt`.
+所有请求都应包含用于授权的 jwt 令牌。它应作为查询参数或在 HTTP 头中添加。
+在这两种情况下，参数名称都是 `jwt`。
 
-You can get JWT token from ThingsBoard Rest API 
+您可以从 ThingsBoard Rest API 获取 JWT 令牌
 
-Request: 
+请求：
 
 ```bash
 curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{"username":"tenant@thingsboard.org", "password":"tenant"}' 'http://THINGSBOARD_URL/api/auth/login'
 ```
 
-Response:
+响应：
 
 ```json
 {"token":"$YOUR_JWT_TOKEN", "refreshToken":"$YOUR_JWT_REFRESH_TOKEN"}
 ```
 
-Now you can use **$YOUR_JWT_TOKEN** as a jwt token for request authorization.
+现在，您可以将 **$YOUR_JWT_TOKEN** 用作请求授权的 jwt 令牌。
 
-## Response format
+## 响应格式
 
-Here is an example of the response:
+以下是一个响应示例：
 
 ```json
 {
@@ -93,13 +93,13 @@ Here is an example of the response:
 }
 ```
 
-`columnLabels` - contains field labels that are included in the report.
-`dataTable` - view report data in table format.
+`columnLabels` - 包含报告中包含的字段标签。
+`dataTable` - 以表格格式查看报告数据。
 
-## Filter modification
+## 过滤器修改
 
-In configured View has filter fields, you can modify filter options during request. You should add `fitlers` field into request body. 
-Here is an example:
+在已配置的视图具有过滤器字段的情况下，您可以在请求期间修改过滤器选项。您应将 `fitlers` 字段添加到请求正文中。
+以下是一个示例：
 
 ```json
 {
@@ -111,13 +111,13 @@ Here is an example:
 }
 ```
 
-Keys inside filters object should match filter name in View and value contains array of values that should be applied to filter field.
+过滤器对象内的键应与视图中的过滤器名称匹配，值包含应应用于过滤器字段的值数组。
 
 
-## Usage in custom ThingsBoard widgets
+## 在自定义 ThingsBoard 小部件中使用
 
-If you need a custom widget with specific logic, you can use Trendz Rest API for loading required data and ThingsBoard custom widgets functionality for creating required visualization.
-Here is an example that describes how to load data from Trendz API, apply dashboard time and set filter values from widget datasource.
+如果您需要具有特定逻辑的自定义小部件，则可以使用 Trendz Rest API 加载所需数据，并使用 ThingsBoard 自定义小部件功能创建所需的视觉效果。
+以下是一个示例，描述了如何从 Trendz API 加载数据、应用仪表板时间以及从小部件数据源设置过滤器值。
 
 ```javascript
 self.onInit = function() {
@@ -219,29 +219,26 @@ self.onDestroy = function() {
 
 ```
 
-* `self.onInit` - standard ThingsBoard widget lifecycle event. Called when widget first initialized.
-* `self.onDataUpdated` - standard ThingsBoard widget lifecycle event. Called when widget datasource or alias updated.
-* `buildTrendzRequest` - initialize request object to Trendz API. Set time range form dashboard time window if required. Set filters for the request.
-* `applyFilters` - read data from datasource and apply it as a filter for Trendz API request.
-* `applyDashboardTime` - apply time range form dashboard time window to the Trendz API request.
-* `loadDataFromTrendz` - add jwt token and execute actual request to API.
-* `loadDataFromTrendz` - add jwt token and execute actual request to API.
- 
-If you need assistance with custom widget creation - contact us and we will help. 
+* `self.onInit` - 标准 ThingsBoard 小部件生命周期事件。在小部件首次初始化时调用。
+* `self.onDataUpdated` - 标准 ThingsBoard 小部件生命周期事件。在小部件数据源或别名更新时调用。
+* `buildTrendzRequest` - 初始化到 Trendz API 的请求对象。如果需要，从仪表板时间窗口设置时间范围。为请求设置过滤器。
+* `applyFilters` - 从数据源读取数据并将其作为 Trendz API 请求的过滤器应用。
+* `applyDashboardTime` - 将仪表板时间窗口中的时间范围应用于 Trendz API 请求。
+* `loadDataFromTrendz` - 添加 jwt 令牌并执行对 API 的实际请求。
+* `loadDataFromTrendz` - 添加 jwt 令牌并执行对 API 的实际请求。
 
-## Limits
+如果您需要有关创建自定义小部件的帮助，请联系我们，我们将提供帮助。
 
-Trendz Rest API has 2 configurable limits:
+## 限制
 
-* `SIMPLE_API_RATE_LIMITER_QUEUE_CAPACITY` - max amount of queued requests that are waiting for execution. 
-If more requests received, system will reject them. By default queue size is 10 requests.
-* `SIMPLE_API_RATE_LIMITER_THREAD_POOL_SIZE` - amount of requests that are executed in parallel.  
+Trendz Rest API 有 2 个可配置限制：
 
-## Possible response codes
+* `SIMPLE_API_RATE_LIMITER_QUEUE_CAPACITY` - 等待执行的排队请求的最大数量。
+如果收到更多请求，系统将拒绝它们。默认队列大小为 10 个请求。
+* `SIMPLE_API_RATE_LIMITER_THREAD_POOL_SIZE` - 并行执行的请求数量。
 
-* `403` - JWT token not valid or expired.
-* `415` - Unsupported Media Type. In this case you should set `Content-Type` header in HTTP request to **application/json**
-* `429` - Too many requests. API limits reached. You need to wait and repeat request or change API limits in Trendz config.
+## 可能的响应代码
 
-
-
+* `403` - JWT 令牌无效或已过期。
+* `415` - 不支持的媒体类型。在这种情况下，您应将 HTTP 请求中的 `Content-Type` 头设置为 **application/json**
+* `429` - 请求过多。达到 API 限制。您需要等待并重复请求或更改 Trendz 配置中的 API 限制。

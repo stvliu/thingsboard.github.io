@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-pe-edge
-title: MQTT Integration
-description: MQTT Integration guide
+title: MQTT 集成
+description: MQTT 集成指南
 addConverter:
     0:
         image: /images/pe/edge/integrations/mqtt/add-converter-step-1.png
@@ -25,16 +25,16 @@ addIntegration:
 assignIntegration:
     0:
         image: /images/pe/edge/integrations/mqtt/assign-integration-step-1.png
-        title: 'Add <b>brokerIp</b> attribute to Edge and set value as your Edge <b>broker.hivemq.com</b>'
+        title: '将 <b>brokerIp</b> 属性添加到 Edge 并将值设置为您的 Edge <b>broker.hivemq.com</b>'
     1:
         image: /images/pe/edge/integrations/mqtt/assign-integration-step-2.png
-        title: 'Click <b>Manage Integrations</b> button of Edge entity'
+        title: '单击 Edge 实体的 <b>管理集成</b> 按钮'
     2:
         image: /images/pe/edge/integrations/mqtt/assign-integration-step-3.png
-        title: 'Assign Integration to the Edge'
+        title: '将集成分配给 Edge'
     3:
         image: /images/pe/edge/integrations/mqtt/assign-integration-step-4.png
-        title: 'Login to your <b>ThingsBoard Edge</b> instance and open Integrations page - placeholder is going to be replaced by attribute value'
+        title: '登录到您的 <b>ThingsBoard Edge</b> 实例并打开集成页面 - 占位符将被属性值替换'
 
 device:
     0:
@@ -82,53 +82,53 @@ downlinkTerminal:
 {% assign integrationUrl = "mqtt" %}
 {% include templates/edge/integrations/edge-pe-reference.md %}
 
-## Overview
+## 概述
 
-MQTT Integration allows to connect to external MQTT brokers, subscribe to data streams from those brokers and convert any type of payload from your devices to ThingsBoard Edge message format. 
-Its typical use is whenever your devices are already connected to external MQTT broker or any other IoT platform or connectivity provider with MQTT based back-end.
+MQTT 集成允许连接到外部 MQTT 代理，订阅来自这些代理的数据流，并将任何类型的有效负载从您的设备转换为 ThingsBoard Edge 消息格式。
+每当您的设备已连接到外部 MQTT 代理或任何其他基于 MQTT 后端的 IoT 平台或连接提供程序时，通常会使用它。
 
-Please review the integration diagram to learn more.
+请查看集成图以了解更多信息。
 
 <object width="100%" style="max-width: max-content;" data="/images/user-guide/integrations/mqtt-integration.svg"></object>
 
-ThingsBoard Edge MQTT Integration acts as an MQTT client. 
-It subscribes to topics and converts the data into telemetry and attribute updates. 
-In case of downlink message, MQTT integration converts it to the device-suitable format and pushes to external MQTT broker.
+ThingsBoard Edge MQTT 集成充当 MQTT 客户端。
+它订阅主题并将数据转换为遥测和属性更新。
+在发送下行消息的情况下，MQTT 集成会将其转换为适合设备的格式并推送到外部 MQTT 代理。
 
-**Pay attention**: MQTT broker should be either co-located with ThingsBoard Edge instance or deployed in the cloud and have a valid DNS name or static IP address. 
+**注意**：MQTT 代理应与 ThingsBoard Edge 实例位于同一位置或部署在云中，并具有有效的 DNS 名称或静态 IP 地址。
 
-### Prerequisites
+### 先决条件
 
-In this tutorial, we will use:
+在本教程中，我们将使用：
 
-- MQTT broker, accessible by ThingsBoard Edge instance — broker.hivemq.com (port 1883);
-- *mosquitto_pub* and *mosquitto_sub* MQTT clients to send and receive messages.
+- MQTT 代理，ThingsBoard Edge 实例可访问 - broker.hivemq.com（端口 1883）；
+- *mosquitto_pub* 和 *mosquitto_sub* MQTT 客户端来发送和接收消息。
 
-Let's assume that we have a sensor which is sending current temperature readings.
-Our sensor device **SN-001** publishes it's temperature readings to **tb-edge/mqtt-integration-tutorial/sensors/SN-001/temperature**, and it is subscribed to **tb-edge/mqtt-integration-tutorial/sensors/SN-001/rx** to receive RPC calls.
+我们假设我们有一个传感器正在发送当前温度读数。
+我们的传感器设备 **SN-001** 将其温度读数发布到 **tb-edge/mqtt-integration-tutorial/sensors/SN-001/temperature**，并且订阅 **tb-edge/mqtt-integration-tutorial/sensors/SN-001/rx** 以接收 RPC 调用。
 
-We will send a message with temperature readings in a simple format: **`{"value":25.1}`**
+我们将发送一条消息，其中包含简单格式的温度读数：**`{"value":25.1}`**
 
-## Create Converter templates
+## 创建转换器模板
 
-Converter and Integration templates are created on the **Cloud**, so please log in as Tenant administrator to cloud instance.
+转换器和集成模板是在 **云** 上创建的，因此请以租户管理员身份登录到云实例。
 
-### Uplink Converter template
+### 上行转换器模板
 
-Before creating the Integration template, you need to create an Uplink and Downlink converter templates in **Converters templates** page.
+在创建集成模板之前，您需要在 **转换器模板** 页面中创建上行和下行转换器模板。
 
-**Uplink Converter** is a script for parsing and transforming the data received by MQTT integration.
-**Downlink Converter** parses and transforms the data sent from ThingsBoard to the format that is consumed by existing device(s).
+**上行转换器** 是一个用于解析和转换 MQTT 集成接收的数据的脚本。
+**下行转换器** 解析和转换从 ThingsBoard 发送到现有设备的数据。
 
-Uplink is necessary in order to convert the incoming data from the device into the required format for displaying them in ThingsBoard Edge.
-Click on the "plus" and on "Create new converter". To view the events, enable Debug.
-In the function decoder field, specify a script to parse and transform data.
+上行对于将来自设备的传入数据转换为在 ThingsBoard Edge 中显示它们所需的格式是必需的。
+单击“加号”和“创建新转换器”。要查看事件，请启用调试。
+在函数解码器字段中，指定一个脚本来解析和转换数据。
 
 {% include images-gallery.html imageCollection="addConverter" %}
 
 {% include templates/edge/integrations/debug-mode-info.md %}
 
-**Example for the Uplink converter:**
+**上行转换器的示例：**
 
 ```ruby
 /** Decoder **/
@@ -172,26 +172,26 @@ return result;
 ```
 {: .copy-code}
 
-The purpose of the decoder function is to parse the incoming data and metadata to a format that ThingsBoard Edge can consume.
-**deviceName** and **deviceType** are required, while **attributes** and **telemetry** are optional.
-**Attributes** and **telemetry** are flat key-value objects. Nested objects are not supported.
+解码器函数的目的是将传入的数据和元数据解析为 ThingsBoard Edge 可以使用的一种格式。
+**deviceName** 和 **deviceType** 是必需的，而 **attributes** 和 **telemetry** 是可选的。
+**Attributes** 和 **telemetry** 是扁平键值对象。不支持嵌套对象。
 
-You can change the decoder function while creating the converter or after creating it. 
-If the converter has already been created, then click on the 'pencil' icon to edit it.
-Copy the configuration example for the converter (or your own configuration) and insert it into the decoder function. 
-Save changes by clicking on the 'checkmark' icon.
+您可以在创建转换器时或创建转换器后更改解码器函数。
+如果转换器已创建，请单击“铅笔”图标进行编辑。
+复制转换器的配置示例（或您自己的配置）并将其插入解码器函数。
+通过单击“复选标记”图标保存更改。
 
 {% include images-gallery.html imageCollection="modifyConverter" %}
 
-### Downlink Converter template
+### 下行转换器模板
 
-Create Downlink in **Converter templates** page as well. To see events select **Debug** checkbox.
+在 **转换器模板** 页面中也创建下行。要查看事件，请选择 **调试** 复选框。
 
 {% include images-gallery.html imageCollection="addDownlink" %}
 
-You can customize a downlink according to your configuration.
-Let’s consider an example where we send an attribute update message.
-An example of downlink converter:
+您可以根据您的配置自定义下行。
+让我们考虑一个我们发送属性更新消息的示例。
+下行转换器的示例：
 
 ```ruby
 /** Encoder **/
@@ -216,83 +216,83 @@ return result;
 ```
 {: .copy-code}
 
-## Create Integration template
+## 创建集成模板
 
-Now that the Uplink and Downlink converter templates have been created, it is possible to create an integration.
-Go to **Integration templates** section and click **Add new integration** button. Name it **Edge MQTT**, select type **MQTT**, turn the Debug mode on and from drop-down menus add recently created Uplink and Downlink converters.
+现在已经创建了上行和下行转换器模板，就可以创建集成。
+转到 **集成模板** 部分并单击 **添加新集成** 按钮。将其命名为 **Edge MQTT**，选择类型 **MQTT**，打开调试模式，然后从下拉菜单中添加最近创建的上行和下行转换器。
 
-Specify host: **$\{\{brokerIp\}\}**. Port: **1883**. It is better to uncheck the **Clean session** parameter. Many brokers do not support sticky sessions, so will silently close the connection if you try to connect with this option enabled.
+指定主机：**$\{\{brokerIp\}\}**。端口：**1883**。最好取消选中 **Clean session** 参数。许多代理不支持粘性会话，因此如果您尝试启用此选项，代理会默默地关闭连接。
 
-Add a Topic Filter **tb-edge/mqtt-integration-tutorial/sensors/+/temperature**. You can also select an MQTT QoS level. We use MQTT QoS level 0 (At most once) by default.
+添加主题过滤器 **tb-edge/mqtt-integration-tutorial/sensors/+/temperature**。您还可以选择 MQTT QoS 级别。我们默认使用 MQTT QoS 级别 0（最多一次）。
 
-Let's leave the Downlink topic pattern by default, meaning that the Integration will take the metadata.topic and use it as the downlink topic.
+让我们默认保留下行主题模式，这意味着集成将采用 metadata.topic 并将其用作下行主题。
 
-Click **Add** to save the Integration.
+单击 **添加** 以保存集成。
 
 {% include images-gallery.html imageCollection="addIntegration" %}
 
-## Modify Edge Root Rule chain for Downlinks
+## 修改 Edge 根规则链以进行下行
 
-We can send a downlink message to the device from Rule chain using the rule node.
-To be able to send downlink over integration we need to modify **'Edge Root Rule chain'** on the cloud.
-We'll need to add two rule nodes - **originator fields** and **integration downlink** nodes.
-Set **'Attributes updated'** link to **originator fields** and configure to add originator name and type to the message metadata - in the **downlink converter** name of the device will be used to set proper *downlink* MQTT topic.
-And then add **Success** link from **originator fields** node to **integration downlink** node.
-When changes are made to device attribute on the Edge, the downlink message will be sent to the integration template.
+我们可以使用规则节点从规则链向设备发送下行消息。
+为了能够通过集成发送下行，我们需要修改云上的 **“Edge 根规则链”**。
+我们需要添加两个规则节点 - **发起者字段** 和 **集成下行** 节点。
+将 **“已更新属性”** 链接到 **发起者字段** 并配置以将发起者名称和类型添加到消息元数据中 - 在 **下行转换器** 中，设备的名称将用于设置正确的 *下行* MQTT 主题。
+然后从 **发起者字段** 节点添加 **成功** 链接到 **集成下行** 节点。
+当对 Edge 上的设备属性进行更改时，下行消息将被发送到集成模板。
 
 {% include images-gallery.html imageCollection="downlinkRule" %}
 
-## Assign Integration to Edge
+## 将集成分配给 Edge
 
-Once converter and integration templates are created, we can assign Integration template to Edge.
-Because we are using placeholder **$\{\{brokerIp\}\}** in the integration configuration, we need to add attribute **brokerIp** to edge first.
-You need to provide **IP address** of the MQTT broker. We are using public URL *broker.hivemq.com* in this tutorial, but this could be any internal IP address as well.
-Once attribute added, we are ready to assign integration and verify that it's added.
+创建转换器和集成模板后，我们可以将集成模板分配给 Edge。
+因为我们在集成配置中使用占位符 **$\{\{brokerIp\}\}**，所以我们需要先将属性 **brokerIp** 添加到 Edge。
+您需要提供 MQTT 代理的 **IP 地址**。我们在本教程中使用公共 URL *broker.hivemq.com*，但也可以是任何内部 IP 地址。
+添加属性后，我们就可以分配集成并验证是否已添加。
 
 {% include images-gallery.html imageCollection="assignIntegration" showListImageTitles="true" %}
 
-## Send uplink message
+## 发送上行消息
 
-Now let’s simulate the device sending a temperature reading to the integration:
+现在让我们模拟设备向集成发送温度读数：
 
 ```ruby
 mosquitto_pub -h broker.hivemq.com -p 1883 -t "tb-edge/mqtt-integration-tutorial/sensors/SN-001/temperature" -m '{"value":25.2}'
 ```
 {: .copy-code}
 
-The created device with data can be seen in the section **Device groups -> All** on the Edge:
+可以在 Edge 上的 **设备组 -> 全部** 部分中看到具有数据的创建的设备：
 
 {% include images-gallery.html imageCollection="device" %}
 
-Received data can be viewed in the Uplink converter. In the **'In'** and **'Out'** blocks of the Events tab:
+可以在上行转换器中查看接收到的数据。在事件选项卡的 **“In”** 和 **“Out”** 块中：
 
 {% include images-gallery.html imageCollection="converterEvents" %}
 
-## Send One-Way RPC to Device
+## 向设备发送单向 RPC
 
-Now let's check downlink functionality.
-Open the terminal window and execute the following command:
+现在让我们检查下行功能。
+打开终端窗口并执行以下命令：
 
 ```ruby
 mosquitto_sub -h broker.hivemq.com -p 1883 -t "tb-edge/mqtt-integration-tutorial/sensors/+/rx"
 ```
 {: .copy-code}
 
-Please leave this terminal running in background - in this terminal window you should receive incoming messages sent later by integration.
+请将此终端保持在后台运行 - 在此终端窗口中，您应该会收到集成稍后发送的传入消息。
 
-Let's add **firmware** shared attribute:
+让我们添加 **固件** 共享属性：
 
 {% include images-gallery.html imageCollection="addSharedAttribute" %}
 
-To make sure that downlink message sent to integration you can check 'Events' tab of integration:
+为了确保发送到集成的下行消息，您可以检查集成的“事件”选项卡：
 
 {% include images-gallery.html imageCollection="downlinkMessage" %}
 
-An example of incoming messages from ThingsBoard Edge in the terminal:
+终端中来自 ThingsBoard Edge 的传入消息示例：
 
 {% include images-gallery.html imageCollection="downlinkTerminal" %}
 
-## Next steps
+## 后续步骤
 
 {% assign docsPrefix = "pe/edge/" %}
 {% include templates/edge/guides-banner-edge.md %}

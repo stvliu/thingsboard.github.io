@@ -1,6 +1,6 @@
 ---
 layout: docwithnav
-title: 20K IoT devices on single ThingsBoard instance
-description: Overview of performance scenario and metrics 
+title: 单个 ThingsBoard 实例上的 20K 物联网设备
+description: 性能场景和指标概述
 
 ---

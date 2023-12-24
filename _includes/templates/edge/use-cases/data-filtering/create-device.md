@@ -1,9 +1,9 @@
-First we will create a new device "In-vehicle monitoring system" on the edge.
+首先，我们将在边缘创建一个新设备“车载监控系统”。
 
-Please open ThingsBoard **Edge** UI using the URL **EDGE_URL**.
+请使用 URL **EDGE_URL** 打开 ThingsBoard **Edge** UI。
 
 {% include images-gallery.html imageCollection="provisionDevicesEdge" showListImageTitles="true" %}
 
-Please open **{{appPrefix}}** using the URL **SERVER_URL**:
+请使用 URL **SERVER_URL** 打开 **{{appPrefix}}**：
 
 {% include images-gallery.html imageCollection="provisionDevices" showListImageTitles="true" %}

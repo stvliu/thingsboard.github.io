@@ -2,71 +2,69 @@
 layout: docwithnav-trendz
 assignees:
 - vparomskiy
-title: Add Trandz widgets on dashboard
-description: Add Trandz widgets on dashboard 
+title: 在仪表板上添加 Trandz 小部件
+description: 在仪表板上添加 Trandz 小部件
 
 ---
 
 * TOC
 {:toc}
 
-All interactive visualizations created with the Trendz Analytics Platform could be shared with other users and embed on ThingsBoard Dashboards 
-or external sites. In this guide, you will learn how to do this. 
+使用 Trendz Analytics Platform 创建的所有交互式可视化都可以与其他用户共享，并嵌入到 ThingsBoard 仪表板或外部网站中。在本指南中，您将学习如何执行此操作。
 
-## Prerequisites
+## 先决条件
 
-You should [import Trendz widget bundle into ThingsBoard](/docs/trendz/trendz-bundle#Import-Trendz-bundle-into-ThingsBoard). If you are using ThingsBoard Cloud - you should already have required bundle imported into ThingsBoard.
+您应该[将 Trendz 小部件包导入 ThingsBoard](/docs/trendz/trendz-bundle#Import-Trendz-bundle-into-ThingsBoard)。如果您使用的是 ThingsBoard Cloud，那么您应该已经将必需的包导入到 ThingsBoard 中。
 
-## Add visualization on ThingsBoard Dashboard
+## 在 ThingsBoard 仪表板上添加可视化
 
-#### Add using share wizard
+#### 使用共享向导添加
 
-* Click on **Share** button in the top right corner of the visualization.
-* Select whether you want to add view on new or existing dashboard.
-* Select on what dashboard state view should be added.
-* Enable `Create alias from filter` - enable this option if you want to create dashboard alias that would be used to filter data in view. For example if you created view that shows data from multiple devices - you can use dashboard state alias to filter data by device name. Once alias value changed - filter inside Trendz view would be automatically updated.
-* Press Save button.
+* 单击可视化右上角的 **共享** 按钮。
+* 选择是要在新仪表板上添加视图还是在现有仪表板上添加视图。
+* 选择应在哪个仪表板状态中添加视图。
+* 启用 `从过滤器创建别名` - 如果要创建仪表板别名以用于过滤视图中的数据，请启用此选项。例如，如果您创建了显示来自多个设备的数据的视图，则可以使用仪表板状态别名按设备名称过滤数据。别名值更改后，Trendz 视图中的过滤器将自动更新。
+* 按保存按钮。
 
-#### Add via direct link to Trendz view
+#### 通过直接链接到 Trendz 视图添加
 
-Once widgets bundle imported, and you already have saved Trendz Visualization - follow next steps to add them on the dashboard:
-* In Trendz, open required visualization
-* Press **Share** button, and click `Copy link` button - sharable URL will be copied into the clipboard
-* Open required ThingsBoard Dashboard and press Edit button
-* Select **Trendz View Static** widget from **Trendz Bundle** and add it on the Dashboard
-* Switch to **Advanced** tab of the widget and insert the copied URL from step 1
-* Save dashboard
+导入小部件包后，您已经保存了 Trendz 可视化 - 请按照以下步骤将其添加到仪表板中：
+* 在 Trendz 中，打开所需的可视化
+* 按 **共享** 按钮，然后单击 `复制链接` 按钮 - 可共享的 URL 将被复制到剪贴板
+* 打开所需的 ThingsBoard 仪表板并按编辑按钮
+* 从 **Trendz Bundle** 中选择 **Trendz View Static** 小部件并将其添加到仪表板中
+* 切换到小部件的 **高级** 选项卡，并插入步骤 1 中复制的 URL
+* 保存仪表板
 
 ![image](/images/trendz/embed-trendz.gif) 
 
-## Use Dashboard time window
+## 使用仪表板时间窗口
 
-By default, all Trendz visualizations use individual time range. However you can change this behavior and configure widget to toke time from ThingsBoard Dashboard.
-This option available for both, Static Trendz widget and for Trendz View with aliases.
+默认情况下，所有 Trendz 可视化都使用单独的时间范围。但是，您可以更改此行为并配置小部件以从 ThingsBoard 仪表板中获取时间。
+此选项适用于静态 Trendz 小部件和具有别名的 Trendz 视图。
 
-* Open Dashboard Edit Mode
-* Select required Trendz Widget
-* Switch to **Advanced** Tab
-* Enable checkbox **Use Dashboard Time Window** 
+* 打开仪表板编辑模式
+* 选择所需的 Trendz 小部件
+* 切换到 **高级** 选项卡
+* 启用复选框 **使用仪表板时间窗口**
 
-## Embed visualization on external site
-You can also embed Trendz visualization into your web site by adding iFrame that points to required visualization.
+## 在外部网站上嵌入可视化
 
-Add iFrame on your site with the following URL **http://{TRENDZ_URL}/viewMode/{VIEW_ID}?jwt={JWT_TOKEN}**. Where:
-* TRENDZ_URL - url of Trendz service
-* VIEW_ID - ID of saved visualization inside Trendz
-* JWT_TOKEN - ThingsBoard JWT token that should be used to authenticate in the ThingsBoard
+您还可以通过添加指向所需可视化的 iFrame 将 Trendz 可视化嵌入到您的网站中。
 
-## Blocked View problem
+在您的网站上添加 iFrame，其 URL 为 **http://{TRENDZ_URL}/viewMode/{VIEW_ID}?jwt={JWT_TOKEN}**。其中：
+* TRENDZ_URL - Trendz 服务的 URL
+* VIEW_ID - Trendz 中保存的可视化的 ID
+* JWT_TOKEN - 应用于在 ThingsBoard 中进行身份验证的 ThingsBoard JWT 令牌
 
-If HTTPS was not enabled for Trendz it is possible that visuals shared on 3rd party websites or on ThingsBoard Dashboard 
-would be blank. 
+## 视图被阻止的问题
 
-The problem is that most browser block mixed content requests: if ThingsBoard use HTTPS and Trendz does not - browser will 
-block requests to Trendz. You can find detailed error in browser console.
+如果未为 Trendz 启用 HTTPS，则在第三方网站或 ThingsBoard 仪表板上共享的可视化可能为空白。
 
-For fixing this - you need to enable HTTPS for Trendz UI. Find details how to do this in Trendz installation guide.
+问题在于大多数浏览器阻止混合内容请求：如果 ThingsBoard 使用 HTTPS 而 Trendz 不使用，浏览器将阻止对 Trendz 的请求。您可以在浏览器控制台中找到详细的错误。
 
-## Next Steps
+要解决此问题，您需要为 Trendz UI 启用 HTTPS。在 Trendz 安装指南中找到如何执行此操作的详细信息。
+
+## 后续步骤
 
 {% assign currentGuide = "EmbedVisualizations" %}{% include templates/trndz-guides-banner.md %}

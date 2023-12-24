@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-pe-edge
 title: ThingsBoard PE Edge
-description: ThingsBoard PE Edge to distribute data processing and analysis using edge computing
+description: ThingsBoard PE Edge 用于使用边缘计算来分布式处理和分析数据
 
 
 ---

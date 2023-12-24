@@ -6,45 +6,45 @@
 
 {% include templates/edge/install/copy-edge-credentials.md %}
 
-Edit ThingsBoard Edge configuration file 
+编辑 ThingsBoard Edge 配置文件
 ```bash 
 sudo nano /etc/tb-edge/conf/tb-edge.conf
 ``` 
 {: .copy-code}
 
-Please update the following lines in your configuration file. Make sure **to replace**:
- * "PUT_YOUR_POSTGRESQL_PASSWORD_HERE" with your **actual postgres user password**.
- * "PUT_YOUR_CLOUD_IP" with an IP address of the machine where **{{appPrefix}}** Server is running. Depending on your setup:
+请更新配置文件中的以下行。确保 **替换**：
+* "PUT_YOUR_POSTGRESQL_PASSWORD_HERE" 为您的 **实际 postgres 用户密码**。
+* "PUT_YOUR_CLOUD_IP" 为运行 **{{appPrefix}}** 服务器的机器的 IP 地址。根据您的设置：
    {% if docsPrefix == 'pe/edge/' %}
-    * If you're connecting the Edge to [**ThingsBoard Cloud**](https://thingsboard.cloud/signup), use **thingsboard.cloud**.
+    * 如果您将 Edge 连接到 [**ThingsBoard Cloud**](https://thingsboard.cloud/signup)，请使用 **thingsboard.cloud**。
 
-    **NOTE**: **thingsboard.cloud** employs the SSL protocol for Edge communication. 
-    You should also uncomment **export CLOUD_RPC_SSL_ENABLED=true** in this case.
+    **注意**：**thingsboard.cloud** 使用 SSL 协议进行 Edge 通信。
+    在这种情况下，您还应该取消注释 **export CLOUD_RPC_SSL_ENABLED=true**。
    {% else %}
-    * If you're connecting the Edge to the [**ThingsBoard Live Demo**](https://demo.thingsboard.io/signup) for evaluation, use **demo.thingsboard.io**.
+    * 如果您将 Edge 连接到 [**ThingsBoard Live Demo**](https://demo.thingsboard.io/signup) 进行评估，请使用 **demo.thingsboard.io**。
    {% endif %}
-    * Use **localhost** if the Edge is running on the same machine as the Server instance. 
-    * Use an **X.X.X.X** IP address if the Edge is connecting to the Server instance in the same network or in a Docker container.
+    * 如果 Edge 与服务器实例在同一台机器上运行，请使用 **localhost**。
+    * 如果 Edge 连接到同一网络或 Docker 容器中的服务器实例，请使用 **X.X.X.X** IP 地址。
 
- * Replace "PUT_YOUR_EDGE_KEY_HERE" and "PUT_YOUR_EDGE_SECRET_HERE" with the respective **Edge key and secret**:
+* 将 "PUT_YOUR_EDGE_KEY_HERE" 和 "PUT_YOUR_EDGE_SECRET_HERE" 替换为相应的 **Edge 密钥和密钥**：
 
 ```bash
-# UNCOMMENT NEXT LINES AND PUT YOUR CLOUD CONNECTION SETTINGS:
+# 取消注释以下行并输入您的云连接设置：
 # export CLOUD_ROUTING_KEY=PUT_YOUR_EDGE_KEY_HERE
 # export CLOUD_ROUTING_SECRET=PUT_YOUR_EDGE_SECRET_HERE
 {% if docsPrefix == 'pe/edge/' %}
-# UNCOMMENT NEXT LINES IF EDGE CONNECTS TO PE 'THINGSBOARD.CLOUD' SERVER:
+# 如果 EDGE 连接到 PE 'THINGSBOARD.CLOUD' 服务器，取消注释以下行：
 # export CLOUD_RPC_HOST=thingsboard.cloud
 # export CLOUD_RPC_SSL_ENABLED=true
 {% else %}
-# UNCOMMENT NEXT LINES IF EDGE CONNECTS TO CE 'DEMO.THINGSBOARD.IO' SERVER:
+# 如果 EDGE 连接到 CE 'DEMO.THINGSBOARD.IO' 服务器，取消注释以下行：
 # export CLOUD_RPC_HOST=demo.thingsboard.io
 {% endif %}
-# UNCOMMENT NEXT LINES IF YOU CHANGED DEFAULT CLOUD RPC HOST/PORT SETTINGS:
+# 如果您更改了默认的 CLOUD RPC 主机/端口设置，取消注释以下行：
 # export CLOUD_RPC_HOST=PUT_YOUR_CLOUD_IP
 # export CLOUD_RPC_PORT=7070
 
-# UNCOMMENT NEXT LINES IF YOU ARE RUNNING EDGE ON THE SAME MACHINE WHERE THINGSBOARD SERVER IS RUNNING:
+# 如果您在运行 THINGSBOARD 服务器的同一台机器上运行 EDGE，取消注释以下行：
 # export HTTP_BIND_PORT=18080
 # export MQTT_BIND_PORT=11883
 # export COAP_BIND_PORT=15683
@@ -52,16 +52,16 @@ Please update the following lines in your configuration file. Make sure **to rep
 {% if docsPrefix == 'pe/edge/' %}
 # export INTEGRATIONS_RPC_PORT=19090
 {% endif %}
-# UNCOMMENT NEXT LINES IF YOU HAVE CHANGED DEFAULT POSTGRESQL DATASOURCE SETTINGS:
+# 如果您更改了默认的 POSTGRESQL DATASOURCE 设置，取消注释以下行：
 # export SPRING_DATASOURCE_URL=jdbc:postgresql://localhost:5432/tb_edge
 # export SPRING_DATASOURCE_USERNAME=postgres
 # export SPRING_DATASOURCE_PASSWORD=PUT_YOUR_POSTGRESQL_PASSWORD_HERE
 ```
 
 {% capture local-deployment %}
-If ThingsBoard Edge is going to be running on the same machine where **{{appPrefix}}** server is running, you'll need to update configuration parameters to avoid port collision between ThingsBoard Server and ThingsBoard Edge.
+如果 ThingsBoard Edge 将在运行 **{{appPrefix}}** 服务器的同一台机器上运行，您需要更新配置参数以避免 ThingsBoard Server 和 ThingsBoard Edge 之间的端口冲突。
 
-Please execute the following command to update ThingsBoard Edge configuration file (**/etc/tb-edge/conf/tb-edge.conf**):
+请执行以下命令以更新 ThingsBoard Edge 配置文件 (**/etc/tb-edge/conf/tb-edge.conf**)：
 {% endcapture %}
 {% include templates/info-banner.md content=local-deployment %}
 
@@ -90,4 +90,4 @@ EOL'
 {: .copy-code}
 {% endif %}
 
-Make sure that ports above (18080, 11883, 15683) are not used by any other application.
+确保上述端口 (18080、11883、15683) 未被任何其他应用程序使用。

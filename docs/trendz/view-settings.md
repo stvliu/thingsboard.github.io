@@ -2,173 +2,170 @@
 layout: docwithnav-trendz
 assignees:
 - vparomskiy
-title: View Settings
-description: Trendz View Settings
+title: 查看设置
+description: Trendz 查看设置
 ---
 
 * TOC
 {:toc}
 
-View Settings icon located in the bottom right corner of the View. There are multiple settings there that controls 
-how visualisation created.
+查看设置图标位于视图的右下角。那里有多个设置，用于控制如何创建可视化。
 
-## General Settings
-##### Title 
-Set title and title font size for View
-##### Hide Legend
-Show or Hide Legend for Views that have it
-##### Legend position
-Control where legend located. Possible options:
+## 常规设置
+##### 标题
+设置视图的标题和标题字体大小
+##### 隐藏图例
+显示或隐藏具有图例的视图
+##### 图例位置
+控制图例的位置。可能选项：
 
-* top
-* right
-* bottom
-* left
+* 顶部
+* 右侧
+* 底部
+* 左侧
 
-##### Dashed Line
-For line and bar charts you enabled or disable dashed lines.
+##### 虚线
+对于折线图和条形图，您可以启用或禁用虚线。
 
-##### Stroke Type 
-For line and bar charts can select stroke type that used for drawing lines. Possible options:
+##### 描边类型
+对于折线图和条形图，可以选择用于绘制线的描边类型。可能选项：
 
-* smooth
-* straight
-* stepline
+* 平滑
+* 直线
+* 阶梯线
 
-##### Horizontal Bar
-For bar charts you can select horizontal or vertical bars.
+##### 水平条形图
+对于条形图，可以选择水平条形图或垂直条形图。
 
-##### Stacked Bar
-Show the composition and comparison of several variables, relative or absolute, over a period of time, appearing as a series of bars stacked on top of each other.
+##### 堆叠条形图
+显示多个变量在一段时间内的构成和比较，相对或绝对，显示为一系列彼此堆叠的条形图。
 
-##### Show Labels
-Shows values in charts.
+##### 显示标签
+在图表中显示值。
 
-##### Show timeline
-Add a timeline at the bottom of the chart for quick selection of time periods (zoom).
+##### 显示时间线
+在图表底部添加时间线，以便快速选择时间段（缩放）。
 
-##### Use single Y-axis
+##### 使用单个 Y 轴
 
-By default each timeseries field in **Y-axis** re-use separate axis. If you show 3 timeseries on chart - you will have 3 different Y-axis.
+默认情况下，**Y 轴**中的每个时间序列字段都会重复使用单独的轴。如果您在图表上显示 3 个时间序列，您将有 3 个不同的 Y 轴。
 
-However if measured unit is the same for all fields - you can join them and show on single axis:
+但是，如果所有字段的测量单位相同，您可以将它们连接起来并显示在单个轴上：
 
-* Open View Settings
-* Select **Enable single axis**
+* 打开视图设置
+* 选择**启用单个轴**
 
-##### Hide X-axis label
-Show or Hide X-axis label for View. It cna be usefull for scenarios where Category located on X-axis and label not required.
+##### 隐藏 X 轴标签
+显示或隐藏视图的 X 轴标签。当类别位于 X 轴且不需要标签时，它可能有用。
 
-##### X axis position
-X axis can be drawn on top of the chart or bottom. This config useful for big heatmaps with scrolls.
+##### X 轴位置
+X 轴可以绘制在图表顶部或底部。此配置对于带有滚动条的大型热图很有用。
 
-##### Remove empty series
-When multiple entities are used for visualization and some of them do have telemetry and others don't it may be useful to 
-remove entities without telemetry from the view (chart/table/heatmap). For making it - enable empty series removing and system will not render them.
+##### 删除空系列
+当多个实体用于可视化，其中一些实体具有遥测而另一些实体没有遥测时，可能需要从视图（图表/表格/热图）中删除没有遥测的实体。为了做到这一点，启用空系列删除，系统将不会渲染它们。
 
-##### Enable filter auto refresh
-Loading the list of elements for the selected filters in real time. By default, the actual list of these elements is loaded during the creation of the view (after pressing the "Build" buttons).
+##### 启用过滤器自动刷新
+实时加载所选过滤器中元素的列表。默认情况下，这些元素的实际列表在创建视图时加载（在按下“构建”按钮后）。
 
-##### Sort Order
-Define default sorting for Tables.
+##### 排序顺序
+定义表的默认排序。
 
-##### Manual Y axis range
-Set the MIN and MAX values to display on the Y-axis
+##### 手动 Y 轴范围
+设置要在 Y 轴上显示的最小值和最大值
 
-##### Manual X axis range
-Set the MIN and MAX values to display on the X-axis.
+##### 手动 X 轴范围
+设置要在 X 轴上显示的最小值和最大值。
 
-##### Show toolbox (export and zoom)
-Displays a toolbox in the upper right corner of the visualization that allows you to export and zoom in on a selection for some types of visualizations
+##### 显示工具箱（导出和缩放）
+在可视化的右上角显示一个工具箱，允许您导出和放大某些类型可视化的选定内容
 
-##### Show total row
-Show/Hide Total row for Tables.
+##### 显示总计行
+显示/隐藏表的总计行。
 
-##### Enable Export to CSV
-Show/Hide export to CSV button for Tables
+##### 启用导出为 CSV
+显示/隐藏表的导出为 CSV 按钮
 
-##### Palette Colors
-If chart contains multiple lines/series system applies different colors for them. By select Palette Color, you can define what colors are used.
+##### 调色板颜色
+如果图表包含多条线/系列，系统会为它们应用不同的颜色。通过选择调色板颜色，您可以定义使用哪些颜色。
 
-Note that you can also define specific color for each field individually in field configuration window. 
+请注意，您还可以在字段配置窗口中为每个字段单独定义特定颜色。
 
-## Query params
+## 查询参数
 
-##### Preview mode
-The ability to load only part of the data from limited set of devices or assets to quickly see how the view will look.
+##### 预览模式
+仅从有限的设备或资产集中加载部分数据的能力，以便快速查看视图的外观。
 
-##### Entities Root
+##### 实体根
 
-Let's assume that we have 2 buildings and 2 sensors registered in the ThingsBoard and relations configured among them:
+假设我们在 ThingsBoard 中注册了 2 栋建筑和 2 个传感器，并在它们之间配置了关系：
 
-* Building A **Contains** Sensor_1
-* Building B do not have any sensors
-* Sensor_2 do not assigned to any building
+* 建筑 A **包含**传感器 1
+* 建筑 B 没有传感器
+* 传感器 2 未分配给任何建筑
 
-We want to create a view that shows how many sensors are located in each building. In this case results depends on 
-who is the root for calculation - **Building** or **Sensor**.
+我们希望创建一个视图来显示每个建筑中有多少个传感器。在这种情况下，结果取决于谁是计算的根 - **建筑**或**传感器**。
 
-If **Building** is the root entity - we will see that **Building_A** has 1 sensor and **Building_B** has no sensors  
-If **Sensor** is the root entity - we will see that **Sensor_1** installed in 1 building and **Sensor_2** do not installed in buildings
+如果**建筑**是根实体，我们将看到**建筑 A**有 1 个传感器，**建筑 B**没有传感器
+如果**传感器**是根实体，我们将看到**传感器 1**安装在 1 栋建筑中，**传感器 2**未安装在建筑中
 
-Trendz select Root Entity automatically during view calculation. However you can control what Entity selected as Root for the request:
+Trendz 在视图计算期间自动选择根实体。但是，您可以控制为请求选择的实体是什么：
 
-* Open View Settings
-* Select required **Entities Root** for the request
-* Save and rebuild view  
+* 打开视图设置
+* 为请求选择所需的**实体根**
+* 保存并重建视图
 
 
-##### Topology Entities
+##### 拓扑实体
 
-Trendz create query plan for each view. For making it system collects all fields and entities that are used in the View. 
-Then, using **Topology Graph**, system identified best query plan for this request by finding the shortest path between used Entities.
+Trendz 为每个视图创建查询计划。为了做到这一点，系统收集视图中使用的所有字段和实体。
+然后，系统使用**拓扑图**通过找到所用实体之间的最短路径来确定此请求的最佳查询计划。
 
-For Complex Topology shortest path is not always the best and you modify what entities included in the query plan:
+对于复杂的拓扑，最短路径并不总是最好的，您可以修改查询计划中包含哪些实体：
 
-* Open View Settings
-* Select required **Topology Entities** that should be included into query plan
-* Save and rebuild view
+* 打开视图设置
+* 选择应包含在查询计划中的所需**拓扑实体**
+* 保存并重建视图
 
-## View Mode fields
+## 视图模式字段
 
-##### Hide filters
-Hide the **filter** field for full-screen view and for display on the dashboard.
+##### 隐藏过滤器
+隐藏全屏视图和仪表板显示的**过滤器**字段。
 
-##### Hide date picker
-Hide the **date picker** field for full-screen view and for display on the dashboard.
+##### 隐藏日期选择器
+隐藏全屏视图和仪表板显示的**日期选择器**字段。
 
-##### Hide By Option
-Hide the **by option** field for full-screen view and for display on the dashboard.
+##### 隐藏按选项
+隐藏全屏视图和仪表板显示的**按选项**字段。
 
-##### GET filter values from url
-The ability to get filtering parameters for the ThingsBoard dashboard using the URL line (query parameters) of the browser.
+##### 从 URL 获取过滤器值
+使用浏览器的 URL 行（查询参数）获取 ThingsBoard 仪表板的过滤参数的能力。
 
-##### SET filter values to url
-The ability to set filtering parameters for the ThingsBoard dashboard using the URL line (query parameters) of the browser.
+##### 将过滤器值设置为 URL
+使用浏览器的 URL 行（查询参数）设置 ThingsBoard 仪表板的过滤参数的能力。
 
-##### Hidden filters
-Hide specific filters when displayed in the ThingsBoard dashboard
+##### 隐藏过滤器
+在 ThingsBoard 仪表板中显示时隐藏特定过滤器
 
-##### Row-click entity
-An entity that will be passed on a click on a view element (table row, bar of chart, etc.) to the ThingsBoard alias. This is usually used to change filters of view in other widgets.
-[**More details you can find here**](/docs/trendz/embed-visuals/#configure-onrowclock-action)
+##### 行单击实体
+将通过视图元素（表格行、图表栏等）单击传递给 ThingsBoard 别名的实体。这通常用于更改其他小部件中视图的过滤器。
+[**您可以在此处找到更多详细信息**](/docs/trendz/embed-visuals/#configure-onrowclock-action)
 
-## Colors
+## 颜色
 
-##### Annotations
-Color Zones on the chart for ranges along the Y axis. [**More details you can find here**](/docs/trendz/visualizations-line/#color-zones) 
+##### 注释
+图表上沿 Y 轴范围的颜色区域。[**您可以在此处找到更多详细信息**](/docs/trendz/visualizations-line/#color-zones) 
 
-## Caching
+## 缓存
 
-##### Cache report
-If the query plan is not changed will be return cached View Report without loading data from ThignsBoard.
-[**More details you can find here**](/docs/trendz/cache-settings/)
+##### 缓存报告
+如果查询计划没有更改，将返回缓存的视图报告，而无需从 ThignsBoard 加载数据。
+[**您可以在此处找到更多详细信息**](/docs/trendz/cache-settings/)
 
-##### Enable caching
-In cases when data can be grouped by fixed intervals, like Hour or Date, will be load already computed\aggregated field value from cache instead of reloading data from ThingsBoard.
-[**More details you can find here**](/docs/trendz/cache-settings/)
+##### 启用缓存
+在可以按固定间隔（如小时或日期）对数据进行分组的情况下，将从缓存中加载已计算/聚合的字段值，而不是从 ThingsBoard 重新加载数据。
+[**您可以在此处找到更多详细信息**](/docs/trendz/cache-settings/)
 
-## TB calculated telemetry save
-It feature provides the ability to make and save (to the same item) a new telemetry that is made by a calculation field that is derived from any telemetry field that you want. 
-It is a scheduled action that will be launched every chosen time unit to keep actual values during the present time.
-[**More details you can find here**](/docs/trendz/save-telemetry-to-thingsboard/)
+## TB 计算遥测保存
+此功能提供了创建和保存（到同一项目）新遥测的能力，该遥测由您想要的任何遥测字段派生的计算字段生成。
+这是一个计划的任务，将在选定的每个时间单位启动，以在当前时间保持实际值。
+[**您可以在此处找到更多详细信息**](/docs/trendz/save-telemetry-to-thingsboard/)

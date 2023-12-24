@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-pe
-title: Smart retail template
-description: Smart retail template overview
+title: 智能零售模板
+description: 智能零售模板概述
 solution-highlights:
     0:
         image: /images/solutions/smart_retail/smart-retail-1.png

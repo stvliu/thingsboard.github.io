@@ -1,7 +1,7 @@
-### Edge Hardware Requirements
+### 边缘硬件要求
 
-The hardware specifications needed for ThingsBoard Edge are determined by both the number of devices connected locally and the extent of GUI interaction:
+ThingsBoard Edge 所需的硬件规格取决于本地连接的设备数量和 GUI 交互的程度：
 
-- **Light Usage:** If you intend to operate ThingsBoard Edge with minimal GUI interactions (such as local dashboards and device management) and anticipate connecting fewer than 100 devices to a single machine, a minimum of 1GB of RAM should suffice.
+- **轻量级使用：**如果您打算在最少的 GUI 交互（例如本地仪表板和设备管理）下运行 ThingsBoard Edge，并预计将不到 100 台设备连接到一台机器，那么至少 1GB 的 RAM 就足够了。
 
-- **Heavy Usage:** Conversely, for heavy GUI interactions and connections to 100+ devices on a single machine, we recommend allocating at least 4GB of RAM to ensure optimal performance.
+- **高强度使用：**相反，对于一台机器上 100 多台设备的繁重 GUI 交互和连接，我们建议分配至少 4GB 的 RAM 以确保最佳性能。

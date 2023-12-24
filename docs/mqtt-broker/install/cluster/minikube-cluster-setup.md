@@ -1,22 +1,22 @@
 ---
 layout: docwithnav-mqtt-broker
-title: Cluster setup using Minikube
-description: TBMQ cluster setup with Kubernetes and Minikube guide
+title: 使用 Minikube 进行集群设置
+description: 使用 Kubernetes 和 Minikube 指南设置 TBMQ 集群
 
 ---
 
 * TOC
 {:toc}
 
-This guide will help you to set up TBMQ in cluster mode using Minikube.
+本指南将帮助您使用 Minikube 在集群模式下设置 TBMQ。
 
-### Prerequisites
+### 先决条件
 
-You need to have a Kubernetes cluster, and the `kubectl` command-line tool must be configured to communicate with your cluster.
-If you don't have Minikube installed, please follow [these instructions](https://kubernetes.io/docs/setup/learning-environment/minikube/).
-Additionally, you will need [helm](https://helm.sh/docs/intro/install/) to be installed.
+您需要有一个 Kubernetes 集群，并且必须将 `kubectl` 命令行工具配置为与您的集群通信。
+如果您尚未安装 Minikube，请按照 [这些说明](https://kubernetes.io/docs/setup/learning-environment/minikube/) 进行操作。
+此外，您还需要安装 [helm](https://helm.sh/docs/intro/install/)。
 
-### Step 1. Clone TBMQ repository
+### 步骤 1. 克隆 TBMQ 存储库
 
 ```bash
 git clone -b {{ site.release.broker_branch }} https://github.com/thingsboard/tbmq.git
@@ -24,26 +24,26 @@ cd tbmq/k8s/minikube
 ```
 {: .copy-code}
 
-### Step 2. Installation
+### 步骤 2. 安装
 
-To install TBMQ execute the following command:
+要安装 TBMQ，请执行以下命令：
 
 ```bash
 ./k8s-install-tbmq.sh
 ```
 {: .copy-code}
 
-### Step 3. Running
+### 步骤 3. 运行
 
-Execute the following command to deploy TBMQ:
+执行以下命令以部署 TBMQ：
 
 ```bash
 ./k8s-deploy-tbmq.sh
 ```
 {: .copy-code}
 
-After a while when all resources will be successfully started you can open `http://{your-cluster-ip}:30001` in your browser (e.g. **http://192.168.49.2:30001**).
-You can check your cluster IP using command:
+一段时间后，当所有资源都成功启动时，您可以在浏览器中打开 `http://{your-cluster-ip}:30001`（例如 **http://192.168.49.2:30001**）。
+您可以使用以下命令检查您的集群 IP：
 ```bash
 minikube ip
 ```
@@ -51,85 +51,85 @@ minikube ip
 
 {% include templates/mqtt-broker/login.md %}
 
-### Step 4. Logs, delete statefulsets and services
+### 步骤 4. 日志、删除有状态集和服务
 
-In case of any issues, you can examine service logs for errors.
-For example to see TBMQ node logs execute the following commands:
+如果出现任何问题，您可以检查服务日志以查找错误。
+例如，要查看 TBMQ 节点日志，请执行以下命令：
 
-1) Get the list of the running tb-broker pods:
+1) 获取正在运行的 tb-broker pod 列表：
 
 ```bash
 kubectl get pods -l app=tb-broker
 ```
 {: .copy-code}
 
-2) Fetch logs of the tb-broker pod:
+2) 获取 tb-broker pod 的日志：
 
 ```bash
 kubectl logs -f TB_BROKER_POD_NAME
 ```
 {: .copy-code}
 
-Where:
+其中：
 
-- `TB_BROKER_POD_NAME` - tb-broker pod name obtained from the list of the running tb-broker pods.
+- `TB_BROKER_POD_NAME` - 从正在运行的 tb-broker pod 列表中获取的 tb-broker pod 名称。
 
-Or use the next command to see the state of all the pods.
+或者使用以下命令查看所有 pod 的状态。
 ```bash
 kubectl get pods
 ```
 {: .copy-code}
 
-Use the next command to see the state of all the services.
+使用以下命令查看所有服务的状态。
 ```bash
 kubectl get services
 ```
 {: .copy-code}
 
-Use the next command to see the state of all the deployments.
+使用以下命令查看所有部署的状态。
 ```bash
 kubectl get deployments
 ```
 {: .copy-code}
 
-Use the next command to see the state of all the statefulsets.
+使用以下命令查看所有有状态集的状态。
 ```bash
 kubectl get statefulsets
 ```
 {: .copy-code}
 
-See [kubectl Cheat Sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/) command reference for more details.
+有关更多详细信息，请参阅 [kubectl 速查表](https://kubernetes.io/docs/reference/kubectl/cheatsheet/) 命令参考。
 
-Execute the following command to delete TBMQ nodes:
+执行以下命令以删除 TBMQ 节点：
 
 ```bash
 ./k8s-delete-tbmq.sh
 ```
 {: .copy-code}
 
-Execute the following command to delete all resources (including database):
+执行以下命令以删除所有资源（包括数据库）：
 
 ```bash
 ./k8s-delete-all.sh
 ```
 {: .copy-code}
 
-### Upgrading
+### 升级
 
 {% include templates/mqtt-broker/install/migration.md %}
 
-In case you would like to upgrade, please pull the recent changes from the latest release branch:
+如果您想升级，请从最新的发布分支中提取最近的更改：
 
 ```bash
 git pull origin {{ site.release.broker_branch }}
 ```
 {: .copy-code}
 
-**Note**: Make sure custom changes of yours if available are not lost during the merge process.
+**注意**：确保在合并过程中不会丢失您可用的自定义更改。
 
 {% include templates/mqtt-broker/install/upgrade-hint.md %}
 
-After that execute the following commands:
+之后执行以下命令：
 
 ```bash
 ./k8s-delete-tbmq.sh
@@ -138,9 +138,9 @@ After that execute the following commands:
 ```
 {: .copy-code}
 
-Where `FROM_VERSION` - from which version upgrade should be started.
-See [Upgrade Instructions](/docs/mqtt-broker/install/upgrade-instructions/) for valid `fromVersion` values.
+其中 `FROM_VERSION` - 从哪个版本开始升级。
+有关有效的 `fromVersion` 值，请参阅 [升级说明](/docs/mqtt-broker/install/upgrade-instructions/)。
 
-### Next steps
+### 后续步骤
 
 {% assign currentGuide = "InstallationGuides" %}{% include templates/mqtt-broker-guides-banner.md %}

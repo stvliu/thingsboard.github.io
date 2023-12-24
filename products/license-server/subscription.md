@@ -2,57 +2,49 @@
 layout: docwithnav-license
 assignees:
 - ashvayka
-title: ThingsBoard Subscription plans definition 
-description: Features and advantages of pay-as-you-go payment model
+title: ThingsBoard 订阅计划定义
+description: 按需付费支付模式的功能和优势
 
 ---
 
- 
- <div id="video">  
-     <div id="video_wrapper">
-         <iframe src="https://www.youtube.com/embed/dK-QDFGxWek" frameborder="0" allowfullscreen></iframe>
-     </div>
- </div>
- <p></p>
+
+ThingsBoars Inc. 为其客户提供两种支付模式，即订阅（按需付费）和永久回退。
+**按需付费**是一种计费系统，在该系统中，**ThingsBoard 专业版 (TB PE)** 客户按时间购买不同种类的许可证（不收取额外消息费用或设备费用）。换句话说，此选项允许订阅 ThingsBoard PE 服务。
+
+有五种预定义的订阅计划，受设备和/或资产数量以及支持优先级的限制：
+
+- ***创客***
+- ***原型***
+- ***初创***
+- ***企业***
+- ***企业级***
+
+按需付费订阅适用于刚开始使用该平台并希望最大程度降低前期许可成本的小公司和初创公司。虽然按需付费模式也适合在开发和发布物联网解决方案时满足已建立企业的需求。有关可用订阅的更多详细信息，请参阅[定价](/pricing/)。
+
+许可证服务器允许为 ThingsBoard 购买月度或年度订阅。为了购买订阅，客户可以在许可证门户上注册，然后按照简单的步骤操作：
+- 转到***订阅***—***选择产品***—选择计划—输入***账单信息***—***创建***
+
+或直接从[定价](/pricing/)中选择确切的计划。一旦您按下***获取许可证***按钮，您将被路由到许可证门户身份验证/注册，或者如果您已在许可证门户上登录，则直接转到***账单信息***步骤。
 
 
-ThingsBoars Inc. provides for their customers two payment models, i. e. subscriptions (pay-as-you-go) and perpetual fallback.   
-**Pay-as-you-go** is a billing system in which **ThingsBoard Professional Edition (TB PE)** customers purchase different kind of licenses on a time basis (no additional fees per messages or per devices). In other words this option allows to subscribe for ThingsBoard PE service. 
-There are five pre-defined subscription plans that are limited by amount of devices and/or assets and support priority:
+默认情况下，订阅涵盖单个 ThingsBoard PE 实例（服务器进程）。但是，客户可以向同一订阅添加更多实例。这允许在单个服务器集群中启动使用相同订阅凭据的多个实例。
+此功能对于基于容器的设置非常有用。
 
-- ***Maker***
-- ***Prototype***
-- ***StartUp***
-- ***Business***
-- ***Enterprise***
+![image](/images/license/manageInstance.png)
 
-Pay-as-you-go subscriptions are convenient for small companies and start-ups that are getting started with the platform and would like to minimize upfront licensing costs. Although pay-as-you-go model also fits needs of established businesses while developing and releasing IoT solution. See [pricing](/pricing/) for more details about available subscriptions. 
-License Server allows to buy monthly or yearly subscriptions for ThingsBoard. In order to purchase the Subscription the customer may register on License portal and then follow simple steps: 
-- Go to ***Subscriptions*** — ***Choose a product*** — Choose a plan — Input ***Billing info*** — ***Create***
+购买订阅后，您可以灵活地升级或降级您的订阅计划。如果在到期前删除订阅，Stripe 将保留余额。在一段时间（大约一小时）后，许可证门户的[计费部分](/products/license-server/billing-info/)中将出现负数应付金额（***账户信用***）和剩余单位。每当特定客户购买新计划或永久许可证时，此金额都会从总费用中扣除。
 
-or choose exact plan directly from [pricing](/pricing/). Once you press ***Get your license*** button you will be routed to the License portal authentication/registration or directly to ***Billing info*** step if you are already logged in on the License portal. 
+![image](/images/license/subscription.png)
 
 
-By default, subscription covers single ThingsBoard PE instance (server process). However, customer can add more instances to the same subscription. This allows to launch multiple instances that use same subscription credentials in one server cluster.
-This feature is very useful for container based setups.
+### 用户指南
 
-![image](/images/license/manageInstance.png)  
+- **使用按需付费订阅启动 TB PE**
 
-Once you purchase a subscription, you can flexibly upgrade or downgrade your subscription plan. If the subscription is deleted before expiration, Stripe will keep the balance. After a certain time period (about an hour) negative Amount due (***Account credit***) with the remain units will appear in [Billing section](/products/license-server/billing-info/) of License portal. This sum is deducted from Total fee whenever particular customer purchase a new plan or a perpetual license.
+- **使用永久许可证启动 TB PE**
 
-![image](/images/license/subscription.png)  
- 
+- **从 AWS IoT Marketplace 迁移**
 
-### User Guide
+- **升级您的 TB PE 订阅**
 
- - **Launching TB PE using pay-as-you-go subscription**
- 
- - **Launching TB PE using perpetual license**
- 
- - **Migrating from AWS IoT Marketplace**
- 
- - **Upgrading your TB PE subscription** 
- 
- - **Moving ThingsBoard to another hardware instance** 
-
-
+- **将 ThingsBoard 移至另一个硬件实例**

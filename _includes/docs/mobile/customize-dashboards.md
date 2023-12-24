@@ -7,58 +7,58 @@
 * TOC
 {:toc}
 
-## Overview
+## 概述
 
-{{appPrefix}} allows configuring how dashboards list will look in mobile application home screen.
-All configuration options related to mobile app are available in dashboard details form. 
+{{appPrefix}} 允许配置仪表板列表在移动应用程序主屏幕中的显示方式。
+所有与移动应用程序相关的配置选项均可在仪表板详细信息表单中找到。
 
-## Dashboard image
+## 仪表板图像
 
-You can configure dashboard image for mobile app in dashboard details form:
+您可以在仪表板详细信息表单中为移动应用程序配置仪表板图像：
 
 {% if docsPrefix == 'pe/' %}
-1. Go to the **Dashboard groups** through the main menu on the left of the screen;
-2. Open target dashboard group;
+1. 通过屏幕左侧的主菜单转到 **仪表板组**；
+2. 打开目标仪表板组；
 {% else %}
-1. Go to the **Dashboards** through the main menu on the left of the screen;
+1. 通过屏幕左侧的主菜单转到 **仪表板**；
 {% endif %}
-2. Click on the dashboard you want to modify;
-3. In the opened dashboard details click **edit** button;
-4. Upload desired image to **Dashboard image** field;
-5. Click **Apply changes** button;
+2. 单击要修改的仪表板；
+3. 在打开的仪表板详细信息中，单击 **编辑** 按钮；
+4. 将所需图像上传到 **仪表板图像** 字段；
+5. 单击 **应用更改** 按钮；
 
 {% include images-gallery.html imageCollection="dashboard-image" %}
 
-## Dashboard order
+## 仪表板顺序
 
-You can configure dashboards order in mobile app home screen:
+您可以在移动应用程序主屏幕中配置仪表板顺序：
 
 {% if docsPrefix == 'pe/' %}
-1. Go to the **Dashboard groups** through the main menu on the left of the screen;
-2. Open target dashboard group;
+1. 通过屏幕左侧的主菜单转到 **仪表板组**；
+2. 打开目标仪表板组；
 {% else %}
-1. Go to the **Dashboards** through the main menu on the left of the screen;
+1. 通过屏幕左侧的主菜单转到 **仪表板**；
 {% endif %}
-2. Click on the dashboard you want to modify;
-3. In the opened dashboard details click **edit** button;
-4. Input desired order in the **Dashboard order in mobile application** field;
-5. Click **Apply changes** button;
+2. 单击要修改的仪表板；
+3. 在打开的仪表板详细信息中，单击 **编辑** 按钮；
+4. 在 **移动应用程序中的仪表板顺序** 字段中输入所需的顺序；
+5. 单击 **应用更改** 按钮；
 
 {% include images-gallery.html imageCollection="dashboard-order" %}
 
-## Hide dashboard in mobile app
+## 在移动应用程序中隐藏仪表板
 
-You can hide particular dashboards from mobile app home screen:
+您可以从移动应用程序主屏幕中隐藏特定仪表板：
 
 {% if docsPrefix == 'pe/' %}
-1. Go to the **Dashboard groups** through the main menu on the left of the screen;
-2. Open target dashboard group;
+1. 通过屏幕左侧的主菜单转到 **仪表板组**；
+2. 打开目标仪表板组；
 {% else %}
-1. Go to the **Dashboards** through the main menu on the left of the screen;
+1. 通过屏幕左侧的主菜单转到 **仪表板**；
 {% endif %}
-2. Click on the dashboard you want to modify;
-3. In the opened dashboard details click **edit** button;
-4. Check **Hide dashboard in mobile application** checkbox;
-5. Click **Apply changes** button;
+2. 单击要修改的仪表板；
+3. 在打开的仪表板详细信息中，单击 **编辑** 按钮；
+4. 选中 **在移动应用程序中隐藏仪表板** 复选框；
+5. 单击 **应用更改** 按钮；
 
 {% include images-gallery.html imageCollection="hide-dashboard" %}

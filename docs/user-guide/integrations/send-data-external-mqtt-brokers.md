@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-pe
-title: Send data to external MQTT brokers
-description: MQTT downlink guide
+title: 将数据发送到外部 MQTT 代理
+description: MQTT 下行指南
 hidetoc: "true"
 
 ---

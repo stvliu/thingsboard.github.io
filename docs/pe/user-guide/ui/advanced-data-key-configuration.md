@@ -2,105 +2,105 @@
 layout: docwithnav-pe
 assignees:
 - ashvayka
-title: Advanced data key configuration
-description: ThingsBoard advanced configuration of data keys
+title: 高级数据键配置
+description: ThingsBoard 高级数据键配置
 
 entity-table-example:
     0:
         image: /images/user-guide/widgets/advanced-data-key/entity-table-example-1-pe.png
-        title: 'Open the dashboard and enter edit mode by clicking the button in the top right corner of the screen;'
+        title: '打开仪表板，然后单击屏幕右上角的按钮进入编辑模式；'
     1:
         image: /images/user-guide/widgets/advanced-data-key/entity-table-example-2-pe.png
-        title: 'In the top right corner of the widget, click the "pencil" icon to open the widget editing window;'
+        title: '在小部件的右上角，单击“铅笔”图标以打开小部件编辑窗口；'
     2:
         image: /images/user-guide/widgets/advanced-data-key/entity-table-example-3-pe.png
-        title: 'Now, click "pencil" icon to next to the key that you want to edit;'
+        title: '现在，单击要编辑的键旁边的“铅笔”图标；'
     3:
         image: /images/user-guide/widgets/advanced-data-key/entity-table-example-4-pe.png
-        title: 'The data key configuration window has been opened. Navigate to the "Advanced" tab to open advanced data key configuration.'
+        title: '数据键配置窗口已打开。导航到“高级”选项卡以打开高级数据键配置。'
 
 custom-header-title:
     0:
         image: /images/user-guide/widgets/advanced-data-key/custom-header-title-1-pe.png
-        title: 'By default, the column name is the same as the key name;'
+        title: '默认情况下，列名称与键名称相同；'
     1:
         image: /images/user-guide/widgets/advanced-data-key/custom-header-title-3-pe.png
-        title: 'Manually enter the desired custom header title and save all changes;'
+        title: '手动输入所需的自定义标题并保存所有更改；'
     2:
         image: /images/user-guide/widgets/advanced-data-key/custom-header-title-4-pe.png
-        title: 'Example of the custom header title.'
+        title: '自定义标题的示例。'
 
 column-width:
     0:
         image: /images/user-guide/widgets/advanced-data-key/column-width-3-pe.png
-        title: 'Default column width;'
+        title: '默认列宽；'
     1:
         image: /images/user-guide/widgets/advanced-data-key/column-width-1-pe.png
-        title: 'Manually enter a desired width and save all changes;'
+        title: '手动输入所需的宽度并保存所有更改；'
     2:
         image: /images/user-guide/widgets/advanced-data-key/column-width-2-pe.png
-        title: 'Custom column width.'
+        title: '自定义列宽。'
 
 style-function:
     0:
         image: /images/user-guide/widgets/advanced-data-key/style-function-3-pe.png
-        title: 'Default cell style;'
+        title: '默认单元格样式；'
     1:
         image: /images/user-guide/widgets/advanced-data-key/style-function-1-pe.png
-        title: 'Check the box "Use cell style function" and input the function in the "Cell style function" field and save all changes;'
+        title: '选中“使用单元格样式函数”复选框，在“单元格样式函数”字段中输入函数，然后保存所有更改；'
     2:
         image: /images/user-guide/widgets/advanced-data-key/style-function-2-pe.png
-        title: 'The cell color changes depending on its values.'
+        title: '单元格颜色会根据其值而改变。'
 
 content-function-1:
     0:
         image: /images/user-guide/widgets/advanced-data-key/content-function-1-pe.png
-        title: 'Default display of device status;'
+        title: '设备状态的默认显示；'
     1:
         image: /images/user-guide/widgets/advanced-data-key/content-function-2-pe.png
-        title: 'Click "pencil" icon to next to the "active" key;'
+        title: '单击“active”键旁边的“铅笔”图标；'
     2:
         image: /images/user-guide/widgets/advanced-data-key/content-function-3-pe.png
-        title: 'Check the "Use cell content function" box and input the function in the "Cell content function" field and save all changes.'
+        title: '选中“使用单元格内容函数”复选框，在“单元格内容函数”字段中输入函数，然后保存所有更改。'
     3:
         image: /images/user-guide/widgets/advanced-data-key/content-function-4-pe.png
-        title: 'The cell content function will change the text in the device name row based on the device&#39;s status.'
+        title: '单元格内容函数将根据设备状态更改设备名称行中的文本。'
 
 content-function-2:
     0:
         image: /images/user-guide/widgets/advanced-data-key/content-function-1-pe.png
-        title: 'Default display of device status;'
+        title: '设备状态的默认显示；'
     1:
         image: /images/user-guide/widgets/advanced-data-key/content-function-2-pe.png
-        title: 'Click "pencil" icon to next to the "active" key;'
+        title: '单击“active”键旁边的“铅笔”图标；'
     2:
         image: /images/user-guide/widgets/advanced-data-key/content-function-5-pe.png
-        title: 'Check the "Use cell content function" box and input the function in the "Cell content function" field and save all changes;'
+        title: '选中“使用单元格内容函数”复选框，在“单元格内容函数”字段中输入函数，然后保存所有更改；'
     3:
         image: /images/user-guide/widgets/advanced-data-key/content-function-6-pe.png
-        title: 'The cell content function will change the color of the icon in the device name row based on the device&#39;s status.'
+        title: '单元格内容函数将根据设备状态更改设备名称行中图标的颜色。'
 
 column-visibility:
     0:
         image: /images/user-guide/widgets/advanced-data-key/column-visibility-3-pe.png
-        title: 'The "temperature" data key column is visible on the widget;'
+        title: '“temperature”数据键列在小部件上可见；'
     1:
         image: /images/user-guide/widgets/advanced-data-key/column-visibility-1-pe.png
-        title: 'Select whether the column will be shown in the visibility selection menu so that clients without permissions will not be able to hide it;'
+        title: '选择是否在可见性选择菜单中显示列，以便没有权限的客户端无法隐藏它；'
     2:
         image: /images/user-guide/widgets/advanced-data-key/column-visibility-2-pe.png
-        title: 'The "temperature" data key column has been hidden.'
+        title: '“temperature”数据键列已隐藏。'
 
 column-to-display:
     0:
         image: /images/user-guide/widgets/advanced-data-key/column-to-display-1-pe.png
-        title: 'The "temperature" column is displayed in the column visibility menu;'
+        title: '“temperature”列显示在列可见性菜单中；'
     1:
         image: /images/user-guide/widgets/advanced-data-key/column-to-display-2-pe.png
-        title: 'To hide the "temperature" column in the column visibility menu, select "Disabled" in the "Column selection in &#39;Column to Display&#39;" field;'
+        title: '要在列可见性菜单中隐藏“temperature”列，请在“列选择中的“列显示””字段中选择“禁用”；'
     2:
         image: /images/user-guide/widgets/advanced-data-key/column-to-display-3-pe.png
-        title: 'The "temperature" column has been excluded from the visibility selection.'
+        title: '“temperature”列已从可见性选择中排除。'
 
 column-export:
     0:
@@ -109,62 +109,62 @@ column-export:
 timeseries-line-chart-example:
     0:
         image: /images/user-guide/widgets/advanced-data-key/timeseries-line-chart-example-1-pe.png
-        title: 'Open the dashboard and enter edit mode by clicking the button in the top right corner of the screen.;'
+        title: '打开仪表板，然后单击屏幕右上角的按钮进入编辑模式。;'
     1:
         image: /images/user-guide/widgets/advanced-data-key/timeseries-line-chart-example-2-pe.png
-        title: 'In the top right corner of the widget, click the "pencil" icon to open the widget editing window;'
+        title: '在小部件的右上角，单击“铅笔”图标以打开小部件编辑窗口；'
     2:
         image: /images/user-guide/widgets/advanced-data-key/timeseries-line-chart-example-3-pe.png
-        title: 'Now, click "pencil" icon to next to the key that you want to edit;'
+        title: '现在，单击要编辑的键旁边的“铅笔”图标；'
     3:
         image: /images/user-guide/widgets/advanced-data-key/timeseries-line-chart-example-4-pe.png
-        title: 'The data key configuration window has been opened. Navigate to the "Advanced" tab to open advanced data key configuration.'
+        title: '数据键配置窗口已打开。导航到“高级”选项卡以打开高级数据键配置。'
 
 data-is-hidden-by-default:
     0:
         image: /images/user-guide/widgets/advanced-data-key/data-is-hidden-by-default-1-pe.png
-        title: 'Open the dashboard and enter edit mode by clicking the button in the top right corner of the screen.;'
+        title: '打开仪表板，然后单击屏幕右上角的按钮进入编辑模式。;'
     1:
         image: /images/user-guide/widgets/advanced-data-key/data-is-hidden-by-default-2-pe.png
-        title: 'Go to the advanced settings of the key whose data you want to hide on the chart by default, and enable "Data is hidden by default";'
+        title: '转到默认情况下要在图表上隐藏其数据的键的高级设置，然后启用“数据默认隐藏”；'
     2:
         image: /images/user-guide/widgets/advanced-data-key/data-is-hidden-by-default-3-pe.png
-        title: 'Now, click "pencil" icon to next to the key that you want to edit;'
+        title: '现在，单击要编辑的键旁边的“铅笔”图标；'
     3:
         image: /images/user-guide/widgets/advanced-data-key/data-is-hidden-by-default-4-pe.png
-        title: 'Click on the name of the key to show its value on the chart again.'
+        title: '单击键的名称以再次在图表上显示其值。'
 
 disable-data-hiding:
     0:
         image: /images/user-guide/widgets/advanced-data-key/disable-data-hiding-1-pe.png
-        title: 'Enable the "Disable data hide" option in the selected key so that you and your users cannot hide the data on the chart by clicking on the key name;'
+        title: '在选定的键中启用“禁用数据隐藏”选项，以便您和您的用户无法通过单击键名称来隐藏图表上的数据；'
     1:
         image: /images/user-guide/widgets/advanced-data-key/disable-data-hiding-2-pe.png
-        title: 'Hiding data by clicking on the key name is not possible.'
+        title: '无法通过单击键名称来隐藏数据。'
 
 remove-datakey-from-legend:
     0:
         image: /images/user-guide/widgets/advanced-data-key/remove-datakey-from-legend-1-pe.png
-        title: 'Enable the "Remove datakey from legend" option to prevent the selected key from being displayed in the legend;'
+        title: '启用“从图例中删除数据键”选项以防止选定的键显示在图例中；'
     1:
         image: /images/user-guide/widgets/advanced-data-key/remove-datakey-from-legend-2-pe.png
-        title: 'The data key from the legend has been removed.'
+        title: '已从图例中删除数据键。'
 
 show-line:
     0:
         image: /images/user-guide/widgets/advanced-data-key/show-line-1-pe.png
-        title: 'Default line width;'
+        title: '默认线宽；'
     1:
         image: /images/user-guide/widgets/advanced-data-key/show-line-2-pe.png
-        title: 'Set the line width in pixels;'
+        title: '以像素为单位设置线宽；'
     2:
         image: /images/user-guide/widgets/advanced-data-key/show-line-3-pe.png
-        title: 'Now the line width is 6 pixels.'
+        title: '现在线宽为 6 像素。'
 
 fill-line:
     0:
         image: /images/user-guide/widgets/advanced-data-key/fill-line-1-pe.png
-        title: 'Enable the "Fill line" option to fill the space between the line and the bottom border of the chart. You can also specify the opacity of the fill in the range of 0 to 1.'
+        title: '启用“填充线”选项以填充线与图表底边之间的空间。您还可以在 0 到 1 的范围内指定填充的不透明度。'
     1:
         image: /images/user-guide/widgets/advanced-data-key/fill-line-2-pe.png
         title: ''
@@ -172,7 +172,7 @@ fill-line:
 show-points:
     0:
         image: /images/user-guide/widgets/advanced-data-key/show-points-1-pe.png
-        title: 'Enable the "Show Points" option to display data points on the chart. Specify the line width of points (px), radius of points (px), and point shape of the points.'
+        title: '启用“显示点”选项以在图表上显示数据点。指定点的线宽（像素）、点的半径（像素）和点的点形状。'
     1:
         image: /images/user-guide/widgets/advanced-data-key/show-points-2-pe.png
         title: ''
@@ -180,15 +180,15 @@ show-points:
 tooltip-settings:
     0:
         image: /images/user-guide/widgets/advanced-data-key/tooltip-settings-1-pe.png
-        title: 'In the "Tooltip value format function" field, enter your tooltip function;'
+        title: '在“工具提示值格式函数”字段中，输入您的工具提示函数；'
     1:
         image: /images/user-guide/widgets/advanced-data-key/tooltip-settings-2-pe.png
-        title: 'Hover the mouse pointer over a data point on the chart to see the customized tooltip content.'
+        title: '将鼠标指针悬停在图表上的数据点上，以查看自定义的工具提示内容。'
 
 vertical-axis-1:
     0:
         image: /images/user-guide/widgets/advanced-data-key/vertical-axis-1-pe.png
-        title: 'Enable the "Show separate axis" option to display a separate axis for this data key. For this axis, you can set your own title, minimum and maximum values of the scale, specify the number of decimal places, and the step size between ticks on the vertical axis.'
+        title: '启用“显示单独轴”选项以显示此数据键的单独轴。对于此轴，您可以设置自己的标题、刻度的最小值和最大值、指定小数位数以及垂直轴上刻度线之间的步长。'
     1:
         image: /images/user-guide/widgets/advanced-data-key/vertical-axis-2-pe.png
         title: ''
@@ -196,7 +196,7 @@ vertical-axis-1:
 vertical-axis-2:
     0:
         image: /images/user-guide/widgets/advanced-data-key/vertical-axis-3-pe.png
-        title: 'In the "Tick Format Function" window, specify the function that will format the value to be displayed as Y axis tick.'
+        title: '在“刻度格式函数”窗口中，指定将格式化为 Y 轴刻度的函数。'
     1:
         image: /images/user-guide/widgets/advanced-data-key/vertical-axis-4-pe.png
         title: '.'
@@ -204,12 +204,7 @@ vertical-axis-2:
 thresholds:
     0:
         image: /images/user-guide/widgets/advanced-data-key/thresholds-1-pe.png
-        title: 'Click the "Add Threshold" button, then enter your preferred threshold value and set the color and line width.'
+        title: '单击“添加阈值”按钮，然后输入您首选的阈值并设置颜色和线宽。'
     1:
         image: /images/user-guide/widgets/advanced-data-key/thresholds-2-pe.png
         title: ''
-
----
-
-{% assign docsPrefix = "pe/" %}
-{% include docs/user-guide/ui/advanced-data-key-configuration.md %}

@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-paas
-title: AWS IoT Integration
-description: AWS IoT Integration Guide
+title: AWS IoT 集成
+description: AWS IoT 集成指南
 
 data-converters:
     0:

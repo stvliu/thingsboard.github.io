@@ -1,31 +1,26 @@
 {% if currentGuide != "GettingStartedGuides" %}
-- [Getting started guides](/docs/guides/#AnchorIDGettingStartedGuides) - These guides provide quick overview of main ThingsBoard features. Designed to be completed in 15-30 minutes.
+- [入门指南](/docs/guides/#AnchorIDGettingStartedGuides) - 这些指南提供了 ThingsBoard 主要功能的快速概述。旨在 15-30 分钟内完成。
 {% endif %}
 {% if currentGuide != "ConnectYourDevice" %}
-- [Connect your device](/docs/guides/#AnchorIDConnectYourDevice) - Learn how to connect devices based on your connectivity technology or solution.
+- [连接您的设备](/docs/guides/#AnchorIDConnectYourDevice) - 了解如何根据您的连接技术或解决方案连接设备。
 {% endif %}
 {% if currentGuide != "DataVisualization" %}
-- [Data visualization](/docs/guides/#AnchorIDDataVisualization) - These guides contain instructions on how to configure complex ThingsBoard dashboards.
+- [数据可视化](/docs/guides/#AnchorIDDataVisualization) - 这些指南包含有关如何配置复杂 ThingsBoard 仪表板的说明。
 {% endif %}
 {% if currentGuide != "DataProcessing" %}
-- [Data processing & actions](/docs/guides#AnchorIDDataProcessing) - Learn how to use ThingsBoard Rule Engine.
+- [数据处理和操作](/docs/guides#AnchorIDDataProcessing) - 了解如何使用 ThingsBoard 规则引擎。
 {% endif %}
 {% if currentGuide != "DataAnalytics" %}
-- [IoT Data analytics](/docs/guides/#AnchorIDDataAnalytics) - Learn how to use rule engine to perform basic analytics tasks.
+- [IoT 数据分析](/docs/guides/#AnchorIDDataAnalytics) - 了解如何使用规则引擎执行基本分析任务。
 {% endif %}
 {% if currentGuide != "HardwareSamples" %}
-- [Hardware samples](/docs/guides/#AnchorIDHardwareSamples) - Learn how to connect various hardware platforms to ThingsBoard.
+- [硬件示例](/docs/guides/#AnchorIDHardwareSamples) - 了解如何将各种硬件平台连接到 ThingsBoard。
 {% endif %}
 {% if currentGuide != "AdvancedFeatures" %}
-- [Advanced features](/docs/guides/#AnchorIDAdvancedFeatures) - Learn about advanced ThingsBoard features.
+- [高级功能](/docs/guides/#AnchorIDAdvancedFeatures) - 了解 ThingsBoard 的高级功能。
 {% endif %}
 {% if currentGuide != "Contribution" %}
-- [Contribution and Development](/docs/guides/#AnchorIDContribution) - Learn about contribution and development in ThingsBoard.
+- [贡献和开发](/docs/guides/#AnchorIDContribution) - 了解 ThingsBoard 中的贡献和开发。
 {% endif %}
-  
+
 <br>
-
-
-
-
-

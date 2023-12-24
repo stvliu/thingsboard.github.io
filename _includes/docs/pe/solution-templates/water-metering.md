@@ -1,99 +1,98 @@
-
-* TOC 
+* TOC
 {:toc}
 
 {% include templates/solution-templates.md %}
 
-Water Metering template represent generic water metering solution.
-With this template you get interactive dashboards that allow administrator and end user browse state of the water meters and aggregated water consumption statistics.
-Users are able to define thresholds and enable alarms and notifications over SMS or email.
+水表计量模板表示通用的水表计量解决方案。
+使用此模板，您可以获得交互式仪表板，允许管理员和最终用户浏览水表的状况和汇总的水消耗统计信息。
+用户能够定义阈值并通过短信或电子邮件启用警报和通知。
 
-### Dashboard
+### 仪表板
 
-As part of this solution, we have created the "Water Metering Tenant Dashboard" that allows you to manage water metering devices, users and alarms:
+作为此解决方案的一部分，我们创建了“水表计量租户仪表板”，允许您管理水表计量设备、用户和警报：
 
-* observe location and status of the water meters on the map. Markers are clustered to be able to show thousands of meters simultaneously;
-* use "Analytics" view to compare consumption for the current and previous month;
-* use "Devices" view to get the list of all water meter devices with ability to
-    * create a new device and assign it to the customer;
-    * change the location of the device;
-    * configure alarm thresholds for this device;
-    * navigate to "Device" view by clicking on the device row;
-* use "Device" view to:
-    * browse water consumption history for a particular water meter device;
-    * browse active alarms for a particular water meter device;
-    * change water meter location information
-    * upload water meter photo;
-    * change location of the device;
-* use "Customers" view to manage your customers;
-* use "Users" view to add more tenant administrators that will receive notifications about alarms;
-* use "Alarms" view to browse and clear alarms from water meters;
-* use "Settings" view to:
-    * turn system alarms on and off;
-    * define thresholds for system alarms;
-    * turn sms and email notifications on and off;
+* 在地图上观察水表的位置和状态。标记被聚类，以便能够同时显示数千个仪表；
+* 使用“分析”视图比较当前月和上个月的消耗量；
+* 使用“设备”视图获取所有水表计量设备的列表，并能够
+    * 创建新设备并将其分配给客户；
+    * 更改设备的位置；
+    * 为此设备配置警报阈值；
+    * 通过单击设备行导航到“设备”视图；
+* 使用“设备”视图：
+    * 浏览特定水表计量设备的用水量历史记录；
+    * 浏览特定水表计量设备的活动警报；
+    * 更改水表位置信息
+    * 上传水表照片；
+    * 更改设备的位置；
+* 使用“客户”视图管理您的客户；
+* 使用“用户”视图添加更多租户管理员，他们将收到有关警报的通知；
+* 使用“警报”视图浏览和清除水表的警报；
+* 使用“设置”视图：
+    * 打开和关闭系统警报；
+    * 定义系统警报的阈值；
+    * 打开和关闭短信和电子邮件通知；
 
 {% include images-gallery.html imageCollection="solution-highlights" %}
 
-We have also created the "Water Metering User Dashboard" for the end users. This dashboard is assigned to the new customers automatically. The end user dashboard allows customers to:
+我们还为最终用户创建了“水表计量用户仪表板”。此仪表板会自动分配给新客户。最终用户仪表板允许客户：
 
-* observe location and status of the water meters on the map. Markers are clustered to be able to show thousands of meters simultaneously;
-* browse active alarms and water consumption per day and week;
-* use "Analytics", "Devices", "Alarms" views that are similar to the main dashboard;
-* use "Settings" view to define alarm thresholds for the particular customer. Generated alarms will not be visible to Tenant Administrator by default;
+* 在地图上观察水表的位置和状态。标记被聚类，以便能够同时显示数千个仪表；
+* 浏览每天和每周的活动警报和用水量；
+* 使用与主仪表板类似的“分析”、“设备”、“警报”视图；
+* 使用“设置”视图为特定客户定义警报阈值。默认情况下，生成的警报对租户管理员不可见；
 
-You may always customize the "Water Metering" dashboards using dashboard development [guide](/docs/{{docsPrefix}}user-guide/dashboards/).
+您始终可以使用仪表板开发[指南](/docs/{{docsPrefix}}user-guide/dashboards/)自定义“水表计量”仪表板。
 
 
-### Devices
+### 设备
 
-We have already created three water metering devices and loaded some demo data for them.
-See solution [instructions](/docs/{{docsPrefix}}solution-templates/overview/#install-solution-template) for the list of created devices and their credentials.
+我们已经创建了三个水表计量设备并为它们加载了一些演示数据。
+有关创建的设备及其凭据的列表，请参阅解决方案[说明](/docs/{{docsPrefix}}solution-templates/overview/#install-solution-template)。
 
-Solution expects that the water meter device will report "pulseCounter", "temperature", "battery" and "leakage" values.
-The most simple example of the expected payload is in JSON format:
+解决方案期望水表计量设备报告“pulseCounter”、“temperature”、“battery”和“leakage”值。
+预期的有效负载的最简单示例采用 JSON 格式：
 
 ```json
 {"temperature":  42, "humidity":  73}
 ```
 {: .copy-code}
 
-You may find the exact commands to send data on behalf of created devices in the solution [instructions](/docs/{{docsPrefix}}solution-templates/overview/#install-solution-template).
-Most of the water meters are using LoRaWAN, Sigfox or NB IoT technology. 
-See [connecting devices](/docs/{{docsPrefix}}getting-started-guides/connectivity/) for various connectivity options to connect real devices.
+您可以在解决方案[说明](/docs/{{docsPrefix}}solution-templates/overview/#install-solution-template)中找到代表创建的设备发送数据的准确命令。
+大多数水表使用 LoRaWAN、Sigfox 或 NB IoT 技术。
+有关连接真实设备的各种连接选项，请参阅[连接设备](/docs/{{docsPrefix}}getting-started-guides/connectivity/)。
 
-### Alarms
+### 警报
 
-Alarms are generated using nine Alarm rules in the "Water Meter" [device profile](/docs/{{docsPrefix}}user-guide/device-profiles/).
-Alarms notifications are sent via SMS or email to Tenant Administrators and Customer Users depending on the thresholds and settings defined in the dashboard.
+警报是使用“水表”[设备配置文件](/docs/{{docsPrefix}}user-guide/device-profiles/)中的九个警报规则生成的。
+警报通知通过短信或电子邮件发送给租户管理员和客户用户，具体取决于仪表板中定义的阈值和设置。
 
 {% include images-gallery.html imageCollection="solution-alarms" %}
 
-### Rule Chains
+### 规则链
 
-The "Water Metering Solution Main" rule chain is processing all incoming messages from water metering devices.
-This rule chain is responsible for aggregation of the incoming data on a daily and weekly basis for device, customer and tenant level.
-Aggregated data is stored as telemetry as well. The aggregation is done in the UTC time zone by default.
-You may change the time zone in the "aggregate stream" rule nodes. You may also aggregate data in different time zones.
+“水表计量解决方案主”规则链正在处理来自水表计量设备的所有传入消息。
+此规则链负责每天和每周汇总设备、客户和租户级别的传入数据。
+汇总的数据也存储为遥测数据。默认情况下，汇总在 UTC 时区进行。
+您可以在“汇总流”规则节点中更改时区。您还可以在不同的时区汇总数据。
 
-There are two other rule chains: "Water Metering Solution Tenant Alarm Routing" and "Water Metering Solution Customer Alarm Routing".
-They are responsible for routing incoming messages to tenant administrators and customer users respectively.
+还有另外两个规则链：“水表计量解决方案租户警报路由”和“水表计量解决方案客户警报路由”。
+它们分别负责将传入消息路由到租户管理员和客户用户。
 
 {% include images-gallery.html imageCollection="rule-chains" %}
 
-### Customers
+### 客户
 
-Meters "WM0000123" and "WM0000124" are assigned to a newly created customer "Water Metering Customer A".
-You may notice that "Water Metering Customer A" has a user, and the "Water Metering User Dashboard" dashboard is assigned to the user by default.
-You may create more [Customers](/docs/{{docsPrefix}}user-guide/ui/customers/) and more [Users](/docs/{{docsPrefix}}user-guide/ui/users/) via administration UI.
+仪表“WM0000123”和“WM0000124”分配给新创建的客户“水表计量客户 A”。
+您可能会注意到“水表计量客户 A”有一个用户，并且“水表计量用户仪表板”仪表板默认分配给该用户。
+您可以通过管理 UI 创建更多[客户](/docs/{{docsPrefix}}user-guide/ui/customers/)和更多[用户](/docs/{{docsPrefix}}user-guide/ui/users/)。
 
-### Role Based Access Control (RBAC)
+### 基于角色的访问控制 (RBAC)
 
-We have created separate users for customers "Water Metering Customer A" and "Water Metering Customer B". See solution [instructions](/docs/{{docsPrefix}}solution-templates/overview/#install-solution-template) for the list of created users and their passwords.
+我们为客户“水表计量客户 A”和“水表计量客户 B”创建了单独的用户。有关创建的用户及其密码的列表，请参阅解决方案[说明](/docs/{{docsPrefix}}solution-templates/overview/#install-solution-template)。
 
-Those users are members of the "Customer User" group. So, they have read-only access to all entities of the Customer".
-We have also created "Water Metering User" generic role that allows those users write access to alarms, customer attributes and device attributes. This enables user to set specific alarm and notification settings.
+这些用户是“客户用户”组的成员。因此，他们对“客户”的所有实体具有只读访问权限。
+我们还创建了“水表计量用户”通用角色，允许这些用户写入访问警报、客户属性和设备属性。这使用户能够设置特定的警报和通知设置。
 
-The idea is to have one "Water Metering User Dashboard" dashboard for all users for multiple customers. Customer users should be able to browse, but should not be able to edit the dashboard.
-To achive this, we create "Water Metering Shared" group that is shared with the customer users using "Water Metering Read Only" role. This group contains the "Water Metering User Dashboard" dashboard. 
-You may add other dashboards to this group, if you want to share more dashboards with the same users. See [Advanced RBAC for IoT](/docs/{{docsPrefix}}user-guide/rbac/) for more information. 
+我们的想法是为多个客户的所有用户提供一个“水表计量用户仪表板”仪表板。客户用户应该能够浏览，但不应该能够编辑仪表板。
+为了实现这一点，我们创建了“水表计量共享”组，该组使用“水表计量只读”角色与客户用户共享。此组包含“水表计量用户仪表板”仪表板。
+如果您想与相同用户共享更多仪表板，可以将其他仪表板添加到此组。有关更多信息，请参阅[物联网的高级 RBAC](/docs/{{docsPrefix}}user-guide/rbac/)。

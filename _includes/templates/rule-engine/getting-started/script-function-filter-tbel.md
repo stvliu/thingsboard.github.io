@@ -1,4 +1,4 @@
-We will use this script for data validation:
+我们将使用此脚本进行数据验证：
 
 ```bash
 return msg.temperature == null

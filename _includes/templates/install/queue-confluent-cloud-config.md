@@ -1,6 +1,6 @@
-#### Confluent Cloud Configuration
+#### Confluent Cloud 配置
 
-To access [Confluent Cloud](https://docs.confluent.io/current/platform.html#what-is-cp) 
-you should first create an [account](https://confluent.cloud/login), 
-then create a [Kafka cluster](https://docs.confluent.io/current/quickstart/cloud-quickstart/index.html#step-1-create-a-ak-cluster-in-ccloud) 
-and get your [API Key](https://docs.confluent.io/current/quickstart/cloud-quickstart/index.html#step-4-create-an-api-key).
+要访问 [Confluent Cloud](https://docs.confluent.io/current/platform.html#what-is-cp)，
+您应首先创建一个 [帐户](https://confluent.cloud/login)，
+然后创建一个 [Kafka 集群](https://docs.confluent.io/current/quickstart/cloud-quickstart/index.html#step-1-create-a-ak-cluster-in-ccloud)
+并获取您的 [API 密钥](https://docs.confluent.io/current/quickstart/cloud-quickstart/index.html#step-4-create-an-api-key)。

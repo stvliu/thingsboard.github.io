@@ -1,13 +1,13 @@
-In table below described parameters to configure TLS connection.
+下表中描述了配置 TLS 连接的参数。
 
-|**Parameter**|**Default value**|**Description**|
+| **参数** | **默认值** | **说明** |
 |:-|:-|-
-| key                      | **/etc/thingsboard-gateway/privateKey.pem**  | Path to private key file.                |
-| cert                     | **/etc/thingsboard-gateway/certificate.pem** | Path to certificate file.                |
-| password                 | **YOUR_PASSWORD**                            | **OPTIONAL** Password for TLS connection |
-|---    
+| key | **/etc/thingsboard-gateway/privateKey.pem** | 私钥文件的路径。 |
+| cert | **/etc/thingsboard-gateway/certificate.pem** | 证书文件的路径。 |
+| password | **YOUR_PASSWORD** | **可选** TLS 连接的密码 |
+|---
 
-Connection subsection in configuration file will look like this: 
+配置文件中的连接子部分将如下所示：
 
 ```yaml
     "connection": {

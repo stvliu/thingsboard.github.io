@@ -1,30 +1,30 @@
 {% include images-gallery.html imageCollection="downlink_0-1-1" %}
 
-An example of downlink converter:
+下行转换器的示例：
 
 ```ruby
-// Encode downlink data from incoming Rule Engine message
+// 对来自规则引擎消息的下行数据进行编码
 
-// msg - JSON message payload downlink message json
-// msgType - type of message, for ex. 'ATTRIBUTES_UPDATED', 'POST_TELEMETRY_REQUEST', etc.
-// metadata - list of key-value pairs with additional data about the message
-// integrationMetadata - list of key-value pairs with additional data defined in Integration executing this converter
+// msg - JSON 消息有效负载下行消息 json
+// msgType - 消息类型，例如“ATTRIBUTES_UPDATED”、“POST_TELEMETRY_REQUEST”等。
+// metadata - 包含有关消息的其他数据的键值对列表
+// integrationMetadata - 包含由执行此转换器的集成定义的其他数据的键值对列表
 
-/** Encoder **/
+/** 编码器 **/
 var data = {};
 
-// Process data from incoming message and metadata
+// 处理来自传入消息和元数据的数据
 data.v0 = msg.state;
 data.m0 = "att_upd_success";
 data.devSerialNumber = metadata['ss_serialNumber'];
 
-// Result object with encoded downlink payload
+// 包含编码下行有效负载的结果对象
 var result = {
-    // downlink data content type: JSON, TEXT or BINARY (base64 format)
+    // 下行数据内容类型：JSON、TEXT 或 BINARY（base64 格式）
     contentType: "JSON",
-    // downlink data
+    // 下行数据
     data: JSON.stringify(data),
-    // Optional metadata object presented in key/value format
+    // 以键/值格式显示的可选元数据对象
     metadata: {
             type: "sensors/device/upload"
     }

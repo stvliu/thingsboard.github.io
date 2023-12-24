@@ -1,4 +1,4 @@
-You can use the following code, copy it to the decoder function section:
+您可以使用以下代码，将其复制到解码器函数部分：
 
 ```javascript
 /** Decoder **/

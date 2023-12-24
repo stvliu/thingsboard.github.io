@@ -10,7 +10,7 @@ jqueryDefer(initLogic);
 
 function initLogic() {
     $( document ).ready(function() {
-      // When the document loads, get the metadata JSON, and kick off tbl render
+      // 当文档加载时，获取元数据 JSON，并启动 tbl 渲染
       $.get("/metadata.txt", function(data, status) {
         metadata = $.parseJSON(data);
         metadata.pages.sort(dynamicSort("t"));
@@ -24,7 +24,7 @@ function initLogic() {
 
 function mainLogic()
 {
-  // If there's a tag filter, change the table/drop down output
+  // 如果有标签过滤器，则更改表格/下拉输出
   if (!dropDownsPopulated) populateDropdowns();
   var tag=window.location.hash.replace("#","");
   if(tag) {
@@ -48,8 +48,7 @@ function mainLogic()
 
 function populateDropdowns()
 {
-  // Keeping mainLogic() brief by functionizing the initialization of the
-  // drop-down filter boxes
+  // 通过对下拉过滤器框的初始化进行函数化来保持 mainLogic() 简短
 
   for(i=0;i<metadata.pages.length;i++)
   {
@@ -60,10 +59,10 @@ function populateDropdowns()
         for (k=0;k<metadataArrays[j].length;k++) {
           if (typeof storedTagsArrays[j] == 'undefined') storedTagsArrays[j] = new Array();
           storedTagsArrays[j][metadataArrays[j][k][tagName[j]]] = true;
-          // ^ conceptList[metadata.pages[i].cr[k].concept] = true; (if rolling through concepts)
-          // ^ conceptList['container'] = true; (ultimate result)
-          // ^ objectList[metadata.pages[i].or[k].object] = true; (if rolling through objects)
-          // ^ objectList['restartPolicy'] = true; (ultimate result)
+          // ^ conceptList[metadata.pages[i].cr[k].concept] = true; (如果滚动浏览概念)
+          // ^ conceptList['container'] = true; (最终结果)
+          // ^ objectList[metadata.pages[i].or[k].object] = true; (如果滚动浏览对象)
+          // ^ objectList['restartPolicy'] = true; (最终结果)
         }
       }
     }
@@ -71,8 +70,8 @@ function populateDropdowns()
   var output = new Array();
   for(i=0;i<tagName.length;i++)
   {
-    // Phew! All tags in conceptList, objectList, and commandList!
-    // Loop through them and populate those drop-downs through html() injection
+    // 呼！所有标签都在 conceptList、objectList 和 commandList 中！
+    // 循环遍历它们并通过 html() 注入填充那些下拉框
     output = [];
     output.push("<select id='" + tagName[i] + "' onchange='dropFilter(this)'>");
     output.push("<option>---</option>");
@@ -87,10 +86,10 @@ function populateDropdowns()
 
 function dropFilter(srcobj)
 {
-  // process the change of a drop-down value
-  // the ID of the drop down is either command, object, or concept
-  // these exact values are what topicsFilter() expects, plus a filter val
-  // which we get from .text() of :selected
+  // 处理下拉值的变化
+  // 下拉菜单的 ID 是命令、对象或概念
+  // 这些确切的值是 topicsFilter() 所期望的，加上一个过滤器值
+  // 我们从 :selected 的 .text() 中获取
   console.log("dropFilter:" + $(srcobj).attr('id') + ":" + $(srcobj).find(":selected").text());
   topicsFilter($(srcobj).attr('id').replace("#",""),$(srcobj).find(":selected").text(),"output");
   for(i=0;i<tagName.length;i++)
@@ -101,7 +100,7 @@ function dropFilter(srcobj)
 
 function selectDropDown(type,tag)
 {
-  // change drop-down selection w/o filtering
+  // 更改下拉选择而不进行过滤
   $("#" + type).val(tag);
 }
 
@@ -116,12 +115,12 @@ function selectDropDown(type,tag)
 }
 </style>
 
-Click tags or use the drop downs to filter. Click table headers to sort or reverse sort.
+单击标签或使用下拉菜单进行过滤。单击表格标题以进行排序或反向排序。
 
 <p id="filters">
-Filter by Concept: <span id="conceptFilter" /><br/>
-Filter by Object: <span id="objectFilter" /><br/>
-Filter by Command: <span id="commandFilter" />
+按概念过滤：<span id="conceptFilter" /><br/>
+按对象过滤：<span id="objectFilter" /><br/>
+按命令过滤：<span id="commandFilter" />
 </p>
 
 <div id="output" />

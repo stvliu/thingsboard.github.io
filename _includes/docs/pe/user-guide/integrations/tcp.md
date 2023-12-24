@@ -8,44 +8,44 @@
 * TOC
 {:toc}
 
-## Overview
+## 概述
 
-TCP Integration allows to stream data from devices which use a TCP transport protocol to ThingsBoard and converts payloads of these devices into the ThingsBoard format.
+TCP 集成允许将使用 TCP 传输协议的数据从设备流式传输到 ThingsBoard，并将这些设备的有效负载转换为 ThingsBoard 格式。
 
 
-**Please note** TCP Integration can be started only as [Remote Integration](/docs/{{peDocsPrefix}}user-guide/integrations/remote-integrations). It could be started on the same machine, where TB instance is running, or you can start in on another machine, that has access over the network to the TB instance.
+**请注意** TCP 集成只能作为 [远程集成](/docs/{{peDocsPrefix}}user-guide/integrations/remote-integrations) 启动。它可以在运行 TB 实例的同一台机器上启动，或者你可以在另一台机器上启动，该机器可以通过网络访问 TB 实例。
 
-Please review the integration diagram to learn more.
+请查看集成图以了解更多信息。
 
 ![image](/images/user-guide/integrations/tcp-integration.svg)
 
-## TCP Integration Configuration
+## TCP 集成配置
 
-### Prerequisites
+### 先决条件
 
-In this tutorial, we will use:
+在本教程中，我们将使用：
 
 {% if docsPrefix == "pe/" %}
- - The instance of [ThingsBoard Professional Edition](https://thingsboard.io/docs/user-guide/install/pe/installation-options/) installed locally;
+ - 本地安装的 [ThingsBoard Professional Edition](https://thingsboard.io/docs/user-guide/install/pe/installation-options/) 实例；
 {% endif %}
 {% if docsPrefix == "paas/" %}
- - ThingsBoard Professional Edition instance — [thingsboard.cloud](https://thingsboard.cloud);
+ - ThingsBoard Professional Edition 实例 — [thingsboard.cloud](https://thingsboard.cloud)；
 {% endif %}
- - TCP Integration, running externally and connected to the cloud ThingsBoard PE instance;
- - **echo** command which intended to display a line of text, and will redirect it's output to **netcat** (**nc**) utility;
- - **netcat** (**nc**) utility to establish TCP connections, receive data from there and transfer them;    
+ - 外部运行并连接到云 ThingsBoard PE 实例的 TCP 集成；
+ - **echo** 命令，用于显示一行文本，并将输出重定向到 **netcat** (**nc**) 实用程序；
+ - **netcat** (**nc**) 实用程序，用于建立 TCP 连接，从那里接收数据并传输数据；    
 
-Let's assume that we have a sensor which is sending current temperature and humidity readings.
-Our sensor device **SN-002** publishes it's temperature and humidity readings to TCP Integration on **10560** port to the machine where TCP Integration is running.
+我们假设我们有一个传感器，它正在发送当前温度和湿度读数。
+我们的传感器设备 **SN-002** 将其温度和湿度读数发布到 **10560** 端口上的 TCP 集成，该端口位于运行 TCP 集成的机器上。
 
-For demo purposes we assume that our device is smart enough to send data in 3 different payload types:
- - **Text** - in this case payload is:
+出于演示目的，我们假设我们的设备足够智能，可以发送 3 种不同的有效负载类型的数据：
+ - **文本** - 在这种情况下，有效负载为：
 
 ```text
 SN-002,default,temperature,25.7\n\rSN-002,default,humidity,69
 ```
 
- - **JSON** - in this case payload is:
+ - **JSON** - 在这种情况下，有效负载为：
 
 ```json
 [
@@ -57,75 +57,75 @@ SN-002,default,temperature,25.7\n\rSN-002,default,humidity,69
   }
 ]
 ```
- - **Binary** - in this case, the payload looks like this (in HEX string):
+ - **二进制** - 在这种情况下，有效负载如下所示（十六进制字符串）：
 
 ```text
 \x30\x30\x30\x30\x11\x53\x4e\x2d\x30\x30\x32\x64\x65\x66\x61\x75\x6c\x74\x32\x35\x2e\x37\x00\x00\x00
 ```
 
-Here is the description of the bytes in this payload:
- - **0-3** bytes - **\x30\x30\x30\x30** - dummy bytes to show how you can skip particular prefix bytes in your payload. These bytes are included for sample purposes;
- - **4** byte - **\x11** - payload length. If we convert it to decimal - **17**. So our payload in this case is limited to 17 bytes from the incoming TCP frame;
- - **5-10** bytes - **\x53\x4e\x2d\x30\x30\x32** - device name. If we convert it to text - **SN-002**;
- - **11-17** bytes - **\x64\x65\x66\x61\x75\x6c\x74** - device type. If we convert it to text - **default**;
- - **18-21** bytes - **\x32\x35\x2e\x37** - temperature telemetry. If we convert it to text - **25.7**;
- - **22-24** bytes - **\x00\x00\x00** - dummy bytes. We are going to ignore them, because payload size is **17** bytes - from **5** till **21** byte. These bytes are included for sample purposes;
+以下是此有效负载中字节的说明：
+ - **0-3** 字节 - **\x30\x30\x30\x30** - 虚拟字节，用于显示如何在有效负载中跳过特定前缀字节。这些字节包含在示例中；
+ - **4** 字节 - **\x11** - 有效负载长度。如果我们将其转换为十进制 - **17**。因此，在这种情况下，我们的有效负载限制为来自传入 TCP 帧的 17 个字节；
+ - **5-10** 字节 - **\x53\x4e\x2d\x30\x30\x32** - 设备名称。如果我们将其转换为文本 - **SN-002**；
+ - **11-17** 字节 - **\x64\x65\x66\x61\x75\x6c\x74** - 设备类型。如果我们将其转换为文本 - **default**；
+ - **18-21** 字节 - **\x32\x35\x2e\x37** - 温度遥测。如果我们将其转换为文本 - **25.7**；
+ - **22-24** 字节 - **\x00\x00\x00** - 虚拟字节。我们将忽略它们，因为有效负载大小为 **17** 字节 - 从 **5** 到 **21** 字节。这些字节包含在示例中；
 
-You can select payload type based on your device capabilities and business cases.
+你可以根据设备功能和业务案例选择有效负载类型。
 
 {% capture difference %}
-**Please note**
+**请注意**
 <br>
-On the machine, where TCP Integration is running, port **10560** must be opened for incoming connections - **nc** utility must be able to connect to TCP socket. In case you are running it locally, it should be fine without any additional changes.
+在运行 TCP 集成的机器上，必须为传入连接打开端口 **10560** - **nc** 实用程序必须能够连接到 TCP 套接字。如果你在本地运行它，它应该没有任何其他更改即可正常工作。
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-### Uplink Converter
+### 上行转换器
 
-Before setting up an **TCP integration**, you need to create an **Uplink Converter** that is a script for parsing and transforming the data received by TCP integration to a format that ThingsBoard can consume.
-**deviceName** and **deviceType** are required, while **attributes** and **telemetry** are optional. **attributes** and **telemetry** are flat key-value objects. Nested objects are not supported.
+在设置 **TCP 集成** 之前，你需要创建一个 **上行转换器**，它是一个用于解析和转换 TCP 集成接收的数据的脚本，使其成为 ThingsBoard 可以使用的一种格式。
+**deviceName** 和 **deviceType** 是必需的，而 **attributes** 和 **telemetry** 是可选的。 **attributes** 和 **telemetry** 是扁平键值对象。不支持嵌套对象。
 
-To create an **Uplink Converter** go to **Data Converters** section and Click **Add new data converter —> Create new converter**.
-Name it **"TCP Uplink Converter"** and select type **Uplink**. Use debug mode for now.
+要创建 **上行转换器**，请转到 **数据转换器** 部分，然后单击 **添加新的数据转换器 —> 创建新的转换器**。
+将其命名为 **“TCP 上行转换器”**，然后选择类型 **上行**。现在使用调试模式。
 
 {% capture difference %}
-**NOTE**
+**注意**
 <br>
-Although the Debug mode is very useful for development and troubleshooting, leaving it enabled in production mode may tremendously increase the disk space, used by the database, because all the debugging data is stored there. It is highly recommended to turn the Debug mode off when done debugging.
+尽管调试模式对于开发和故障排除非常有用，但在生产模式下启用它可能会极大地增加数据库使用的磁盘空间，因为所有调试数据都存储在那里。强烈建议在完成调试后关闭调试模式。
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-**Choose device payload type to for decoder configuration:**
+**选择设备有效负载类型以进行解码器配置：**
 
-- **Text payload**
+- **文本有效负载**
 
 {% include templates/tbel-vs-js.md %}
 
 {% capture tcpuplinktext %}
-TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/tcp/tcp-uplink-text-tbel.md%br%
+TBEL<small>推荐</small>%,%accessToken%,%templates/integration/tcp/tcp-uplink-text-tbel.md%br%
 JavaScript<small></small>%,%anonymous%,%templates/integration/tcp/tcp-uplink-text-java.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="tcpuplinktext" toggle-spec=tcpuplinktext %}
 
-- **JSON payload**
+- **JSON 有效负载**
 
 {% capture tcpuplinkjson %}
-TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/tcp/tcp-uplink-json-tbel.md%br%
+TBEL<small>推荐</small>%,%accessToken%,%templates/integration/tcp/tcp-uplink-json-tbel.md%br%
 JavaScript<small></small>%,%anonymous%,%templates/integration/tcp/tcp-uplink-json-java.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="tcpuplinkjson" toggle-spec=tcpuplinkjson %}
 
-- **Binary payload**
+- **二进制有效负载**
 
 {% capture tcpuplinkbinary %}
-TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/tcp/tcp-uplink-binary-tbel.md%br%
+TBEL<small>推荐</small>%,%accessToken%,%templates/integration/tcp/tcp-uplink-binary-tbel.md%br%
 JavaScript<small></small>%,%anonymous%,%templates/integration/tcp/tcp-uplink-binary-java.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="tcpuplinkbinary" toggle-spec=tcpuplinkbinary %}
 
-### TCP Integration Setup
+### TCP 集成设置
 
-- Go to **Integrations** section and click **Add new integration** button. Name it **TCP Integration**, select type **TCP**;
+- 转到 **集成** 部分，然后单击 **添加新的集成** 按钮。将其命名为 **TCP 集成**，选择类型 **TCP**；
 
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/tcp/tcp-integration-setup-1-pe.png)
@@ -134,7 +134,7 @@ JavaScript<small></small>%,%anonymous%,%templates/integration/tcp/tcp-uplink-bin
 ![image](/images/user-guide/integrations/tcp/tcp-integration-setup-1-paas.png)
 {% endif %}
 
-- Add recently created UDP Uplink Converter;
+- 添加最近创建的 UDP 上行转换器；
 
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/tcp/tcp-integration-setup-2-pe.png)
@@ -143,7 +143,7 @@ JavaScript<small></small>%,%anonymous%,%templates/integration/tcp/tcp-uplink-bin
 ![image](/images/user-guide/integrations/tcp/tcp-integration-setup-2-paas.png)
 {% endif %}
 
-- For now, leave the "Downlink Data Converter" field blank.
+- 现在，将“下行数据转换器”字段留空。
 
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/tcp/tcp-integration-setup-3-pe.png)
@@ -152,29 +152,29 @@ JavaScript<small></small>%,%anonymous%,%templates/integration/tcp/tcp-uplink-bin
 ![image](/images/user-guide/integrations/tcp/tcp-integration-setup-3-paas.png)
 {% endif %}
 
-As you mentioned **Execute remotely** is checked and can not be modified - TCP Integration can be only **remote** type.
+正如你提到的，**远程执行** 已选中且无法修改 - TCP 集成只能是 **远程** 类型。
 
-By default TCP Integration will use **10560** port, but you can change this to any available port in your case.
+默认情况下，TCP 集成将使用 **10560** 端口，但你可以在你的案例中将其更改为任何可用的端口。
 
-Please note down **Integration key** and **Integration secret** - we will use these values later in the configuration on the remote TCP Integration itself.
+请记下 **集成密钥** 和 **集成机密** - 我们将在远程 TCP 集成本身的配置中使用这些值。
 
-We leave other options by default, but there is brief description of them:
-- **Max number of pending connects on the socket** - The maximum queue length for incoming connection indications (a request to connect) is set to the backlog parameter. If a connection indication arrives when the queue is full, the connection is refused;
-- **Size of the buffer for inbound socket** - the size in KBytes of the socket data receive buffer;
-- **Size of the buffer for outbound socket** - the size in KBytes of the socket data send buffer;
-- **Enable sending of keep-alive messages on connection-oriented sockets** - a flag indicating that probes should be periodically sent across the network to the opposing socket to keep the connection alive;
-- **Forces a socket to send the data without buffering (disable Nagle's buffering algorithm)** - disables Nagle's algorithm on the socket which delays the transmission of data until a certain volume of pending data has accumulated.
+我们默认保留其他选项，但这里是对它们的简要说明：
+- **套接字上挂起的连接的最大数量** - 传入连接指示（连接请求）的最大队列长度设置为 backlog 参数。如果队列已满时出现连接指示，则拒绝连接；
+- **入站套接字的缓冲区大小** - 套接字数据接收缓冲区的 KBytes 大小；
+- **出站套接字的缓冲区大小** - 套接字数据发送缓冲区的 KBytes 大小；
+- **启用在面向连接的套接字上发送保持活动消息** - 一个标志，指示应定期通过网络向对端套接字发送探测，以保持连接处于活动状态；
+- **强制套接字在不缓冲的情况下发送数据（禁用 Nagle 的缓冲算法）** - 在套接字上禁用 Nagle 的算法，该算法会延迟数据传输，直到积累一定量的待处理数据。
 
-Choose device payload type for **Handler Configuration**
+为 **处理程序配置** 选择设备有效负载类型
 
 {% capture handlerconfiguration %}
-Text payload<br>%,%text%,%templates/integration/tcp/tcp-handler-configuration-text.md%br%
-JSON payload<br>%,%json%,%templates/integration/tcp/tcp-handler-configuration-json.md%br%
-Binary payload<br>%,%binary%,%templates/integration/tcp/tcp-handler-configuration-binary.md{% endcapture %}
+文本有效负载<br>%,%text%,%templates/integration/tcp/tcp-handler-configuration-text.md%br%
+JSON 有效负载<br>%,%json%,%templates/integration/tcp/tcp-handler-configuration-json.md%br%
+二进制有效负载<br>%,%binary%,%templates/integration/tcp/tcp-handler-configuration-binary.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="tcpintegrationhandlerconfiguration" toggle-spec=handlerconfiguration %}
 
-Click **Add** to save the Integration.
+单击 **添加** 以保存集成。
 
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/tcp/tcp-integration-setup-4-pe.png)
@@ -183,27 +183,27 @@ Click **Add** to save the Integration.
 ![image](/images/user-guide/integrations/tcp/tcp-integration-setup-4-paas.png)
 {% endif %}
 
-#### Installing and running external TCP Integration
+#### 安装和运行外部 TCP 集成
 
-Please refer to the [Remote Integration guide](/docs/{{peDocsPrefix}}user-guide/integrations/remote-integrations) and install TCP Integration service locally or on separate machine.
+请参阅 [远程集成指南](/docs/{{peDocsPrefix}}user-guide/integrations/remote-integrations)并在本地或单独的机器上安装 TCP 集成服务。
 
-Please use **Integration key** and **Integration secret** from the above section for your TCP Integration configuration.
+请在你的 TCP 集成配置中使用上述部分中的 **集成密钥** 和 **集成机密**。
 
-### Send Uplink message
+### 发送上行消息
 
-Once ThingsBoard TCP Integration has been created, the TCP server starts, and then it waits for data from the devices.
+创建 ThingsBoard TCP 集成后，TCP 服务器启动，然后等待来自设备的数据。
 
-Choose device payload type to send uplink message
+选择设备有效负载类型以发送上行消息
 
 {% capture senduplink %}
-Text payload<br>%,%text%,%templates/integration/tcp/tcp-send-uplink-text.md%br%
-JSON payload<br>%,%json%,%templates/integration/tcp/tcp-send-uplink-json.md%br%
-Binary payload<br>%,%binary%,%templates/integration/tcp/tcp-send-uplink-binary.md{% endcapture %}
+文本有效负载<br>%,%text%,%templates/integration/tcp/tcp-send-uplink-text.md%br%
+JSON 有效负载<br>%,%json%,%templates/integration/tcp/tcp-send-uplink-json.md%br%
+二进制有效负载<br>%,%binary%,%templates/integration/tcp/tcp-send-uplink-binary.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="tcpintegrationsenduplink" toggle-spec=senduplink %}
 
-Once you go to **Device Groups -> All** you should find a **SN-002** device provisioned by the Integration.
-Click on the device, go to **Latest Telemetry** tab to see "temperature" key and its value (25.7) there.
+一旦你转到 **设备组 -> 全部**，你应该找到由集成预配的 **SN-002** 设备。
+单击设备，转到 **最新遥测** 选项卡以查看“温度”键及其值（25.7）。
 
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/tcp/tcp-integration-create-device-1-pe.png)
@@ -212,11 +212,11 @@ Click on the device, go to **Latest Telemetry** tab to see "temperature" key and
 ![image](/images/user-guide/integrations/tcp/tcp-integration-create-device-1-paas.png)
 {% endif %}
 
-If your payload contains **humidity** telemetry, you should see "humidity" key and its value (69) there as well.
+如果你的有效负载包含 **湿度** 遥测，你应该也会在那里看到“湿度”键及其值（69）。
 
-## Advanced usage: Downlink Converter
+## 高级用法：下行转换器
 
-In **Data converters** create **Downlink converter** with default script. To see events - enable **Debug.**
+在 **数据转换器** 中使用默认脚本创建 **下行转换器**。要查看事件 - 启用 **调试**。
 
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/tcp/tcp-create-downlink-converter-tbel-1-pe.png)
@@ -225,13 +225,13 @@ In **Data converters** create **Downlink converter** with default script. To see
 ![image](/images/user-guide/integrations/tcp/tcp-create-downlink-converter-tbel-1-paas.png)
 {% endif %}
 
-Add a converter to the integration. You can customize the downlink according to your configuration.
-Let's consider an example where we send an attribute update message. So we should change code in the downlink encoder function under line `//downlink data`
+将转换器添加到集成。你可以根据你的配置自定义下行链路。
+让我们考虑一个示例，其中我们发送属性更新消息。因此，我们应该在 `//downlink data` 下的行中更改下行编码器函数中的代码
 
 ```
 data: JSON.stringify(msg)
 ```
-where ***msg*** is the message that we receive and send back to the device.
+其中 ***msg*** 是我们接收并发送回设备的消息。
 
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/tcp/tcp-edit-downlink-converter-tbel-1-pe.png)
@@ -240,13 +240,13 @@ where ***msg*** is the message that we receive and send back to the device.
 ![image](/images/user-guide/integrations/tcp/tcp-edit-downlink-converter-tbel-1-paas.png)
 {% endif %}
 
-Now you have to add a converter to the integration. 
-Optionally configure Cache Size and Cache time to live in minutes (able just for UDP Downlink).
+现在你必须将转换器添加到集成。
+可以选择配置缓存大小和缓存生存时间（分钟）（仅适用于 UDP 下行链路）。
 
 {% capture difference %}
-Cache size and Time to live - features, that helps to avoid memory leak when we are storing connections.<br>
-Cache time to live - time to storage messages.<br>
-Cache size - maximum size of messages for UDP client.
+缓存大小和生存时间 - 有助于避免在存储连接时出现内存泄漏的功能。<br>
+缓存生存时间 - 存储消息的时间。<br>
+缓存大小 - UDP 客户端的最大消息大小。
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
@@ -260,7 +260,7 @@ Cache size - maximum size of messages for UDP client.
 <br>
 
 
-When integration configured and ready to use, we need to go to Rule Chains, choose ‘Root Rule Chain’ and here create rule node **Integration Downlink**. Input here some name, choose which integration you need to use and tap **Add**.
+当集成配置好并可以使用时，我们需要转到规则链，选择“根规则链”，然后在这里创建规则节点 **集成下行链路**。在此处输入一些名称，选择你需要使用的集成，然后点击 **添加**。
 
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/tcp/tcp-rule-chain-downlink-pe.png)
@@ -269,7 +269,7 @@ When integration configured and ready to use, we need to go to Rule Chains, choo
 ![image](/images/user-guide/integrations/tcp/tcp-rule-chain-downlink-paas.png)
 {% endif %}
 
-After this steps, we need to tap on a right grey circle of rule node **message type switch** and drag this circle to left side of ‘Integration Downlink’, here lets choose **Attribute Update**, tap ‘Add’ and save Rule node.
+完成这些步骤后，我们需要点击规则节点 **消息类型开关** 的右侧灰色圆圈，并将此圆圈拖动到“集成下行链路”的左侧，在这里让我们选择 **属性更新**，点击“添加”并保存规则节点。
 
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/tcp/tcp-rule-chain-and-attributes-updated-pe.png)
@@ -278,9 +278,9 @@ After this steps, we need to tap on a right grey circle of rule node **message t
 ![image](/images/user-guide/integrations/tcp/tcp-rule-chain-and-attributes-updated-paas.png)
 {% endif %}
 
-### Test Downlink
+### 测试下行链路
 
-To test downlink, go to **"All"** folder in the **Device group** section. Create some **shared attribute** on device **SN-002** and send some Uplink message on this device.
+要测试下行链路，请转到 **设备组** 部分中的 **“全部”** 文件夹。在设备 **SN-002** 上创建一些 **共享属性** 并在此设备上发送一些上行消息。
 
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/tcp/tcp-create-shared-add-attribute-pe.png)
@@ -289,7 +289,7 @@ To test downlink, go to **"All"** folder in the **Device group** section. Create
 ![image](/images/user-guide/integrations/tcp/tcp-create-shared-add-attribute-paas.png)
 {% endif %}
 
-Received data and data that was sent can be viewed in the downlink converter.In the **“In”** block of the **Events** tab, we see what data entered:
+接收的数据和发送的数据可以在下行转换器中查看。在 **事件** 选项卡的 **“In”** 块中，我们看到输入了哪些数据：
 
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/tcp/tcp-downlink-converter-events-in-pe.png)
@@ -298,7 +298,7 @@ Received data and data that was sent can be viewed in the downlink converter.In 
 ![image](/images/user-guide/integrations/tcp/tcp-downlink-converter-events-in-paas.png)
 {% endif %}
 
-The **“Out”** field displays messages to device:
+**“Out”** 字段显示到设备的消息：
 
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/tcp/tcp-downlink-converter-events-out-pe.png)
@@ -307,15 +307,15 @@ The **“Out”** field displays messages to device:
 ![image](/images/user-guide/integrations/tcp/tcp-downlink-converter-events-out-paas.png)
 {% endif %}
 
-An example of a sent message and a response from ThingsBoard in the terminal:
+终端中发送消息和来自 ThingsBoard 的响应的示例：
 
 ![image](/images/user-guide/integrations/tcp/tcp-terminal-send-downlink-message.png)
 
-This command will send the Uplink message to the ThingsBoard and will wait for Downlink message for 60 seconds if the message exists. 
-To learn how to send Uplink message, please [read here](/docs/{{peDocsPrefix}}user-guide/integrations/tcp/?tcpintegrationsenduplink=text&tcpintegrationhandlerconfiguration=text&tcpintegartionuplinkpayload=json#send-uplink-message)
+此命令将上行消息发送到 ThingsBoard，如果消息存在，它将在 60 秒内等待下行消息。
+要了解如何发送上行消息，请 [在此处阅读](/docs/{{peDocsPrefix}}user-guide/integrations/tcp/?tcpintegrationsenduplink=text&tcpintegrationhandlerconfiguration=text&tcpintegartionuplinkpayload=json#send-uplink-message)
 
 
 
-## Next steps
+## 后续步骤
 
 {% assign currentGuide = "ConnectYourDevice" %}{% include templates/multi-project-guides-banner.md %}

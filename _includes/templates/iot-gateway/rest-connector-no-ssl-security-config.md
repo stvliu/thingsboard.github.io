@@ -1,11 +1,11 @@
-| **Parameter** | **Default value**                 | **Description**                                           |
-|:-|:-|-
-| host          | **127.0.0.1**                     | Domain address or ip of the server.                       |
-| port          | **5000**                          | Port of the server.                                       |
-| SSLVerify     | **false**                         | Verify or no SSL certificate on the server if available.  |
+| **参数** | **默认值** | **说明** |
+|:-|:-|:-|
+| host | **127.0.0.1** | 服务器的域名地址或 IP。 |
+| port | **5000** | 服务器的端口。 |
+| SSLVerify | **false** | 如果可用，验证服务器上的 SSL 证书。 |
 |---
 
-Configuration section will look like:
+配置部分将如下所示：
 ```json
 {
   "host": "127.0.0.1",

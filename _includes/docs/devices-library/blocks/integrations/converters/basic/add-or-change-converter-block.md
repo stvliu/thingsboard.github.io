@@ -19,14 +19,14 @@
 {% include code-toggle.liquid code=customDecodingCodeCapture params="javascript|.copy-code.expandable-10" %}
 {% endcapture %}
 
-### Uplink converter in ThingsBoard integration
+### ThingsBoard 集成中的上行转换器
 
-Such as we have already connected gateway and configured integration - we will need to modify the converter and add an ability to parse incoming payload from the device.  
+例如，我们已经连接了网关并配置了集成 - 我们需要修改转换器并添加解析来自设备的传入有效负载的功能。
 
-To do this you can add code to "*Decoding block*", it locates between comments "*// --- Decoding code --- //*" in your converter, if you are using the default converters (for ThingsBoard v3.5.2 or above).
+为此，您可以在“*解码块*”中添加代码，它位于转换器中的注释“*// --- 解码代码 --- //*”之间，如果您使用的是默认转换器（适用于 ThingsBoard v3.5.2 或更高版本）。
 
 {{ customDecodingCodeBlock }}
 
-Or you can copy the whole code of the converter and paste it to your converter:  
+或者，您可以复制转换器的整个代码并将其粘贴到您的转换器中：
 
 {{ wholeConverterCodeBlock }}

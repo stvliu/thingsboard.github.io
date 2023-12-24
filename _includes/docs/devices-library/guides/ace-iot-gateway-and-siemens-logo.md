@@ -12,51 +12,45 @@
 {% endif %}
 
 
-## Introduction
+## Введение
 ![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
-[The ACE Automation MQTT 4G GPS Gateway]({{deviceVendorLink}}){: target="_blank"} is a cutting-edge device that revolutionizes data communication and connectivity 
-for industrial and IoT applications. Equipped with 4G capabilities, this gateway ensures reliable and high-speed data 
-transmission over cellular networks, even in remote locations. It integrates GPS technology for real-time location 
-tracking, ideal for asset and vehicle management. With MQTT as the communication protocol, data exchange becomes 
-lightweight and efficient, enabling seamless integration into existing IoT ecosystems. Its robust industrial design 
-guarantees reliable operation in harsh environments, making it a valuable solution for optimizing operations and 
-harnessing real-time data. Simplify your connectivity and data management with the ACE Automation MQTT 4G GPS Gateway.
+[Шлюз ACE Automation MQTT 4G GPS]({{deviceVendorLink}}){: target="_blank"} — это передовое устройство, которое революционизирует передачу данных и подключение для промышленных и IoT-приложений. Благодаря поддержке 4G этот шлюз обеспечивает надежную и высокоскоростную передачу данных по сотовым сетям, даже в удаленных местах. Он оснащен технологией GPS для отслеживания местоположения в режиме реального времени, что идеально подходит для управления активами и транспортными средствами. Благодаря MQTT в качестве протокола связи обмен данными становится легким и эффективным, что позволяет легко интегрироваться в существующие экосистемы IoT. Его надежная промышленная конструкция гарантирует надежную работу в суровых условиях, что делает его ценным решением для оптимизации операций и использования данных в режиме реального времени. Упростите подключение и управление данными с помощью шлюза ACE Automation MQTT 4G GPS.
 
-## Prerequisites
+## Предварительные условия
 
-To continue with this guide, we will need the following:  
+Чтобы продолжить работу с этим руководством, нам потребуется следующее:  
 {{ prerequisites }}
-- [ThingsBoard account]({{thingsboardInstanceLink}}){: target="_blank"}  
+- [Учетная запись ThingsBoard]({{thingsboardInstanceLink}}){: target="_blank"}  
 
-## Import Rule chain
+## Импорт цепочки правил
 
-Download [ACE Rule Chain](/docs/devices-library/resources/dashboards/ready-to-go-devices/ACE-rule-chain.json){:target="_blank" download="ace-rule-chain.json"} and import.
+Загрузите [цепочку правил ACE]({:target="_blank" download="ace-rule-chain.json"})(/docs/devices-library/resources/dashboards/ready-to-go-devices/ACE-rule-chain.json) и импортируйте ее.
 
-To import rule chain from а JSON file, you should:
+Чтобы импортировать цепочку правил из файла JSON, вам следует:
 
 {% assign importRuleChainPE = '
     ===
         image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-rule-chain-import-1-pe.png,
-        title: Navigate to the "Rule chains" page and click on the "+" button in the upper right corner of the screen and then choose "Import rule chain" option. The toolbar import popup window will appear. Upload a JSON file and click on the "Import" button;
+        title: Перейдите на страницу "Цепочки правил" и нажмите кнопку "+" в правом верхнем углу экрана, а затем выберите опцию "Импортировать цепочку правил". Откроется всплывающее окно импорта на панели инструментов. Загрузите файл JSON и нажмите кнопку "Импорт";
     ===
         image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-rule-chain-import-2-pe.png,
-        title: The imported rule chain will open. Click on the "Apply changes" button to save the rule chain. Then, go back to the main "Rule chains" page;
+        title: Откроется импортированная цепочка правил. Нажмите кнопку "Применить изменения", чтобы сохранить цепочку правил. Затем вернитесь на главную страницу "Цепочки правил";
     ===
         image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-rule-chain-import-3-pe.png,
-        title: Rule chain is imported.
+        title: Цепочка правил импортирована.
 '
 %}
 
 {% assign importRuleChainCE = '
     ===
         image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-rule-chain-import-1-ce.png,
-        title: Navigate to the "Rule chains" page and click on the "+" button in the upper right corner of the screen and then choose "Import rule chain" option. The toolbar import popup window will appear. Upload a JSON file and click on the "Import" button;
+        title: Перейдите на страницу "Цепочки правил" и нажмите кнопку "+" в правом верхнем углу экрана, а затем выберите опцию "Импортировать цепочку правил". Откроется всплывающее окно импорта на панели инструментов. Загрузите файл JSON и нажмите кнопку "Импорт";
     ===
         image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-rule-chain-import-2-ce.png,
-        title: The imported rule chain will open. Click on the "Apply changes" button to save the rule chain. Then, go back to the main "Rule chains" page;
+        title: Откроется импортированная цепочка правил. Нажмите кнопку "Применить изменения", чтобы сохранить цепочку правил. Затем вернитесь на главную страницу "Цепочки правил";
     ===
         image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-rule-chain-import-3-ce.png,
-        title: Rule chain is imported.
+        title: Цепочка правил импортирована.
 '
 %}
 
@@ -66,39 +60,39 @@ To import rule chain from а JSON file, you should:
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=importRuleChainCE %}
 {% endif %}
 
-## Create device profile
+## Создание профиля устройства
 
-Now, we are ready to create device profile. For this, follow steps below:
+Теперь мы готовы создать профиль устройства. Для этого выполните следующие действия:
 
 {% assign createDeviceProfilePE = '
     ===
         image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-device-profile-1-pe.png,
-		title: Go to **Profiles** > **Device profiles** and click on **"Add"** button > **"Create new device profile"**;
+		title: Перейдите в раздел **Профили** > **Профили устройств** и нажмите кнопку **"Добавить"** > **"Создать новый профиль устройства"**;
     ===
         image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-device-profile-2-pe.png,
-		title: Input **Name** field with **"ACE routers"** value, and select **"ACE routers"** imported rule chain from the step above;
+		title: Введите в поле **Имя** значение **"ACE routers"** и выберите импортированную цепочку правил **"ACE routers"** из предыдущего шага;
     ===
         image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-device-profile-3-pe.png,
-		title: Click on **"Transport configuration"** tab, select **MQTT** transport type and change **Telemetry topic filter** value from **"v1/devices/me/telemetry"** to **"siemens/+"**, click on **"Add"** button;
+		title: Перейдите на вкладку **"Настройка транспорта"**, выберите тип транспорта **MQTT** и измените значение **Фильтр тем телеметрии** с **"v1/devices/me/telemetry"** на **"siemens/+"**, нажмите кнопку **"Добавить"**;
     ===
         image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-device-profile-4-pe.png,
-		title: Device Profile created.
+		title: Профиль устройства создан.
     '
 %}
 
 {% assign createDeviceProfileCE = '
     ===
         image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-device-profile-1-ce.png,
-		title: Go to **Profiles** > **Device profiles** and click on **"Add"** button > **"Create new device profile"**;
+		title: Перейдите в раздел **Профили** > **Профили устройств** и нажмите кнопку **"Добавить"** > **"Создать новый профиль устройства"**;
     ===
         image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-device-profile-2-ce.png,
-		title: Input **Name** field with **"ACE routers"** value, and select **"ACE routers"** imported rule chain from the step above;
+		title: Введите в поле **Имя** значение **"ACE routers"** и выберите импортированную цепочку правил **"ACE routers"** из предыдущего шага;
     ===
         image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-device-profile-3-ce.png,
-		title: Click on **"Transport configuration"** tab, select **MQTT** transport type and change **Telemetry topic filter** value from **"v1/devices/me/telemetry"** to **"siemens/+"**, click on **"Add"** button;
+		title: Перейдите на вкладку **"Настройка транспорта"**, выберите тип транспорта **MQTT** и измените значение **Фильтр тем телеметрии** с **"v1/devices/me/telemetry"** на **"siemens/+"**, нажмите кнопку **"Добавить"**;
     ===
         image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-device-profile-4-ce.png,
-		title: Device Profile created.
+		title: Профиль устройства создан.
     '
 %}
 
@@ -108,39 +102,39 @@ Now, we are ready to create device profile. For this, follow steps below:
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=createDeviceProfileCE %}
 {% endif %}
 
-## Create device
+## Создание устройства
 
-For simplicity, we will provide the device manually using the UI:
+Для простоты мы предоставим устройство вручную с помощью пользовательского интерфейса:
 
 {% assign provisionDevicePE = '
     ===
         image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-create-device-1-pe.png,
-		title: Open the **Devices** page. By default, you navigate to the device group **“All”**. Click on the **“+”** icon in the top right corner of the table and then select **“Add new device”**;
+		title: Откройте страницу **Устройства**. По умолчанию вы переходите в группу устройств **"Все"**. Нажмите значок **"+"** в правом верхнем углу таблицы, а затем выберите **"Добавить новое устройство"**;
     ===
         image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-create-device-2-pe.png,
-		title: Input device name. For example, **“ACE Gateway”**. Select created device profile from the step above, in our case, **"ACE routers"**;
+		title: Введите имя устройства. Например, **"ACE Gateway"**. Выберите созданный профиль устройства из предыдущего шага, в нашем случае **"ACE routers"**;
     ===
         image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-create-device-3-pe.png,
-		title: Click on **"Credentials"** tab. Check **"Add credentials"** and select **"MQTT Basic"** credentials type. Click on **"Generate"** button on each field. Click **"Add"** button;
+		title: Перейдите на вкладку **"Учетные данные"**. Установите флажок **"Добавить учетные данные"** и выберите тип учетных данных **"MQTT Basic"**. Нажмите кнопку **"Сгенерировать"** в каждом поле. Нажмите кнопку **"Добавить"**;
     ===
         image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-create-device-4-pe.png,
-		title: Device added.
+		title: Устройство добавлено.
     '
 %}
 
 {% assign provisionDeviceCE = '
     ===
         image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-create-device-1-ce.png,
-		title: Open the **Devices** page. By default, you navigate to the device group **“All”**. Click on the **“+”** icon in the top right corner of the table and then select **“Add new device”**;
+		title: Откройте страницу **Устройства**. По умолчанию вы переходите в группу устройств **"Все"**. Нажмите значок **"+"** в правом верхнем углу таблицы, а затем выберите **"Добавить новое устройство"**;
     ===
         image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-create-device-2-ce.png,
-		title: Input device name. For example, **“ACE Gateway”**. Select created device profile from the step above, in our case, **"ACE routers"**;
+		title: Введите имя устройства. Например, **"ACE Gateway"**. Выберите созданный профиль устройства из предыдущего шага, в нашем случае **"ACE routers"**;
     ===
         image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-create-device-3-ce.png,
-		title: Click on **"Credentials"** tab. Check **"Add credentials"** and select **"MQTT Basic"** credentials type. Click on **"Generate"** button on each field. Click **"Add"** button;
+		title: Перейдите на вкладку **"Учетные данные"**. Установите флажок **"Добавить учетные данные"** и выберите тип учетных данных **"MQTT Basic"**. Нажмите кнопку **"Сгенерировать"** в каждом поле. Нажмите кнопку **"Добавить"**;
     ===
         image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-create-device-4-ce.png,
-		title: Device added.
+		title: Устройство добавлено.
     '
 %}
 
@@ -150,68 +144,64 @@ For simplicity, we will provide the device manually using the UI:
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=provisionDeviceCE %}
 {% endif %}
 
-## Gateway connection
+## Подключение шлюза
 
-According to the official user manual and this guide, you can connect the gateway to the network and get access to 
-the WebUI in two ways:
+Согласно официальному руководству пользователя и этому руководству, вы можете подключить шлюз к сети и получить доступ к веб-интерфейсу двумя способами:
 {% capture readytogodeviceconnectionstogglespec %}
-Wireless connection%,%wirelessConnection%,%templates/device-library/ready-to-go-devices/ace-gateway-wireless-connection-block.md%br%
-Wired connection%,%wiredConnection%,%templates/device-library/ready-to-go-devices/ace-gateway-wired-connection-block.md{% endcapture %}
+Беспроводное соединение%,%wirelessConnection%,%templates/device-library/ready-to-go-devices/ace-gateway-wireless-connection-block.md%br%
+Проводное соединение%,%wiredConnection%,%templates/device-library/ready-to-go-devices/ace-gateway-wired-connection-block.md{% endcapture %}
 
 {% include content-toggle.liquid content-toggle-id="readytogodeviceconnectionstogglespec" toggle-spec=readytogodeviceconnectionstogglespec %}
 
-Now, you can configure the gateway.
+Теперь вы можете настроить шлюз.
 
-Once you are connected to the ACE-GTW-MQTT, you can change its IP address if you wish:
-* **Network** > **Interfaces**;
-* Click on **“Edit”** the LAN interface;
-* Enter a new IP address that is not already being used by another device on your network.
+После подключения к ACE-GTW-MQTT вы можете изменить его IP-адрес, если хотите:
+* **Сеть** > **Интерфейсы**;
+* Нажмите **"Изменить"** интерфейс LAN;
+* Введите новый IP-адрес, который еще не используется другим устройством в вашей сети.
 
 {% capture info %}
 <body>
   <p>
-    <b style="color:red">WARNING:</b>
-    <span style="color:black">Don't forget to change default password.</span>
+    <b style="color:red">ВНИМАНИЕ:</b>
+    <span style="color:black">Не забудьте изменить пароль по умолчанию.</span>
   </p>
 </body>
 {% endcapture %}
 {% include templates/warn-banner.md content=info %}
 
-Now we are ready to configure the MQTT connection, topics for data transmission, and establishing the Modbus connection.
+Теперь мы готовы настроить соединение MQTT, темы для передачи данных и установить соединение Modbus.
 
-Let's first configure Modbus Connection. As mention above, we use Siemens LOGO! with AM2 RTD module 
-(used for connecting PT100) - which is the perfect choice for the fast, uncomplicated, and space-saving solution of simple 
-control and regulation tasks. LOGO! has long since established itself as an intelligent logic module in small automation 
-projects.
+Сначала настроим соединение Modbus. Как упоминалось выше, мы используем Siemens LOGO! с модулем AM2 RTD (используется для подключения PT100) - это идеальный выбор для быстрого, простого и компактного решения простых задач управления и регулирования. LOGO! давно зарекомендовал себя как интеллектуальный логический модуль в небольших проектах автоматизации.
 
-Follow the next steps:
-* Go to **Gateway** > **MQTT Configuration** > **ETHERNET STATIONS LIST** (under MQTT Broker section);
-* Fill in all required fields with correct information about your device;
-* Click on **"Save & Apply"** button.
+Выполните следующие действия:
+* Перейдите в раздел **Шлюз** > **Настройка MQTT** > **СПИСОК СТАНЦИЙ ETHERNET** (в разделе MQTT Broker);
+* Заполните все обязательные поля правильной информацией о вашем устройстве;
+* Нажмите кнопку **"Сохранить и применить"**.
 
-In our case, we have the following settings:
+В нашем случае у нас есть следующие настройки:
 
 ![](/images/devices-library/ready-to-go-devices/ace-iot-gateway/modbus-tcp-settings.png)
 
-For configuring MQTT connection, follow the next steps:
-* Go to **Gateway** > **MQTT Configuration** > **MQTT Broker** (tab);
-* Fill in all required fields with correct credentials and other information for broker access;
-* Click on **"Save & Apply"** button.
+Чтобы настроить соединение MQTT, выполните следующие действия:
+* Перейдите в раздел **Шлюз** > **Настройка MQTT** > **MQTT Broker** (вкладка);
+* Заполните все обязательные поля правильными учетными данными и другой информацией для доступа к брокеру;
+* Нажмите кнопку **"Сохранить и применить"**.
 
 ![](/images/devices-library/ready-to-go-devices/ace-iot-gateway/mqtt-broker-settings.png)
 
-The next thing we have to do is configure MQTT topics for receiving and sending data:
-* Go to **Gateway** > **MQTT Configuration** > **MQTT Broker** (tab);
-* Scroll down to **"MQTT TOPICS LIST : Publishing and Subscribing to MQTT Topics"** section;
-* Add all topics for publishing data;
-* Add all subscription topics for receiving data;
-* Click on **"Save & Apply"** button.
+Следующее, что нам нужно сделать, это настроить темы MQTT для приема и отправки данных:
+* Перейдите в раздел **Шлюз** > **Настройка MQTT** > **MQTT Broker** (вкладка);
+* Прокрутите вниз до раздела **"СПИСОК ТЕМ MQTT: публикация и подписка на темы MQTT"**;
+* Добавьте все темы для публикации данных;
+* Добавьте все темы подписки для получения данных;
+* Нажмите кнопку **"Сохранить и применить"**.
 
-In case Siemens LOGO!, we have the following topics list:
+В случае Siemens LOGO! у нас есть следующий список тем:
 
 ![](/images/devices-library/ready-to-go-devices/ace-iot-gateway/topic-list.png)
 
-If you are using Siemens LOGO! too, you can use the following configuration:
+Если вы также используете Siemens LOGO!, вы можете использовать следующую конфигурацию:
 {% capture gatewayCode %}
 config mqttconfig
 	option baudrate '9600'
@@ -293,21 +283,20 @@ config topics
 {% endcapture %}
 {% include code-toggle.liquid code=gatewayCode params="conf|.copy-code.expandable-20" %}
 
-## Check data on ThingsBoard
+## Проверка данных на ThingsBoard
 
 {% include /docs/devices-library/blocks/ready-to-go-devices/check-data-on-thingsboard-block.md %}
 
 {% capture readytogodevicestogglespec %}
-Imported Dashboard%,%importedDashboard%,%templates/device-library/ready-to-go-devices/ace-gateway-imported-dashboard.md%br%
-New Dashboard%,%newDashboard%,%templates/device-library/ready-to-go-devices/gateway-new-dashboard.md{% endcapture %}
+Импортированная панель%,%importedDashboard%,%templates/device-library/ready-to-go-devices/ace-gateway-imported-dashboard.md%br%
+Новая панель%,%newDashboard%,%templates/device-library/ready-to-go-devices/gateway-new-dashboard.md{% endcapture %}
 
 {% include content-toggle.liquid content-toggle-id="minicomputersDashboard" toggle-spec=readytogodevicestogglespec %}
 
-## Conclusion
+## Заключение
 
-With the knowledge in this guide, you can easily connect your ACE Automation MQTT 4G GPS Gateway and use the built-in 
-integration to retrieve data from devices connected to ACE Automation MQTT 4G GPS Gateway.
+С помощью знаний, изложенных в этом руководстве, вы можете легко подключить свой шлюз ACE Automation MQTT 4G GPS и использовать встроенную интеграцию для получения данных с устройств, подключенных к шлюзу ACE Automation MQTT 4G GPS.
 
-After connecting the devices to the gateway, you will be able to see and process the data coming from the devices on the ThingsBoard.
+После подключения устройств к шлюзу вы сможете видеть и обрабатывать данные, поступающие с устройств, на ThingsBoard.
 
-Explore the platform [documentation](/docs/{{page.docsPrefix}}){: target="_blank"} to learn more about key concepts and features. 
+Изучите [документацию](/docs/{{page.docsPrefix}}){: target="_blank"} платформы, чтобы узнать больше о ключевых концепциях и функциях.

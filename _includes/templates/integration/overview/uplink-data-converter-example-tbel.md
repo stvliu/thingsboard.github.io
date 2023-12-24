@@ -1,9 +1,9 @@
 ![image](/images/user-guide/integrations/uplink-converter-example-tbel.png)
 
-The full source code of TBEL function used in converter:
+转换器中使用的 TBEL 函数的完整源代码：
 
 ```shell
-// decode payload to JSON
+// 将有效负载解码为 JSON
 var data = decodeToJson(payload);
 var result = [];
 for (var i = 0; i < data.length; i++) {
@@ -12,7 +12,7 @@ for (var i = 0; i < data.length; i++) {
     var deviceType = metadata.deviceType;
     var raw = report.value;
     var decoded = hexStringToByte(raw);
-    // Result object with device attributes/telemetry data
+    // 具有设备属性/遥测数据的 Result 对象
     result.push({
         deviceName: deviceName,
         deviceType: deviceType,
@@ -31,7 +31,7 @@ for (var i = 0; i < data.length; i++) {
 }
 
 
-/** Helper functions **/
+/** 辅助函数 **/
 
 function decodeToString(payload) {
     return String.fromCharCode.apply(String, payload);

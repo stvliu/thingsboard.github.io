@@ -1,6 +1,6 @@
+现在是时候对电路板进行编程以连接到 ThingsBoard。
 
-Now it’s time to program the board to connect to ThingsBoard.  
-To do this, you can use the code below. It contains all required functionality for this guide.    
+为此，您可以使用下面的代码。它包含本指南所需的所有功能。
 
 
 ```cpp
@@ -28,31 +28,31 @@ Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1);
 constexpr char WIFI_SSID[] = "YOUR_WIFI_SSID";
 constexpr char WIFI_PASSWORD[] = "YOUR_WIFI_PASSWORD";
 
-// See https://thingsboard.io/docs/getting-started-guides/helloworld/
-// to understand how to obtain an access token
+// 请参阅 https://thingsboard.io/docs/getting-started-guides/helloworld/
+// 以了解如何获取访问令牌
 constexpr char TOKEN[] = "YOUR_ACCESS_TOKEN";
 
-// Thingsboard we want to establish a connection too
+// 我们希望建立连接的 Thingsboard
 constexpr char THINGSBOARD_SERVER[] = "{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}thingsboard.cloud{% else %}demo.thingsboard.io{% endif %}";
-// MQTT port used to communicate with the server, 1883 is the default unencrypted MQTT port.
+// 用于与服务器通信的 MQTT 端口，1883 是默认的未加密 MQTT 端口。
 constexpr uint16_t THINGSBOARD_PORT = 1883U;
 
-// Maximum size packets will ever be sent or received by the underlying MQTT client,
-// if the size is to small messages might not be sent or received messages will be discarded
+// 底层 MQTT 客户端将发送或接收的最大数据包大小，
+// 如果大小太小，则可能不会发送消息或将丢弃接收到的消息
 constexpr uint32_t MAX_MESSAGE_SIZE = 1024U;
 
-// Baud rate for the debugging serial connection.
-// If the Serial output is mangled, ensure to change the monitor speed accordingly to this variable
+// 用于调试串行连接的波特率。
+// 如果串行输出被破坏，请确保相应地更改监视器速度以适应此变量
 constexpr uint32_t SERIAL_DEBUG_BAUD = 115200U;
 
-// Initialize underlying client, used to establish a connection
+// 初始化底层客户端，用于建立连接
 WiFiClient wifiClient;
-// Initalize the Mqtt client instance
+// 初始化 Mqtt 客户端实例
 Arduino_MQTT_Client mqttClient(wifiClient);
-// Initialize ThingsBoard instance with the maximum needed buffer size
+// 使用最大所需缓冲区大小初始化 ThingsBoard 实例
 ThingsBoard tb = ThingsBoard(mqttClient, MAX_MESSAGE_SIZE, false, 1024);
 
-// Attribute names for attribute request and attribute updates functionality
+// 用于属性请求和属性更新功能的属性名称
 
 constexpr char BLINKING_INTERVAL_ATTR[] = "blinkingInterval";
 constexpr char LED_MODE_ATTR[] = "ledMode";
@@ -62,76 +62,76 @@ constexpr char SCREEN_TEXT_ATTR[] = "screenText";
 String screenText;
 volatile bool screenTextUpdated;
 
-// handle led state and mode changes
+// 处理 led 状态和模式更改
 volatile bool attributesChanged = false;
 
-// LED modes: 0 - continious state, 1 - blinking
+// LED 模式：0 - 连续状态，1 - 闪烁
 volatile int ledMode = 0;
 
-// Current led state
+// 当前 led 状态
 volatile bool ledState = false;
 
-// Settings for interval in blinking mode
+// 闪烁模式下的间隔设置
 constexpr uint16_t BLINKING_INTERVAL_MS_MIN = 10U;
 constexpr uint16_t BLINKING_INTERVAL_MS_MAX = 60000U;
 volatile uint16_t blinkingInterval = 1000U;
 
 uint32_t previousStateChange;
 
-// For telemetry
+// 用于遥测
 constexpr int16_t telemetrySendInterval = 2000U;
 uint32_t previousDataSend;
 
-// List of shared attributes for subscribing to their updates
+// 共享属性列表，用于订阅其更新
 constexpr std::array<const char *, 3U> SHARED_ATTRIBUTES_LIST = {
   LED_STATE_ATTR,
   BLINKING_INTERVAL_ATTR,
   SCREEN_TEXT_ATTR
 };
 
-// List of client attributes for requesting them (Using to initialize device states)
+// 客户端属性列表，用于请求它们（用于初始化设备状态）
 constexpr std::array<const char *, 1U> CLIENT_ATTRIBUTES_LIST = {
   LED_MODE_ATTR
 };
 
-/// @brief Initalizes WiFi connection,
-// will endlessly delay until a connection has been successfully established
+/// @brief 初始化 WiFi 连接，
+// 将无限期延迟，直到成功建立连接
 void InitWiFi() {
   Serial.println("Connecting to AP ...");
-  // Attempting to establish a connection to the given WiFi network
+  // 尝试建立与给定 WiFi 网络的连接
   WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
   while (WiFi.status() != WL_CONNECTED) {
-    // Delay 500ms until a connection has been succesfully established
+    // 延迟 500 毫秒，直到成功建立连接
     delay(500);
     Serial.print(".");
   }
   Serial.println("Connected to AP");
 }
 
-/// @brief Reconnects the WiFi uses InitWiFi if the connection has been removed
-/// @return Returns true as soon as a connection has been established again
+/// @brief 如果已删除连接，则重新连接 WiFi，使用 InitWiFi
+/// @return 一旦重新建立连接，就返回 true
 const bool reconnect() {
-  // Check to ensure we aren't connected yet
+  // 检查以确保我们尚未连接
   const wl_status_t status = WiFi.status();
   if (status == WL_CONNECTED) {
     return true;
   }
 
-  // If we aren't establish a new connection to the given WiFi network
+  // 如果我们没有建立与给定 WiFi 网络的新连接
   InitWiFi();
   return true;
 }
 
 
-/// @brief Processes function for RPC call "setLedMode"
-/// RPC_Data is a JSON variant, that can be queried using operator[]
-/// See https://arduinojson.org/v5/api/jsonvariant/subscript/ for more details
-/// @param data Data containing the rpc data that was called and its current value
-/// @return Response that should be sent to the cloud. Useful for getMethods
+/// @brief 处理 RPC 调用 "setLedMode" 的函数
+/// RPC_Data 是一个 JSON 变体，可以使用运算符 [] 查询
+/// 有关更多详细信息，请参阅 https://arduinojson.org/v5/api/jsonvariant/subscript/
+/// @param data 包含被调用的 rpc 数据及其当前值的数据
+/// @return 应发送到云的响应。对 getMethods 有用
 RPC_Response processSetLedMode(const RPC_Data &data) {
   Serial.println("Received the set led state RPC method");
 
-  // Process data
+  // 处理数据
   int new_mode = data;
 
   Serial.print("Mode to change: ");
@@ -145,22 +145,22 @@ RPC_Response processSetLedMode(const RPC_Data &data) {
 
   attributesChanged = true;
 
-  // Returning current mode
+  // 返回当前模式
   return RPC_Response("newMode", (int)ledMode);
 }
 
 
-// Optional, keep subscribed shared attributes empty instead,
-// and the callback will be called for every shared attribute changed on the device,
-// instead of only the one that were entered instead
+// 可选，改为保持订阅的共享属性为空，
+// 然后将为设备上更改的每个共享属性调用回调，
+// 而不仅仅是输入的属性
 const std::array<RPC_Callback, 1U> callbacks = {
   RPC_Callback{ "setLedMode", processSetLedMode }
 };
 
 
-/// @brief Update callback that will be called as soon as one of the provided shared attributes changes value,
-/// if none are provided we subscribe to any shared attribute change instead
-/// @param data Data containing the shared attributes that were changed and their current value
+/// @brief 将在提供的一个共享属性值更改时调用的更新回调，
+/// 如果没有提供任何属性，我们改为订阅任何共享属性更改
+/// @param data 包含已更改的共享属性及其当前值的数据
 void processSharedAttributes(const Shared_Attribute_Data &data) {
   for (auto it = data.begin(); it != data.end(); ++it) {
     if (strcmp(it->key().c_str(), BLINKING_INTERVAL_ATTR) == 0) {
@@ -199,7 +199,7 @@ const Attribute_Request_Callback attribute_shared_request_callback(&processShare
 const Attribute_Request_Callback attribute_client_request_callback(&processClientAttributes, CLIENT_ATTRIBUTES_LIST.cbegin(), CLIENT_ATTRIBUTES_LIST.cend());
 
 void setup() {
-  // Initalize serial connection for debugging
+  // 初始化用于调试的串行连接
   Serial.begin(115200);
   pinMode(LED_BUILTIN, OUTPUT);
   Wire.begin(5, 4);
@@ -220,7 +220,7 @@ void loop() {
   }
 
   if (!tb.connected()) {
-    // Connect to the ThingsBoard
+    // 连接到 ThingsBoard
     Serial.print("Connecting to: ");
     Serial.print(THINGSBOARD_SERVER);
     Serial.print(" with token ");
@@ -230,13 +230,13 @@ void loop() {
       delay(2000);
       return;
     }
-    // Sending a MAC address as an attribute
+    // 将 MAC 地址作为属性发送
     tb.sendAttributeData("macAddress", WiFi.macAddress().c_str());
     
     Serial.println("Subscribing for RPC...");
-    // Perform a subscription. All consequent data processing will happen in
-    // processSetLedState() and processSetLedMode() functions,
-    // as denoted by callbacks array.
+    // 执行订阅。所有后续数据处理都将在
+    // processSetLedState() 和 processSetLedMode() 函数中进行，
+    // 如回调数组所示。
     if (!tb.RPC_Subscribe(callbacks.cbegin(), callbacks.cend())) {
       Serial.println("Failed to subscribe for RPC");
       return;
@@ -249,13 +249,13 @@ void loop() {
 
     Serial.println("Subscribe done");
 
-    // Request current states of shared attributes
+    // 请求共享属性的当前状态
     if (!tb.Shared_Attributes_Request(attribute_shared_request_callback)) {
       Serial.println("Failed to request for shared attributes");
       return;
     }
 
-    // Request current states of client attributes
+    // 请求客户端属性的当前状态
     if (!tb.Client_Attributes_Request(attribute_client_request_callback)) {
       Serial.println("Failed to request for client attributes");
       return;
@@ -296,7 +296,7 @@ void loop() {
     }
   }
 
-  // Sending telemetry every telemetrySendInterval time
+  // 每隔 telemetrySendInterval 时间发送遥测数据
   if (millis() - previousDataSend > telemetrySendInterval) {
     previousDataSend = millis();
     tb.sendTelemetryData("temperature", random(10, 20));
@@ -311,78 +311,3 @@ void loop() {
 }
 
 ```
-{:.copy-code.expandable-20}
-
-
-{% capture replacePlaceholders %}
-Don’t forget to replace placeholders with your real WiFi network SSID, password, ThingsBoard device access token.
-{% endcapture %}
-
-{% include templates/info-banner.md content=replacePlaceholders %}
-
-Necessary variables for connection:  
-
-| Variable name      | Default value                                                                                                                | Description                                                                             | 
-|--------------------|------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------|
-| WIFI_SSID          | **YOUR_WIFI_SSID**                                                                                                           | Your WiFi network name.                                                                 | 
-| WIFI_PASSWORD      | **YOUR_WIFI_PASSWORD**                                                                                                       | Your WiFi network password.                                                             |
-| TOKEN              | **YOUR_DEVICE_ACCESS_TOKEN**                                                                                                 | Access token from device. Obtaining process described in #connect-device-to-thingsboard | 
-| THINGSBOARD_SERVER | **{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}thingsboard.cloud{% else %}demo.thingsboard.io{% endif %}** | Your ThingsBoard host or ip address.                                                    |
-| THINGSBOARD_PORT   | **1883U**                                                                                                                    | ThingsBoard server MQTT port. Can be default for this guide.                            |
-| MAX_MESSAGE_SIZE   | **256U**                                                                                                                     | Maximal size of MQTT messages. Can be default for this guide.                           |
-| SERIAL_DEBUG_BAUD  | **1883U**                                                                                                                    | Baud rate for serial port. Can be default for this guide.                               |  
-
-```cpp
-...
-
-constexpr char WIFI_SSID[] = "YOUR_WIFI_SSID";
-constexpr char WIFI_PASSWORD[] = "YOUR_WIFI_PASSWORD";
-
-constexpr char TOKEN[] = "YOUR_ACCESS_TOKEN";
-
-constexpr char THINGSBOARD_SERVER[] = "{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}thingsboard.cloud{% else %}demo.thingsboard.io{% endif %}";
-constexpr uint16_t THINGSBOARD_PORT = 1883U;
-
-constexpr uint32_t MAX_MESSAGE_SIZE = 256U;
-constexpr uint32_t SERIAL_DEBUG_BAUD = 115200U;
-
-...
-```
-
-Send data part (By default the example sends random value for **temperature** key and some WiFi information):  
-```cpp
-...
-    tb.sendTelemetryData("temperature", random(10, 20));
-    tb.sendAttributeData("rssi", WiFi.RSSI());
-    tb.sendAttributeData("bssid", WiFi.BSSIDstr().c_str());
-    tb.sendAttributeData("localIp", WiFi.localIP().toString().c_str());
-    tb.sendAttributeData("ssid", WiFi.SSID().c_str());
-    tb.sendAttributeData("channel", WiFi.channel());
-...
-```
-
-Then upload the code to the device by pressing Upload button or keyboard combination Ctrl+U.  
-{% assign codeByUploadButton='
-    ===
-        image: /images/devices-library/basic/arduino-ide/upload.png
-' 
-%}
-{% include images-gallery.liquid imageCollection=codeByUploadButton %}
-
-{% if arduinoBoardPath contains "ESP" %}
-
-If you cannot upload the code and receive an error: `Property 'upload.tool.serial' is undefined` you can do the following:  
-  
-{% assign codeByUploadWithProgrammer='
-    ===
-        image: /images/devices-library/basic/arduino-ide/select-esptool-programmer.png,
-        title: Go to "Tools" > "Programmer" and select "Esptool" as a programmer.  
-    ===
-        image: /images/devices-library/basic/arduino-ide/upload-using-programmer.png,
-        title: Go to "Sketch" > "Upload Using Programmer".  
-' 
-%}
-
-{% include images-gallery.liquid showListImageTitles="true" imageCollection=codeByUploadWithProgrammer %}
-
-{% endif %}

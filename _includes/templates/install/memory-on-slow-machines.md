@@ -1,14 +1,14 @@
-Edit ThingsBoard configuration file 
+编辑 ThingsBoard 配置文件
 
 ```bash 
 sudo nano /etc/thingsboard/conf/thingsboard.conf
 ``` 
 {: .copy-code}
 
-Add the following lines to the configuration file. 
+将以下行添加到配置文件中。
 
 ```bash
-# Update ThingsBoard memory usage and restrict it to 256MB in /etc/thingsboard/conf/thingsboard.conf
+# 更新 ThingsBoard 内存使用情况，并将其限制为 /etc/thingsboard/conf/thingsboard.conf 中的 256MB
 export JAVA_OPTS="$JAVA_OPTS -Xms256M -Xmx256M"
 ```
 {: .copy-code}

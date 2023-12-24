@@ -1,37 +1,37 @@
-ThingsBoard provides the ability to track user actions in order to keep audit log. 
-It is possible to log user actions related to main entities: assets, devices, dashboard, rules, etc. 
+ThingsBoard 提供跟踪用户操作以保持审计日志的功能。
+可以记录与主要实体相关联的用户操作：资产、设备、仪表板、规则等。
 
-### User Interface
+### 用户界面
 
-Tenant Administrator is able to review audit logs that belong to corresponding tenant account. The administrator is able to setup date range and executes a full-text search for fetched entities.
+租户管理员能够查看属于相应租户帐户的审计日志。管理员能够设置日期范围并对获取的实体执行全文搜索。
 
 ![image](/images/user-guide/ui/audit-log.png)
 
-The "details" button allows reviewing low-level details of the logged action.
+“详细信息”按钮允许查看已记录操作的低级详细信息。
 
 ![image](/images/user-guide/ui/audit-log-details.png)
 
 ### REST API
 
-It is possible to fetch audit logs via [REST API](https://demo.thingsboard.io/swagger-ui.html#/audit-log-controller). 
-There are several API calls that allow to fetch entities related to particular user, entity, customer or fetch all records using page links.  
+可以通过 [REST API](https://demo.thingsboard.io/swagger-ui.html#/audit-log-controller) 获取审计日志。
+有几个 API 调用允许获取与特定用户、实体、客户相关联的实体或使用页面链接获取所有记录。
 
 {% unless docsPrefix == "paas/" %}
-### General configuration
+### 常规配置
 
-System administrator is able to configure audit log levels using [thingsboard.yml](/docs/user-guide/install/{{docsPrefix}}config/). You can find sample configuration below:
+系统管理员能够使用 [thingsboard.yml](/docs/user-guide/install/{{docsPrefix}}config/) 配置审计日志级别。您可以在下面找到示例配置：
 
 ```yaml
-# Audit log parameters
+# 审计日志参数
 audit_log:
-  # Enable/disable audit log functionality.
+  # 启用/禁用审计日志功能。
   enabled: "${AUDIT_LOG_ENABLED:true}"
-  # Specify partitioning size for audit log by tenant id storage. Example MINUTES, HOURS, DAYS, MONTHS
+  # 按租户 ID 存储指定审计日志的分区大小。示例 MINUTES、HOURS、DAYS、MONTHS
   by_tenant_partitioning: "${AUDIT_LOG_BY_TENANT_PARTITIONING:MONTHS}"
-  # Number of days as history period if startTime and endTime are not specified
+  # 如果未指定 startTime 和 endTime，则作为历史记录期间的天数
   default_query_period: "${AUDIT_LOG_DEFAULT_QUERY_PERIOD:30}"
-  # Logging levels per each entity type.
-  # Allowed values: OFF (disable), W (log write operations), RW (log read and write operations)
+  # 每个实体类型的日志记录级别。
+  # 允许的值：OFF（禁用）、W（记录写操作）、RW（记录读写操作）
   logging_level:
     mask:
       "device": "${AUDIT_LOG_MASK_DEVICE:W}"
@@ -43,31 +43,31 @@ audit_log:
       "plugin": "${AUDIT_LOG_MASK_PLUGIN:RW}"
 ```
 
-This configuration sample disables the logging of any actions related to dashboards and logs read operations for users and rules. 
-For all other entities, ThingsBoard will log only write level operations.
+此配置示例禁用与仪表板相关的任何操作的日志记录，并记录用户和规则的读取操作。
+对于所有其他实体，ThingsBoard 将仅记录写入级别操作。
 
-We recommend to modify "by_tenant_partitioning" parameter based on the number of devices and user actions that will be logged. 
-The more actions you plan to log, the more precise partitioning is required. 
-The approximate amount of records per partition should not exceed 500 000 records.
+我们建议根据将记录的设备和用户操作的数量修改“by_tenant_partitioning”参数。
+您计划记录的操作越多，就需要越精确的分区。
+每个分区的大致记录量不应超过 500,000 条记录。
 
-### External log sink configuration
+### 外部日志接收器配置
 
-System administrator is able to configure connection to external system. This connection will be used to push audit logs.
-The configuration parameters are well documented inline.
+系统管理员能够配置与外部系统的连接。此连接将用于推送审计日志。
+配置参数在内联中记录得很好。
 
 ```yaml
   sink:
-    # Type of external sink. possible options: none, elasticsearch
+    # 外部接收器的类型。可能选项：none、elasticsearch
     type: "${AUDIT_LOG_SINK_TYPE:none}"
-    # Name of the index where audit logs stored
-    # Index name could contain next placeholders (not mandatory):
-    # @{TENANT} - substituted by tenant ID
-    # @{DATE} - substituted by current date in format provided in audit_log.sink.date_format
+    # 存储审计日志的索引名称
+    # 索引名称可能包含以下占位符（不是强制性的）：
+    # @{TENANT} - 由租户 ID 替换
+    # @{DATE} - 由 audit_log.sink.date_format 中提供的格式中的当前日期替换
     index_pattern: "${AUDIT_LOG_SINK_INDEX_PATTERN:@{TENANT}_AUDIT_LOG_@{DATE}}"
-    # Date format. Details of the pattern could be found here:
+    # 日期格式。可以在此处找到模式的详细信息：
     # https://docs.oracle.com/javase/8/docs/{{docsPrefix}}api/java/time/format/DateTimeFormatter.html
     date_format: "${AUDIT_LOG_SINK_DATE_FORMAT:YYYY.MM.DD}"
-    scheme_name: "${AUDIT_LOG_SINK_SCHEME_NAME:http}" # http or https
+    scheme_name: "${AUDIT_LOG_SINK_SCHEME_NAME:http}" # http 或 https
     host: "${AUDIT_LOG_SINK_HOST:localhost}"
     port: "${AUDIT_LOG_SINK_POST:9200}"
     user_name: "${AUDIT_LOG_SINK_USER_NAME:}"
@@ -75,6 +75,6 @@ The configuration parameters are well documented inline.
 ```
 {% endunless %}
 
-## Next steps
+## 后续步骤
 
 {% assign currentGuide = "AdvancedFeatures" %}{% include templates/multi-project-guides-banner.md %}

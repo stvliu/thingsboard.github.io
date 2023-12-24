@@ -1,13 +1,13 @@
 ---
 layout: thingsboard-edge
 title: ThingsBoard Edge
-description: Comprehensive software solutions for edge computing, providing data analysis and management at the source of data creation.
+description: 综合软件解决方案，用于边缘计算，在数据创建源头提供数据分析和管理。
 ---
 
 <section id="intro">
 	<main>
-		<h1 class="intro_title">Introducing ThingsBoard Edge <a href="/docs/edge/getting-started-guides/what-is-edge/">CE</a> and <a href="/docs/pe/edge/getting-started-guides/what-is-edge/">PE</a>: Our software products specifically designed for edge computing</h1>
-        <p class="labeling">With ThingsBoard Edge, data analysis and management are executed at the edge, right where data is created. Furthermore, it synchronizes seamlessly with the ThingsBoard cloud platform  (Cloud, Demo, PE, or CE) to cater to your specific business requirements.</p>
+		<h1 class="intro_title">推出 ThingsBoard Edge <a href="/docs/edge/getting-started-guides/what-is-edge/">CE</a> 和 <a href="/docs/pe/edge/getting-started-guides/what-is-edge/">PE</a>：我们专为边缘计算设计的软件产品</h1>
+        <p class="labeling">使用 ThingsBoard Edge，数据分析和管理在边缘执行，即数据创建的位置。此外，它与 ThingsBoard 云平台（云、演示、PE 或 CE）无缝同步，以满足您的特定业务需求。</p>
 	</main>
 </section>
 
@@ -17,13 +17,13 @@ description: Comprehensive software solutions for edge computing, providing data
             <div class="main1"></div><div class="small1"></div><div class="small2"></div><div class="small3"></div><div class="small4"></div>
         </div>
         <div class="block">
-            <div class="feature-des"><h3 class="item-heading">Local Deployment and Storage</h3>
-                <p>Process and store data from local (edge) devices independently of the cloud. Sync updates with the cloud once connectivity is restored.</p>
+            <div class="feature-des"><h3 class="item-heading">本地部署和存储</h3>
+                <p>独立于云处理和存储来自本地（边缘）设备的数据。在连接恢复后与云同步更新。</p>
                 <a class="read-more-button" href="/docs/edge/getting-started-guides/what-is-edge/">Edge CE<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
                 <a class="read-more-button" style="margin-left: 60px;" href="/docs/pe/edge/getting-started-guides/what-is-edge/">Edge PE<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
             </div>
             <div class="block-img">
-                <img src="/images/edge/local-deployment.svg" alt="local deployment">
+                <img src="/images/edge/local-deployment.svg" alt="本地部署">
             </div>
         </div>
     </main>
@@ -33,10 +33,10 @@ description: Comprehensive software solutions for edge computing, providing data
     <main>
         <div class="block">
             <div class="block-img">
-                <img src="/images/edge/data-filtering.svg" alt="data filtering">
+                <img src="/images/edge/data-filtering.svg" alt="数据过滤">
             </div>
-            <div class="feature-des"><h3 class="item-heading">Data Filtering</h3>
-                <p>Use the ThingsBoard Edge service to filter data from local (edge) devices and forward only a subset of data to the cloud for further processing or storage.</p>
+            <div class="feature-des"><h3 class="item-heading">数据过滤</h3>
+                <p>使用 ThingsBoard Edge 服务从本地（边缘）设备过滤数据，并仅将数据子集转发到云进行进一步处理或存储。</p>
                 <a class="read-more-button" href="/docs/edge/getting-started-guides/what-is-edge/">Edge CE<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
                 <a class="read-more-button" style="margin-left: 60px;" href="/docs/pe/edge/getting-started-guides/what-is-edge/">Edge PE<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
             </div>
@@ -50,13 +50,13 @@ description: Comprehensive software solutions for edge computing, providing data
             <div class="main2"></div><div class="small5"></div><div class="small6"></div><div class="small7"></div>
         </div>
         <div class="block">
-            <div class="feature-des"><h3 class="item-heading">Local Alarms</h3>
-                <p>Respond instantly to critical situations on-site, even without cloud connectivity.</p>
+            <div class="feature-des"><h3 class="item-heading">本地警报</h3>
+                <p>即使没有云连接，也能立即响应现场的紧急情况。</p>
                 <a class="read-more-button" href="/docs/edge/getting-started-guides/what-is-edge/">Edge CE<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
                 <a class="read-more-button" style="margin-left: 60px;" href="/docs/pe/edge/getting-started-guides/what-is-edge/">Edge PE<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
             </div>
             <div class="block-img">
-                <img src="/images/edge/local-alarms.svg" alt="local alarms">
+                <img src="/images/edge/local-alarms.svg" alt="本地警报">
             </div>
         </div>
     </main>
@@ -66,10 +66,10 @@ description: Comprehensive software solutions for edge computing, providing data
     <main>
         <div class="block">
             <div class="block-img">
-                <img src="/images/edge/batch-update.svg" alt="batch update">
+                <img src="/images/edge/batch-update.svg" alt="批量更新">
             </div>
-            <div class="feature-des"><h3 class="item-heading">Batch Update and Visualization</h3>
-                <p>Update thousands of edge configurations with a single click. Monitor local events and timeseries data using a real-time dashboard.</p>
+            <div class="feature-des"><h3 class="item-heading">批量更新和可视化</h3>
+                <p>只需单击一下即可更新数千个边缘配置。使用实时仪表板监视本地事件和时序数据。</p>
                 <a class="read-more-button" href="/docs/edge/getting-started-guides/what-is-edge/">Edge CE<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
                 <a class="read-more-button" style="margin-left: 60px;" href="/docs/pe/edge/getting-started-guides/what-is-edge/">Edge PE<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
             </div>
@@ -83,38 +83,38 @@ description: Comprehensive software solutions for edge computing, providing data
         <div id="background">
             <div class="main3"></div><div class="small8"></div>
         </div>
-        <h3>More about ThingsBoard Edge strengths</h3>
+        <h3>更多关于 ThingsBoard Edge 的优势</h3>
         <div class="cards row">
             <div class="col-lg-6">
                 <div class="block">
-                    <img src="/images/edge/robust-icon.svg" alt="Robust and Efficient">
+                    <img src="/images/edge/robust-icon.svg" alt="强大且高效">
                     <div>
-                        <h4 class="title">Robust and Efficient</h4>
-                        <p>A single Edge instance is capable of handling up to 1,000 devices, depending on the use-case and the capabilities of the deployed hardware.</p>
+                        <h4 class="title">强大且高效</h4>
+                        <p>单个 Edge 实例能够处理多达 1,000 个设备，具体取决于用例和已部署硬件的功能。</p>
                     </div>
                 </div>
             </div>
             <div class="col-lg-6">
-                <div class="block"><img src="/images/edge/durable-icon.svg" alt="Durable">
+                <div class="block"><img src="/images/edge/durable-icon.svg" alt="耐用">
                     <div>
-                        <h4 class="title">Durable</h4>
-                        <p>The Edge system collects all messages and events in a persistent layer. Selected messages can be transferred to the cloud, as per necessity.</p>
+                        <h4 class="title">耐用</h4>
+                        <p>Edge 系统在持久层收集所有消息和事件。可以根据需要将选定的消息传输到云。</p>
                     </div>
                 </div>
             </div>
             <div class="col-lg-6">
-                <div class="block"><img src="/images/edge/customizable-icon.svg" alt="Customizable">
+                <div class="block"><img src="/images/edge/customizable-icon.svg" alt="可定制">
                     <div>
-                    <h4 class="title">Customizable</h4>
-                    <p>Enhancing functionality is effortless with our rule engine, alongside the ability to customize widgets and dashboards to your preference.</p>
+                    <h4 class="title">可定制</h4>
+                    <p>使用我们的规则引擎可以轻松增强功能，同时还可以根据您的喜好自定义小部件和仪表板。</p>
                     </div>
                 </div>
             </div>
             <div class="col-lg-6">
-                <div class="block"><img src="/images/edge/scalable-icon.svg" alt="Scalable">
+                <div class="block"><img src="/images/edge/scalable-icon.svg" alt="可扩展">
                     <div>
-                    <h4 class="title">Scalable</h4>
-                    <p>Distribute your computational tasks and data analysis across thousands of Edge instances for superior scalability.</p>
+                    <h4 class="title">可扩展</h4>
+                    <p>将您的计算任务和数据分析分布到数千个 Edge 实例中，以实现卓越的可扩展性。</p>
                     </div>
                 </div>
             </div>
@@ -123,5 +123,5 @@ description: Comprehensive software solutions for edge computing, providing data
 </section>
 
 <section id="bottom">
-    <a href="/docs/edge/getting-started/" class="bottom-button">Try Edge now</a>
+    <a href="/docs/edge/getting-started/" class="bottom-button">立即试用 Edge</a>
 </section>

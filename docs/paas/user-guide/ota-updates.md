@@ -2,14 +2,13 @@
 layout: docwithnav-paas
 assignees:
 - ashvayka
-title: Over-the-air firmware and software updates
-description: IoT device firmware updates
+title: 空中固件和软件更新
+description: 物联网设备固件更新
  
 createFirmware:
     0:
         image: /images/user-guide/firmware/add-firmware-pe.png  
-        title: 'You have to enter title and version; select type and device profile (this field we define what type of device this firmware will be available; 
-                choose file contains firmware. Optionally add checksum algorithm and checksum.'
+        title: '您必须输入标题和版本；选择类型和设备配置文件（此字段中，我们定义此固件将可用的设备类型；选择包含固件的文件。可以选择性地添加校验和算法和校验和。'
 
 listFirmware:
     0:
@@ -43,13 +42,13 @@ fw-deviceprofile:
 deviceFirmware:
     0:
         image: /images/user-guide/firmware/device-firmware-pe.png
-        title: 'Go to the Device page and open needed device details to edit its information.'
+        title: '转到设备页面并打开所需的设备详细信息以编辑其信息。'
     1:
         image: /images/user-guide/firmware/device-firmware-1-pe.png
-        title: "From the drop-down menu select firmware that you&#39;d like to assign to this device."
+        title: "从下拉菜单中选择您要分配给此设备的固件。"
     3:
         image: /images/user-guide/firmware/device-firmware-2-pe.png
-        title: 'After selecting firmware, apply changes by clicking the orange check mark in the right corner of the page.'
+        title: '选择固件后，单击页面右上角的橙色复选标记应用更改。'
     4:
         image: /images/user-guide/firmware/device-firmware-3-pe.png
         title: '.'
@@ -62,10 +61,10 @@ fw-attributes:
 fw-dashboard:
     0:
         image: /images/user-guide/firmware/fw-dashboard-pe.png
-        title: 'Monitor and track the firmware status of your device in the Firmware dashboard.'
+        title: '在固件仪表板中监视和跟踪设备的固件状态。'
     1:
         image: /images/user-guide/firmware/fw-dashboard-1-pe.png
-        title: 'Find out more about the firmware status of specific devices by clicking the buttons next to the device names.'
+        title: '通过单击设备名称旁边的按钮，了解有关特定设备固件状态的更多信息。'
 
 fw-status:
     0:
@@ -78,10 +77,10 @@ fw-status:
 sw-dashboard:
     0:
         image: /images/user-guide/firmware/sw-dashboard-1-pe.png
-        title: 'Monitor and track the software status of your device in the Software dashboard.'
+        title: '在软件仪表板中监视和跟踪设备的软件状态。'
     1:
         image: /images/user-guide/firmware/sw-dashboard-2-pe.png
-        title: 'Find out more about the software status of specific devices by clicking the buttons next to the device names.'
+        title: '通过单击设备名称旁边的按钮，了解有关特定设备软件状态的更多信息。'
 
 fw-http-updated:
     0:
@@ -101,13 +100,13 @@ fw-coap-updated:
 fw-devicegroup:
     0:
         image: /images/user-guide/firmware/fw-devicegroup-pe.png
-        title: 'Go to the Device profile page and open needed device profile details to edit its information.'
+        title: '转到设备配置文件页面并打开所需的设备配置文件详细信息以编辑其信息。'
     1:
         image: /images/user-guide/firmware/fw-devicegroup-1-pe.png
-        title: "From the drop-down menu select firmware that you would like to assign to this device profile."
+        title: "从下拉菜单中选择您要分配给此设备配置文件的固件。"
     2:
         image: /images/user-guide/firmware/fw-devicegroup-2-pe.png
-        title: 'After selecting firmware, apply changes by clicking the orange check mark in the right corner of the page.'
+        title: '选择固件后，单击页面右上角的橙色复选标记应用更改。'
     3:
         image: /images/user-guide/firmware/fw-devicegroup-3-pe.png
         title: ''
@@ -130,50 +129,45 @@ fw-calendar:
 {% assign docsPrefix = "paas/" %}
 {% include docs/user-guide/ota-updates.md %}
 
-## Assign OTA package to device group
+## 将 OTA 软件包分配给设备组
 
-Profession Editions gives you an opportunity to assign firmware/software to a specific device group for
-automatic distribution of the package to all devices that share the same group. See screenshots below.
+专业版让您有机会将固件/软件分配给特定设备组，以便自动将软件包分发给共享同一组的所有设备。请参阅下面的屏幕截图。
 
 {% include images-gallery.html imageCollection="fw-devicegroup" %}
 
-The device group details allow choosing only compatible OTA update packages 
-(see [provisioning](/docs/{{docsPrefix}}user-guide/ota-updates/#provision-ota-package-to-thingsboard-repository)) for more info.  
-Assignment of the firmware/software triggers the [update process](/docs/{{docsPrefix}}user-guide/ota-updates/#update-process).
+设备组详细信息仅允许选择兼容的 OTA 更新软件包
+（有关更多信息，请参阅 [预配](/docs/{{docsPrefix}}user-guide/ota-updates/#provision-ota-package-to-thingsboard-repository)）。
+分配固件/软件会触发 [更新过程](/docs/{{docsPrefix}}user-guide/ota-updates/#update-process)。
 
-The firmware version assigned specifically to the device will automatically overwrite firmware version that is assigned to the device group.
+专门分配给设备的固件版本将自动覆盖分配给设备组的固件版本。
 
-For example, let's assume you have Devices A1, A2 and A3 that are in the same Device Group, but have different device profiles. 
+例如，假设您有设备 A1、A2 和 A3，它们位于同一设备组中，但具有不同的设备配置文件。
 
-* Devices A1 and A2 have compatible device profiles, while Device A3 has incompatible one. When you assign the package to this device group, 
-  firmware/software will be updated only on Devices A1 and A2.
-* If you update the package specifically on Device A2, Device A1 will stay not updated.
+* 设备 A1 和 A2 具有兼容的设备配置文件，而设备 A3 具有不兼容的设备配置文件。当您将软件包分配给此设备组时，固件/软件将仅在设备 A1 和 A2 上更新。
+* 如果您专门在设备 A2 上更新软件包，设备 A1 将保持不更新状态。
 
-## Scheduler 
+## 调度程序
 
-Scheduler allows you to set the exact date and time for an OTA package update. 
-You can either observe scheduler events as a list, or see upcoming events in a calendar view.
-1. To schedule an update, click the plus sign in the upper right corner of the screen to open a dialog window.
+调度程序允许您设置 OTA 软件包更新的确切日期和时间。
+您可以将调度程序事件观察为列表，或在日历视图中查看即将发生的事件。
+1. 要安排更新，请单击屏幕右上角的加号以打开一个对话框窗口。
 
-2. In the **Configuration** tab of the opened dialog, enter the event name, from the drop-down menu select an event type (Software/Firmware update) and 
-choose an update target:
-* If you need to schedule an update for Device, Device profile or Device group, from the drop-down menus, select an entity 
-and needed OTA package. 
-* If you need to schedule an update for Devices group owner, from the drop-down menus, select the owner of the group, specific entity group that belongs to this owner,
-and the package that will be updated.
-  
-3. In the **Schedule** tab, choose your timezone, set the date and time when you'd like your entity to be updated. 
-If you want to make it repeatable action, check the Repeat box. From the appeared drop-down menu, choose how often the update will be happening.
-When choosing Weekly updates, you should check the boxes on which days you want the update happen. 
-Timer-based update allows you to set the frequency: hours, minutes or seconds, and numeric value.
-Also, you need to set the time when repetition will be finished.
+2. 在打开的对话框的 **配置** 选项卡中，输入事件名称，从下拉菜单中选择事件类型（软件/固件更新）并选择更新目标：
+* 如果您需要为设备、设备配置文件或设备组安排更新，请从下拉菜单中选择实体和所需的 OTA 软件包。
+* 如果您需要为设备组所有者安排更新，请从下拉菜单中选择组的所有者、属于此所有者的特定实体组以及将更新的软件包。
 
-4. After setting up Configuration parameters and Schedule time, click the "Create" button.
-You are able to edit created scheduler events or delete them by clicking the corresponding buttons next to their names.
-In the Edit scheduler event dialog, you may configure Method and Params.
-  
+3. 在 **计划** 选项卡中，选择您的时区，设置您希望实体更新的日期和时间。
+如果您想使其成为可重复操作，请选中重复框。从出现的下拉菜单中，选择更新将发生的频率。
+选择每周更新时，您应该选中您希望更新发生的日期。
+基于计时器的更新允许您设置频率：小时、分钟或秒，以及数值。
+此外，您需要设置重复完成的时间。
+
+4. 设置配置参数和计划时间后，单击“创建”按钮。
+您可以通过单击其名称旁边的相应按钮来编辑创建的调度程序事件或删除它们。
+在编辑调度程序事件对话框中，您可以配置方法和参数。
+
 {% include images-gallery.html imageCollection="fw-scheduler" %}
 
-In the calendar, you are able to change its view type by choosing the preferred one in the drop-down menu. To edit or delete a scheduler event, click on it.
+在日历中，您可以通过在下拉菜单中选择首选的视图类型来更改其视图类型。要编辑或删除调度程序事件，请单击它。
 
 {% include images-gallery.html imageCollection="fw-calendar" %}

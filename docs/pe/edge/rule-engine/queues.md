@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-pe-edge
-title: Queues
-description: Queues
+title: 队列
+description: 队列
 ---
 
 {% assign docsPrefix = "pe/edge/" %}

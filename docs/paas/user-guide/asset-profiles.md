@@ -2,8 +2,8 @@
 layout: docwithnav-paas
 assignees:
 - ikulikov
-title: Asset Profiles
-description: IoT asset profiles
+title: 资产配置文件
+description: IoT 资产配置文件
 redirect_from: "/docs/paas/user-guide/ui/asset-profiles"
 
 ---

@@ -1,13 +1,12 @@
-
-Also we can change the period of the blinking using [shared attribute](/docs/{{page.docsPrefix}}user-guide/attributes/#shared-attributes) update functionality.    
+我们还可以使用 [共享属性](/docs/{{page.docsPrefix}}user-guide/attributes/#shared-attributes) 更新功能来更改闪烁周期。
 
 {% assign updateLedBlinkingPeriod = '
     ===
         image: /images/devices-library/basic/microcontrollers/dashboard/thingsboard-example-dashboard-change-blinking-mode-1.png,
-        title: To change period of the blinking we just need to change the value on our dashboard.
+        title: 要更改闪烁周期，我们只需要更改仪表板上的值。
     ===
         image: /images/devices-library/basic/microcontrollers/dashboard/thingsboard-example-dashboard-blinking-interval-change.png,
-        title: After applying by pressing check mark you will see a confirmation message.
+        title: 通过按复选标记应用后，您将看到一条确认消息。
 '
 %} 
 
@@ -16,24 +15,25 @@ Also we can change the period of the blinking using [shared attribute](/docs/{{p
 {% assign updateLedState= '
     ===
         image: /images/devices-library/basic/microcontrollers/dashboard/thingsboard-example-dashboard-change-blinking-mode-0.png,
-        title: It can be done only when the blinking mode is disabled.
+        title: 仅当闪烁模式已禁用时才能执行此操作。
 '
 %}
 
-In order to change state when blinking is disabled - we can use the switch in the same widget:  
+为了在禁用闪烁时更改状态，我们可以使用同一个微件中的开关：
 
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=updateLedState %}
 
 {% if boardLedCount == 0 %}
 
-Unfortunately, this board doesn't have built-in LED indicator that we can control.  
-So you can check results of shared attribute change using Serial Monitor (**Tools** -> **Serial monitor**) and choose a baud rate 115200.  
+很遗憾，此板没有我们可以控制的内置 LED 指示灯。
+因此，您可以使用串行监视器（**工具** -> **串行监视器**）检查共享属性更改的结果，并选择波特率 115200。
 
 {% endif %}
 
-To reach this, we have a variable "blinkingInterval" used in the following parts of the code:  
-- Callback for shared attributes update:  
-    
+为了实现这一点，我们在代码的以下部分中使用了一个变量“blinkingInterval”：
+
+- 共享属性更新的回调：
+
 ```cpp
 ...
 
@@ -61,8 +61,8 @@ const Shared_Attribute_Callback attributes_callback(SHARED_ATTRIBUTES_LIST.cbegi
 ...
 ```
 
-- Subscribing for shared attributes update:  
-    
+- 订阅共享属性更新：
+
 ```cpp
 ...
     if (!tb.Shared_Attributes_Request(attribute_shared_request_callback)) {
@@ -72,8 +72,8 @@ const Shared_Attribute_Callback attributes_callback(SHARED_ATTRIBUTES_LIST.cbegi
 ...
 ```
 
-- Part of code to blink:  
-    
+- 闪烁的代码部分：
+
 ```cpp
 ...
 
@@ -96,17 +96,17 @@ const Shared_Attribute_Callback attributes_callback(SHARED_ATTRIBUTES_LIST.cbegi
 {% assign updateLedColor = '
     ===
         image: /images/devices-library/basic/microcontrollers/dashboard/thingsboard-example-dashboard-change-led-color.png,
-        title: You can update the color of the led on the board, using the widget on ThingsBoard dashboard. 
+        title: 您可以使用 ThingsBoard 仪表板上的微件更新板上 LED 的颜色。
 '
 %}
 
-Such as the board has included RGB LED we can control it color.  
+由于该板包含 RGB LED，因此我们可以控制其颜色。
 
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=updateLedColor %}
 
-To control the led we change "ledColor" shared attribute. It contains RGB values in the following string format "R,G,B". 
+要控制 LED，我们更改“ledColor”共享属性。它包含以下字符串格式的 RGB 值“R,G,B”。
 
-The following part of the code used to parse incoming values and save them:  
+代码的以下部分用于解析传入的值并保存它们：
 
 ```cpp
 ...
@@ -147,7 +147,7 @@ if (strcmp(it->key().c_str(), LED_COLOR_ATTR) == 0) {
 ...
 ```
 
-To set the color of the LED we use the following function in the code:  
+为了设置 LED 的颜色，我们在代码中使用以下函数：
 
 ```cpp
 ...
@@ -181,19 +181,20 @@ void setLedColor() {
 {% assign updateTextOnDisplay = '
     ===
         image: /images/devices-library/basic/microcontrollers/dashboard/thingsboard-example-dashboard-update-oled-screen.png,
-        title: Put text to the input box and apply changes. Text also will be displayed in the field above.
+        title: 将文本放入输入框并应用更改。文本还将显示在上面的字段中。
 '
 %}
 
-Also, you can change text on the display. To do this you can change **screenText** shared attribute or using the example dashboard.  
+此外，您还可以更改显示屏上的文本。为此，您可以更改 **screenText** 共享属性或使用示例仪表板。
 
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=updateTextOnDisplay %}
 
-You can use the following special symbols:  
-- **\n** - new line.
-- **\t** - four spaces.
+您可以使用以下特殊符号：
 
-To connect OLED display we use the following code parts (We have an I2C line, connected to pins **5** and **4** on the board):  
+- **\n** - 新行。
+- **\t** - 四个空格。
+
+为了连接 OLED 显示屏，我们使用以下代码部分（我们有一条 I2C 线，连接到板上的引脚 **5** 和 **4**）：
 
 ```cpp
 ...
@@ -206,7 +207,8 @@ if(!display.begin(SSD1306_SWITCHCAPVCC, 0x3C, false, false)) {
 ...
 ```
 
-To process incoming text and handle special symbols we use the following code:  
+为了处理传入的文本和处理特殊符号，我们使用以下代码：
+
 ```cpp
 ...
 if (strcmp(it->key().c_str(), SCREEN_TEXT_ATTR) == 0) {
@@ -218,7 +220,8 @@ if (strcmp(it->key().c_str(), SCREEN_TEXT_ATTR) == 0) {
 ...
 ```
 
-To display incoming test on display we use the following part of code:  
+为了在显示屏上显示传入的测试，我们使用以下代码部分：
+
 ```cpp
 ...
 
@@ -237,4 +240,4 @@ To display incoming test on display we use the following part of code:
 
 {% endif %}
 
-You can change the logic to reach your goals and add processing for your attributes.  
+您可以更改逻辑以实现您的目标并添加对属性的处理。

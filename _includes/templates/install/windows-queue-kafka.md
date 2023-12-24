@@ -1,16 +1,16 @@
 {% include templates/install/queue-kafka-in-docker.md %}
 
-##### ThingsBoard Configuration
+##### ThingsBoard 配置
 
-Open the Notepad or other editor as administrator user (right click on the app icon and select "Run as administrator").  
-Open the following file for editing (select "All Files" instead of "Text Documents" in file choosing dialog, the encoding is UTF-8):
+以管理员用户身份打开记事本或其他编辑器（右键单击应用程序图标并选择“以管理员身份运行”）。
+打开以下文件进行编辑（在文件选择对话框中选择“所有文件”而不是“文本文档”，编码为 UTF-8）：
 
 ```text 
 C:\Program Files (x86)\thingsboard\conf\thingsboard.yml
 ``` 
 {: .copy-code}
 
-and locate "queue:" block. Make sure the queue type is "kafka", and **don't forget** to replace "localhost:9092" with your real Kafka bootstrap servers:
+并找到“queue:”块。确保队列类型为“kafka”，**不要忘记**将“localhost:9092”替换为您的真实 Kafka 引导服务器：
 
 ```yml
 queue:

@@ -1,44 +1,44 @@
 ---
 layout: docwithnav-pe-edge
-title: Edge Integrations
-description: Edge Integrations Documentation
+title: 边缘集成
+description: 边缘集成文档
 converterTemplateCreation:
     0:
         image: /images/pe/edge/integrations/create-converter-step-1.png
-        title: 'Create Converter template'
+        title: '创建转换器模板'
     1:
         image: /images/pe/edge/integrations/create-converter-step-2.png
-        title: 'Converter template configuration'
+        title: '转换器模板配置'
 
 integrationTemplateCreation:
     0:
         image: /images/pe/edge/integrations/create-integration-step-1.png
-        title: 'Create Integration template'
+        title: '创建集成模板'
     1:
         image: /images/pe/edge/integrations/create-integration-step-2.png
-        title: 'Integration template configuration'
+        title: '集成模板配置'
 
 placeholderFeature:
     0:
         image: /images/pe/edge/integrations/placeholder-feature-step-1.png
-        title: 'Add <b>ipAddress</b> attribute to Edge'
+        title: '向边缘添加<b>ipAddress</b>属性'
     1:
         image: /images/pe/edge/integrations/placeholder-feature-step-2.png
-        title: 'Add placeholder <b>${{ipAddress}}</b> to Integration configuration'
+        title: '向集成配置中添加占位符<b>${{ipAddress}}</b>'
     2:
         image: /images/pe/edge/integrations/placeholder-feature-step-3.png
-        title: 'Click <b>Manage Integrations</b> button of Edge entity'
+        title: '单击边缘实体的<b>管理集成</b>按钮'
     3:
         image: /images/pe/edge/integrations/placeholder-feature-step-4.png
-        title: 'Assign Integration to the Edge'
+        title: '将集成分配给边缘'
     4:
         image: /images/pe/edge/integrations/placeholder-feature-step-5.png
-        title: 'Login to your <b>ThingsBoard Edge</b> instance and open Integrations page - placeholder is going to be replaced by attribute value'
+        title: '登录到您的<b>ThingsBoard Edge</b>实例并打开集成页面 - 占位符将被属性值替换'
 
 missingPlaceholder:
     0:
         image: /images/pe/edge/integrations/missing-placeholder.png
-        title: 'Add ipAddress attribute to Edge'
+        title: '向边缘添加ipAddress属性'
 
 ---
 
@@ -50,105 +50,105 @@ missingPlaceholder:
 
 {% include templates/edge/integrations/edge-pe-reference.md %}
 
-### Overview
+### 概述
 
-Edge Integrations feature was designed in a similar way as Platform Integrations. The only major difference is in the way how integrations and converters are configured. 
+边缘集成功能的设计方式与平台集成类似。唯一的主要区别在于集成和转换器的配置方式。
 
-To reuse same Integration between multiple Edges, **Integration templates** and **Converter templates** approach was introduced. 
+为了在多个边缘之间重用相同的集成，引入了**集成模板**和**转换器模板**方法。
 
-Integration templates are created on the Cloud, but these templates are not regular Platform Integrations and *not started* on the cloud. 
-They are assigned to the Edge and *started* once they are provisioned to the Edge.
+集成模板在云端创建，但这些模板不是常规的平台集成，并且*未在云端启动*。
+它们被分配给边缘，并在配置到边缘后*启动*。
 
-At the moment Integrations and Converters can not be modified on the Edge - they are modified on the Cloud and all the modifications automatically propagated to the Edge from the Cloud.
+目前，集成和转换器无法在边缘上修改 - 它们在云端修改，所有修改都会从云端自动传播到边缘。
 
-Integration configurations fields (URIs, passwords, etc.) could be replaced by Edge attribute value with a help of placeholders. 
-In this way, single Integration template could be used by multiple Edges, and any specific configuration field of the Integration could be replaced by Edge attribute value.
+集成配置字段（URI、密码等）可以通过占位符替换为边缘属性值。
+通过这种方式，单个集成模板可以被多个边缘使用，并且集成的任何特定配置字段都可以被边缘属性值替换。
 
-### Deployment options
+### 部署选项
 
-ThingsBoard Integration has two deployment options: embedded and remote. See details and architecture diagrams below.
+ThingsBoard 集成具有两种部署选项：嵌入式和远程。请参阅下面的详细信息和架构图。
 
-#### Embedded integrations
+#### 嵌入式集成
 
-Embedded integration is running in the main ThingsBoard Edge process. 
+嵌入式集成在主 ThingsBoard Edge 进程中运行。
 
-Pros:
-* simplifies deployment of new integration (just few clicks on ThingsBoard UI);
-* minimize latency for message delivery;
+优点：
+* 简化新集成的部署（只需在 ThingsBoard UI 上单击几下）；
+* 最大限度地减少消息传递的延迟；
 
-Cons:
-* consume resources allocated to main ThingsBoard Edge process: network connections, OS threads and CPU cycles;
-* low level of isolation;
+缺点：
+* 消耗分配给主 ThingsBoard Edge 进程的资源：网络连接、操作系统线程和 CPU 周期；
+* 低隔离级别；
 
 <object width="60%" data="/images/user-guide/integrations/embeded-integrations-overview.svg"></object>
 
-#### Remote integrations
+#### 远程集成
 
-One can install remote integration in the local network and stream data to the edge over network.
+可以在本地网络中安装远程集成，并通过网络将数据流式传输到边缘。
 
-Let's assume you have local MQTT broker or OPC-UA server deployed on-premises.
-Those brokers and/or servers don't have dedicated external IP address, so ThingsBoard Edge can't connect to them directly.
-However, you can install remote integration close to this edge, in the same local network.
-This integration will connect to the broker/edge, pull the data and store it in the local file system.
-Remote integration will stream the data to the ThingsBoard Edge deployed in the network once the network connection is available.
+假设您在本地部署了本地 MQTT 代理或 OPC-UA 服务器。
+这些代理和/或服务器没有专用的外部 IP 地址，因此 ThingsBoard Edge 无法直接连接到它们。
+但是，您可以在同一本地网络中在该边缘附近安装远程集成。
+此集成将连接到代理/边缘，提取数据并将其存储在本地文件系统中。
+一旦网络连接可用，远程集成就会将数据流式传输到网络中部署的 ThingsBoard Edge。
 
-Pros:
-* enables integration with servers deployed in the local network;
-* isolates the integration process from main ThingsBoard Edgeprocess;
+优点：
+* 支持与在本地网络中部署的服务器集成；
+* 将集成过程与主 ThingsBoard Edge 进程隔离；
 
-Cons:
-* requires installation of a separate package;
+缺点：
+* 需要安装单独的软件包；
 
-Learn how to configure integration to run remotely using [this guide](/docs/pe/edge/user-guide/integrations/remote-integrations).
+了解如何使用[本指南](/docs/pe/edge/user-guide/integrations/remote-integrations)配置集成以远程运行。
 
 <object width="70%" data="/images/user-guide/integrations/remote-integrations-overview.svg"></object>
 
-### Converter templates
+### 转换器模板
 
-Converter templates could be created only by Tenant administrator. 
-Go to Cloud and navigate to **Edge management -> Converter templates** page.
-This page allows you to create Converter template. These Converter templates are going to be used later in Integration templates configuration.
+转换器模板只能由租户管理员创建。
+转到云端并导航到**边缘管理 -> 转换器模板**页面。
+此页面允许您创建转换器模板。这些转换器模板将在以后的集成模板配置中使用。
 
 {% include images-gallery.html imageCollection="converterTemplateCreation" %}
 
-You do not need to assign Converter templates to the Edge - once Integration template is assigned to specific Edge, related Uplink/Downlink Converters are provisioned to the Edge automatically.
+您无需将转换器模板分配给边缘 - 一旦集成模板分配给特定边缘，相关上行/下行转换器就会自动配置到边缘。
 
-### Integration templates
+### 集成模板
 
-Once Converter template was created you can navigate to **Edge management -> Integration templates** page to create Integration.
-This page allows you to create Integration template. These Integration templates are going to be assigned to the Edge.
+创建转换器模板后，您可以导航到**边缘管理 -> 集成模板**页面以创建集成。
+此页面允许您创建集成模板。这些集成模板将分配给边缘。
 
 {% include images-gallery.html imageCollection="integrationTemplateCreation" %}
 
-#### Integration configuration placeholders
+#### 集成配置占位符
 
-In most of the cases, Integration have common configuration part for most of the Edges, except some specific field(s).
-To be able to use the same Integration template for multiple Edges, with some unique values between Edges, placeholders feature could be used.
-You are able to add specific attributes to the Edge, and then use name of this attribute in the Integration template.
-This placeholder is going to be replaced by attribute value during the assignment to the Edge.
+在大多数情况下，集成对大多数边缘都有通用的配置部分，除了某些特定字段。
+为了能够将相同的集成模板用于多个边缘，并在边缘之间使用一些唯一值，可以使用占位符功能。
+您能够向边缘添加特定属性，然后在集成模板中使用此属性的名称。
+此占位符将在分配给边缘期间替换为属性值。
 
-Let's see on example how HTTP Integration could be configured with unique IP Address value per Edge as 'Base URL'.
+让我们看一个示例，说明如何将 HTTP 集成配置为每个边缘的唯一 IP 地址值作为“基本 URL”。
 
 {% include images-gallery.html imageCollection="placeholderFeature" showListImageTitles="true" %}
 
-You can assign this Integration template to other Edge entities, and every Integration on the Edge is going to have it's unique **'Base URL'** value, that is replaced by attribute value.
+您可以将此集成模板分配给其他边缘实体，并且边缘上的每个集成都将具有其唯一的**“基本 URL”**值，该值由属性值替换。
 
-If specific Edge is missing placeholder attribute key, Platform will notify regarding it during the assignment to Edge or Integration configuration update:
+如果特定边缘缺少占位符属性键，平台将在分配给边缘或集成配置更新期间通知它：
 
 {% include images-gallery.html imageCollection="missingPlaceholder" %}
 
-### Edge limitations
+### 边缘限制
 
-In the current version, Edge is not able to create customers, device profiles and entity groups. 
-These limitations affect Uplink Data converter functionality:
+在当前版本中，Edge 无法创建客户、设备配置文件和实体组。
+这些限制会影响上行数据转换器功能：
 
-* If non-existent device type used in the Converter, **'default'** device type will be used.
-* Same applies to the customer - if customer is not available on the Edge, device will be assigned to Tenant.
-* If entity group non-exists on the edge - 'All' group is going to be used.
+* 如果转换器中使用了不存在的设备类型，则将使用**“默认”**设备类型。
+* 同样适用于客户 - 如果客户在边缘上不可用，则设备将分配给租户。
+* 如果实体组在边缘上不存在 - 将使用“全部”组。
 
-### See Also
+### 另请参阅
 
-Explore guides and video tutorials related to specific integrations:
+探索与特定集成相关的指南和视频教程：
 
  - [HTTP](/docs/pe/edge/user-guide/integrations/http/)
  - [MQTT](/docs/pe/edge/user-guide/integrations/mqtt/)
@@ -157,11 +157,7 @@ Explore guides and video tutorials related to specific integrations:
  - [TCP](/docs/pe/edge/user-guide/integrations/tcp/)
  - [UDP](/docs/pe/edge/user-guide/integrations/udp/)
  
-## Next steps
+## 后续步骤
 
 {% assign docsPrefix = "pe/edge/" %}
 {% include templates/edge/guides-banner-edge.md %}
-
-
-
-

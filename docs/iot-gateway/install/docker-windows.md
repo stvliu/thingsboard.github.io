@@ -1,119 +1,119 @@
 ---
 layout: docwithnav-gw
-title: Install ThingsBoard IoT Gateway using Docker.
-redirect_from: 
+title: 使用 Docker 在 Windows 上安装 ThingsBoard IoT 网关。
+redirect_from:
  - "/docs/iot-gateway/install/windows/"
 ---
 
 * TOC
 {:toc}
 
-This guide will help you to install and start ThingsBoard Gateway using Docker on Windows.
+本指南将帮助您在 Windows 上使用 Docker 安装并启动 ThingsBoard 网关。
 
 
-## Prerequisites
+## 先决条件
 
-- [Install Docker Toolbox for Windows](https://docs.docker.com/toolbox/toolbox_install_windows/)
+- [为 Windows 安装 Docker Toolbox](https://docs.docker.com/toolbox/toolbox_install_windows/)
 
-## Running
+## 运行
 
-Click the Docker QuickStart icon to launch a pre-configured Docker Toolbox terminal.
+单击 Docker QuickStart 图标以启动预先配置的 Docker Toolbox 终端。
 
-Make sure your have [logged in](https://docs.docker.com/engine/reference/commandline/login/) to docker hub using command line.
+确保您已使用命令行[登录](https://docs.docker.com/engine/reference/commandline/login/)到 Docker 中心。
 
-**Execute the following command to run this docker directly:**
+**执行以下命令直接运行此 Docker：**
 
 ```
 docker run -it -v %HOMEPATH%\tb-gateway\config:/thingsboard_gateway/config -v %HOMEPATH%\tb-gateway\extensions:/thingsboard_gateway/extensions -v %HOMEPATH%\tb-gateway\logs:/thingsboard_gateway/logs --name tb-gateway --restart always thingsboard/tb-gateway
 ```
 {: .copy-code}
 
-Where: 
-    
-- `docker run`              - run this container
-- `-it`                     - attach a terminal session with current Gateway process output
-- `-v %HOMEPATH%\tb-gateway\config:/thingsboard_gateway/config`   - mounts the host's dir `%HOMEPATH%\tb-gateway\config` to Gateway config  directory
-- `-v %HOMEPATH%\tb-gateway\extensions:/thingsboard_gateway/extensions`   - mounts the host's dir `%HOMEPATH%\tb-gateway\extensions` to Gateway extensions  directory
-- `-v %HOMEPATH%\tb-gateway\logs:/thingsboard_gateway/logs`   - mounts the host's dir `%HOMEPATH%\tb-gateway\logs` to Gateway logs  directory
-- `--name tb-gateway`             - friendly local name of this machine
-- `--restart always`        - automatically start ThingsBoard in case of system reboot and restart in case of failure.
-- `thingsboard/tb-gateway`          - docker image
-- `$HOME`   - current user's home dir(`%HomePath%`)
+其中：
+
+- `docker run` - 运行此容器
+- `-it` - 使用当前网关进程输出附加终端会话
+- `-v %HOMEPATH%\tb-gateway\config:/thingsboard_gateway/config` - 将主机的目录 `%HOMEPATH%\tb-gateway\config` 挂载到网关配置目录
+- `-v %HOMEPATH%\tb-gateway\extensions:/thingsboard_gateway/extensions` - 将主机的目录 `%HOMEPATH%\tb-gateway\extensions` 挂载到网关扩展目录
+- `-v %HOMEPATH%\tb-gateway\logs:/thingsboard_gateway/logs` - 将主机的目录 `%HOMEPATH%\tb-gateway\logs` 挂载到网关日志目录
+- `--name tb-gateway` - 此计算机的友好本地名称
+- `--restart always` - 在系统重新启动时自动启动 ThingsBoard，并在发生故障时重新启动。
+- `thingsboard/tb-gateway` - Docker 镜像
+- `$HOME` - 当前用户的 home 目录（`%HomePath%`）
 
 
-## Running (with ENV variables)
+## 运行（使用 ENV 变量）
 
-**Execute the following command to run docker container with ENV variables:**
+**执行以下命令以使用 ENV 变量运行 Docker 容器：**
 
 ```
 docker run -it -e host=thingsboard.cloud -e port=1883 -e accessToken=ACCESS_TOKEN -v %HOMEPATH%\tb-gateway\config:/thingsboard_gateway/config -v %HOMEPATH%\tb-gateway\extensions:/thingsboard_gateway/extensions -v %HOMEPATH%\tb-gateway\logs:/thingsboard_gateway/logs --name tb-gateway --restart always thingsboard/tb-gateway
 ```
 {: .copy-code}
 
-Available  ENV variables:
+可用的 ENV 变量：
 
-| **ENV**     | **Description**                |
-|:-|-
-| host        | ThingsBoard instance host.     |
-| port        | ThingsBoard instance port.     |
-| accessToken | Gateway access token.          |
-| caCert      | Path to CA file.               |
-| privateKey  | Path to private key file.      |
-| cert        | Path to certificate file.      |
+| **ENV** | **说明** |
+|:-|-|
+| host | ThingsBoard 实例主机。 |
+| port | ThingsBoard 实例端口。 |
+| accessToken | 网关访问令牌。 |
+| caCert | CA 文件的路径。 |
+| privateKey | 私钥文件的路径。 |
+| cert | 证书文件的路径。 |
 |--
 
-## Detaching, stop and start commands
+## 分离、停止和启动命令
 
-You can detach from session terminal with `Ctrl-p` `Ctrl-q` - the container will keep running in the background.
+您可以使用 `Ctrl-p` `Ctrl-q` 从会话终端分离 - 容器将继续在后台运行。
 
-To reattach to the terminal (to look at Gateway logs) run:
+要重新连接到终端（查看网关日志），请运行：
 
 ```
 docker attach tb-gateway
 ```
 {: .copy-code}
 
-To stop the container:
+要停止容器：
 
 ```
 docker stop tb-gateway
 ```
 {: .copy-code}
 
-To start the container:
+要启动容器：
 
 ```
 docker start tb-gateway
 ```
 {: .copy-code}
 
-## Gateway configuration
+## 网关配置
 
-Stop the container:
+停止容器：
 
 ```
 docker stop tb-gateway
 ```
 {: .copy-code}
 
-Open the directory with configuration files:
+打开包含配置文件的目录：
 
 `%HOMEPATH%\tb-gateway\config`
 
 
-**Configure gateway to work with your instance of ThingsBoard, using [this guide](/docs/iot-gateway/configuration/):**
+**使用[本指南](/docs/iot-gateway/configuration/)配置网关以与您的 ThingsBoard 实例配合使用：**
 
 
-Start the container after made changes:
+在进行更改后启动容器：
 
 ```
 docker start tb-gateway
 ```
 {: .copy-code}
 
-## Upgrading
+## 升级
 
-In order to update to the latest image, execute the following commands:
+为了更新到最新镜像，请执行以下命令：
 
 ```
 $ docker pull thingsboard/tb-gateway
@@ -122,11 +122,11 @@ $ docker rm tb-gateway
 $ docker run -it -v %HOMEPATH%\tb-gateway\config:/thingsboard-gateway/config -v %HOMEPATH%\tb-gateway\extensions:/var/lib/thingsboard_gateway/extensions -v %HOMEPATH%\tb-gateway\logs:/var/log/thingsboard-gateway --name tb-gateway --restart always thingsboard/tb-gateway
 ```
 
-## Build local docker image
+## 构建本地 Docker 镜像
 
-In order to build local docker image, follow the next steps:
+为了构建本地 Docker 镜像，请按照以下步骤操作：
 
-1. Copy **thingsboard_gateway/** folder to **docker/** folder, so the final view of the directory structure will look like:
+1. 将 **thingsboard_gateway/** 文件夹复制到 **docker/** 文件夹，以便目录结构的最终视图如下所示：
     ```text
     /thingsboard-gateway/docker
             thingsboard_gateway/
@@ -136,7 +136,7 @@ In order to build local docker image, follow the next steps:
             setup.py
             requirements.txt
     ```
-2. From project root folder execute the following command:
+2. 从项目根文件夹执行以下命令：
     ```bash
     docker build -t local-gateway docker
     ```

@@ -1,39 +1,37 @@
-
 * TOC
 {:toc}
 
-## Overview
+## 概述
 
-Since ThingsBoard 3.2, a System Administrator is able to configure common settings for multiple tenants using Tenant Profiles. 
-Each Tenant has the one and only profile at a single point in time.
+自 ThingsBoard 3.2 起，系统管理员能够使用租户配置文件为多个租户配置通用设置。
+每个租户在某个时间点只有一个配置文件。
 
-Let's review the settings available in the tenant profile, one-by-one.
- 
-## Entity Limits
+让我们逐一查看租户配置文件中可用的设置。
 
-This group of settings allows the System Administrator to configure a maximum number of entities that each Tenant is able to create.
+## 实体限制
 
-**ThingsBoard Community** edition supports limits for the following entities: devices, assets, customers, users, dashboards, and rule chains.
+这组设置允许系统管理员配置每个租户能够创建的最大实体数。
 
-**ThingsBoard Professional** edition supports limits for everything listed above and as well additional constraint support for the following entities: integrations, converters, and scheduler events.
+**ThingsBoard Community** 版本支持以下实体的限制：设备、资产、客户、用户、仪表板和规则链。
+
+**ThingsBoard Professional** 版本支持上述所有内容的限制，以及以下实体的额外约束支持：集成、转换器和调度程序事件。
 
 {% include images-gallery.html imageCollection="entityLimits" %}
- 
-## API Limits & Usage
 
-This group of settings allows a System Administrator to configure a maximum number of messages, API calls, etc., per month that each Tenant would like to perform. 
-ThingsBoard constantly collects and analyzes statistics about API Usage. The typical update interval of the statistics is 1 minute
+## API 限制和使用情况
 
-ThingsBoard tracks API usage for six main components: Transport, Rule Engine, JS functions, Telemetry persistence, Email, and SMS services. The platform will disable the component if one of the related API Limits reaches a threshold. 
-For example, if Tenant devices produce more than 100M messages per a month, the platform will disable all connections for devices that belong to this Tenant. 
-When the API usage is disabled or reaches a certain threshold (typically 80%) ThingsBoard will notify the Tenant Administrator via email.  
+这组设置允许系统管理员配置每个租户每月可以执行的最大消息数、API 调用数等。ThingsBoard 会持续收集和分析有关 API 使用情况的统计信息。统计信息的典型更新间隔为 1 分钟
 
-Let's review each limit separately:
+ThingsBoard 会跟踪六个主要组件的 API 使用情况：传输、规则引擎、JS 函数、遥测持久性、电子邮件和短信服务。如果其中一个相关的 API 限制达到阈值，平台会禁用该组件。
+例如，如果租户设备每月产生超过 1 亿条消息，平台会禁用属于此租户的所有设备的连接。
+当 API 使用情况被禁用或达到某个阈值（通常为 80%）时，ThingsBoard 会通过电子邮件通知租户管理员。
 
-**Transport Messages** means any message that your device sends to the server. This may be telemetry, attribute update, RPC call, etc.
+让我们分别查看每个限制：
 
-**Transport Data Points** means a number of the Key-Value pairs that your telemetry or attribute messages contain. 
-For example, the message listed below contains 5 data points, because the “jsonKey” corresponds to one data point.  
+**传输消息**是指设备发送到服务器的任何消息。这可能是遥测、属性更新、RPC 调用等。
+
+**传输数据点**是指遥测或属性消息包含的键值对数。
+例如，下面列出的消息包含 5 个数据点，因为“jsonKey”对应一个数据点。
 
 ```json
 {
@@ -49,69 +47,66 @@ For example, the message listed below contains 5 data points, because the “jso
 }
 ```
 
-**Note**: If the value of a String or JSON key is larger than 512 characters, the platform will count it as multiple data points. 
-  
-**Rule Engine executions** mean any execution of the rule node that belongs to the current Tenant. Processing of a single telemetry message may cause multiple Rule Engine executions. 
-The platform will also count periodic messages produced by Generator nodes, etc.
+**注意**：如果字符串或 JSON 键的值大于 512 个字符，平台会将其计为多个数据点。
 
-**JavaScript executions** mean any execution of the custom function defined by Tenant Administrators. For example, processing of the “Script” filter or a transformation node, an invocation of the data converter, etc.       
+**规则引擎执行**是指属于当前租户的规则节点的任何执行。处理单个遥测消息可能会导致多个规则引擎执行。
+平台还会计算由生成器节点等产生的定期消息。
 
-**Data points storage days** are calculated for all time-series data points that are stored in the database. 
-Platform multiplies the number of data points by the number of days those data points will be stored. The TTL parameter is used to extract the number of days to store the data. 
-For example, if you store 3 data points for 30 days, this is 90 storage data point days.
-A System Administrator is able to configure default TTL using the "**Default Storage TTL Days**" parameter in the tenant profile.
-A Tenant Administrator is able to overwrite default TTL using the "**Save Timeseries**" ule node configuration or using the “TTL” parameter in the post telemetry request.
+**JavaScript 执行**是指租户管理员定义的自定义函数的任何执行。例如，处理“脚本”过滤器或转换节点、调用数据转换器等。
 
-**Alarms TTL** means how many days to store alarms in the database.
+**数据点存储天数**是针对存储在数据库中的所有时间序列数据点计算的。
+平台将数据点数量乘以这些数据点将存储的天数。TTL 参数用于提取存储数据的日期数。
+例如，如果您将 3 个数据点存储 30 天，则这是 90 个存储数据点天。
+系统管理员能够使用租户配置文件中的“**默认存储 TTL 天数**”参数配置默认 TTL。
+租户管理员能够使用“**保存时序**”规则节点配置或使用发布遥测请求中的“TTL”参数覆盖默认 TTL。
 
-**Alarms sent** means the total number of alarms created per the period (one month by default).
+**警报 TTL**是指在数据库中存储警报的天数。
 
-**Emails sent** means the number of emails that are sent from the rule engine using system SMTP provider (settings). 
-Please note that the Tenant Administrator is able to define custom SMTP settings in both Community and Professional Editions of the platform. 
-Emails sent with custom SMTP settings do not affect API limits.  
+**发送的警报**是指在该期间（默认情况下为一个月）内创建的警报总数。
 
-**SMS sent** means the number of SMSes that are sent from the rule engine using the system SMS provider. 
-Please note that the Tenant Administrator is able to define custom SMS provider settings in both Community and Professional Editions of the platform. 
-SMS sent with custom SMTP settings do not affect API limits.
+**发送的电子邮件**是指使用系统 SMTP 提供程序（设置）从规则引擎发送的电子邮件数。
+请注意，租户管理员能够在平台的社区版和专业版中定义自定义 SMTP 设置。
+使用自定义 SMTP 设置发送的电子邮件不会影响 API 限制。
 
-### API Usage dashboard
+**发送的短信**是指使用系统短信提供程序从规则引擎发送的短信数。
+请注意，租户管理员能够在平台的社区版和专业版中定义自定义短信提供程序设置。
+使用自定义 SMTP 设置发送的短信不会影响 API 限制。
 
-As a Tenant Administrator, you can review the API Usage dashboard. 
-The dashboard below allows Tenant Administrators to learn more about their hourly/daily/monthly API usage and instantly review the status of the API limits. 
+### API 使用情况仪表板
+
+作为租户管理员，您可以查看 API 使用情况仪表板。
+下面的仪表板允许租户管理员详细了解他们的每小时/每天/每月的 API 使用情况，并即时查看 API 限制的状态。
 
 {% include images-gallery.html imageCollection="apiLimitsDashboard" %}
 
-## Rate Limits
+## 速率限制
 
-This group of settings allows a System Administrator to configure a maximum number of
-requests the platform should process for a specific device (device-level) or for all devices belonging to a single tenant (tenant-level).
-The implementation of rate limits is based on the [token bucket](https://en.wikipedia.org/wiki/Token_bucket) algorithm.
+这组设置允许系统管理员配置平台应为特定设备（设备级）或属于单个租户的所有设备（租户级）处理的最大请求数。
+速率限制的实现基于[令牌桶](https://en.wikipedia.org/wiki/Token_bucket)算法。
 
-The rate limit definition consists of the value and time interval. For example, "1000:60" means "no more than 1000 messages per 60 seconds". 
-You can define multiple intervals with ",". For example, "100:1,1000:60" means "bursts of 100 messages per second but no more than 1000 times per 60 seconds".
+速率限制定义由值和时间间隔组成。例如，“1000:60”表示“每 60 秒不超过 1000 条消息”。
+您可以用“,”定义多个间隔。例如，“100:1,1000:60”表示“每秒 100 条消息的突发，但每 60 秒不超过 1000 次”。
 
 {% include images-gallery.html imageCollection="rateLimits" %}
 
-## Processing in isolated ThingsBoard Rule Engine queues
+## 在隔离的 ThingsBoard 规则引擎队列中处理
 
-ThingsBoard Rule Engine is the main "worker" in the cluster and is responsible for processing incoming messages.
+ThingsBoard 规则引擎是集群中的主要“工作器”，负责处理传入的消息。
 
-By default, all messages (such as telemetry, connectivity, and lifecycle events) are pushed to the same message queue/topic (powered by Kafka, RabbitMQ, AWS SQS, Azure Service Bus, Google Pub/Sub).
-ThingsBoard pushes messages for all Tenants to a common queue when isolated processing is disabled (default). 
+默认情况下，所有消息（例如遥测、连接和生命周期事件）都会推送到相同的消息队列/主题（由 Kafka、RabbitMQ、AWS SQS、Azure Service Bus、Google Pub/Sub 提供支持）。
+当隔离处理被禁用（默认）时，ThingsBoard 会将所有租户的消息推送到一个公共队列。
 
-ThingsBoard pushes messages to a separate queue when you select processing to be isolated for a particular tenant. 
-This provides a better level of isolation for those tenants. You need to create tenant profile with enabled "Use isolated ThingsBoard Rule Engine queues" box 
-and assign for a particular Tenant, or update existing tenant profile. 
-This will instruct Rule Engine to subscribe to specific message queue topics that contain data for corresponding tenants.
+当您选择将处理隔离到特定租户时，ThingsBoard 会将消息推送到单独的队列。
+这为这些租户提供了更好的隔离级别。您需要创建启用了“使用隔离的 ThingsBoard 规则引擎队列”框的租户配置文件，并将其分配给特定租户，或更新现有的租户配置文件。
+这将指示规则引擎订阅包含相应租户数据的特定消息队列主题。
 
-You might as well set up a separate Rule Engine instance that will be responsible for tenants of specific tenant profiles only.
-See [configuration parameters](/docs/user-guide/install/config/#thingsboard-service-parameters).
+您也可以设置一个单独的规则引擎实例，该实例仅负责特定租户配置文件的租户。
+请参阅[配置参数](/docs/user-guide/install/config/#thingsboard-service-parameters)。
 
-### Queue configuration for isolated tenants
+### 隔离租户的队列配置
 
 {% include images-gallery.html imageCollection="isolatedQueueConfiguration" showListImageTitles="true"%}
 
-After assigning tenant profile for a particular tenant configured queues automatically created and started, and ready
-for using in rule chain or device profile.
+为特定租户分配租户配置文件后，配置的队列会自动创建并启动，并准备好用于规则链或设备配置文件。
 
-More about queue settings in [guide](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/#queue-settings)
+有关队列设置的更多信息，请参阅[指南](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/#queue-settings)

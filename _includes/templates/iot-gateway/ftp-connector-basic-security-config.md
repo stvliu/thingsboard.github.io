@@ -1,16 +1,15 @@
+一种安全配置是基本配置，
+对于授权，将使用本节中 config 中提供的用户名/密码组合。
 
-One type of security configuration is basic, 
-For authorization will be used combination of username/password, provided in this section in config. 
 
-
-|**Parameter**|**Default value**|**Description**|
+|**参数**|**默认值**|**说明**|
 |:-|:-|-
-| type               | **basic**                      | Type of authorization.      |
-| username           | **username**                   | Username for authorization. |
-| password           | **password**                   | Password for authorization. |
+| type               | **basic**                      | 授权类型。      |
+| username           | **username**                   | 授权用户名。 |
+| password           | **password**                   | 授权密码。 |
 |---
 
-Security subsection in configuration file will look like this: 
+配置文件中的安全子部分将如下所示：
 
 ```yaml
     "security": {

@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-pe
-title: Azure IoT Hub Integration
-description: Azure IoT Hub Integration Guide 
+title: Azure IoT Hub 集成
+description: Azure IoT Hub 集成指南
 
 ---
 {% assign docsPrefix = "pe/" %}

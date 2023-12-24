@@ -1,24 +1,23 @@
- 
 {% if docsPrefix != 'paas/' %}
 {% capture info %}
 <br>
-**INFO: To use this feature, you should configure [MQTT over SSL in ThingsBoard](/docs/{{docsPrefix}}user-guide/mqtt-over-ssl/)**  
+**信息：要使用此功能，您应该配置 [ThingsBoard 中的 MQTT over SSL](/docs/{{docsPrefix}}user-guide/mqtt-over-ssl/)**  
 {% endcapture %}
 {% include templates/info-banner.md content=info %}
 {% endif %}
 
 
 |---
-| **Parameter**             | **Example value**                            | **Description**                                                                |
+| **参数**             | **示例值**                            | **说明**                                                                |
 |:-|:-|-
-| *deviceName*              | **DEVICE_NAME**                              | Device name in ThingsBoard.                                                    |
-| *provisionDeviceKey*      | **PUT_PROVISION_KEY_HERE**                   | Provisioning device key, you should take it from configured device profile.    |
-| *provisionDeviceSecret*   | **PUT_PROVISION_SECRET_HERE**                | Provisioning device secret, you should take it from configured device profile. | 
-| credentialsType           | **X509_CERTIFICATE**                         | Credentials type parameter.                                                    |
-| hash                      | **MIIB........AQAB**                         | Public key X509 hash for device in ThingsBoard.                                |
+| *deviceName*              | **DEVICE_NAME**                              | ThingsBoard 中的设备名称。                                                    |
+| *provisionDeviceKey*      | **PUT_PROVISION_KEY_HERE**                   | Provisioning 设备密钥，您应该从配置的设备配置文件中获取它。    |
+| *provisionDeviceSecret*   | **PUT_PROVISION_SECRET_HERE**                | Provisioning 设备密钥，您应该从配置的设备配置文件中获取它。 | 
+| credentialsType           | **X509_CERTIFICATE**                         | 凭据类型参数。                                                    |
+| hash                      | **MIIB........AQAB**                         | ThingsBoard 中设备的公钥 X509 哈希。                                |
 |---
 
-Provisioning request data example:
+Provisioning 请求数据示例：
  
 ```json
 {
@@ -30,7 +29,7 @@ Provisioning request data example:
 }
 ```
 
-Provisioning response example:
+Provisioning 响应示例：
 
 ```json
 {
@@ -43,9 +42,9 @@ Provisioning response example:
 ```
 
 
-### MQTT Example script
+### MQTT 示例脚本
 
-To use this script put your **mqttserver.pub.pem** (public key of the server) into the folder with script. 
+要使用此脚本，请将您的 **mqttserver.pub.pem**（服务器的公钥）放入包含脚本的文件夹中。 
 
 ```python
 
@@ -72,15 +71,15 @@ RESULT_CODES = {
 def collect_required_data():
     config = {}
     print("\n\n", "="*80, sep="")
-    print(" "*10, "\033[1m\033[94mThingsBoard device provisioning with X509 certificate authorization example script. MQTT API\033[0m", sep="")
+    print(" "*10, "\033[1m\033[94mThingsBoard 设备 Provisioning 带有 X509 证书授权示例脚本。MQTT API\033[0m", sep="")
     print("="*80, "\n\n", sep="")
-    host = input("Please write your ThingsBoard \033[93mhost\033[0m or leave it blank to use default (thingsboard.cloud): ")
+    host = input("请写下您的 ThingsBoard \033[93mhost\033[0m 或留空以使用默认值 (thingsboard.cloud): ")
     config["host"] = host if host else "mqtt.thingsboard.cloud"
-    port = input("Please write your ThingsBoard \033[93mSSL port\033[0m or leave it blank to use default (8883): ")
+    port = input("请写下您的 ThingsBoard \033[93mSSL 端口\033[0m 或留空以使用默认值 (8883): ")
     config["port"] = int(port) if port else 8883
-    config["provision_device_key"] = input("Please write \033[93mprovision device key\033[0m: ")
-    config["provision_device_secret"] = input("Please write \033[93mprovision device secret\033[0m: ")
-    device_name = input("Please write \033[93mdevice name\033[0m or leave it blank to generate: ")
+    config["provision_device_key"] = input("请写下 \033[93mprovision 设备密钥\033[0m: ")
+    config["provision_device_secret"] = input("请写下 \033[93mprovision 设备密钥\033[0m: ")
+    device_name = input("请写下 \033[93m设备名称\033[0m 或留空以生成: ")
     if device_name:
         config["device_name"] = device_name
     print("\n", "="*80, "\n", sep="")
@@ -92,7 +91,7 @@ def generate_certs(ca_certfile="mqttserver.pub.pem"):
         with open(ca_certfile, "r") as ca_file:
             root_cert = x509.load_pem_x509_certificate(str.encode(ca_file.read()), default_backend())
     except Exception as e:
-        print("Failed to load CA certificate: %r" % e)
+        print("无法加载 CA 证书: %r" % e)
     if root_cert is not None:
         private_key = rsa.generate_private_key(
             public_exponent=65537, key_size=2048, backend=default_backend()
@@ -131,7 +130,7 @@ def read_cert():
         with open("key.pem", "r") as key_file:
             key = key_file.read()
     except Exception as e:
-        print("Cannot read certificate with error: %r" % e)
+        print("无法读取证书，错误: %r" % e)
     return cert, key
 
 
@@ -149,35 +148,35 @@ class ProvisionClient(Client):
         self.on_message = self.__on_message
         self.__provision_request = provision_request
 
-    def __on_connect(self, client, userdata, flags, rc):  # Callback for connect
+    def __on_connect(self, client, userdata, flags, rc):  # 连接回调
         if rc == 0:
-            print("[Provisioning client] Connected to ThingsBoard ")
-            client.subscribe(self.PROVISION_RESPONSE_TOPIC)  # Subscribe to provisioning response topic
+            print("[Provisioning 客户端] 已连接到 ThingsBoard ")
+            client.subscribe(self.PROVISION_RESPONSE_TOPIC)  # 订阅 Provisioning 响应主题
             provision_request = dumps(self.__provision_request)
-            print("[Provisioning client] Sending provisioning request %s" % provision_request)
-            client.publish(self.PROVISION_REQUEST_TOPIC, provision_request)  # Publishing provisioning request topic
+            print("[Provisioning 客户端] 发送 Provisioning 请求 %s" % provision_request)
+            client.publish(self.PROVISION_REQUEST_TOPIC, provision_request)  # 发布 Provisioning 请求主题
         else:
-            print("[Provisioning client] Cannot connect to ThingsBoard!, result: %s" % RESULT_CODES[rc])
+            print("[Provisioning 客户端] 无法连接到 ThingsBoard！结果: %s" % RESULT_CODES[rc])
 
     def __on_message(self, client, userdata, msg):
         decoded_payload = msg.payload.decode("UTF-8")
-        print("[Provisioning client] Received data from ThingsBoard: %s" % decoded_payload)
+        print("[Provisioning 客户端] 从 ThingsBoard 收到数据: %s" % decoded_payload)
         decoded_message = loads(decoded_payload)
         provision_device_status = decoded_message.get("status")
         if provision_device_status == "SUCCESS":
             if decoded_message["credentialsValue"] == cert.replace("-----BEGIN CERTIFICATE-----\n", "")\
                                                           .replace("-----END CERTIFICATE-----\n", "")\
                                                           .replace("\n", ""):
-                print("[Provisioning client] Provisioning success! Certificates are saved.")
+                print("[Provisioning 客户端] Provisioning 成功！证书已保存。")
                 self.__save_credentials(cert)
             else:
-                print("[Provisioning client] Returned certificate is not equal to sent one.")
+                print("[Provisioning 客户端] 返回的证书与发送的证书不一致。")
         else:
-            print("[Provisioning client] Provisioning was unsuccessful with status %s and message: %s" % (provision_device_status, decoded_message["errorMsg"]))
+            print("[Provisioning 客户端] Provisioning 失败，状态 %s，消息: %s" % (provision_device_status, decoded_message["errorMsg"]))
         self.disconnect()
 
     def provision(self):
-        print("[Provisioning client] Connecting to ThingsBoard (provisioning client)")
+        print("[Provisioning 客户端] 正在连接到 ThingsBoard (provisioning 客户端)")
         self.__clean_credentials()
         self.connect(self._host, self._port, 60)
         self.loop_forever()
@@ -190,9 +189,9 @@ class ProvisionClient(Client):
             new_client.tls_set(ca_certs="mqttserver.pub.pem", certfile="cert.pem", keyfile="key.pem", cert_reqs=ssl.CERT_REQUIRED,
                                tls_version=ssl.PROTOCOL_TLSv1_2, ciphers=None)
             new_client.tls_insecure_set(False)
-            print("[Provisioning client] Read credentials from file.")
+            print("[Provisioning 客户端] 从文件中读取凭据。")
         else:
-            print("[Provisioning client] Cannot read credentials from file!")
+            print("[Provisioning 客户端] 无法从文件中读取凭据！")
         return new_client
 
     @staticmethod
@@ -215,41 +214,39 @@ class ProvisionClient(Client):
         open("credentials", "w").close()
 
 
-def on_tb_connected(client, userdata, flags, rc):  # Callback for connect with received credentials
+def on_tb_connected(client, userdata, flags, rc):  # 使用接收到的凭据连接的回调
     if rc == 0:
-        print("[ThingsBoard client] Connected to ThingsBoard with credentials: username: %s, password: %s, client id: %s" % (client._username, client._password, client._client_id))
+        print("[ThingsBoard 客户端] 已使用凭据连接到 ThingsBoard：用户名: %s，密码: %s，客户端 ID: %s" % (client._username, client._password, client._client_id))
     else:
-        print("[ThingsBoard client] Cannot connect to ThingsBoard!, result: %s" % RESULT_CODES[rc])
+        print("[ThingsBoard 客户端] 无法连接到 ThingsBoard！结果: %s" % RESULT_CODES[rc])
 
 
 if __name__ == '__main__':
 
     config = collect_required_data()
 
-    THINGSBOARD_HOST = config["host"]  # ThingsBoard instance host
-    THINGSBOARD_PORT = config["port"]  # ThingsBoard instance MQTT port
+    THINGSBOARD_HOST = config["host"]  # ThingsBoard 实例 host
+    THINGSBOARD_PORT = config["port"]  # ThingsBoard 实例 MQTT 端口
 
-    PROVISION_REQUEST = {"provisionDeviceKey": config["provision_device_key"],  # Provision device key, replace this value with your value from device profile.
-                         "provisionDeviceSecret": config["provision_device_secret"],  # Provision device secret, replace this value with your value from device profile.
+    PROVISION_REQUEST = {"provisionDeviceKey": config["provision_device_key"],  # Provision 设备密钥，用设备配置文件中的值替换此值。
+                         "provisionDeviceSecret": config["provision_device_secret"],  # Provision 设备密钥，用设备配置文件中的值替换此值。
                          "credentialsType": "X509_CERTIFICATE",
                          }
     if config.get("device_name") is not None:
         PROVISION_REQUEST["deviceName"] = config["device_name"]
-    generate_certs()  # Generate certificate and key
-    cert, key = read_cert()  # Read certificate and key
+    generate_certs()  # 生成证书和密钥
+    cert, key = read_cert()  # 读取证书和密钥
     PROVISION_REQUEST["hash"] = cert
     if PROVISION_REQUEST.get("hash") is not None:
         provision_client = ProvisionClient(THINGSBOARD_HOST, THINGSBOARD_PORT, PROVISION_REQUEST)
-        provision_client.provision()  # Request provisioned data
-        tb_client = provision_client.get_new_client()  # Getting client with provisioned data
+        provision_client.provision()  # 请求 provisioned 数据
+        tb_client = provision_client.get_new_client()  # 获取具有 provisioned 数据的客户端
         if tb_client:
-            tb_client.on_connect = on_tb_connected  # Setting callback for connect
+            tb_client.on_connect = on_tb_connected  # 设置连接回调
             tb_client.connect(THINGSBOARD_HOST, THINGSBOARD_PORT, 60)
-            tb_client.loop_forever()  # Starting infinity loop
+            tb_client.loop_forever()  # 启动无限循环
         else:
-            print("Client was not created!")
+            print("未创建客户端！")
     else:
-        print("Cannot read certificate.")
-
+        print("无法读取证书。")
 ```
-{: .copy-code}

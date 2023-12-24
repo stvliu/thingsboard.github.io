@@ -1,6 +1,6 @@
+现在是时候对电路板进行编程以连接到 ThingsBoard。
 
-Now it’s time to program the board to connect to ThingsBoard.  
-To do this, you can use the code below. It contains all required functionality for this guide.    
+为此，您可以使用以下代码。它包含本指南所需的所有功能。
 
 
 ```cpp
@@ -361,63 +361,4 @@ void loop() {
 
   tb.loop();
 }
-
 ```
-{:.copy-code.expandable-20}
-
-
-{% capture replacePlaceholders %}
-Don’t forget to replace placeholders with your real WiFi network SSID, password, ThingsBoard device access token.
-{% endcapture %}
-
-{% include templates/info-banner.md content=replacePlaceholders %}
-
-Necessary variables for connection:  
-
-| Variable name | Default value | Description | 
-|-|-|-|
-| WIFI_SSID | **YOUR_WIFI_SSID** | Your WiFi network name. | 
-| WIFI_PASSWORD | **YOUR_WIFI_PASSWORD** | Your WiFi network password. |
-| TOKEN | **YOUR_DEVICE_ACCESS_TOKEN** | Access token from device. Obtaining process described in #connect-device-to-thingsboard | 
-| THINGSBOARD_SERVER | **{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}thingsboard.cloud{% else %}demo.thingsboard.io{% endif %}** | Your ThingsBoard host or ip address. |
-| THINGSBOARD_PORT | **1883U** | ThingsBoard server MQTT port. Can be default for this guide. |
-| MAX_MESSAGE_SIZE | **512U** | Maximal size of MQTT messages. Can be default for this guide. |
-| SERIAL_DEBUG_BAUD | **1883U** | Baud rate for serial port. Can be default for this guide. |  
-
-```cpp
-...
-
-constexpr char WIFI_SSID[] = "YOUR_WIFI_SSID";
-constexpr char WIFI_PASSWORD[] = "YOUR_WIFI_PASSWORD";
-
-constexpr char TOKEN[] = "YOUR_ACCESS_TOKEN";
-
-constexpr char THINGSBOARD_SERVER[] = "{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}thingsboard.cloud{% else %}demo.thingsboard.io{% endif %}";
-constexpr uint16_t THINGSBOARD_PORT = 1883U;
-
-constexpr uint32_t MAX_MESSAGE_SIZE = 512U;
-constexpr uint32_t SERIAL_DEBUG_BAUD = 115200U;
-
-...
-```
-
-Send data part in code (By default the example sends random value for **temperature** key and some WiFi information):  
-
-```cpp
-...
-    tb.sendTelemetryData("temperature", random(10, 20));
-    tb.sendAttributeData("rssi", WiFi.RSSI());
-    tb.sendAttributeData("ssid", WIFI_SSID);
-    tb.sendAttributeData("bssid", getBSSID());
-    tb.sendAttributeData("localIp", String(String(WiFi.localIP()[0]) + "." + String(WiFi.localIP()[1]) + "." + String(WiFi.localIP()[2]) + "." + String(WiFi.localIP()[3])).c_str());
-...
-```
-
-Then upload the code to the device by pressing Upload button or keyboard combination Ctrl+U.  
-{% assign codeByUploadButton='
-    ===
-        image: /images/devices-library/basic/arduino-ide/upload.png
-' 
-%}
-{% include images-gallery.liquid imageCollection=codeByUploadButton %}
-

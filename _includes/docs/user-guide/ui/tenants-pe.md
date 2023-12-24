@@ -1,81 +1,81 @@
 * TOC
 {:toc}
 
-### Introduction
+### 简介
 
-ThingsBoard supports [Multi-tenancy](https://en.wikipedia.org/wiki/Multitenancy) right out of the box. 
+ThingsBoard 开箱即用，支持 [多租户](https://en.wikipedia.org/wiki/Multitenancy)。
 
-You can think of the ThingsBoard tenant as a separate business entity. This is the individual or organization that owns or manufactures the devices and assets.
+您可以将 ThingsBoard 租户视为一个独立的业务实体。这是拥有或制造设备和资产的个人或组织。
 
 {% if docsPrefix == "pe/" %}
-Tenant may have multiple tenant administrator users, enormous number of [customers](/docs/{{docsPrefix}}user-guide/ui/customers), and an unlimited number of [users](/docs/{{docsPrefix}}user-guide/ui/users), assets, and devices.
+租户可能有多个租户管理员用户、大量 [客户](/docs/{{docsPrefix}}user-guide/ui/customers) 以及无限数量的 [用户](/docs/{{docsPrefix}}user-guide/ui/users)、资产和设备。
 {% endif %}
 {% if docsPrefix == "paas/" %}
-Tenant may have multiple [customers](/docs/{{docsPrefix}}user-guide/ui/customers) and enormous number of [users](/docs/{{docsPrefix}}user-guide/ui/users), devices and assets.
+租户可能有多个 [客户](/docs/{{docsPrefix}}user-guide/ui/customers) 和大量 [用户](/docs/{{docsPrefix}}user-guide/ui/users)、设备和资产。
 {% endif %}
 
 {% if docsPrefix == "pe/" %}
-### Сreate new tenant
+### 创建新租户
 
-The **System administrator** is able to create tenant entities.
+**系统管理员** 能够创建租户实体。
 
-To add a new tenant, you should:
+要添加新租户，您应该：
 
 {% include images-gallery.html imageCollection="tenants-pe" showListImageTitles="true" %}
 
-Learn more about tenant profiles [here](/docs/{{docsPrefix}}user-guide/tenant-profiles).
+在此 [处](/docs/{{docsPrefix}}user-guide/tenant-profiles) 了解有关租户配置文件的更多信息。
 
-### Сreate tenant administrator
+### 创建租户管理员
 
-System administrator can create multiple **users with tenant administrator role** for each tenant.
+系统管理员可以为每个租户创建多个 **具有租户管理员角色的用户**。
 
-To add a user, you should:
+要添加用户，您应该：
 
 {% include images-gallery.html imageCollection="tenant-new-pe" showListImageTitles="true" %}
 
-The tenant can have multiple users.
+租户可以有多个用户。
 
 {% include images-gallery.html imageCollection="multiple-users-pe" %}
 
-### Edit tenant or user
+### 编辑租户或用户
 
-In the Tenant details you can edit all fields.
+在租户详细信息中，您可以编辑所有字段。
 
-Let's see how to do this:
+让我们看看如何做到这一点：
 
 {% include images-gallery.html imageCollection="tenant-edit-pe" showListImageTitles="true" %}
 
-Also, you can edit the **user**.
+此外，您还可以编辑 **用户**。
 
-The steps are similar to how we edit the tenant:
+步骤与我们编辑租户的方式类似：
 
 {% include images-gallery.html imageCollection="user-edit-pe" showListImageTitles="true" %}
 
-### Delete tenant or user
+### 删除租户或用户
 
-You can delete the **Tenant** at once with all its users. To do this, click on the "trash" icon and then also confirm the deletion by clicking on "Yes".
+您可以一次删除 **租户** 及其所有用户。为此，请单击“垃圾箱”图标，然后单击“是”确认删除。
 
 {% include images-gallery.html imageCollection="tenant-delete-pe" %}
 
-Also, you can delete any **user** from the Tenant. To do this, go to the Tenant, find the user you need and click on the "trash" icon. After clicking, a warning window will appear. If you are sure you want to delete the user, click on "Yes".
+此外，您还可以从租户中删除任何 **用户**。为此，请转到租户，找到您需要的用户，然后单击“垃圾箱”图标。单击后，将出现一个警告窗口。如果您确定要删除用户，请单击“是”。
 
 {% include images-gallery.html imageCollection="user-delete-pe" %}
 
-### Login as tenant administrator
+### 以租户管理员身份登录
 
-If you need to log in as a tenant, just open the tenant group and click the icon opposite to the user account to log in as this tenant.
+如果您需要以租户身份登录，只需打开租户组，然后单击用户帐户对面的图标即可以该租户身份登录。
 
 {% include images-gallery.html imageCollection="tenant-login-pe" %}
 {% endif %}
 
 <br>
-Tenant Administrator is able to do following actions:
+租户管理员能够执行以下操作：
 
-- Provision and Manage [Devices](/docs/{{docsPrefix}}user-guide/ui/devices/).
-- Provision and Manage [Assets](/docs/{{docsPrefix}}user-guide/ui/assets/).
-- Create and Manage [Customers](/docs/{{docsPrefix}}user-guide/ui/customers/).
-- Create and Manage [Dashboards](/docs/{{docsPrefix}}user-guide/ui/dashboards/).
-- Configure [Rule Engine](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/re-getting-started/).
-- Add or modify default widgets using [Widget Library](/docs/{{docsPrefix}}user-guide/ui/widget-library/).
+- 配置和管理 [设备](/docs/{{docsPrefix}}user-guide/ui/devices/)。
+- 配置和管理 [资产](/docs/{{docsPrefix}}user-guide/ui/assets/)。
+- 创建和管理 [客户](/docs/{{docsPrefix}}user-guide/ui/customers/)。
+- 创建和管理 [仪表板](/docs/{{docsPrefix}}user-guide/ui/dashboards/)。
+- 配置 [规则引擎](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/re-getting-started/)。
+- 使用 [小部件库](/docs/{{docsPrefix}}user-guide/ui/widget-library/) 添加或修改默认小部件。
 
-All actions listed above are available using [REST API](/docs/{{docsPrefix}}reference/rest-api/).
+可以使用 [REST API](/docs/{{docsPrefix}}reference/rest-api/) 执行上面列出的所有操作。

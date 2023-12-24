@@ -1,9 +1,9 @@
 ---
 layout: devices-library-article
-title: How to connect ESP32 Dev Kit C V4 to ThingsBoard?
-category: Microcontrollers
+title: 如何将 ESP32 Dev Kit C V4 连接到 ThingsBoard？
+category: 微控制器
 chip: ESP32
-connectivity: HTTP, MQTT, WIFI, Bluetooth
+connectivity: HTTP, MQTT, WIFI, 蓝牙
 vendor: Espressif
 deviceImageFileName: esp32-dev-kit-v4.jpg
 docsPrefix: pe/

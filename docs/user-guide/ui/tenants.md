@@ -2,86 +2,86 @@
 layout: docwithnav
 assignees:
 - ashvayka
-title: Tenants
-description: ThingsBoard Tenants management
+title: 租户
+description: ThingsBoard 租户管理
 
 create-tenants-ce:
     0:
         image: /images/user-guide/tenant-profile/CE/create-tenant-1-ce.png
-        title: 'Login to your ThingsBoard instance WEB UI as a system administrator;'
+        title: '以系统管理员身份登录到 ThingsBoard 实例 WEB UI；'
     1:
         image: /images/user-guide/tenant-profile/CE/create-tenant-2-ce.png
-        title: 'Navigate to the Tenants page. Then click on the "plus" icon in the upper right corner of the screen;'
+        title: '导航到租户页面。然后单击屏幕右上角的“加号”图标；'
     2:
         image: /images/user-guide/tenant-profile/CE/create-tenant-3-ce.png
-        title: 'You must fill in the required fields: title and tenant profile;'
+        title: '您必须填写必填字段：标题和租户配置文件；'
     3:
         image: /images/user-guide/tenant-profile/CE/create-tenant-4-ce.png
-        title: 'Optionally, include the country, city, address, phone number, and email address. Then click "Add";'
+        title: '可以选择包括国家/地区、城市、地址、电话号码和电子邮件地址。然后单击“添加”；'
     4:
         image: /images/user-guide/tenant-profile/CE/create-tenant-5-ce.png
-        title: 'New tenant is created.'
+        title: '创建新租户。'
 
 create-tenant-admin-ce:
     0:
         image: /images/user-guide/tenant-profile/CE/create-user-in-tenant-1-ce.png
-        title: 'Click the "Manage tenant admins" icon on the row of the tenant. The second option: choose the tenant and click on it. Then click on "Manage tenant admins" button;'
+        title: '单击租户行上的“管理租户管理员”图标。第二个选项：选择租户并单击它。然后单击“管理租户管理员”按钮；'
     1:
         image: /images/user-guide/tenant-profile/CE/create-user-in-tenant-2-ce.png
-        title: 'Click on the "plus" icon in the top right corner. In "Add User" window specify user email, enter information about the new user and select "Show activation link" or "Send activation email" from the drop-down menu;'
+        title: '单击右上角的“加号”图标。在“添加用户”窗口中指定用户电子邮件，输入有关新用户的信息，然后从下拉菜单中选择“显示激活链接”或“发送激活电子邮件”；'
     2:
         image: /images/user-guide/tenant-profile/CE/create-user-in-tenant-3-ce.png
-        title: 'If you selected the option "Show activation link", copy the link address and send it to the user. Click "OK";'
+        title: '如果您选择了“显示激活链接”选项，请复制链接地址并将其发送给用户。单击“确定”；'
     3:
         image: /images/user-guide/tenant-profile/CE/create-user-in-tenant-4-ce.png
-        title: 'New user with tenant administrator role is created.'
+        title: '创建具有租户管理员角色的新用户。'
 
 tenant-edit-ce:
     0:
         image: /images/user-guide/tenant-profile/CE/edit-tenant-1-ce.png
-        title: 'Click on a tenant`s name to open their details. Click the "pencil" icon to enter edit mode;'
+        title: '单击租户的名称以打开其详细信息。单击“铅笔”图标以进入编辑模式；'
     1:
         image: /images/user-guide/tenant-profile/CE/edit-tenant-2-ce.png
-        title: 'Edit the fields. For example, you can set up a home dashboard for all users of this tenant. After that, save all changes;'
+        title: '编辑字段。例如，您可以为该租户的所有用户设置主页仪表板。之后，保存所有更改；'
     2:
         image: /images/user-guide/tenant-profile/CE/edit-tenant-3-ce.png
-        title: 'You have updated tenant information.'
+        title: '您已更新租户信息。'
 
 user-edit-ce:
     0:
         image: /images/user-guide/tenant-profile/CE/edit-user-1-ce.png
-        title: 'Click on a user`s name to open their details. Click the "pencil" icon to enter edit mode;'
+        title: '单击用户的名称以打开其详细信息。单击“铅笔”图标以进入编辑模式；'
     1:
         image: /images/user-guide/tenant-profile/CE/edit-user-2-ce.png
-        title: 'Edit the fields. For example, you can set up a home dashboard for all users of this user. After editing, save all changes;'
+        title: '编辑字段。例如，您可以为该用户的用户设置主页仪表板。编辑后，保存所有更改；'
     2:
         image: /images/user-guide/tenant-profile/CE/edit-user-3-ce.png
-        title: 'You have updated user information.'
+        title: '您已更新用户信息。'
 
 user-delete-ce:
     0:
         image: /images/user-guide/tenant-profile/CE/delete-user-2-ce.png
-        title: 'Go to the tenant. Find the user you want to delete. Click on the "delete" icon and confirm the deletion by clicking on "Yes".'
+        title: '转到租户。找到要删除的用户。单击“删除”图标，然后单击“是”确认删除。'
 
 user-delete-2-ce:
     0:
         image: /images/user-guide/tenant-profile/CE/delete-user-3-ce.png
-        title: 'In addition, there is an option to delete the user using the action tab in Tenant details window.'
+        title: '此外，还可以使用租户详细信息窗口中的操作选项卡删除用户。'
 
 tenant-delete-1-ce:
     0:
         image: /images/user-guide/tenant-profile/CE/delete-tenant-2-ce.png
-        title: 'Find the tenant you want to delete. Click on the "delete" icon and confirm the deletion by clicking on "Yes".'
+        title: '找到要删除的租户。单击“删除”图标，然后单击“是”确认删除。'
 
 tenant-delete-2-ce:
     0:
         image: /images/user-guide/tenant-profile/CE/delete-tenant-3-ce.png
-        title: 'In addition, there is an option to delete the Tenant using the action tab in Tenant details window.'
+        title: '此外，还可以使用租户详细信息窗口中的操作选项卡删除租户。'
 
 tenant-login-ce:
     0:
         image: /images/user-guide/tenant-profile/CE/login-as-a-tenant-administrator-1-ce.png
-        title: 'Open the tenant group. Click the "login" icon opposite to the user account to log in as a tenant administrator.'
+        title: '打开租户组。单击用户帐户对面的“登录”图标以以租户管理员身份登录。'
 
 tenant-details-ce:
     0:

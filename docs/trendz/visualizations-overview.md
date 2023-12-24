@@ -2,22 +2,22 @@
 layout: docwithnav-trendz
 assignees:
 - vparomskiy
-title: Visualisations Overview
-description: Built in Visualisation Types in Trendz Analytics 
+title: 可视化概述
+description: Trendz Analytics 中内置的可视化类型
 ---
 
-Trendz provides major visualization types required for analyzing IoT datasets. 
+Trendz 提供了分析物联网数据集所需的主要可视化类型。
 
-* [**Tables**](/docs/trendz/visualizations-tables)
-* [**Line Chart**](/docs/trendz/visualizations-line)
-* [**Bar Chart & Histogram**](/docs/trendz/visualizations-bar)
-* [**Pie Chart**](/docs/trendz/visualizations-pie)
-* [**Scatter Plot**](/docs/trendz/visualizations-scatter)
-* [**Heat Map**](/docs/trendz/visualizations-heatmap)
-* [**Calendar**](/docs/trendz/visualizations-calendar)
-* [**Card**](/docs/trendz/visualizations-card)
+* [**表格**](/docs/trendz/visualizations-tables)
+* [**折线图**](/docs/trendz/visualizations-line)
+* [**条形图和直方图**](/docs/trendz/visualizations-bar)
+* [**饼图**](/docs/trendz/visualizations-pie)
+* [**散点图**](/docs/trendz/visualizations-scatter)
+* [**热图**](/docs/trendz/visualizations-heatmap)
+* [**日历**](/docs/trendz/visualizations-calendar)
+* [**卡片**](/docs/trendz/visualizations-card)
 
-## First visualisation
+## 第一个可视化
 
 <div class="image-block">
     <div class="image-wrapper">
@@ -27,19 +27,19 @@ Trendz provides major visualization types required for analyzing IoT datasets.
     </div>
 </div>
 
-* Open Trend UI home page and press **Create View** button
-* Select **Line** chart
-* Select **Date** field from left navigation panel and drop it to the **X axis** section
-* Select any telemetry field from left navigation panel and drop it to the **Y axis** section
+* 打开 Trend UI 主页并按 **创建视图** 按钮
+* 选择 **折线** 图表
+* 从左侧导航面板中选择 **日期** 字段并将其拖放到 **X 轴** 部分
+* 从左侧导航面板中选择任何遥测字段并将其拖放到 **Y 轴** 部分
 
-At this moment you will see average measurement from all entities in the ThingsBoard
+此时，您将看到 ThingsBoard 中所有实体的平均测量值
 
-* Add **Entity Name** to the **Series** section - separate series displayed for each entity
+* 将 **实体名称** 添加到 **系列** 部分 - 为每个实体显示单独的系列
 
-## Video Tutorial
+## 视频教程
 
-We are glad to present the series of webinars about ThingsBoard Trendz Analytics functionality. 
-Learn more about Trendz Analytics features and how it helps to transform the IoT data into value for informed decision-making.
+我们很高兴地介绍有关 ThingsBoard Trendz Analytics 功能的一系列网络研讨会。
+详细了解 Trendz Analytics 功能以及它如何帮助将物联网数据转化为价值，以便做出明智的决策。
 
 &nbsp; 
   
@@ -49,6 +49,6 @@ Learn more about Trendz Analytics features and how it helps to transform the IoT
     </div>
 </div>
 
-## Next Steps
+## 后续步骤
 
 {% assign currentGuide = "AvailableVisualizations" %}{% include templates/trndz-guides-banner.md %}

@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-pe-edge
-title: Remote Integrations
-description: Remote Integrations Documentation
+title: 远程集成
+description: 远程集成文档
 
 addConverter:
     0:
@@ -20,16 +20,16 @@ addIntegration:
 assignIntegration:
     0:
         image: /images/pe/edge/integrations/remote/assign-integration-step-1.png
-        title: 'Add <b>remoteHttpIntegrationUrl</b> attribute to Edge and set value as your remote HTTP integration <b>http://IP:port</b>'
+        title: '将 <b>remoteHttpIntegrationUrl</b> 属性添加到 Edge 并将值设置为远程 HTTP 集成 <b>http://IP:port</b>'
     1:
         image: /images/pe/edge/integrations/remote/assign-integration-step-2.png
-        title: 'Click <b>Manage Integrations</b> button of Edge entity'
+        title: '单击 Edge 实体的 <b>管理集成</b> 按钮'
     2:
         image: /images/pe/edge/integrations/remote/assign-integration-step-3.png
-        title: 'Assign Integration to the Edge'
+        title: '将集成分配给 Edge'
     3:
         image: /images/pe/edge/integrations/remote/assign-integration-step-4.png
-        title: 'Login to your <b>ThingsBoard Edge</b> instance and open Integrations page - placeholder is going to be replaced by attribute value'
+        title: '登录到您的 <b>ThingsBoard Edge</b> 实例并打开集成页面 - 占位符将被属性值替换'
 
 copyCredentials:
     0:
@@ -50,46 +50,46 @@ device:
 * TOC
 {:toc}
 
-## Introduction
+## 简介
 
-It is possible to execute any ThingsBoard Integration remotely from main ThingsBoard Edge instance.
-This guide contains step-by-step instructions how to launch ThingsBoard integration remotely.
-For example, we will launch HTTP integration and push data over *remote* HTTP integration to ThingsBoard Edge.  
+可以从主 ThingsBoard Edge 实例远程执行任何 ThingsBoard 集成。
+本指南包含有关如何远程启动 ThingsBoard 集成的分步说明。
+例如，我们将启动 HTTP 集成并将数据通过 *远程* HTTP 集成推送到 ThingsBoard Edge。
 
-See [deployment options](/docs/pe/edge/user-guide/integrations/#deployment-options) for more general information.
+有关更多一般信息，请参阅 [部署选项](/docs/pe/edge/user-guide/integrations/#deployment-options)。
 
-## Prerequisites
+## 先决条件
 
-We assume you already have a ThingsBoard Edge instance up and running, and connected to the **Server**.   
+我们假设您已经启动并运行了 ThingsBoard Edge 实例，并已连接到 **服务器**。
 
-## ThingsBoard Server configuration steps
+## ThingsBoard 服务器配置步骤
 
-Converter and Integration templates are created on the **Server**, so please log in as Tenant administrator to the Server instance.
+转换器和集成模板在 **服务器** 上创建，因此请以租户管理员身份登录到服务器实例。
 
-### Step 1. Create Uplink Converter
+### 步骤 1. 创建上行转换器
 
-Before creating the Integration template, you need to create an Uplink converter template in **Converters templates** page.
-Uplink is necessary in order to convert the incoming data from the device into the required format for displaying them in ThingsBoard Edge.
-Click on the 'plus' and on 'Create new converter'. To view the events, enable Debug.
-In the function decoder field, specify a script to parse and transform data.
+在创建集成模板之前，您需要在 **转换器模板** 页面中创建一个上行转换器模板。
+上行链路对于将来自设备的传入数据转换为在 ThingsBoard Edge 中显示它们所需的格式是必需的。
+单击“加号”和“创建新转换器”。要查看事件，请启用调试。
+在函数解码器字段中，指定一个脚本来解析和转换数据。
 
 {% include images-gallery.html imageCollection="addConverter" %}
 
 {% include templates/edge/integrations/debug-mode-info.md %}
 
-**Example for the Uplink converter:**
+**上行转换器的示例：**
 
 ```ruby
-// Decode an uplink message from a buffer
-// payload - array of bytes
-// metadata - key/value object
-/** Decoder **/
-// decode payload to string
+// 从缓冲区解码上行消息
+// payload - 字节数组
+// metadata - 键/值对象
+/** 解码器 **/
+// 将有效负载解码为字符串
 // var payloadStr = decodeToString(payload);
-// decode payload to JSON
+// 将有效负载解码为 JSON
 var data = decodeToJson(payload);
 var deviceName = data.deviceName;
-// Result object with device attributes/telemetry data
+// 具有设备属性/遥测数据的 Result 对象
 var result = {
    deviceName: deviceName,
    deviceType: 'default',
@@ -100,14 +100,14 @@ var result = {
        temperature: data.temperature
    }
 };
-/** Helper functions **/
+/** 帮助器函数 **/
 function decodeToString(payload) {
    return String.fromCharCode.apply(String, payload);
 }
 function decodeToJson(payload) {
-   // covert payload to string.
+   // 将有效负载转换为字符串。
    var str = decodeToString(payload);
-   // parse string to JSON
+   // 将字符串解析为 JSON
    var data = JSON.parse(str);
    return data;
 }
@@ -115,54 +115,54 @@ return result;
 ```
 {: .copy-code}
 
-### Step 2. Create Remote Integration 
+### 步骤 2. 创建远程集成
 
-Now that the Uplink converter template has been created, it is possible to create an integration.
+现在已经创建了上行转换器模板，就可以创建一个集成。
 
 {% include images-gallery.html imageCollection="addIntegration" %}
 
-### Step 3. Save Remote Integration credentials.
+### 步骤 3. 保存远程集成凭据。
 
-Let's copy-paste the integration key and secret from the integration details, we'll use them later during **Remote integration installation steps**.
+让我们从集成详细信息中复制粘贴集成密钥和机密，我们将在 **远程集成安装步骤** 中稍后使用它们。
 
 {% include images-gallery.html imageCollection="copyCredentials" %}
 
-### Step 4. Assign Integration to Edge.
+### 步骤 4. 将集成分配给 Edge。
 
-Once converter and integration templates are created, we can assign Integration template to Edge.
-Because we are using placeholder **$\{\{remoteHttpIntegrationUrl\}\}** in the integration configuration, we need to add attribute **remoteHttpIntegrationUrl** to edge first.
-You need to provide **IP address** and **port** of your *HTTP* remote integration as **remoteHttpIntegrationUrl** attribute.
-By default, remote HTTP integration uses **8082** port. 
-We are going to use the same port in the demo, and IP address is going to be set as IP of the machine where remote integration service is going to be started.
-Once attribute added, we are ready to assign integration and verify that it's added.
+创建转换器和集成模板后，我们可以将集成模板分配给 Edge。
+因为我们在集成配置中使用占位符 **$\{\{remoteHttpIntegrationUrl\}\}**，所以我们需要先将属性 **remoteHttpIntegrationUrl** 添加到 edge。
+您需要提供 *HTTP* 远程集成的 **IP 地址** 和 **端口** 作为 **remoteHttpIntegrationUrl** 属性。
+默认情况下，远程 HTTP 集成使用 **8082** 端口。
+我们将在演示中使用相同的端口，IP 地址将设置为启动远程集成服务的机器的 IP 地址。
+添加属性后，我们就可以分配集成并验证是否已添加。
 
 {% include images-gallery.html imageCollection="assignIntegration" showListImageTitles="true" %}
 
-## Remote integration installation steps
+## 远程集成安装步骤
 
-### Choose your platform and install
+### 选择您的平台并安装
 
-One can install ThingsBoard Integration via Docker, Debian or RPM packages.
-Please use one of the next steps.
+可以通过 Docker、Debian 或 RPM 软件包安装 ThingsBoard 集成。
+请使用以下步骤之一。
 
- * [Docker on Linux or Mac OS](#docker-on-linuxmac)
- * [Docker on Windows](#docker-on-windows)
+ * [Linux 或 Mac OS 上的 Docker](#docker-on-linuxmac)
+ * [Windows 上的 Docker](#docker-on-windows)
  * [Ubuntu](#ubuntu-server)
- * [CentOS/RHEL Server](#centosrhel-server)
+ * [CentOS/RHEL 服务器](#centosrhel-server)
 
-### Docker on Linux/Mac
+### Linux/Mac 上的 Docker
 
-- **[Install Docker CE](https://docs.docker.com/engine/installation/)**
+- **[安装 Docker CE](https://docs.docker.com/engine/installation/)**
 
-- **Choose Integration to install**
+- **选择要安装的集成**
 
 
 {% capture contenttogglespec %}
-HTTP Integrations<br><small>(HTTP, Sigfox, ThingPark, OceanConnect and <br> T-Mobile IoT CDP)</small>%,%http%,%templates/edge/install/integration/http-docker.md%br%
-MQTT Integrations<br><small>(MQTT, AWS IoT, IBM Watson, The Things Network)</small>%,%mqtt%,%templates/edge/install/integration/mqtt-docker.md%br%
-OPC UA<br> Integration<br>%,%opcua%,%templates/edge/install/integration/opcua-docker.md%br%
-TCP/UDP<br> Integration<br>%,%tcpudp%,%templates/edge/install/integration/tcpudp-docker.md%br%
-CoAP<br> Integration<br>%,%coap%,%templates/edge/install/integration/coap-docker.md{% endcapture %}
+HTTP 集成<br><small>(HTTP、Sigfox、ThingPark、OceanConnect 和 <br> T-Mobile IoT CDP)</small>%,%http%,%templates/edge/install/integration/http-docker.md%br%
+MQTT 集成<br><small>(MQTT、AWS IoT、IBM Watson、The Things Network)</small>%,%mqtt%,%templates/edge/install/integration/mqtt-docker.md%br%
+OPC UA<br> 集成<br>%,%opcua%,%templates/edge/install/integration/opcua-docker.md%br%
+TCP/UDP<br> 集成<br>%,%tcpudp%,%templates/edge/install/integration/tcpudp-docker.md%br%
+CoAP<br> 集成<br>%,%coap%,%templates/edge/install/integration/coap-docker.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="remoteintegrationdockerinstall" toggle-spec=contenttogglespec %}
 
@@ -170,74 +170,74 @@ CoAP<br> Integration<br>%,%coap%,%templates/edge/install/integration/coap-docker
 {% include templates/edge/install/integration/advanced-config-docker.md %} 
 
 
-- **Troubleshooting**
+- **故障排除**
 
 {% include templates/troubleshooting/dns-issues.md %}
 
-### Docker on Windows
+### Windows 上的 Docker
 
-- **[Install Docker Toolbox for Windows](https://docs.docker.com/toolbox/toolbox_install_windows/)**
+- **[为 Windows 安装 Docker Toolbox](https://docs.docker.com/toolbox/toolbox_install_windows/)**
 
-- **Choose Integration to install**
+- **选择要安装的集成**
 
 {% capture contenttogglespecwin %}
-HTTP Integrations<br><small>(HTTP, Sigfox, ThingPark, OceanConnect and <br> T-Mobile IoT CDP)</small>%,%http%,%templates/edge/install/integration/http-docker-windows.md%br%
-MQTT Integrations<br><small>(MQTT, AWS IoT, IBM Watson, The Things Network)</small>%,%mqtt%,%templates/edge/install/integration/mqtt-docker-windows.md%br%
-OPC UA<br> Integration<br>%,%opcua%,%templates/edge/install/integration/opcua-docker-windows.md%br%
-TCP/UDP<br> Integration<br>%,%tcpudp%,%templates/edge/install/integration/tcpudp-docker-windows.md%br%
-CoAP<br> Integration<br>%,%coap%,%templates/edge/install/integration/coap-docker-windows.md{% endcapture %}
+HTTP 集成<br><small>(HTTP、Sigfox、ThingPark、OceanConnect 和 <br> T-Mobile IoT CDP)</small>%,%http%,%templates/edge/install/integration/http-docker-windows.md%br%
+MQTT 集成<br><small>(MQTT、AWS IoT、IBM Watson、The Things Network)</small>%,%mqtt%,%templates/edge/install/integration/mqtt-docker-windows.md%br%
+OPC UA<br> 集成<br>%,%opcua%,%templates/edge/install/integration/opcua-docker-windows.md%br%
+TCP/UDP<br> 集成<br>%,%tcpudp%,%templates/edge/install/integration/tcpudp-docker-windows.md%br%
+CoAP<br> 集成<br>%,%coap%,%templates/edge/install/integration/coap-docker-windows.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="remoteintegrationdockerinstallwin" toggle-spec=contenttogglespecwin %}
 
 {% include templates/edge/install/integration/advanced-config-docker.md %} 
 
-- **Troubleshooting**
+- **故障排除**
 
 {% include templates/troubleshooting/dns-issues-windows.md %}
 
-### Ubuntu Server
+### Ubuntu 服务器
 
-- Install Java 11 (OpenJDK) 
+- 安装 Java 11 (OpenJDK) 
 
 {% include templates/install/ubuntu-java-install.md %}
 
-- **Choose Integration package to install**
+- **选择要安装的集成包**
  
 {% capture ubuntuinstallspec %}
-HTTP Integrations<br><small>(HTTP, Sigfox, ThingPark, OceanConnect and <br> T-Mobile IoT CDP)</small>%,%http%,%templates/edge/install/integration/http-ubuntu.md%br%
-MQTT Integrations<br><small>(MQTT, AWS IoT, IBM Watson, The Things Network)</small>%,%mqtt%,%templates/edge/install/integration/mqtt-ubuntu.md%br%
-OPC UA<br> Integration<br>%,%opcua%,%templates/edge/install/integration/opcua-ubuntu.md%br%
-TCP/UDP<br> Integration<br>%,%tcpudp%,%templates/edge/install/integration/tcpudp-ubuntu.md%br%
-CoAP<br> Integration<br>%,%coap%,%templates/edge/install/integration/coap-ubuntu.md{% endcapture %}
+HTTP 集成<br><small>(HTTP、Sigfox、ThingPark、OceanConnect 和 <br> T-Mobile IoT CDP)</small>%,%http%,%templates/edge/install/integration/http-ubuntu.md%br%
+MQTT 集成<br><small>(MQTT、AWS IoT、IBM Watson、The Things Network)</small>%,%mqtt%,%templates/edge/install/integration/mqtt-ubuntu.md%br%
+OPC UA<br> 集成<br>%,%opcua%,%templates/edge/install/integration/opcua-ubuntu.md%br%
+TCP/UDP<br> 集成<br>%,%tcpudp%,%templates/edge/install/integration/tcpudp-ubuntu.md%br%
+CoAP<br> 集成<br>%,%coap%,%templates/edge/install/integration/coap-ubuntu.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="remoteintegrationinstallubuntu" toggle-spec=ubuntuinstallspec %} 
 
-### CentOS/RHEL Server
+### CentOS/RHEL 服务器
 
-- Install Java 11 (OpenJDK) 
+- 安装 Java 11 (OpenJDK) 
 
 {% include templates/install/rhel-java-install.md %}
 
-- **Choose Integration package to install**
+- **选择要安装的集成包**
  
 {% capture rhelinstallspec %}
-HTTP Integrations<br><small>(HTTP, Sigfox, ThingPark, OceanConnect and <br> T-Mobile IoT CDP)</small>%,%http%,%templates/edge/install/integration/http-rhel.md%br%
-MQTT Integrations<br><small>(MQTT, AWS IoT, IBM Watson, The Things Network)</small>%,%mqtt%,%templates/edge/install/integration/mqtt-rhel.md%br%
-OPC UA<br> Integration<br>%,%opcua%,%templates/edge/install/integration/opcua-rhel.md%br%
-TCP/UDP<br> Integration<br>%,%tcpudp%,%templates/edge/install/integration/tcpudp-rhel.md%br%
-CoAP<br> Integration<br>%,%coap%,%templates/edge/install/integration/coap-rhel.md{% endcapture %}
+HTTP 集成<br><small>(HTTP、Sigfox、ThingPark、OceanConnect 和 <br> T-Mobile IoT CDP)</small>%,%http%,%templates/edge/install/integration/http-rhel.md%br%
+MQTT 集成<br><small>(MQTT、AWS IoT、IBM Watson、The Things Network)</small>%,%mqtt%,%templates/edge/install/integration/mqtt-rhel.md%br%
+OPC UA<br> 集成<br>%,%opcua%,%templates/edge/install/integration/opcua-rhel.md%br%
+TCP/UDP<br> 集成<br>%,%tcpudp%,%templates/edge/install/integration/tcpudp-rhel.md%br%
+CoAP<br> 集成<br>%,%coap%,%templates/edge/install/integration/coap-rhel.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="remoteintegrationinstallrhel" toggle-spec=rhelinstallspec %} 
 
-## Remote HTTP integration validation
+## 远程 HTTP 集成验证
 
-To send an uplink message, you need HTTP endpoint URL from the integration.  
-Let's log in to ThingsBoard **Edge** and go to the **Integrations** page. 
-Find your HTTP integration and click on it. There you can find the HTTP endpoint URL. Click on the icon to copy the url.
+要发送上行消息，您需要集成中的 HTTP 端点 URL。
+让我们登录 ThingsBoard **Edge** 并转到 **集成** 页面。
+找到您的 HTTP 集成并单击它。您可以在其中找到 HTTP 端点 URL。单击图标以复制 URL。
 
-**Important!** Please make sure that your machine is able to access machine where remote HTTP integration is running, and port *8082* is not blocked by any firewall rules.
+**重要提示！** 请确保您的机器能够访问运行远程 HTTP 集成的机器，并且端口 *8082* 未被任何防火墙规则阻止。
 
-Use this command to send the message. Replace $DEVICE_NAME and $YOUR_HTTP_ENDPOINT_URL with corresponding values.
+使用此命令发送消息。将 $DEVICE_NAME 和 $YOUR_HTTP_ENDPOINT_URL 替换为相应的值。
 
 ```ruby
 curl -v -X POST -d "{\"deviceName\":\"$DEVICE_NAME\",\"temperature\":33,\"model\":\"test\"}" $YOUR_HTTP_ENDPOINT_URL -H "Content-Type:application/json"
@@ -246,14 +246,14 @@ curl -v -X POST -d "{\"deviceName\":\"$DEVICE_NAME\",\"temperature\":33,\"model\
 
 {% include images-gallery.html imageCollection="sendUplink" %}
 
-The created device with data can be seen in the section **Device groups -> All** on the Edge:
+可以在 Edge 的 **设备组 -> 全部** 部分中看到创建的具有数据的设备：
 
 {% include images-gallery.html imageCollection="device" %}
 
-## Remote integration configuration
+## 远程集成配置
 
-Remote integration configuration is done via ThingsBoard UI and there is no specific steps.
-Explore guides and video tutorials related to specific integrations:
+远程集成配置通过 ThingsBoard UI 完成，没有具体步骤。
+探索与特定集成相关的指南和视频教程：
 
  - [HTTP](/docs/pe/edge/user-guide/integrations/http/)
  - [MQTT](/docs/pe/edge/user-guide/integrations/mqtt/)
@@ -262,15 +262,11 @@ Explore guides and video tutorials related to specific integrations:
  - [UDP](/docs/pe/edge/user-guide/integrations/udp/)
  - [CoAP](/docs/pe/edge/user-guide/integrations/coap/)
 
-## Remote integration troubleshooting
+## 远程集成故障排除
 
-Please review the log files. Their location is specific to the platform and installation package you have used and is mentioned in the installation steps. 
+请查看日志文件。它们的位置取决于您使用的平台和安装包，并在安装步骤中提及。
 
-## Next steps
+## 后续步骤
 
 {% assign docsPrefix = "pe/edge/" %}
 {% include templates/edge/guides-banner-edge.md %}
-
-
-
-

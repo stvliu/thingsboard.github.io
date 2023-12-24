@@ -1,80 +1,79 @@
-
 * TOC
 {:toc}
 
-## Introduction
+## 简介
 
-Rule chain - nodes are connected with each other with relations, so the outbound message from rule node is sent to next connected rule nodes.
+规则链 - 节点通过关系相互连接，因此规则节点的出站消息将发送到下一个连接的规则节点。
 
-Rule chains page displays a table of configured tenant rule chains.
-You can create, export/import, delete, and mark the desired rule chain as root.
+规则链页面显示已配置租户规则链的表格。
+您可以创建、导出/导入、删除并标记所需的规则链作为根。
 
-See [**Rule Engine**](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/re-getting-started/) documentation for more details.
+有关更多详细信息，请参阅[**规则引擎**](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/re-getting-started/)文档。
 
-### Create new rule chain
+### 创建新规则链
 
-To add a new rule chain, you should:
+要添加新规则链，您应该：
 
 {% include images-gallery.html imageCollection="create-rule-chain" showListImageTitles="true" %}
 
-### Edit rule chain
+### 编辑规则链
 
-You can edit the name and description rows as well as enable/disable debug mode.
+您可以编辑名称和描述行，以及启用/禁用调试模式。
 
 {% include images-gallery.html imageCollection="edit-rule-chain" showListImageTitles="true" %}
 
-### Export/import rule chain 
+### 导出/导入规则链
 
-You are able to [export](#export-rule-chain) your rule chain to а JSON file and [import](#import-rule-chain) it to the same or another ThingsBoard instance.
+您可以将规则链[导出](#export-rule-chain)到 JSON 文件，并将其[导入](#import-rule-chain)到相同或其他 ThingsBoard 实例。
 
-#### Export rule chain 
+#### 导出规则链
 
-In order to export rule chain, you should:
+要导出规则链，您应该：
 
 {% include images-gallery.html imageCollection="export-rule-chain" showListImageTitles="true" %}
 
-#### Import rule chain
+#### 导入规则链
 
-To import rule chain from а JSON file, you should:
+要从 JSON 文件导入规则链，您应该：
 
 {% include images-gallery.html imageCollection="import-rule-chain" showListImageTitles="true" %}
 
 {% capture difference %}
-**Note 1:**
+**注意 1：**
 <br>
-All imported rule chain are **not root** rule chain.
+所有导入的规则链**不是根**规则链。
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
 {% capture difference %}
-**Note 2:**
+**注意 2：**
 <br>
-If imported rule chain contains references to other rule chains (via **Rule Chain** node), then you will need to update those references before saving rule chain.
+如果导入的规则链包含对其他规则链的引用（通过**规则链**节点），那么您需要在保存规则链之前更新这些引用。
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-### Make rule chain root
+### 使规则链成为根
 
-To make rule chain root, you should:
+要使规则链成为根，您应该：
 
 {% include images-gallery.html imageCollection="make-rule-chain-as-root" showListImageTitles="true" %}
 
-### Delete rule chain
+### 删除规则链
 
-You can delete a rule chain using one of the following ways:
+您可以使用以下方法之一删除规则链：
 
-First way:
+第一种方法：
 
 {% include images-gallery.html imageCollection="delete-rule-chain-1" showListImageTitles="true" %}
 
-Second way:
+第二种方法：
 
 {% include images-gallery.html imageCollection="delete-rule-chain-2" showListImageTitles="true" %}
 
-You can also delete multiple rule chains at once.
+您还可以一次删除多个规则链。
 
 {% include images-gallery.html imageCollection="delete-rule-chain-3" showListImageTitles="true" %}
 
-## Next steps
+## 后续步骤
 
 {% assign currentGuide = "ConnectYourDevice" %}{% include templates/multi-project-guides-banner.md %}

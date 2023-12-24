@@ -2,32 +2,32 @@
 layout: docwithnav-trendz
 assignees:
 - vparomskiy
-title: Scatter Plot
-description: Trendz Scatter Plot 
+title: 散点图
+description: Trendz 散点图
 ---
 
 * TOC
 {:toc}
 
-## Video Tutorial
+## 视频教程
 
-&nbsp; 
-  
-<div id="video">  
+&nbsp;
+
+<div id="video">
     <div id="video_wrapper">
         <iframe src="https://www.youtube.com/embed/wX4ro6FfyaE" frameborder="0" allowfullscreen></iframe>
     </div>
 </div>
 
-## Compare 2 dimensions
-Scatter plot show dependency between few properties of your topology.
+## 比较 2 个维度
+散点图显示拓扑结构的几个属性之间的依赖关系。
 
-In this case you only use **X-axis** and **Y-axis** sections and drop there fields of interest.
+在这种情况下，您只使用 **X 轴** 和 **Y 轴** 部分，并将感兴趣的字段放在那里。
 ![image](/images/trendz/simple-scatter.png)
 
-## Compare Many dimensions
-In case when more than 2 dimensions should be compared, we can group measurements by multiple fields and apply a different colors to each group. 
-Here is an example of how it can be used on the same dataset - we compare heat and energy consumption, but apply different color for each floor of each building.
-As a result, we see that the first and third floors of Retroville are most energy-efficient and the first floor in Astarta is less efficient.
+## 比较多个维度
+如果需要比较 2 个以上的维度，我们可以按多个字段对测量值进行分组，并对每个组应用不同的颜色。
+以下是如何在同一数据集上使用它的示例 - 我们比较热量和能耗，但对每栋建筑的每层应用不同的颜色。
+结果，我们看到 Retroville 的第一层和第三层最节能，而 Astarta 的第一层效率较低。
 
 ![image](/images/trendz/complex-scatter.png)

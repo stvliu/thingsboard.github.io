@@ -2,28 +2,27 @@
 layout: docwithnav
 assignees:
 - ashvayka
-title: Self-hosted setup using GCP VM instance
-description: ThingsBoard IoT platform self-hosted setup with GCP VM instance
+title: 使用 GCP VM 实例进行自托管设置
+description: 使用 GCP VM 实例进行 ThingsBoard IoT 平台自托管设置
 
 ---
 
 * TOC
 {:toc}
 
-This guide will help you to setup ThingsBoard in GCP VM instance. 
+本指南将帮助您在 GCP VM 实例中设置 ThingsBoard。
 
-## Prerequisites
+## 先决条件
 
-You need to have admin access to Compute Engine in your GCP account.
+您需要对 GCP 帐户中的 Compute Engine 拥有管理员访问权限。
 
-### Step 1. Create VM instance
+### 步骤 1. 创建 VM 实例
 
-Create EC2 instance ([Creating and starting a VM instance](https://cloud.google.com/compute/docs/instances/create-start-instance)) and choose Ubuntu Server 20.04 LTS. We recommend this distribution and OS version for our product.
+创建 EC2 实例（[创建和启动 VM 实例](https://cloud.google.com/compute/docs/instances/create-start-instance)），并选择 Ubuntu Server 20.04 LTS。我们建议您为我们的产品使用此发行版和操作系统版本。
 
-### Step 2. Configure your firewall rules for the instance.
+### 步骤 2. 为实例配置防火墙规则。
 
-You need to open TCP 22,80,443,1883 and UDP 5683 ports in inbound rules.
+您需要在入站规则中打开 TCP 22、80、443、1883 和 UDP 5683 端口。
 
 
-After that, you can start installation from this [guide](/docs/user-guide/install/ubuntu/).
-
+之后，您可以从本 [指南](/docs/user-guide/install/ubuntu/) 开始安装。

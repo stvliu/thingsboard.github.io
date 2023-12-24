@@ -2,8 +2,8 @@
 layout: docwithnav
 assignees:
 - zbeacon
-title: Python Client SDK
-description: Software development kit for client-side integration of your Python projects
+title: Python 客户端 SDK
+description: Python 项目客户端集成软件开发工具包
 
 ---
 

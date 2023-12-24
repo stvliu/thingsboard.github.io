@@ -1,6 +1,6 @@
-### 1M connection setup with Docker and Ubuntu
+### 1M 连接设置与 Docker 和 Ubuntu
 
-How to modify the docker file to handle more connections out of the box (optional)
+如何修改 docker 文件以处理更多的开箱即用连接（可选）
 
 ```dockerfile
 FROM thingsboard/tb:latest
@@ -15,7 +15,7 @@ USER thingsboard
 ```
 {: .copy-code}
 
-Add lines to your limits.conf file.
+将行添加到 limits.conf 文件。
 
 cat | sudo tee -a /etc/security/limits.conf
 
@@ -29,7 +29,7 @@ root        soft      nofile     1048576
 root        hard      nofile     1048576
 ```
 
-Add lines to your sysctl.conf file.
+将行添加到 sysctl.conf 文件。
 
 cat | sudo tee -a /etc/sysctl.conf
 
@@ -43,17 +43,17 @@ net.ipv4.ip_local_port_range = 1024 65535
 fs.file-max = 1048576
 ```
 
-### m6a.2xlarge (8 vCPUs AMD EPYC 3rd, 32 GiB, EBS GP3) + Cassandra - 500k devices, 5k msg/sec, 15k tps
+### m6a.2xlarge（8 个 vCPU AMD EPYC 第 3 代，32 GiB，EBS GP3）+ Cassandra - 50 万个设备，5k 条消息/秒，15k tps
 
-Architecture is 1 Thingsboard server + 20 client instances each supply 25k devices (500k in total).
+架构是 1 个 Thingsboard 服务器 + 20 个客户端实例，每个实例提供 25k 个设备（总计 50 万个）。
 
-500k devices connected
+50 万个设备已连接
 
 ![](/images/reference/performance-aws-instances/method/m6a-2xlarge/500k-5k-15k/500k-is-connected-watsh-ss.png)
 
-### m6a.4xlarge (16 vCPUs AMD EPYC 3rd, 64 GiB, EBS GP3)- 500k devices, 10k msg, 30k tps - almost handle
+### m6a.4xlarge（16 个 vCPU AMD EPYC 第 3 代，64 GiB，EBS GP3）- 50 万个设备，10k 条消息，30k tps - 几乎可以处理
 
-Almost handle, but it's hard to handle 10k mps rate with 500k devices without further optimization. Work in progress!
+几乎可以处理，但在不进一步优化的情况下，很难处理 10k mps 速率和 50 万个设备。正在进行中！
 
 ![](/images/reference/performance-aws-instances/method/m6a-4xlarge/500k-10k-30k/queue-stats.png)
 
@@ -63,11 +63,11 @@ Almost handle, but it's hard to handle 10k mps rate with 500k devices without fu
 
 ![](/images/reference/performance-aws-instances/method/m6a-4xlarge/500k-10k-30k/aws-storage-monitoring.png)
 
-### m6a.4xlarge (16 vCPUs AMD EPYC 3rd, 64 GiB, EBS GP3) + Cassandra - 1Million devices, 5k msg/sec, 15k tps
+### m6a.4xlarge（16 个 vCPU AMD EPYC 第 3 代，64 GiB，EBS GP3）+ Cassandra - 100 万个设备，5k 条消息/秒，15k tps
 
-Architecture is 1 Thingsboard server + 32 clients instances each supply 31250 devices (1 million in total).
+架构是 1 个 Thingsboard 服务器 + 32 个客户端实例，每个实例提供 31250 个设备（总计 100 万个）。
 
-Prepare the instance `pt01` example. See the particular scripts that manages many instances at once
+准备实例 `pt01` 示例。请参阅一次管理多个实例的特定脚本
 
 ```bash
 ssh tb2 <<'ENDSSH'
@@ -112,9 +112,9 @@ nohup mvn spring-boot:run &
 ENDSSH
 ```
 
-Important: to handle more than 256k (limit depends on total memory size) TCP connections, please adjust the `conntrack_max` system parameter.
+重要提示：要处理超过 256k（限制取决于总内存大小）的 TCP 连接，请调整 `conntrack_max` 系统参数。
 
-Run this once on `thingsboard` node to increase file descriptor and net filter limits. This is required to handle about 1M TCP connections.
+在 `thingsboard` 节点上运行此操作一次，以增加文件描述符和网络过滤器限制。这是处理大约 100 万个 TCP 连接所必需的。
 
 ```bash
 ulimit -n 1048576
@@ -122,7 +122,7 @@ sudo sysctl -a | grep conntrack_max
 sudo sysctl -w net.netfilter.nf_conntrack_max=1048576
 ```
 
-scripts for managing 20-32 test instances
+用于管理 20-32 个测试实例的脚本
 
 _includes/docs/reference/performance-scripts/*.sh
 init-tests.sh
@@ -132,7 +132,7 @@ run-test.sh
 ssh-tests.sh
 test-ips.sh
 
-Here the docker-compose config
+以下是 docker-compose 配置
 
 ```bash
 #1M (million) devices

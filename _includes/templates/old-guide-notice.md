@@ -1,10 +1,10 @@
 {% capture oldGuideContent %}
-Please note that this guide is for ThingsBoard versions prior v2.0.
+请注意，本指南适用于 v2.0 之前的 ThingsBoard 版本。
 
-Old rules and plugins functionality is replaced by **new rule engine components** (rule chains and rule nodes).
+旧规则和插件功能已被 **新的规则引擎组件**（规则链和规则节点）取代。
 
-Please review [new rule engine](/docs/user-guide/rule-engine-2-0/re-getting-started/) documentation to learn how to adopt new functionality.
+请查看 [新的规则引擎](/docs/user-guide/rule-engine-2-0/re-getting-started/) 文档，了解如何采用新功能。
 
-We are doing our best to modify this guide to v2.0 components. Contributions are welcome.
+我们正在尽最大努力将本指南修改为 v2.0 组件。欢迎大家贡献。
 {% endcapture %}
-{% include templates/info-banner.md title="Important note" content=oldGuideContent %}
+{% include templates/info-banner.md title="重要提示" content=oldGuideContent %}

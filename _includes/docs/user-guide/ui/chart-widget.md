@@ -1,215 +1,215 @@
 * TOC
 {:toc}
 
-## Overview
+## 概述
 
-This guide will study Chart widgets: their functionality, features, basic and advanced settings of the widgets, and widgets’ data keys.
+本指南将研究图表小部件：它们的功能、特性、小部件的基本和高级设置以及小部件的数据键。
 
-Chart widgets allow you to display time series data with customizable line charts and bar charts. Moreover, you can use various pie charts to display the latest values.
+图表小部件允许您使用可自定义的折线图和条形图显示时间序列数据。此外，您可以使用各种饼图来显示最新值。
 
-## How to create a Chart widget
+## 如何创建图表小部件
 
-To add any chart widgets to your dashboards, you should:
+要将任何图表小部件添加到您的仪表板，您应该：
 
 {% include images-gallery.html imageCollection="charts-addwidget" showListImageTitles="true" %}
 
-## Chart widget types
+## 图表小部件类型
 
-Chart widgets are divided into Timeseries and Latest value widgets. Timeseries widgets are useful for visualizing changes in time series data over time.
-Latest values widgets are used when you need to see the latest attribute values or time series data for multiple entities.
+图表小部件分为时间序列和小部件和最新值小部件。时间序列小部件对于可视化时间序列数据随时间的变化非常有用。
+最新值小部件用于当您需要查看多个实体的最新属性值或时间序列数据时。
 
-### Timeseries widgets
+### 时间序列小部件
 
-Time series widgets visualize changes in time series data over time. Read [here](/docs/{{docsPrefix}}user-guide/dashboards/#time-window) how to set up the time window.
+时间序列小部件可视化时间序列数据随时间的变化。阅读[此处](/docs/{{docsPrefix}}user-guide/dashboards/#time-window)以了解如何设置时间窗口。
 
-##### Bar Chart
+##### 条形图
 
-[Bar Chart](/docs/{{docsPrefix}}user-guide/ui/chart-widget/#timeseries-bar-chart) widget displays changes to time series data over time. The example shows the temperature readings.
+[条形图](/docs/{{docsPrefix}}user-guide/ui/chart-widget/#timeseries-bar-chart)小部件显示时间序列数据随时间的变化。示例显示温度读数。
 
 {% include images-gallery.html imageCollection="charts-bar" %}
 
-##### Line Chart
+##### 折线图
 
-[Line Chart](/docs/{{docsPrefix}}user-guide/ui/chart-widget/#timeseries-line-chart) widget displays changes to time series data over time. The example shows temperature and humidity readings.
+[折线图](/docs/{{docsPrefix}}user-guide/ui/chart-widget/#timeseries-line-chart)小部件显示时间序列数据随时间的变化。示例显示温度和湿度读数。
 
 {% include images-gallery.html imageCollection="charts-line" %}
 
-##### State Chart
+##### 状态图
 
-[State Chart](/docs/{{docsPrefix}}user-guide/ui/chart-widget/#state-chart-1) widget displays changes to the state of the entity over time. 
-For example, if a device on and off, its states and conditions.
+[状态图](/docs/{{docsPrefix}}user-guide/ui/chart-widget/#state-chart-1)小部件显示实体状态随时间的变化。
+例如，如果设备开和关，其状态和条件。
 
 {% include images-gallery.html imageCollection="charts-state" %}
 
-### Last values widgets
+### 最新值小部件
 
-Latest values widgets render the latest values of attributes or time series data for multiple entities. Latest values widgets mostly support numeric values.
+最新值小部件呈现多个实体的属性或时间序列数据的最新值。最新值小部件主要支持数值。
 
-##### Radar
+##### 雷达
 
-Radar widget displays the latest attribute or time series data values for multiple entities in a radar chart. Supports numeric values only.
+雷达小部件在雷达图中显示多个实体的最新属性或时间序列数据值。仅支持数值。
 
-In the example, the widget displays the latest pressure time series data for three devices.
+在示例中，小部件显示三个设备的最新压力时间序列数据。
 
 {% include images-gallery.html imageCollection="charts-radar" %}
 
-##### Polar Area
+##### 极坐标面积图
 
-Polar Area widget displays the latest attribute or time series data values for multiple entities in a polar area chart. Supports numeric values only.
+极坐标面积图小部件在极坐标面积图中显示多个实体的最新属性或时间序列数据值。仅支持数值。
 
-In the example, the widget displays the latest pressure time series data for three devices.
+在示例中，小部件显示三个设备的最新压力时间序列数据。
 
 {% include images-gallery.html imageCollection="charts-polar" %}
 
-##### Pie - Chart.js
+##### 饼图 - Chart.js
 
-Pie - Chart.js widget displays the latest attribute or time series data values for multiple entities in a pie chart. Supports numeric values only.
+饼图 - Chart.js 小部件在饼图中显示多个实体的最新属性或时间序列数据值。仅支持数值。
 
-In the example, the widget displays the latest temperature time series data values for three devices.
+在示例中，小部件显示三个设备的最新温度时间序列数据值。
 
 {% include images-gallery.html imageCollection="charts-piejs" %}
 
-##### Pie - Flot
+##### 饼图 - Flot
 
-[Pie - Flot](/docs/{{docsPrefix}}user-guide/ui/chart-widget/#latest-values-pie---flot) widget displays the latest attribute or time series data values for multiple entities in a pie chart. 
-Supports numeric values only.
+[饼图 - Flot](/docs/{{docsPrefix}}user-guide/ui/chart-widget/#latest-values-pie---flot)小部件在饼图中显示多个实体的最新属性或时间序列数据值。
+仅支持数值。
 
-In the example, the widget displays the latest pressure time series data values for three devices.
+在示例中，小部件显示三个设备的最新压力时间序列数据值。
 
 {% include images-gallery.html imageCollection="charts-pieflot" %}
 
-##### Doughnut
+##### 甜甜圈
 
-[Doughnut](/docs/{{docsPrefix}}user-guide/ui/chart-widget/#latest-values-doughnut) widget displays the latest attribute or time series data values for multiple entities in a donut chart. 
-Supports numeric values only.
+[甜甜圈](/docs/{{docsPrefix}}user-guide/ui/chart-widget/#latest-values-doughnut)小部件在甜甜圈图中显示多个实体的最新属性或时间序列数据值。
+仅支持数值。
 
-In the example, the widget displays the latest humidity time series data values for three devices.
+在示例中，小部件显示三个设备的最新湿度时间序列数据值。
 
 {% include images-gallery.html imageCollection="charts-doughnut" %}
 
-##### Bars
+##### 条形图
 
-Bars widget displays the latest values of the attributes or time series data for multiple entities as separate bars.
-The only latest values chart widget that allows using not only numeric values.
+条形图小部件将多个实体的属性或时间序列数据的最新值显示为单独的条形图。
+唯一允许使用不仅是数值的最新值图表小部件。
 
-In the example, widget is displaying the latest pressure time series data values for three devices.
+在示例中，小部件显示三个设备的最新压力时间序列数据值。
 
 {% include images-gallery.html imageCollection="charts-bars" %}
 
-## Chart widget settings
+## 图表小部件设置
 
-### Basic widget settings 
+### 基本小部件设置
 
-Basic widget settings are responsible for the appearance and style of the widget: from the title style and legend configuration to the settings for mobile devices. 
-All of ThingsBoard widgets have the same basic settings, you can learn how to customize them [here](/docs/{{docsPrefix}}user-guide/dashboards/#basic-widget-settings).
+基本小部件设置负责小部件的外观和样式：从标题样式和图例配置到移动设备的设置。
+所有 ThingsBoard 小部件都具有相同的基本设置，您可以在[此处](/docs/{{docsPrefix}}user-guide/dashboards/#basic-widget-settings)了解如何自定义它们。
 
-### Advanced widgets settings
+### 高级小部件设置
 
-Advanced widget settings vary for different widget types. Advanced settings are responsible for configuring the unique features of the specific widget.  
-To enter the widget Edit mode and start configuring its Advanced settings, first enter the dashboard edit mode. Then, you should:
+高级小部件设置因不同的小部件类型而异。高级设置负责配置特定小部件的独特功能。
+要进入小部件编辑模式并开始配置其高级设置，首先进入仪表板编辑模式。然后，您应该：
 
 {% include images-gallery.html imageCollection="charts-bar-advanced" showListImageTitles="true" %}
 
-#### Timeseries Bar Chart
+#### 时间序列条形图
 
-##### 1. Common Settings
+##### 1. 常规设置
 
-**1.1.** Stacking
+**1.1.** 堆叠
 
-Use this function if the data aggregation function **is not** set to None.
-If the Stacking box checked, the bar will be split according to the values of the entities used.
-If this box isn't checked, the widget will show you the sum of the used entity values. To see the values of all entities, you need to hover your mouse over the bar.
+如果数据聚合函数**未**设置为无，请使用此功能。
+如果选中堆叠框，则条形图将根据所用实体的值进行拆分。
+如果未选中此框，则小部件将显示所用实体值的总和。要查看所有实体的值，您需要将鼠标悬停在条形图上。
 
 {% include images-gallery.html imageCollection="charts-bar-adv-stacking" showListImageTitles="true" %}
 
-If your data is not aggregated, you can adjust **the Default bar width for non-aggregated data (milliseconds)** by changing the number. This action makes the bars of the chart wider.
+如果您的数据未聚合，您可以通过更改数字来调整**非聚合数据的默认条形图宽度（毫秒）**。此操作使图表中的条形图更宽。
 
-**Bar alignment** is responsible for the placement of the bars on the Chart widget relative to the time point.
+**条形图对齐**负责图表小部件上条形图相对于时间点的放置。
 
-**Default line width for all thresholds**, **Shadow size**, **Font color and size** work for Timeseries Line Chart and State Chart widgets.
+**所有阈值的默认线宽**、**阴影大小**、**字体颜色和大小**适用于时间序列折线图和状态图小部件。
 
-**Tooltip value format function, f(value)** is used when you want to manually customize the tooltip.
-You can customize the values that will be displayed in the tooltip via [Settings](/docs/{{docsPrefix}}user-guide/dashboards/#5-other-settings) or 
-[Advanced Data key configuration](/docs/{{docsPrefix}}user-guide/ui/advanced-data-key-configuration/#2-charts). 
-Tooltip configuration via Settings is basic and applied to all entities at the same time. When configured in the Advanced Data key configuration,
-it is applied only to the specific time series data, and the basic tooltip function will be overwritten by this configuration.
+**工具提示值格式函数，f(value)**用于您想要手动自定义工具提示时。
+您可以通过[设置](/docs/{{docsPrefix}}user-guide/dashboards/#5-other-settings)或
+[高级数据键配置](/docs/{{docsPrefix}}user-guide/ui/advanced-data-key-configuration/#2-charts)自定义将在工具提示中显示的值。
+通过设置进行的工具提示配置是基本的，同时应用于所有实体。在高级数据键配置中配置时，
+它仅应用于特定时间序列数据，并且基本工具提示函数将被此配置覆盖。
 
-But, if you need something really special for your widget, the Tooltip value format function is for you.
-Suppose you have temperature readings, and you'd like to see Celsius and Fahrenheit values on your widget, which will be displayed with two floating points.
+但是，如果您的小部件需要一些非常特别的东西，那么工具提示值格式函数适合您。
+假设您有温度读数，并且您希望在小部件上看到摄氏度和华氏度值，这些值将以两个浮点数显示。
 
 {% include images-gallery.html imageCollection="bars-tooltipfunction" showListImageTitles="true" %}
 
-**1.2.** Grid settings
+**1.2.** 网格设置
 
-You can change the appearance of the Chart grid: customize the color of the background, the grid frame and its ticks; change the width of the lines and turn off their visibility.
+您可以更改图表网格的外观：自定义背景颜色、网格框架及其刻度；更改线条的宽度并关闭它们的可见性。
 
 {% include images-gallery.html imageCollection="bars-grid" showListImageTitles="true" %}
 
-**1.3.** Axis settings
+**1.3.** 轴设置
 
 {% include images-gallery.html imageCollection="bars-axis" showListImageTitles="true" %}
 
-**1.4.** Ticks formatter function, f(value)
+**1.4.** 刻度格式化程序函数，f(value)
 
-Let's say we have telemetry which takes values of very large numbers, especially when there is a special symbol near values.
-However, we need to build a small graph (since we don't have a lot of free space on the dashboard).
-Therefore, using the ticks-formatter function, we can convert the ticks values to a more compact form.
+假设我们有遥测数据，其值非常大，尤其是在值附近有特殊符号时。
+但是，我们需要构建一个小的图形（因为仪表板上没有太多可用空间）。
+因此，使用刻度格式化程序函数，我们可以将刻度值转换为更紧凑的形式。
 
 {% include images-gallery.html imageCollection="bars-ticksfun" showListImageTitles="true" %}
 
-##### 2. Comparison Settings
+##### 2. 比较设置
 
-Comparison settings allow you to compare the difference in values over a specific period of time. Works only in the History time window.
+比较设置允许您比较特定时间段内值的差异。仅在历史时间窗口中有效。
 
 {% include images-gallery.html imageCollection="bars-comparison" showListImageTitles="true" %}
 
-##### 3. Custom Legend Settings
+##### 3. 自定义图例设置
 
-Custom Legend Settings are for cases when you need to display data that cannot be displayed in the chart such as attributes or display specific time series only in the Chart legend.
-For the example let's use active/inactive attributes that can not be displayed on a Chart, only in a Table widget.
+自定义图例设置适用于您需要显示图表中无法显示的数据的情况，例如属性或仅在图表图例中显示特定时间序列。
+例如，让我们使用无法在图表中显示的活动/非活动属性，只能在表格小部件中显示。
 
 {% include images-gallery.html imageCollection="bars-legend" showListImageTitles="true" %}
 
-#### Timeseries Line Chart
+#### 时间序列折线图
 
-Advanced settings for the _Timeseries Line Chart_ widget are the same as for Timeseries Bar Chart. You can learn about these settings [above](/docs/{{docsPrefix}}user-guide/ui/chart-widget/#timeseries-bar-chart).
+时间序列折线图小部件的高级设置与时间序列条形图相同。您可以在[上面](/docs/{{docsPrefix}}user-guide/ui/chart-widget/#timeseries-bar-chart)了解这些设置。
 
-##### 1. Display smooth (curved) lines 
+##### 1. 显示平滑（曲线）线
 
 {% include images-gallery.html imageCollection="lines-smooth" showListImageTitles="true" %}
 
-###### 2. Default line width for all thresholds
+###### 2. 所有阈值的默认线宽
 
 {% include images-gallery.html imageCollection="lines-thresholds" showListImageTitles="true" %}
 
-#### State Chart
+#### 状态图
 
-##### 1. Common Settings
+##### 1. 常规设置
 
-**1.1.** Stacking
+**1.1.** 堆叠
 
-Stacking mode works in widgets where you need to see entity values.
+堆叠模式适用于您需要查看实体值的小部件。
 
-**1.2.** Display smooth (curved) lines works only in Line Charts.
+**1.2.** 显示平滑（曲线）线仅适用于折线图。
 
-**1.3.** Hover individual points
+**1.3.** 悬停单个点
 
-When the box **Hover individual points** is checked, you won't see value points on the lines. 
+选中**悬停单个点**框后，您将看不到线上的值点。
 
-**1.4.** Cumulative values in stacking mode
+**1.4.** 堆叠模式中的累积值
 
-While stacking mode is on, you can check the box "Cumulative values" to enable your chart to display sum of all entity values.
+在堆叠模式开启时，您可以选中“累积值”框以使您的图表显示所有实体值的总和。
 
-**1.5. Tooltip value format function, f(value)** is used when you want to manually customize the tooltip.
-You can customize the values that will be displayed in the tooltip via [Settings](/docs/{{docsPrefix}}user-guide/dashboards/#5-other-settings) or
-[Advanced Data key configuration](/docs/{{docsPrefix}}user-guide/ui/advanced-data-key-configuration/#2-charts).
-Tooltip configuration via Settings is basic and applied to all entities at the same time. When configured in the Advanced Data key configuration,
-it is applied only to the specific time series data, and the basic tooltip function will be overwritten by this configuration.
+**1.5. 工具提示值格式函数，f(value)**用于您想要手动自定义工具提示时。
+您可以通过[设置](/docs/{{docsPrefix}}user-guide/dashboards/#5-other-settings)或
+[高级数据键配置](/docs/{{docsPrefix}}user-guide/ui/advanced-data-key-configuration/#2-charts)自定义将在工具提示中显示的值。
+通过设置进行的工具提示配置是基本的，同时应用于所有实体。在高级数据键配置中配置时，
+它仅应用于特定时间序列数据，并且基本工具提示函数将被此配置覆盖。
 
-In State Chart, you can configure entity states to be shown on a tooltip depending on entity values.
+在状态图中，您可以根据实体值将实体状态配置为显示在工具提示上。
 
 <summary>
-<b>Let's use function to set the needed configuration:</b>
+<b>让我们使用函数来设置所需的配置：</b>
 </summary>
 
 {% highlight ruby %}
@@ -220,66 +220,65 @@ return celsiusValue + ' °C (' + farenheitValue + ' °F)';
 
 {% include images-gallery.html imageCollection="state-tooltipfunction" showListImageTitles="true" %}
 
-**1.6. Grid settings**
+**1.6. 网格设置**
 
-Grid settings are the same as in [Timeseries Bar Chart](/docs/{{docsPrefix}}user-guide/ui/chart-widget/#1-common-settings). 
+网格设置与[时间序列条形图](/docs/{{docsPrefix}}user-guide/ui/chart-widget/#1-common-settings)中的相同。
 
-**1.7. Axis settings**
+**1.7. 轴设置**
 
-Axis settings are the same as in [Timeseries Bar Chart](/docs/{{docsPrefix}}user-guide/ui/chart-widget/#1-common-settings).
+轴设置与[时间序列条形图](/docs/{{docsPrefix}}user-guide/ui/chart-widget/#1-common-settings)中的相同。
 
-**1.8. Ticks formatter function**
+**1.8. 刻度格式化程序函数**
 
 {% include images-gallery.html imageCollection="state-ticksfun" showListImageTitles="true" %}
 
-##### 2. Comparison Settings
+##### 2. 比较设置
 
 {% include images-gallery.html imageCollection="state-comparison" showListImageTitles="true" %}
 
-##### 3. Custom Legend Settings
+##### 3. 自定义图例设置
 
-Custom Legend Settings are the same as in [Timeseries Bar Chart](/docs/{{docsPrefix}}user-guide/ui/chart-widget/#3-custom-legend-settings).
+自定义图例设置与[时间序列条形图](/docs/{{docsPrefix}}user-guide/ui/chart-widget/#3-custom-legend-settings)中的相同。
 
-#### Latest values Pie - Flot
+#### 最新值饼图 - Flot
 
-##### 1. Radius
+##### 1. 半径
 
-Sets the radius of the pie. If the value is between 0 and 1 (inclusive) then it will use that as a percentage of the available space (size of the container). 
-Otherwise, it will use the value as a direct pixel length.
+设置饼的半径。如果值在 0 和 1（包括）之间，则将其用作可用空间（容器大小）的百分比。
+否则，它将使用该值作为直接像素长度。
 
 {% include images-gallery.html imageCollection="pieflot-radius" showListImageTitles="true" %}
 
-##### 2. Inner radius
+##### 2. 内半径
 
-Sets the radius of the donut hole. If value is between 0 and 1 (inclusive) then it will use that as a percentage of the radius, otherwise it will use the value as a direct pixel length.
+设置甜甜圈孔的半径。如果值在 0 和 1（包括）之间，则将其用作半径的百分比，否则它将使用该值作为直接像素长度。
 
 {% include images-gallery.html imageCollection="pieflot-innerradius" showListImageTitles="true" %}
 
-##### 3. Enable pie animation
+##### 3. 启用饼动画
 
-With the changing of entities values the Pie - Flot obviously moves, but these moves are rather sharp movements. Nevertheless, Pie animation makes these moves smoother and softer. 
+随着实体值的改变，饼图 - Flot 显然会移动，但这些移动是相当剧烈的动作。尽管如此，饼动画使这些动作更流畅、更柔和。
 
 {% include images-gallery.html imageCollection="pieflot-animation" showListImageTitles="true" %}
 
-##### 4. Tilt
+##### 4. 倾斜
 
-Percentage of tilt ranging from 0 and 1, where 1 has no change (fully vertical) and 0 is completely flat (fully horizontal, in which case nothing actually gets drawn).
-The tilt value is now used when calculating the maximum radius of the pie in relation to the height of the container. 
-This should prevent the pie from being smaller than it needed to in some cases, as well as reducing the amount of extra white space generated above and below the pie.
+倾斜的百分比范围从 0 到 1，其中 1 没有变化（完全垂直），0 是完全平坦（完全水平，在这种情况下实际上没有任何东西被绘制）。
+现在在计算饼的最大半径与容器高度的关系时使用倾斜值。
+这应该可以防止饼在某些情况下比需要的小，并减少饼上方和下方生成的额外空白空间。
 
 {% include images-gallery.html imageCollection="pieflot-tilt" showListImageTitles="true" %}
 
-##### 5. Stroke
+##### 5. 描边
 
 {% include images-gallery.html imageCollection="pieflot-stroke" showListImageTitles="true" %}
 
-#### Latest values Doughnut
+#### 最新值甜甜圈
 
-##### 1. Border
+##### 1. 边框
 
 {% include images-gallery.html imageCollection="donut-border" showListImageTitles="true" %}
 
-##### 2. Legend settings
+##### 2. 图例设置
 
 {% include images-gallery.html imageCollection="donut-legend" showListImageTitles="true" %}
-

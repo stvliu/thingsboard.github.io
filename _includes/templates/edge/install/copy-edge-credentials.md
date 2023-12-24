@@ -1,6 +1,6 @@
-Click on **Copy Edge Key** and **Copy Edge Secret** in the edge details section.
-This will copy your edge credentials to your clipboard.
-Be sure to store them in a secure location, as these values will be needed in the following steps.
+在边缘详细信息部分点击 **复制边缘密钥** 和 **复制边缘密钥**。
+这会将您的边缘凭据复制到剪贴板。
+务必将它们存储在安全的位置，因为在后续步骤中需要这些值。
 
 {% if docsPrefix == 'pe/edge/' %}
 {% assign copyEdgeCredentials = '

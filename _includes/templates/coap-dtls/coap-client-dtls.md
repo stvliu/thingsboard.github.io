@@ -1,20 +1,20 @@
-Install the CoAP client with DTLS support on Linux by following the next steps:
- 
-- step 1: clone libcoap git repo: 
+按照以下步骤在 Linux 上安装支持 DTLS 的 CoAP 客户端：
+
+- 步骤 1：克隆 libcoap git 仓库：
 
 ```bash
 git clone https://github.com/obgm/libcoap --recursive --depth 1
 ```
 {: .copy-code}
 
-- step 2: navigate into libcoap directory:
+- 步骤 2：导航到 libcoap 目录：
 
 ```bash
 cd libcoap
 ```
 {: .copy-code}
 
-- step 3: execute next commands and then run ./autogen.sh script:
+- 步骤 3：执行以下命令，然后运行 ./autogen.sh 脚本：
 
 ```bash
 sudo apt-get update
@@ -33,21 +33,21 @@ sudo apt-get install autoconf libtool libssl-dev
 ```
 {: .copy-code}
 
-- step 4: run ./configure script with next options:
+- 步骤 4：使用以下选项运行 ./configure 脚本：
 
 ```bash
 ./configure --with-openssl --disable-doxygen --disable-manpages --disable-shared
 ```
 {: .copy-code}
 
-- step 5: execute next command:
+- 步骤 5：执行以下命令：
 
 ```bash
 make
 ```
 {: .copy-code}
 
-- step 6: execute next command:
+- 步骤 6：执行以下命令：
 
 ```bash
 sudo make install

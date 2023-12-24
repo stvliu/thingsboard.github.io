@@ -1,7 +1,7 @@
 <table>
     <thead>
       <tr>
-          <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
+          <td style="width: 25%"><b>参数</b></td><td style="width: 30%"><b>环境变量</b></td><td style="width: 15%"><b>默认值</b></td><td style="width: 30%"><b>说明</b></td>
       </tr>
     </thead>
     <tbody>
@@ -9,123 +9,121 @@
         <td>transport.coap.bind_address</td>
         <td>COAP_BIND_ADDRESS</td>
         <td>0.0.0.0</td>
-        <td>CoAP bind address</td>
+        <td>CoAP 绑定地址</td>
     </tr>
     <tr>
         <td>transport.coap.bind_port</td>
         <td>COAP_BIND_PORT</td>
         <td>5683</td>
-        <td>CoAP bind port</td>
+        <td>CoAP 绑定端口</td>
     </tr>
     <tr>
         <td>transport.coap.timeout</td>
         <td>COAP_TIMEOUT</td>
         <td>10000</td>
-        <td>CoaP processing timeout in milliseconds</td>
+        <td>CoaP 处理超时（以毫秒为单位）</td>
     </tr>
     <tr>
         <td>transport.coap.psm_activity_timer</td>
         <td>COAP_PSM_ACTIVITY_TIMER</td>
         <td>10000</td>
-        <td>Default PSM Activity Timer if not specified in device profile.</td>
+        <td>如果设备配置文件中未指定，则为默认 PSM 活动计时器。</td>
     </tr>
     <tr>
         <td>transport.coap.paging_transmission_window</td>
         <td>COAP_PAGING_TRANSMISSION_WINDOW</td>
         <td>10000</td>
-        <td>Default Paging Transmission Window for eDRX support if not specified in the device profile.</td>
+        <td>如果设备配置文件中未指定，则为 eDRX 支持的默认寻呼传输窗口。</td>
     </tr>
     <tr>
         <td>transport.coap.dtls.enabled</td>
         <td>COAP_DTLS_ENABLED</td>
         <td>false</td>
-        <td>Enable/disable DTLS 1.2 support</td>
+        <td>启用/禁用 DTLS 1.2 支持</td>
     </tr>
     <tr>
         <td>transport.coap.dtls.bind_address</td>
         <td>COAP_DTLS_BIND_ADDRESS</td>
         <td>0.0.0.0</td>
-        <td>CoAP DTLS bind address</td>
+        <td>CoAP DTLS 绑定地址</td>
     </tr>
     <tr>
         <td>transport.coap.dtls.bind_port</td>
         <td>COAP_DTLS_BIND_PORT</td>
         <td>5684</td>
-        <td>CoAP DTLS bind port</td>
+        <td>CoAP DTLS 绑定端口</td>
     </tr>
     <tr>
         <td>transport.coap.dtls.credentials.type</td>
         <td>COAP_DTLS_CREDENTIALS_TYPE</td>
         <td>PEM</td>
-        <td>Server credentials type (PEM - pem certificate file; KEYSTORE - java keystore)</td>
+        <td>服务器凭据类型（PEM - pem 证书文件；KEYSTORE - java 密钥库）</td>
     </tr>
     <tr>
         <td>transport.coap.dtls.credentials.pem.cert_file</td>
         <td>COAP_DTLS_PEM_CERT</td>
         <td>coapserver.pem</td>
-        <td>Path to the server certificate file (holds server certificate or certificate chain, may include server
-            private key)
-        </td>
+        <td>服务器证书文件的路径（保存服务器证书或证书链，可能包括服务器私钥）</td>
     </tr>
     <tr>
         <td>transport.coap.dtls.credentials.pem.key_file</td>
         <td>COAP_DTLS_PEM_KEY</td>
         <td>coapserver_key.pem</td>
-        <td>Path to the server certificate private key file (optional)</td>
+        <td>服务器证书私钥文件的路径（可选）</td>
     </tr>
     <tr>
         <td>transport.coap.dtls.credentials.pem.key_password</td>
         <td>COAP_DTLS_PEM_KEY_PASSWORD</td>
         <td>server_key_password</td>
-        <td>Server certificate private key password (optional)</td>
+        <td>服务器证书私钥密码（可选）</td>
     </tr>
     <tr>
         <td>transport.coap.dtls.credentials.keystore.type</td>
         <td>COAP_DTLS_KEY_STORE_TYPE</td>
         <td>JKS</td>
-        <td>Type of the key store</td>
+        <td>密钥库的类型</td>
     </tr>
     <tr>
         <td>transport.coap.dtls.credentials.keystore.store_file</td>
         <td>COAP_DTLS_KEY_STORE</td>
         <td>coapserver.jks</td>
-        <td>Path to the key store that holds the SSL certificate</td>
+        <td>保存 SSL 证书的密钥库的路径</td>
     </tr>
     <tr>
         <td>transport.coap.dtls.credentials.keystore.store_password</td>
         <td>COAP_DTLS_KEY_STORE_PASSWORD</td>
         <td>server_ks_password</td>
-        <td>Password used to access the key store</td>
+        <td>用于访问密钥库的密码</td>
     </tr>
     <tr>
         <td>transport.coap.dtls.credentials.keystore.key_alias</td>
         <td>COAP_DTLS_KEY_ALIAS</td>
         <td>serveralias</td>
-        <td>Key alias</td>
+        <td>密钥别名</td>
     </tr>
     <tr>
         <td>transport.coap.dtls.credentials.keystore.key_password</td>
         <td>COAP_DTLS_KEY_PASSWORD</td>
         <td>server_key_password</td>
-        <td>Password used to access the key</td>
+        <td>用于访问密钥的密码</td>
     </tr>
     <tr>
         <td>transport.coap.dtls.x509.skip_validity_check_for_client_cert</td>
         <td>TB_COAP_X509_DTLS_SKIP_VALIDITY_CHECK_FOR_CLIENT_CERT</td>
         <td>false</td>
-        <td>Skip check of client certificate validity.</td>
+        <td>跳过客户端证书有效性检查。</td>
     </tr>
     <tr>
         <td>transport.coap.dtls.x509.dtls_session_inactivity_timeout</td>
         <td>TB_COAP_X509_DTLS_SESSION_INACTIVITY_TIMEOUT</td>
         <td>86400000</td>
-        <td>Inactivity timeout of DTLS session. Used to cleanup cache.</td>
+        <td>DTLS 会话的不活动超时。用于清理缓存。</td>
     </tr>
     <tr>
         <td>transport.coap.dtls.x509.dtls_session_report_timeout</td>
         <td>TB_COAP_X509_DTLS_SESSION_REPORT_TIMEOUT</td>
         <td>1800000</td>
-        <td>Interval of periodic eviction of the timed-out DTLS sessions.</td>
+        <td>定期驱逐超时 DTLS 会话的时间间隔。</td>
     </tr>
     </tbody>
 </table>

@@ -2,26 +2,26 @@
 layout: docwithnav
 assignees:
 - ashvayka
-title: Method Name Filter
+title: 方法名称过滤器
 
 ---
 
-## Overview
+## 概述
 
-This component allows filtering incoming RPC request messages by method name. 
-This filter is very efficient and useful to forward RPC request to particular plugins that handle them.
+此组件允许按方法名称过滤传入的 RPC 请求消息。
+此过滤器非常高效，可用于将 RPC 请求转发到处理它们的特定插件。
 
-## Configuration
+## 配置
 
-You are able to select multiple method names in one filter. 
-For example, if you want to have two plugins (their functionality is just for the demo purposes):
- - plugin A allows getting current time
- - plugin B allows getting the weather forecast
-You may implement plugin A to handle *getTime* method and plugin B to handle *getWeather* method.
-In this case you will need to configure two rules:
- - rule A that points to plugin A based on "getTime" method filter 
- - rule B that points to plugin B based on "getWeather" method filter
+您可以在一个过滤器中选择多个方法名称。
+例如，如果您想有两个插件（它们的功能仅用于演示目的）：
+- 插件 A 允许获取当前时间
+- 插件 B 允许获取天气预报
+您可以实现插件 A 来处理 *getTime* 方法，并实现插件 B 来处理 *getWeather* 方法。
+在这种情况下，您需要配置两条规则：
+- 基于“getTime”方法过滤器指向插件 A 的规则 A
+- 基于“getWeather”方法过滤器指向插件 B 的规则 B
 
-## Example
+## 示例
 
-As a system administrator, you are able to review filter example inside **Rules->Demo Time RPC Rule->Filters->Message Telemetry Filter** which match rpc requests with "getTime" method name.
+作为系统管理员，您可以在 **规则->演示时间 RPC 规则->过滤器->消息遥测过滤器** 中查看过滤器示例，该示例与“getTime”方法名称匹配 rpc 请求。

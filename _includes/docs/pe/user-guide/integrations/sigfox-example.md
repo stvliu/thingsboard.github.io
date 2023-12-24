@@ -3,226 +3,222 @@
 {% assign peDocsPrefix = docsPrefix %}
 {% endif %}
 
-{% assign feature = "Platform Integrations" %}{% include templates/pe-feature-banner.md %}
+{% assign feature = "平台集成" %}{% include templates/pe-feature-banner.md %}
 
-This tutorial will show how to push downlink messages to devices connected via Sigfox integration
- when user updates device attribute using ThingsBoard UI
+本教程将演示如何将下行消息推送到通过 Sigfox 集成连接的设备，前提是用户使用 ThingsBoard UI 更新设备属性
 
 * TOC
 {:toc}
  
-## Use case
+## 使用案例
 
-In this tutorial we will get a shared attribute of specified device using SigFox integration.
-SigFox backend will be simulated using Postman.
+在本教程中，我们将使用 SigFox 集成获取指定设备的共享属性。
+SigFox 后端将使用 Postman 模拟。
 
-## Prerequisites
+## 先决条件
 
-We assume you have completed the following guides and reviewed the articles listed below:
+我们假设您已完成以下指南并阅读了以下文章：
 
-  * [Getting Started](/docs/{{docsPrefix}}getting-started-guides/helloworld/) guide.
-  * [Rule Engine Overview](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/).
-  * [SigFox Integration](/docs/{{peDocsPrefix}}user-guide/integrations/sigfox/).
-  * [Data converters](/docs/{{peDocsPrefix}}user-guide/integrations/#data-converters).
+  * [入门](/docs/{{docsPrefix}}getting-started-guides/helloworld/) 指南。
+  * [规则引擎概述](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/)。
+  * [SigFox 集成](/docs/{{peDocsPrefix}}user-guide/integrations/sigfox/)。
+  * [数据转换器](/docs/{{peDocsPrefix}}user-guide/integrations/#data-converters)。
 
-## Model definition
+## 模型定义
   
-We will operate with device that has name "Thermostat A" which will be
-automatically created in the process of integration work.
+我们将操作具有名称“恒温器 A”的设备，该设备将在集成工作过程中自动创建。
 
 ![image](/images/user-guide/integrations/sigfox/sigfox-device.png)
 
-**Note**: a shared attribute of this device has to be created.
+**注意**：必须创建此设备的共享属性。
 
-## Getting started
+## 入门
 
-### Creating converters
+### 创建转换器
 
-In order for integration to work, downlink and uplink converters should be created.
+为了使集成正常工作，应创建下行和上行转换器。
 
-- Go to **Data Converters** -> **Add new Data Converter** -> **Import Converter** 
+- 转到 **数据转换器** -> **添加新的数据转换器** -> **导入转换器** 
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/import_new_converter.png)
 
-- Import following files: [**uplink converter**](/docs/user-guide/resources/sigfox/uplink-sigfox-converter.json),
- [**downlink converter**](/docs/user-guide/resources/sigfox/downlink-sigfox-converter.json).
+- 导入以下文件：[**上行转换器**](/docs/user-guide/resources/sigfox/uplink-sigfox-converter.json)，
+ [**下行转换器**](/docs/user-guide/resources/sigfox/downlink-sigfox-converter.json)。
 
-Uplink converter should look like this:
+上行转换器应如下所示：
 
 ![image](/images/user-guide/integrations/sigfox/sigfox-uplink-converter.png) 
 
-Downlink converter should look like this:
+下行转换器应如下所示：
 
 ![image](/images/user-guide/integrations/sigfox/sigfox-uplink-converter.png)
 
-### Creating integration
+### 创建集成
 
-Integration should look like this:
+集成应如下所示：
 
-- Go to **Integrations** -> **Add new Integration**
+- 转到 **集成** -> **添加新的集成**
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/add-new-integration.png)
 
-- Fill in the fields with the input data shown in the following table: 
+- 使用下表中所示的输入数据填写字段：
 
 <table style="width: 25%">
   <thead>
       <tr>
-          <td><b>Field</b></td><td><b>Input Data</b></td>
+          <td><b>字段</b></td><td><b>输入数据</b></td>
       </tr>
   </thead>
   <tbody>
       <tr>
-          <td>Name</td>
-          <td>New SigFox Integration</td>
+          <td>名称</td>
+          <td>新的 SigFox 集成</td>
       </tr>
       <tr>
-          <td>Type</td>
+          <td>类型</td>
           <td>SigFox</td>
       </tr>
       <tr>
-          <td>Debug mode</td>
-          <td>False</td>
+          <td>调试模式</td>
+          <td>否</td>
       </tr>
       <tr>
-          <td>Uplink data converter</td>
-          <td>New uplink SigFox converter</td>
+          <td>上行数据转换器</td>
+          <td>新的上行 SigFox 转换器</td>
       </tr>
       <tr>
-          <td>Downlink data converter</td>
-          <td>New downlink SigFox converter</td>
+          <td>下行数据转换器</td>
+          <td>新的下行 SigFox 转换器</td>
       </tr>
       <tr>
-          <td>Base URl</td>
+          <td>基本 URL</td>
           <td>http://thingsboard.cloud</td>
       </tr>
       <tr>
-          <td>Enable secrurity</td>
-          <td>False</td>
+          <td>启用安全性</td>
+          <td>否</td>
       </tr>
    </tbody>
 </table> 
 
 ![image](/images/user-guide/integrations/sigfox/sigfox-create-integration.png)
 
-## Message flow
+## 消息流
 
-In this section, we explain the purpose of each node in this tutorial. There will be one rule chain involved:
+在本节中，我们将解释本教程中每个节点的用途。将涉及一个规则链：
 
-- **Root rule chain** - rule chain that saves telemetry from devices into the database, and redirects the 
-attribute updates to **To SigFox integration** chain.
-- **To SigFox integration** - rule chain that sends all incoming data which has a specified key to integration.
+- **根规则链** - 将设备遥测数据保存到数据库的规则链，并将属性更新重定向到 **到 SigFox 集成** 链。
+- **到 SigFox 集成** - 将所有具有指定键的传入数据发送到集成的规则链。
 
-The following screenshots show how the above Rule Chains should look like:
+以下屏幕截图显示了上述规则链应如何显示：
 
-- **To SigFox integration**:
+- **到 SigFox 集成**：
 
 ![image](/images/user-guide/integrations/sigfox/sigfox-rule-chain.png)
 
-- **Root Rule Chain**:
+- **根规则链**：
 
 ![image](/images/user-guide/integrations/sigfox/sigfox-root-rule-chain.png)
 
-Download and [**import**](/docs/{{docsPrefix}}user-guide/ui/rule-chains/#rule-import) the attached json
- [**file**](/docs/user-guide/integrations/tutorials/resources/sigfox/to-sigfox-integration.json) for the
-  **To SigFox integration** rule chain.
+下载并[**导入**](/docs/{{docsPrefix}}user-guide/ui/rule-chains/#rule-import)附加的 json
+ [**文件**](/docs/user-guide/integrations/tutorials/resources/sigfox/to-sigfox-integration.json) 作为
+  **到 SigFox 集成** 规则链。
   
-Create Node C as shown on the image above in the root rule chain to forward attribute update messages to the imported 
-rule chain. 
+在根规则链中创建节点 C，如上图所示，以将属性更新消息转发到导入的规则链。
 
-The following section shows you how to create this rule chain from scratch.
+以下部分向您展示如何从头开始创建此规则链。
 
-#### Create new Rule Chain (**To SigFox integration**)
+#### 创建新的规则链（**到 SigFox 集成**）
 
-Go to **Rule Chains** -> **Add new Rule Chain** 
+转到 **规则链** -> **添加新的规则链** 
 
-Configuration:
+配置：
 
-- Name : **To SigFox integration**
+- 名称：**到 SigFox 集成**
 
 ![image](/images/user-guide/integrations/sigfox/add-to-sigfox-integration-chain.png)
 
-New Rule Chain is created. Press **Edit** button and configure Chain.
+创建新的规则链。按 **编辑** 按钮并配置链。
 
-###### Adding the required nodes
+###### 添加所需的节点
 
-In this rule chain, you will create 2 nodes as it will be explained in the following sections:
+在此规则链中，您将创建 2 个节点，如下节所述：
 
-###### Node A: **Check existence filter**
+###### 节点 A：**检查存在过滤器**
 
-- Add the **Check existence filter** node and connect it to the **Input** node with a relation type **Success**.
-  This rule node checks if incoming updated attribute is "status" or not. 
+- 添加 **检查存在过滤器** 节点，并通过关系类型 **成功** 将其连接到 **输入** 节点。
+此规则节点检查传入的更新属性是否为“状态”。
 
 ![image](/images/user-guide/integrations/sigfox/check-status-field.png)
 
-- Fill in the fields with the input data shown in the following table: 
+- 使用下表中所示的输入数据填写字段：
 
 <table style="width: 25%">
   <thead>
       <tr>
-          <td><b>Field</b></td><td><b>Input Data</b></td>
+          <td><b>字段</b></td><td><b>输入数据</b></td>
       </tr>
   </thead>
   <tbody>
       <tr>
-          <td>Name</td>
-          <td>Check status field</td>
+          <td>名称</td>
+          <td>检查状态字段</td>
       </tr>
       <tr>
-          <td>Message data</td>
-          <td>status</td>
+          <td>消息数据</td>
+          <td>状态</td>
       </tr>
    </tbody>
 </table> 
 
-###### Node B: **Integration downlink**
+###### 节点 B：**集成下行**
 
-- Add the **Integration downlink** node and connect it to the **Check existence filter** node with a relation type
- **Success**. This rule node pushes message to specified integration. 
+- 添加 **集成下行** 节点，并通过关系类型
+ **成功** 将其连接到 **检查存在过滤器** 节点。此规则节点将消息推送到指定集成。 
  
  ![image](/images/user-guide/integrations/sigfox/push-to-integration.png)
 
-- Fill in the fields with the input data shown in the following table: 
+- 使用下表中所示的输入数据填写字段：
 
 <table style="width: 25%">
   <thead>
       <tr>
-          <td><b>Field</b></td><td><b>Input Data</b></td>
+          <td><b>字段</b></td><td><b>输入数据</b></td>
       </tr>
   </thead>
   <tbody>
       <tr>
-          <td>Name</td>
-          <td>Push to integration</td>
+          <td>名称</td>
+          <td>推送到集成</td>
       </tr>
       <tr>
-          <td>Integration</td>
-          <td>New SigFox Integration</td>
+          <td>集成</td>
+          <td>新的 SigFox 集成</td>
       </tr>
    </tbody>
 </table> 
 
-#### Modify Root Rule Chain
+#### 修改根规则链
 
-The initial root Rule Chain has been modified by adding the following node:
+通过添加以下节点修改了初始根规则链：
 
-###### Node С: **Rule Chain**
+###### 节点 С：**规则链**
 
-- Add the **Rule Chain** node and connect it to the **Message type switch** node with a relation type 
-**Update attributes**. This node forwards incoming Message to specified Rule Chain **To SigFox integration**.
+- 添加 **规则链** 节点，并通过关系类型
+ **更新属性** 将其连接到 **消息类型开关** 节点。此节点将传入消息转发到指定的规则链 **到 SigFox 集成**。
 
-- Select the Rule Chain field: **To SigFox integration**.
+- 选择规则链字段：**到 SigFox 集成**。
 
 ![image](/images/user-guide/integrations/sigfox/add-rule-chain-node.png)
 
-The following screenshot shows how the final **Root Rule Chain** should look like:
+以下屏幕截图显示了最终的 **根规则链** 应如何显示：
 
 ![image](/images/user-guide/integrations/sigfox/sigfox-root-rule-chain.png)
 
-## Conclusion
+## 结论
 
-Now when "status" attribute is updated, integration will send downlink message.
+现在，当“状态”属性更新时，集成将发送下行消息。
 
-## Next steps
+## 后续步骤
 
 {% assign currentGuide = "ConnectYourDevice" %}{% include templates/multi-project-guides-banner.md %}

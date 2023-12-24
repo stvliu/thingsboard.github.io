@@ -1,7 +1,7 @@
 ---
 layout: devices-library-article
-title: How to connect WS101 LoRaWAN® Smart Button to ThingsBoard?
-category: Other devices
+title: 如何将 WS101 LoRaWAN® 智能按钮连接到 ThingsBoard？
+category: 其他设备
 connectivity: LoRaWAN®
 vendor: Milesight
 hasIntegrationDeviceConfiguration: true

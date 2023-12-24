@@ -2,8 +2,8 @@
 layout: docwithnav
 assignees:
 - ashvayka
-title: Access Token based authentication
-description: ThingsBoard Access Token based authentication.
+title: 基于访问令牌的身份验证
+description: ThingsBoard 基于访问令牌的身份验证。
 
 ---
 

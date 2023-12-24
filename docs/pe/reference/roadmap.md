@@ -1,16 +1,16 @@
 ---
 layout: docwithnav-pe
-title: ThingsBoard PE Roadmap
-description: ThingsBoard architecture
+title: ThingsBoard PE 路线图
+description: ThingsBoard 架构
 
 ---
 
-The product roadmap listed below covers only main features and does not cover small improvements and bug fixes.         
+下面列出的产品路线图仅涵盖主要功能，不涵盖小的改进和错误修复。
 
 ### v3.7
- 
-Everything in CE 3.7, plus:
 
-  * Improved white-labeling: improved the palette with background and foreground, typography settings;   
-  * Numerous usability improvements;
-  * New integrations, widgets and rule nodes;
+CE 3.7 中的所有内容，外加：
+
+* 改进的白标：改进了背景和前景的调色板、排版设置；
+* 大量可用性改进；
+* 新的集成、小部件和规则节点；

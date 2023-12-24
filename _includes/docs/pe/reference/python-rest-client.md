@@ -379,7 +379,7 @@ To configure this feature we will need the command line arguments and data:
 | -p | **ThingsBoard port (Default: 80)**                                                                   |  
 | -U | **ThingsBoard user (email for login)**                                                               |  
 | -P | **ThingsBoard user password**                                                                        |
-| -r | **Repository uri, link to your repository**                                                          |
+| -r | **Repository uri, link to your repository**                                                          |  
 | -b | **Default branch (Default: main)**                                                                   |  
 | -gu | **VCS username** (This parameter named GITHUB_USERNAME, but it can work with any VCS)               |  
 | -gp | **VCS access token / password** (This parameter named GITHUB_PASSWORD, but it can work with any VCS)|  

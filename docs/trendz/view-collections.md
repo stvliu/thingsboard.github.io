@@ -2,76 +2,76 @@
 layout: docwithnav-trendz
 assignees:
 - vparomskiy
-title: View Collections
-description: View Collections 
+title: 查看集合
+description: 查看集合
 ---
 
 * TOC
 {:toc}
 
-Collections are individual folders designed to enhance navigation and restrict access rights and  visibility among users of different ranks, providing a more convenient way to organize and manage views.
+集合是旨在增强导航并限制不同级别用户之间的访问权限和可见性的各个文件夹，提供了一种更便捷的方式来组织和管理视图。
 
-## Collections types
+## 集合类型
 
-* **Your collections (root)** : This is the default common folder that is consistently available for all users and cannot be deleted. It serves as the root directory for creating all other subcollections.
-* **Subcollections** : These are all the folders that have been created within the root collection. Subcollections can be nested inside one another without any limitation on the level of nesting.
-* **Favourites** : These are lists of frequently used views that you have personally selected to facilitate faster access. To choose a collection, all you need to do is click on the star icon located in the views table.
+* **您的集合（根）**：这是始终可供所有用户使用且无法删除的默认公共文件夹。它用作创建所有其他子集合的根目录。
+* **子集合**：这些是在根集合中创建的所有文件夹。子集合可以相互嵌套，而嵌套级别没有限制。
+* **收藏夹**：这些是您亲自选择的常用视图列表，以便更快地访问。要选择一个集合，您只需单击视图表中位于星形图标上即可。
 
 ![image](/images/trendz/view_collections_1.png)
 
-## Permissions and Visibility between users
-There are three types of permissions on collections and visualization:
+## 用户之间的权限和可见性
+集合和可视化上有三种类型的权限：
 
-* **Full permissions (read, write, and run)** : This means the user can make changes to the visualization or collection (save it). Only the owner (creator) has full rights, meaning that even a tenant cannot modify visualizations created by other users (customers, subcostomers or users).
-* ** Limited permissions (read and run)**: In this case, the user can view and interact with the visualization or collection, but cannot save any changes. Limited rights are granted to users with higher rank who are not the owners. In other words, the tenant, for example, can view all the visualizations created by customers, utilize them, and customize them, but he is unable to save any changes. This restriction also applies to collections.
-* **No permissions** : The user will not see the visualization within their collections. Users of the same rank have limited visibility rights, ensuring privacy and data separation. For example, a customer will not have access to the folders and visualizations of another customer, a subcustomer will not have access to another subcustomer's data, and a user will not have access to other users' data.
+* **完全权限（读取、写入和运行）**：这意味着用户可以对可视化或集合进行更改（保存）。只有所有者（创建者）拥有完全权限，这意味着即使租户也不能修改其他用户（客户、子客户或用户）创建的可视化。
+* **有限权限（读取和运行）**：在这种情况下，用户可以查看和与可视化或集合进行交互，但无法保存任何更改。有限权限授予不是所有者的较高等级用户。换句话说，例如，租户可以查看客户创建的所有可视化，利用它们并自定义它们，但他无法保存任何更改。此限制也适用于集合。
+* **无权限**：用户不会在他们的集合中看到可视化。相同等级的用户具有有限的可见性权限，确保隐私和数据分离。例如，客户无法访问其他客户的文件夹和可视化，子客户无法访问其他子客户的数据，用户无法访问其他用户的数据。
 
-To view the collections and visualizations of users of a lower rank, you can enable this option by clicking on the "Show subcustomers collections and views" button.
+要查看较低等级用户的集合和可视化，您可以通过单击“显示子客户集合和视图”按钮来启用此选项。
 
 ![image](/images/trendz/view_collections_2.png)
 
-**The outcome is as follows:**
-Users of a higher rank have access to view all collections and visualizations of lower-ranked users, but only the user who created the visualization or collection can save changes.
-Users with the same rank cannot see each other's collections or visualizations.
+**结果如下：**
+较高等级的用户可以访问所有较低等级用户的集合和可视化，但只有创建可视化或集合的用户才能保存更改。
+具有相同等级的用户无法看到彼此的集合或可视化。
 
-## Collection and view management
+## 集合和视图管理
 
-#### Creation
-A new collection is created by pressing the "Add new" button on the previously created collection, within which the new one will appear.
+#### 创建
+通过按先前创建的集合上的“添加新”按钮来创建新集合，新集合将显示在其中。
 
 ![image](/images/trendz/view_collections_3.png)
 
-When creating a new visualization, it is not automatically associated with any collection until it is saved. During the initial save process, you will be prompted to choose the collection in which you want to save the visualization.
+创建新可视化时，它不会自动与任何集合关联，直到保存为止。在初始保存过程中，系统会提示您选择要将可视化保存到的集合。
 
 ![image](/images/trendz/view_collections_4.png)
 
-#### Sorting
-Collections can be sorted either by name or by date. By default, the sorting is based on the collection names. 
-To switch to sorting by date, simply click on the "Sort by date" button located next to the name of the root collection. 
-The sort order is not preserved. After reloading the page, it will be changed back to default.
+#### 排序
+集合可以按名称或日期排序。默认情况下，排序基于集合名称。
+要切换到按日期排序，只需单击根集合名称旁边的“按日期排序”按钮。
+排序顺序不会保留。重新加载页面后，它将更改回默认值。
 
 ![image](/images/trendz/view_collections_5.png)
 
-#### Editing
-A previously created collection (except for the root one) can be renamed. To do this, click on the "Change name" button.
+#### 编辑
+可以重命名先前创建的集合（根集合除外）。为此，请单击“更改名称”按钮。
 
 ![image](/images/trendz/view_collections_6.png)
 
-You can perform various actions on a visualization, such as renaming it, moving it to another collection, or making a copy of it. 
-These options, along with the deletion feature, are accessible through a menu. To access the menu, click on the button with three dots located in the visualization table.
+您可以对可视化执行各种操作，例如重命名、将其移动到另一个集合或复制它。
+这些选项以及删除功能可通过菜单访问。要访问菜单，请单击可视化表中位于三个点的按钮。
 
 ![image](/images/trendz/view_collections_7.png)
 
-Additionally, you have the option to perform bulk actions on multiple visualizations, such as moving them to another collection or deleting them.
+此外，您还可以对多个可视化执行批量操作，例如将它们移动到另一个集合或删除它们。
 
 ![image](/images/trendz/view_collections_8.png)
 
-#### Deletion
-To ensure data integrity, it is not possible to delete a collection that still contains at least one visualization or non-empty subcollection. 
-In order to delete a collection, you must first remove or move all the visualizations within it to another collection.
+#### 删除
+为了确保数据完整性，无法删除仍包含至少一个可视化或非空子集合的集合。
+要删除集合，您必须首先删除或将其中的所有可视化移动到另一个集合。
 
 ![image](/images/trendz/view_collections_9.png)
 
-## Next Steps
+## 后续步骤
 
 {% assign currentGuide = "Filtering" %}{% include templates/trndz-guides-banner.md %}

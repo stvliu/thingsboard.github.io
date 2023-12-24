@@ -2,54 +2,55 @@
 layout: docwithnav-trendz
 assignees:
 - vparomskiy
-title: Card with line chart
-description: Card with line chart to show data trend
+title: 带折线图的卡片
+description: 带折线图的卡片可用于显示数据趋势
 ---
 
 * TOC
 {:toc}
 
 
-Card with line chart widget allows visualizing the single important metric and compare the dynamics of it with the previous similar period, if necessary.
+带折线图的小部件卡片允许可视化单个重要指标，并在必要时将其动态与之前的类似时期进行比较。
 
-## Simple Card with line chart
+## 带折线图的简单卡片
 
-For creating simple Card with line chart view:
+若要创建带折线图的简单卡片视图：
 
-* Drag and drop the field that you would like to monitor in the Value column;
-* Select required aggregation type;
-* Click “Build Report”.
+* 将您想要在“值”列中监视的字段拖放进去；
+* 选择所需的聚合类型；
+* 单击“生成报告”。
 
 ![image](/images/trendz/card-with-line-simple.png)
 
-## Comparison with the previous period
+## 与前一时期比较
 
-Comparison with the previous similar period allows us to compare the value and dynamics with the corresponding period. 
-For example, if we have the amount of water consumed in the last 7 days, we can compare it with the amount of water consumed in the previous 7 days.
+与前一类似时期的比较允许我们将值和动态与相应时期进行比较。
+例如，如果我们有过去 7 天消耗的水量，我们可以将其与前 7 天消耗的水量进行比较。
 
-* Turn on **Enable comparison in the settings**.
-* Click **Build Report**.
+* 在设置中打开**启用比较**。
+* 单击**生成报告**。
 
 ![image](/images/trendz/card-with-line-comparison.png)
 
-The compared value will present the difference between these two figures in percentage. The chart will also show the dynamics together for both of these periods.
+比较值将以百分比的形式显示这两个数字之间的差异。图表还将同时显示这两个时期的动态。
 
 
-## Fast setting the visualization colors of the value difference
+## 快速设置值差异的可视化颜色
 
-The comparison of two periods will be presented by default as a red number with a warning if the dynamics are negative, or as a green number without a warning if the dynamics are positive.
+默认情况下，两个时期的比较将以红色数字显示，如果动态为负，则显示警告；如果动态为正，则以绿色数字显示，不显示警告。
 
-* To invert the color, enable or disable the **Reverse comparison colors** option in the settings.
-* Click **Build Report**.
+* 若要反转颜色，请在设置中启用或禁用**反转比较颜色**选项。
+* 单击**生成报告**。
 
 ![image](/images/trendz/card-with-line-reverse-colors.png)
 
-## Manual setting the visualization of the value difference
-It is also possible to manually set the visualization of the value difference by specifying ranges and colors for normal, warning, and dangerous value ranges.
+## 手动设置值差异的可视化
 
-* Set the minimum and maximum values for the ranges in the field settings;
-* Click **Build Report**.
+还可以通过为正常、警告和危险值范围指定范围和颜色来手动设置值差异的可视化。
 
-Please note that in this case, the **Reverse comparison colors setting** will be ignored.
+* 在字段设置中设置范围的最小值和最大值；
+* 单击**生成报告**。
+
+请注意，在这种情况下，**反转比较颜色设置**将被忽略。
 
 ![image](/images/trendz/card-with-line-custom-colors.png)

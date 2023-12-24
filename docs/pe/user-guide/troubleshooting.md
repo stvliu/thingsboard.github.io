@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-pe
-title: Troubleshooting
-description: ThingsBoard IoT Platform troubleshooting
+title: 故障排除
+description: ThingsBoard IoT 平台故障排除
 
 ---
 

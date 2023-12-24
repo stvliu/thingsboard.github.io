@@ -1,115 +1,115 @@
 ---
 layout: docwithnav-edge
-title: Getting started with ThingsBoard Edge
-description: Getting started with ThingsBoard Edge 
+title: ThingsBoard Edge 入门
+description: ThingsBoard Edge 入门
 
 step1:
     0:
         image: /images/edge/getting-started/step-1-item-1.png 
-        title: 'Log in to your <b>ThingsBoard Edge</b> instance and click the "Add Device" button.'
+        title: '登录您的<b>ThingsBoard Edge</b>实例并单击“添加设备”按钮。'
     1:
         image: /images/edge/getting-started/step-1-item-2.png  
-        title: 'Enter a name for the device, for example, "My New Device". No other changes are required at this time. Click "Add" to create the device.'
+        title: '输入设备的名称，例如“我的新设备”。此时无需进行其他更改。单击“添加”以创建设备。'
     2:
         image: /images/edge/getting-started/step-1-item-3.png
-        title: 'Open the "Check connectivity" window from the device details page, or skip this step if the pop-up window has already appeared.'
+        title: '从设备详细信息页面打开“检查连接”窗口，或者如果弹出窗口已经出现，则跳过此步骤。'
     3:
         image: /images/edge/getting-started/step-1-item-4.png
-        title: 'Please keep this window open and execute the "curl" command in a new terminal window. This command will publish demo telemetry data to the newly created device.'
+        title: '请保持此窗口打开，并在新的终端窗口中执行“curl”命令。此命令将发布演示遥测数据到新创建的设备。'
     4:
         image: /images/edge/getting-started/step-1-item-5.png
-        title: 'Open a new terminal window and execute the "curl" command copied from the previous step.'
+        title: '打开一个新的终端窗口并执行从上一步复制的“curl”命令。'
     5:
         image: /images/edge/getting-started/step-1-item-6.png
-        title: 'Observe the successful result of the "curl" command.'        
+        title: '观察“curl”命令的成功结果。'        
     6:
         image: /images/edge/getting-started/step-1-item-7.png
-        title: 'Revisit the connectivity instructions window and verify the telemetry upload.'
+        title: '重新访问连接说明窗口并验证遥测上传。'
     7:
         image: /images/edge/getting-started/step-1-item-8.png
-        title: 'If you have already closed the connectivity window, you can check the "Latest telemetry" tab of the device for verification.'
+        title: '如果您已经关闭了连接窗口，则可以检查设备的“最新遥测”选项卡进行验证。'
 
 step2:
     0:
         image: /images/edge/getting-started/step-2-item-1.png
-        title: 'Log in to your <b>ThingsBoard Community Edition</b> instance and navigate to the Devices page.'
+        title: '登录您的<b>ThingsBoard Community Edition</b>实例并导航到设备页面。'
     1:
         image: /images/edge/getting-started/step-2-item-2.png  
-        title: 'Confirm that the device "My New Device" has been created on the ThingsBoard Community Edition cloud.'
+        title: '确认设备“我的新设备”已在 ThingsBoard Community Edition 云中创建。'
     2:
         image: /images/edge/getting-started/step-2-item-3.png
-        title: 'Select "My New Device" and navigate to the "Relations" tab.'
+        title: '选择“我的新设备”并导航到“关系”选项卡。'
     3:
         image: /images/edge/getting-started/step-2-item-4.png
-        title: 'Switch the direction from "From" to "To" to view the relation to the Edge that provisioned this device.'
+        title: '将方向从“从”切换到“到”以查看与配置此设备的 Edge 的关系。'
 
 step3:
     0:
         image: /images/edge/getting-started/step-3-item-1.png
-        title: 'Navigate to the "Rule Chains" page within your ThingsBoard <b>Edge</b> instance and open the "Edge Root Rule Chain".'
+        title: '在您的 ThingsBoard <b>Edge</b>实例中导航到“规则链”页面并打开“Edge 根规则链”。'
     1:
         image: /images/edge/getting-started/step-3-item-2.png
-        title: 'The <b>Push to Cloud</b> rule node will transmit temperature timeseries data to the cloud once it has been stored in the local database.'
+        title: '<b>推送到云</b>规则节点将在温度时间序列数据存储在本地数据库后将其传输到云。'
 
 step4:
     0:
         image: /images/edge/getting-started/step-4-item-1.png
-        title: 'Click the <b>Add Dashboard</b> button on the <b>ThingsBoard Community Edition</b> server.'
+        title: '在<b>ThingsBoard Community Edition</b>服务器上单击<b>添加仪表板</b>按钮。'
     1:
         image: /images/edge/getting-started/step-4-item-2.png
-        title: 'Input the dashboard name, for example, "My New Dashboard", and click "Add" to create the dashboard.'
+        title: '输入仪表板名称，例如“我的新仪表板”，然后单击“添加”以创建仪表板。'
     2:
         image: /images/edge/getting-started/step-4-item-3.png
-        title: 'Click the "Add new widget" button to begin adding new widgets to this dashboard.'
+        title: '单击“添加新小部件”按钮开始向此仪表板添加新小部件。'
     3:
         image: /images/edge/getting-started/step-4-item-4.png
-        title: 'Locate "Entity widgets" in the list and select this menu item.'        
+        title: '在列表中找到“实体小部件”并选择此菜单项。'        
     4:
         image: /images/edge/getting-started/step-4-item-5.png
-        title: 'Locate and select the "Entities table" widget.'
+        title: '找到并选择“实体表”小部件。'
     5:
         image: /images/edge/getting-started/step-4-item-6.png
-        title: 'From the devices list, select "My New Device" and add the "temperature" column to the table configuration. Click "Add" button.'
+        title: '从设备列表中选择“我的新设备”并将“温度”列添加到表配置中。单击“添加”按钮。'
     6:
         image: /images/edge/getting-started/step-4-item-7.png
-        title: 'The "Entities table" has been added, and "My New Device" is displayed in the list. Click the "Add widget" button.'
+        title: '已添加“实体表”，并且“我的新设备”显示在列表中。单击“添加小部件”按钮。'
     7:
         image: /images/edge/getting-started/step-4-item-8.png
-        title: 'Find "Charts" in the list and click on this menu item.'
+        title: '在列表中找到“图表”并单击此菜单项。'
     8:
         image: /images/edge/getting-started/step-4-item-9.png
-        title: 'Locate and click on the "Timeseries Line Chart" widget.'
+        title: '找到并单击“时间序列折线图”小部件。'
     9:
         image: /images/edge/getting-started/step-4-item-10.png
-        title: 'From the devices list, select "My New Device" and click "Add" button.'
+        title: '从设备列表中选择“我的新设备”并单击“添加”按钮。'
     10:
         image: /images/edge/getting-started/step-4-item-11.png
-        title: 'The "Timeseries Line Chart" widget has been added to the dashboard.'
+        title: '已将“时间序列折线图”小部件添加到仪表板。'
     11:
         image: /images/edge/getting-started/step-4-item-12.png
-        title: 'Move and resize the "Timeseries Line Chart" widget. Click the "Edit timewindow" icon.'
+        title: '移动并调整“时间序列折线图”小部件的大小。单击“编辑时间窗口”图标。'
     12:
         image: /images/edge/getting-started/step-4-item-13.png
-        title: 'Specify "1 day" and "None" as the Data aggregation function. Click "Update" button.'
+        title: '将“1 天”和“无”指定为数据聚合函数。单击“更新”按钮。'
     13:
         image: /images/edge/getting-started/step-4-item-14.png
-        title: 'Click the "Save" button to save the Dashboard.'
+        title: '单击“保存”按钮以保存仪表板。'
 
 step5Server:
     0:
         image: /images/edge/getting-started/step-5-item-1.png
-        title: 'Open the Edge instances page on the <b>ThingsBoard Community Edition</b> server. Click on the <b>Dashboards</b> button of the edge instance to view dashboards that are already assigned to this edge.'
+        title: '在<b>ThingsBoard Community Edition</b>服务器上打开 Edge 实例页面。单击 Edge 实例的<b>仪表板</b>按钮以查看已分配给此 Edge 的仪表板。'
     1:
         image: /images/edge/getting-started/step-5-item-2.png
-        title: 'Click on the "+" icon and select "My New Dashboard" from the list. This dashboard will be provisioned to the edge.'
+        title: '单击“+”图标并从列表中选择“我的新仪表板”。此仪表板将配置到 Edge。'
 
 step5Edge:
     0:
         image: /images/edge/getting-started/step-5-item-3.png
-        title: 'Open the "Dashboards" page in the <b>ThingsBoard Edge</b> UI. Open "My New Dashboard".'    
+        title: '在<b>ThingsBoard Edge</b> UI 中打开“仪表板”页面。打开“我的新仪表板”。'    
     1:
         image: /images/edge/getting-started/step-5-item-4.png
-        title: 'Verify that you see the same widgets that you have added on the cloud and temperature readings from the device.'
+        title: '验证您是否看到在云中添加的相同小部件以及来自设备的温度读数。'
 
 ---
 
@@ -118,41 +118,40 @@ step5Edge:
 
 {% assign currentThingsBoardVersion = "ThingsBoard Community Edition" %}
 
-## Introduction
+## 简介
 
 {% include templates/edge/getting-started/introduction.md %}
 
 {% assign docsPrefix = "edge/" %}
 {% include templates/edge/getting-started/prerequisites.md %}
 
-## Step 1. Provision and Connect Device
+## 第 1 步。配置并连接设备
 
 {% include templates/edge/getting-started/step-1.md %}
 
-## Step 2. Provision Device from ThingsBoard Edge to ThingsBoard Community Edition Server
+## 第 2 步。从 ThingsBoard Edge 配置设备到 ThingsBoard Community Edition 服务器
 
 {% include templates/edge/getting-started/step-2.md %}
 
-## Step 3. Push data from ThingsBoard Edge to ThingsBoard Community Edition Server
+## 第 3 步。将数据从 ThingsBoard Edge 推送到 ThingsBoard Community Edition 服务器
 
 {% include templates/edge/getting-started/step-3.md %}
 
-## Step 4. Create And Configure Dashboard
+## 第 4 步。创建并配置仪表板
 
 {% include templates/edge/getting-started/step-4.md %}
 
-## Step 5. Provision Dashboard to ThingsBoard Edge
+## 第 5 步。将仪表板配置到 ThingsBoard Edge
 
 {% include templates/edge/getting-started/step-5.md %}
 
-## Next steps
+## 后续步骤
 
 {% assign currentGuide = "GettingStartedGuide" %}
 {% assign docsPrefix = "edge/" %}
 {% include templates/edge/guides-banner-edge.md %}
 
-## Your feedback
+## 您的反馈
 
-Don't hesitate to star ThingsBoard Edge on **[github](https://github.com/thingsboard/thingsboard-edge)** to help us spread the word.
-If you have some questions about this sample - post it on the **[forum](https://groups.google.com/forum/#!forum/thingsboard)**.
-
+不要犹豫，在 **[github](https://github.com/thingsboard/thingsboard-edge)** 上为 ThingsBoard Edge 点赞，帮助我们传播信息。
+如果您对本示例有任何疑问，请将其发布到 **[论坛](https://groups.google.com/forum/#!forum/thingsboard)**。

@@ -1,42 +1,41 @@
 {% if currentGuide != "GettingStartedGuide" %}
-- [Getting started guide](/docs/{{docsPrefix}}getting-started/) - Provide quick overview of main ThingsBoard Edge features. Designed to be completed in 15-30 minutes:
+- [入门指南](/docs/{{docsPrefix}}getting-started/) - 提供 ThingsBoard Edge 主要功能的快速概述。旨在 15-30 分钟内完成：
 {% endif %}
 {% if currentGuide != "InstallationGuides" %}
-- [Installation guides](/docs/user-guide/install/{{docsPrefix}}installation-options/) - Learn how to setup ThingsBoard Edge on various available operating systems and connect to ThingsBoard CE server.
+- [安装指南](/docs/user-guide/install/{{docsPrefix}}installation-options/) - 了解如何在各种可用操作系统上设置 ThingsBoard Edge 并连接到 ThingsBoard CE 服务器。
 {% endif %}
-- Edge Rule Engine:
+- 边缘规则引擎：
 {% if currentGuide != "EdgeRuleEngineOverview" %}
-  - [Overview](/docs/{{docsPrefix}}rule-engine/general/) - Learn about ThingsBoard Edge Rule Engine.
+  - [概述](/docs/{{docsPrefix}}rule-engine/general/) - 了解 ThingsBoard Edge 规则引擎。
 {% endif %}
 {% if currentGuide != "RuleChainTemplates" %}
-  - [Rule Chain Templates](/docs/{{docsPrefix}}rule-engine/rule-chain-templates/) - Learn how to use ThingsBoard Edge Rule Chain Templates.
+  - [规则链模板](/docs/{{docsPrefix}}rule-engine/rule-chain-templates/) - 了解如何使用 ThingsBoard Edge 规则链模板。
 {% endif %}
 {% if currentGuide != "ProvisionRuleChainFromCloudToEdge" %}
-  - [Provision Rule Chains from cloud to edge](/docs/{{docsPrefix}}rule-engine/provision-rule-chains/) - Learn how to provision edge rule chains from cloud to edge.
+  - [从云端到边缘配置规则链](/docs/{{docsPrefix}}rule-engine/provision-rule-chains/) - 了解如何从云端到边缘配置边缘规则链。
 {% endif %}
 {% if currentGuide != "PushDataFromEdgeToCloudAndViseVersa" %}
-  - [Push data from edge to cloud and vice versa](/docs/{{docsPrefix}}rule-engine/push-data/) - Learn how to push data from edge to cloud and vice versa.
+  - [从边缘到云端推送数据，反之亦然](/docs/{{docsPrefix}}rule-engine/push-data/) - 了解如何从边缘到云端推送数据，反之亦然。
 {% endif %}
 {% if currentGuide != "GrpcOverSsl" %}
-- Security:
-  - [gRPC over SSL/TLS](/docs/{{docsPrefix}}user-guide/grpc-over-ssl/) - Learn how to configure gRPC over SSL/TLS for communication between edge and cloud.
+- 安全：
+  - [gRPC over SSL/TLS](/docs/{{docsPrefix}}user-guide/grpc-over-ssl/) - 了解如何为边缘和云端之间的通信配置 gRPC over SSL/TLS。
 {% endif %}
-- Features:
+- 功能：
 {% if currentGuide != "EdgeStatus" %}
-  - [Edge Status](/docs/{{docsPrefix}}features/edge-status/) - Learn about Edge Status page on ThingsBoard Edge.
+  - [边缘状态](/docs/{{docsPrefix}}features/edge-status/) - 了解 ThingsBoard Edge 上的边缘状态页面。
 {% endif %}
 {% if currentGuide != "CloudEvents" %}
-  - [Cloud Events](/docs/{{docsPrefix}}features/cloud-events/) -  Learn about Cloud Events page on ThingsBoard Edge.
+  - [云事件](/docs/{{docsPrefix}}features/cloud-events/) - 了解 ThingsBoard Edge 上的云事件页面。
 {% endif %}    
-- Use cases:
+- 使用案例：
 {% if currentGuide != "ManageAlarmsAndRpcRequestsOnEdgeDevices" %}
-  - [Manage alarms and RPC requests on edge devices](/docs/{{docsPrefix}}use-cases/manage-alarms-rpc-requests/) - This guide will show how to generate local alarms on the edge and send RPC requests to devices connected to edge:
+  - [在边缘设备上管理警报和 RPC 请求](/docs/{{docsPrefix}}use-cases/manage-alarms-rpc-requests/) - 本指南将展示如何在边缘生成本地警报并将 RPC 请求发送到连接到边缘的设备：
 {% endif %}
 {% if currentGuide != "DataFilteringAndTrafficReduce" %}
-  - [Data filtering and traffic reduce](/docs/{{docsPrefix}}use-cases/data-filtering-traffic-reduce/) - This guide will show how to send to cloud from edge only filterd amount of device data:
+  - [数据过滤和流量减少](/docs/{{docsPrefix}}use-cases/data-filtering-traffic-reduce/) - 本指南将展示如何仅从边缘向云端发送经过过滤的设备数据量：
 {% endif %}
 {% if currentGuide != "EdgeRoadmap" %}
-- [Roadmap](/docs/{{docsPrefix}}roadmap) - ThingsBoard Edge roadmap. 
+- [路线图](/docs/{{docsPrefix}}roadmap) - ThingsBoard Edge 路线图。
 {% endif %}    
 <br>
-

@@ -1,67 +1,55 @@
-
 * TOC
 {:toc}
 
-Shared subscriptions are an advanced capability introduced in MQTT v5 that has been widely anticipated by users. 
-While TBMQ does not restrict its usage to MQTT v5 clients exclusively, clients with any protocol version can leverage this feature. 
-The official [documentation](https://docs.oasis-open.org/mqtt/mqtt/v5.0/os/mqtt-v5.0-os.html#_Toc3901250) offers comprehensive details on shared subscriptions, 
-and this tutorial will focus on the fundamental aspects of this functionality. 
-By understanding and exploring shared subscriptions, users can harness the full potential of this powerful feature in their MQTT interactions.
+共享订阅是 MQTT v5 中引入的一项高级功能，受到用户的广泛期待。
+虽然 TBMQ 并不将它的使用仅限于 MQTT v5 客户端，但任何协议版本的客户端都可以利用此功能。
+官方[文档](https://docs.oasis-open.org/mqtt/mqtt/v5.0/os/mqtt-v5.0-os.html#_Toc3901250) 提供了有关共享订阅的全面详细信息，本教程将重点介绍此功能的基本方面。
+通过理解和探索共享订阅，用户可以在其 MQTT 交互中充分利用此强大功能的潜力。
 
-### What are Shared Subscriptions?
+### 什么是共享订阅？
 
-In traditional or standard subscriptions, each subscribed client receives a duplicate copy of every published message that matches the subscribed topic. 
-This approach ensures that all clients receive the same set of messages. 
-However, shared subscriptions introduce a more efficient mechanism for distributing the subscription load among multiple clients within a defined group. 
-This technique, known as **client load balancing**, enables MQTT clients to collectively handle the incoming message flow more effectively, 
-optimizing network bandwidth and reducing overall processing overhead.
+在传统或标准订阅中，每个已订阅的客户端都会收到与已订阅主题匹配的每条已发布消息的副本。
+这种方法确保所有客户端收到相同的消息集。
+但是，共享订阅引入了一种更有效的方法，可以在定义的组内的多个客户端之间分配订阅负载。
+这种技术称为**客户端负载均衡**，它使 MQTT 客户端能够更有效地共同处理传入的消息流，从而优化网络带宽并减少整体处理开销。
 
-Shared subscriptions are identified by a distinct style of topic filter, which follows a specific format. 
-The format for a shared subscription topic filter is as follows:
+共享订阅由特定格式的主题过滤器样式标识。
+共享订阅主题过滤器的格式如下：
 ```
 $share/{ShareName}/{TopicFilter}
 ```
 
-where:
-* $share - is a constant that denotes the subscription as shared.
-* {ShareName} - is the identifier of the shared subscription, which helps distinguish it from other shared subscriptions.
-* {TopicFilter} - represents the topic filter used for the subscription, similar to regular subscriptions. 
-It can include wildcards such as `#` and `+` to match multiple topics.
+其中：
+* $share - 是一个常量，表示订阅为共享。
+* {ShareName} - 是共享订阅的标识符，有助于将其与其他共享订阅区分开来。
+* {TopicFilter} - 表示用于订阅的主题过滤器，类似于常规订阅。它可以包含通配符（例如 `#` 和 `+`）以匹配多个主题。
 
-For example, the following is a shared subscription:
+例如，以下是一个共享订阅：
 
 ```
 $share/group1/country/+/city/+/home/#
 ```
 
-### Shared Subscription Use Cases
+### 共享订阅用例
 
-Shared subscriptions can be applied to various use cases based on their suitability and advantages. 
-However, there are several common scenarios where shared subscriptions are particularly beneficial:
+共享订阅可以根据其适用性和优势应用于各种用例。
+但是，在以下几种情况下，共享订阅特别有益：
 
-* **Horizontal scaling of backend applications.** When specific backend applications need to subscribe to the MQTT message stream and 
-handle a high volume of messages, shared subscriptions allow for horizontal scaling. Multiple application instances can be part of the shared subscription group, 
-distributing the workload and improving scalability.
-* **High message rate topics.** In situations where certain topics experience a high message rate that individual clients may struggle to handle, 
-shared subscriptions can be utilized. By distributing the load among multiple clients within the shared subscription group, 
-the message processing can be more efficient and avoid overwhelming a single client.
-* **Balancing system resources**. Shared subscriptions help distribute system resources evenly, mitigating the risk of bottlenecks. 
-By leveraging multiple clients within the shared subscription group, message processing and resource utilization can be optimized, 
-ensuring a balanced and efficient operation of the system.
+* **后端应用程序的水平扩展。**当特定后端应用程序需要订阅 MQTT 消息流并处理大量消息时，共享订阅允许水平扩展。多个应用程序实例可以成为共享订阅组的一部分，从而分发工作负载并提高可扩展性。
+* **高消息速率主题。**在某些主题遇到高消息速率且各个客户端可能难以处理的情况下，可以使用共享订阅。通过在共享订阅组内的多个客户端之间分配负载，消息处理可以更有效，避免单个客户端不堪重负。
+* **平衡系统资源。**共享订阅有助于均匀分配系统资源，从而降低瓶颈风险。通过利用共享订阅组内的多个客户端，可以优化消息处理和资源利用，确保系统平衡高效地运行。
 
-In summary, shared subscriptions offer flexibility and scalability for scenarios involving backend applications, 
-high message rates, and resource optimization, allowing for better management of MQTT message streams.
+总之，共享订阅为涉及后端应用程序、高消息速率和资源优化的场景提供了灵活性和可扩展性，从而可以更好地管理 MQTT 消息流。
 
-### Subscribing to Shared Subscriptions
+### 订阅共享订阅
 
-In this tutorial, we will be connecting [DEVICE](/docs/mqtt-broker/user-guide/mqtt-client-type/#device-client) non-persistent clients and using the Mosquitto client library, 
-which can be installed using the following command:
+在本教程中，我们将连接[DEVICE](/docs/mqtt-broker/user-guide/mqtt-client-type/#device-client) 非持久性客户端并使用 Mosquitto 客户端库，该库可以通过以下命令安装：
 ```
 sudo apt-get install mosquitto-clients
 ```
 {: .copy-code}
 
-To initiate a shared subscription, execute the following commands in two separate terminals:
+要启动共享订阅，请在两个单独的终端中执行以下命令：
 
 ```bash
 mosquitto_sub -d -h "YOUR_MQTT_BROKER_HOST" -p 1883 -t '$share/group/home/temp' -q 1 -V mqttv5 -i client1
@@ -73,77 +61,72 @@ mosquitto_sub -d -h "YOUR_MQTT_BROKER_HOST" -p 1883 -t '$share/group/home/temp' 
 ```
 {: .copy-code}
 
-**Note,** do not forget to put your hostname instead of `YOUR_MQTT_BROKER_HOST`.
-Make sure authentications are disabled. Otherwise, adjust the commands in this guide appropriately.
+**注意，**不要忘记将你的主机名替换为 `YOUR_MQTT_BROKER_HOST`。
+确保禁用身份验证。否则，请相应地调整本指南中的命令。
 
-As a result, a new shared subscription is initiated (with ShareName equal to `group`) with two clients (`client1` and `client2`) subscribing to the `home/temp` topic. 
-Both clients will receive messages published on the mentioned topic evenly.
+因此，启动了一个新的共享订阅（ShareName 等于 `group`），其中两个客户端（`client1` 和 `client2`）订阅了 `home/temp` 主题。
+两个客户端都会均匀地收到在上述主题上发布的消息。
 
-To ensure that the clients belonging to the shared subscription receive messages, you can publish some messages to the broker targeting the `home/temp` topic.
-Execute the following command to do so:
+为了确保属于共享订阅的客户端收到消息，你可以向针对 `home/temp` 主题的代理发布一些消息。
+执行以下命令以执行此操作：
 
 ```bash
 mosquitto_pub -d -h "YOUR_MQTT_BROKER_HOST" -p 1883 -t 'home/temp' -m 32 -q 1
 ```
 {: .copy-code}
 
-The number of subscriptions within a shared subscription group can be **increased** by subscribing a new client to the group, 
-or **decreased** by unsubscribing existing clients from the group. 
-This dynamic adjustment allows for flexibility in managing the load distribution and scaling of the shared subscription.
+共享订阅组内的订阅数量可以通过将新客户端订阅到该组来**增加**，或者通过取消订阅现有客户端来**减少**。
+这种动态调整允许灵活地管理共享订阅的负载分配和扩展。
 
-Let's see shared subscription processing in action:
+让我们看看共享订阅处理的实际情况：
 
 ![image](/images/mqtt-broker/user-guide/shared-subscription-demo.gif)
 
-### Shared Subscriptions Load Balancing Strategy
+### 共享订阅负载均衡策略
 
-Currently, TBMQ supports the **ROUND_ROBIN** load balancing strategy type for shared subscriptions. 
-This means that incoming messages for a shared subscription are evenly distributed among the subscribed clients in a round-robin fashion. 
-Each client in the group receives messages in sequential order, taking turns to handle the message load.
-We are continuously working on enhancing TBMQ and plan to introduce additional load-balancing strategy types in the near future. 
-These may include random and hash-based load-balancing strategies. Stay tuned for updates as we expand the capabilities of TBMQ.
+目前，TBMQ 支持共享订阅的**循环**负载均衡策略类型。
+这意味着共享订阅的传入消息在已订阅的客户端之间以循环方式均匀分布。
+组中的每个客户端按顺序接收消息，轮流处理消息负载。
+我们正在不断努力改进 TBMQ，并计划在不久的将来引入其他负载均衡策略类型。
+这些可能包括随机和基于哈希的负载均衡策略。随着我们扩展 TBMQ 的功能，敬请期待更新。
 
-### Shared Subscriptions & Client Type
+### 共享订阅和客户端类型
 
-The **DEVICE** and **APPLICATION** clients in TBMQ are implemented differently, and this impacts how the shared subscription feature 
-is utilized and how it processes messages for each client type.
+TBMQ 中的**DEVICE** 和**APPLICATION** 客户端的实现方式不同，这会影响共享订阅功能的使用方式以及它如何处理每种客户端类型的消息。
 
-If you create a shared subscription with the same structure and subscribe to it with both DEVICE and APPLICATION clients,
-TBMQ will treat them as separate shared subscription groups. 
-This means that messages published to the shared subscription topic will be distributed only among clients of the same type. 
-DEVICE clients will receive messages within the DEVICE shared subscription group, while APPLICATION clients will receive messages within the APPLICATION shared subscription group.
+如果你创建具有相同结构的共享订阅，并使用 DEVICE 和 APPLICATION 客户端订阅它，
+TBMQ 将它们视为单独的共享订阅组。
+这意味着发布到共享订阅主题的消息将仅分发给相同类型的客户端。
+DEVICE 客户端将在 DEVICE 共享订阅组内接收消息，而 APPLICATION 客户端将在 APPLICATION 共享订阅组内接收消息。
 
-Therefore, it's important to consider the client type when working with shared subscriptions in TBMQ, 
-as the messages will be processed and distributed accordingly based on the client type within their respective shared subscription groups.
+因此，在 TBMQ 中使用共享订阅时，考虑客户端类型非常重要，因为消息将根据其各自共享订阅组内的客户端类型进行处理和分发。
 
-#### DEVICE client type
+#### DEVICE 客户端类型
 
-From the user's perspective, using the shared subscription feature for DEVICE clients in TBMQ is seamless. 
-Simply subscribe your clients to the shared subscription, and the feature will work as intended.
+从用户的角度来看，在 TBMQ 中为 DEVICE 客户端使用共享订阅功能是无缝的。
+只需将你的客户端订阅到共享订阅，该功能即可按预期工作。
 
-However, there are some considerations when persistent clients are involved in the shared subscription group:
-1. If the shared subscription group **contains some persistent clients**, they will share the message load for the subscription topic as well until they go offline. 
-Once they are offline, the messages will not be distributed among them.
-2. On the other hand, if the shared subscription group **consists solely of persistent clients**, and they all go offline, 
-newly received messages will be stored per shared subscription group in the PostgreSQL database. 
-Once the first client from the group reconnects to the broker, it will receive stored persistent messages related to the shared subscription.
+但是，当持久性客户端参与共享订阅组时，需要考虑一些事项：
+1. 如果共享订阅组**包含一些持久性客户端**，它们也会共享订阅主题的消息负载，直到它们离线。
+一旦它们离线，消息将不会在它们之间分发。
+2. 另一方面，如果共享订阅组**仅由持久性客户端组成**，并且它们全部离线，
+新接收的消息将按共享订阅组存储在 PostgreSQL 数据库中。
+当组中的第一个客户端重新连接到代理时，它将收到与共享订阅相关的存储的持久性消息。
 
-These considerations ensure that message distribution and persistence are handled appropriately for shared subscription groups containing persistent clients.
+这些注意事项确保了对包含持久性客户端的共享订阅组的消息分发和持久性进行适当处理。
 
-#### APPLICATION client type
+#### APPLICATION 客户端类型
 
-To utilize the shared subscription feature for APPLICATION clients in TBMQ, you need to follow an additional step. 
-First, you'll need to create an Application Shared Subscription entity in the PostgreSQL database. 
-To do so follow the instructions from the following [guide](/docs/mqtt-broker/user-guide/ui/shared-subscriptions/).
-This can also be done through the REST API, and detailed instructions can be found in the next [documentation](/docs/mqtt-broker/application-shared-subscription/). 
-The entity creation process includes the automatic creation of a corresponding Kafka topic.
+要在 TBMQ 中为 APPLICATION 客户端利用共享订阅功能，你需要执行一个额外的步骤。
+首先，你需要在 PostgreSQL 数据库中创建一个应用程序共享订阅实体。
+为此，请按照以下[指南](/docs/mqtt-broker/user-guide/ui/shared-subscriptions/)中的说明进行操作。
+也可以通过 REST API 来完成此操作，可以在下一个[文档](/docs/mqtt-broker/application-shared-subscription/)中找到详细说明。
+实体创建过程包括自动创建相应的 Kafka 主题。
 
-Once the entity is created, you're all set to start using the shared subscription feature. 
-When the first client connects to the broker and initiates a shared subscription, a new Kafka consumer is created for that client and added to the 
-[Consumer Group](https://docs.confluent.io/platform/current/clients/consumer.html) (CG).
-As more clients subscribe to the shared subscription, their consumers are added to the CG as well, allowing them to share the message load. 
-Likewise, when a client unsubscribes, its consumer is removed from the CG, and the group rebalances accordingly.
+创建实体后，你就可以开始使用共享订阅功能了。
+当第一个客户端连接到代理并启动共享订阅时，将为该客户端创建一个新的 Kafka 消费者并将其添加到[消费者组](https://docs.confluent.io/platform/current/clients/consumer.html) (CG) 中。
+随着更多客户端订阅共享订阅，它们的消费者也会被添加到 CG 中，从而允许它们共享消息负载。
+同样，当客户端取消订阅时，其消费者将从 CG 中删除，并且该组会相应地重新平衡。
 
-This utilization of Kafka's capabilities enables enhanced performance, scalability, and reliability for shared subscriptions with APPLICATION clients in TBMQ. 
-By leveraging Kafka's features, the system can effectively manage and distribute the workload among the subscribed clients, ensuring optimal performance and fault tolerance.
-
+利用 Kafka 的功能可以为 TBMQ 中的 APPLICATION 客户端的共享订阅提供增强的性能、可扩展性和可靠性。
+通过利用 Kafka 的功能，系统可以有效地管理和在已订阅的客户端之间分配工作负载，从而确保最佳性能和容错能力。

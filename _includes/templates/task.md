@@ -4,24 +4,24 @@
 
 {% else %}
 
-{% include templates/_errorthrower.md missing_block='overview' purpose='states, in one or two sentences, the purpose of this document' %}
+{% include templates/_errorthrower.md missing_block='overview' purpose='说明此文档的用途，一两句话即可' %}
 
 {% endif %}
 
 
-* TOC
+* 目录
 {: toc}
 
 
 {% if prerequisites %}
 
-### Before you begin
+### 开始之前
 
 {{ prerequisites }}
 
 {% else %}
 
-{% include templates/_errorthrower.md missing_block='prerequisites' heading='Before you begin' purpose='lists action prerequisites and knowledge prerequisites' %}
+{% include templates/_errorthrower.md missing_block='prerequisites' heading='开始之前' purpose='列出操作前提条件和知识前提条件' %}
 
 {% endif %}
 
@@ -32,7 +32,7 @@
 
 {% else %}
 
-{% include templates/_errorthrower.md missing_block='steps' purpose='lists a sequence of numbered steps that accomplish the task.' %}
+{% include templates/_errorthrower.md missing_block='steps' purpose='列出完成任务的一系列编号步骤。' %}
 
 {% endif %}
 
@@ -48,7 +48,7 @@
 
 {% if whatsnext %}
 
-### What's next
+### 后续步骤
 
 {{ whatsnext }}
 

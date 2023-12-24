@@ -1,15 +1,15 @@
-You'll need to set up [Amazon ElastiCache (Redis)](https://aws.amazon.com/elasticache/redis/). ThingsBoard uses cache to improve performance and avoid frequent DB reads.
+您需要设置 [Amazon ElastiCache (Redis)](https://aws.amazon.com/elasticache/redis/)。ThingsBoard 使用缓存来提高性能并避免频繁的数据库读取。
 
-Please open AWS console and navigate to ElastiCache->Redis->Create.
+请打开 AWS 控制台并导航至 ElastiCache->Redis->Create。
 
-* Specify Redis Engine version 6.x and node type with at least 1 GB of RAM;
-* Make sure your Redis cluster is accessible from the ThingsBoard cluster. The easiest way to achieve this is to deploy the Redis cluster in the same VPC. We also recommend to use private subnets. Use "eksctl-thingsboard-cluster-ClusterSharedNodeSecurityGroup-*" security group;
-* Disable automatic backups.
+* 指定 Redis Engine 版本 6.x 和至少具有 1 GB RAM 的节点类型；
+* 确保您的 Redis 集群可从 ThingsBoard 集群访问。实现此目的最简单的方法是在同一 VPC 中部署 Redis 集群。我们还建议使用专用子网。使用“eksctl-thingsboard-cluster-ClusterSharedNodeSecurityGroup-*”安全组；
+* 禁用自动备份。
 
 {% include images-gallery.html imageCollection="redisSetup"%}
 
-Once the Redis cluster switch to the 'Available' state, navigate to 'Details' and copy 'Primary Endpoint' without ':6379' port sufix, it`s **YOUR_REDIS_ENDPOINT_URL_WITHOUT_PORT**.
+一旦 Redis 集群切换到“可用”状态，导航至“详细信息”并复制“主端点”，不带“:6379”端口后缀，即 **YOUR_REDIS_ENDPOINT_URL_WITHOUT_PORT**。
 
 {% include images-gallery.html imageCollection="redisEndpointUrl"%}
 
-Edit “tb-redis-configmap.yml” and replace **YOUR_REDIS_ENDPOINT_URL_WITHOUT_PORT**.
+编辑“tb-redis-configmap.yml”并替换 **YOUR_REDIS_ENDPOINT_URL_WITHOUT_PORT**。

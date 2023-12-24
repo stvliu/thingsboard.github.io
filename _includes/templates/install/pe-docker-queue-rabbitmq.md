@@ -1,14 +1,13 @@
+要安装 RabbitMQ，请使用此 [说明](https://www.rabbitmq.com/install-debian.html)。
 
-For installing RabbitMQ use this [instruction](https://www.rabbitmq.com/install-debian.html).
-
-Create docker compose file for ThingsBoard queue service:
+为 ThingsBoard 队列服务创建 docker compose 文件：
 
 ```text
 nano docker-compose.yml
 ```
 {: .copy-code}
 
-Add the following line to the yml file. Don't forget to replace "YOUR_USERNAME" and "YOUR_PASSWORD" with your **real user credentials**, "localhost" and "5672" with your **real RabbitMQ host and port**, and "PUT_YOUR_LICENSE_SECRET_HERE" with your **license secret obtained on the first step**:
+将以下行添加到 yml 文件中。不要忘记将“YOUR_USERNAME”和“YOUR_PASSWORD”替换为您的 **真实用户凭据**，“localhost”和“5672”替换为您的 **真实 RabbitMQ 主机和端口**，并将“PUT_YOUR_LICENSE_SECRET_HERE”替换为 **您在第一步中获得的许可证密钥**：
 
 ```yml
 version: '3.0'

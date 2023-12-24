@@ -1,13 +1,13 @@
 ---
 layout: docwithnav-pe-edge
-title: ThingsBoard Edge Rule Engine
-description: ThingsBoard Edge Rule Engine
+title: ThingsBoard Edge 规则引擎
+description: ThingsBoard Edge 规则引擎
 
 ---
 
 ![image](/images/coming-soon.jpg)
 
-### Next Steps
+### 后续步骤
 
 {% assign currentGuide = "EdgeRuleEngineOverview" %}
 {% assign docsPrefix = "pe/edge/" %}

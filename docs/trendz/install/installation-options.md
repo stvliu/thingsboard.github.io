@@ -2,8 +2,8 @@
 layout: docwithnav-trendz
 assignees:
 - vparomskiy
-title: ThingsBoard Trendz Analytics installation options
-description: ThingsBoard Trendz Analytics installation instructions for various operation systems
+title: ThingsBoard Trendz Analytics 安装选项
+description: ThingsBoard Trendz Analytics 安装说明，适用于各种操作系统
 notitle: "true"
 ---
 
@@ -12,7 +12,7 @@ notitle: "true"
        <div class="install-options-hero">
           <div class="container">
             <div class="install-options-hero-content">
-                <h1>ThingsBoard Trendz Analytics installation options</h1>
+                <h1>ThingsBoard Trendz Analytics 安装选项</h1>
             </div>
             <div class="deployment-container one-line-deployment-container">
                 <div class="deployment-div">
@@ -69,7 +69,7 @@ notitle: "true"
                                         <a href="/docs/trendz/install/docker/">
                                             <span>
                                                 <div class="deployment-logo">
-                                                    <img width="" src="/images/install/platform/docker-linux-macos.svg" title="Docker (Linux or Mac OS)" alt="Docker (Linux or Mac OS)">
+                                                    <img width="" src="/images/install/platform/docker-linux-macos.svg" title="Docker (Linux 或 Mac OS)" alt="Docker (Linux 或 Mac OS)">
                                                  </div>
                                             </span>
                                         </a>

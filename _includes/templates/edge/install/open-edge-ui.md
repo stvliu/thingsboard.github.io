@@ -4,8 +4,8 @@
 {% assign cloudLink = "[**ThingsBoard Live Demo**](https://demo.thingsboard.io/signup)" %}
 {% endif %}
 
-Once started, you will be able to open **ThingsBoard Edge UI** using the following link `http://localhost:8080`.
+启动后，您可以使用以下链接 `http://localhost:8080` 打开 **ThingsBoard Edge UI**。
 
 {% include templates/edge/bind-port-changed-banner.md %}
 
-Please use your tenant credentials from local Server instance or {{cloudLink}} to log in to the ThingsBoard Edge.
+请使用本地服务器实例或 {{cloudLink}} 中的租户凭据登录 ThingsBoard Edge。

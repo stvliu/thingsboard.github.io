@@ -1,18 +1,18 @@
-Execute the following command to pull the image:
+执行以下命令以拉取镜像：
 
 ```bash
 docker pull thingsboard/tb-pe-tcp-udp-integration:{{ site.release.pe_full_ver }}
 ```
 {: .copy-code}
 
-Execute the following command to create volume for the integration logs (799 is the user id of ThingsBoard non-root docker user):
+执行以下命令以创建用于集成日志的卷（799 是 ThingsBoard 非 root docker 用户的用户 ID）：
 
 ```bash
 mkdir -p ~/.tb-pe-tcp-udp-integration-logs && sudo chown -R 799:799 ~/.tb-pe-tcp-udp-integration-logs
 ```
 {: .copy-code}
 
-Execute the following command to run the integration:
+执行以下命令以运行集成：
 
 ```bash
 docker run -it -p 10560:10560 -v ~/.tb-pe-tcp-udp-integration-logs:/var/log/tb-tcp-udp-integration  \
@@ -22,49 +22,47 @@ docker run -it -p 10560:10560 -v ~/.tb-pe-tcp-udp-integration-logs:/var/log/tb-t
 ```
 {: .copy-code}
 
-Where: 
-    
-- `thingsboard.cloud` - is the host name of your ThingsBoard PE instance;
-- `9090` - is the port of your ThingsBoard PE instance. It is configured in thingsboard.yml using INTEGRATIONS_RPC_PORT env variable;    
-- `YOUR_ROUTING_KEY` - placeholder for your integration routing key obtained on [Step 3](/docs/user-guide/integrations/remote-integrations/#step-3-save-remote-integration-credentials);
-- `YOUR_SECRET` - placeholder for your integration secret obtained on [Step 3](/docs/user-guide/integrations/remote-integrations/#step-3-save-remote-integration-credentials);
-- `docker run`              - run this container;
-- `-it`                     - attach a terminal session with current ThingsBoard process output;
-- `-p 10560:10560` - connect local port 10560 to exposed internal 10560 port for the integration. If the exposed port is UDP, add `/udp` at the end, e.g. `-p 11560:11560/udp` 
-- `-v ~/.tb-pe-tcp-udp-integration-logs:/var/log/tb-tcp-udp-integration`   - mounts the host's dir `~/.tb-pe-tcp-udp-integration-logs` to ThingsBoard logs directory;
-- `--name tb-pe-tcp-udp-integration`             - friendly local name of this machine;
-- `--restart always`        - automatically start ThingsBoard Integration in case of system reboot and restart in case of failure.;
-- `thingsboard/tb-pe-tcp-udp-integration:{{ site.release.pe_full_ver }}`          - docker image.
+其中：
 
-After executing this command you can open logs which are located here `~/.tb-pe-tcp-udp-integration-logs`. 
-You should see some INFO log messages with your latest Integration configuration that arrived from the server.
+- `thingsboard.cloud` - 是 ThingsBoard PE 实例的主机名；
+- `9090` - 是 ThingsBoard PE 实例的端口。它在 thingsboard.yml 中使用 INTEGRATIONS_RPC_PORT 环境变量进行配置；
+- `YOUR_ROUTING_KEY` - 在 [步骤 3](/docs/user-guide/integrations/remote-integrations/#step-3-save-remote-integration-credentials) 中获得的集成路由密钥的占位符；
+- `YOUR_SECRET` - 在 [步骤 3](/docs/user-guide/integrations/remote-integrations/#step-3-save-remote-integration-credentials) 中获得的集成密钥的占位符；
+- `docker run` - 运行此容器；
+- `-it` - 附加一个终端会话，其中包含当前 ThingsBoard 进程输出；
+- `-p 10560:10560` - 将本地端口 10560 连接到公开的内部 10560 端口以进行集成。如果公开的端口是 UDP，请在末尾添加 `/udp`，例如 `-p 11560:11560/udp`
+- `-v ~/.tb-pe-tcp-udp-integration-logs:/var/log/tb-tcp-udp-integration` - 将主机的目录 `~/.tb-pe-tcp-udp-integration-logs` 挂载到 ThingsBoard 日志目录；
+- `--name tb-pe-tcp-udp-integration` - 此计算机的友好本地名称；
+- `--restart always` - 在系统重新启动时自动启动 ThingsBoard 集成，并在发生故障时重新启动；
+- `thingsboard/tb-pe-tcp-udp-integration:{{ site.release.pe_full_ver }}` - docker 镜像。
 
-<br>
-
-You can detach from session terminal with **`Ctrl-p`**+**`Ctrl-q`** - the container will keep running in the background.
+执行此命令后，您可以打开位于此处 `~/.tb-pe-tcp-udp-integration-logs` 的日志。您应该会看到一些 INFO 日志消息，其中包含从服务器收到的最新集成配置。
 
 <br>
 
-- **Reattaching, stop and start commands**
+您可以使用 **`Ctrl-p`**+**`Ctrl-q`** 从会话终端分离 - 容器将继续在后台运行。
 
-To reattach to the terminal (to see ThingsBoard logs) run:
+<br>
+
+- **重新连接、停止和启动命令**
+
+要重新连接到终端（以查看 ThingsBoard 日志），请运行：
 
 ```
 docker attach tb-pe-tcp-udp-integration
 ```
 {: .copy-code}
 
-To stop the container:
+要停止容器：
 
 ```
 docker stop tb-pe-tcp-udp-integration
 ```
 {: .copy-code}
 
-To start the container:
+要启动容器：
 
 ```
 docker start tb-pe-tcp-udp-integration
 ```
 {: .copy-code}
-

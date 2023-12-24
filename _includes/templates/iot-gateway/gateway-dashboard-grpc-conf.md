@@ -1,10 +1,10 @@
 ![](/images/gateway/dashboard/gateway-dashboard-grpc-conf.png)
 
-GRPC - provides GRPC configuration:
-- Server port - network port on which the GRPC server will listen for incoming connections;
-- Keep alive permit without calls - allow server to keep the GRPC connection alive even when there are no active RPC calls;
-- Keep alive - duration (in milliseconds) between two successive keepalive ping messages when there is no active RPC call;
-- Max pings without data - maximum number of keepalive ping messages that the server can send without receiving any data before it considers the connection dead;
-- Keep alive timeout - maximum time (in milliseconds) the server should wait for a keepalive ping response before considering the connection dead;
-- Min time between pings - minimum amount of time (in milliseconds) the server should wait between sending keepalive ping messages;
-- Min ping interval without data - minimum amount of time (in milliseconds) the server should wait between sending keepalive ping messages when there is no data being sent or received.
+GRPC - 提供 GRPC 配置：
+- 服务器端口 - GRPC 服务器将侦听传入连接的网络端口；
+- 允许保持活动而不进行调用 - 即使没有活动的 RPC 调用，也允许服务器保持 GRPC 连接处于活动状态；
+- 保持活动 - 在没有活动的 RPC 调用时，两次连续保持活动 ping 消息之间的持续时间（以毫秒为单位）；
+- 无数据时的最大 ping 次数 - 服务器在认为连接已断开之前可以发送的最大保持活动 ping 消息数，而不会收到任何数据；
+- 保持活动超时 - 服务器在认为连接已断开之前应等待保持活动 ping 响应的最长时间（以毫秒为单位）；
+- ping 之间的最短时间 - 服务器在发送保持活动 ping 消息之间应等待的最小时间量（以毫秒为单位）；
+- 无数据时的最小 ping 间隔 - 当没有发送或接收数据时，服务器在发送保持活动 ping 消息之间应等待的最小时间量（以毫秒为单位）。

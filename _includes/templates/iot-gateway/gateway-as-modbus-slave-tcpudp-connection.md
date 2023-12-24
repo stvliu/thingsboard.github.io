@@ -1,28 +1,28 @@
-| **Parameter**                 | **Default value**                       | **Description**                                                                                                               |
-|:-|:-|-
-| type                          | **tcp**                                 | Type of connection may be **tcp**, **udp** or **serial**.                                                                     |
-| host                          | **127.0.0.1**                           | Hostname or ip address of Modbus server.                                                                                      |
-| port                          | **5020**                                | Port of Modbus server for connect.                                                                                            |
-| method                        | **socket**                              | Type of framer **socket** or **rtu**, if needed.                                                                              |
-| deviceName                    | **Modbus_Slave_Example**                | Device name                                                                                                                   |
-| deviceType                    | **default**                             | Device type                                                                                                                   |
-| pollPeriod                    | **5000**                                | Period in milliseconds for check the attributes and the telemetry.                                                            |
-| sendDataToThingsBoard         | **false**                               | If set to TRUE, Gateway make autoconfiguration and every <pollPeriod> ms send values to ThingsBoard                           |
-| byteOrder                     | **BIG**                                 | Order of bytes to read.                                                                                                       |
-| unitId                        | **0**                                   | Unit id of the device                                                                                                         |
+| **参数** | **默认值** | **说明** |
+|:-|:-|:-|
+| 类型 | **tcp** | 连接类型可以是 **tcp**、**udp** 或 **serial**。 |
+| 主机 | **127.0.0.1** | Modbus 服务器的主机名或 IP 地址。 |
+| 端口 | **5020** | Modbus 服务器的连接端口。 |
+| 方法 | **socket** | 如果需要，则为 **socket** 或 **rtu** 类型。 |
+| 设备名称 | **Modbus_Slave_Example** | 设备名称 |
+| 设备类型 | **default** | 设备类型 |
+| 轮询周期 | **5000** | 检查属性和遥测的毫秒数周期。 |
+| 将数据发送到 ThingsBoard | **false** | 如果设置为 TRUE，网关将进行自动配置，并且每 <pollPeriod> 毫秒向 ThingsBoard 发送值 |
+| 字节顺序 | **BIG** | 要读取的字节顺序。 |
+| 单元 ID | **0** | 设备的单元 ID |
 |---
 
-Also, you can configure TLS connection using the following configuration:
+此外，您可以使用以下配置来配置 TLS 连接：
 
-| **Parameter**                 | **Default value**                            | **Description**                           |
-|:-|:-|-------------------------------------------
-| certfile                      | **/etc/thingsboard-gateway/certificate.pem** | Path to certificate file.                 |
-| keyfile                       | **/etc/thingsboard-gateway/privateKey.pem**  | Path to private key file.                 |
-| password                      | **YOUR_PASSWORD**                            | Server password.                          |
-| reqclicert                    | **false**                                    | Request certificate file from the client. |
+| **参数** | **默认值** | **说明** |
+|:-|:-|:-|
+| 证书文件 | **/etc/thingsboard-gateway/certificate.pem** | 证书文件的路径。 |
+| 密钥文件 | **/etc/thingsboard-gateway/privateKey.pem** | 私钥文件的路径。 |
+| 密码 | **YOUR_PASSWORD** | 服务器密码。 |
+| 请求客户端证书 | **false** | 从客户端请求证书文件。 |
 |---
 
-Configuration example:
+配置示例：
 ```json
 "slave": {
   "type": "tcp",

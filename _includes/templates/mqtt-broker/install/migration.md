@@ -1,4 +1,1 @@
-**Note:** For the TBMQ 1.2.1 version the installation scripts were updated to start using docker volumes instead of 
-bind mounts, Kafka without ZooKeeper (by leveraging KRaft), and some other important changes. As the migration process is too complex in this scope, 
-we recommend installing TBMQ from scratch for test deployments. Otherwise, please [contact us](https://github.com/thingsboard/tbmq/issues), so we can answer any questions
-and provide our help if needed.
+**注意：**对于 TBMQ 1.2.1 版本，安装脚本已更新为开始使用 docker 卷而不是绑定挂载、无 ZooKeeper 的 Kafka（通过利用 KRaft）以及其他一些重要更改。由于迁移过程在此范围内过于复杂，我们建议从头开始安装 TBMQ 以进行测试部署。否则，请 [联系我们](https://github.com/thingsboard/tbmq/issues)，以便我们能够回答任何问题并在需要时提供帮助。

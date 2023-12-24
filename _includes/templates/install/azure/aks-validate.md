@@ -1,58 +1,58 @@
-#### Validate Web UI access
+#### 验证 Web UI 访问
 
-Now you can open ThingsBoard web interface in your browser using DNS name of the load balancer.
+现在，您可以使用负载均衡器的 DNS 名称在浏览器中打开 ThingsBoard Web 界面。
 
-You can see DNS name (the `ADDRESS` column) of the HTTP load-balancer using command:
+您可以使用以下命令查看 HTTP 负载均衡器的 DNS 名称（`ADDRESS` 列）：
 
 ```bash
 kubectl get ingress
 ```
 {: .copy-code}
 
-You should see the similar picture:
+您应该会看到类似的图片：
 
 ![image](/images/install/cloud/aws-application-loadbalancers.png)
 
-Use the following default credentials:
+使用以下默认凭据：
 
-- **System Administrator**: sysadmin@thingsboard.org / sysadmin
+- **系统管理员**：sysadmin@thingsboard.org / sysadmin
 
-If you installed DataBase with demo data (using `--loadDemo` flag) you can also use the following credentials:
+如果您使用 `--loadDemo` 标志安装了包含演示数据的数据库，您还可以使用以下凭据：
 
-- **Tenant Administrator**: tenant@thingsboard.org / tenant
-- **Customer User**: customer@thingsboard.org / customer
+- **租户管理员**：tenant@thingsboard.org / tenant
+- **客户用户**：customer@thingsboard.org / customer
 
-#### Validate MQTT/CoAP access
+#### 验证 MQTT/CoAP 访问
 
-To connect to the cluster via MQTT or COAP you'll need to get corresponding service, you can do it with command:
+要通过 MQTT 或 COAP 连接到集群，您需要获取相应的服务，您可以使用以下命令执行此操作：
 
 ```bash
 kubectl get service
 ```
 {: .copy-code}
 
-You should see the similar picture:
+您应该会看到类似的图片：
 
 ![image](/images/install/cloud/aws-network-loadbalancers.png)
 
 
-There are two load-balancers:
-- tb-mqtt-loadbalancer-external - for MQTT protocol
-- tb-coap-loadbalancer-external - for COAP protocol
+有两个负载均衡器：
+- tb-mqtt-loadbalancer-external - 用于 MQTT 协议
+- tb-coap-loadbalancer-external - 用于 COAP 协议
 
-Use `EXTERNAL-IP` field of the load-balancers to connect to the cluster.
+使用负载均衡器的 `EXTERNAL-IP` 字段连接到集群。
 
-#### Troubleshooting
+#### 故障排除
 
-In case of any issues you can examine service logs for errors.
-For example to see ThingsBoard node logs execute the following command:
+如果出现任何问题，您可以检查服务日志以查找错误。
+例如，要查看 ThingsBoard 节点日志，请执行以下命令：
 
 ```bash
 kubectl logs -f tb-node-0
 ```
 {: .copy-code}
 
-Or use `kubectl get pods` to see the state of the pods.
-Or use `kubectl get services` to see the state of all the services.
-Or use `kubectl get deployments` to see the state of all the deployments.
-See [kubectl Cheat Sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/) command reference for details.
+或者使用 `kubectl get pods` 查看 Pod 的状态。
+或者使用 `kubectl get services` 查看所有服务的状态。
+或者使用 `kubectl get deployments` 查看所有部署的状态。
+有关详细信息，请参阅 [kubectl 速查表](https://kubernetes.io/docs/reference/kubectl/cheatsheet/) 命令参考。

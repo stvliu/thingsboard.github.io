@@ -397,8 +397,3 @@ dialog-window-1:
 entityfromwidget:
     0:
         image: /images/user-guide/ui/widgets/actions/settings/entityfromwidget-pe.png
-
----
-
-{% assign docsPrefix = "pe/" %}
-{% include docs/user-guide/ui/widget-actions.md %}

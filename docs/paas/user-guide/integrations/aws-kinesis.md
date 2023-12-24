@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-paas
-title: AWS Kinesis Integration
-description: AWS Kinesis Integration Guide 
+title: AWS Kinesis 集成
+description: AWS Kinesis 集成指南
 
 ---
 {% assign docsPrefix = "paas/" %}

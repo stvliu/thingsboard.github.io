@@ -1,45 +1,39 @@
-{% assign feature = "Platform Integrations" %}{% include templates/pe-feature-banner.md %}
+{% assign feature = "平台集成" %}{% include templates/pe-feature-banner.md %}
 
 * TOC
 {:toc}
 
-## Overview
+## 概述
 
-AWS IoT Integration allows to stream data from AWS IoT Backend to ThingsBoard and converts device payloads 
-to the ThingsBoard format. AWS IoT will be primarily responsible for receiving all messages (as a broker - 
-messaging server), filtering them, deciding who is interested, and then sending the message to all 
-subscribers, in our case of integration.
+AWS IoT 集成允许将数据从 AWS IoT 后端流式传输到 ThingsBoard，并将设备有效负载转换为 ThingsBoard 格式。AWS IoT 将主要负责接收所有消息（作为代理 - 消息服务器），过滤它们，确定谁感兴趣，然后将消息发送给所有订阅者，在我们的集成案例中。
 
 <object width="100%" style="max-width: max-content;" data="/images/user-guide/integrations/aws-iot-integration.svg"></object>
 
 ## AWS IOT
 
-You should already have an [AWS account](https://aws.amazon.com/iot/) prepared, on which 
-perform a few settings. To establish a correct and secure connection between the service and ThingsBoard, you need to create Policies, devices, and certificates for them.
+您应该已经准备了一个 [AWS 帐户](https://aws.amazon.com/iot/)，并在其上执行一些设置。要在服务和 ThingsBoard 之间建立正确且安全的连接，您需要为它们创建策略、设备和证书。
 
-#### Create Policy
+#### 创建策略
 
-A policy is an object in AWS that, when associated with an entity or resource, defines their permissions. 
-Permissions in the policies determine whether the request is allowed or denied. Most policies are stored in 
-AWS as JSON documents.
+策略是 AWS 中的对象，当与实体或资源关联时，定义它们的权限。策略中的权限决定允许还是拒绝请求。大多数策略都以 JSON 文档的形式存储在 AWS 中。
 
-To add a new policy, choose **Security** - **Policies** in the main menu, and select the **Create Policy** button.
+要添加新策略，请在主菜单中选择 **安全** - **策略**，然后选择 **创建策略** 按钮。
 
 {% include images-gallery.html imageCollection="create-policies_0" %}
 
-You will be redirected to the policy creation page, where you must specify the **Policy Name** and switch to **JSON** type.
+您将被重定向到策略创建页面，您必须在其中指定 **策略名称** 并切换到 **JSON** 类型。
 
 {% include images-gallery.html imageCollection="create-policies_1" %}
 
-In the field for the **Policy document**, you need to paste the code below with your unique **profile ID**.
+在 **策略文档** 的字段中，您需要使用您的唯一 **个人资料 ID** 粘贴下面的代码。
 
 {% capture update_server_first %}
-Be sure to replace **YOUR_REGION**  and **YOUR_AWS_ID** with your region and account ID accordingly, <br>
-(for example region and id "<strong><h style="color:DarkOrange;">eu-west-1:111197721064</h></strong>").
+请务必将 **YOUR_REGION** 和 **YOUR_AWS_ID** 分别替换为您的区域和帐户 ID，<br>
+（例如区域和 ID "<strong><h style="color:DarkOrange;">eu-west-1:111197721064</h></strong>"）。
 {% endcapture %}
-{% include templates/info-banner.md title="Importantly:" content=update_server_first %}
+{% include templates/info-banner.md title="重要提示：" content=update_server_first %}
 
-**For example of policy document:**
+**策略文档示例：**
 
 ```json
 {
@@ -78,133 +72,119 @@ Be sure to replace **YOUR_REGION**  and **YOUR_AWS_ID** with your region and acc
 ```
 {: .copy-code}
 
-Your region is listed in the URL when you are signed in to your AWS IoT account. <br> For example: **https://<h style="color:orange;">eu-west-1</h>.console.aws.amazaon.com**
+当您登录 AWS IoT 帐户时，您的区域会列在 URL 中。 <br> 例如：**https://<h style="color:orange;">eu-west-1</h>.console.aws.amazaon.com**
 
 {% include images-gallery.html imageCollection="create-policies_2" %}
 
-After that, click the **Create** button. The policy will be added to the list, and you will receive the **Successfully created policy tb_policy** message.
+之后，单击 **创建** 按钮。该策略将被添加到列表中，您将收到 **成功创建策略 tb_policy** 消息。
 
 {% include images-gallery.html imageCollection="create-policies_3" %}
 
-#### Create Things and Certificates
-A Thing is a digital representation of a physical device or logical entity in AWS IoT.
+#### 创建事物和证书
+事物是 AWS IoT 中物理设备或逻辑实体的数字表示。
 
-You can create a conditional device in several steps, but for it need to go to the appropriate section. 
-On the left, choose the **All devices** category - then **Things** item. This page will display
-all your devices if you don't have them yet. At the top right, select the **Create thing** button to proceed 
-to adding a device.
+您可以通过几个步骤创建条件设备，但需要转到相应的部分。在左侧，选择 **所有设备** 类别 - 然后选择 **事物** 项目。如果您还没有设备，此页面将显示您的所有设备。在右上角，选择 **创建事物** 按钮以继续添加设备。
 
 {% include images-gallery.html imageCollection="add_device_0" %}
 
-Consider the example of adding a single device, select the corresponding option the **Create 
-single thing**, and then **Next** button.
+考虑添加单个设备的示例，选择相应的选项 **创建单个事物**，然后选择 **下一步** 按钮。
 
 {% include images-gallery.html imageCollection="add_device_1" %}
 
-In the first stage, we will set the **Name** for the device, and at your discretion, additional parameters. 
-Then press the **Next** button to move to the following step.
+在第一阶段，我们将为设备设置 **名称**，并根据您的判断设置其他参数。然后按 **下一步** 按钮转到以下步骤。
 
 {% include images-gallery.html imageCollection="add_device_2" %}
 
-At this stage, select the **Auto-generate a new certificate**. Certificates and keys will be available 
-for download after confirming the addition of the device, so just click the next button.
+在此阶段，选择 **自动生成新证书**。在确认添加设备后，证书和密钥可供下载，因此只需单击下一步按钮即可。
 
 {% include images-gallery.html imageCollection="add_device_3" %}
 
-At the last stage, select your previously added policy and confirm the creation of a thing (device) 
-with the **Create thing** button.
+在最后阶段，选择您之前添加的策略并使用 **创建事物** 按钮确认创建事物（设备）。
 
 {% include images-gallery.html imageCollection="add_device_4" %}
 
-Upon completion, you will see an additional window with the possibility to download certificates and keys.
+完成后，您将看到一个其他窗口，可以下载证书和密钥。
 
-The list of files that are required to configure the integration:
-- Device certificate (_*.pem.crt_)
-- Private key (_*-private.pem.key_)
-- Root CA certificate (_*.pem_)
+需要配置集成以进行文件列表：
+- 设备证书 (_*.pem.crt_)
+- 私钥 (_*-private.pem.key_)
+- 根 CA 证书 (_*.pem_)
 
-AWS additionally requires you to save your **Public key file** for yourself, so please download that as well.
+AWS 还要求您为自己保存 **公钥文件**，因此请也下载该文件。
 
-After saving the required, click the **Done**.
+保存所需内容后，单击 **完成**。
 
 {% include images-gallery.html imageCollection="save_certificates" %}
 
-## ThingsBoard setup
+## ThingsBoard 设置
 
-### Create Uplink Converter
+### 创建上行转换器
 
-Before creating the integration, you need to create an Uplink converter in Data converters. Uplink is
-necessary in order to convert the incoming data from the device into the required format for displaying
-them in ThingsBoard. Click on the “plus” and on “Create new converter”. To view the events, enable Debug.
-In the function decoder field, specify a script, for it copy the example Uplink converter, or
-use own configuration to parse and transform data.
+在创建集成之前，您需要在数据转换器中创建上行转换器。上行对于将来自设备的传入数据转换为在 ThingsBoard 中显示它们所需的格式是必要的。单击“加号”和“创建新转换器”。要查看事件，请启用调试。在函数解码器字段中，指定一个脚本，为此复制示例上行转换器，或使用自己的配置来解析和转换数据。
 
 {% capture noteDebug %}
-While Debug mode is very useful for development and troubleshooting, leaving it enabled in production mode
-can significantly increase the disk space used by the database since all the debug data is stored there. It is highly recommended turning the Debug mode off after debugging is complete.
+虽然调试模式对于开发和故障排除非常有用，但在生产模式下启用它会显着增加数据库使用的磁盘空间，因为所有调试数据都存储在那里。强烈建议在调试完成后关闭调试模式。
 {% endcapture %}
-{% include templates/info-banner.md title="Note:" content=noteDebug %}
+{% include templates/info-banner.md title="注意：" content=noteDebug %}
 
 {% include templates/tbel-vs-js.md %}
 
 {% capture awsiotuplinkconverterconfig %}
-TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/aws-iot/aws-iot-uplink-converter-config-tbel.md%br%
+TBEL<small>推荐</small>%,%accessToken%,%templates/integration/aws-iot/aws-iot-uplink-converter-config-tbel.md%br%
 JavaScript<small></small>%,%anonymous%,%templates/integration/aws-iot/aws-iot-uplink-converter-config-javascript.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="awsiotuplinkconverterconfig" toggle-spec=awsiotuplinkconverterconfig %}
 
-You can change the decoder function while creating the converter or after creating it. If the converter
-has already been created, then click on the “pencil” icon to edit it.
+您可以在创建转换器时或创建转换器后更改解码器函数。如果转换器已经创建，则单击“铅笔”图标进行编辑。
 {% include images-gallery.html imageCollection="edit_converter" %}
 
-### Create Integration
+### 创建集成
 
-- Go to **Integrations** section and click **Add new integration** button. Name it **"AWS IoT Integration"**, select type **AWS IoT**.
+- 转到 **集成** 部分，然后单击 **添加新集成** 按钮。将其命名为 **“AWS IoT 集成”**，选择类型 **AWS IoT**。
 
 ![image](/images/user-guide/integrations/aws-iot/aws-iot-add-integration-1-pe.png)
 
 {% capture allowCreateDevice %}
-Note that if the “Allow create devices or assets” checkbox is unchecked, when sending a message to thingsboard
-with any parameters of the device (or asset), if such a device (asset) does not exist, then device (asset) will not be created.
+请注意，如果取消选中“允许创建设备或资产”复选框，则在向 thingsboard 发送带有任何设备（或资产）参数的消息时，如果不存在此类设备（资产），则不会创建设备（资产）。
 {% endcapture %}
 {% include templates/info-banner.md content=allowCreateDevice %}
 
-- The next steps is to add the recently created **Uplink** converter.
+- 下一步是添加最近创建的 **上行** 转换器。
 
 ![image](/images/user-guide/integrations/aws-iot/aws-iot-add-integration-2-pe.png)
 
-- For now, leave the "Downlink data converter" field blank.
+- 现在，将“下行数据转换器”字段留空。
 
 ![image](/images/user-guide/integrations/aws-iot/aws-iot-add-integration-3-pe.png)
 
-- Enter AWS IoT Endpoint. You can find it in your [AWS account](https://aws.amazon.com/iot/) if you go to **Settings** - **Device data endpoint**. 
+- 输入 AWS IoT 端点。如果您转到 **设置** - **设备数据端点**，可以在您的 [AWS 帐户](https://aws.amazon.com/iot/) 中找到它。
 
 {% include images-gallery.html imageCollection="aws_endpoint" %}
 
-- Download the previously generated certificates and key.
+- 下载之前生成的证书和密钥。
 
 ![image](/images/user-guide/integrations/aws-iot/aws-iot-add-integration-4-pe.png)
 
-- Add a Topic Filter **tb/aws/iot/#**. You can also select QoS level. We use QoS level 0 (At most once) by default.
+- 添加主题过滤器 **tb/aws/iot/#**。您还可以选择 QoS 级别。我们默认使用 QoS 级别 0（最多一次）。
 
-- Click **Add** to create an integration.
+- 单击 **添加** 以创建集成。
 
 ![image](/images/user-guide/integrations/aws-iot/aws-iot-add-integration-5-pe.png)
 
-### Send Uplink message
+### 发送上行消息
 
-To send a test message, use the additional functionality of AWS IoT, the MQTT test client.
-In the main menu, go to **MQTT test client**, then select the **Publish to a topic** tab.
+要发送测试消息，请使用 AWS IoT 的附加功能，MQTT 测试客户端。
+在主菜单中，转到 **MQTT 测试客户端**，然后选择 **发布到主题** 选项卡。
 
 {% include images-gallery.html imageCollection="send_uplink_0" %}
 
-**Example of topic:**
+**主题示例：**
 ```
 tb/aws/iot/sensors/freezer-432
 ```
 {: .copy-code}
 
-**Example of payload:**
+**有效负载示例：**
 ```ruby
 {
     "val0": "loaded",
@@ -215,44 +195,42 @@ tb/aws/iot/sensors/freezer-432
 ```
 {: .copy-code}
 
-To check if the message has arrived at AWS IoT integration open the events tab of integration.
+要检查消息是否已到达 AWS IoT 集成，请打开集成的事件选项卡。
 
 {% include images-gallery.html imageCollection="send_uplink_1" %}
 
-## Advanced usage: Create Downlink Converter
+## 高级用法：创建下行转换器
 
-Let's look at a simple example to test a connection and send a message. For it need to create a downlink
-Data converter. Then set the converter and topic in the AWS IoT integration.
+让我们看一个简单的示例来测试连接并发送消息。为此，需要创建一个下行数据转换器。然后在 AWS IoT 集成中设置转换器和主题。
 
 {% include templates/tbel-vs-js.md %}
 
 {% capture awsiotdownlinkconverterconfig %}
-TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/aws-iot/aws-iot-downlink-converter-config-tbel.md%br%
+TBEL<small>推荐</small>%,%accessToken%,%templates/integration/aws-iot/aws-iot-downlink-converter-config-tbel.md%br%
 JavaScript<small></small>%,%anonymous%,%templates/integration/aws-iot/aws-iot-downlink-converter-config-javascript.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="awsiotdownlinkconverterconfig" toggle-spec=awsiotdownlinkconverterconfig %}
 
-Next, configure the conditions under which a message will be sent through the AWS IoT Downlink integration.
-To do this, you need to open the Rule Chain used for the device (in our case, the default Root Rule Chain), then add an [integration downlink node](https://thingsboard.io/docs/pe/user-guide/rule-engine-2-0/action-nodes/#integration-downlink-node), for link condition set the Attributes Updated.
+接下来，配置在哪些条件下将通过 AWS IoT 下行集成发送消息。
+为此，您需要打开用于设备的规则链（在我们的示例中，是默认的根规则链），然后添加 [集成下行节点](https://thingsboard.io/docs/pe/user-guide/rule-engine-2-0/action-nodes/#integration-downlink-node)，对于链接条件，设置属性已更新。
 
 {% include images-gallery.html imageCollection="downlink_2-3" %}
 
-To subscribe to a topic for receive messages from Thingsboard, use the **AWS MQTT test client**.
+要订阅主题以接收来自 Thingsboard 的消息，请使用 **AWS MQTT 测试客户端**。
 
 {% include images-gallery.html imageCollection="downlink_4" %}
 
-Now you can update the device attribute. To do this, open **Device**, **Attributes** tab, and choose 
-**Shared Attributes**, then select any attribute, or add a new one to update it.
+现在，您可以更新设备属性。为此，请打开 **设备**、**属性** 选项卡，然后选择 **共享属性**，然后选择任何属性或添加一个新属性来更新它。
 
 {% include images-gallery.html imageCollection="downlink_5" %}
 
-The result can be tracked on AWS page where you subscribed to the topic:
+可以在您订阅主题的 AWS 页面上跟踪结果：
 
 {% include images-gallery.html imageCollection="downlink_6" %}
 
-## Video tutorial
+## 视频教程
 
-See video tutorial below for step-by-step instruction how to setup AWS IoT Integration (Outdated interface).
+请参阅下面的视频教程，了解有关如何设置 AWS IoT 集成（过时的界面）的分步说明。
 
 <br>
 <div id="video">  
@@ -261,6 +239,6 @@ See video tutorial below for step-by-step instruction how to setup AWS IoT Integ
  </div>
 </div>
 
-## Next steps
+## 后续步骤
 
 {% assign currentGuide = "ConnectYourDevice" %}{% include templates/multi-project-guides-banner.md %}

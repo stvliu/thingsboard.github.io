@@ -2,62 +2,62 @@
 layout: docwithnav-trendz
 assignees:
 - vparomskiy
-title: White Labeling
-description: Trendz White Labeling configuration - set color schema, logo and other branding settings
+title: 白标
+description: Trendz 白标配置 - 设置颜色方案、徽标和其他品牌设置
 
 trendz-white-labeling-section:
   0:
     image: /images/trendz/trendz-white-labeling-settings.png
-    title: 'White labeling section in Trendz analytics settings'
+    title: 'Trendz 分析设置中的白标部分'
 
 trendz-white-labeling-logo:
   0:
     image: /images/trendz/trendz-white-labeling-logo.png
-    title: 'Change Trendz analytics logo settings'
+    title: '更改 Trendz 分析徽标设置'
 
 trendz-white-labeling-title:
   0:
     image: /images/trendz/trendz-white-labeling-title.png
-    title: 'Change Trendz analytics tab title'
+    title: '更改 Trendz 分析选项卡标题'
 
 trendz-white-labeling-url-path:
   0:
     image: /images/trendz/trendz-white-labeling-path-cloud.png
-    title: 'Change Trendz analytics loading URL path in self hosted installation'
+    title: '在自托管安装中更改 Trendz 分析加载 URL 路径'
   1:
     image: /images/trendz/trendz-white-labeling-path-self.png
-    title: 'Change loading URL path in Trenzd Cloud'
+    title: '在 Trendz Cloud 中更改加载 URL 路径'
 ---
 
 
 * TOC
 {:toc}
 
-Starting from Trendz version 1.11, you can now customize certain branding settings. These options include editing the following interface elements:
+从 Trendz 版本 1.11 开始，您现在可以自定义某些品牌设置。这些选项包括编辑以下界面元素：
 
-* Logo and favicon (icon on the tab of the browser).
-* Name of the browser tab.
-* URL path customization (the part that comes after the domain name).
+* 徽标和 favicon（浏览器选项卡上的图标）。
+* 浏览器选项卡的名称。
+* URL 路径自定义（域名后面的部分）。
 
-You can configure these settings in the Trendz **Settings** page in **White labeling** section.
+您可以在 **白标** 部分的 Trendz **设置** 页面中配置这些设置。
 
 {% include images-gallery.html imageCollection="trendz-white-labeling-section" %}
 
 
-## Trendz logo and favicon
-All major image formats are supported for uploading. The recommended size is 64 by 64 px. But other sizes will be supported.
-After uploading a new image and pressing the Save button, the logo and favicon will change.
+## Trendz 徽标和 favicon
+支持上传所有主要图像格式。建议大小为 64 x 64 像素。但会支持其他大小。
+上传新图像并按下保存按钮后，徽标和 favicon 将发生更改。
 
 {% include images-gallery.html imageCollection="trendz-white-labeling-logo" %}
 
-## Name of the browser tab
-This field can accommodate up to 128 characters. It's worth mentioning that while most browsers might not fully display all of them.
+## 浏览器选项卡的名称
+此字段最多可容纳 128 个字符。值得一提的是，虽然大多数浏览器可能无法完全显示所有这些字符。
 
 {% include images-gallery.html imageCollection="trendz-white-labeling-title" %}
 
-## URL path customization
+## URL 路径自定义
 
-* **Self-managed:** If you are using the self-managed option (Trendz is hosted on your own server), then this field can contain arbitrary text. Limit - 128 characters. Remember that this is part of the url. Therefore, for a more correct display of words, you need to separate them with hyphens.
-* **Trendz Cloud** -  you cannot set custom text, but you can use the generic word **analytics**
+* **自管理：**如果您使用的是自管理选项（Trendz 托管在您自己的服务器上），那么此字段可以包含任意文本。限制 - 128 个字符。请记住，这是 URL 的一部分。因此，为了更正显示单词，您需要用连字符将它们分开。
+* **Trendz Cloud** - 您无法设置自定义文本，但可以使用通用词 **analytics**
 
 {% include images-gallery.html imageCollection="trendz-white-labeling-url-path" %}

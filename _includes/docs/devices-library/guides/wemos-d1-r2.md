@@ -1,57 +1,56 @@
-
 {% assign boardLedCount = 1 %}
-{% assign deviceName = page.title | remove: "How to connect " | remove: "to ThingsBoard?" %}
+{% assign deviceName = page.title | remove: "如何连接 " | remove: "到 ThingsBoard？" %}
 {% assign arduinoBoardPath="**ESP8266** > **LOLIN(WEMOS) D1 R2 & mini**" %}
 {% assign prerequisites = "
 - " | append: deviceName | append: "
 - [Arduino IDE](https://www.arduino.cc/en/software)"
  %}
 
-## Introduction
+## 简介
 
 ![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 
-The WeMos D1 board, developed by WeMos company, is based on the ESP8266 ESP-12 WiFi module.  
-Board programming is carried out using the standard Arduino IDE development environment.  
-The controller includes a processor, peripherals, RAM and input/output devices.  
-Most often, microcontrollers are used in computer equipment, household appliances and other electronic devices.  
-WeMos is distinguished by its low cost and ease of connection and programming.  
+WeMos D1 板由 WeMos 公司开发，基于 ESP8266 ESP-12 WiFi 模块。
+使用标准 Arduino IDE 开发环境对电路板进行编程。
+控制器包括处理器、外设、RAM 和输入/输出设备。
+微控制器最常用于计算机设备、家用电器和其他电子设备。
+WeMos 的特点是成本低，连接和编程简单。
 
 {% include /docs/devices-library/blocks/basic/introduction-block.md %}
 
-## Create device on ThingsBoard
+## 在 ThingsBoard 上创建设备
 
 {% include /docs/devices-library/blocks/basic/thingsboard-create-device-block.md %}
 
-## Install required libraries and tools
+## 安装所需的库和工具
 
 {% include /docs/devices-library/blocks/microcontrollers/esp8266-arduino-library-install-block.md %}
 
 {% include /docs/devices-library/blocks/microcontrollers/thingsboard-arduino-library-install-block.md %}
 
-## Connect device to ThingsBoard 
+## 将设备连接到 ThingsBoard
 
 {% include /docs/devices-library/blocks/basic/thingsboard-provide-device-access-token-block.md %}
 
 {% include /docs/devices-library/blocks/microcontrollers/general-code-to-program-block.md %}
 
-## Check data on ThingsBoard
+## 在 ThingsBoard 上检查数据
 
 {% include /docs/devices-library/blocks/basic/thingsboard-upload-example-dashboard.md %}
 
 {% include /docs/devices-library/blocks/microcontrollers/thingsboard-check-example-data-block.md %}
 
-## Synchronize device state using client and shared attribute requests
+## 使用客户端和共享属性请求同步设备状态
 
 {% include /docs/devices-library/blocks/microcontrollers/thingsboard-synchronize-device-state-using-attribute-requests-block.md %}
 
-## Control device using shared attributes
+## 使用共享属性控制设备
 
 {% include /docs/devices-library/blocks/microcontrollers/thingsboard-update-shared-attributes-device-block.md %}
 
-## Control device using RPC
+## 使用 RPC 控制设备
 
 {% include /docs/devices-library/blocks/microcontrollers/thingsboard-send-rpc-to-device-block.md %}
 
-## Conclusion
+## 结论
 {% include /docs/devices-library/blocks/basic/conclusion-block.md %}

@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-pe-edge
-title: Installing ThingsBoard Edge on Ubuntu Server
-description: Installing ThingsBoard Edge on Ubuntu Server
+title: 在 Ubuntu Server 上安装 ThingsBoard Edge
+description: 在 Ubuntu Server 上安装 ThingsBoard Edge
 
 ---
 
@@ -12,68 +12,68 @@ description: Installing ThingsBoard Edge on Ubuntu Server
 
 {% assign docsPrefix = "pe/edge/" %}
 
-This guide describes how to install ThingsBoard Edge on Ubuntu 18.04 LTS / Ubuntu 20.04 LTS.
+本指南介绍如何在 Ubuntu 18.04 LTS / Ubuntu 20.04 LTS 上安装 ThingsBoard Edge。
 
 {% include templates/edge/install/prerequisites.md %}
 
-## Guided Installation Using ThingsBoard Server Pre-configured Instructions
+## 使用 ThingsBoard Server 预配置说明进行引导安装
 
 {% include templates/edge/install/tb-server-pre-configured-install-instructions.md %}
 
 {% include templates/edge/install/manual-install-instructions-intro.md %}
 
-### Step 1. Install Java 11 (OpenJDK) 
+### 步骤 1. 安装 Java 11 (OpenJDK)
 
 {% include templates/install/ubuntu-java-install.md %}
 
-### Step 2. Configure PostgreSQL
+### 步骤 2. 配置 PostgreSQL
 
 {% include templates/edge/install/ubuntu-db-postgresql.md %}
 
-### Step 3. ThingsBoard Edge service installation
+### 步骤 3. ThingsBoard Edge 服务安装
 
-Download installation package.
+下载安装包。
 
 ```bash
 wget https://dist.thingsboard.io/tb-edge-{{ site.release.pe_edge_ver }}.deb
 ```
 {: .copy-code}
 
-Go to the download repository and install ThingsBoard Edge service
+转到下载存储库并安装 ThingsBoard Edge 服务
 
 ```bash
 sudo dpkg -i tb-edge-{{ site.release.pe_edge_ver }}.deb
 ```
 {: .copy-code}
 
-### Step 4. Configure ThingsBoard Edge
+### 步骤 4. 配置 ThingsBoard Edge
 
 {% include templates/edge/install/linux-configure-edge.md %}
 
-### Step 5. Run installation script
+### 步骤 5. 运行安装脚本
 
 {% include templates/edge/install/run-edge-install.md %} 
 
-### Step 6. Restart ThingsBoard Edge service
+### 步骤 6. 重启 ThingsBoard Edge 服务
 
 ```bash
 sudo service tb-edge restart
 ```
 {: .copy-code}
 
-### Step 7. Open ThingsBoard Edge UI
+### 步骤 7. 打开 ThingsBoard Edge UI
 
 {% include templates/edge/install/open-edge-ui.md %} 
 
-## Troubleshooting
+## 故障排除
 
-ThingsBoard Edge logs stored in the following directory:
+ThingsBoard Edge 日志存储在以下目录中：
  
 ```bash
 /var/log/tb-edge
 ```
 
-You can issue the following command in order to check if there are any errors on the service side:
+您可以发出以下命令以检查服务端是否有任何错误：
  
 ```bash
 cat /var/log/tb-edge/tb-edge.log | grep ERROR
@@ -82,6 +82,6 @@ cat /var/log/tb-edge/tb-edge.log | grep ERROR
 
 {% include templates/edge/install/edge-service-commands.md %} 
 
-## Next Steps
+## 后续步骤
 
 {% include templates/edge/install/next-steps.md %}

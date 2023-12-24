@@ -1,30 +1,30 @@
-#### X.509 Certificate:
+#### X.509 证书：
 
-#### Step 1. Prepare your server and certificate chain
+#### 步骤 1. 准备服务器和证书链
 
-ThingsBoard Team has already provisioned a valid certificate for [ThingsBoard Cloud](https://thingsboard.cloud/signup).
+ThingsBoard 团队已经为 [ThingsBoard Cloud](https://thingsboard.cloud/signup) 配置了有效证书。
 {% if docsPrefix != 'paas/' %}
-Follow the [MQTT over SSL](/docs/{{docsPrefix}}user-guide/mqtt-over-ssl/) guide to provision server certificate if you are hosting your own ThingsBoard instance.
+如果您托管自己的 ThingsBoard 实例，请按照 [MQTT over SSL](/docs/{{docsPrefix}}user-guide/mqtt-over-ssl/) 指南配置服务器证书。
 {% endif %}
 
-Once provisioned, you should prepare a CA root certificate in pem format. This certificate will be used by mqtt client to validate the server certificate.
-Save the CA root certificate to your working directory as "**ca-root.pem**".
-An example of CA root certificate for *mqtt.thingsboard.cloud* is located
-[here](/docs/paas/user-guide/resources/mqtt-over-ssl/ca-root.pem).
+配置后，您应该准备一个 pem 格式的 CA 根证书。此证书将由 mqtt 客户端用于验证服务器证书。
+将 CA 根证书保存到您的工作目录中，文件名“**ca-root.pem**”。
+*mqtt.thingsboard.cloud* 的 CA 根证书示例位于
+[此处](/docs/paas/user-guide/resources/mqtt-over-ssl/ca-root.pem)。
 
-#### Step 2. Generate Client certificate
+#### 步骤 2. 生成客户端证书
 
-Use the following command to generate the self-signed private key and x509 certificate.
-The command is based on the **openssl** tool which is most likely already installed on your workstation:
+使用以下命令生成自签名私钥和 x509 证书。
+该命令基于 **openssl** 工具，该工具很可能已经安装在您的工作站上：
 
-To generate the RSA based key and certificate, use:
+要生成基于 RSA 的密钥和证书，请使用：
 
 ```bash
 openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -sha256 -days 365 -nodes
 ```
 {: .copy-code}
 
-To generate the EC based key and certificate, use:
+要生成基于 EC 的密钥和证书，请使用：
 
 ```bash
 openssl ecparam -out key.pem -name secp256r1 -genkey
@@ -32,18 +32,18 @@ openssl req -new -key key.pem -x509 -nodes -days 365 -out cert.pem
 ```
 {: .copy-code}
 
-The output of the command will be a private key file *key.pem* and a public certificate *cert.pem*.
-We will use them in next steps.
+该命令的输出将是私钥文件 *key.pem* 和公有证书 *cert.pem*。
+我们将在后续步骤中使用它们。
 
-#### Step 3. Provision Client Public Key as Device Credentials
+#### 步骤 3. 将客户端公钥配置为设备凭证
 
-Go to **ThingsBoard Web UI -> Entities -> Devices -> Your Device -> Manage credentials**.
-Select **X.509 Certificate** device credentials, insert the contents of *cert.pem* file and click save.
-Alternatively, the same can be done through the [REST API](/docs/{{docsPrefix}}reference/rest-api/).
+转到 **ThingsBoard Web UI -> 实体 -> 设备 -> 您的设备 -> 管理凭证**。
+选择 **X.509 证书** 设备凭证，插入 *cert.pem* 文件的内容，然后单击保存。
+或者，也可以通过 [REST API](/docs/{{docsPrefix}}reference/rest-api/) 完成相同的操作。
 
-#### Step 4. Test the connection
+#### 步骤 4. 测试连接
 
-Execute the following command to upload temperature readings to ThingsBoard Cloud using secure channel:
+执行以下命令，使用安全通道将温度读数上传到 ThingsBoard Cloud：
 
 {% if docsPrefix == 'paas/' %}
 ```bash
@@ -59,4 +59,4 @@ mosquitto_pub --cafile ca-root.pem -d -q 1 -h "YOUR_TB_HOST" -p "8883" \
 {: .copy-code}
 {% endif %}
 
-Don't forget to replace **YOUR_TB_HOST** with the host of your ThingsBoard instance.
+别忘了将 **YOUR_TB_HOST** 替换为 ThingsBoard 实例的主机。

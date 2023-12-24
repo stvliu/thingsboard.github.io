@@ -1,14 +1,13 @@
+[Apache Kafka](https://kafka.apache.org/) 是一个开源流处理软件平台。
 
-[Apache Kafka](https://kafka.apache.org/) is an open-source stream-processing software platform.
-
-Create docker compose file for ThingsBoard queue service:
+为 ThingsBoard 队列服务创建 docker compose 文件：
 
 ```text
 docker-compose.yml
 ```
 {: .copy-code}
 
-Add the following line to the yml file. Don’t forget to replace "PUT_YOUR_LICENSE_SECRET_HERE" with your **license secret obtained on the first step**:
+将以下行添加到 yml 文件。不要忘记将“PUT_YOUR_LICENSE_SECRET_HERE”替换为**第一步获得的许可证密钥**：
 
 ```yml
 version: '3.0'

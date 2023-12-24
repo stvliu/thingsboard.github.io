@@ -1,57 +1,56 @@
-
 {% assign boardLedCount = 1 %}
-{% assign deviceName = page.title | remove: "How to connect " | remove: "to ThingsBoard?" %}
-{% assign arduinoBoardPath="**ESP8266** > **NodeMCU 1.0 (ESP-12E Module)**" %}
+{% assign deviceName = page.title | remove: "如何连接 " | remove: "到 ThingsBoard？" %}
+{% assign arduinoBoardPath="**ESP8266** > **NodeMCU 1.0 (ESP-12E 模块)**" %}
 {% assign prerequisites = "
 - " | append: deviceName | append: "
 - [Arduino IDE](https://www.arduino.cc/en/software)"
  %}
 
-## Introduction
+## 简介
 
 ![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 
-The NodeMCU is quite a popular development board that is broadly implemented across the internet world.
-It is based on the ESP-12E Wi-Fi module that is perfectly associated with the combination of easy programming elements with Arduino IDE as well as Wi-Fi capability.
-The prototyping and development projects can be handled smoothly via the inbuilt programmer and CP2102 USB-to-serial chip that flashes the ESP8266 and serial output on PC integration.
-The NodeMCU development board integrates ESP8266.  It is a well-integrated chip that is specifically crafted to cater to the requirements of a new connected world.
-The unit allows to either host the application or to offload all Wi-Fi networking functions derived from another application processing unit.
+NodeMCU 是一个非常流行的开发板，在互联网世界中广泛使用。
+它基于 ESP-12E Wi-Fi 模块，该模块与 Arduino IDE 的简单编程元素以及 Wi-Fi 功能完美结合。
+内置的编程器和 CP2102 USB 转串口芯片可以顺利处理原型设计和开发项目，这些芯片可以在 PC 集成上刷新 ESP8266 和串行输出。
+NodeMCU 开发板集成了 ESP8266。它是一款集成度很高的芯片，专门设计用于满足新连接世界的需求。
+该单元允许托管应用程序或卸载源自另一个应用程序处理单元的所有 Wi-Fi 网络功能。
 
 {% include /docs/devices-library/blocks/basic/introduction-block.md %}
 
-## Create device on ThingsBoard
+## 在 ThingsBoard 上创建设备
 
 {% include /docs/devices-library/blocks/basic/thingsboard-create-device-block.md %}
 
-## Install required libraries and tools
+## 安装所需的库和工具
 
 {% include /docs/devices-library/blocks/microcontrollers/esp8266-arduino-library-install-block.md %}
 
 {% include /docs/devices-library/blocks/microcontrollers/thingsboard-arduino-library-install-block.md %}
 
-## Connect device to ThingsBoard
+## 将设备连接到 ThingsBoard
 
 {% include /docs/devices-library/blocks/basic/thingsboard-provide-device-access-token-block.md %}
 
 {% include /docs/devices-library/blocks/microcontrollers/general-code-to-program-block.md %}
 
-## Check data on ThingsBoard
+## 在 ThingsBoard 上查看数据
 
 {% include /docs/devices-library/blocks/basic/thingsboard-upload-example-dashboard.md %}
 
 {% include /docs/devices-library/blocks/microcontrollers/thingsboard-check-example-data-block.md %}
 
-## Synchronize device state using client and shared attribute requests
+## 使用客户端和共享属性请求同步设备状态
 
 {% include /docs/devices-library/blocks/microcontrollers/thingsboard-synchronize-device-state-using-attribute-requests-block.md %}
 
-## Control device using shared attributes
+## 使用共享属性控制设备
 
 {% include /docs/devices-library/blocks/microcontrollers/thingsboard-update-shared-attributes-device-block.md %}
 
-## Control device using RPC
+## 使用 RPC 控制设备
 
 {% include /docs/devices-library/blocks/microcontrollers/thingsboard-send-rpc-to-device-block.md %}
 
-## Conclusion
+## 结论
 {% include /docs/devices-library/blocks/basic/conclusion-block.md %}

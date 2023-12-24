@@ -2,7 +2,7 @@
 layout: docwithnav-paas
 assignees:
 - stitenko
-title: Mail Templates
+title: 邮件模板
 description:
 
 ---

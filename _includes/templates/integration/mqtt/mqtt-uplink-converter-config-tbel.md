@@ -1,17 +1,17 @@
-Now copy & paste the following script to the Decoder function section:
+现在将以下脚本复制并粘贴到解码器函数部分：
 
 ```javascript
 /** Decoder **/
 
-// decode payload to string
+// 将有效负载解码为字符串
 var payloadStr = decodeToString(payload);
 var data = JSON.parse(payloadStr);
 
 var deviceName =  metadata.topic.split("/")[3];
-// decode payload to JSON
+// 将有效负载解码为 JSON
 var deviceType = 'sensor';
 
-// Result object with device attributes/telemetry data
+// 包含设备属性/遥测数据的 Result 对象
 var result = {
     deviceName: deviceName,
     deviceType: deviceType,
@@ -23,7 +23,7 @@ var result = {
     }
 };
 
-/** Helper functions 'decodeToString' and 'decodeToJson' are already built-in **/
+/** 辅助函数 'decodeToString' 和 'decodeToJson' 已内置 **/
 
 return result;
 ``` 

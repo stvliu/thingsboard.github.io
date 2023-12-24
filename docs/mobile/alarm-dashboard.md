@@ -1,14 +1,14 @@
 ---
 layout: docwithnav-mobile
-title: Configure alarm details dashboards in ThingsBoard Mobile Application
+title: 在 ThingsBoard 移动应用程序中配置警报详细信息仪表板
 
 alarm-dashboard:
  0:
   image: /images/mobile/alarm-dashboard-1.png
-  title: 'Select desired dashboard in the <b>Mobile dashboard</b> field'
+  title: '在<b>移动仪表板</b>字段中选择所需的仪表板'
  1:
   image: /images/mobile/alarm-dashboard-2.png
-  title: 'Select desired dashboard in the <b>Mobile dashboard</b> field'
+  title: '在<b>移动仪表板</b>字段中选择所需的仪表板'
 
 
 ---

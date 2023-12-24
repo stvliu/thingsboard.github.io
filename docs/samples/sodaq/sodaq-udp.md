@@ -8,41 +8,41 @@ hidetoc: "true"
 
 {% assign feature = "Platform Integrations" %}{% include templates/pe-feature-banner.md %}
 
-This guide contains step-by-step instruction how to to connect your SODAQ NB-IoT boards to ThingsBoard Professional Edition (PE) through the T-Mobile NB IoT network.
-We will use free ThingsBoard PE demo server [thingsboard.cloud](https://thingsboard.cloud/signup) in this guide.
-This guide will be useful for anyone who wants to connect their SODAQ NB-IoT boards or other hardware to T-Mobile NB IoT network.
+本指南包含有关如何通过 T-Mobile NB IoT 网络将 SODAQ NB-IoT 板连接到 ThingsBoard Professional Edition (PE) 的分步说明。
+在本指南中，我们将使用免费的 ThingsBoard PE 演示服务器 [thingsboard.cloud](https://thingsboard.cloud/signup)。
+本指南对希望将 SODAQ NB-IoT 板或其他硬件连接到 T-Mobile NB IoT 网络的任何人都有用。
 
 * TOC
 {:toc}
 
-## Prerequisites
+## 先决条件
 
-We assume you have at least one of SODAQ NB-IoT Trackers in your lab that is already connected to your T-Mobile IoT network.
-We also assume you already have a ThingsBoard PE server or free demo account.
-Otherwise you can register for a 30-days free demo account here: [thingsboard.cloud](https://thingsboard.cloud/signup).
+我们假设您的实验室中至少有一个 SODAQ NB-IoT 追踪器，并且该追踪器已连接到您的 T-Mobile IoT 网络。
+我们还假设您已经拥有 ThingsBoard PE 服务器或免费演示帐户。
+否则，您可以在此处注册 30 天免费演示帐户：[thingsboard.cloud](https://thingsboard.cloud/signup)。
 
-We expect you have a very basic knowledge about ThingsBoard. Otherwise we do recommend to complete the following guides:
-- [Getting Started](/docs/getting-started-guides/helloworld/) guide.
-- [Platform Integrations](/docs/user-guide/integrations/) guide.
+我们希望您对 ThingsBoard 有非常基本的了解。否则，我们建议您完成以下指南：
+- [入门](/docs/getting-started-guides/helloworld/) 指南。
+- [平台集成](/docs/user-guide/integrations/) 指南。
 
-## Integration overview
+## 集成概述
 
-ThingsBoard Platform Integrations feature allows to push data from various platforms and connectivity solutions to ThingsBoard.
-We will use "UDP" platform integration to consume data from T-Mobile NB IoT Network and automatically register devices in ThingsBoard.
-Besides configuring the integration, we will also setup ThingsBoard to decode incoming data, store it in the database, visualize on the dashboard and generate alarms based on configurable thresholds.
+ThingsBoard 平台集成功能允许将数据从各种平台和连接解决方案推送到 ThingsBoard。
+我们将使用“UDP”平台集成来使用 T-Mobile NB IoT 网络的数据并自动在 ThingsBoard 中注册设备。
+除了配置集成之外，我们还将设置 ThingsBoard 来解码传入数据，将其存储在数据库中，在仪表板上可视化并根据可配置阈值生成警报。
 
-## Step 1. Data Converter configuration
+## 步骤 1. 数据转换器配置
 
-In order to create an [Integration](/docs/user-guide/integrations), we should create the [Uplink Data Converter](/docs/user-guide/integrations/#uplink-data-converter) first.
-The converter will decode incoming telemetry payload data from T-Mobile NB IoT that contains in encoded hex string to human readable, simplified ThingsBoard data format.
+为了创建 [集成](/docs/user-guide/integrations/)，我们应该首先创建 [上行数据转换器](/docs/user-guide/integrations/#uplink-data-converter)。
+转换器将解码来自 T-Mobile NB IoT 的传入遥测有效载荷数据，该数据包含编码的十六进制字符串，以转换为人类可读的简化 ThingsBoard 数据格式。
 
- - Input data from T-Mobile NB IoT Platform is a byte sequence and after converting them to a hexadecimal string-type look like this:
+- 来自 T-Mobile NB IoT 平台的输入数据是一个字节序列，在将它们转换为十六进制字符串类型后，如下所示：
 
 {% highlight bash %}
     "010145292a2bfbfc0000000000000000e6e3355c751a879de31e6535d10306005600d00402"
 {% endhighlight %}
 
- - UDP integration passes the above hexadecimal string to JSON, to get the following payload:
+- UDP 集成将上述十六进制字符串传递给 JSON，以获取以下有效载荷：
 {% highlight bash %}
 {
     "reports": [{
@@ -51,7 +51,7 @@ The converter will decode incoming telemetry payload data from T-Mobile NB IoT t
 }
 {% endhighlight %}
 
- - For this payload, the decoder has the following appearance:
+- 对于此有效载荷，解码器具有以下外观：
 
 ```javascript
         /** Decoder **/
@@ -123,7 +123,7 @@ The converter will decode incoming telemetry payload data from T-Mobile NB IoT t
 
 ```
 
- - After decoding output data will look like this:
+- 解码后，输出数据将如下所示：
 
 {% highlight bash %}
 {
@@ -145,17 +145,17 @@ The converter will decode incoming telemetry payload data from T-Mobile NB IoT t
 }
 {% endhighlight %}
 
-Few things to notice:
+需要注意的几点：
 
- * The IMEI from the incoming message will become the Device Name in ThingsBoard;
- * ThingsBoard will automatically create device with type "tracker" and name equal to IMEI;
- * Timestamp and sensor readings are decoded from incoming hex string.
- * The following table shows the first byte position and the number of bytes for each encoded field that includes in the incoming hex string:
+* 来自传入消息的 IMEI 将成为 ThingsBoard 中的设备名称；
+* ThingsBoard 将自动创建类型为“tracker”且名称等于 IMEI 的设备；
+* 从传入的十六进制字符串中解码时间戳和传感器读数。
+* 下表显示了传入十六进制字符串中包含的每个编码字段的第一个字节位置和字节数：
 
 <table style="width: 22%">
   <thead>
       <tr>
-          <td><b>Field</b></td><td><b>First Byte</b></td><td><b>Byte length</b></td>
+          <td><b>字段</b></td><td><b>第一个字节</b></td><td><b>字节长度</b></td>
       </tr>
   </thead>
   <tbody>
@@ -212,96 +212,93 @@ Few things to notice:
    </tbody>
 </table>
 
-- Go to **Data Converters** -> **Add new Data Converter** -> **Import Converter**
+- 转到 **数据转换器** -> **添加新的数据转换器** -> **导入转换器**
 
-- Import following json file: [**SODAQ UDP Uplink Data Converter**](/docs/user-guide/resources/sodaq/sodaq_udp_uplink_data_converter.json) (left click on the link and then 'Ctrl+S' to download)
-as described on the following screencast:
+- 导入以下 json 文件：[**SODAQ UDP 上行数据转换器**](/docs/user-guide/resources/sodaq/sodaq_udp_uplink_data_converter.json)（左键单击链接，然后按“Ctrl+S”下载）
+如下面的屏幕截图所示：
 
 <img data-gifffer="/images/user-guide/integrations/sodaq/import-udp-converter_updated.gif" alt="import udp converter updated">
 
-## Step 2. Integration configuration
+## 步骤 2. 集成配置
 
-- Create new integration based on the screencast below.
+- 根据以下屏幕截图创建新的集成。
 
-  Please, note that you should copy **Integration key** and **Integration secret** as described in the [**UDP Integration Setup**](/docs/user-guide/integrations/udp/#udp-integration-setup) guide.
+请注意，您应该复制 **集成密钥** 和 **集成机密**，如 [**UDP 集成设置**](/docs/user-guide/integrations/udp/#udp-integration-setup) 指南中所述。
 
 
 <img data-gifffer="/images/user-guide/integrations/sodaq/create-udp-integration.gif" alt="create udp integration">
 
-- Fill in the fields with the input data shown in the following table:
+- 使用下表中所示的输入数据填写字段：
 
 <table style="width: 50%">
   <thead>
       <tr>
-          <td><b>Field</b></td><td><b>Input Data</b></td>
+          <td><b>字段</b></td><td><b>输入数据</b></td>
       </tr>
   </thead>
   <tbody>
       <tr>
-          <td>Name</td>
-          <td>SODAQ UDP Integration</td>
+          <td>名称</td>
+          <td>SODAQ UDP 集成</td>
       </tr>
       <tr>
-          <td>Type</td>
+          <td>类型</td>
           <td>UDP</td>
       </tr>
       <tr>
-          <td>Debug mode</td>
-          <td>True</td>
+          <td>调试模式</td>
+          <td>真</td>
       </tr>
       <tr>
-          <td>Uplink data converter</td>
-          <td>SODAQ UDP Data Uplink Converter</td>
+          <td>上行数据转换器</td>
+          <td>SODAQ UDP 数据上行转换器</td>
       </tr>
       <tr>
-          <td>Downlink data converter</td>
-          <td>(empty)</td>
+          <td>下行数据转换器</td>
+          <td>（空）</td>
       </tr>
       <tr>
-          <td>Port</td>
+          <td>端口</td>
           <td>11560</td>
       </tr>
       <tr>
-          <td>So Broadcast option</td>
+          <td>So 广播选项</td>
           <td>64</td>
       </tr>
       <tr>
-          <td>Handler Configuration</td>
-          <td>Handler Type | HEX</td>
+          <td>处理程序配置</td>
+          <td>处理程序类型 | HEX</td>
       </tr>
    </tbody>
 </table>
 
-- After filling all fields click the **ADD** button.
+- 填写所有字段后，单击 **添加** 按钮。
 
-## Step 3: Post telemetry and verify the Integration configuration
+## 步骤 3：发布遥测并验证集成配置
 
+在我们急于进行 T-Mobile IoT 平台配置之前，请确保您已完成 [**远程集成安装步骤**](/docs/user-guide/integrations/remote-integrations/#remote-integration-installation-steps)。
 
-
-Before we rush to T-Mobile IoT platform configuration, make sure that you complete the [**Remote integration installation steps**](/docs/user-guide/integrations/remote-integrations/#remote-integration-installation-steps).
-
-Also, let’s make sure ThingsBoard is properly configured using simple **echo** command and **netcat** utility.
-We will simulate messages from the T-Mobile IoT platform using the command below.
-Let's execute the following command:
+此外，让我们确保使用简单的 **echo** 命令和 **netcat** 实用程序正确配置了 ThingsBoard。
+我们将使用以下命令模拟来自 T-Mobile IoT 平台的消息。
+让我们执行以下命令：
 
 {% highlight bash %}
 echo -e -n '$PAYLOAD' | xxd -r -p | nc -q1 -w1 -u $URL_THINGSBOARD_CLOUD_HOST $PORT
 
-You need to replace $PAYLOAD, $URL_THINGSBOARD_CLOUD_HOST and $PORT respectively with the actual payload, cloud host URL and port.
+您需要分别用实际有效载荷、云主机 URL 和端口替换 $PAYLOAD、$URL_THINGSBOARD_CLOUD_HOST 和 $PORT。
 {% endhighlight %}
 
-Sample:
+示例：
 {% highlight bash %}
 echo -e -n '010145292a2bfbfc0000000000000000e6e3355c751a879de31e6535d10306005600d00402' | xxd -r -p | nc -q1 -w1 -u 127.0.0.1 11560
 {% endhighlight %}
 
-Navigate to Integration Debug Events and check that data real arrives and is processed successfully.
+导航到集成调试事件并检查数据是否真实到达并成功处理。
 
-Device with name **357518080211964** should be created.
+应该创建名称为 **357518080211964** 的设备。
 
 <img data-gifffer="/images/user-guide/integrations/sodaq/validate-udp-integration.gif" alt="validate udp integration">
 
-## Next steps
+## 后续步骤
 
 {% assign currentGuide = "HardwareSamples" %}{% include templates/guides-banner.md %}
-

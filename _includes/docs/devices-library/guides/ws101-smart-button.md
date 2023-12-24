@@ -1,5 +1,4 @@
-
-{% assign deviceName = page.title | remove: "How to connect " | remove: "to ThingsBoard?" %}
+{% assign deviceName = page.title | remove: "如何连接 " | remove: "到 ThingsBoard？" %}
 {% assign deviceVendorLink = "https://www.milesight-iot.com/lorawan/sensor/ws101/" %}
 {% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}
 {% assign thingsboardHost = 'https://thingsboard.cloud' %}
@@ -9,38 +8,38 @@
 {% assign officialManualLink = "https://resource.milesight-iot.com/milesight/document/ws101-user-guide-en.pdf" %}
 {% assign prerequisites = '
 - <a href="' | append: deviceVendorLink | append: '" target="_blank">' | append: deviceName | append: '</a>
-- [WS101 Smart Button user manual](' | append: officialManualLink | append: '){: target="_blank"}
-- Smartphone with NFC-enabled and Milesight ToolBox application ([Android](https://play.google.com/store/apps/details?id=com.ursalinknfc){: target="_blank"}/[iOS](https://itunes.apple.com/app/id1518748039){: target="_blank"})
-- LoRaWAN® gateway
-- Configured integration on networks server and ThingsBoard
-- [Network Server account](#device-connection)
+- [WS101 智能按钮用户手册](' | append: officialManualLink | append: '){: target="_blank"}
+- 具有 NFC 功能的智能手机和 Milesight ToolBox 应用程序 ([Android](https://play.google.com/store/apps/details?id=com.ursalinknfc){: target="_blank"}/[iOS](https://itunes.apple.com/app/id1518748039){: target="_blank"})
+- LoRaWAN® 网关
+- 在网络服务器和 ThingsBoard 上配置的集成
+- [网络服务器帐户](#device-connection)
 '
  %}
 
-## Introduction
+## 简介
 
 ![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
-[WS101 Smart Button]({{deviceVendorLink}}){: target="_blank"} is a LoRaWAN®-based smart button for wireless controls, triggers and alarms.  
-WS101 supports multiple press actions, all of which can be defined by the user to control devices or trigger scenes.
-WS101 can be widely used in smart homes, smart offices, schools, warehouses, etc.  
-Sensor data are transmitted in real-time using the standard LoRaWAN® protocol.  
-LoRaWAN® enables encrypted radio transmissions over long distances while consuming very little power.  
+[WS101 智能按钮]({{deviceVendorLink}}){: target="_blank"} 是一款基于 LoRaWAN® 的智能按钮，用于无线控制、触发和警报。  
+WS101 支持多种按键操作，所有这些操作均可由用户定义以控制设备或触发场景。
+WS101 可广泛用于智能家居、智能办公室、学校、仓库等。  
+传感器数据使用标准 LoRaWAN® 协议实时传输。  
+LoRaWAN® 能够在很远的距离上进行加密无线传输，同时消耗极少的电量。  
 
-{% assign feature = "Platform Integrations" %}{% include templates/pe-feature-banner.md %}
+{% assign feature = "平台集成" %}{% include templates/pe-feature-banner.md %}
 <br>
 
-## Prerequisites
+## 先决条件
 
-To continue with this guide we will need the following:  
+要继续本指南，我们需要以下内容：  
 {{ prerequisites }}
-- [ThingsBoard account]({{ thingsboardHost }}){: target="_blank"}
+- [ThingsBoard 帐户]({{ thingsboardHost }}){: target="_blank"}
 
 
-## Device connection
+## 设备连接
 
-According to the [official user manual]({{officialManualLink}}){: target="_blank"}, we need a smartphone with NFC enabled and the ToolBox application to connect the sensor.  
-Since this device can only be operated using a LoRaWAN® gateway, we must first connect it to a network server that has an integration configured with ThingsBoard.  
-Afterward, it can be provisioned to ThingsBoard.
+根据 [官方用户手册]({{officialManualLink}}){: target="_blank"}，我们需要一部支持 NFC 的智能手机和 ToolBox 应用程序来连接传感器。  
+由于此设备只能使用 LoRaWAN® 网关操作，因此我们必须先将其连接到已配置与 ThingsBoard 集成的网络服务器。  
+之后，可以将其配置到 ThingsBoard。
 
 {% if page.hasIntegrationDeviceConfiguration | downcase == "true"%}
 
@@ -51,7 +50,7 @@ Afterward, it can be provisioned to ThingsBoard.
 
 {% endif %}
 
-To configure the device we also need to add it to a network server, so select the network server your gateway is connected to:  
+要配置设备，我们还需要将其添加到网络服务器，因此选择网关连接到的网络服务器：  
 
 {% assign targetIntegrationTypes = '
 ChirpStack,
@@ -64,6 +63,6 @@ Loriot
 
 {% include /docs/devices-library/blocks/ready-to-go-devices/ws101-smart-button-check-data-block.md %}
 
-## Conclusion
+## 结论
 
 {% include /docs/devices-library/blocks/basic/conclusion-block.md %}

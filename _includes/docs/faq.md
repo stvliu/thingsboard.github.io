@@ -2,81 +2,81 @@
 {:toc}
 
 
-## What is ThingsBoard?
+## ThingsBoard 是什么？
 
-ThingsBoard is an open-source server-side platform that allows you to monitor and control your IoT devices.
-It is free for both personal and commercial usage and you can deploy it anywhere. 
-If this is your first experience with the platform we recommend to review [what-is-thingsboard](/docs/{{docsPrefix}}getting-started-guides/what-is-thingsboard/) 
-and [getting started guide](/docs/{{docsPrefix}}getting-started-guides/helloworld/).
-You can find more information on the dedicated page.
+ThingsBoard 是一个开源的服务器端平台，允许您监控和控制您的物联网设备。
+它对个人和商业用途都是免费的，您可以在任何地方部署它。
+如果您是第一次使用该平台，我们建议您查看 [what-is-thingsboard](/docs/{{docsPrefix}}getting-started-guides/what-is-thingsboard/)
+和 [入门指南](/docs/{{docsPrefix}}getting-started-guides/helloworld/)。
+您可以在专用页面上找到更多信息。
 
-## How do I get started?
+## 我如何开始？
 
 {% if docsPrefix == 'paas/' %}
-We recommend to follow the [getting started guide](/docs/{{docsPrefix}}getting-started-guides/helloworld/).
+我们建议您按照 [入门指南](/docs/{{docsPrefix}}getting-started-guides/helloworld/) 进行操作。
 {% else %}
-We recommend to [install](/docs/user-guide/install/{{docsPrefix}}installation-options/) ThingsBoard locally on your laptop or PC using Docker
-and follow the [getting started guide](/docs/{{docsPrefix}}getting-started-guides/helloworld/).
+我们建议您使用 Docker 在您的笔记本电脑或 PC 上本地 [安装](/docs/user-guide/install/{{docsPrefix}}installation-options/) ThingsBoard
+并按照 [入门指南](/docs/{{docsPrefix}}getting-started-guides/helloworld/) 进行操作。
 {% endif %}
 
-## What can I do with ThingsBoard?
+## 我可以使用 ThingsBoard 做什么？
 
-ThingsBoard provides out-of-the-box IoT solution that will enable server-side infrastructure for your IoT applications.
-You can find more information by browsing [guides](/docs/{{docsPrefix}}user-guide/) and [hardware samples](/docs/{{docsPrefix}}guides/#AnchorIDHardwareSamples)
+ThingsBoard 提供开箱即用的物联网解决方案，该解决方案将为您的物联网应用程序启用服务器端基础设施。
+您可以通过浏览 [指南](/docs/{{docsPrefix}}user-guide/) 和 [硬件示例](/docs/{{docsPrefix}}guides/#AnchorIDHardwareSamples) 找到更多信息
 
 {% unless docsPrefix == 'paas/' %}
-## Where can I host ThingsBoard?
+## 我可以在哪里托管 ThingsBoard？
 
-You can host ThingsBoard in the cloud, on-premises or locally on your laptop, PC or even Raspberry Pi. We recommend to get started with Docker installation
+您可以在云端、本地或在您的笔记本电脑、PC 甚至树莓派上本地托管 ThingsBoard。我们建议您从 Docker 安装开始
   
-  - [Linux & Mac OS](/docs/user-guide/install/{{docsPrefix}}docker/) 
+  - [Linux 和 Mac OS](/docs/user-guide/install/{{docsPrefix}}docker/) 
   - [Windows](/docs/user-guide/install/{{docsPrefix}}docker-windows/)
 
-You can also take a look at [cluster setup](/docs/user-guide/install/{{docsPrefix}}cluster-setup/) guide.
+您还可以查看 [集群设置](/docs/user-guide/install/{{docsPrefix}}cluster-setup/) 指南。
 {% endunless %}
 
-## How to connect my device?
+## 如何连接我的设备？
 
-ThingsBoard provides
+ThingsBoard 提供
 [MQTT](/docs/{{docsPrefix}}reference/mqtt-api), 
 [CoAP](/docs/{{docsPrefix}}reference/coap-api), 
-[HTTP](/docs/{{docsPrefix}}reference/http-api), and.
-[LwM2M](/docs/{{docsPrefix}}reference/lwm2m-api) protocols support.
-**Existing** devices may be connected to the platform using **[ThingsBoard Gateway](/docs/iot-gateway/what-is-iot-gateway/)**.
-You can find more information on the [connectivity](/docs/{{docsPrefix}}reference/protocols/) page. 
+[HTTP](/docs/{{docsPrefix}}reference/http-api), 和.
+[LwM2M](/docs/{{docsPrefix}}reference/lwm2m-api) 协议支持。
+**现有**设备可以使用 **[ThingsBoard 网关](/docs/iot-gateway/what-is-iot-gateway/)** 连接到平台。
+您可以在 [连接](/docs/{{docsPrefix}}reference/protocols/) 页面上找到更多信息。 
 
-## Do I need to use an SDK?
+## 我需要使用 SDK 吗？
 
-No, many IoT devices can't afford to embed third-party SDK. ThingsBoard provides quite simple API over common IoT protocols. You can choose any client-side library you like or use your own.
-Some useful references:
+不需要，许多物联网设备无法嵌入第三方 SDK。ThingsBoard 通过常见的物联网协议提供非常简单的 API。您可以选择您喜欢的任何客户端库或使用您自己的库。
+一些有用的参考：
  
- - [MQTT client-side libraries list](https://github.com/mqtt/mqtt.github.io/wiki/libraries) 
- - [C-implementation for CoAP](https://libcoap.net/)
+ - [MQTT 客户端库列表](https://github.com/mqtt/mqtt.github.io/wiki/libraries) 
+ - [CoAP 的 C 实现](https://libcoap.net/)
 
-## What about security?
+## 安全性如何？
 
-You can use MQTT (over SSL) or HTTPS protocols for transport encryption. 
+您可以使用 MQTT（通过 SSL）或 HTTPS 协议进行传输加密。 
 
-Each device has unique access token credentials that is used to setup connection. Credentials type is pluggable, so X.509 certificates support is coming soon.
+每个设备都有唯一的访问令牌凭据，用于建立连接。凭据类型是可插拔的，因此 X.509 证书支持即将推出。
 
-## How much devices can ThingsBoard support?
+## ThingsBoard 可以支持多少设备？
 
-ThingsBoard platform is horizontally scalable. Each server node in the cluster is unique.
-Scalability is achieved using [consistent-hashing](https://en.wikipedia.org/wiki/Consistent_hashing) load balancing algorithm between the cluster nodes.
-Actual performance depends on usage scenario of connected devices.
+ThingsBoard 平台是横向可扩展的。集群中的每个服务器节点都是唯一的。
+可扩展性是通过集群节点之间的 [一致哈希](https://en.wikipedia.org/wiki/Consistent_hashing) 负载平衡算法实现的。
+实际性能取决于连接设备的使用情况。
 {% unless docsPrefix == 'paas/' %}
-For example, small commodity hardware cluster can support [several millions](/docs/{{docsPrefix}}reference/iot-platform-deployment-scenarios/#1-million-smart-meters-tco) of devices connected over MQTT.
+例如，小型商品硬件集群可以支持 [数百万](/docs/{{docsPrefix}}reference/iot-platform-deployment-scenarios/#1-million-smart-meters-tco) 通过 MQTT 连接的设备。
 {% endunless %}
   
-## Where does ThingsBoard store data?
+## ThingsBoard 在哪里存储数据？
 
-The data is stored in [Cassandra](https://cassandra.apache.org/) database. Cassandra suites well for storage and querying of time-series data and provides high availability and fault-tolerance.
+数据存储在 [Cassandra](https://cassandra.apache.org/) 数据库中。Cassandra 非常适合存储和查询时间序列数据，并提供高可用性和容错性。
  
-## What license type does ThingsBoard use?
+## ThingsBoard 使用什么许可类型？
 
-ThingsBoard is licensed under [Apache 2.0 License](https://en.wikipedia.org/wiki/Apache_License#Version_2.0).
-It is free for both personal and commercial usage and you can deploy it anywhere.
+ThingsBoard 采用 [Apache 2.0 许可证](https://en.wikipedia.org/wiki/Apache_License#Version_2.0) 授权。
+它对个人和商业用途都是免费的，您可以在任何地方部署它。
 
-## How to get support?
+## 如何获得支持？
 
-You can use troubleshooting instructions and community resources or [contact us](/docs/contact-us) and learn more about [services](/docs/services/) we provide.
+您可以使用故障排除说明和社区资源或 [联系我们](/docs/contact-us) 并详细了解我们提供的 [服务](/docs/services/)。

@@ -1,21 +1,22 @@
-You'll need to set up Kafka using Amazon MSK. ThingsBoard will use it to communicate between microservices, store unprocessed messages, etc.
-Kafka is useful to survive peak loads and hardware failures to make sure that all messages from devices will be processed.
+您需要使用 Amazon MSK 设置 Kafka。ThingsBoard 将使用它在微服务之间进行通信、存储未处理的消息等。
 
-Please open AWS console and navigate to MSK, press `Create cluster` button and choose `Custom create` mode.
+Kafka 可用于应对峰值负载和硬件故障，以确保处理来自设备的所有消息。
 
-* Make sure your Apache Kafka version is 2.6.x;
-* Make sure your MSK instance is accessible from the ThingsBoard cluster.
-  The easiest way to achieve this is to deploy the MSK instance in the same VPC.
-  We also recommend to use private subnets. This way it will be nearly impossible to accidentally expose it to the internet;
-* Use m5.large or similar instance types;
-* Choose default security settings. Make sure 'Plaintext' mode is enabled;
-* Use default 'Monitoring' settings or enable 'Enhenced topic level monitoring'.
+请打开 AWS 控制台并导航至 MSK，按“创建集群”按钮并选择“自定义创建”模式。
+
+* 确保您的 Apache Kafka 版本为 2.6.x；
+* 确保 ThingsBoard 集群可以访问您的 MSK 实例。
+  实现此目的最简单的方法是在同一 VPC 中部署 MSK 实例。
+  我们还建议使用专用子网。这样几乎不可能意外地将其暴露给互联网；
+* 使用 m5.large 或类似的实例类型；
+* 选择默认安全设置。确保启用“纯文本”模式；
+* 使用默认“监控”设置或启用“增强主题级别监控”。
 
 {% include images-gallery.html imageCollection="mskSetup"%}
 
-Once the MSK cluster switch to the 'Active' state, navigate to 'Details' and click 'View client information'.
-Copy bootstrap server information in plaintext, it`s **YOUR_MSK_BOOTSTRAP_SERVERS_PLAINTEXT**.
+MSK 集群切换到“活动”状态后，导航至“详细信息”并单击“查看客户端信息”。
+复制纯文本中的引导服务器信息，即 **YOUR_MSK_BOOTSTRAP_SERVERS_PLAINTEXT**。
 
 {% include images-gallery.html imageCollection="mskConnectionParams"%}
 
-Edit “tb-kafka-configmap.yml” and replace **YOUR_MSK_BOOTSTRAP_SERVERS_PLAINTEXT**.
+编辑“tb-kafka-configmap.yml”并替换 **YOUR_MSK_BOOTSTRAP_SERVERS_PLAINTEXT**。

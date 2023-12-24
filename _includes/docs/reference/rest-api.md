@@ -1,58 +1,56 @@
-
 * TOC
 {:toc}
 
-## Interactive Documentation
+## 交互式文档
 
 {% if docsPrefix == "paas/" or docsPrefix == "pe/"  %}
-ThingsBoard REST API interactive documentation is available via Swagger UI. For example, you may browse ThingsBoard Cloud API documentation using the **[Swagger UI link.](https://thingsboard.cloud/swagger-ui.html)**. 
+ThingsBoard REST API 交互式文档可通过 Swagger UI 获取。例如，您可以使用 **[Swagger UI 链接](https://thingsboard.cloud/swagger-ui.html)** 浏览 ThingsBoard Cloud API 文档。
 {% else %}
-ThingsBoard REST API interactive documentation is available via Swagger UI. For example, you may browse Community Edition demo server API documentation using the **[Swagger UI link.](https://demo.thingsboard.io/swagger-ui.html)**.
+ThingsBoard REST API 交互式文档可通过 Swagger UI 获取。例如，您可以使用 **[Swagger UI 链接](https://demo.thingsboard.io/swagger-ui.html)** 浏览社区版演示服务器 API 文档。
 {% endif %}
 
 {% if docsPrefix == "paas/" %}
 {% else %}
-Once you will install ThingsBoard server you can open an interactive documentation using the following URL:
-    
+安装 ThingsBoard 服务器后，您可以使用以下 URL 打开交互式文档：
+
 ``` 
 http://YOUR_HOST:PORT/swagger-ui.html
 ```
 
 {% endif %}
 
-Documentation page will automatically use your credentials, if you have previously authorized on the main login page. 
-You may use “Authorize” button in the top right corner of the documentation page to manually authorize. You may also use this button to authorize as a different user. See below:
+如果您之前已在主登录页面上授权，文档页面将自动使用您的凭据。
+您可以使用文档页面右上角的“授权”按钮手动授权。您还可以使用此按钮以不同用户的身份授权。请参阅以下内容：
 
 {% include images-gallery.html imageCollection="swagger-ui" %}
 
 {% if docsPrefix == "pe/" or docsPrefix == "paas/" %}
 
-The easiest way to get your account is to use [ThingsBoard Cloud](https://thingsboard.cloud/signup) server.
+获取帐户最简单的方法是使用 [ThingsBoard Cloud](https://thingsboard.cloud/signup) 服务器。
 
 {% else %}
 
-See **[live-demo](/docs/{{docsPrefix}}user-guide/live-demo/)** page for more details how to get your account.
+有关如何获取帐户的更多详细信息，请参阅 **[实时演示](/docs/{{docsPrefix}}user-guide/live-demo/)** 页面。
 
 {% endif %}
 
-## JWT Tokens
+## JWT 令牌
 
-ThingsBoard uses [JWT](https://jwt.io/) tokens for representing claims securely between the API client (browser, scripts, etc) and the platform. 
-When you login to the platform, your username and password is exchanged to the pair of tokens. 
+ThingsBoard 使用 [JWT](https://jwt.io/) 令牌在 API 客户端（浏览器、脚本等）和平台之间安全地表示声明。
+当您登录平台时，您的用户名和密码将交换为一对令牌。
 
 
 {% if docsPrefix == "paas/" %}
-The main token is short-lived token you should use to perform the API calls. The refresh token is used to get new main token once it is expired.
-Default expiration time values are 2.5 hours and 1 week respectively.
+主令牌是您应该用来执行 API 调用的短期令牌。刷新令牌用于在主令牌过期后获取新的主令牌。
+默认过期时间值分别为 2.5 小时和 1 周。
 
-See sample command below to get the token for user "your_user@company.com" and password "secret":
+请参阅以下示例命令，以获取用户“your_user@company.com”和密码“secret”的令牌：
 
 {% else %}
-The main token is short-lived token you should use to perform the API calls. The refresh token is used to get new main token once it is expired.
-The expiration time of main and refresh tokens is [configurable](/docs/user-guide/install/{{docsPrefix}}config/) in system settings 
-via JWT_TOKEN_EXPIRATION_TIME and JWT_REFRESH_TOKEN_EXPIRATION_TIME parameters. Default expiration time values are 2.5 hours and 1 week respectively.
+主令牌是您应该用来执行 API 调用的短期令牌。刷新令牌用于在主令牌过期后获取新的主令牌。
+主令牌和刷新令牌的过期时间可以通过 JWT_TOKEN_EXPIRATION_TIME 和 JWT_REFRESH_TOKEN_EXPIRATION_TIME 参数在系统设置中进行 [配置](/docs/user-guide/install/{{docsPrefix}}config/)。默认过期时间值分别为 2.5 小时和 1 周。
 
-See sample command below to get the token for user "tenant@thingsboard.org", password "tenant" and server "THINGSBOARD_URL":
+请参阅以下示例命令，以获取用户“tenant@thingsboard.org”、密码“tenant”和服务器“THINGSBOARD_URL”的令牌：
 
 {% endif %}
 
@@ -61,14 +59,14 @@ A,get-token.sh,shell,resources/get-token.sh,/docs/reference/resources/get-token.
 B,response.json,json,resources/get-token-response.json,/docs/reference/resources/get-token-response.json{% endcapture %}
 {% include tabs.html %}
 
-- Now, you should set  'X-Authorization' header to "Bearer $YOUR_JWT_TOKEN". **Make sure** you use main JWT token and not the refresh token.
+- 现在，您应该将“X-Authorization”标头设置为“Bearer $YOUR_JWT_TOKEN”。**请确保**您使用的是主 JWT 令牌，而不是刷新令牌。
 
-## Java REST API Client
+## Java REST API 客户端
 
-ThingsBoard team provides client library written in Java to simplify consumption of the REST API.
-Please see Java REST API Client [documentation page](/docs/{{docsPrefix}}reference/rest-client/) for more details.
+ThingsBoard 团队提供用 Java 编写的客户端库，以简化 REST API 的使用。
+有关更多详细信息，请参阅 Java REST API 客户端 [文档页面](/docs/{{docsPrefix}}reference/rest-client/)。
 
-## Python REST API Client
+## Python REST API 客户端
 
-ThingsBoard team provides client library written in Python to simplify consumption of the REST API.
-Please see Python REST API Client [documentation page](/docs/{{docsPrefix}}reference/python-rest-client/) for more details.
+ThingsBoard 团队提供用 Python 编写的客户端库，以简化 REST API 的使用。
+有关更多详细信息，请参阅 Python REST API 客户端 [文档页面](/docs/{{docsPrefix}}reference/python-rest-client/)。

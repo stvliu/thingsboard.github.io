@@ -1,40 +1,42 @@
 * TOC
 {:toc}
 
-## Overview
+## 概述
 
-ThingsBoard allows you to provide Single Sign-On functionality for your customers and automatically create tenants, customers, or sub customers using external user management platforms, that supports the OAuth 2.0 protocol.  
-A list of platforms that supports the OAuth 2.0 protocol: [Google](https://developers.google.com/identity/protocols/oauth2/openid-connect), [Okta](https://www.okta.com/), [Auth0](https://auth0.com/), etc.   
+ThingsBoard 允许您为您的客户提供单点登录功能，并使用支持 OAuth 2.0 协议的外部用户管理平台自动创建租户、客户或子客户。
 
-
-## OAuth 2.0 authentication flow
-
-ThingsBoard supports the Authorization Code grant type to exchange an authorization code for an access token.   
-Once the user returns to the ThingsBoard client via redirect URL, the platform will get the authorization code from the URL and will use it to request an access token from the external user management platform.
-Using the [basic mapper](/docs/{{docsPrefix}}user-guide/oauth-2-support/#basic-mapper) or [custom mapper](/docs/{{docsPrefix}}user-guide/oauth-2-support/#custom-mapper), external user info object will be converted from external platform into ThingsBoard internal OAuth 2.0 user. 
-After this, the regular ThingsBoard authorization flow will happen.
+支持 OAuth 2.0 协议的平台列表：[Google](https://developers.google.com/identity/protocols/oauth2/openid-connect)、[Okta](https://www.okta.com/)、[Auth0](https://auth0.com/) 等。
 
 
-## Scenario description
+## OAuth 2.0 身份验证流程
 
-In this sample, we are going to use [Google](https://developers.google.com/identity/protocols/oauth2/openid-connect) the authentication. 
-The user is going to be logged into the Tenant, and the Tenant name is going to be equal to the user's email.
-If the Tenant does not exist in the system, the new Tenant will be created.
+ThingsBoard 支持授权码授予类型，以将授权码交换为访问令牌。
 
-As a second step, we are going to add a new external provider for authentication - [Auth0](https://auth0.com/).
-In this case, the User is going to be logged into the Tenant which name is going to be equal to a user email domain name.
-Additionally, for every user, we are going to create a new Customer and the Customer name is going to be equal to a user email. 
+一旦用户通过重定向 URL 返回 ThingsBoard 客户端，平台将从 URL 中获取授权码，并使用它向外部用户管理平台请求访问令牌。
+使用 [基本映射器](/docs/{{docsPrefix}}user-guide/oauth-2-support/#basic-mapper) 或 [自定义映射器](/docs/{{docsPrefix}}user-guide/oauth-2-support/#custom-mapper)，外部用户信息对象将从外部平台转换为 ThingsBoard 内部 OAuth 2.0 用户。
+此后，将发生常规的 ThingsBoard 授权流程。
 
-To map that external user info from Google and Auth0 platform, we are going to use a built-in [basic mapper](/docs/{{docsPrefix}}user-guide/oauth-2-support/#basic-mapper). 
 
-If [basic mapper](/docs/{{docsPrefix}}user-guide/oauth-2-support/#basic-mapper) functionality doesn't fit your business needs, you can configure the [custom mapper](/docs/{{docsPrefix}}user-guide/oauth-2-support/#custom-mapper),  so that you are able to add an implementation that fits your specific needs.
+## 场景描述
 
-### Login with Google
+在本示例中，我们将使用 [Google](https://developers.google.com/identity/protocols/oauth2/openid-connect) 进行身份验证。
+用户将登录到租户，并且租户名称将等于用户的电子邮件。
+如果租户在系统中不存在，则将创建新租户。
 
-To use Google OAuth 2.0 authentication platform for Login, you need to set up a project in the Google API Console to obtain OAuth 2.0 credentials.
+作为第二步，我们将为身份验证添加一个新的外部提供程序 - [Auth0](https://auth0.com/)。
+在这种情况下，用户将登录到租户，其名称将等于用户的电子邮件域名。
+此外，对于每个用户，我们将创建一个新客户，并且客户名称将等于用户的电子邮件。
 
-Please, follow the instructions on the [OpenID Connect](https://developers.google.com/identity/protocols/oauth2/openid-connect) page to configure the OAuth 2.0 Client.
-After completing the instructions above, you should have a new OAuth Client with credentials consisting of a Client ID and a Client Secret.
+为了从 Google 和 Auth0 平台映射外部用户信息，我们将使用内置的 [基本映射器](/docs/{{docsPrefix}}user-guide/oauth-2-support/#basic-mapper)。
+
+如果 [基本映射器](/docs/{{docsPrefix}}user-guide/oauth-2-support/#basic-mapper) 功能不符合您的业务需求，您可以配置 [自定义映射器](/docs/{{docsPrefix}}user-guide/oauth-2-support/#custom-mapper)，以便能够添加适合您特定需求的实现。
+
+### 使用 Google 登录
+
+要使用 Google OAuth 2.0 身份验证平台进行登录，您需要在 Google API 控制台中设置一个项目以获取 OAuth 2.0 凭据。
+
+请按照 [OpenID Connect](https://developers.google.com/identity/protocols/oauth2/openid-connect) 页面上的说明配置 OAuth 2.0 客户端。
+完成上述说明后，您应该有一个新的 OAuth 客户端，其凭据包括客户端 ID 和客户端密钥。
 
 [comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/1-create-credentials.png&#41;)
 {% include images-gallery.html imageCollection="step1" preview="false" max-width="100%" %}
@@ -45,7 +47,7 @@ After completing the instructions above, you should have a new OAuth Client with
 [comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/3-client-id.png&#41;)
 {% include images-gallery.html imageCollection="step3" preview="false" max-width="100%" %}
 
-Please, add the ThingsBoard default redirect URI, which we are going to use in this example, to the Authorized Redirect URI section:
+请将我们将在此示例中使用的 ThingsBoard 默认重定向 URI 添加到授权重定向 URI 部分：
 
 ```
 http://localhost:8080/login/oauth2/code/
@@ -54,151 +56,152 @@ http://localhost:8080/login/oauth2/code/
 [comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/4-Authorized-redirect-uris.png&#41;)
 {% include images-gallery.html imageCollection="step4" preview="false" max-width="100%" %}
 
-#### Configuration of ThingsBoard
+#### ThingsBoard 的配置
 
-Go to your ThingsBoard as a System Administrator (sysadmin@thingsboard.org / sysadmin). Check the General Settings -> Base URL should not contain "/" at the end (e.g. "`http://127.0.0.1:8080`" instead of "`https://127.0.0.1:8080/`"). Then in the **Home** section, find the "OAuth2" icon and click on it.
+以系统管理员身份转到您的 ThingsBoard (sysadmin@thingsboard.org / sysadmin)。检查常规设置 -> 基本 URL 在末尾不应包含“/”（例如，“`http://127.0.0.1:8080`”而不是“`https://127.0.0.1:8080/`”）。然后在 **主页** 部分，找到“OAuth2”图标并单击它。
 
 [comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/5-home-oauth2.png&#41;)
 {% include images-gallery.html imageCollection="step5" preview="false" max-width="100%" %}
 
-Check the **Enable OAuth2 settings** and click on **+ Add**. Click on *localhost* in the window that appears, for further settings.
+选中 **启用 OAuth2 设置** 并单击 **+ 添加**。在出现的窗口中单击 *localhost* 以进行进一步设置。
 
 [comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/6-home-oauth2-add.png&#41;)
 {% include images-gallery.html imageCollection="step6" preview="false" max-width="100%" %}
 
-Select the required protocol. If you decide to use the HTTP protocol, be sure to write down its port 8080 in the domain name (localhost:8080).
-In this example, we will configure the Google provider. Click on this block.
+选择所需的协议。如果您决定使用 HTTP 协议，请务必在域名中写下其端口 8080 (localhost:8080)。
+在本示例中，我们将配置 Google 提供商。单击此块。
 
 [comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/7-oauth2-google.png&#41;)
 {% include images-gallery.html imageCollection="step7" preview="false" max-width="100%" %}
 
-Please provide information (**client ID** and **Client secret**) from your Google API console.
-Then expand the **Custom settings** menu.
- 
+请提供来自 Google API 控制台的信息（**客户端 ID** 和 **客户端密钥**）。
+然后展开 **自定义设置** 菜单。
+
 [comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/8-login-provider-google.png&#41;)
 {% include images-gallery.html imageCollection="step8" preview="false" max-width="100%" %}
 
-Let's make the settings for the General block. 
-Use this [link](https://developers.google.com/identity/protocols/oauth2/openid-connect#discovery) to see the list of up-to-date URLs like **accessTokenUri**, **authorizationUri**, etc.
-Select **POST** in the *Client authentication method* field. Then check the "Allow user creation" checkbox. Add to the scope field: *openid, email, profile*. And go to the **Mapper** block.
+让我们对常规块进行设置。
+使用此 [链接](https://developers.google.com/identity/protocols/oauth2/openid-connect#discovery) 查看最新 URL 列表，例如 **accessTokenUri**、**authorizationUri** 等。
+在 *客户端身份验证方法* 字段中选择 **POST**。然后选中“允许用户创建”复选框。将以下内容添加到范围字段：*openid、email、profile*。然后转到 **映射器** 块。
 
 [comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/9-oauth2-google-general.png&#41;)
 {% include images-gallery.html imageCollection="step9" preview="false" max-width="100%" %}
 
-Select the **Basic** type and fill in the fields, if necessary (*described in more detail below in this article in the Basic mapper part*).
-Some configurations are available only in Professional Edition. Then, **save the settings**.
+选择 **基本** 类型，并在必要时填写字段（*在本文档的后面部分中以基本映射器部分进行了更详细的描述*）。
+某些配置仅在专业版中可用。然后，**保存设置**。
 
 
 [comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/10-oauth2-google-general-mapper-pe.png&#41;)
 {% include images-gallery.html imageCollection="step10" preview="false" max-width="100%" %}
 
-So that the resulted oauth2 configurations for Google will look similar to the provided below.
+因此，Google 的最终 oauth2 配置将类似于下面提供的配置。
 
-If we navigate to the Login screen, we will see an additional Login option with Google:
+如果我们导航到登录屏幕，我们将看到一个带有 Google 的其他登录选项：
 
 [comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/11-login-with-google.png&#41;)
 {% include images-gallery.html imageCollection="step11" preview="false" max-width="100%" %}
 
-Once we click it and select one of our Google Account, we are going to be logged into ThingsBoard with our Google's email as a Tenant Administrator email:
+一旦我们单击它并选择我们的一个 Google 帐户，我们将使用我们的 Google 电子邮件作为租户管理员电子邮件登录到 ThingsBoard：
 
 [comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/12-tenant-administrator.png&#41;)
 {% include images-gallery.html imageCollection="step12" preview="false" max-width="100%" %}
 
-If you log in as the System Administrator, you will see that the Tenant name is our Google's email, according to basic mapper:
+如果您以系统管理员身份登录，您将看到租户名称是我们的 Google 电子邮件，根据基本映射器：
 
 [comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/13-tenants-email.png&#41;)
 {% include images-gallery.html imageCollection="step13" preview="false" max-width="100%" %}
 
-### Login with Auth0
+### 使用 Auth0 登录
 
-Now let's add one more provider to our list - [Auth0](https://auth0.com/).
-This time we are going to create customers for our users inside a single domain tenant.
+现在让我们在我们的列表中添加另一个提供商 - [Auth0](https://auth0.com/)。
+这次，我们将在单个域租户内为我们的用户创建客户。
 
-To use the Auth0 authentication platform for Login, let's create a new application of the 'Regular Web App' type following this [link](https://auth0.com/docs/quickstarts/).
+要使用 Auth0 身份验证平台进行登录，让我们按照此 [链接](https://auth0.com/docs/quickstarts/) 创建一个“常规 Web 应用程序”类型的应用程序。
 
 [comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/14-auth0-regular-web-app.png&#41;)
 {% include images-gallery.html imageCollection="step14" preview="false" max-width="100%" %}
 
-From the list of technologies please select *Java Spring Boot*:
+从技术列表中，请选择 *Java Spring Boot*：
 
 [comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/15-auth0-java-spring-boot.png&#41;)
 {% include images-gallery.html imageCollection="step15" preview="false" max-width="100%" %}
 
-Once your application is created, you can navigate to application details to obtain **clientId** and **clientSecret**:
+创建应用程序后，您可以导航到应用程序详细信息以获取 **clientId** 和 **clientSecret**：
 
 [comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/16-auth0-applications-settings.png&#41;)
 {% include images-gallery.html imageCollection="step16" preview="false" max-width="100%" %}
 
-As well, please update your allowed Callback URLs:
+同样，请更新您的允许的回调 URL：
 
 ```
 http://localhost:8080/login/oauth2/code/
 ```
 
-**Please, note** that it is not necessary to update the Application login URI.
+**请注意**，无需更新应用程序登录 URI。
 
 [comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/17-auth0_allowed-callback-urls.png&#41;)
 {% include images-gallery.html imageCollection="step17" preview="false" max-width="100%" %}
 
-In the advanced details section you will be able to find all the required URLs (endpoints) for OAuth 2.0 configuration:
+在高级详细信息部分，您将能够找到 OAuth 2.0 配置所需的所有 URL（端点）：
 
 [comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/18-auth0-advanced-settings.png&#41;)
 {% include images-gallery.html imageCollection="step18" preview="false" max-width="100%" %}
 
-#### Configuration of ThingsBoard
+#### ThingsBoard 的配置
 
-Now we can add one more provider:
+现在我们可以添加另一个提供商：
 
 [comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/19-oauth2-add-provider.png&#41;)
 {% include images-gallery.html imageCollection="step19" preview="false" max-width="100%" %}
 
-Then select **Custom:**
+然后选择 **自定义：**
 
 [comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/20-oauth2-add-provider-custom.png&#41;)
 {% include images-gallery.html imageCollection="step20" preview="false" max-width="100%" %}
 
-Please provide information (**client ID** and **Client secret**) from your application details, and you may find all the required URLs in the advanced details section.
+请提供来自您的应用程序详细信息的信息（**客户端 ID** 和 **客户端密钥**），您可以在高级详细信息部分找到所有必需的 URL。
 
-Select **POST** in the *client authentication method* field. We indicate **Auth0** in the *provider label* field. Then check the “Allow user creation” checkbox. Add to the scope field: *openid, email, profile*. And go to the **Mapper** block.
+在 *客户端身份验证方法* 字段中选择 **POST**。我们在 *提供商标签* 字段中指明 **Auth0**。然后选中“允许用户创建”复选框。将以下内容添加到范围字段：*openid、email、profile*。然后转到 **映射器** 块。
 
 [comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/21-oauth2-custom-general.png&#41;)
 {% include images-gallery.html imageCollection="step21" preview="false" max-width="100%" %}
 
-Select the **Basic** type and, if necessary fill in the fields *(described in more detail below in this article in the Basic mapper part).* Some configurations are available only in Professional Edition. Then, **save** the settings.
+选择 **基本** 类型，并在必要时填写字段（*在本文档的后面部分中以基本映射器部分进行了更详细的描述*）。
+某些配置仅在专业版中可用。然后，**保存** 设置。
 
 [comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/22-oauth2-custom-mapper-pe.png&#41;)
 {% include images-gallery.html imageCollection="step22" preview="false" max-width="100%" %}
 
-So that the resulted oauth2 configurations for OAuth0 will look similar to the provided below.
+因此，OAuth0 的最终 oauth2 配置将类似于下面提供的配置。
 
 
-If we navigate to Login screen, we will see two possible Login with options - **Google** and **Auth0**:
+如果我们导航到登录屏幕，我们将看到两个可能的登录选项 - **Google** 和 **Auth0**：
 
 [comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/23-login-with-auth0.png&#41;)
 {% include images-gallery.html imageCollection="step23" preview="false" max-width="100%" %}
 
-Once we click it and select our *Auth0* Account, we are going to be logged into ThingsBoard with our email's as Customer User:
+一旦我们单击它并选择我们的 *Auth0* 帐户，我们将使用我们的电子邮件作为客户用户登录到 ThingsBoard：
 
 [comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/24_customer.png&#41;)
 {% include images-gallery.html imageCollection="step24" preview="false" max-width="100%" %}
 
-If we are logged as System Administrator, you will see that Tenant name is our *Auth0* email domain name, according to basic mapper:
+如果我们以系统管理员身份登录，您将看到租户名称是我们的 *Auth0* 电子邮件域名，根据基本映射器：
 
 [comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/25-tenants-emails.png&#41;)
 {% include images-gallery.html imageCollection="step25" preview="false" max-width="100%" %}
 
-We have completed our sample and now your users are not required to create accounts inside ThingsBoard - they can use already exist SSO providers for this.
+我们已经完成了我们的示例，现在您的用户无需在 ThingsBoard 中创建帐户 - 他们可以使用已经存在的 SSO 提供商来实现此目的。
 
-### Resulted Snippet
-This snippet contains both providers that are used in our sample:
+### 结果片段
+此片段包含我们示例中使用的两个提供商：
 
 [comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/26-both-providers.png&#41;)
 {% include images-gallery.html imageCollection="step26" preview="false" max-width="100%" %}
 
-## Mapping of the external user into ThingsBoard internal user structure
+## 将外部用户映射到 ThingsBoard 内部用户结构
 
-Mapping of the external user info object into ThingsBoard user can be achieved in two ways - using the **Basic** and **Custom** mappers. 
-The main functionality of the mapper is to map key-value attributes from the external user info object into the expected structure of the ThingsBoard OAuth 2.0 User:
+可以通过使用 **基本** 和 **自定义** 映射器将外部用户的信息对象映射到 ThingsBoard 用户。
+映射器的主要功能是将外部用户的信息对象中的键值属性映射到 ThingsBoard OAuth 2.0 用户的预期结构：
 
 ```java
 public class OAuth2User {
@@ -220,92 +223,92 @@ public class OAuth2User {
 }
 ```
 
-### Basic mapper
+### 基本映射器
 
-A basic mapper is able to merge an external OAuth 2.0 user info object into the ThingsBoard OAuth 2.0 user with a predefined set of rules.
+基本映射器能够使用一组预定义的规则将外部 OAuth 2.0 用户信息对象合并到 ThingsBoard OAuth 2.0 用户中。
 
 [comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/27-oauth2-basic-mapper-pe.png&#41;)
 {% include images-gallery.html imageCollection="step27" preview="false" max-width="100%" %}
 
-To use a basic mapper please set *mapperConfig.type* or *SECURITY_OAUTH2_DEFAULT_MAPPER_TYPE* environment variable to **basic**. 
+要使用基本映射器，请将 *mapperConfig.type* 或 *SECURITY_OAUTH2_DEFAULT_MAPPER_TYPE* 环境变量设置为 **basic**。
 
-Here are the details of other properties:
+以下是其他属性的详细信息：
 
 - **allowUserCreation** -
-  if this option is set to **true**, then in case, the user account does not exist in the ThingsBoard yet, it will be created.
-  If this option is set to **false**, the user will get access denied error, in case, he tries to log in with an external OAuth 2.0 provider, but there is no user on ThingsBoard with those credentials.   
+  如果此选项设置为 **true**，那么，如果用户帐户在 ThingsBoard 中还不存在，它将被创建。
+  如果此选项设置为 **false**，用户将收到访问被拒绝的错误，如果他尝试使用外部 OAuth 2.0 提供商登录，但 ThingsBoard 中没有具有这些凭据的用户。   
  
 - **emailAttributeKey** -
-  this is the key to the attributes from the external OAuth 2.0 user info that is going to be used as ThingsBoard user email property.
+  这是外部 OAuth 2.0 用户信息中属性的键，该键将用作 ThingsBoard 用户的电子邮件属性。
   
 - **firstNameAttributeKey** -
-  this is the key to the attributes from the external OAuth 2.0 user info that is going to be used as ThingsBoard user first name property.
+  这是外部 OAuth 2.0 用户信息中属性的键，该键将用作 ThingsBoard 用户的姓氏属性。
     
 - **lastNameAttributeKey** -
-  this is the key to the attributes from the external OAuth 2.0 user info that is going to be used as ThingsBoard user surname property.
+  这是外部 OAuth 2.0 用户信息中属性的键，该键将用作 ThingsBoard 用户的姓氏属性。
 
 - **tenantNameStrategy** -
-  this option specifies which tenant is going to be chosen for creating the user.
-  A basic mapper provides three possible options strategy for a generating Tenant name from an external user info object - *domain*, *email*, or *custom*:
-     - **domain** - the name of the Tenant will be extracted as the domain from the email of the user;
-     - **email** - the name of the Tenant will be the user's email;
-     - **custom** - a custom pattern can be set for the Tenant name. Please see *tenantNamePattern*.
+  此选项指定将为创建用户选择哪个租户。
+  基本映射器为从外部用户信息对象生成租户名称提供了三种可能的选项策略 - *domain*、*email* 或 *custom*：
+     - **domain** - 租户的名称将从用户的电子邮件中提取为域；
+     - **email** - 租户的名称将是用户的电子邮件；
+     - **custom** - 可以为租户名称设置自定义模式。请参阅 *tenantNamePattern*。
 
 - **tenantNamePattern** -
-  In case, the *tenantNameStrategy* is **custom** you can specify the name of the Tenant, where the user is going to be created with a help of a custom pattern.
-  You can use attributes from the external user info object to put them into the Tenant's name. Please use %{attribute_key} as placeholder for the attribute value.
+  如果 *tenantNameStrategy* 是 **custom**，您可以使用自定义模式来指定要为其创建用户的租户的名称。
+  您可以使用外部用户信息对象中的属性将它们放入租户的名称中。请使用 %{attribute_key} 作为属性值的占位符。
   
-  Tenant pattern examples:
-     - **Demo Tenant**           # Hard coded Tenant name;
-     - **Demo Tenant %{email}**  # if the user's email is *test@demo.com*, the Tenant's name will be the *'Demo Tenant test@demo.com'*;
-     - **%{givenName}**          # if the user's givenName attribute is *Demo User*, the Tenant name will be *'Demo User'*.
+  租户模式示例：
+     - **Demo Tenant**           # 硬编码租户名称；
+     - **Demo Tenant %{email}**  # 如果用户的电子邮件是 *test@demo.com*，租户的名称将是 *'Demo Tenant test@demo.com'*;
+     - **%{givenName}**          # 如果用户的 givenName 属性是 *Demo User*，租户名称将是 *'Demo User'*.
         
 - **customerNamePattern**
-  User can be created under specific Customer, and not under the Tenant if this pattern field is not empty.
-  You can use attributes from the external user info object to put them into the Customer name. Please use %{attribute_key} as placeholder for the attribute value.
+  用户可以在特定客户下创建，而不在租户下，如果此模式字段不为空。
+  您可以使用外部用户信息对象中的属性将它们放入客户名称中。请使用 %{attribute_key} 作为属性值的占位符。
   
-  Customer pattern examples:
-     - **Demo Customer**             # Hard coded Customer name;
-     - **Demo Customer %{email}**    # If the user's *email* attribute is *test@demo.com*, the Customer name will be *'Demo Customer test@demo.com'*;
-     - **%{city}**                   # If the user's *city* attribute is *New York*, the Customer name will be *'New York'*. 
+  客户模式示例：
+     - **Demo Customer**             # 硬编码客户名称；
+     - **Demo Customer %{email}**    # 如果用户的 *email* 属性是 *test@demo.com*，客户名称将是 *'Demo Customer test@demo.com'*;
+     - **%{city}**                   # 如果用户的 *city* 属性是 *New York*，客户名称将是 *'New York'*. 
 
 - **defaultDashboardName**
-  A user will be redirected to a specific Dashboard if this field is not empty.
+  如果此字段不为空，用户将被重定向到特定仪表板。
   
 - **alwaysFullScreen**
-  If this field is **true** and **defaultDashboardName** is not empty, the User will be redirected to a specific Dashboard in a fullscreen mode.
+  如果此字段为 **true** 且 **defaultDashboardName** 不为空，用户将被重定向到全屏模式下的特定仪表板。
 
 - **parentCustomerNamePattern**
 
-  **NOTE: This configuration available only in Professional Edition.**
+  **注意：此配置仅在专业版中可用。**
 
-  The Customer of the user can be created in the hierarchy under this parent Customer if this pattern field is not empty.
-  You can use attributes from the external user info object to put them into the Parent Customer name. Please use %{attribute_key} as a placeholder for the attribute value.
+  如果此模式字段不为空，则可以将用户的客户创建在该父客户的层次结构中。
+  您可以使用外部用户信息对象中的属性将它们放入父客户名称中。请使用 %{attribute_key} 作为属性值的占位符。
   
-  Parent Customer pattern examples:
-     - **Demo Parent Customer**           # Hard coded Parent Customer name;
-     - **Demo Parent Customer %{email}**  # If user's *email* attribute is *test@demo.com*, Parent Customer name is going to be *'Demo Parent Customer test@demo.com'*;
-     - **%{country}**                     # If user's *country* attribute is *Top Customer*, Parent Customer name is going to be *'Parent Customer'*. 
+  父客户模式示例：
+     - **Demo Parent Customer**           # 硬编码父客户名称；
+     - **Demo Parent Customer %{email}**  # 如果用户的 *email* 属性是 *test@demo.com*，父客户名称将是 *'Demo Parent Customer test@demo.com'*;
+     - **%{country}**                     # 如果用户的 *country* 属性是 *Top Customer*，父客户名称将是 *'Parent Customer'*. 
 
 - **userGroupsNamePattern**
 
-  **NOTE: This configuration available only in Professional Edition.**
+  **注意：此配置仅在专业版中可用。**
 
-  By default, the newly created user is assigned only to the **All** user's group. 
-  You can customize this behavior by specifying a list of groups, where a user has to be assigned to as well. 
-  You can use attributes from the external user info object to put them into user group names. Please use %{attribute_key} as placeholder for attribute value.
-  If groups don't exist, this group will be created automatically.
+  默认情况下，新创建的用户仅分配给 **All** 用户组。
+  您可以通过指定用户必须分配到的组列表来自定义此行为。
+  您可以使用外部用户信息对象中的属性将它们放入用户组名称中。请使用 %{attribute_key} 作为属性值的占位符。
+  如果组不存在，此组将自动创建。
   
-  User groups pattern examples:
-     - **Tenant Administrators, Managers**   # Hard coded user groups;
-     - **%{job_title}**                    # If user's *job_title* attribute is *Manager*, user is going to be assigned into *Manager* user group.
+  用户组模式示例：
+     - **Tenant Administrators, Managers**   # 硬编码用户组；
+     - **%{job_title}**                    # 如果用户的 *job_title* 属性是 *Manager*，用户将被分配到 *Manager* 用户组。
 
-### Custom mapper
+### 自定义映射器
 
-If the basic mapper functionality doesn't cover your business needs, with the help of the custom mapper you are able to add an implementation that fits your specific goals.
+如果基本映射器功能无法满足您的业务需求，您可以借助自定义映射器添加一个实现来满足您的特定目标。
 
-A custom mapper designed as a separate microservice that is running nearby the ThingsBoard core microservice.
-ThingsBoard forwards all mapping requests to this microservice and expects as a response ThingsBoard OAuth 2.0 user object:
+自定义映射器设计为一个单独的微服务，它在 ThingsBoard 核心微服务附近运行。
+ThingsBoard 将所有映射请求转发到此微服务，并期望作为响应的 ThingsBoard OAuth 2.0 用户对象：
 
 ```java
 public class OAuth2User {
@@ -326,25 +329,25 @@ public class OAuth2User {
 }
 ```
 
-Please refer to this [base implementation](https://github.com/thingsboard/custom-oauth2-mapper) as a starting point for your custom mapper.
+请参阅此 [基本实现](https://github.com/thingsboard/custom-oauth2-mapper)作为自定义映射器的起点。
 
-To use the custom mapper please set *mapperConfig.type* or *SECURITY_OAUTH2_DEFAULT_MAPPER_TYPE* environment variable to **custom**. 
+要使用自定义映射器，请将 *mapperConfig.type* 或 *SECURITY_OAUTH2_DEFAULT_MAPPER_TYPE* 环境变量设置为 **custom**。
 
-Here are the details of other properties:
+以下是其他属性的详细信息：
 
 - **URL**
 
-  URL of the custom mapper endpoint.
+  自定义映射器端点的 URL。
 
 - **username**
 
-  If the custom mapper endpoint configured with basic authorization, specify the *username* in this property.
+  如果自定义映射器端点配置了基本授权，请在此属性中指定 *username*。
  
 - **password**
 
-  If the custom mapper endpoint configured with basic authorization, specify the *password* in this property.
+  如果自定义映射器端点配置了基本授权，请在此属性中指定 *password*。
   
-Here is an example of demo configuration:
+这是一个演示配置的示例：
 
 ```bash
   custom:
@@ -357,39 +360,39 @@ Here is an example of demo configuration:
 {% include images-gallery.html imageCollection="step28" preview="false" max-width="100%" %} 
 
 
-## OAuth 2.0 configuration parameters
+## OAuth 2.0 配置参数
 
-| Key | Description |
+| 键 | 描述 |
 | --- | ----------- |
-| security.oauth2.enabled | Enable/disable OAuth 2.0 login functionality |
-| security.oauth2.loginProcessingUrl | Redirect URL where access code from external user management system will be processed |
-| security.oauth2.clients.default.loginButtonLabel | Label that going to be show on login button - 'Login with {loginButtonLabel}' |
-| security.oauth2.clients.default.loginButtonIcon | Icon that going to be show on login button. Material design icon ID. List of icon IDs could be found [here](https://material.angularjs.org/latest/api/directive/mdIcon) |
-| security.oauth2.clients.default.clientName | Logical name of the client or registration |
-| security.oauth2.clients.default.clientId | Client ID |
-| security.oauth2.clients.default.clientSecret | Client secret |
-| security.oauth2.clients.default.accessTokenUri | URI for the token endpoint |
-| security.oauth2.clients.default.authorizationUri | URI for the authorization endpoint |
-| security.oauth2.clients.default.scope | Sets the scope(s) used for the client |
-| security.oauth2.clients.default.redirectUriTemplate | URI (or uri template) for the redirection endpoint. Must be in sync with 'security.oauth2.loginProcessingUrl' (domain name added) |
-| security.oauth2.clients.default.jwkSetUri | URI for the JSON Web Key (JWK) Set endpoint |
-| security.oauth2.clients.default.authorizationGrantType | [Authorization grant type](https://docs.spring.io/spring-security/site/docs/current/api/org/springframework/security/oauth2/core/AuthorizationGrantType.html) used for the client |
-| security.oauth2.clients.default.clientAuthenticationMethod | [Authentication method](https://docs.spring.io/spring-security/site/docs/current/api/org/springframework/security/oauth2/core/ClientAuthenticationMethod.html) used when authenticating the client with the authorization server |
-| security.oauth2.clients.default.userInfoUri | URI for the user info endpoint |
-| security.oauth2.clients.default.userNameAttributeName | Attribute name used to access the user's name from the user info response |
+| security.oauth2.enabled | 启用/禁用 OAuth 2.0 登录功能 |
+| security.oauth2.loginProcessingUrl | 将处理来自外部用户管理系统的访问代码的重定向 URL |
+| security.oauth2.clients.default.loginButtonLabel | 将显示在登录按钮上的标签 - 'Login with {loginButtonLabel}' |
+| security.oauth2.clients.default.loginButtonIcon | 将显示在登录按钮上的图标。材质设计图标 ID。可以在 [此处](https://material.angularjs.org/latest/api/directive/mdIcon) 找到图标 ID 列表 |
+| security.oauth2.clients.default.clientName | 客户端或注册的逻辑名称 |
+| security.oauth2.clients.default.clientId | 客户端 ID |
+| security.oauth2.clients.default.clientSecret | 客户端密钥 |
+| security.oauth2.clients.default.accessTokenUri | 令牌端点的 URI |
+| security.oauth2.clients.default.authorizationUri | 授权端点的 URI |
+| security.oauth2.clients.default.scope | 为客户端设置的范围 |
+| security.oauth2.clients.default.redirectUriTemplate | 重定向端点的 URI（或 uri 模板）。必须与 'security.oauth2.loginProcessingUrl'（已添加域名）同步 |
+| security.oauth2.clients.default.jwkSetUri | JSON Web Key (JWK) 集端点的 URI |
+| security.oauth2.clients.default.authorizationGrantType | 用于客户端的 [授权授予类型](https://docs.spring.io/spring-security/site/docs/current/api/org/springframework/security/oauth2/core/AuthorizationGrantType.html) |
+| security.oauth2.clients.default.clientAuthenticationMethod | 在使用授权服务器对客户端进行身份验证时使用的 [身份验证方法](https://docs.spring.io/spring-security/site/docs/current/api/org/springframework/security/oauth2/core/ClientAuthenticationMethod.html) |
+| security.oauth2.clients.default.userInfoUri | 用户信息端点的 URI |
+| security.oauth2.clients.default.userNameAttributeName | 用于从用户信息响应中访问用户名称的属性名称 |
 
-## HaProxy configuration
+## HaProxy 配置
 
-If ThingsBoard is running under a load balancer like HAProxy please configure properly balance algorithm to make sure that the correct session is available on the ThingsBoard instance: 
+如果 ThingsBoard 在负载均衡器（如 HAProxy）下运行，请正确配置平衡算法，以确保在 ThingsBoard 实例上可以使用正确的会话：
 ```bash
 backend tb-api-backend
   ...
-  balance source # balance must be set to 'source'
+  balance source # balance 必须设置为 'source'
   ...
 ```
 
 
-As well please configure properly ACL mapping for HTTP and HTTPs requests:
+同样，请为 HTTP 和 HTTPs 请求正确配置 ACL 映射：
 ```bash
 frontend http-in
   ...

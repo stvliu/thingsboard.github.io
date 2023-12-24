@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-edge
-title: Provision Dashboard from cloud to edge
-description: Provision Dashboard from cloud to edge
+title: 从云端到边缘配置仪表盘
+description: 从云端到边缘配置仪表盘
 
 edgeDashboards:
     0:
@@ -12,14 +12,14 @@ edgeDashboards:
 
 ![image](/images/coming-soon.jpg)
 
-#### Dashboards management
+#### 仪表盘管理
 
-Please use 'Edge Dashboards' icon to navigate to dashboards that are *'assigned'* to specific edge entity.
-User is able to assign to edge any dashboards that he has access to.
+请使用“边缘仪表盘”图标导航到分配给特定边缘实体的仪表盘。
+用户可以将自己有权访问的任何仪表盘分配给边缘。
 
 {% include images-gallery.html imageCollection="edgeDashboards" %}
 
-### Next Steps
+### 后续步骤
 
 {% assign currentGuide = "ProvisionDashboardFromCloudToEdge" %}
 {% assign docsPrefix = "edge/" %}

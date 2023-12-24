@@ -2,8 +2,8 @@
 layout: docwithnav
 assignees:
 - ashvayka
-title: Audit Log
-description: IoT device management Audit Log
+title: 审计日志
+description: IoT 设备管理审计日志
 
 ---
 

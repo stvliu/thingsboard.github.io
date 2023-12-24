@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
-title: Java JMX monitoring tool
-description: Java JMX monitoring tool
+title: Java JMX 监控工具
+description: Java JMX 监控工具
 
 ---
 

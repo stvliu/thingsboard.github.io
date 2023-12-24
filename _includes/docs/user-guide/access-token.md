@@ -1,14 +1,15 @@
 * TOC
 {:toc}
-  
-Access Token based authentication is the default device authentication type.
-The unique access token is generated once the device is created in ThingsBoard. It can be changed afterwards.
-The client must specify the access token as a username in MQTT connect message.
 
-#### Plain MQTT (without SSL)
 
-Let's review a simple command to upload temperature readings using Access Token *YOUR_ACCESS_TOKEN* to ThingsBoard Cloud.
-See [MQTT API](/docs/{{docsPrefix}}reference/mqtt-api/) for more details. The command is using plain MQTT without TLS:
+基于访问令牌的身份验证是默认的设备身份验证类型。
+在设备在 ThingsBoard 中创建后，将生成唯一的访问令牌。之后可以更改它。
+客户端必须在 MQTT 连接消息中将访问令牌指定为用户名。
+
+#### 纯 MQTT（无 SSL）
+
+让我们回顾一下使用访问令牌 *YOUR_ACCESS_TOKEN* 将温度读数上传到 ThingsBoard Cloud 的简单命令。
+有关更多详细信息，请参阅 [MQTT API](/docs/{{docsPrefix}}reference/mqtt-api/)。该命令使用纯 MQTT，不使用 TLS：
 
 ```bash
 mosquitto_pub -d -q 1 -h "YOUR_TB_HOST" -p "1883" \ 
@@ -16,22 +17,22 @@ mosquitto_pub -d -q 1 -h "YOUR_TB_HOST" -p "1883" \
 ```
 {: .copy-code}
 
-The above command requires mosquitto clients library that you can install using the following command: **apt-get install mosquitto-clients**.
-Don't forget to replace **YOUR_TB_HOST** with the host of your ThingsBoard instance and **YOUR_ACCESS_TOKEN** with the access token of your device.
+上述命令需要 mosquitto 客户端库，可以使用以下命令安装：**apt-get install mosquitto-clients**。
+别忘了将 **YOUR_TB_HOST** 替换为 ThingsBoard 实例的主机，将 **YOUR_ACCESS_TOKEN** 替换为设备的访问令牌。
 
-#### MQTTS (MQTT over SSL)
+#### MQTTS（MQTT over SSL）
 
-One-way SSL authentication is a standard authentication mode, where your client device verifies the identity of a server using server certificate.
-ThingsBoard Team has already provisioned a valid certificate for [ThingsBoard Cloud](https://thingsboard.cloud/signup).
+单向 SSL 身份验证是一种标准身份验证模式，其中客户端设备使用服务器证书验证服务器的身份。
+ThingsBoard 团队已经为 [ThingsBoard Cloud](https://thingsboard.cloud/signup) 配置了有效证书。
 {% if docsPrefix != 'paas/' %}
-Follow the [MQTT over SSL](/docs/{{docsPrefix}}user-guide/mqtt-over-ssl/) guide to provision server certificate if you are hosting your own ThingsBoard instance.
+如果您托管自己的 ThingsBoard 实例，请按照 [MQTT over SSL](/docs/{{docsPrefix}}user-guide/mqtt-over-ssl/) 指南配置服务器证书。
 {% endif %}
 
-Once provisioned, you should prepare a CA root certificate in pem format. This certificate will be used by mqtt client to validate the server certificate.
-Save the CA root certificate to your working directory as "**ca-root.pem**".
-An example of CA root certificate for *mqtt.thingsboard.cloud* is located [here](/docs/paas/user-guide/resources/mqtt-over-ssl/ca-root.pem).
+配置完成后，您应该准备一个 pem 格式的 CA 根证书。此证书将由 mqtt 客户端用于验证服务器证书。
+将 CA 根证书保存到您的工作目录中，文件名“**ca-root.pem**”。
+*mqtt.thingsboard.cloud* 的 CA 根证书示例位于 [此处](/docs/paas/user-guide/resources/mqtt-over-ssl/ca-root.pem)。
 
-Now you may use the *ca-root.pem* to setup secure connection to your ThingsBoard instance (*YOUR_TB_HOST*) and Access Token (*YOUR_ACCESS_TOKEN*) to authenticate the device to upload telemetry:
+现在，您可以使用 *ca-root.pem* 建立与 ThingsBoard 实例 (*YOUR_TB_HOST*) 的安全连接，并使用访问令牌 (*YOUR_ACCESS_TOKEN*) 对设备进行身份验证以上传遥测数据：
 
 ```bash
 mosquitto_pub --cafile ca-root.pem -d -q 1 -h "YOUR_TB_HOST" -p "8883" \
@@ -39,6 +40,5 @@ mosquitto_pub --cafile ca-root.pem -d -q 1 -h "YOUR_TB_HOST" -p "8883" \
 ```
 {: .copy-code}
 
-The above command requires mosquitto clients library that you can install using the following command: **apt-get install mosquitto-clients**.
-Don't forget to replace **YOUR_TB_HOST** with the host of your ThingsBoard instance and **YOUR_ACCESS_TOKEN** with the access token of your device.
-
+上述命令需要 mosquitto 客户端库，可以使用以下命令安装：**apt-get install mosquitto-clients**。
+别忘了将 **YOUR_TB_HOST** 替换为 ThingsBoard 实例的主机，将 **YOUR_ACCESS_TOKEN** 替换为设备的访问令牌。

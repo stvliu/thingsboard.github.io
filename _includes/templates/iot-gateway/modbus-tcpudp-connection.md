@@ -1,26 +1,26 @@
-| **Parameter**                 | **Default value**                       | **Description**                                                                       |
-|:-|:-|-
-| name                          | **Modbus Default Server**               | Name of connector to server.                                                          |
-| host                          | **127.0.0.1**                           | Hostname or ip address of Modbus server.                                              |
-| port                          | **5021**                                | Port of Modbus server for connect.                                                    |
-| type                          | **tcp**                                 | Type of connection may be **tcp**, **udp** or **serial**.                             |
-| method                        | **socket**                              | Type of a framer **socket** or **rtu**, if needed.                                    |
-| timeout                       | **35**                                  | Timeout in seconds for connecting to Modbus server.                                   |
-| byteOrder                     | **LITTLE**                              | Order of bytes to read.                                                               |
-| wordOrder                     | **LITTLE**                              | Order of words in case of reading several registers.                                  |
+| **参数** | **默认值** | **说明** |
+|:-|:-|:-|
+| 名称 | **Modbus 默认服务器** | 连接器到服务器的名称。 |
+| 主机 | **127.0.0.1** | Modbus 服务器的主机名或 IP 地址。 |
+| 端口 | **5021** | Modbus 服务器的端口，用于连接。 |
+| 类型 | **tcp** | 连接类型可以是 **tcp**、**udp** 或 **serial**。 |
+| 方法 | **socket** | 帧类型 **socket** 或 **rtu**（如果需要）。 |
+| 超时 | **35** | 连接到 Modbus 服务器的超时时间（以秒为单位）。 |
+| 字节顺序 | **LITTLE** | 要读取的字节顺序。 |
+| 字序 | **LITTLE** | 读取多个寄存器时字的顺序。 |
 |---
 
-Also, you can configure TLS connection using the following configuration:
+此外，您可以使用以下配置来配置 TLS 连接：
 
-| **Parameter**                 | **Default value**                            | **Description**           |
+| **参数** | **默认值** | **说明** |
 |:-|:---------------------------------------------|---------------------------
-| certfile                      | **/etc/thingsboard-gateway/certificate.pem** | Path to certificate file. |
-| keyfile                       | **/etc/thingsboard-gateway/privateKey.pem**  | Path to private key file. |
-| password                      | **YOUR_PASSWORD**                            | Server password.          |
-| server_hostname               | **localhost**                                | Server host name.         |
+| 证书文件 | **/etc/thingsboard-gateway/certificate.pem** | 证书文件的路径。 |
+| 密钥文件 | **/etc/thingsboard-gateway/privateKey.pem** | 私钥文件的路径。 |
+| 密码 | **YOUR_PASSWORD** | 服务器密码。 |
+| 服务器主机名 | **localhost** | 服务器主机名。 |
 |---
 
-Configuration example:
+配置示例：
 ```json
 {
   "master": {

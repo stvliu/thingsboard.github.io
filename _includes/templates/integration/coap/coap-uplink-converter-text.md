@@ -1,9 +1,9 @@
-Now copy & paste the following script to the Decoder function section:
+现在将以下脚本复制并粘贴到解码器函数部分：
 
 ```javascript
 /** Decoder **/
 
-// decode payload to string
+// 将有效负载解码为字符串
 var strArray = decodeToString(payload);
 var payloadArray = strArray.replace(/\"/g, "").replace(/\s/g, "").replace(/\\n/g, "").split(',');
 
@@ -14,7 +14,7 @@ for (var i = 2; i < payloadArray.length; i = i + 2) {
     telemetryPayload[telemetryKey] = telemetryValue;
 }
 
-// Result object with device attributes/telemetry data
+// 包含设备属性/遥测数据的 result 对象
 var result = {
     deviceName: payloadArray[0],
     deviceType: payloadArray[1],
@@ -22,7 +22,7 @@ var result = {
     attributes: {}
   };
 
-/** Helper functions **/
+/** 辅助函数 **/
 
 function decodeToString(payload) {
    return String.fromCharCode.apply(String, payload);
@@ -33,6 +33,6 @@ return result;
 {: .copy-code}
 
 
-The purpose of the decoder function is to parse the incoming data and metadata to a format that ThingsBoard can consume. 
-**deviceName** and **deviceType** are required, while **attributes** and **telemetry** are optional.
-**attributes** and **telemetry** are flat key-value objects. Nested objects are not supported.
+解码器函数的目的是将传入的数据和元数据解析为 ThingsBoard 可以使用的格式。
+**deviceName** 和 **deviceType** 是必需的，而 **attributes** 和 **telemetry** 是可选的。
+**attributes** 和 **telemetry** 是扁平的键值对象。不支持嵌套对象。

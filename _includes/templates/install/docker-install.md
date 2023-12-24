@@ -1,3 +1,3 @@
-Install Docker:
-- [for Ubuntu](https://docs.docker.com/engine/install/ubuntu/)
-- [for CentOS](https://docs.docker.com/engine/install/centos/)
+安装 Docker：
+- [适用于 Ubuntu](https://docs.docker.com/engine/install/ubuntu/)
+- [适用于 CentOS](https://docs.docker.com/engine/install/centos/)

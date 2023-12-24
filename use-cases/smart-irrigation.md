@@ -1,38 +1,38 @@
 ---
 layout: use-case
-title: Smart Irrigation solution
-description: Irrigation management, fields provision and data visualization with ThingsBoard IoT Platform
+title: 智能灌溉解决方案
+description: ThingsBoard IoT 平台的灌溉管理、田地配置和数据可视化
 notitle: "true"
 
 ---
 
 {% include usecase-nav.html usecase="smart-irrigation" %}
 
-<h1 class="usecase-title">Smart Irrigation solution</h1>
+<h1 class="usecase-title">智能灌溉解决方案</h1>
 
-Everyone knows that when it comes to agriculture, the critical indicator of success is the yield and high quality of the product. However, achieving these indicators costs farmers a lot of effort and resources. One of the main conditions for the stable production of agricultural products is the necessary soil moisture for the growth of crops. However, not all regions can boast of ideal climatic conditions. Sometimes the lack of soil moisture and improper monitoring and care of crops during growth can lead to negative consequences: loss of harvest and, as a result - profit.
+众所周知，在农业领域，成功的关键指标是产量和产品的高质量。然而，实现这些指标需要农民付出大量努力和资源。农产品稳定生产的主要条件之一是作物生长所需的土壤水分。然而，并非所有地区都能拥有理想的气候条件。有时，土壤水分不足以及在生长过程中对作物进行不当的监测和护理会导致负面后果：收成损失，进而导致利润损失。
 
-An irrigation system is usually used to solve the problem of agricultural and irrigated land, which helps farmers achieve good results in growing and harvesting products.
+灌溉系统通常用于解决农业和灌溉土地的问题，这有助于农民在种植和收获产品方面取得良好的成果。
 
-We developed the Smart Irrigation <a href="/docs/paas/solution-templates/smart-irrigation/">template</a> to represent a generic field irrigation solution.
+我们开发了智能灌溉 <a href="/docs/paas/solution-templates/smart-irrigation/">模板</a> 来表示通用的田地灌溉解决方案。
 
-<h2>Solution Structure</h2>
+<h2>解决方案结构</h2>
 
-Smart Irrigation dashboard allows you to monitor the irrigation system and respond in time to changes in field conditions and has components that you may easily embed into your IoT solution.
+智能灌溉仪表板允许您监控灌溉系统并及时响应田地条件的变化，并且具有您可以轻松嵌入到您的物联网解决方案中的组件。
 
-Also, this dashboard has several states: **Main state** and **Field state**:
-- **Main state**  is intended for the user to list the fields and monitor their soil moisture, location, statistics, etc.;
-- **Field state** displays detailed information about the field. It allows you to manage moisture monitoring sensors, observes soil moisture levels, schedule irrigation, view statistics, etc.
+此外，此仪表板有几个状态：**主状态**和**田地状态**：
+- **主状态** 用于用户列出田地并监控其土壤水分、位置、统计信息等；
+- **田地状态** 显示有关田地的详细信息。它允许您管理水分监测传感器，观察土壤水分水平，安排灌溉，查看统计信息等。
 
-<h2>Smart Irrigation Benefits</h2>
-Save up to 90% of development time for your smart irrigation solution by utilizing the following platform benefits:
-- reliable and scalable data collection for your smart sensors and soil moisture monitors;
-- powerful rule engine to process collected data and produce alarms and valuable insights;
-- advanced and flexible visualization for real-time and historical data;
-- customizable end-user dashboards to analyze and share the results of soil moisture monitoring;
-- integration with third-party analytics frameworks and solutions for advanced usage analytics;
-- remote control and OTA updates for your smart sensors and other devices;
-- customizable mobile applications with minimum coding efforts.
+<h2>智能灌溉优势</h2>
+通过利用以下平台优势，为您的智能灌溉解决方案节省高达 90% 的开发时间：
+- 为您的智能传感器和土壤水分监测器提供可靠且可扩展的数据收集；
+- 功能强大的规则引擎来处理收集的数据并产生警报和有价值的见解；
+- 先进且灵活的可视化，用于实时和历史数据；
+- 可自定义的最终用户仪表板，用于分析和共享土壤水分监测结果；
+- 与第三方分析框架和解决方案集成，用于高级使用分析；
+- 远程控制和 OTA 更新，适用于您的智能传感器和其他设备；
+- 最小编码工作量的可自定义移动应用程序。
 
 
 <div class="usecase-carousel owl-carousel owl-theme">
@@ -54,7 +54,7 @@ Save up to 90% of development time for your smart irrigation solution by utilizi
 </div>
 
 
-## ThingsBoard advantages
+## ThingsBoard 优势
 <section class="usecase-advantages">
     <div class="usecase-background">
         <div class="bottom-features1"></div><div class="bottom-features2"></div><div class="small11"></div><div class="small12"></div>
@@ -64,8 +64,8 @@ Save up to 90% of development time for your smart irrigation solution by utilizi
             <div class="block">
                 <object data="/images/microservices-icon.svg"></object>
                 <div>
-                    <a class="title" href="/docs/reference/msa/">Scalability and high availability</a>
-                    <p>ThingsBoard supports high-availability deployments on cloud and on-premises data centers using K8S or bare-metal deployments. Platform components are horizontally scalable. ThingsBoard has production deployments with more than 500 000 smart-meters.</p>
+                    <a class="title" href="/docs/reference/msa/">可扩展性和高可用性</a>
+                    <p>ThingsBoard 支持使用 K8S 或裸机部署在云和本地数据中心上的高可用性部署。平台组件是水平可扩展的。ThingsBoard 具有超过 500,000 个智能电表的生产部署。</p>
                 </div>
             </div>
         </div>
@@ -73,8 +73,8 @@ Save up to 90% of development time for your smart irrigation solution by utilizi
             <div class="block">
                 <object data="/images/telemetry-icon.svg"></object>
                 <div>
-                    <a class="title" href="/docs/getting-started-guides/connectivity/">Connectivity</a>
-                    <p>Connect devices directly to the platform via the following built-in protocols: HTTP, CoAP, MQTT, LwM2M, and SNMP. Connect devices in your local network to the cloud using ThingsBoard Gateway via Modbus, BLE, BACnet, OPC-UA, and other protocols.</p>
+                    <a class="title" href="/docs/getting-started-guides/connectivity/">连接性</a>
+                    <p>通过以下内置协议将设备直接连接到平台：HTTP、CoAP、MQTT、LwM2M 和 SNMP。使用 ThingsBoard 网关通过 Modbus、BLE、BACnet、OPC-UA 和其他协议将本地网络中的设备连接到云。</p>
                 </div>
             </div>
         </div>
@@ -82,8 +82,8 @@ Save up to 90% of development time for your smart irrigation solution by utilizi
             <div class="block">
                 <object data="/images/integration-icon.svg"></object>
                 <div>
-                    <a class="title" href="/docs/user-guide/integrations/">LoRaWAN & SigFox Support</a>
-                    <p>Connect LoRaWAN devices via integrations with standard network servers like TTN, LORIOT, ChirpStack, Actility, etc. Connect SigFox devices via integrations with the SigFox backend.</p>
+                    <a class="title" href="/docs/user-guide/integrations/">LoRaWAN 和 SigFox 支持</a>
+                    <p>通过与标准网络服务器（如 TTN、LORIOT、ChirpStack、Actility 等）集成来连接 LoRaWAN 设备。通过与 SigFox 后端的集成来连接 SigFox 设备。</p>
                 </div>
             </div>
         </div>
@@ -91,8 +91,8 @@ Save up to 90% of development time for your smart irrigation solution by utilizi
             <div class="block">
                 <object data="/images/security-icon.svg"></object>
                 <div>
-                    <a class="title" href="/docs/pe/user-guide/ssl/http-over-ssl/">Security</a>
-                    <p>ThingsBoard supports industry-standard encryption algorithms like RSA and ECDSA to ensure the data is secure during transfer via TLS(TCP) and DTLS (UDP).</p>
+                    <a class="title" href="/docs/pe/user-guide/ssl/http-over-ssl/">安全性</a>
+                    <p>ThingsBoard 支持行业标准加密算法（如 RSA 和 ECDSA），以确保数据在通过 TLS(TCP) 和 DTLS (UDP) 传输期间的安全。</p>
                 </div>
             </div>
         </div>
@@ -100,8 +100,8 @@ Save up to 90% of development time for your smart irrigation solution by utilizi
             <div class="block">
                 <object data="/images/engine-icon.svg"></object>
                 <div>
-                    <a class="title" href="/docs/pe/user-guide/rule-engine-2-0/overview/">Data processing</a>
-                    <p>ThingsBoard allows you to define application logic with drag-n-drop rule chain designer. The Rule Engine is a robust and scalable processing framework that leverages industry-standard message queue implementations like Apache Kafka or AWS SQS to ensure data durability and guarantee data processing. You are free to process data with the Rule engine or push it to further processing in external systems.</p>
+                    <a class="title" href="/docs/pe/user-guide/rule-engine-2-0/overview/">数据处理</a>
+                    <p>ThingsBoard 允许您使用拖放规则链设计器定义应用程序逻辑。规则引擎是一个强大且可扩展的处理框架，它利用行业标准消息队列实现（如 Apache Kafka 或 AWS SQS）来确保数据持久性和保证数据处理。您可以使用规则引擎处理数据或将其推送到外部系统中进行进一步处理。</p>
                 </div>
             </div>
         </div>
@@ -109,8 +109,8 @@ Save up to 90% of development time for your smart irrigation solution by utilizi
             <div class="block">
                 <object data="/images/visualization-icon.svg"></object>
                 <div>
-                    <a class="title" href="/docs/user-guide/dashboards/">Data visualization</a>
-                    <p>Visualize collected data using rich interactive dashboards. Develop multi-state interactive dashboards with zero coding efforts and built-in charts, gauges, maps, tables, and control widgets. Customize every dashboard aspect using advanced widget settings or even custom widget bundles. Low latency updates are possible with embedded web-sockets support.</p>
+                    <a class="title" href="/docs/user-guide/dashboards/">数据可视化</a>
+                    <p>使用丰富的交互式仪表板可视化收集的数据。使用零编码工作量和内置图表、仪表、地图、表格和控制小部件开发多状态交互式仪表板。使用高级小部件设置甚至自定义小部件包自定义每个仪表板方面。通过嵌入式 Web 套接字支持，可以进行低延迟更新。</p>
                 </div>
             </div>
         </div>
@@ -118,8 +118,8 @@ Save up to 90% of development time for your smart irrigation solution by utilizi
             <div class="block">
                 <object data="/images/phone-icon.svg"></object>
                 <div>
-                    <a class="title" href="/docs/mobile">Mobile application</a>
-                    <p>Build your own IoT mobile application with minimum coding efforts using ThingsBoard Mobile Application, an open-source project based on Flutter. Leverage a built-in set of mobile actions to take a photo, scan QR code, update location, and more directly within the dashboard.</p>
+                    <a class="title" href="/docs/mobile">移动应用程序</a>
+                    <p>使用 ThingsBoard 移动应用程序（一个基于 Flutter 的开源项目）构建您自己的物联网移动应用程序，并以最少的编码工作量。利用内置的一组移动操作，可以在仪表板中直接拍照、扫描二维码、更新位置等。</p>
                 </div>
             </div>
         </div>
@@ -127,29 +127,29 @@ Save up to 90% of development time for your smart irrigation solution by utilizi
             <div class="block">
                 <object data="/images/tenancy-icon.svg"></object>
                 <div>
-                    <a class="title" href="/docs/user-guide/entities-and-relations/">Multi-tenancy</a>
-                    <p>ThingsBoard provides UI and API to manage tenants, customers, users, devices, and assets. Single tenant may have multiple tenant administrators and millions of devices and customers. It also offers out-of-the-box support of OTA updates for your smart meters.</p>
+                    <a class="title" href="/docs/user-guide/entities-and-relations/">多租户</a>
+                    <p>ThingsBoard 提供 UI 和 API 来管理租户、客户、用户、设备和资产。单个租户可能有多个租户管理员以及数百万个设备和客户。它还开箱即用地支持智能电表的 OTA 更新。</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-## Smart Irrigation solution overview
+## 智能灌溉解决方案概述
 
-The diagram below identifies data flow and integration points for a typical smart irrigation monitoring solution that uses the ThingsBoard platform to collect and analyze monitoring data from sensors.
+下图标识了使用 ThingsBoard 平台收集和分析来自传感器的监测数据，用于典型的智能灌溉监测解决方案的数据流和集成点。
 
 <object width="100%" style="max-width: max-content; margin: 32px 0" data="/images/iot-use-cases/smart-energy-diagram.svg"></object>
 
-You may notice plenty of connectivity options for the soil moisture sensors: direct connection to the cloud, through the IoT Gateway, or an Integration with a third-party system.
-The platform supports industry-standard encryption algorithms and device credentials types. ThingsBoard stores data in the fault-tolerant and reliable Cassandra database.
-The Rule Engine enables forwarding incoming data to various analytics systems, such as Apache Spark or Hadoop, using Kafka or other Message buses.
+您可能会注意到土壤水分传感器有很多连接选项：直接连接到云、通过物联网网关或与第三方系统的集成。
+该平台支持行业标准加密算法和设备凭据类型。ThingsBoard 将数据存储在容错且可靠的 Cassandra 数据库中。
+规则引擎能够使用 Kafka 或其他消息总线将传入数据转发到各种分析系统，例如 Apache Spark 或 Hadoop。
 
-## Learn more
+## 了解更多
 <div class="usecases-bottom-nav">
-    <a href="/docs/getting-started-guides/helloworld/" class="button">Getting started</a>
-    <a href="/industries/smart-energy/" class="button">Customers feedback</a>
-    <a href="/docs/#platform-features" class="button">Platform features</a>
-    <a href="/docs/reference/" class="button">Architecture</a>
-    <a href="/docs/contact-us/" class="button">Contact us</a>
+    <a href="/docs/getting-started-guides/helloworld/" class="button">入门</a>
+    <a href="/industries/smart-energy/" class="button">客户反馈</a>
+    <a href="/docs/#platform-features" class="button">平台功能</a>
+    <a href="/docs/reference/" class="button">架构</a>
+    <a href="/docs/contact-us/" class="button">联系我们</a>
 </div>

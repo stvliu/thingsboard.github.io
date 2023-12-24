@@ -2,50 +2,50 @@
 layout: docwithnav-pe
 assignees:
 - ikulikov
-title: Assets
-description: Thingsboard IoT Asset management
+title: 资产
+description: Thingsboard IoT 资产管理
 asset-intro-pe:
     0:
         image: /images/user-guide/ui/assets/pe/asset-pe.png
-        title: 'Asset groups'
+        title: '资产组'
     1:
         image: /images/user-guide/ui/assets/pe/asset-1-pe.png
-        title: 'List of assets'
+        title: '资产列表'
 
 asset-pe:
     0:
         image: /images/user-guide/ui/assets/pe/asset-groups-pe.png
-        title: 'Click the plus icon to add a new asset group and enter the name for it in the opened dialog box'
+        title: '单击加号图标添加新的资产组，并在打开的对话框中输入其名称'
     1:
         image: /images/user-guide/ui/assets/pe/asset-groups-1-pe.png
-        title: 'To share an asset group, check the box and select customers. Then, click Add'
+        title: '要共享资产组，请选中该框并选择客户。然后，单击添加'
     2:
         image: /images/user-guide/ui/assets/pe/asset-groups-2-pe.png
-        title: 'To delete an asset group, click the trash can icon opposite an asset and confirm it in the dialog box'
+        title: '要删除资产组，请单击资产对面的垃圾桶图标并在对话框中确认'
 
 asset-id-pe:
     0:
         image: /images/user-guide/ui/assets/pe/asset-id-pe.png
-        title: 'Open an asset group, then click the asset name to open its details.'
+        title: '打开资产组，然后单击资产名称以打开其详细信息。'
     1:
         image: /images/user-guide/ui/assets/pe/asset-id-1-pe.png
-        title: 'There, click the Copy Asset ID button.'
+        title: '在那里，单击复制资产 ID 按钮。'
 
 asset-attributes-pe:
     0:
         image: /images/user-guide/ui/assets/pe/asset-id-pe.png
-        title: 'Click on the asset to open its details'
+        title: '单击资产以打开其详细信息'
     1:
         image: /images/user-guide/ui/assets/pe/asset-attributes-1-pe.png
-        title: 'Go to attributes tab'
+        title: '转到属性选项卡'
     2:
         image: /images/user-guide/ui/assets/pe/asset-attributes-2-pe.png
-        title: 'By checking the box next to asset attribute, you can delete it or display it on a widget'
+        title: '通过选中资产属性旁边的框，您可以将其删除或在小部件上显示'
 
 asset-alarms-pe:
     0:
         image: /images/user-guide/ui/assets/pe/asset-alarms-9-pe.png
-        title: 'Triggered alarm from the connected device in the asset details'
+        title: '资产详细信息中连接设备触发的警报'
 
 asset-events-pe:
     0:
@@ -54,21 +54,21 @@ asset-events-pe:
 asset-relations-pe:
     0:
         image: /images/user-guide/ui/assets/pe/asset-relations-pe.png
-        title: 'In the relations tab of asset details, add a new relation by clicking the plus icon'
+        title: '在资产详细信息的关系选项卡中，单击加号图标添加新关系'
     1:
         image: /images/user-guide/ui/assets/pe/asset-relations-1-pe.png
-        title: 'Select entity type and add a list of entities'
+        title: '选择实体类型并添加实体列表'
     2:
         image: /images/user-guide/ui/assets/pe/asset-relations-2-pe.png
-        title: 'Save applied changes'
+        title: '保存应用的更改'
     3:
         image: /images/user-guide/ui/assets/pe/asset-relations-3-pe.png
-        title: 'From asset created relation to two devices'
+        title: '从资产创建的关系到两个设备'
 
 asset-auditlogs-pe:
     0:
         image: /images/user-guide/ui/assets/pe/asset-auditlogs-pe.png
-        title: 'Track user actions in order to keep audit log'
+        title: '跟踪用户操作以保留审计日志'
 
 ---
 

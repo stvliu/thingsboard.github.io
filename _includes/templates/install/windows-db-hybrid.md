@@ -1,64 +1,64 @@
 {% capture hybrid-info %}
-ThingsBoard team recommends to use Hybrid database approach if you do plan to have 1M+ devices in production or high data ingestion rate (> 5000 msg/sec).
-In this case, ThingsBoard will be storing timeseries data in Cassandra while continue to use PostgreSQL for main entities (devices/assets/dashboards/customers).  
+ThingsBoard 团队建议，如果您计划在生产环境中拥有 100 万台以上的设备或高数据摄取率（> 5000 条消息/秒），则使用混合数据库方法。
+在这种情况下，ThingsBoard 将把时序数据存储在 Cassandra 中，同时继续使用 PostgreSQL 作为主要实体（设备/资产/仪表板/客户）。  
 {% endcapture %}
 {% include templates/info-banner.md content=hybrid-info %}
 
-##### PostgreSQL Installation
+##### PostgreSQL 安装
 
-Download the installation file (PostgreSQL 12.17 or newer releases) [here](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads#windows) and follow the installation instructions.
+下载安装文件（PostgreSQL 12.17 或更高版本）[此处](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads#windows)，然后按照安装说明进行操作。
 
-During PostgreSQL installation, you will be prompted for superuser (postgres) password.
-Don't forget this password. It will be used later. For simplicity, we will substitute it with "postgres".
+在 PostgreSQL 安装过程中，系统会提示您输入超级用户 (postgres) 密码。
+请记住此密码。稍后会用到它。为简单起见，我们将用“postgres”替换它。
 
-##### Create ThingsBoard Database
+##### 创建 ThingsBoard 数据库
 
-Once installed, launch the "pgAdmin" software and login as superuser (postgres). 
-Open your server and create database "thingsboard" with owner "postgres".
+安装完成后，启动“pgAdmin”软件并以超级用户 (postgres) 身份登录。
+打开您的服务器，并创建由所有者“postgres”拥有的数据库“thingsboard”。
 
-##### Cassandra Installation
+##### Cassandra 安装
 
-Instructions listed below will help you to install Cassandra.
+以下列出的说明将帮助您安装 Cassandra。
 
-- Download DataStax Community Edition v3.0.9
-    - [MSI Installer (32-bit)](http://downloads.datastax.com/community/datastax-community-32bit_3.0.9.msi)
-    - [MSI Installer (64-bit)](http://downloads.datastax.com/community/datastax-community-64bit_3.0.9.msi)
-- Run downloaded MSI package. You are first presented with an initial welcome panel that identifies your installation package:
+- 下载 DataStax Community Edition v3.0.9
+    - [MSI 安装程序（32 位）](http://downloads.datastax.com/community/datastax-community-32bit_3.0.9.msi)
+    - [MSI 安装程序（64 位）](http://downloads.datastax.com/community/datastax-community-64bit_3.0.9.msi)
+- 运行下载的 MSI 包。首先会显示一个初始欢迎面板，其中标识了您的安装包：
 
  ![image](/images/user-guide/install/windows/windows-cassandra-1.png)
  
-- Clicking next takes you to the end user license agreement:
+- 单击“下一步”将转到最终用户许可协议：
  
  ![image](/images/user-guide/install/windows/windows-cassandra-2.png)
  
-- The next panel allows you to specify where the software is to be installed:
+- 下一个面板允许您指定要安装软件的位置：
    
  ![image](/images/user-guide/install/windows/windows-cassandra-3.png)
 
-- Once the installation directory has been set, the installer will ask how you want to handle the service that will be installed:
+- 设置安装目录后，安装程序将询问您希望如何处理要安装的服务：
 
  ![image](/images/user-guide/install/windows/windows-cassandra-4.png)
 
-- The next panel initiates the installation process:
+- 下一个面板启动安装过程：
 
  ![image](/images/user-guide/install/windows/windows-cassandra-5.png)
  
  ![image](/images/user-guide/install/windows/windows-cassandra-6.png)
 
-- The final panel asks if you would like to register to be updated when new versions of the software become available:
+- 最后一个面板询问您是否希望在有新版本软件可用时注册以获取更新：
 
  ![image](/images/user-guide/install/windows/windows-cassandra-7.png)
  
-- You can find installed interfaces in "DataStax Community Edition" program group that the installer creates for you:
+- 您可以在安装程序为您创建的“DataStax Community Edition”程序组中找到已安装的界面：
 
  ![image](/images/user-guide/install/windows/windows-cassandra-8.png)
  
-- The primary interface into Cassandra is the CQL (Cassandra Query Language) shell utility, which can be used to execute CQL commands for the new Cassandra server.
+- 进入 Cassandra 的主要界面是 CQL（Cassandra 查询语言）shell 实用程序，可用于对新的 Cassandra 服务器执行 CQL 命令。
 
-##### ThingsBoard Configuration
+##### ThingsBoard 配置
 
-Open the Notepad or other editor as administrator user (right click on the app icon and select "Run as administrator").  
-Open the following file for editing (select "All Files" instead of "Text Documents" in file choosing dialog, the encoding is UTF-8):
+以管理员用户身份打开记事本或其他编辑器（右键单击应用程序图标并选择“以管理员身份运行”）。  
+打开以下文件进行编辑（在文件选择对话框中选择“所有文件”而不是“文本文档”，编码为 UTF-8）：
 
 ```text 
 C:\Program Files (x86)\thingsboard\conf\thingsboard.yml
@@ -66,7 +66,7 @@ C:\Program Files (x86)\thingsboard\conf\thingsboard.yml
 {: .copy-code}
 
 
-and locate "# SQL DAO Configuration" block. Don't forget to replace "postgres" with your real postgres user password:
+并找到“# SQL DAO 配置”块。别忘了用你的真实 postgres 用户密码替换“postgres”：
 
 ```yml
 # SQL DAO Configuration
@@ -89,13 +89,13 @@ spring:
 ``` 
 {: .copy-code}
 
-locate "DATABASE_TS_TYPE" parameter. Replace "sql" with "cassandra".
+找到“DATABASE_TS_TYPE”参数。将“sql”替换为“cassandra”。
 
 ```yml
     type: "${DATABASE_TS_TYPE:cassandra}" # cassandra OR sql (for hybrid mode, only this value should be cassandra)
 ```
 
-You can optionally tune parameters inside "cassandra" configuration block.
+您还可以调整“cassandra”配置块中的参数。
 
 ```yml
 # Cassandra driver configuration parameters
@@ -127,4 +127,3 @@ cassandra:
   # Specify your password
   password: "${CASSANDRA_PASSWORD:}"
 ```
-

@@ -1,36 +1,32 @@
 ---
 layout: docwithnav
-title: Installing ThingsBoard on DigitalOcean 
-description: Installing ThingsBoard on DigitalOcean
+title: 在 DigitalOcean 上安装 ThingsBoard
+description: 在 DigitalOcean 上安装 ThingsBoard
 
 ---
 
-This guide describes how to install ThingsBoard Community Edition on DigitalOcean. 
+本指南介绍如何在 DigitalOcean 上安装 ThingsBoard 社区版。
 
 * TOC
 {:toc}
 
-{% include templates/install/digital-ocean-droplet.md %} 
+{% include templates/install/digital-ocean-droplet.md %}
 
-### Step 4. Use regular installation instruction for Ubuntu
+### 第 4 步。使用 Ubuntu 的常规安装说明
 
-Please navigate to the ThingsBoard [**installation instruction**](/docs/user-guide/install/ubuntu/) 
-for Ubuntu and complete the installation steps.
+请导航至 ThingsBoard [**安装说明**](/docs/user-guide/install/ubuntu/)
+适用于 Ubuntu 并完成安装步骤。
 
-**Note:** Use your droplet IP address instead of "localhost" to access the instance WEB UI.
+**注意：**使用您的 droplet IP 地址而不是“localhost”来访问实例 WEB UI。
 
-### Post-installation steps
+### 安装后步骤
 
 {% include templates/install/ubuntu-haproxy-postinstall.md %}
 
-### Troubleshooting
+### 故障排除
 
 {% include templates/install/troubleshooting.md %}
 
-## Next steps
+## 后续步骤
 
 {% assign currentGuide = "InstallationGuides" %}{% include templates/guides-banner.md %}
-
-
-
-

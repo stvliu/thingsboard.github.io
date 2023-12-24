@@ -2,70 +2,68 @@
 layout: docwithnav-trendz
 assignees:
 - vparomskiy
-title: Connect To the ThingsBoard
-description: Connect Trendz Analytics platform to the ThingsBoard
+title: 连接到 ThingsBoard
+description: 将 Trendz Analytics 平台连接到 ThingsBoard
 ---
 
 * TOC
 {:toc}
 
 
-## Connect to ThingsBoard
-You can connect Trendz Analytics to the ThingsBoard Community Edition or ThingsBoard Professional Edition.
+## 连接到 ThingsBoard
+您可以将 Trendz Analytics 连接到 ThingsBoard Community Edition 或 ThingsBoard Professional Edition。
 
 <br>
 
-By default, Trendz expects that ThingsBoard is hosted on the same instance and accessible via an URL:
+默认情况下，Trendz 预期 ThingsBoard 托管在同一实例上，并且可以通过 URL 访问：
  
  - http://localhost:9090
     
-If your ThingsBoard installation is hosted on another instance/port - you have to update config with correct value:
+如果您的 ThingsBoard 安装托管在另一个实例/端口上 - 您必须使用正确的值更新配置：
 
-Open Trendz configuration file:
+打开 Trendz 配置文件：
 
 ```
 sudo nano /usr/share/trendz/conf/trendz.conf
 ```
     
-And update this property to the correct value:
+并将此属性更新为正确的值：
 
 ```yml
 export TB_API_URL=http://localhost:9090
 ```    
     
-For docker installations - update environment variable ``TB_API_URL`` with the correct value.   
+对于 docker 安装 - 使用正确的值更新环境变量 ``TB_API_URL``。   
 
-## Authentication and Security
-Trendz uses ThingsBoard as an authentication service. Any Tenant Administrator or Customer User can sign in into Trendz UI using their login\password that they use for authentication in the ThingsBoard.
+## 身份验证和安全性
+Trendz 使用 ThingsBoard 作为身份验证服务。任何租户管理员或客户用户都可以使用他们在 ThingsBoard 中用于身份验证的登录名\密码登录 Trendz UI。
 
-Same security restrictions that are configured on the ThingsBoard works in the Trendz Analytics. 
+在 ThingsBoard 上配置的相同安全限制适用于 Trendz Analytics。
 
-- **Tenant Administrator** has access to all Devices/Assets
-- **Customer user** has access only to those Devices/Assets that they have permissions to view
-
-
-## Topology Discovery
-Trendz Topology represents the business model of Devices/Assets that was created in ThingsBoard. 
-Topology defines dimensions/fields that used for building visualizations and relation between Devices/Assets.
-Here are the core components of Trendz Topology:
+- **租户管理员**可以访问所有设备/资产
+- **客户用户**只能访问他们有权查看的那些设备/资产
 
 
-**Business Entity** - Definition of a group of Devices or Assets with same Device Type/Asset Type. Each Business Entity has:
-
-- **Criteria** - General properties that define how Devices/Assets fetched from the ThingsBoard
-- **Business Entity Field** - Represent field that is used during building visualizations. Field contains data type, label and query parameters used during fetching data from The thingsBoard.
-Here is a list of supported fields:
-    - Entity Name - the name of the Device or Asset
-    - Owner - who own device (administrator/customer)
-    - Attribute
-    - Telemetry
-- **Relations** - configured relations between Business Entities and their properties. Trendz Relations represent ThingsBoard relations between Devices and Assets
-
-#### First Topology discovery
+## 拓扑发现
+Trendz 拓扑表示在 ThingsBoard 中创建的设备/资产的业务模型。拓扑定义用于构建可视化和设备/资产之间的关系的维度/字段。以下是 Trendz 拓扑的核心组件：
 
 
-After the first sign-in user should perform initial Topology Discovery. During this process, Trendz will analyze all Devices/Assets available in the ThingsBoard, their attributes/telemetry and all relations between them.
-As a result, Trendz will extract and save the collection of Business Entities. You can view and modify them on the `Settings` page.
+**业务实体** - 定义具有相同设备类型/资产类型的设备或资产组。每个业务实体都有：
+
+- **标准** - 定义从 ThingsBoard 获取设备/资产的一般属性
+- **业务实体字段** - 表示在构建可视化期间使用的字段。字段包含数据类型、标签和从 ThingsBoard 获取数据期间使用的查询参数。
+以下是支持的字段列表：
+    - 实体名称 - 设备或资产的名称
+    - 所有者 - 谁拥有设备（管理员/客户）
+    - 属性
+    - 遥测
+- **关系** - 配置的业务实体及其属性之间的关系。Trendz 关系表示设备和资产之间的 ThingsBoard 关系
+
+#### 首次拓扑发现
+
+
+在首次登录后，用户应执行初始拓扑发现。在此过程中，Trendz 将分析 ThingsBoard 中可用的所有设备/资产、它们的属性/遥测以及它们之间的所有关系。
+结果，Trendz 将提取并保存业务实体的集合。您可以在“设置”页面上查看和修改它们。
 
 ![image](/images/trendz/first-discovery.png)
 
@@ -73,22 +71,21 @@ As a result, Trendz will extract and save the collection of Business Entities. Y
 
 ![image](/images/trendz/discover-results.png)
  
-#### Manual Topology rediscovery
-Business Entity does not represent a single Device or Asset, but the query that used for fetching Device/Asset from the ThingsBoard. It means that you do not need to update topology if new Devices Assets with the same type were added on the ThingsBoard.
+#### 手动拓扑重新发现
+业务实体不表示单个设备或资产，而是用于从 ThingsBoard 获取设备/资产的查询。这意味着如果在 ThingsBoard 上添加了具有相同类型的新设备资产，则无需更新拓扑。
 
-When new Device/Asset types were added or attribute/telemetry with a new key was created in the ThingsBoard - you should update Topology. 
+当添加了新设备/资产类型或在 ThingsBoard 中创建了具有新密钥的属性/遥测时 - 您应该更新拓扑。
 
 
-Manual Topology Rediscovery will scan ThingsBoard again, detect modifications and update collection of Business Entities with required settings. 
-You can trigger this process on the `Settings` page by pressing `Refresh Topology`.
+手动拓扑重新发现将再次扫描 ThingsBoard，检测修改并使用所需设置更新业务实体集合。您可以在“设置”页面上按“刷新拓扑”触发此过程。
 
  
-#### Manual Modification
-Another option for updating topology is a manual modification of Business Entity properties. You can have as many Business Entities with similar properties as you want. 
-It may be useful in case when the same devices/assets represent different aspects of business solution. For example, single devices can monitor the environment and submit debug events for troubleshooting.
-By separating debug events from environment measurements into isolated Business Entities it becomes easier to build visualizations focused on a single aspect of your solution.
+#### 手动修改
+更新拓扑的另一种选择是手动修改业务实体属性。您可以拥有任意数量具有相似属性的业务实体。
+当同一设备/资产表示业务解决方案的不同方面时，这可能很有用。例如，单个设备可以监控环境并提交调试事件以进行故障排除。
+通过将调试事件与环境测量结果分离到孤立的业务实体中，可以更轻松地构建专注于解决方案的单个方面的可视化。
 
 
-## Next Steps
+## 后续步骤
 
 {% assign currentGuide = "InstallationOptions" %}{% include templates/trndz-guides-banner.md %}

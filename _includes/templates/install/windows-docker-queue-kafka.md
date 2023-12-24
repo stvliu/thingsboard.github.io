@@ -1,15 +1,15 @@
-#### Kafka Installation
+#### Kafka 安装
 
-[Apache Kafka](https://kafka.apache.org/) is an open-source stream-processing software platform.
+[Apache Kafka](https://kafka.apache.org/) 是一个开源流处理软件平台。
 
-Create docker compose file for ThingsBoard queue service:
+为 ThingsBoard 队列服务创建 docker compose 文件：
 
 ```text
 docker-compose.yml
 ```
 {: .copy-code}
 
-Add the following line to the yml file.
+将以下行添加到 yml 文件。
 
 ```yml
 version: '3.0'

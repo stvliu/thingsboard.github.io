@@ -2,9 +2,9 @@
 layout: docwithnav
 assignees:
 - ashvayka
-title: Installing ThingsBoard CE on GCP
+title: 在 GCP 上安装 ThingsBoard CE
 notitle: "true"
-description: Installing ThingsBoard CE on Google Cloud Platform
+description: 在 Google Cloud Platform 上安装 ThingsBoard CE
 
 ---
 
@@ -13,10 +13,10 @@ description: Installing ThingsBoard CE on Google Cloud Platform
        <div class="install-options-hero">
           <div class="container">
             <div class="install-options-hero-content">
-                <h1>ThingsBoard Setup options on GCP</h1>
+                <h1>GCP 上的 ThingsBoard 设置选项</h1>
                 <div class="install-options-description">
                     <p>
-                        You may deploy ThingsBoard IoT Platform using different tools and platforms
+                        您可以使用不同的工具和平台部署 ThingsBoard IoT 平台
                     </p>
                 </div>
             </div>
@@ -30,7 +30,7 @@ description: Installing ThingsBoard CE on Google Cloud Platform
                                        <a href="/docs/user-guide/install/cluster/gcp-self-hosted-setup/">
                                            <span>
                                                <div class="deployment-logo">
-                                                   <img width="" src="/images/install/cloud/gcp-vm.svg" title="Self-hosted setup using GCP VM instance" alt="GCP VM">
+                                                   <img width="" src="/images/install/cloud/gcp-vm.svg" title="使用 GCP VM 实例进行自托管设置" alt="GCP VM">
                                                    <h5 class="title">Google Cloud Platform</h5>
                                                </div>
                                            </span>
@@ -40,7 +40,7 @@ description: Installing ThingsBoard CE on Google Cloud Platform
                                         <a href="/docs/user-guide/install/cluster/gcp-gke-setup/">
                                             <span>
                                                 <div class="deployment-logo">
-                                                    <img width="" src="/images/install/cloud/gke.jpeg" title="Cluster setup with Google Kubernetes Engine" alt="GCP GKE">
+                                                    <img width="" src="/images/install/cloud/gke.jpeg" title="使用 Google Kubernetes Engine 进行集群设置" alt="GCP GKE">
                                                     <h5 class="title">Google Kubernetes Engine</h5>
                                                 </div>
                                             </span>

@@ -1,43 +1,46 @@
-Execute the following command to create log folders for the services and chown of these folders to the docker container users.
-To be able to change user, **chown** command is used, which requires sudo permissions (script will request password for a sudo access):
+执行以下命令为服务创建日志文件夹，并将这些文件夹的 chown 授予 docker 容器用户。
+
+要能够更改用户，请使用 **chown** 命令，该命令需要 sudo 权限（脚本将请求 sudo 访问的密码）：
 
 ```bash
 ./docker-create-log-folders.sh
 ```
 {: .copy-code}
 
-Execute the following command to run installation:
+执行以下命令运行安装：
 
 ```bash
 ./docker-install-tb.sh --loadDemo
 ```
 {: .copy-code}
 
-Where:
+其中：
 
-- `--loadDemo` - optional argument. Whether to load additional demo data.
+- `--loadDemo` - 可选参数。是否加载其他演示数据。
 
-Execute the following command to start services:
+执行以下命令启动服务：
 
 ```bash
 ./docker-start-services.sh
 ```
 {: .copy-code}
 
-After a while when all services will be successfully started you can open `http://{your-host-ip}` in you browser (for ex. `http://localhost`).
-You should see ThingsBoard login page.
+一段时间后，当所有服务都成功启动后，你可以在浏览器中打开 `http://{your-host-ip}`（例如 `http://localhost`）。
 
-Use the following default credentials:
+你应该会看到 ThingsBoard 登录页面。
 
-- **System Administrator**: sysadmin@thingsboard.org / sysadmin
+使用以下默认凭据：
 
-If you installed DataBase with demo data (using `--loadDemo` flag) you can also use the following credentials:
+- **系统管理员**：sysadmin@thingsboard.org / sysadmin
 
-- **Tenant Administrator**: tenant@thingsboard.org / tenant
-- **Customer User**: customer@thingsboard.org / customer
+如果你使用 `--loadDemo` 标志安装了包含演示数据的数据库，你还可以使用以下凭据：
 
-In case of any issues you can examine service logs for errors.
-For example to see ThingsBoard node logs execute the following command:
+- **租户管理员**：tenant@thingsboard.org / tenant
+- **客户用户**：customer@thingsboard.org / customer
+
+如果出现任何问题，你可以检查服务日志以查找错误。
+
+例如，要查看 ThingsBoard 节点日志，请执行以下命令：
 
 ```bash
 docker compose {{dockerComposeFileLocation}}logs -f tb-core1 tb-rule-engine1
@@ -45,13 +48,13 @@ docker compose {{dockerComposeFileLocation}}logs -f tb-core1 tb-rule-engine1
 {: .copy-code}
 
 {% capture dockerComposeStandalone %}
-If you still rely on Docker Compose as docker-compose (with a hyphen) execute next command:
+如果你仍然依赖 Docker Compose 作为 docker-compose（带连字符），请执行以下命令：
 
 **docker-compose {{dockerComposeFileLocation}}logs -f tb-core1 tb-rule-engine1**
 {% endcapture %}
 {% include templates/info-banner.md content=dockerComposeStandalone %}
 
-Or use the following command to see the state of all the containers:
+或者使用以下命令查看所有容器的状态：
 
 ```bash
 docker compose {{dockerComposeFileLocation}}ps
@@ -59,13 +62,13 @@ docker compose {{dockerComposeFileLocation}}ps
 {: .copy-code}
 
 {% capture dockerComposeStandalone %}
-If you still rely on Docker Compose as docker-compose (with a hyphen) execute next command:
+如果你仍然依赖 Docker Compose 作为 docker-compose（带连字符），请执行以下命令：
 
 **docker-compose {{dockerComposeFileLocation}}ps**
 {% endcapture %}
 {% include templates/info-banner.md content=dockerComposeStandalone %}
 
-Use the following command to inspect the logs of all running services:
+使用以下命令检查所有正在运行的服务的日志：
 
 ```bash
 docker compose {{dockerComposeFileLocation}}logs -f
@@ -73,38 +76,38 @@ docker compose {{dockerComposeFileLocation}}logs -f
 {: .copy-code}
 
 {% capture dockerComposeStandalone %}
-If you still rely on Docker Compose as docker-compose (with a hyphen) execute next command:
+如果你仍然依赖 Docker Compose 作为 docker-compose（带连字符），请执行以下命令：
 
 **docker-compose {{dockerComposeFileLocation}}logs -f**
 {% endcapture %}
 {% include templates/info-banner.md content=dockerComposeStandalone %}
 
-See [docker-compose logs](https://docs.docker.com/compose/reference/logs/) command reference for details.
+有关详细信息，请参阅 [docker-compose logs](https://docs.docker.com/compose/reference/logs/) 命令参考。
 
-Execute the following command to stop services:
+执行以下命令停止服务：
 
 ```bash
 ./docker-stop-services.sh
 ```
 {: .copy-code}
 
-Execute the following command to stop and completely remove deployed docker containers:
+执行以下命令停止并完全删除已部署的 docker 容器：
 
 ```bash
 ./docker-remove-services.sh
 ```
 {: .copy-code}
 
-Execute the following command to update particular or all services (pull newer docker image and rebuild container):
+执行以下命令更新特定服务或所有服务（拉取较新的 docker 镜像并重建容器）：
 
 ```bash
 ./docker-update-service.sh [SERVICE...]
 ```
 {: .copy-code}
 
-Where:
+其中：
 
-- `[SERVICE...]` - list of services to update (defined in docker-compose configurations). If not specified all services will be updated.
+- `[SERVICE...]` - 要更新的服务列表（在 docker-compose 配置中定义）。如果未指定，则将更新所有服务。
 
 {% include templates/install/upgrade-docker-compose.md %}
 

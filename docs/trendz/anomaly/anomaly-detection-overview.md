@@ -2,26 +2,26 @@
 layout: docwithnav-trendz
 assignees:
 - vparomskiy
-title: Anomaly Detection System — Concept and Examples
-description: What is anomaly detection system?✔ Anomaly detection examples ⚫ ThingsBoard ➤ Complete guide for anomaly detection in timeseries data
+title: 异常检测系统 — 概念和示例
+description: 什么是异常检测系统？✔ 异常检测示例 ⚫ ThingsBoard ➤ 有关时序数据中异常检测的完整指南
 
 scoreVsIndexExample:
     0:
         image: /images/trendz/anomaly/score_vs_index.png
-        title: 'Pump vibration pattern during start'
+        title: '启动期间的泵振动模式'
        
 ---
 
 * TOC
 {:toc}
 
-## Introduction
-Anomaly detection is an important component of any asset monitoring system. Simple threshold-based condition monitoring is a good starting point,
-but it is useless in scenarios where hidden correlations between multiple telemetries should be analyzed. In some cases, it is not even possible to
-define thresholds because we just don't know them. For such use cases, Trendz Analytics provides automated anomaly detection instruments that are based on 
-built-in machine learning algorithms.   
+## 简介
+异常检测是任何资产监控系统的重要组成部分。基于阈值的简单条件监控是一个良好的起点，
+但在需要分析多个遥测之间隐藏的相关性的场景中，它是无用的。在某些情况下，甚至无法
+定义阈值，因为我们根本不知道它们。对于此类用例，Trendz Analytics 提供了基于
+内置机器学习算法的自动异常检测工具。
 
-You can find details how to use Trendz Analytics to create anomaly detection models here:
+您可以在此处找到有关如何使用 Trendz Analytics 创建异常检测模型的详细信息：
 &nbsp;
 <div id="video">  
     <div id="video_wrapper">
@@ -29,171 +29,159 @@ You can find details how to use Trendz Analytics to create anomaly detection mod
     </div>
 </div>
 
-The purpose of this article is to give a general overview of what is anomaly detection, how it works and how to implement it.
+本文的目的是概述什么是异常检测、它是如何工作的以及如何实施它。
 
-## What is an anomaly
-In the beginning, we need to define what [**Anomaly**](https://en.wikipedia.org/wiki/Anomaly_detection){:target="_blank"} - 
-**it is a time interval when a device or process behaves differently from others**. 
+## 什么是异常
+首先，我们需要定义什么是 [**异常**](https://en.wikipedia.org/wiki/Anomaly_detection){:target="_blank"} -
+**它是一个设备或过程的行为与其他设备或过程不同的时间间隔**。
 
-Let’s assume that we monitor diesel engines and collect telemetry like rotation speed, temperature, vibration, etc. 
-We can analyze how engine behavior changes under different conditions and we can compare the behavior of different engines.
-We know that when the rotation speed is between 1000-1500 rpm, the temperature should be 270-290°C. We know that because such 
-behavior was observed 1000 times. And now, if we see that under the same conditions, the temperature is greater than 350°C - 
-it is an anomaly because it is not expected behavior. It is very simplified example that explains the basic concept used in 
-different real-life anomaly detection techniques.
+假设我们监控柴油发动机并收集转速、温度、振动等遥测数据。
+我们可以分析发动机行为在不同条件下的变化，并可以比较不同发动机的行为。
+我们知道当转速在 1000-1500 转/分之间时，温度应为 270-290°C。我们知道这一点，因为已经观察到这种
+行为 1000 次。现在，如果我们看到在相同条件下，温度高于 350°C -
+这是一个异常，因为它不是预期的行为。这是一个非常简单的示例，它解释了
+在不同现实生活中的异常检测技术中使用的基本概念。
  
-## Anomaly score and Score Index
-After you discovered anomalies in your system you will want to prioritize them and focus on real problems. Anomaly scoring as a 
-technique that allow as to do this.
+## 异常分数和分数指数
+在系统中发现异常后，您需要对它们进行优先级排序并关注实际问题。异常评分作为
+一种允许我们做到这一点的技术。
 
-**Anomaly score** - it is a number that says how much current behavior is different 
-from the expected. Higher number - higher anomaly we are looking at. In Trendz, we are using distance measurement functions for 
-computing anomaly scores. The simplest distance measurement function - Euclidean distance. But you can also use other functions 
-like - Chebyshev, Canberra, Manhattan, or Dynamic Time Warping (DTW) distances.
+**异常分数** - 它是一个数字，表示当前行为与预期行为的差异程度。数字越大 - 我们看到的异常越大。在 Trendz 中，我们使用距离测量函数来计算异常分数。最简单的距离测量函数 - 欧几里得距离。但您还可以使用其他函数
+如 - 切比雪夫、堪培拉、曼哈顿或动态时间规整 (DTW) 距离。
 
-Sometimes an anomaly score is not a perfect candidate for anomalies prioritization. 
-Take a look on example how vibration on the pump looks like right after it is started.
+有时异常分数并不是异常优先级排序的理想候选者。
+看看泵启动后振动的样子。
 
 {% include images-gallery.html imageCollection="scoreVsIndexExample" showListImageTitles="true" preview="false" %}
 
-* **normal behavior** expected vibration pattern for new pumps.
-* **anomaly_A** has a higher anomaly score because we observed a big vibration spike during 5 seconds.
-* **anomaly_B** has a lower anomaly score without big vibration spikes
+* **正常行为** 预计新泵的振动模式。
+* **异常_A** 具有更高的异常分数，因为我们在 5 秒内观察到一个大的振动峰值。
+* **异常_B** 具有较低的异常分数，没有大的振动峰值
 
-**anomaly_A** has higher anomaly score compared to **anomaly_B**, but the duration of **anomaly_B** anomaly is much higher 
-and most probably we want to focus on it because it has a higher impact on pump health compared to anomaly_A.
+**异常_A** 与 **异常_B** 相比具有更高的异常分数，但 **异常_B** 异常的持续时间要长得多
+而且我们很可能希望关注它，因为它与异常_A** 相比对泵的健康状况有更大的影响。
  
-**Anomaly Score Index** - is a metric that combines anomaly score and anomaly duration. It is computed as an area between expected 
-and actual behavior. This metric is a good candidate for filtering false-positive anomalies and reducing alert storms in large 
-installations with a lot of connected sensors.
+**异常分数指数** - 是一个结合异常分数和异常持续时间的指标。它被计算为预期
+行为和实际行为之间的面积。此指标非常适合过滤误报异常并减少
+在具有大量连接传感器的大型安装中发出警报。
 
-## Technical background
+## 技术背景
 
-Our goal is to train an anomaly detection model to label telemetry as good or abnormal. 
-It is a [**binary classification task**](https://machinelearningmastery.com/types-of-classification-in-machine-learning/){:target="_blank"}. 
-There are many Machine learning algorithms that can do this job for us and identify anomalies in the data. We can split them 
-into 2 groups - supervised and unsupervised algorithms.
+我们的目标是训练一个异常检测模型，将遥测标记为良好或异常。
+这是一个 [**二元分类任务**](https://machinelearningmastery.com/types-of-classification-in-machine-learning/){:target="_blank"}。
+有许多机器学习算法可以为我们完成这项工作并识别数据中的异常。我们可以将它们分为 2 组 - 监督和无监督算法。
 
-#### Supervised anomaly detection
-Supervised algorithms require a labeled data for model training. It means that we should say what segments are good and what 
-segments contain anomalies. Based on this knowledge, an anomaly detection model will train to detect segments with anomalies automatically. 
+#### 监督异常检测
+监督算法需要标记的数据进行模型训练。这意味着我们应该说出哪些部分是好的，哪些部分包含异常。基于此知识，异常检测模型将训练以自动检测包含异常的部分。
 
-The most popular supervised classification algorithms are - Knn, SVM, Logistic Regression, Decision trees, RNN\LSTM. 
-Here is a good [**overview of those algorithms and how they work**](https://builtin.com/data-science/supervised-machine-learning-classification/){:target="_blank"}.
+最流行的监督分类算法是 - Knn、SVM、逻辑回归、决策树、RNN\LSTM。
+这是一个很好的 [**概述这些算法及其工作原理**](https://builtin.com/data-science/supervised-machine-learning-classification/){:target="_blank"}。
 
 
-Despite the fact that these algorithms show good results, they have few important drawbacks:
-1. They require a labeled dataset as an input. It may be a problem when labeled data does not exist and manual labeling will 
-take a lot of time and resources.
-2. If the dataset does not have anomalies yet - we can not train a model to predict anomalies.
-3. Supervised models do not work well with new anomaly types that were not observed during model train. For example, our model 
-shows excellent results for detecting anomalies related to temperature conditions. But the same model does not detect mechanical 
-wear because such problems were not observed in the training dataset.
+尽管这些算法显示出良好的结果，但它们有一些重要的缺点：
+1. 它们需要标记的数据集作为输入。当不存在标记数据并且手动标记将
+花费大量时间和资源时，这可能是一个问题。
+2. 如果数据集中还没有异常 - 我们无法训练模型来预测异常。
+3. 监督模型不适用于在模型训练期间未观察到的新异常类型。例如，我们的模型
+显示出检测与温度条件相关的异常的出色结果。但同一模型无法检测到机械
+磨损，因为在训练数据集中没有观察到此类问题。
 
-#### Unsupervised anomaly detection 
-The main advantage of unsupervised classification algorithms is that they do not need labeled datasets for model 
-training. Thanks to this, such algorithms suit well for automated anomaly detection in various use-cases like
-asset monitoring, process fault detection, equipment prediction maintenance. 
+#### 无监督异常检测
+无监督分类算法的主要优点是它们不需要标记的数据集进行模型
+训练。因此，此类算法非常适合各种用例中的自动异常检测，例如
+资产监控、过程故障检测、设备预测维护。
 
-The second advantage - unsupervised models show good results in detecting abnormal 
-patterns that were not observed before. Supervised algorithms focused on finding known anomalies, and unsupervised trained to tell 
-how far the current observation is from the expected.   
+第二个优点 - 无监督模型在检测以前未观察到的异常模式方面表现出良好的结果。监督算法专注于发现已知异常，而无监督算法经过训练，可以告诉当前观察结果与预期结果的距离。   
 
-The most popular unsupervised clustering and classification algorithms are - 
-[**K-means, DBSCAN, Gaussian Mixture, Agglomerative Hierarchy clustering**](https://towardsdatascience.com/k-means-dbscan-gmm-agglomerative-clustering-mastering-the-popular-models-in-a-segmentation-c891a3818e29/){:target="_blank"}.
+最流行的无监督聚类和分类算法是 -
+[**K-means、DBSCAN、高斯混合、凝聚层次聚类**](https://towardsdatascience.com/k-means-dbscan-gmm-agglomerative-clustering-mastering-the-popular-models-in-a-segmentation-c891a3818e29/){:target="_blank"}。
 
 
-## How automated unsupervised anomaly detection works
-Let’s split the anomaly detection task into smaller steps:
-1. Collect data
-2. Normalize data
-3. Split data into segments
-4. Extract features for each segment
-5. Train anomaly detection model to mark a segment as **good** or **abnormal**
-6. Calculate anomaly score for abnormal segments
-7. Validate results
-8. Apply the model to detect anomalies in realtime
+## 自动无监督异常检测的工作原理
+我们将异常检测任务分解为更小的步骤：
+1. 收集数据
+2. 规范化数据
+3. 将数据分成段
+4. 提取每个段的特征
+5. 训练异常检测模型将段标记为 **好** 或 **异常**
+6. 计算异常段的异常分数
+7. 验证结果
+8. 应用模型实时检测异常
 
-Trendz Analytics has built-in instruments to perform all those steps with minimal configuration. It actually takes 
-few clicks to create an anomaly detection model with default properties. But for understanding how it works in the 
-background we will explain in detail what should be done in each step and show how to use unsupervised machine learning 
-algorithms for automated anomaly detection.
+Trendz Analytics 具有内置工具，可以以最少的配置执行所有这些步骤。实际上
+只需点击几下即可创建具有默认属性的异常检测模型。但为了了解它在后台的工作原理，我们将详细解释每个步骤应该做什么，并展示如何使用无监督机器学习
+算法进行自动异常检测。
 
 
-#### How automated unsupervised anomaly detection works
-**Step 1**: We have collections of data segments from sensors. Each segment is a point. Features of the segment are 
-point coordinates. 
+#### 自动无监督异常检测的工作原理
+**步骤 1**：我们有来自传感器的各种数据段。每个段都是一个点。段的特征
+是点坐标。
 
-**Step 2**: The clustering algorithm iteratively split all segments into different clusters. Almost all methods use 
-distance metric to find similar segments and add them into the same cluster. As the result, we receive few 
-clusters and each cluster contains multiple segments that are similar to each other.
+**步骤 2**：聚类算法迭代地将所有段分成不同的簇。几乎所有方法都使用
+距离度量来查找相似段并将它们添加到同一个簇中。结果，我们收到几个
+簇，每个簇包含彼此相似的多个段。
 
-**Step 3**: We can compute centroid for each cluster - this central point describes what kind of segments are inside 
-the cluster and represent an ideal or good point. Also, we can compute the distance between the centroid and any 
-other point. This distance tells us how far that point from the ‘ideal’ point.
+**步骤 3**：我们可以计算每个簇的质心 - 这个中心点描述了簇内有什么样的段并表示理想或良好点。此外，我们可以计算质心与任何
+其他点之间的距离。此距离告诉我们该点与“理想”点的距离。
 
-**Step 4**: Points that are not included in any clusters after segmentation or are too far from cluster centroid are 
-abnormal points and represent an anomaly. We can use distance from centroid as an anomaly score. Higher 
-distance - a higher anomaly.
+**步骤 4**：在分段后未包含在任何簇中或离簇质心太远的点
+是异常点并表示异常。我们可以使用质心的距离作为异常分数。距离越大 - 异常越大。
 
-Distance measurement function is very important here because it tells how similar 2 segments are. The simplest 
-distance measurement function - Euclidean distance. But you can also use other functions like - Chebyshev, 
-Canberra, Manhattan, etc. 
+距离测量函数在这里非常重要，因为它告诉了我们 2 个段的相似程度。最简单的距离测量函数 - 欧几里得距离。但您还可以使用其他函数
+如 - 切比雪夫、
+堪培拉、曼哈顿等。
 
-Dynamic Time Warping (DTW) distance.
-In case when we want to compare the behavior of the time-series and Euclidian distance does not show good 
-results, we recommend trying Dynamic Time Warping as a distance measurement function. Dynamic Time Warping
-shows good results when you compare distorted intervals or intervals with a phase shift. More details here
+动态时间规整 (DTW) 距离。
+当我们想要比较时间序列的行为并且欧几里得距离没有显示出良好的结果时，我们建议尝试动态时间规整作为距离测量函数。动态时间规整
+在比较失真间隔或具有相移的间隔时显示出良好的结果。此处有更多详细信息
 
-## Data segmentation - how to split telemetry into intervals
-The segment is a collection of measurements for a time interval. It can be 1 minute/hour/day etc. 
-Interval size depends on the type of problem that we solve. The general recommendation - interval should be big 
-enough to include data that describes the current state of the device, asset, or process. 
+## 数据分段 - 如何将遥测分成间隔
+段是时间间隔的测量集合。它可以是 1 分钟/小时/天等。
+间隔大小取决于我们解决的问题类型。一般建议 - 间隔应该足够大，以包含描述设备、资产或过程当前状态的数据。
 
-For example, we create a predictive maintenance model for water pumps and want to detect engine abnormalities. 
-The pump can work under different loads, but a 5-minute interval would describe how it works and the current state 
-of the pump - throughput, energy consumption, vibration, etc. In this case, we will group data from pumps into 
-segments with 5-minute intervals.
-Also, we analyzing water pump utilization to understand resource usage patterns and want to detect anomalies 
-that would identify unauthorized usage, leakage, or theft. In this case, the segment interval would be 1 day
-because such interval describes how and when the pump was utilized.
-Similar logic applied in other business areas - environment conditions tracking, electricity grid, soil and 
-crop monitoring, equipment management.
+例如，我们创建一个水泵的预测性维护模型并希望检测发动机异常。
+泵可以在不同的负载下工作，但 5 分钟的间隔将描述它的工作方式和泵的当前状态 -  throughput、能耗、振动等。在这种情况下，我们将泵的数据分组为
+具有 5 分钟间隔的段。
+此外，我们分析水泵利用率以了解资源使用模式并希望检测异常
+这将识别未经授权的使用、泄漏或盗窃。在这种情况下，段间隔将为 1 天
+因为这样的间隔描述了泵的使用方式和时间。
+类似的逻辑应用于其他业务领域 - 环境条件跟踪、电网、土壤和
+作物监测、设备管理。
 
-## Data normalization
-All machine learning algorithms require normalized input data for training. We have to:
-1. Map non-numeric values, like boolean or text, into numeric values.
-2. Filter noise from the dataset, like extremely abnormal readings.
-3. Fill gaps in the data. In real life, you will always have gaps in the data because of different connectivity\software issues. Gaps should be removed to increase anomaly detection model accuracy.
-4. Scale all raw telemetry values into [0;1]   range.
+## 数据规范化
+所有机器学习算法都需要规范化的输入数据进行训练。我们必须：
+1. 将非数字值（如布尔值或文本）映射到数字值。
+2. 从数据集中过滤噪声，例如极度异常的读数。
+3. 填充数据中的空白。在现实生活中，由于不同的连接\软件问题，您总是会
+在数据中留有空白。应删除空白以提高异常检测模型的准确性。
+4. 将所有原始遥测值缩放至 [0;1]   范围。
 
-Trendz does all those steps automatically. Good articles that describes why it is important and how to do this:
+Trendz 自动执行所有这些步骤。描述为什么这样做很重要以及如何做到这一点的优秀文章：
 [https://medium.com/@urvashilluniya/why-data-normalization-is-necessary-for-machine-learning-models-681b65a05029](https://medium.com/@urvashilluniya/why-data-normalization-is-necessary-for-machine-learning-models-681b65a05029){:target="_blank"}.
 [https://towardsdatascience.com/understand-data-normalization-in-machine-learning-8ff3062101f0](https://towardsdatascience.com/understand-data-normalization-in-machine-learning-8ff3062101f0){:target="_blank"}.
 
 
-## Feature extraction
-The final step is to extract features from each segment because all ML algorithms work with feature vectors 
-or simply numeric arrays. Each segment represents a single point, feature vector describes that point. 
-An anomaly detection model will train to assign correct classification for each point (segment). 
+## 特征提取
+最后一步是从每个段中提取特征，因为所有 ML 算法都使用特征向量
+或简单的数字数组。每个段表示一个点，特征向量描述该点。
+异常检测模型将训练以分配每个点（段）的正确分类。
 
-There are 2 different approaches for computing features:
-1. The **behavior-based approach** used when behavior inside a segment is important for us. Such features 
-describe the correlation between telemetries over time and order how telemetry changed inside a segment.
-2. In the **feature-based approach**, we compute the statistic for raw telemetry data - min, max, variation, 
-distribution, slope etc.
+有 2 种不同的方法来计算特征：
+1. **基于行为的方法** 用于当段内的行为对我们很重要时。此类特征
+描述遥测之间随时间的相关性以及遥测在段内如何变化的顺序。
+2. 在 **基于特征的方法** 中，我们计算原始遥测数据的统计信息 - 最小值、最大值、变化、分布、斜率等。
 
-If you don’t know what approach to select - try both and compare results. It’s really easy because in Trendz 
-you just select features type from the dropdown and click ‘Train Model’ and that’s all. You don’t need to 
-implement feature extraction logic all alone.
+如果您不知道选择哪种方法 - 尝试两种方法并比较结果。这真的很容易，因为在 Trendz 中
+您只需从下拉列表中选择特征类型，然后单击“训练模型”，仅此而已。您不必
+单独实现特征提取逻辑。
 
-If the model that we are creating uses only 1 telemetry field, for example, temperature, for detecting anomalies, 
-then it is called a univariate model. But more popular are multivariate models - multiple telemetries are used. 
-In some cases, it is useful to add an attribute of the device to the model. For example, firmware version or 
-device location may be important knowledge that helps to detect abnormal behavior.
-
+如果我们创建的模型仅使用 1 个遥测字段（例如温度）来检测异常，
+那么它被称为单变量模型。但更受欢迎的是多变量模型 - 使用多个遥测。
+在某些情况下，将设备的属性添加到模型中很有用。例如，固件版本或
+设备位置可能是有助于检测异常行为的重要知识。
 
 
-## Next Steps
+
+## 后续步骤
 
 {% assign currentGuide = "CalculatedFields" %}{% include templates/trndz-guides-banner.md %}

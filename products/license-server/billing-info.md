@@ -2,48 +2,45 @@
 layout: docwithnav-license
 assignees:
 - ashvayka
-title: Billing info
-description: Billing options via ThingsBoard License Server
+title: 计费信息
+description: 通过 ThingsBoard 许可证服务器的计费选项
 
 ---
 * TOC
 {:toc}
 
-### New billing provider
+### 新的计费提供商
 
-The **ThingsBoard License Server** is a proprietary billing solution that allows **ThingsBoard Professional Edition (TB PE)** customers to easily purchase license keys online. The online payment processing is secured by [Stripe](https://stripe.com/), which allows both credit/debit cards and wire transfer. ThingsBoard Inc. has no access to your card data. 
-Now you can easily pay for the subscription or purchase a perperual license online, without manual paperwork. 
+**ThingsBoard 许可证服务器**是一种专有计费解决方案，允许 **ThingsBoard 专业版 (TB PE)** 客户轻松在线购买许可证密钥。在线支付处理由 [Stripe](https://stripe.com/) 保护，它允许使用信用卡/借记卡和电汇。ThingsBoard Inc. 无权访问您的卡数据。现在，您可以轻松在线支付订阅费用或购买永久许可证，无需手动填写文书工作。
 
-Notice: payments are non-refundable. Although if you decide to terminate (***Cancel***) the subscription before the end time, remain amount of units will be reserved upon your account. In the Billing section you will see the ***Account credit*** notice next to ***Payment method*** and ***Billing information***. These credits will be deducted from the total sum of your next purchasing.  
+注意：付款不可退款。但是，如果您决定在结束时间之前终止（***取消***）订阅，剩余的单位数量将保留在您的帐户中。在计费部分，您将在 ***付款方式*** 和 ***计费信息*** 旁边看到 ***帐户信用*** 通知。这些信用额度将从您下次购买的总金额中扣除。
 
 ![image](/images/license/accountcredit.png) 
 
-All invoices are automatically generated and available for download in the License portal in a PDF-format.
+所有发票都会自动生成，并以 PDF 格式在许可证门户中提供下载。
 
 ![image](/images/license/billing.png) 
- 
-### Payment method
-ThingsBoard Inc. wants the customer get most of the product and the way to get it was as comfortable as possible.  Launching of License portal allowed to use credit/debit cards for online payments. But we continue diversifying payment methods and this section will constantly extend.
 
-In order to pay with the card the ***Owner name***, ***Country***, ***Card number*** and ***Expiry date*** should be populated either after registration on License portal or during first purchasing. Stripe provides charging silently (no need to confirm).
+### 付款方式
+ThingsBoard Inc. 希望客户充分利用产品，并尽可能舒适地获得产品。推出许可证门户允许使用信用卡/借记卡进行在线支付。但我们继续多样化支付方式，本节将不断扩展。
 
-In order to proceed with wire transfer you should create the Subscription or a Perpetual license without adding card details. In that case the license will be inactive until the invoice is payed.  
+为了用卡支付，***所有者姓名***、***国家***、***卡号*** 和 ***到期日*** 应在许可证门户注册后或首次购买期间填写。Stripe 提供静默收费（无需确认）。
 
-**Couponing.** License Server allows administrator to provision coupons (promo codes). This coupons may be used by partners, distributors and for marketing campaigns. They provide occasional discounts either for Pay-as-you-go or Perpetual licenses.
- 
-### Billing information
-Billing information is used by Stripe to generate the invoice. You may easily update this info.
+为了继续电汇，您应该创建订阅或永久许可证，而无需添加卡详细信息。在这种情况下，许可证将在发票支付之前处于非活动状态。
 
-### User Guide
+**优惠券。**许可证服务器允许管理员提供优惠券（促销代码）。这些优惠券可由合作伙伴、分销商和营销活动使用。它们为按需付费或永久许可证提供偶尔折扣。
 
- - **Launching TB PE using pay-as-you-go subscription**
- 
- - **Launching TB PE using perpetual license**
- 
- - **Migrating from AWS IoT Marketplace**
- 
- - **Upgrading your TB PE subscription** 
- 
- - **Moving ThingsBoard to another hardware instance** 
+### 计费信息
+Stripe 使用计费信息生成发票。您可以轻松更新此信息。
 
+### 用户指南
 
+- **使用按需付费订阅启动 TB PE**
+
+- **使用永久许可证启动 TB PE**
+
+- **从 AWS IoT Marketplace 迁移**
+
+- **升级您的 TB PE 订阅**
+
+- **将 ThingsBoard 移至另一个硬件实例**

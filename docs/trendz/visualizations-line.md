@@ -2,100 +2,94 @@
 layout: docwithnav-trendz
 assignees:
 - vparomskiy
-title: Line Chart
-description: Trendz Line Chart 
+title: 折线图
+description: Trendz 折线图
 ---
 
 * TOC
 {:toc}
 
-## Video Tutorial
+## 视频教程
 
-&nbsp; 
-  
-<div id="video">  
+&nbsp;
+
+<div id="video">
     <div id="video_wrapper">
         <iframe src="https://www.youtube.com/embed/v2pZKQhiw8s" frameborder="0" allowfullscreen></iframe>
     </div>
 </div>
 
 
-## Simple Line Chart
-In case of Bar and Line charts you have 3 configurable sections:
-* **X-axis** - define what value will be used in the X-axis of the chart (horizontal axis). In most cases it would be Raw Date field, 
-but it can be any field from your Topology or combination of fields.
-* **Y-axis** - define what value will be used in the Y-axis of the chart (vertical axis). You can drop few telemetry fields in this section with required aggregation.
-* **Series** - split data into multiple groups using single (or multiple) field criteria
+## 简单折线图
+对于条形图和折线图，您有 3 个可配置的部分：
+* **X 轴** - 定义将在图表 X 轴（水平轴）中使用什么值。在大多数情况下，它将是原始日期字段，但它可以是拓扑中的任何字段或字段组合。
+* **Y 轴** - 定义将在图表 Y 轴（垂直轴）中使用什么值。您可以在此部分中删除一些遥测字段，并进行所需的聚合。
+* **系列** - 使用单个（或多个）字段条件将数据分成多个组
 
 
-Add Date field on **X-axis** and numeric telemetry to the **Y-axis** 
+在 **X 轴** 上添加日期字段，在 **Y 轴** 上添加数字遥测
 
 ![image](/images/trendz/simple-line.png)
 
-## Line Chart with series
+## 带系列的折线图
 
-#### Telemetry as series
-When you want to show multiple telemetry fields for selected device/asset you have to add required fields into 
-**Y-asix** and leave **Series** section blank. To focus in interested device you can use **Filter**. 
+#### 遥测作为系列
+当您想为选定的设备/资产显示多个遥测字段时，您必须将所需字段添加到 **Y 轴** 中，并留空 **系列** 部分。要关注感兴趣的设备，您可以使用 **过滤器**。
 
 ![image](/images/trendz/line-multi-telemetry.png)
 
-#### Group as series
-In this case you want to see how same telemetry looks like for different assets/devices or categories. Add required grouping field inti **Series** section:
+#### 组作为系列
+在这种情况下，您想了解相同遥测对于不同资产/设备或类别的外观。将所需的分组字段添加到 **系列** 部分：
 
 ![image](/images/trendz/basic-line.png)
 
-Another example shows how to combine multiple fields in 1 section. This concrete example show what was overall building 
-energy consumption for different quarters split by day of the week.
+另一个示例显示了如何在 1 个部分中组合多个字段。此具体示例显示了不同季度按星期几划分的建筑整体能耗。
 
 ![image](/images/trendz/multiple-bar.png)
 
-## Vertical Lines
-Any machine message can be translated into the event and present on the line chart for the investigation. 
-Such events can be represented as vertical lines on the chart and value of the telemetry (numeric or text) would be shown as a label for vertical line.
- 
-* Add required telemetry field in **Y-axis** section
-* Choose the aggregation type **None** on the telemetry card
+## 垂直线
+任何机器消息都可以转换为事件，并显示在折线图上以供调查。此类事件可以表示为图表上的垂直线，遥测值（数字或文本）将显示为垂直线的标签。
+
+* 在 **Y 轴** 部分添加所需的遥测字段
+* 在遥测卡上选择聚合类型 **无**
 
 ![image](/images/trendz/line-vertical-annotation.png)
 
-## Color Zones
+## 彩色区域
 
 ![image](/images/trendz/line-background-example.png)
 
-The color zones can be added to the bar and line charts to visually identify certain thresholds.
+可以将彩色区域添加到条形图和折线图中，以直观地识别某些阈值。
 
-* Navigate to the Setting card and select Annotation. 
-* Choose the values and color from the color pallet, press ok. 
-* Click on the Build Report button. 
+* 导航到设置卡并选择注释。
+* 从调色板中选择值和颜色，然后按确定。
+* 单击生成报告按钮。
 
-Multiple color zones can be added to one visualization.
+可以将多个彩色区域添加到一个可视化中。
 
 
 ![image](/images/trendz/line-background-config.png)
 
-## Mixed Charts
+## 混合图表
 
 ![image](/images/trendz/line-mixed.png)
 
-Mixed charts overlay different charts with a shared horizontal axis, but different vertical axis scales (one for each component chart).
-It is common to use different base chart types, like the bar and line combination, to reduce confusion of the different axis scales for each component chart.
+混合图表叠加具有共享水平轴但不同垂直轴刻度的不同图表（每个组件图表一个）。通常使用不同的基本图表类型（如条形和折线组合）来减少每个组件图表不同轴刻度的混淆。
 
-Trendz supports the combination of the columns, lines, and areas in case the 'Series' section is empty. 
+如果“系列”部分为空，Trendz 支持列、线和区域的组合。
 
-* Navigate to the card with the chosen telemetry 
-* Choose required chart type - **Area**, **Line**, **Bar**
+* 导航到具有所选遥测的卡
+* 选择所需的图表类型 - **区域**、**折线**、**条形**
 
 ![image](/images/trendz/line-mixed-config.png)
 
-## Control Y-axis
+## 控制 Y 轴
 
-By default each timeseries field in **Y-axis** re-use separate axis. If you show 3 timeseries on chart - you will have 3 different Y-axis.
+默认情况下，**Y 轴** 中的每个时间序列字段都会重复使用单独的轴。如果您在图表上显示 3 个时间序列，您将有 3 个不同的 Y 轴。
 
-However if measured unit is the same for all fields - you can join them and show on single axis:
+但是，如果所有字段的测量单位相同，您可以将它们连接起来并显示在单个轴上：
 
-* Open View Settings
-* Select **Enable single axis**
+* 打开视图设置
+* 选择 **启用单轴**
 
 ![image](/images/trendz/line-single-axis.png)
-

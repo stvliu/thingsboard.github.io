@@ -2,8 +2,8 @@
 layout: docwithnav
 assignees:
 - ashvayka
-title: Access Token based authentication for CoAP over DTLS
-description: ThingsBoard Access Token based authentication for CoAP transport.
+title: 基于访问令牌的 CoAP over DTLS 身份验证
+description: ThingsBoard 基于访问令牌的 CoAP 传输身份验证。
 
 ---
 

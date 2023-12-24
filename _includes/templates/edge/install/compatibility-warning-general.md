@@ -1,12 +1,12 @@
 {% capture update_server_first %}
-**Rules of Compatibility Between ThingsBoard Edge and ThingsBoard Server Versions:**
-* A ThingsBoard Edge version X.Y.Z is compatible with the same ThingsBoard Server version X.Y.Z and any later versions.
-* A ThingsBoard Edge version X.Y.Z is **NOT** compatible with ThingsBoard Server versions preceding X.Y.Z.
+**物联网边缘与物联网服务器版本之间的兼容性规则：**
+* 物联网边缘版本 X.Y.Z 与相同物联网服务器版本 X.Y.Z 及任何更高版本兼容。
+* 物联网边缘版本 X.Y.Z **不**与 X.Y.Z 之前的物联网服务器版本兼容。
 
-**Example**: ThingsBoard Edge version 3.3.4.1 is compatible with ThingsBoard Server version 3.3.4.1 and subsequent versions (3.4.0, 3.4.1, ...).
-However, ThingsBoard Edge version 3.4.0 is **NOT** compatible with ThingsBoard Server version 3.3.4.1 or any prior versions (3.3.4, 3.3.3, ...).
-In such scenarios, ThingsBoard Server 3.3.4.1 or a preceding version must first be upgraded to ThingsBoard Server 3.4.0 or a later version.
+**示例**：物联网边缘版本 3.3.4.1 与物联网服务器版本 3.3.4.1 及后续版本（3.4.0、3.4.1 等）兼容。
+但是，物联网边缘版本 3.4.0 **不**与物联网服务器版本 3.3.4.1 或任何先前版本（3.3.4、3.3.3 等）兼容。
+在这种情况下，物联网服务器 3.3.4.1 或先前版本必须首先升级到物联网服务器 3.4.0 或更高版本。
 
-**Please ensure that the ThingsBoard Server is updated to the latest version before proceeding.**
+**请确保在继续之前将物联网服务器更新到最新版本。**
 {% endcapture %}
 {% include templates/warn-banner.md content=update_server_first %}

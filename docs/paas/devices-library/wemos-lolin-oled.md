@@ -1,9 +1,9 @@
 ---
 layout: devices-library-article
-title: How to connect WeMos Lolin ESP32 OLED to ThingsBoard?
-category: Microcontrollers
+title: 如何将 WeMos Lolin ESP32 OLED 连接到 ThingsBoard？
+category: 微控制器
 chip: ESP32
-connectivity: HTTP, MQTT, WIFI, Bluetooth, BLE
+connectivity: HTTP, MQTT, WIFI, 蓝牙, BLE
 vendor: WeMos
 deviceImageFileName: wemos-lolin-oled.jpg
 docsPrefix: paas/

@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-pe-edge
-title: ThingsBoard Edge PE Roadmap
-description: Upcoming releases
+title: ThingsBoard Edge PE 路线图
+description: 即将发布的版本
 
 ---
 
@@ -10,9 +10,9 @@ description: Upcoming releases
 
 ## ThingsBoard Edge PE
 
-### Upcoming releases
-* Edge Profiles Functionality (Templates)
-* Functionality to Create or Update Rule Chains Directly on the Edge
-* Full Role-Based Access Control (RBAC) Support
-* OAuth2 Functionality
-* Two-Factor Authentication Functionality
+### 即将发布的版本
+* 边缘配置文件功能（模板）
+* 直接在边缘创建或更新规则链的功能
+* 完全基于角色的访问控制 (RBAC) 支持
+* OAuth2 功能
+* 双因素身份验证功能

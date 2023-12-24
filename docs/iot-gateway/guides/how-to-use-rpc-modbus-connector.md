@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
-title: How to use RPC in Modbus connector
-description: Guide how to use RPC in Modbus connector 
+title: 如何在 Modbus 连接器中使用 RPC
+description: 指南如何在 Modbus 连接器中使用 RPC
 
 ---
 
@@ -10,21 +10,19 @@ description: Guide how to use RPC in Modbus connector
 {:toc}
 
 
-This guide explains how to use RPC to devices in Modbus connector.  
+本指南解释了如何在 Modbus 连接器中对设备使用 RPC。
 
-Let's assume:
-1. We want to write "5.0" into register with number 15421
-
-
-For the purpose of this tutorial, you need:  
-1. Locally installed instance of ThingsBoard platform (In case you are new with ThingsBoard [use this 'how to install' documentation](/docs/user-guide/install/installation-options/)).
-2. [Installed](/docs/iot-gateway/installation/) and [configured](/docs/iot-gateway/configuration/) ThingsBoard IoT Gateway and [Modbus connector](/docs/iot-gateway/config/modbus/). 
-
-## Modbus connector RPC configuration
-  
-
-## ThingsBoard sending RPC 
-
-To send RPC requests to the device through the gateway we will use **RPC Debug Terminal** from **Control widgets** bundle.  
+我们假设：
+1. 我们想将“5.0”写入编号为 15421 的寄存器
 
 
+出于本教程的目的，您需要：
+1. 本地安装的 ThingsBoard 平台实例（如果您是 ThingsBoard 新手，[使用此“如何安装”文档](/docs/user-guide/install/installation-options/)）。
+2. [已安装](/docs/iot-gateway/installation/)并[配置](/docs/iot-gateway/configuration/) ThingsBoard IoT 网关和[Modbus 连接器](/docs/iot-gateway/config/modbus/)。
+
+## Modbus 连接器 RPC 配置
+
+
+## ThingsBoard 发送 RPC
+
+为了通过网关向设备发送 RPC 请求，我们将使用 **控制小部件** 包中的 **RPC 调试终端**。

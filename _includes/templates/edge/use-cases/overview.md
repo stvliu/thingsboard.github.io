@@ -1,9 +1,9 @@
-The ThingsBoard Edge **Use Cases** guides can help you to get familiar with ThingsBoard Edge functionality.
+ThingsBoard Edge **用例** 指南可以帮助您熟悉 ThingsBoard Edge 功能。
 
-#### Contents
+#### 内容
 
-[**Manage alarms and RPC requests on edge devices**](/docs/{{docsPrefix}}use-cases/manage-alarms-rpc-requests/)
-: Provides steps to configure ThingsBoard Edge to react to local situations even without internet connectivity to the cloud.
+[**管理边缘设备上的警报和 RPC 请求**](/docs/{{docsPrefix}}use-cases/manage-alarms-rpc-requests/)
+: 提供了配置 ThingsBoard Edge 以对本地情况做出反应的步骤，即使没有与云的互联网连接也是如此。
 
-[**Data filtering and traffic reduce**](/docs/{{docsPrefix}}use-cases/data-filtering-traffic-reduce/)
-: Covers guide how to decrease data that is transferred from edge devices to cloud and to save money on traffic.
+[**数据过滤和流量减少**](/docs/{{docsPrefix}}use-cases/data-filtering-traffic-reduce/)
+: 介绍了如何减少从边缘设备传输到云端的数据以及如何节省流量费用。

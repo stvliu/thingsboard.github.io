@@ -1,14 +1,13 @@
+[Apache Kafka](https://kafka.apache.org/) 是一个开源流处理软件平台。
 
-[Apache Kafka](https://kafka.apache.org/) is an open-source stream-processing software platform.
-
-Configuration environment file for ThingsBoard queue service:
+ThingsBoard 队列服务的配置环境文件：
 
 ```text
 nano tb-node.env
 ```
 {: .copy-code}
 
-Add the following line to the file.
+将以下行添加到文件中。
 
 ```bash
 TB_QUEUE_TYPE=kafka
@@ -16,7 +15,7 @@ TB_KAFKA_SERVERS=kafka:9092
 ```
 {: .copy-code}
 
-Check docker-compose.yml and configure ports if you need:
+检查 docker-compose.yml 并根据需要配置端口：
 
 ```yml
 services:

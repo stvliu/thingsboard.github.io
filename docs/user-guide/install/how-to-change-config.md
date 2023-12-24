@@ -2,8 +2,8 @@
 layout: docwithnav
 assignees:
 - vparomskiy
-title: How to change configuration parameters
-description: How to change Thingsboard configuration parameters
+title: 如何更改配置参数
+description: 如何更改 Thingsboard 配置参数
 
 ---
 

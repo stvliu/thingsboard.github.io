@@ -12,49 +12,46 @@
 {% endif %}
 
 
-## Introduction
+## Введение
 ![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
-[{{deviceName}}]({{deviceVendorLink}}){: target="_blank"} offers dual-SIM cellular 
-connectivity, four Ethernet ports and Wi-Fi combined with RS232, RS485, USB interfaces and I/O for a wide variety of 
-professional application scenarios. This router is equipped with advanced RutOS software features such as Modbus, SNMP, 
-TR-069, NTRIP, MQTT protocol support and GNSS tracking capabilities.
+[{{deviceName}}]({{deviceVendorLink}}){: target="_blank"} предлагает двухсимочное сотовое соединение, четыре порта Ethernet и Wi-Fi в сочетании с интерфейсами RS232, RS485, USB и вводом-выводом для широкого спектра профессиональных сценариев применения. Этот маршрутизатор оснащен расширенными программными функциями RutOS, такими как поддержка протоколов Modbus, SNMP, TR-069, NTRIP, MQTT и возможностями отслеживания GNSS.
 <br><br>
 
-## Prerequisites
+## Предварительные условия
 
-To continue with this guide, we will need the following:  
+Чтобы продолжить работу с этим руководством, нам понадобятся следующие компоненты:  
 {{ prerequisites }}
-- [ThingsBoard account]({{thingsboardInstanceLink}}){: target="_blank"}
+- [Учетная запись ThingsBoard]({{thingsboardInstanceLink}}){: target="_blank"}
 
-## Import Rule chain
+## Импорт цепочки правил
 
-Download [Teltonika Rule Chain](/docs/devices-library/resources/dashboards/ready-to-go-devices/teltonika-rut-955-rule-chain.json){:target="_blank" download="teltonika-rut955-rule-chain.json"} and import.
+Загрузите [цепочку правил Teltonika] (/docs/devices-library/resources/dashboards/ready-to-go-devices/teltonika-rut-955-rule-chain.json) {:target="_blank" download="teltonika-rut955-rule-chain.json"} и импортируйте ее.
 
-To import rule chain from а JSON file, you should:
+Чтобы импортировать цепочку правил из файла JSON, вам следует:
 
 {% assign importRuleChainPE = '
     ===
         image: /images/devices-library/ready-to-go-devices/teltonika-rut955/import-rule-chain-1-pe.png,
-        title: Navigate to the "Rule chains" page and click on the "+" button in the upper right corner of the screen and then choose "Import rule chain" option. The toolbar import popup window will appear. Upload a JSON file and click on the "Import" button;
+        title: Перейдите на страницу "Цепочки правил" и нажмите кнопку "+" в правом верхнем углу экрана, а затем выберите опцию "Импортировать цепочку правил". Откроется всплывающее окно импорта панели инструментов. Загрузите файл JSON и нажмите кнопку "Импорт";
     ===
         image: /images/devices-library/ready-to-go-devices/teltonika-rut955/import-rule-chain-2-pe.png,
-        title: The imported rule chain will open. Click on the "Apply changes" button to save the rule chain. Then, go back to the main "Rule chains" page;
+        title: Откроется импортированная цепочка правил. Нажмите кнопку "Применить изменения", чтобы сохранить цепочку правил. Затем вернитесь на главную страницу "Цепочки правил";
     ===
         image: /images/devices-library/ready-to-go-devices/teltonika-rut955/import-rule-chain-3-pe.png,
-        title: Rule chain is imported.
+        title: Цепочка правил импортирована.
 '
 %}
 
 {% assign importRuleChainCE = '
     ===
         image: /images/devices-library/ready-to-go-devices/teltonika-rut955/teltonika-rule-chain-import-1-ce.png,
-        title: Navigate to the "Rule chains" page and click on the "+" button in the upper right corner of the screen and then choose "Import rule chain" option. The toolbar import popup window will appear. Upload a JSON file and click on the "Import" button;
+        title: Перейдите на страницу "Цепочки правил" и нажмите кнопку "+" в правом верхнем углу экрана, а затем выберите опцию "Импортировать цепочку правил". Откроется всплывающее окно импорта панели инструментов. Загрузите файл JSON и нажмите кнопку "Импорт";
     ===
         image: /images/devices-library/ready-to-go-devices/teltonika-rut955/teltonika-rule-chain-import-2-ce.png,
-        title: The imported rule chain will open. Click on the "Apply changes" button to save the rule chain. Then, go back to the main "Rule chains" page;
+        title: Откроется импортированная цепочка правил. Нажмите кнопку "Применить изменения", чтобы сохранить цепочку правил. Затем вернитесь на главную страницу "Цепочки правил";
     ===
         image: /images/devices-library/ready-to-go-devices/teltonika-rut955/teltonika-rule-chain-import-3-ce.png,
-        title: Rule chain is imported.
+        title: Цепочка правил импортирована.
 '
 %}
 
@@ -64,39 +61,39 @@ To import rule chain from а JSON file, you should:
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=importRuleChainCE %}
 {% endif %}
 
-## Create device profile
+## Создание профиля устройства
 
-Now, we are ready to create device profile. For this, follow steps below:
+Теперь мы готовы создать профиль устройства. Для этого выполните следующие действия:
 
 {% assign createDeviceProfilePE = '
     ===
         image: /images/devices-library/ready-to-go-devices/teltonika-rut955/add-device-profiles-1-pe.png,
-        title: Go to **Profiles** > **Device profiles** and click on **"Add"** button > **"Create new device profile"**;
+        title: Перейдите в раздел **Профили** > **Профили устройств** и нажмите кнопку **"Добавить"** > **"Создать новый профиль устройства"**;
     ===
         image: /images/devices-library/ready-to-go-devices/teltonika-rut955/add-device-profiles-2-pe.png,
-        title: Input **Name** field with **"Teltonika routers"** value. Select **"Teltonika routers"** imported rule chain from the step above;
+        title: Введите в поле **"Имя"** значение **"Teltonika routers"**. Выберите импортированную цепочку правил **"Teltonika routers"** из предыдущего шага;
     ===
         image: /images/devices-library/ready-to-go-devices/teltonika-rut955/add-device-profiles-3-pe.png,
-        title: Click on **"Transport configuration"** tab. Select **MQTT** transport type and change **Telemetry topic filter** value from **"v1/devices/me/telemetry"** to **"RUT/"**. Click on **"Add"** button;
+        title: Нажмите на вкладку **"Настройка транспорта"**. Выберите тип транспорта **MQTT** и измените значение **"Фильтр тем телеметрии"** с **"v1/devices/me/telemetry"** на **"RUT/"**. Нажмите кнопку **"Добавить"**;
     ===
         image: /images/devices-library/ready-to-go-devices/teltonika-rut955/add-device-profiles-4-pe.png,
-        title: Device Profile created.
+        title: Профиль устройства создан.
     '
 %}
 
 {% assign createDeviceProfileCE = '
     ===
         image: /images/devices-library/ready-to-go-devices/teltonika-rut955/teltonika-device-profile-1-ce.png,
-        title: Go to **Profiles** > **Device profiles** and click on **"Add"** button > **"Create new device profile"**;
+        title: Перейдите в раздел **Профили** > **Профили устройств** и нажмите кнопку **"Добавить"** > **"Создать новый профиль устройства"**;
     ===
         image: /images/devices-library/ready-to-go-devices/teltonika-rut955/teltonika-device-profile-2-ce.png,
-        title: Input **Name** field with **"Teltonika routers"** value. Select **"Teltonika routers"** imported rule chain from the step above;
+        title: Введите в поле **"Имя"** значение **"Teltonika routers"**. Выберите импортированную цепочку правил **"Teltonika routers"** из предыдущего шага;
     ===
         image: /images/devices-library/ready-to-go-devices/teltonika-rut955/teltonika-device-profile-3-ce.png,
-        title: Click on **"Transport configuration"** tab. Select **MQTT** transport type and change **Telemetry topic filter** value from **"v1/devices/me/telemetry"** to **"RUT/"**. Click on **"Add"** button;
+        title: Нажмите на вкладку **"Настройка транспорта"**. Выберите тип транспорта **MQTT** и измените значение **"Фильтр тем телеметрии"** с **"v1/devices/me/telemetry"** на **"RUT/"**. Нажмите кнопку **"Добавить"**;
     ===
         image: /images/devices-library/ready-to-go-devices/teltonika-rut955/teltonika-device-profile-4-ce.png,
-        title: Device Profile created.
+        title: Профиль устройства создан.
     '
 %}
 
@@ -106,39 +103,39 @@ Now, we are ready to create device profile. For this, follow steps below:
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=createDeviceProfileCE %}
 {% endif %}
 
-## Create device
+## Создание устройства
 
-For simplicity, we will provide the device manually using the UI:
+Для простоты мы предоставим устройство вручную с помощью пользовательского интерфейса:
 
 {% assign provisionDevicePE = '
     ===
         image: /images/devices-library/ready-to-go-devices/teltonika-rut955/add-device-1-pe.png,
-        title: Open the **Devices** page. By default, you navigate to the device group **“All”**. Click on the **“+”** icon in the top right corner of the table and then select **“Add new device”**;
+        title: Откройте страницу **Устройства**. По умолчанию вы переходите в группу устройств **"Все"**. Нажмите значок **"+"** в правом верхнем углу таблицы, а затем выберите **"Добавить новое устройство"**;
     ===
         image: /images/devices-library/ready-to-go-devices/teltonika-rut955/add-device-2-pe.png,
-        title: Input device name. For example, **“Teltonika RUT955”**. Select created device profile from the step above, in our case **"Teltonika routers"**;
+        title: Введите имя устройства. Например, **"Teltonika RUT955"**. Выберите созданный профиль устройства из предыдущего шага, в нашем случае **"Teltonika routers"**;
     ===
         image: /images/devices-library/ready-to-go-devices/teltonika-rut955/add-device-3-pe.png,
-        title: Click on **"Credentials"** tab. Check **"Add credentials"** and select **"MQTT Basic"** credentials type. Click on **"Generate"** button on each field and click **"Add"** button;
+        title: Нажмите на вкладку **"Учетные данные"**. Установите флажок **"Добавить учетные данные"** и выберите тип учетных данных **"MQTT Basic"**. Нажмите кнопку **"Сгенерировать"** в каждом поле и нажмите кнопку **"Добавить"**;
     ===
         image: /images/devices-library/ready-to-go-devices/teltonika-rut955/add-device-4-pe.png,
-        title: Device added.
+        title: Устройство добавлено.
     '
 %}
 
 {% assign provisionDeviceCE = '
     ===
         image: /images/devices-library/ready-to-go-devices/teltonika-rut955/teltonika-create-device-1-ce.png,
-        title: Open the **Devices** page. By default, you navigate to the device group **“All”**. Click on the **“+”** icon in the top right corner of the table and then select **“Add new device”**;
+        title: Откройте страницу **Устройства**. По умолчанию вы переходите в группу устройств **"Все"**. Нажмите значок **"+"** в правом верхнем углу таблицы, а затем выберите **"Добавить новое устройство"**;
     ===
         image: /images/devices-library/ready-to-go-devices/teltonika-rut955/teltonika-create-device-2-ce.png,
-        title: Input device name. For example, **“Teltonika RUT955”**. Select created device profile from the step above, in our case **"Teltonika routers"**;
+        title: Введите имя устройства. Например, **"Teltonika RUT955"**. Выберите созданный профиль устройства из предыдущего шага, в нашем случае **"Teltonika routers"**;
     ===
         image: /images/devices-library/ready-to-go-devices/teltonika-rut955/teltonika-create-device-3-ce.png,
-        title: Click on **"Credentials"** tab. Check **"Add credentials"** and select **"MQTT Basic"** credentials type. Click on **"Generate"** button on each field and click **"Add"** button;
+        title: Нажмите на вкладку **"Учетные данные"**. Установите флажок **"Добавить учетные данные"** и выберите тип учетных данных **"MQTT Basic"**. Нажмите кнопку **"Сгенерировать"** в каждом поле и нажмите кнопку **"Добавить"**;
     ===
         image: /images/devices-library/ready-to-go-devices/teltonika-rut955/teltonika-create-device-4-ce.png,
-        title: Device added.
+        title: Устройство добавлено.
     '
 %}
 
@@ -148,88 +145,83 @@ For simplicity, we will provide the device manually using the UI:
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=provisionDeviceCE %}
 {% endif %}
 
-## Gateway connection
+## Подключение шлюза
 
 {% capture infoSettings %}
-Make sure you enable **"ADVANCED"** mode in the top right corner by clicking the button under **"Mode"**.
+Убедитесь, что вы включили **"РАСШИРЕННЫЙ"** режим в правом верхнем углу, нажав кнопку под **"Режим"**.
 {% endcapture %}
 {% include templates/info-banner.md content=infoSettings %}
 
-According to the official user manual and this guide you can connect the gateway to the network and get access to 
-the WebUI in two ways:
+Согласно официальному руководству пользователя и этому руководству вы можете подключить шлюз к сети и получить доступ к WebUI двумя способами:
 
 {% capture readytogodeviceconnectionstogglespec %}
-Wireless connection%,%wirelessConnection%,%templates/device-library/ready-to-go-devices/teltonika-rut955-wireless-connection-block.md%br%
-Wired connection%,%wiredConnection%,%templates/device-library/ready-to-go-devices/teltonika-rut955-wired-connection-block.md{% endcapture %}
+Беспроводное соединение%,%wirelessConnection%,%templates/device-library/ready-to-go-devices/teltonika-rut955-wireless-connection-block.md%br%
+Проводное соединение%,%wiredConnection%,%templates/device-library/ready-to-go-devices/teltonika-rut955-wired-connection-block.md{% endcapture %}
 
 {% include content-toggle.liquid content-toggle-id="readytogodeviceconnectionstogglespec" toggle-spec=readytogodeviceconnectionstogglespec %}
 
-Now, you can configure the gateway.
+Теперь вы можете настроить шлюз.
 
-Once you are connected to the {{deviceName}}, you can change its IP address if you wish:
-- Go to **Interfaces** > **General**;
-- Click **"Edit"** button on **"lan"** interface;
-- Enter a new IP address that is not already being used by another device on your network.
+После подключения к {{deviceName}} вы можете изменить его IP-адрес, если хотите:
+- Перейдите в раздел **Интерфейсы** > **Общие**;
+- Нажмите кнопку **"Изменить"** в интерфейсе **"lan"**;
+- Введите новый IP-адрес, который еще не используется другим устройством в вашей сети.
 
-Now we are ready to configure the MQTT connection and topics for both data reception and transmission and establishing
-the Modbus connection.
+Теперь мы готовы настроить соединение MQTT и темы как для приема, так и для передачи данных, а также установить соединение Modbus.
 
-Let's first configure Modbus Connection. As mentioned above, we use Siemens LOGO! with AM2 RTD module (used for connecting PT100) - 
-which is the perfect choice for the fast, uncomplicated, and space-saving solution of simple control and regulation tasks. 
-LOGO! has long since established itself as an intelligent logic module in small automation projects.
+Сначала настроим соединение Modbus. Как упоминалось выше, мы используем Siemens LOGO! с модулем AM2 RTD (используется для подключения PT100) - это идеальный выбор для быстрого, простого и компактного решения простых задач управления и регулирования. LOGO! давно зарекомендовал себя как интеллектуальный логический модуль в небольших проектах автоматизации.
 
-In our case, the following diagram for data reading and preparation was created in LOGO! Soft Comfort:
+В нашем случае в LOGO! Soft Comfort была создана следующая схема для считывания и подготовки данных:
 <br><br>
 ![](/images/devices-library/ready-to-go-devices/teltonika-rut955/siemens-logo-diagram.png)
 <br><br>
 
-Don't forget to enable TCP connection.
+Не забудьте включить соединение TCP.
 <br><br>
 ![](/images/devices-library/ready-to-go-devices/teltonika-rut955/siemens-logo-tcp-enable.png)
 <br><br>
 
-Also, we have to add Modbus slave device configuration. To do this, follow the steps below:
-1. Go to **Services** > **Modbus** > **Modbus TCP Master**;
-2. Click **"ADD"** button;
-3. Fill in all required fields with correct information about your device;
-4. Scroll down to **"REQUESTS CONFIGURATION"** section;
-5. Add all registers from which you want to read data;
-6. Click on **“Save & Apply”** button.
+Кроме того, нам нужно добавить конфигурацию ведомого устройства Modbus. Для этого выполните следующие действия:
+1. Перейдите в раздел **Сервисы** > **Modbus** > **Modbus TCP Master**;
+2. Нажмите кнопку **"ДОБАВИТЬ"**;
+3. Заполните все обязательные поля правильной информацией о вашем устройстве;
+4. Прокрутите вниз до раздела **"КОНФИГУРАЦИЯ ЗАПРОСОВ"**;
+5. Добавьте все регистры, из которых вы хотите считывать данные;
+6. Нажмите кнопку **"Сохранить и применить"**.
 
-In our case, we have the following settings:
+В нашем случае у нас есть следующие настройки:
 
 ![](/images/devices-library/ready-to-go-devices/teltonika-rut955/teltonika-modbus-tcp-master.png)
 
-The next thing we have to do is configure the Data Sender. To do this, follow the steps below:
-1. Go to **Services** > **Data to Server**;
-2. Click **"ADD"** button;
-3. Fill in all required fields with correct credentials and other information for broker access;
-4. Click on **“Save & Apply”** button.
+Следующее, что нам нужно сделать, это настроить отправитель данных. Для этого выполните следующие действия:
+1. Перейдите в раздел **Сервисы** > **Данные на сервер**;
+2. Нажмите кнопку **"ДОБАВИТЬ"**;
+3. Заполните все обязательные поля правильными учетными данными и другой информацией для доступа к брокеру;
+4. Нажмите кнопку **"Сохранить и применить"**.
 
-In our case, we have the following settings:
+В нашем случае у нас есть следующие настройки:
 
 ![](/images/devices-library/ready-to-go-devices/teltonika-rut955/teltonika-rut-955-data-sender.png)
 
-If you did everything right, you have to receive the following MQTT message:
+Если вы все сделали правильно, вы должны получить следующее сообщение MQTT:
 ```json
 {"data": 299, "reg": 300003, "ts": 1696838802}
 ```
 
-## Check data on ThingsBoard
+## Проверка данных на ThingsBoard
 
 {% include /docs/devices-library/blocks/ready-to-go-devices/check-data-on-thingsboard-block.md %}
 
 {% capture readytogodevicestogglespec %}
-Imported Dashboard%,%importedDashboard%,%templates/device-library/ready-to-go-devices/teltonika-rut955-imported-dashboard.md%br%
-New Dashboard%,%newDashboard%,%templates/device-library/ready-to-go-devices/gateway-new-dashboard.md{% endcapture %}
+Импортированная панель инструментов%,%importedDashboard%,%templates/device-library/ready-to-go-devices/teltonika-rut955-imported-dashboard.md%br%
+Новая панель инструментов%,%newDashboard%,%templates/device-library/ready-to-go-devices/gateway-new-dashboard.md{% endcapture %}
 
 {% include content-toggle.liquid content-toggle-id="minicomputersDashboard" toggle-spec=readytogodevicestogglespec %}
 
-## Conclusion
+## Заключение
 
-With the knowledge in this guide, you can easily connect your {{deviceName}} and use the built-in 
-integration to retrieve data from devices connected to {{deviceName}}.
+С помощью знаний, изложенных в этом руководстве, вы можете легко подключить свой {{deviceName}} и использовать встроенную интеграцию для получения данных с устройств, подключенных к {{deviceName}}.
 
-After connecting the devices to the gateway, you will be able to see and process the data coming from the devices on the ThingsBoard.
+После подключения устройств к шлюзу вы сможете видеть и обрабатывать данные, поступающие с устройств, на ThingsBoard.
 
-Explore the platform [documentation](/docs/{{page.docsPrefix}}){: target="_blank"} to learn more about key concepts and features. 
+Изучите [документацию](/docs/{{page.docsPrefix}}){: target="_blank"} платформы, чтобы узнать больше о ключевых концепциях и функциях.

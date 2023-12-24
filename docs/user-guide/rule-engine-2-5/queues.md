@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
-title: Queues
-description: Rule Engine Queues
+title: 队列
+description: 规则引擎队列
 redirect_from: "/docs/user-guide/queue"
 
 ---

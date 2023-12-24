@@ -1,10 +1,10 @@
 <br>
 {% capture grpc_ssl_note %}
-**Important note for securing communication between ThingsBoard Edge and ThingsBoard Professional/Community Edition server**
- - ThingsBoard Edge and ThingsBoard Professional/Community Edition server instance are communicating over gRPC protocol
- - gRPC channel is not secured with TLS/SSL mechanism dy default and binary messages that are transferring between ThingsBoard Edge and ThingsBoard Professional/Community Edition server instance could be stolen by non-authorized persons
- - gRPC messages contain sensitive data like user passwords and device credentials, and theft of this data could lead to serious consequences 
- - ThingsBoard team strongly recommends secure gRPC with TLS/SSL for production environments and environments with sensitive data
- - Please follow this [guide](/docs/edge/user-guide/grpc-over-ssl/) to configure gRPC with TLS/SSL 
+**保护 ThingsBoard Edge 与 ThingsBoard Professional/Community Edition 服务器之间的通信的重要说明**
+- ThingsBoard Edge 与 ThingsBoard Professional/Community Edition 服务器实例通过 gRPC 协议进行通信
+- 默认情况下，gRPC 通道未通过 TLS/SSL 机制保护，在 ThingsBoard Edge 与 ThingsBoard Professional/Community Edition 服务器实例之间传输的二进制消息可能会被未经授权的人员窃取
+- gRPC 消息包含敏感数据，如用户密码和设备凭据，窃取这些数据可能会导致严重后果
+- ThingsBoard 团队强烈建议在生产环境和包含敏感数据的环境中使用 TLS/SSL 保护 gRPC
+- 请按照此 [指南](/docs/edge/user-guide/grpc-over-ssl/) 配置使用 TLS/SSL 的 gRPC
 {% endcapture %}
 {% include templates/info-banner.md content=grpc_ssl_note %}

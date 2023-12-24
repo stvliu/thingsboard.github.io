@@ -1,29 +1,29 @@
 {% capture hybrid-info %}
-ThingsBoard team recommends using Timescale database only for companies that already use TimescaleDB in production.
-In this case, ThingsBoard will be storing timeseries data in TimescaleDB Hypertable while continue to use PostgreSQL for main entities (devices/assets/dashboards/customers).  
+ThingsBoard 团队建议仅将 Timescale 数据库用于已经在生产中使用 TimescaleDB 的公司。
+在这种情况下，ThingsBoard 将把时序数据存储在 TimescaleDB Hypertable 中，同时继续使用 PostgreSQL 作为主要实体（设备/资产/仪表板/客户）。  
 {% endcapture %}
 {% include templates/info-banner.md content=hybrid-info %}
 
-##### PostgreSQL Installation
+##### PostgreSQL 安装
 
-Download the installation file (PostgreSQL 12.17 or newer releases) [here](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads#windows) and follow the installation instructions.
+下载安装文件（PostgreSQL 12.17 或更高版本）[此处](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads#windows)，然后按照安装说明进行操作。
 
-During PostgreSQL installation, you will be prompted for superuser (postgres) password.
-Don't forget this password. It will be used later. For simplicity, we will substitute it with "postgres".
+在 PostgreSQL 安装过程中，系统会提示您输入超级用户 (postgres) 密码。
+请记住此密码。稍后会用到它。为简单起见，我们将用“postgres”代替它。
 
-##### Create ThingsBoard Database
+##### 创建 ThingsBoard 数据库
 
-Once installed, launch the "pgAdmin" software and login as superuser (postgres). 
-Open your server and create database "thingsboard" with owner "postgres".
+安装完成后，启动“pgAdmin”软件并以超级用户 (postgres) 身份登录。
+打开服务器并创建所有者为“postgres”的数据库“thingsboard”。
 
-##### TimescaleDB Installation
+##### TimescaleDB 安装
 
 {% include templates/install/timescale-windows-install.md %}
 
-##### ThingsBoard Configuration
+##### ThingsBoard 配置
 
-Open the Notepad or other editor as administrator user (right click on the app icon and select "Run as administrator").  
-Open the following file for editing (select "All Files" instead of "Text Documents" in file choosing dialog, the encoding is UTF-8):
+以管理员用户身份打开记事本或其他编辑器（右键单击应用程序图标并选择“以管理员身份运行”）。
+打开以下文件进行编辑（在文件选择对话框中选择“所有文件”而不是“文本文档”，编码为 UTF-8）：
 
 ```text 
 C:\Program Files (x86)\thingsboard\conf\thingsboard.yml
@@ -31,10 +31,10 @@ C:\Program Files (x86)\thingsboard\conf\thingsboard.yml
 {: .copy-code}
 
 
-and locate "# SQL DAO Configuration" block. Don't forget to replace "postgres" with your real postgres user password:
+并找到“# SQL DAO 配置”块。别忘了用你的真实 postgres 用户密码替换“postgres”：
 
 ```yml
-# SQL DAO Configuration
+# SQL DAO 配置
 spring:
   data:
     jpa:
@@ -54,21 +54,21 @@ spring:
 ``` 
 {: .copy-code}
 
-locate "DATABASE_TS_TYPE" parameter. Replace "sql" with "timescale".
+找到“DATABASE_TS_TYPE”参数。将“sql”替换为“timescale”。
 
 ```yml
       ts:
         type: "${DATABASE_TS_TYPE:sql}" # cassandra, sql, or timescale (for hybrid mode, DATABASE_TS_TYPE value should be cassandra, or timescale)
     
-    # note: timescale works only with postgreSQL database for DATABASE_ENTITIES_TYPE.
+    # 注意：timescale 仅适用于 DATABASE_ENTITIES_TYPE 的 postgreSQL 数据库。
 ```
 
-You can optionally tune parameters that refer to the Timescale DB configuration: "timescale" configuration block inside "sql" configuration block.
+您可以选择调整引用 Timescale DB 配置的参数：“sql”配置块内的“timescale”配置块。
 
 ```yml
-# SQL configuration parameters
+# SQL 配置参数
 sql:
     timescale:
-      # Specify Interval size for new data chunks storage.
+      # 指定新数据块存储的时间间隔。
       chunk_time_interval: "${SQL_TIMESCALE_CHUNK_TIME_INTERVAL:604800000}"
 ```

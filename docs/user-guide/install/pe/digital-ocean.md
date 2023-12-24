@@ -1,39 +1,35 @@
 ---
 layout: docwithnav-pe
-title: Installing ThingsBoard PE on DigitalOcean 
-description: Installing ThingsBoard PE on DigitalOcean
+title: 在 DigitalOcean 上安装 ThingsBoard PE
+description: 在 DigitalOcean 上安装 ThingsBoard PE
 
 ---
 
-This guide describes how to install ThingsBoard Professional Edition on DigitalOcean. 
-Using this guide you will install "Bring Your Own License" version of the product.
-Basically, you get the license directly from ThingsBoard, Inc, but purchase corresponding server instances and infrastructure from DigitalOcean.       
+本指南介绍如何在 DigitalOcean 上安装 ThingsBoard Professional Edition。
+使用本指南，您将安装产品的“自备许可证”版本。
+基本上，您可以直接从 ThingsBoard, Inc 获取许可证，但从 DigitalOcean 购买相应的服务器实例和基础设施。
 
 * TOC
 {:toc}
 
 
-{% include templates/install/digital-ocean-droplet.md %} 
+{% include templates/install/digital-ocean-droplet.md %}
 
-### Step 4. Use regular installation instruction for Ubuntu
+### 第 4 步。对 Ubuntu 使用常规安装说明
 
-Please navigate to the ThingsBoard PE [**installation instruction**](/docs/user-guide/install/pe/ubuntu/) 
-for Ubuntu and complete the installation steps.
+请导航至 ThingsBoard PE [**安装说明**](/docs/user-guide/install/pe/ubuntu/)
+适用于 Ubuntu 并完成安装步骤。
 
-**Note:** Use your droplet IP address instead of "localhost" to access the instance WEB UI.
+**注意：**使用您的 droplet IP 地址而不是“localhost”来访问实例 WEB UI。
 
-### Post-installation steps
+### 安装后步骤
 
 {% include templates/install/ubuntu-haproxy-postinstall.md %}
 
-### Troubleshooting
+### 故障排除
 
 {% include templates/install/troubleshooting.md %}
 
-## Next steps
+## 后续步骤
 
 {% assign currentGuide = "InstallationGuides" %}{% include templates/guides-banner.md %}
-
-
-
-

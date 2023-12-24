@@ -130,7 +130,7 @@
 <div class="guides">
     <div class="filter-panel">
         <div id="searchGuideBox">
-            <input type="text" id="searchGuideInput" placeholder="Find a guide...">
+            <input type="text" id="searchGuideInput" placeholder="查找指南...">
             <button class="searchButton"></button>
         </div>
     </div>

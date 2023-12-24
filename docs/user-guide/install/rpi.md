@@ -2,8 +2,8 @@
 layout: docwithnav
 assignees:
 - ashvayka
-title: Installing ThingsBoard on Raspberry Pi 3 Model B
-description: Installing ThingsBoard IoT Platform on Raspberry Pi 3 Model B
+title: 在树莓派 3 型号 B 上安装 ThingsBoard
+description: 在树莓派 3 型号 B 上安装 ThingsBoard IoT 平台
 
 ---
 
@@ -12,67 +12,67 @@ description: Installing ThingsBoard IoT Platform on Raspberry Pi 3 Model B
 * TOC
 {:toc}
 
-This guide describes how to install ThingsBoard on a Raspberry Pi 3 running Raspbian Buster.
+本指南介绍如何在运行 Raspbian Buster 的树莓派 3 上安装 ThingsBoard。
 
-### Third-party components installation
+### 第三方组件安装
 
-### Step 1. Install Java 11 (OpenJDK) 
+### 步骤 1. 安装 Java 11 (OpenJDK)
 
 {% include templates/install/ubuntu-java-install.md %}
 
-### Step 2. ThingsBoard service installation
+### 步骤 2. ThingsBoard 服务安装
 
-Download installation package.
+下载安装包。
 
 ```bash
 wget https://github.com/thingsboard/thingsboard/releases/download/{{ site.release.ce_tag }}/thingsboard-{{ site.release.ce_ver }}.deb
 ```
 {: .copy-code}
 
-Install ThingsBoard as a service
+将 ThingsBoard 安装为服务
 
 ```bash
 sudo dpkg -i thingsboard-{{ site.release.ce_ver }}.deb
 ```
 {: .copy-code}
 
-### Step 3. Configure ThingsBoard database
+### 步骤 3. 配置 ThingsBoard 数据库
 
 {% include templates/install/rpi-db-postgresql.md %}
 
-### Step 4. Choose ThingsBoard queue service
+### 步骤 4. 选择 ThingsBoard 队列服务
 
 {% include templates/install/rpi-install-queue.md %}
 
 {% capture contenttogglespecqueue %}
-In Memory <small>(built-in and default)</small>%,%inmemory%,%templates/install/queue-in-memory.md%br%
-AWS SQS <small>(managed service from AWS)</small>%,%aws-sqs%,%templates/install/ubuntu-queue-aws-sqs.md%br%
-Google Pub/Sub <small>(managed service from Google)</small>%,%pubsub%,%templates/install/ubuntu-queue-pub-sub.md%br%
-Azure Service Bus <small>(managed service from Azure)</small>%,%service-bus%,%templates/install/ubuntu-queue-service-bus.md%br%
-Confluent Cloud <small>(Event Streaming Platform based on Kafka)</small>%,%confluent-cloud%,%templates/install/ubuntu-queue-confluent-cloud.md{% endcapture %}
+内存 <small>(内置且默认)</small>%,%inmemory%,%templates/install/queue-in-memory.md%br%
+AWS SQS <small>(AWS 托管服务)</small>%,%aws-sqs%,%templates/install/ubuntu-queue-aws-sqs.md%br%
+Google Pub/Sub <small>(Google 托管服务)</small>%,%pubsub%,%templates/install/ubuntu-queue-pub-sub.md%br%
+Azure 服务总线 <small>(Azure 托管服务)</small>%,%service-bus%,%templates/install/ubuntu-queue-service-bus.md%br%
+Confluent Cloud <small>(基于 Kafka 的事件流平台)</small>%,%confluent-cloud%,%templates/install/ubuntu-queue-confluent-cloud.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="ubuntuThingsboardQueue" toggle-spec=contenttogglespecqueue %} 
 
-### Step 5. Memory update for slow machines (1GB of RAM) 
+### 步骤 5. 为运行缓慢的机器更新内存（1GB RAM）
 
 {% include templates/install/memory-on-slow-machines.md %} 
 
-### Step 6. Run installation script
+### 步骤 6. 运行安装脚本
 {% include templates/run-install.md %} 
 
 
-### Step 7. Start ThingsBoard service
+### 步骤 7. 启动 ThingsBoard 服务
 
 {% include templates/start-service.md %}
 
 {% capture 90-sec-ui %}
-Please allow up to 240 seconds for the Web UI to start. This is applicable only for slow machines with 1-2 CPUs or 1-2 GB RAM.{% endcapture %}
+请允许 Web UI 最多启动 240 秒。这仅适用于具有 1-2 个 CPU 或 1-2 GB RAM 的运行缓慢的机器。{% endcapture %}
 {% include templates/info-banner.md content=90-sec-ui %}
 
-### Troubleshooting
+### 故障排除
 
 {% include templates/install/troubleshooting.md %}
 
-## Next steps
+## 后续步骤
 
 {% assign currentGuide = "InstallationGuides" %}{% include templates/guides-banner.md %}

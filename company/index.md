@@ -1,53 +1,51 @@
 ---
 layout: common
-title: Our Company
+title: 我们的公司
 notitle: "true"
 description: 
 
 ---
 
-<h1 class="aboutus-title">About Us</h1> 
+<h1 class="aboutus-title">关于我们</h1> 
 
-<span class="who-we-are">Who we are?</span>
-<p class="company-info">ThingsBoard, Inc. was founded in 2016. We develop IoT software products under ThingsBoard™ umbrella.
-   Our flagship IoT platform is the most popular open-source project in its class. ThingsBoard's freeware and licensed software is widely used by both IoT
-   enthusiasts who design and prototype their smart solutions in their garages and industrial customers with a wide range of requirements for device management,
-   data processing, security, privacy, analysis, etc.<br><br>
-   ThingsBoard, Inc. evolved from a startup with 2 employees to a renowned IoT enabler with hundreds of licensees and thousands of community users in a very short period.
-   Currently, our R&D office is in Kyiv, Ukraine. However, the company is fast-growing and new offices will appear in the future. Stay in touch with us.
+<span class="who-we-are">我们是谁？</span>
+<p class="company-info">ThingsBoard, Inc. 成立于 2016 年。我们在 ThingsBoard™ 的支持下开发物联网软件产品。
+   我们的旗舰物联网平台是同类产品中最受欢迎的开源项目。ThingsBoard 的免费软件和授权软件被广泛用于物联网
+   爱好者，他们在车库中设计和制作智能解决方案，以及对设备管理、数据处理、安全、隐私、分析等有广泛要求的工业客户。<br><br>
+   ThingsBoard, Inc. 在很短的时间内从拥有 2 名员工的初创公司发展成为拥有数百名被许可人和数千名社区用户的知名物联网支持者。
+   目前，我们的研发办公室位于乌克兰基辅。然而，公司发展迅速，未来将出现新的办事处。与我们保持联系。
 </p>
 <div class="our-mission">
     <div class="our-mission-logos">
         <div class="spacer"></div>
         <div class="about-mission-background"></div>
-        <img class="about-mission-index" src="/images/about-mission-index.svg" alt="Map dashboard example">
-        <img class="about-mission-left" src="/images/about-mission-left.svg" alt="Root dashboard example">
-        <img class="about-mission-right" src="/images/about-mission-right.svg" alt="Chart dashboard example">
+        <img class="about-mission-index" src="/images/about-mission-index.svg" alt="地图仪表盘示例">
+        <img class="about-mission-left" src="/images/about-mission-left.svg" alt="根仪表盘示例">
+        <img class="about-mission-right" src="/images/about-mission-right.svg" alt="图表仪表盘示例">
     </div>
     <div class="our-mission-info">
-        <span class="our-mission">Our mission</span>
+        <span class="our-mission">我们的使命</span>
         <p class="company-info">
-          IoT helps to reduce the negative impacts of human development on the environment and helps us to work and live better by surrounding us with smart devices.
-          We invest our time and knowledge in the future by providing IoT cloud platform and products that help companies follow their sustainability commitments.
+          物联网有助于减少人类发展对环境的负面影响，并通过智能设备环绕我们，帮助我们更好地工作和生活。
+          我们通过提供物联网云平台和产品来投资我们的时间和知识，帮助公司履行其可持续发展承诺。
         </p>
     </div>
 </div>
 <div class="our-goal">
-    <span class="heading">Our goal</span>
-    <p>Reduce time-to-market for IoT solutions that change the world.</p>
+    <span class="heading">我们的目标</span>
+    <p>缩短改变世界的物联网解决方案的上市时间。</p>
 </div>
 <div class="center" style="margin-top: 48px;">
-    <a class="button" style="padding: 10px 40px;" href="/docs/contact-us/">Contact Us</a>
+    <a class="button" style="padding: 10px 40px;" href="/docs/contact-us/">联系我们</a>
 </div>
 <div class="company-contacts">
     <div class="company-contact">
         <div class="phone">+1 212 334 4096</div>
     </div>
     <div class="company-contact">
-        <div class="address">110 Duane Street, Suite 1C, New York, NY 10007, USA</div>
+        <div class="address">美国纽约州纽约市杜安街 110 号，1C 套房，邮编 10007</div>
     </div>
     <div class="company-contact">
         <div class="mail"><a href="mailto:info@thingsboard.io">info@thingsboard.io</a></div>
     </div>
 </div>
-

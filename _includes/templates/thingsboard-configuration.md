@@ -1,5 +1,5 @@
-## ThingsBoard configuration
+## ThingsBoard 配置
 
-**Note** ThingsBoard configuration steps are necessary only in case of **local ThingsBoard installation**.
-If you are using [**Live Demo**](https://demo.thingsboard.io/) instance all entities are pre-configured for your demo account.
-However, we recommend reviewing this steps because you will still need to get device access token to send requests to ThingsBoard.
+**注意** 仅在 **本地 ThingsBoard 安装** 的情况下，才需要 ThingsBoard 配置步骤。
+如果您使用 [**实时演示**](https://demo.thingsboard.io/) 实例，则所有实体都已针对您的演示帐户预先配置。
+但是，我们建议您查看这些步骤，因为您仍然需要获取设备访问令牌才能向 ThingsBoard 发送请求。

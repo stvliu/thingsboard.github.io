@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-paas
-title: Water Metering solution template
-description: Water Metering template overview
+title: 水表计量解决方案模板
+description: 水表计量模板概述
 solution-highlights:
     0:
         image: /images/solutions/water_metering/water-metering-1.png
@@ -18,24 +18,24 @@ solution-highlights:
 solution-alarms:
     0:
         image: /images/solutions/water_metering/alarm-rules-src.png
-        title: 'Navigate to "Device profiles". Select "Water Meter" profile. Open "Alarm rules" tab.'
+        title: '导航至“设备配置文件”。选择“水表”配置文件。打开“警报规则”选项卡。'
     1:
         image: /images/solutions/water_metering/alarm-settings-btn-src.png
-        title: 'Navigate to the solution dashboard. Click "Settings" button.'
+        title: '导航至解决方案仪表板。单击“设置”按钮。'
     2:
         image: /images/solutions/water_metering/alarm-settings-src.png
-        title: 'Enable or disable alarms and define thresholds. Turn email or SMS notifications on and off.'
+        title: '启用或禁用警报并定义阈值。打开或关闭电子邮件或短信通知。'
 
 rule-chains:
     0:
         image: /images/solutions/water_metering/rule-chains-1-src.png
-        title: 'Main solution rule chain is responsible for data aggregation and alarms. Messages about created alarms are forwarded to notification rule chains.'
+        title: '主要解决方案规则链负责数据聚合和警报。有关创建的警报的消息将转发到通知规则链。'
     1:
         image: /images/solutions/water_metering/rule-chains-2-src.png
-        title: 'Tenant Alarm routing forwards notifications via email or sms to all tenant administrators if corresponding settings are enabled.'
+        title: '租户警报路由通过电子邮件或短信将通知转发给所有租户管理员（如果启用了相应设置）。'
     2:
         image: /images/solutions/water_metering/rule-chains-3-src.png
-        title: 'Customer Alarm routing forwards notifications via email or sms to all customer users if corresponding settings are enabled.'
+        title: '客户警报路由通过电子邮件或短信将通知转发给所有客户用户（如果启用了相应设置）。'
 
 ---
 

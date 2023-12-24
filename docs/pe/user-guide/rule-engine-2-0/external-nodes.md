@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-pe
-title: External Nodes
-description: Rule Engine 2.0 External Nodes
+title: 外部节点
+description: 规则引擎 2.0 外部节点
 
 ---
 

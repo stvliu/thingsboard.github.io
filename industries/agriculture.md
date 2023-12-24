@@ -1,35 +1,35 @@
 ---
 layout: common
-title: Agriculture customers
+title: 农业客户
 notitle: "true"
 description:
 
 ---
 
-<h1 class="mainTitle agriculture">Agriculture customers</h1>
+<h1 class="mainTitle agriculture">农业客户</h1>
 
 <nav class="customers-nav">
     <ul>
         <li>
-            <a href="/industries/smart-energy/">Smart Energy</a>
+            <a href="/industries/smart-energy/">智能能源</a>
         </li>
         <li>
-            <a href="/industries/agriculture/" class="active">Agriculture</a>
+            <a href="/industries/agriculture/" class="active">农业</a>
         </li>
         <li>
-            <a href="/industries/smart-buildings/">Smart Buildings</a>
+            <a href="/industries/smart-buildings/">智能建筑</a>
         </li>
         <li>
-            <a href="/industries/smart-city/">Smart City</a>
+            <a href="/industries/smart-city/">智慧城市</a>
         </li>
         <li>
-            <a href="/industries/telecom/">Telecom</a>
+            <a href="/industries/telecom/">电信</a>
         </li>
         <li>
-            <a href="/industries/industry40/">Industry 4.0</a>
+            <a href="/industries/industry40/">工业 4.0</a>
         </li>
         <li>
-            <a href="/industries/warehouse-monitoring/">Warehouse monitoring</a>
+            <a href="/industries/warehouse-monitoring/">仓库监控</a>
         </li>
     </ul>
 </nav>
@@ -43,22 +43,24 @@ description:
         <div class="person-container">
             <div class="person-title">
                 <p class="person-name"> Jeppe Walther </p>
-                <p class="person-position"> CTO </p>
+                <p class="person-position"> 首席技术官 </p>
             </div>
         </div>
         <h2>
-            Develops, manufactures and sells high quality post-harvest equipment worldwide.
+            在全球范围内开发、制造和销售高质量的收获后设备。
         </h2>
         <p>
-            ThingsBoard (TB) turned out to be a great match to build our Agricultural IoT platform. 
-            First and foremost because of the extremely skilled and service minded architects behind it. 
-            Together with the TB developers several new features were added to the platform for our needs, 
-            among these the Asset system and PostgreSQL support. 
-            These new features gave us the possibility to model our data structure using only TB as the backend, both on the multi-tenant cloud server and on-premise installations.
-            The real time UI system proved useful both in development phase and for our final user interface. 
+            ThingsBoard (TB) 被证明非常适合构建我们的农业物联网平台。
+            首先，因为它背后有非常熟练且乐于提供服务的架构师。
+            与 TB 开发人员一起，为满足我们的需求，在平台中添加了多项新功能，
+            其中包括资产系统和 PostgreSQL 支持。
+            这些新功能使我们能够仅使用 TB 作为后端对我们的数据结构进行建模，
+            无论是在多租户云服务器上还是在本地安装上。
+            实时 UI 系统在开发阶段和最终用户界面中都非常有用。
         </p>
         <p>
-            Using TB as our platform allowed us to rapidly achieve a very genetic solution that will serve our scaling needs for years to come. 
+            使用 TB 作为我们的平台，使我们能够快速实现一种非常通用的解决方案，
+            这种解决方案将在未来几年满足我们的扩展需求。
         </p>
     </div>
 </div>
@@ -72,17 +74,27 @@ description:
         <div class="person-container">
             <div class="person-title">
                 <p class="person-name"> Mark Morris </p>
-                <p class="person-position"> Founder & Managing Director </p>
+                <p class="person-position"> 创始人兼董事总经理 </p>
             </div>
         </div>
         <h2>
-            Developers of VineHub, the industry's first integrated vineyard management and automation platform.
+            VineHub 的开发人员，这是业界首个集成的葡萄园管理和自动化平台。
         </h2>
         <p>
-            ThingsBoard (TB) has been an amazing discovery after much searching. The thought and architectural maturity of the platform is unmatched in the market. It’s allowed us to bring our platform to market a full 18 months sooner, than if we had embarked on developing our own backend and visualisation capabilities. With such a flexible UI, even with just a basic understanding of HTML and Javascript one can quickly and easily begin customising and designing they’re own widgets. This has provided great value to our growers since we can build them customised dashboards with very little time and effort on our part. The ability to ingest data directly from our LoRaWAN MQTT broker, via the platform’s IoT Gateway feature, has eliminated the need for us to maintain a seperate middleware layer, improving our operational efficiencies.
+            在经过大量搜索后，ThingsBoard (TB) 成为一项惊人的发现。
+            该平台的思想和架构成熟度在市场上无与伦比。
+            它使我们能够将我们的平台提前整整 18 个月推向市场，
+            而不是着手开发我们自己的后端和可视化功能。
+            凭借如此灵活的 UI，即使只具备基本的 HTML 和 Javascript 知识，
+            也可以快速轻松地开始自定义和设计自己的小部件。
+            这对我们的种植者来说非常有价值，因为我们可以在几乎不花费时间和精力的情况下为他们构建自定义仪表板。
+            通过平台的物联网网关功能，能够直接从我们的 LoRaWAN MQTT 代理接收数据，
+            无需我们维护单独的中间件层，从而提高了我们的运营效率。
         </p>
         <p>
-            All in all, Andrew and all the amazingly helpful guys at ThingsBoard, have developed a highly capable and scalable solution for just about any IoT application and we say look no further for your next IoT project. 
+            总而言之，Andrew 和 ThingsBoard 中所有乐于助人的家伙们，
+            为几乎任何物联网应用程序开发了一种功能强大且可扩展的解决方案，
+            我们说，不要再为您的下一个物联网项目寻找其他解决方案了。
         </p>
     </div>
 </div>
@@ -96,17 +108,21 @@ description:
         <div class="person-container">
             <div class="person-title">
                 <p class="person-name"> Miroslav Holubec </p>
-                <p class="person-position"> Director </p>
+                <p class="person-position"> 董事 </p>
             </div>
         </div>
         <h2>
-            Develops solutions for agriculture and the environment.
+            为农业和环境开发解决方案。
         </h2>
         <p>
-            We started using the Thingsboard (TB) in 2017, and later switched to the professional edition (PE). We are very satisfied with the platform as it provides us with high flexibility and stability. We highly appreciate the visual editor for Rule engine new Multitenancy approach. The platform provides for us a unique possibility to create our own data connectors, which allows us to create dashboards and combine data from multiple data sources.
+            我们从 2017 年开始使用 Thingsboard (TB)，后来切换到专业版 (PE)。
+            我们对该平台非常满意，因为它为我们提供了很高的灵活性和稳定性。
+            我们非常赞赏规则引擎的新多租户方法的可视化编辑器。
+            该平台为我们提供了创建我们自己的数据连接器的独特可能性，
+            这使我们能够创建仪表板并组合来自多个数据源的数据。
         </p>
         <p>
-            We highly appreciate the support of the creators, their feedback is simply excellent!
+            我们非常感谢创建者的支持，他们的反馈非常棒！
         </p>
     </div>
 </div>

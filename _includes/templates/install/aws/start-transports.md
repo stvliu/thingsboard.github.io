@@ -1,34 +1,34 @@
-You should also deploy the transport microservices. Omit the protocols that you don't use in order to save resources:
+您还应该部署传输微服务。省略您不使用的协议以节省资源：
 
-##### HTTP Transport (optional)
+##### HTTP 传输（可选）
 
 ```
 kubectl apply -f transports/tb-http-transport.yml
 ```
 {: .copy-code}
 
-##### MQTT transport (optional)
+##### MQTT 传输（可选）
 
 ```
 kubectl apply -f transports/tb-mqtt-transport.yml
 ```
 {: .copy-code}
 
-##### CoAP transport (optional)
+##### CoAP 传输（可选）
 
 ```
 kubectl apply -f transports/tb-coap-transport.yml
 ```
 {: .copy-code}
 
-##### LwM2M transport (optional)
+##### LwM2M 传输（可选）
 
 ```
 kubectl apply -f transports/tb-lwm2m-transport.yml
 ```
 {: .copy-code}
 
-##### SNMP transport (optional)
+##### SNMP 传输（可选）
 
 ```
 kubectl apply -f transports/tb-snmp-transport.yml

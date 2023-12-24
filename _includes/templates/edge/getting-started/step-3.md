@@ -1,4 +1,4 @@
-Timeseries data and attributes are pushed to the Server according to the [Edge Rule Engine](/docs/edge/rule-engine/general/).
-We will review the default **Edge Root Rule Chain** to understand how the temperature data is pushed from the Edge to the Server.
+时间序列数据和属性根据 [边缘规则引擎](/docs/edge/rule-engine/general/) 推送到服务器。
+我们将查看默认的 **边缘根规则链**，以了解温度数据如何从边缘推送到服务器。
 
 {% include images-gallery.html imageCollection="step3" showListImageTitles="true" %}

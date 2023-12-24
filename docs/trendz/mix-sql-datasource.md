@@ -2,94 +2,94 @@
 layout: docwithnav-trendz
 assignees:
 - vparomskiy
-title: Combine data from ThingsBoard and external databases
-description: Combine data from ThingsBoard and external SQL databases to compute metrics and analyze trends.
+title: 组合来自 ThingsBoard 和外部数据库的数据
+description: 组合来自 ThingsBoard 和外部 SQL 数据库的数据以计算指标并分析趋势。
 ---
 
 * TOC
 {:toc}
 
-ThingsBoard is a reliable platform to manage your IoT entities – from devices and assets to customers and users. All these entities produce data: attributes and telemetry information, stored and organized neatly in the system.
-Trendz lets you look at the data, calculate metrics, spot unusual patterns, and even predict what might happen next. But IoT solution is limited by data reported from sensors, there are other systems that can provide useful data for your business. 
-To support such cases we updated Trendz to work with more than just ThingsBoard data. You can now also pull data from external SQL databases into Trendz. 
-This means you can combine data from ThingsBoard with data from other systems and look at everything together in one place.
+ThingsBoard 是一个可靠的平台，可用于管理您的 IoT 实体——从设备和资产到客户和用户。所有这些实体都会产生数据：属性和遥测信息，存储在系统中并井然有序。
+Trendz 允许您查看数据、计算指标、发现异常模式，甚至预测接下来可能发生的事情。但是，IoT 解决方案受到传感器报告的数据的限制，还有其他系统可以为您的业务提供有用的数据。
+为了支持此类案例，我们更新了 Trendz，使其不仅可以处理 ThingsBoard 数据。您现在还可以将数据从外部 SQL 数据库提取到 Trendz 中。
+这意味着您可以将来自 ThingsBoard 的数据与来自其他系统的数据组合在一起，并在一个地方查看所有内容。
 
-**For example:** if you have machine performance data in ThingsBoard and maintenance logs or factory production rates in an external SQL database, you can merge and analyze them together in Trendz. 
+**例如：**如果您在 ThingsBoard 中有机器性能数据，而在外部 SQL 数据库中有维护日志或工厂生产率，则可以将它们合并并一起在 Trendz 中进行分析。
 
-In this article, we'll show you how this new feature works, give you some examples of how it can be helpful, and walk you through the setup process step by step. Let’s get started!
+在本文中，我们将向您展示此新功能的工作原理，为您提供一些有关它如何提供帮助的示例，并逐步引导您完成设置过程。让我们开始吧！
 
-## Add external SQL datasource
-First step is to tell Trendz how to connect to your external SQL database.
+## 添加外部 SQL 数据源
+第一步是告诉 Trendz 如何连接到您的外部 SQL 数据库。
 
-* Got to **Settings** -> **External data sources**
-* Click **Add new datasource** button
-* Fill in the form with your database connection details like, url, login and password. For example
-  * **URL**: `jdbc:postgresql://localhost:5432/externaldb`
-  * **Login**: `postgres`
-  * **Password**: `postgres`
-* Save changes
+* 转到 **设置** -> **外部数据源**
+* 单击 **添加新数据源** 按钮
+* 使用您的数据库连接详细信息（例如，URL、登录名和密码）填写表单。例如
+  * **URL**：`jdbc:postgresql://localhost:5432/externaldb`
+  * **登录名**：`postgres`
+  * **密码**：`postgres`
+* 保存更改
 
-## Define external Business Entity
-Next step is to tell Trendz what data you want to pull from your external SQL database. Trendz has a concept of `Business Entity` that represents a group of ThingsBoard entities, like device/asset/customer. 
-Trendz also supports 'external' business entities that are not stored in ThingsBoard, but in external SQL database. Note that business entity is not a single entity or row in the table, 
-but a definition of a group of entities with same common parameters - type, attributes, telemetry fields. Finally, business entities are connected between each other with relations or foreign keys. All this information represent a `topology graph` in Trendz.
+## 定义外部业务实体
+下一步是告诉 Trendz 您想从外部 SQL 数据库中提取哪些数据。Trendz 有一个 `业务实体` 的概念，它表示一组 ThingsBoard 实体，如设备/资产/客户。
+Trendz 还支持未存储在 ThingsBoard 中而是存储在外部 SQL 数据库中的“外部”业务实体。请注意，业务实体不是表中的单个实体或行，
+而是具有相同通用参数（类型、属性、遥测字段）的一组实体的定义。最后，业务实体通过关系或外键相互连接。所有这些信息都代表 Trendz 中的 `拓扑图`。
 
-To add exeternal business entity in Trendz topology follow these steps:
-* Go to **Business Entities** page in Trendz
-* Click **Add business entity** button
-* Configure `Criteria` tab
-  * `Name` - name of the business entity 
-  * `Entity type` = **EXTERNAL** - this is how Trendz knows that this business entity is not stored in ThingsBoard
-  * `Datasource` - select datasource that you added in previous step
-  * `Table` - type name of the table that should be used to pull data from
-* Configure `Fields` tab
-  * For each column in a table create a separate field under business entity
-  * `Name` - name of the field
-  * `Key` - column name in the table
-  * `Query type` = **TELEMETRY**
-  * For timestamp field in external table you must enable `Use Field as Telemetry Timestamp` checkbox
+若要在 Trendz 拓扑中添加外部业务实体，请按照以下步骤操作：
+* 转到 Trendz 中的 **业务实体** 页面
+* 单击 **添加业务实体** 按钮
+* 配置 `标准` 选项卡
+  * `名称` - 业务实体的名称
+  * `实体类型` = **外部** - 这是 Trendz 知道此业务实体未存储在 ThingsBoard 中的方式
+  * `数据源` - 选择您在上一步中添加的数据源
+  * `表` - 键入应从中提取数据的表的名称
+* 配置 `字段` 选项卡
+  * 对于表中的每一列，在业务实体下创建一个单独的字段
+  * `名称` - 字段的名称
+  * `键` - 表中的列名
+  * `查询类型` = **遥测**
+  * 对于外部表中的时间戳字段，您必须启用 `将字段用作遥测时间戳` 复选框
 
-Finally, we need to tell Trendz how external Business Entity conencted with other entities in ThignsBoard. For example, if you have a table with `device_id` column, you can use it to connect external business entity with ThingsBoard devices.
+最后，我们需要告诉 Trendz 外部业务实体如何与 ThignsBoard 中的其他实体连接。例如，如果您有一个带有 `device_id` 列的表，则可以使用它将外部业务实体与 ThingsBoard 设备连接起来。
 
-* Configure `Relations` tab
-  * Click **Add relation** button
-  * `Name` - set name of the relation
-  * `Direction` - set to **FROM**
-  * `Selected business entity` - select related ThingsBoard business entity from the list
-  * Enable created relation
-* Save changes
+* 配置 `关系` 选项卡
+  * 单击 **添加关系** 按钮
+  * `名称` - 设置关系的名称
+  * `方向` - 设置为 **来自**
+  * `选定的业务实体` - 从列表中选择相关的 ThingsBoard 业务实体
+  * 启用创建的关系
+* 保存更改
 
-## Security and data visibility
-With the exciting capability to pull data from both ThingsBoard and external SQL tables into Trendz, it's essential that we address an important aspect: security and data visibility. 
-Users should be confident that their data remains protected and is shown only to those with the right permissions. Here's how it works:
+## 安全性和数据可见性
+借助将数据从 ThingsBoard 和外部 SQL 表提取到 Trendz 的令人兴奋的功能，我们必须解决一个重要方面：安全性和数据可见性。
+用户应该确信他们的数据受到保护，并且只向具有正确权限的人员显示。它的工作原理如下：
 
-An external SQL table might have information for various entities in our system. When creating visualizations in Trendz that combine data from ThingsBoard and these external tables, we prioritize ensuring that users only see what they're allowed to see.
-ThingsBoard already has a system in place where specific user permissions are set for each entity. Trendz taps into these permissions. 
-Because Trendz understands how the external SQL table links to entities in ThingsBoard, it can smartly filter data from the external sources.
+外部 SQL 表可能包含我们系统中各种实体的信息。在 Trendz 中创建将来自 ThingsBoard 和这些外部表的数据组合在一起的可视化时，我们优先确保用户只能看到他们被允许看到的内容。
+ThingsBoard 已经有一个系统，其中为每个实体设置了特定的用户权限。Trendz 利用这些权限。
+由于 Trendz 了解外部 SQL 表如何链接到 ThingsBoard 中的实体，因此它可以智能地过滤来自外部源的数据。
 
-To give a clearer picture, consider this: Let's say we have an external SQL table storing maintenance history for every machine in a factory. 
-Each of these machines is also registered as an entity in ThingsBoard. 
-Now, if certain users are only given access to specific machines in ThingsBoard, when they view a Trendz visualization that combines machine data and maintenance history, they'll only see the maintenance details for the machines they have access to.
+为了提供更清晰的画面，请考虑这一点：假设我们有一个外部 SQL 表，其中存储了工厂中每台机器的维护历史记录。
+其中每台机器也作为实体注册在 ThingsBoard 中。
+现在，如果某些用户仅被授予访问 ThingsBoard 中特定机器的权限，那么当他们查看将机器数据和维护历史记录组合在一起的 Trendz 可视化时，他们将只看到他们有权访问的机器的维护详细信息。
 
-In this case, if we want to see what was an average maintenance period for factory equiment, Trendz will provide us with an average value based on the data that we have access to. 
-In essence, this setup ensures that data remains secure and visible only to the right eyes, maintaining a seamless and trusted user experience.
+在这种情况下，如果我们想了解工厂设备的平均维护周期，Trendz 将根据我们有权访问的数据为我们提供平均值。
+从本质上讲，此设置确保数据保持安全，并且仅对正确的人员可见，从而保持无缝且值得信赖的用户体验。
 
-## Data grouping and aggregation
-In this part we want to explain how Trendz mix data from ThignsBoard and external SQL datasources. To make it we will use a simple example: 
-Imagine you want to see a report showing the total maintenance duration for each type of equipment maintenance, broken down monthly for the past year. 
-We already have `Equipment` entity in ThingsBoard and `Maintenance` entity in external SQL database. And we alredy configured Trendz topology graph to connect these two entities via relation.
+## 数据分组和聚合
+在这一部分，我们想解释 Trendz 如何混合来自 ThignsBoard 和外部 SQL 数据源的数据。为了做到这一点，我们将使用一个简单的示例：
+想象一下，您想查看一份报告，显示过去一年按月分类的每种设备维护的总维护持续时间。
+我们已经在 ThingsBoard 中有了 `设备` 实体，在外部 SQL 数据库中有 `维护` 实体。我们已经配置了 Trendz 拓扑图，通过关系将这两个实体连接起来。
 
-To build such report we need to create a new visualization in Trendz, probably stacked bar chart nad add following fields into it:
-* Equipment serial number (from ThingsBoard) set to `uniq` aggregation.
-* Maintenance type (a text column from an external SQL table) with `uniq` aggregation.
-* Duration (an integer column from the same external SQL table) with `sum` aggregation.
+要构建此类报告，我们需要在 Trendz 中创建一个新的可视化，可能是堆叠条形图，并在其中添加以下字段：
+* 设备序列号（来自 ThingsBoard）设置为 `uniq` 聚合。
+* 维护类型（来自外部 SQL 表的文本列）具有 `uniq` 聚合。
+* 持续时间（来自同一外部 SQL 表的整数列）具有 `sum` 聚合。
 
-Here is a simplified process how Trendz will build this report:
-* Fetch list of equipment entities form ThignsBoard that are visible to current user.
-* Build SQL query to fetch data from external SQL table. This query will have `WHERE` clause to filter data only for equipment entities that we fetched from ThingsBoard.
-* Add configured filter conditions, time grouping and aggregation functions to the query.
+以下是 Trendz 将如何构建此报告的简化过程：
+* 从 ThignsBoard 中提取当前用户可见的设备实体列表。
+* 构建 SQL 查询以从外部 SQL 表中提取数据。此查询将具有 `WHERE` 子句，以仅过滤我们从 ThingsBoard 中提取的设备实体的数据。
+* 将配置的筛选条件、时间分组和聚合函数添加到查询中。
 
-Final query will look like this:
+最终查询将如下所示：
 ```sql
 SELECT
   date_trunc('month', start_at) AS month_start,
@@ -106,13 +106,13 @@ GROUP BY
   date_trunc('month', start_at);
 ```
 
-## Save incoming telemetry from ThingsBoard into external SQL table
-Certain telemetry formats can be difficult to fetch for reporting. At times, retrieving and aggregating data can consume a lot of time, affecting performance. 
-One effective solution is to utilize external SQL tables. ThingsBord Rule Engine is a palce where we define how incoming telemetry streams are processed in the ssytem. 
-By duplicating the incoming telemetry from Rule Engine into custom SQL table, we ensure the data is in an easily accessible format and properly configured indexes further enhance data fetching speeds.
-By registering this table as external business entity in Trendz, we can build reports faster, and utilize the flexibility Trendz offers for data visualization and analysis.
+## 将来自 ThingsBoard 的传入遥测保存到外部 SQL 表中
+某些遥测格式可能难以提取以进行报告。有时，检索和聚合数据会消耗大量时间，从而影响性能。
+一种有效的解决方案是利用外部 SQL 表。ThingsBord 规则引擎是我们定义如何在系统中处理传入遥测流的地方。
+通过将来自规则引擎的传入遥测复制到自定义 SQL 表中，我们确保数据采用易于访问的格式，并且正确配置的索引进一步提高了数据提取速度。
+通过将此表注册为 Trendz 中的外部业务实体，我们可以更快地构建报告，并利用 Trendz 为数据可视化和分析提供的灵活性。
 
-Here is a brief concept how to make it happen:
-* Transform and Enrich Incoming Data: Before storing, enhance inciming telemetry event in ThingsBoard Rule Engine to suit your reporting needs.
-* Create custom rule node in Rule Engine: This node's job will be to save the telemetry data into the external SQL table.
-* Migrate historical data into the external SQL table: This step is optional, but if you want to build reports on historical data that you already have, you'll need to migrate it into the external SQL table.
+以下是如何实现它的简要概念：
+* 转换和丰富传入数据：在存储之前，在 ThingsBoard 规则引擎中增强传入遥测事件以满足您的报告需求。
+* 在规则引擎中创建自定义规则节点：此节点的任务是将遥测数据保存到外部 SQL 表中。
+* 将历史数据迁移到外部 SQL 表：此步骤是可选的，但如果您想根据已经拥有的历史数据构建报告，则需要将其迁移到外部 SQL 表中。

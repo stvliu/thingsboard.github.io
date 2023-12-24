@@ -1,41 +1,41 @@
 ---
 layout: docwithnav-gw
-title: IoT Gateway upgrade instructions.
+title: 物联网网关升级说明。
 
 ---
 
 
-### Upgrade instructions
+### 升级说明
 
-There are 2 ways for upgrade ThingsBoard IoT Gateway, depends on a version that you want (**Release** or **Develop**).
+有 2 种方法可以升级 ThingsBoard 物联网网关，具体取决于您想要升级的版本（**Release** 或 **Develop**）。
 
-* To upgrade to **Release** version you should use following commands:
+* 要升级到 **Release** 版本，您应该使用以下命令：
 
- - **Installation from pip**
+ - **从 pip 安装**
 
 ```bash
 sudo pip3 install thingsboard-gateway --upgrade
 ```
 {: .copy-code}
 
- - **Installation as a daemon**
+ - **作为守护进程安装**
  
  ```bash
 sudo pip3 install thingsboard-gateway --user thingsboard_gateway --upgrade
 ```
 {: .copy-code}
 
-* To upgrade to **Develop** version you should use [this guide](/docs/iot-gateway/install/source-installation/).
+* 要升级到 **Develop** 版本，您应该使用 [本指南](/docs/iot-gateway/install/source-installation/)。
 
-To upgrade ThingsBoard IoT Gateway docker installation use **Upgrading** step from [Docker installation guide](/docs/iot-gateway/install/docker-installation/#upgrading).
+要升级 ThingsBoard 物联网网关 docker 安装，请使用 [Docker 安装指南](/docs/iot-gateway/install/docker-installation/#upgrading) 中的 **升级** 步骤。
 
 
-**Notate:** If you have some issues with upgrade, please try to remove package from pip in every system layer (sudo, user, local).  
+**注意：**如果您在升级时遇到一些问题，请尝试从每个系统层（sudo、用户、本地）中删除 pip 包。
 
-To do this please run following command:  
+为此，请运行以下命令：
 ```bash
 sudo pip3 uninstall thingsboard-gateway -y
 ```
 {: .copy-code}
 
-After removal, you need to install the gateway again using command above.  
+删除后，您需要使用上述命令重新安装网关。

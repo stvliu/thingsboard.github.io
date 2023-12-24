@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-pe
-title: Flow Nodes
-description: Rule Engine 2.0 Flow Nodes
+title: 流程节点
+description: 规则引擎 2.0 流程节点
 redirect_from: "/docs/user-guide/rule-engine-2-0/pe/flow-nodes"
 ---
 

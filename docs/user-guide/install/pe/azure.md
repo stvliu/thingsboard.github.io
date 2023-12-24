@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-pe
-title: Installing ThingsBoard PE on Azure
-description: Installing ThingsBoard PE on Azure
+title: 在 Azure 上安装 ThingsBoard PE
+description: 在 Azure 上安装 ThingsBoard PE
 
 ---
 
@@ -10,10 +10,10 @@ description: Installing ThingsBoard PE on Azure
        <div class="install-options-hero">
           <div class="container">
             <div class="install-options-hero-content">
-                <span class="heading">ThingsBoard Setup options on Azure</span>
+                <span class="heading">Azure 上的 ThingsBoard 设置选项</span>
                 <div class="install-options-description">
                     <p>
-                        You may deploy ThingsBoard IoT Platform with different infrastructure setup
+                        您可以使用不同的基础设施设置部署 ThingsBoard IoT 平台
                     </p>
                 </div>
             </div>
@@ -27,7 +27,7 @@ description: Installing ThingsBoard PE on Azure
                                        <a href="/docs/user-guide/install/pe/cluster/azure-from-markeplace/">
                                            <span>
                                                <div class="deployment-logo">
-                                                   <img width="" src="/images/install/cloud/azure-vm.svg" title="Installing ThingsBoard PE from Azure Marketplace" alt="Azure Marketplace">
+                                                   <img width="" src="/images/install/cloud/azure-vm.svg" title="从 Azure Marketplace 安装 ThingsBoard PE" alt="Azure Marketplace">
                                                    <h5 class="title">Azure Marketplace</h5>
                                                 </div>
                                            </span>
@@ -37,8 +37,8 @@ description: Installing ThingsBoard PE on Azure
                                        <a href="/docs/user-guide/install/pe/cluster/azure-aks-setup/">
                                            <span>
                                                <div class="deployment-logo">
-                                                   <img width="" src="/images/install/cloud/azure-aks.svg" title="ThingsBoard setup with Kubernetes on Azure AKS" alt="Azure AKS">
-                                                   <h5 class="title">Azure Kubernetes Service</h5>
+                                                   <img width="" src="/images/install/cloud/azure-aks.svg" title="在 Azure AKS 上使用 Kubernetes 设置 ThingsBoard" alt="Azure AKS">
+                                                   <h5 class="title">Azure Kubernetes 服务</h5>
                                                 </div>
                                            </span>
                                        </a>

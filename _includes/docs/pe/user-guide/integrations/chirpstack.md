@@ -1,34 +1,40 @@
-{% assign feature = "Platform Integrations" %}{% include templates/pe-feature-banner.md %}
+{% assign feature = "平台集成" %}{% include templates/pe-feature-banner.md %}
 
-* TOC 
+* TOC
 {:toc}
 
-## Overview
+## 概述
 
-The ChirpStack open-source LoRaWAN Network Server stack provides open-source components for LoRaWAN networks.  
-After integrating ChirpStack with ThingsBoard, you can connect, communicate, process and visualize data from devices in the ThingsBoard IoT platform.
+ChirpStack 开源 LoRaWAN 网络服务器堆栈为 LoRaWAN 网络提供开源组件。
 
-## ChirpStack configuration
+将 ChirpStack 与 ThingsBoard 集成后，您可以在 ThingsBoard IoT 平台中连接、通信、处理和可视化设备数据。
 
-In order to get data you should have configured instance of ChirpStack Network server stack.  
-In this guide we will use the ***configured local instance***, installed by docker compose.
-[**How to install ChirpStack Network server stack using docker compose**](https://www.chirpstack.io/project/guides/docker-compose/).  
-Also, we have connected device, how to connect it you can find in [**Connection guide from the official site**](https://www.chirpstack.io/project/guides/connect-device/).  
-When device connected and the data appears in the **DEVICE DATA** tab - we can start to configure the integration to the ThingsBoard.  
+## ChirpStack 配置
 
-## Create Uplink Converter
+为了获取数据，您应该配置 ChirpStack 网络服务器堆栈实例。
 
-Before creating the integration, you need to create an **Uplink converter** in **Data converters.**
-Uplink is necessary in order to convert the incoming data from the device into the required format for displaying them in ThingsBoard.
-Click on the **"plus"** and on **"Create new converter".** 
-To view the events, enable **Debug.** In the function decoder field, specify a script to parse
-and transform data. 
+在本指南中，我们将使用通过 docker compose 安装的 ***配置的本地实例***。
+[**如何使用 docker compose 安装 ChirpStack 网络服务器堆栈**](https://www.chirpstack.io/project/guides/docker-compose/)。
 
-**NOTE** Although the Debug mode is very useful for development and troubleshooting, leaving it enabled in production mode may tremendously increase the disk space, used by the database, because all the debugging data is stored there. It is highly recommended to turn the Debug mode off when done debugging.
+此外，我们已经连接了设备，您可以在 [**官方网站的连接指南**](https://www.chirpstack.io/project/guides/connect-device/) 中找到如何连接设备。
+
+当设备连接并且数据出现在 **设备数据** 选项卡中时，我们可以开始配置与 ThingsBoard 的集成。
+
+## 创建上行转换器
+
+在创建集成之前，您需要在 **数据转换器** 中创建一个 **上行转换器**。
+
+上行对于将来自设备的传入数据转换为在 ThingsBoard 中显示它们所需的格式是必要的。
+
+单击 **“加号”** 和 **“创建新转换器”。**
+
+要查看事件，请启用 **调试。** 在函数解码器字段中，指定一个脚本来解析和转换数据。
+
+**注意** 尽管调试模式对于开发和故障排除非常有用，但在生产模式下启用它可能会极大地增加数据库使用的磁盘空间，因为所有调试数据都存储在那里。强烈建议在完成调试后关闭调试模式。
 
 {% include images-gallery.html imageCollection="uplink" %}
 
-Let's review sample uplink message from ChirpStack:
+让我们回顾一下来自 ChirpStack 的上行示例消息：
 
 ```
 {
@@ -59,20 +65,20 @@ Let's review sample uplink message from ChirpStack:
     "publishedAt": "2021-09-17T13:45:00.342008687Z"
 }
 ```
-As you can see the device name arrives in the "deviceName" field. We will use it as a device name in ThingsBoard. Device data is encoded in the "data" field.
-The Base64 encoded data here is:
+如您所见，设备名称出现在 "deviceName" 字段中。我们将在 ThingsBoard 中将其用作设备名称。设备数据编码在 "data" 字段中。
+此处的 Base64 编码数据为：
 ```
 "data": "GVAy"
 ```
-Let's convert them into flags, battery and light values.
+让我们将它们转换为标志、电池和光值。
 
-In the decoded form we have the following string: ***258050***  
+在解码形式中，我们有以下字符串：***258050***
 
-**25** is the value for **flags**.  
-**80** is the value for **battery**.  
-**50** is the value for **light**.  
+**25** 是 **标志** 的值。
+**80** 是 **电池** 的值。
+**50** 是 **光** 的值。
 
-In the converter it will be indicated like this:  
+在转换器中，它将指示如下：
 
 ```
 var flags = parseInt(incomingHexData.substring(0, 2), 16);
@@ -81,19 +87,19 @@ var light = parseInt(incomingHexData.substring(4, 6), 16);
 ```
 
 
-#### Example for the Uplink converter
+#### 上行转换器的示例
 
 ```javascript
-// Decode an uplink message from a buffer
-// payload - array of bytes
-// metadata - key/value object
+// 从缓冲区解码上行消息
+// payload - 字节数组
+// metadata - 键/值对象
 
-/** Decoder **/
+/** 解码器 **/
 
-// decode payload to string
+// 将有效负载解码为字符串
 var payloadStr = decodeToString(payload);
 
-// decode payload to JSON
+// 将有效负载解码为 JSON
 var data = decodeToJson(payload);
 
 var deviceName = data.deviceName;
@@ -123,17 +129,17 @@ var result = {
    }
 };
 
-/** Helper functions **/
+/** 帮助器函数 **/
 
 function decodeToString(payload) {
    return String.fromCharCode.apply(String, payload);
 }
 
 function decodeToJson(payload) {
-   // covert payload to string.
+   // 将有效负载转换为字符串。
    var str = decodeToString(payload);
 
-   // parse string to JSON
+   // 将字符串解析为 JSON
    var data = JSON.parse(str);
    return data;
 }
@@ -149,81 +155,83 @@ function base64ToHex(str) {
 }
 
 return result;
-``` 
+```
 {: .copy-code}
 
-You can change the decoder function while creating the converter or after creating it. If the converter has already been created, then click on the "pencil" icon to edit it.
-Copy the configuration example for the converter (or your own configuration) and insert it into the decoder function. Save changes by clicking on the "checkmark" icon.
+您可以在创建转换器或创建转换器后更改解码器函数。如果转换器已经创建，则单击“铅笔”图标进行编辑。
+复制转换器的配置示例（或您自己的配置）并将其插入解码器函数。单击“对勾”图标保存更改。
 
 
-## Create Integration
+## 创建集成
 
-To create integration on ThingsBoard we need the following parts:
-- **Uplink converter**
-- **Application server url**
-- **Application API key from application server**
+要在 ThingsBoard 上创建集成，我们需要以下部分：
+- **上行转换器**
+- **应用服务器 URL**
+- **应用服务器的应用 API 密钥**
 
-To get the API key we need to open Application server UI, open **API keys** tab from the left top menu and create an API key.  
+要获取 API 密钥，我们需要打开应用服务器 UI，从左上角菜单中打开 **API 密钥** 选项卡并创建一个 API 密钥。
 
 {% include images-gallery.html imageCollection="api-keys" %}
 
-Now that the Uplink converter has been created, and we have all required data, it is possible to create an integration.
+现在已经创建了上行转换器，并且我们拥有所有所需数据，就可以创建集成。
 
-**NOTE**: It is recommended to enable **Debug mode** for debug purposes to see uplink/downlink events on integration.
+**注意：** 建议出于调试目的启用 **调试模式**，以便在集成上查看上行/下行事件。
 
 {% include images-gallery.html imageCollection="integration" %}
 
-In order for data to be transferred from ChirpStack to ThingsBoard, you need to configure an **Integration** for your ChirpStack application.    
-To create integration on ChirpStack Network server stack, we need to do the following steps:  
-1. Login to ChirpStack Network server stack user interface (Default login/password - **admin**/**admin**).  
-2. We go to the tab **Applications** in the left menu and open our application (our application is named *Application*).  
-3. Open the **Integrations** tab and create a **HTTP** integration.
-4. Let`s go to the **Integrations** tab in ThingsBoard. Find your ChirpStack integration and click on it. There you can find the HTTP endpoint URL. Click on the icon to copy the url.
-5. Fill the fields with endpoint url from ThingsBoard integration.
+为了将数据从 ChirpStack 传输到 ThingsBoard，您需要为您的 ChirpStack 应用配置一个 **集成**。
+
+要在 ChirpStack 网络服务器堆栈上创建集成，我们需要执行以下步骤：
+1. 登录到 ChirpStack 网络服务器堆栈用户界面（默认登录名/密码 - **admin**/**admin**）。
+2. 我们转到左侧菜单中的 **应用** 选项卡并打开我们的应用（我们的应用名为 *应用*）。
+3. 打开 **集成** 选项卡并创建一个 **HTTP** 集成。
+4. 让我们转到 ThingsBoard 中的 **集成** 选项卡。找到您的 ChirpStack 集成并单击它。在那里您可以找到 HTTP 端点 URL。单击图标复制 URL。
+5. 使用来自 ThingsBoard 集成的端点 URL 填写字段。
 
 {% include images-gallery.html imageCollection="chirpstack_integration" %}
 
 
-## Processing Uplink message
+## 处理上行消息
 
-When device sends uplink message, you will receive an uplink event on integration and data from the device.  
+当设备发送上行消息时，您将在集成上收到一个上行事件和来自设备的数据。
 
 {% include images-gallery.html imageCollection="uplink_message" %}
 
-The created device with data can be seen in the section **Device groups -> All**
+可以在 **设备组 -> 全部** 部分中看到具有数据的已创建设备
 
 {% include images-gallery.html imageCollection="device_groups" %}
 
-Received data can be viewed in the Uplink converter. In the **“In”** and **"Out"** blocks of the **Events** tab:
+可以在上行转换器中查看接收到的数据。在 **事件** 选项卡的 **“输入”** 和 **“输出”** 块中：
 
 {% include images-gallery.html imageCollection="uplink_events" %}
 
-Use the Dashboards to work with data. Dashboards are a modern format for collecting and visualizing data sets. Visibility of data presentation is achieved through a variety of widgets. 
+使用仪表板处理数据。仪表板是收集和可视化数据集的现代格式。通过各种小部件实现数据呈现的可见性。
 
-ThingsBoard has examples of several types of dashboards that you can use. You can find them in **Solution templates** tab.
+ThingsBoard 有几种类型的仪表板示例，您可以使用它们。您可以在 **解决方案模板** 选项卡中找到它们。
 
 {% include images-gallery.html imageCollection="solution_templates" %}
 
-How to work with dashboards [read here](/docs/{{docsPrefix}}user-guide/dashboards/)
+如何使用仪表板 [在此处阅读](/docs/{{docsPrefix}}user-guide/dashboards/)
 
 
 
-## Advanced Usage: Create Downlink Converter
+## 高级用法：创建下行转换器
 
-Create Downlink in **Data converters.** To see events - enable **Debug.**
+在 **数据转换器** 中创建下行。要查看事件 - 启用 **调试。**
 
 {% include images-gallery.html imageCollection="create_downlink" %}
 
 
-You can customize the downlink according to your configuration.  
-Let's consider an example where we send an attribute update message.
-`So we should change code in the downlink encoder function under line `//downlink data input`
+您可以根据您的配置自定义下行。
+
+让我们考虑一个我们发送属性更新消息的示例。
+`因此，我们应该在 `//下行数据输入` 行下更改下行编码器函数中的代码
 
 ```
 data: msg.downlink
 ```
 
-Also, indicate the required parameters in the metadata:  
+此外，在元数据中指明所需的参数：
 
 ```
 metadata: {
@@ -231,28 +239,28 @@ metadata: {
   "port": 1
 }
 ```
-Example for downlink converter:  
+下行转换器的示例：
 
 ```javascript
-// Encode downlink data from incoming Rule Engine message
+// 从传入的规则引擎消息对下行数据进行编码
 
-// msg - JSON message payload downlink message json
-// msgType - type of message, for ex. 'ATTRIBUTES_UPDATED', 'POST_TELEMETRY_REQUEST', etc.
-// metadata - list of key-value pairs with additional data about the message
-// integrationMetadata - list of key-value pairs with additional data defined in Integration executing this converter
+// msg - JSON 消息有效负载下行消息 json
+// msgType - 消息类型，例如 'ATTRIBUTES_UPDATED'、'POST_TELEMETRY_REQUEST' 等。
+// metadata - 包含有关消息的其他数据的键值对列表
+// integrationMetadata - 包含有关在执行此转换器的集成中定义的其他数据的键值对列表
 
-/** Encoder **/
+/** 编码器 **/
 
-// Result object with encoded downlink payload
+// 具有编码下行有效负载的 Result 对象
 var result = {
 
-    // downlink data content type: JSON, TEXT or BINARY (base64 format)
+    // 下行数据内容类型：JSON、TEXT 或 BINARY（base64 格式）
     contentType: "TEXT",
 
-    // downlink data
+    // 下行数据
     data: btoa(msg.downlink),
 
-    // Optional metadata object presented in key/value format
+    // 以键/值格式显示的可选元数据对象
     metadata: {
             DevEUI: metadata.cs_DevEUI,
             fPort: metadata.cs_fPort
@@ -262,42 +270,44 @@ var result = {
 
 return result;
 
-``` 
+```
 {: .copy-code}
 
-Where **DevEUI** is device EUI, it will be taken from the device uplink message.  
-A **fPort** can be from 1 to 223, it will be taken from the device uplink message.  
+其中 **DevEUI** 是设备 EUI，它将从设备上行消息中获取。
+
+**fPort** 可以是 1 到 223，它将从设备上行消息中获取。
 
 {% include images-gallery.html imageCollection="downlink" %}
 
-Add a converter to the integration.  
-You can do this at the stage of creating an integration or editing it.  
+将转换器添加到集成。您可以在创建集成或编辑集成的阶段执行此操作。
 
-In order to send Downlink, we use the rule chain to process shared attribute update.  
-To get **fPort** and **DevEUI** from device we have to import rule-chain.  
-You can find it [**here**](/docs/user-guide/integrations/resources/downlink_to_chirpstack.json).  
+为了发送下行，我们使用规则链来处理共享属性更新。
+
+要从设备获取 **fPort** 和 **DevEUI**，我们必须导入规则链。
+
+您可以在 [**此处**](/docs/user-guide/integrations/resources/downlink_to_chirpstack.json) 找到它。
 
 {% include images-gallery.html imageCollection="downlink_rule_chain" %}
 
-Also, we have to configure the root rule-chain:
+此外，我们必须配置根规则链：
 
 {% include images-gallery.html imageCollection="root_rule_chain" %}
 
-We go to the **Device group** section in the **All** folder, to see this with an example.  
-We have indicated the downlink of the device in the **Shared attributes.**  
-Now we edit it by clicking on the “pencil” icon.  
-Then we make changes to the attribute (change the **downlink** to 01040206) and save the data.
+我们转到 **设备组** 部分中的 **全部** 文件夹，以示例方式查看此内容。
+
+我们已在 **共享属性** 中指明设备的下行。
+
+现在，我们通过单击“铅笔”图标对其进行编辑。
+
+然后，我们对属性进行更改（将 **下行** 更改为 01040206）并保存数据。
 
 {% include images-gallery.html imageCollection="shared_attributes" %}
 
-Received data and data that was sent can be viewed in the downlink converter. In the **“In”** block of the **Events** tab, we see what data entered and the **“Out”** field displays messages to device:
+可以在下行转换器中查看接收到的数据和发送的数据。在 **事件** 选项卡的 **“输入”** 块中，我们看到输入了什么数据，**“输出”** 字段显示到设备的消息：
 
 {% include images-gallery.html imageCollection="downlink_events" %}
 
 
-## Next steps
+## 后续步骤
 
 {% assign currentGuide = "ConnectYourDevice" %}{% include templates/multi-project-guides-banner.md %}
-
-
-

@@ -1,9 +1,9 @@
 ---
 layout: devices-library-article
-title: How to connect Coral Dev Board to ThingsBoard?
-category: Single-board computers
+title: 如何将 Coral Dev Board 连接到 ThingsBoard？
+category: 单板计算机
 chip: Google Edge TPU ML
-connectivity: WIFI, Bluetooth
+connectivity: WIFI，蓝牙
 vendor: Google
 deviceImageFileName: coral-dev-board.jpg
 docsPrefix: pe/

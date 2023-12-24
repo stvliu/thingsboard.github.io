@@ -1,14 +1,12 @@
-
- 
-Anonymous auth is the most simple option. It is useful for testing.  
+匿名身份验证是最简单的选项。它对于测试很有用。
 
 
-|**Parameter**|**Default value**|**Description**|
+|**参数**|**默认值**|**说明**|
 |:-|:-|-
-| type               | **anonymous**                      | Type of authorization.      |
+| 类型               | **匿名**                      | 授权类型。      |
 |---
 
-Security subsection in configuration file will look like this: 
+配置文件中的安全子部分将如下所示：
 
 ```json
     "security": {

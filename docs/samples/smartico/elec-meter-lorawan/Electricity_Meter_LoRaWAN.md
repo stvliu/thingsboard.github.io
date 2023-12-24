@@ -1,53 +1,53 @@
 ---
 layout: docwithnav
-title: Electricity Three Phase Smart Meter "Smartico E307” telemetry upload
-description: ThingsBoard IoT Platform sample for electricity data upload over MQTT using Smart Meter "Smartico E307”.
+title: 三相智能电表“Smartico E307”遥测上传
+description: 使用智能电表“Smartico E307”通过 MQTT 上传电力数据到 ThingsBoard IoT 平台的示例。
 hidetoc: "true"
 ---
 
 * TOC
 {:toc}
 
-# Electricity Three Phase Smart Meter "Smartico E307” telemetry upload
-## Introduction
-The three-phase Smart Electricity Meters “Smartico E307” is optimized for smart metering systems. It comes in many shapes and variants. The Smartico E307 is a true intelligent meter, able to store data in non-volatile memory and measure active/reactive energy in both consumed and delivered to the power grid. Main function is accuracy measure loop power grid parameters, including voltage, current, power, frequency and other parameters. The dashboard contains two states – Counter readings and Quality parameters. The figure shows states of dashboard with processed telemetry results.
+# 三相智能电表“Smartico E307”遥测上传
+## 简介
+三相智能电表“Smartico E307”针对智能计量系统进行了优化。它有多种形状和变体。Smartico E307 是一款真正的智能电表，能够将数据存储在非易失性存储器中，并测量消耗和输送到电网的有功/无功能量。主要功能是准确测量环路电网参数，包括电压、电流、功率、频率和其他参数。仪表板包含两种状态——计数器读数和质量参数。下图显示了具有处理遥测结果的仪表板状态。
 
-Counter readings state of dashboard.
+仪表板的计数器读数状态。
 
 ![image](/images/samples/smartico/elec-meter-lorawan/MainDash1.PNG)
 
-Quality parameters state of dashboard.
+仪表板的质量参数状态。
 
 ![image](/images/samples/smartico/elec-meter-lorawan/MainDash2.PNG)
 
-## Prerequisites
-LoRaWAN technology is used to transfer data from the Electricity Meters “Smartico E307” to the ThingsBoard platform. This is the wireless communication technology that allows small amounts of data to be exchanged over a long distance. First of all, you need to configure the LoRaWAN server and make sure that data from the device goes to the server.  This guide uses [ChirpStack open-source LoRaWAN Network Server](https://www.chirpstack.io/application-server/). 
-After finishing the server configuration on the Applications page, an entry with the device type should appear in the table.
+## 先决条件
+LoRaWAN 技术用于将数据从电表“Smartico E307”传输到 ThingsBoard 平台。这是一种无线通信技术，允许在长距离上交换少量数据。首先，您需要配置 LoRaWAN 服务器并确保数据从设备发送到服务器。本指南使用 [ChirpStack 开源 LoRaWAN 网络服务器](https://www.chirpstack.io/application-server/)。
+完成应用程序页面上的服务器配置后，表中应出现具有设备类型的条目。
 
 ![image](/images/samples/smartico/elec-meter-lorawan/Lora1.PNG)
 
-For example, we connected a device with the serial number 0012778. With the correct configuration of the LoRaWAN server, we should see the data flow from the device. The frequency of data transmission from the device depends on the Electricity Meter settings.
+例如，我们连接了一个序列号为 0012778 的设备。通过正确配置 LoRaWAN 服务器，我们应该看到来自设备的数据流。从设备传输数据的频率取决于电表设置。
 
 ![image](/images/samples/smartico/elec-meter-lorawan/Lora2.PNG)
 
-To be able to receive data via the MQTT protocol, you need to integrate the [LoRaWAN server and the Mosquitto MQTT broker](https://www.chirpstack.io/application-server/integrations/mqtt/).
-## Step 1. Creation UpLink Data Converters.
-First, you should create the Uplink Data Converter according to the device protocol. The converter will decode incoming telemetry payload data from Electricity Meters “Smartico E307” that contains in encoded Base64 string to human readable, simplified ThingsBoard data format. Import [uplink_elec_meter.json](/docs/samples/smartico/elec-meter-lorawan/resources/uplink_elec_meter.json) file with Uplink data converter.
+为了能够通过 MQTT 协议接收数据，您需要集成 [LoRaWAN 服务器和 Mosquitto MQTT 代理](https://www.chirpstack.io/application-server/integrations/mqtt/)。
+## 步骤 1. 创建上行数据转换器。
+首先，您应该根据设备协议创建上行数据转换器。转换器将解码来自电表“Smartico E307”的传入遥测有效载荷数据，其中包含编码的 Base64 字符串，以转换为人类可读的、简化的 ThingsBoard 数据格式。导入 [uplink_elec_meter.json](/docs/samples/smartico/elec-meter-lorawan/resources/uplink_elec_meter.json) 文件，其中包含上行数据转换器。
 
 ![image](/images/samples/smartico/elec-meter-lorawan/uplink.PNG)
 
-## Step 2. Integration configuration.
-To integrate Electricity Meters “Smartico E307” into ThingsBoard platform you should create a new integration as shown on the figure.
+## 步骤 2. 集成配置。
+要将电表“Smartico E307”集成到 ThingsBoard 平台，您应该创建一个新的集成，如图所示。
 
 ![image](/images/samples/smartico/elec-meter-lorawan/Integration.PNG)
 
-Also below you should add the topic filter according to LoRaWAN server configuration (in this example ``` application/2/device/+/rx ``` ). In the Host and Port fields, enter the ip-address where the MQTT broker is installed and port for working with it.
-## Step 3. Verifying the receipt of data from the device.
-Connect Electricity Meter  to transfer information. If the integration was performed without errors, after the transmission of the first telemetry, a new device with the name “0012778” will appear in the DEVICE GROUPS → All. Also you can verify the input and output data, respectively, before and after conversion in DATA CONVERTERS → Uplink Elec meter → EVENTS.
+您还应该在下面根据 LoRaWAN 服务器配置添加主题过滤器（在本例中为 ``` application/2/device/+/rx ```）。在主机和端口字段中，输入安装 MQTT 代理的 IP 地址和用于与其协同工作的端口。
+## 步骤 3. 验证从设备接收的数据。
+连接电表以传输信息。如果集成没有错误执行，则在传输第一个遥测后，一个名为“0012778”的新设备将出现在设备组 → 全部中。您还可以分别在转换前和转换后验证输入和输出数据，方法是转到数据转换器 → 上行电表 → 事件。
 
 ![image](/images/samples/smartico/elec-meter-lorawan/verifying.PNG)
 
-Input data from Electricity Meters looks like this:
+来自电表的数据输入如下所示：
 ```json
 {
     "applicationID": "2",
@@ -76,7 +76,7 @@ Input data from Electricity Meters looks like this:
     "data": "QF8gJWwgSK4giMogyIYhQHEhgcshwTwiw1BBwABNNw=="
 }
 ```
-The payload is contained in the “data” field and encrypted in Base64. After decoding output data will look like this:
+有效载荷包含在“data”字段中并以 Base64 加密。解码后，输出数据将如下所示：
 ```json
 {
     "deviceName": "0012778",
@@ -130,43 +130,43 @@ The payload is contained in the “data” field and encrypted in Base64. After 
     }
 }
 ```
-The input and output data are for example purposes only and not related to the dashboard shown at the beginning of the guide. 
-Before turning on the device, you can verify the functionality of programming code from [uplink_elec_meter.json](/docs/samples/smartico/elec-meter-lorawan/resources/uplink_elec_meter.json) file. For this purpose, open the **Test decoder function** for Uplink Elec meter in the DATA CONVERTERS and copy the input data from this guide into **Payload content** field. Press **TEST** button then in **Output** field should appear decoding output data as shown on the figure (the REAL_TIME field displays the current date and time).
+输入和输出数据仅用于示例目的，与本指南开头所示的仪表板无关。
+在打开设备之前，您可以验证 [uplink_elec_meter.json](/docs/samples/smartico/elec-meter-lorawan/resources/uplink_elec_meter.json) 文件中编程代码的功能。为此，请打开数据转换器中的上行电表 **测试解码器功能**，并将本指南中的输入数据复制到 **有效载荷内容** 字段中。按 **测试** 按钮，然后 **输出** 字段中应显示解码输出数据，如图所示（REAL_TIME 字段显示当前日期和时间）。
 
 ![image](/images/samples/smartico/elec-meter-lorawan/verifyingUplink.PNG)
 
-## Step 4. Creation Electricity Meter Asset.
-To be able to display data in the dashboard, you should first create an asset and add device 0012778 in the RELATIONS, as shown in the figures.
+## 步骤 4. 创建电表资产。
+为了能够在仪表板中显示数据，您应该首先创建一个资产并在关系中添加设备 0012778，如图所示。
 
 ![image](/images/samples/smartico/elec-meter-lorawan/asset1.PNG)
 
 ![image](/images/samples/smartico/elec-meter-lorawan/asset2.PNG)
 
-## Step 5. Dashboard import and configuration.
-To display data to users, you need to create a dashboard that can be imported from [dashboard_elec_meter.json](/docs/samples/smartico/elec-meter-lorawan/resources/dashboard_elec_meter.json) file. 
+## 步骤 5. 仪表板导入和配置。
+要向用户显示数据，您需要创建一个可以从 [dashboard_elec_meter.json](/docs/samples/smartico/elec-meter-lorawan/resources/dashboard_elec_meter.json) 文件导入的仪表板。
 
 ![image](/images/samples/smartico/elec-meter-lorawan/dash1.PNG)
 
-When importing a dashboard, it will be necessary to create an alias, as shown in the figure.
+导入仪表板时，需要创建一个别名，如图所示。
 
 ![image](/images/samples/smartico/elec-meter-lorawan/dash2.PNG)
 
-If everything was done correctly, in DASHBOARD GROUPS → All you will see the new dashboard **Electricity Three Phase Smart Meter "Smartico E307"** that was provided at the beginning of the guide.
+如果一切正常，在仪表板组 → 全部中，您将看到本指南开头提供的新的仪表板 **三相智能电表“Smartico E307”**。
 
-## See also
+## 参见
 
-Browse other [samples](/docs/samples) or explore guides related to main ThingsBoard features:
+浏览其他 [示例](/docs/samples) 或探索与 ThingsBoard 主要功能相关的指南：
 
- - [Device attributes](/docs/user-guide/attributes/) - how to use device attributes.
- - [Telemetry data collection](/docs/user-guide/telemetry/) - how to collect telemetry data.
- - [Using RPC capabilities](/docs/user-guide/rpc/) - how to send commands to/from devices.
- - [Rule Engine](/docs/user-guide/rule-engine/) - how to use rule engine to analyze data from devices.
- - [Data Visualization](/docs/user-guide/visualization/) - how to visualize collected data.
+- [设备属性](/docs/user-guide/attributes/) - 如何使用设备属性。
+- [遥测数据收集](/docs/user-guide/telemetry/) - 如何收集遥测数据。
+- [使用 RPC 功能](/docs/user-guide/rpc/) - 如何向/从设备发送命令。
+- [规则引擎](/docs/user-guide/rule-engine/) - 如何使用规则引擎分析来自设备的数据。
+- [数据可视化](/docs/user-guide/visualization/) - 如何可视化收集的数据。
 
 {% include templates/feedback.md %}
 
 {% include socials.html %}
 
-## Next steps
+## 后续步骤
 
 {% assign currentGuide = "HardwareSamples" %}{% include templates/guides-banner.md %}

@@ -2,8 +2,8 @@
 layout: docwithnav-pe
 assignees:
 - ashvayka
-title: Installing ThingsBoard PE on Windows
-description: Installing ThingsBoard on Windows
+title: 在 Windows 上安装 ThingsBoard PE
+description: 在 Windows 上安装 ThingsBoard
 
 ---
 
@@ -14,21 +14,21 @@ description: Installing ThingsBoard on Windows
 
 {% include templates/install/windows-warning-note.md %}
 
-### Prerequisites
+### 先决条件
 
-This guide describes how to install ThingsBoard on a Windows machine.
-Instructions below are provided for Windows 10/8.1/8/7 32-bit/64-bit. 
-Hardware requirements depend on chosen database and amount of devices connected to the system. 
-To run ThingsBoard and PostgreSQL on a single machine you will need at least 2Gb of RAM.
-To run ThingsBoard and Cassandra on a single machine you will need at least 8Gb of RAM.
+本指南介绍如何在 Windows 机器上安装 ThingsBoard。
+以下说明适用于 Windows 10/8.1/8/7 32 位/64 位。
+硬件要求取决于所选数据库和连接到系统的设备数量。
+要在单台机器上运行 ThingsBoard 和 PostgreSQL，您至少需要 2Gb 的 RAM。
+要在单台机器上运行 ThingsBoard 和 Cassandra，您至少需要 8Gb 的 RAM。
 
-### Step 1. Install Java 11 (OpenJDK) 
+### 步骤 1. 安装 Java 11 (OpenJDK)
 
 {% include templates/install/windows-java-install.md %}
 
-### Step 2. ThingsBoard service installation
+### 步骤 2. ThingsBoard 服务安装
 
-Download and run the installation package.
+下载并运行安装包。
 
 ```bash
 https://dist.thingsboard.io/thingsboard-windows-setup-{{ site.release.pe_ver }}.exe
@@ -36,77 +36,77 @@ https://dist.thingsboard.io/thingsboard-windows-setup-{{ site.release.pe_ver }}.
 {: .copy-code}
 
 
-**Note:** We assume you have installed ThingsBoard to default location: *C:\Program Files (x86)\thingsboard*  
+**注意：**我们假设您已将 ThingsBoard 安装到默认位置：*C:\Program Files (x86)\thingsboard*
 
-### Step 3. Obtain and configure license key 
+### 步骤 3. 获取并配置许可证密钥
 
-We assume you have already chosen your subscription plan or decided to purchase a perpetual license. 
-If not, please navigate to [pricing](/pricing/) page to select the best license option for your case and get your license. 
-See [How-to get pay-as-you-go subscription](https://www.youtube.com/watch?v=dK-QDFGxWek){:target="_blank"} or [How-to get perpetual license](https://www.youtube.com/watch?v=GPe0lHolWek){:target="_blank"} for more details.
+我们假设您已经选择了订阅计划或决定购买永久许可证。
+如果没有，请导航至 [定价](/pricing/) 页面，为您的案例选择最佳许可证选项并获取许可证。
+有关更多详细信息，请参阅 [如何获取按需付费订阅](https://www.youtube.com/watch?v=dK-QDFGxWek){:target="_blank"} 或 [如何获取永久许可证](https://www.youtube.com/watch?v=GPe0lHolWek){:target="_blank"}。
 
-Once you get the license secret, you should put it to the thingsboard configuration file.
+获取许可证密钥后，您应将其放入 thingsboard 配置文件中。
 
-Open the Notepad or other editor as administrator user (right click on the app icon and select "Run as administrator").  
-Open the following file for editing (select "All Files" instead of "Text Documents" in file choosing dialog, the encoding is UTF-8):
+以管理员用户身份打开记事本或其他编辑器（右键单击应用程序图标并选择“以管理员身份运行”）。
+打开以下文件进行编辑（在文件选择对话框中选择“所有文件”而不是“文本文档”，编码为 UTF-8）：
 
 ```text 
 C:\Program Files (x86)\thingsboard\conf\thingsboard.yml
 ``` 
 {: .copy-code}
 
-Scroll to the bottom of the file and locate the following configuration block:
+滚动到文件底部并找到以下配置块：
 
 ```yml
 license:
     secret: "${TB_LICENSE_SECRET:}" # license secret obtained from ThingsBoard License Portal (https://license.thingsboard.io)
 ```
 
-and put your license secret. See example below: 
+并放入您的许可证密钥。请参阅以下示例：
 
 ```yml
 license:
     secret: "${TB_LICENSE_SECRET:YOUR_LICENSE_SECRET_HERE}" # license secret obtained from ThingsBoard License Portal (https://license.thingsboard.io)
 ``` 
 
-### Step 4. Configure ThingsBoard database
+### 步骤 4. 配置 ThingsBoard 数据库
 
 {% include templates/install/install-db.md %}
 
 {% capture contenttogglespec %}
-PostgreSQL <small>(recommended for < 5K msg/sec)</small>%,%postgresql%,%templates/install/windows-db-postgresql.md%br%
-Hybrid <br>PostgreSQL+TimescaleDB<br><small>(for TimescaleDB professionals)</small>%,%timescale%,%templates/install/windows-db-hybrid-timescale.md{% endcapture %}
+PostgreSQL <small>(推荐用于 < 5K msg/sec)</small>%,%postgresql%,%templates/install/windows-db-postgresql.md%br%
+混合 <br>PostgreSQL+TimescaleDB<br><small>(适用于 TimescaleDB 专业人员)</small>%,%timescale%,%templates/install/windows-db-hybrid-timescale.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="ubuntuThingsboardDatabase" toggle-spec=contenttogglespec %} 
 
-### Step 5. Choose ThingsBoard queue service
+### 步骤 5. 选择 ThingsBoard 队列服务
 
 {% include templates/install/install-queue.md %}
 
 {% capture contenttogglespecqueue %}
-In Memory <small>(built-in and default)</small>%,%inmemory%,%templates/install/queue-in-memory.md%br%
-Kafka <small>(recommended for on-prem, production installations)</small>%,%kafka%,%templates/install/windows-queue-kafka.md%br%
-AWS SQS <small>(managed service from AWS)</small>%,%aws-sqs%,%templates/install/windows-queue-aws-sqs.md%br%
-Google Pub/Sub <small>(managed service from Google)</small>%,%pubsub%,%templates/install/windows-queue-pub-sub.md%br%
-Azure Service Bus <small>(managed service from Azure)</small>%,%service-bus%,%templates/install/windows-queue-service-bus.md%br%
-RabbitMQ <small>(for small on-prem installations)</small>%,%rabbitmq%,%templates/install/windows-queue-rabbitmq.md%br%
-Confluent Cloud <small>(Event Streaming Platform based on Kafka)</small>%,%confluent-cloud%,%templates/install/windows-queue-confluent-cloud.md{% endcapture %}
+内存 <small>(内置且默认)</small>%,%inmemory%,%templates/install/queue-in-memory.md%br%
+Kafka <small>(推荐用于本地、生产安装)</small>%,%kafka%,%templates/install/windows-queue-kafka.md%br%
+AWS SQS <small>(AWS 托管服务)</small>%,%aws-sqs%,%templates/install/windows-queue-aws-sqs.md%br%
+Google Pub/Sub <small>(Google 托管服务)</small>%,%pubsub%,%templates/install/windows-queue-pub-sub.md%br%
+Azure 服务总线 <small>(Azure 托管服务)</small>%,%service-bus%,%templates/install/windows-queue-service-bus.md%br%
+RabbitMQ <small>(适用于小型本地安装)</small>%,%rabbitmq%,%templates/install/windows-queue-rabbitmq.md%br%
+Confluent Cloud <small>(基于 Kafka 的事件流平台)</small>%,%confluent-cloud%,%templates/install/windows-queue-confluent-cloud.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="windowsThingsboardQueue" toggle-spec=contenttogglespecqueue %} 
 
-### Step 6. [Optional] Memory update for slow machines (1GB of RAM) 
+### 步骤 6. [可选] 慢速机器的内存更新（1GB RAM）
 
 {% include templates/install/windows-memory-on-slow-machines.md %} 
 
-### Step 7. Run installation script
+### 步骤 7. 运行安装脚本
 
-Launch windows shell (Command Prompt) as Administrator. Change directory to your ThingsBoard installation directory.
+以管理员身份启动 Windows shell（命令提示符）。将目录更改为 ThingsBoard 安装目录。
 
-Execute **install.bat** script to install ThingsBoard as a Windows service (or run **"install.bat --loadDemo"** to install and add demo data).
-This means it will be automatically started on system startup. 
-Similar, **uninstall.bat** will remove ThingsBoard from Windows services.
-The output should be similar to this one:
-  
-  ```text
+执行 **install.bat** 脚本以将 ThingsBoard 安装为 Windows 服务（或运行 **"install.bat --loadDemo"** 以安装并添加演示数据）。
+这意味着它将在系统启动时自动启动。
+类似地，**uninstall.bat** 将从 Windows 服务中删除 ThingsBoard。
+输出应类似于以下内容：
+
+```text
 C:\Program Files (x86)\thingsboard>install.bat --loadDemo
 Detecting Java version installed.
 CurrentVersion 18
@@ -116,47 +116,47 @@ Installing thingsboard ...
 ThingsBoard installed successfully!
 ```
 
-### Step 8. Start ThingsBoard service
+### 步骤 8. 启动 ThingsBoard 服务
 
 {% include templates/windows-start-service.md %}
 
 {% capture 90-sec-ui %}
-Please allow up to 90 seconds for the Web UI to start. This is applicable only for slow machines with 1-2 CPUs or 1-2 GB RAM.{% endcapture %}
+请允许 Web UI 启动长达 90 秒。这仅适用于具有 1-2 个 CPU 或 1-2 GB RAM 的慢速机器。{% endcapture %}
 {% include templates/info-banner.md content=90-sec-ui %}
 
-### Step 9. Install ThingsBoard Web Report Server component
+### 步骤 9. 安装 ThingsBoard Web Report Server 组件
 
-Download and extract the installation package.
+下载并解压安装包。
 
 ```bash
 https://dist.thingsboard.io/tb-web-report-windows-{{ site.release.pe_ver }}.zip
 ```
 {: .copy-code}
 
-**Note:** We assume you have extracted ThingsBoard Web Report Server to default location: *C:\Program Files (x86)\tb-web-report* 
+**注意：**我们假设您已将 ThingsBoard Web Report Server 解压到默认位置：*C:\Program Files (x86)\tb-web-report*
 
-Launch windows shell (Command Prompt) as Administrator. Change directory to your ThingsBoard installation directory.
+以管理员身份启动 Windows shell（命令提示符）。将目录更改为 ThingsBoard 安装目录。
 
-Execute **install.bat** script to install ThingsBoard Web Report Server as a Windows service.
-  This means it will be automatically started on system startup. 
-  Similar, **uninstall.bat** will remove ThingsBoard from Windows services.
-  The output should be like:
+执行 **install.bat** 脚本以将 ThingsBoard Web Report Server 安装为 Windows 服务。
+这意味着它将在系统启动时自动启动。
+类似地，**uninstall.bat** 将从 Windows 服务中删除 ThingsBoard。
+输出应如下所示：
 
-  ```text
+```text
     C:\Program Files (x86)\tb-web-report>install.bat
     Installing tb-web-report ...
     tb-web-report installed successfully!  
-  ```
+```
 
-Now let's start the ThingsBoard service!
-Open the command prompt as an Administrator and execute the following command:
+现在让我们启动 ThingsBoard 服务！
+以管理员身份打开命令提示符并执行以下命令：
 
 ```shell
 net start tb-web-report
 ```
 {: .copy-code}
 
-Expected output:
+预期输出：
 
 ```text
 C:\Program Files (x86)\tb-web-report>net start tb-web-report
@@ -164,58 +164,57 @@ The Thingsboard Web Report Microservice service is starting.
 The Thingsboard Web Report Microservice service was started successfully.
 ```
 
-### Troubleshooting
+### 故障排除
 
-The log files are located in **logs** folder ("C:\Program Files (x86)\thingsboard\logs" in our case).
+日志文件位于 **logs** 文件夹中（在本例中为“C:\Program Files (x86)\thingsboard\logs”）。
 
-The **thingsboard.log** file should contain following line:
+**thingsboard.log** 文件应包含以下行：
 
 ```text
 YYYY-MM-DD HH:mm:ss,sss [main] INFO  o.t.s.ThingsboardServerApplication - Started ThingsboardServerApplication in x.xxx seconds (JVM running for x.xxx)
 
 ```
 
-In case of any unclear errors, use general [troubleshooting guide](/docs/user-guide/troubleshooting/#getting-help) or [contact us](/docs/contact-us/).
+如果出现任何不明确的错误，请使用常规 [故障排除指南](/docs/user-guide/troubleshooting/#getting-help) 或 [联系我们](/docs/contact-us/)。
 
-### Windows firewall settings
+### Windows 防火墙设置
 
-In order to have external access to ThingsBoard Web UI and device connectivity (HTTP, MQTT, CoAP)
-you need to create a new inbound rule with Windows Firewall with Advanced Security.
- 
-- Open "Windows Firewall" from "Control Panel":
+为了能够从外部访问 ThingsBoard Web UI 和设备连接（HTTP、MQTT、CoAP），您需要使用高级安全性的 Windows 防火墙创建一个新的入站规则。
+
+- 从“控制面板”中打开“Windows 防火墙”：
 
 ![image](/images/user-guide/install/windows/windows7-firewall-1.png)
 
-- Click "Advanced settings" on the left panel:
+- 在左侧面板中单击“高级设置”：
 
 ![image](/images/user-guide/install/windows/windows7-firewall-2.png)
 
-- Select "Inbound Rules" on the left panel, then click "New Rule..." on the right "Actions" panel:
+- 在左侧面板中选择“入站规则”，然后在右侧“操作”面板中单击“新建规则...”：
 
 ![image](/images/user-guide/install/windows/windows7-firewall-3.png)
 
-- Now new "New Inbound Rule Wizard" window will open. On the first step "Rule Type" select "Port" option: 
+- 现在将打开“新建入站规则向导”窗口。在第一步“规则类型”中选择“端口”选项：
 
 ![image](/images/user-guide/install/windows/windows7-firewall-4.png)
 
-- On the "Protocol and Ports" step select "TCP" protocol and enter port list **8080, 1883, 5683** in the "Specific local ports" field:
+- 在“协议和端口”步骤中选择“TCP”协议并在“特定本地端口”字段中输入端口列表 **8080、1883、5683**：
 
 ![image](/images/user-guide/install/windows/windows7-firewall-5.png)
 
-- On the "Action" step leave "Allow the connection" option selected:
+- 在“操作”步骤中，保持“允许连接”选项处于选中状态：
 
 ![image](/images/user-guide/install/windows/windows7-firewall-6.png)
 
-- On the "Profile" step select Windows network profiles when to apply this rule:
+- 在“配置文件”步骤中，选择要应用此规则的 Windows 网络配置文件：
 
 ![image](/images/user-guide/install/windows/windows7-firewall-7.png)
 
-- Finally, give the name to this rule (for ex. "ThingsBoard Service Networking") and click "Finish".
+- 最后，为该规则命名（例如“ThingsBoard 服务网络”）并单击“完成”。
 
 ![image](/images/user-guide/install/windows/windows7-firewall-8.png)
 
 
 
-## Next steps
+## 后续步骤
 
 {% assign currentGuide = "InstallationGuides" %}{% include templates/guides-banner.md %}

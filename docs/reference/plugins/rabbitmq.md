@@ -2,90 +2,90 @@
 layout: docwithnav
 assignees:
 - ashvayka
-title: RabbitMQ Plugin
+title: RabbitMQ 插件
 
 ---
 
 {% include templates/old-guide-notice.md %}
 
-## Overview
+## 概述
 
-RabbitMQ plugin is responsible for sending messages to RabbitMQ instances triggered by specific rules
+RabbitMQ 插件负责向 RabbitMQ 实例发送由特定规则触发的消息
 
-## Configuration
+## 配置
 
-You can specify following configuration parameters:
+您可以指定以下配置参数：
 
- - rabbitmq instance host
- - rabbitmq instance port
- - rabbitmq virtual host
- - username for authorization
- - password for authorization
- - enables automation connection revovery in case of failure
- - connection timeout
- - handshake timeout
- - additional client properties that could be usefull for connecting to specific rabbitmq instances
+- rabbitmq 实例主机
+- rabbitmq 实例端口
+- rabbitmq 虚拟主机
+- 授权用户名
+- 授权密码
+- 在发生故障时启用自动化连接恢复
+- 连接超时
+- 握手超时
+- 其他客户端属性，可用于连接到特定 rabbitmq 实例
 
-## Server-side API
+## 服务器端 API
 
-This plugin does not provide any server-side API.
+此插件不提供任何服务器端 API。
 
-## Example
+## 示例
 
-In this example, we are going to demonstrate how you can configure RabbitMQ extension to be able to send messages to particular queue every time new telemetry message for the device arrives.
+在此示例中，我们将演示如何配置 RabbitMQ 扩展，以便每次设备的新遥测消息到达时都能向特定队列发送消息。
 
-Prerequisites before continuing RabbitMQ extension configuration:
+在继续 RabbitMQ 扩展配置之前的前提条件：
 
- - ThingsBoard is up and running
- - RabbitMQ instance is up and running
+- ThingsBoard 已启动并正在运行
+- RabbitMQ 实例已启动并正在运行
 
-### RabbitMQ Plugin Configuration
+### RabbitMQ 插件配置
 
-Let's configure RabbitMQ plugin first. Go to *Plugins* menu, click on a '+' button and create new plugin:
+我们首先配置 RabbitMQ 插件。转到“插件”菜单，单击“+”按钮并创建新插件：
 
 ![image](/images/reference/plugins/rabbitmq/rabbitmq-plugin-config-1.png)
 
 ![image](/images/reference/plugins/rabbitmq/rabbitmq-plugin-config-2.png)
 
-Please set host, port and credentials correctly so extension is able to connect to RabbitMQ broker.
+请正确设置主机、端口和凭据，以便扩展能够连接到 RabbitMQ 代理。
 
-Save plugin and click on *'Activate'* plugin button:
+保存插件并单击“激活”插件按钮：
 
 ![image](/images/reference/plugins/rabbitmq/rabbitmq-activate-plugin.png)
 
-### RabbitMQ Rule Configuration
+### RabbitMQ 规则配置
 
-Now it's time to create appropriate Rule.
+现在是时候创建适当的规则了。
 
 ![image](/images/reference/plugins/rabbitmq/rabbitmq-rule-config.png)
 
-Add filter for **POST_TELEMETRY** message type:
+为 **POST_TELEMETRY** 消息类型添加过滤器：
 
 ![image](/images/reference/plugins/rabbitmq/post-telemetry-filter.png)
 
-Click *'Add'* button to add the filter.
+单击“添加”按钮以添加过滤器。
 
-Then select *'RabbitMQ Plugin'* in the drop-down box for the Plugin field:
+然后在插件字段的下拉框中选择“RabbitMQ 插件”：
 
 ![image](/images/reference/plugins/rabbitmq/rabbitmq-plugin-selection.png)
 
-Add action that will send temperature telemetry of device to particular RabbitMQ queue:
+添加一个操作，将设备的温度遥测发送到特定的 RabbitMQ 队列：
 
 ![image](/images/reference/plugins/rabbitmq/rabbitmq-rule-action-config.png)
 
-Click *'Add'* button and then activate Rule.
+单击“添加”按钮，然后激活规则。
 
-### Sending Temperature Telemetry
+### 发送温度遥测
 
-Now for any of your devices send Telemetry message that contains *'temp'* telemetry:
+现在，对于您的任何设备，发送包含“temp”遥测的遥测消息：
 
 ```json
 {"temp":73.4}
 ```
 
-You should receive message **'73.4'** in appropriate RabbitMQ queue once you'll post this message.
+一旦您发布此消息，您应该在相应的 RabbitMQ 队列中收到消息“73.4”。
 
-Here is an example of a command that publish single telemetry message to locally installed ThingsBoard:
+以下是一个将单个遥测消息发布到本地安装的 ThingsBoard 的命令示例：
 
 ```bash
 mosquitto_pub -d -h "localhost" -p 1883 -t "v1/devices/me/telemetry" -u "$ACCESS_TOKEN" -m '{"temp":73.4}'

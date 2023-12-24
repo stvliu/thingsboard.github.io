@@ -1,6 +1,6 @@
 {% capture node-js-installed %}
 
-We assume that you have Node.js and NPM installed on your local PC.
+我们假设您已在本地 PC 上安装了 Node.js 和 NPM。
 
 {% endcapture %}
 {% include templates/info-banner.md content=node-js-installed %}

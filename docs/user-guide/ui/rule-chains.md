@@ -2,90 +2,90 @@
 layout: docwithnav
 assignees:
 - vparomskiy
-title: Rule Chains
-description: ThingsBoard Rule Chains management
+title: 规则链
+description: ThingsBoard 规则链管理
 
 create-rule-chain:
     0:
         image: /images/user-guide/ui/rule-chains/create-rule-chain-1-ce.png
-        title: 'Navigate to the "Rule chains" page. Then click on the "plus" icon in the upper right corner, and select "Create new rule chain";'
+        title: '导航到“规则链”页面。然后点击右上角的“加号”图标，并选择“创建新规则链”；'
     1:
         image: /images/user-guide/ui/rule-chains/create-rule-chain-2-ce.png
-        title: 'Specify a name for the rule chain. If necessary, enable "Debug mode". Click "Add";'
+        title: '为规则链指定一个名称。如有必要，启用“调试模式”。点击“添加”；'
     2:
         image: /images/user-guide/ui/rule-chains/create-rule-chain-3-ce.png
-        title: 'The new rule chain is created. To open rule chain click on it.'
+        title: '创建了新的规则链。要打开规则链，请点击它。'
 
 export-rule-chain:
     0:
         image: /images/user-guide/ui/rule-chains/export-rule-chain-1-ce.png
-        title: 'Navigate to the "Rule chains" page and click on the "Export rule chain" icon located on the particular rule chain row. A JSON file containing the rule chain configuration will be saved on your PC.'
+        title: '导航到“规则链”页面，然后点击位于特定规则链行上的“导出规则链”图标。包含规则链配置的 JSON 文件将保存在您的电脑上。'
 
 import-rule-chain:
     0:
         image: /images/user-guide/ui/rule-chains/import-rule-chain-1-ce.png
-        title: 'Navigate to the "Rule chains" page and click on the "+" button in the upper right corner of the screen and then choose "Import rule chain" option;'
+        title: '导航到“规则链”页面，然后点击屏幕右上角的“+”按钮，然后选择“导入规则链”选项；'
     1:
         image: /images/user-guide/ui/rule-chains/import-rule-chain-2-ce.png
-        title: 'The toolbar import popup window will appear. Upload a JSON file and click on the "Import" button;'
+        title: '工具栏导入弹出窗口将出现。上传 JSON 文件并点击“导入”按钮；'
     2:
         image: /images/user-guide/ui/rule-chains/import-rule-chain-3-ce.png
-        title: 'The imported rule chain will open. Click on the "Apply changes" button to save the rule chain. Then, go back to the main "Rule chains" page;'
+        title: '导入的规则链将打开。点击“应用更改”按钮以保存规则链。然后，返回到“规则链”主页面；'
     3:
         image: /images/user-guide/ui/rule-chains/import-rule-chain-4-ce.png
-        title: 'Rule chain is imported.'
+        title: '规则链已导入。'
 
 edit-rule-chain:
     0:
         image: /images/user-guide/ui/rule-chains/edit-rule-chain-1-ce.png
-        title: 'Navigate to the "Rule chains" page and click on the "Rule chain details" icon can opposite the rule chain`s name you want to edit;'
+        title: '导航到“规则链”页面，然后点击您要编辑的规则链名称对面的“规则链详细信息”图标；'
     1:
         image: /images/user-guide/ui/rule-chains/edit-rule-chain-2-ce.png
-        title: 'The rule chain details window will open. Click on the "pencil" icon to enter edit mode;'
+        title: '规则链详细信息窗口将打开。点击“铅笔”图标以进入编辑模式；'
     2:
         image: /images/user-guide/ui/rule-chains/edit-rule-chain-3-ce.png
-        title: 'Edit name for this rule chain and enable debug mode. After that, click on the "Apply changes" button;'
+        title: '编辑此规则链的名称并启用调试模式。之后，点击“应用更改”按钮；'
     3:
         image: /images/user-guide/ui/rule-chains/edit-rule-chain-4-ce.png
-        title: 'You changed rule chain name and enable debug mode.'
+        title: '您更改了规则链名称并启用了调试模式。'
 
 make-rule-chain-as-root:
     0:
         image: /images/user-guide/ui/rule-chains/make-rule-chain-root-1-ce.png
-        title: 'Navigate to the "Rule chains" page and click on the "Make rule chain root" button located on the particular rule chain row;'
+        title: '导航到“规则链”页面，然后点击位于特定规则链行上的“使规则链成为根”按钮；'
     1:
         image: /images/user-guide/ui/rule-chains/make-rule-chain-root-2-ce.png
-        title: 'Please confirm your actions in the dialog box;'
+        title: '请在对话框中确认您的操作；'
     2:
         image: /images/user-guide/ui/rule-chains/make-rule-chain-root-3-ce.png
-        title: 'The selected rule chain has now become the root.'
+        title: '选定的规则链现在已成为根。'
 
 delete-rule-chain-1:
     0:
         image: /images/user-guide/ui/rule-chains/delete-rule-chain-1-ce.png
-        title: 'Click a trash icon can opposite the rule chains`s name you want to delete;'
+        title: '点击您要删除的规则链名称对面的垃圾箱图标；'
     1:
         image: /images/user-guide/ui/rule-chains/delete-rule-chain-2-ce.png
-        title: 'Confirm deleting the rule chain in the dialog box.'
+        title: '在对话框中确认删除规则链。'
 
 delete-rule-chain-2:
     0:
         image: /images/user-guide/ui/rule-chains/delete-rule-chain-3-ce.png
-        title: 'Click on the "Rule chain details" button located on the particular rule chain row;'
+        title: '点击位于特定规则链行上的“规则链详细信息”按钮；'
     1:
         image: /images/user-guide/ui/rule-chains/delete-rule-chain-4-ce.png
-        title: 'In the rule chain details, click on the "Delete rule chain" button;'
+        title: '在规则链详细信息中，点击“删除规则链”按钮；'
     2:
         image: /images/user-guide/ui/rule-chains/delete-rule-chain-5-ce.png
-        title: 'Confirm deleting the rule chain in the dialog box.'
+        title: '在对话框中确认删除规则链。'
 
 delete-rule-chain-3:
     0:
         image: /images/user-guide/ui/rule-chains/delete-rule-chain-6-ce.png
-        title: 'Mark one or multiple rule chains you want to delete. Click on the trash bin icon in the top right corner;'
+        title: '标记要删除的一个或多个规则链。点击右上角的垃圾箱图标；'
     1:
         image: /images/user-guide/ui/rule-chains/delete-rule-chain-7-ce.png
-        title: 'Confirm deleting rule chains in the dialog box.'
+        title: '在对话框中确认删除规则链。'
 
 ---
 

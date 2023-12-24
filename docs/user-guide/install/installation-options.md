@@ -2,8 +2,8 @@
 layout: docwithnav
 assignees:
 - ashvayka
-title: ThingsBoard installation options
-description: ThingsBoard installation instructions for various operation systems and cloud platforms
+title: ThingsBoard 安装选项
+description: ThingsBoard 安装说明，适用于各种操作系统和云平台
 notitle: "true"
 ---
 
@@ -12,10 +12,10 @@ notitle: "true"
        <div class="install-options-hero">
           <div class="container">
             <div class="install-options-hero-content">
-                <h1>ThingsBoard installation options</h1>
+                <h1>ThingsBoard 安装选项</h1>
                 <div class="install-options-description">
                     <p>
-                        ThingsBoard is designed to run and utilize on majority of hardware, from local Raspberry PI to powerful servers in the cloud
+                        ThingsBoard 旨在运行并利用大多数硬件，从本地 Raspberry PI 到云中的强大服务器
                     </p>
                 </div>
             </div>
@@ -23,13 +23,13 @@ notitle: "true"
                <nav id="install-navigation" class="install-navigation">
                  <ul id="menu-install-navigation-1" class="menu">
                     <li id="menu-item-liveDemo" class="menu-item tb-live-demo">
-                        <a href="javascript:void(0);" onClick="activateInstallSection('liveDemo')">Live demo</a>
+                        <a href="javascript:void(0);" onClick="activateInstallSection('liveDemo')">实时演示</a>
                     </li>
                     <li id="menu-item-onPremise" class="menu-item tb-on-premise active">
-                        <a href="javascript:void(0);" onClick="activateInstallSection('onPremise')">On premise</a>
+                        <a href="javascript:void(0);" onClick="activateInstallSection('onPremise')">本地</a>
                     </li>
                     <li id="menu-item-cloud" class="menu-item tb-cloud">
-                        <a href="javascript:void(0);" onClick="activateInstallSection('cloud')">Cloud</a>
+                        <a href="javascript:void(0);" onClick="activateInstallSection('cloud')">云</a>
                     </li>
                  </ul>
                </nav>
@@ -42,7 +42,7 @@ notitle: "true"
                                         <a href="https://demo.thingsboard.io/signup">
                                             <span>
                                                 <div class="deployment-logo">
-                                                    <img width="" src="/images/sign-ce-img.svg" title="Live Demo" alt="Live Demo">
+                                                    <img width="" src="/images/sign-ce-img.svg" title="实时演示" alt="实时演示">
                                                  </div>
                                             </span>
                                         </a>
@@ -102,7 +102,7 @@ notitle: "true"
                                         <a href="/docs/user-guide/install/docker/">
                                             <span>
                                                 <div class="deployment-logo">
-                                                    <img width="" src="/images/install/platform/docker-linux-macos.svg" title="Docker (Linux or Mac OS)" alt="Docker (Linux or Mac OS)">
+                                                    <img width="" src="/images/install/platform/docker-linux-macos.svg" title="Docker (Linux 或 Mac OS)" alt="Docker (Linux 或 Mac OS)">
                                                  </div>
                                             </span>
                                         </a>
@@ -111,7 +111,7 @@ notitle: "true"
                                         <a href="/docs/user-guide/install/building-from-source/">
                                             <span>
                                                 <div class="deployment-logo">
-                                                    <img width="" src="/images/install/platform/sources.svg" title="Building from source" alt="Building from source">
+                                                    <img width="" src="/images/install/platform/sources.svg" title="从源代码构建" alt="从源代码构建">
                                                  </div>
                                             </span>
                                         </a>
@@ -120,7 +120,7 @@ notitle: "true"
                                         <a href="/docs/user-guide/install/cluster-setup/">
                                             <span>
                                                 <div class="deployment-logo">
-                                                    <img width="" src="/images/install/platform/cluster-ce.svg" title="Cluster setup with Kubernetes" alt="Cluster setup with Kubernetes">
+                                                    <img width="" src="/images/install/platform/cluster-ce.svg" title="使用 Kubernetes 进行集群设置" alt="使用 Kubernetes 进行集群设置">
                                                  </div>
                                             </span>
                                         </a>

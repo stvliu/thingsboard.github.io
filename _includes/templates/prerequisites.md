@@ -1,10 +1,8 @@
-## Prerequisites
+## 先决条件
 
-You will need to have ThingsBoard server up and running. 
-The easiest way is to use [Live Demo](https://demo.thingsboard.io/signup) server.
+您需要启动并运行 ThingsBoard 服务器。最简单的方法是使用 [实时演示](https://demo.thingsboard.io/signup) 服务器。
 
-The alternative option is to install ThingsBoard using [Installation Guide](/docs/user-guide/install/installation-options/). 
-**Windows** users should follow this [guide](/docs/user-guide/install/docker-windows/). **Linux** users that have docker installed should execute the following commands:
+另一种选择是使用 [安装指南](/docs/user-guide/install/installation-options/) 安装 ThingsBoard。**Windows** 用户应遵循此 [指南](/docs/user-guide/install/docker-windows/)。已安装 docker 的 **Linux** 用户应执行以下命令：
 
 ```
 mkdir -p ~/.mytb-data && sudo chown -R 799:799 ~/.mytb-data
@@ -15,11 +13,7 @@ docker run -it -p 8080:9090 -p 7070:7070 -p 1883:1883 -p 5683-5688:5683-5688/udp
 ``` 
 {: .copy-code}
 
-These commands install ThingsBoard and load demo data and accounts.
+这些命令安装 ThingsBoard 并加载演示数据和帐户。
 
-ThingsBoard UI will be available using the URL: **http://localhost:8080**.
-You may use username **tenant@thingsboard.org** and password **tenant**. 
-More info about demo accounts is available [here](/docs/samples/demo-account/). 
-
-
-
+ThingsBoard UI 将使用以下 URL 提供：**http://localhost:8080**。
+您可以使用用户名 **tenant@thingsboard.org** 和密码 **tenant**。有关演示帐户的更多信息，请 [在此处](/docs/samples/demo-account/) 了解。

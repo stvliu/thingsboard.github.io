@@ -1,14 +1,14 @@
-One type of security configuration is token.
-For authorization will be used token, , provided in this section in config.
+一种安全配置类型是令牌。
+授权将使用令牌，，在此部分的 config 中提供。
 
 
-|**Parameter**|**Default value**|**Description**|
+|**参数**|**默认值**|**说明**|
 |:-|:-|-
-| type               | **token**                      | Type of authorization.      |
-| tokens             | **["Bearer ACCESS_TOKEN"]**    | List of allowed tokens.     |
+| 类型               | **令牌**                      | 授权类型。      |
+| 令牌             | **["Bearer ACCESS_TOKEN"]**    | 允许的令牌列表。     |
 |---
 
-Security subsection in configuration file will look like this: 
+配置文件中的安全子部分将如下所示：
 
 ```yaml
     "security": [

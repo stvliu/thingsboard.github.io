@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-mqtt-broker
-title: Mail Server
-description: TBMQ Mail Server
+title: 邮件服务器
+description: TBMQ 邮件服务器
 
 ---
 

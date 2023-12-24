@@ -1,6 +1,6 @@
 ---
 layout: docwithnav-mobile-pe
-title: Customize ThingsBoard PE Mobile Application
+title: 自定义 ThingsBoard PE 移动应用程序
 
 ---
 

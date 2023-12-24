@@ -2,65 +2,64 @@
 layout: docwithnav-trendz
 assignees:
 - vparomskiy
-title: Anomaly detection model properties
-description: Anomaly detection model properties
+title: 异常检测模型属性
+description: 异常检测模型属性
 ---
 
 * TOC
 {:toc}
 
-## Clustering algorithm
-This property defines what clustering ML algorithm will be used for anomaly detection. Currently supported algorithms are:
+## 聚类算法
+此属性定义将使用什么聚类 ML 算法进行异常检测。当前支持的算法有：
 
-* `K-Means` - Anomaly detection algorithm that partitions data into clusters based on similarity, identifying anomalies as data points significantly different from their assigned cluster centroid.
-* `DBSCAN` - Anomaly detection algorithm that groups data points based on density and connectivity, identifying anomalies as points not belonging to any cluster or isolated in low-density regions.
-* `Custom` - Anomaly detection algorithm that models the data distribution as a mixture of Gaussian distributions. It identifies anomalies as data points that have low probability under the Gaussian mixture model, indicating unusual patterns or behaviors in the data.
+* `K-Means` - 异常检测算法，根据相似性将数据划分为集群，将与分配的集群质心显着不同的数据点识别为异常。
+* `DBSCAN` - 异常检测算法，根据密度和连通性对数据点进行分组，将不属于任何集群或孤立在低密度区域的点识别为异常。
+* `Custom` - 异常检测算法，将数据分布建模为高斯分布的混合。它将高斯混合模型下概率较低的数据点识别为异常，表明数据中存在异常模式或行为。
 
-## Segment time range
-During data preparation step for anomaly detection Trendz loads telemetry data and split it into multiple segments. Model is trained to tell does current segment is abnormal or no and assign anomaly score for segment. 
-It means that if we want to discover anomalies in short time ranges, for example device send data every 10 seconds and anomaly can occur and disappear in 1 minute time range. In cases when devices report data once per hour - 
-it means that minimal time range that we analyze should be minimum 3 hours. 
+## 区段时间范围
+在异常检测的 data preparation 步骤中，Trendz 加载遥测数据并将其拆分为多个区段。模型经过训练，可以判断当前区段是否异常，并为区段分配异常分数。
+这意味着如果我们想在短时间范围内发现异常，例如设备每 10 秒发送一次数据，并且异常可能在 1 分钟时间范围内发生并消失。在设备每小时报告一次数据的情况下 - 这意味着我们分析的最小时间范围应为至少 3 小时。
 
-This property defines time interval duration for each segment.
+此属性定义每个区段的时间间隔持续时间。
 
-## Comparison type
-This property affects feature extraction process and identifies how features are computed based on fields in the incoming data. Currently supported comparison types are:
+## 比较类型
+此属性影响特征提取过程，并确定如何根据传入数据中的字段计算特征。当前支持的比较类型有：
 
-* `Behaviour based` - capture the overall patterns, dynamics, and trends exhibited by the timeseries data. They provide insights into the holistic behavior of the data over time, allowing for the identification of recurring patterns, anomalies, or deviations. These features analyze the data as a whole and focus on capturing the underlying behavior or patterns present in the timeseries.
-* `Feature based` - focus on specific measurements or attributes derived from the raw timeseries data. These features extract relevant information or characteristics from the data, such as statistical properties (e.g., mean, standard deviation) or domain-specific measurements. Feature-based features provide a more detailed and specific analysis by considering individual aspects or properties of the timeseries data.
+* `基于行为` - 捕获时序数据表现出的整体模式、动态和趋势。它们提供了随着时间推移的数据整体行为的见解，允许识别重复的模式、异常或偏差。这些特征将数据作为一个整体进行分析，并专注于捕获时序数据中存在的潜在行为或模式。
+* `基于特征` - 关注从原始时序数据派生的特定测量或属性。这些特征从数据中提取相关信息或特征，例如统计属性（例如，平均值、标准差）或特定于域的测量。基于特征的特征通过考虑时序数据的各个方面或属性来提供更详细和具体的分析。
 
-## Distance function
-You configure how distance between two points in feature space is computed. Currently supported distance functions are:
+## 距离函数
+您可以配置计算特征空间中两点之间距离的方式。当前支持的距离函数有：
 
-* `Euclidean` - Euclidean distance is the most commonly used distance measure. It is the straight-line distance between two points in Euclidean space. It is the most obvious way of representing distance between two points.
-* `Dynamic time warping` - measuring similarity between time series data, accommodating variations in their temporal alignment. DTW considers flexible matching of corresponding points, accommodating differences in speed or time shifts. It enables effective clustering of time series data with varying patterns or lengths, capturing similarities that traditional distance measures may overlook.
-* `Manhattan` - measures the total absolute difference between corresponding points in time series, suitable for capturing temporal variations in clustering.
-* `Chebyshev` - focuses on the maximum absolute difference between corresponding points in time series, effectively capturing the largest temporal variations in clustering.
-* `Canberra` - function measures the weighted absolute difference between corresponding points in time series, considering both magnitude and relative changes, beneficial for clustering time series with varying scales or proportions.
+* `欧几里得` - 欧几里得距离是最常用的距离度量。它是欧几里得空间中两点之间的直线距离。它是表示两点之间距离的最明显方式。
+* `动态时间规整` - 测量时序数据之间的相似性，适应其时间对齐的变化。DTW 考虑相应点的灵活匹配，适应速度或时间偏移的差异。它能够有效地对具有不同模式或长度的时序数据进行聚类，捕获传统距离度量可能忽略的相似性。
+* `曼哈顿` - 测量时序数据中相应点之间的总绝对差异，适用于捕获聚类中的时间变化。
+* `切比雪夫` - 关注时序数据中相应点之间的最大绝对差异，有效地捕获聚类中的最大时间变化。
+* `堪培拉` - 函数测量时序数据中相应点之间的加权绝对差异，同时考虑大小和相对变化，有利于对具有不同尺度或比例的时序数据进行聚类。
 
-## Time window type
-This property defines how time window for segments is computed when preparing raw telemetry for clustering. Currently supported time window types are:
+## 时间窗口类型
+此属性定义在为聚类准备原始遥测数据时如何计算区段的时间窗口。当前支持的时间窗口类型有：
 
-* `Fixed range` - time window for segments are fixed and do not overlap.
-* `Sliding window` - time window for segments are sliding and overlap.
+* `固定范围` - 区段的时间窗口是固定的，不重叠。
+* `滑动窗口` - 区段的时间窗口是滑动的，并且重叠。
 
-In case of `sliding windows` user can define `Sliding step percent` property to define at what percent sliding window should move.
+在 `滑动窗口` 的情况下，用户可以定义 `滑动步长百分比` 属性来定义滑动窗口应移动的百分比。
 
-## Other properties
+## 其他属性
 
-* `Cluster count` - number of clusters that will be used for anomaly detection.
-* `Max iterations` - maximum number of iterations that will be used for building anomaly detection model.
-* `Score threshold percent` - initial factor that tells how many abnormal segments we expect to have in training dataset.
-* `Aggregation` - defines function used to aggregate data points inside segment before feature extraction.
-* `Min points interval` - minimal number of data points inside segment. If segment contains less data points - it will be skipped.
-* `Segment points` - amount of points aggregated inside segment.
-* `Min interval duration` - minimal time interval for a segment to include into anomaly detection model training process.
-* `Max time gap` - if segment contains data gaps with duration bigger than this property - segment would be skipped.
-* `Max points count` - maximum amount of segment points analyzed during training process.
-* `Min anomaly duration` - if discover anomaly has duration smaller that his property - anomaly would be discarded.
-* `Max segments count` - maximum amount of segments extract for training dataset.
-* `Join clusters` - define system behavior when 2 segments that are near each other and they both have anomaly, but they belong to different clusters. 
+* `集群计数` - 将用于异常检测的集群数量。
+* `最大迭代次数` - 用于构建异常检测模型的最大迭代次数。
+* `分数阈值百分比` - 初始因子，告诉我们在训练数据集中期望有多少异常区段。
+* `聚合` - 定义在特征提取之前用于聚合区段内数据点的函数。
+* `最小点数间隔` - 区段内的数据点最小数量。如果区段包含较少的数据点 - 它将被跳过。
+* `区段点数` - 在区段内聚合的点数。
+* `最小间隔持续时间` - 将区段包含到异常检测模型训练过程中的最小时间间隔。
+* `最大时间间隔` - 如果区段包含持续时间大于此属性的数据间隔 - 区段将被跳过。
+* `最大点数` - 在训练过程中分析的最大区段点数。
+* `最小异常持续时间` - 如果发现异常的持续时间小于此属性 - 异常将被丢弃。
+* `最大区段计数` - 为训练数据集提取的最大区段数量。
+* `加入集群` - 定义当两个彼此靠近的区段都具有异常时，但它们属于不同集群时的系统行为。
 
-## Next Steps
+## 后续步骤
 
 {% assign currentGuide = "InstallationOptions" %}{% include templates/trndz-guides-banner.md %}

@@ -1,7 +1,7 @@
 ---
 layout: devicelibrary
-title: Devices Library
-description: Device library and connecting guides
+title: 设备库
+description: 设备库和连接指南
 notitle: "true"
 ---
 

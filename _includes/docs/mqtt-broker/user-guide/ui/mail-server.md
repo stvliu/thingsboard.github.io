@@ -1,3 +1,1 @@
-
-Please refer to the ThingsBoard docs [Mail Settings](https://thingsboard.io/docs/user-guide/ui/mail-settings/) in 
-order to configure SMTP server that is used to reset user's password.  
+请参阅 ThingsBoard 文档 [邮件设置](https://thingsboard.io/docs/user-guide/ui/mail-settings/)，以配置用于重置用户密码的 SMTP 服务器。

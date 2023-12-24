@@ -1,6 +1,4 @@
-Here you can find scripts for different deployment scenarios using Azure AKS platform:
+您可以在此处找到使用 Azure AKS 平台的不同部署方案的脚本：
 
-- [**monolith**](/docs/user-guide/install/{{docsPrefix}}cluster/azure-monolith-setup/) - simplistic deployment of ThingsBoard with only one service and
-  Azure Database for PostgreSQL;
-- [**microservices**](/docs/user-guide/install/{{docsPrefix}}cluster/azure-microservices-setup/) (recommended) - deployment of ThingsBoard in a microservices mode 
-  with Azure Database for PostgreSQL and Azure Cache for Redis;
+- [**monolith**](/docs/user-guide/install/{{docsPrefix}}cluster/azure-monolith-setup/) - 仅使用一项服务和 Azure Database for PostgreSQL 的 ThingsBoard 简化部署；
+- [**microservices**](/docs/user-guide/install/{{docsPrefix}}cluster/azure-microservices-setup/)（推荐） - 使用 Azure Database for PostgreSQL 和 Azure Cache for Redis 以微服务模式部署 ThingsBoard；

@@ -1,17 +1,17 @@
 * TOC
 {:toc}
 
-ThingsBoard allows you to configure customizable IoT dashboards.
-Each IoT Dashboard can contain multiple widgets that visualize data from multiple IoT devices.
-Once IoT Dashboard is created, you can assign it to multiple customers of your IoT project.
- 
-IoT Dashboards are light-weight, and you can have millions of dashboards.
+ThingsBoard 允许您配置可自定义的物联网仪表板。
+每个物联网仪表板可以包含多个小部件，这些小部件可视化来自多个物联网设备的数据。
+创建物联网仪表板后，您可以将其分配给物联网项目的多个客户。
 
-You can find useful links to get started below:
+物联网仪表板重量轻，您可以拥有数百万个仪表板。
 
- - [Getting started guide](/docs/{{docsPrefix}}getting-started-guides/helloworld/) - covers basic steps to create a dashboard.
- - [IoT Dashboards](/docs/{{docsPrefix}}user-guide/dashboards/) - contains tutorials about basic IoT dashboard operations.
+您可以在下面找到有用的链接以开始使用：
+
+- [入门指南](/docs/{{docsPrefix}}getting-started-guides/helloworld/) - 介绍创建仪表板的基本步骤。
+- [物联网仪表板](/docs/{{docsPrefix}}user-guide/dashboards/) - 包含有关基本物联网仪表板操作的教程。
 {% if docsPrefix == "pe/" or docsPrefix == "paas/" %}
- - [Solution Templates](/docs/{{docsPrefix}}solution-templates/overview/) - contains several examples of IoT dashboards.
-{% endif %} 
- - [Widget Library](/docs/{{docsPrefix}}user-guide/ui/widget-library/) - contains an overview of dashboard widget bundles.
+- [解决方案模板](/docs/{{docsPrefix}}solution-templates/overview/) - 包含多个物联网仪表板示例。
+{% endif %}
+- [小部件库](/docs/{{docsPrefix}}user-guide/ui/widget-library/) - 包含仪表板小部件包的概述。

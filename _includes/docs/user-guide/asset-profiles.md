@@ -1,20 +1,19 @@
-
 * TOC
 {:toc}
 
-## Overview
+## 概述
 
-Since ThingsBoard 3.4.2, the Tenant administrator is able to configure common settings for multiple assets using Asset Profiles.
-Each Asset has one and only profile at a single point in time.
-Experienced ThingsBoard users can notice that the asset type has been deprecated in favor of the Asset Profile.
-The update script will automatically create Asset Profiles based on unique Asset Types and assign them to the appropriate assets.
+自 ThingsBoard 3.4.2 起，租户管理员能够使用资产配置文件为多个资产配置通用设置。
+每个资产在某个时间点只有一个配置文件。
+有经验的 ThingsBoard 用户可能会注意到资产类型已被弃用，取而代之的是资产配置文件。
+更新脚本将根据唯一的资产类型自动创建资产配置文件，并将它们分配给相应的资产。
 
-Asset Profile allows you to select the [Rule Chain](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-chain) and [Queue](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/) to be used by the [Rule Engine](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview) for processing of the asset data.
-Let's take a look at the settings available in the asset profile.
+资产配置文件允许您选择[规则链](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-chain)和[队列](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/)，以便[规则引擎](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview)用于处理资产数据。
+让我们来看看资产配置文件中可用的设置。
 
-## Create Asset Profile
+## 创建资产配置文件
 
-To create an asset profile, go to the Asset Profiles on the Profiles tab and click on the plus button to add a new asset profile.
+要创建资产配置文件，请转到“配置文件”选项卡上的“资产配置文件”，然后单击加号按钮以添加新的资产配置文件。
 
 {% if docsPrefix == null %}
 ![image](/images/user-guide/asset-profile/asset-profile-add-1-ce.png)
@@ -23,17 +22,17 @@ To create an asset profile, go to the Asset Profiles on the Profiles tab and cli
 ![image](/images/user-guide/asset-profile/asset-profile-add-1-pe.png)
 {% endif %}
 
-## Asset Profile settings
+## 资产配置文件设置
 
-### Rule Chain
+### 规则链
 
-By default, the [Root Rule Chain](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-chain) processes all incoming messages and events for any asset.
-However, the more different asset types you have, the more complex your Root Rule Chain may become.
-Many platform users create their Root Rule Chain for the sole purpose of sending messages to specific rule chains depending on the asset type.
+默认情况下，[根规则链](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-chain)处理任何资产的所有传入消息和事件。
+但是，您拥有的不同资产类型越多，根规则链就可能变得越复杂。
+许多平台用户创建根规则链的唯一目的是根据资产类型将消息发送到特定规则链。
 
-To avoid this painful and mundane activity, since ThingsBoard 3.4.2, you can specify a custom Rule Chain for your assets.
-The new Rule Chain will receive asset attributes updates, and asset lifecycle(Created/Updated/Deleted) events.
-This setting is available in the Asset Profile details.
+为了避免这种痛苦且平凡的活动，自 ThingsBoard 3.4.2 起，您可以为您的资产指定自定义规则链。
+新的规则链将接收资产属性更新和资产生命周期（创建/更新/删除）事件。
+此设置在资产配置文件详细信息中可用。
 
 {% if docsPrefix == null %}
 ![image](/images/user-guide/asset-profile/asset-profile-rule-chain-1-ce.png)
@@ -49,16 +48,16 @@ This setting is available in the Asset Profile details.
 ![image](/images/user-guide/asset-profile/asset-profile-rule-chain-2-pe.png)
 {% endif %}
 
-### Queue
+### 队列
 
-By default, the [Main](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/) queue will be used to store all incoming events from any asset.
-The API layer will submit messages to this queue and Rule Engine will poll the queue for new messages.
-However, for multiple use cases, you might want to use different queues for different assets.
-For example, you might want to isolate data processing for urgent asset data and other assets or devices.
-This way, even if your system has a peak load produced by millions of water meters, whenever the important asset configuration changes will be processed without delay.
-Separation of the queues also allows you to customize different [submit](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/#queue-submit-strategy) and [processing](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/#queue-processing-strategy) strategies.
+默认情况下，[主](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/)队列将用于存储来自任何资产的所有传入事件。
+API 层将把消息提交到此队列，规则引擎将轮询队列以获取新消息。
+但是，对于多种用例，您可能希望为不同资产使用不同的队列。
+例如，您可能希望隔离紧急资产数据和其他资产或设备的数据处理。
+这样，即使您的系统因数百万水表而产生峰值负载，每当重要的资产配置发生更改时，都将立即处理。
+队列的分离还允许您自定义不同的[提交](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/#queue-submit-strategy)和[处理](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/#queue-processing-strategy)策略。
 
-This setting is available when you create an Asset Profile and in the Asset Profile details.
+此设置在您创建资产配置文件和资产配置文件详细信息中可用。
 
 {% if docsPrefix == null %}
 ![image](/images/user-guide/asset-profile/asset-profile-queue-1-ce.png)
@@ -75,24 +74,24 @@ This setting is available when you create an Asset Profile and in the Asset Prof
 ![image](/images/user-guide/asset-profile/asset-profile-queue-2-pe.png)
 {% endif %}
 
-## Related guides
+## 相关指南
 
-You can use the following links to check out the related guides:
+您可以使用以下链接查看相关指南：
 
 {% if docsPrefix == null %}
- - [Rule Chains](/docs/{{peDocsPrefix}}user-guide/ui/rule-chains/)
- - [Queues](/docs/{{peDocsPrefix}}user-guide/rule-engine-2-5/queues/)
- - [Assets](/docs/{{peDocsPrefix}}user-guide/ui/assets/)
- - [Entities and Relations](/docs/{{peDocsPrefix}}user-guide/entities-and-relations/)
+ - [规则链](/docs/{{peDocsPrefix}}user-guide/ui/rule-chains/)
+ - [队列](/docs/{{peDocsPrefix}}user-guide/rule-engine-2-5/queues/)
+ - [资产](/docs/{{peDocsPrefix}}user-guide/ui/assets/)
+ - [实体和关系](/docs/{{peDocsPrefix}}user-guide/entities-and-relations/)
   {% endif %}
   {% if docsPrefix == "pe/" %}
- - [Rule Chains](/docs/pe/user-guide/ui/rule-chains/)
- - [Queues](/docs/pe/user-guide/rule-engine-2-5/queues/)
- - [Assets](/docs/pe/user-guide/ui/assets/)
- - [Entities and Relations](/docs/pe/user-guide/entities-and-relations/)
+ - [规则链](/docs/pe/user-guide/ui/rule-chains/)
+ - [队列](/docs/pe/user-guide/rule-engine-2-5/queues/)
+ - [资产](/docs/pe/user-guide/ui/assets/)
+ - [实体和关系](/docs/pe/user-guide/entities-and-relations/)
   {% endif %}
   {% if docsPrefix == "paas/" %}
- - [Rule Chains](/docs/paas/user-guide/ui/rule-chains/)
- - [Assets](/docs/paas/user-guide/ui/assets/)
- - [Entities and Relations](/docs/paas/user-guide/entities-and-relations/)
+ - [规则链](/docs/paas/user-guide/ui/rule-chains/)
+ - [资产](/docs/paas/user-guide/ui/assets/)
+ - [实体和关系](/docs/paas/user-guide/entities-and-relations/)
   {% endif %}

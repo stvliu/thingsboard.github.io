@@ -2,8 +2,8 @@
 layout: docwithnav
 assignees:
 - ikulikov
-title: Assets
-description: Thingsboard IoT Asset management
+title: 资产
+description: Thingsboard IoT 资产管理
 
 ---
 

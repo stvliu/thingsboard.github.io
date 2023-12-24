@@ -1,23 +1,21 @@
 ---
 layout: docwithnav
-title: Samples
-description: ThingsBoard IoT Platform hardware samples and tutorials
+title: 样例
+description: ThingsBoard IoT 平台硬件样例和教程
 
 --- 
 
-#### Demo Account
+#### 演示帐户
 
-ThingsBoard installation contains **[single tenant account](/docs/samples/demo-account/)** that is used in sample applications and contains a lot of pre-provisioned entities for demonstration purposes.
+ThingsBoard 安装包含 **[单租户帐户](/docs/samples/demo-account/)**，该帐户用于示例应用程序，并包含大量预置实体以供演示。
 
-#### Hardware platforms
+#### 硬件平台
 
-The ThingsBoard samples are grouped by hardware platform.
+ThingsBoard 样例按硬件平台分组。
 
-**Note** ThingsBoard provides hardware independent APIs.
-If your device platform is not in the list, but is able to setup HTTP, CoAP or MQTT connections - it is possible to integrate it with ThingsBoard.
-ThingsBoard team is working on samples applications for
-Intel Edison, C.H.I.P, Tessel, Samsung Artik and Gemalto 
-and will upload them to this page as soon as possible.  
+**注意** ThingsBoard 提供硬件无关的 API。
+如果您的设备平台不在列表中，但能够设置 HTTP、CoAP 或 MQTT 连接，则可以将其与 ThingsBoard 集成。
+ThingsBoard 团队正在为英特尔爱迪生、C.H.I.P、Tessel、三星 Artik 和 Gemalto 开发示例应用程序，并将尽快将它们上传到此页面。  
 
  - [**Arduino**](/docs/samples/arduino/)
 
@@ -35,9 +33,8 @@ and will upload them to this page as soon as possible.
 
  - [**Smartico**](/docs/samples/smartico/)
 
-#### Tutorials
+#### 教程
 
- - [**Sending alarms using Email Plugin**](/docs/samples/alarms/mail/)
- - [**Alarms based on sensor readings**](/docs/samples/alarms/basic-rules/)
- - [**Facilities monitoring system prototype using ThingsBoard**](/docs/samples/monitoring/facilities-monitoring-poc/)
- 
+ - [**使用电子邮件插件发送警报**](/docs/samples/alarms/mail/)
+ - [**基于传感器读数的警报**](/docs/samples/alarms/basic-rules/)
+ - [**使用 ThingsBoard 的设施监控系统原型**](/docs/samples/monitoring/facilities-monitoring-poc/)

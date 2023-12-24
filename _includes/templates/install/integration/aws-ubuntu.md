@@ -1,25 +1,25 @@
-Download installation package:
+下载安装包：
 
 ```bash
 wget https://dist.thingsboard.io/tb-aws-integration-{{ site.release.pe_ver }}.deb
 ```
 {: .copy-code}
 
-Install integration as a service:
+将集成安装为服务：
 
 ```bash
 sudo dpkg -i tb-aws-integration-{{ site.release.pe_ver }}.deb
 ```
 {: .copy-code}
 
-Open the file for editing using the following command:
+使用以下命令打开文件进行编辑：
 
 ```bash 
 sudo nano /etc/tb-aws-integration/conf/tb-aws-integration.conf
 ``` 
 {: .copy-code}
 
-Locate the following configuration block:
+找到以下配置块：
 
 ```bash
 # UNCOMMENT NEXT LINES AND PUT YOUR CONNECTION PARAMETERS:
@@ -29,7 +29,7 @@ Locate the following configuration block:
 # export INTEGRATION_SECRET=YOUR_INTEGRATION_SECRET
 ```
 
-and put your configuration parameters. Please don't forget to uncomment the export statement. See example below:
+并输入您的配置参数。请不要忘记取消注释 export 语句。请参阅以下示例：
 
 ```bash
 # UNCOMMENT NEXT LINES AND PUT YOUR CONNECTION PARAMETERS:
@@ -39,23 +39,22 @@ export INTEGRATION_ROUTING_KEY=b75**************************34d
 export INTEGRATION_SECRET=vna**************mik
 ```
 
-Execute the following command to start ThingsBoard:
+执行以下命令启动 ThingsBoard：
 
 ```bash
 sudo service tb-aws-integration start
 ```
 {: .copy-code}
 
- - **Advanced configuration**
+- **高级配置**
 
-Once can lookup additional configuration parameters inside the yml configuration file.
+可以在 yml 配置文件中查找其他配置参数。
 
-Open the file for editing using the following command:
+使用以下命令打开文件进行编辑：
 
 ```bash 
 sudo nano /etc/tb-aws-integration/conf/tb-aws-integration.conf
 ``` 
 {: .copy-code} 
 
-After executing this command you can open logs which are located here `/var/log/tb-aws-integration/`. 
-You should see some INFO log messages with your latest Integration configuration that arrived from the server.
+执行此命令后，您可以打开位于 `/var/log/tb-aws-integration/` 的日志。您应该会看到一些 INFO 日志消息，其中包含从服务器收到的最新集成配置。

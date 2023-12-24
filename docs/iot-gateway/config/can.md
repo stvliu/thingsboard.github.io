@@ -280,7 +280,7 @@ Examples:
 ```json
 "value": "0:7:double"
 ```
- - Read 4 bytes starting from 0th position as the *little* byte ordered and cast to the value of the *float* type. 
+ - Read 4 bytes starting from 0th position as the *little* byte ordered and cast to the value the *float* type. 
 ```json
 "value": "0:4:little:float"
 ```

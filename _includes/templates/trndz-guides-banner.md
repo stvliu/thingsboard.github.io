@@ -1,28 +1,28 @@
 {% if currentGuide != "GettingStartedGuide" %}
-- [**Getting started guide**](/docs/trendz/getting-started/) - These guide provide quick overview of main Trendz features.
+- [**入门指南**](/docs/trendz/getting-started/) - 本指南提供了 Trendz 主要功能的快速概述。
 {% endif %}
 {% if currentGuide != "InstallationOptions" %}
-- [**Installation guides**](/docs/trendz/install/installation-options/) - Learn how to setup ThingsBoard on various available operating systems.
+- [**安装指南**](/docs/trendz/install/installation-options/) - 了解如何在各种可用操作系统上设置 ThingsBoard。
 {% endif %}
 {% if currentGuide != "CalculatedFields" %}
-- [**Calculated Fields**](/docs/trendz/calculated-fields) - Learn about Calculated fields and how to use them.
+- [**计算字段**](/docs/trendz/calculated-fields) - 了解计算字段及其使用方法。
 {% endif %}
 {% if currentGuide != "States" %}
-- [**States**](/docs/trendz/states) - Learn how to define and analyse states for assets based on raw telemetry.
+- [**状态**](/docs/trendz/states) - 了解如何根据原始遥测数据定义和分析资产状态。
 {% endif %}
 {% if currentGuide != "GroupAndAggregateData" %}
-- [**Group and Aggregate data**](/docs/trendz/data-grouping-aggregation) - Learn how to group and aggregate data in Trendz.
+- [**分组和聚合数据**](/docs/trendz/data-grouping-aggregation) - 了解如何在 Trendz 中分组和聚合数据。
 {% endif %}
 {% if currentGuide != "Prediction" %}
-- [**Prediction**](/docs/trendz/prediction) - Learn how to make forecasts and predict telemetry behavior.
+- [**预测**](/docs/trendz/prediction) - 了解如何进行预测并预测遥测行为。
 {% endif %}
 {% if currentGuide != "Filtering" %}
-- [**Filters**](/docs/trendz/data-filtering) - Learn how filter dataset during analysis.
+- [**过滤器**](/docs/trendz/data-filtering) - 了解如何在分析期间过滤数据集。
 {% endif %}
 {% if currentGuide != "AvailableVisualizations" %}
-- [**Available Visualizations**](/docs/trendz/visualizations-overview) - Learn about visualization widgets available in Trendz and how to configure them.
+- [**可用可视化**](/docs/trendz/visualizations-overview) - 了解 Trendz 中可用的可视化小部件以及如何配置它们。
 {% endif %}
 {% if currentGuide != "EmbedVisualizations" %}
-- [**Share and embed Visualizations**](/docs/trendz/embed-visuals) - Learn how to add Trendz visualizations on ThingsBoard dashboard or 3rd party web pages.
+- [**共享和嵌入可视化**](/docs/trendz/embed-visuals) - 了解如何在 ThingsBoard 仪表板或第三方网页上添加 Trendz 可视化。
 {% endif %}  
 <br>

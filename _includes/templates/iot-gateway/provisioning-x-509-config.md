@@ -1,14 +1,14 @@
-Using the following config, you can configure Gateway to use X.509 Certificate provisioning strategy:
+使用以下配置，您可以配置网关以使用 X.509 证书配置策略：
 
-| **Parameter**         | **Default value**        | **Description**                                                                |
-|:----------------------|:-------------------------|--------------------------------------------------------------------------------
-| type                  | **X509_CERTIFICATE**     | Type of provisioning strategy.                                                 |
-| provisionDeviceKey    | **DEVICE_KEY**           | Provisioning device key, you should take it from configured device profile.    |
-| provisionDeviceSecret | **DEVICE_SECRET**        | Provisioning device secret, you should take it from configured device profile. |
-| caCert                | **ca-root.pem**  | Public key X509 for device in ThingsBoard.                                     |
-| ---                   
+| **参数** | **默认值** | **说明** |
+|---|---|---|
+| type | **X509_CERTIFICATE** | 配置策略的类型。 |
+| provisionDeviceKey | **DEVICE_KEY** | 配置设备密钥，您应该从配置的设备配置文件中获取它。 |
+| provisionDeviceSecret | **DEVICE_SECRET** | 配置设备密钥，您应该从配置的设备配置文件中获取它。 |
+| caCert | **ca-root.pem** | ThingsBoard 中设备的公钥 X509。 |
+| --- | | |
 
-Provisioning subsection in configuration file will look like this:
+配置文件中的配置子部分将如下所示：
 ```yaml
 ...
 "provisioning": {

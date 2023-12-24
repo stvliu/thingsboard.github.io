@@ -1,29 +1,29 @@
-{% assign feature = "Platform Integrations" %}{% include templates/pe-feature-banner.md %}
+{% assign feature = "平台集成" %}{% include templates/pe-feature-banner.md %}
 
 
-ThingPark Integration allows to stream data from Actility ThingPark servers to ThingsBoard and converts binary device payloads to the ThingsBoard format.
+ThingPark 集成允许将数据从 Actility ThingPark 服务器流式传输到 ThingsBoard，并将二进制设备有效负载转换为 ThingsBoard 格式。
 
 <object width="100%" style="max-width: max-content;" data="/images/user-guide/integrations/thingpark-integration.svg"></object>
 
-Configuration steps:
-- Review official  ThingPark DX Dataflow API reference documentation:
+配置步骤：
+- 查看官方 ThingPark DX 数据流 API 参考文档：
 
-[documentation](https://www.actility.com/thingpark-documentation-portal/).
+[文档](https://www.actility.com/thingpark-documentation-portal/)。
 
-- Go through the procedure of your registration and registration of your device on the ThingPark Wireless OSS intelligent logger (Actility).
+- 完成在 ThingPark Wireless OSS 智能记录器（Actility）上注册和注册设备的过程。
 
-[Procedure of your registration and registration of your device](https://thingparkenterprise.eu.actility.com/tpe/#/login).
+[注册和注册设备的过程](https://thingparkenterprise.eu.actility.com/tpe/#/login)。
 
-- Check the connection and operation of your device to the ThingPark Wireless OSS intelligent logger (Actility).
+- 检查设备与 ThingPark Wireless OSS 智能记录器（Actility）的连接和操作。
 
-[Check the connection and operation of your device](https://thingparkenterprise.eu.actility.com/thingpark/wlogger/gui/).
+[检查设备的连接和操作](https://thingparkenterprise.eu.actility.com/thingpark/wlogger/gui/)。
 
-- To create a new Integration on the ThingsBoard platform with the ThingPark Wireless OSS intelligent logger (Actility) platform, click on the link.
+- 要在 ThingsBoard 平台上使用 ThingPark Wireless OSS 智能记录器（Actility）平台创建新的集成，请点击链接。
 
-[Create new Integration of type "ThingPark"](/docs/samples/abeeway/tracker)
+[创建类型为“ThingPark”的新集成](/docs/samples/abeeway/tracker)
 
 <br>
 
-## Next steps
+## 后续步骤
 
  {% assign currentGuide = "ConnectYourDevice" %}{% include templates/multi-project-guides-banner.md %}

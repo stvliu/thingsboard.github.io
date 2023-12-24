@@ -1,54 +1,54 @@
 ---
-position: PR/Community Manager
+position: 公关/社区经理
 tag:
-location: Kyiv, Ukraine
+location: 乌克兰基辅
 dateString:
 layout: career
 ---
-##### We’re looking for a PR/Community Manager to join our team on the full-time basis in the Kyiv office.
-##### ThingsBoard, Inc. is a US corporation founded in 2016 with RnD center in Kyiv, Ukraine. We are the main contributor and maintainer of ThingsBoard open-source IoT Platform. We deliver and constantly improve scalable, robust and affordable IoT Platform that dramatically reduces time-to-market for life-changing IoT solutions. We also help companies to deliver great IoT products based on ThingsBoard.
+##### 我们正在寻找一名公关/社区经理，全职加入我们在基辅办公室的团队。
+##### ThingsBoard, Inc. 是一家成立于 2016 年的美国公司，在乌克兰基辅设有研发中心。我们是 ThingsBoard 开源物联网平台的主要贡献者和维护者。我们提供并不断改进可扩展、强大且价格合理的物联网平台，可大幅缩短改变生活的物联网解决方案的上市时间。我们还帮助公司基于 ThingsBoard 提供出色的物联网产品。
 
-### Requirements and skills:
-1+ year experience in IT sphere;
+### 要求和技能：
+1 年以上的 IT 领域经验；
 
-Experience with copywriting in IT;
+IT 领域的文案写作经验；
 
-Excellent English language skills, verbal and written;
+出色的英语语言技能，口头和书面；
 
-Hands on experience with social media management;
+社交媒体管理的实践经验；
 
-Attention to details and ability to multitask.
+注重细节并能够同时处理多项任务。
 
-### Responsibilities:
-Educate the community on how to purposefully use our platform;
+### 职责：
+教育社区如何有目的地使用我们的平台；
 
-Setting and implementing social media and communication campaigns to align with marketing strategies;
+制定和实施社交媒体和沟通活动，以配合营销策略；
 
-Providing engaging text, image and video content for social media accounts;
+为社交媒体帐户提供引人入胜的文字、图像和视频内容；
 
-Writing articles on IoT-topics;
+撰写有关物联网主题的文章；
 
-Responding to comments and customer queries in a timely manner;
+及时回复评论和客户查询；
 
-Liaise with Development and Sales departments to stay updated on new products and features;
+与开发和销售部门保持联系，以了解新产品和功能；
 
-Build relationships with customers and potential customers;
+与客户和潜在客户建立关系；
 
-Stay up-to-date with digital technology trends.
+随时了解数字技术趋势。
 
-### We offer:
-Full-time office work with flexible work hours;
+### 我们提供：
+全职办公室工作，工作时间灵活；
 
-Working on an open-source IoT platform that has thousands of installations all over the world and 13000+ stars on GitHub;
+在一个开源物联网平台上工作，该平台在全球拥有数千个安装，在 GitHub 上拥有 13000 多颗星；
 
-Modern cutting-edge development stack;
+现代尖端开发堆栈；
 
-A high-professional team without bureaucracy and management overhead with 13+ years of experience;
+一支没有官僚主义和管理开销、拥有 13 年以上经验的高专业团队；
 
-Career growth opportunities and regular salary review;
+职业发展机会和定期薪资审查；
 
-Medical Insurance;
+医疗保险；
 
-Free English classes;
+免费英语课程；
 
-Comfortable office and fridge with free beverages.
+舒适的办公室和提供免费饮料的冰箱。

@@ -2,8 +2,8 @@
 layout: docwithnav
 assignees:
 - ashvayka
-title: JWT Security Settings
-description: ThingsBoard IoT platform JWT security settings
+title: JWT 安全设置
+description: ThingsBoard IoT 平台 JWT 安全设置
 
 ---
 

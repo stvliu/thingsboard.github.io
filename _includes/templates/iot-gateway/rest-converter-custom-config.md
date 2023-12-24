@@ -1,33 +1,33 @@
-A custom converter is converter written for some device:
+自定义转换器是为某些设备编写的转换器：
 
 
 
-|**Parameter**|**Default value**|**Description**|
+|**参数**|**默认值**|**说明**|
 |:-|:-|-
-| type                        | **custom**                      | Provides information to connector that custom converter will be uses for converting data from request.                            |
-| deviceNameExpression        | **SuperAnonDevice**             | Device name.                                                                                                                      |
-| deviceTypeExpression        | **default**                     | Devcie type.                                                                                                                      |
-| extension                   | **CustomRESTUplinkConverter**   | Name of custom converter class.                                                                                                   |
-| extension-config            |                                 | Configuration, for custom converter (You can put anything, there. It will be passed to the converter object on initialization).   |
+| type                        | **custom**                      | 向连接器提供信息，自定义转换器将用于转换请求中的数据。                            |
+| deviceNameExpression        | **SuperAnonDevice**             | 设备名称。                                                                                                                      |
+| deviceTypeExpression        | **default**                     | 设备类型。                                                                                                                      |
+| extension                   | **CustomRESTUplinkConverter**   | 自定义转换器类的名称。                                                                                                   |
+| extension-config            |                                 | 配置，用于自定义转换器（您可以在此处放置任何内容。它将在初始化时传递给转换器对象）。   |
 |   key                       | **Totaliser**                   |                                                                                                                                   |
 |   datatype                  | **float**                       |                                                                                                                                   |
 |   fromByte                  | **0**                           |                                                                                                                                   |
 |   toByte                    | **4**                           |                                                                                                                                   |
 |   byteorder                 | **big**                         |                                                                                                                                   |
 |   signed                    | **true**                        |                                                                                                                                   |
-|   multiplier                | **1**                           |                                                                                                                                   | 
-|--- 
+|   multiplier                | **1**                           |                                                                                                                                   |
+---
 
 {% capture difference %}
 <br>
   
-**Custom converter usually needed if you want to collect data from some device with not regular structure in response or when the data needs some processing before sending it to the ThingsBoard.**  
+**通常，如果您想从响应中结构不规则的某些设备收集数据，或者在将数据发送到 ThingsBoard 之前需要对数据进行一些处理，则需要自定义转换器。**  
 {% endcapture %}  
 {% include templates/info-banner.md content=difference %}  
 
-**Notate: Everything, you placed in the "converter" section will be passed to the custom converter as a configuration.**  
+**注意：您放在“converter”部分中的所有内容都将作为配置传递给自定义转换器。**  
 
-Mapping subsection in the configuration looks like:  
+配置中的映射子部分如下所示：  
 
 ```json
       "converter": {

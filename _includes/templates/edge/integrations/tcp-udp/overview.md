@@ -1,1 +1,1 @@
-{{integrationName}} Integration allows to stream data from devices which use a {{integrationName}} transport protocol to ThingsBoard Edge and converts payloads of these devices into the ThingsBoard Edge format.
+{{integrationName}} 集成允许将数据从使用 {{integrationName}} 传输协议的设备流式传输到 ThingsBoard Edge，并将这些设备的有效负载转换为 ThingsBoard Edge 格式。

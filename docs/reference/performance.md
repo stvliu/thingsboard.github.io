@@ -1,86 +1,85 @@
 ---
 layout: docwithnav
-title: ThingsBoard Data Collection Performance
-description: ThingsBoard IoT Platform data collection performance overview
+title: ThingsBoard 数据收集性能
+description: ThingsBoard IoT 平台数据收集性能概述
 
 ---
 
 * TOC
 {:toc}
 
-One of the key features of ThingsBoard open-source IoT Platform is data collection and this is a crucial feature that must work reliably under high load.
-In this article, we are going to describe steps and improvements that we have made to ensure that single instance of ThingsBoard server
-can constantly handle **20,000+** devices and **30,000+** MQTT publish messages per second,
-which in summary gives us around **2 million published messages per minute**.
+ThingsBoard 开源 IoT 平台的关键功能之一是数据收集，这是一项必须在高负载下可靠运行的关键功能。
+在本文中，我们将介绍我们为确保 ThingsBoard 服务器的单个实例能够持续处理 **20,000+** 个设备和每秒 **30,000+** 条 MQTT 发布消息所采取的步骤和改进，
+总而言之，这为我们提供了每分钟大约 **200 万条已发布消息**。
 
-## Architecture
+## 架构
 
-ThingsBoard performance leverages three main projects:
+ThingsBoard 性能利用三个主要项目：
 
- - [Netty](http://netty.io/) for high-performance MQTT server/broker for IoT devices.
- - [Cassandra](http://cassandra.apache.org/) for scalable high-performance NoSQL DB to store timeseries data from devices.
- - Actor System for high-performance coordination of messages between millions of devices.
- - Kafka (or RabbitMQ, AWS SQS, Azure Event Hub, Google PubSub) - as a scalable message queue 
- 
-We also use [Zookeeper](https://zookeeper.apache.org/) for coordination and [gRPC](http://www.grpc.io/) in cluster mode. See [platform architecture](/docs/reference/) for more details.
+- [Netty](http://netty.io/)，用于 IoT 设备的高性能 MQTT 服务器/代理。
+- [Cassandra](http://cassandra.apache.org/)，用于可扩展的高性能 NoSQL 数据库，以存储来自设备的时间序列数据。
+- Actor System，用于数百万个设备之间的高性能消息协调。
+- Kafka（或 RabbitMQ、AWS SQS、Azure Event Hub、Google PubSub） - 作为可扩展的消息队列
 
-## Data flow and test tools
- 
-IoT devices connect to ThingsBoard server via MQTT and issue "publish" commands with JSON payload.
-Size of single publish message is approximately 100 bytes. 
-[MQTT](http://mqtt.org/) is lightweight publish/subscribe messaging protocol and offers a number of advantages over HTTP request/response protocol.
- 
+我们还使用 [Zookeeper](https://zookeeper.apache.org/) 进行协调，并在集群模式下使用 [gRPC](http://www.grpc.io/)。有关更多详细信息，请参阅 [平台架构](/docs/reference/)。
+
+## 数据流和测试工具
+
+IoT 设备通过 MQTT 连接到 ThingsBoard 服务器，并使用 JSON 有效负载发出“发布”命令。
+单个发布消息的大小约为 100 字节。
+[MQTT](http://mqtt.org/) 是轻量级的发布/订阅消息传递协议，与 HTTP 请求/响应协议相比，它具有许多优势。
+
 ![image](/images/reference/performance/performance-diagram-0.svg)
 
-ThingsBoard server processes MQTT publish messages and stores them to Cassandra asynchronously.
-The server may also push data to websocket subscriptions from the Web UI dashboards (if present).
-We try to avoid any blocking operations and this is critical for overall system performance.
-ThingsBoard supports MQTT QoS level 1, which means that a client receives a response to the publish message only after data is stored to Cassandra DB.
-Data duplicates which are possible with QoS level 1 are just the overwrites to the corresponding Cassandra row and thus are not present in persisted data. 
-This functionality provides reliable data delivery and persistence. 
+ThingsBoard 服务器处理 MQTT 发布消息，并将其异步存储到 Cassandra。
+服务器还可以将数据推送到 Web UI 仪表板的 websocket 订阅（如果存在）。
+我们尝试避免任何阻塞操作，这对整体系统性能至关重要。
+ThingsBoard 支持 MQTT QoS 级别 1，这意味着客户端仅在数据存储到 Cassandra 数据库后才会收到对发布消息的响应。
+使用 QoS 级别 1 可能出现的重复数据只是对相应 Cassandra 行的覆盖，因此不会出现在持久数据中。
+此功能提供可靠的数据传递和持久性。
 
-We have used [Gatling](http://gatling.io/) load testing framework that is also based on Akka and Netty. 
-Gatling is able to simulate 10K MQTT clients using 5-10% of a 2-core CPU. 
-See our separate [article](/docs/reference/performance-tools) about how we improved unofficial Gatling MQTT plugin to support our use case.
+我们使用了 [Gatling](http://gatling.io/) 负载测试框架，它也基于 Akka 和 Netty。
+Gatling 能够使用 2 核 CPU 的 5-10% 来模拟 10K MQTT 客户端。
+请参阅我们关于如何改进非官方 Gatling MQTT 插件以支持我们的用例的单独 [文章](/docs/reference/performance-tools)。
 
-## Performance improvement steps
+## 性能改进步骤
 
-### Step 1. Asynchronous Cassandra Driver API 
+### 步骤 1. 异步 Cassandra 驱动程序 API
 
-The results of first performance tests on the modern 4-core laptop with SSD were quite poor. The platform was able to process only 200 messages per second.
-The root cause and a main performance bottle-neck were quite obvious and easy to find. 
-It appears that the processing was not 100% asynchronous and we were executing blocking API call of Cassandra driver inside the [Telemetry Service](/docs/user-guide/telemetry/) actor.
-Quick refactoring of the service implementation resulted in more than 10X performance improvement and we received approximately 2500 published messages per second from 1000 devices.
+在具有 SSD 的现代 4 核笔记本电脑上进行的首次性能测试结果非常差。该平台每秒只能处理 200 条消息。
+根本原因和主要的性能瓶颈非常明显且易于找到。
+显然，处理不是 100% 异步的，我们正在 [遥测服务](/docs/user-guide/telemetry/) actor 中执行 Cassandra 驱动程序的阻塞 API 调用。
+对服务实现进行快速重构导致性能提高了 10 倍以上，我们从 1000 个设备中收到了大约 2500 条已发布的消息。
 
-### Step 2. Connection pooling
+### 步骤 2. 连接池
 
-We have decided to move to AWS EC2 instances to be able to share both results and tests we executed. We start running tests on [c4.xlarge](http://www.ec2instances.info/?selected=c4.xlarge) instance (4 vCPUs and 7.5 Gb of RAM) with Cassandra and ThingsBoard services co-located.
+我们决定迁移到 AWS EC2 实例，以便能够共享我们执行的结果和测试。我们开始在 [c4.xlarge](http://www.ec2instances.info/?selected=c4.xlarge) 实例（4 个 vCPU 和 7.5 Gb RAM）上运行测试，Cassandra 和 ThingsBoard 服务位于同一位置。
 
 ![image](/images/reference/performance/performance-diagram-1.svg)
 
-Test specification:
+测试规范：
 
- - Number of devices: 10 000
- - Publish frequency per device: once per second
- - Total load: 10 000 messages per second
- 
-First test results were obviously unacceptable:
+- 设备数量：10 000
+- 每台设备的发布频率：每秒一次
+- 总负载：每秒 10 000 条消息
 
-![image](/images/reference/performance/single_node_no_fix_stats.png) 
- 
+第一个测试结果显然是不可接受的：
 
-The huge response time above was caused by the fact that the server was simply not able to process 10 K messages per second and they are getting queued.
+![image](/images/reference/performance/single_node_no_fix_stats.png)
 
-We have started our investigation with monitoring memory and CPU load on the testing instance. 
-Initially, our guessing regarding poor performance was because of the heavy load on CPU or RAM. 
-But in fact, during load testing, we have seen that CPU in particular moments was idle for a couple of seconds. 
-This 'pause' event was happening every 3-7 seconds, see chart below.
- 
-![image](/images/reference/performance/single_node_no_fix_rps.png) 
 
-As a next step, we have decided to do the thread dump during these pauses. 
-We were expecting to see threads that are blocked and this could give us some clue what is happening while pauses. 
-So we have opened separate console to monitor CPU load and another one to execute thread dump while performing stress tests using the following command:
+上面的巨大响应时间是由服务器根本无法处理每秒 10 K 条消息并且它们正在排队这一事实造成的。
+
+我们已经开始通过监视测试实例上的内存和 CPU 负载来进行调查。
+最初，我们猜测性能不佳是因为 CPU 或 RAM 负载过重。
+但事实上，在负载测试期间，我们看到 CPU 在特定时刻空闲了几秒钟。
+此“暂停”事件每 3-7 秒发生一次，请参见下表。
+
+![image](/images/reference/performance/single_node_no_fix_rps.png)
+
+作为下一步，我们决定在这些暂停期间进行线程转储。
+我们希望看到被阻塞的线程，这可以为我们提供有关暂停时发生的情况的一些线索。
+因此，我们打开了单独的控制台来监视 CPU 负载，并打开了另一个控制台来执行线程转储，同时使用以下命令执行压力测试：
 
 ```bash
 
@@ -88,7 +87,7 @@ kill -3 THINGSBOARD_PID
 
 ```
 
-We have identified that during pause there was always one thread in TIMED_WAITING state and the root cause was in method awaitAvailableConnection of Cassandra driver:
+我们已经确定在暂停期间，TIMED_WAITING 状态中总有一个线程，根本原因在于 Cassandra 驱动程序的 awaitAvailableConnection 方法：
 
 ```bash
 java.lang.Thread.State: TIMED_WAITING (parking)
@@ -109,17 +108,17 @@ at org.thingsboard.server.dao.AbstractDao.executeAsyncWrite(AbstractDao.java:75)
 at org.thingsboard.server.dao.timeseries.BaseTimeseriesDao.savePartition(BaseTimeseriesDao.java:135)
 ```
 
-As a result, we have realized that the default connection pool configuration for cassandra driver caused bad results in our use case.
+因此，我们意识到 cassandra 驱动程序的默认连接池配置导致了我们用例中的不良结果。
 
-[Official configuration](http://docs.datastax.com/en/developer/java-driver/2.1/manual/pooling/) for connection pool feature contains special option 
-**‘Simultaneous requests per connection’** that allows you to tune concurrent request per single connection. 
-We use cassandra driver protocol v3 and it uses the next values by default: 
- 
- - 1024 for LOCAL hosts.
- - 256 for REMOTE hosts. 
+连接池功能的 [官方配置](http://docs.datastax.com/en/developer/java-driver/2.1/manual/pooling/) 包含特殊选项
+**“每个连接的同时请求”**，允许您调整每个连接的并发请求。
+我们使用 cassandra 驱动程序协议 v3，它默认使用以下值：
 
-Considering the fact that we are actually pulling data from 10,000 devices, default values are definitely not enough. 
-So we have done changes in the code and updated values for LOCAL and REMOTE hosts and set them to the maximum possible values:
+- 对于 LOCAL 主机为 1024。
+- 对于 REMOTE 主机为 256。
+
+考虑到我们实际上是从 10,000 个设备中提取数据，默认值肯定不够。
+因此，我们对代码进行了更改，并更新了 LOCAL 和 REMOTE 主机的值，并将它们设置为最大可能值：
 
 ```java
 poolingOptions
@@ -127,67 +126,63 @@ poolingOptions
     .setMaxRequestsPerConnection(HostDistance.REMOTE, 32768);
 ```
 
-Test results after the applied changes are listed below.
+应用更改后的测试结果如下。
 
 ![image](/images/reference/performance/single_node_with_fix_stats.png)
- 
-![image](/images/reference/performance/single_node_with_fix_rps.png) 
 
-The results were much better, but far from even 1 million messages per minute. We have not seen pauses in CPU load during our tests on c4.xlarge anymore.
-CPU load was high (80-95%) during the entire test. We have done couple thread dumps to verify that cassandra driver does not await available connections 
-and indeed we have not seen this issue anymore.
+![image](/images/reference/performance/single_node_with_fix_rps.png)
 
-### Step 3: Vertical scaling
- 
-We have decided to run the same tests on twice as more powerful node [c4.2xlarge](http://www.ec2instances.info/?selected=c4.2xlarge) with 8 vCPUs and 15Gb of RAM.
-The performance increase was not linear and the CPU was still loaded (80-90%).
+结果好多了，但还远远达不到每分钟 100 万条消息。我们不再在 c4.xlarge 上的测试中看到 CPU 负载暂停。
+在整个测试期间，CPU 负载很高（80-95%）。我们已经进行了两次线程转储，以验证 cassandra 驱动程序不会等待可用连接，事实上我们不再看到此问题。
+
+### 步骤 3：垂直扩展
+
+我们决定在功能更强大的节点 [c4.2xlarge](http://www.ec2instances.info/?selected=c4.2xlarge) 上运行相同的测试，该节点具有 8 个 vCPU 和 15Gb 的 RAM。
+性能提升不是线性的，CPU 仍然处于负载状态（80-90%）。
 
 ![image](/images/reference/performance/single_node_x2_with_fix_stats.png)
 
-We have noticed a significant improvement in response time. After significant peak on the start of the test maximum response time was within 200ms and average response time was ~ 50ms. 
+我们注意到响应时间有显着提高。在测试开始时出现显着峰值后，最大响应时间在 200 毫秒以内，平均响应时间约为 50 毫秒。
 
 ![image](/images/reference/performance/single_node_x2_with_fix_time.png)
 
-Number of requests per second was around 10K
+每秒请求数约为 10K
 
 ![image](/images/reference/performance/single_node_x2_with_fix_rps.png)
 
-We have also executed test on [c4.4xlarge](http://www.ec2instances.info/?selected=c4.4xlarge) with 16 vCPUs and 30Gb of RAM but have not noticed significant improvements and decided to separate ThingsBoard server and move Cassandra to three nodes cluster.
+我们还在 [c4.4xlarge](http://www.ec2instances.info/?selected=c4.4xlarge) 上执行了测试，该测试具有 16 个 vCPU 和 30Gb 的 RAM，但没有注意到显着的改进，并决定分离 ThingsBoard 服务器并将 Cassandra 移至三个节点集群。
 
-### Step 4: Horizontal scaling
+### 步骤 4：水平扩展
 
-Our main goal was to identify how much MQTT messages we can handle using single ThingsBoard server running on [c4.2xlarge](http://www.ec2instances.info/?selected=c4.2xlarge).
-We will cover horizontal scalability of ThingsBoard cluster in a separate article.
-So, we decided to move Cassandra to three [c4.xlarge](http://www.ec2instances.info/?selected=c4.xlarge) separate instances with default configuration 
-and launch gatling stress test tool from two separate [c4.xlarge](http://www.ec2instances.info/?selected=c4.xlarge) instances simultaneously 
-to minimize the possible affect on latency and throughput by thirdparty.
+我们的主要目标是确定使用在 [c4.2xlarge](http://www.ec2instances.info/?selected=c4.2xlarge) 上运行的单个 ThingsBoard 服务器可以处理多少 MQTT 消息。
+我们将在单独的文章中介绍 ThingsBoard 集群的水平可扩展性。
+因此，我们决定将 Cassandra 移至三个具有默认配置的 [c4.xlarge](http://www.ec2instances.info/?selected=c4.xlarge) 单独实例，并同时从两个单独的 [c4.xlarge](http://www.ec2instances.info/?selected=c4.xlarge) 实例启动 gatling 压力测试工具，以最大程度地减少第三方对延迟和吞吐量的可能影响。
 
 ![image](/images/reference/performance/performance-diagram-2.svg)
 
-Test specification:
+测试规范：
 
- - Number of devices: 20 000
- - Publish frequency per device: twice per second
- - Total load: 40 000 messages per second
+- 设备数量：20 000
+- 每台设备的发布频率：每秒两次
+- 总负载：每秒 40 000 条消息
 
-The statistics of two simultaneous test runs launched on different client machines is listed below.
- 
+在不同的客户端机器上启动的两个同时测试运行的统计信息如下。
+
 ![image](/images/reference/performance/cluster_stats.png)
 ![image](/images/reference/performance/cluster_rps.png)
 ![image](/images/reference/performance/cluster_responses_ps.png)
 
-Based on the data from two simultaneous test runs we have reached **30 000 published messages per second** which is equal to **1.8 million per minute**.
+根据两个同时进行的测试运行的数据，我们已经达到 **每秒 30 000 条已发布的消息**，这等于 **每分钟 180 万条消息**。
 
-## How to repeat the tests
+## 如何重复测试
 
-We have prepared several AWS AMIs for anyone who is interested in replication of these tests. See separate [documentation page](/docs/reference/performance-tests) with detailed instructions.
+我们已经为任何有兴趣复制这些测试的人准备了几个 AWS AMI。请参阅包含详细说明的单独 [文档页面](/docs/reference/performance-tests)。
 
-## Conclusion
+## 结论
 
-This performance test demonstrates how a small ThingsBoard cluster, that costs approximately **1$ per hour**, can easily receive,
-store and visualize more than **100 million messages** from your devices. 
-We will continue our work on performance improvements and are going to publish performance results for the cluster of ThingsBoard servers in our next blog post.
-We hope this article will be useful for people who are evaluating the platform and want to execute performance tests on their own.
-We also hope that performance improvement steps will be useful for any engineers who use similar technologies. 
+此性能测试演示了一个小型 ThingsBoard 集群（每小时成本约为 **1 美元**）如何轻松接收、存储和可视化来自您设备的 **1 亿多条消息**。
+我们将继续致力于性能改进，并在我们的下一篇博文中发布 ThingsBoard 服务器集群的性能结果。
+我们希望这篇文章对正在评估该平台并希望自行执行性能测试的人们有用。
+我们还希望性能改进步骤对使用类似技术的任何工程师都有用。
 
-Please let us know your feedback and follow our project on [**Github**](https://github.com/thingsboard/thingsboard) or [**Twitter**](https://twitter.com/thingsboard).
+请告诉我们您的反馈，并在 [**Github**](https://github.com/thingsboard/thingsboard) 或 [**Twitter**](https://twitter.com/thingsboard) 上关注我们的项目。

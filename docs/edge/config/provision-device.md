@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-edge
-title: Provision Device from cloud to edge
-description: Provision Device from cloud to edge
+title: 从云端到边缘设备配置
+description: 从云端到边缘设备配置
 
 edgeDevices:
     0:
@@ -12,14 +12,14 @@ edgeDevices:
 
 ![image](/images/coming-soon.jpg)
 
-#### Devices management
+#### 设备管理
 
-Please use 'Edge Devices' icon to navigate to devices that are *'assigned'* to specific edge entity.
-User is able to assign to edge any device that he has access to.
+请使用“边缘设备”图标导航到分配给特定边缘实体的设备。
+用户可以将自己有权访问的任何设备分配给边缘。
 
 {% include images-gallery.html imageCollection="edgeDevices" %}
 
-### Next Steps
+### 后续步骤
 
 {% assign currentGuide = "ProvisionDeviceFromCloudToEdge" %}
 {% assign docsPrefix = "edge/" %}

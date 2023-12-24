@@ -1,8 +1,8 @@
 ![image](/images/user-guide/integrations/tcp/tcp-handler-configuration-binary.png)
 
-To parse payload properly, please make sure that next values are set:
-- **Max Frame Length** - the maximum length of the decoded frame. An exception will be thrown if the length of the frame exceeds this value; Leave it by default for this demo - **128**; 
-- **Length Field Offset** - the offset of the length field. In our case length field is 5th byte in the payload \x30\x30\x30\x30 **\x11** \x53.... So set it to **4**;
-- **Length Field Length** - the length of the length field. In our case length of the length field is 1 byte ...\x30 **\x11** \x53.... So set it to **1**;
-- **Length Adjustment (the compensation value to add to the value of the length field)** - the compensation value to add to the value of the length field. In our case we don't need this compensation, as length field contains correct value - **17** bytes. So leave it **0**;
-- **Number of first bytes to strip out from the decoded frame** - the number of first bytes to strip out from the decoded frame. We need to skip first 5 bytes from the decoded payload, to get our data - \x30\x30\x30\x30\x11 **\x53\x4e\x2d\x30...**. So set it to **5**;
+要正确解析有效负载，请确保设置以下值：
+- **最大帧长度** - 解码帧的最大长度。如果帧的长度超过此值，将引发异常；对于此演示，请将其保留为默认值 - **128**；
+- **长度字段偏移量** - 长度字段的偏移量。在我们的示例中，长度字段是有效负载中的第 5 个字节 \x30\x30\x30\x30 **\x11** \x53.... 因此将其设置为 **4**；
+- **长度字段长度** - 长度字段的长度。在我们的示例中，长度字段的长度为 1 个字节 ...\x30 **\x11** \x53.... 因此将其设置为 **1**；
+- **长度调整（要添加到长度字段值中的补偿值）** - 要添加到长度字段值中的补偿值。在我们的示例中，我们不需要此补偿，因为长度字段包含正确的值 - **17** 个字节。因此将其保留为 **0**；
+- **从解码帧中剥离的第一个字节数** - 从解码帧中剥离的第一个字节数。我们需要从解码的有效负载中跳过前 5 个字节，以获取我们的数据 - \x30\x30\x30\x30\x11 **\x53\x4e\x2d\x30...**。因此将其设置为 **5**；

@@ -1,52 +1,51 @@
-
-{% assign deviceName = page.title | remove: "How to connect " | remove: "to ThingsBoard?" %}
+{% assign deviceName = page.title | remove: "如何连接 " | remove: "到 ThingsBoard？" %}
 {% assign prerequisites = "
 - " | append: deviceName | append: "
-- [tb-mqtt-client library](https://pypi.org/project/tb-mqtt-client/)
+- [tb-mqtt-client 库](https://pypi.org/project/tb-mqtt-client/)
 - [python ≥ 3.7](https://www.python.org/)
 - [Adafruit-Blinka](https://pypi.org/project/Adafruit-Blinka/) "
  %}
 
-## Introduction
+## 简介
 
 ![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
-The DragonBoard™ 410c is the first development board based on a Qualcomm® APQ8016e application processor.
-It features advanced processing power, WIFI, Bluetooth connectivity, and GPS, all packed into a board the size of a credit card.
-Based on the 64-bit capable Qualcomm APQ8016e application processor, the DragonBoard 410c is designed to support rapid software development, education and prototyping, and is compliant with the 96Boards Consumer Edition specification.
-All this makes it ideal for enabling embedded computing and Internet of Things (IoT) products, including the next generation of robotics, cameras, medical devices, vending machines, smart buildings, digital signage, casino gaming consoles, and much more.
+DragonBoard™ 410c 是首款基于 Qualcomm® APQ8016e 应用处理器的开发板。
+它具有先进的处理能力、WIFI、蓝牙连接和 GPS，所有这些都集成在一个信用卡大小的板上。
+DragonBoard 410c 基于 64 位 Qualcomm APQ8016e 应用处理器，旨在支持快速软件开发、教育和原型设计，并且符合 96Boards 消费者版本规范。
+所有这些使其非常适合支持嵌入式计算和物联网 (IoT) 产品，包括下一代机器人、相机、医疗设备、自动售货机、智能建筑、数字标牌、赌场游戏机等等。
 
 
 {% include /docs/devices-library/blocks/basic/introduction-block.md %}
 
-## Create device on ThingsBoard
+## 在 ThingsBoard 上创建设备
 
 {% include /docs/devices-library/blocks/basic/thingsboard-create-device-block.md %}
 
-## Install required libraries and tools
+## 安装所需的库和工具
 
 {% include /docs/devices-library/blocks/single-board-computers/install-required-libraries-and-tools-block.md %}
 
-## Connect device to ThingsBoard
+## 将设备连接到 ThingsBoard
 
 {% include /docs/devices-library/blocks/basic/thingsboard-provide-device-access-token-block.md %}
 
 {% include /docs/devices-library/blocks/single-board-computers/general-code-to-program-block.md %}
 
-## Synchronize device state using client and shared attribute requests
+## 使用客户端和共享属性请求同步设备状态
 {% include /docs/devices-library/blocks/single-board-computers/thingsboard-synchronize-device-state-using-attribute-requests-block.md %}
 
-## Check data on ThingsBoard
+## 在 ThingsBoard 上检查数据
 
 {% include /docs/devices-library/blocks/single-board-computers/check-data-on-thingsboard-block.md %}
 
-## Control device using shared attributes
+## 使用共享属性控制设备
 
 {% include /docs/devices-library/blocks/single-board-computers/update-shared-attributes-block.md %}
 
-## Control device using RPC
+## 使用 RPC 控制设备
 
 {% include /docs/devices-library/blocks/single-board-computers/using-rpc-block.md %}
 
-## Conclusion
+## 结论
 
 {% include /docs/devices-library/blocks/basic/conclusion-block.md %}

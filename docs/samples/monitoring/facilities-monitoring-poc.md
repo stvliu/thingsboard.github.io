@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
-title: Facilities monitoring system prototype using ThingsBoard
-description: Facilities monitoring system prototype using IoT Devices and ThingsBoard
+title: 使用 ThingsBoard 的设施监控系统原型
+description: 使用物联网设备和 ThingsBoard 的设施监控系统原型
 ---
 
 {% include templates/old-guide-notice.md %}
@@ -9,61 +9,60 @@ description: Facilities monitoring system prototype using IoT Devices and Things
 * TOC
 {:toc}
 
-Environmental controls in the office rooms are very important as the loss of HVAC can result in significant loss of servers, network gear, employee productivity etc. 
+办公室房间的环境控制非常重要，因为 HVAC 故障可能导致服务器、网络设备、员工生产力等方面出现重大损失。
 
-In this tutorial we will prototype facilities monitoring system that will be able to cover following use cases:
+在本教程中，我们将构建设施监控系统原型，该原型能够涵盖以下用例：
 
- - Monitoring of temperature and humidity in different zones of the office building.
- - Processing of collected telemetry with various alerting rules based on zone type: work space, meeting and server rooms.
- - Distribution of collected alarms to assigned facility managers.
- - Visualization of real-time and historical values on the configurable web dashboards.
+- 监控办公楼不同区域的温度和湿度。
+- 根据区域类型（工作空间、会议室和服务器室）处理收集的遥测数据，并应用各种警报规则。
+- 将收集到的警报分发给指定的设施经理。
+- 在可配置的 Web 仪表板上可视化实时值和历史值。
 
-This article describes development and configuration steps we have done in order to build the PoC. 
+本文介绍了我们为构建 PoC 所做的开发和配置步骤。
 
-The prototype is open-source and is also based on open-source technologies, so you are able to use it for building commercial products.
+该原型是开源的，并且也基于开源技术，因此您可以使用它来构建商业产品。
 
-   ![image](/images/samples/monitoring/facilities-management.svg)
+![image](/images/samples/monitoring/facilities-management.svg)
 
-## Devices and Connectivity
+## 设备和连接
 
-We decided to use quite cheap hardware based on ESP8266 and DHT22 sensor.
-The total cost of each device that includes sensor and connectivity module is approximately 5$. Since this is a prototype, we decided to use MQTT over WiFi and have not discussed other connectivity options.
+我们决定使用基于 ESP8266 和 DHT22 传感器的相当便宜的硬件。每个设备的总成本（包括传感器和连接模块）约为 5 美元。由于这是一个原型，我们决定使用 WiFi 上的 MQTT，并且没有讨论其他连接选项。
 
-## Server-side infrastructure
+## 服务器端基础设施
 
-The server-side part of the solution will be based on the ThingsBoard IoT platform which is 100% open-source and can be deployed both in the cloud, on premises or even on Raspberry Pi 3. The collected data is stored in Cassandra database due to built-in fault-tolerance and scalability. We have recently launched Live Demo instance to simplify  the getting-started process, so we will use this instance in the tutorial.
+解决方案的服务器端部分将基于 ThingsBoard IoT 平台，该平台 100% 开源，可以部署在云端、本地甚至 Raspberry Pi 3 上。收集的数据存储在 Cassandra 数据库中，因为该数据库具有内置的容错性和可扩展性。我们最近启动了实时演示实例，以简化入门流程，因此我们将在本教程中使用此实例。
 
-## Development and Configuration steps
+## 开发和配置步骤
 
-### Step 1. Device provisioning
+### 步骤 1. 设备预配
 
-The initial step of the PoC is to provision several devices and their attributes. We’ve decided to support three zone types: work area, meeting and server rooms. We have registered three buildings with four rooms in each. During registration, we have populated Zone Id, Zone Type server-side attributes. Note that the server-side device attributes may be used by the processing rules, but are not visible to the device itself.
+PoC 的初始步骤是预配多个设备及其属性。我们决定支持三种区域类型：工作区、会议室和服务器室。我们已经注册了三座建筑，每座建筑有四个房间。在注册期间，我们已经填充了区域 ID、区域类型服务器端属性。请注意，服务器端设备属性可以由处理规则使用，但设备本身不可见。
 
-  ![image](/images/samples/monitoring/service-side-attributes.png)
-  
-### Step 2. Flushing the devices
+![image](/images/samples/monitoring/service-side-attributes.png)
 
-During this step, we have flushed firmware update with individual device credentials built-in to the firmware. The firmware code and corresponding instructions are available in links below. We have used code from our [previous article](/docs/samples/nodemcu/temperature/) without modifications, since all the logic is on the server side.
+### 步骤 2. 刷新设备
 
-Please note that steps 1 and 2 may be automated, we’ve developed simple java based application that performs provisioning of the devices and other entities using REST API and also emulates these devices for the live demo purposes.
+在此步骤中，我们已经刷新了固件更新，其中包含内置于固件中的各个设备凭据。固件代码和相应的说明可在下面的链接中找到。我们使用了我们[上一篇文章](/docs/samples/nodemcu/temperature/)中的代码，没有任何修改，因为所有逻辑都在服务器端。
 
-### Step 3. Processing Rules
+请注意，步骤 1 和 2 可以自动化，我们已经开发了一个简单的基于 Java 的应用程序，该应用程序使用 REST API 预配设备和其他实体，并且还模拟这些设备以进行实时演示。
 
-During these steps we have provisioned rules that analyze temperature and humidity against configurable thresholds based on zone type. 
+### 步骤 3. 处理规则
 
-For example, acceptable humidity range in a server room is between 40% and 60%, however, humidity range for the work zone is from 30% to 70%. 
+在这些步骤中，我们已经预配了根据区域类型分析温度和湿度与可配置阈值的规则。
 
-The rules are basically a set of logical expression written using javascript syntax. 
+例如，服务器机房中可接受的湿度范围在 40% 到 60% 之间，但是工作区的湿度范围为 30% 到 70%。
 
-For example, a rule for a server room consists of two parts: attribute and telemetry filter. This filters may be combined, but we decided to separate them to simplify the PoC.
+这些规则基本上是一组使用 JavaScript 语法编写的逻辑表达式。
 
-Attributes filter body example:
+例如，服务器机房的规则由两部分组成：属性和遥测过滤器。这些过滤器可以组合，但我们决定将它们分开以简化 PoC。
+
+属性过滤器主体示例：
 
 ```javascript
 typeof ss.ZoneType !== 'undefined' && ss.ZoneType === 'Server Room'
 ```
 
-Telemetry filter body example:
+遥测过滤器主体示例：
 
 ```javascript
 (
@@ -77,15 +76,16 @@ Telemetry filter body example:
 )
 ```
 
-You may notice “null” checks in the filter body. This is basically a good practice, because you may use the same server for multiple device applications. Some of them report humidity and temperature, the others upload other sensor readings and this should not affect rules processing.
+您可能会注意到过滤器主体中的“null”检查。这基本上是一个好习惯，因为您可以将同一台服务器用于多个设备应用程序。其中一些报告湿度和温度，另一些上传其他传感器读数，这不会影响规则处理。
 
 
-### Step 4. Alarms distribution
+### 步骤 4. 警报分发
 
-At this step, we have configured email plugin to distribute data using SendGrid mail service and provisioned rule action to send data to the configured email address. 
-Rule action consists of several templates that allow flexible configuration of email topic, body and address list based on substitution of device attributes and telemetry values. 
+在此步骤中，我们已经配置了电子邮件插件以使用 SendGrid 邮件服务分发数据，并预配了规则操作以将数据发送到配置的电子邮件地址。
 
-For example, following email body template:
+规则操作由多个模板组成，这些模板允许根据设备属性和遥测值的替换灵活配置电子邮件主题、正文和地址列表。
+
+例如，以下电子邮件正文模板：
 
 ```velocity
 [$date.get('yyyy-MM-dd HH:mm:ss')] $ss.get('ZoneId') HVAC malfunction detected. 
@@ -93,7 +93,7 @@ Temperature - $temperature.valueAsString (°C).
 Humidity - $humidity.valueAsString (%)!
 ```
 
-Will be evaluated to the following email body
+将评估为以下电子邮件正文
 
 ```text
 [2016-12-22 15:06:09] Server Room C HVAC malfunction detected. 
@@ -101,63 +101,63 @@ Temperature – 45.0 (°C).
 Humidity – 70.0 (%)!
 ```
 
-The evaluation and template syntax is based on [Velocity](http://velocity.apache.org/) engine.
+评估和模板语法基于[Velocity](http://velocity.apache.org/)引擎。
 
-### Step 5. Data visualization
-At this step, we provisioned several dashboards to visualize the data. We will describe them below.
+### 步骤 5. 数据可视化
+在此步骤中，我们预配了几个仪表板来可视化数据。我们将在下面描述它们。
 
-### Map dashboard
+### 地图仪表板
 
-This dashboard shows multiple buildings on the map with their short status available in the tooltip. You can use links in the tooltips to navigate to Floor Plan and Historical Data dashboards.
+此仪表板在地图上显示多座建筑，其简短状态可在工具提示中获得。您可以使用工具提示中的链接导航到平面图和历史数据仪表板。
 
-   ![image](/images/samples/monitoring/map.png)
+![image](/images/samples/monitoring/map.png)
 
-### Floor Plan dashboard
+### 平面图仪表板
 
-This dashboard uses a static background image with the floor plan. We have placed widgets that show temperature and humidity in each room that is being monitored.
+此仪表板使用带有平面图的静态背景图像。我们已经放置了小部件，以显示正在监控的每个房间的温度和湿度。
 
-   ![image](/images/samples/monitoring/plan.png)
+![image](/images/samples/monitoring/plan.png)
 
-### Historical dashboard
+### 历史仪表板
 
-This dashboard shows last minute of sensor readings that are reported each second.
+此仪表板显示每秒报告的传感器读数的最后时刻。
 
-   ![image](/images/samples/monitoring/history-all.png)
+![image](/images/samples/monitoring/history-all.png)
 
-## Live Demo
+## 实时演示
 
-In order to demonstrate this PoC in action you need to do two simple steps:
+为了演示此 PoC 的实际操作，您需要执行两个简单的步骤：
 
- - [Sign-up](https://demo.thingsboard.io/signup) or [login](https://demo.thingsboard.io) to the live demo instance and save your login and password.
- - Download and launch device emulator using this [link](https://github.com/thingsboard/samples/releases/download/v1.0-tfm/facilities-monitoring.jar). 
+- [注册](https://demo.thingsboard.io/signup)或[登录](https://demo.thingsboard.io)实时演示实例，并保存您的登录名和密码。
+- 使用此[链接](https://github.com/thingsboard/samples/releases/download/v1.0-tfm/facilities-monitoring.jar)下载并启动设备模拟器。
 
 ```shell
 java -jar facilities-monitoring.jar demo.thingsboard.io
 ```
 
-Once started, the emulator will ask you for your live demo login and password. This information will be used to get the JWT token and execute REST API calls in order to:
+启动后，模拟器会要求您提供实时演示登录名和密码。此信息将用于获取 JWT 令牌并执行 REST API 调用，以便：
 
- - provision demo devices.
- - create rules and dashboards.
- - start emulation of the temperature and humidity sensor data for provisioned devices using MQTT.
+- 预配演示设备。
+- 创建规则和仪表板。
+- 使用 MQTT 开始模拟预配设备的温度和湿度传感器数据。
 
-## Conclusion
+## 结论
 
-This prototype was written by two engineers literally in one day. Most of the time was spent on the client-side code (Lua script for real device and emulator). The server-side part of the prototype has zero coding and was all about configuration of the rules, plugins, and dashboards.
+这个原型是由两位工程师在一天之内编写的。大部分时间都花在了客户端代码上（真实设备和模拟器的 Lua 脚本）。原型的服务器端部分没有编码，完全是关于规则、插件和仪表板的配置。
 
-This demonstrates how easy is to prototype and build IoT solutions using [ThingsBoard](http://thingsboard.io). Of course, there is a certain learning curve that you need to pass, but we hope that this article and other [docs](http://thingsboard.io/docs/) will help you to do this.
+这说明了使用[ThingsBoard](http://thingsboard.io)构建物联网解决方案是多么容易。当然，您需要通过一定的学习曲线，但我们希望本文和其他[文档](http://thingsboard.io/docs/)将帮助您做到这一点。
 
-If you found this article interesting, please leave your feedback, questions or feature requests in the comments section and “star” our project on the [github](https://github.com/thingsboard/thingsboard) in order to stay tuned for new releases and tutorials.
+如果您发现本文有趣，请在评论部分留下您的反馈、问题或功能请求，并在[github](https://github.com/thingsboard/thingsboard)上“点赞”我们的项目，以便随时了解新版本和教程。
 
 
-## Links
+## 链接
 
- - Compatible sample applications for different hardware platforms:
- 
-    - [Temperature upload over MQTT using ESP8266 and DHT22 sensor](/docs/samples/esp8266/temperature/)
-    - [Temperature upload over MQTT using Arduino UNO, ESP8266 and DHT22 sensor](/docs/samples/arduino/temperature/)
-    - [Temperature upload over MQTT using NodeMCU and DHT11 sensor](/docs/samples/nodemcu/temperature/)
- 
- - [ThingsBoard github page](https://github.com/thingsboard/thingsboard)
- - [Emulator source code](https://github.com/thingsboard/samples)
- - [Emulator binary](https://github.com/thingsboard/samples/releases/download/v1.0-tfm/facilities-monitoring.jar)
+- 适用于不同硬件平台的兼容示例应用程序：
+
+    - [使用 ESP8266 和 DHT22 传感器通过 MQTT 上传温度](/docs/samples/esp8266/temperature/)
+    - [使用 Arduino UNO、ESP8266 和 DHT22 传感器通过 MQTT 上传温度](/docs/samples/arduino/temperature/)
+    - [使用 NodeMCU 和 DHT11 传感器通过 MQTT 上传温度](/docs/samples/nodemcu/temperature/)
+
+- [ThingsBoard github 页面](https://github.com/thingsboard/thingsboard)
+- [模拟器源代码](https://github.com/thingsboard/samples)
+- [模拟器二进制文件](https://github.com/thingsboard/samples/releases/download/v1.0-tfm/facilities-monitoring.jar)

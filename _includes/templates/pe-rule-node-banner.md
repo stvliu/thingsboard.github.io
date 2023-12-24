@@ -1,5 +1,5 @@
 {% capture peRuleNodeContent %}
-Only [**Professional Edition**](/products/thingsboard-pe/) supports **{{ rulenode }}** Rule Node.<br>
-Use [**ThingsBoard Cloud**](https://thingsboard.cloud/signup) or [**install**](/docs/user-guide/install/pe/installation-options/) your own platform instance.
+只有 [**专业版**](/products/thingsboard-pe/) 支持 **{{ rulenode }}** 规则节点。<br>
+使用 [**ThingsBoard Cloud**](https://thingsboard.cloud/signup) 或 [**安装**](/docs/user-guide/install/pe/installation-options/) 您自己的平台实例。
 {% endcapture %}
-{% include templates/info-banner.md title="Professional Rule Node" content=peRuleNodeContent %}
+{% include templates/info-banner.md title="专业规则节点" content=peRuleNodeContent %}

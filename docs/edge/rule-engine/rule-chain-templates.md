@@ -1,12 +1,12 @@
 ---
 layout: docwithnav-edge
-title: Rule Chain templates
-description: Rule Chain templates
+title: 规则链模板
+description: 规则链模板
 ---
 
 ![image](/images/coming-soon.jpg)
 
-#### Next Steps
+#### 后续步骤
 
 {% assign currentGuide = "RuleChainTemplates" %}
 {% assign docsPrefix = "edge/" %}

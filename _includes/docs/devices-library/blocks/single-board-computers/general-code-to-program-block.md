@@ -1,29 +1,28 @@
-Now you are ready to publish telemetry data on behalf of your device. We will use, as mentioned before, the 
-“thingsboard-python-client-sdk” library.
-Let’s setup our project:
+现在，您可以代表您的设备发布遥测数据。我们将使用前面提到的“thingsboard-python-client-sdk”库。
+让我们设置我们的项目：
 
-1. Create project folder:
+1. 创建项目文件夹：
 
     ```bash
    mkdir thingsboard_example && cd thingsboard_example
    ```
    {:.copy-code}
 
-2. Install packages:
+2. 安装软件包：
 
    ```bash
    pip3 install tb-mqtt-client
    ```
    {:.copy-code}
 
-3. Create the main script:
+3. 创建主脚本：
 
    ```bash
    nano main.py
    ```
    {:.copy-code}
 
-4. Copy and paste the following code:
+4. 复制并粘贴以下代码：
 
    ```python
    import logging.handlers
@@ -40,19 +39,19 @@ Let’s setup our project:
    
    client = None
    
-   # default blinking period
+   # 默认闪烁周期
    period = 1.0
    
    
-   # callback function that will call when we will change value of our Shared Attribute
+   # 当我们更改共享属性的值时将调用的回调函数
    def attribute_callback(result, _):
         print(result)
-        # make sure that you paste YOUR shared attribute name
+        # 确保粘贴您的共享属性名称
         period = result.get('blinkingPeriod', 1.0)
 
-   # callback function that will call when we will send RPC
+   # 当我们发送 RPC 时将调用的回调函数
    def rpc_callback(id, request_body):
-       # request body contains method and other parameters
+       # 请求正文包含方法和其他参数
        print(request_body)
        method = request_body.get('method')
        if method == 'getTelemetry':
@@ -91,7 +90,7 @@ Let’s setup our project:
        print(attributes, telemetry)
        return attributes, telemetry
    
-   # request attribute callback
+   # 请求属性回调
    def sync_state(result, exception=None):
         global period
         if exception is not None:
@@ -105,11 +104,11 @@ Let’s setup our project:
         client.connect()
         client.request_attributes(shared_keys=['blinkingPeriod'], callback=sync_state)
         
-        # now attribute_callback will process shared attribute request from server
+        # 现在 attribute_callback 将处理来自服务器的共享属性请求
         sub_id_1 = client.subscribe_to_attribute("blinkingPeriod", attribute_callback)
         sub_id_2 = client.subscribe_to_all_attributes(attribute_callback)
 
-        # now rpc_callback will process rpc requests from server
+        # 现在 rpc_callback 将处理来自服务器的 rpc 请求
         client.set_server_side_rpc_request_handler(rpc_callback)
 
         while not client.stopped:
@@ -126,25 +125,25 @@ Let’s setup our project:
    ```
    {:.copy-code.expandable-15}
 
-   In the code above change values for the following variables - THINGSBOARD_SERVER, ACCESS_TOKEN to your credentials.
+   在上面的代码中，将以下变量的值更改为您的凭据 - THINGSBOARD_SERVER、ACCESS_TOKEN。
    
-   Necessary variables for connection:  
+   连接所需的变量：  
    
-   | Variable name | Default value | Description | 
+   | 变量名 | 默认值 | 说明 | 
    |-|-|
-   | ACCESS_TOKEN | **TEST_TOKEN** | Your device access token |
-   | THINGSBOARD_SERVER | **{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}thingsboard.cloud{% else %}demo.thingsboard.io{% endif %}** | Your ThingsBoard host or ip address. |
-   | THINGSBOARD_PORT | **1883** | ThingsBoard server MQTT port. Can be default for this guide. |
+   | ACCESS_TOKEN | **TEST_TOKEN** | 您的设备访问令牌 |
+   | THINGSBOARD_SERVER | **{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}thingsboard.cloud{% else %}demo.thingsboard.io{% endif %}** | 您的 ThingsBoard 主机或 IP 地址。 |
+   | THINGSBOARD_PORT | **1883** | ThingsBoard 服务器 MQTT 端口。对于本指南，可以是默认值。 |
 
-5. Click **Ctrl+O** and **Ctrl+X** keys to save the file.
-6. And finally, let’s start our script:
+5. 单击 **Ctrl+O** 和 **Ctrl+X** 键保存文件。
+6. 最后，让我们启动我们的脚本：
 
    ```bash
    python3 main.py
    ```
    {:.copy-code}
 
-If you did everything right, you should see the following console output:
+如果您做对了所有事情，您应该会看到以下控制台输出：
 ```
 > INFO:tb_device_mqtt:connection SUCCESS
 > 
@@ -153,8 +152,8 @@ If you did everything right, you should see the following console output:
 > 
 ```
 
-Let’s review and make an explanation for our code. In this step, we are interested in the `get_data` function.
-Data packing and returning in the `get_data` function, so you can easily add new telemetry or attributes to the dictionary if you want to monitor more values:
+让我们回顾一下并对我们的代码进行解释。在此步骤中，我们对 `get_data` 函数感兴趣。
+在 `get_data` 函数中打包和返回数据，因此如果您想监视更多值，可以轻松地将新的遥测或属性添加到字典中：
 ```python
 ...
 def get_data():
@@ -187,7 +186,7 @@ def get_data():
 ...
 ```
 
-Send data part, as you can see below, we send our attributes and telemetry data every 60 seconds (feel free to change it if you want more frequent data updating):
+发送数据部分，如下所示，我们每 60 秒发送一次属性和遥测数据（如果您希望更频繁地更新数据，可以随时更改）：
 ```python
 ...		
     while not client.stopped:

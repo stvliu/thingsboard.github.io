@@ -1,46 +1,41 @@
 ---
 layout: common
-title: Cookie Policy
+title: Cookie 政策
 notitle: "true"
 description: 
 
 ---
 
-<h1 class="aboutus-title">Cookie Policy</h1>
+<h1 class="aboutus-title">Cookie 政策</h1>
 
-Cookies are activated and used during your browsing on this site. 
-These are small text ﬁles, usually numbers and letters, that do not create a security risk for your computer, tablet, or smartphone.
+在您浏览本网站期间，Cookie 会被激活并使用。
+这些是小型文本文件，通常是数字和字母，不会对您的计算机、平板电脑或智能手机造成安全风险。
 
-Cookies allow us to:
+Cookie 允许我们：
 
- * Understand the behavior of visitors, measure the number of visits and page views using [Google Analytics](https://analytics.google.com/);
- * Improve load-balancing and page load speed using [Cloudflare](https://cloudflare.com).
+* 了解访问者的行为，使用 [Google Analytics](https://analytics.google.com/) 来衡量访问量和页面浏览量；
+* 使用 [Cloudflare](https://cloudflare.com) 来改善负载平衡和页面加载速度。
 
-These cookies are enabled by default on your web browser. 
-However, you may configure your browser to alert you each time cookies are created. It is also possible to prevent their installation. 
-Here is the procedure to follow on the three main browsers:
+这些 Cookie 在您的网络浏览器上默认启用。
+但是，您可以将浏览器配置为在每次创建 Cookie 时向您发出警报。也可以阻止它们安装。以下是三个主要浏览器上的操作步骤：
 
- * Chrome [instructions](https://support.google.com/chrome/answer/95647?hl=en&co=GENIE.Platform%3DDesktop);
- * Firefox [instructions](https://support.mozilla.org/en-US/kb/clear-cookies-and-site-data-firefox);
- * Safari [instructions](https://support.apple.com/guide/safari/manage-cookies-sfri11471/mac).
+* Chrome [说明](https://support.google.com/chrome/answer/95647?hl=en&co=GENIE.Platform%3DDesktop)；
+* Firefox [说明](https://support.mozilla.org/en-US/kb/clear-cookies-and-site-data-firefox)；
+* Safari [说明](https://support.apple.com/guide/safari/manage-cookies-sfri11471/mac)。
 
-Access to our site will not be denied if you disable cookies, but some features may not work.
+如果您禁用 Cookie，不会被拒绝访问我们的网站，但某些功能可能无法使用。
 
-You may find below the additional information and resources regarding the above mentioned services.
+您可以在下面找到有关上述服务的其他信息和资源。
 
 ### Google Analytics
 
-See Google Analytics privacy [page](https://policies.google.com/technologies/cookies?hl=en-US) for more details.
+有关更多详细信息，请参阅 Google Analytics 隐私 [页面](https://policies.google.com/technologies/cookies?hl=en-US)。
 
 ### Cloudflare
 
-See Cloudflare documentation [page](https://developers.cloudflare.com/fundamentals/get-started/reference/cloudflare-cookies/) for more details.
+有关更多详细信息，请参阅 Cloudflare 文档 [页面](https://developers.cloudflare.com/fundamentals/get-started/reference/cloudflare-cookies/)。
 
-### Other Cookies
+### 其他 Cookie
 
- * **cookie-notice-dismissed** is used to store if the user clicked `Accept` button on the cookies banner or dismissed (X) it. This cookie has a 365 days timeout. 
-   Please note that by continuing to browse this site with the opened cookies banner, you agree the use of cookies, in accordance with our cookie policy.
-
-
-
-
+* **cookie-notice-dismissed** 用于存储用户是否在 Cookie 横幅上单击了“接受”按钮或将其关闭 (X)。此 Cookie 的超时时间为 365 天。
+请注意，继续浏览此网站并打开 Cookie 横幅，即表示您同意根据我们的 Cookie 政策使用 Cookie。

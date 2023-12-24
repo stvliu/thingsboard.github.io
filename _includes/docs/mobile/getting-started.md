@@ -17,37 +17,37 @@
 * TOC
 {:toc}
 
-## Introduction
+## 简介
 
-The goal of this tutorial is to demonstrate the basic setup of {{appPrefix}} Mobile Application with your {{appPrefix}} platform instance. You will learn how to:
+本教程的目的是演示如何将 {{appPrefix}} 移动应用程序与您的 {{appPrefix}} 平台实例进行基本设置。您将学习如何：
 
-* Setup development environment;
-* Get application project source code;
-* Configure API endpoint to your {{appPrefix}} platform instance;
-* Build and run your version of {{appPrefix}} Mobile Application;
+* 设置开发环境；
+* 获取应用程序项目源代码；
+* 将 API 端点配置到您的 {{appPrefix}} 平台实例；
+* 构建并运行您的 {{appPrefix}} 移动应用程序版本；
 
-## Step 1. Prepare development environment
+## 步骤 1. 准备开发环境
 
-Flutter {{appPrefix}} Mobile Application requires Flutter SDK starting from version 2.12.0.
-Follow [these](https://flutter.dev/docs/get-started/install) instructions in order to setup Flutter SDK.
-For an even better experience we recommend to set up an editor using [these](https://flutter.dev/docs/get-started/editor) instructions.
+Flutter {{appPrefix}} 移动应用程序需要从 2.12.0 版本开始的 Flutter SDK。
+按照 [这些](https://flutter.dev/docs/get-started/install) 说明设置 Flutter SDK。
+为了获得更好的体验，我们建议使用 [这些](https://flutter.dev/docs/get-started/editor) 说明设置编辑器。
 
-Flutter {{appPrefix}} Mobile Application is served by {{appPrefix}} platform starting from version 3.4.0{% if docsPrefix == 'pe/' %}PE{% endif %}.
-You will need to have {{appPrefix}} server up and running. The easiest way is to use {{cloudApp}}.
-The alternative option is to install {{appPrefix}} using [Installation Guide](/docs/user-guide/install/{{docsPrefix}}installation-options/).
+Flutter {{appPrefix}} 移动应用程序由从 3.4.0{% if docsPrefix == 'pe/' %}PE{% endif %} 版本开始的 {{appPrefix}} 平台提供服务。
+您需要启动并运行 {{appPrefix}} 服务器。最简单的方法是使用 {{cloudApp}}。
+另一种选择是使用 [安装指南](/docs/user-guide/install/{{docsPrefix}}installation-options/) 安装 {{appPrefix}}。
 
-## Step 2. Get app source code
+## 步骤 2. 获取应用程序源代码
 
-#### Flutter {{appPrefix}} Mobile Application compatibility table 
+#### Flutter {{appPrefix}} 移动应用程序兼容性表
 
-Determine the Flutter {{appPrefix}} Mobile Application version according to the version of {{appPrefix}}.
+根据 {{appPrefix}} 的版本确定 Flutter {{appPrefix}} 移动应用程序版本。
 
 {% if docsPrefix != 'pe/' %}
 
 <table>
     <thead>
         <tr>
-          <td style="width: 50%"><b>ThingsBoard version</b></td><td style="width: 50%"><b>Flutter ThingsBoard Mobile Application</b></td><td style="width: 50%"><b>Dart ThingsBoard Client</b></td>
+          <td style="width: 50%"><b>ThingsBoard 版本</b></td><td style="width: 50%"><b>Flutter ThingsBoard 移动应用程序</b></td><td style="width: 50%"><b>Dart ThingsBoard 客户端</b></td>
         </tr>
     </thead>
     <tbody>
@@ -79,7 +79,7 @@ Determine the Flutter {{appPrefix}} Mobile Application version according to the 
 <table>
     <thead>
         <tr>
-          <td style="width: 50%"><b>ThingsBoard PE version</b></td><td style="width: 50%"><b>Flutter ThingsBoard PE Mobile Application</b></td><td style="width: 50%"><b>Dart ThingsBoard PE Client</b></td>
+          <td style="width: 50%"><b>ThingsBoard PE 版本</b></td><td style="width: 50%"><b>Flutter ThingsBoard PE 移动应用程序</b></td><td style="width: 50%"><b>Dart ThingsBoard PE 客户端</b></td>
         </tr>
     </thead>
     <tbody>
@@ -109,19 +109,19 @@ Determine the Flutter {{appPrefix}} Mobile Application version according to the 
 
 {% endif %}
 
-You can get Flutter {{appPrefix}} Mobile Application source code by cloning it from [github repository]({{appRepo}}):
+您可以通过从 [github 存储库]({{appRepo}}) 克隆来获取 Flutter {{appPrefix}} 移动应用程序源代码：
 
 ```bash
 git clone -b release/{{flutterAppVer}} {{appRepo}}
 ```
 {: .copy-code}
 
-## Step 3. Configure {{appPrefix}} API endpoint
+## 步骤 3. 配置 {{appPrefix}} API 端点
 
-Open **{{appProject}}** project in your editor/IDE. Edit **lib/constants/app_constants.dart**.
+在您的编辑器/IDE 中打开 **{{appProject}}** 项目。编辑 **lib/constants/app_constants.dart**。
 
-Set value of **thingsBoardApiEndpoint** constant to match api endpoint of your {{appPrefix}} server instance.<br>
-In case of {{cloudApp}} set it to `{{cloudEndpoint}}`.
+将 **thingsBoardApiEndpoint** 常量值设置为与您的 {{appPrefix}} 服务器实例的 API 端点匹配。<br>
+如果是 {{cloudApp}}，请将其设置为 `{{cloudEndpoint}}`。
 
 ```dart
 abstract class ThingsboardAppConstants {
@@ -133,66 +133,66 @@ abstract class ThingsboardAppConstants {
 ```
 
 {% capture local_endpoint_note %}
-**Note:** Do not use `localhost` or `127.0.0.1` host names.<br>
-If you are using local {{appPrefix}} installation use alternative ip address/host name accessible within your local network.<br>
-You can read [Connecting Flutter application to Localhost](https://medium.com/@podcoder/connecting-flutter-application-to-localhost-a1022df63130){:target="_blank"} for more information.
+**注意：** 不要使用 `localhost` 或 `127.0.0.1` 主机名。<br>
+如果您使用的是本地 {{appPrefix}} 安装，请使用本地网络中可访问的备用 IP 地址/主机名。<br>
+您可以阅读 [将 Flutter 应用程序连接到本地主机](https://medium.com/@podcoder/connecting-flutter-application-to-localhost-a1022df63130){:target="_blank"} 以了解更多信息。
 {% endcapture %}
 {% include templates/info-banner.md content=local_endpoint_note %}
 
-## Step 4. Run the app
+## 步骤 4. 运行应用程序
 
-Run the app [in the way your IDE describes](https://flutter.dev/docs/get-started/test-drive).
+按照 [您的 IDE 描述的方式](https://flutter.dev/docs/get-started/test-drive) 运行应用程序。
 
-When using terminal run the app with the following command:
+在使用终端时，使用以下命令运行应用程序：
 
 ```bash
 flutter run
 ```
 {: .copy-code}
 
-You should see either Android or iOS output, depending on your device.
+您应该会看到 Android 或 iOS 输出，具体取决于您的设备。
 
 <br>
 
 <div style="display: flex; flex-direction: row;">
     <div style="display: flex; flex-direction: column; align-items: center;">
-        <img width="" src="/images/mobile/{{docsPrefix}}android-app-login.png" title="Android login screen" alt="Android login screen example">
+        <img width="" src="/images/mobile/{{docsPrefix}}android-app-login.png" title="Android 登录屏幕" alt="Android 登录屏幕示例">
         <span style="margin-top: 16px; font-size: 90%; color: #6c757d;">Android</span>
     </div>
     <div style="display: flex; flex-direction: column; align-items: center;">
-        <img width="" src="/images/mobile/{{docsPrefix}}ios-app-login.png" title="iOS login screen" alt="iOS login screen example">
+        <img width="" src="/images/mobile/{{docsPrefix}}ios-app-login.png" title="iOS 登录屏幕" alt="iOS 登录屏幕示例">
         <span style="margin-top: 16px; font-size: 90%; color: #6c757d;">iOS</span>
     </div>
 </div>
 
 {% capture run_tip %}
-**Tip:** The first time you run on a physical device, it can take a while to load.
-Afterward, you can use hot reload for quick updates.
+**提示：** 第一次在物理设备上运行时，可能需要一段时间才能加载。
+之后，您可以使用热重载进行快速更新。
 
-**Save** also performs a hot reload if the app is running.
-When running an app directly from the console using `flutter run`, enter `r` to perform hot reload.
+**保存** 也会在应用程序正在运行时执行热重载。
+当使用 `flutter run` 从控制台直接运行应用程序时，输入 `r` 以执行热重载。
 {% endcapture %}
 {% include templates/info-banner.md content=run_tip %}
 
 {% if docsPrefix != 'pe/' %}
-## Live demo app
+## 实时演示应用程序
 
-To be familiar with common app features try out our ThingsBoard Live mobile application available on Google Play and App Store.
+为了熟悉常见的应用程序功能，请在 Google Play 和 App Store 上试用我们的 ThingsBoard Live 移动应用程序。
 
 <br>
 
 <div class="mobile-market-badges">
     <a href="https://play.google.com/store/apps/details?id=org.thingsboard.demo.app&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1" target="_blank">
-        <img src="/images/mobile/get-it-on-google-play.png" alt="Get it on Google Play icon">
+        <img src="/images/mobile/get-it-on-google-play.png" alt="在 Google Play 上获取图标">
     </a>
     <a href="https://apps.apple.com/us/app/thingsboard-live/id1594355695?itsct=apps_box_badge&amp;itscg=30200" target="_blank">
-        <img src="/images/mobile/download-on-the-app-store.png" alt="Download on the App Store icon">
+        <img src="/images/mobile/download-on-the-app-store.png" alt="在 App Store 上下载图标">
     </a>
 </div>
 
 {% endif %}
 
-## Next Steps
+## 后续步骤
 
-- [Customize your app](/docs/{{docsPrefix}}mobile/customization) - Learn how to customize your {{appPrefix}} Mobile Application to meet your requirements.
-- [Publish your app](/docs/{{docsPrefix}}mobile/release) - Learn how to build release and publish your version of {{appPrefix}} Mobile Application to Google Play or App Store.
+- [自定义您的应用程序](/docs/{{docsPrefix}}mobile/customization) - 了解如何自定义您的 {{appPrefix}} 移动应用程序以满足您的要求。
+- [发布您的应用程序](/docs/{{docsPrefix}}mobile/release) - 了解如何构建发布版本并将其 {{appPrefix}} 移动应用程序版本发布到 Google Play 或 App Store。

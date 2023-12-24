@@ -2,41 +2,41 @@
 layout: docwithnav
 assignees:
 - zbeacon
-title: How to connect Modbus device to ThingsBoard using the ThingsBoard IoT Gateway
-description: Understand how to connect Modbus device to ThingsBoard using the ThingsBoard IoT Gateway 
+title: 如何使用 ThingsBoard IoT 网关将 Modbus 设备连接到 ThingsBoard
+description: 了解如何使用 ThingsBoard IoT 网关将 Modbus 设备连接到 ThingsBoard
 
 ---
 
 * TOC
 {:toc}
 
-## Device information
+## 设备信息
 
-For the purpose of this guide, we will use Raspberry Pi with Modbus server to emulate Modbus device.
-We will use [Modbus connector](/docs/iot-gateway/config/modbus/) to collect data.  
+为了本指南的目的，我们将使用带有 Modbus 服务器的 Raspberry Pi 来模拟 Modbus 设备。
+我们将使用 [Modbus 连接器](/docs/iot-gateway/config/modbus/) 来收集数据。
 
-The info available at this moment:  
+目前可用的信息：
 
 
-| Parameter     | Our value            |
+| 参数     | 我们的值            |
 |-|-|
-| Device name   | **TH_sensor**        |
-| IP Address    | **192.168.1.113**    |
-| Port          | **5020**             |
-| Unit id       | **1**                |
-| Poll period   | **5 seconds**        | 
+| 设备名称   | **TH_sensor**        |
+| IP 地址    | **192.168.1.113**    |
+| 端口          | **5020**             |
+| 单元 ID       | **1**                |
+| 轮询周期   | **5 秒**        | 
 |-|-|
 
-We want to write **temperature** (register address is 0) and **humidity** (register address is 1) as the telemetry to ThingsBoard and **batteryLevel** (register address is 2) as the device client-side attribute.      
+我们希望将 **温度**（寄存器地址为 0）和 **湿度**（寄存器地址为 1）作为遥测数据写入 ThingsBoard，并将 **batteryLevel**（寄存器地址为 2）作为设备客户端属性。      
 
 
 
-## Step 1. Configuring the Modbus connector
+## 步骤 1. 配置 Modbus 连接器
 
-In order to configure the connector, we must create MODBUS setup file and put configuration there.
-You may use default modbus.json file (from /etc/thingsboard-gateway/config in case of daemon installation or from folder with tb_gateway.json file in case you use python package).  
-Simply replace some parameters with our values.
-For example: 
+为了配置连接器，我们必须创建 MODBUS 设置文件并将配置放在那里。
+您可以使用默认的 modbus.json 文件（在守护程序安装的情况下为 /etc/thingsboard-gateway/config 中的文件，或者在使用 python 包的情况下为包含 tb_gateway.json 文件的文件夹中的文件）。  
+只需用我们的值替换一些参数即可。
+例如：
 
 ```json
 {
@@ -90,22 +90,22 @@ For example:
 {: .copy-code}
 
   
-About sections of Modbus configuration file you can [read more here](/docs/iot-gateway/config/modbus/).  
+关于 Modbus 配置文件的各个部分，您可以在此处 [了解更多信息](/docs/iot-gateway/config/modbus/)。  
 
-Let's analyze our settings:
+让我们分析一下我们的设置：
 
-1. General configuration of connector. In this section we have defined main settings (e. g. connector name — Modbus Default Server, port — 5020 etc.). You can read more about available parameters here.
-2. General device configuration. In this section we have defined main settings of our Modbus device (e. g. device name within ThingsBoard — TH_sensor, unit id — 1 etc.). You can read more about available parameters here.
-3. Timeseries configuration. In this section we set up temperature and humidity parameters. You can read more about available parameters here.
-4. Attributes configuration. In this section we have defined the settings for batteryLevel attribute within ThingsBoard. You can read more about available parameters here.
+1. 连接器的常规配置。在此部分中，我们定义了主要设置（例如连接器名称 — Modbus 默认服务器、端口 — 5020 等）。您可以在此处阅读有关可用参数的更多信息。
+2. 常规设备配置。在此部分中，我们定义了 Modbus 设备的主要设置（例如 ThingsBoard 中的设备名称 — TH_sensor、单元 ID — 1 等）。您可以在此处阅读有关可用参数的更多信息。
+3. 时间序列配置。在此部分中，我们设置了温度和湿度参数。您可以在此处阅读有关可用参数的更多信息。
+4. 属性配置。在此部分中，我们定义了 ThingsBoard 中 batteryLevel 属性的设置。您可以在此处阅读有关可用参数的更多信息。
 
-Save the configuration file as modbus.json in configuration folder (the directory, that contains the general configuration file - **tb_gateway.yaml**).  
+将配置文件另存为 modbus.json，放在配置文件夹中（包含常规配置文件 **tb_gateway.yaml** 的目录）。  
 
-## Step 3. Turn on the connector 
+## 步骤 3. 打开连接器
 
-To use the connector, we must turn it on in the main configuration file (**[tb_gateway.yaml](/docs/iot-gateway/configuration/#connectors-configuration)**)
+要使用连接器，我们必须在主配置文件（**[tb_gateway.yaml](/docs/iot-gateway/configuration/#connectors-configuration)**）中将其打开
 
-In "connectors" section we should uncomment following strings:
+在“connectors”部分中，我们应该取消注释以下字符串：
 
 ```yaml
   -
@@ -114,23 +114,23 @@ In "connectors" section we should uncomment following strings:
     configuration: modbus.json
 ```
 
-## Step 4. Run the gateway
+## 步骤 4. 运行网关
   
-Command for run depends on type of installation.  
-If you have installed the gateway as daemon, run the following command:  
+运行命令取决于安装类型。  
+如果您已将网关安装为守护程序，请运行以下命令：  
 ```bash
 sudo systemctl restart thingsboard-gateway
 ```  
 {: .copy-code}
 
-If you have installed the gateway as a python module (using [pip package manager](/docs/iot-gateway/install/pip-installation/) or [from sources](/docs/iot-gateway/install/source-installation/)), use following command or script to run the gateway.  
-**Notice**: You must place correct path to the main configuration file (**tb_gateway.yaml**) in the command/script.  
+如果您已将网关安装为 python 模块（使用 [pip 包管理器](/docs/iot-gateway/install/pip-installation/) 或 [从源代码](/docs/iot-gateway/install/source-installation/)），请使用以下命令或脚本运行网关。  
+**注意**：您必须在命令/脚本中放置正确的主配置文件路径（**tb_gateway.yaml**）。  
 
 ```bash
 sudo python3 -c 'from thingsboard_gateway.gateway.tb_gateway_service import TBGatewayService; TBGatewayService("YOUR_PATH_HERE")'
 ```
 
-or script:
+或脚本：
 
 ```python
 from thingsboard_gateway.gateway.tb_gateway_service import TBGatewayService 
@@ -140,19 +140,18 @@ config_file_path = "YOUR_PATH_HERE"
 TBGatewayService(config_file_path)
 ```
 
-## Step 5. Check information from device
+## 步骤 5. 检查设备信息
 
-Check data in your ThingsBoard instance.  
-    - Go to the your ThingsBoard instance and login.  
-    - Go to the "Devices" tab. "TH_sensor" will be there.
+检查 ThingsBoard 实例中的数据。  
+    - 转到您的 ThingsBoard 实例并登录。  
+    - 转到“设备”选项卡。“TH_sensor”将在那里。
     <br>    
     ![](/images/gateway/gateway-modbus-device-added.png)
 <br><br>
-Go to the device details, **ATTRIBUTES** tab, there you may see the attribute **batteryLevel** with some value.  
+转到设备详细信息，**属性**选项卡，您可能会看到具有某个值的属性 **batteryLevel**。  
 <br>
 ![](/images/gateway/modbus-device-client-attribute.png)
 <br><br>
-Go to the device details, **LATEST TELEMETRY** tab, to see your telemetries data: **temperature** and **humidity**.  
+转到设备详细信息，**最新遥测数据**选项卡，以查看您的遥测数据：**温度**和**湿度**。  
 <br>
 ![](/images/gateway/modbus-device-telemetry.png)
-

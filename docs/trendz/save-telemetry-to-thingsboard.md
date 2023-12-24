@@ -2,40 +2,35 @@
 layout: docwithnav-trendz
 assignees:
 - vparomskiy
-title: Save telemetry to ThingsBoard
-description: Save telemetry to ThingsBoard 
+title: 将遥测数据保存到 ThingsBoard
+description: 将遥测数据保存到 ThingsBoard
 ---
 
 * TOC
 {:toc}
 
-Sometimes you can face to situation, where you need to do some complicated action on the data using different features 
-of Trendz and ThingsBoard at the same time. You understand you need to provide Trendz result data to ThingsBoard 
-for different purposes - make alert rules to data derived from particular calculations or provide the data to the rule chain. 
-After that, you notice that you can share data from Thingsboard, but not vice versa. 
-To solve this problem we have made a **Save Telemetry To TB** feature for each view configuration that you can create (table, line chart, etc).
+有时，您可能会遇到这种情况，您需要使用 Trendz 和 ThingsBoard 的不同功能对数据执行一些复杂的操作。您了解到，您需要将 Trendz 结果数据提供给 ThingsBoard 以用于不同的目的 - 为源自特定计算的数据制定警报规则或将数据提供给规则链。之后，您注意到您可以共享来自 Thingsboard 的数据，但反之则不行。为了解决这个问题，我们为您可以创建的每个视图配置（表格、折线图等）制作了一个 **将遥测数据保存到 TB** 功能。
 
-The **Save Telemetry To TB** feature provides the ability to make and save (to the same item) a new telemetry that is made 
-by a calculation field that is derived from any telemetry field that you want. It is a scheduled action that will be launched every chosen time unit to keep actual values during the present time.
+**将遥测数据保存到 TB** 功能提供了创建和保存（到同一项目）新遥测数据的能力，该遥测数据由您想要的任何遥测字段派生的计算字段生成。这是一个计划任务，将在所选时间单位内启动，以在当前时间内保持实际值。
 
-## Configuration steps:
-* Create a view configuration (usually a table).
-* Add a Date field to the Columns with the next types of date aggregation: **FULL_HOUR** or **FULL_DATE**.
-* Add item name field of needed business entity - for example, if you have lamps that provide telemetry “light” you need to add the “lamps” business entity field (drop list on the left side of the screen).
-* In the view config settings (right side of the screen) choose the **View Mode Field** menu, select `Row Click Entity` and choose the needed business entity - for example, lamp.
-* Add Batched Calculated Field to the Columns and write a script that defines the necessary data for your business entity - for example, lamp. You can add a lot of these fields. Notice that you must use only one same Business Entity (for example, lamp). Usual calculation fields (not batched) are forbidden.
-* Also, you must name fields by custom names and select the needed aggregation. Each name of each calculation field must be unique - otherwise, there will be collisions and data will rewrite each other.
-* In the view config settings (right side of the screen) choose `TB calculated telemetry save`, choose how often the task must be launched by **Every** and **Time Unit** fields and switch on the checkbox.
-* Press the **Save changes** Button to save the view configuration.
+## 配置步骤：
+* 创建视图配置（通常是表格）。
+* 将日期字段添加到具有以下日期聚合类型的列中：**FULL_HOUR** 或 **FULL_DATE**。
+* 添加所需业务实体的项目名称字段 - 例如，如果您有提供遥测数据“光照”的灯，则需要添加“灯”业务实体字段（屏幕左侧的下拉列表）。
+* 在视图配置设置（屏幕右侧）中，选择 **视图模式字段** 菜单，选择 `行单击实体` 并选择所需的业务实体 - 例如，灯。
+* 将批处理计算字段添加到列中，并编写一个脚本来定义业务实体（例如，灯）的必要数据。您可以添加许多这样的字段。请注意，您必须仅使用一个相同的业务实体（例如，灯）。禁止使用常规计算字段（非批处理）。
+* 此外，您必须通过自定义名称命名字段并选择所需的聚合。每个计算字段的名称必须是唯一的 - 否则，将发生冲突并且数据将相互覆盖。
+* 在视图配置设置（屏幕右侧）中，选择 `TB 计算遥测数据保存`，选择任务必须通过 **每** 和 **时间单位** 字段启动的频率，并打开复选框。
+* 按 **保存更改** 按钮以保存视图配置。
 
-## Review historical jobs
-In view settings page where scheduling was configured you can press `Show History` button will appear in the **TB calculated telemetry save** menu and you can check when the task was performed, what was the duration of the task and their status.
+## 查看历史作业
+在配置计划任务的视图设置页面中，您可以在 **TB 计算遥测数据保存** 菜单中按 `显示历史记录` 按钮，您可以检查任务执行的时间、任务的持续时间及其状态。
 
-## Important notes
+## 重要说明
 
-* You can add any telemetry/attribute field just to see the data - they will be ignored for saving to TB.
-* Only Batched Calculation Fields will be used.
-* Usual calculation fields (not batched) are forbidden.
-* Use only one same Business Entity.
-* The new telemetry key would have name: `Trendz_[field aggreagtion]_[field name]`
-* Used Date field aggregation will define how often the data will be represented on the timeline (each hour/each day).
+* 您可以添加任何遥测/属性字段只是为了查看数据 - 它们将被忽略以保存到 TB。
+* 仅使用批处理计算字段。
+* 禁止使用常规计算字段（非批处理）。
+* 仅使用一个相同的业务实体。
+* 新遥测密钥的名称为：`Trendz_[field aggreagtion]_[field name]`
+* 使用的日期字段聚合将定义数据在时间线上的显示频率（每小时/每天）。

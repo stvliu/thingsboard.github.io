@@ -1,9 +1,9 @@
 ---
 layout: devices-library-article
-title: How to connect Udoo x86 Ultra to ThingsBoard?
-category: Single-board computers
+title: 如何将 Udoo x86 Ultra 连接到 ThingsBoard？
+category: 单板计算机
 chip: Pentium N3710
-connectivity: WIFI, Bluetooth
+connectivity: WIFI，蓝牙
 vendor: UDOO
 deviceImageFileName: udoo-x86-ultra.jpg
 docsPrefix: paas/

@@ -2,91 +2,91 @@
 layout: docwithnav
 assignees:
 - ashvayka
-title: Kafka Plugin
+title: Kafka 插件
 
 ---
 
 {% include templates/old-guide-notice.md %}
 
-## Overview
+## 概述
 
-Kafka plugin is responsible for sending messages to Kafka brokers triggered by specific rules
+Kafka 插件负责向由特定规则触发的 Kafka 代理发送消息
 
-## Configuration
+## 配置
 
-You can specify following configuration parameters:
+您可以指定以下配置参数：
 
- - *bootstrap servers* - list of kafka brokers
- - *number of attempts to reconnect to kafka if connection fails*
- - *number of messages to unit into batch on client*
- - *time to buffer locally before sending to kafka broker (in ms)*
- - *buffer max size on client*
- - *minimum number of replicas that must acknowledge a write*
- - *topic key serializer* by default - org.apache.kafka.common.serialization.StringSerializer
- - *topic value serializer* by default - org.apache.kafka.common.serialization.StringSerializer
- - any other additional properties could be provided for kafka broker connection
+- *引导服务器* - Kafka 代理列表
+- *如果连接失败，重新连接到 Kafka 的尝试次数*
+- *在客户端上将消息单元化到批次中的数量*
+- *在发送到 Kafka 代理之前在本地缓冲的时间（以毫秒为单位）*
+- *客户端上的缓冲区最大大小*
+- *必须确认写入的最小副本数*
+- 默认情况下，主题键序列化程序 - org.apache.kafka.common.serialization.StringSerializer
+- 默认情况下，主题值序列化程序 - org.apache.kafka.common.serialization.StringSerializer
+- 可以为 Kafka 代理连接提供任何其他附加属性
 
-## Server-side API
+## 服务器端 API
 
-This plugin does not provide any server-side API.
+此插件不提供任何服务器端 API。
 
-## Example
+## 示例
 
-In this example, we are going to demonstrate how you can configure this extension to be able to send a message to Kafka topic every time new telemetry message for the device arrives.
+在此示例中，我们将演示如何配置此扩展，以便每次设备的新遥测消息到达时都能向 Kafka 主题发送消息。
 
-Prerequisites before contining Kafka extension configuration:
+在继续 Kafka 扩展配置之前的前提条件：
 
- - Kafka broker is up and running
- - Appropriate Kafka Topic created
- - ThingsBoard is up and running
+- Kafka 代理正在运行
+- 创建了适当的 Kafka 主题
+- ThingsBoard 正在运行
 
-### Kafka Plugin Configuration
+### Kafka 插件配置
 
-Let's configure Kafka plugin first. Go to *Plugins* menu and create new plugin:
+让我们首先配置 Kafka 插件。转到 *插件* 菜单并创建新插件：
 
 ![image](/images/reference/plugins/kafka/kafka-plugin-config-1.png)
 
 ![image](/images/reference/plugins/kafka/kafka-plugin-config-2.png)
 
-Please set correctly Kafka Bootstrap Servers URL and any other parameters located in plugin configuration section that is suitable for your case so Kafka extension is able to connect to Kafka broker.
+请正确设置 Kafka 引导服务器 URL 和插件配置部分中适合您的情况的任何其他参数，以便 Kafka 扩展能够连接到 Kafka 代理。
 
-Click on *'Activate'* plugin button:
+单击 *“激活”* 插件按钮：
 
 ![image](/images/reference/plugins/kafka/kafka-activate-plugin.png)
 
-### Kafka Rule Configuration
+### Kafka 规则配置
 
-Now it's time to create appropriate Rule.
+现在是时候创建适当的规则了。
 
 ![image](/images/reference/plugins/kafka/kafka-rule-config.png)
 
-Add filter for **POST_TELEMETRY** message type:
+为 **POST_TELEMETRY** 消息类型添加过滤器：
 
 ![image](/images/reference/plugins/post-telemetry-filter.png)
 
-Click *'Add'* button to add filter.
+单击 *“添加”* 按钮以添加过滤器。
 
-Then select *'Kafka Plugin'* in the drop-down box for the Plugin field:
+然后在插件字段的下拉框中选择 *“Kafka 插件”*：
 
 ![image](/images/reference/plugins/kafka/kafka-plugin-selection.png)
 
-Add action that will send temperature telemetry of device to particular kafka topic:
+添加一个操作，将设备的温度遥测发送到特定 Kafka 主题：
 
 ![image](/images/reference/plugins/kafka/send-temp-telemetry.png)
 
-Click *'Add'* button and then activate Rule.
+单击 *“添加”* 按钮，然后激活规则。
 
-### Sending Temperature Telemetry
+### 发送温度遥测
 
-Now you can send Telemetry message that contains *'temp'* telemetry for any of your devices:
+现在，您可以发送包含任何设备的 *“temp”* 遥测的遥测消息：
 
 ```json
 {"temp":73.4}
 ```
 
-You should see **'73.4'** message in appropriate Kafka topic once you'll post this message.
+一旦您发布此消息，您应该在适当的 Kafka 主题中看到 **“73.4”** 消息。
 
-Here is an example of a command that publish single telemetry message to locally installed ThingsBoard:
+以下是一个将单个遥测消息发布到本地安装的 ThingsBoard 的命令示例：
 
 ```bash
 mosquitto_pub -d -h "localhost" -p 1883 -t "v1/devices/me/telemetry" -u "$ACCESS_TOKEN" -m '{"temp":73.4}'

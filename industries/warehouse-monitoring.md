@@ -1,35 +1,35 @@
 ---
 layout: common
-title: Warehouse monitoring customers
+title: 仓库监控客户
 notitle: "true"
 description:
 
 ---
 
-<h1 class="mainTitle smart-buildings">Smart Buildings customers</h1>
+<h1 class="mainTitle smart-buildings">智能建筑客户</h1>
 
 <nav class="customers-nav">
     <ul>
         <li>
-            <a href="/industries/smart-energy/">Smart Energy</a>
+            <a href="/industries/smart-energy/">智能能源</a>
         </li>
         <li>
-            <a href="/industries/agriculture/">Agriculture</a>
+            <a href="/industries/agriculture/">农业</a>
         </li>
         <li>
-            <a href="/industries/smart-buildings/">Smart Buildings</a>
+            <a href="/industries/smart-buildings/">智能建筑</a>
         </li>
         <li>
-            <a href="/industries/smart-city/">Smart City</a>
+            <a href="/industries/smart-city/">智慧城市</a>
         </li>
         <li>
-            <a href="/industries/telecom/">Telecom</a>
+            <a href="/industries/telecom/">电信</a>
         </li>
         <li>
-            <a href="/industries/industry40/">Industry 4.0</a>
+            <a href="/industries/industry40/">工业 4.0</a>
         </li>
         <li>
-            <a href="/industries/warehouse-monitoring/" class="active">Warehouse monitoring</a>
+            <a href="/industries/warehouse-monitoring/" class="active">仓库监控</a>
         </li>
     </ul>
 </nav>
@@ -44,17 +44,17 @@ description:
             <img class="person-logo" src="/images/customers/JTMcGibbon.jpeg" alt="JT McGibbon">
             <div class="person-title">
                 <p class="person-name"> JT McGibbon </p>
-                <p class="person-position"> General manager </p>
+                <p class="person-position"> 总经理 </p>
             </div>
         </div>
         <h2>
-            Industrial IoT solutions provider targeting perishable food items, pharmaceuticals, and other environmentally sensitive goods monitoring to ensure the highest quality products to your customers
+            工业物联网解决方案提供商，针对易腐食品、药品和其他对环境敏感的商品进行监控，以确保为您的客户提供最高质量的产品
         </h2>
         <p>
-            I wanted to thank everyone at Thingsboard on behalf of us here at Vypin for the tremendous support over the past few months. This has allowed Vypin to taste the finish line for our two primary projects. We are looking forward to continuing our partnership and even strengthening our business relationship and opportunities going forward.
+            我谨代表 Vypin 的全体员工感谢 Thingsboard 在过去几个月中给予我们的巨大支持。这使得 Vypin 能够顺利完成我们两个主要项目的收尾工作。我们期待继续保持我们的合作伙伴关系，甚至加强我们的业务关系和未来的机遇。
         </p>
         <p>
-            Read Vypin's <a href="/case-study/Vypin.pdf">case study.</a>
+            阅读 Vypin 的 <a href="/case-study/Vypin.pdf">案例研究。</a>
         </p>
     </div>
 </div>

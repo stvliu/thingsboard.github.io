@@ -1,17 +1,17 @@
-We assume you have completed the following guides and reviewed the articles listed below:
+我们假设您已完成以下指南并查看了下面列出的文章：
 
 {% if docsPrefix == 'pe/edge/' %}
-* [Getting Started](/docs/getting-started-guides/helloworld-pe/) guide.{% endif %}
+* [入门](/docs/getting-started-guides/helloworld-pe/) 指南。{% endif %}
 {% if docsPrefix == 'edge/' %}
-* [Getting Started](/docs/getting-started-guides/helloworld/) guide.{% endif %}
-* [Rule Engine Overview](/docs/{{cloudDocsPrefix}}user-guide/rule-engine-2-0/overview/) article.
-* [ThingsBoard Edge Getting Started](/docs/{{docsPrefix}}getting-started/) article.
-* [Edge Rule Engine Overview](/docs/{{docsPrefix}}rule-engine/general/) guide.
+* [入门](/docs/getting-started-guides/helloworld/) 指南。{% endif %}
+* [规则引擎概述](/docs/{{cloudDocsPrefix}}user-guide/rule-engine-2-0/overview/) 文章。
+* [ThingsBoard Edge 入门](/docs/{{docsPrefix}}getting-started/) 文章。
+* [Edge 规则引擎概述](/docs/{{docsPrefix}}rule-engine/general/) 指南。
 
-Please make sure that you have **{{appPrefix}}** server up and running. Additionally, ThingsBoard **Edge** must be up, running and connected to the cloud.
+请确保您已启动并运行 **{{appPrefix}}** 服务器。此外，ThingsBoard **Edge** 必须启动、运行并连接到云。
 
-If you have these prerequisites in place let's go to next steps.
+如果您已具备这些先决条件，让我们继续执行后续步骤。
 
-In other case please visit this link to provision, install and connect Edge to Server [guide](/docs/user-guide/install/{{docsPrefix}}installation-options/){:target="_blank"}.
+在其他情况下，请访问此链接以配置、安装并将 Edge 连接到服务器 [指南](/docs/user-guide/install/{{docsPrefix}}installation-options/){:target="_blank"}。
 
-{% include templates/edge/ui-url-aliases-banner.md %} 
+{% include templates/edge/ui-url-aliases-banner.md %}

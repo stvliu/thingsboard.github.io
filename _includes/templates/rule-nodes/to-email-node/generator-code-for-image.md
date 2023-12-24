@@ -1,6 +1,6 @@
-_To send an image you need to encode the image to Base64. To do this you need to find some service that can do this and set the result string for `encodedImage` in the next example._
+_要发送图像，您需要将图像编码为 Base64。为此，您需要找到一些可以执行此操作的服务，并在下一个示例中为 `encodedImage` 设置结果字符串。_
 
-Example of generator JS code
+生成器 JS 代码示例
 ```js
 var encodedImage = 'HERE_YOU_BASE_64_ENCODED_IMAGE';
 var images = {

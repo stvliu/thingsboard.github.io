@@ -1,60 +1,50 @@
 * TOC
 {:toc}
 
-This guide will help you to get familiar with ThingsBoard configuration files and parameters. We **recommend** to
-configure ThingsBoard using environment variables. This way you do not need to merge the configuration files when new
-platform release arrives. List of available configuration parameters and corresponding environment variables is
-located [here](#configuration-parameters).
+本指南将帮助您熟悉 ThingsBoard 配置文件和参数。我们**建议**使用环境变量配置 ThingsBoard。这样，您无需在新的平台版本发布时合并配置文件。可用的配置参数和相应的环境变量列表位于 [此处](#configuration-parameters)。
 
-## How to change configuration parameters?
+## 如何更改配置参数？
 
-#### Monolithic deployment on Linux
+#### 在 Linux 上的整体部署
 
-If ThingsBoard is installed on **Linux** as a **monolithic application**, you may specify the environment variables in
-the thingsboard.conf file:
+如果 ThingsBoard 以**整体应用程序**的形式安装在 **Linux** 上，您可以在 thingsboard.conf 文件中指定环境变量：
 
 ```bash
 sudo nano /usr/share/thingsboard/conf/thingsboard.conf
 ```
 
-Use simple example below to add new environment variable 'HTTP_BIND_PORT' with value '8081'.
+使用以下简单示例添加值为“8081”的新环境变量“HTTP_BIND_PORT”。
 
 ```bash
 ...
 export HTTP_BIND_PORT=8081
 ```
 
-#### Monolithic deployment on Windows
+#### 在 Windows 上的整体部署
 
-If ThingsBoard is installed on **Windows** as a **monolithic application**, you may specify the environment variables in
-the thingsboard.yml file located in the following directory:
+如果 ThingsBoard 以**整体应用程序**的形式安装在 **Windows** 上，您可以在以下目录中找到的 thingsboard.yml 文件中指定环境变量：
 
 ```bash
 YOUR_INSTALL_DIR/conf
 ```
 
-The configuration file is written in YAML.
+配置文件以 YAML 编写。
 
-All configuration parameters have corresponding environment variable name and default value. In order to change
-configuration parameter you can simply change it's default value. For example:
+所有配置参数都有相应的环境变量名称和默认值。为了更改配置参数，您可以简单地更改其默认值。例如：
 
 ```bash
 server:
   address: "${HTTP_BIND_ADDRESS:0.0.0.0}"
 ```
 
-In this case, *'HTTP_BIND_ADDRESS'* is environment variable name and *'0.0.0.0'* is a default value.
+在这种情况下，*'HTTP_BIND_ADDRESS'* 是环境变量名称，*'0.0.0.0'* 是默认值。
 
-#### Docker based deployment
+#### 基于 Docker 的部署
 
-If ThingsBoard is installed in a docker compose environment, you may edit the scripts and add environment variables for
-the corresponding containers.
-See [docker documentation](https://docs.docker.com/compose/environment-variables/#/the-envfile-configuration-option) for
-more details.
+如果 ThingsBoard 安装在 docker compose 环境中，您可以编辑脚本并为相应的容器添加环境变量。
+有关更多详细信息，请参阅 [docker 文档](https://docs.docker.com/compose/environment-variables/#/the-envfile-configuration-option)。
 
-#### K8S based deployment
+#### 基于 K8S 的部署
 
-If ThingsBoard is installed in a K8S environment, you may edit the scripts and add environment variables for the
-corresponding deployments/stateful sets.
-See [K8S documentation](https://kubernetes.io/docs/tasks/inject-data-application/define-environment-variable-container/)
-for more details.
+如果 ThingsBoard 安装在 K8S 环境中，您可以编辑脚本并为相应的部署/有状态集添加环境变量。
+有关更多详细信息，请参阅 [K8S 文档](https://kubernetes.io/docs/tasks/inject-data-application/define-environment-variable-container/)。

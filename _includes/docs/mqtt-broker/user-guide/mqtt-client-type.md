@@ -1,110 +1,67 @@
-
 * TOC
 {:toc}
 
-In the implementation of TBMQ, two distinct types of clients are supported: **DEVICE** and **APPLICATION**. 
-This categorization is based on our extensive experience in the IoT ecosystem, 
-where we have observed that the majority of clients can be classified into one of these two predominant use cases.
+在 TBMQ 的实现中，支持两种不同类型的客户端：**设备**和**应用程序**。
+这种分类基于我们在物联网生态系统中的广泛经验，我们观察到大多数客户端可以归类为这两个主要用例之一。
 
-* The DEVICE clients primarily engaged in publishing a significant volume of messages while subscribing to a limited number of topics with relatively low message rates. 
-These clients are typically associated with IoT devices or sensors that frequently transmit data to TBMQ.
+* 设备客户端主要用于发布大量消息，同时订阅数量有限的主题，消息速率相对较低。这些客户端通常与频繁向 TBMQ 传输数据的物联网设备或传感器相关联。
 
-* APPLICATION clients specialize in subscribing to topics with high message rates. 
-They often require messages to be persisted when the client is offline with later delivery, ensuring the availability of crucial data. 
-APPLICATION clients are commonly utilized for real-time analytics, data processing, or other application-level functionalities.
+* 应用程序客户端专门用于订阅消息速率高的主题。当客户端处于脱机状态时，它们通常需要持久化消息以便稍后交付，从而确保关键数据的可用性。应用程序客户端通常用于实时分析、数据处理或其他应用程序级功能。
 
-By categorizing clients into these distinct types, we can better tailor TBMQ to accommodate the specific 
-requirements and performance expectations of each use case. 
-This segregation of clients simplifies the implementation of different IoT scenarios, thereby optimizing overall system performance.
+通过将客户端分类为这些不同的类型，我们可以更好地调整 TBMQ 以适应每个用例的特定要求和性能期望。这种客户端分离简化了不同物联网场景的实现，从而优化了整体系统性能。
 
-The determination of client type occurs during the processing of the _CONNECT_ packet, with client authentication playing 
-a pivotal role in identifying the client type. Further details regarding client authentication can be found in the [security](/docs/mqtt-broker/security/) guide, 
-which provide comprehensive information on securing client connections.
+客户端类型的确定发生在处理 _CONNECT_ 数据包期间，客户端身份验证在识别客户端类型中起着关键作用。有关客户端身份验证的更多详细信息，请参阅 [安全](/docs/mqtt-broker/security/) 指南，其中提供了有关保护客户端连接的全面信息。
 
-If both Basic and TLS authentications are disabled, the connecting client will always be assigned the DEVICE type. 
-However, when Basic or TLS authentication is enabled, the client type is determined by the MQTT credentials used during the authentication process. 
-Each MQTT client credential incorporates a `clientType` field that explicitly defines the client type. 
-For step-by-step instructions on creating MQTT credentials, please refer to the designated [guide](/docs/mqtt-broker/user-guide/ui/mqtt-client-credentials/).
+如果禁用基本身份验证和 TLS 身份验证，则连接的客户端将始终被分配为设备类型。但是，当启用基本身份验证或 TLS 身份验证时，客户端类型由身份验证过程中使用的 MQTT 凭据确定。每个 MQTT 客户端凭据都包含一个 `clientType` 字段，该字段明确定义了客户端类型。有关创建 MQTT 凭据的分步说明，请参阅指定的 [指南](/docs/mqtt-broker/user-guide/ui/mqtt-client-credentials/)。
 
-### Client persistence
+### 客户端持久性
 
-All messages published by MQTT clients are persistently stored in the `tbmq.msg.all` Kafka topic. 
-The subsequent processing of these messages varies based on the client type and whether the client is persistent or non-persistent.
+MQTT 客户端发布的所有消息都持久存储在 `tbmq.msg.all` Kafka 主题中。这些消息的后续处理根据客户端类型以及客户端是持久性还是非持久性而有所不同。
 
 {% capture difference %}
-To delve into the details of client persistence, it is worthwhile to explore the concept of the 
-[Clean Session](https://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html#_Toc398718030) property in MQTT v3.x or 
-the [Clean Start](https://docs.oasis-open.org/mqtt/mqtt/v5.0/os/mqtt-v5.0-os.html#_Toc3901039) and
-[Session Expiry Interval](https://docs.oasis-open.org/mqtt/mqtt/v5.0/os/mqtt-v5.0-os.html#_Toc3901048) properties in MQTT v5. 
-These properties, defined in the respective MQTT specifications, provide insights into the behavior and handling of client sessions in terms of persistence.
+要深入了解客户端持久性的详细信息，值得探讨 [Clean Session](https://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html#_Toc398718030) 的概念MQTT v3.x 中的属性或 [Clean Start](https://docs.oasis-open.org/mqtt/mqtt/v5.0/os/mqtt-v5.0-os.html#_Toc3901039) 和 [Session Expiry Interval](https://docs.oasis-open.org/mqtt/mqtt/v5.0/os/mqtt-v5.0-os.html#_Toc3901048) MQTT v5 中的属性。这些属性在各自的 MQTT 规范中定义，提供了有关客户端会话在持久性方面的行为和处理的见解。
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-TBMQ employs a Kafka consumer that actively polls messages from the `tbmq.msg.all` topic, subsequently forwarding these messages to their intended recipients. 
-However, the processing logic differs between persistent and non-persistent clients.
+TBMQ 使用一个 Kafka 消费者，该消费者主动轮询 `tbmq.msg.all` 主题中的消息，然后将这些消息转发给其预期的收件人。但是，持久性客户端和非持久性客户端之间的处理逻辑不同。
 
-* For non-persistent clients, messages are directly published to the subscribed clients.
+* 对于非持久性客户端，消息直接发布给订阅的客户端。
 
-* Persistent clients maintain a session state that persists beyond individual connections, allowing them to receive messages even when they were offline. 
-This persistence enables TBMQ to ensure message delivery to the client once it reconnects. Consequently, a distinct approach is employed for message processing intended for such clients.
-However, **please note**, that if the subscribing client is both persistent and subscribed with a Quality of Service (QoS) level of _0_ (_AT_MOST_ONCE_), 
-all the messages associated with that subscription will be delivered to the client without any supplementary steps. 
-The same holds true for a persistent subscriber with a QoS level higher than 0, as long as the publisher is transmitting messages with a QoS level of 0. 
-This behavior is implemented as a result of QoS level downgrading.
+* 持久性客户端维护一个会话状态，该状态在各个连接之外持续存在，允许它们在离线时接收消息。这种持久性使 TBMQ 能够确保在客户端重新连接后向其传递消息。因此，针对此类客户端的消息处理采用了不同的方法。
+但是，**请注意**，如果订阅客户端既是持久性的，又以服务质量 (QoS) 级别 _0_（_AT_MOST_ONCE_）订阅，则与该订阅关联的所有消息都将传递给客户端，无需任何补充步骤。对于 QoS 级别高于 0 的持久性订阅者也是如此，只要发布者以 QoS 级别 0 传输消息即可。这种行为是由于 QoS 级别降级而实现的。
 
-By leveraging Kafka as intermediary message storage and employing different processing strategies based on client characteristics, 
-TBMQ optimizes message delivery and ensures reliable communication in both persistent and non-persistent client scenarios.
+通过利用 Kafka 作为中间消息存储并根据客户端特征采用不同的处理策略，TBMQ 优化了消息传递并确保了在持久性和非持久性客户端场景中进行可靠的通信。
 
-### Device client
+### 设备客户端
 
-Clients of the **DEVICE** type can exhibit either persistent or non-persistent behavior, depending on the settings specified in the _CONNECT_ packet, 
-as discussed in the [Client persistence](#client-persistence) section. 
-In the case of persistent DEVICE clients available, related messages are directed to an additional Kafka topic known as `tbmq.msg.persisted`.
+**DEVICE** 类型的客户端可以表现出持久性或非持久性行为，具体取决于 _CONNECT_ 数据包中指定的设置，如 [客户端持久性](#client-persistence) 部分所述。在有持久性设备客户端的情况下，相关消息将被定向到另一个称为 `tbmq.msg.persisted` 的 Kafka 主题。
 
-To facilitate the delivery of messages to both online and offline clients, a dedicated Kafka consumer diligently polls messages from the `tbmq.msg.persisted` topic. 
-These messages are then processed and persisted in a **PostgreSQL** database before being dispatched to the subscribed online clients. 
-This approach ensures that both online and offline clients can receive all messages, guaranteeing consistent message delivery across different client states.
+为了便于将消息传递给在线和离线客户端，一个专用的 Kafka 消费者会勤奋地轮询 `tbmq.msg.persisted` 主题中的消息。然后处理这些消息并将其持久化到 **PostgreSQL** 数据库中，然后再分发给订阅的在线客户端。这种方法确保在线和离线客户端都可以接收所有消息，从而保证在不同客户端状态下消息传递的一致性。
 
-When offline clients reconnect to the broker, they receive the persisted messages that were stored during their offline period. 
-The number of messages received by an offline client upon reconnection can be controlled by modifying the 
-`MQTT_PERSISTENT_SESSION_DEVICE_PERSISTED_MESSAGES_LIMIT` environment variable. 
-This enables fine-tuning of the message retrieval behavior for offline clients, allowing for customized handling of the number of messages they receive upon reconnection.
+当离线客户端重新连接到代理时，它们会收到在其离线期间存储的持久性消息。可以通过修改 `MQTT_PERSISTENT_SESSION_DEVICE_PERSISTED_MESSAGES_LIMIT` 环境变量来控制离线客户端在重新连接时收到的消息数量。这使得能够微调离线客户端的消息检索行为，允许自定义处理它们在重新连接时收到的消息数量。
 
-### Application client
+### 应用程序客户端
 
-**Clients of the APPLICATION type are exclusively persistent.** 
+**APPLICATION 类型的客户端是专有持久性的。**
 
-In case the client is authenticated as an APPLICATION type but is not persistent, 
-messages destined for that client will be directly sent without undergoing additional persistence steps.
-To alert about the implications of non-persistent APPLICATION clients, a warning message is displayed prominently on the client session details page.
+如果客户端被认证为 APPLICATION 类型但不是持久性的，则发往该客户端的消息将直接发送，而无需经历额外的持久性步骤。为了提醒非持久性应用程序客户端的影响，客户端会话详细信息页面上会突出显示一条警告消息。
 
 {% include images-gallery.html imageCollection="mqtt-client-type" %}
 
-Upon polling messages from the `tbmq.msg.all` Kafka topic, the messages are subsequently forwarded to a dedicated Kafka topic. 
-For each connecting APPLICATION client, an individual Kafka topic is automatically created. 
-The naming convention for this topic follows the format:
+轮询 `tbmq.msg.all` Kafka 主题中的消息后，这些消息随后被转发到一个专用的 Kafka 主题。对于每个连接的应用程序客户端，都会自动创建一个单独的 Kafka 主题。此主题的命名约定遵循以下格式：
 
 ```
 tbmq.msg.app.$CLIENT_ID
 ```
-where **$CLIENT_ID** represents the unique client ID associated with the connecting client.
 
-**Important notice:** if the client ID contains characters other than alphanumeric characters, 
-a hash value derived from the client ID will be used for the construction of the topic. 
-This ensures compatibility and adherence to topic naming conventions, as some special characters may not be allowed or supported in topic names. 
-By generating a hash from the client ID, any incompatible or prohibited characters are effectively handled, ensuring proper topic construction and functionality.
+其中 **$CLIENT_ID** 表示与连接客户端关联的唯一客户端 ID。
+
+**重要提示：**如果客户端 ID 包含除字母数字字符之外的其他字符，则将使用从客户端 ID 派生的哈希值来构建主题。这确保了兼容性和遵守主题命名约定，因为某些特殊字符可能不被允许或在主题名称中不受支持。通过从客户端 ID 生成哈希，可以有效地处理任何不兼容或禁止的字符，从而确保正确的主题构建和功能。
 
 ```
 tbmq.msg.app.$CLIENT_ID_HASH
 ```
 
-The behavior described above, where a hash is used for topic construction when the client ID contains special characters, 
-is controlled by the `TB_APP_PERSISTED_MSG_CLIENT_ID_VALIDATION` environment variable. 
-By default, this variable is enabled, meaning that the validation process is active, ensuring proper topic creation. 
-However, if you choose to disable this validation by setting the variable to _false_, 
-the system will no longer create Kafka topics for clients with special characters in their client ID, resulting in a failure to create the corresponding topics. 
-It's important to consider this when configuring your environment and handling client IDs with special characters.
+当客户端 ID 包含特殊字符时，使用哈希构建主题的行为由 `TB_APP_PERSISTED_MSG_CLIENT_ID_VALIDATION` 环境变量控制。默认情况下，此变量处于启用状态，这意味着验证过程处于活动状态，确保正确创建主题。但是，如果您选择通过将变量设置为 _false_ 来禁用此验证，则系统将不再为客户端 ID 中包含特殊字符的客户端创建 Kafka 主题，从而导致无法创建相应的主题。在配置环境和处理具有特殊字符的客户端 ID 时，这一点很重要。
 
-To ensure efficient processing and optimal performance, a distinct Kafka consumer continuously polls messages from the aforementioned topic. 
-This consumer is responsible for delivering the messages to the corresponding application client. 
-By processing each application client in a separate thread, this approach enables enhanced performance and streamlined message delivery.
+为了确保高效的处理和最佳性能，一个独立的 Kafka 消费者会持续轮询上述主题中的消息。此消费者负责将消息传递给相应的应用程序客户端。通过在单独的线程中处理每个应用程序客户端，这种方法能够提高性能并简化消息传递。

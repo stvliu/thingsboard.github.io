@@ -1,27 +1,26 @@
-
 * TOC
 {:toc}
 
-SDK supports:
-- Unencrypted and encrypted (TLS v1.2) connection;
-- QoS 0 and 1;
-- Automatic reconnect;
-- All [**Device MQTT APIs**](/docs/{{docsPrefix}}reference/mqtt-api/)
-- All [**Gateway MQTT APIs**](/docs/{{docsPrefix}}reference/gateway-mqtt-api/)
+SDK 支持：
+- 未加密和加密（TLS v1.2）连接；
+- QoS 0 和 1；
+- 自动重新连接；
+- 所有 [**设备 MQTT API**](/docs/{{docsPrefix}}reference/mqtt-api/)
+- 所有 [**网关 MQTT API**](/docs/{{docsPrefix}}reference/gateway-mqtt-api/)
 
-SDK is based on Paho MQTT library. 
+SDK 基于 Paho MQTT 库。
 
-## Installation
+## 安装
 
-To install using pip:
+要使用 pip 安装：
 
 ```bash
 pip3 install tb-mqtt-client
 ```
 
-## Getting Started
+## 入门
 
-Client initialization and telemetry publishing.
+客户端初始化和遥测发布。
 
 ```python
 from tb_device_mqtt import TBDeviceMqttClient, TBPublishInfo
@@ -29,23 +28,23 @@ from tb_device_mqtt import TBDeviceMqttClient, TBPublishInfo
 
 telemetry = {"temperature": 41.9, "enabled": False, "currentFirmwareVersion": "v1.2.2"}
 client = TBDeviceMqttClient("127.0.0.1", "A1_TEST_TOKEN")
-# Connect to ThingsBoard
+# 连接到 ThingsBoard
 client.connect()
-# Sending telemetry without checking the delivery status
+# 发送遥测而不检查传递状态
 client.send_telemetry(telemetry) 
-# Sending telemetry and checking the delivery status (QoS = 1 by default)
+# 发送遥测并检查传递状态（默认情况下 QoS = 1）
 result = client.send_telemetry(telemetry)
-# get is a blocking call that awaits delivery status  
+# get 是一个阻塞调用，等待传递状态  
 success = result.get() == TBPublishInfo.TB_ERR_SUCCESS
-# Disconnect from ThingsBoard
+# 断开与 ThingsBoard 的连接
 client.disconnect()
 
 ```
 
-### Connection using TLS
+### 使用 TLS 的连接
 
-TLS connection to localhost. {% if docsPrefix != 'paas/' %}See [MQTT over SSL](/docs/{{docsPrefix}}user-guide/mqtt-over-ssl/) for more information about client and ThingsBoard configuration.{% endif %}
-To connect to ThingsBoard with MQTT over SSL, first, you should generate a certificate and have a code like the following one:
+到本地的 TLS 连接。{% if docsPrefix != 'paas/' %}有关客户端和 ThingsBoard 配置的更多信息，请参阅 [MQTT over SSL](/docs/{{docsPrefix}}user-guide/mqtt-over-ssl/)。{% endif %}
+要通过 MQTT over SSL 连接到 ThingsBoard，首先，您应该生成一个证书，并具有如下所示的代码：
 
 ```python
 from socket import gethostname
@@ -60,14 +59,14 @@ client.disconnect()
 
 ```
 
-## Using Device APIs
+## 使用设备 API
 
-**TBDeviceMqttClient** provides access to Device MQTT APIs of ThingsBoard platform.  
-It allows publishing telemetry and attributes updates, subscribing to attribute changes, sending and receiving RPC commands, etc.    
+**TBDeviceMqttClient** 提供对 ThingsBoard 平台的设备 MQTT API 的访问。  
+它允许发布遥测和属性更新、订阅属性更改、发送和接收 RPC 命令等。    
 
-#### Subscribtion to attributes
+#### 订阅属性
 
-If you need to receive shared attributes updates, you can use the code like the following:  
+如果您需要接收共享属性更新，可以使用如下代码：  
 
 ```python
 from time import sleep
@@ -86,9 +85,9 @@ while True:
 
 ```
 
-#### Telemetry pack sending
+#### 发送遥测包
 
-In order to send data to ThingsBoard you can use code like the following one:
+为了将数据发送到 ThingsBoard，可以使用如下代码：
 
 ```python
 from time import time
@@ -97,7 +96,7 @@ from tb_device_mqtt import TBDeviceMqttClient, TBPublishInfo
 
 telemetry_with_ts = {"ts": int(round(time() * 1000)), "values": {"temperature": 42.1, "humidity": 70}}
 client = TBDeviceMqttClient("127.0.0.1", "A1_TEST_TOKEN")
-# we set maximum amount of messages sent to send them at the same time. it may stress memory but increases performance
+# 我们设置发送的最大消息数，以便同时发送它们。它可能会占用内存，但会提高性能
 client.max_inflight_messages_set(100)
 client.connect()
 results = []
@@ -111,9 +110,9 @@ client.disconnect()
 
 ```
 
-#### Request attributes from server
+#### 从服务器请求属性
 
-In order to request shared attributes values from ThingsBoard you can use the following example:
+为了从 ThingsBoard 请求共享属性值，可以使用以下示例：
 
 ```python
 from time import sleep
@@ -135,11 +134,11 @@ while True:
     sleep(1)
 
 ```
-#### Respond to server RPC call
+#### 响应服务器 RPC 调用
 
-If you want to send a response for some RPC request, you can use the logic like in the code below.  
-The following example connects to the ThingsBoard local instance and waits for RPC request.  
-When RPC request is received, the client will send the response to ThingsBoard with data from machine with client for device with the name **Test Device A1**.  
+如果您想为某些 RPC 请求发送响应，可以使用如下代码中的逻辑。  
+以下示例连接到 ThingsBoard 本地实例并等待 RPC 请求。  
+收到 RPC 请求后，客户端将向 ThingsBoard 发送带有来自具有客户端的设备的机器数据的响应，该设备的名称为 **Test Device A1**。  
 
 ```python
 from psutil import cpu_percent, virtual_memory
@@ -147,7 +146,7 @@ from time import sleep
 from tb_device_mqtt import TBDeviceMqttClient
 
 
-# dependently of request method we send different data back
+# 根据请求方法，我们发送不同的数据
 def on_server_side_rpc_request(client, request_id, request_body):
     print(request_id, request_body)
     if request_body["method"] == "getCPULoad":
@@ -164,14 +163,14 @@ while True:
     sleep(1)
 
 ```
-## Using Gateway APIs
+## 使用网关 API
 
-**TBGatewayMqttClient** extends **TBDeviceMqttClient**, thus has access to all its APIs as a regular device.   
-Besides, gateway is able to represent multiple devices connected to it. For example, sending telemetry or attributes on behalf of other, constrained, device. See more info about the gateway [**here**](/docs/iot-gateway/).  
+**TBGatewayMqttClient** 扩展了 **TBDeviceMqttClient**，因此可以像普通设备一样访问其所有 API。   
+此外，网关能够表示连接到它的多个设备。例如，代表其他受限设备发送遥测或属性。有关网关的更多信息，请参阅 [**此处**](/docs/iot-gateway/)。  
 
-#### Telemetry and attributes sending 
+#### 发送遥测和属性
 
-In order to send data to ThingsBoard for device with name **Test Device A1** you can use code like the following one:
+为了将数据发送到 ThingsBoard，设备名称为 **Test Device A1**，可以使用如下代码：
 
 ```python
 from time import time
@@ -191,9 +190,9 @@ gateway.disconnect()
 ```
 
 
-####  Request attributes from server
+#### 从服务器请求属性
 
-In order to request shared attributes values from ThingsBoard for device with name **Test Device A1** you can use the following example:
+为了从 ThingsBoard 请求设备名称为 **Test Device A1** 的共享属性值，可以使用以下示例：
 
 ```python
 from time import sleep
@@ -215,11 +214,11 @@ while True:
 
 ```
 
-#### Respond to server RPC call
+#### 响应服务器 RPC 调用
 
-If you want to send response for some RPC request, you can use the logic like in the code below.  
-The following example will connect to the ThingsBoard local instance and wait for RPC request.  
-When RPC request will be received, client will send response to ThingsBoard with data for device with name **Test Device A1**.  
+如果您想为某些 RPC 请求发送响应，可以使用如下代码中的逻辑。  
+以下示例将连接到 ThingsBoard 本地实例并等待 RPC 请求。  
+收到 RPC 请求后，客户端将向 ThingsBoard 发送带有设备名称为 **Test Device A1** 的数据的响应。  
 
 ```python
 
@@ -229,12 +228,12 @@ from tb_gateway_mqtt import TBGatewayMqttClient
 
 
 def rpc_request_response(client, request_id, request_body):
-    # request body contains id, method and other parameters
+    # 请求正文包含 id、方法和其他参数
     print(request_body)
     method = request_body["data"]["method"]
     device = request_body["device"]
     req_id = request_body["data"]["id"]
-    # dependently of request method we send different data back
+    # 根据请求方法，我们发送不同的数据
     if method == 'getCPULoad':
         gateway.gw_send_rpc_reply(device, req_id, {"CPU load": cpu_percent()})
     elif method == 'getMemoryLoad':
@@ -244,9 +243,9 @@ def rpc_request_response(client, request_id, request_body):
 
 gateway = TBGatewayMqttClient("127.0.0.1", "TEST_GATEWAY_TOKEN")
 gateway.connect()
-# now rpc_request_response will process rpc requests from servers
+# 现在 rpc_request_response 将处理来自服务器的 rpc 请求
 gateway.gw_set_server_side_rpc_request_handler(rpc_request_response)
-# without device connection it is impossible to get any messages
+# 如果没有设备连接，则无法接收任何消息
 gateway.gw_connect_device("Test Device A1")
 
 while True:
@@ -255,6 +254,6 @@ while True:
 ```
 
 
-## Other Examples
+## 其他示例
 
-There are more examples for both [device](https://github.com/thingsboard/thingsboard-python-client-sdk/tree/master/examples/device) and [gateway](https://github.com/thingsboard/thingsboard-python-client-sdk/tree/master/examples/gateway) in corresponding [folders](https://github.com/thingsboard/thingsboard-python-client-sdk/tree/master/examples).
+在相应的 [文件夹](https://github.com/thingsboard/thingsboard-python-client-sdk/tree/master/examples) 中，还有更多有关 [设备](https://github.com/thingsboard/thingsboard-python-client-sdk/tree/master/examples/device) 和 [网关](https://github.com/thingsboard/thingsboard-python-client-sdk/tree/master/examples/gateway) 的示例。

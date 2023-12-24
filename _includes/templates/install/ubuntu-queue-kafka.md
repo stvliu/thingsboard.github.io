@@ -1,17 +1,17 @@
-#### Kafka Installation
+#### Kafka 安装
 
-[Apache Kafka](https://kafka.apache.org/) is an open-source stream-processing software platform.
+[Apache Kafka](https://kafka.apache.org/) 是一个开源流处理软件平台。
 
-##### Install ZooKeeper
+##### 安装 ZooKeeper
 
-Kafka uses [ZooKeeper](https://zookeeper.apache.org/) so you need to first install ZooKeeper server:
+Kafka 使用 [ZooKeeper](https://zookeeper.apache.org/)，因此您需要首先安装 ZooKeeper 服务器：
 
 ```text
 sudo apt-get install zookeeper
 ```
 {: .copy-code}
 
-##### Install Kafka
+##### 安装 Kafka
 
 ```text
 wget https://archive.apache.org/dist/kafka/2.6.0/kafka_2.13-2.6.0.tgz
@@ -22,15 +22,15 @@ sudo mv kafka_2.13-2.6.0 /usr/local/kafka
 ```
 {: .copy-code}
 
-##### Setup ZooKeeper Systemd Unit file
+##### 设置 ZooKeeper Systemd 单元文件
 
-Create systemd unit file for Zookeeper:
+为 Zookeeper 创建 systemd 单元文件：
 ```text
 sudo nano /etc/systemd/system/zookeeper.service
 ```
 {: .copy-code}
 
-Add below contnet:
+添加以下内容：
 ```bash
 [Unit]
 Description=Apache Zookeeper server
@@ -49,15 +49,15 @@ WantedBy=multi-user.target
 ```
 {: .copy-code}
 
-##### Setup Kafka Systemd Unit file
+##### 设置 Kafka Systemd 单元文件
 
-Create systemd unit file for Kafka:
+为 Kafka 创建 systemd 单元文件：
 ```text
 sudo nano /etc/systemd/system/kafka.service
 ```
 {: .copy-code}
 
-Add the below content. Make sure **to replace** "PUT_YOUR_JAVA_PATH" with your **real JAVA_HOME path** as per the Java installed on your system, by default like "/usr/lib/jvm/java-11-openjdk-xxx":
+添加以下内容。确保将“PUT_YOUR_JAVA_PATH”**替换**为系统上安装的 Java 的**真实 JAVA_HOME 路径**，默认情况下为“/usr/lib/jvm/java-11-openjdk-xxx”：
 ```bash
 [Unit]
 Description=Apache Kafka Server
@@ -74,7 +74,7 @@ ExecStop=/usr/local/kafka/bin/kafka-server-stop.sh
 WantedBy=multi-user.target
 ```
 {: .copy-code}
-##### Start ZooKeeper and Kafka:
+##### 启动 ZooKeeper 和 Kafka：
 
 ```text
 sudo systemctl start zookeeper
@@ -83,16 +83,16 @@ sudo systemctl start kafka
 ```
 {: .copy-code}
 
-##### ThingsBoard Configuration
+##### ThingsBoard 配置
 
-Edit ThingsBoard configuration file
+编辑 ThingsBoard 配置文件
 
 ```text
 sudo nano /etc/thingsboard/conf/thingsboard.conf
 ```
 {: .copy-code}
 
-Add the following line to the configuration file. **Don't forget** to replace "localhost:9092" with your real Kafka bootstrap servers:
+将以下行添加到配置文件中。**不要忘记**将“localhost:9092”替换为您的真实 Kafka 引导服务器：
 
 ```bash
 export TB_QUEUE_TYPE=kafka

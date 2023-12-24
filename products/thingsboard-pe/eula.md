@@ -6,129 +6,131 @@ description: ThingsBoard Professional Edition End User License Agreement
 ---
 
 <br>
-<p style="text-align: center; font-size: 1.5em; font-weight: bold;">END USER LICENSE AGREEMENT</p>
+<p style="text-align: center; font-size: 1.5em; font-weight: bold;">最终用户许可协议</p>
 
-PLEASE, READ THIS END USER LICENSE AGREEMENT (“AGREEMENT”) VERY CAREFULLY BEFORE CLICKING AN “I AGREE” BUTTON, DOWNLOADING OR USING THINGSBOARD PROFESSIONAL EDITION IOT PLATFORM. IF YOU DO NOT AGREE TO THIS AGREEMENT, PLEASE DO NOT USE THE SOFTWARE
+在点击“我同意”按钮、下载或使用 THINGSBOARD PROFESSIONAL EDITION IOT 平台之前，请非常仔细地阅读本最终用户许可协议（“协议”）。如果您不同意本协议，请不要使用软件
 
-**WHEREAS**, the Licensor has developed the Software and is the owner of this Software;
+**鉴于**许可方已开发软件并拥有该软件；
 
-**WHEREAS**, the Licensee intends to purchase a License and use the Software; 
-and 
+**鉴于**被许可方打算购买许可证并使用软件；
+并且
 
-**WHEREAS**, the Licensor is ready to provide such the License for usage of the Software under the terms and conditions set forth herein, the Parties, in consideration of the foregoing premises and realizing reciprocal obligations, contained in this Agreement, have agreed as follows:
+**鉴于**许可方已准备好根据此处规定的条款和条件提供此类许可证以供使用软件，各方在考虑上述前提并意识到本协议中包含的相互义务后，已同意如下：
 
-In compliance with the terms and conditions of this End­ User License Agreement (hereinafter referred to as the “License agreement”/“Agreement”), ThingsBoard, Inc. (hereinafter referred to as the “Licensor”/“We”) hereby grants Licensee (hereinafter referred to as the “Licensee”/“You”)      (hereinafter collectively referred to as “Parties”) a limited, personal, non-sublicensable, non-transferable, royalty-free, nonexclusive right  to use the Software on the territory only for Licensee’s personal use in accordance with any documentation that accompanies the License and under the terms set forth herein (hereinafter referred to as the “License”). Herewith, under the territory must be understood a territory of the whole world. This Agreement cannot be understood as an agreement for sale in any way.
+根据本最终用户许可协议（以下简称“许可协议”/“协议”）的条款和条件，ThingsBoard, Inc.（以下简称“许可方”/“我们”）特此授予被许可方（以下简称“被许可方”/“您”）（以下统称为“各方”）一项有限的、个人的、不可再许可的、不可转让的、免版税的、非排他性的权利，仅在被许可方个人使用范围内使用软件，且应符合随许可证附带的任何文件以及此处规定的条款（以下简称“许可证”）。在此，领土应理解为整个世界。本协议绝不能以任何方式理解为销售协议。
 
-<p style="text-align: center; font-size: 1.17em; font-weight: bold;">GENERAL USE CONDITIONS</p>
+<p style="text-align: center; font-size: 1.17em; font-weight: bold;">一般使用条件</p>
 
-For the purpose of this Agreement, under the meaning “Software” must be understood                                a ThingsBoard Professional Edition IoT Platform that enables rapid development, management and scaling of IoT projects as well as provide a possibility to: (i) provision and control devices; (ii) collect and visualize data from devices; (iii) analyze device data and trigger alarms; (iv) deliver device data to other systems; (v) enable use-case specific features using customizable rules and plugins. All specific features regarding the Software functionality can be found by the Licensee at: https://thingsboard.io/docs.
+在本协议中，术语“软件”的含义应理解为 ThingsBoard Professional Edition IoT 平台，该平台能够快速开发、管理和扩展物联网项目，并提供以下可能性：(i) 配置和控制设备；(ii) 收集和可视化设备数据；(iii) 分析设备数据并触发警报；(iv) 将设备数据传递给其他系统；(v) 使用可自定义的规则和插件启用特定用例的功能。被许可方可以在以下网址找到有关软件功能的所有具体功能：https://thingsboard.io/docs。
 
-Using the Software, the Licensee is obliged to adhere to the terms and conditions specified herein. Before the use of the Software on a fee basis, the Licensee may use the Software under a free trial short term License, the period of which is 10 (ten) days (hereinafter referred to as “Test period”).
+使用软件时，被许可方有义务遵守此处规定的条款和条件。在按费用使用软件之前，被许可方可以在免费试用短期许可证下使用软件，其期限为 10（十）天（以下简称“试用期”）。
 
-The Licensee can purchase the Software License on the aws.amazon.com web-site. Herewith, the Licensee is obliged to adhere all demands, terms and rules placed on the aws.amazon.com web-site. For the purpose of this Agreement and in accordance with its terms and conditions, the Licensee may use the Software on Amazon servers on which the Software is available. 
+被许可方可以在 aws.amazon.com 网站上购买软件许可证。在此，被许可方有义务遵守 aws.amazon.com 网站上列出的所有要求、条款和规则。为了本协议的目的，并且根据其条款和条件，被许可方可以在 Amazon 服务器上使用软件，软件可在该服务器上使用。
 
-The Software within the current License covers a single operating system process. In a case, the Licensee intends to have multiple servers or containers with Software installed, each server requires purchase of a dedicated license.
+当前许可证中的软件涵盖单个操作系统进程。如果被许可方打算安装软件的多个服务器或容器，则每个服务器都需要购买专用许可证。
 
-Before purchasing and using the License, the Licensee must create and register an Account on the aws.amazon.com web-site.
+在购买和使用许可证之前，被许可方必须在 aws.amazon.com 网站上创建并注册一个帐户。
 
-Upon the Test period expiration, the Licensee, on its sole decision, is obliged either to fulfill its payment obligations under this Agreement or to stop using the Software.
+试用期结束后，被许可方有义务自行决定履行本协议项下的付款义务或停止使用软件。
 
-The Licensee shall strictly comply with all laws, rules, and regulations applicable to the use of the Software. After the fulfillment of all payment obligations the Licensee may get access and use the Software in accordance with the terms and conditions stipulated herein.
+被许可方应严格遵守适用于软件使用的所有法律、规则和法规。履行所有付款义务后，被许可方可以根据此处规定的条款和条件访问和使用软件。
 
-The Licensee is entitled to use the Software the Licensee paid for, at its sole discretion with the purposes that are specified herein as well as with any other purposes contemplated by the Software functionality.
+被许可方有权自行决定使用其支付的软件，用于此处规定的目的以及软件功能设想的任何其他目的。
 
-The Licensee is entitled to grant the right on access to the Software to its employees, clients and partners or any other individuals but only on the basis set forth herein. Herewith, the Licensee is obliged not to transfer the Software to the third parties, which are not formally authorized by the Licensee to the Software access.
+被许可方有权授予其员工、客户和合作伙伴或任何其他个人访问软件的权利，但只能基于此处规定的基础。在此，被许可方有义务不将软件转让给未经被许可方正式授权访问软件的第三方。
 
-The Licensee is obliged not to perform any actions regarding the Software, which can directly or indirectly breach Licensor’s rights and/or contribute the damages for the Licensor and/or for the third parties.
+被许可方有义务不对软件执行任何操作，这些操作可能直接或间接侵犯许可方的权利和/或对许可方和/或第三方造成损害。
 
-The Licensee independently bears all liability for the consequences that may arise as a result from the access to Software provided by the Licensee to its employees, clients, partners or other third parties.
+被许可方独立承担因被许可方向其员工、客户、合作伙伴或其他第三方提供软件访问权限而可能产生的后果的所有责任。
 
-The Licensee confirms that the Software may contain a code, which is able to deactivate the Software or suspend the access to the Software after termination or early termination of the License.
+被许可方确认软件可能包含一段代码，该代码能够在许可证终止或提前终止后停用软件或暂停对软件的访问。
 
-**_Prohibitions_**
+**_禁止事项_**
 
-The Licensee has not any rights to: (i) modify, alter, tamper with, repair, or otherwise create derivative works of the Software; (ii) reverse engineer, disassemble, or decompile the Software or apply any other process or procedure to derive the source code of the Software; (iii) access or use the Software in a way intended to avoid incurring fees or exceeding usage limits or quotas; (iv) resell or sublicense the Software; (v) attempt to disable or circumvent any security mechanisms used by the Software; (vi) use the Software to perform a malicious activity; or (vii) upload or otherwise process any malicious content to or through the Software. 
+被许可方无权：(i) 修改、更改、篡改、修复或以其他方式创建软件的衍生作品；(ii) 对软件进行逆向工程、反汇编或反编译，或应用任何其他流程或程序来获取软件的源代码；(iii) 以旨在避免产生费用或超过使用限制或配额的方式访问或使用软件；(iv) 转售或再许可软件；(v) 尝试禁用或规避软件使用的任何安全机制；(vi) 使用软件执行恶意活动；或 (vii) 将任何恶意内容上传或以其他方式处理到软件或通过软件。
 
-<p style="text-align: center; font-size: 1.17em; font-weight: bold;">CONFIDENTIALITY</p>
+<p style="text-align: center; font-size: 1.17em; font-weight: bold;">保密</p>
 
-In the context of this Agreement, the "Confidential Information" shall mean an information designated as confidential or reasonably considered as confidential, including, but not limited to financial, advertising and operational information, information about commercial relations between the Licensor and the Licensee.
-Internal structure, constitution and the Software code is valuable commercial and confidential information, owned by the Licensor.
+在本协议的背景下，“机密信息”应指被指定为机密或合理地视为机密的信息，包括但不限于财务、广告和运营信息、许可方与被许可方之间的商业关系信息。
 
-Each party of this Agreement shall keep the other party's Confidential Information confidential by using a reasonable degree of care, but not less than the degree of care used to protect its own Confidential Information.
+本协议的每个缔约方应使用合理程度的谨慎来保密另一方的机密信息，但不得低于用于保护其自身机密信息程度的谨慎程度。
 
-Each party is obliged not to disclose the other party's Confidential Information to any third party without the other party's prior written consent or except as required by law or use the other party's Confidential Information for any purpose except performing this Agreement or furthering the relationship between the Parties.  The Licensor is entitled to collect, keep and use the Confidential information of the Licensee with the purpose of fulfillment of the terms of this Agreement as well as for the Software improvement and development, if another is agreed by the Parties.   
+各方有义务未经另一方事先书面同意或法律要求除外，不得向任何第三方披露另一方的机密信息，或将另一方的机密信息用于除履行本协议或促进双方关系之外的任何目的。许可方有权收集、保存和使用被许可方的机密信息，以履行本协议的条款以及改进和开发软件，如果各方另有约定。
 
-The information shall not be considered as confidential in case if such information: (i) is or becomes publicly known without breaching terms of this Agreement or any other similar obligation of confidentiality by the Licensee of any other third Party; (ii) was at Licensee’s disposal or became known before the moment of signing of this Agreement.
+如果此类信息：(i) 在不违反本协议的条款或被许可方或任何其他第三方的任何其他类似保密义务的情况下公开或变得公开；(ii) 在被许可方处置或在签署本协议之前已知，则该信息不应被视为机密。
 
-Within the current Agreement, the Licensee may provide the Licensor with both impersonal and personal information about itself with a purpose the Licensor to conduct analytical researches in various fields regarding the Software development and improvement as well as other purposes that could facilitate the Software use in future. In this case, such information may be provided by the Licensee only based on the Licensee's consent.
+在本协议中，被许可方可以向许可方提供有关其自身的非个人信息和个人信息，目的是让许可方在软件开发和改进以及其他可能促进未来软件使用的目的方面进行分析研究。在这种情况下，被许可方只能在获得被许可方同意的情况下提供此类信息。
 
-For the purpose of this Agreement, the “Personal information” means an information or aggregate of information about You as an individual, which specifically can identify You. This data includes, but is not limited to, your surname, name, email address, photo.
+在本协议中，“个人信息”是指作为个人的您有关您的信息或信息集合，可以具体识别您。此数据包括但不限于您的姓氏、名字、电子邮件地址、照片。
 
-We make all reasonable steps to safeguard and prevent disclosure of your Personal information.
-We try to use all advanced security practices and, whenever possible, keep them up to date, but we cannot guarantee that our security and security procedures will not contain any errors. We cannot guarantee that the transfer of your data will always be safe or that our security measures or security measures of our partners cannot be affected by the external factors, or that data cannot be damaged by the unlawful actions of third parties.
-In case of the termination or early termination of the Agreement, the Licensor is not obligated to keep any Licensee’s Confidential information and has a right to delete such information at sole discretion after the termination date. 
+我们采取一切合理措施来保护和防止披露您的个人信息。
+我们尝试使用所有先进的安全实践，并在可能的情况下保持其最新状态，但我们无法保证我们的安全和安全程序不会包含任何错误。我们无法保证您的数据传输始终是安全的，或者我们的安全措施或我们合作伙伴的安全措施不会受到外部因素的影响，或者数据不会因第三方的非法行为而损坏。
+在协议终止或提前终止的情况下，许可方没有义务保留任何被许可方的机密信息，并有权在终止日期后自行决定删除此类信息。
 
-<p style="text-align: center; font-size: 1.17em; font-weight: bold;">INTELLECTUAL PROPERTY RIGHTS AND OWNERSHIP</p>
+<p style="text-align: center; font-size: 1.17em; font-weight: bold;">知识产权和所有权</p>
 
-We reserve ownership of all intellectual property rights inherent in or relating to the Software, which include, but not limited to, all copyright, patent rights, all rights in relation to registered and unregistered trademarks (including service marks), confidential information (including trade secrets and know-how) and all rights other than those expressly granted by this Agreement. These rights are reserved by the international treaties and all other applicable legislative provisions regarding the intellectual property protection. The Software is not sold and is not alienated to the Licensee.   
+我们保留软件固有或与软件相关的知识产权的所有权，包括但不限于所有版权、专利权、所有与注册和未注册商标（包括服务商标）相关的权利、机密信息（包括商业秘密和专有技术）以及除本协议明确授予的权利之外的所有权利。这些权利受国际条约和所有其他适用的有关知识产权保护的立法规定的保护。软件不销售，也不转让给被许可方。
 
-All rights for the Software are reserved by the Licensor except those, which are explicitly transferred to the Licensee as the end user of the Software under this Agreement.
+除根据本协议作为软件最终用户明确转让给被许可方的权利外，许可方保留软件的所有权利。
 
-While using the Software, the Licensee is entitled to upload a data which belongs the Licensee. Herewith, the Licensee represents and warrants that the Licensee owns all rights, title, and interests in and to its data and none of its data violates this Agreement, any applicable law or any third party's intellectual property or other right.
+在使用软件时，被许可方有权上传属于被许可方的数据。在此，被许可方声明并保证被许可方拥有其数据的所有权利、所有权和权益，并且其任何数据均不违反本协议、任何适用法律或任何第三方的知识产权或其他权利。
 
-The Licensee acknowledges and confirms that We may use the data, the intellectual property rights for which belong to the Licensee, with the purpose to improve or develop the Software functionality. We may disclose the Licensee’s data to provide the Software to You or to comply with any request of a governmental or regulatory body.  
+被许可方承认并确认，我们可能会使用知识产权属于被许可方的数据，以改进或开发软件功能。我们可能会披露被许可方的数据，以便向您提供软件或遵守任何政府或监管机构的要求。
 
-In a case of the termination or early termination of the Agreement, the Licensor is not obligated to keep any data the intellectual property rights which belong to the Licensee and has a right to delete such data at its sole discretion after the termination date. 
+在协议终止或提前终止的情况下，许可方没有义务保留任何知识产权属于被许可方的任何数据，并有权在终止日期后自行决定删除此类数据。
 
-<p style="text-align: center; font-size: 1.17em; font-weight: bold;">FEES</p>
+<p style="text-align: center; font-size: 1.17em; font-weight: bold;">费用</p>
 
-The Licensee shall pay the License fee and all other reasonable fees where it is required. The final amount of the License fee shall be specified on the aws.amazon.com web-site while You are purchasing the Licensee. The License fee is non-refundable, regardless of any circumstances, unless other is agreed by the Parties. 
+被许可方应支付许可费和所有其他合理费用（如有要求）。在您购买许可证时，许可费的最终金额应在 aws.amazon.com 网站上指定。无论任何情况，许可费均不可退款，除非各方另有约定。
 
-The License fee is a gross amount, but it does not include any value added tax, use tax, sales tax or any other similar tax. Each party shall pay all taxes they must (including, but not limited to, taxes based upon its income) or levies imposed on them under applicable laws, regulations and tax treaties.
+许可费为总金额，但不包括任何增值税、使用税、销售税或任何其他类似税。各方应支付其必须支付的所有税款（包括但不限于基于其收入的税款）或根据适用的法律、法规和税收条约对其征收的税款。
 
-<p style="text-align: center; font-size: 1.17em; font-weight: bold;">TERM AND TERMINATION</p>
+<p style="text-align: center; font-size: 1.17em; font-weight: bold;">期限和终止</p>
 
-Under this Agreement, the License is deemed to be granted to the Licensee since the moment all corresponding payments are made (Inception date). Herewith, the term of the License is 1(one) year since the Inception date, unless other is agreed by the Parties.    
+根据本协议，自支付所有相应款项之日起（开始日期），许可证被视为已授予被许可方。在此，许可证的期限为自开始日期起 1（一）年，除非各方另有约定。
 
-The License may be withdrawn, and the Agreement may be terminated by the Licensor at any time if the Licensee breaches the terms of this Agreement or for other reasons, which may be determined by the Licensor as ones that violate the terms of this Agreement.
+如果被许可方违反本协议的条款或许可方确定的其他原因（可能违反本协议的条款），许可方可以随时撤销许可证并终止协议。
 
-In a case the License is withdrawn, the Agreement is considered to be terminated since the date of notification of the Licensee about the withdrawal. 
+如果撤销许可证，则自通知被许可方撤销之日起，协议被视为终止。
 
-In a case of early termination of the Agreement, the License fee paid by Licensee for the Licensor's benefit shall not be refunded to the Licensee.
+在协议提前终止的情况下，被许可方为许可方利益支付的许可费不应退还给被许可方。
 
-Upon this Agreement termination, the Licensor agrees to immediately cease the Software use including the use of all accompanying documents.
+本协议终止后，许可方同意立即停止使用软件，包括停止使用所有随附文件。
 
-Upon this Agreement termination (i) all your rights under this Agreement immediately are to be terminated and (ii) You remain responsible for all fees and charges You have incurred through the date of termination.
+本协议终止后，(i) 您根据本协议享有的所有权利应立即终止，(ii) 您仍应对您在终止日期之前产生的所有费用和收费负责。
 
-<p style="text-align: center; font-size: 1.17em; font-weight: bold;">WARRANTIES DISCLAIMER</p>
+<p style="text-align: center; font-size: 1.17em; font-weight: bold;">免责声明</p>
 
-THE LICENSOR PROVIDES THE SOFTWARE “AS IS” AND WITHOUT WARRANTY OF ANY KIND, AND HEREBY DISCLAIMS ALL EXPRESS OR IMPLIED WARRANTIES, INCLUDING WITHOUT LIMITATION WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, PERFORMANCE, ACCURACY, RELIABILITY, AND NON-INFRINGEMENT. WE DO NOT GUARANTEE THAT THE OPERATION OF THE SOFTWARE WILL BE UNINTERRUPTED OR ERROR-FREE, AND YOU ACKNOWLEDGE THAT IT IS NOT TECHNICALLY PRACTICABLE FOR US TO DO SO. IN NO EVENT SHALL THE LICENSOR BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. THIS DISCLAIMER OF WARRANTY CONSTITUTES AN ESSENTIAL PART OF THIS AGREEMENT.
+许可方按“原样”提供软件，不提供任何形式的保证，并在此放弃所有明示或暗示的保证，包括但不限于适销性、适用于特定目的、性能、准确性、可靠性和非侵权的保证。我们不保证软件的操作不会中断或没有错误，并且您承认我们从技术上无法做到这一点。在任何情况下，许可方均不对因软件或软件的使用或其他交易而产生、产生或与之相关的任何索赔、损害或其他责任或其他情况承担责任。此免责声明是本协议的重要组成部分。
 
-<p style="text-align: center; font-size: 1.17em; font-weight: bold;">LIMITATION OF LIABILITY</p>
+<p style="text-align: center; font-size: 1.17em; font-weight: bold;">责任限制</p>
 
-UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY, INCLUDING, BUT NOT LIMITED TO, TORT, AGREEMENT, NEGLIGENCE, STRICT LIABILITY, OR OTHERWISE, SHALL LICENSOR OR ITS SUPPLIERS OR RESELLERS BE LIABLE TO LICENSEE OR ANY OTHER PERSON FOR ANY INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES OF ANY CHARACTER INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOST PROFITS, LOSS OF GOODWILL, WORK STOPPAGE, ACCURACY OF RESULTS, COMPUTER FAILURE OR MALFUNCTION, OR DAMAGES RESULTING FROM YOUR USE OF THE SOFTWARE. LICENSOR'S LIABILITY FOR DAMAGES OF ANY KIND WHATSOEVER ARISING OUT OF THIS AGREEMENT SHALL BE LIMITED TO THE FEES PAID BY LICENSEE HEREUNDER. THE FOREGOING LIMITATIONS SHALL APPLY EVEN IF THE LICENSOR SHALL HAVE BEEN INFORMED OF THE POSSIBILITY OF SUCH DAMAGES.
+在任何情况下和任何法律理论下，包括但不限于侵权、协议、疏忽、严格责任或其他情况下，许可方或其供应商或经销商均不对被许可方或任何其他人承担任何间接、特殊、偶然或后果性损害的责任，包括但不限于利润损失、商誉损失、停工、结果准确性、计算机故障或故障或因您使用软件而造成的损害。许可方对因本协议产生的任何种类的损害的责任应限于被许可方在此项下支付的费用。即使许可方已被告知此类损害的可能性，上述限制也应适用。
 
-<p style="text-align: center; font-size: 1.17em; font-weight: bold;">LIABILITY AND INDEMNIFICATION</p>
+<p style="text-align: center; font-size: 1.17em; font-weight: bold;">责任和赔偿</p>
 
-If the Licensee violates the Licensor’s intellectual property rights and/ or discloses the Licensor’s Confidential information, the Licensee is obliged to reimburse to the Licensor all arisen expenses and loses.
+如果被许可方侵犯许可方的知识产权和/或披露许可方的机密信息，则被许可方有义务向许可方偿还所有产生的费用和损失。
 
-The Licensee independently bears the liability in a case of appeals of any third parties, whose rights and/or interests are violated in a result of use of the data uploaded by the Licensee while using the Software.
+如果任何第三方的权利和/或利益因被许可方在使用软件时上传的数据的使用而受到侵犯，则被许可方独立承担责任。
 
-The Licensee is obliged to indemnify and hold harmless the Licensor, its representatives and partners from and against any damages, reasonable legal fees and costs finally awarded against the Licensor to the extent resulting from or for amounts paid by the Licensor to settle any third party claim concerning Licensee’s data or the combination of Licensee’s data with other applications, content or processes, including any claims involving alleged infringement or misappropriation of third-party rights by Licensee’s data or by the use, development, design, production, advertising or marketing of Licensee’s data. 
+被许可方有义务赔偿并使许可方、其代表和合作伙伴免受任何损害、最终判给许可方的合理法律费用和成本的侵害，这些损害、费用和成本是由被许可方的数据或被许可方的数据与其他应用程序、内容或流程的组合引起的，包括任何涉及被许可方的数据或被许可方数据的使用、开发、设计、生产、广告或营销而涉嫌侵犯或盗用第三方权利的索赔。
 
-The Licensor shall indemnify the Licensee from damages, reasonable legal fees, and costs finally awarded against the Licensee in a case when a third party asserts against the Licensee a claim that the Software infringes a third party's intellectual property right. In any case, the Licensor shall not be obliged to defend or indemnify the Licensee if the third parties’ claims are based on any breach of this Agreement by the Licensee.
+许可方应赔偿被许可方因第三方声称软件侵犯第三方知识产权而最终判给被许可方的损害、合理法律费用和成本。在任何情况下，如果第三方的索赔基于被许可方违反本协议，许可方均没有义务为被许可方辩护或赔偿被许可方。
 
-<p style="text-align: center; font-size: 1.17em; font-weight: bold;">DISPUTES RESOLUTIONS</p>
+<p style="text-align: center; font-size: 1.17em; font-weight: bold;">争议解决</p>
 
-All issues arising out of or related to this Agreement shall be resolved in accordance with the laws of the United States.
-All disputes, arising from this Agreement shall be settled by the Parties by negotiating. In a case the Parties cannot manage to reach agreement on the appropriate dispute, it shall be submitted to the corresponding court within the United States. Each party hereby unconditionally agrees on the exclusive jurisdiction and the place of trial venue. Herewith, the Licensee hereby agrees to service of process in accordance with the rules of such court.
+所有因本协议产生或与本协议相关的争议应根据美国法律解决。
 
-<p style="text-align: center; font-size: 1.17em; font-weight: bold;">SUPPORT</p>
+本协议产生的所有争议应由双方通过谈判解决。如果双方无法就适当的争议达成协议，则应提交给美国境内的相应法院。在此，各方无条件同意专属管辖权和审判地点。在此，被许可方特此同意根据该法院的规则进行送达。
 
-The Licensor will make all reasonable steps to provide You with a quality Software support when it is needed. Herewith, the Licensor will provide You a free of charge support with best effort to provide 48 hours first response time. The more quality Software support could be provided by the Licensor on fee basis if it additionally agreed by the Parties.
+<p style="text-align: center; font-size: 1.17em; font-weight: bold;">支持</p>
 
-<p style="text-align: center; font-size: 1.17em; font-weight: bold;">MISCELLANEOUS</p>
+许可方将采取一切合理措施，在需要时为您提供优质的软件支持。在此，许可方将为您提供免费支持，尽最大努力提供 48 小时的首次响应时间。如果各方另有约定，许可方可以按费用提供更优质的软件支持。
 
-This Agreement represents the complete agreement regarding the License that is to be transferred by the Licensor to the Licensee and supersedes all prior agreements and representations between them.
-In a case any provision of this Agreement becomes or is declared by the court of the competent jurisdiction as illegal, unenforceable or void, this Agreement will be effective entirely without mentioned provision.
-After this Agreement is concluded, all prior agreements, correspondence, preliminary agreements, protocols of intent and any other written or oral appointments between the Parties on issues, in some manner regarding this Agreement, lose legal effect, but can be taking into consideration in case of interpretation of the terms of this Agreement. 
+<p style="text-align: center; font-size: 1.17em; font-weight: bold;">其他</p>
+
+本协议代表许可方应转让给被许可方的许可证的完整协议，并取代双方之间所有先前的协议和陈述。
+
+如果本协议的任何条款被主管辖区的法院认定为非法、不可执行或无效，则本协议将完全有效，不包含所述条款。
+
+本协议订立后，双方之间关于本协议以某种方式涉及的问题的所有先前的协议、通信、初步协议、意向协议以及任何其他书面或口头任命均丧失法律效力，但在解释本协议条款时可以考虑。

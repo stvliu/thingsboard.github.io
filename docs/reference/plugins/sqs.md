@@ -2,146 +2,146 @@
 layout: docwithnav
 assignees:
 - mp-loki
-title: SQS Plugin
+title: SQS 插件
 
 ---
 
 {% include templates/old-guide-notice.md %}
 
-## Overview
+## 概述
 
-SQS plugin is responsible for sending messages to Amazon Web Services Simple Queue Service queues triggered by specific rules
+SQS 插件负责将消息发送到由特定规则触发的 Amazon Web Services Simple Queue Service 队列
 
-## Configuration
+## 配置
 
-SQS Plugin has the following configuration parameters:
+SQS 插件具有以下配置参数：
 
- - *Access Key ID*
- - *Secret Access Key*
- - *Region*
+- *访问密钥 ID*
+- *秘密访问密钥*
+- *区域*
 
-*Access Key ID* and *Secret Access Key* are the credentials of an AWS IAM User with programmatic access. More information on AWS access keys can be found [here](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html) 
+*访问密钥 ID* 和 *秘密访问密钥* 是具有编程访问权限的 AWS IAM 用户的凭据。有关 AWS 访问密钥的更多信息，请参阅[此处](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html)
 
-*Region* must correspond to the one in which the SQS Queue(s) are created. Current list of AWS Regions can be found [here](http://docs.aws.amazon.com/general/latest/gr/rande.html)
- 
-## Server-side API
+*区域* 必须与创建 SQS 队列的区域相对应。当前的 AWS 区域列表请参阅[此处](http://docs.aws.amazon.com/general/latest/gr/rande.html)
 
-This plugin does not provide any server-side API.
+## 服务器端 API
 
-## Example
+此插件不提供任何服务器端 API。
 
-In this example, we are going to demonstrate how you can configure this extension to be able to send a message to both SQS Sandard and FIFO queues every time new telemetry message for the device arrives.
+## 示例
 
-Prerequisites before contining Kafka extension configuration:
+在此示例中，我们将演示如何配置此扩展，以便每次设备的新遥测消息到达时，都能向 SQS 标准队列和 FIFO 队列发送消息。
 
- - AWS IAM User is created and Access Key ID/Secret Access Key are obtained
- - SQS Standard Queue is created
- - SQS FIFO Queue is created
- - ThingsBoard is up and running
+在继续 Kafka 扩展配置之前，先决条件：
 
-The information on how to create SQS Queues can be found [here](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-create-queue.html)
- 
-### SQS Plugin Configuration
+- 创建 AWS IAM 用户并获取访问密钥 ID/秘密访问密钥
+- 创建 SQS 标准队列
+- 创建 SQS FIFO 队列
+- ThingsBoard 正在运行
 
-Let's configure SQS plugin first. Go to *Plugins* menu and create new plugin:
+有关如何创建 SQS 队列的信息，请参阅[此处](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-create-queue.html)
+
+### SQS 插件配置
+
+我们首先配置 SQS 插件。转到 *插件* 菜单并创建新插件：
 
 ![image](/images/reference/plugins/sqs/sqs-plugin-config-1.png)
 
 ![image](/images/reference/plugins/sqs/sqs-plugin-config-2.png)
 
-Make sure to replace <$YOUR_ACCESS_KEY_ID> and <$YOUR_SECRET_ACCESS_KEY> placeholders with the actual values and set the right region. 
+确保将 <$YOUR_ACCESS_KEY_ID> 和 <$YOUR_SECRET_ACCESS_KEY> 占位符替换为实际值并设置正确的区域。
 
-Click on *'Activate'* plugin button:
+单击 *'激活'* 插件按钮：
 
 ![image](/images/reference/plugins/sqs/sqs-activate-plugin.png)
 
-### SQS Standard Queue Rule Configuration
+### SQS 标准队列规则配置
 
-[SQS Standard Queue](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/standard-queues.html) does not preserve the order in which messages have arrived and ensures *At-Least-Once* message delivery.
+[SQS 标准队列](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/standard-queues.html) 不会保留消息到达的顺序，并确保 *至少一次* 消息传递。
 
-In order to create SQS Standard Queue Rule, go to Rules screen and click 'Add New rule' button.
+为了创建 SQS 标准队列规则，请转到规则屏幕并单击“添加新规则”按钮。
 
 ![image](/images/reference/plugins/sqs/sqs-standard-queue-rule.png)
 
-Add filter for **POST_TELEMETRY** message type:
+添加 **POST_TELEMETRY** 消息类型的过滤器：
 
 ![image](/images/reference/plugins/post-telemetry-filter.png)
 
-Click *'Add'* button to add filter.
+单击 *'添加'* 按钮添加过滤器。
 
-Then select *'SQS Plugin'* in the drop-down box for the Plugin field:
+然后在插件字段的下拉框中选择 *'SQS 插件'*：
 
 ![image](/images/reference/plugins/sqs/sqs-plugin-selection.png)
 
-Add action that will send temperature telemetry of device to the particular SQS Standard Queue:
+添加一个操作，将设备的温度遥测发送到特定的 SQS 标准队列：
 
 ![image](/images/reference/plugins/sqs/sqs-standard-queue-action.png)
 
-Click *'Add'* button and then activate Rule.
+单击 *'添加'* 按钮，然后激活规则。
 
 ![image](/images/reference/plugins/sqs/sqs-standard-queue-activate-rule.png)
 
-### Sending Temperature Telemetry
+### 发送温度遥测
 
-Now you can send Telemetry message that contains *'temp'* telemetry for any of your devices:
+现在，您可以发送包含任何设备的 *'temp'* 遥测的遥测消息：
 
 ```json
 {"temp":73.4}
 ```
 
-Here is an example of a command that publish single telemetry message to locally installed ThingsBoard:
+以下是一个将单个遥测消息发布到本地安装的 ThingsBoard 的命令示例：
 
 ```bash
 mosquitto_pub -d -h "localhost" -p 1883 -t "v1/devices/me/telemetry" -u "$ACCESS_TOKEN" -m "{'temp':73.4}"
 ```
 
-Now you should be able to see the message available in your SQS Standard Queue through AWS console:
+现在，您应该能够通过 AWS 控制台在 SQS 标准队列中看到可用的消息：
 
 ![image](/images/reference/plugins/sqs/sqs-standard-queue-message-received.png)
 
-### SQS FIFO Queue Rule Configuration
+### SQS FIFO 队列规则配置
 
-[SQS FIFO Queue](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html) maintains First-In-First-Out order Per Message Group ID and ensures exactly one processing.
-ThingsBoard SQS Plugin uses Device ID as Message Group ID  when sending a message to SQS FIFO Queue. It means that FIFO order will be maintained on per-device basis.
+[SQS FIFO 队列](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html) 按照每个消息组 ID 维护先进先出顺序，并确保只处理一次。
+ThingsBoard SQS 插件在向 SQS FIFO 队列发送消息时使用设备 ID 作为消息组 ID。这意味着 FIFO 顺序将按每个设备维护。
 
-SQS FIFO Queue Rule configation is very similar to the SQS Standard Queue configuration with subtle differences.
+SQS FIFO 队列规则配置与 SQS 标准队列配置非常相似，但有一些细微差别。
 
-In order to create SQS FIFO Queue Rule, go to Rules screen and click 'Add New rule' button.
+为了创建 SQS FIFO 队列规则，请转到规则屏幕并单击“添加新规则”按钮。
 
 ![image](/images/reference/plugins/sqs/sqs-fifo-queue-rule.png)
 
-Add filter for **POST_TELEMETRY** message type:
+添加 **POST_TELEMETRY** 消息类型的过滤器：
 
 ![image](/images/reference/plugins/sqs/post-telemetry-filter.png)
 
-Click *'Add'* button to add filter.
+单击 *'添加'* 按钮添加过滤器。
 
-Then select *'SQS Plugin'* in the drop-down box for the Plugin field:
+然后在插件字段的下拉框中选择 *'SQS 插件'*：
 
 ![image](/images/reference/plugins/sqs/sqs-plugin-selection.png)
 
-Add action that will send temperature telemetry of device to the particular SQS FIFO Queue:
+添加一个操作，将设备的温度遥测发送到特定的 SQS FIFO 队列：
 
 ![image](/images/reference/plugins/sqs/sqs-fifo-queue-action.png)
 
-Click *'Add'* button and then activate Rule.
+单击 *'添加'* 按钮，然后激活规则。
 
 ![image](/images/reference/plugins/sqs/sqs-fifo-queue-activate-rule.png)
 
-### Sending Temperature Telemetry
+### 发送温度遥测
 
-Now you can send Telemetry message that contains *'temp'* telemetry for any of your devices:
+现在，您可以发送包含任何设备的 *'temp'* 遥测的遥测消息：
 
 ```json
 {"temp":68.3}
 ```
 
-Here is an example of a command that publish single telemetry message to locally installed ThingsBoard:
+以下是一个将单个遥测消息发布到本地安装的 ThingsBoard 的命令示例：
 
 ```bash
 mosquitto_pub -d -h "localhost" -p 1883 -t "v1/devices/me/telemetry" -u "$ACCESS_TOKEN" -m "{'temp':68.3}"
 ```
 
-Now you should be able to see the message available in your SQS FIFO Queue through AWS console:
+现在，您应该能够通过 AWS 控制台在 SQS FIFO 队列中看到可用的消息：
 
 ![image](/images/reference/plugins/sqs/sqs-fifo-queue-message-received.png)

@@ -1,58 +1,54 @@
 ---
 layout: plain
-title: ThingsBoard Cloud Privacy Policy
-description: ThingsBoard Cloud Privacy Policy
+title: ThingsBoard Cloud 隐私政策
+description: ThingsBoard Cloud 隐私政策
 
 ---
 
 <br>
-<p style="text-align: center; font-size: 1.5em; font-weight: bold;">PRIVACY POLICY</p>
+<p style="text-align: center; font-size: 1.5em; font-weight: bold;">隐私政策</p>
 
 <br>
-<h2> Privacy Policy Statement on the Use of this Service (Website)</h2>
-<p style="font-size: 0.8em; color: grey">As of December 24, 2020</p> 
+<h2>本服务（网站）使用隐私政策声明</h2>
+<p style="font-size: 0.8em; color: grey">截至 2020 年 12 月 24 日</p> 
 
 <br>
 
-<p> <b>1. Definition of Policy</b> </p> 
-<p> 1.1 The following Privacy Policy is adopted by ThingsBoard, Inc. (“ThingsBoard” or “We”) in regards to the use of ThingsBoard Cloud Platform and related web pages and services (the <b>“Service”</b>), excluding affiliated websites covered by independent privacy policies. This Privacy Policy applies to information collected through the Service and otherwise (for example, if you contact us directly). However, it does not cover any information, whether personal or not, that may be collected through other websites or in other venues. Your use of the Service and our remaining services is subject to this Privacy Policy, which may be updated periodically to reflect changes in how we collect, use, and/or share information.</p>
+<p> <b>1. 政策定义</b> </p> 
+<p> 1.1 ThingsBoard, Inc.（“ThingsBoard”或“我们”）采用以下隐私政策，涉及 ThingsBoard 云平台及相关网页和服务（<b>“服务”</b>）的使用，但不包括受独立隐私政策约束的附属网站。本隐私政策适用于通过服务收集的信息以及其他方式（例如，如果您直接与我们联系）收集的信息。但是，它不涵盖可能通过其他网站或其他场所收集的任何信息，无论是否为个人信息。您对服务和我们剩余服务的使用受本隐私政策约束，该政策可能会定期更新，以反映我们收集、使用和/或共享信息方式的变化。</p>
 
-<p> 1.2 It is your responsibility to review this Privacy Policy together with the actual date of the change. Please check this Privacy Policy each time you use our Service to ensure you are aware of any changes in our practices. Your continued use of the Service will signify your acceptance of any changes to our Privacy Policy.</p>
-
-<br>
-<p> <b>2. Collection</b> </p> 
-<p> 2.1 You may not access the Service without providing some portion of required personal information to us. If you request receipt of certain notifications and updates, we will collect personally identifiable information, which you voluntarily give us. Said information may include your name, telephone number, email address, postal address, and any other information which would allow someone to personally identify you. Certain non-personally identifiable information, or non-PII, may also be collected when you use the Service, including the type of the Internet browser and operating system you use, region, other navigational clickstream data, etc.</p> 
-
-<p> 2.2 You may collect personal information of individuals approached to use the Service by you (<b>“Users”</b>). You represent and warrant that your users accept this Privacy Policy and agree to share their personal data with you. You are liable for all and any breach of the personally identifiable information of Users. </p> 
-
-<p> 2.3 Pursuant to the Service use, certain personal data and sensitive data can be collected by you with help of specific technical equipment for without limitation remote monitoring and control (<b>“IoT Devices”</b>). You represent and warrant that you have a legal right for such collection and Users agree upon said data collection.</p> 
-
-<p> 2.4 We obtain information from third-party sources. For example, we may collect information about you from social networks, accounting services providers and data analytics providers. Additionally, if you create or log into your account through a third-party platform (such as Google, Facebook or GitHub), we will have access to certain information from that platform, such as your name and email, in accordance with the authorization procedures determined by such platform.</p> 
+<p> 1.2 您有责任查看本隐私政策以及实际的变更日期。每次使用我们的服务时，请查看本隐私政策，以确保您了解我们的做法的任何变更。您继续使用本服务将表示您接受我们隐私政策的任何变更。</p>
 
 <br>
-<p> <b>3. Purpose and Use</b> </p> 
-<p> 3.1 ThingsBoard, Inc. uses the personally identifiable information to provide you with public information regarding us and our services; to share news, updates and reports in response to your inquiries; for gaining an understanding of your needs; for performing statistical analysis or analyses of global Service usage; for security and legal compliance; for notifying you of any changes to this Service or our remain services; for billing; and for other services. We also reserve the right to make full use of information that is not personally identifiable information.</p> 
+<p> <b>2. 收集</b> </p> 
+<p> 2.1 您不得在不向我们提供部分所需个人信息的情况下访问服务。如果您要求接收某些通知和更新，我们将收集您自愿提供给我们的个人身份信息。所述信息可能包括您的姓名、电话号码、电子邮件地址、邮政地址以及任何允许某人识别您的个人身份的信息。当您使用服务时，还可能收集某些非个人身份信息或非 PII，包括您使用的互联网浏览器和操作系统类型、地区、其他导航点击流数据等。</p> 
+
+<p> 2.2 您可能会收集您接触到的使用服务的人员（<b>“用户”</b>）的个人信息。您声明并保证您的用户接受本隐私政策并同意与您共享其个人数据。您对用户个人身份信息的任何和所有泄露行为承担责任。 </p> 
+
+<p> 2.3 根据服务使用情况，您可以借助特定技术设备收集某些个人数据和敏感数据，而无需限制远程监控和控制（<b>“物联网设备”</b>）。您声明并保证您有权进行此类收集，并且用户同意所述数据收集。</p> 
+
+<p> 2.4 我们从第三方来源获取信息。例如，我们可能会从社交网络、会计服务提供商和数据分析提供商处收集有关您的信息。此外，如果您通过第三方平台（例如 Google、Facebook 或 GitHub）创建或登录您的帐户，我们将根据该平台确定的授权程序访问该平台的某些信息，例如您的姓名和电子邮件。</p> 
 
 <br>
-<p> <b>4. Disclosure</b> </p> 
-<p>4.1 We will not sell, share, or rent your information to others except to our staff and to trusted third parties and affiliates when we need to share the information to provide a product or service you have requested. Without limiting the above, we will share your personal data with third parties only in the ways that are described in this Privacy Policy.</p> 
-
-<p>4.2 It may happen, the disclosure of your personally identifiable information would be necessary in response to a subpoena, court order, or a request for cooperation from law enforcement or other governmental agency globally, in accordance with applicable law. Your personal data may also be shared when we believe disclosure is necessary in connection with efforts to investigate, prevent, or take other action regarding actual or suspected illegal activity or other wrongdoing, to protect and defend the rights, property or safety of the Service, ThingsBoard, Inc., our users, or others.</p> 
-
-<p> 4.3 We will use commercially reasonable efforts to make you aware of the disclosure of your personal information contrary to the terms set forth in this Privacy Policy (e.g., in the event of any material security breach).</p> 
+<p> <b>3. 目的和用途</b> </p> 
+<p> 3.1 ThingsBoard, Inc. 使用个人身份信息向您提供有关我们和我们服务的公开信息；分享新闻、更新和报告以回应您的询问；了解您的需求；执行统计分析或对全球服务使用情况进行分析；出于安全和法律合规目的；通知您本服务或我们剩余服务的任何变更；用于计费；以及其他服务。我们还保留充分利用非个人身份信息的权利。</p> 
 
 <br>
-<p> <b>5. Third Parties</b> </p> 
-<p>5.1 The Service may contain links to other websites owned and operated by third parties. Said third parties and affiliates may collect information from you, their computer servers may be located outside your region. Browsing of Third Party websites and/or using their services out of the scope of this Privacy Policy. We do not control, and are not responsible for, the privacy and security practices of any third parties. Please acknowledge their privacy and security terms prior to any interaction with third parties. </p> 
+<p> <b>4. 披露</b> </p> 
+<p>4.1 除非为了向您提供您请求的产品或服务，否则我们不会向他人出售、共享或出租您的信息，但我们的员工和值得信赖的第三方和附属公司除外。在不限制上述规定的情况下，我们只会按照本隐私政策中描述的方式与第三方共享您的个人数据。</p> 
+
+<p>4.2 可能发生的情况是，根据适用的法律，需要披露您的个人身份信息以回应传票、法院命令或全球执法或其他政府机构的合作请求。当我们认为有必要披露以调查、预防或采取其他行动来处理实际或涉嫌的非法活动或其他不当行为时，或者为了保护和捍卫服务、ThingsBoard, Inc.、我们的用户或其他人的权利、财产或安全时，也可能会共享您的个人数据。</p> 
+
+<p> 4.3 我们将尽商业上合理的努力，让您了解违反本隐私政策中规定的条款披露您的个人信息的情况（例如，在发生任何重大安全漏洞时）。</p> 
 
 <br>
-<p> <b>6. No tracking</b> </p> 
-<p>6.1 Nowadays some browsers provide the “Do Not Track” feature in a proprietary way. There is no common understanding of how to interpret Do Not Track requests. The Service does not currently respond to Do Not Track signals.</p> 
+<p> <b>5. 第三方</b> </p> 
+<p>5.1 服务可能包含指向由第三方拥有和运营的其他网站的链接。所述第三方和附属公司可能会从您那里收集信息，其计算机服务器可能位于您所在地区以外。浏览第三方网站和/或使用超出本隐私政策范围的服务。我们不控制任何第三方的隐私和安全做法，也不对此负责。在与第三方进行任何互动之前，请确认其隐私和安全条款。 </p> 
 
 <br>
-<p id="unsubscribe"> <b>7. Unsubscribe request</b> </p> 
-<p>By accepting the <a href="/products/paas/terms-of-use/">Terms of Use </a> you subscribe to our newsletters and remain email campaigns without limitation. You can opt out at any time by using the unsubscribe links at the bottom of our emails. Our Service gives you the ability to delete all personal information from within the Service. 
-You can completely delete your account and data by clicking "Delete Account" button which is available on the User Profile Page. Please note, however, that we may need to retain certain information for record keeping purposes, to complete transactions or to comply with our legal obligations.</p> 
+<p> <b>6. 不跟踪</b> </p> 
+<p>6.1 如今，一些浏览器以专有方式提供“请勿跟踪”功能。对于如何解释“请勿跟踪”请求，目前还没有达成共识。服务目前不响应“请勿跟踪”信号。</p> 
 
-
-
+<br>
+<p id="unsubscribe"> <b>7. 取消订阅请求</b> </p> 
+<p>通过接受<a href="/products/paas/terms-of-use/">使用条款</a>，您订阅了我们的时事通讯和剩余的电子邮件活动，不受限制。您可以随时使用我们电子邮件底部的取消订阅链接选择退出。我们的服务让您能够从服务中删除所有个人信息。您可以通过点击用户个人资料页面上提供的“删除帐户”按钮完全删除您的帐户和数据。但是，请注意，我们可能需要出于记录保存目的、完成交易或遵守我们的法律义务而保留某些信息。</p>

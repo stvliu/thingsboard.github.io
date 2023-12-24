@@ -1,13 +1,13 @@
-**ThingsBoard includes In Memory Queue service and use it by default without extra settings.**
+**ThingsBoard 包含内存队列服务，默认情况下使用它，无需额外设置。**
 
-Create docker compose file for ThingsBoard queue service:
+为 ThingsBoard 队列服务创建 docker compose 文件：
 
 ```text
 nano docker-compose.yml
 ```
 {: .copy-code}
 
-Add the following line to the yml file. Don’t forget to replace "PUT_YOUR_LICENSE_SECRET_HERE" with your **license secret obtained on the first step**:
+将以下行添加到 yml 文件中。不要忘记将“PUT_YOUR_LICENSE_SECRET_HERE”替换为**在第一步中获得的许可证密钥**：
 
 ```yml
 version: '3.0'

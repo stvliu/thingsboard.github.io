@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-pe
-title: Azure Service Bus Integration
-description: Azure Service Bus Integration Guide 
+title: Azure Service Bus 集成
+description: Azure Service Bus 集成指南
 
 uplink-converter-events:
     0:

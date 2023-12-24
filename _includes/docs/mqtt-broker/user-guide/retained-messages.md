@@ -1,78 +1,72 @@
 * TOC
 {:toc}
 
-Retained Messages is an MQTT feature that allows storing the "last known good" message for a 
-particular topic on the broker and delivering the message to a client whenever the client subscribes to a matching topic.
+保留消息是 MQTT 的一项功能，允许在代理上存储特定主题的“最后已知良好”消息，并在客户端订阅匹配主题时将消息传递给客户端。
 
-There are a few important notes to mention regarding retained messages:
-* Only **one message** can be stored on the broker **per topic**.
-* The **next message** published on the same topic will **replace the previous one**.
-* The **message with an empty payload** published on the same topic will **clear** it entirely from that topic.
-* The subscribers for the topic will receive **only the last message** if available.
+关于保留消息，有一些重要的注意事项：
+* 代理上只能存储 **一条消息** **每个主题**。
+* 在同一主题上发布的 **下一条消息** 将 **替换前一条消息**。
+* 在同一主题上发布的 **有效负载为空的消息** 将 **完全清除** 该主题。
+* 该主题的订阅者将 **仅接收最后一条消息**（如果可用）。
 
-### Publish Retained Message
+### 发布保留消息
 
-In MQTT, the retained message refers to a regular publish message with the **retained flag** set to _true_.
-Let's consider a simple command using `mosquitto_pub` to publish a retained message. 
+在 MQTT 中，保留消息是指将 **保留标志** 设置为 _true_ 的常规发布消息。
+让我们考虑一个使用 `mosquitto_pub` 发布保留消息的简单命令。
 
 ```shell
 mosquitto_pub -d -h "YOUR_MQTT_BROKER_HOST" -p 1883 -D PUBLISH user-property hello world -q 1 -t demo/topic -V mqttv5 -m "Hello world" -r
 ```
 {: .copy-code}
 
-**Note,** do not forget to put your hostname instead of `YOUR_MQTT_BROKER_HOST`. 
-Make sure authentications are disabled. Otherwise, adjust the commands in this guide appropriately.
+**注意，** 不要忘记将你的主机名替换为 `YOUR_MQTT_BROKER_HOST`。确保禁用身份验证。否则，请相应地调整本指南中的命令。
 
-### Payload, User Properties
+### 有效负载、用户属性
 
-To access and view the payload and user properties of the last message for a specific topic on the WEB UI Retained Messages page, please follow these steps:
+若要访问和查看 WEB UI 保留消息页面上特定主题的最后一条消息的有效负载和用户属性，请按照以下步骤操作：
 
-1. Open page Retained Messages.
-2. To view the payload of a retained message, click on the icon `{}`. 
-3. To see the User Properties of retained message click on the icon `[]`. Please note that if the button is disabled, the retained message does not have any user properties.
+1. 打开页面保留消息。
+2. 若要查看保留消息的有效负载，请点击图标 `{}`。
+3. 若要查看保留消息的用户属性，请点击图标 `[]`。请注意，如果按钮被禁用，则保留消息没有任何用户属性。
 
 {% include images-gallery.html imageCollection="details-retained-messages" %}
 
-### Deleting Retained Message
+### 删除保留消息
 
-Deleting a retained message is a straightforward process. To remove a previous retained message, you can send a new retained message with a `zero-byte payload` to the 
-specific topic associated with the retained message you want to delete. Subsequently, any new subscribers to that topic will no longer receive the previously retained message.
+删除保留消息是一个简单的过程。若要删除以前的保留消息，可以向与要删除的保留消息关联的特定主题发送一个 `零字节有效负载` 的新保留消息。随后，该主题的任何新订阅者将不再收到以前保留的消息。
 
-To delete a retained message for the topic `demo/topic`, you can use the following command, specifying the `-n` flag with a zero-byte payload:
+若要删除主题 `demo/topic` 的保留消息，可以使用以下命令，指定带有零字节有效负载的 `-n` 标志：
 
 ```shell
 mosquitto_pub -d -h "YOUR_MQTT_BROKER_HOST" -p 1883 -q 1 -t demo/topic -n -r
 ```
 {: .copy-code}
 
-To delete retained messages using the WEB UI of TBMQ, you have two options based on the number of messages you want to delete:
-1. **Deleting a Single Retained Message.** Click on the icon 'Delete retained message' and confirm action.
-2. **Deleting Multiple Retained Messages:** 
-  * Select messages you want to delete.
-  * Click on the 'Delete retained messages' button in the top right corner and confirm the action when prompted.
+若要使用 TBMQ 的 WEB UI 删除保留消息，你可以根据要删除的消息数量选择两个选项：
+1. **删除单个保留消息。** 点击图标“删除保留消息”并确认操作。
+2. **删除多个保留消息：**
+  * 选择要删除的消息。
+  * 点击右上角的“删除保留消息”按钮，并在出现提示时确认操作。
 
 {% include images-gallery.html imageCollection="delete-retained-messages" %}
 
-### Clearing Empty Retained Message Nodes
+### 清除空的保留消息节点
 
-Retained messages in the broker are stored in the memory using the [Trie](https://en.wikipedia.org/wiki/Trie) data structure, 
-which is known for its efficient searching capabilities.
-The Trie (also called a prefix tree) is a tree-based data structure that allows for quick retrieval of information based on a key or a sequence of characters.
+代理中的保留消息使用 [Trie](https://en.wikipedia.org/wiki/Trie) 数据结构存储在内存中，Trie 以其高效的搜索能力而闻名。
+Trie（也称为前缀树）是一种基于树的数据结构，它允许根据键或字符序列快速检索信息。
 
-The Trie organizes the topic names in a hierarchical manner, where each node represents a topic level from the topic name.
-By using the Trie data structure, the broker can quickly locate and retrieve retained messages based on the topic filter provided by a subscribing client. 
-This ensures that clients receive the retained messages they are interested in without significant delays, contributing to improved performance and responsiveness of the broker.
+Trie 以分层的方式组织主题名称，其中每个节点表示主题名称中的一个主题级别。
+通过使用 Trie 数据结构，代理可以根据订阅客户端提供的主题过滤器快速定位和检索保留消息。这确保客户端可以收到他们感兴趣的保留消息，而不会出现明显的延迟，从而提高代理的性能和响应能力。
 
-When a retained message is deleted, the broker removes the message payload from its memory and marks the node as empty.
-Over time, if many retained messages are deleted, there may be many empty nodes left in the broker's memory.
-These empty nodes can cause inefficiencies and waste memory resources.
+当删除保留消息时，代理会从其内存中删除消息有效负载并将节点标记为空。
+随着时间的推移，如果删除了许多保留消息，代理的内存中可能会留下许多空节点。
+这些空节点会导致效率低下并浪费内存资源。
 
-Clearing empty retained message nodes frees up memory resources and can improve the performance of the broker, 
-as it can process MQTT messages more quickly when there are fewer empty nodes to search through.
+清除空的保留消息节点可以释放内存资源并提高代理的性能，因为它可以在搜索更少的空节点时更快地处理 MQTT 消息。
 
-To Clear empty retained message nodes click on the button 'Clear empty retained messages nodes' in the top right corner and confirm action.
+若要清除空的保留消息节点，请点击右上角的“清除空的保留消息节点”按钮并确认操作。
 
 {% include images-gallery.html imageCollection="clear-empty-retained-messages" %}
 
-Additionally, the broker is configured to clear empty retained message nodes by a scheduler. This is controlled by the following environment variables:
-`MQTT_RETAIN_MSG_TRIE_CLEAR_NODES_CRON` and `MQTT_RETAIN_MSG_TRIE_CLEAR_NODES_ZONE`.
+此外，代理配置为由调度程序清除空的保留消息节点。这由以下环境变量控制：
+`MQTT_RETAIN_MSG_TRIE_CLEAR_NODES_CRON` 和 `MQTT_RETAIN_MSG_TRIE_CLEAR_NODES_ZONE`。

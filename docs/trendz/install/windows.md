@@ -2,109 +2,106 @@
 layout: docwithnav-trendz
 assignees:
 - ashvayka
-title: Installing ThingsBoard Trendz Analytics on Windows
-description: Installing ThingsBoard Trendz Analytics on Windows
+title: 在 Windows 上安装 ThingsBoard Trendz Analytics
+description: 在 Windows 上安装 ThingsBoard Trendz Analytics
 
 ---
 
 * TOC
 {:toc}
 
-### Prerequisites
+### 先决条件
 
-This guide describes how to install Trendz Analytics on a Windows machine.
-Instructions below are provided for Windows 10/8.1/8/7 32-bit/64-bit. 
+本指南介绍如何在 Windows 机器上安装 Trendz Analytics。
+以下说明适用于 Windows 10/8.1/8/7 32 位/64 位。
 
-**Hardware requirements** depend on amount of analyzed data and amount of devices connected to the system. 
-To run Trendz Analytics on a single machine you will need at least 1Gb of free RAM.
+**硬件要求**取决于分析的数据量和连接到系统设备的数量。
+要在单台机器上运行 Trendz Analytics，您至少需要 1Gb 的可用 RAM。
 
-In small and medium installations Trendz can be installed **on the same** server with ThingsBoard.
+在小型和中型安装中，Trendz 可以安装**在与 ThingsBoard 相同的**服务器上。
 
-### Step 1. Install Java 11 (OpenJDK) 
+### 步骤 1. 安装 Java 11（OpenJDK）
 
 {% include templates/install/windows-java-install.md %}
 
-### Step 2. Trendz Analytics service installation
+### 步骤 2. Trendz Analytics 服务安装
 
-Download and extract the package.
+下载并解压软件包。
 
 ```bash
 https://dist.thingsboard.io/trendz-windows-1.10.3-HF3.zip
 ```
 {: .copy-code}
 
-**Note:** We assume you have extracted Trendz package to default location: *C:\Program Files (x86)\trendz*  
+**注意：**我们假设您已将 Trendz 软件包解压到默认位置：*C:\Program Files (x86)\trendz*
 
-### Step 3. Obtain and configure license key 
+### 步骤 3. 获取并配置许可证密钥
 
-We assume you have already chosen subscription plan for Trendz and have license key. If not, please get your [Free Trial license](/pricing/?section=trendz-options&product=trendz-self-managed&solution=trendz-pay-as-you-go) before you proceed.
-See [How-to get pay-as-you-go subscription](https://www.youtube.com/watch?v=dK-QDFGxWek){:target="_blank"} for more details.
+我们假设您已经为 Trendz 选择了订阅计划并拥有许可证密钥。如果没有，请在继续之前获取您的[免费试用许可证](/pricing/?section=trendz-options&product=trendz-self-managed&solution=trendz-pay-as-you-go)。
+有关更多详细信息，请参阅[如何获取按需付费订阅](https://www.youtube.com/watch?v=dK-QDFGxWek){:target="_blank"}。
 
-Once you get the license secret, you should put it to the trendz configuration file. 
-Open the Notepad or other editor as administrator user (right click on the app icon and select "Run as administrator").  
-Open the following file for editing (select "All Files" instead of "Text Documents" in file choosing dialog, the encoding is UTF-8):
+获取许可证密钥后，您应该将其放入 trendz 配置文件中。
+以管理员用户身份打开记事本或其他编辑器（右键单击应用程序图标并选择“以管理员身份运行”）。
+打开以下文件进行编辑（在文件选择对话框中选择“所有文件”而不是“文本文档”，编码为 UTF-8）：
 
 ```text 
 C:\Program Files (x86)\trendz\conf\trendz.yml
 ``` 
 {: .copy-code}
 
-Scroll to the bottom of the file and locate the following configuration block:
+滚动到文件底部并找到以下配置块：
 
 ```yml
 license:
     secret: "${TRENDZ_LICENSE_SECRET:YOUR_LICENSE_SECRET_HERE}" # license secret obtained from ThingsBoard License Portal (https://license.thingsboard.io)
 ```
 
-### Step 4. Configure connection with ThingsBoard Platform
+### 步骤 4. 配置与 ThingsBoard 平台的连接
 
-You can connect Trendz Analytics to the ThingsBoard Community Edition or ThingsBoard Professional Edition.
+您可以将 Trendz Analytics 连接到 ThingsBoard Community Edition 或 ThingsBoard Professional Edition。
 
-Open the Notepad or other editor as administrator user (right click on the app icon and select "Run as administrator").  
-Open the following file for editing (select "All Files" instead of "Text Documents" in file choosing dialog, the encoding is UTF-8):
+以管理员用户身份打开记事本或其他编辑器（右键单击应用程序图标并选择“以管理员身份运行”）。
+打开以下文件进行编辑（在文件选择对话框中选择“所有文件”而不是“文本文档”，编码为 UTF-8）：
 
 ```text
 C:\Program Files (x86)\trendz\conf\trendz.yml
 ``` 
 {: .copy-code}
 
-Add ThingsBoard REST API URL that would be used for communicating with ThingsBoard Platform. In most cases, when Trendz installed
-in the same server with ThingsBoard, API_URL would be **http://localhost:8080**. Otherwise you should use ThingsBoard domain name.
+添加 ThingsBoard REST API URL，该 URL 将用于与 ThingsBoard 平台通信。在大多数情况下，当 Trendz 与 ThingsBoard 安装在同一服务器中时，API_URL 将为 **http://localhost:8080**。否则，您应该使用 ThingsBoard 域名。
 
 ```bash
 tb.api.url: "${TB_API_URL:http://localhost:8080}"
 ```
 {: .copy-code}
 
-### Step 5. Configure Trendz database
-Trendz uses PostgreSQL as a database. You can install PostgreSQL on the same serverfor Trendz or use managed PostgreSQL 
-service from your cloud vendor.
+### 步骤 5. 配置 Trendz 数据库
+Trendz 使用 PostgreSQL 作为数据库。您可以在 Trendz 的同一服务器上安装 PostgreSQL，或使用云供应商提供的托管 PostgreSQL 服务。
 
-#### PostgreSQL Installation
+#### PostgreSQL 安装
 
-Download the installation file (PostgreSQL 12.17 or newer releases) [here](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads#windows) and follow the installation instructions.
+下载安装文件（PostgreSQL 12.17 或更高版本）[此处](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads#windows)并按照安装说明进行操作。
 
-During PostgreSQL installation, you will be prompted for superuser (postgres) password.
-Don't forget this password. It will be used later. For simplicity, we will substitute it with "postgres".
+在 PostgreSQL 安装过程中，系统会提示您输入超级用户 (postgres) 密码。
+不要忘记此密码。它将在以后使用。为简单起见，我们将用“postgres”替换它。
 
-#### Create Database for Trendz
+#### 为 Trendz 创建数据库
 
-Once installed, launch the "pgAdmin" software and login as superuser (postgres). 
-Open your server and create database "trendz" with owner "postgres".
+安装完成后，启动“pgAdmin”软件并以超级用户 (postgres) 身份登录。
+打开您的服务器并使用所有者“postgres”创建数据库“trendz”。
 
 
-#### Configure database connection for Trendz
+#### 为 Trendz 配置数据库连接
 
-Open the Notepad or other editor as administrator user (right click on the app icon and select "Run as administrator").  
-Open the following file for editing (select "All Files" instead of "Text Documents" in file choosing dialog, the encoding is UTF-8):
+以管理员用户身份打开记事本或其他编辑器（右键单击应用程序图标并选择“以管理员身份运行”）。
+打开以下文件进行编辑（在文件选择对话框中选择“所有文件”而不是“文本文档”，编码为 UTF-8）：
 
 ```text 
 C:\Program Files (x86)\trendz\conf\trendz.yml
 ``` 
 {: .copy-code}
 
-and locate "datasource" block. Replace SPRING_DATASOURCE_URL, SPRING_DATASOURCE_USERNAME and SPRING_DATASOURCE_PASSWORD
- properties with valid values. Don't forget to replace "postgres" with your real postgres user password:
+并找到“datasource”块。用有效值替换 SPRING_DATASOURCE_URL、SPRING_DATASOURCE_USERNAME 和 SPRING_DATASOURCE_PASSWORD 属性。不要忘记用您的真实 postgres 用户密码替换“postgres”：
 
 ```yml
 datasource:
@@ -117,14 +114,14 @@ datasource:
 ``` 
 {: .copy-code}
 
-### Step 6. Run installation script
+### 步骤 6. 运行安装脚本
 
-Launch windows shell (Command Prompt) as Administrator. Change directory to your Trendz installation directory.
+以管理员身份启动 Windows shell（命令提示符）。将目录更改为您的 Trendz 安装目录。
 
-Execute **install.bat** script to install Trendz as a Windows service.
-This means it will be automatically started on system startup. 
-Similar, **uninstall.bat** will remove Trendz from Windows services.
-The output should be similar to this one:
+执行 **install.bat** 脚本以将 Trendz 安装为 Windows 服务。
+这意味着它将在系统启动时自动启动。
+类似地，**uninstall.bat** 将从 Windows 服务中删除 Trendz。
+输出应类似于以下内容：
   
   ```text
 C:\Program Files (x86)\trendz>install.bat
@@ -136,97 +133,94 @@ Installing Trendz Analytics...
 Trendz Analytics installed successfully!
 ```
 
-### Step 7. Start Trendz service
+### 步骤 7. 启动 Trendz 服务
 
-Now let's start the Trendz service!
-Open the command prompt as an Administrator and execute the following command:
+现在让我们启动 Trendz 服务！
+以管理员身份打开命令提示符并执行以下命令：
 
 ```shell
 net start trendz
 ```
 {: .copy-code}
 
-Expected output:
+预期输出：
 
 ```text
 The Trendz Analytics service is starting.
 The Trendz Analytics service was started successfully.
 ```
 
-In order to restart the Trendz service you can execute following commands:
+为了重新启动 Trendz 服务，您可以执行以下命令：
 
 ```shell
 net stop trendz
 net start trendz
 ```
 
-Once started, you will be able to open Web UI using the following link:
+启动后，您将能够使用以下链接打开 Web UI：
 
 ```bash
 http://localhost:8888/trendz
 ```
 
-**Note**:  If Trendz installed on a remote server, you have to replace localhost with the public IP address of 
-the server or with a domain name. Also, check that port 8888 opened for public access.
+**注意：**如果 Trendz 安装在远程服务器上，您必须将 localhost 替换为服务器的公有 IP 地址或域名。此外，请检查端口 8888 是否已开放供公共访问。
 
-##### Authentication
+##### 身份验证
 
-For first authentication you need to use **Tenant Administrator** credentials from your **ThingsBoard**
+对于首次身份验证，您需要使用来自 **ThingsBoard** 的 **租户管理员**凭据
 
-Trendz uses ThingsBoard as an authentication service. During first sign in ThingsBoard service should be also available 
-to validate credentials.
+Trendz 使用 ThingsBoard 作为身份验证服务。在首次登录期间，ThingsBoard 服务也应该可用以验证凭据。
 
 
-### Troubleshooting
+### 故障排除
 
-The log files are located in **logs** folder ("C:\Program Files (x86)\trendz\logs" in our case).
+日志文件位于 **logs** 文件夹中（在我们的示例中为“C:\Program Files (x86)\trendz\logs”）。
 
-The **trendz.log** file should contain following line:
+**trendz.log** 文件应包含以下行：
 
 ```text
 YYYY-MM-DD HH:mm:ss,sss [main] INFO  o.t.t.TrendzApplication - Started TrendzApplication in x.xxx seconds (JVM running for x.xxx)
 
 ```
 
-In case of any unclear errors, use general [troubleshooting guide](/docs/user-guide/troubleshooting/#getting-help) or [contact us](/docs/contact-us/).
+如果出现任何不明确的错误，请使用通用[故障排除指南](/docs/user-guide/troubleshooting/#getting-help)或[联系我们](/docs/contact-us/)。
 
-### Windows firewall settings
+### Windows 防火墙设置
 
-In order to have external access to Trendz Web UI 
-you need to create a new inbound rule with Windows Firewall with Advanced Security.
+为了能够从外部访问 Trendz Web UI，您需要使用高级安全性的 Windows 防火墙创建一个新的入站规则。
  
-- Open "Windows Firewall" from "Control Panel":
+- 从“控制面板”中打开“Windows 防火墙”：
 
 ![image](/images/user-guide/install/windows/windows7-firewall-1.png)
 
-- Click "Advanced settings" on the left panel:
+- 在左侧面板中单击“高级设置”：
 
 ![image](/images/user-guide/install/windows/windows7-firewall-2.png)
 
-- Select "Inbound Rules" on the left panel, then click "New Rule..." on the right "Actions" panel:
+- 在左侧面板中选择“入站规则”，然后在右侧“操作”面板中单击“新建规则...”：
 
 ![image](/images/user-guide/install/windows/windows7-firewall-3.png)
 
-- Now new "New Inbound Rule Wizard" window will open. On the first step "Rule Type" select "Port" option: 
+- 现在将打开新的“新建入站规则向导”窗口。在第一步“规则类型”中选择“端口”选项：
 
 ![image](/images/user-guide/install/windows/windows7-firewall-4.png)
 
-- On the "Protocol and Ports" step select "TCP" protocol and enter port **8888** in the "Specific local ports" field:
+- 在“协议和端口”步骤中选择“TCP”协议并在“特定本地端口”字段中输入端口 **8888**：
 
 ![image](/images/user-guide/install/windows/windows7-firewall-5.png)
 
-- On the "Action" step leave "Allow the connection" option selected:
+- 在“操作”步骤中，保持“允许连接”选项处于选中状态：
 
 ![image](/images/user-guide/install/windows/windows7-firewall-6.png)
 
-- On the "Profile" step select Windows network profiles when to apply this rule:
+- 在“配置文件”步骤中，选择要应用此规则的 Windows 网络配置文件：
 
 ![image](/images/user-guide/install/windows/windows7-firewall-7.png)
 
-- Finally, give the name to this rule (for ex. "Trendz Service Networking") and click "Finish".
+- 最后，为该规则命名（例如“Trendz 服务网络”）并单击“完成”。
 
 ![image](/images/user-guide/install/windows/windows7-firewall-8.png)
 
-## Next steps
+## 后续步骤
 
 {% assign currentGuide = "InstallationOptions" %}{% include templates/trndz-guides-banner.md %}

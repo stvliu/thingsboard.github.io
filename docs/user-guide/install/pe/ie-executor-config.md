@@ -2,8 +2,8 @@
 layout: docwithnav-pe
 assignees:
 - vparomskiy
-title: Integration executor parameters
-description: ThingsBoard configuration parameters and environment variables
+title: 集成执行器参数
+description: ThingsBoard 配置参数和环境变量
 
 ---
 

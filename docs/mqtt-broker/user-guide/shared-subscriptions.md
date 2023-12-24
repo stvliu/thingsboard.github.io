@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-mqtt-broker
-title: Shared Subscriptions
-description: TBMQ Shared Subscriptions feature overview
+title: 共享订阅
+description: TBMQ 共享订阅功能概述
 
 ---
 

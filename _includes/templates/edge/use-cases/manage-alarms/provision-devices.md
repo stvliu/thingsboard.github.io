@@ -1,11 +1,11 @@
-For simplicity, we will provision device manually using the UI.
+为简单起见，我们将使用 UI 手动配置设备。
 
-Let's first create **DHT22 temperature sensor** and **Air Conditioner** devices on the edge and add relation between these devices. This relation will be used to find related **Air Conditioner** device once **DHT22 temperature sensor** will send critical temperature value.
+我们首先在边缘创建 **DHT22 温度传感器** 和 **空调** 设备，并在这些设备之间添加关系。一旦 **DHT22 温度传感器** 发送关键温度值，此关系将用于查找相关的 **空调** 设备。
 
-We are going to provision device on the Edge. Please open ThingsBoard **Edge** UI using the URL: **EDGE_URL**.
+我们将在边缘配置设备。请使用 URL：**EDGE_URL** 打开 ThingsBoard **Edge** UI。
 
 {% include images-gallery.html imageCollection="provisionDevicesEdge" showListImageTitles="true" %}
 
-Please open **{{appPrefix}}** using the URL **SERVER_URL**:
+请使用 URL **SERVER_URL** 打开 **{{appPrefix}}**：
 
 {% include images-gallery.html imageCollection="provisionDevices" showListImageTitles="true" %}

@@ -1,20 +1,19 @@
-Create a [dashboard](https://thingsboard.io/docs/{{page.docsPrefix}}user-guide/dashboards/){:target="_blank"} to visualize telemetry values in widgets.
+创建一个 [仪表板](https://thingsboard.io/docs/{{page.docsPrefix}}user-guide/dashboards/){:target="_blank"}，以便在小部件中可视化遥测值。
 
 {% assign dashboardCreation = '
     ===
         image: /images/devices-library/ready-to-go-devices/iot-gateway-cell-1024/exxn-create-dashboard-1.png,
-        title: Go to the <b>Dashboard groups</b> tab -> <b>All</b>. Creat new dashboard by clicking the "plus" button in the upper right corner of the dashboards page. Enter dashboard name and click on "<b>Add</b>" button.
+        title: 转到<b>仪表板组</b>选项卡 -> <b>全部</b>。通过单击仪表板页面右上角的“加号”按钮创建新仪表板。输入仪表板名称，然后单击“<b>添加</b>”按钮。
     ===
         image: /images/devices-library/ready-to-go-devices/iot-gateway-cell-1024/exxn-create-dashboard-2.png,
-        title: Create <b>Radial gauge</b> widget from the <b>Analog gauges</b> bundle. We used <b><i>sc0_temperature</i></b>.
+        title: 从<b>模拟仪表</b>包中创建<b>径向仪表</b>小部件。我们使用了<b><i>sc0_temperature</i></b>。
     ===
         image: /images/devices-library/ready-to-go-devices/iot-gateway-cell-1024/exxn-create-dashboard-3.png,
-        title: The data will be shown on the selected widget.
+        title: 数据将显示在所选小部件上。
 '
 %}
 
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=dashboardCreation %}
 
-- All the measures that are "enabled" in the device's JSON configuration file will be found as metrics with the name specified in the same file.  
-- You can read more about widgets and their creation in [this guide](https://thingsboard.io/docs/{{page.docsPrefix}}user-guide/dashboards/#widgets){:target="_blank"}.  
-
+- 设备的 JSON 配置文件中“启用”的所有度量都将作为度量找到，名称在同一文件中指定。
+- 您可以在 [本指南](https://thingsboard.io/docs/{{page.docsPrefix}}user-guide/dashboards/#widgets){:target="_blank"} 中阅读有关小部件及其创建的更多信息。

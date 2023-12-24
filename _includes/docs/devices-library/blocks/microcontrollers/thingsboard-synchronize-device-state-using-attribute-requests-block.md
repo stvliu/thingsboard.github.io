@@ -1,9 +1,9 @@
-In order to get the state of the device from ThingsBoard during booting we have [functionality](/docs/{{page.docsPrefix}}reference/mqtt-api/#request-attribute-values-from-the-server) to do this in the code.  
+为了在启动期间从 ThingsBoard 获取设备状态，我们在代码中具有 [功能](/docs/{{page.docsPrefix}}reference/mqtt-api/#request-attribute-values-from-the-server) 来执行此操作。
 
-Below are the relevant parts of the code example:  
+以下是代码示例的相关部分：
 
-- Attribute callbacks:  
-    
+- 属性回调：
+
 ```cpp
 ...
 void processSharedAttributes(const Shared_Attribute_Data &data) {
@@ -39,15 +39,15 @@ const Attribute_Request_Callback attribute_client_request_callback(CLIENT_ATTRIB
 ...
 ```
 
-We have two callbacks:
-* Shared Attributes Callback: 
-  This callback is specific to shared attributes. Its primary function is to receive a response containing the blinking interval, which determines the appropriate blinking period.;
-* Client Attributes Callback: 
-  This callback is specific to client attributes. It receives information regarding the mode and state of the LED. Once this data is received, the system saves and sets these parameters.
+我们有两个回调：
+* 共享属性回调：
+  此回调特定于共享属性。其主要功能是接收包含闪烁间隔的响应，该响应确定适当的闪烁周期；
+* 客户端属性回调：
+  此回调特定于客户端属性。它接收有关 LED 模式和状态的信息。收到此数据后，系统会保存并设置这些参数。
 
-This functionality allows us to keep the actual state after rebooting.  
+此功能允许我们在重新启动后保持实际状态。
 
-- Attribute requests:    
+- 属性请求：
 ```cpp
 ...
     // Request current states of shared attributes
@@ -62,5 +62,5 @@ This functionality allows us to keep the actual state after rebooting.
       return;
     }
 ...
-``` 
-In order for our callbacks to receive the data, we have to send a request to ThingsBoard.  
+```
+为了让我们的回调接收数据，我们必须向 ThingsBoard 发送请求。

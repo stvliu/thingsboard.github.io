@@ -1,18 +1,18 @@
 ---
 layout: docwithnav-mqtt-broker
-title: TBMQ Roadmap
-description: TBMQ upcoming releases
+title: TBMQ 路线图
+description: TBMQ 即将发布的版本
 
 ---
 
 * TOC
 {:toc}
 
-The product roadmap listed below covers only main features and does not cover small improvements and bug fixes.
+下面列出的产品路线图仅涵盖主要功能，不涵盖小的改进和错误修复。
 
-### Upcoming releases
+### 即将发布的版本
 
-* MQTT 5 full support;
-* UI: MQTT client via WebSockets;
-* Redis support for storing messages of **DEVICE** persistent clients;
-* MQTT clients monitoring enhancements.
+* 完全支持 MQTT 5；
+* UI：通过 WebSockets 的 MQTT 客户端；
+* Redis 支持存储 **DEVICE** 持久客户端的消息；
+* MQTT 客户端监控增强。

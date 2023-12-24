@@ -1,15 +1,15 @@
-#### RabbitMQ Installation
+#### RabbitMQ 安装
 
-For installing RabbitMQ use this [instruction](https://www.rabbitmq.com/install-windows.html).
+要安装 RabbitMQ，请使用此 [说明](https://www.rabbitmq.com/install-windows.html)。
 
-Create docker compose file for ThingsBoard queue service:
+为 ThingsBoard 队列服务创建 docker compose 文件：
 
 ```text
 docker-compose.yml
 ```
 {: .copy-code}
 
-Add the following line to the yml file. Don't forget to replace "YOUR_USERNAME" and "YOUR_PASSWORD" with your **real user credentials**, "localhost" and "5672" with your **real RabbitMQ host and port**:
+将以下行添加到 yml 文件。不要忘记将“YOUR_USERNAME”和“YOUR_PASSWORD”替换为您的 **真实用户凭据**，“localhost”和“5672”替换为您的 **真实 RabbitMQ 主机和端口**：
 
 ```yml
 version: '3.0'

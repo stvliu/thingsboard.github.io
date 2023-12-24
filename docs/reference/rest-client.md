@@ -2,24 +2,24 @@
 layout: docwithnav
 assignees:
 - ashvayka
-title: REST Client
-description: Supported REST API Reference for server-side integration of your java projects
+title: REST 客户端
+description: 受支持的 REST API 参考，用于服务器端集成 Java 项目
 
 ---
- * TOC
+ * 目录
  {:toc}
  
-## REST Client
+## REST 客户端
 
-The ThingsBoard REST API Client helps you interact with ThingsBoard REST API from your Java application.
-With Rest Client you can programmatically create assets, devices, customers, users and other entities and their relations in ThingsBoard.
+ThingsBoard REST API 客户端可帮助您通过 Java 应用程序与 ThingsBoard REST API 进行交互。
+使用 Rest 客户端，您可以以编程方式在 ThingsBoard 中创建资产、设备、客户、用户和其他实体及其关系。
  
-The recommended method for installing the Rest Client is with a build automation tool, like Maven. 
-The version of the REST Client depends on the version of the platform that you are using.   
+安装 Rest 客户端的推荐方法是使用构建自动化工具，例如 Maven。
+REST 客户端的版本取决于您使用的平台版本。   
   
-## Community Edition REST Client
+## 社区版 REST 客户端
 
-In order to add REST Client to your Maven/Gradle project, you should use the following dependency:
+为了将 REST 客户端添加到您的 Maven/Gradle 项目，您应该使用以下依赖项：
  
 ```xml
 <dependencies>
@@ -32,9 +32,9 @@ In order to add REST Client to your Maven/Gradle project, you should use the fol
 ```
 {: .copy-code}
 
-Note: The REST Client is built on top of Spring RestTemplate and thus depends on Spring Web (5.1.5.RELEASE at the moment of writing this article).
+注意：REST 客户端构建在 Spring RestTemplate 之上，因此依赖于 Spring Web（在撰写本文时为 5.1.5.RELEASE）。
 
-In order to download the REST Client dependency, you should add the following repository to your project. Alternatively, you can build REST Client from [sources](https://github.com/thingsboard/thingsboard/tree/master/rest-client). 
+为了下载 REST 客户端依赖项，您应该将以下存储库添加到您的项目中。或者，您可以从 [sources](https://github.com/thingsboard/thingsboard/tree/master/rest-client) 构建 REST 客户端。
 
 ```xml
 <repositories>
@@ -45,97 +45,97 @@ In order to download the REST Client dependency, you should add the following re
 </repositories>
 ```
 {: .copy-code}
-### Basic Usage
+### 基本用法
 
-The next sample code shows how to instantiate ThingsBoard Client, perform login and get user details of current logged in user.
+以下示例代码演示了如何实例化 ThingsBoard 客户端、执行登录并获取当前登录用户的用户详细信息。
 
 ```java
 // ThingsBoard REST API URL
 String url = "http://localhost:8080";
 
-// Default Tenant Administrator credentials
+// 默认租户管理员凭据
 String username = "tenant@thingsboard.org";
 String password = "tenant";
 
-// Creating new rest client and auth with credentials
+// 创建新的 rest 客户端并使用凭据进行身份验证
 RestClient client = new RestClient(url);
 client.login(username, password);
 
-// Get information of current logged in user and print it
+// 获取当前登录用户的详细信息并打印它
 client.getUser().ifPresent(System.out::println);
 
-// Perform logout of current user and close the client
+// 执行当前用户的注销并关闭客户端
 client.logout();
 client.close();
 ```
 {: .copy-code}
 
-### Examples
+### 示例
 
-#### Fetch tenant devices
-The following sample code shows how to fetch tenant devices via page link.
+#### 获取租户设备
+以下示例代码演示了如何通过页面链接获取租户设备。
 ```java
 // ThingsBoard REST API URL
 String url = "http://localhost:8080";
 
-// Default Tenant Administrator credentials
+// 默认租户管理员凭据
 String username = "tenant@thingsboard.org";
 String password = "tenant";
 
-// Creating new rest client and auth with credentials
+// 创建新的 rest 客户端并使用凭据进行身份验证
 RestClient client = new RestClient(url);
 client.login(username, password);
 
 PageData<Device> tenantDevices;
 PageLink pageLink = new PageLink(10);
 do {
-    // Fetch all tenant devices using current page link and print each of them
+    // 使用当前页面链接获取所有租户设备并打印每个设备
     tenantDevices = client.getTenantDevices("", pageLink);
     tenantDevices.getData().forEach(System.out::println);
     pageLink = pageLink.nextPageLink();
 } while (tenantDevices.hasNext());
 
-// Perform logout of current user and close the client
+// 执行当前用户的注销并关闭客户端
 client.logout();
 client.close();
 ```
 {: .copy-code}
 
-#### Fetch tenant dashboards
-The following sample code shows how to fetch tenant dashboards via page link.
+#### 获取租户仪表板
+以下示例代码演示了如何通过页面链接获取租户仪表板。
 ```java
 // ThingsBoard REST API URL
 String url = "http://localhost:8080";
 
-// Default Tenant Administrator credentials
+// 默认租户管理员凭据
 String username = "tenant@thingsboard.org";
 String password = "tenant";
 
-// Creating new rest client and auth with credentials
+// 创建新的 rest 客户端并使用凭据进行身份验证
 RestClient client = new RestClient(url);
 client.login(username, password);
 
 PageData<DashboardInfo> pageData;
 PageLink pageLink = new PageLink(10);
 do {
-    // Fetch all tenant dashboards using current page link and print each of them
+    // 使用当前页面链接获取所有租户仪表板并打印每个仪表板
     pageData = client.getTenantDashboards(pageLink);
     pageData.getData().forEach(System.out::println);
     pageLink = pageLink.nextPageLink();
 } while (pageData.hasNext());
 
-// Perform logout of current user and close the client
+// 执行当前用户的注销并关闭客户端
 client.logout();
 client.close();
 ```
 {: .copy-code}
 
-#### Fetch customer devices
-The following sample code shows how to fetch customer devices via page link.
+#### 获取客户设备
+以下示例代码演示了如何通过页面链接获取客户设备。
 ```java
 // ThingsBoard REST API URL
 String url = "http://localhost:8080";
-// Perform login with default Customer User credentials
+// 使用默认客户用户凭据登录
 String username = "customer@thingsboard.org";
 String password = "customer";
 RestClient client = new RestClient(url);
@@ -144,45 +144,45 @@ client.login(username, password);
 PageData<Device> pageData;
 PageLink pageLink = new PageLink(10);
 do {
-    // Get current user
+    // 获取当前用户
     User user = client.getUser().orElseThrow(() -> new IllegalStateException("No logged in user has been found"));
-    // Fetch customer devices using current page link
+    // 使用当前页面链接获取客户设备
     pageData = client.getCustomerDevices(user.getCustomerId(), "", pageLink);
     pageData.getData().forEach(System.out::println);
     pageLink = pageLink.nextPageLink();
 } while (pageData.hasNext());
 
-// Perform logout of current user and close the client
+// 执行当前用户的注销并关闭客户端
 client.logout();
 client.close();
 ```
 {: .copy-code}
 
-#### Count entities using Entity Data Query API
+#### 使用实体数据查询 API 计数实体
 
-The following sample code shows how to use Entity Data Query API to count total devices, total active devices.
+以下示例代码演示了如何使用实体数据查询 API 来计算总设备数、总活动设备数。
 ```java
 // ThingsBoard REST API URL
 String url = "http://localhost:8080";
 
-// Perform login with default Customer User credentials
+// 使用默认客户用户凭据登录
 String username = "tenant@thingsboard.org";
 String password = "tenant";
 RestClient client = new RestClient(url);
 client.login(username, password);
 
-// Create entity filter to get all devices
+// 创建实体过滤器以获取所有设备
 EntityTypeFilter typeFilter = new EntityTypeFilter();
 typeFilter.setEntityType(EntityType.DEVICE);
 
-// Create entity count query with provided filter
+// 使用提供的过滤器创建实体计数查询
 EntityCountQuery totalDevicesQuery = new EntityCountQuery(typeFilter);
 
-// Execute entity count query and get total devices count
+// 执行实体计数查询并获取总设备数
 Long totalDevicesCount = client.countEntitiesByQuery(totalDevicesQuery);
-System.out.println("Total devices by the first query: " + totalDevicesCount);
+System.out.println("第一个查询的总设备数：" + totalDevicesCount);
 
-// Set key filter to existing query to get only active devices
+// 将键过滤器设置为现有查询以仅获取活动设备
 KeyFilter keyFilter = new KeyFilter();
 keyFilter.setKey(new EntityKey(EntityKeyType.ATTRIBUTE, "active"));
 keyFilter.setValueType(EntityKeyValueType.BOOLEAN);
@@ -193,38 +193,38 @@ filterPredicate.setValue(new FilterPredicateValue<>(true));
         
 keyFilter.setPredicate(filterPredicate);
 
-// Create entity count query with provided filter
+// 使用提供的过滤器创建实体计数查询
 EntityCountQuery totalActiveDevicesQuery = 
         new EntityCountQuery(typeFilter, List.of(keyFilter));
         
-// Execute active devices query and print total devices count
+// 执行活动设备查询并打印总设备数
 Long totalActiveDevicesCount = client.countEntitiesByQuery(totalActiveDevicesQuery);
-System.out.println("Total devices by the second query: " + totalActiveDevicesCount);
+System.out.println("第二个查询的总设备数：" + totalActiveDevicesCount);
         
-// Perform logout of current user and close the client
+// 执行当前用户的注销并关闭客户端
 client.logout();
 client.close();
 ```
 {: .copy-code}
 
-#### Query entities using Entity Data Query API
-The following sample code shows how to use Entity Data Query API to get all active devices.
+#### 使用实体数据查询 API 查询实体
+以下示例代码演示了如何使用实体数据查询 API 来获取所有活动设备。
 
 ```java
 // ThingsBoard REST API URL
 String url = "http://localhost:8080";
 
-// Perform login with default Customer User credentials
+// 使用默认客户用户凭据登录
 String username = "tenant@thingsboard.org";
 String password = "tenant";
 RestClient client = new RestClient(url);
 client.login(username, password);
 
-// Create entity filter to get only devices
+// 创建实体过滤器以仅获取设备
 EntityTypeFilter typeFilter = new EntityTypeFilter();
 typeFilter.setEntityType(EntityType.DEVICE);
 
-// Create key filter to query only active devices
+// 创建键过滤器以仅查询活动设备
 KeyFilter keyFilter = new KeyFilter();
 keyFilter.setKey(new EntityKey(EntityKeyType.ATTRIBUTE, "active"));
 keyFilter.setValueType(EntityKeyValueType.BOOLEAN);
@@ -235,93 +235,92 @@ filterPredicate.setValue(new FilterPredicateValue<>(true));
 
 keyFilter.setPredicate(filterPredicate);
 
-// Prepare list of queried device fields
+// 准备要查询的设备字段列表
 List<EntityKey> fields = List.of(
         new EntityKey(EntityKeyType.ENTITY_FIELD, "name"),
         new EntityKey(EntityKeyType.ENTITY_FIELD, "type"),
         new EntityKey(EntityKeyType.ENTITY_FIELD, "createdTime")
 );
 
-// Prepare list of queried device attributes
+// 准备要查询的设备属性列表
 List<EntityKey> attributes = List.of(
         new EntityKey(EntityKeyType.ATTRIBUTE, "active")
 );
 
-// Prepare page link
+// 准备页面链接
 EntityDataSortOrder sortOrder = new EntityDataSortOrder();
 sortOrder.setKey(new EntityKey(EntityKeyType.ENTITY_FIELD, "createdTime"));
 sortOrder.setDirection(EntityDataSortOrder.Direction.DESC);
 EntityDataPageLink entityDataPageLink = new EntityDataPageLink(10, 0, "", sortOrder);
 
-// Create entity query with provided entity filter, key filter, queried fields and page link
+// 使用提供的实体过滤器、键过滤器、查询字段和页面链接创建实体查询
 EntityDataQuery dataQuery = 
         new EntityDataQuery(typeFilter, entityDataPageLink, fields, attributes, List.of(keyFilter));
 
 PageData<EntityData> entityPageData;
 do {
-    // Fetch active devices using entities query and print them
+    // 使用实体查询获取活动设备并打印它们
     entityPageData = client.findEntityDataByQuery(dataQuery);
     entityPageData.getData().forEach(System.out::println);
     dataQuery = dataQuery.next();
 } while (entityPageData.hasNext());
 
-// Perform logout of current user and close client
+// 执行当前用户的注销并关闭客户端
 client.logout();
 client.close();
 ```
 {: .copy-code}
 
-#### Manage Device example
+#### 设备管理示例
 
-The following sample code demonstrates basic concepts of device management API (add/get/delete device, get/save device attributes).
+以下示例代码演示了设备管理 API 的基本概念（添加/获取/删除设备、获取/保存设备属性）。
 ```java
 // ThingsBoard REST API URL
 String url = "http://localhost:8080";
 
-// Perform login with default Customer User credentials
+// 使用默认客户用户凭据登录
 String username = "tenantg@thingsboard.org";
 String password = "tenant";
 RestClient client = new RestClient(url);
 client.login(username, password);
 
-// Construct device object
+// 构建设备对象
 String newDeviceName = "Test Device";
 Device newDevice = new Device();
 newDevice.setName(newDeviceName);
 
-// Create Json Object Node and set it as additional info
+// 创建 Json 对象节点并将其设置为附加信息
 ObjectMapper mapper = new ObjectMapper();
 ObjectNode additionalInfoNode = mapper.createObjectNode().put("description", "My brand new device");
 newDevice.setAdditionalInfo(additionalInfoNode);
 
-// Save device
+// 保存设备
 Device savedDevice = client.saveDevice(newDevice);
 System.out.println("Saved device: " + savedDevice);
 
-// Find device by device id or throw an exception otherwise
+// 通过设备 ID 查找设备，否则抛出异常
 Optional<DeviceInfo> optionalDevice = client.getDeviceInfoById(savedDevice.getId());
 DeviceInfo foundDevice = optionalDevice
         .orElseThrow(() -> new IllegalArgumentException("Device with id " + newDevice.getId().getId() + " hasn't been found"));
 
-// Save device shared attributes
+// 保存设备共享属性
 ObjectNode requestNode = mapper.createObjectNode().put("temperature", 22.4).put("humidity", 57.4);
 boolean isSuccessful = client.saveEntityAttributesV2(foundDevice.getId(), "SHARED_SCOPE", requestNode);
 System.out.println("Attributes have been successfully saved: " + isSuccessful);
 
-// Get device shared attributes
+// 获取设备共享属性
 var attributes = client.getAttributesByScope(foundDevice.getId(), "SHARED_SCOPE", List.of("temperature", "humidity"));
 System.out.println("Found attributes: ");
 attributes.forEach(System.out::println);
 
-// Delete the device
+// 删除设备
 client.deleteDevice(savedDevice.getId());
 
-// Perform logout of current user and close client
+// 执行当前用户的注销并关闭客户端
 client.logout();
 client.close();
 ```
 {: .copy-code}
 
-#### More examples
-You can find the example to learn how to use ThingsBoard REST Client **[here](https://github.com/thingsboard/tb-ce-rest-client-example)**.
-
+#### 更多示例
+你可以找到学习如何使用 ThingsBoard REST 客户端的示例 **[此处](https://github.com/thingsboard/tb-ce-rest-client-example)**。

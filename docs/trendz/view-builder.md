@@ -2,39 +2,38 @@
 layout: docwithnav-trendz
 assignees:
 - vparomskiy
-title: Clear, Filter, Group and Aggregate data
-description: How to customize aggregation, filter and clear dataset in Trendz Analytics 
+title: 清除、过滤、分组和聚合数据
+description: 如何在 Trendz Analytics 中自定义聚合、过滤和清除数据集
 ---
 
-This guide describes how to prepare your dataset for visualization
+本指南介绍如何准备数据集以进行可视化
 
 * TOC
 {:toc}
 
-During Data Analysis it is a common task to define how a big dataset should be aggregated. 
-This task can be split into 2 phases - define groups that will be used during analysis and define aggregation function for groups.
+在数据分析期间，定义如何聚合大型数据集是一项常见任务。
+此任务可以分为 2 个阶段 - 定义将在分析期间使用的组并为组定义聚合函数。
 
-## Define Groups for analysis
-In this step, we want to define on what logical level we want to see our data. In the Energy Metering scenario, we can make analysis on different levels such as 
-city, region, building, apartment or concrete energy meter. The good news is that Trendz provides this grouping automatically in real-time. 
-You don't need to explicitly define aggregation rules and pre-compute value for different levels before analysis.
+## 定义用于分析的组
+在此步骤中，我们希望定义希望在什么逻辑级别上查看我们的数据。在能量计量场景中，我们可以在不同的级别进行分析，例如城市、区域、建筑物、公寓或具体能量计。好消息是 Trendz 会自动实时提供此分组。
+您无需在分析前显式定义聚合规则并为不同级别预先计算值。
 
-In this example we just add 2 fields - **Building name** and **Energy Consumption**. We do not have any aggregation rules in the Rule Engine. 
-Trendz knows what Energy Meters are registered in each building, so energy meters divided into a separate groups for each building.
+在此示例中，我们仅添加 2 个字段 - **建筑物名称**和**能耗**。我们在规则引擎中没有任何聚合规则。
+Trendz 知道每个建筑物中注册了哪些能量计，因此能量计分为每个建筑物的单独组。
 
 ![image](/images/trendz/data-grouping-simple.png)
 
-We see total consumption for the last year. Now let's group data by quarters - add **Date** field with **quarter** type:
+我们看到过去一年的总消耗量。现在，让我们按季度对数据进行分组 - 添加具有**季度**类型的**日期**字段：
 
 ![image](/images/trendz/data-grouping-quarter.png)
 
-Finally lets deep dive and see total consumption separated by room number - add **Room Number** attribute from **Apartment** Business Entity:
+最后，让我们深入研究并查看按房间号分隔的总消耗量 - 从**公寓**业务实体中添加**房间号**属性：
 
 ![image](/images/trendz/data-grouping-room.png)
 
 
-## Aggregate telemetry and groups
-The Next important step is to define how data should be aggregated. Here are supported aggregation types:
+## 聚合遥测和组
+下一个重要步骤是定义如何聚合数据。以下是支持的聚合类型：
 * AVG
 * SUM
 * MIN
@@ -42,36 +41,33 @@ The Next important step is to define how data should be aggregated. Here are sup
 * LATEST
 * COUNT
 * UNIQ
-* DELTA - special case described later in this guide
+* DELTA - 本指南后面介绍的特殊情况
 
-For changing aggregation type - just click on the field and select required value.
+要更改聚合类型 - 只需单击该字段并选择所需值。
 ![image](/images/trendz/field-aggregation.png)
 
 
-## Work with pulse output telemetry
-Water meter is a good example of a device with pulse output - telemetry value always growing and during analysis, we want to convert it into delta values.
-Here is an example chart for such telemetry:
- 
+## 使用脉冲输出遥测
+水表是一个具有脉冲输出的设备的良好示例 - 遥测值始终增长，在分析期间，我们希望将其转换为增量值。
+以下是此类遥测的示例图表：
+
 ![image](/images/trendz/pulse-before.png)
 
-Let's apply **DELTA** aggregation for this field and see how our data will look like:
+让我们对此字段应用**DELTA**聚合，看看我们的数据会是什么样子：
 
 ![image](/images/trendz/pulse-after.png)
 
-Trendz automatically computes delta for this field for defined time ranges with required granularity. 
-In case when **DELTA** aggregation applied for multiple devices - Trendz will apply **SUM** aggregation to the aggregate group - as the result, we can see total consumption on different levels (city, building, etc.)
+Trendz 会自动计算此字段的增量，以所需的粒度定义时间范围。
+当对多个设备应用**DELTA**聚合时 - Trendz 会将**SUM**聚合应用于聚合组 - 结果是，我们可以在不同级别（城市、建筑物等）上看到总消耗量
 
-## Filter Data
-To get better results during analysis it is required to filter data from noisy sources or we want to focus on a concrete subset of entities. 
-Drag-n-drop fields that you want to filter on into **Filter** section and apply the required filter. 
+## 过滤数据
+为了在分析期间获得更好的结果，需要从嘈杂的源中过滤数据，或者我们希望关注实体的具体子集。
+将您想要过滤的字段拖放到**过滤器**部分并应用所需的过滤器。
 
-You can apply filters even on fields that are not used for actual data visualization. For example, during energy consumption analysis, we want to filter out all 
-empty apartments and focus on apartments located on the second and third floors. Here is how our config will look like:
+您甚至可以对未用于实际数据可视化的字段应用过滤器。例如，在能耗分析期间，我们希望过滤掉所有空置公寓，并关注位于二楼和三楼的公寓。以下是我们的配置外观：
 
 ![image](/images/trendz/filter-example.png)
 
-You can filter by any field type (string, numeric, date, etc.). To change filter condition - click on the filter field and select the required option:
+您可以按任何字段类型（字符串、数字、日期等）进行过滤。要更改过滤器条件 - 单击过滤器字段并选择所需选项：
 
 ![image](/images/trendz/filter-dialog.png)
-
-

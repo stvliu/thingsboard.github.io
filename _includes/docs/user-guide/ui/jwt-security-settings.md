@@ -1,8 +1,8 @@
-ThingsBoard uses [JWT](https://jwt.io/) tokens for representing claims securely between the API client (browser, scripts, etc.) and the platform. When you log in to the platform, your username and password are exchanged for a pair of tokens.
+ThingsBoard 使用 [JWT](https://jwt.io/) 令牌在 API 客户端（浏览器、脚本等）和平台之间安全地表示声明。当您登录平台时，您的用户名和密码将交换为一对令牌。
 
-The main token is the short-lived token you should use to perform the API calls. The refresh token is used to get a new main token once it is expired.
+主令牌是您应该用来执行 API 调用的短期令牌。刷新令牌用于在主令牌过期后获取新的主令牌。
 
-To customize JWT, log in to ThingsBoard as a System Administrator.
+要自定义 JWT，请以系统管理员身份登录 ThingsBoard。
 
 {% if docsPrefix == null %}
 ![image](/images/user-guide/ui/jwt/jwt-provider-settings-step-1-ce.png)
@@ -11,12 +11,12 @@ To customize JWT, log in to ThingsBoard as a System Administrator.
 ![image](/images/user-guide/ui/jwt/jwt-provider-settings-step-1-pe.png)
 {% endif %}
 
-You can customize the following JWT options:
+您可以自定义以下 JWT 选项：
 
-**Issuer name** - this field is required and added to the token’s default “iss” claim value. This field is included in generated tokens and validated in a decoded token.
+**颁发者名称** - 此字段是必需的，并添加到令牌的默认“iss”声明值中。此字段包含在生成的令牌中，并在解码的令牌中进行验证。
 
-**Signing key** - this field value is used to sign the content of generated tokens. For HMAC signing, this should be a random string encoded Base64 format with at least 256 bits of data as is required by the signing protocol.
+**签名密钥** - 此字段值用于对生成的令牌的内容进行签名。对于 HMAC 签名，这应该是一个随机字符串，以 Base64 格式编码，并且至少包含 256 位数据，这是签名协议所要求的。
 
-**Token expiration time** - value in seconds specifies how long access tokens are valid. This value is added to the current UTC during token generation to obtain the token’s default “exp” claim value. The default value is 9000 seconds. The minimal value is 60 seconds.
+**令牌过期时间** - 以秒为单位的值指定访问令牌的有效期。此值在令牌生成期间添加到当前 UTC 中，以获取令牌的默认“exp”声明值。默认值为 9000 秒。最小值为 60 秒。
 
-**Refresh token expiration time** - value in seconds specifies how long refresh tokens are valid. This value is added to the current UTC during token generation to obtain the token’s default “exp” claim value. The default value is 604800 seconds. The minimal value is 900 seconds.
+**刷新令牌过期时间** - 以秒为单位的值指定刷新令牌的有效期。此值在令牌生成期间添加到当前 UTC 中，以获取令牌的默认“exp”声明值。默认值为 604800 秒。最小值为 900 秒。

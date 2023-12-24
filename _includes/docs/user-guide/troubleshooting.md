@@ -1,46 +1,46 @@
 * TOC
 {:toc}
 
-## Possible performance issues
+## 可能的性能问题
 
-Here we will describe different possible scenarios of what may go wrong.
+此处我们将描述可能出错的不同可能场景。
 
 {% capture contenttogglespecscenario %}
-No Message Processing%,%no-message-processing%,%templates/troubleshooting/scenarios/no-message-processing.md%br%
-Growing Latency For Messages%,%growing-latency%,%templates/troubleshooting/scenarios/growing-latency.md{% endcapture %}
+无消息处理%,%no-message-processing%,%templates/troubleshooting/scenarios/no-message-processing.md%br%
+消息延迟增加%,%growing-latency%,%templates/troubleshooting/scenarios/growing-latency.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="scenario" toggle-spec=contenttogglespecscenario %}
 
-## Troubleshooting instruments and tips
+## 故障排除工具和提示
 
-### Rule Engine Statistics Dashboard
-You can see if there are any Failures, Timeouts or Exceptions during the processing of your rule-chain. More detailed information you can find [here](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-engine-statistics).
+### 规则引擎统计信息仪表板
+您可以查看在处理规则链期间是否存在任何故障、超时或异常。您可以在 [此处](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-engine-statistics) 找到更详细的信息。
 
-### Consumer group message lag for Kafka Queue
+### Kafka 队列的消费者组消息延迟
 
-**Note:** This method can be used only if Kafka is selected as a queue.
+**注意：** 仅当选择 Kafka 作为队列时，才能使用此方法。
 
-With this log you can identify if there's some issue with processing of your messages (since Queue is used for all messaging inside the system you can analyze not only rule-engine queues but also <b>transport</b>, <b>core</b> etc).
-For more detailed information about troubleshooting rule-engine processing using consumer-group lag click [here](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#troubleshooting).
+使用此日志，您可以确定是否在处理消息时出现问题（由于队列用于系统内的所有消息传递，因此您不仅可以分析规则引擎队列，还可以分析<b>传输</b>、<b>核心</b>等）。
+有关使用消费者组延迟对规则引擎处理进行故障排除的更多详细信息，请点击 [此处](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#troubleshooting)。
 
-### CPU/Memory Usage
+### CPU/内存使用情况
 
-Sometimes the problem is that you don't have enough resources for some service. You can view CPU and Memory usage by logging into your server/container/pod and executing <code>top</code> linux command.
+有时问题在于您没有足够的资源来使用某些服务。您可以通过登录服务器/容器/pod 并执行 `top` Linux 命令来查看 CPU 和内存使用情况。
 
-For the more convenient monitoring it is better to have configured Prometheus and Grafana.
+为了更方便地进行监控，最好配置 Prometheus 和 Grafana。
 
-If you see that some services sometimes use 100% of the CPU, you should either scale the service horizontally by creating new nodes in cluster or scale it vertically by increasing the total amount of CPU.
+如果您看到某些服务有时使用 100% 的 CPU，则应通过在集群中创建新节点来水平扩展服务，或通过增加 CPU 总量来垂直扩展服务。
 
-### Message Pack Processing Log
+### 消息包处理日志
 
-You can enable logging of the slowest and most frequently called rule-nodes.
-To do this you need to [update your logging configuration](#enable-certain-logs) with the following <i>logger</i>:
+您可以启用对最慢和最常调用的规则节点的日志记录。
+为此，您需要使用以下<i>logger</i>来[更新日志记录配置](#enable-certain-logs)：
 
 ```bash
 <logger name="org.thingsboard.server.service.queue.TbMsgPackProcessingContext" level="DEBUG" />
 ```
 
-After this you can find the following messages in your [logs](#logs):
+之后，您可以在 [日志](#logs) 中找到以下消息：
 
 ```bash
 2021-03-24 17:01:21,023 [tb-rule-engine-consumer-24-thread-3] DEBUG o.t.s.s.q.TbMsgPackProcessingContext - Top Rule Nodes by max execution time:
@@ -54,47 +54,47 @@ After this you can find the following messages in your [logs](#logs):
 2021-03-24 17:01:21,028 [tb-rule-engine-consumer-24-thread-3] INFO  o.t.s.s.q.TbMsgPackProcessingContext - [Main][3f6debf0-8cc0-11eb-bcd9-d343878c0c7f] execution count: 1. [RuleChain: Thermostat|RuleNode: Message Type Switch(3f6debf0-8cc0-11eb-bcd9-d343878c0c7f)]
 ```
 
-### Clearing Redis Cache
+### 清除 Redis 缓存
 
-**Note:** This can be used only if Redis is selected as a cache.
+**注意：** 仅当选择 Redis 作为缓存时，才能使用此方法。
 
-It is possible that the data inside the cache somehow got corrupted. Regardless of the reason, it is always safe to clear cache, ThingsBoard will just refill it at the runtime.
-To clear Redis cache you need to log into the server/container/pod with Redis on it and call <code>redis-cli FLUSHALL</code> command. To clear the cache in Redis Sentinel mode, access the master container and execute the cache-clearing command.
+缓存中的数据可能已损坏。无论出于何种原因，清除缓存始终是安全的，ThingsBoard 只会在运行时重新填充缓存。
+要清除 Redis 缓存，您需要登录包含 Redis 的服务器/容器/pod，并调用 `redis-cli FLUSHALL` 命令。要在 Redis Sentinel 模式下清除缓存，请访问主容器并执行清除缓存命令。
 
-So if you are struggling with identifying the reason of some problem, you can safely clear Redis cache to make sure it isn't the reason of the issue.
+因此，如果您难以确定某些问题的根源，您可以安全地清除 Redis 缓存，以确保它不是问题的原因。
 
 
-## Logs
+## 日志
 
-### Read logs
+### 读取日志
 
-Regardless of the deployment type, ThingsBoard logs are stored on the same server/container as ThingsBoard Server/Node itself in the following directory:
+无论部署类型如何，ThingsBoard 日志都与 ThingsBoard Server/Node 本身存储在同一服务器/容器中，目录如下：
 
 ```bash
 /var/log/thingsboard
 ```
 
-Different deployment tools provide different ways to view logs:
+不同的部署工具提供了不同的查看日志的方式：
 
 {% capture contenttogglespecdeploymenttype %}
-Standalone Deployment%,%standalone%,%templates/troubleshooting/logs/view-logs/standalone-view-logs.md%br%
-Docker-Compose Deployment%,%docker-compose%,%templates/troubleshooting/logs/view-logs/docker-compose-view-logs.md%br%
-Kubernetes Deployment%,%kubernetes%,%templates/troubleshooting/logs/view-logs/kubernetes-view-logs.md{% endcapture %}
+独立部署%,%standalone%,%templates/troubleshooting/logs/view-logs/standalone-view-logs.md%br%
+Docker-Compose 部署%,%docker-compose%,%templates/troubleshooting/logs/view-logs/docker-compose-view-logs.md%br%
+Kubernetes 部署%,%kubernetes%,%templates/troubleshooting/logs/view-logs/kubernetes-view-logs.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="deploymentType" toggle-spec=contenttogglespecdeploymenttype %}
 
 
-### Enable certain logs
+### 启用某些日志
 
-ThingsBoard provides the ability to enable/disable logging for certain parts of the system depending on what information do you need for troubleshooting.
+ThingsBoard 提供了根据您需要哪些信息进行故障排除来启用/禁用系统某些部分的日志记录的功能。
 
-You can do this by modifying <b>logback.xml</b> file. As logs itself, it is stored on the same server/container as ThingsBoard Server/Node in the following directory:
+您可以通过修改<b>logback.xml</b> 文件来执行此操作。与日志本身一样，它与 ThingsBoard Server/Node 存储在同一服务器/容器中，目录如下：
 
 ```bash
 /usr/share/thingsboard/conf
 ```
 
-Here's an example of the <b>logback.xml</b> configuration:
+以下是一个<b>logback.xml</b> 配置示例：
 
 ```bash
 <!DOCTYPE configuration>
@@ -125,145 +125,142 @@ Here's an example of the <b>logback.xml</b> configuration:
 </configuration>
 ```
 
-The most useful for the troubleshooting parts of the config files are <i>loggers</i>.
-They allow you to enable/disable logging for the certain class or group of classes.
-In the example above the default logging level is <b>INFO</b> (it means that logs will contain only general information, warnings and errors), but for the package <code>org.thingsboard.js.api</code> we enabled the most detailed level of logging.
-There's also a possibility to completely disable logs for some part of the system, in the example above we did it to <code>com.microsoft.azure.servicebus.primitives.CoreMessageReceiver</code> class using <b>OFF</b> log-level.
+配置文件中最有用的故障排除部分是<i>loggers</i>。
+它们允许您启用/禁用某些类或类组的日志记录。
+在上面的示例中，默认日志记录级别是<b>INFO</b>（这意味着日志将仅包含一般信息、警告和错误），但对于包<code>org.thingsboard.js.api</code>，我们启用了最详细的日志记录级别。
+还可以完全禁用系统某些部分的日志记录，在上面的示例中，我们使用<b>OFF</b> 日志级别对<code>com.microsoft.azure.servicebus.primitives.CoreMessageReceiver</code> 类执行了此操作。
 
-To enable/disable logging for some part of the system you need to add proper <code></logger></code> configuration and wait up to 10 seconds.
+要启用/禁用系统某些部分的日志记录，您需要添加适当的<code></logger></code> 配置并等待最多 10 秒。
 
-Different deployment tools provide different ways to update logs:
+不同的部署工具提供了不同的更新日志的方式：
 
 {% capture contenttogglespecdeploymenttype %}
-Standalone Deployment%,%standalone%,%templates/troubleshooting/logs/enable-logs/standalone-enable-logs.md%br%
-Docker-Compose Deployment%,%docker-compose%,%templates/troubleshooting/logs/enable-logs/docker-compose-enable-logs.md%br%
-Kubernetes Deployment%,%kubernetes%,%templates/troubleshooting/logs/enable-logs/kubernetes-enable-logs.md{% endcapture %}
+独立部署%,%standalone%,%templates/troubleshooting/logs/enable-logs/standalone-enable-logs.md%br%
+Docker-Compose 部署%,%docker-compose%,%templates/troubleshooting/logs/enable-logs/docker-compose-enable-logs.md%br%
+Kubernetes 部署%,%kubernetes%,%templates/troubleshooting/logs/enable-logs/kubernetes-enable-logs.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="deploymentType" toggle-spec=contenttogglespecdeploymenttype %}
 
 
-## Metrics
+## 指标
 
-You may enable prometheus metrics by setting environment variables `METRICS_ENABLED` to value `true` and `METRICS_ENDPOINTS_EXPOSE` to value `prometheus` in the configuration file.
-If you are running ThingsBoard as microservices with separate services for MQTT and COAP transport, you also need to set environment variables `WEB_APPLICATION_ENABLE` to value `true`, 
-`WEB_APPLICATION_TYPE` to value `servlet` and `HTTP_BIND_PORT` to value `8081` for MQTT and COAP services in order to enable web-server with Prometheus metrics.
+您可以通过在配置文件中将环境变量 `METRICS_ENABLED` 设置为 `true` 和 `METRICS_ENDPOINTS_EXPOSE` 设置为 `prometheus` 来启用 prometheus 指标。
+如果您将 ThingsBoard 作为微服务运行，并为 MQTT 和 COAP 传输提供单独的服务，那么您还需要将环境变量 `WEB_APPLICATION_ENABLE` 设置为 `true`，`WEB_APPLICATION_TYPE` 设置为 `servlet`，`HTTP_BIND_PORT` 设置为 `8081`，以便为 MQTT 和 COAP 服务启用带有 Prometheus 指标的 Web 服务器。
 
-These metrics are exposed at the path: `https://<yourhostname>/actuator/prometheus` which can be scraped by prometheus (No authentication required).
+这些指标在以下路径公开：`https://<yourhostname>/actuator/prometheus`，prometheus 可以抓取该路径（无需身份验证）。
 
-## Prometheus metrics
+## Prometheus 指标
 
-Some internal state metrics can be exposed by the Spring Actuator using Prometheus.
+Spring Actuator 可以使用 Prometheus 公开一些内部状态指标。
 
-Here's the list of metrics ThingsBoard pushes to Prometheus.
+以下是 ThingsBoard 推送到 Prometheus 的指标列表。
 
-#### <b>tb-node</b> metrics
-- <i>attributes_queue_${index_of_queue}</i> (statsNames - <i>totalMsgs, failedMsgs, successfulMsgs</i>): stats about writing <b>attributes</b> to the database. 
-Note that there are several queues (threads) for persisting attributes in order to reach maximum performance.
-- <i>ruleEngine_${name_of_queue}</i> (statsNames - <i>totalMsgs, failedMsgs, successfulMsgs, tmpFailed, failedIterations, successfulIterations, timeoutMsgs, tmpTimeout</i>): 
-  stats about processing of the messages inside of the Rule Engine. They are persisted for each queue (e.g. Main, HighPriority, SequentialByOriginator etc).
-  Some stats descriptions:
-  - <i>tmpFailed</i>: number of messages that failed and got reprocessed later
-  - <i>tmpTimeout</i>: number of messages that timed out and got reprocessed later
-  - <i>timeoutMsgs</i>: number of messages that timed out and were discarded afterwards
-  - <i>failedIterations</i>: iterations of processing messages pack where at least one message wasn't processed successfully
-- <i>ruleEngine_${name_of_queue}_seconds</i> (for each present <i>tenantId</i>): stats about the time message processing took for different queues.
-- <i>core</i> (statsNames - <i>totalMsgs, toDevRpc, coreNfs, sessionEvents, subInfo, subToAttr, subToRpc, deviceState, getAttr, claimDevice, subMsgs</i>): 
-  stats about processing of the internal system messages.
-  Some stats descriptions:
-  - <i>toDevRpc</i>: number of processed RPC responses from Transport services
-  - <i>sessionEvents</i>: number of session events from Transport services
-  - <i>subInfo</i>: number of subscription infos from Transport services
-  - <i>subToAttr</i>: number of subscribes to attribute updates from Transport services
-  - <i>subToRpc</i>: number of subscribes to RPC from Transport services
-  - <i>getAttr</i>: number of 'get attributes' requests from Transport services
-  - <i>claimDevice</i>: number of Device claims from Transport services
-  - <i>deviceState</i>: number of processed changes to Device State
-  - <i>subMsgs</i>: number of processed subscriptions
-  - <i>coreNfs</i>: number of processed specific 'system' messages
-- <i>jsInvoke</i> (statsNames - <i>requests, responses, failures</i>): stats about total, successful and failed requests to the JS executors
-- <i>attributes_cache</i> (results - <i>hit, miss</i>): stats about how much attribute requests went to the cache
-
-
-#### <b>transport</b> metrics
-- <i>transport</i> (statsNames - <i>totalMsgs, failedMsgs, successfulMsgs</i>): stats about requests received by Transport from TB nodes 
-- <i>ruleEngine_producer</i> (statsNames - <i>totalMsgs, failedMsgs, successfulMsgs</i>): stats about pushing messages from Transport to the Rule Engine.
-- <i>core_producer</i> (statsNames - <i>totalMsgs, failedMsgs, successfulMsgs</i>): stats about pushing messages from Transport to the TB node Device actor.
-- <i>transport_producer</i> (statsNames - <i>totalMsgs, failedMsgs, successfulMsgs</i>): stats about requests from Transport to the TB.
+#### <b>tb-node</b> 指标
+- <i>attributes_queue_${index_of_queue}</i>（统计名称 - <i>totalMsgs, failedMsgs, successfulMsgs</i>）：有关将<b>属性</b>写入数据库的统计信息。
+请注意，为了达到最佳性能，有多个队列（线程）用于持久化属性。
+- <i>ruleEngine_${name_of_queue}</i>（统计名称 - <i>totalMsgs, failedMsgs, successfulMsgs, tmpFailed, failedIterations, successfulIterations, timeoutMsgs, tmpTimeout</i>）：
+  有关在规则引擎内处理消息的统计信息。它们为每个队列（例如 Main、HighPriority、SequentialByOriginator 等）持久化。
+  一些统计描述：
+  - <i>tmpFailed</i>：失败并稍后重新处理的消息数
+  - <i>tmpTimeout</i>：超时并稍后重新处理的消息数
+  - <i>timeoutMsgs</i>：超时并随后丢弃的消息数
+  - <i>failedIterations</i>：处理消息包的迭代次数，其中至少一条消息未成功处理
+- <i>ruleEngine_${name_of_queue}_seconds</i>（对于每个现有的<i>tenantId</i>）：有关不同队列的消息处理时间统计信息。
+- <i>core</i>（统计名称 - <i>totalMsgs, toDevRpc, coreNfs, sessionEvents, subInfo, subToAttr, subToRpc, deviceState, getAttr, claimDevice, subMsgs</i>）：
+  有关处理内部系统消息的统计信息。
+  一些统计描述：
+  - <i>toDevRpc</i>：从传输服务处理的 RPC 响应数
+  - <i>sessionEvents</i>：来自传输服务会话事件数
+  - <i>subInfo</i>：来自传输服务的订阅信息数
+  - <i>subToAttr</i>：来自传输服务的订阅属性更新数
+  - <i>subToRpc</i>：来自传输服务的订阅 RPC 数
+  - <i>getAttr</i>：来自传输服务的“获取属性”请求数
+  - <i>claimDevice</i>：来自传输服务的设备声明数
+  - <i>deviceState</i>：处理的设备状态更改数
+  - <i>subMsgs</i>：处理的订阅数
+  - <i>coreNfs</i>：处理的特定“系统”消息数
+- <i>jsInvoke</i>（统计名称 - <i>requests, responses, failures</i>）：有关对 JS 执行器的总请求数、成功请求数和失败请求数的统计信息
+- <i>attributes_cache</i>（结果 - <i>hit, miss</i>）：有关有多少属性请求进入缓存的统计信息
 
 
-<b>Some metrics depends on the type of the database you are using to persist timeseries data.</b>
+#### <b>transport</b> 指标
+- <i>transport</i>（统计名称 - <i>totalMsgs, failedMsgs, successfulMsgs</i>）：有关 TB 节点接收的传输请求的统计信息
+- <i>ruleEngine_producer</i>（统计名称 - <i>totalMsgs, failedMsgs, successfulMsgs</i>）：有关从传输到规则引擎推送消息的统计信息。
+- <i>core_producer</i>（统计名称 - <i>totalMsgs, failedMsgs, successfulMsgs</i>）：有关从传输到 TB 节点设备参与者推送消息的统计信息。
+- <i>transport_producer</i>（统计名称 - <i>totalMsgs, failedMsgs, successfulMsgs</i>）：有关从传输到 TB 的请求的统计信息。
 
-#### PostgreSQL-specific metrics
-- <i>ts_latest_queue_${index_of_queue}</i> (statsNames - <i>totalMsgs, failedMsgs, successfulMsgs</i>): stats about writing <b>latest telemetry</b> to the database. 
-Note that there are several queues (threads) in order to reach maximum performance.
-- <i>ts_queue_${index_of_queue}</i> (statsNames - <i>totalMsgs, failedMsgs, successfulMsgs</i>): stats about writing <b>telemetry</b> to the database. 
-Note that there are several queues (threads) in order to reach maximum performance.
 
-#### Cassandra-specific metrics
-- <i>rateExecutor_currBuffer</i>: number of messages that are currently being persisted inside the Cassandra.
-- <i>rateExecutor_tenant</i> (for each present <i>tenantId</i>): number of requests that got rate-limited
-- <i>rateExecutor</i> (statsNames - <i>totalAdded, totalRejected, totalLaunched, totalReleased, totalFailed, totalExpired, totalRateLimited</i>)
-Stats descriptions:
-    - <i>totalAdded</i>: number messages that were submitted for persisting
-    - <i>totalRejected</i>: number messages that were rejected while trying to submit for persisting
-    - <i>totalLaunched</i>: number messages sent to the Cassandra
-    - <i>totalReleased</i>: number successfully persisted messages
-    - <i>totalFailed</i>: number of messages that were not persisted
-    - <i>totalExpired</i>: number of expired messages that were not sent to the Cassandra
-    - <i>totalRateLimited</i>: number of messages that were not processed because of the Tenant's rate-limits
+<b>某些指标取决于您用于持久化时序数据类型的数据库。</b>
+
+#### 特定于 PostgreSQL 的指标
+- <i>ts_latest_queue_${index_of_queue}</i>（统计名称 - <i>totalMsgs, failedMsgs, successfulMsgs</i>）：有关将<b>最新遥测</b>写入数据库的统计信息。
+请注意，为了达到最佳性能，有多个队列（线程）。
+- <i>ts_queue_${index_of_queue}</i>（统计名称 - <i>totalMsgs, failedMsgs, successfulMsgs</i>）：有关将<b>遥测</b>写入数据库的统计信息。
+请注意，为了达到最佳性能，有多个队列（线程）。
+
+#### 特定于 Cassandra 的指标
+- <i>rateExecutor_currBuffer</i>：当前正在 Cassandra 内持久化的消息数。
+- <i>rateExecutor_tenant</i>（对于每个现有的<i>tenantId</i>）：受到速率限制的请求数
+- <i>rateExecutor</i>（统计名称 - <i>totalAdded, totalRejected, totalLaunched, totalReleased, totalFailed, totalExpired, totalRateLimited</i>）
+统计描述：
+    - <i>totalAdded</i>：提交持久化的消息数
+    - <i>totalRejected</i>：尝试提交持久化时被拒绝的消息数
+    - <i>totalLaunched</i>：发送到 Cassandra 的消息数
+    - <i>totalReleased</i>：成功持久化的消息数
+    - <i>totalFailed</i>：未持久化的消息数
+    - <i>totalExpired</i>：未发送到 Cassandra 的过期消息数
+    - <i>totalRateLimited</i>：由于租户的速率限制而未处理的消息数
     
-## Grafana Dashboards
+## Grafana 仪表盘
 
-You can import preconfigured Grafana dashboards from [here](https://github.com/thingsboard/thingsboard/tree/master/docker/monitoring/grafana/provisioning/dashboards). 
-**Note:** Depending on the cluster configuration you may need to make changes to the dashboards.
+您可以从 [此处](https://github.com/thingsboard/thingsboard/tree/master/docker/monitoring/grafana/provisioning/dashboards) 导入预配置的 Grafana 仪表盘。
+**注意：**根据集群配置，您可能需要对仪表盘进行更改。
 
-Also, you can view Grafana dashboards after deploying ThingsBoards docker-compose cluster configuration (for more information please follow [this guide](/docs/user-guide/install/{{docsPrefix}}cluster/docker-compose-setup/)).
-Make sure that `MONITORING_ENABLED` environment variable is set to `true`. 
-After deployment, you will be able to reach Prometheus at `http://localhost:9090` and Grafana at `http://localhost:3000` (default login is `admin` and password `foobar`).
+此外，您可以在部署 ThingsBoards docker-compose 集群配置后查看 Grafana 仪表盘（有关更多信息，请遵循 [此指南](/docs/user-guide/install/{{docsPrefix}}cluster/docker-compose-setup/)）。
+确保将 `MONITORING_ENABLED` 环境变量设置为 `true`。
+部署后，您将能够在 `http://localhost:9090` 访问 Prometheus，在 `http://localhost:3000` 访问 Grafana（默认登录名为 `admin`，密码为 `foobar`）。
 
-Here's screenshots of default preconfigured Grafana dashboards:
+以下是默认预配置 Grafana 仪表盘的屏幕截图：
 
 {% include images-gallery.html imageCollection="metrics-dashboards" %}
 
 
 ## OAuth2
 
-Sometimes after configuring OAuth you can not see the button for logging in with OAuth provider. This happens when “Domain name” and “Redirect URI Template” contain faulty values, they need to be the same you use for accessing your ThingsBoard web page.
+有时在配置 OAuth 后，您看不到使用 OAuth 提供程序登录的按钮。当“域名”和“重定向 URI 模板”包含错误的值时，就会发生这种情况，它们需要与您用于访问 ThingsBoard 网页的值相同。
 
-Example:
+示例：
 
-| Base URL |  Domain name     |  Redirect URI Template                    |
+| 基本 URL |  域名     |  重定向 URI 模板                    |
 |-----------------|----------------- |----------------------------------         |
 |http://mycompany.com:8080    |mycompany.com:8080     | http://mycompany.com:8080/login/oauth2/code  |
 |https://mycompany.com          |mycompany.com          | https://mycompany.com/login/oauth2/code       |
 
-Base URL in "HOME" section should not contain "/" or other characters.
+“主页”部分中的基本 URL 不应包含“/”或其他字符。
 
-> Go to your ThingsBoard as a System Administrator. Check the General
-> Settings -> Base URL should not contain “/” at the end (e.g. “https://
-> mycompany.com ” instead of “https://mycompany.com/”).
+> 以系统管理员身份转到您的 ThingsBoard。检查常规设置 -> 基本 URL 不应在末尾包含“/”（例如，“https://mycompany.com”而不是“https://mycompany.com/”）。
 
-For OAuth2 configuration click [here](/docs/{{docsPrefix}}user-guide/oauth-2-support/).
+有关 OAuth2 配置，请 [单击此处](/docs/{{docsPrefix}}user-guide/oauth-2-support/)。
 
-## Getting help
+## 获取帮助
 
 <section id="talkToUs">
     <div id="gettingHelp">
         <a href="https://app.gitter.im/#/room/#thingsboard_chat:gitter.im">
-            <span class="phrase-heading">Community chat</span>
-            <p>Our Gitter channel is the best way to contact our engineers and share your ideas with them.</p>
+            <span class="phrase-heading">社区聊天</span>
+            <p>我们的 Gitter 频道是联系我们的工程师并与他们分享您的想法的最佳方式。</p>
         </a>
         <a href="https://groups.google.com/forum/#!forum/thingsboard">
-            <span class="phrase-heading">Q&A forum</span>
-            <p>Our user forum is a great place to go for community support.</p>
+            <span class="phrase-heading">问答论坛</span>
+            <p>我们的用户论坛是获得社区支持的好地方。</p>
         </a>
         <a href="https://stackoverflow.com/questions/tagged/thingsboard">
             <span class="phrase-heading">Stack Overflow</span>
-            <p>The ThingsBoard team will also monitor posts tagged thingsboard. If there aren’t any existing questions that help, please ask a new one!</p>
+            <p>ThingsBoard 团队还将监控标记为 thingsboard 的帖子。如果没有现有的问题可以提供帮助，请提出一个新问题！</p>
         </a>
     </div>
 </section>
 
-If your problem isn't answered by any of the guides above, feel free to contact ThingsBoard team.
+如果上述任何指南都没有回答您的问题，请随时联系 ThingsBoard 团队。
 
-<a class="button" href="/docs/contact-us/">Contact us</a>
+<a class="button" href="/docs/contact-us/">联系我们</a>

@@ -2,30 +2,27 @@
 layout: docwithnav-trendz
 assignees:
 - vparomskiy
-title: Batch Calculated Fields
-description: Batch Calculated Fields
+title: 批量计算字段
+description: 批量计算字段
 ---
 
 * TOC
 {:toc}
 
 
-When batch calculation option is disabled - you write a function that works with 1 value at a time. But when a batch 
-calculation is enabled you work with the whole raw telemetry array. With the enabled `Batch calculation` checkbox, you 
-receive more control over how raw telemetry is converted into the required metric. For example you can write a function that 
-has access to the previous telemetry value, you can filter or exclude telemetry value from calculation if needed, you can group telemetries by timestamp and apply transformation on group.
+当禁用批量计算选项时 - 你编写一个一次处理 1 个值的功能。但当启用批量计算时，你处理整个原始遥测数组。启用“批量计算”复选框后，你可以更好地控制如何将原始遥测转换为所需的指标。例如，你可以编写一个可以访问先前遥测值的功能，如果需要，你可以从计算中过滤或排除遥测值，你可以按时间戳对遥测进行分组并在组上应用转换。
 
-Once raw telemetry array was transformed and returned from the calculation function, system will apply required aggregation on that array.
+一旦原始遥测数组从计算函数转换并返回，系统将对该数组应用所需的聚合。
 
-## Basic syntax
+## 基本语法
 
-Let's assume that you create following variable for telemetry data:
+假设你为遥测数据创建了以下变量：
 
 ```javascript
 var temperatureReadings = none(thermostat.temperature);
 ```
 
-In this case `temperatureReadings` variable would be an array of telemetry objects:
+在这种情况下，`temperatureReadings` 变量将是一个遥测对象数组：
 
 ```json
 [
@@ -44,7 +41,7 @@ In this case `temperatureReadings` variable would be an array of telemetry objec
 ]
 ```
 
-In case of attributes you also has an array with 1 object that represent an attribute. Here is an example how to use attributes insude your script:
+对于属性，你还有一个包含表示属性的 1 个对象的数组。以下是如何在脚本中使用属性的示例：
 
 ```javascript
 var unit = uniq(thermostat.measureUnit);
@@ -53,11 +50,11 @@ if(unit.length) {
 }
 ```
 
-## Examples
+## 示例
 
-#### Filter raw telemetry 
+#### 过滤原始遥测
 
-You can exclude some telemetry values from metric calculation. In this example we will exclude all temperature values that bigger than 40:
+你可以从指标计算中排除一些遥测值。在此示例中，我们将排除所有大于 40 的温度值：
 
 ```javascript
 var temperatureReadings = none(thermostat.temperature);
@@ -74,9 +71,9 @@ for (var i = 0; i < temperatureReadings.length; i++) {
 return filteredReadings;
 ```
 
-#### Modify raw telemetry
+#### 修改原始遥测
 
-Here is an example how to transform raw telemetry array based on attribute value: 
+以下是如何根据属性值转换原始遥测数组的示例：
 
 ```javascript
 var temperatureReadings = none(thermostat.temperature);
@@ -96,7 +93,7 @@ for (var i = 0; i < temperatureReadings.length; i++) {
 return temperatureReadings;
 ```
 
-#### Group multiple telemetries by timestamp
+#### 按时间戳对多个遥测进行分组
 
 ```javascript
 var voltageTelemetry = none(energyMeter.voltage);
@@ -109,7 +106,7 @@ groupTelemetryByTime(voltageTelemetry, groupedTelemetry, 'voltage');
 groupTelemetryByTime(temperatureTelemetry, groupedTelemetry, 'temperature');
 groupTelemetryByTime(pressureTelemetry, groupedTelemetry, 'pressure');
 
-// ... execute transformation
+// ... 执行转换
 
 groupTelemetryByTime = function (telemetry, groupedTelemetry, keyName) {
     for (var i = 0; i < telemetry.length; i++) {
@@ -122,10 +119,11 @@ groupTelemetryByTime = function (telemetry, groupedTelemetry, keyName) {
 };
 
 ```
- 
-#### Fill gaps in telemetry stream
 
-In this example we demonstrate how to detect gaps im timeseries stream and fill it with `0` values:
+
+#### 填充遥测流中的空白
+
+在此示例中，我们将演示如何检测时间序列流中的空白并用 `0` 值填充它：
 
 ```javascript
 var temperatureReadings = none(thermostat.temperature);
@@ -142,6 +140,6 @@ for (var i = 1; i < temperatureReadings.length; i++) {
 return temperatureReadings;
 ``` 
 
-## Next Steps
+## 后续步骤
 
 {% assign currentGuide = "CalculatedFields" %}{% include templates/trndz-guides-banner.md %}

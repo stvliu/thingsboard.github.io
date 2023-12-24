@@ -2,8 +2,8 @@
 layout: docwithnav-pe
 asiconees:
 - yefimov-andrey
-title: Aliases
-description: ThingsBoard Aliases
+title: 别名
+description: ThingsBoard 别名
 
 single-alias:
  0:
@@ -452,8 +452,3 @@ entity-view-search-query:
   image: /images/user-guide/ui/alias/entity-view-search-query-8-paas.png
  8:
   image: /images/user-guide/ui/alias/entity-view-search-query-9-paas.png
-
----
-
-{% assign docsPrefix = "pe/" %}
-{% include docs/pe/user-guide/ui/aliases.md %}

@@ -1,110 +1,110 @@
 ---
 layout: docwithnav
 title: ROLTEK
-description: ROLTEK guide
+description: ROLTEK 指南
 
 ---
 
 * TOC
 {:toc}
 
-## Introduction
+## 简介
 
-This article contains instructions on how to configure ThingsBoard IoT platform and connect Roltek DC620 device. 
-[ThingsBoard IoT](https://thingsboard.io/) platform is an open-source IoT platform for data collection, processing, visualization, and device management. 
-It enables device connectivity via industry standard IoT protocols - MQTT, CoAP and HTTP and supports both cloud and on-premises deployments. 
-ThingsBoard combines scalability, fault-tolerance and performance so you will never lose your data.
+本文包含有关如何配置 ThingsBoard IoT 平台和连接 Roltek DC620 设备的说明。
+[ThingsBoard IoT](https://thingsboard.io/) 平台是一个用于数据收集、处理、可视化和设备管理的开源 IoT 平台。
+它通过行业标准 IoT 协议（MQTT、CoAP 和 HTTP）实现设备连接，并支持云端和本地部署。
+ThingsBoard 结合了可扩展性、容错性和性能，因此您永远不会丢失数据。
 
-## Create Device On Thingsboard
+## 在 Thingsboard 上创建设备
 
-Login to your ThingsBoard platform and ppen "**Devices**" page.
+登录您的 ThingsBoard 平台并打开“**设备**”页面。
 
 ![image](/images/samples/roltek/tb1.png)
 
 <br>
-Click "**plus**" button then click "**Add new device**" button to add new device.
-**Enter name** for your device. Then click "**Next: Credentials**" button;
+单击“**加号**”按钮，然后单击“**添加新设备**”按钮以添加新设备。
+**输入设备名称**。然后单击“**下一步：凭据**”按钮；
 
 ![image](/images/samples/roltek/tb3.png)
 
 <br>
-Enable "**Add credentials**" option. Enter the desirable **Access Token** and click "**Add**" button to save changes.
+启用“**添加凭据**”选项。输入所需的**访问令牌**，然后单击“**添加**”按钮以保存更改。
 
 ![image](/images/samples/roltek/tb4.png)
 
-## Configuring Roltek DC620
+## 配置 Roltek DC620
 
-First connect your device to the Internet via WiFi or Ethernet as described in the user manual.
+首先，按照用户手册中的说明通过 WiFi 或以太网将设备连接到互联网。
 
-On the "**MQTT Settings**" page: 
- - Set "**MQTT Mode**" to **enable**;
- - Enter your Thingsboard Server hostname or IP to "**MQTT Broker URI**";
- - Enter your **Access Token** to "**MQTT Broker Username**";
- - Click **Save** button.
+在“**MQTT 设置**”页面上：
+- 将“**MQTT 模式**”设置为**启用**；
+- 在“**MQTT 代理 URI**”中输入您的 Thingsboard 服务器主机名或 IP；
+- 在“**MQTT 代理用户名**”中输入您的**访问令牌**；
+- 单击**保存**按钮。
 
 ![image](/images/samples/roltek/tb5.png)
 
 <br>
-Users can add **Nodes** and **Tags** as described in the user manual. In this demo we will work with device’s default node and tags.
+用户可以按照用户手册中所述添加**节点**和**标签**。在此演示中，我们将使用设备的默认节点和标签。
 
-On the **Rules** page navigate to the **MQTT Payloads** tab and click Add **MQTT Payload** button.
+在**规则**页面上，导航到**MQTT 有效负载**选项卡，然后单击添加**MQTT 有效负载**按钮。
 
 ![image](/images/samples/roltek/tb6.png)
 
 <br>
-In new window enter values:
- - Select **Payload Type** - **JSON**;
- - Enter "**{**" to **Header**;
- - Enter **"$V":#V** to **Pattern**;
- - Enter "**,**" to **Seperator**;
- - Enter "**}**" to **Ending**;
- - Click **Save** button.
+在新窗口中输入值：
+- 选择**有效负载类型** - **JSON**；
+- 在**标题**中输入“**{**”；
+- 在**模式**中输入**“$V”：#V**；
+- 在**分隔符**中输入“**,**”；
+- 在**结束**中输入“**}**”；
+- 单击**保存**按钮。
 
 ![image](/images/samples/roltek/tb7.png)
 
 <br>
-On the **Rules** page navigate to the **MQTT Publishers** tab and click **Add MQTT Publisher** button.
+在**规则**页面上，导航到**MQTT 发布者**选项卡，然后单击**添加 MQTT 发布者**按钮。
 
 ![image](/images/samples/roltek/tb8.png)
 
 <br>
-In new window enter values:
- - Enter publish period you want to **Period**;
- - Choose **QoS** option you want;
- - Choose **Retain** value you want;
- - Enter **"v1/devices/me/telemetry"** to **Topic**;
- - Choose **Payload** we previously added. (**1** in this case);
- - Select **tag** or **tags** you want to publish;
- - Click **Save** button.
+在新窗口中输入值：
+- 在**周期**中输入您想要发布的周期；
+- 选择您想要的**QoS**选项；
+- 选择您想要的**保留**值；
+- 在**主题**中输入**“v1/devices/me/telemetry”**；
+- 选择我们之前添加的**有效负载**。（在本例中为**1**）；
+- 选择您想要发布的**标签**；
+- 单击**保存**按钮。
 
 ![image](/images/samples/roltek/tb9.png)
 
-## Adding Widget to the Dashboard
+## 将小部件添加到仪表板
 
-The collected data can be displayed using various widgets. To create one you should be able to see gathered data in the Latest telemetry section.
+可以使用各种小部件显示收集的数据。要创建一个，您应该能够在最新遥测部分中看到收集的数据。
 
-To access it you should follow these steps:
- - Go to the **Devices** on the left menu;
- - Select previously configure device;
- - Navigate to the **Latest Telemetry** tab;
- - Click on the gathered data row;
- - Press **Show on widget** button.
+要访问它，您应该按照以下步骤操作：
+- 转到左侧菜单上的**设备**；
+- 选择先前配置的设备；
+- 导航到**最新遥测**选项卡；
+- 单击收集的数据行；
+- 按下**在小部件上显示**按钮。
 
 ![image](/images/samples/roltek/tb10.png)
 
 <br>
-Choose widget bundle accordingly to your data. Choose suitable chart for your data visualization. Click "**Add to dashboard**" button.
+根据您的数据选择小部件包。选择适合您数据可视化的图表。单击“**添加到仪表板**”按钮。
 
 ![image](/images/samples/roltek/tb11.png)
 
 <br>
-Now select "**Create new dashboard**". Mark "**Open dashboard**" (with this option enabled after addition you will be redirected to newly created dashboard) and click "**Add**" to create new dashboard.
+现在选择“**创建新仪表板**”。标记“**打开仪表板**”（启用此选项后，添加后您将被重定向到新创建的仪表板）并单击“**添加**”以创建新仪表板。
 
 ![image](/images/samples/roltek/tb12.png)
 
 <br>
 ![image](/images/samples/roltek/tb13.png)
 
-## Next steps
+## 后续步骤
 
 {% assign currentGuide = "HardwareSamples" %}{% include templates/guides-banner.md %}

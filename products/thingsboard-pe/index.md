@@ -16,8 +16,8 @@ description:
     </section>
     <section id="intro">
         <div class="main-div">
-            <h1>Advanced ThingsBoard IoT Platform distribution</h1>
-            <h2 class="sub-title clari">with value added features</h2>
+            <h1>ThingsBoard IoT平台高级发行版</h1>
+            <h2 class="sub-title clari">具有增值功能</h2>
         </div>
     </section>
     <section id="labeling">
@@ -28,9 +28,9 @@ description:
                 </div>
                 <div class="block">
                     <div class="feature-des">
-                    <h3 class="item-heading">White-labeling</h3>
-                    <p>Rebrand ThingsBoard platform web interface with your company or product logo and color scheme in 2 minutes. No coding or service restart required. Allow your customers and their sub-customers to white-label their interface as well.</p>
-                    <a class="read-more-button" href="/docs/user-guide/white-labeling/">Read more<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
+                    <h3 class="item-heading">白标</h3>
+                    <p>在 2 分钟内使用您的公司或产品徽标和配色方案重新标记 ThingsBoard 平台网络界面。无需编码或重新启动服务。允许您的客户及其子客户也对他们的界面进行白标标记。</p>
+                    <a class="read-more-button" href="/docs/user-guide/white-labeling/">了解更多<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
                     </div>
                     <img class="preview" src="/images/pe/white-labeling.svg" alt="white labeling">
                 </div>
@@ -38,10 +38,10 @@ description:
                     <div id="diagram" class="feature-des preview">
                         <ul>
                             <li id="menu-item-roles" class="menu-item">
-                                <a href="javascript:void(0);" onClick="activatePricingSection('roles')">Roles</a>
+                                <a href="javascript:void(0);" onClick="activatePricingSection('roles')">角色</a>
                             </li>
                             <li id="menu-item-hierarchy" class="menu-item">
-                                <a href="javascript:void(0);" onClick="activatePricingSection('hierarchy')">Customer hierarchy</a>
+                                <a href="javascript:void(0);" onClick="activatePricingSection('hierarchy')">客户层级</a>
                             </li>
                         </ul>
                         <img class="diagram-border" src="/images/pe/diagram-border.svg" alt="diagram border">
@@ -52,9 +52,9 @@ description:
                             <img src="/images/pe/roles.svg" alt="roles">
                         </div>
                     </div>
-                    <div class="feature-des"><h3 class="item-heading">Advanced RBAC for IoT</h3>
-                    <p>Advanced management of user roles and permissions. Manage hierarchy of customers with multiple levels of sub-customers, independent users and devices.</p>
-                    <a class="read-more-button" href="/docs/user-guide/rbac/">Read more<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
+                    <div class="feature-des"><h3 class="item-heading">适用于 IoT 的高级 RBAC</h3>
+                    <p>高级管理用户角色和权限。管理具有多个子客户、独立用户和设备的客户层级。</p>
+                    <a class="read-more-button" href="/docs/user-guide/rbac/">了解更多<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
                     </div>
                 </div>
             </div>
@@ -70,17 +70,17 @@ description:
                     <div class="main2"></div><div class="small4"></div><div class="small5"></div>
                 </div>
                 <div class="block dark">
-                    <div class="feature-des"><h3 class="item-heading ">Platform Integrations</h3>
-                    <p>Stream data from devices connected to existing IoT Platforms to enable real-time interactive dashboards and efficient data processing. Connect NB IoT, LoRaWAN and SigFox devices with specific payload formats using highly customizable data converters. Design and plugin your own converter as a JavaScript functions in real-time.</p>
-                    <a class="read-more-button" href="/docs/user-guide/integrations/">Read more<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
+                    <div class="feature-des"><h3 class="item-heading ">平台集成</h3>
+                    <p>将数据从连接到现有 IoT 平台的设备流式传输，以启用实时交互式仪表板和高效的数据处理。使用高度可定制的数据转换器连接 NB IoT、LoRaWAN 和 SigFox 设备以及特定的有效负载格式。实时设计并插入您自己的转换器作为 JavaScript 函数。</p>
+                    <a class="read-more-button" href="/docs/user-guide/integrations/">了解更多<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
                     </div>
                     <img class="preview" src="/images/pe/integrations.svg" alt="integrations">
                 </div>
                 <div class="block">
                     <img class="preview" src="/images/pe/entity-groups.svg" alt="entity groups">
-                    <div class="feature-des"><h3 class="item-heading">Entity Groups</h3>
-                    <p>Group your entities (device, assets, etc.) to simplify administration tasks. Customize set of columns for each group and trigger actions on entities directly from administration interface.</p>
-                    <a class="read-more-button" href="/docs/user-guide/groups/">Read more<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
+                    <div class="feature-des"><h3 class="item-heading">实体组</h3>
+                    <p>对您的实体（设备、资产等）进行分组，以简化管理任务。为每个组自定义列集，并直接从管理界面触发实体上的操作。</p>
+                    <a class="read-more-button" href="/docs/user-guide/groups/">了解更多<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
                     </div>
                 </div>
             </div>
@@ -93,14 +93,14 @@ description:
                     <div class="main3"></div><div class="small6"></div><div class="small7"></div><div class="small8"></div>
                 </div>
                 <div class="block double">
-                    <div class="left-textblock feature-des"><h3 class="item-heading">Scheduler</h3>
-                    <p>Schedule various types of events including report generation, commands to devices and configuration updates with flexible schedule configuration.</p>
-                    <a class="read-more-button" href="/docs/user-guide/scheduler/">Read more<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
+                    <div class="left-textblock feature-des"><h3 class="item-heading">调度程序</h3>
+                    <p>安排各种类型的事件，包括报告生成、设备命令和配置更新，并具有灵活的计划配置。</p>
+                    <a class="read-more-button" href="/docs/user-guide/scheduler/">了解更多<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
                     </div>
                     <img class="preview" src="/images/pe/scheduler.svg" alt="scheduler">
-                    <div class="right-textblock feature-des"><h3 class="item-heading">Reporting</h3>
-                    <p>Generate great looking reports using dashboards visualization capabilities. Generate reports by schedule or export by demand.</p>
-                    <a class="read-more-button" href="/docs/user-guide/reporting/">Read more<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
+                    <div class="right-textblock feature-des"><h3 class="item-heading">报告</h3>
+                    <p>使用仪表板可视化功能生成美观报告。按计划生成报告或按需导出。</p>
+                    <a class="read-more-button" href="/docs/user-guide/reporting/">了解更多<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
                     </div>
                 </div>
             </div>
@@ -117,9 +117,9 @@ description:
                 </div>
                 <div class="block end">
                     <img class="preview" src="/images/pe/data-export.svg" alt="data export">
-                    <div class="feature-des"><h3 class="item-heading">CSV/XLS data export</h3>
-                    <p>Export any dashboard widget data to CSV or XLS format. Allow your customers to download valuable insights from their device's data and review them in offline mode.</p>
-                    <a class="read-more-button" href="/docs/user-guide/csv-xls-data-export/">Read more<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
+                    <div class="feature-des"><h3 class="item-heading">CSV/XLS 数据导出</h3>
+                    <p>将任何仪表板小部件数据导出为 CSV 或 XLS 格式。允许您的客户从其设备数据中下载有价值的见解，并在离线模式下查看它们。</p>
+                    <a class="read-more-button" href="/docs/user-guide/csv-xls-data-export/">了解更多<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
                     </div>
                 </div>
             </div>
@@ -132,103 +132,103 @@ description:
         <div class="prof"><div class="coln"><div class="head"></div></div></div>
         <div class="cloud"><div class="coln"><div class="head"></div></div></div>
         </div>
-        <h3>Feature Comparison Matrix</h3>
+        <h3>功能比较矩阵</h3>
         <table>
                 <thead>
                     <tr>
                         <td></td>
-                        <th>Community<br>Edition</th>
-                        <th>Professional<br>Edition</th>
-                        <th>Cloud</th>
+                        <th>社区<br>版本</th>
+                        <th>专业<br>版本</th>
+                        <th>云</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <th>Asset management & Data collection</th>
+                        <th>资产管理和数据收集</th>
                         <td><img src="/images/pe/checked.svg" alt="checked"></td>
                         <td><img src="/images/pe/checked.svg" alt="checked"></td>
                         <td><img src="/images/pe/checked.svg" alt="checked"></td>
                     </tr>
                     <tr>
-                        <th>End-user real-time dashboards</th>
+                        <th>终端用户实时仪表板</th>
                         <td><img src="/images/pe/checked.svg" alt="checked"></td>
                         <td><img src="/images/pe/checked.svg" alt="checked"></td>
                         <td><img src="/images/pe/checked.svg" alt="checked"></td>
                     </tr>
                     <tr>
-                        <th>Customizable rule chains, widgets</th>
+                        <th>可定制的规则链、小部件</th>
                         <td><img src="/images/pe/checked.svg" alt="checked"></td>
                         <td><img src="/images/pe/checked.svg" alt="checked"></td>
                         <td><img src="/images/pe/checked.svg" alt="checked"></td>
                     </tr>
                     <tr>
-                        <th>MQTT, HTTP, CoAP, OPC-UA transport</th>
+                        <th>MQTT、HTTP、CoAP、OPC-UA 传输</th>
                         <td><img src="/images/pe/checked.svg" alt="checked"></td>
                         <td><img src="/images/pe/checked.svg" alt="checked"></td>
                         <td><img src="/images/pe/checked.svg" alt="checked"></td>
                     </tr>
                     <tr>
-                        <th>Integrations with BigData systems</th>
+                        <th>与大数据系统的集成</th>
                         <td><img src="/images/pe/checked.svg" alt="checked"></td>
                         <td><img src="/images/pe/checked.svg" alt="checked"></td>
                         <td><img src="/images/pe/checked.svg" alt="checked"></td>
                     </tr>
                     <tr>
-                        <th>NB-IoT, SigFox, LoRaWAN support</th>
-                        <td>Basic</td>
-                        <td>Advanced</td>
-                        <td>Advanced</td>
+                        <th>NB-IoT、SigFox、LoRaWAN 支持</th>
+                        <td>基本</td>
+                        <td>高级</td>
+                        <td>高级</td>
                     </tr>
                     <tr>
-                        <th><a href="/docs/user-guide/rule-engine-2-0/overview/">Rule Engine: Components<img src="/images/pe/help-black18.svg" alt="help"></a></th>
-                        <td>Basic</td>
-                        <td>Advanced</td>
-                        <td>Advanced</td>
+                        <th><a href="/docs/user-guide/rule-engine-2-0/overview/">规则引擎：组件<img src="/images/pe/help-black18.svg" alt="help"></a></th>
+                        <td>基本</td>
+                        <td>高级</td>
+                        <td>高级</td>
                     </tr>
                     <tr>
-                        <th><a href="/docs/user-guide/groups/">Entity groups<img src="/images/pe/help-black18.svg" alt="help"></a></th>
+                        <th><a href="/docs/user-guide/groups/">实体组<img src="/images/pe/help-black18.svg" alt="help"></a></th>
                         <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
                         <td><img src="/images/pe/checked.svg" alt="checked"></td>
                         <td><img src="/images/pe/checked.svg" alt="checked"></td>
                     </tr>
                     <tr>
-                        <th><a href="/docs/user-guide/rbac/">Advanced RBAC for IoT<img src="/images/pe/help-black18.svg" alt="help"></a></th>
+                        <th><a href="/docs/user-guide/rbac/">适用于 IoT 的高级 RBAC<img src="/images/pe/help-black18.svg" alt="help"></a></th>
                         <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
                         <td><img src="/images/pe/checked.svg" alt="checked"></td>
                         <td><img src="/images/pe/checked.svg" alt="checked"></td>
                     </tr>
                     <tr>
-                        <th><a href="/docs/user-guide/scheduler/">Scheduler<img src="/images/pe/help-black18.svg" alt="help"></a></th>
+                        <th><a href="/docs/user-guide/scheduler/">调度程序<img src="/images/pe/help-black18.svg" alt="help"></a></th>
                         <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
                         <td><img src="/images/pe/checked.svg" alt="checked"></td>
                         <td><img src="/images/pe/checked.svg" alt="checked"></td>
                     </tr>
                     <tr>
-                        <th><a href="/docs/user-guide/reporting/">Reporting<img src="/images/pe/help-black18.svg" alt="help"></a></th>
+                        <th><a href="/docs/user-guide/reporting/">报告<img src="/images/pe/help-black18.svg" alt="help"></a></th>
                         <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
                         <td><img src="/images/pe/checked.svg" alt="checked"></td>
                         <td><img src="/images/pe/checked.svg" alt="checked"></td>
                     </tr>
                     <tr>
-                        <th><a href="/docs/user-guide/white-labeling/">White-labeling<img src="/images/pe/help-black18.svg" alt="help"></a></th>
+                        <th><a href="/docs/user-guide/white-labeling/">白标<img src="/images/pe/help-black18.svg" alt="help"></a></th>
                         <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
                         <td><img src="/images/pe/checked.svg" alt="checked"></td>
                         <td><img src="/images/pe/checked.svg" alt="checked"></td>
                     </tr>
                     <tr>
-                        <th><a href="/docs/user-guide/csv-xls-data-export/">CSV/XLS data export<img src="/images/pe/help-black18.svg" alt="help"></a></th>
+                        <th><a href="/docs/user-guide/csv-xls-data-export/">CSV/XLS 数据导出<img src="/images/pe/help-black18.svg" alt="help"></a></th>
                         <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
                         <td><img src="/images/pe/checked.svg" alt="checked"></td>
                         <td><img src="/images/pe/checked.svg" alt="checked"></td>
                     </tr>
                     <tr>
-                        <th><a href="/docs/user-guide/integrations/">Platform Integrations<img src="/images/pe/help-black18.svg" alt="help"></a></th>
+                        <th><a href="/docs/user-guide/integrations/">平台集成<img src="/images/pe/help-black18.svg" alt="help"></a></th>
                         <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
                         <td><img src="/images/pe/checked.svg" alt="checked"></td>
                         <td><img src="/images/pe/checked.svg" alt="checked"></td>
                     </tr>
                     <tr>
-                        <th><a href="/products/paas/domains/">Domain management<img src="/images/pe/help-black18.svg" alt="help"></a></th>
+                        <th><a href="/products/paas/domains/">域管理<img src="/images/pe/help-black18.svg" alt="help"></a></th>
                         <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
                         <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
                         <td><img src="/images/pe/checked.svg" alt="checked"></td>
@@ -241,20 +241,20 @@ description:
         <div class="main-div">
             <div class="item">
                 <img src="/images/pe/cloud-premises.svg" alt="Flexible deployment options">
-                <h3 class="item-heading">Flexible deployment options</h3>
-                <p>Deploy ThingsBoard platform in the cloud or on premises. Use commodity hardware to scale out horizontally by adding new nodes to your cluster. Single ThingsBoard server can support 10 000+ devices and 100M messages per hour, while simple cluster can support millions of devices and billions of messages.</p>
+                <h3 class="item-heading">灵活的部署选项</h3>
+                <p>在云端或本地部署 ThingsBoard 平台。使用通用硬件通过向集群添加新节点来横向扩展。单个 ThingsBoard 服务器可以支持 10,000 多个设备和每小时 1 亿条消息，而简单的集群可以支持数百万个设备和数十亿条消息。</p>
             </div>
             <div class="divider"></div>
             <div class="item">
-                <img src="/images/pe/pricing-models.svg" alt="Simple and predictable pricing models">
-                <h3 class="item-heading">Simple and predictable pricing models</h3>
-                <p>Say "No!" to per message or per device pricing that turns to a monster bills in production system. ThingsBoard PE supports two simple and predictable pricing models depending on your product life-cycle stage.</p>
+                <img src="/images/pe/pricing-models.svg" alt="简单且可预测的定价模式">
+                <h3 class="item-heading">简单且可预测的定价模式</h3>
+                <p>对每条消息或每个设备说不，这些消息或设备在生产系统中会变成巨额账单。ThingsBoard PE 支持两种简单且可预测的定价模式，具体取决于您的产品生命周期阶段。</p>
             </div>
         </div>
     </section>
     <section id="bottom">
         <div class="main-div">
-            <a href="/pricing/" class="try-pe">Get it now</a>
+            <a href="/pricing/" class="try-pe">立即获取</a>
         </div>
     </section>
 </main>

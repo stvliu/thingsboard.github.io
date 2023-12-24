@@ -1,93 +1,93 @@
+配置 HTTP(S) 负载均衡器以访问 ThingsBoard 实例的 Web 界面。基本上，您有 3 种可能的配置选项：
 
-Configure HTTP(S) Load Balancer to access web interface of your ThingsBoard instance. Basically you have 3 possible options of configuration:
+* http - 不支持 HTTPS 的负载均衡器。建议**用于开发。**
+  唯一的优点是配置简单且成本最低。可能是开发服务器的不错选择，但绝对不适合生产环境。
+* https - 支持 HTTPS 的负载均衡器。建议**用于生产。**充当 SSL 终止点。
+  您可以轻松配置它以颁发和维护有效的 SSL 证书。自动将所有非安全 (HTTP) 流量重定向到安全 (HTTPS) 端口。
+* transparent - 负载均衡器，只需将流量转发到 ThingsBoard 的 http 和 https 端口。要求您配置和维护有效的 SSL 证书。
+  适用于无法容忍 LB 作为 SSL 终止点的生产环境。
 
-* http - Load Balancer without HTTPS support. Recommended **for development.**
-  The only advantage is simple configuration and minimum costs. May be good option for development server but definitely not suitable for production.
-* https - Load Balancer with HTTPS support. Recommended **for production.** Acts as an SSL termination point.
-  You may easily configure it to issue and maintain a valid SSL certificate. Automatically redirects all non-secure (HTTP) traffic to secure (HTTPS) port.
-* transparent - Load Balancer that simply forwards traffic to http and https ports of the ThingsBoard. Requires you to provision and maintain valid SSL certificate.
-  Useful for production environments that can't tolerate the LB to be an SSL termination point.
+请参阅以下链接/说明，了解如何配置每个建议的选项。
 
-See links/instructions below on how to configure each of the suggested options.
+#### HTTP 负载均衡器
 
-#### HTTP Load Balancer
-
-Execute the following command to deploy plain http load balancer:
+执行以下命令以部署纯 http 负载均衡器：
 
 ```bash
 kubectl apply -f receipts/http-load-balancer.yml
 ```
 {: .copy-code}
 
-The process of load balancer provisioning may take some time. You may periodically check the status of the load balancer using the following command:
+负载均衡器配置过程可能需要一些时间。您可以使用以下命令定期检查负载均衡器的状态：
 
 ```bash
 kubectl get ingress
 ```
 {: .copy-code}
 
-Once provisioned, you should see similar output:
+配置完成后，您应该会看到类似的输出：
 
 ```text
 NAME                   CLASS    HOSTS   ADDRESS         PORTS   AGE
 tb-http-loadbalancer   <none>   *       34.111.24.134   80      7m25s
 ```
 
-Now, you may use the address (the one you see instead of 34.111.24.134 in the command output) to access HTTP web UI (port 80) and connect your devices via [HTTP API](/docs/{{docsPrefix}}reference/http-api/)
-Use the following default credentials:
+现在，您可以使用地址（您在命令输出中看到而不是 34.111.24.134 的地址）来访问 HTTP Web UI（端口 80）并通过 [HTTP API](/docs/{{docsPrefix}}reference/http-api/)连接您的设备。
 
-- **System Administrator**: sysadmin@thingsboard.org / sysadmin
-- **Tenant Administrator**: tenant@thingsboard.org / tenant
-- **Customer User**: customer@thingsboard.org / customer
+使用以下默认凭据：
 
-#### HTTPS Load Balancer
+- **系统管理员**：sysadmin@thingsboard.org / sysadmin
+- **租户管理员**：tenant@thingsboard.org / tenant
+- **客户用户**：customer@thingsboard.org / customer
 
-The process of configuring the load balancer using Google-managed SSL certificates is described on the official [documentation page](https://cloud.google.com/kubernetes-engine/docs/how-to/managed-certs).
-The instructions below are extracted from the official documentation. Make sure you read [prerequisites](https://cloud.google.com/kubernetes-engine/docs/how-to/managed-certs#prerequisites) carefully before proceeding.
+#### HTTPS 负载均衡器
+
+使用 Google 管理的 SSL 证书配置负载均衡器的过程在官方 [文档页面](https://cloud.google.com/kubernetes-engine/docs/how-to/managed-certs) 中进行了描述。
+以下说明摘自官方文档。在继续之前，请仔细阅读 [先决条件](https://cloud.google.com/kubernetes-engine/docs/how-to/managed-certs#prerequisites)。
 
 ```bash
 gcloud compute addresses create thingsboard-http-lb-address --global
 ```
 {: .copy-code}
 
-Replace the *PUT_YOUR_DOMAIN_HERE* with valid domain name in the *https-load-balancer.yml* file:
+在 *https-load-balancer.yml* 文件中将 *PUT_YOUR_DOMAIN_HERE* 替换为有效的域名：
 
 ```bash
 nano receipts/https-load-balancer.yml
 ```
 {: .copy-code}
 
-Execute the following command to deploy secure http load balancer:
+执行以下命令以部署安全的 http 负载均衡器：
 
 ```bash
  kubectl apply -f receipts/https-load-balancer.yml
 ```
 {: .copy-code}
 
-The process of load balancer provisioning may take some time. You may periodically check the status of the load balancer using the following command:
+负载均衡器配置过程可能需要一些时间。您可以使用以下命令定期检查负载均衡器的状态：
 
 ```bash
 kubectl get ingress
 ```
 {: .copy-code}
 
-Once provisioned, you should see similar output:
+配置完成后，您应该会看到类似的输出：
 
 ```text
 NAME                   CLASS    HOSTS   ADDRESS         PORTS   AGE
 tb-https-loadbalancer   <none>   *       34.111.24.134   80      7m25s
 ```
 
-Now, **assign the domain name** you have used to the load balancer IP address (the one you see instead of 34.111.24.134 in the command output).
+现在，**将您使用的域名**分配给负载均衡器 IP 地址（您在命令输出中看到而不是 34.111.24.134 的地址）。
 
-Check that the domain name is configured correctly using dig:
+使用 dig 检查域名是否配置正确：
 
 ```bash
 dig YOUR_DOMAIN_NAME
 ```
 {: .copy-code}
 
-Sample output:
+示例输出：
 
 ```text
 
@@ -112,20 +112,18 @@ YOUR_DOMAIN_NAME. 36 IN	A	34.111.24.134
 
 ```
 
-Once assigned, wait for the Google-managed certificate to finish provisioning. This might take up to 60 minutes. You can check the status of the certificate using the following command:
+分配后，等待 Google 管理的证书完成配置。这可能需要长达 60 分钟。您可以使用以下命令检查证书的状态：
 
 ```bash
 kubectl describe managedcertificate managed-cert
 ```
 {: .copy-code}
 
-Certificate will be eventually provisioned if you have configured domain records properly.
-Once provisioned, you may use your domain name to access Web UI (over https) and connect your devices via [HTTP API](/docs/{{docsPrefix}}reference/http-api/).
+如果您正确配置了域记录，最终将配置证书。配置完成后，您可以使用您的域名访问 Web UI（通过 https）并通过 [HTTP API](/docs/{{docsPrefix}}reference/http-api/)连接您的设备。
 
 {% capture https_lb_device_api_warn %}
-**NOTE**: The load balancer will redirect all HTTP traffic to HTTPS. Devices that do not support HTTPS will not be able to connect to ThingsBoard.
-If you would like to support such devices, you may either deploy separate load balancer for HTTP transport (recommended)
-or disable the redirect behavior by changing the *redirectToHttps* setting in the *https-load-balancer.yml* file.
+**注意**：负载均衡器会将所有 HTTP 流量重定向到 HTTPS。不支持 HTTPS 的设备将无法连接到 ThingsBoard。
+如果您想支持此类设备，您可以为 HTTP 传输部署单独的负载均衡器（推荐）或通过更改 *https-load-balancer.yml* 文件中的 *redirectToHttps* 设置来禁用重定向行为。
 
 {% endcapture %}
 {% include templates/warn-banner.md content=https_lb_device_api_warn %}

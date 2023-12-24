@@ -1,171 +1,168 @@
 {% include docs/user-guide/ui/aliases.md %}
 
-### Group entities
+### 分组实体
 
-This alias allows choosing a single group of entities, which can be a customer group, an asset group, or a device group.
-**Please note** that when you choose a group, the group Id is hard-coded to the dashboard config.
-So, if you export and import the dashboard to another server, the alias will not work. **We recommend to use "Entities by group name" alias in most of the cases.**  
-In this example, an alias was created that filters the device group, which in this case is Irrigation systems.
+此别名允许选择一组实体，可以是客户组、资产组或设备组。
+**请注意**，当您选择一个组时，组 ID 会硬编码到仪表板配置中。
+因此，如果您将仪表板导出并导入到另一台服务器，则别名将不起作用。**我们建议在大多数情况下使用“按组名分组的实体”别名。**
+在此示例中，创建了一个别名来过滤设备组，在本例中为灌溉系统。
 
-Let's learn how to add a Group entities alias:
-1. Enter dashboard editing mode.
-2. In the upper right corner of the window, click the "Entity alias" icon.
-3. In the opened Entity aliases window, click the "Add alias" button on the left side of the dialog box.
-4. In the opened dialog _Add alias_, enter a name for the alias, select a _Group entities_ filter type.
-   From the Type drop-down menu, Select the _Device_ and enter the name of the needed entity group of devices (start typing it and it will be found automatically).
-5. After configuring the alias, click the "Add" button in the lower right corner.
-6. We can now see that a new alias has been added. Click "Save" in the lower right corner of the dialog box.
+让我们学习如何添加组实体别名：
+1. 进入仪表板编辑模式。
+2. 在窗口的右上角，单击“实体别名”图标。
+3. 在打开的实体别名窗口中，单击对话框左侧的“添加别名”按钮。
+4. 在打开的对话框_添加别名_中，输入别名的名称，选择_组实体_过滤器类型。
+   从类型下拉菜单中，选择_设备_并输入所需的设备实体组的名称（开始输入，系统会自动找到）。
+5. 配置别名后，单击右下角的“添加”按钮。
+6. 我们现在可以看到已添加了一个新别名。单击对话框右下角的“保存”。
 
 {% include images-gallery.html imageCollection="group-entities" %}
 <br>
 
-Now let's use the added alias in a widget:
-1. Click the "Add new widget" icon in the center of the screen.
-2. In the opened widget bundles selection, click "Cards system". There select the _Entities table_ widget.
-3. Input data source: Entity type, select the name of the created alias from the list, and add telemetry.
-4. Click the "Add" button in the lower right corner of the dialog box.
-5. Widget with alias that filters a group of devices, which in this case is Irrigation systems, has been added.
-6. Don't forget to save all the changes by clicking on the big orange checkmark in the lower right corner of the screen.
+现在让我们在小部件中使用添加的别名：
+1. 单击屏幕中央的“添加新小部件”图标。
+2. 在打开的小部件捆绑选择中，单击“卡片系统”。在那里选择_实体表_小部件。
+3. 输入数据源：实体类型，从列表中选择已创建别名的名称，并添加遥测。
+4. 单击对话框右下角的“添加”按钮。
+5. 已添加带有别名的小部件，该别名可过滤一组设备，在本例中为灌溉系统。
+6. 不要忘记通过单击屏幕右下角的大橙色复选标记来保存所有更改。
 
 {% include images-gallery.html imageCollection="group-entities-1" %}
 
-### Entity group list
+### 实体组列表
 
-This alias allows choosing several entity groups manually without entering a query, which can be device groups,
-asset groups, entity view groups, customer groups, dashboard groups, or user groups.
-In this example, an alias was created that filters a list of device groups, which in this case are ‘Irrigation systems’ and ‘Moisture sensors’.
+此别名允许手动选择多个实体组，而无需输入查询，这些实体组可以是设备组、资产组、实体视图组、客户组、仪表板组或用户组。
+在此示例中，创建了一个别名来过滤设备组列表，在本例中为“灌溉系统”和“湿度传感器”。
 
-Let's learn how to add an Entity group list alias:
-1. Enter dashboard editing mode.
-2. In the upper right corner of the window, click the "Entity alias" icon.
-3. In the opened Entity aliases window, click the "Add alias" button on the left side of the dialog box.
-4. In the opened dialog _Add alias_, enter a name for the alias, select an _Entity group list_ filter type.
-5. Select the Device and input device groups. Click "Add" in the lower right corner of the dialog box.
-6. After adding the first alias, click the "Add alias" button again.
-7. Enter a name for the alias, select a _Group entities_ filter type.
-8. Move the slider to use a dashboard state entity as an entity group.
-9. In the Default state entity group, Select the _Device_ type and Irrigation system as entity group.
-10. Click "Add" in the lower right corner of the dialog box.
-11. After adding both aliases, click "Save" in the lower right corner of the dialog box.
+让我们学习如何添加实体组列表别名：
+1. 进入仪表板编辑模式。
+2. 在窗口的右上角，单击“实体别名”图标。
+3. 在打开的实体别名窗口中，单击对话框左侧的“添加别名”按钮。
+4. 在打开的对话框_添加别名_中，输入别名的名称，选择_实体组列表_过滤器类型。
+5. 选择设备并输入设备组。单击对话框右下角的“添加”。
+6. 添加第一个别名后，再次单击“添加别名”按钮。
+7. 输入别名的名称，选择_组实体_过滤器类型。
+8. 移动滑块以使用仪表板状态实体作为实体组。
+9. 在默认状态实体组中，选择_设备_类型和灌溉系统作为实体组。
+10. 单击对话框右下角的“添加”。
+11. 添加两个别名后，单击对话框右下角的“保存”。
 
 {% include images-gallery.html imageCollection="entity-group-list" %}
 <br>
 
-Now let's use the added alias in a widget:
-1. Click the "Add new widget" icon in the center of the screen.
-2. In the opened widget bundles selection, click "Cards system". There select the _Entities table_ widget.
-3. Input data source: Entity type and _Entity group list_ alias. Click "Add" in the lower right corner to add a widget.
-4. After adding the widget, click the "pencil" icon in the upper right corner to enter the widget editing mode.
-5. Move to the Action cell and click a "+" icon to add a new action.
-6. In the Add widget dialog, select an [action source](/docs/{{docsPrefix}}user-guide/ui/widget-actions/#action-sources) which is responsible for each entity separately (action cell button, on row click etc.)
-7. Enter the name of the action.
-8. If necessary, select the icon representing the button to perform the action.
-9. Select the _Update current dashboard state_ action type and click "Add" to add a new action to the widget.
-10. After successfully adding the action, click the large orange checkmark in the upper right of the screen to apply the changes.
-11. Now, add a widget on which action will be performed by clicking the orange "+" icon in the lower right corner of the screen and choosing a "Paper" icon ("Create new widget").
-12. In the opened widget bundles selection, click "Cards system". There select the _Entities table_ widget.
-13. Input data source: Entity type and _group entities_ alias and add telemetry. Click "Add" in the lower right corner.
-14. After adding both widgets, click the checkmark in the lower right corner of the screen.
+现在让我们在小部件中使用添加的别名：
+1. 单击屏幕中央的“添加新小部件”图标。
+2. 在打开的小部件捆绑选择中，单击“卡片系统”。在那里选择_实体表_小部件。
+3. 输入数据源：实体类型和_实体组列表_别名。单击右下角的“添加”以添加小部件。
+4. 添加小部件后，单击右上角的“铅笔”图标以进入小部件编辑模式。
+5. 移至操作单元格，然后单击“+”图标以添加新操作。
+6. 在添加小部件对话框中，选择负责每个实体的[操作源](/docs/{{docsPrefix}}user-guide/ui/widget-actions/#action-sources)（操作单元格按钮、行单击等）。
+7. 输入操作的名称。
+8. 如果有必要，选择代表执行操作的按钮的图标。
+9. 选择_更新当前仪表板状态_操作类型，然后单击“添加”以将新操作添加到小部件。
+10. 成功添加操作后，单击屏幕右上角的大橙色复选标记以应用更改。
+11. 现在，通过单击屏幕右下角的橙色“+”图标并选择“纸张”图标（“创建新小部件”），添加将执行操作的小部件。
+12. 在打开的小部件捆绑选择中，单击“卡片系统”。在那里选择_实体表_小部件。
+13. 输入数据源：实体类型和_组实体_别名并添加遥测。单击右下角的“添加”。
+14. 添加两个小部件后，单击屏幕右下角的复选标记。
 
-To execute an action and filter aliases by device groups, click the action cell button.
+要执行操作并按设备组过滤别名，请单击操作单元格按钮。
 
 {% include images-gallery.html imageCollection="entity-group-list-1" %}
 
 
-### Entity group name
+### 实体组名称
 
-This alias allows choosing multiple entity name groups that begin with an entered query, which can be device group(s),
-asset group(s), entity view group(s), customer group(s), dashboard group(s) or user group(s). In this example, an alias filters device groups whose names start with ‘Irrigation’.
+此别名允许选择以输入查询开头的多个实体名称组，这些实体可以是设备组、资产组、实体视图组、客户组、仪表板组或用户组。在此示例中，别名过滤名称以“灌溉”开头的设备组。
 
-For this example, an empty device group named 'Irrigation machines' was created.
+对于此示例，创建了一个名为“灌溉机器”的空设备组。
 
-Let's learn how to add an Entity group name alias:
-1. Enter dashboard editing mode.
-2. In the upper right corner of the window, click the "Entity alias" icon.
-3. In the opened Entity aliases window, click the "Add alias" button on the left side of the dialog box.
-4. In the opened dialog _Add alias_, enter a name for the alias, select an _Entity group name_ filter type.
-5. Select the Device and enter the beginning of the group name, for example, "Irrigation". Click "Add" in the lower right corner.
-6. After adding the first alias, click the "Add alias" button again.
-7. Enter a name for the alias, select a _Group entities_ filter type.
-8. Move the slider to use a dashboard state entity as an entity group.
-9. In the Default state entity group, Select the _Device_ type and _Irrigation system_ as an entity group.
-10. Click "Add" in the lower right corner of the dialog box.
-11. After adding both aliases, click "Save" in the lower right corner of the dialog box.
+让我们学习如何添加实体组名称别名：
+1. 进入仪表板编辑模式。
+2. 在窗口的右上角，单击“实体别名”图标。
+3. 在打开的实体别名窗口中，单击对话框左侧的“添加别名”按钮。
+4. 在打开的对话框_添加别名_中，输入别名的名称，选择_实体组名称_过滤器类型。
+5. 选择设备并输入组名称的开头，例如“灌溉”。单击右下角的“添加”。
+6. 添加第一个别名后，再次单击“添加别名”按钮。
+7. 输入别名的名称，选择_组实体_过滤器类型。
+8. 移动滑块以使用仪表板状态实体作为实体组。
+9. 在默认状态实体组中，选择_设备_类型和_灌溉系统_作为实体组。
+10. 单击对话框右下角的“添加”。
+11. 添加两个别名后，单击对话框右下角的“保存”。
 
 {% include images-gallery.html imageCollection="entity-group-name" %}
 <br>
 
-Now let's use the added alias in a widget:
-1. Click the "Add new widget" icon in the center of the screen.
-2. In the opened widget bundles selection, click "Cards system". There select the _Entities table_ widget.
-3. Input data source: Entity type and _Entity group name_ alias. Click "Add" in the lower right corner to add a widget.
-4. After adding the widget, click the "pencil" icon in the upper right corner to enter the widget editing mode.
-5. Move to the Action cell and click a "+" icon to add a new action.
-6. In the Add widget dialog, select an [action source](/docs/{{docsPrefix}}user-guide/ui/widget-actions/#action-sources) which is responsible for each entity separately (action cell button, on row click etc.)
-7. Enter the name of the action.
-8. If necessary, select the icon representing the button to perform the action.
-9. Select the _Update current dashboard state_ action type and click "Add" to add a new action to the widget.
-10. After successfully adding the action, click big orange tick mark in the upper right of the screen to apply the changes.
-11. Now, add a widget on which action will be performed by clicking the orange "+" icon in the lower right corner of the screen and choosing a "Paper" icon ("Create new widget").
-12. In the opened widget bundles selection, click "Cards system". There select the Entity table widget.
-13. Input data source: Entity type and _group entities_ alias and add telemetry. Click "Add" in the lower right corner.
-14. After adding both widgets, click the checkmark in the lower right corner of the screen.
+现在让我们在小部件中使用添加的别名：
+1. 单击屏幕中央的“添加新小部件”图标。
+2. 在打开的小部件捆绑选择中，单击“卡片系统”。在那里选择_实体表_小部件。
+3. 输入数据源：实体类型和_实体组名称_别名。单击右下角的“添加”以添加小部件。
+4. 添加小部件后，单击右上角的“铅笔”图标以进入小部件编辑模式。
+5. 移至操作单元格，然后单击“+”图标以添加新操作。
+6. 在添加小部件对话框中，选择负责每个实体的[操作源](/docs/{{docsPrefix}}user-guide/ui/widget-actions/#action-sources)（操作单元格按钮、行单击等）。
+7. 输入操作的名称。
+8. 如果有必要，选择代表执行操作的按钮的图标。
+9. 选择_更新当前仪表板状态_操作类型，然后单击“添加”以将新操作添加到小部件。
+10. 成功添加操作后，单击屏幕右上角的大橙色勾号以应用更改。
+11. 现在，通过单击屏幕右下角的橙色“+”图标并选择“纸张”图标（“创建新小部件”），添加将执行操作的小部件。
+12. 在打开的小部件捆绑选择中，单击“卡片系统”。在那里选择实体表小部件。
+13. 输入数据源：实体类型和_组实体_别名并添加遥测。单击右下角的“添加”。
+14. 添加两个小部件后，单击屏幕右下角的复选标记。
 
 {% include images-gallery.html imageCollection="entity-group-name-1" %}
 
-### Entities by group name
+### 按组名分组的实体
 
-This alias allows choosing entities by entering the exact full name of an entity group. This entity can be device group(s), asset group(s), entity view group(s), customer group(s), dashboard group(s), or user group(s).
-The difference between Entities by group name and Group entities is that the first one resolved the group by the specified name while the second one uses hard-coded group ID.
-More important, during the lookup of entities, this alias will use information about the current user. So, if you share the dashboard with multiple customers,
-and would like each customer to see devices that belong to him, you should use this alias instead of "Group entities".
+此别名允许通过输入实体组的确切全名来选择实体。此实体可以是设备组、资产组、实体视图组、客户组、仪表板组或用户组。
+按组名分组的实体与组实体之间的区别在于，第一个按指定名称解析组，而第二个使用硬编码的组 ID。
+更重要的是，在查找实体期间，此别名将使用有关当前用户的信息。因此，如果您与多个客户共享仪表板，并且希望每个客户看到属于他的设备，则应使用此别名而不是“组实体”。
 
-Let's learn how to add an _Entities by group name_ alias:
-1. Enter dashboard editing mode.
-2. In the upper right corner of the window, click the "Entity alias" icon.
-3. In the opened Entity aliases window, click the "Add alias" button on the left side of the dialog box.
-4. In the opened dialog _Add alias_, enter a name for the alias, select a _Entities by group name e_ filter type.
-5. Choose entity type and enter the exact full name of the entity group. Click "Add" in the lower right corner of the dialog box.
-6. After the alias has been added, click "Save" in the lower right corner of the dialog box.
+让我们学习如何添加_按组名分组的实体_别名：
+1. 进入仪表板编辑模式。
+2. 在窗口的右上角，单击“实体别名”图标。
+3. 在打开的实体别名窗口中，单击对话框左侧的“添加别名”按钮。
+4. 在打开的对话框_添加别名_中，输入别名的名称，选择_按组名分组的实体_过滤器类型。
+5. 选择实体类型并输入实体组的确切全名。单击对话框右下角的“添加”。
+6. 添加别名后，单击对话框右下角的“保存”。
 
 {% include images-gallery.html imageCollection="entities-by-group-name" %}
 <br>
 
-Now let's use the added alias in a widget:
-1. Click the "Add new widget" icon in the center of the screen.
-2. In the opened widget bundles selection, click "Cards system". There select the _Entities table_ widget.
-3. Input data source: Entity type and _Entities by group name_ alias. Click "Add" in the lower right corner to add a widget.
-4. After adding the widget, click a big tick icon in the lower right corner of the screen to save all applied changes.
+现在让我们在小部件中使用添加的别名：
+1. 单击屏幕中央的“添加新小部件”图标。
+2. 在打开的小部件捆绑选择中，单击“卡片系统”。在那里选择_实体表_小部件。
+3. 输入数据源：实体类型和_按组名分组的实体_别名。单击右下角的“添加”以添加小部件。
+4. 添加小部件后，单击屏幕右下角的大勾号图标以保存所有应用的更改。
 
 {% include images-gallery.html imageCollection="entities-by-group-name-1" %}
 
-### Owner of entity from dashboard state
+### 仪表板状态的实体所有者
 
-This alias allows displaying owners of the devices, assets, entities, etc. Commonly used when there is a hierarchy of customers and it is needed to see what devices belong to whom.
+此别名允许显示设备、资产、实体等的所有者。当存在客户层级并且需要查看哪些设备属于谁时，通常使用此别名。
 
-Let's learn how to add an Owner of entity from dashboard state alias, create a widget with it and configure an action to use it:
-1. Enter dashboard editing mode.
-2. In the upper right corner of the window, click the "Entity alias" icon.
-3. In the opened Entity aliases window, click the "Add alias" button on the left side of the dialog box.
-4. In the opened dialog _Add alias_, enter a name for the alias, select a _Owner of entity from dashboard state_ filter type. Click "Add".
-5. After saving _Owner of entity from dashboard state_ alias, click "Add alias" again to add one more alias.
-6. In the opened dialog _Add alias_, enter a name for the alias, select a _Device type_ filter type, set default device type and enter the beginning of the device names. Click "Add".
-7. After adding both aliases, click "Save" in the lower right corner of the dialog box.
+让我们学习如何添加仪表板状态的实体所有者别名，创建一个带有它的部件，并配置一个操作来使用它：
+1. 进入仪表板编辑模式。
+2. 在窗口的右上角，单击“实体别名”图标。
+3. 在打开的实体别名窗口中，单击对话框左侧的“添加别名”按钮。
+4. 在打开的对话框_添加别名_中，输入别名的名称，选择_仪表板状态的实体所有者_过滤器类型。单击“添加”。
+5. 保存_仪表板状态的实体所有者_别名后，再次单击“添加别名”以添加另一个别名。
+6. 在打开的对话框_添加别名_中，输入别名的名称，选择_设备类型_过滤器类型，设置默认设备类型并输入设备名称的开头。单击“添加”。
+7. 添加两个别名后，单击对话框右下角的“保存”。
 
-8. Click the "Add new widget" icon in the center of the screen.
-9. In the opened widget bundles selection dialog, click "Cards system". There select the Entity table widget.
-10. Input data source: Entity type and _Device type_ alias. Click "Add" in the lower right corner to add a widget.
-11. After a widget with alias that filters entities by devices which names start with Owner test, click a "Pencil" icon in the upper right of the widget.
-12. Move to the Actions cell, click a "+" icon to add an action.
-13. Select an [action source](/docs/{{docsPrefix}}user-guide/ui/widget-actions/#action-sources) which is responsible for each entity separately (action cell button, on row click etc.). Enter the action name.
-14. Select the _Update current dashboard state_ action type and set default state as a target dashboard state. Click "Add" to add a new action to the widget.
-15. After successfully adding the action, click big orange tick mark in the upper right of the screen to apply the changes.
+8. 单击屏幕中央的“添加新小部件”图标。
+9. 在打开的小部件捆绑选择对话框中，单击“卡片系统”。在那里选择实体表小部件。
+10. 输入数据源：实体类型和_设备类型_别名。单击右下角的“添加”以添加小部件。
+11. 添加带有别名的部件后，过滤实体的设备名称以所有者测试开头，单击部件右上角的“铅笔”图标。
+12. 移至操作单元格，单击“+”图标以添加操作。
+13. 选择负责每个实体的[操作源](/docs/{{docsPrefix}}user-guide/ui/widget-actions/#action-sources)（操作单元格按钮、行单击等）。输入操作名称。
+14. 选择_更新当前仪表板状态_操作类型，并将默认状态设置为目标仪表板状态。单击“添加”以将新操作添加到小部件。
+15. 成功添加操作后，单击屏幕右上角的大橙色勾号以应用更改。
 
-16. Click a big orange "+" icon in the lower right of the screen. Among appeared icons, click a "paper" icon to create a new widget.
-17. In the opened widget bundles selection dialog, click "Cards system". There select the _Entities table_ widget.
-18. Input data source: Entity type and _Owner of entity from dashboard state_ alias. Click "Add" in the lower right corner to add a widget.
-19. After adding the widget, click a big tick icon in the lower right corner of the screen to save all applied changes.
+16. 单击屏幕右下角的大橙色“+”图标。在出现的图标中，单击“纸张”图标以创建新小部件。
+17. 在打开的小部件捆绑选择对话框中，单击“卡片系统”。在那里选择_实体表_小部件。
+18. 输入数据源：实体类型和_仪表板状态的实体所有者_别名。单击右下角的“添加”以添加小部件。
+19. 添加小部件后，单击屏幕右下角的大勾号图标以保存所有应用的更改。
 
-By clicking on a row, the action will be executed, so an owner of the corresponding entity will be displayed on the widget on the same dashboard state.
+通过单击行，将执行操作，因此相应实体的所有者将显示在同一仪表板状态的小部件上。
 
 {% include images-gallery.html imageCollection="owner-of-entity-from-dashboard-state" %}

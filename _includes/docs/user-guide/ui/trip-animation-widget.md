@@ -1,34 +1,33 @@
-
-{% assign feature = "Platform Integrations" %}
+{% assign feature = "平台集成" %}
 
 * TOC
 {:toc}
 
-## Overview
+## 概述
 
-In this example, we'll study trip animation widget functionality. 
+在本示例中，我们将研究行程动画小部件的功能。
 
-This widget might be useful for different use cases, but mainly it might be used for a Tracking in a realtime, researching movement of the entities and visualizing it.
+此小部件可能对不同的用例有用，但主要可用于实时跟踪、研究实体的移动并对其进行可视化。
 {% if docsPrefix == null %}
 {% else %}
-This guide was written for [cloud](https://thingsboard.cloud), so some steps will be a little different from Community Edition.
+本指南适用于 [云](https://thingsboard.cloud)，因此某些步骤与社区版略有不同。
 {% endif %}
 
-It's capable of all further versions.
+它适用于所有进一步的版本。
 
-## Create device emulator
+## 创建设备模拟器
 
-Firstly you need to create a device from which will collect telemetry.
+首先，您需要创建一个设备，从中收集遥测数据。
 
-Also, you may use any device you have with a coordinates telemetry (longitude and latitude).
+此外，您可以使用任何具有坐标遥测（经度和纬度）的设备。
 
-This can be any device which receives its coordinates in a realtime.
+这可以是任何实时接收其坐标的设备。
 
-Longitude and latitude are the key data for map visualization so that you'll see it on a widget at the dashboard which you chose.
+经度和纬度是地图可视化的关键数据，以便您在所选仪表板的小部件上看到它。
 
 
 
-Create a new device **Tracker1**.
+创建新设备 **Tracker1**。
 
 {% if docsPrefix == null %}
 ![image](/images/user-guide/ui/widgets/trip-animation-widget/adding-device-1-ce.png)
@@ -45,15 +44,15 @@ Create a new device **Tracker1**.
 {% if docsPrefix == "paas/" %}
 {% assign YOUR_HOST = "[emulator](/docs/user-guide/resources/timeseries-map-bus-cloud.js)" %}
 {% endif %}
-In our example, the device receives its longitude, latitude, speed, radius of circle, status, and coordinates of polygon use an {{YOUR_HOST}} written in javascript.
+在我们的示例中，该设备使用 javascript 编写的 {{YOUR_HOST}} 接收其经度、纬度、速度、圆圈半径、状态和多边形坐标。
 
-For receive telemetry and further visualize it on the dashboard execute script in a command line:
+要接收遥测数据并在仪表板上进一步对其进行可视化，请在命令行中执行脚本：
 
 ```bash
 node timeseries-map-bus.js $ACCESSTOKEN
 ```
 {: .copy-code}
-Where **$ACCESSTOKEN** is your device access token.
+其中 **$ACCESSTOKEN** 是您的设备访问令牌。
 
 {% if docsPrefix == null %}
 ![image](/images/user-guide/ui/widgets/trip-animation-widget/device-emulator-ce.png)
@@ -65,7 +64,7 @@ Where **$ACCESSTOKEN** is your device access token.
 ![image](/images/user-guide/ui/widgets/trip-animation-widget/device-emulator-paas.png)
 {% endif %}
 
-**$ACCESSTOKEN** is located in a device details.
+**$ACCESSTOKEN** 位于设备详细信息中。
 
 {% if docsPrefix == null %}
 ![image](/images/user-guide/ui/widgets/trip-animation-widget/access-token-1-ce.png)
@@ -73,21 +72,21 @@ Where **$ACCESSTOKEN** is your device access token.
 ![image](/images/user-guide/ui/widgets/trip-animation-widget/access-token-1-pe.png)
 {% endif %}
 
-Emulator is capable with Node.js v8.10.0
+模拟器与 Node.js v8.10.0 兼容
 
-## Setting up Trip Animation Widget
+## 设置行程动画小部件
 
-### Creating a dashboard
+### 创建仪表板
 
-We need to create a dashboard where our telemetry will be visualized. It might be useful if your goal is to track how your entity moved in a specific period. 
+我们需要创建一个仪表板，以便对我们的遥测数据进行可视化。如果您想跟踪实体在特定时期的移动情况，这可能很有用。
 
-We can use an existing one or create a new dashboard for our new use case. 
+我们可以使用现有的仪表板，也可以为我们的新用例创建一个新的仪表板。
 
-In our example, we create a new dashboard called “Dashboard1” for our guide reasons. 
+在我们的示例中，我们为指南原因创建了一个名为“Dashboard1”的新仪表板。
 
-### Adding widget
+### 添加小部件
 
-Create and open an empty dashboard. And let’s fill it with some content. Click pencil button "Enter edit mode".
+创建并打开一个空仪表板。让我们用一些内容填充它。单击铅笔按钮“进入编辑模式”。
 
 {% if docsPrefix == null %}
 ![image](/images/user-guide/ui/widgets/trip-animation-widget/adding-widget-1-ce.png)
@@ -95,9 +94,9 @@ Create and open an empty dashboard. And let’s fill it with some content. Click
 ![image](/images/user-guide/ui/widgets/trip-animation-widget/adding-widget-1-pe.png)
 {% endif %}
 
-Firstly we need to create an **alias** to specify entity from which we’ll receive telemetry data. 
+首先，我们需要创建一个 **别名** 来指定我们将从中接收遥测数据的实体。
 
-Our entity in this guide will be **“Tracker1”** device which we created previously. We’ll give **“GeoData1”** name to our alias. 
+本指南中的我们的实体将是 **“Tracker1”** 设备，我们之前创建过该设备。我们将为我们的别名命名 **“GeoData1”**。
 
 {% if docsPrefix == null %}
 ![image](/images/user-guide/ui/widgets/trip-animation-widget/adding-widget-2-ce.png)
@@ -105,7 +104,7 @@ Our entity in this guide will be **“Tracker1”** device which we created prev
 ![image](/images/user-guide/ui/widgets/trip-animation-widget/adding-widget-2-pe.png)
 {% endif %}
 
-Now we go for adding a widget!
+现在我们开始添加小部件！
 
 {% if docsPrefix == null %}
 ![image](/images/user-guide/ui/widgets/trip-animation-widget/adding-widget-3-ce.png)
@@ -113,7 +112,7 @@ Now we go for adding a widget!
 ![image](/images/user-guide/ui/widgets/trip-animation-widget/adding-widget-3-pe.png)
 {% endif %}
 
-Trip animation widget is located in Maps bundle 
+行程动画小部件位于地图包中
 
 {% if docsPrefix == null %}
 ![image](/images/user-guide/ui/widgets/trip-animation-widget/adding-widget-4-ce.png)
@@ -121,13 +120,13 @@ Trip animation widget is located in Maps bundle
 ![image](/images/user-guide/ui/widgets/trip-animation-widget/adding-widget-4-pe.png)
 {% endif %}
 
-In our widget we add **coordinates**, **latitude**, **longitude**, **radius**, **speed** and **status** from our alias **“GeoData1”** as our parameters.
+在我们的窗口小部件中，我们添加了 **坐标**、**纬度**、**经度**、**半径**、**速度** 和 **状态** 作为我们的别名 **“GeoData1”** 的参数。
 
-They have the same labels as their keys are. Secondly, we create a widget on which we will visualize our telemetry.
+它们的标签与它们的键相同。其次，我们在其上创建一个小部件，以便对我们的遥测数据进行可视化。
 
-We use **Trip Animation** widget in our guide. It’s located in Maps Bundle, Time series tab.
+我们在指南中使用 **行程动画** 小部件。它位于地图包的时间序列选项卡中。
 
-Also, we’ll go for “Use dashboard timewindow” so that we’ll make it easier to synchronise our data.
+此外，我们将选择“使用仪表板时间窗口”，以便更轻松地同步我们的数据。
 
 {% if docsPrefix == null %}
 ![image](/images/user-guide/ui/widgets/trip-animation-widget/adding-widget-5-ce.png)
@@ -135,7 +134,7 @@ Also, we’ll go for “Use dashboard timewindow” so that we’ll make it easi
 ![image](/images/user-guide/ui/widgets/trip-animation-widget/adding-widget-5-pe.png)
 {% endif %}
 
-In addition to this, we’ll use last minute received data to visualize and change aggregation function to None, because we don’t need to guess possible data value for the next time period, we receive data in realtime without any errors.
+除此之外，我们将使用最后收到的分钟数据进行可视化，并将聚合函数更改为无，因为我们不需要猜测下一个时间段的可能数据值，我们实时接收数据而不会出现任何错误。
 
 {% if docsPrefix == null %}
 ![image](/images/user-guide/ui/widgets/trip-animation-widget/adding-widget-6-ce.png)
@@ -143,7 +142,7 @@ In addition to this, we’ll use last minute received data to visualize and chan
 ![image](/images/user-guide/ui/widgets/trip-animation-widget/adding-widget-6-pe.png)
 {% endif %}
 
-Now we can take a look at how our device is being moving for the last minute in a realtime. Press the “Start” button.
+现在我们可以看看我们的设备在过去一分钟内是如何实时移动的。按“开始”按钮。
 
 {% if docsPrefix == null %}
 ![image](/images/user-guide/ui/widgets/trip-animation-widget/adding-widget-7-ce.png)
@@ -151,7 +150,7 @@ Now we can take a look at how our device is being moving for the last minute in 
 ![image](/images/user-guide/ui/widgets/trip-animation-widget/adding-widget-7-pe.png)
 {% endif %}
 
-We also can speed up our timeline cursor up to 1,5,10,25 times so that we can make a check on its routing much faster.
+我们还可以将时间线光标加速至 1.5、10、25 倍，以便我们可以更快地检查其路由。
 
 {% if docsPrefix == null %}
 ![image](/images/user-guide/ui/widgets/trip-animation-widget/adding-widget-8-ce.png)
@@ -159,32 +158,32 @@ We also can speed up our timeline cursor up to 1,5,10,25 times so that we can ma
 ![image](/images/user-guide/ui/widgets/trip-animation-widget/adding-widget-8-pe.png)
 {% endif %}
 
-## Customization
+## 自定义
 
-### Settings tab
+### 设置选项卡
 
-Now, when we got the basics of what our widget can provide, let us go for editing its settings to make it more functional and eye-catching. Firstly we go to settings, there we can specify:
+现在，当我们了解了小部件可以提供哪些基本信息时，让我们编辑其设置以使其更具功能性和吸引力。首先，我们转到设置，在那里我们可以指定：
 
-* Title of widget, its style
+* 小部件的标题、其样式
 
-* Title tooltip
+* 标题工具提示
 
-* Title icon, icon colour, icon size in a px
+* 标题图标、图标颜色、图标大小（以像素为单位）
 
-* Change widget style
+* 更改小部件样式
 
-* Background color, text color, padding, margin
+* 背景颜色、文本颜色、填充、边距
 
-* Enable/disable drop shadow
+* 启用/禁用阴影
 
-* Enable/disable fullscreen mode for widget
+* 为小部件启用/禁用全屏模式
 
-* Enable/disable legend display
+* 启用/禁用图例显示
 
-* Specify mobile settings
+* 指定移动设置
 
 
-Let's see how it works.
+让我们看看它是如何工作的。
 
 {% if docsPrefix == null %}
 ![image](/images/user-guide/ui/widgets/trip-animation-widget/widget-settings-1-ce.png)
@@ -198,11 +197,11 @@ Let's see how it works.
 ![image](/images/user-guide/ui/widgets/trip-animation-widget/widget-settings-2-pe.png)
 {% endif %}
 
-### Advanced tab
+### 高级选项卡
 
-In a settings tab, we can specify unique parametres for Trip animation widget for functionality that only it can provide. We have:
+在设置选项卡中，我们可以为行程动画小部件指定仅它可以提供的功能的唯一参数。我们有：
 
-#### Map Provider Settings
+#### 地图提供程序设置
 
 {% if docsPrefix == null %}
 ![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-1-ce.png)
@@ -210,9 +209,9 @@ In a settings tab, we can specify unique parametres for Trip animation widget fo
 ![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-1-pe.png)
 {% endif %}
 
-#### Trip Animation Settings
+#### 行程动画设置
 
-##### Normalization data step (ms) 
+##### 归一化数据步骤（毫秒）
 
 {% if docsPrefix == null %}
 ![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-2-ce.png)
@@ -220,17 +219,17 @@ In a settings tab, we can specify unique parametres for Trip animation widget fo
 ![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-2-pe.png)
 {% endif %}
 
-##### Latitude & Longitude key names
-You can specify name based on which widget will be updated. It uses data based on the label of the data. So that you may specify label “data-1” for the longitude key value and get longitude from the alias after we edit longitude key name as “data-1”. 
+##### 纬度和经度键名
+您可以指定基于该名称更新小部件。它使用基于数据标签的数据。因此，您可以为经度键值指定标签“data-1”，并在我们编辑经度键名称为“data-1”后从别名中获取经度。
 
 {% include images-gallery.html imageCollection="advanced-settings-key-name" %}
 
-##### Tooltip function
-You can show/hide Tooltip, its color, its font color, the opacity of tooltip and tooltip text or use tooltip function (you may change data contained in a tooltip based on *data, dsData, dsIndex*)
+##### 工具提示功能
+您可以显示/隐藏工具提示、其颜色、其字体颜色、工具提示的不透明度和工具提示文本，或使用工具提示功能（您可以根据 *data、dsData、dsIndex* 更改工具提示中包含的数据）
 
 {% include images-gallery.html imageCollection="advanced-settings-tooltip" %}
 
-Tooltip function:
+工具提示功能：
 ```javascript
 var speed = data['speed'];
 var res;
@@ -243,19 +242,19 @@ return res;
 ```
 {: .copy-code}
 
-#### Markers settings
+#### 标记设置
 
-##### Label function
+##### 标签功能
 
-* Set additional rotation angle for marker
+* 为标记设置其他旋转角度
 
 {% include images-gallery.html imageCollection="advanced-settings-additional-rotation-angle-for-marker" %}
 
-* Widget label, or specify label function (you may change data contained in a widget label based on *data, dsData, dsIndex*)
+* 小部件标签，或指定标签功能（您可以根据 *data、dsData、dsIndex* 更改小部件标签中包含的数据）
 
 {% include images-gallery.html imageCollection="advanced-settings-label" %}
  
-Label function:
+标签功能：
 ```javascript
 var speed = data['speed'];
 var res;
@@ -268,23 +267,23 @@ return res;
 ```
 {: .copy-code}
 
-##### Marker function:
+##### 标记功能：
 
-In addition to all of this, there are some settings for the marker and you can specify next settings for it:
+除了所有这些之外，标记还有一些设置，您可以为其指定以下设置：
 
-* Custom marker image
+* 自定义标记图像
 
-* Custom marker image size px
+* 自定义标记图像大小像素
 
 {% include images-gallery.html imageCollection="advanced-settings-marker-image" %}
 
-* Marker image function (you may change marker image, marker image color based on *data, dsData, dsIndex*)
+* 标记图像功能（您可以根据 *data、dsData、dsIndex* 更改标记图像、标记图像颜色）
 
-* Specify other possible marker images, which can be used in a marker image function
+* 指定其他可能的标记图像，可用于标记图像功能中
 
 {% include images-gallery.html imageCollection="advanced-settings-marker-image-function" %}
 
-Marker image function:
+标记图像功能：
 ```javascript
 var speed = data['speed'];
 var res = {
@@ -300,13 +299,13 @@ return res;
 ```
 {: .copy-code}
 
-#### Path Settings
+#### 路径设置
 
-You can specify path color or specify path color function (you may change data based on *data, dsData, dsIndex*) - the color of the marker moves 
+您可以指定路径颜色或指定路径颜色函数（您可以根据 *data、dsData、dsIndex* 更改数据） - 标记移动的颜色
 
 {% include images-gallery.html imageCollection="advanced-settings-path-color-function" %}
 
-Path color function:
+路径颜色函数：
 ```javascript
 var speed = data['speed'];
 var res;
@@ -319,9 +318,9 @@ return res;
 ```
 {: .copy-code}
 
-##### Path decorator
+##### 路径装饰器
 
-* Path decorator, its size in px, end/beginning offset, decorator repeater, stroke weight and stroke opacity
+* 路径装饰器、其大小（以像素为单位）、结束/开始偏移、装饰器重复器、笔触粗细和笔触不透明度
 
 {% if docsPrefix == null %}
 ![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-path-decorator-1-ce.png)
@@ -329,15 +328,15 @@ return res;
 ![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-path-decorator-1-pe.png)
 {% endif %}
 
-#### Points Settings
+#### 点设置
 
-The next option is a show points option. Points are a telemetry data updates so that you can check each. For the points next options are available.
+下一个选项是显示点选项。点是遥测数据更新，以便您可以检查每个点。对于点，可以使用以下选项。
 
-* Show/Hide points
+* 显示/隐藏点
 
-* Point color
+* 点颜色
 
-* Point size px
+* 点大小像素
 
 {% if docsPrefix == null %}
 ![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-points-settings-1-ce.png)
@@ -345,7 +344,7 @@ The next option is a show points option. Points are a telemetry data updates so 
 ![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-points-settings-1-pe.png)
 {% endif %}
 
-* Use color point function
+* 使用彩色点函数
 
 {% if docsPrefix == null %}
 ![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-point-color-function-1-ce.png)
@@ -353,7 +352,7 @@ The next option is a show points option. Points are a telemetry data updates so 
 ![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-point-color-function-1-pe.png)
 {% endif %}
 
-Points color function:
+点颜色函数：
 ```javascript
 var speed = data['speed'];
 var res;
@@ -366,11 +365,11 @@ return res;
 ```
 {: .copy-code}
 
-* Use point as an anchor (you may change data based on *data, dsData, dsIndex*)
+* 将点用作锚点（您可以根据 *data、dsData、dsIndex* 更改数据）
 
 {% include images-gallery.html imageCollection="advanced-settings-anchor-function" %}
 
-Point as anchor function:
+点作为锚点函数：
 ```javascript
 var speed = data['speed'];
 if (speed > 55) {
@@ -381,27 +380,27 @@ if (speed > 55) {
 ```
 {: .copy-code}
 
-* **Independent point tooltip**
+* **独立点工具提示**
 
 
-#### Polygon Settings
+#### 多边形设置
 
-What’s a polygon? It’s a plane figure that’s described by a finite number of dots. We use polygon which is based on coordinates that are specified within the device we use, but you can use any other entity. 
+什么是多边形？它是一个平面图形，由有限数量的点描述。我们使用基于我们在使用的设备中指定的多边形，但您可以使用任何其他实体。
 
-You may mark your assets and any other entities with a polygon option.
+您可以使用多边形选项标记您的资产和任何其他实体。
 
-Polygon coordinates are being received in a format:
+多边形坐标以以下格式接收：
 
 ```
 [[1CoordinateLatitude,1CoordinateLatitude],[2CoordinateLatitude,2CoordinateLatitude]...[nCoordinateLatitude,nCoordinateLatitude]]
 ``` 
 
-where **n** - number of coordinates which polygon is described by.
+其中 **n** - 多边形由其描述的坐标数。
 
 <br>
-For the polygon, we can specify the next settings:
+对于多边形，我们可以指定以下设置：
 
-* Show/Hide polygon
+* 显示/隐藏多边形
 
 {% if docsPrefix == null %}
 ![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-polygon-settings-1-ce.png)
@@ -409,7 +408,7 @@ For the polygon, we can specify the next settings:
 ![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-polygon-settings-1-pe.png)
 {% endif %}
 
-* Enable/disable polygon edit
+* 启用/禁用多边形编辑
 
 {% if docsPrefix == null %}
 ![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-polygon-settings-2-ce.png)
@@ -417,7 +416,7 @@ For the polygon, we can specify the next settings:
 ![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-polygon-settings-2-pe.png)
 {% endif %}
 
-* Polygon label text or polygon label function (you may change data contained in a polygon label based on *data, dsData, dsIndex*)
+* 多边形标签文本或多边形标签函数（您可以根据 *data、dsData、dsIndex* 更改多边形标签中包含的数据）
 
 {% if docsPrefix == null %}
 ![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-polygon-settings-3-ce.png)
@@ -425,7 +424,7 @@ For the polygon, we can specify the next settings:
 ![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-polygon-settings-3-pe.png)
 {% endif %}
 
-* Polygon tooltip text or polygon tooltip function (you may change data contained in a polygon tooltip based on *data, dsData, dsIndex*) 
+* 多边形工具提示文本或多边形工具提示函数（您可以根据 *data、dsData、dsIndex* 更改多边形工具提示中包含的数据）
 
 {% if docsPrefix == null %}
 ![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-polygon-settings-4-ce.png)
@@ -433,7 +432,7 @@ For the polygon, we can specify the next settings:
 ![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-polygon-settings-4-pe.png)
 {% endif %}
 
-* Polygon color, polygon opacity, or polygon color function (you may change polygon color based on *data, dsData, dsIndex*)
+* 多边形颜色、多边形不透明度或多边形颜色函数（您可以根据 *data、dsData、dsIndex* 更改多边形颜色）
 
 {% if docsPrefix == null %}
 ![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-polygon-settings-5-ce.png)
@@ -441,7 +440,7 @@ For the polygon, we can specify the next settings:
 ![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-polygon-settings-5-pe.png)
 {% endif %}
 
-* Polygon stroke color, polygon opacity, polygon weight or polygon stroke color function (you may change polygon color based on *data, dsData, dsIndex*)
+* 多边形笔触颜色、多边形不透明度、多边形粗细或多边形笔触颜色函数（您可以根据 *data、dsData、dsIndex* 更改多边形颜色）
 
 {% if docsPrefix == null %}
 ![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-polygon-settings-6-ce.png)
@@ -449,22 +448,22 @@ For the polygon, we can specify the next settings:
 ![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-polygon-settings-6-pe.png)
 {% endif %}
 
-#### Circle settings
+#### 圆形设置
 
-Circle is a plane figure, boundary points of which are always the same distance away from a fixed central point. We use circle which is based on coordinates that are specified within the device we use, but you can use any other entity.
+圆是一个平面图形，其边界点始终与一个固定的中心点保持相同的距离。我们使用基于我们在使用的设备中指定的圆，但您可以使用任何其他实体。
 
-You may mark your assets and any other entities with a circle option. 
+您可以使用圆形选项标记您的资产和任何其他实体。
 
-Circle coordinates are being received in a format:
+圆形坐标以以下格式接收：
 
 ```
 {"latitude": 37.770460000, "longitude":-122.510870000, "radius":700}
 ``` 
 
 <br>
-For the circle, we can specify the next settings:
+对于圆形，我们可以指定以下设置：
 
-* Show/Hide circle
+* 显示/隐藏圆形
 
 {% if docsPrefix == null %}
 ![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-circle-settings-1-ce.png)
@@ -472,7 +471,7 @@ For the circle, we can specify the next settings:
 ![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-circle-settings-1-pe.png)
 {% endif %}
 
-* Enable/disable circle edit
+* 启用/禁用圆形编辑
 
 {% if docsPrefix == null %}
 ![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-circle-settings-2-ce.png)
@@ -480,7 +479,7 @@ For the circle, we can specify the next settings:
 ![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-circle-settings-2-pe.png)
 {% endif %}
 
-* Circle label text or circle label function (you may change data contained in a circle label based on *data, dsData, dsIndex*)
+* 圆形标签文本或圆形标签函数（您可以根据 *data、dsData、dsIndex* 更改圆形标签中包含的数据）
 
 {% if docsPrefix == null %}
 ![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-circle-settings-3-ce.png)
@@ -488,7 +487,7 @@ For the circle, we can specify the next settings:
 ![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-circle-settings-3-pe.png)
 {% endif %}
 
-* Circle tooltip text or circle tooltip function (you may change data contained in a circle tooltip based on *data, dsData, dsIndex*)
+* 圆形工具提示文本或圆形工具提示函数（您可以根据 *data、dsData、dsIndex* 更改圆形工具提示中包含的数据）
 
 {% if docsPrefix == null %}
 ![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-circle-settings-4-ce.png)
@@ -496,7 +495,7 @@ For the circle, we can specify the next settings:
 ![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-circle-settings-4-pe.png)
 {% endif %}
 
-* Circle fill color, circle fill color opacity, or circle fill color function (you may change circle color based on *data, dsData, dsIndex*)
+* 圆形填充颜色、圆形填充颜色不透明度或圆形填充颜色函数（您可以根据 *data、dsData、dsIndex* 更改圆形颜色）
 
 {% if docsPrefix == null %}
 ![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-circle-settings-5-ce.png)
@@ -504,7 +503,7 @@ For the circle, we can specify the next settings:
 ![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-circle-settings-5-pe.png)
 {% endif %}
 
-* Circle stroke color, stroke opacity, stroke weight or circle stroke color function (you may change circle color based on *data, dsData, dsIndex*)
+* 圆形笔触颜色、笔触不透明度、笔触粗细或圆形笔触颜色函数（您可以根据 *data、dsData、dsIndex* 更改圆形颜色）
 
 {% if docsPrefix == null %}
 ![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-circle-settings-6-ce.png)
@@ -513,9 +512,9 @@ For the circle, we can specify the next settings:
 {% endif %}
 
 
-## Video tutorial 
+## 视频教程
  
-We also recommend you to review this video tutorial.
+我们还建议您查看此视频教程。
 
   
 <div id="video">  
@@ -523,4 +522,3 @@ We also recommend you to review this video tutorial.
         <iframe src="https://www.youtube.com/embed/qWCmDjca-T8" frameborder="0" allowfullscreen></iframe>
     </div>
 </div>
-

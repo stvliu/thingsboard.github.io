@@ -1,12 +1,12 @@
-Now copy & paste the following script to the Decoder function section:
+现在将以下脚本复制并粘贴到解码器函数部分：
 
 ```javascript
 /** Decoder **/
 
-// decode payload to JSON
+// 将有效负载解码为 JSON
 var data = decodeToJson(payload).reports[0].value;
 
-// Result object with device telemetry data
+// 包含设备遥测数据的 Result 对象
 var result = {
     deviceName: hexToString(data.substring(0, 12)),
     deviceType: hexToString(data.substring(12, 26)),
@@ -16,13 +16,13 @@ var result = {
     }
 };
 
-/** Helper functions **/
+/** 辅助函数 **/
 
 function decodeToString(payload) {
     return String.fromCharCode.apply(String, payload);
 }
 
-// Hexadecimal string to string
+// 十六进制字符串到字符串
 function hexToString(hex) {
     var str = '';
     for (var i = 0; i < hex.length; i += 2) {
@@ -35,10 +35,10 @@ function hexToString(hex) {
 }
 
 function decodeToJson(payload) {
-    // convert payload to string.
+    // 将有效负载转换为字符串。
     var str = decodeToString(payload);
 
-    // parse string to JSON
+    // 将字符串解析为 JSON
     var data = JSON.parse(str);
     return data;
 }

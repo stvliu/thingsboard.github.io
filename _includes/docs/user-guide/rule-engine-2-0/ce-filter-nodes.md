@@ -1,249 +1,245 @@
-
-Filter Nodes are used for Message filtering and routing. You may find list of available nodes below.
+过滤器节点用于消息过滤和路由。您可以在下面找到可用节点的列表。
 
 * TOC
 {:toc}
   
-## asset profile switch
+## 资产配置文件开关
 
-Route incoming messages based on the name of the asset profile. The asset profile name is case-sensitive. Available since **v3.4.4**.
+根据资产配置文件的名称路由传入的消息。资产配置文件名称区分大小写。自 **v3.4.4** 起可用。
 
-**Output**
+**输出**
 
-The output connection of the rule node corresponds to the asset profile name. For example: "Freezer room", "Building", etc. 
-See rule node [connections](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-node-connection) for more details.
+规则节点的输出连接对应于资产配置文件名称。例如：“冷冻室”、“建筑物”等。有关更多详细信息，请参阅规则节点 [连接](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-node-connection)。
 
-**Usage example**
+**用法示例**
 
-Experienced platform users utilize [Asset Profiles](/docs/{{docsPrefix}}user-guide/asset-profiles/) and configure specific rule chains per Asset Profile. 
-This is useful to automatically route messages the platform generates: Asset Created, Deleted, Attribute Updated, etc.
-But most of the messages are derived from the sensor data.
-Let's assume we have temperature sensors in the room assets with profiles: "Freezer Room" and "Boiler Room". We also take that there is a relation between room asset and temperature device of type "Contains". 
-The below rule chain will change the originator of the message from the device to the related asset and route the incoming messages to the "Freezer Room" or "Boiler Room" rule chains.  
- 
+经验丰富的平台用户利用 [资产配置文件](/docs/{{docsPrefix}}user-guide/asset-profiles/) 并为每个资产配置文件配置特定的规则链。
+这对于自动路由平台生成的消息非常有用：资产创建、删除、属性更新等。
+但大多数消息都来自传感器数据。
+假设我们在具有以下配置文件的房间资产中安装了温度传感器：“冷冻室”和“锅炉房”。我们还认为房间资产和类型为“包含”的温度设备之间存在关系。
+下面的规则链将消息的始发者从设备更改为相关资产，并将传入的消息路由到“冷冻室”或“锅炉房”规则链。  
+
 ![image](/images/user-guide/rule-engine-2-0/nodes/asset-profile-switch-chain.png)
 
-You may [download](https://gist.github.com/ashvayka/f67f9415c625e8a2d12340e18248111f#file-asset-profile-switch-example-json) and import the rule chain. 
-Note that the "rule chain" nodes will point to not existing rule chains in your environment.
+您可以 [下载](https://gist.github.com/ashvayka/f67f9415c625e8a2d12340e18248111f#file-asset-profile-switch-example-json) 并导入规则链。
+请注意，“规则链”节点将指向您环境中不存在的规则链。
 
 <br>
 
-## device profile switch
+## 设备配置文件开关
 
-Route incoming messages based on the name of the device profile. The device profile name is case-sensitive. Available since **v3.4.4**.
+根据设备配置文件的名称路由传入的消息。设备配置文件名称区分大小写。自 **v3.4.4** 起可用。
 
-**Output**
+**输出**
 
-The output connection of the rule node corresponds to the device profile name. For example: "Temperature sensor", "Humidity sensor", etc. 
-See rule node [connections](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-node-connection) for more details.
+规则节点的输出连接对应于设备配置文件名称。例如：“温度传感器”、“湿度传感器”等。有关更多详细信息，请参阅规则节点 [连接](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-node-connection)。
 
-**Usage example**
+**用法示例**
 
-Experienced platform users utilize [Device Profiles](/docs/{{docsPrefix}}user-guide/device-profiles/) and configure specific Rule Chains per Device Profile.
-This is useful in most of the cases, except when the device data is derived from some other message.
-For example, you may use BLE to MQTT gateway and BLE beacons. The Gateway payload typically contains MAC of the beacon and beacon data:
+经验丰富的平台用户利用 [设备配置文件](/docs/{{docsPrefix}}user-guide/device-profiles/) 并为每个设备配置文件配置特定的规则链。
+在大多数情况下，这很有用，除非设备数据来自其他一些消息。
+例如，您可以将 BLE 用于 MQTT 网关和 BLE 信标。网关有效负载通常包含信标的 MAC 和信标数据：
 
 ```json
 {"mac": "7085C2F13DCD", "rssi": -25, "payload": "AABBCC"}
 ```
 
-Let's assume you have different beacon profiles - indoor air quality ("IAQ sensor") and leak sensors ("Leak sensor"). 
-The below rule chain will change the originator of the message from gateway to device and forward the message to the corresponding rule chain:
+假设您有不同的信标配置文件 - 室内空气质量（“IAQ 传感器”）和泄漏传感器（“泄漏传感器”）。
+下面的规则链将消息的始发者从网关更改为设备，并将消息转发到相应的规则链：
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/device-profile-switch-chain.png)
 
-You may [download](https://gist.github.com/ashvayka/f67f9415c625e8a2d12340e18248111f#file-device-profile-switch-example-json) and import the rule chain. 
-Note that the "rule chain" nodes will point to not existing rule chains in your environment.
+您可以 [下载](https://gist.github.com/ashvayka/f67f9415c625e8a2d12340e18248111f#file-device-profile-switch-example-json) 并导入规则链。
+请注意，“规则链”节点将指向您环境中不存在的规则链。
 
 <br>
 
-## check alarm status
+## 检查警报状态
 
-Checks the [Alarm](/docs/{{docsPrefix}}user-guide/alarms/) status to match one of the specified statuses.
+检查 [警报](/docs/{{docsPrefix}}user-guide/alarms/) 状态以匹配指定状态之一。
 
-**Configuration**
+**配置**
 
- * Alarm status filter - Contains list of alarms statuses. 
-  Available statuses: "Active Acknowledged", "Active Unacknowledged", "Cleared Acknowledged", "Cleared Unacknowledged".
+* 警报状态过滤器 - 包含警报状态列表。
+可用状态：“已确认激活”、“未确认激活”、“已确认清除”、“未确认清除”。
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/check-alarm-status-configuration.png)
 
-**Output**
+**输出**
 
-Output connection types: "True" or "False".
+输出连接类型：“真”或“假”。
 
-**Example**
+**示例**
 
-The rule chain below will check that the acknowledged alarm is still active or already cleared.
+下面的规则链将检查确认的警报仍然处于活动状态还是已经清除。
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/check-alarm-status-chain.png)
 
-You may [download](https://gist.github.com/ashvayka/f67f9415c625e8a2d12340e18248111f#file-check-alarm-status-example-json) and import the rule chain.
+您可以 [下载](https://gist.github.com/ashvayka/f67f9415c625e8a2d12340e18248111f#file-check-alarm-status-example-json) 并导入规则链。
 
 <br>
 
-## check fields presence {#check-existence-fields-node}
+## 检查字段是否存在 {#check-existence-fields-node}
 
-Checks the presence of the specified fields in the message and/or metadata. 
-Both message and metadata is typically a JSON object. 
-User specifies message and/or metadata field names in the configuration.
+检查消息和/或元数据中是否存在指定字段。
+消息和元数据通常是 JSON 对象。
+用户在配置中指定消息和/或元数据字段名称。
  
 
-**Configuration**
+**配置**
 
- * Message field names - list of field names that should be present in the message;
- * Metadata field names - list of field names that should be present in the metadata;
- * 'Check that all specified fields are present' checkbox - check the presence of all (if checked) or of at least one field (if unchecked). 
+* 消息字段名称 - 应存在于消息中的字段名称列表；
+* 元数据字段名称 - 应存在于元数据中的字段名称列表；
+* '检查所有指定字段是否存在' 复选框 - 检查所有（如果选中）或至少一个字段（如果未选中）的存在。
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/check-fields-presence-configuration.png)
 
-**Output**
+**输出**
 
-Output connection types: "True" or "False".
+输出连接类型：“真”或“假”。
 
-**Example**
+**示例**
 
-See configuration screenshot. 
+请参阅配置屏幕截图。
 
 <br>
 
-## check relation {#check-relation-filter-node}
+## 检查关系 {#check-relation-filter-node}
 
-Checks the presence of the [Relation](/docs/{{docsPrefix}}user-guide/entities-and-relations/#relations) between the originator of the message and other entities.
-If 'check relation to specific entity' is selected, one must specify a related entity. Otherwise, the rule node checks the presence of a relation to any entity that matches the direction and relation type criteria.
+检查消息的始发者与其他实体之间的 [关系](/docs/{{docsPrefix}}user-guide/entities-and-relations/#relations) 的存在。
+如果选中“检查与特定实体的关系”，则必须指定相关实体。否则，规则节点将检查与匹配方向和关系类型条件的任何实体的关系的存在。
 
-**Configuration**
+**配置**
 
- * 'check relation to specific entity' checkbox enables configuration of specific entity used to check the relation.
- * Direction - configures direction of the relation. It is either 'From' or 'To'. The value corresponds to direction of the relation from the specific/any entity to the originator.
-   See example.
- * Relation type - arbitrary relation type. Default relation types are 'Contains' and 'Manages', but you may create relation of any type. 
+* '检查与特定实体的关系' 复选框启用特定实体的配置，用于检查关系。
+* 方向 - 配置关系的方向。它是“从”或“到”。该值对应于从特定/任何实体到始发者的关系的方向。
+   见示例。
+* 关系类型 - 任意关系类型。默认关系类型是“包含”和“管理”，但您可以创建任何类型的关系。
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/check-relation-configuration.png)
 
-**Output**
+**输出**
 
-Output connection types: "True" or "False".
+输出连接类型：“真”或“假”。
 
-**Example**
+**示例**
 
-Let's assume you have temperature sensor inside the office and also inside the warehouses. 
-During the data processing, you may want to know either the sensor is located in the office or in the warehouse.
-To achieve this one should provision the "OfficeToDevice" relation from the Office asset to the sensor device located in the office.  
-See configuration screenshot to learn how to configure the rule node for this specific case. 
+假设您在办公室和仓库内都有温度传感器。
+在数据处理期间，您可能想知道传感器位于办公室还是仓库中。
+要实现这一点，您应该从办公室资产向位于办公室的传感器设备提供“OfficeToDevice”关系。
+请参阅配置屏幕截图以了解如何针对此特定情况配置规则节点。
 
 <br>
 
-## entity type {#originator-type-filter-node}
+## 实体类型 {#originator-type-filter-node}
 
-Filter incoming messages by the type of message originator entity. 
-Checks that the entity type of the incoming message originator matches one of the values specified in the filter.
+按消息始发者实体的类型过滤传入的消息。
+检查传入消息始发者的实体类型是否与过滤器中指定的值之一匹配。
 
-**Configuration**
+**配置**
 
- * Originator types filter - list of entity types: Device, Asset, User, etc.
+* 始发者类型过滤器 - 实体类型列表：设备、资产、用户等。
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/entity-type-configuration.png)
 
-**Output**
+**输出**
 
-Output connection types: "True" or "False".
+输出连接类型：“真”或“假”。
 
-**Example**
+**示例**
 
-See configuration screenshot.
+请参阅配置屏幕截图。
 
 <br>
 
-## entity type switch {#originator-type-switch-node}
+## 实体类型开关 {#originator-type-switch-node}
 
-Switch incoming messages by the type of message originator entity.
+按消息始发者实体的类型切换传入的消息。
 
-**Output**
+**输出**
 
-The output connection of the rule node corresponds to the entity type of the message originator. For example: "Device", "Asset", "User", etc.
+规则节点的输出连接对应于消息始发者的实体类型。例如：“设备”、“资产”、“用户”等。
 
-**Example**
+**示例**
 
-Let's assume you have messages from different entities processed in one rule chain. 
-You may want to split the message flow based on entity type.
-See below:
+假设您在一个规则链中处理来自不同实体的消息。
+您可能希望根据实体类型拆分消息流。
+见下文：
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/entity-type-switch-chain.png)
 
 <br>
 
-## message type {#message-type-filter-node}
+## 消息类型 {#message-type-filter-node}
 
-Filter incoming messages based on one or more [predefined](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#predefined-message-types) or custom message types. 
-Checks that the message type of the incoming message matches one of the values specified in the filter.
+根据一个或多个 [预定义](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#predefined-message-types) 或自定义消息类型过滤传入的消息。
+检查传入消息的消息类型是否与过滤器中指定的值之一匹配。
 
-**Configuration**
+**配置**
 
- * Message types filter - list of [predefined](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#predefined-message-types) message types. 
-   Custom message types are supported as well.
+* 消息类型过滤器 - [预定义](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#predefined-message-types) 消息类型列表。
+   还支持自定义消息类型。
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/message-type-configuration.png)
 
-**Output**
+**输出**
 
-Output connection types: "True" or "False".
+输出连接类型：“真”或“假”。
 
-**Example**
+**示例**
 
-See configuration screenshot.
+请参阅配置屏幕截图。
 
 <br>
 
-## message type switch {#message-type-switch-node}
+## 消息类型开关 {#message-type-switch-node}
 
-Route incoming messages by the message type value. 
-If incoming Message has known [Message Type](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#predefined-message-types) 
-then it is sent to the corresponding chain, otherwise, message is sent to **Other** chain.
+按消息类型值路由传入的消息。
+如果传入消息具有已知 [消息类型](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#predefined-message-types)，
+那么它将被发送到相应的链，否则，消息将被发送到 **其他** 链。
 
-If you use custom message types than you can route those messages via **Other** chain of **Message Type Switch Node** 
-to the [**message type**](#message-type) configured with required routing logic.
+如果您使用自定义消息类型，则可以通过 **消息类型开关节点** 的 **其他** 链将这些消息路由到配置了所需路由逻辑的 [**消息类型**](#message-type)。
 
-**Output**
+**输出**
 
-The output connection of the rule node corresponds to the type of the message. For example: "Device", "Asset", "User", etc.
+规则节点的输出连接对应于消息的类型。例如：“设备”、“资产”、“用户”等。
 
-**Example**
+**示例**
 
-Let's assume you have messages with different types processed in one rule chain. 
-You may want to split the message flow based on message type.
-See below:
+假设您在一个规则链中处理具有不同类型的消息。
+您可能希望根据消息类型拆分消息流。
+见下文：
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/message-type-switch-chain.png)
 
 <br>
 
-## script {#script-filter-node}
+## 脚本 {#script-filter-node}
 
-Evaluates boolean function using incoming message. The function may be written using [TBEL](/docs/{{docsPrefix}}user-guide/tbel/)(recommended) or plain JavaScript.  
-Script function should return boolean value and accepts three parameters.
+使用传入消息评估布尔函数。该函数可以使用 [TBEL](/docs/{{docsPrefix}}user-guide/tbel/)(推荐) 或纯 JavaScript 编写。
+脚本函数应返回布尔值并接受三个参数。
 
-**Configuration**
+**配置**
 
-TBEL/JavaScript function receive 3 input parameters: 
+TBEL/JavaScript 函数接收 3 个输入参数：
 
-- <code>msg</code> - is a message payload, typically a JSON object or array.
-- <code>metadata</code> - is a message metadata. Represented as a Key-Value map. Both keys and values are strings.
-- <code>msgType</code> - is a message type, string.
+- `msg` - 是消息有效负载，通常是 JSON 对象或数组。
+- `metadata` - 是消息元数据。表示为键值对映射。键和值都是字符串。
+- `msgType` - 是消息类型，字符串。
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/script-filter-node-configuration.png)
 
-**Output**
+**输出**
 
-Output connection types: "True" or "False".
+输出连接类型：“真”或“假”。
 
-**Examples**
+**示例**
  
-Message payload can be accessed via <code>msg</code> variable. For example <code>msg.temperature < 10;</code><br> 
-Message metadata can be accessed via <code>metadata</code> variable. For example <code>metadata.deviceType === 'DHT11';</code><br> 
-Message type can be accessed via <code>msgType</code> variable. For example <code>msgType === 'POST_TELEMETRY_REQUEST'</code><br> 
+可以通过 `msg` 变量访问消息有效负载。例如 `msg.temperature < 10;` <br> 
+可以通过 `metadata` 变量访问消息元数据。例如 `metadata.deviceType === 'DHT11';` <br> 
+可以通过 `msgType` 变量访问消息类型。例如 `msgType === 'POST_TELEMETRY_REQUEST'` <br> 
 
-Full script example:
+完整脚本示例：
 
 ```javascript
 if(msgType === 'POST_TELEMETRY_REQUEST') {
@@ -258,45 +254,45 @@ return false;
 ```
 {: .copy-code}
 
-TBEL/JavaScript condition can be verified using [test filter function](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#test-script-functions).
+可以使用 [测试脚本函数](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#test-script-functions) 验证 TBEL/JavaScript 条件。
 
-You can see the real life examples, where this node is used, in the next tutorials:
+您可以在以下教程中看到使用此节点的真实示例：
 
-- [Create and Clear Alarms](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/)
-- [Reply to RPC Calls](/docs/user-guide/rule-engine-2-0/tutorials/rpc-reply-tutorial/#add-filter-script-node)
+- [创建和清除警报](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/)
+- [回复 RPC 调用](/docs/user-guide/rule-engine-2-0/tutorials/rpc-reply-tutorial/#add-filter-script-node)
 
 <br>
 
-## switch {#switch-node}
+## 开关 {#switch-node}
 
-Routes incoming message to one OR multiple output connections. 
-Node executes configured [TBEL](/docs/{{docsPrefix}}user-guide/tbel/)(recommended) or JavaScript function that returns array of strings (connection names).
+将传入消息路由到一个或多个输出连接。
+节点执行配置的 [TBEL](/docs/{{docsPrefix}}user-guide/tbel/)(推荐) 或 JavaScript 函数，该函数返回字符串数组（连接名称）。
 
-**Configuration**
+**配置**
 
-TBEL/JavaScript function receive 3 input parameters: 
+TBEL/JavaScript 函数接收 3 个输入参数：
 
-- <code>msg</code> - is a message payload, typically a JSON object or array.
-- <code>metadata</code> - is a message metadata. Represented as a Key-Value map. Both keys and values are strings.
-- <code>msgType</code> - is a message type, string.
+- `msg` - 是消息有效负载，通常是 JSON 对象或数组。
+- `metadata` - 是消息元数据。表示为键值对映射。键和值都是字符串。
+- `msgType` - 是消息类型，字符串。
 
-The script should return **_an array of next Relation names_** where Message should be routed.
-If returned array is empty - message will not be routed to any Node and discarded.
+脚本应返回 **_下一个关系名称的数组_**，消息应被路由到该数组。
+如果返回的数组为空 - 消息将不会被路由到任何节点并被丢弃。
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/filter-switch-configuration.png)
 
-**Output**
+**输出**
 
-The output connection of the rule node corresponds to the result of the script execution. For example: "Low Temperature Telemetry", "Normal Temperature Telemetry", "Idle State", etc.
-See rule node [connections](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-node-connection) for more details.
+规则节点的输出连接对应于脚本执行的结果。例如：“低温遥测”、“正常温度遥测”、“空闲状态”等。
+有关更多详细信息，请参阅规则节点 [连接](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-node-connection)。
 
-**Examples**
+**示例**
 
-Message payload can be accessed via <code>msg</code> variable. For example <code>msg.temperature < 10;</code><br> 
-Message metadata can be accessed via <code>metadata</code> variable. For example <code>metadata.customerName === 'John';</code><br> 
-Message type can be accessed via <code>msgType</code> variable. For example <code>msgType === 'POST_TELEMETRY_REQUEST'</code><br> 
+可以通过 `msg` 变量访问消息有效负载。例如 `msg.temperature < 10;` <br> 
+可以通过 `metadata` 变量访问消息元数据。例如 `metadata.customerName === 'John';` <br> 
+可以通过 `msgType` 变量访问消息类型。例如 `msgType === 'POST_TELEMETRY_REQUEST'` <br> 
 
-Full script example:
+完整脚本示例：
 
 ```javascript
 if (msgType === 'POST_TELEMETRY_REQUEST') {
@@ -320,67 +316,67 @@ return [];
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/filter-switch.png)
 
-TBEL/JavaScript condition can be verified using [test filter function](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#test-script-functions).
+可以使用 [测试脚本函数](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#test-script-functions) 验证 TBEL/JavaScript 条件。
 
 <br>
 
-## GPS geofencing filter {#gps-geofencing-filter-node}
+## GPS 地理围栏过滤器 {#gps-geofencing-filter-node}
 
-Filter incoming messages by GPS-based geofencing. 
-Extracts latitude and longitude parameters from the incoming message and checks them according to configured perimeter.
+按基于 GPS 的地理围栏过滤传入的消息。
+从传入消息中提取纬度和经度参数，并根据配置的周长对其进行检查。
 
-**Configuration**
+**配置**
 
- * Latitude key name - name of the message field that contains location latitude;
- * Longitude key name - name of the message field that contains location longitude;
- * Perimeter type - Polygon or Circle;
- * Fetch perimeter from message metadata - checkbox to load perimeter from message metadata; 
-   Enable if your perimeter is specific to device/asset and you store it as device/asset attribute;
- * Perimeter key name - name of the metadata key that stores perimeter information;
- * For Polygon perimeter type:  
-    * Polygon definition - string that contains array of coordinates in the following format: [[lat1, lon1],[lat2, lon2],[lat3, lon3], ... , [latN, lonN]]
- * For Circle perimeter type:      
-    * Center latitude - latitude of the circle perimeter center;
-    * Center longitude - longitude of the circle perimeter center;
-    * Range - value of the circle perimeter range, double-precision floating-point value;
-    * Range units - one of: Meter, Kilometer, Foot, Mile, Nautical Mile;
+ * 纬度键名 - 包含位置纬度的消息字段的名称；
+ * 经度键名 - 包含位置经度的消息字段的名称；
+ * 周长类型 - 多边形或圆形；
+ * 从消息元数据获取周长 - 从消息元数据加载周长的复选框；
+   如果您的周长特定于设备/资产并且您将其存储为设备/资产属性，请启用；
+ * 周长键名 - 存储周长信息的消息元数据的键名；
+ * 对于多边形周长类型：  
+    * 多边形定义 - 包含以下格式的坐标数组的字符串：[[lat1, lon1],[lat2, lon2],[lat3, lon3], ... , [latN, lonN]]
+ * 对于圆形周长类型：      
+    * 中心纬度 - 圆形周长中心的纬度；
+    * 中心经度 - 圆形周长中心的经度；
+    * 范围 - 圆形周长范围的值，双精度浮点值；
+    * 范围单位 - 其中之一：米、公里、英尺、英里、海里；
     
-Rule node will use default metadata key names, if the "Fetch perimeter from message metadata" is enabled and "Perimeter key name" is not configured.
-Default metadata key names for polygon perimeter type is "perimeter". Default metadata key names for circle perimeter are: "centerLatitude", "centerLongitude", "range", "rangeUnit".
+如果启用了“从消息元数据获取周长”，并且“周长键名”未配置，则规则节点将使用默认元数据键名。
+多边形周长类型的默认元数据键名是“perimeter”。圆形周长的默认元数据键名是：“centerLatitude”、“centerLongitude”、“range”、“rangeUnit”。
 
-Structure of the circle perimeter definition (stored in server-side attribute, for example):
+圆形周长定义的结构（例如存储在服务器端属性中）：
 
 ```json
 {"latitude":  48.198618758582384, "longitude": 24.65322245153503, "radius":  100.0, "radiusUnit": "METER" }
 ```
 
-Available radius units: METER, KILOMETER, FOOT, MILE, NAUTICAL_MILE;
+可用半径单位：METER、KILOMETER、FOOT、MILE、NAUTICAL_MILE；
     
-**Output**
+**输出**
 
-Output connection types: "True" or "False". 
-The "Failure" connection will to be used when: a) incoming message has no configured latitude or longitude key in data or metadata or b) missing perimeter definition;     
+输出连接类型：“真”或“假”。
+当出现以下情况时，将使用“失败”连接：a) 传入消息在数据或元数据中没有配置的纬度或经度键，或 b) 缺少周长定义；     
 
-**Examples**
+**示例**
 
-*Static circle perimeter*
+*静态圆形周长*
 
-Let's assume you would like to check that the location of the device is within 100 meters from the Ukraine's Independence Monument, located in the center of Kyiv.
-The coordinates of the monument are the following: latitude = 50.4515652, longitude = 0.5236963. The configuration of the rule node is quite simple:
+假设您想检查设备的位置是否在乌克兰独立纪念碑周围 100 米范围内，该纪念碑位于基辅市中心。
+纪念碑的坐标如下：纬度 = 50.4515652，经度 = 0.5236963。规则节点的配置非常简单：
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/filter-gps-geofencing-circle-static-configuration.png)
 
-*Static polygon perimeter*
+*静态多边形周长*
 
-Let's assume a simple livestock location monitoring use case. Let's configure the rule node to monitor that the sheep is within area perimeter:
+假设一个简单的牲畜位置监控用例。让我们配置规则节点以监控绵羊是否在区域周长内：
 
-We will use static polygon coordinates of the farm field: 
+我们将使用农场字段的静态多边形坐标：
 
 ```json
 [[48.19736726399899, 24.652353415807884], [48.19800374220741, 24.65060461551745], [48.19918370897885, 24.65317953619048], [48.19849718616351, 24.65420950445969]]
 ```  
 
-You may test that rule node returns 'True' if you submit the following coordinates in the message: 
+如果您在消息中提交以下坐标，则可以测试规则节点是否返回“真”：
 
 ```json
 { latitude: 48.198618758582384, longitude: 24.65322245153503 }
@@ -388,27 +384,25 @@ You may test that rule node returns 'True' if you submit the following coordinat
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/filter-gps-geofencing-perimeter-static-configuration.png)
 
-*Dynamic circle/polygon perimeter*
+*动态圆形/多边形周长*
 
-Let's review more complex livestock location monitoring case, where you may have sheeps located in different farms.
-Let's assume we have created two farms: Farm A and Farm B. Each livestock tracker device is related either to Farm A or Farm B asset.
+让我们回顾一个更复杂的牲畜位置监控案例，您可能在不同的农场中饲养绵羊。
+假设我们创建了两个农场：农场 A 和农场 B。每个牲畜追踪器设备都与农场 A 或农场 B 资产相关。
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/gps-geofencing-filter-farm-relation.png)
 
-We will configure server-side attribute called "perimeter" with the JSON value: "[[48.19736726399899, 24.652353415807884], [48.19800374220741, 24.65060461551745], [48.19918370897885, 24.65317953619048], [48.19849718616351, 24.65420950445969]]";
+我们将配置名为“perimeter”的服务器端属性，其 JSON 值为：“[[48.19736726399899, 24.652353415807884], [48.19800374220741, 24.65060461551745], [48.19918370897885, 24.65317953619048], [48.19849718616351, 24.65420950445969]]”;
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/gps-geofencing-filter-farm-attribute.png)
 
-The below rule chain will fetch the attribute from the related asset (Farm A) and use it in the geofencing node:
+下面的规则链将从相关资产（农场 A）中获取属性并在地理围栏节点中使用它：
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/gps-geofencing-filter-dynamic-example.png)
 
-Rule node configuration is fairly simple. Please note that perimeter key name is without any prefix:
+规则节点配置非常简单。请注意，周长键名没有任何前缀：
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/gps-geofencing-filter-dynamic-configuration.png)
 
-You may [download](https://gist.github.com/ashvayka/f67f9415c625e8a2d12340e18248111f#file-gps-geofencing-filter-example) and import the rule chain. 
-Note that the "rule chain" nodes will point to not existing device in the "Sheep Tracker Generator" node. 
-You will need to provision device and asset to replicate the example.
-
-<br>
+您可以 [下载](https://gist.github.com/ashvayka/f67f9415c625e8a2d12340e18248111f#file-gps-geofencing-filter-example) 并导入规则链。
+请注意，“规则链”节点将指向“绵羊追踪器生成器”节点中不存在的设备。
+您需要配置设备和资产才能复制示例。

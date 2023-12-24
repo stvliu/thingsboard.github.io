@@ -2,12 +2,12 @@
 layout: docwithnav-trendz
 assignees:
   - vparomskiy
-title: Trendz Analytics guides
-description: Trendz Analytics guides and tutorials
+title: Trendz Analytics 指南
+description: Trendz Analytics 指南和教程
 ---
 {% assign guides = site.data.trendz.guides-list %}
 <div class="guides">
-    <p>Explore our collection of step-by-step guides on implementing various IoT use cases with a focus on data analytics. Learn how to leverage Trendz Analytics to extract insights, optimize operations, and drive informed decision-making. Discover practical solutions for predictive maintenance, energy management, occupancy tracking, anomaly detection, and more.</p>
+    <p>探索我们关于使用各种物联网用例的逐步指南集合，重点是数据分析。了解如何利用 Trendz Analytics 提取见解、优化运营并推动明智的决策。发现预测性维护、能源管理、占用率跟踪、异常检测等的实用解决方案。</p>
     {% for guide in guides %}
     <div class="guides-block">
         <div class="guides-title-panel">

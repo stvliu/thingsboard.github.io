@@ -1,127 +1,126 @@
 * TOC
 {:toc}
 
-ThingsBoard provides the ability to create and manage alarms related to your entities: devices, assets, customers, etc.
-For example, you may configure ThingsBoard to automatically create an alarm when the temperature sensor reading is above a certain threshold.
-Of course, this is a very simplified case, and real scenarios can be much more complex.
+ThingsBoard 提供创建和管理与实体（设备、资产、客户等）相关的警报的功能。
+例如，您可以将 ThingsBoard 配置为在温度传感器读数高于某个阈值时自动创建警报。
+当然，这是一个非常简单的案例，而实际场景可能要复杂得多。
 
 
-## Main concepts
+## 主要概念
 
-Let's review the main concepts of the alarm below:
+我们来回顾一下以下警报的主要概念：
 
-##### Originator
+##### 触发器
 
-Alarm originator is an entity that causes the alarm.
-For instance, Device A is an originator of the alarm if ThingsBoard receives a temperature reading from it and raise the “HighTemperature” alarm because the reading exceeds the threshold.
+警报触发器是导致警报的实体。
+例如，如果 ThingsBoard 从设备 A 收到温度读数，并因读数超过阈值而引发“高温”警报，则设备 A 是警报的触发器。
 
-##### Type
+##### 类型
 
-Alarm type helps to identify the root cause of the alarm. For example, "HighTemperature" and "LowHumidity" are two different alarms.
+警报类型有助于识别警报的根本原因。例如，“高温”和“低湿度”是两个不同的警报。
 
-##### Severity
+##### 严重性
 
-Each alarm has severity which is either Critical, Major, Minor, Warning, or Indeterminate (sorted by priority in descending order).
+每个警报都有严重性，包括严重、主要、次要、警告或不确定（按优先级降序排列）。
 
-##### Lifecycle
+##### 生命周期
 
-Alarm may be active or cleared. When ThingsBoard creates an alarm it persists the **start** and **end time** of the alarm. By default, the start time and the end time are the same. 
-If the alarm trigger condition repeats, the platform updates the end time. ThingsBoard can automatically clear the alarm when an event occurs that matches an alarm clearing condition.
-Alarm clear condition is optional. A user can clear the alarm manually.
+警报可以处于活动状态或已清除状态。当 ThingsBoard 创建警报时，它会保留警报的**开始**和**结束时间**。默认情况下，开始时间和结束时间相同。
+如果警报触发条件重复，平台会更新结束时间。当发生与警报清除条件匹配的事件时，ThingsBoard 可以自动清除警报。
+警报清除条件是可选的。用户可以手动清除警报。
 
-Besides active and cleared alarm state, ThingsBoard also keeps track of whether someone has acknowledged the alarm. 
-Alarm acknowledgment is possible via the dashboard widget, or an entity details tab.        
+除了活动和已清除警报状态外，ThingsBoard 还会跟踪是否有人确认警报。
+可以通过仪表板小部件或实体详细信息选项卡确认警报。
 
-To summarize, there are 4 possible values of the "**status**" field: 
+总之，“**状态**”字段有 4 个可能的值：
 
- * Active unacknowledged (ACTIVE_UNACK) - alarm is not cleared and not acknowledged yet;
- * Active acknowledged(ACTIVE_ACK) - alarm is not cleared, but already acknowledged;
- * Cleared unacknowledged(CLEARED_UNACK) - alarm was already cleared, but not yet acknowledged;
- * Cleared acknowledged(CLEARED_ACK) - alarm was already cleared and acknowledged;
+* 活动未确认 (ACTIVE_UNACK) - 警报尚未清除且尚未确认；
+* 活动已确认 (ACTIVE_ACK) - 警报尚未清除，但已确认；
+* 已清除未确认 (CLEARED_UNACK) - 警报已清除，但尚未确认；
+* 已清除已确认 (CLEARED_ACK) - 警报已清除并确认；
 
-##### Alarm uniqueness
+##### 警报唯一性
 
-ThingsBoard identifies alarm using a combination of originator, type, and start time. 
-Thus, at a single point in time, there is only one active alarm with the same originator, type, and start time.
+ThingsBoard 使用触发器、类型和开始时间的组合来识别警报。
+因此，在某个时间点，只有一个具有相同触发器、类型和开始时间的活动警报。
 
-Let's assume you have provisioned alarm rules to create a "HighTemperature" alarm when the temperature is greater than 20.
-And you also provisioned alarm rules to clear the "HighTemperature" alarm when the temperature is less than or equal to 20.   
+假设您已配置警报规则，以便在温度高于 20 时创建“高温”警报。
+您还配置了警报规则，以便在温度小于或等于 20 时清除“高温”警报。
 
-Assuming the following sequence of events:
+假设以下事件序列：
 
- * 12:00 - temperature equals 18
- * 12:30 - temperature equals 22
- * 13:00 - temperature equals 25
- * 13:30 - temperature equals 18
+* 12:00 - 温度等于 18
+* 12:30 - 温度等于 22
+* 13:00 - 温度等于 25
+* 13:30 - 温度等于 18
 
-Hence, you should create a single "HighTemperature" alarm with start time = 12:30 and end time = 13:00.
+因此，您应该创建一个开始时间 = 12:30 和结束时间 = 13:00 的“高温”警报。
 
-##### Propagation
+##### 传播
 
-Suppose you have a topology where one Tenant has 1000 Customers and each Customer has 1000 Devices. 
-Thus, you have 1M Devices in your server installation. 
-You may want to design a dashboard that displays all active alarms on the Tenant and Customer level.
-To simplify the database queries and improve load time, ThingsBoard supports the propagation of the alarm. 
-When the alarm is created, we can specify whether it should be visible for parent entities or not. 
-We can also optionally specify the relations that should be present between the parent entities and the originator for the alarm to propagate. 
+假设您有一个拓扑，其中一个租户有 1000 个客户，每个客户有 1000 个设备。
+因此，您的服务器安装中有 100 万个设备。
+您可能希望设计一个仪表板，在租户和客户级别显示所有活动警报。
+为了简化数据库查询并缩短加载时间，ThingsBoard 支持警报传播。
+创建警报时，我们可以指定是否应该对父实体可见。
+我们还可以选择性地指定父实体与触发器之间应该存在的关系，以便警报传播。
 
-Now, when you know the theory, let's proceed to practical tutorials.       
+现在，当您了解了理论知识，我们就可以继续进行实际教程了。
 
-## Alarm FAQ and How-Tos
+## 警报常见问题解答和操作方法
 
-### How to create the alarm?
+### 如何创建警报？
 
-**The easiest way** is to use the [**Alarm Rules**](/docs/{{docsPrefix}}user-guide/device-profiles/#alarm-rules).
+**最简单的方法**是使用 [**警报规则**](/docs/{{docsPrefix}}user-guide/device-profiles/#alarm-rules)。
 
-The alternative option is to configure your custom logic in the [Rule Engine](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/re-getting-started/) and use 
-[Create Alarm](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#create-alarm-node) and [Clear Alarm](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#clear-alarm-node) rule nodes. 
-You can find a corresponding example [here](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/).
+另一种选择是在 [规则引擎](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/re-getting-started/) 中配置自定义逻辑，并使用
+[创建警报](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#create-alarm-node) 和 [清除警报](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#clear-alarm-node) 规则节点。
+您可以在 [此处](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/) 找到相应的示例。
 
-### How to find alarms for a specific device or asset?
+### 如何查找特定设备或资产的警报？
 
-To find alarms for a specific device or asset you should:
-* Open Assets or Device list;
-* Select needed entity;
-* Navigate to the Alarms tab;
-* Choose an Alarm status and a time interval.
+要查找特定设备或资产的警报，您应该：
+* 打开资产或设备列表；
+* 选择所需的实体；
+* 导航到“警报”选项卡；
+* 选择警报状态和时间间隔。
 
 {% include images-gallery.html imageCollection="entityAlarms" %}
 
-### How to assign alarm to user?
+### 如何将警报分配给用户？
 
-To assign an alarm to a user, navigate to the alarm tab and select the user in Assignee column. 
+要将警报分配给用户，请导航到警报选项卡，然后在“受让人”列中选择用户。
 
 {% include images-gallery.html imageCollection="alarmAssignee" %}
 
-### How to find alarm comments and add your own?
+### 如何查找警报评论并添加您自己的评论？
 
-Open alarm details to find comments for a specific alarm.
+打开警报详细信息以查找特定警报的评论。
 
 {% include images-gallery.html imageCollection="alarmComments" %}
 
-There are two types of comments in the Comments section: user and system.
-Any authorized user may add, edit, and delete user comments. System comments are non-editable grey-colored comments that describe alarm events such as changes to severity, alarm assignee etc. 
+“评论”部分中有两种类型的评论：用户评论和系统评论。
+任何授权用户都可以添加、编辑和删除用户评论。系统评论是不可编辑的灰色评论，用于描述警报事件，例如严重性更改、警报受让人等。
 
-### How to visualize alarms on the dashboard?
+### 如何在仪表板上可视化警报？
 
-See this [doc](/docs/{{docsPrefix}}getting-started-guides/helloworld/#step-35-add-alarm-widget) to add an alarm widget to the dashboard. 
+请参阅此 [文档](/docs/{{docsPrefix}}getting-started-guides/helloworld/#step-35-add-alarm-widget) 将警报小部件添加到仪表板。
 
-You can also explore datasource settings and advanced settings of the widget.
+您还可以探索数据源设置和小部件的高级设置。
 
-The Datasource setting allows you to:
+数据源设置允许您：
 
- * Specify the status filter using any combination of ack/unack/active/clear;
- * Specify severity filter using any combination of severity levels;
- * Specify a list of alarm types;
- * Enable or disable search of the propagated alarms (disabled by default).
- 
+* 使用任何 ack/unack/active/clear 组合指定状态过滤器；
+* 使用任何严重性级别组合指定严重性过滤器；
+* 指定警报类型列表；
+* 启用或禁用传播警报的搜索（默认情况下禁用）。
+
 {% include images-gallery.html imageCollection="alarmWidgetDataSettings" %}
- 
-### How to send notification when alarm is created or cleared?
 
-To send notification when alarm is created or cleared, please check this [doc](/docs/{{docsPrefix}}user-guide/device-profiles/#notifications-about-alarms).  
+### 如何在创建或清除警报时发送通知？
 
-### How to query alarm using REST API? 
+要在创建或清除警报时发送通知，请查看此 [文档](/docs/{{docsPrefix}}user-guide/device-profiles/#notifications-about-alarms)。
 
-ThingsBoard provides REST API to manage and query alarms. See demo environment [Alarm REST API](https://demo.thingsboard.io/swagger-ui.html#/alarm-controller) and general [REST API](/docs/{{docsPrefix}}reference/rest-api/) documentation for more details.
+### 如何使用 REST API 查询警报？
 
+ThingsBoard 提供 REST API 来管理和查询警报。有关更多详细信息，请参阅演示环境 [警报 REST API](https://demo.thingsboard.io/swagger-ui.html#/alarm-controller) 和通用 [REST API](/docs/{{docsPrefix}}reference/rest-api/) 文档。

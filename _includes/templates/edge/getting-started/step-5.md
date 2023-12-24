@@ -1,12 +1,12 @@
-To provision dashboard to Edge we need to open Edge dashboards on **{{currentThingsBoardVersion}}** Server and assign the newly created dashboard. 
-Once this dashboard is assigned we are going to open ThingsBoard **Edge** UI to see the same dashboard on the Edge.
+要将仪表板配置到 Edge，我们需要在 **{{currentThingsBoardVersion}}** 服务器上打开 Edge 仪表板并分配新创建的仪表板。
+一旦分配了此仪表板，我们将打开 ThingsBoard **Edge** UI，以便在 Edge 上看到相同的仪表板。
 
-Please open **{{currentThingsBoardVersion}}** using the URL **SERVER_URL**.
+请使用 URL **SERVER_URL** 打开 **{{currentThingsBoardVersion}}**。
 
 {% include images-gallery.html imageCollection="step5Server" showListImageTitles="true" %}
 
-Let's open ThingsBoard **Edge** UI using the URL **EDGE_URL** to verify that dashboard was provisioned.
+让我们使用 URL **EDGE_URL** 打开 ThingsBoard **Edge** UI，以验证仪表板是否已配置。
 
 {% include images-gallery.html imageCollection="step5Edge" showListImageTitles="true" %}
 
-Congratulations! Dashboard has been provisioned to the Edge. Now you can send new telemetry reading, and it will immediately appear in the chart on the Edge.
+恭喜！仪表板已配置到 Edge。现在，您可以发送新的遥测读数，它将立即显示在 Edge 上的图表中。

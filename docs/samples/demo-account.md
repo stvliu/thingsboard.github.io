@@ -2,58 +2,57 @@
 layout: docwithnav
 assignees:
 - ashvayka
-title: Demo Account
-description: ThingsBoard default demo accounts
+title: 演示帐户
+description: ThingsBoard 默认演示帐户
 
 ---
 
 * TOC
 {:toc}
 
-ThingsBoard installation contains single tenant account that is used in sample applications and contains a lot of pre-provisioned entities for demonstration purposes.
+ThingsBoard 安装包含用于示例应用程序的单租户帐户，并包含大量预置实体以供演示。
 
-## System Administrator
- 
-Default system administrator account:
+## 系统管理员
 
- - login - **sysadmin@thingsboard.org**.
- - password - **sysadmin**.
- 
-## Demo Tenant
+默认系统管理员帐户：
 
-Default tenant administrator account:
+- 登录 - **sysadmin@thingsboard.org**。
+- 密码 - **sysadmin**。
 
- - login - **tenant@thingsboard.org**.
- - password - **tenant**.
- 
-Demo tenant customers:
+## 演示租户
 
- - Customer A users -  **customer@thingsboard.org** or **customerA@thingsboard.org**.
- - Customer B users -  **customerB@thingsboard.org**.
- - Customer C users -  **customerC@thingsboard.org**.
- - all users have **"customer"** password. 
- 
-## Tenant devices
+默认租户管理员帐户：
 
- - Test Device A1, A2, A3 - belong to Customer A. Access tokens: A1_TEST_TOKEN, A2_TEST_TOKEN and A3_TEST_TOKEN.
- - Test Device B1 - belong to Customer B. Access token: B1_TEST_TOKEN.
- - Test Device C1 - belong to Customer C. Access token: C1_TEST_TOKEN.
- 
- - DHT11 Demo Device - created for temperature and humidity upload [sample applications](/docs/samples/nodemcu/temperature/). 
-   Access token: DHT11_DEMO_TOKEN
- - Raspberry Pi Demo Device - created for GPIO control [sample application](/docs/samples/raspberry/gpio/).
-   Access token: RASPBERRY_PI_DEMO_TOKEN
- 
-## Dashboards
+- 登录 - **tenant@thingsboard.org**。
+- 密码 - **tenant**。
 
- - Temperature & Humidity Demo Dashboard - created for temperature and humidity upload [sample applications](/docs/samples/nodemcu/temperature/).
- - Raspberry PI GPIO Demo Dashboard - created for Raspberry Pi GPIO control [sample application](/docs/samples/raspberry/gpio/).
- 
-## Rule Chains
-There is predefined Rule Chain for storing all incoming telemetry and attribute updates. All other incoming requests just logged.
-For adding additional Rule Nodes, like Send Email, Create Alarms, etc. please read related articles:
+演示租户客户：
 
-- [Rule Engine Getting Started](/docs/user-guide/rule-engine-2-0/re-getting-started/)
-- [Rule Engine Overview](/docs/user-guide/rule-engine-2-0/overview/)
-- [Rule Engine Tutorials](/docs/user-guide/rule-engine-2-0/overview/#tutorials)
-  
+- 客户 A 用户 - **customer@thingsboard.org** 或 **customerA@thingsboard.org**。
+- 客户 B 用户 - **customerB@thingsboard.org**。
+- 客户 C 用户 - **customerC@thingsboard.org**。
+- 所有用户都有 **“customer”** 密码。
+
+## 租户设备
+
+- 测试设备 A1、A2、A3 - 属于客户 A。访问令牌：A1_TEST_TOKEN、A2_TEST_TOKEN 和 A3_TEST_TOKEN。
+- 测试设备 B1 - 属于客户 B。访问令牌：B1_TEST_TOKEN。
+- 测试设备 C1 - 属于客户 C。访问令牌：C1_TEST_TOKEN。
+
+- DHT11 演示设备 - 创建用于温度和湿度上传 [示例应用程序](/docs/samples/nodemcu/temperature/)。
+访问令牌：DHT11_DEMO_TOKEN
+- Raspberry Pi 演示设备 - 创建用于 GPIO 控制 [示例应用程序](/docs/samples/raspberry/gpio/)。
+访问令牌：RASPBERRY_PI_DEMO_TOKEN
+
+## 仪表板
+
+- 温度和湿度演示仪表板 - 创建用于温度和湿度上传 [示例应用程序](/docs/samples/nodemcu/temperature/)。
+- Raspberry PI GPIO 演示仪表板 - 创建用于 Raspberry Pi GPIO 控制 [示例应用程序](/docs/samples/raspberry/gpio/)。
+
+## 规则链
+有一个预定义的规则链，用于存储所有传入遥测和属性更新。所有其他传入请求都已记录。
+有关添加其他规则节点（如发送电子邮件、创建警报等），请阅读相关文章：
+
+- [规则引擎入门](/docs/user-guide/rule-engine-2-0/re-getting-started/)
+- [规则引擎概述](/docs/user-guide/rule-engine-2-0/overview/)
+- [规则引擎教程](/docs/user-guide/rule-engine-2-0/overview/#tutorials)

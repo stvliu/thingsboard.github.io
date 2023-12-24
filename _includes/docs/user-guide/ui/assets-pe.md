@@ -1,65 +1,65 @@
 * TOC
 {:toc}
 
-## Introduction
+## 简介
 
-Thingsboard support following asset management features using Web UI and [REST API](/docs/{{docsPrefix}}reference/rest-api/).
+Thingsboard 支持使用 Web UI 和 [REST API](/docs/{{docsPrefix}}reference/rest-api/) 以下资产管理功能。
 
 {% include images-gallery.html imageCollection="asset-intro-pe" %}
 
-## Adding and delete asset
+## 添加和删除资产
 
-Tenant administrators can register new assets or delete them from Thingsboard.
-To add a new asset group, click the plus icon in the upper right corner.
-Enter the name for the new asset group, set up the sharing configuration, and click Add.
+租户管理员可以注册新资产或从 Thingsboard 中删除它们。
+要添加新的资产组，请单击右上角的加号图标。
+输入新资产组的名称，设置共享配置，然后单击添加。
 
-To delete the asset group, click the trash can icon next to the asset and confirm it in the dialog box.
+要删除资产组，请单击资产旁边的垃圾桶图标并在对话框中确认。
 
 {% include images-gallery.html imageCollection="asset-pe" %}
 
-## Asset ID
+## 资产 ID
 
-Tenant administrators and customer users can copy the asset ID to the clipboard.
-Open an asset group, then click the asset name to open its details. There, click the “Copy Asset ID” button.
+租户管理员和客户用户可以将资产 ID 复制到剪贴板。
+打开资产组，然后单击资产名称以打开其详细信息。然后，单击“复制资产 ID”按钮。
 
 {% include images-gallery.html imageCollection="asset-id-pe" %}
 
-## Asset attributes
+## 资产属性
 
-Tenant administrators and customer users are able to manage asset server-side [attributes](/docs/{{docsPrefix}}user-guide/attributes/).
-First, you should click on the asset to open its details. Then, go to attributes tab and, by checking the box next to asset attribute, you can delete it or display it on a widget.
+租户管理员和客户用户能够管理资产服务器端 [属性](/docs/{{docsPrefix}}user-guide/attributes/)。
+首先，您应该单击资产以打开其详细信息。然后，转到属性选项卡，通过选中资产属性旁边的框，您可以删除它或在小部件上显示它。
 
 {% include images-gallery.html imageCollection="asset-attributes-pe" %}
 
-## Asset alarms
+## 资产警报
 
-Tenant administrators and customer users are able to browse asset [alarms](/docs/{{docsPrefix}}user-guide/alarms/).
-To configure an alarm, you should create relations from asset to the device, add an alarm rule and trigger the alarm via terminal.
-After these actions, you can see the triggered alarm in the asset details.
+租户管理员和客户用户能够浏览资产 [警报](/docs/{{docsPrefix}}user-guide/alarms/)。
+要配置警报，您应该从资产创建到设备的关系，添加警报规则并通过终端触发警报。
+在执行这些操作后，您可以在资产详细信息中看到触发的警报。
 
 {% include images-gallery.html imageCollection="asset-alarms-pe" %}
 
-## Asset events
+## 资产事件
 
-Tenant administrators and customer users can browse events related to a particular asset using the Events tab. Events help to track each message to see what happened to an asset.  
-Error event displays major problems that could affect asset's work.  
-Lifecycle event displays when the asset was created and if it was successful.  
-Statistics event displays how many messages were proceeded and how many errors were there.
-Raw data event is using while debugging.
+租户管理员和客户用户可以使用“事件”选项卡浏览与特定资产相关的事件。事件有助于跟踪每条消息，以查看资产发生了什么。
+错误事件显示可能影响资产工作的主要问题。
+生命周期事件显示资产创建的时间以及是否成功。
+统计事件显示处理了多少条消息以及有多少错误。
+原始数据事件用于调试。
 
-_Documentation dedicated to events is coming soon._
+_专门针对事件的文档即将推出。_
 
 {% include images-gallery.html imageCollection="asset-events-pe" %}
 
-## Asset relations
+## 资产关系
 
-ThingsBoard provides the user interface and REST APIs to provision and manage multiple entity types and their [relations](/docs/{{docsPrefix}}user-guide/entities-and-relations/) in your IoT application.
+ThingsBoard 提供用户界面和 REST API 来配置和管理您的 IoT 应用程序中的多个实体类型及其 [关系](/docs/{{docsPrefix}}user-guide/entities-and-relations/)。
 
 {% include images-gallery.html imageCollection="asset-relations-pe" %}
 
-## Audit logs
+## 审计日志
 
-ThingsBoard provides the ability to track user actions in order to keep an [audit log](/docs/{{docsPrefix}}user-guide/audit-log/).
-It is possible to log user actions related to main entities: assets, devices, dashboard, rules, etc.
+ThingsBoard 提供跟踪用户操作的功能，以便保留 [审计日志](/docs/{{docsPrefix}}user-guide/audit-log/)。
+可以记录与主要实体相关联的用户操作：资产、设备、仪表板、规则等。
 
 {% include images-gallery.html imageCollection="asset-auditlogs-pe" %}

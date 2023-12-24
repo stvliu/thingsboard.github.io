@@ -1,51 +1,48 @@
 ---
 layout: docwithnav-mqtt-broker
-title: Configuration properties
-description: TBMQ configuration properties and environment variables
+title: 配置属性
+description: TBMQ 配置属性和环境变量
 
 ---
 
 * TOC
 {:toc}
 
-This guide will help you become familiar with TBMQ configuration files and parameters. 
-We **strongly recommend** configuring TBMQ using environment variables. 
-This way, you won't need to merge the configuration files when a new platform release arrives. 
+本指南将帮助您熟悉 TBMQ 配置文件和参数。
+我们**强烈建议**使用环境变量配置 TBMQ。
+这样，当新平台版本发布时，您无需合并配置文件。
 
-The list of available configuration parameters and corresponding environment variables can be found [here](#configuration-parameters).
+可用的配置参数和相应的环境变量列表可以在 [此处](#configuration-parameters) 找到。
 
-### How to change configuration parameters?
+### 如何更改配置参数？
 
-#### Docker-Based deployment
+#### 基于 Docker 的部署
 
-If TBMQ is installed in a Docker Compose environment, you can edit the scripts and add environment variables for 
-the corresponding containers. For more details, refer to the [Docker documentation](https://docs.docker.com/compose/environment-variables/#/the-envfile-configuration-option).
+如果 TBMQ 安装在 Docker Compose 环境中，您可以编辑脚本并为相应的容器添加环境变量。有关更多详细信息，请参阅 [Docker 文档](https://docs.docker.com/compose/environment-variables/#/the-envfile-configuration-option)。
 
-#### K8S-Based deployment
+#### 基于 K8S 的部署
 
-If TBMQ is installed in a K8S environment, you can edit the scripts and add environment variables for the 
-corresponding deployments/stateful sets. For more details, refer to the [K8S documentation](https://kubernetes.io/docs/tasks/inject-data-application/define-environment-variable-container/).
+如果 TBMQ 安装在 K8S 环境中，您可以编辑脚本并为相应的部署/有状态集添加环境变量。有关更多详细信息，请参阅 [K8S 文档](https://kubernetes.io/docs/tasks/inject-data-application/define-environment-variable-container/)。
 
-### Configuration parameters
+### 配置参数
 
-The configuration file is written in YAML format. All configuration parameters have corresponding environment variable names and default values. 
-To change a configuration parameter, simply modify its default value. For example:
+配置文件以 YAML 格式编写。所有配置参数都有相应的环境变量名称和默认值。
+要更改配置参数，只需修改其默认值即可。例如：
 
 ```bash
 server:
   address: "${HTTP_BIND_ADDRESS:0.0.0.0}"
 ```
 
-In this case, *'HTTP_BIND_ADDRESS'* is the environment variable name and *'0.0.0.0'* is the default value.
+在这种情况下，*'HTTP_BIND_ADDRESS'* 是环境变量名称，*'0.0.0.0'* 是默认值。
 
-You can use the simple example below to add a new environment variable 'HTTP_BIND_PORT' with value '8084'.
+您可以使用以下简单示例添加一个值为 '8084' 的新环境变量 'HTTP_BIND_PORT'。
 
 ```bash
 ...
 export HTTP_BIND_PORT=8084
 ```
 
-The parameters are grouped by system components. The list contains the name (address in **thingsboard-mqtt-broker.yml** file), 
-environment variable, default value, and description.
+这些参数按系统组件分组。该列表包含名称（**thingsboard-mqtt-broker.yml** 文件中的地址）、环境变量、默认值和说明。
 
 {% include docs/mqtt-broker/install/config.md %}

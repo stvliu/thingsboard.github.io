@@ -2,8 +2,8 @@
 layout: docwithnav-pe
 assignees:
 - ashvayka
-title: Installing ThingsBoard PE on Ubuntu
-description: Installing ThingsBoard on Ubuntu
+title: 在 Ubuntu 上安装 ThingsBoard PE
+description: 在 Ubuntu 上安装 ThingsBoard
 
 ---
 
@@ -12,48 +12,48 @@ description: Installing ThingsBoard on Ubuntu
 * TOC
 {:toc}
 
-### Prerequisites
+### 先决条件
 
-This guide describes how to install ThingsBoard on Ubuntu 18.04 LTS / Ubuntu 20.04 LTS.
-Hardware requirements depend on chosen database and amount of devices connected to the system. 
-To run ThingsBoard and PostgreSQL on a single machine you will need at least 1Gb of RAM.
-To run ThingsBoard and Cassandra on a single machine you will need at least 8Gb of RAM.
+本指南介绍如何在 Ubuntu 18.04 LTS / Ubuntu 20.04 LTS 上安装 ThingsBoard。
+硬件要求取决于所选数据库和连接到系统上的设备数量。
+要在单台机器上运行 ThingsBoard 和 PostgreSQL，您至少需要 1Gb 的 RAM。
+要在单台机器上运行 ThingsBoard 和 Cassandra，您至少需要 8Gb 的 RAM。
 
-### Step 1. Install Java 11 (OpenJDK) 
+### 步骤 1. 安装 Java 11 (OpenJDK) 
 
 {% include templates/install/ubuntu-java-install.md %}
 
-### Step 2. ThingsBoard service installation
+### 步骤 2. ThingsBoard 服务安装
 
-Download installation package.
+下载安装包。
 
 ```bash
 wget https://dist.thingsboard.io/thingsboard-{{ site.release.pe_ver }}.deb
 ```
 {: .copy-code}
 
-Install ThingsBoard as a service
+将 ThingsBoard 安装为服务
 
 ```bash
 sudo dpkg -i thingsboard-{{ site.release.pe_ver }}.deb
 ```
 {: .copy-code}
 
-### Step 3. Obtain and configure license key 
+### 步骤 3. 获取并配置许可证密钥
 
-We assume you have already chosen your subscription plan or decided to purchase a perpetual license. 
-If not, please navigate to [pricing](/pricing/) page to select the best license option for your case and get your license. 
-See [How-to get pay-as-you-go subscription](https://www.youtube.com/watch?v=dK-QDFGxWek){:target="_blank"} or [How-to get perpetual license](https://www.youtube.com/watch?v=GPe0lHolWek){:target="_blank"} for more details.
+我们假设您已经选择了订阅计划或决定购买永久许可证。
+如果没有，请导航至 [定价](/pricing/) 页面，选择最适合您的情况的许可证选项并获取许可证。
+有关更多详细信息，请参阅 [如何获取即用即付订阅](https://www.youtube.com/watch?v=dK-QDFGxWek){:target="_blank"} 或 [如何获取永久许可证](https://www.youtube.com/watch?v=GPe0lHolWek){:target="_blank"}。
 
-Once you get the license secret, you should put it to the thingsboard configuration file. 
-Open the file for editing using the following command:
+获取许可证密钥后，您应该将其放入 thingsboard 配置文件中。
+使用以下命令打开文件进行编辑：
 
 ```bash 
 sudo nano /etc/thingsboard/conf/thingsboard.conf
 ``` 
 {: .copy-code}
 
-Locate the following configuration block:
+找到以下配置块：
 
 ```bash
 # License secret obtained from ThingsBoard License Portal (https://license.thingsboard.io)
@@ -61,7 +61,7 @@ Locate the following configuration block:
 # export TB_LICENSE_SECRET=
 ```
 
-and put your license secret. Please don't forget to uncomment the export statement. See example below: 
+并放入您的许可证密钥。请不要忘记取消注释 export 语句。请参阅以下示例：
 
 ```bash
 # License secret obtained from ThingsBoard License Portal (https://license.thingsboard.io)
@@ -69,59 +69,59 @@ and put your license secret. Please don't forget to uncomment the export stateme
 export TB_LICENSE_SECRET=YOUR_LICENSE_SECRET_HERE
 ``` 
 
-### Step 4. Configure ThingsBoard database
+### 步骤 4. 配置 ThingsBoard 数据库
 
 {% include templates/install/install-db.md %}
 
 {% capture contenttogglespec %}
-PostgreSQL <small>(recommended for < 5K msg/sec)</small>%,%postgresql%,%templates/install/ubuntu-db-postgresql.md%br%
-Hybrid <br>PostgreSQL+Cassandra<br><small>(recommended for > 5K msg/sec)</small>%,%hybrid%,%templates/install/ubuntu-db-hybrid.md%br%
-Hybrid <br>PostgreSQL+TimescaleDB<br><small>(for TimescaleDB professionals)</small>%,%timescale%,%templates/install/ubuntu-db-hybrid-timescale.md{% endcapture %}
+PostgreSQL <small>(推荐用于 < 5K msg/sec)</small>%,%postgresql%,%templates/install/ubuntu-db-postgresql.md%br%
+混合 <br>PostgreSQL+Cassandra<br><small>(推荐用于 > 5K msg/sec)</small>%,%hybrid%,%templates/install/ubuntu-db-hybrid.md%br%
+混合 <br>PostgreSQL+TimescaleDB<br><small>(适用于 TimescaleDB 专业人员)</small>%,%timescale%,%templates/install/ubuntu-db-hybrid-timescale.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="ubuntuThingsboardDatabase" toggle-spec=contenttogglespec %} 
 
-### Step 5. Choose ThingsBoard queue service
+### 步骤 5. 选择 ThingsBoard 队列服务
 
 {% include templates/install/install-queue.md %}
 
 {% capture contenttogglespecqueue %}
-In Memory <small>(built-in and default)</small>%,%inmemory%,%templates/install/queue-in-memory.md%br%
-Kafka <small>(recommended for on-prem, production installations)</small>%,%kafka%,%templates/install/ubuntu-queue-kafka.md%br%
-Kafka in docker container <small>(recommended for on-prem, production installations)</small>%,%kafka-in-docker%,%templates/install/ubuntu-queue-kafka-in-docker.md%br%
-AWS SQS <small>(managed service from AWS)</small>%,%aws-sqs%,%templates/install/ubuntu-queue-aws-sqs.md%br%
-Google Pub/Sub <small>(managed service from Google)</small>%,%pubsub%,%templates/install/ubuntu-queue-pub-sub.md%br%
-Azure Service Bus <small>(managed service from Azure)</small>%,%service-bus%,%templates/install/ubuntu-queue-service-bus.md%br%
-RabbitMQ <small>(for small on-prem installations)</small>%,%rabbitmq%,%templates/install/ubuntu-queue-rabbitmq.md%br%
-Confluent Cloud <small>(Event Streaming Platform based on Kafka)</small>%,%confluent-cloud%,%templates/install/ubuntu-queue-confluent-cloud.md{% endcapture %}
+内存 <small>(内置且默认)</small>%,%inmemory%,%templates/install/queue-in-memory.md%br%
+Kafka <small>(推荐用于本地、生产安装)</small>%,%kafka%,%templates/install/ubuntu-queue-kafka.md%br%
+Kafka 在 docker 容器中 <small>(推荐用于本地、生产安装)</small>%,%kafka-in-docker%,%templates/install/ubuntu-queue-kafka-in-docker.md%br%
+AWS SQS <small>(AWS 托管服务)</small>%,%aws-sqs%,%templates/install/ubuntu-queue-aws-sqs.md%br%
+Google Pub/Sub <small>(Google 托管服务)</small>%,%pubsub%,%templates/install/ubuntu-queue-pub-sub.md%br%
+Azure 服务总线 <small>(Azure 托管服务)</small>%,%service-bus%,%templates/install/ubuntu-queue-service-bus.md%br%
+RabbitMQ <small>(适用于小型本地安装)</small>%,%rabbitmq%,%templates/install/ubuntu-queue-rabbitmq.md%br%
+Confluent Cloud <small>(基于 Kafka 的事件流平台)</small>%,%confluent-cloud%,%templates/install/ubuntu-queue-confluent-cloud.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="ubuntuThingsboardQueue" toggle-spec=contenttogglespecqueue %} 
 
-### Step 6. [Optional] Memory update for slow machines (1GB of RAM) 
+### 步骤 6. [可选] 慢速机器的内存更新（1GB RAM）
 
 {% include templates/install/memory-on-slow-machines.md %} 
 
-### Step 7. Run installation script
+### 步骤 7. 运行安装脚本
 
 {% include templates/run-install.md %} 
 
-### Step 8. Start ThingsBoard service
+### 步骤 8. 启动 ThingsBoard 服务
 
 {% include templates/start-service.md %}
 
 {% capture 90-sec-ui %}
-Please allow up to 90 seconds for the Web UI to start. This is applicable only for slow machines with 1-2 CPUs or 1-2 GB RAM.{% endcapture %}
+请允许 Web UI 最多启动 90 秒。这仅适用于具有 1-2 个 CPU 或 1-2 GB RAM 的慢速机器。{% endcapture %}
 {% include templates/info-banner.md content=90-sec-ui %}
 
-### Step 9. Install ThingsBoard WebReport component
+### 步骤 9. 安装 ThingsBoard WebReport 组件
 
-Download installation package for the [Reports Server](/docs/user-guide/reporting/#reports-server) component:
+下载 [报告服务器](/docs/user-guide/reporting/#reports-server) 组件的安装包：
 
 ```bash
 wget https://dist.thingsboard.io/tb-web-report-{{ site.release.pe_ver }}.deb
 ```
 {: .copy-code}
 
-Install third-party libraries:
+安装第三方库：
 
 ```bash
 sudo apt install -yq gconf-service libasound2 libatk1.0-0 libc6 libcairo2 libcups2 libdbus-1-3 \
@@ -132,14 +132,14 @@ sudo apt install -yq gconf-service libasound2 libatk1.0-0 libc6 libcairo2 libcup
 ```
 {: .copy-code}
 
-Install Roboto fonts:
+安装 Roboto 字体：
 
 ```bash
 sudo apt install fonts-roboto
 ```
 {: .copy-code}
 
-Install Noto fonts (Japanese, Chinese, etc.):
+安装 Noto 字体（日语、汉语等）：
 
 ```bash
 mkdir ~/noto
@@ -155,7 +155,7 @@ rm -rf ~/noto
 ```
 
 
-Install and start Web Report service:
+安装并启动 Web Report 服务：
 
 ```bash
 sudo dpkg -i tb-web-report-{{ site.release.pe_ver }}.deb
@@ -163,14 +163,14 @@ sudo service tb-web-report start
 ```
 {: .copy-code}
 
-### Post-installation steps
+### 安装后步骤
 
 {% include templates/install/ubuntu-haproxy-postinstall.md %}
 
-### Troubleshooting
+### 故障排除
 
 {% include templates/install/troubleshooting.md %}
 
-## Next steps
+## 后续步骤
 
 {% assign currentGuide = "InstallationGuides" %}{% include templates/guides-banner.md %}

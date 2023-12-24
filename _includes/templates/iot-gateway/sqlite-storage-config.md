@@ -1,16 +1,16 @@
 |---
-| **Parameter**               | **Default value**                            | **Description**                                                |
+| **参数**               | **默认值**                            | **说明**                                                |
 |:-|:-|-
-| type                        | **sqlite**                                   | Storage type (Saving data to .db file)                         |
-| data_file_path              | **./data/data.db**                           | Path to folder, that will contains data (Relative or Absolute).|
-| messages_ttl_check_in_hours | **1**                                        | How often will Gateway check data for obsolescence             |
-| messages_ttl_in_days *      | **7**                                        | Maximum days that storage will save data                       |
+| 类型                        | **sqlite**                                   | 存储类型（将数据保存到 .db 文件）                         |
+| 数据文件路径              | **./data/data.db**                           | 包含数据（相对或绝对）的文件夹路径。|
+| 消息 TTL 检查时间（小时） | **1**                                        | 网关多久检查一次数据是否过时             |
+| 消息 TTL（天） *      | **7**                                        | 存储保存数据的天数上限                       |
 |---
 
 
-\* -- If receive data when storage has already counted, described in this parameter, new data will lose.
+\* -- 如果在存储已计数时收到数据，如该参数中所述，新数据将丢失。
 
-Storage section of configuration file will look like:
+配置文件的存储部分将如下所示：
 
 ```json
 ...

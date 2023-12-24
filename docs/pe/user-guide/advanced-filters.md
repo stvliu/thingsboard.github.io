@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-pe
-title: Advanced filters
-description: Filters over entity fields, attributes and latest telemetry
+title: 高级过滤器
+description: 针对实体字段、属性和最新遥测数据的过滤器
 ---
 
 {% assign docsPrefix = "pe/" %}

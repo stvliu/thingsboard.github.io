@@ -1,9 +1,9 @@
 ---
 layout: devices-library-article
-title: How to connect HiLetgo ESP32 Development Board to ThingsBoard?
-category: Microcontrollers
+title: 如何将 HiLetgo ESP32 开发板连接到 ThingsBoard？
+category: 微控制器
 chip: ESP32
-connectivity: HTTP, MQTT, WIFI, Bluetooth
+connectivity: HTTP, MQTT, WIFI, 蓝牙
 vendor: HiLetGo
 deviceImageFileName: hiletgo-esp32-dev-kit.jpg
 ---

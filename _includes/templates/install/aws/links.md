@@ -1,5 +1,5 @@
-Edit "tb-node-db-configmap.yml" and replace **YOUR_RDS_ENDPOINT_URL** and **YOUR_RDS_PASSWORD** with the values you have obtained during [step 4](#step-4-amazon-postgresql-db-configuration).
+编辑“tb-node-db-configmap.yml”并用在 [步骤 4](#步骤 4：Amazon PostgreSQL 数据库配置) 中获得的值替换 **YOUR_RDS_ENDPOINT_URL** 和 **YOUR_RDS_PASSWORD**。
 
-Edit "tb-kafka-configmap.yml" and replace **YOUR_MSK_BOOTSTRAP_SERVERS_PLAINTEXT** with the values you have obtained during [step 5](#step-5-amazon-msk-configuration).
+编辑“tb-kafka-configmap.yml”并用在 [步骤 5](#步骤 5：Amazon MSK 配置) 中获得的值替换 **YOUR_MSK_BOOTSTRAP_SERVERS_PLAINTEXT**。
 
-Edit "tb-redis-configmap.yml" and replace **YOUR_REDIS_ENDPOINT_URL_WITHOUT_PORT** with the values you have obtained during [step 6](#step-6-amazon-elacticache-redis-configuration).
+编辑“tb-redis-configmap.yml”并用在 [步骤 6](#步骤 6：Amazon ElastiCache Redis 配置) 中获得的值替换 **YOUR_REDIS_ENDPOINT_URL_WITHOUT_PORT**。

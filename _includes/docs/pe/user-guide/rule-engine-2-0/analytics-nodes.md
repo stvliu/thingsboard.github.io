@@ -1,221 +1,212 @@
 {% assign feature = "PE Analytics Nodes" %}{% include templates/pe-feature-banner.md %}
 
-Analytics Nodes that are specific to ThingsBoard PE. Used for analysis of streamed or persisted data.
+Analytics Nodes 专门用于 ThingsBoard PE。用于分析流式或持久化数据。
 
 * TOC
 {:toc}
 
-## Aggregate Latest Node
+## 聚合最新节点
 
 <table  style="width:250px;">
    <thead>
      <tr>
-	 <td style="text-align: center"><strong><em>Since TB Version 2.1</em></strong></td>
+	 <td style="text-align: center"><strong><em>自 TB 版本 2.1 起</em></strong></td>
      </tr>
    </thead>
 </table> 
 
 ![image](/images/user-guide/rule-engine-2-0/pe/nodes/analytics-aggregate-latest.png)
 
-Periodically does aggregation of child entities attributes or latest timeseries for specified set of parent entities.
+定期聚合子实体属性或最新时序，以获取指定的一组父实体。
 
-Performs aggregation of attributes or latest timeseries fetched from child entities with configurable period.
+执行从子实体获取的属性或最新时序的聚合，具有可配置的周期。
 
-Aggregation result then set to specified target timeseries attribute of parent entity.
- 
-Message of type **POST_TELEMETRY_REQUEST** is generated for each parent entity and aggregated attribute.
+然后将聚合结果设置为父实体的指定目标时序属性。
 
-Configuration:
+为每个父实体和聚合属性生成 **POST_TELEMETRY_REQUEST** 类型的消息。
+
+配置：
 
 ![image](/images/user-guide/rule-engine-2-0/pe/nodes/analytics-aggregate-latest-config.png)
 
-- **Execution period value/time unit** - specifies period of aggregation task.
-- **Entities** - specifies set of parent entities for which aggregation should be performed. Can be: 
-    - **Single entity** - one specific entity. 
-    - **Group of entities** - specific entity group. 
-    - **Relations query** - set of entities found by **Relations query** starting from the **Root entity**.
-- **Child entities** - specifies **Relations query** used to find child entities starting from the parent entity.
-Should be specified only when **Single entity** or **Relations query** is selected for parent entities.
-In case of **Group of entities** child entities selected from the entity group itself.
-- **Aggregate latest mappings** - table of mapping configurations specifying rules of child attributes aggregation.
+- **执行周期值/时间单位** - 指定聚合任务的周期。
+- **实体** - 指定应执行聚合的一组父实体。可以是：
+    - **单个实体** - 一个特定实体。
+    - **实体组** - 特定实体组。
+    - **关系查询** - 从 **根实体** 开始通过 **关系查询** 找到的一组实体。
+- **子实体** - 指定用于从父实体开始查找子实体的 **关系查询**。
+仅当为父实体选择 **单个实体** 或 **关系查询** 时才应指定。
+在 **实体组** 的情况下，从实体组本身选择子实体。
+- **聚合最新映射** - 指定子属性聚合规则的映射配置表。
 
-Mapping Configuration:
+映射配置：
 
 ![image](/images/user-guide/rule-engine-2-0/pe/nodes/analytics-aggregate-latest-mapping-config.png)
 
-- **Latest telemetry** - specifies whether value of child latest telemetry or attribute should be aggregated.
-- **Source telemetry/attribute** - child latest telemetry or attribute key name.  
-- **Attribute scope** - specifies scope of child attribute in case when attribute used as source (**Latest telemetry** is unchecked).
-- **Default value** - numeric value used by default in cases when source attribute is not defined or is absent for child entity.
-- **Aggregation function** - mathematical function used for child values aggregation. Can be:
-    - **Minimum** - detects minimum attribute value among all child entities. 
-    - **Maximum** - detects maximum attribute value among all child entities.
-    - **Sum** - calculates total sum of attribute values of child entities.
-    - **Average** - calculates average value for attribute values of child entities.
-    - **Count** - performs count of child entities. In this case **Source telemetry/attribute** is not used and can be empty. 
-    - **Count unique** - performs count of unique attribute values of child entities.
-- **Target telemetry** - name of the target telemetry key of parent entity used to store aggregation result. 
-- **Filter entities** - whether to perform filtering of child entities before their attribute values aggregation. 
-- **Entity filter** - filter used to filter child entities. It has two parts:
-    1. List of entity attribute/latest timeseries keys that should be fetched and used in JavaScript filter function.
-    1. JavaScript filter function that should return filtering result as boolean value.
-    It receives **attributes** map containing fetched attributes/latest timeseries values as input argument.
-    Fetched attribute values are added into **attributes** map using attribute/latest timeseries keys with scope prefix:
-        - shared attribute -> <code>shared_</code>
-        - client attribute -> <code>cs_</code>
-        - server attribute -> <code>ss_</code>
-        - telemetry -> no prefix used 
+- **最新遥测** - 指定是否应聚合子最新遥测或属性的值。
+- **源遥测/属性** - 子最新遥测或属性键名。
+- **属性范围** - 在将属性用作源时指定子属性的范围（未选中 **最新遥测**）。
+- **默认值** - 在未定义源属性或子实体不存在源属性的情况下默认使用的数值。
+- **聚合函数** - 用于子值聚合的数学函数。可以是：
+    - **最小值** - 检测所有子实体中的最小属性值。
+    - **最大值** - 检测所有子实体中的最大属性值。
+    - **总和** - 计算子实体的属性值的总和。
+    - **平均值** - 计算子实体的属性值的平均值。
+    - **计数** - 执行子实体的计数。在这种情况下，不使用 **源遥测/属性**，并且可以为空。
+    - **计数唯一值** - 执行子实体的唯一属性值的计数。
+- **目标遥测** - 用于存储聚合结果的父实体的目标遥测键的名称。
+- **过滤实体** - 是否在聚合子实体属性值之前执行子实体的过滤。
+- **实体过滤器** - 用于过滤子实体的过滤器。它有两个部分：
+    1. 应获取并用于 JavaScript 过滤器函数的实体属性/最新时序键列表。
+    1. 应将过滤结果作为布尔值返回的 JavaScript 过滤器函数。
+    它接收包含获取的属性/最新时序值作为输入参数的 **attributes** 映射。
+    获取的属性值使用属性/最新时序键和范围前缀添加到 **attributes** 映射中：
+        - 共享属性 -> <code>shared_</code>
+        - 客户端属性 -> <code>cs_</code>
+        - 服务器属性 -> <code>ss_</code>
+        - 遥测 -> 不使用前缀
 
-For each parent entity node will generate and forward via **Success** chain new messages of type **POST_TELEMETRY_REQUEST**,
-parent entity itself as originator and json body containing target telemetry with aggregated value.
-In case when aggregation of some child attributes will fail node will generate failure message
-with failure reason and parent entity as originator. Failure message is forwarded via **Failure** chain.
+对于每个父实体，节点将生成并通过 **Success** 链转发新消息，类型为 **POST_TELEMETRY_REQUEST**，父实体本身作为发起者，json 正文包含具有聚合值的 目标遥测。
+当某些子属性的聚合失败时，节点将生成失败消息，其中包含失败原因和父实体作为发起者。失败消息通过 **Failure** 链转发。
 
-**Since TB Version 3.3.3** you can select the queue name:
+**自 TB 版本 3.3.3 起**，您可以选择队列名称：
 
 ![image](/images/user-guide/rule-engine-2-0/pe/nodes/analytics-queue-name.png)
 
 <br>
 
-## Aggregate Stream Node
+## 聚合流节点
 
 <table  style="width:250px;">
    <thead>
      <tr>
-	 <td style="text-align: center"><strong><em>Since TB Version 2.1</em></strong></td>
+	 <td style="text-align: center"><strong><em>自 TB 版本 2.1 起</em></strong></td>
      </tr>
    </thead>
 </table> 
 
 ![image](/images/user-guide/rule-engine-2-0/pe/nodes/analytics-aggregate-stream.png)
 
-Calculates MIN/MAX/SUM/AVG/COUNT/UNIQUE based on the incoming data stream. 
-Groups incoming data stream based on originator id of the message (i.e. particular device, asset, customer), 
-**aggregation function** (e.g. "Average", "Sum", "Min", "Max"), **aggregation interval value** (e.g. 1 minute, 6 hours) into **Intervals**.
+根据传入的数据流计算 MIN/MAX/SUM/AVG/COUNT/UNIQUE。
+根据消息的发起者 ID（即特定设备、资产、客户）、**聚合函数**（例如“平均值”、“总和”、“最小值”、“最大值”）、**聚合间隔值**（例如 1 分钟、6 小时）将传入的数据流分组为 **间隔**。
 
 
-Intervals are periodically persisted based on **interval persistence policy** and **interval check value**. Intervals are cached in memory based on **Interval TTL value**.
-State of the Intervals are persisted as timeseries entities based on **state persistence policy** and **state persistence value**.
-In case there is no data for certain entity, it might be useful to generate default values for those entities. 
-To lookup those entities one may select **Create intervals automatically** checkbox and configure **Interval entities**.
+间隔根据 **间隔持久性策略** 和 **间隔检查值** 定期持久化。间隔根据 **间隔 TTL 值** 缓存在内存中。间隔的状态根据 **状态持久性策略** 和 **状态持久性值** 作为时序实体持久化。
+如果没有某些实体的数据，则为这些实体生成默认值可能很有用。
+要查找这些实体，可以选择 **自动创建间隔** 复选框并配置 **间隔实体**。
 
 
-Generates 'POST_TELEMETRY_REQUEST' messages with the results of the aggregation for particular interval.
+生成具有特定间隔聚合结果的 'POST_TELEMETRY_REQUEST' 消息。
 
 
-Configuration below will calculate average hourly temperature and will persist it within one minute once the hourly interval is ended. 
-In case some delayed telemetry will arrive for the particular interval, the rule node will lookup it from internal cache or from telemetry values.
+下面的配置将计算每小时平均温度，并在每小时间隔结束时在一分钟内将其持久化。
+如果某些延迟遥测到达特定间隔，规则节点将从内部缓存或遥测值中查找它。
 
 ![image](/images/user-guide/rule-engine-2-0/pe/nodes/analytics-aggregate-stream-config.png)
     
-The results of aggregation will be persisted to the database once per minute. Alternatively you can persist the interval on each new message to avoid any data loss in case of server outage.
-In case devices for some building are not reporting any temperature readings, we can generate default value (zero) for such building on each interval by selecting "Create Intervals automatically" and 
-specifying "Buildings" entity group.    
+聚合结果将每分钟持久化一次到数据库。或者，您可以在每条新消息上持久化间隔，以避免在服务器中断的情况下丢失任何数据。
+如果某些建筑物的设备没有报告任何温度读数，我们可以通过选择“自动创建间隔”并指定“建筑物”实体组，为每个间隔生成该建筑物的默认值（零）。    
 
 ![image](/images/user-guide/rule-engine-2-0/pe/nodes/analytics-aggregate-stream-config-2.png)
 
-**Since TB Version 3.3.3** you can select the queue name:
+**自 TB 版本 3.3.3 起**，您可以选择队列名称：
 
 ![image](/images/user-guide/rule-engine-2-0/pe/nodes/analytics-queue-name.png)
 
-## Alarms Count Node
+## 警报计数节点
 
 <table  style="width:250px;">
    <thead>
      <tr>
-	 <td style="text-align: center"><strong><em>Since TB Version 3.2.2</em></strong></td>
+	 <td style="text-align: center"><strong><em>自 TB 版本 3.2.2 起</em></strong></td>
      </tr>
    </thead>
 </table> 
 
 ![image](/images/user-guide/rule-engine-2-0/pe/nodes/analytics-alarms-count.png)
 
-Count alarms when receives input message about new alarm. The input message may be 'ALARM', 'ALARM_ACK', 'ALARM_CLEAR', or 'ENTITY_CREATED' and 'ENTITY_UPDATED' message about the alarm. 
-Executes count query based on the alarm count mappings and the originator of the message (device, asset, etc.) 
+当收到有关新警报的输入消息时，计数警报。输入消息可能是 'ALARM'、'ALARM_ACK'、'ALARM_CLEAR' 或 'ENTITY_CREATED' 和有关警报的 'ENTITY_UPDATED' 消息。
+根据警报计数映射和消息的发起者（设备、资产等）执行计数查询
 
-Result of alarms count then set to specified target timeseries attribute of the entity.
+然后将警报计数的结果设置为实体的指定目标时序属性。
 
-Message of type **POST_TELEMETRY_REQUEST** is generated for each entity and alarms count result.
+为每个实体和警报计数结果生成 **POST_TELEMETRY_REQUEST** 类型的消息。
 
-Configuration:
+配置：
 
 ![image](/images/user-guide/rule-engine-2-0/pe/nodes/analytics-alarms-count-config-new.png)
 
-- **Count alarms for propagation entities** - if enabled, will count alarms not only for originator of the alarm, but also for all propagated entities.
-- **Alarms count mappings** - table of mapping configurations specifying rules used to count alarms.
+- **计数传播实体的警报** - 如果启用，不仅会计数警报的发起者，还会计数所有传播实体的警报。
+- **警报计数映射** - 指定用于计数警报的规则的映射配置表。
 
-Mapping Configuration:
+映射配置：
 
 ![image](/images/user-guide/rule-engine-2-0/pe/nodes/analytics-alarms-count-mapping-config.png)
 
-- **Target telemetry** - name of the target telemetry key of the entity used to store alarms count result.
-- **Status filter** - list of allowed alarm statuses used to filter alarms. If not specified alarms with any status will be selected.
-- **Severity filter** - list of allowed alarm severities used to filter alarms. If not specified alarms with any severity will be selected.
-- **Type filter** - list of allowed alarm types used to filter alarms. If not specified alarms with any type will be selected.
-- **Specify interval** - if checked only alarms created during specified interval will be selected otherwise alarms will be selected for the entire time.
+- **目标遥测** - 用于存储警报计数结果的实体的目标遥测键的名称。
+- **状态过滤器** - 用于过滤警报的允许警报状态列表。如果未指定，将选择具有任何状态的警报。
+- **严重性过滤器** - 用于过滤警报的允许警报严重性列表。如果未指定，将选择具有任何严重性的警报。
+- **类型过滤器** - 用于过滤警报的允许警报类型列表。如果未指定，将选择具有任何类型的警报。
+- **指定间隔** - 如果选中，则仅选择在指定间隔内创建的警报，否则将选择整个时间的警报。
 
-For each selected entity node will generate and forward via **Success** chain new messages of type **POST_TELEMETRY_REQUEST**
-and json body containing target telemetry with alarms count value.
-In case when alarms count for some entity will fail node will generate failure message
-with failure reason and entity as originator. Failure message is forwarded via **Failure** chain.
+对于每个选定的实体，节点将生成并通过 **Success** 链转发新消息，类型为 **POST_TELEMETRY_REQUEST**，json 正文包含具有警报计数值的 目标遥测。
+当某些实体的警报计数失败时，节点将生成失败消息，其中包含失败原因和实体作为发起者。失败消息通过 **Failure** 链转发。
 
-**Since TB Version 3.3.3** you can select the queue name:
+**自 TB 版本 3.3.3 起**，您可以选择队列名称：
 
 ![image](/images/user-guide/rule-engine-2-0/pe/nodes/analytics-queue-name.png)
 
 <br>
 
-## Alarms Count Node (deprecated)
+## 警报计数节点（已弃用）
 
 <table  style="width:250px;">
    <thead>
      <tr>
-	 <td style="text-align: center"><strong><em>Since TB Version 2.1</em></strong></td>
+	 <td style="text-align: center"><strong><em>自 TB 版本 2.1 起</em></strong></td>
      </tr>
    </thead>
 </table> 
 
 ![image](/images/user-guide/rule-engine-2-0/pe/nodes/analytics-alarms-count.png)
 
-Periodically does count of alarms for selected set of entities.
+定期对选定的一组实体进行警报计数。
 
-Performs count of alarms for selected entities including their child entities if specified with configurable period.
+执行对选定实体的警报计数，包括其子实体（如果指定），具有可配置的周期。
 
-Result of alarms count then set to specified target timeseries attribute of the entity.
+然后将警报计数的结果设置为实体的指定目标时序属性。
 
-Message of type **POST_TELEMETRY_REQUEST** is generated for each entity and alarms count result.
+为每个实体和警报计数结果生成 **POST_TELEMETRY_REQUEST** 类型的消息。
 
-Configuration:
+配置：
 
 ![image](/images/user-guide/rule-engine-2-0/pe/nodes/analytics-alarms-count-config.png)
 
-- **Execution period value/time unit** - specifies period of alarms count task.
-- **Entities** - specifies set of entities for which alarms count should be performed. Can be: 
-    - **Single entity** - one specific entity. 
-    - **Group of entities** - specific entity group. 
-    - **Relations query** - set of entities found by **Relations query** starting from the **Root entity**.
-- **Count alarms for child entities** - whether to perform alarms count for child entities of each found entity.    
-- **Child entities** - specifies **Relations query** used to find child entities starting from the parent entity.
-Should be specified only when **Count alarms for child entities** is checked and **Single entity** or **Relations query** is selected for entities.
-In case of **Group of entities** child entities selected from the entity group itself.
-- **Alarms count mappings** - table of mapping configurations specifying rules used to count alarms.
+- **执行周期值/时间单位** - 指定警报计数任务的周期。
+- **实体** - 指定应执行警报计数的实体集。可以是：
+    - **单个实体** - 一个特定实体。
+    - **实体组** - 特定实体组。
+    - **关系查询** - 从 **根实体** 开始通过 **关系查询** 找到的实体集。
+- **计数子实体的警报** - 是否对每个找到的实体的子实体执行警报计数。    
+- **子实体** - 指定从父实体开始用于查找子实体的 **关系查询**。
+仅当选中 **计数子实体的警报** 并且为实体选择 **单个实体** 或 **关系查询** 时才应指定。
+在 **实体组** 的情况下，子实体从实体组本身选择。
+- **警报计数映射** - 指定用于计数警报的规则的映射配置表。
 
-Mapping Configuration:
+映射配置：
 
 ![image](/images/user-guide/rule-engine-2-0/pe/nodes/analytics-alarms-count-mapping-config.png)
 
-- **Target telemetry** - name of the target telemetry key of the entity used to store alarms count result.
-- **Status filter** - list of allowed alarm statuses used to filter alarms. If not specified alarms with any status will be selected. 
-- **Severity filter** - list of allowed alarm severities used to filter alarms. If not specified alarms with any severity will be selected. 
-- **Type filter** - list of allowed alarm types used to filter alarms. If not specified alarms with any type will be selected.
-- **Specify interval** - if checked only alarms created during specified interval will be selected otherwise alarms will be selected for the entire time.
+- **目标遥测** - 用于存储警报计数结果的实体的目标遥测键的名称。
+- **状态过滤器** - 用于过滤警报的允许警报状态列表。如果未指定，将选择具有任何状态的警报。
+- **严重性过滤器** - 用于过滤警报的允许警报严重性列表。如果未指定，将选择具有任何严重性的警报。
+- **类型过滤器** - 用于过滤警报的允许警报类型列表。如果未指定，将选择具有任何类型的警报。
+- **指定间隔** - 如果选中，则仅选择在指定间隔内创建的警报，否则将选择整个时间的警报。
 
-For each selected entity node will generate and forward via **Success** chain new messages of type **POST_TELEMETRY_REQUEST** 
-and json body containing target telemetry with alarms count value.
-In case when alarms count for some entity will fail node will generate failure message
-with failure reason and entity as originator. Failure message is forwarded via **Failure** chain.
+对于每个选定的实体，节点将生成并通过 **Success** 链转发新消息，类型为 **POST_TELEMETRY_REQUEST**，json 正文包含具有警报计数值的 目标遥测。
+当某些实体的警报计数失败时，节点将生成失败消息，其中包含失败原因和实体作为发起者。失败消息通过 **Failure** 链转发。
 
-**Since TB Version 3.3.3** you can select the queue name:
+**自 TB 版本 3.3.3 起**，您可以选择队列名称：
 
 ![image](/images/user-guide/rule-engine-2-0/pe/nodes/analytics-queue-name.png)
 

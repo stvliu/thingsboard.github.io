@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-pe
-title: Installing ThingsBoard PE from IBM Cloud Marketplace
-description: Installing ThingsBoard PE from IBM Cloud Marketplace
+title: 从 IBM Cloud Marketplace 安装 ThingsBoard PE
+description: 从 IBM Cloud Marketplace 安装 ThingsBoard PE
 
 ---
 

@@ -1,17 +1,17 @@
-#### RabbitMQ Installation
+#### RabbitMQ 安装
 
-Use this [instruction](https://www.rabbitmq.com/install-debian.html) for installing RabbitMQ.
+使用此 [说明](https://www.rabbitmq.com/install-debian.html) 安装 RabbitMQ。
 
-##### ThingsBoard Configuration
+##### ThingsBoard 配置
 
-Edit ThingsBoard configuration file
+编辑 ThingsBoard 配置文件
 
 ```text
 sudo nano /etc/thingsboard/conf/thingsboard.conf
 ```
 {: .copy-code}
 
-Add the following lines to the configuration file. Don't forget to replace "YOUR_USERNAME" and "YOUR_PASSWORD" with your **real user credentials**, "localhost" and "5672" with your **real RabbitMQ host and port**:
+将以下行添加到配置文件中。不要忘记用你的 **真实用户凭据** 替换“YOUR_USERNAME”和“YOUR_PASSWORD”，用你的 **真实 RabbitMQ 主机和端口** 替换“localhost”和“5672”：
 
 ```bash
 export TB_QUEUE_TYPE=rabbitmq

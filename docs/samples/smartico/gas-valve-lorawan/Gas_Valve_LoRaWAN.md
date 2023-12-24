@@ -1,47 +1,47 @@
 ---
 layout: docwithnav
-title: Gas Shutoff Valve LoRaWAN “Smartico V-LR” telemetry upload
-description: ThingsBoard IoT Platform sample for valve state data upload over MQTT using Gas Shutoff Valve LoRaWAN “Smartico V-LR”.
+title: Gas Shutoff Valve LoRaWAN “Smartico V-LR” 遥测数据上传
+description: ThingsBoard IoT 平台示例，使用 Gas Shutoff Valve LoRaWAN “Smartico V-LR” 通过 MQTT 上传阀门状态数据。
 hidetoc: "true"
 ---
 
 * TOC
 {:toc}
 
-# Gas Shutoff Valve LoRaWAN “Smartico V-LR” telemetry upload
-## Introduction
-The Gas Shutoff Valve LoRaWAN “Smartico V-LR” was designed for remotely shut off the gas supply in the low pressure gas network. The shut-off valve was made with autonomous power supply. It has a special valve activation mechanism that allows safe recovery of gas supply. Places of installation of protective seals are provided to prevent unauthorized access to the power source and exclude the possibility of dismantling the valve from the connecting gas pipeline. The figure shows a dashboard with processed telemetry results.
+# Gas Shutoff Valve LoRaWAN “Smartico V-LR” 遥测数据上传
+## 简介
+Gas Shutoff Valve LoRaWAN “Smartico V-LR” 设计用于远程关闭低压气体网络中的气体供应。截止阀采用自主电源。它具有特殊的阀门激活机制，可安全恢复气体供应。提供了安装保护密封件的位置，以防止未经授权访问电源并排除从连接气体管道拆卸阀门的可能性。下图显示了一个包含已处理遥测结果的仪表板。
 
 ![image](/images/samples/smartico/gas-valve-lorawan/MainDash.png)
 
-## Prerequisites
-LoRaWAN technology is used to transfer data from the Gas Valve V-LR to the ThingsBoard platform. This is the wireless communication technology that allows small amounts of data to be exchanged over a long distance. First of all, you need to configure the LoRaWAN server and make sure that data from the device goes to the server. This guide uses [ChirpStack open-source LoRaWAN Network Server](https://www.chirpstack.io/application-server/). 
-After finishing the server configuration on the Applications page, an entry with the device type should appear in the table.
+## 先决条件
+LoRaWAN 技术用于将数据从气阀 V-LR 传输到 ThingsBoard 平台。这是一种无线通信技术，允许在长距离上交换少量数据。首先，您需要配置 LoRaWAN 服务器并确保数据从设备发送到服务器。本指南使用 [ChirpStack 开源 LoRaWAN 网络服务器](https://www.chirpstack.io/application-server/)。
+在应用程序页面上完成服务器配置后，表中应出现带有设备类型的条目。
 
 ![image](/images/samples/smartico/gas-valve-lorawan/Lora1.PNG)
 
-For example, we connected a device with the serial number 0000129. With the correct configuration of the LoRaWAN server, we should see the data flow from the device on the “DEVICE DATA” page. The frequency of data transmission from the device depends on the Gas Valve settings.
+例如，我们连接了一个序列号为 0000129 的设备。通过正确配置 LoRaWAN 服务器，我们应该在“设备数据”页面上看到来自设备的数据流。从设备传输数据的频率取决于气阀设置。
 
 ![image](/images/samples/smartico/gas-valve-lorawan/Lora2.PNG)
 
-To be able to receive data via the MQTT protocol, you need to integrate the [LoRaWAN server and the Mosquitto MQTT broker](https://www.chirpstack.io/application-server/integrations/mqtt/).
-## Step 1. Creation UpLink Data Converters.
-First, you should create the Uplink Data Converter according to the device protocol. The converter will decode incoming telemetry payload data from Gas Shutoff Valve LoRaWAN “Smartico V-LR” that contains in encoded Base64 string to human readable, simplified ThingsBoard data format. Import [uplink_gas_valve.json](/docs/samples/smartico/gas-valve-lorawan/resources/uplink_gas_valve.json) file with Uplink data converter .
+要能够通过 MQTT 协议接收数据，您需要集成 [LoRaWAN 服务器和 Mosquitto MQTT 代理](https://www.chirpstack.io/application-server/integrations/mqtt/)。
+## 步骤 1. 创建上行数据转换器。
+首先，您应该根据设备协议创建上行数据转换器。转换器将解码来自 Gas Shutoff Valve LoRaWAN “Smartico V-LR” 的传入遥测有效载荷数据，其中包含编码的 Base64 字符串，以转换为人类可读的、简化的 ThingsBoard 数据格式。导入包含上行数据转换器的 [uplink_gas_valve.json](/docs/samples/smartico/gas-valve-lorawan/resources/uplink_gas_valve.json) 文件。
 
 ![image](/images/samples/smartico/gas-valve-lorawan/converter.PNG)
 
-## Step 2. Integration configuration.
-To integrate Gas Shutoff Valve LoRaWAN “Smartico V-LR” into ThingsBoard platform you should create a new integration as shown on the figure.
+## 步骤 2. 集成配置。
+要将 Gas Shutoff Valve LoRaWAN “Smartico V-LR” 集成到 ThingsBoard 平台，您应该创建一个新的集成，如图所示。
 
 ![image](/images/samples/smartico/gas-valve-lorawan/integration.PNG)
 
-Also below you should add the topic filter according to LoRaWAN server configuration (in this example ```application/6/device/+/rx```). In the Host and Port fields, enter the ip-address where the MQTT broker is installed and port for working with it.
-## Step 3. Verifying the receipt of data from the device.
-Connect Gas Valve V-LR to transfer information. If the integration was performed without errors, after the transmission of the first telemetry, a new device with the name “0000129” will appear in the DEVICE GROUPS → All. Also you can verify the input and output data, respectively, before and after conversion in DATA CONVERTERS → Uplink Gas Valve → EVENTS.
+您还应该在下面根据 LoRaWAN 服务器配置添加主题过滤器（在本例中为 ```application/6/device/+/rx```）。在主机和端口字段中，输入安装 MQTT 代理的 IP 地址和用于与其配合工作的端口。
+## 步骤 3. 验证从设备接收的数据。
+连接气阀 V-LR 以传输信息。如果集成没有错误执行，在传输第一个遥测后，设备组 → 全部中将出现一个名为“0000129”的新设备。您还可以分别在数据转换器 → 上行气阀 → 事件中验证转换前后的输入和输出数据。
 
 ![image](/images/samples/smartico/gas-valve-lorawan/Verifying.PNG)
 
-Input data from Gas Valve looks like this:
+来自气阀的输入数据如下所示：
 ```json
 {
     "applicationID": "6",
@@ -70,7 +70,7 @@ Input data from Gas Valve looks like this:
     "data": "BkABAACB"
 }
 ```
-The payload is contained in the “data” field and encrypted in Base64. After decoding output data will look like this:
+有效载荷包含在“data”字段中并以 Base64 加密。解码后，输出数据如下所示：
 ```json
 {
     "deviceName": "0000129",
@@ -96,52 +96,52 @@ The payload is contained in the “data” field and encrypted in Base64. After 
     }
 }
 ```
-The input and output data are for example purposes only and not related to the dashboard shown at the beginning of the guide. 
-Before turning on the device, you can verify the functionality of programming code from [uplink_gas_valve.json](/docs/samples/smartico/gas-valve-lorawan/resources/uplink_gas_valve.json) file. For this purpose, open the **Test decoder function** for Uplink Gas Valve in the DATA CONVERTERS and copy the input data from this guide into **Payload content** field. Press **TEST** button then in **Output** field should appear decoding output data as shown on the figure (the REAL_TIME field displays the current date and time).
+输入和输出数据仅用于示例目的，与本指南开头所示的仪表板无关。
+在打开设备之前，您可以验证 [uplink_gas_valve.json](/docs/samples/smartico/gas-valve-lorawan/resources/uplink_gas_valve.json) 文件中编程代码的功能。为此，请打开数据转换器中的上行气阀的 **测试解码器功能**，并将本指南中的输入数据复制到 **有效载荷内容** 字段中。按 **测试** 按钮，然后 **输出** 字段中应出现解码输出数据，如图所示（REAL_TIME 字段显示当前日期和时间）。
 
 ![image](/images/samples/smartico/gas-valve-lorawan/VerifyingUplink.PNG)
 
-## Step 4. Creation Gas Valve Asset.
-To be able to display data in the dashboard, you should first create an asset and add device 0000129 in the RELATIONS, as shown in the figures.
+## 步骤 4. 创建气阀资产。
+要能够在仪表板中显示数据，您应该首先创建一个资产并在关系中添加设备 0000129，如图所示。
 
 ![image](/images/samples/smartico/gas-valve-lorawan/asset.PNG)
 
 ![image](/images/samples/smartico/gas-valve-lorawan/asset2.PNG)
 
-## Step 5. Rule chain import and configuration.
-In addition to meter readings, it is possible to monitor the status of the device. For example, you can get information about a low battery, opening the device case, exposure to a magnetic field, and others. This information is displayed in the Alarm widget. Therefore, you should set up Rule chain first. Import [alarms_gas_valve.json](/docs/samples/smartico/gas-valve-lorawan/resources/alarms_gas_valve.json) file with alarms  and save the configuration of the Rule chain in ThingsBoard.
+## 步骤 5. 规则链导入和配置。
+除了仪表读数外，还可以监视设备的状态。例如，您可以获取有关电池电量不足、打开设备外壳、暴露于磁场等信息。此信息显示在警报小部件中。因此，您应该首先设置规则链。导入包含警报的 [alarms_gas_valve.json](/docs/samples/smartico/gas-valve-lorawan/resources/alarms_gas_valve.json) 文件，并将规则链的配置保存在 ThingsBoard 中。
 
 ![image](/images/samples/smartico/gas-valve-lorawan/alarm1.PNG)
 
-Then configure Root Rule chain. You should add in Root Rule chain Alarms Gas Valve as it shown on the figure.
+然后配置根规则链。您应该在根规则链中添加气阀警报，如图所示。
 
 ![image](/images/samples/smartico/gas-valve-lorawan/alarm2.PNG)
 
-## Step 6. Dashboard import and configuration.
-To display data to users, you need to create a dashboard that can be imported from [dashboard_gas_valve.json](/docs/samples/smartico/gas-valve-lorawan/resources/dashboard_gas_valve.json) file.
+## 步骤 6. 仪表板导入和配置。
+要向用户显示数据，您需要创建一个可以从 [dashboard_gas_valve.json](/docs/samples/smartico/gas-valve-lorawan/resources/dashboard_gas_valve.json) 文件导入的仪表板。
 
 ![image](/images/samples/smartico/gas-valve-lorawan/dashboard1.PNG)
 
-When importing a dashboard, it will be necessary to create an alias, as shown in the figure.
+导入仪表板时，需要创建一个别名，如图所示。
 
 ![image](/images/samples/smartico/gas-valve-lorawan/dashboard2.PNG)
 
-If everything was done correctly, in DASHBOARD GROUPS → All you will see the new dashboard **Gas Shutoff Valve LoRaWAN “Smartico V-LR”** that was provided at the beginning of the guide.
+如果一切操作正确，在仪表板组 → 全部中，您将看到本指南开头提供的新的仪表板 **Gas Shutoff Valve LoRaWAN “Smartico V-LR”**。
 
-## See also
+## 另请参阅
 
-Browse other [samples](/docs/samples) or explore guides related to main ThingsBoard features:
+浏览其他 [示例](/docs/samples) 或探索与 ThingsBoard 主要功能相关的指南：
 
- - [Device attributes](/docs/user-guide/attributes/) - how to use device attributes.
- - [Telemetry data collection](/docs/user-guide/telemetry/) - how to collect telemetry data.
- - [Using RPC capabilities](/docs/user-guide/rpc/) - how to send commands to/from devices.
- - [Rule Engine](/docs/user-guide/rule-engine/) - how to use rule engine to analyze data from devices.
- - [Data Visualization](/docs/user-guide/visualization/) - how to visualize collected data.
+- [设备属性](/docs/user-guide/attributes/) - 如何使用设备属性。
+- [遥测数据收集](/docs/user-guide/telemetry/) - 如何收集遥测数据。
+- [使用 RPC 功能](/docs/user-guide/rpc/) - 如何向设备发送/从设备接收命令。
+- [规则引擎](/docs/user-guide/rule-engine/) - 如何使用规则引擎分析来自设备的数据。
+- [数据可视化](/docs/user-guide/visualization/) - 如何可视化收集的数据。
 
 {% include templates/feedback.md %}
 
 {% include socials.html %}
 
-## Next steps
+## 后续步骤
 
 {% assign currentGuide = "HardwareSamples" %}{% include templates/guides-banner.md %}

@@ -1,12 +1,10 @@
-
-You can customize the downlink according to your configuration. Let's consider an example where we send an attribute update message. So we should change code in the downlink encoder function under
-line `//downlink data input`
+您可以根据配置自定义下行链路。我们考虑一个发送属性更新消息的示例。因此，我们应该在 `//downlink data input` 下的 downlink 编码器函数中更改代码
 
 ```
 data: msg.firmware
 ```
 
-Also, indicate the required parameters in the metadata:
+此外，在元数据中指示所需的参数：
 
 ```
 metadata: {
@@ -14,7 +12,7 @@ metadata: {
   "port": 1
 }
 ```
-Example for downlink converter:
+下行链路转换器的示例：
 
 ```javascript
 // Encode downlink data from incoming Rule Engine message
@@ -41,5 +39,4 @@ return result;
 
 {% include images-gallery.html imageCollection="create_downlink-tbel" %}
 
-where **EUI** is device EUI and is taken from the device in LORIOT.
-A **port** can be from 1 to 223
+其中 **EUI** 是设备 EUI，取自 LORIOT 中的设备。**端口**可以是 1 到 223

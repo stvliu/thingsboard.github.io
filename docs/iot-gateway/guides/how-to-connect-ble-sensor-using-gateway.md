@@ -2,49 +2,50 @@
 layout: docwithnav
 assignees:
 - zbeacon
-title: How to connect BLE temperature and humidity sensor using the gateway
-description: Understand how to connect BLE temperature and humidity sensor using the gateway 
+title: 如何使用网关连接 BLE 温度和湿度传感器
+description: 了解如何使用网关连接 BLE 温度和湿度传感器
 
 ---
 
 * TOC
 {:toc}
 
-## Device information
+## 设备信息
 
-For the purpose of this guide, we will use a Mi humidity and temperature sensor.
-We will use [BLE connector](/docs/iot-gateway/config/ble/) to connect to the device and collect data.
+在本指南中，我们将使用米家湿度和温度传感器。
+我们将使用 [BLE 连接器](/docs/iot-gateway/config/ble/) 连接到设备并收集数据。
 
-Our goals for this device:  
-1. Temperature and humidity data.
-2. Get a device name.
+我们对该设备的目标：
 
-At this moment the only info about the device are it's MAC address and characteristic identifiers:  
+1. 温度和湿度数据。
+2. 获取设备名称。
 
-MAC Address - 4C:65:A8:DF:85:C0  
+目前，有关设备的唯一信息是其 MAC 地址和特征标识符：
 
-Characteristics IDs:  
-00002A00-0000-1000-8000-00805F9B34FB - identifier of standard device name characteristic ([GATT Specification](https://www.bluetooth.com/specifications/gatt/services/))  
-226CAA55-6476-4566-7562-66734470666D - identifier of a custom temperature and humidity characteristic ([How to get characteristics list from BLE device](#how-to-get-characteristics-identifiers-list-from-ble-device))    
+MAC 地址 - 4C:65:A8:DF:85:C0
 
-## Step 1. Required libraries
+特征 ID：
 
-Before we start configure our BLE connector within the gateway.
-These libraries depend on type of your OS:
+00002A00-0000-1000-8000-00805F9B34FB - 标准设备名称特征的标识符 ([GATT 规范](https://www.bluetooth.com/specifications/gatt/services/))
+
+226CAA55-6476-4566-7562-66734470666D - 自定义温度和湿度特征的标识符 ([如何从 BLE 设备获取特征列表标识符](#how-to-get-characteristics-identifiers-list-from-ble-device))
+
+## 步骤 1. 所需库
+
+在我们开始在网关中配置 BLE 连接器之前。
+这些库取决于您的操作系统类型：
 
 
 {% capture systemtogglespec %}
-Debian based<br>%,%deb%,%templates/iot-gateway/ble-requirements-deb.md%br%
-Red Hat based<br>%,%red-hat%,%templates/iot-gateway/ble-requirements-rpm.md{% endcapture %}
+基于 Debian<br>%,%deb%,%templates/iot-gateway/ble-requirements-deb.md%br%
+基于 Red Hat<br>%,%red-hat%,%templates/iot-gateway/ble-requirements-rpm.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="SystemLibraries" toggle-spec=systemtogglespec %}
 
 
- 
+## 步骤 2. 配置 BLE 连接器
 
-## Step 2. Configuring the BLE connector
-
-We need to create ble setup file and put configuration there. For example:
+我们需要创建 ble 设置文件并将配置放在其中。例如：
 
 ```json
 {
@@ -102,29 +103,29 @@ We need to create ble setup file and put configuration there. For example:
 ```
 {: .copy-code}
 
-  
-About sections of BLE configuration file you can [read more here](/docs/iot-gateway/config/ble/).  
 
-In this guide we will use configuration above.
+有关 BLE 配置文件的部分，您可以在此处 [了解更多](/docs/iot-gateway/config/ble/)。
 
-Let's analyze our settings:
+在本指南中，我们将使用上面的配置。
 
-1. General configuration for the connector. In this section we have defined general connector settings, such as connector name ("BLE Connector"), rescan interval (100) etc. You can read more about available parameters [here](/docs/iot-gateway/config/ble/#main-section).  
-2. General device configuration. In this section we have defined general device settings, such as device name in ThingsBoard ("Temperature and humidity sensor"), MAC-address ("4C:65:A8:DF:85:C0") etc. You can read more about available parameters [here](/docs/iot-gateway/config/ble/#device-object-subsection).
-3. Telemetry configuration. In this section we have defined a configuration for temperature and humidity parameters. You can read more about available parameters [here](/docs/iot-gateway/config/ble/#subsection-telemetry).  
-4. Attributes configuration. In this section we have defined that connector will read value from characteristic ("00002A00-0000-1000-8000-00805F9B34FB") and write it as the device client-side attribute ("name") on ThingsBoard. You can read more about available parameters [here](/docs/iot-gateway/config/ble/#subsection-attributes).    
-5. Attribute updates configuration. In this section we have configured the gateway to change the device name when we change shared attribute ("sharedName") in ThingsBoard device. You can read more about available parameters [here](/docs/iot-gateway/config/ble/#subsection-attributeupdates).   
-6. Server side rpc configuration. In this section we have configured the gateway to read the device name and return it when we call RPC method ("rpcMethod1") from ThingsBoard. You can read more about available parameters [here](/docs/iot-gateway/config/ble/#subsection-serversiderpc).   
+让我们分析我们的设置：
 
-If you have a different device, you should provide your device characteristic identifiers in the configuration json.    
+1. 连接器的常规配置。在本节中，我们定义了常规连接器设置，例如连接器名称（“BLE 连接器”）、重新扫描间隔（100）等。您可以在此处 [阅读有关可用参数的更多信息](/docs/iot-gateway/config/ble/#main-section)。
+2. 常规设备配置。在本节中，我们定义了常规设备设置，例如 ThingsBoard 中的设备名称（“温度和湿度传感器”）、MAC 地址（“4C:65:A8:DF:85:C0”）等。您可以在此处 [阅读有关可用参数的更多信息](/docs/iot-gateway/config/ble/#device-object-subsection)。
+3. 遥测配置。在本节中，我们定义了温度和湿度参数的配置。您可以在此处 [阅读有关可用参数的更多信息](/docs/iot-gateway/config/ble/#subsection-telemetry)。
+4. 属性配置。在本节中，我们定义了连接器将从特征（“00002A00-0000-1000-8000-00805F9B34FB”）中读取值，并将其作为 ThingsBoard 上的设备客户端属性（“名称”）写入。您可以在此处 [阅读有关可用参数的更多信息](/docs/iot-gateway/config/ble/#subsection-attributes)。
+5. 属性更新配置。在本节中，我们配置了网关，以便在我们在 ThingsBoard 设备中更改共享属性（“sharedName”）时更改设备名称。您可以在此处 [阅读有关可用参数的更多信息](/docs/iot-gateway/config/ble/#subsection-attributeupdates)。
+6. 服务器端 rpc 配置。在本节中，我们配置了网关，以便在从 ThingsBoard 调用 RPC 方法（“rpcMethod1”）时读取设备名称并返回该名称。您可以在此处 [阅读有关可用参数的更多信息](/docs/iot-gateway/config/ble/#subsection-serversiderpc)。
 
-We have saved the configuration file as **ble.json** in the config folder (the directory, that contains the general configuration file - **tb_gateway.yaml**).  
+如果您有不同的设备，则应在配置 json 中提供您的设备特征标识符。
 
-## Step 3. Turn on the connector 
+我们将配置文件另存为 **ble.json**，位于 config 文件夹中（包含常规配置文件 - **tb_gateway.yaml** 的目录）。
 
-To use the connector, we must turn it on in the main configuration file (**[tb_gateway.yaml](/docs/iot-gateway/configuration/#connectors-configuration)**)
+## 步骤 3. 打开连接器
 
-In "connectors" section we should uncomment following strings:
+要使用连接器，我们必须在主配置文件（**[tb_gateway.yaml](/docs/iot-gateway/configuration/#connectors-configuration)**）中将其打开
+
+在“connectors”部分中，我们应该取消注释以下字符串：
 
 ```yaml
    -
@@ -133,24 +134,29 @@ In "connectors" section we should uncomment following strings:
      configuration: ble.json
 ```
 
-## Step 4. Run the gateway
+## 步骤 4. 运行网关
 
-To run the gateway with BLE Connector we will use root permissions.  
-Command for run depends on type of installation.  
-If you have installed the gateway as daemon, run the following command:  
+要使用 BLE 连接器运行网关，我们将使用 root 权限。
+
+运行命令取决于安装类型。
+
+如果您已将网关安装为守护程序，请运行以下命令：
+
 ```bash
 sudo systemctl restart thingsboard-gateway
-```  
+```
+
 {: .copy-code}
 
-If you have installed the gateway as a python module (using [pip package manager](/docs/iot-gateway/install/pip-installation/) or [from sources](/docs/iot-gateway/install/source-installation/)), use following command or script to run the gateway.  
-**Notice**: You must place correct path to the main configuration file (**tb_gateway.yaml**) in the command/script.  
+如果您已将网关安装为 Python 模块（使用 [pip 包管理器](/docs/iot-gateway/install/pip-installation/) 或 [从源代码](/docs/iot-gateway/install/source-installation/)），请使用以下命令或脚本运行网关。
+
+**注意：** 您必须在命令/脚本中放置到主配置文件（**tb_gateway.yaml**）的正确路径。
 
 ```bash
 sudo python3 -c 'from thingsboard_gateway.gateway.tb_gateway_service import TBGatewayService; TBGatewayService("YOUR_PATH_HERE")'
 ```
 
-or script:
+或脚本：
 
 ```python
 from thingsboard_gateway.gateway.tb_gateway_service import TBGatewayService 
@@ -160,35 +166,37 @@ config_file_path = "YOUR_PATH_HERE"
 TBGatewayService(config_file_path)
 ```
 
-## Step 5. Check information on ThingsBoard
+## 步骤 5. 检查 ThingsBoard 上的信息
 
-Check data in your ThingsBoard instance, that you have been configured in the [general configuration guide](/docs/iot-gateway/configuration/).  
-    - Go to the your ThingsBoard instance and login.  
-    - Go to the "Devices" tab. "Temperature and Humidity sensor" should be there.
-    <br>    
-    ![](/images/gateway/temp-hum-sensor.png)
+检查您已在 [常规配置指南](/docs/iot-gateway/configuration/) 中配置的 ThingsBoard 实例中的数据。
+
+- 前往您的 ThingsBoard 实例并登录。
+- 转到“设备”选项卡。“温度和湿度传感器”应该在那里。
+<br>
+![](/images/gateway/temp-hum-sensor.png)
 <br><br>
-Go to the device details, **ATTRIBUTES** tab, which contains all client-side attributes, including requested from our configuration file attributes.  
-**Notify:** Attributes from the GATT specification updates only on first connect to device after the gateway start.  
+转到设备详细信息，**属性**选项卡，其中包含所有客户端属性，包括从我们的配置文件属性中请求的属性。
+
+**通知：** 来自 GATT 规范的属性仅在网关启动后首次连接到设备时更新。
 <br>
 ![](/images/gateway/attribute-on-ble-device.png)
 
-## Step 6. Change the device name using shared attributes
+## 步骤 6. 使用共享属性更改设备名称
 
-Let's try to change the device name.
-We should follow several steps:
-1. Create a shared attribute in the device on ThingsBoard, to do this we go to the **ATTRIBUTES** tab, select from a list of attributes option "Shared attributes" instead of "Client attributes", press plus icon, put "sharedName" as Key and "New_name_" as "String value".
-2. Check name of device using "rpcMethod1" from RPC Dashboard or scan devices around using default ability in the device where installed the gateway. 
+我们尝试更改设备名称。
+我们应该遵循以下几个步骤：
+1. 在 ThingsBoard 上的设备中创建共享属性，为此，我们转到 **属性**选项卡，从属性列表中选择“共享属性”选项而不是“客户端属性”，按加号图标，将“sharedName”作为键和“New_name_”作为“字符串值”。
+2. 使用 RPC 仪表板中的“rpcMethod1”检查设备名称或使用在安装网关的设备中使用默认功能扫描周围设备。
 
-**Notify:** Some devices can reset their name to default.
+**通知：** 某些设备可以将它们的名称重置为默认名称。
 
 ![](/images/gateway/changed-name-ble-tb-gateway.png)
 
 
 
-#### How to get characteristic identifiers list from BLE device
+#### 如何从 BLE 设备获取特征标识符列表
 
-To get all available device characteristics, you can use the following Python script:  
+要获取所有可用的设备特征，您可以使用以下 Python 脚本：
 
 ```python
 from bluepy.btle import Peripheral
@@ -200,13 +208,14 @@ peripheral = Peripheral(MAC)
 for service in peripheral.getServices():
     for characteristic in service.getCharacteristics():
         print("Characteristic - id: %s\tname (if exists): %s\tavailable methods: %s" % (str(characteristic.uuid), str(characteristic), characteristic.propertiesToString()))
-``` 
+```
 
 {: .copy-code}
 
-**Notate: To run the script - you should have installed Bluepy library and permissions to access to Bluetooth module.**  
+**注意：要运行脚本 - 您应该安装 Bluepy 库并具有访问蓝牙模块的权限。**
 
-After run the script, you will receive output in console like following:  
+运行脚本后，您将在控制台中收到如下输出：
+
 ```text
 Characteristic - id: 00002a00-0000-1000-8000-00805f9b34fb	name (if exists): Characteristic <Device Name>	available methods: READ WRITE 
 Characteristic - id: 00002a01-0000-1000-8000-00805f9b34fb	name (if exists): Characteristic <Appearance>	available methods: READ 
@@ -229,16 +238,20 @@ Characteristic - id: 00000004-0000-1000-8000-00805f9b34fb	name (if exists): Char
 Characteristic - id: 00000010-0000-1000-8000-00805f9b34fb	name (if exists): Characteristic <0010>	available methods: WRITE 
 Characteristic - id: 00000013-0000-1000-8000-00805f9b34fb	name (if exists): Characteristic <0013>	available methods: READ WRITE 
 Characteristic - id: 00000014-0000-1000-8000-00805f9b34fb	name (if exists): Characteristic <0014>	available methods: READ WRITE 
-```  
+```
 
-Where:  
-id - characteristic identifier.  
-name (if exists) - Characteristic name, if it has description in a [GATT specification](https://www.bluetooth.com/specifications/gatt/services/).  
-available methods - Characteristic supports methods.  
+其中：
 
-Characteristic methods:  
-1. READ - Read value from the characteristic.  
-2. WRITE - Write value to the characteristic.  
-3. NOTIFY - Subscribe to characteristic updates.  
+id - 特征标识符。
 
-Usually characteristics where name is equals to id is custom.  
+name (if exists) - 特征名称，如果它在 [GATT 规范](https://www.bluetooth.com/specifications/gatt/services/) 中有描述。
+
+available methods - 特征支持的方法。
+
+特征方法：
+
+1. READ - 从特征中读取值。
+2. WRITE - 将值写入特征。
+3. NOTIFY - 订阅特征更新。
+
+通常名称等于 id 的特征是自定义的。

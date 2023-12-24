@@ -1,8 +1,10 @@
+一旦我们拥有访问令牌，我们就可以配置 MI-8。
 
-Once we have an access token we can configure the MI-8.  
-All MI-8 DAQs are configured through a file in the root directory of their SD card named **config.json**.  
-The MI-8 [User manual](https://fusiondaq.com/wp-content/uploads/2023/01/LTEdaq_OperatingManual-1.pdf) contains detailed information for making changes to this file, but for this example we will focus on the name and push fields.  
-These are the fields which are present in configuration file.  
+所有 MI-8 DAQ 都通过 SD 卡根目录中的名为 **config.json** 的文件进行配置。
+
+MI-8 [用户手册](https://fusiondaq.com/wp-content/uploads/2023/01/LTEdaq_OperatingManual-1.pdf) 包含有关更改此文件的详细信息，但对于此示例，我们将重点关注名称和推送字段。
+
+这些是配置文件中存在的字段。
 
 ```json
 {
@@ -58,26 +60,26 @@ These are the fields which are present in configuration file.
 ```
 {:.copy-code}
 
-Necessary parameters to change for connection:
+连接所需的更改参数：
 
-| Parameter | Default value | Description |
+| 参数 | 默认值 | 说明 |
 |-|-|
-| path | **api/v1/YOUR_ACCESS_TOKEN/telemetry** | Replace **YOUR_ACCESS_TOKEN** with your access token for the device on ThingsBoard. |
-| attributes_path | **api/v1/YOUR_ACCESS_TOKEN/attributes** | Replace **YOUR_ACCESS_TOKEN** with your access token for the device on ThingsBoard. | 
-| server | **{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}thingsboard.cloud{% else %}demo.thingsboard.io{% endif %}** | Your ThingsBoard instance address. |
-| port | **80** | Your ThingsBoard instance HTTP port. You can Set **port** equal to 443 and **use_ssl** equal to true to use SSL encryption (HTTPS). Either protocol is supported, but HTTPS will consume more cellular data each time data is pushed to the server.|
+| 路径 | **api/v1/YOUR_ACCESS_TOKEN/telemetry** | 将 **YOUR_ACCESS_TOKEN** 替换为 ThingsBoard 上设备的访问令牌。 |
+| attributes_path | **api/v1/YOUR_ACCESS_TOKEN/attributes** | 将 **YOUR_ACCESS_TOKEN** 替换为 ThingsBoard 上设备的访问令牌。 |
+| 服务器 | **{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}thingsboard.cloud{% else %}demo.thingsboard.io{% endif %}** | 您的 ThingsBoard 实例地址。 |
+| 端口 | **80** | 您的 ThingsBoard 实例 HTTP 端口。您可以将 **port** 设置为 443，并将 **use_ssl** 设置为 true 以使用 SSL 加密 (HTTPS)。支持任一协议，但每次将数据推送到服务器时，HTTPS 会消耗更多蜂窝数据。|
 
-Other configuration parameters:
+其他配置参数：
 
-- The name field is optional in this file. This name is displayed on the MI-8 OLED screen and is sent to ThingsBoard as a device attribute. Best practice is for the name in config.json to match the name of the device in ThingsBoard, but this doesn’t have to be the case. The name field isn’t used to associate telemetry data between the MI-8 and ThingsBoard. It is only meant as an aid for the user.  
-- The push field describes the connection to the ThingsBoard servers. In this example we use HTTP POST requests (“mode”:”post”). MQTT is also supported, but POST consumes less cellular data. The HTTP request URL is built up through the server, port, use_ssl, and path/attributes_path fields.  
-- The use_ssl field describes whether HTTP or HTTPS is used. The server field is everything between the double slashes ‘//’ and the colon. Next comes the port and one additional slash. Everything beyond that is the path.  
-- Set push_attributes equal to true so that attributes (things such as the MI-8 IMEI number which don’t change frequently) are sent once each power up.  
-- Set use_json equal to true. All data sent to ThingsBoard should be formatted as JSON.  
-- Set use_headers false. HTTP headers are not required by ThingsBoard, but require additional cellular data each push.  
-- You can set include_name, include_imei, and include_iccid to false. These fields cause the ICCID, IMEI, and MI-8 name to be included in the telemetry pushes which would consume additional cellular data. They do not need included here since they are already sent to ThingsBoard in a separate attributes HTTP request once per MI-8 power cycle.  
+- 此文件中的 name 字段是可选的。此名称显示在 MI-8 OLED 屏幕上，并作为设备属性发送到 ThingsBoard。最佳做法是 config.json 中的名称与 ThingsBoard 中的设备名称匹配，但这并非必须。name 字段不用于在 MI-8 和 ThingsBoard 之间关联遥测数据。它仅用作用户的辅助工具。
+- push 字段描述了与 ThingsBoard 服务器的连接。在此示例中，我们使用 HTTP POST 请求（“mode”:”post”）。MQTT 也受支持，但 POST 消耗的蜂窝数据更少。HTTP 请求 URL 通过 server、port、use_ssl 和 path/attributes_path 字段构建。
+- 将 use_ssl 字段设置为 true，以便在每次开机时发送属性（例如 MI-8 IMEI 号码等不经常更改的内容）。
+- 将 use_json 设置为 true。发送到 ThingsBoard 的所有数据都应采用 JSON 格式。
+- 将 use_headers 设置为 false。ThingsBoard 不需要 HTTP 头，但每次推送都需要额外的蜂窝数据。
+- 您可以将 include_name、include_imei 和 include_iccid 设置为 false。这些字段会导致 ICCID、IMEI 和 MI-8 名称包含在遥测推送中，这会消耗额外的蜂窝数据。它们不需要包含在这里，因为它们已经通过单独的属性 HTTP 请求在每次 MI-8 电源循环时发送到 ThingsBoard。
 
-After adding or changing configuration file do the following steps:  
-- Save config.json
-- Disconnect the PC from the MI-8 USB port (if connected and mass-storage enabled)
-- Power cycle the MI-8 so new settings take effect.
+添加或更改配置文件后，执行以下步骤：
+
+- 保存 config.json
+- 断开 PC 与 MI-8 USB 端口的连接（如果已连接并启用了大容量存储）
+- 循环 MI-8 电源，以便新设置生效。

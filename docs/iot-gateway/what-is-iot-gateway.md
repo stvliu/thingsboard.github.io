@@ -1,87 +1,87 @@
 ---
 layout: docwithnav-gw
-title: What is ThingsBoard IoT Gateway?
-description: Features and advantages of ThingsBoard IoT Gateway
+title: ThingsBoard IoT 网关是什么？
+description: ThingsBoard IoT 网关的功能和优势
 
 ---
 
-The ThingsBoard **IoT Gateway** is an open-source solution that allows you to integrate devices connected to legacy and third-party systems with ThingsBoard.  
+ThingsBoard **IoT 网关** 是一款开源解决方案，允许您将连接到旧版和第三方系统的设备与 ThingsBoard 集成。
 
-ThingsBoard is an open-source IoT platform for data collection, processing, visualization, and device management. See [**What is ThingsBoard?**](/docs/getting-started-guides/what-is-thingsboard/) if you are new platform user.
+ThingsBoard 是一个用于数据收集、处理、可视化和设备管理的开源 IoT 平台。如果您是新平台用户，请参阅 [**ThingsBoard 是什么？**](/docs/getting-started-guides/what-is-thingsboard/)。
 
 <object width="95%" data="/images/gateway/python-gateway-animd-ff.svg"></object>
 
-#### Gateway features
+#### 网关功能
 
-The ThingsBoard IoT Gateway provides the following features:
+ThingsBoard IoT 网关提供以下功能：
 
- - [**MQTT** connector](/docs/iot-gateway/config/mqtt/) to control, configure and collect data from IoT devices that are connected to external MQTT brokers using existing protocols.
- - [**OPC-UA** connector](/docs/iot-gateway/config/opc-ua/) to collect data from IoT devices that are connected to OPC-UA servers.
- - [**Modbus** connector](/docs/iot-gateway/config/modbus/) to collect data from IoT devices that are connected through Modbus protocol.
- - [**BLE** connector](/docs/iot-gateway/config/ble/) to collect data from IoT devices that are connected using Bluetooth Low Energy.
- - [**Request** connector](/docs/iot-gateway/config/request/) to collect data from IoT devices that have HTTP(S) API endpoints.
- - [**CAN** connector](/docs/iot-gateway/config/can/) to collect data from IoT devices that are connected through CAN protocol.
- - [**BACnet** connector](/docs/iot-gateway/config/bacnet/) to collect data from IoT devices that are connected through BACnet protocol.
- - [**ODBC** connector](/docs/iot-gateway/config/odbc/) to collect data from ODBC databases.
- - [**REST** connector](/docs/iot-gateway/config/rest/) to create endpoints and collect data from incoming HTTP requests.
- - [**SNMP** connector](/docs/iot-gateway/config/snmp/) to collect data from SNMP managers.
- - [**FTP** connector](/docs/iot-gateway/config/ftp/) to collect data from FTP server.
- - [**Socket** connector](/docs/iot-gateway/config/socket/) to collect data from IoT devices that are connected through TCP/UDP protocol.
- - [**XMPP** connector](/docs/iot-gateway/config/xmpp/) to collect data from IoT devices that are connected through XMPP protocol.
- - [**OCPP** connector](/docs/iot-gateway/config/ocpp/) to communicate between Charge Point and Central System.
- - [**Custom** connector](/docs/iot-gateway/custom/) to collect data from IoT devices that are connected by different protocols. (You can create your own connector for the required protocol).
- - **Persistence** of collected data to guarantee data delivery in case of network or hardware failures.
- - **Automatic reconnect** to the ThingsBoard cluster.
- - Simple yet powerful **mapping** of incoming data and messages **to unified format**.
+- [**MQTT** 连接器](/docs/iot-gateway/config/mqtt/)，用于控制、配置和收集连接到外部 MQTT 代理的 IoT 设备的数据，使用现有协议。
+- [**OPC-UA** 连接器](/docs/iot-gateway/config/opc-ua/)，用于收集连接到 OPC-UA 服务器的 IoT 设备的数据。
+- [**Modbus** 连接器](/docs/iot-gateway/config/modbus/)，用于收集通过 Modbus 协议连接的 IoT 设备的数据。
+- [**BLE** 连接器](/docs/iot-gateway/config/ble/)，用于收集使用蓝牙低能耗连接的 IoT 设备的数据。
+- [**请求** 连接器](/docs/iot-gateway/config/request/)，用于收集具有 HTTP(S) API 端点的 IoT 设备的数据。
+- [**CAN** 连接器](/docs/iot-gateway/config/can/)，用于收集通过 CAN 协议连接的 IoT 设备的数据。
+- [**BACnet** 连接器](/docs/iot-gateway/config/bacnet/)，用于收集通过 BACnet 协议连接的 IoT 设备的数据。
+- [**ODBC** 连接器](/docs/iot-gateway/config/odbc/)，用于收集来自 ODBC 数据库的数据。
+- [**REST** 连接器](/docs/iot-gateway/config/rest/)，用于创建端点并收集来自传入 HTTP 请求的数据。
+- [**SNMP** 连接器](/docs/iot-gateway/config/snmp/)，用于收集来自 SNMP 管理器的数据。
+- [**FTP** 连接器](/docs/iot-gateway/config/ftp/)，用于收集来自 FTP 服务器的数据。
+- [**Socket** 连接器](/docs/iot-gateway/config/socket/)，用于收集通过 TCP/UDP 协议连接的 IoT 设备的数据。
+- [**XMPP** 连接器](/docs/iot-gateway/config/xmpp/)，用于收集通过 XMPP 协议连接的 IoT 设备的数据。
+- [**OCPP** 连接器](/docs/iot-gateway/config/ocpp/)，用于在充电点和中央系统之间进行通信。
+- [**自定义** 连接器](/docs/iot-gateway/custom/)，用于收集通过不同协议连接的 IoT 设备的数据。（您可以为所需的协议创建自己的连接器）。
+- 收集数据的 **持久性**，以确保在网络或硬件故障的情况下也能传送数据。
+- **自动重新连接** 到 ThingsBoard 集群。
+- 简单但功能强大的 **映射**，将传入的数据和消息 **转换为统一格式**。
 
 
-#### Architecture
+#### 架构
 
-The IoT Gateway is a software component that is designed to run on a Linux based microcomputers that support **Python 3.7+**.
-The main components of ThingsBoard IoT Gateway are listed below.
+IoT 网关是一个软件组件，设计用于运行在支持 **Python 3.7+** 的基于 Linux 的微型计算机上。
+ThingsBoard IoT 网关的主要组件如下所示。
 
-**Connector**
+**连接器**
 
-The purpose of this component is to connect to external system (e.g. MQTT broker or OPC-UA server) or directly to devices (e.g. Modbus, BLE or CAN).
-Once connected, the connector either poll data from those systems or subscribe to updates. Poll vs subscribe depends on the protocol capabilities. 
-For example, we use subscription model for MQTT connectors and polling for Modbus and CAN. 
-The connector is also able to push updates to devices either directly or via external systems.
+此组件的目的是连接到外部系统（例如 MQTT 代理或 OPC-UA 服务器）或直接连接到设备（例如 Modbus、BLE 或 CAN）。
+连接后，连接器要么从这些系统轮询数据，要么订阅更新。轮询与订阅取决于协议功能。
+例如，我们对 MQTT 连接器使用订阅模型，对 Modbus 和 CAN 使用轮询。
+连接器还能够将更新直接或通过外部系统推送到设备。
 
-It is possible to define your own connector using the [customization guide](/docs/iot-gateway/custom/).
+您可以使用 [自定义指南](/docs/iot-gateway/custom/) 定义自己的连接器。
 
-**Converter**   
- 
-Converters are responsible for converting data from protocol specific format to/from ThingsBoard format.
-Converters are invoked by Connectors. Converters are often specific to protocol supported by Connector.
-There are uplink and downlink converters. The uplink converter is used to convert data from specific protocol to ThingsBoard format.
-The downlink converter is used to convert messages from ThingsBoard to specific protocol format.
+**转换器**
 
-It is possible to define your own converter using the [customization guide](/docs/iot-gateway/custom/#step-4-define-converter-implementation/).
+转换器负责将数据从特定于协议的格式转换为 ThingsBoard 格式或从 ThingsBoard 格式转换为特定于协议的格式。
+转换器由连接器调用。转换器通常特定于连接器支持的协议。
+有上行和下行转换器。上行转换器用于将数据从特定协议转换为 ThingsBoard 格式。
+下行转换器用于将来自 ThingsBoard 的消息转换为特定协议格式。
 
-**Event Storage**
+您可以使用 [自定义指南](/docs/iot-gateway/custom/#step-4-define-converter-implementation/) 定义自己的转换器。
 
-The Event Storage is used to temporary store the telemetry and other events produced by Connectors until they are delivered to ThingsBoard.
-The Event Storage supports two implementations: in-memory queue and persistent file storage. 
-Both implementations make sure that your device data is eventually delivered in case of network outages.
-In-memory queue minimizes the IO operations but may lose messages in case of gateway process restart.  
-Persistent file storage survives the restart of the process but executes IO operations to the file system.
+**事件存储**
 
-**ThingsBoard Client**
+事件存储用于临时存储连接器产生的遥测和其他事件，直到将它们传送至 ThingsBoard。
+事件存储支持两种实现：内存队列和持久文件存储。
+这两种实现都确保在网络中断的情况下最终传送您的设备数据。
+内存队列最大限度地减少了 IO 操作，但如果网关进程重新启动，可能会丢失消息。
+持久文件存储可在进程重新启动后继续存在，但会对文件系统执行 IO 操作。
 
-The Gateway communicates to ThingsBoard via MQTT protocol and uses API described [here](/docs/reference/gateway-mqtt-api/).
-ThingsBoard Client is a separate thread that polls Event Storage and delivers messages once connection to ThingsBoard is active.  
-ThingsBoard Client supports monitoring of the connectivity, batching the events for performance improvement and many other features.
+**ThingsBoard 客户端**
 
-**Gateway Service**
+网关通过 MQTT 协议与 ThingsBoard 通信，并使用 [此处](/docs/reference/gateway-mqtt-api/) 描述的 API。
+ThingsBoard 客户端是一个单独的线程，它轮询事件存储，并在与 ThingsBoard 的连接处于活动状态时传送消息。
+ThingsBoard 客户端支持连接性监控、批量处理事件以提高性能以及许多其他功能。
 
-The Gateway Service is responsible for bootstrapping the Connectors, Event Storage and ThingsBoard Client. 
-This Service collects and periodically reports statistics to ThingsBoard about incoming messages and connected devices.
-Gateway Service persists list of connected devices to be able to re-subscribe to device configuration updates in case of the restart of the gateway. 
+**网关服务**
 
-#### Project Roadmap
+网关服务负责引导连接器、事件存储和 ThingsBoard 客户端。
+此服务收集并定期向 ThingsBoard 报告有关传入消息和已连接设备的统计信息。
+网关服务保留已连接设备的列表，以便在网关重新启动时能够重新订阅设备配置更新。
 
-<p><a href="/docs/iot-gateway/roadmap/" class="button">Gateway Roadmap</a></p>
+#### 项目路线图
 
-#### Next Steps
+<p><a href="/docs/iot-gateway/roadmap/" class="button">网关路线图</a></p>
 
-<p><a href="/docs/iot-gateway/getting-started/" class="button">Getting Started Guide</a></p>
+#### 后续步骤
+
+<p><a href="/docs/iot-gateway/getting-started/" class="button">入门指南</a></p>

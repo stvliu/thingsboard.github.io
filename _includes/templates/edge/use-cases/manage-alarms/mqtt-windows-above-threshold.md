@@ -1,1 +1,1 @@
-Using MQTTBox please publish temperature telemetry with value **51**.
+请使用 MQTTBox 发布温度遥测数据，其值为 **51**。

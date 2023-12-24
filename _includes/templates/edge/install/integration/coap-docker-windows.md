@@ -1,13 +1,13 @@
-Windows users should use docker managed volume for remote integration logs. 
-Create docker volume (for ex. `tb-coap-integration-logs`) before executing docker run command:
-Open "Docker Quickstart Terminal". Execute the following command to create docker volume:
+Windows 用户应使用 docker 管理的卷来记录远程集成日志。
+在执行 docker run 命令之前创建 docker 卷（例如 `tb-coap-integration-logs`）：
+打开“Docker 快速启动终端”。执行以下命令以创建 docker 卷：
 
 ``` 
 docker volume create tb-pe-coap-integration-logs
 ```
 {: .copy-code}
 
-Execute the following command to run this docker directly:
+执行以下命令以直接运行此 docker：
 
 ```bash
 docker run -it -p 5683:5683/udp -v tb-pe-coap-integration-logs:/var/log/tb-coap-integration `
@@ -17,46 +17,45 @@ docker run -it -p 5683:5683/udp -v tb-pe-coap-integration-logs:/var/log/tb-coap-
 ```
 {: .copy-code}
 
-Where: 
-    
-- `EDGE_IP_OR_HOST_ADDRESS` - is the host name or IP address of your ThingsBoard Edge;
-- `9090` - is the integrations port of your ThingsBoard Edge. It is configured in tb-edge.yml using INTEGRATIONS_RPC_PORT env variable;   
-- `YOUR_ROUTING_KEY` - placeholder for your integration routing key obtained on [Step 3](/docs/pe/edge/user-guide/integrations/remote-integrations/#step-3-save-remote-integration-credentials);
-- `YOUR_SECRET` - placeholder for your integration secret obtained on [Step 3](/docs/pe/edge/user-guide/integrations/remote-integrations/#step-3-save-remote-integration-credentials);
-- `docker run`              - run this container;
-- `-it`                     - attach a terminal session with current ThingsBoard remote integration process output;
-- `-p 5683:5683/udp` - connect local udp port 5683 to exposed internal 5683 udp port for the integration.
-- `-v tb-pe-coap-integration-logs:/var/log/tb-coap-integration`   - mounts the host's dir `~/.tb-pe-coap-integration-logs` to ThingsBoard remote integration logs directory;
-- `--name tb-pe-coap-integration`             - friendly local name of this machine;
-- `--restart always`        - automatically start ThingsBoard Integration in case of system reboot and restart in case of failure.;
-- `thingsboard/tb-pe-coap-integration:{{ site.release.pe_full_ver }}`          - docker image.
+其中：
 
-After executing this command you can open logs which are located here `~/.tb-pe-coap-integration-logs`. 
-You should see some INFO log messages with your latest Integration configuration that arrived from the server.
+- `EDGE_IP_OR_HOST_ADDRESS` - 是 ThingsBoard Edge 的主机名或 IP 地址；
+- `9090` - 是 ThingsBoard Edge 的集成端口。它在 tb-edge.yml 中使用 INTEGRATIONS_RPC_PORT 环境变量进行配置；
+- `YOUR_ROUTING_KEY` - 在 [步骤 3](/docs/pe/edge/user-guide/integrations/remote-integrations/#step-3-save-remote-integration-credentials) 中获得的集成路由密钥的占位符；
+- `YOUR_SECRET` - 在 [步骤 3](/docs/pe/edge/user-guide/integrations/remote-integrations/#step-3-save-remote-integration-credentials) 中获得的集成密钥的占位符；
+- `docker run` - 运行此容器；
+- `-it` - 附加一个终端会话，其中包含当前 ThingsBoard 远程集成进程的输出；
+- `-p 5683:5683/udp` - 将本地 udp 端口 5683 连接到公开的内部 5683 udp 端口以进行集成。
+- `-v tb-pe-coap-integration-logs:/var/log/tb-coap-integration` - 将主机的目录 `~/.tb-pe-coap-integration-logs` 挂载到 ThingsBoard 远程集成日志目录；
+- `--name tb-pe-coap-integration` - 此计算机的友好本地名称；
+- `--restart always` - 在系统重新启动时自动启动 ThingsBoard 集成，并在发生故障时重新启动；
+- `thingsboard/tb-pe-coap-integration:{{ site.release.pe_full_ver }}` - docker 镜像。
 
-<br>
-
-You can detach from session terminal with **`Ctrl-p`**+**`Ctrl-q`** - the container will keep running in the background.
+执行此命令后，您可以打开位于此处 `~/.tb-pe-coap-integration-logs` 的日志。您应该会看到一些 INFO 日志消息，其中包含从服务器收到的最新集成配置。
 
 <br>
 
-- **Reattaching, stop and start commands**
+您可以使用 **`Ctrl-p`**+**`Ctrl-q`** 从会话终端分离 - 容器将继续在后台运行。
 
-To reattach to the terminal (to see ThingsBoard remote integration logs) run:
+<br>
+
+- **重新连接、停止和启动命令**
+
+要重新连接到终端（以查看 ThingsBoard 远程集成日志），请运行：
 
 ```
 docker attach tb-pe-coap-integration
 ```
 {: .copy-code}
 
-To stop the container:
+要停止容器：
 
 ```
 docker stop tb-pe-coap-integration
 ```
 {: .copy-code}
 
-To start the container:
+要启动容器：
 
 ```
 docker start tb-pe-coap-integration

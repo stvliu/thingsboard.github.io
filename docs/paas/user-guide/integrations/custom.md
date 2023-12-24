@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-paas
-title: Custom Integration
-description: Custom integration guide 
+title: 自定义集成
+description: 自定义集成指南
 
 ---
 {% assign docsPrefix = "paas/" %}

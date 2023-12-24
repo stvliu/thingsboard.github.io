@@ -1,9 +1,9 @@
-You can use the following code, copy it to the decoder function section:
+您可以使用以下代码，将其复制到解码器函数部分：
 
 ```javascript
 /** Decoder **/
 
-// decode payload to string
+// 将有效负载解码为字符串
 var data = decodeToJson(payload);
 var deviceName = data.devName;
 var deviceType = 'thermostat';
@@ -17,7 +17,7 @@ var result = {
     }
 };
 
-/** Helper functions 'decodeToString' and 'decodeToJson' are already built-in **/
+/** 辅助函数 'decodeToString' 和 'decodeToJson' 已内置 **/
 return result;
 ```
 {: .copy-code}

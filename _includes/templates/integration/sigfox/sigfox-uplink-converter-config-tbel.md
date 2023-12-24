@@ -1,20 +1,20 @@
-You can use the following code, copy it to the decoder function section:
+您可以使用以下代码，将其复制到解码器函数部分：
 
 ```javascript
 /** Decoder **/
 
-// decode payload to string
+// 将有效负载解码为字符串
 var json = decodeToJson(payload);
 var deviceName = 'Sigfox-' + json.device;
 var deviceType = 'Sigfox Airwits CO2';
 var groupName = 'UC-0023 Sigfox Airwits CO2';
 
-var attrByte = parseInt(json.data.substring(0, 2), 16); // force javascript to convert to INT
-var autoCalibration = (attrByte & 0x1) === 1 ? "on" : "off"; // bitmask for first bit
-var zeroPointAdjusted = ((attrByte & 0x2) >> 1) === 1 ? true : false; // bitmask for second bit; right shift one bit to get second bit to the LSB position
-var transmitPower = ((attrByte & 0x4) >> 2) === 1 ? "full" : "low"; // bitmask for third bit; right shift two bits to get third bit to the LSB position
-var powerControl = ((attrByte & 0x8) >> 3) === 1 ? "on" : "off"; // bitmask for third bit; right shift three bits to get fourth bit to the LSB position
-var firmwareVersion = attrByte >> 4; // shift right to bring the nibble down to the first four bits; result is INT
+var attrByte = parseInt(json.data.substring(0, 2), 16); // 强制 javascript 转换为 INT
+var autoCalibration = (attrByte & 0x1) === 1 ? "on" : "off"; // 第一位的位掩码
+var zeroPointAdjusted = ((attrByte & 0x2) >> 1) === 1 ? true : false; // 第二位的位掩码；右移一位，将第二位移至 LSB 位置
+var transmitPower = ((attrByte & 0x4) >> 2) === 1 ? "full" : "low"; // 第三位位掩码；右移两位，将第三位移至 LSB 位置
+var powerControl = ((attrByte & 0x8) >> 3) === 1 ? "on" : "off"; // 第三位位掩码；右移三位，将第四位移至 LSB 位置
+var firmwareVersion = attrByte >> 4; // 右移，将半字节移至前四位；结果为 INT
 
 var temperature = parseInt(json.data.substring(2, 6), 16) / 10.0 - 40;
 var humidity = parseInt(json.data.substring(6, 8), 16);
@@ -22,14 +22,14 @@ var co2 = parseInt(json.data.substring(8, 12), 16);
 
 var co2Baseline = 0;
 var co2BaselineN = parseInt(json.data.substring(12, 14), 16);
-if(co2BaselineN === 0){ // see documentation for more information on baseline
+if(co2BaselineN === 0){ // 有关基准的更多信息，请参阅文档
     co2Baseline = 400;
 }else{
     co2Baseline = co2BaselineN * 10;
 }
 
 var result = {
-// Use deviceName and deviceType or assetName and assetType, but not both.
+// 使用 deviceName 和 deviceType 或 assetName 和 assetType，但不能同时使用。
     deviceName: deviceName,
     deviceType: deviceType,
     groupName: groupName,
@@ -55,7 +55,7 @@ var result = {
     }
 };
 
-/** Helper functions 'decodeToString' and 'decodeToJson' are already built-in **/
+/** 辅助函数 'decodeToString' 和 'decodeToJson' 已内置 **/
 
 return result;
 ```

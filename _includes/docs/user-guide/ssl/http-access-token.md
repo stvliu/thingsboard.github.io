@@ -1,6 +1,6 @@
 * TOC
 {:toc}
 
-Access Token Based Authentication is the default device authentication type. Once the device is created in ThingsBoard, the default access token is generated. It can be changed afterwards.
-In order to connect the device to a server using Access Token based authentication, the client must specify the access token as part of HTTP request URL.
-See [HTTP API](/docs/{{docsPrefix}}reference/coap-api/) for more details. There are no specific examples, since all modern HTTP clients support HTTPS as well.
+基于访问令牌的身份验证是默认的设备身份验证类型。在设备在 ThingsBoard 中创建后，将生成默认访问令牌。之后可以更改它。
+为了使用基于访问令牌的身份验证将设备连接到服务器，客户端必须将访问令牌指定为 HTTP 请求 URL 的一部分。
+有关更多详细信息，请参阅 [HTTP API](/docs/{{docsPrefix}}reference/coap-api/)。没有具体示例，因为所有现代 HTTP 客户端也支持 HTTPS。

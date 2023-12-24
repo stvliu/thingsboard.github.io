@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-pe
-title: HTTP Integration
-description: HTTP integration guide 
+title: HTTP 集成
+description: HTTP 集成指南
 
 send-uplink:
     0:

@@ -1,43 +1,43 @@
-To subscribe to RPC commands from edge for the **Air Conditioner** device you need to get the **Air Conditioner** device credentials first.
-ThingsBoard supports different device credentials. We recommend to use default auto-generated credentials which is access token for this guide.
+要订阅来自边缘的针对 **空调** 设备的 RPC 命令，您首先需要获取 **空调** 设备凭据。
+ThingsBoard 支持不同的设备凭据。我们建议使用本指南中的默认自动生成凭据，即访问令牌。
 
-Please open ThingsBoard **Edge** UI using the URL: **EDGE_URL**.
+请使用以下 URL 打开 ThingsBoard **Edge** UI：**EDGE_URL**。
 
 {% include images-gallery.html imageCollection="copyAccessTokenAirConditioner" showListImageTitles="true" %}
 
-Now you are ready to subscribe to RPC commands for Air Conditioner device.
-We will use simple commands to subscribe to RPC commands over MQTT protocol in this example.
+现在，您已准备好订阅空调设备的 RPC 命令。
+在本示例中，我们将使用简单的命令通过 MQTT 协议订阅 RPC 命令。
 
-Please download following scripts to your local folder:
+请将以下脚本下载到您的本地文件夹：
 - [**mqtt-js.sh**](/docs/edge/use-cases/resources/manage-alarms-rpc-requests/mqtt-js.sh)
 - [**cooler.js**](/docs/edge/use-cases/resources/manage-alarms-rpc-requests/cooler.js)
 
 {% include templates/edge/node-js-installed-banner.md %}
 
-Before running the scripts, please modify **mqtt-js.sh** accordingly:
+在运行脚本之前，请相应地修改 **mqtt-js.sh**：
 
-- Replace **YOUR_ACCESS_TOKEN** with **Air Conditioner** device access token copied from the steps above. 
+- 将 **YOUR_ACCESS_TOKEN** 替换为从上述步骤中复制的 **空调** 设备访问令牌。
 
-- Replace **YOUR_TB_EDGE_HOST** with your ThingsBoard Edge host. For example, **localhost**.
+- 将 **YOUR_TB_EDGE_HOST** 替换为您的 ThingsBoard Edge 主机。例如，**localhost**。
 
-- Replace **YOUR_TB_EDGE_MQTT_PORT** with your ThingsBoard Edge MQTT port. For example, **11883** or **1883**.
+- 将 **YOUR_TB_EDGE_MQTT_PORT** 替换为您的 ThingsBoard Edge MQTT 端口。例如，**11883** 或 **1883**。
 
-Open the terminal, go to the folder that contains **mqtt-js.sh** and **cooler.js** scripts and make sure it is executable:
+打开终端，转到包含 **mqtt-js.sh** 和 **cooler.js** 脚本的文件夹，并确保它可执行：
 ```shell
  chmod +x *.sh
 ```
 
-Install **mqtt** node module to be able to use mqtt package in the **cooler.js** script:
+安装 **mqtt** 节点模块，以便能够在 **cooler.js** 脚本中使用 mqtt 包：
 ```shell
 npm install mqtt --save
 ```
 
-Then run the following command:
+然后运行以下命令：
 ```shell
 bash mqtt-js.sh
 ```
 
-You should see the following screen with your host and device token:
+您应该会看到以下屏幕，其中显示您的主机和设备令牌：
 
 ```shell
 pc@pc-XPS-15-9550:~/alarm-tutorial$ bash mqtt-js.sh
@@ -46,5 +46,5 @@ Cooler is connected!
 ```
 
 {% capture new-tab %}
-Please open a new terminal tab to push temperature telemetry to device and leave this running in the background until end of the guide.{% endcapture %}
+请打开一个新的终端选项卡，将温度遥测数据推送到设备，并将其留在后台运行，直到本指南结束。{% endcapture %}
 {% include templates/info-banner.md content=new-tab %}

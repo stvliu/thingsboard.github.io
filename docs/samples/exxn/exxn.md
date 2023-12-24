@@ -1,165 +1,165 @@
 ---
 layout: docwithnav
-title: EXXN IoT Gateway
-description: EXXN IoT Gateway Integration guide
+title: EXXN IoT 网关
+description: EXXN IoT 网关集成指南
 
 ---
 
 * TOC
 {:toc}
 
-## Introduction
+## 简介
 
-The EXXN IoT Gateway is a versatile device with an ARM processor that can be adapted to a variety of use cases, including monitoring environmental sensors, energy consumption, radon gas levels, marine environments, and edge computing.
+EXXN IoT 网关是一款多功能设备，配备 ARM 处理器，可适应各种用例，包括监测环境传感器、能耗、氡气水平、海洋环境和边缘计算。
 
-This guide outlines the process for integrating an EXXN IoT Gateway with the ThingsBoard platform to enable remote monitoring and management of devices.
+本指南概述了将 EXXN IoT 网关与 ThingsBoard 平台集成的过程，以实现对设备的远程监控和管理。
 
 <br>
-An example of a dashboard developed with ThingsBoard that displays metrics captured by an EXXN IoT Gateway.
+使用 ThingsBoard 开发的仪表板示例，显示 EXXN IoT 网关捕获的指标。
 
 ![image](/images/samples/exxn/ennx-dashboard.png)
 
-## Prerequisites
+## 先决条件
 
-In this tutorial, we will configure an EXXN IoT Gateway to integrate it with ThingsBoard via the MQTT API. In order to do this we will use:
+在本教程中，我们将配置 EXXN IoT 网关，通过 MQTT API 将其与 ThingsBoard 集成。为此，我们将使用：
 
- - EXXN IoT Gateway 'Cell 1024';
- - We must have connection to the device and the Device have to be connected to the Internet via Ethernet, Modem or Wifi.
+- EXXN IoT 网关“Cell 1024”；
+- 我们必须连接到设备，并且设备必须通过以太网、调制解调器或 Wi-Fi 连接到互联网。
 
-## Technical characteristics
-The technical specifications of the EXXN IoT Gateway 'Cell 1024' used in this guide are:
-* ARM Cortex-A53 Quad-Core 64-bit Processor
+## 技术特性
+本指南中使用的 EXXN IoT 网关“Cell 1024”的技术规格如下：
+* ARM Cortex-A53 四核 64 位处理器
 * GPU Mali 470
 * 2GB DDR4
 * 8GB eMMC
-* 10/100 Mbit/s Ethernet
+* 10/100 Mbit/s 以太网
 * Wi-Fi 802.11 b/g/n/AC
-* Bluetooth 4.2
+* 蓝牙 4.2
 * PoE
-* Possibility of hardware development for custom functionalities
+* 硬件开发的可能性，以实现自定义功能
 
 <p align="center">
    <img src="/images/samples/exxn/cell_1024.jpg" alt="cell 1024">
 </p>
 
-## Provisioning the device for Thingsboard
+## 为 Thingsboard 配置设备
 
-Contains instructions that are necessary to connect your device to ThingsBoard.
+包含将设备连接到 ThingsBoard 所需的说明。
 
-### Create device
+### 创建设备
 
-Open your platform instance or ThingsBoard [cloud](https://thingsboard.cloud/) in browser and login as tenant administrator.
+在浏览器中打开平台实例或 ThingsBoard [云](https://thingsboard.cloud/)，并以租户管理员身份登录。
 
-Go to "**Device groups**" tab -> "**All**" and click "plus" button to add a new device.
+转到“**设备组**”选项卡 -> “**全部**”，然后单击“加号”按钮添加新设备。
 
-Enter device name, select existing or create a new [device profile](https://thingsboard.io/docs/user-guide/device-profiles/) and click on "Add" button.
+输入设备名称，选择现有设备或创建新的 [设备配置文件](https://thingsboard.io/docs/user-guide/device-profiles/)，然后单击“添加”按钮。
 
 ![image](/images/samples/exxn/exxn-create-device-cell-1.png)
 
-Your device has been created. Open its details and copy auto-generated **access token** by clicking on the "Copy access token" button.
+您的设备已创建。打开其详细信息，然后单击“复制访问令牌”按钮，复制自动生成的 **访问令牌**。
 
 ![image](/images/samples/exxn/exxn-create-device-cell-2.png)
 
-### Device configuration
+### 设备配置
 
-Open a Browser to the administration web of Cell 1024 using this URL: https://[IP_DEVICE] and go to the 'Cloud' tab:
+使用此 URL：https://[IP_DEVICE] 打开浏览器访问 Cell 1024 的管理网页，然后转到“云”选项卡：
 <br>
 <br>
   <img src="/images/samples/exxn/conn1.png" alt="conn1">
 
-Activate the Cloud control and configure all the parameters to connect the device to the specific ThingsBoard platform via MQTT:
+激活云控件，并配置所有参数，通过 MQTT 将设备连接到特定的 ThingsBoard 平台：
 
 <img src="/images/samples/exxn/conn2.png" alt="conn2">
 
-Configuration parameters:
-- **Cloud Platform**: Select ThingsBoard.
-- **MQTT broker URL**: URL to de Broker of the server we want to integrate to.
-- **MQTT broker port**: Number of the port used by the server.
-- **TLS**: Select true if the server use the Transport Layer Security protocol.
-- **Connection Type**: Select 'Access Token' option. We will use an Access token previously created in ThingsBoard.
-- **Access Token**: Indicate the Access token previously copyed in ThingsBoard.
+配置参数：
+- **云平台**：选择 ThingsBoard。
+- **MQTT 代理 URL**：我们要集成的服务器的代理 URL。
+- **MQTT 代理端口**：服务器使用的端口号。
+- **TLS**：如果服务器使用传输层安全协议，请选择 true。
+- **连接类型**：选择“访问令牌”选项。我们将使用之前在 ThingsBoard 中创建的访问令牌。
+- **访问令牌**：指明之前在 ThingsBoard 中复制的访问令牌。
 
 {% capture domain_owner_note %}
-**Note**
+**注意**
 
-Currently, the IoT EXXN Gateways use the 'Access Token' integration method. We are working on a Pre-Provisioning integration method that will eliminate the need to copy this Access token on the device.
+目前，IoT EXXN 网关使用“访问令牌”集成方法。我们正在开发一种预配置集成方法，该方法将无需在设备上复制此访问令牌。
 
 {% endcapture %}
 {% include templates/info-banner.md content=domain_owner_note %}
 
-Click "Save configuration" button.
+单击“保存配置”按钮。
 
 <img src="/images/samples/exxn/conn3.png" alt="conn3">
 
 <br>
-To verify that the device is connected correctly to ThingsBoard, go to the **Device groups** menu -> **All** devices, select your device. In the **device details** select **client attributes** tab and check if the client attributes have been communicated to the device.
+要验证设备是否已正确连接到 ThingsBoard，请转到 **设备组** 菜单 -> **全部** 设备，选择您的设备。在 **设备详细信息** 中选择 **客户端属性** 选项卡，然后检查客户端属性是否已传达给设备。
 
-If you did everything is correct, we will see client attributes like the *serial_number*, *last_rebbot*, *device_model*, etc.
+如果您一切操作正确，我们将看到客户端属性，如 *serial_number*、*last_rebbot*、*device_model* 等。
 
 ![image](/images/samples/exxn/exxn-client-attributes-device-1.png)
 
-## ThingsBoard configuration
+## ThingsBoard 配置
 
-The EXXN IoT Gateway will connect to ThingsBoard using the MQTT API. <br>
-We have previously covered how to configure the device to connect to ThingsBoard. Now, we will show the steps to configure the device in ThingsBoard in order to monitor data and manage the device.
+EXXN IoT 网关将使用 MQTT API 连接到 ThingsBoard。 <br>
+我们之前已经介绍了如何配置设备以连接到 ThingsBoard。现在，我们将展示在 ThingsBoard 中配置设备的步骤，以便监控数据和管理设备。
 
-In order to configurate the datalogger options of the EXXN IoT Gateway, we must to create a new JSON 'Shared' Attribute for the Device with de key 'config'.
+为了配置 EXXN IoT 网关的数据记录器选项，我们必须为设备创建一个新的 JSON“共享”属性，其键为“config”。
 
- - Go to devices **attributes** tab in the device details. Add a new "**Shared**" attribute with the key "config" of type **JSON**.
+- 转到设备详细信息中的 **属性** 选项卡。添加一个新的“**共享**”属性，其键为“config”，类型为 **JSON**。
 
 ![image](/images/samples/exxn/exxn-shared-attributes-device-1.png)
 
- - Expand the content of the attribute to full screen for ease of writing it. Paste the contents of the device configuration file into the attribute value.
+- 将属性的内容展开为全屏，以便轻松编写。将设备配置文件的内容粘贴到属性值中。
 
 ![image](/images/samples/exxn/ennx-config-json.png)
 
-An example of this JSON file can be downloaded from this [link](/docs/samples/exxn/resources/config.json).
+可以从 [此链接](/docs/samples/exxn/resources/config.json) 下载此 JSON 文件的示例。
 
-All the information to configure the device correctly through this JSON File can be found in the EXXN IoT Gateway Manual.
+可以在 EXXN IoT 网关手册中找到通过此 JSON 文件正确配置设备的所有信息。
 
- - Click "Add" attribute.
+- 单击“添加”属性。
 
 ![image](/images/samples/exxn/exxn-shared-attributes-device-2.png)
 
-### Data Visualization
+### 数据可视化
 
-Create a [dashboard](https://thingsboard.io/docs/pe/user-guide/dashboards/) to visualize telemetry values in widgets.
+创建一个 [仪表板](https://thingsboard.io/docs/pe/user-guide/dashboards/)，以在小部件中可视化遥测值。
 
- - Go to the **Dashboard groups** tab -> **All**. Creat new dashboard by clicking the "plus" button in the upper right corner of the dashboards page. Enter dashboard name and click on "Add" button.
+- 转到 **仪表板组** 选项卡 -> **全部**。通过单击仪表板页面右上角的“加号”按钮创建新仪表板。输入仪表板名称，然后单击“添加”按钮。
 
 ![image](/images/samples/exxn/exxn-create-dashboard-1.png)
 
- - Create **Radial gauge** widget from the **Analohue gauges** bundle. Read more about widgets and their creation in [this guide](https://thingsboard.io/docs/pe/user-guide/dashboards/#widgets).
+- 从 **模拟仪表** 捆绑包中创建 **径向仪表** 小部件。在 [本指南](https://thingsboard.io/docs/pe/user-guide/dashboards/#widgets) 中详细了解小部件及其创建。
 
-All the measures that are 'enabled' in the device's JSON configuration file will be found as metrics with the name specified in the same file.
+在设备的 JSON 配置文件中“启用”的所有度量都将作为指标找到，名称在同一文件中指定。
 
 ![image](/images/samples/exxn/exxn-create-dashboard-2.png)
 
 <br>
 ![image](/images/samples/exxn/exxn-create-dashboard-3.png)
 
-### RPC commands
+### RPC 命令
 
-It is possible to send commands to the device to execute certain tasks. The parameters of the method must be in JSON format.
+可以向设备发送命令来执行某些任务。方法的参数必须采用 JSON 格式。
 
 ![image](/images/samples/exxn/exxn-rpc-button.png)
 
-All the commands that can be sent to the device are explained in the EXXN IoT Gateway manual.
+可以在 EXXN IoT 网关手册中了解可以发送到设备的所有命令。
 
-## Additional information
+## 其他信息
 
-### Troubleshooting
- - The most common problem in the integration process is not having a connection with the MQTT Broker. Make sure the device is connected to the internet and is able to communicate with the ThingsBoard Broker.
- - Another common problem is not setting the correct Access Token. Check that the provided Access token is configured in ThingsBoard for the device.
+### 故障排除
+- 集成过程中最常见的问题是无法连接到 MQTT 代理。确保设备已连接到互联网，并且能够与 ThingsBoard 代理通信。
+- 另一个常见问题是未设置正确的访问令牌。检查提供的访问令牌是否已在 ThingsBoard 中为设备配置。
 
 <br>
 
-### Feedback & Contact Us for your integration
+### 反馈和联系我们以进行集成
 
-For more information, visit our website at [EXXN Engineering](http://exxn.es/en/).
+有关更多信息，请访问我们的网站 [EXXN Engineering](http://exxn.es/en/)。
 <br>
-If you have any problems or doubts, please do not hesitate in contact us at: [troubleshooting@exxn.es](mailto://troubleshooting@exxn.es)
+如果您有任何问题或疑问，请随时通过以下方式与我们联系：[troubleshooting@exxn.es](mailto://troubleshooting@exxn.es)
 
-## Next steps
+## 后续步骤
 
 {% assign currentGuide = "HardwareSamples" %}{% include templates/guides-banner.md %}

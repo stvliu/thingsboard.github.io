@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-paas
-title: TheThingsIndustries Integration
-description: TheThingsIndustries Integration Guide 
+title: TheThingsIndustries 集成
+description: TheThingsIndustries 集成指南
 
 ---
 {% assign docsPrefix = "paas/" %}

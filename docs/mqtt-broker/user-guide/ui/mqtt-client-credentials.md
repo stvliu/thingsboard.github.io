@@ -1,40 +1,40 @@
 ---
 layout: docwithnav-mqtt-broker
-title: MQTT Client Credentials
-description: UI MQTT Client Credentials
+title: MQTT 客户端凭据
+description: UI MQTT 客户端凭据
 
 add-client-credentials:
   0:
     image: /images/mqtt-broker/user-guide/ui/add-client-credentials-1.png
-    title: 'Go to the Credentials page and click the Add Client Credentials button, represented by a "plus" icon.'
+    title: '转到凭据页面，然后单击“添加客户端凭据”按钮，该按钮由“加号”图标表示。'
   1:
     image: /images/mqtt-broker/user-guide/ui/add-client-credentials-2.png
-    title: 'Fill in the Name, Credentials Type.'
+    title: '填写名称、凭据类型。'
   2:
     image: /images/mqtt-broker/user-guide/ui/add-client-credentials-3.png
-    title: 'Fill in the Authentication settings.'
+    title: '填写身份验证设置。'
   3:
     image: /images/mqtt-broker/user-guide/ui/add-client-credentials-4.png
-    title: 'Set Authorization rules.'
+    title: '设置授权规则。'
 
 change-password-basic-credentials:
   0:
     image: /images/mqtt-broker/user-guide/ui/change-password-1.png
-    title: 'Go to the Credentials page, click on the corresponding row and click the Edit button.'
+    title: '转到凭据页面，单击相应行，然后单击编辑按钮。'
   1:
     image: /images/mqtt-broker/user-guide/ui/change-password-2.png
-    title: 'Click the Change password button.'
+    title: '单击更改密码按钮。'
   2:
     image: /images/mqtt-broker/user-guide/ui/change-password-3.png
-    title: 'Input your current password and set a new one. Click the Change password button'
+    title: '输入当前密码并设置新密码。单击更改密码按钮'
 
 delete-client-credentials:
   0:
     image: /images/mqtt-broker/user-guide/ui/delete-credentials-1.png
-    title: 'Delete single. Click on the icon "Delete".'
+    title: '删除单个。单击“删除”图标。'
   1:
     image: /images/mqtt-broker/user-guide/ui/delete-credentials-2.png
-    title: 'Delete mulptiple. Click on the checkboxes and confirm action by clicking on the button "Delete" in the top right corner.'
+    title: '删除多个。单击复选框，然后单击右上角的“删除”按钮确认操作。'
 
 ---
 

@@ -1,9 +1,9 @@
 ---
 layout: devices-library-article
-title: How to connect HummingBoard Gate to ThingsBoard?
-category: Single-board computers
+title: 如何将 HummingBoard Gate 连接到 ThingsBoard？
+category: 单板计算机
 chip: i.MX6DualLite
-connectivity: Ethernet, WIFI, Bluetooth
+connectivity: 以太网、WIFI、蓝牙
 vendor: SolidRun
 deviceImageFileName: hummingboard-gate.png
 docsPrefix: pe/

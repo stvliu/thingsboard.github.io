@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-pe
-title: Installing ThingsBoard PE from Alibaba Cloud Marketplace
-description: Installing ThingsBoard PE from Alibaba Cloud Marketplace
+title: 从阿里云市场安装 ThingsBoard PE
+description: 从阿里云市场安装 ThingsBoard PE
 
 ---
 

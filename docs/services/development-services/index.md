@@ -21,7 +21,7 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
                     sizes="(max-width: 671px) 360px, (max-width: 999px) 560px, (min-width: 1000px)  1127px, 2254px"
                     src="/images/development-services/laptop-with-dashboard_1127x720_1x.png"
                     alt="Laptop with a dashboard"/>
-                <button class="button schedule anchor-button" data-href="#get-in-touch">Contact Us</button>
+                <button class="button schedule anchor-button" data-href="#get-in-touch">联系我们</button>
             </div>
             <div class="image-wrapper-icon-phone">
                 <img
@@ -36,15 +36,15 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
                     src="/images/development-services/half-circle-progress.svg"
                     alt="half cicrle progress icon"/>
                 <span class="result-number">100%</span>
-                <span class="result-text">We offer time-guaranteed result</span>
-                <button class="button anchor-button" data-href="#get-in-touch">Contact Us</button>
+                <span class="result-text">我们提供有时间保证的结果</span>
+                <button class="button anchor-button" data-href="#get-in-touch">联系我们</button>
             </div>
         </div>
     </div>
 </section>
 
 <section class="our-customers">
-    <span class="title">We created solutions for:</span>
+    <span class="title">我们为以下客户创建了解决方案：</span>
     <div class="customer-logos">
         <div class="logo">
             <img src="/images/development-services/logo-kalitec.svg" alt="logo kalitec"/>
@@ -67,10 +67,10 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
     <div class="content-wrapper">
         <div class="header">
             <div class="side-title">
-                <span>OUR SERVICES</span>
+                <span>我们的服务</span>
             </div>
-            <div class="section-title">From complicated widgets to diverse IoT solutions</div>
-            <div class="section-text">If you are facing constraints in terms of time and resources for configuring the solution, custom development unit is equipped to handle all development and configuration tasks according to your requirements and the defined scope, ensuring seamless delivery.</div>
+            <div class="section-title">从复杂的部件到多样化的物联网解决方案</div>
+            <div class="section-text">如果您在配置解决方案方面面临时间和资源的限制，那么定制开发部门将根据您的要求和定义的范围来处理所有开发和配置任务，确保无缝交付。</div>
         </div>
     </div>
     <div id="content-poc" class="content-wrapper">
@@ -99,13 +99,13 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
             </div>
             <div class="right-block">
                 <div class="section-title">
-                    Proof of concept
+                    概念验证
                 </div>
                 <ul class="section-list">
-                    <li>One-two layers dashboard</li>
-                    <li>Emulated data with simple logic of data processing</li>
-                    <li>Default widgets for visualization</li>
-                    <li>1 type of user role</li>
+                    <li>一到两层仪表板</li>
+                    <li>具有简单数据处理逻辑的模拟数据</li>
+                    <li>用于可视化的默认部件</li>
+                    <li>1 种用户角色</li>
                 </ul>
             </div>
             <img id="number-one" class="absolute-image" src="/images/development-services/number-1.svg" alt="background number one">
@@ -115,13 +115,13 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
         <div class="mvp">
             <div class="left-block">
                 <div class="section-title">
-                    Minimal value product
+                    最小值产品
                 </div>
                 <ul class="section-list">
-                    <li>Multiple layers dashboard</li>
-                    <li>Real connected devices with concrete logic of data processing, agriculture, calculations, etc</li>
-                    <li>Alarms and notification setup</li>
-                    <li>A diverse range of user roles and permissions are available</li>
+                    <li>多层仪表板</li>
+                    <li>具有具体数据处理逻辑的真实连接设备，农业、计算等</li>
+                    <li>设置警报和通知</li>
+                    <li>提供各种用户角色和权限</li>
                 </ul>
             </div>
             <div class="right-block">
@@ -161,13 +161,13 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
             </div>
             <div class="right-block">
                 <div class="section-title">
-                    Ready for the market solutions
+                    面向市场的解决方案
                 </div>
                 <ul class="section-list">
-                    <li>Multiple layers dashboard</li>
-                    <li>Real connected devices with concrete logic of data processing, agracationg, calculations, etc</li>
-                    <li>Alarms and notification setup</li>
-                    <li>External system integrations (e.g. Billing system, analytic system, etc.)</li>
+                    <li>多层仪表板</li>
+                    <li>具有具体数据处理逻辑的真实连接设备，农业、计算等</li>
+                    <li>设置警报和通知</li>
+                    <li>外部系统集成（例如计费系统、分析系统等）</li>
                 </ul>
             </div>
             <img id="number-three" class="absolute-image" src="/images/development-services/number-3.svg" alt="Background number three">
@@ -176,19 +176,19 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
     <div class="content-wrapper">
         <div class="additionally">
             <div class="side-title">
-                <span>additionally</span>
+                <span>此外</span>
             </div>
             <div class="info">
                 <div class="left-block">
                     <div class="section-title">
-                        We offer architecture design session for clear vision of your product
+                        我们提供架构设计会议，以便您清晰地了解您的产品
                     </div>
                     <div class="section-text">
-                        In case you are facing uncertainty regarding your user story, topology, or system design, the ThingsBoard development team offers an architecture design session. With our one-week architecture session, we assure you that you will receive a comprehensive and detailed document with a well-structured roadmap, including all the necessary steps to deliver a clarified scope of work and successfully implement your idea.
+                        如果您在用户故事、拓扑或系统设计方面存在不确定性，ThingsBoard 开发团队将提供架构设计会议。通过我们为期一周的架构会议，我们向您保证，您将收到一份包含结构良好的路线图的全面而详细的文档，其中包括交付明确的工作范围和成功实施您的想法的所有必要步骤。
                     </div>
                 </div>
                 <div class="right-block">
-                    <button class="anchor-button" data-href="#get-in-touch">Contact Us</button>
+                    <button class="anchor-button" data-href="#get-in-touch">联系我们</button>
                 </div>
             </div>
             <span id="additionally-bg1"></span>
@@ -202,10 +202,10 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
     <div class="content-wrapper">
         <div class="upper-block">
             <div class="side-title">
-                <span>testimonials</span>
+                <span>评价</span>
             </div>
             <div class="section-title">
-                What our clients say about us
+                我们的客户对我们的评价
             </div>
         </div>
         <div id="carousel-wrapper">
@@ -214,41 +214,41 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
                     <div class="logo">
                         <img src="/images/development-services/logo-asg-tech.svg" alt="logo asg tech"/>
                     </div>
-                    <div class="review-header">Exceptional experience working with ThingsBoard's unit</div>
+                    <div class="review-header">与 ThingsBoard 部门合作的非凡体验</div>
                     <div class="review-body">
-                        <h6>We are delighted to share our exceptional experience working with ThingsBoard's development unit for custom widget development. As a company specializing in delivering innovative IoT solutions, working with ThingsBoard Professional Edition platform, we sought their expertise to reduce our time to market. From the initial estimation to the final delivery, ThingsBoard's development team demonstrated remarkable professionalism and technical prowess.</h6>
+                        <h6>我们很高兴分享我们与 ThingsBoard 开发部门合作的非凡体验，以进行定制部件开发。作为一家专门提供创新物联网解决方案的公司，与 ThingsBoard Professional Edition 平台合作，我们寻求他们的专业知识来缩短我们的上市时间。从最初的估算到最终交付，ThingsBoard 的开发团队展示了卓越的专业精神和技术能力。</h6>
                     </div>
-                    <a href="/docs/services/development-services/customers-full-reviews/#review-asg" class="full-review-link">Read full feedback</a>
+                    <a href="/docs/services/development-services/customers-full-reviews/#review-asg" class="full-review-link">阅读完整反馈</a>
                 </div>
                 <div class="review">
                     <div class="logo">
                         <img src="/images/development-services/logo-kalitec.svg" alt="logo kalitec"/>
                     </div>
-                    <div class="review-header">Very professional in its approach to projects</div>
+                    <div class="review-header">在项目中非常专业</div>
                     <div class="review-body">
-                        <h6>The Thingsboard team is very professional in its approach to projects. They can help you design and implement your ideas with solid attention to detail. They make sure to clearly understand your challenges so they can provide you the best scenario to get your project up and running quickly.</h6>
+                        <h6>Thingsboard 团队在项目中非常专业。他们可以帮助您设计和实施您的想法，并非常注重细节。他们确保清楚地了解您的挑战，以便他们能够为您提供最佳方案，以便快速启动并运行您的项目。</h6>
                     </div>
-                    <a href="/docs/services/development-services/customers-full-reviews/#review-kalitec" class="full-review-link">Read full feedback</a>
+                    <a href="/docs/services/development-services/customers-full-reviews/#review-kalitec" class="full-review-link">阅读完整反馈</a>
                 </div>
                 <div class="review">
                     <div class="logo">
                         <img src="/images/development-services/logo-super-bock-group.svg" alt="logo super bock group"/>
                     </div>
-                    <div class="review-header">Impressed by professionalism, knowledge, and commitment</div>
+                    <div class="review-header">对专业精神、知识和承诺印象深刻</div>
                     <div class="review-body">
-                        <h6>At Super Bock Bebidas, S.A. we pride ourselves on our ability to adapt, innovate, and stay ahead of the curve. We have been using in-house beer drive tanks and tracking systems for many years. It served us well, but as the times evolved, we realized our system had become outdated, lacking the efficiency we desired. That's when we discovered ThingsBoard.</h6>
+                        <h6>在 Super Bock Bebidas, S.A.，我们为自己的适应能力、创新能力和保持领先地位的能力感到自豪。我们已经使用内部啤酒驱动罐和跟踪系统多年了。它为我们提供了良好的服务，但随着时间的推移，我们意识到我们的系统已经过时，缺乏我们想要的高效性。那时我们发现了 ThingsBoard。</h6>
                     </div>
-                    <a href="/docs/services/development-services/customers-full-reviews/#review-superbockgroup" class="full-review-link">Read full feedback</a>
+                    <a href="/docs/services/development-services/customers-full-reviews/#review-superbockgroup" class="full-review-link">阅读完整反馈</a>
                 </div>
                 <div class="review">
                     <div class="logo">
                         <img src="/images/development-services/logo-iona-tech.svg" alt="logo iona tech"/>
                     </div>
-                    <div class="review-header">Expertise, attention to detail, and client satisfaction</div>
+                    <div class="review-header">专业知识、对细节的关注和客户满意度</div>
                     <div class="review-body">
-                        <h6>We have found the Thingsboard suite to be the best in class tool for presenting our Industrial IoT data to customers. Our distributed hardware solution is built to monitor electrostatic discharge (ESD) conditions in electronics manufacturing. The functionality of TB's software stack is extensive and the documentation makes it easy to get up and running.</h6>
+                        <h6>我们发现 Thingsboard 套件是向客户展示我们的工业物联网数据的最佳工具。我们的分布式硬件解决方案旨在监控电子制造中的静电放电 (ESD) 条件。TB 软件堆栈的功能非常强大，文档使您可以轻松启动并运行。</h6>
                     </div>
-                    <a href="/docs/services/development-services/customers-full-reviews/#review-ionatech" class="full-review-link">Read full feedback</a>
+                    <a href="/docs/services/development-services/customers-full-reviews/#review-ionatech" class="full-review-link">阅读完整反馈</a>
                 </div>
             </div>
         </div>
@@ -259,11 +259,11 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
     <div class="content-wrapper">
         <div id="content-get-in-touch">
             <div class="side-title">
-                <span id="side-title-heading">get in touch</span>
+                <span id="side-title-heading">联系我们</span>
             </div>
             <div class="info">
-                <div class="section-title">Ready to launch your unique product?</div>
-                <div class="section-text">Leave us your name and email and we will get back to you within 2 business days</div>
+                <div class="section-title">准备好推出您独特的产品了吗？</div>
+                <div class="section-text">留下您的姓名和电子邮件，我们将在 2 个工作日内回复您</div>
             </div>
             <form id="contact-form" class="contact-form" method="post" onsubmit="return validateContactForm(this)">
                 <fieldset>
@@ -271,18 +271,18 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
                         <div class="form-element">
                             <label for="name">
                                 <input id="name" class="cdu-form-control" value="" placeholder="Your Name" name="name" type="text" size="40" maxlength="50">
-                                <p>Name*</p>
+                                <p>姓名*</p>
                             </label>
                         </div>
                         <div class="form-element">
                             <label for="email">
                                 <input id="email" class="cdu-form-control" value="" placeholder="Enter Email" name="email" type="email" size="40" maxlength="80">
-                                <p>Email Address*</p>
+                                <p>电子邮件地址*</p>
                             </label>
                         </div>
                     </div>
                     <div class="submit-button-container">
-                        <input class="cdu-button" value="Submit" type="submit">
+                        <input class="cdu-button" value="提交" type="submit">
                     </div>
                 </fieldset>
             </form>

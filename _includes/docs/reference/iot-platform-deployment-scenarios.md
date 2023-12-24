@@ -1,249 +1,249 @@
-
 * TOC
 {:toc}
 
-This article describes most popular deployment architectures supported by ThingsBoard. 
-All deployment scenarios contain certain pros and cons. 
-Choosing the right architecture for your deployment depends on the TCO, performance and high-availability requirements.
-We will start from the most simple scenarios and see how the minimalistic deployment can be upgraded to most complex ones.
+本文介绍了 ThingsBoard 支持的最流行的部署架构。
+所有部署方案都包含一定的优缺点。
+为你的部署选择合适的架构取决于 TCO、性能和高可用性要求。
+我们将从最简单的方案开始，看看如何将最小的部署升级到最复杂的部署。
 
-Herewith you can find total cost of ownership (TCO) calculations for ThingsBoard deployed using AWS.  
-Important notice: all calculation and pricing below are approximate and are listed as an example.
-Please consult your cloud provider in order to get your accurate pricing.
+在此你可以找到使用 AWS 部署 ThingsBoard 的总拥有成本 (TCO) 计算。
+重要提示：以下所有计算和定价都是近似的，仅作为示例列出。
+请咨询你的云提供商以获取准确的定价。
 
-## Performance requirements
+## 性能要求
 
-We have prepared a list of items to quickly estimate typical IoT solution performance requirements:
+我们准备了一份清单，以便快速估算典型的物联网解决方案的性能要求：
 
-1. Total number of connected devices, assets, customers, customer users and tenants in production or per year;
-2. Maximum and average amount of messages per day per device;
-3. Maximum and average size of device payload;
-4. Average amount of data points in each message; 
-5. Communication protocol or Integration type used for device connectivity;
-6. Entities data lifetime (in years).
+1. 生产中或每年连接的设备、资产、客户、客户用户和租户的总数；
+2. 每台设备每天的最大和平均消息数量；
+3. 设备有效负载的最大和平均大小；
+4. 每条消息中的数据点平均数量；
+5. 用于设备连接的通信协议或集成类型；
+6. 实体数据生命周期（以年为单位）。
 
-Once we have rough vision over above mentioned parameters we (as well as you) will be able to estimate required infrastucture.  
-ThingsBoard performance heavily depends on both the amount of messages produced by devices and the structure of those messages.
+一旦我们对上述参数有了大致的了解，我们（以及你）就可以估算出所需的基础设施。
+ThingsBoard 的性能在很大程度上取决于设备产生的消息数量和这些消息的结构。
 
-**Example 1: 20,000 trackers**
- 
-20,000 devices send messages to the cloud once per minute. Each message contains parameters as follows:
+**示例 1：20,000 个追踪器**
+
+20,000 台设备每分钟向云发送一次消息。每条消息包含以下参数：
 
 ```json
 {"latitude": 42.222222, "longitude": 73.333333, "speed": 55.5, "fuel": 92, "batteryLevel": 81}
 ```
-In this case ThingsBoard constantly maintains 20,000 connections and processes 333 messages per second. 
-Each message delivers 5 data points that may need to be graphed/analyzed/fetched separately. 
-This causes 1,667 write requests to the database per second and produces 143M requests per day.
-Based on the chosen database type, this results into approximately 1-2GB (Cassandra) or 7-10GB (PostgreSQL) daily.
 
-**Example 2: 100,000 smart meters** 
+在这种情况下，ThingsBoard 持续保持 20,000 个连接，并每秒处理 333 条消息。
+每条消息传递 5 个数据点，这些数据点可能需要分别绘制图表/分析/提取。
+这导致每秒向数据库发出 1,667 个写请求，每天产生 1.43 亿个请求。
+根据所选的数据库类型，这每天大约产生 1-2GB（Cassandra）或 7-10GB（PostgreSQL）。
 
-100,000 LoRaWAN devices send messages to the cloud once per hour. Each message structure is the following:
+**示例 2：100,000 个智能电表**
+
+100,000 台 LoRaWAN 设备每小时向云发送一次消息。每条消息的结构如下：
 
 ```json
 {"pulseCounter": 1234567, "leakage": false, "batteryLevel": 81}
 ```
-ThingsBoard receives uplink messages from one of the available Network Servers over HTTP or MQTT. 
-Typical message rate is 100,000 / 3600 = 28 messages per second, which is quite low. 
-Each message contains 3 data points, that may need to be graphed/analyzed/fetched separately. 
-However, we decide not to store "leakage" property since it is redundant ("false" most of the time). 
-We will only use it to generate the alarm.
-This causes 55.5 write requests to the database per second and produces 4.78M requests per day.
-Based on the chosen database type, this results into approximately 100MB (Cassandra) or 238MB (PostgreSQL) daily.
 
-## Key infrastructure characteristics
+ThingsBoard 通过 HTTP 或 MQTT 从可用网络服务器之一接收上行消息。
+典型消息速率为 100,000 / 3600 = 每秒 28 条消息，这相当低。
+每条消息包含 3 个数据点，这些数据点可能需要分别绘制图表/分析/提取。
+但是，我们决定不存储“泄漏”属性，因为它冗余（大多数时候为“false”）。
+我们只会用它来生成警报。
+这导致每秒向数据库发出 55.5 个写请求，每天产生 478 万个请求。
+根据所选的数据库类型，这每天大约产生 100MB（Cassandra）或 2.38MB（PostgreSQL）。
 
-Based on the [performance requirements](/docs/{{docsPrefix}}reference/iot-platform-deployment-scenarios/#performance-requirements), 
-you can identify key ThingsBoard server/cluster characteristics:
+## 关键基础设施特征
 
-- the number of **incoming messages per second** (mostly impacts RAM and CPU consumption);
-- the number of concurrent **active device sessions** (mostly impacts RAM consumption);
-- the number of **messages processed by Rule Engine** (mostly impacts CPU consumption);
-- the number of **persisted data points** (directly impacts IOPS and corresponding database). 
+根据 [性能要求](/docs/{{docsPrefix}}reference/iot-platform-deployment-scenarios/#performance-requirements)，
+你可以确定 ThingsBoard 服务器/集群的关键特征：
 
-ThingsBoard cluster can scale horizontally, so you quite easily deal with RAM/CPU influencers. 
-However, you need to carefully plan amount of persisted data points (the last item in the list above).
-In case you intent to use PostgreSQL, we recommend to have less then 20,000 data points records per second.
-In case you plan to use Hybrid database approach (PostgreSQL and Cassandra) you can scale telemetry (Cassandra) writes to 1M data points/second, although the attribute updates are pushed to PostgreSQL, so 20,000 limit remains valid.  
+- 每秒传入消息的数量（主要影响 RAM 和 CPU 消耗）；
+- 并发活动设备会话的数量（主要影响 RAM 消耗）；
+- 规则引擎处理的消息数量（主要影响 CPU 消耗）；
+- 持久化数据点数量（直接影响 IOPS 和相应数据库）。
 
-## Deployment Scenarios
+ThingsBoard 集群可以横向扩展，因此你可以很容易地处理 RAM/CPU 影响因素。
+但是，你需要仔细规划持久化数据点数量（上述列表中的最后一项）。
+如果你打算使用 PostgreSQL，我们建议每秒少于 20,000 个数据点记录。
+如果你计划使用混合数据库方法（PostgreSQL 和 Cassandra），你可以将遥测（Cassandra）写入扩展到每秒 100 万个数据点，尽管属性更新被推送到 PostgreSQL，因此 20,000 的限制仍然有效。
 
-### Standalone server deployment (Scenario A)
+## 部署方案
 
-The most simple deployment scenario is suitable for up to 300 000 devices with 10,000 messages and 10,000 data points per second based on real production use cases.  
-This scenario requires both ThingsBoard platform and PostgreSQL database deployment within the same server (on-premise or in the cloud). 
-The HAProxy load balancer is also installed on the same server and acts as a reverse proxy and optionally TLS termination proxy.
-See diagram below.
+### 独立服务器部署（方案 A）
+
+最简单的部署方案适用于多达 300,000 台设备，每秒 10,000 条消息和 10,000 个数据点，基于实际生产用例。
+此方案要求在同一服务器（内部部署或云端）中部署 ThingsBoard 平台和 PostgreSQL 数据库。
+HAProxy 负载均衡器也安装在同一服务器上，充当反向代理和可选的 TLS 终止代理。
+请参见下图。
 
 <object width="80%" data="/images/reference/deployment/single.svg"></object>
 
-**Pros**:
+**优点**：
 
-* Very simple setup, literally: 10 minutes to deploy using [our installation guides](/docs/user-guide/install/{{docsPrefix}}installation-options/).
-* Easy to maintain and update the software instance.
+* 非常简单的设置，从字面上看：使用 [我们的安装指南](/docs/user-guide/install/{{docsPrefix}}installation-options/)部署只需 10 分钟。
+* 易于维护和更新软件实例。
 
-**Cons**:
+**缺点**：
 
-* Upgrades cause downtime, which is approximately 5-10 minute per upgrade.  
-* Minimum high-availability. In case of hardware or application failure all devices and users are affected. 
-* No data durability. Everything is stored on one server.
-* Performance of the system is limited by performance of the single server.
+* 升级会导致停机，每次升级大约需要 5-10 分钟。
+* 最低高可用性。如果硬件或应用程序发生故障，所有设备和用户都会受到影响。
+* 没有数据持久性。所有内容都存储在一个服务器上。
+* 系统的性能受到单个服务器性能的限制。
 
-**Performance**:
+**性能**：
 
-Overall performance of the solution depends on the instance hardware and heavily rely on the performance of the database.
-We suggest to use PostgreSQL for both entities and telemetry data in Standalone server deployment scenario.
-An average virtual environment can handle ~ 5,000 telemetry data points per second.
-See [key infrastructure characteristics](/docs/{{docsPrefix}}reference/iot-platform-deployment-scenarios/#key-infrastructure-characteristics)
-and [performance tests](/docs/{{docsPrefix}}reference/performance-aws-instances/) on different AWS instances. This information is useful for making right decision regarding the infrastructure for your solution. 
+解决方案的整体性能取决于实例硬件，并且在很大程度上依赖于数据库的性能。
+我们建议在独立服务器部署方案中将 PostgreSQL 用于实体和遥测数据。
+平均虚拟环境每秒可以处理约 5,000 个遥测数据点。
+请参阅不同 AWS 实例上的 [关键基础设施特征](/docs/{{docsPrefix}}reference/iot-platform-deployment-scenarios/#key-infrastructure-characteristics) 和 [性能测试](/docs/{{docsPrefix}}reference/performance-aws-instances/)。此信息对于为你的解决方案的基础设施做出正确决策非常有用。
 
-**Total cost of ownership (TCO) example**:
+**总拥有成本 (TCO) 示例**：
 
-Assuming 10,000 LoRaWAN smart meter devices send messages to the cloud once per hour.
+假设 10,000 台 LoRaWAN 智能电表设备每小时向云发送一次消息。
 
-Single AWS EC2 "m5.large" instance costs ~41.66 USD per month (~500 USD annually in case of 1 year upfront payment).
-500 GB Storage price is 50 USD per month.
-Approximate infrastructure cost, respectively, is ~100 USD per month.
+单个 AWS EC2“m5.large”实例每月花费约 41.66 美元（如果预付一年，则每年约 500 美元）。
+500 GB 存储价格为每月 50 美元。
+相应的基础设施成本约为每月 100 美元。
 
-Single ThingsBoard PE perpetual license (below v3.0) cost is 2,999 USD (including with optional updates and basic support within initial year of usage). 1,199 USD is the respective pricing for the subsequent years of software updates + basic support.
+单个 ThingsBoard PE 永久许可证（低于 v3.0）的成本为 2,999 美元（包括可选更新和使用第一年的基本支持）。1,199 美元是后续年份的软件更新 + 基本支持的相应定价。
 
-TCO: ~350 USD per month. This price correlates with 0.035 USD per month per device, while the amount of devices is 10k. 
-Adding [Premium support](/docs/services/support/) package results in ~850 USD per month or 0.085 USD per month per device.  
+TCO：每月约 350 美元。此价格与每台设备每月 0.035 美元相关，而设备数量为 10k。
+添加 [高级支持](/docs/services/support/)套餐，每月花费约 850 美元，或每台设备每月 0.085 美元。
 
-**Comments and Recommendations**:
+**评论和建议**：
 
-This deployment scenario is quite simple and suites well for development environments, prototyping and early stage startup companies. 
-Before you go to production, we recommend to setup the data backup scripts and periodically upload database snapshots to durable storage (AWS S3, etc.). It is also useful to have regular snapshots of your server instance implemented in order to minimize the recovery time in case of possible outage.
-  
-If you would like to minimize resources spent for the database maintenance, we recommend to use cloud managed database. See Scenario B for more details. 
+此部署方案非常简单，非常适合开发环境、原型设计和早期创业公司。
+在投入生产之前，我们建议你设置数据备份脚本，并定期将数据库快照上传到持久存储（AWS S3 等）。
+为了在可能发生中断的情况下最大限度地缩短恢复时间，定期对你的服务器实例进行快照也很有用。
 
-### Single-server deployment with external database (Scenario B)
+如果你想最大限度地减少用于数据库维护的资源，我们建议使用云托管数据库。有关更多详细信息，请参阅方案 B。
 
-This deployment scenario rather similar to scenario A, but requires fully-managed database deployed on a separate server(s). 
-ThingsBoard customers successfully utilize [AWS RDS](https://aws.amazon.com/rds/postgresql/), [Azure Database for PostgreSQL](https://azure.microsoft.com/en-us/services/postgresql/) and
-[Google Cloud SQL](https://cloud.google.com/sql/docs/postgres/) to minimize efforts on database setup, backups and support.
-See diagram below.
+### 带有外部数据库的单服务器部署（方案 B）
+
+此部署方案与方案 A 非常相似，但需要在单独的服务器上部署完全托管的数据库。
+ThingsBoard 客户成功利用 [AWS RDS](https://aws.amazon.com/rds/postgresql/)、[Azure Database for PostgreSQL](https://azure.microsoft.com/en-us/services/postgresql/) 和
+[Google Cloud SQL](https://cloud.google.com/sql/docs/postgres/) 来最大限度地减少数据库设置、备份和支持方面的工作。
+请参见下图。
 
 <object width="80%" data="/images/reference/deployment/standalone.svg"></object>
 
-**Pros**:
+**优点**：
 
-* Very simple setup (approximately 1 hour to deploy using our installation guides).
-* Easy to maintain and update the software instance.
-* The data is stored separately with managed backups and failover.
+* 非常简单的设置（使用我们的安装指南部署大约需要 1 小时）。
+* 易于维护和更新软件实例。
+* 数据与托管备份和故障转移分开存储。
 
-**Cons**:
+**缺点**：
 
-* Upgrades cause downtime. The downtime is approximately 5 minute per upgrade.
-* Minimum high-availability. In case of hardware or application failure administrator is obliged to perform manual actions to up and run  the system. 
-* Performance of the system is limited by performance of the single server.
+* 升级会导致停机。每次升级大约需要 5 分钟的停机时间。
+* 最低高可用性。如果硬件或应用程序发生故障，管理员有义务执行手动操作来启动并运行系统。
+* 系统的性能受到单个服务器性能的限制。
 
-**Performance**:
+**性能**：
 
-Overall performance of the solution depends on the instance hardware and heavily rely on the performance of the database.
-We suggest to use PostgreSQL for both entities and telemetry data in this scenario.
-An average virtual environment can handle ~ 5,000 telemetry data points per second.
-See [key infrastructure characteristics](/docs/{{docsPrefix}}reference/iot-platform-deployment-scenarios/#key-infrastructure-characteristics)
-and [performance tests](/docs/{{docsPrefix}}reference/performance-aws-instances/) on different AWS instances.
+解决方案的整体性能取决于实例硬件，并且在很大程度上依赖于数据库的性能。
+我们建议在此方案中将 PostgreSQL 用于实体和遥测数据。
+平均虚拟环境每秒可以处理约 5,000 个遥测数据点。
+请参阅不同 AWS 实例上的 [关键基础设施特征](/docs/{{docsPrefix}}reference/iot-platform-deployment-scenarios/#key-infrastructure-characteristics) 和 [性能测试](/docs/{{docsPrefix}}reference/performance-aws-instances/)。
 
-**Total cost of ownership example for Scenario B**:
+**方案 B 的总拥有成本示例**：
 
-Assuming 10,000 LoRaWAN smart meter devices that send messages to the cloud once per hour.
+假设 10,000 台 LoRaWAN 智能电表设备每小时向云发送一次消息。
 
-Single AWS EC2 "m5.large" instance cost per month is ~41.66 USD (~500 USD annually in case of yearly upfront payment).
-Amazon RDS PostgreSQL instance cost is ~200 USD per month in case of db.t2.medium and Multi-AZ deployment.
-Approximate infrastructure cost: ~250 USD/month.
+单个 AWS EC2“m5.large”实例的每月成本约为 41.66 美元（如果预付一年，则每年约 500 美元）。
+Amazon RDS PostgreSQL 实例的成本约为每月 200 美元，如果是 db.t2.medium 和多可用区部署。
+基础设施成本约为每月 250 美元。
 
-Single ThingsBoard PE perpetual license costs 2,999 USD (including optional updates and basic support within initial year of usage). 1,199 USD  is the respective pricing for the subsequent years of software updates + basic support.
+单个 ThingsBoard PE 永久许可证的成本为 2,999 美元（包括可选更新和使用第一年的基本支持）。1,199 美元是后续年份的软件更新 + 基本支持的相应定价。
 
-TCO: ~500 USD per month or 0.05 USD per month per device for up to 10k devices use case. 
-Adding [Premium support](/docs/services/support/) package results in ~1000 USD per month or 0.1 USD per month per device.  
+TCO：每月约 500 美元，或每台设备每月 0.05 美元，适用于多达 10k 台设备的用例。
+添加 [高级支持](/docs/services/support/)套餐，每月花费约 1000 美元，或每台设备每月 0.1 美元。
 
-### Cluster deployment with the Microservices architecture (Scenario C)
+### 具有微服务架构的集群部署（方案 C）
 
-ThingsBoard supports Microservices architecture (MSA) to perform scalable deployments for millions of devices. See [platform architecture](/docs/{{docsPrefix}}reference/msa/) for more details, please. With MSA deployments, system administrator can flexibly tune number of transport, rule-engine, web-ui and JavaScript executor microservices to optimize the cluster according to the current load.
+ThingsBoard 支持微服务架构 (MSA) 来执行数百万台设备的可扩展部署。有关更多详细信息，请参阅 [平台架构](/docs/{{docsPrefix}}reference/msa/)。使用 MSA 部署，系统管理员可以灵活地调整传输、规则引擎、Web UI 和 JavaScript 执行器微服务的数量，以根据当前负载优化集群。
 
-ThingsBoard uses [Kafka](https://kafka.apache.org/) as a main message queue and streaming solution, [Redis](https://redis.io/) as a distributed cache and [Cassandra](https://cassandra.apache.org/) as a highly available, scalable and fast NoSQL database. 
-Note that Cassandra usage is optional and is recommended in case of high telemetry data rate (more then 20,000 data points per second)
-In other cases PostgreSQL based deployment is sufficient.
+ThingsBoard 使用 [Kafka](https://kafka.apache.org/) 作为主要的消息队列和流式解决方案，[Redis](https://redis.io/) 作为分布式缓存，[Cassandra](https://cassandra.apache.org/) 作为高可用、可扩展和快速的 NoSQL 数据库。
+请注意，Cassandra 的使用是可选的，并且在遥测数据速率高（每秒超过 20,000 个数据点）的情况下建议使用。
+在其他情况下，基于 PostgreSQL 的部署就足够了。
 
-**Pros**:
+**优点**：
 
-* Simple Kubernetes deployment.
-* No SPOF.
-* Highly available and system.
-* No downtimes during minor version upgrades.
+* 简单 Kubernetes 部署。
+* 无 SPOF。
+* 高可用性和系统。
+* 在小版本升级期间没有停机时间。
 
-**Cons**:
+**缺点**：
 
-* High TCO on small number of devices (<100 000 devices per ThingsBoard cluster).  
+* 在少量设备（每个 ThingsBoard 集群少于 100,000 台设备）上 TCO 高。
 
-**Performance**:
+**性能**：
 
-Overall performance of the solution depends on the cluster hardware and heavily rely on the performance of the database used.
-A cluster of virtual machines with 5 ThingsBoard servers and 5 Cassandra nodes can handle 1 million of devices;
-See [key infrastructure characteristics](/docs/{{docsPrefix}}reference/iot-platform-deployment-scenarios/#key-infrastructure-characteristics) for more details.
-  
-**Total cost of ownership examples for Cluster deployment scenario**:
+解决方案的整体性能取决于集群硬件，并且在很大程度上依赖于所用数据库的性能。
+一个包含 5 个 ThingsBoard 服务器和 5 个 Cassandra 节点的虚拟机集群可以处理 100 万台设备；
+有关更多详细信息，请参阅 [关键基础设施特征](/docs/{{docsPrefix}}reference/iot-platform-deployment-scenarios/#key-infrastructure-characteristics)。
 
-#### 1 Million Smart Meters TCO
+**集群部署方案的总拥有成本示例**：
 
-**Example 1:** Assuming **1,000,000** LoRaWAN/NB-IoT **smart meter** devices sending messages to the cloud **once per hour**. 
-Each message contains 3 data points that may need to be graphed/analyzed/fetched separately.
-We consider the messages are being sent to ThingsBoard via HTTP or UDP Integration, which is typical for such case.
+#### 100 万智能电表的 TCO
 
-1,000,000 devices represent 280 messages per second load (1,000,000 devices/3600 sec), which causes 280 x 3 = 840 write requests to the database (data points) every second, or 72.6M requests per day.
-Based on the chosen database type, above case results into approximately 1.2GB (Cassandra) or 4GB (PostgreSQL) of consumed disk space daily.
+**示例 1：**假设 **1,000,000** 台 LoRaWAN/NB-IoT **智能电表**设备每小时向云发送一次消息。
+每条消息包含 3 个数据点，可能需要单独绘制/分析/获取。
+我们认为消息是通过 HTTP 或 UDP 集成发送到 ThingsBoard 的，这对于这种情况很典型。
 
-The following Kubernetes cluster is sufficient to support this use case:
+1,000,000 台设备表示每秒 280 条消息的负载（1,000,000 台设备/3600 秒），这导致每秒 280 x 3 = 840 个对数据库的写请求（数据点），或每天 7260 万个请求。
+基于所选的数据库类型，上述情况每天大约会消耗 1.2GB（Cassandra）或 4GB（PostgreSQL）的磁盘空间。
 
-- 2 x "r5.xlarge" instances (4vCPUs and 32 GB of RAM) to host 2 ThingsBoard Node containers. Approx. price is ~380 USD/month.
-- 3 x "c5.large" instances (2vCPUs and 4 GB of RAM) to host 3 Zookeeper and ~9 JS Executors. Approx. price is ~120 USD/month.
-- Amazon ElastiCache for Redis based on 2 x "cache.m5.large". Approx. price is ~200 USD/month. 
-- Amazon Managed Streaming for Kafka based on 3 x "kafka.m5.large" and 1TB data storage. Estimate: 620 USD/month.
-- Amazon RDS for PostgreSQL based on "db.m5.large" Multi-AZ deployment. Estimate: 220 USD/month.
-- 1TB Multi-AZ deployment storage. The price is 230 USD/month. 
+以下 Kubernetes 集群足以支持此用例：
+
+- 2 个“r5.xlarge”实例（4 个 vCPU 和 32 GB RAM）来托管 2 个 ThingsBoard 节点容器。大约价格为每月 380 美元。
+- 3 个“c5.large”实例（2 个 vCPU 和 4 GB RAM）来托管 3 个 Zookeeper 和约 9 个 JS 执行器。大约价格为每月 120 美元。
+- 基于 2 个“cache.m5.large”的 Amazon ElastiCache for Redis。大约价格为每月 200 美元。
+- 基于 3 个“kafka.m5.large”和 1TB 数据存储的 Amazon Managed Streaming for Kafka。估计：每月 620 美元。
+- 基于“db.m5.large”多可用区部署的 Amazon RDS for PostgreSQL。估计：每月 220 美元。
+- 1TB 多可用区部署存储。价格为每月 230 美元。
 
 <object width="100%" data="/images/reference/deployment/smart-meter-cluster.svg"></object>
 
-Hence, approximate infrastructure cost is ~1,770 USD/month or 0.00177 USD/month per device.
+因此，基础设施成本约为每月 1,770 美元，或每台设备每月 0.00177 美元。
 
-Two ThingsBoard PE perpetual licenses cost 5,998 USD (including optional updates and basic support within initial year of usage). 2,398 USD is the respective pricing for the subsequent years of software updates + basic support.
-With more than 10k devices use cases we provide **Managed services** to support the production environment (not the basic Support subscriptions). The rate is 0.01 USD per device per month. 
- 
-TCO: ~12,270 USD per month or 0.01227 USD per month per device.
+两个 ThingsBoard PE 永久许可证的成本为 5,998 美元（包括可选更新和使用第一年的基本支持）。2,398 美元是后续年份的软件更新 + 基本支持的相应定价。
+对于超过 10k 台设备的用例，我们提供 **托管服务** 来支持生产环境（而不是基本支持订阅）。费率为每台设备每月 0.01 美元。
 
-**If you would like to reproduce this case on your cluster setup, please follow this guide:**
-[Smart Meters use case performance test](https://github.com/ashvayka/tb-pe-k8s-perf-tests/tree/scenario/1-million-smart-meters)
+TCO：每月约 12,270 美元，或每台设备每月 0.01227 美元。
 
-#### 1 Million Smart Trackers TCO
+**如果你想在你的集群设置中复制此案例，请按照以下指南操作：**
+[智能电表用例性能测试](https://github.com/ashvayka/tb-pe-k8s-perf-tests/tree/scenario/1-million-smart-meters)
 
-**Example 2:** Assuming 1,000,000 **smart tracker** devices sending readings to the cloud **once per minute**.
-Each message contains 5 data points that may need to be graphed/analyzed/fetched separately. 
+#### 100 万智能追踪器的 TCO
 
-Typical message rate is 1,000,000 / 60 sec. = 16,667 messages per second.
-This causes 16667 x 5 = 83,335 write requests to the database (data points) every second, or 7.2B requests per day.
-This load can be reliably handled with Cassandra and results to 144GB daily. Since the data need to be replicated 3 times within Cassandra it results to 432GB of disk space daily.
+**示例 2：**假设 1,000,000 台 **智能追踪器** 设备每分钟向云发送读数。
+每条消息包含 5 个数据点，可能需要单独绘制/分析/获取。
 
-The following Kubernetes cluster is sufficient to support this use case:
+典型的消息速率为 1,000,000 / 60 秒 = 每秒 16,667 条消息。
+这导致每秒 16667 x 5 = 83,335 个对数据库的写请求（数据点），或每天 7.2B 个请求。
+Cassandra 可以可靠地处理此负载，并每天产生 144GB。由于数据需要在 Cassandra 中复制 3 次，因此每天产生 432GB 的磁盘空间。
 
-- 8 x "c5.large" instances (2vCPUs and 4 GB of RAM) to host 8 ThingsBoard MQTT Transport containers. Approx. price is ~320 USD/month.
-- 15 x "c5.xlarge" instances (4vCPUs and 8 GB of RAM) to host 15 ThingsBoard Node containers. Approx. price is ~1095 USD/month.
-- 15 x "c5.xlarge" instances (4vCPUs and 8 GB of RAM) to host 15 Cassandra containers. Approx. price is ~1095 USD/month.
-- 3 x "c5.xlarge" instances (2vCPUs and 4 GB of RAM) to host 3 Zookeeper and ~30 JS Executors. Approx. price is ~240 USD/month.
-- Amazon ElastiCache for Redis based on 2 x "cache.m5.large". Approx. price is ~200 USD/month. 
-- Amazon Managed Streaming for Kafka based on 3 x "kafka.m5.large" and 1TB data storage. Estimate: 620 USD/month.
-- Amazon RDS for PostgreSQL based on "db.m5.large" Multi-AZ deployment. Estimate: 220 USD/month. 
-- 100TB of deployment storage. The price: 10,000 USD/month. 
+以下 Kubernetes 集群足以支持此用例：
+
+- 8 个“c5.large”实例（2 个 vCPU 和 4 GB RAM）来托管 8 个 ThingsBoard MQTT 传输容器。大约价格为每月 320 美元。
+- 15 个“c5.xlarge”实例（4 个 vCPU 和 8 GB RAM）来托管 15 个 ThingsBoard 节点容器。大约价格为每月 1095 美元。
+- 15 个“c5.xlarge”实例（4 个 vCPU 和 8 GB RAM）来托管 15 个 Cassandra 容器。大约价格为每月 1095 美元。
+- 3 个“c5.xlarge”实例（2 个 vCPU 和 4 GB RAM）来托管 3 个 Zookeeper 和约 30 个 JS 执行器。大约价格为每月 240 美元。
+- 基于 2 个“cache.m5.large”的 Amazon ElastiCache for Redis。大约价格为每月 200 美元。
+- 基于 3 个“kafka.m5.large”和 1TB 数据存储的 Amazon Managed Streaming for Kafka。估计：每月 620 美元。
+- 基于“db.m5.large”多可用区部署的 Amazon RDS for PostgreSQL。估计：每月 220 美元。
+- 100TB 的部署存储。价格：每月 10,000 美元。
 
 <object width="100%" data="/images/reference/deployment/smart-tracker-cluster.svg"></object>
 
-Thus approximate infrastructure cost is ~13,790 USD/month or 0.0138 USD/month per device.
-15 ThingsBoard PE perpetual licenses (below v3.0) cost 44,985 USD (including optional updates and basic support within initial year of usage). 17,985 USD is the respective pricing for the subsequent years of software updates + basic support.
-ThingsBoard **Managed services** to support the production environment: 0.01 USD per device per month. 
+因此，基础设施成本约为每月 13,790 美元，或每台设备每月 0.0138 美元。
+15 个 ThingsBoard PE 永久许可证（低于 v3.0）的成本为 44,985 美元（包括可选更新和使用第一年的基本支持）。17,985 美元是后续年份的软件更新 + 基本支持的相应定价。
+ThingsBoard **托管服务** 来支持生产环境：每台设备每月 0.01 美元。
 
-TCO: ~27,508 USD per month or 0.0275 USD per month per device.
+TCO：每月约 27,508 美元，或每台设备每月 0.0275 美元。
 
-**If you would like to reproduce this case on your cluster setup, please follow this guide:**
-[Smart Trackers use case performance test](https://github.com/ashvayka/tb-pe-k8s-perf-tests/tree/scenario/1-million-smart-trackers)
+**如果你想在你的集群设置中复制此案例，请按照以下指南操作：**
+[智能追踪器用例性能测试](https://github.com/ashvayka/tb-pe-k8s-perf-tests/tree/scenario/1-million-smart-trackers)

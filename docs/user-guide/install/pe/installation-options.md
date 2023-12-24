@@ -2,8 +2,8 @@
 layout: docwithnav-pe
 assignees:
 - ashvayka
-title: ThingsBoard Professional Edition installation options
-description: ThingsBoard Professional Edition installation instructions for various operation systems and cloud platforms
+title: ThingsBoard Professional Edition 安装选项
+description: ThingsBoard Professional Edition 安装说明，适用于各种操作系统和云平台
 notitle: "true"
 redirect_from: "/docs/pe/user-guide/install/installation-options/"
 ---
@@ -13,10 +13,10 @@ redirect_from: "/docs/pe/user-guide/install/installation-options/"
        <div class="install-options-hero">
           <div class="container">
             <div class="install-options-hero-content">
-                <h1>ThingsBoard Professional Edition installation options</h1>
+                <h1>ThingsBoard Professional Edition 安装选项</h1>
                 <div class="install-options-description">
                     <p>
-                        ThingsBoard Professional Edition is designed to run and utilize on majority of hardware, from local Raspberry PI to powerful servers in the cloud
+                        ThingsBoard Professional Edition 旨在运行并利用大多数硬件，从本地 Raspberry PI 到云中的强大服务器
                     </p>
                 </div>
             </div>
@@ -24,13 +24,13 @@ redirect_from: "/docs/pe/user-guide/install/installation-options/"
                 <nav id="install-navigation" class="install-navigation">
                      <ul id="menu-install-navigation-1" class="menu">
                         <li id="menu-item-liveDemo" class="menu-item tb-live-demo">
-                            <a href="javascript:void(0);" onClick="activateInstallSection('liveDemo')">Live demo</a>
+                            <a href="javascript:void(0);" onClick="activateInstallSection('liveDemo')">实时演示</a>
                         </li>
                         <li id="menu-item-onPremise" class="menu-item tb-on-premise active">
-                            <a href="javascript:void(0);" onClick="activateInstallSection('onPremise')">On premise</a>
+                            <a href="javascript:void(0);" onClick="activateInstallSection('onPremise')">本地</a>
                         </li>
                         <li id="menu-item-cloud" class="menu-item tb-cloud">
-                            <a href="javascript:void(0);" onClick="activateInstallSection('cloud')">Cloud</a>
+                            <a href="javascript:void(0);" onClick="activateInstallSection('cloud')">云</a>
                         </li>
                      </ul>
                 </nav>
@@ -43,7 +43,7 @@ redirect_from: "/docs/pe/user-guide/install/installation-options/"
                                         <a href="https://thingsboard.cloud/signup">
                                             <span>
                                                 <div class="deployment-logo">
-                                                    <img width="" src="/images/sign-pe-img.svg" title="Live Demo" alt="Live Demo">
+                                                    <img width="" src="/images/sign-pe-img.svg" title="实时演示" alt="实时演示">
                                                  </div>
                                             </span>
                                         </a>
@@ -94,7 +94,7 @@ redirect_from: "/docs/pe/user-guide/install/installation-options/"
                                         <a href="/docs/user-guide/install/pe/docker/">
                                             <span>
                                                 <div class="deployment-logo">
-                                                    <img width="" src="/images/install/platform/docker-linux-macos.svg" title="Docker (Linux or Mac OS)" alt="Docker (Linux or Mac OS)">
+                                                    <img width="" src="/images/install/platform/docker-linux-macos.svg" title="Docker (Linux 或 Mac OS)" alt="Docker (Linux 或 Mac OS)">
                                                  </div>
                                             </span>
                                         </a>
@@ -103,7 +103,7 @@ redirect_from: "/docs/pe/user-guide/install/installation-options/"
                                         <a href="/docs/user-guide/install/pe/cluster-setup/">
                                             <span>
                                                 <div class="deployment-logo">
-                                                    <img width="" src="/images/install/platform/cluster.svg" title="Cluster setup" alt="Cluster setup">
+                                                    <img width="" src="/images/install/platform/cluster.svg" title="集群设置" alt="集群设置">
                                                  </div>
                                             </span>
                                         </a>

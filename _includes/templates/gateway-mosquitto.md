@@ -1,9 +1,7 @@
-We will use Mosquitto MQTT broker for the demonstration purposes. See Mosquitto [downloads page](https://mosquitto.org/download/) for instructions how to install this broker.
+我们将使用 Mosquitto MQTT 代理进行演示。请参阅 Mosquitto [下载页面](https://mosquitto.org/download/)，了解如何安装此代理的说明。
 
-**NOTE:** Mosquitto and ThingsBoard use the same port (1883) for MQTT service by default. If you want to use ThingsBoard and Mosquitto on the same host, you need to change the mqtt port in one of the servers.
-See corresponding [ThingsBoard](/docs/user-guide/install/config/) or [Mosquitto](https://mosquitto.org/man/mosquitto-conf-5.html) documentation for more details.
+**注意：**默认情况下，Mosquitto 和 ThingsBoard 使用相同的端口 (1883) 来提供 MQTT 服务。如果您想在同一主机上使用 ThingsBoard 和 Mosquitto，则需要更改其中一台服务器的 MQTT 端口。有关更多详细信息，请参阅相应的 [ThingsBoard](/docs/user-guide/install/config/) 或 [Mosquitto](https://mosquitto.org/man/mosquitto-conf-5.html) 文档。
 
-Since we use ThingsBoard [demo instance](https://demo.thingsboard.io/signup) hosted in the cloud, we will install Mosquitto MQTT broker locally and use the default service configuration.
+由于我们使用的是托管在云中的 ThingsBoard [演示实例](https://demo.thingsboard.io/signup)，因此我们将本地安装 Mosquitto MQTT 代理并使用默认服务配置。
 
-If you decide to use other MQTT broker that is deployed to the external host or has specific security configuration, please edit **mqtt-config.json** file and modify connection parameters.
-See MQTT extension [configuration guide](/docs/iot-gateway/mqtt/) for more details.
+如果您决定使用部署到外部主机或具有特定安全配置的其他 MQTT 代理，请编辑 **mqtt-config.json** 文件并修改连接参数。有关更多详细信息，请参阅 MQTT 扩展 [配置指南](/docs/iot-gateway/mqtt/)。

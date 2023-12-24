@@ -1,17 +1,17 @@
 ---
 layout: docwithnav
-title: Nettra RTU overview
-description: ThingsBoard IoT Platform hardware samples for Nettra RTU devices.
+title: Nettra RTU 概述
+description: ThingsBoard IoT 平台硬件示例，适用于 Nettra RTU 设备。
 
 ---
 
 * TOC
 {:toc}
 
-## Samples
+## 示例
 
- - [Temperature upload over MQTT using Nettra RTU](/docs/samples/nettrartu+/rtu_temp_sensor/)
+ - [使用 Nettra RTU 通过 MQTT 上传温度](/docs/samples/nettrartu+/rtu_temp_sensor/)
 
-## Documentation
+## 文档
 
- - [Official site](https://nettra.tech)
+ - [官方网站](https://nettra.tech)

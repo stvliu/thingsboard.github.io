@@ -1,15 +1,15 @@
-In table below described parameters to configure authorization of IoT gateway on ThingsBoard platform.  
+下表描述了在 ThingsBoard 平台上配置 IoT 网关授权的参数。
 
-|**Parameter**|**Default value**|**Description**|
+| **参数** | **默认值** | **说明** |
 |:-|:-|-
-| caCert                   | **/etc/thingsboard-gateway/ca.pem**          | Path to CA file.                                                      |
-| privateKey               | **/etc/thingsboard-gateway/privateKey.pem**  | Path to private key file.                                             |
-| cert                     | **/etc/thingsboard-gateway/certificate.pem** | Path to certificate file.                                             |
-| checkCertPeriod          | **86400**                                    | The period in seconds when the certificate will be checked            |
-| certificateDaysLeft      | **3**                                        | Days until the certificate expires, when a new one will be generated  |
+| caCert                   | **/etc/thingsboard-gateway/ca.pem**          | CA 文件的路径。                                                      |
+| privateKey               | **/etc/thingsboard-gateway/privateKey.pem**  | 私钥文件的路径。                                             |
+| cert                     | **/etc/thingsboard-gateway/certificate.pem** | 证书文件的路径。                                             |
+| checkCertPeriod          | **86400**                                    | 检查证书的周期（以秒为单位）。                                   |
+| certificateDaysLeft      | **3**                                        | 证书到期前的天数，届时将生成新的证书。                          |
 |---    
 
-Security subsection in configuration file will look like this: 
+配置文件中的安全子部分将如下所示：
 
 ```json
 ...

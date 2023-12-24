@@ -1,104 +1,104 @@
 ---
 layout: docwithnav
-title: Integration Syrus 4 IoT Telematics Gateway - Thingsboard
-description: Syrus 4 IoT Telematics Gateway integration guide
+title: 集成 Syrus 4 IoT 远程信息处理网关 - Thingsboard
+description: Syrus 4 IoT 远程信息处理网关集成指南
 hidetoc: "true"
 
 ---
 
-{% assign feature = "Platform Integrations" %}{% include templates/pe-feature-banner.md %}
+{% assign feature = "平台集成" %}{% include templates/pe-feature-banner.md %}
 
 * TOC
 {:toc}
 
-## Description
+## 说明
 
-Here&#39;s a detailed integration example between Syrus 4G IoT Telematics Gateway with Thingsboard Platform over MQTT connection.
+这是一个详细的集成示例，介绍如何通过 MQTT 连接将 Syrus 4G IoT 远程信息处理网关与 Thingsboard 平台集成。
 
-## Getting Started
+## 入门
 
-[Syrus 4G IoT Telematics Gateway.](https://syrus.pegasusgateway.com/syrdocs/syrus4/getting-started/)
+[Syrus 4G IoT 远程信息处理网关。](https://syrus.pegasusgateway.com/syrdocs/syrus4/getting-started/)
 
-[Thingsboard Sign Up](https://demo.thingsboard.io/signup)
+[Thingsboard 注册](https://demo.thingsboard.io/signup)
 
-## Provisioning the device for Thingsboard
+## 为 Thingsboard 配置设备
 
-For simplicity, we will provision device manually using the UI.
+为简单起见，我们将使用 UI 手动配置设备。
 
-### 1. Login to your ThingsBoard instance and open Devices page.
+### 1. 登录到 ThingsBoard 实例并打开“设备”页面。
 
 ![image](/images/samples/syrus/device_page.png)
 
-Click on the &quot;+&quot; icon in the top right corner of the table and then select &quot;Add new device&quot;.
+单击表格右上角的“+”图标，然后选择“添加新设备”。
 
 ![image](/images/samples/syrus/add_device.png)
 
-Input device name. For example, &quot;Syrus&quot;. No other changes are required at this time. Click &quot;Add&quot; to add the device.
+输入设备名称。例如，“Syrus”。此时无需进行其他更改。单击“添加”以添加设备。
 
 ![image](/images/samples/syrus/name_device.png)
 
-Now your device should be listed first, since the table sorts the devices by using created time as default.
+现在，您的设备应首先列出，因为表格默认按创建时间对设备进行排序。
 
 ![image](/images/samples/syrus/device_details.png)
 
-### 2. Token creation
+### 2. 令牌创建
 
-To connect the device you need to get the device credentials first. ThingsBoard supports different device credentials. We recommend using default auto-generated credentials which is an access token for this guide.
+要连接设备，您首先需要获取设备凭据。ThingsBoard 支持不同的设备凭据。我们建议使用本指南中作为访问令牌的默认自动生成凭据。
 
-Click on the device row in the table to open device details
+单击表格中的设备行以打开设备详细信息
 
 ![image](/images/samples/syrus/copy_token.png)
 
-Click &quot;Copy access token&quot;. Token will be copied to your clipboard. Save it to a safe place.
+单击“复制访问令牌”。令牌将复制到您的剪贴板。将其保存在安全的地方。
 
-## Syrus 4G IoT Telematics Gateway Configuration
+## Syrus 4G IoT 远程信息处理网关配置
 
-The first step to do is make sure you have the latest version of Apex OS
+第一步是确保您拥有最新版本的 Apex OS
 
-### 1. Preparing your System
+### 1. 准备您的系统
 
-Go to Management Tool (**http://192.168.9.2**) if you&#39;re over USB cable), select System and confirm that you&#39;re up to date
+如果您通过 USB 电缆连接，请转到管理工具（**http://192.168.9.2**），选择“系统”并确认您已更新
 
 ![image](/images/samples/syrus/update_device.png)
 
-Now go to Applications Manager and Check for updates and make sure you have the latest version of SyrusJS application installed:
+现在，转到应用程序管理器并检查更新，确保您已安装最新版本的 SyrusJS 应用程序：
 
 ![image](/images/samples/syrus/js_latest.png)
 
-### 2. Create an instance
+### 2. 创建实例
 
-In application manager pull down the menu of SyrusJS, this will show you all versions installed of the application, select the latest one and Create a New Instance:
+在应用程序管理器中下拉 SyrusJS 菜单，这将向您显示已安装的所有应用程序版本，选择最新版本并创建新实例：
 
 ![image](/images/samples/syrus/new_instance.png)
 
-Name your instance and select the &quot;Create Instance&quot; button:
+为您的实例命名并选择“创建实例”按钮：
 
 ![image](/images/samples/syrus/name_instance.png)
 
 
-Now you have your instance created:
+现在，您已创建实例：
 
 ![image](/images/samples/syrus/instance_created.png)
 
-### 3. Creating your configuration files
+### 3. 创建配置文件
 
-We need to create two files on any notepad application (notepad++, sublime, vscode, etc), you can name it as you want but the extension must be syrus.conf
+我们需要在任何记事本应用程序（记事本++、崇高、vscode 等）上创建两个文件，您可以根据需要命名，但扩展名必须是 syrus.conf
 
 ![image](/images/samples/syrus/configuration_files.png)
 
-One file contains the destination data, protocol, output format, MQTT URI, username and topics.
+一个文件包含目标数据、协议、输出格式、MQTT URI、用户名和主题。
 
-you may define custom MQTT topics in the MQTT transport configuration. See [transport configuration](/docs/user-guide/device-profiles/#transport-configuration)
+您可以在 MQTT 传输配置中定义自定义 MQTT 主题。请参阅[传输配置](/docs/user-guide/device-profiles/#transport-configuration)
 
-here is an example:
+这是一个示例：
 
 ![image](/images/samples/syrus/example.png)
 
-Replace [YOUR\_TOKEN] with the copied access token you got from Thingsboard when you created the device.
+将 [YOUR\_TOKEN] 替换为您在创建设备时从 Thingsboard 复制的访问令牌。
 
-More information about: [https://syrus.pegasusgateway.com/syrdocs/syrus4/syruslang/#destinations](https://syrus.pegasusgateway.com/syrdocs/syrus4/syruslang/#destinations)
+有关更多信息：[https://syrus.pegasusgateway.com/syrdocs/syrus4/syruslang/#destinations](https://syrus.pegasusgateway.com/syrdocs/syrus4/syruslang/#destinations)
 
-The second file contains all the events that will be sent to the Thingsboard over MQTT, here is an example, this will send Ignition On/Off events and track points every minute:
+第二个文件包含将通过 MQTT 发送到 Thingsboard 的所有事件，这是一个示例，它将每分钟发送点火开/关事件和跟踪点：
 
 {% highlight bash %}
 _####### ###### ####### ###### #######_
@@ -150,46 +150,46 @@ _############ END MQTT EVENT ###########
 _####### ###### ####### ###### #######
 {% endhighlight %}
 
-If you need more information about how to configure more events please refer to SyrusLang documentation:
+如果您需要有关如何配置更多事件的更多信息，请参阅 SyrusLang 文档：
 
 [https://syrus.pegasusgateway.com/syrdocs/syrus4/syruslang](https://syrus.pegasusgateway.com/syrdocs/syrus4/syruslang)
 
-### 4. Upload your configuration files
+### 4. 上传配置文件
 
-Select your created instance:
+选择您创建的实例：
 
 ![image](/images/samples/syrus/select_instance.png)
 
-Go to Data Folder Tab:
+转到“数据文件夹”选项卡：
 
 ![image](/images/samples/syrus/data_tab.png)
 
-Select Upload File:
+选择“上传文件”：
 
 ![image](/images/samples/syrus/upload_file.png)
 
-And search in your local disk the previous configurations files created, and upload it one by one
+并在本地磁盘中搜索之前创建的配置文件，然后逐个上传
 
 ![image](/images/samples/syrus/upload_config.png)
 
-Go to Configuration tab, pull down in Configuration and Destination File, select you previously updated items and click Save button: 
+转到“配置”选项卡，在“配置”和“目标文件”中下拉，选择您之前更新的项目，然后单击“保存”按钮：
 
 ![image](/images/samples/syrus/select_configuration.png)
 
-### 5. Start your instance
+### 5. 启动您的实例
 
-Finally, go back to the Information tab and click the Start button:
+最后，返回“信息”选项卡并单击“启动”按钮：
 
 ![image](/images/samples/syrus/information_tab.png)
 
-## Check your data in Thingsboard demo account
+## 在 Thingsboard 演示帐户中检查您的数据
 
-The reported variables are automatically created according to the fieldset configuration.
+报告的变量会根据字段集配置自动创建。
 
-Go to Devices, choose Syrus 4 and click &quot;Latest telemetry&quot;
+转到“设备”，选择 Syrus 4，然后单击“最新遥测”
 
 ![image](/images/samples/syrus/latest_telemetry.png)
 
-Now you can use Thingsboard&#39;s tools to design your own dashboard with Syrus 4G data:
+现在，您可以使用 Thingsboard 的工具使用 Syrus 4G 数据设计自己的仪表板：
 
 ![image](/images/samples/syrus/dashboard.png)

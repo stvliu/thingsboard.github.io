@@ -1,6 +1,6 @@
-Device provisioning from the Edge to the Server is automatic, requiring no additional actions. 
-Once a device is created on the Edge, it will be automatically published to the Server.
+从边缘到服务器的设备配置是自动的，无需其他操作。
+在边缘创建设备后，它将自动发布到服务器。
 
-To view the provisioned device, please open **{{currentThingsBoardVersion}}** by visiting **SERVER_URL**. 
+要查看已配置的设备，请访问 **SERVER_URL** 打开 **{{currentThingsBoardVersion}}**。
 
 {% include images-gallery.html imageCollection="step2" showListImageTitles="true" %}

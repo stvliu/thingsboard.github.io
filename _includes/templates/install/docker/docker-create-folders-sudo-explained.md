@@ -1,5 +1,5 @@
-Before starting your Docker containers, execute the following commands to create directories for data storage and logs. 
-These commands will also change the ownership of the newly created directories to the Docker container user.
+在启动 Docker 容器之前，执行以下命令以创建用于数据存储和日志的目录。
+这些命令还将新创建的目录的所有权更改为 Docker 容器用户。
 
-The **chown** command is used to change the owner of the directories, and it requires *sudo* permissions. 
-You may be prompted to enter a password to grant sudo access:
+**chown** 命令用于更改目录的所有者，并且需要 *sudo* 权限。
+系统可能会提示您输入密码以授予 sudo 访问权限：

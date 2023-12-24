@@ -1,20 +1,17 @@
-Check the **Create Loriot Application output** checkbox. 
+选中 **创建 Loriot 应用程序输出** 复选框。
 
-Let`s open the account in LORIOT. The link contains the server that we selected at the registration stage. It need to be specified in the integration.
+让我们在 LORIOT 中打开帐户。该链接包含我们在注册阶段选择的服务器。需要在集成中指定它。
 
 {% include images-gallery.html imageCollection="server" preview="false" %}
 
-By default, Applications is already created. It used for our integration in the example. To get the value we need, go to Аpplications.
+默认情况下，应用程序已创建。它用于我们示例中的集成。要获取我们所需的值，请转到应用程序。
 
 {% include images-gallery.html imageCollection="applications" preview="false" %}
 
-This value needed at the stage of creating the integration to fill in the Application ID field.
+在创建集成阶段需要此值来填写应用程序 ID 字段。
 
 {% include images-gallery.html imageCollection="application_id" preview="false" %}
 
-Then click on the “Credentials - Basic” block and input the email and password from your account to account in LORIOT.
+然后单击“凭据 - 基本”块，并输入您的 LORIOT 帐户的电子邮件和密码。
 
 {% include images-gallery.html imageCollection="basic" preview="false" %}
-
-
-

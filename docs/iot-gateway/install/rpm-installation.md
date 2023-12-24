@@ -1,40 +1,40 @@
 ---
 layout: docwithnav-gw
-title: Install ThingsBoard IoT Gateway as package.
+title: 以软件包形式安装 ThingsBoard IoT 网关。
 
 ---
 
 
-### Prerequisites
+### 先决条件
 
-This guide describes how to install ThingsBoard IoT Gateway on CentOS or RHEL.
+本指南介绍如何在 CentOS 或 RHEL 上安装 ThingsBoard IoT 网关。
 
-### Step 1. Download the installation package
+### 步骤 1. 下载安装包
 
-Download installation package.
+下载安装包。
 
 ```bash
 wget https://github.com/thingsboard/thingsboard-gateway/releases/download/2.0/python3-thingsboard-gateway.rpm
 ```
 {: .copy-code}
 
-### Step 2. Install the gateway using yum
+### 步骤 2. 使用 yum 安装网关
 
-Install ThingsBoard IoT Gateway as package and run it as daemon use the following command:<br><br>
+使用以下命令以软件包形式安装 ThingsBoard IoT 网关并以守护进程形式运行它：<br><br>
 
 ```bash
 sudo yum install -y ./python3-thingsboard-gateway.rpm
 ```
 {: .copy-code}  
 
-### Step 3. Check gateway status 
+### 步骤 3. 检查网关状态
 
 ```bash
 systemctl status thingsboard-gateway
 ```
 {: .copy-code}
 
-You may notice some errors in the output. However, it is expected, since gateway is not configured to connect to ThingsBoard yet:
+您可能会在输出中注意到一些错误。但是，这是预期的，因为网关尚未配置为连接到 ThingsBoard：
 
 ```text
 ... python3[7563]: ''2019-12-26 09:31:15' - ERROR - mqtt_connector - 181 - Default Broker connection FAIL with error 5 not authorised!'
@@ -43,6 +43,6 @@ You may notice some errors in the output. However, it is expected, since gateway
 ... python3[7563]: ''2019-12-26 09:31:17' - DEBUG - tb_client - 78 - connecting to ThingsBoard'
 ```
 
-### Step 4. Configure the gateway 
+### 步骤 4. 配置网关
 
-Now you can go to [**configuration guide**](/docs/iot-gateway/configuration/) to configure the gateway.
+现在，您可以转到 [**配置指南**](/docs/iot-gateway/configuration/) 来配置网关。

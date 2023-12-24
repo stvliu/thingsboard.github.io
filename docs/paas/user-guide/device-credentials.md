@@ -2,8 +2,8 @@
 layout: docwithnav-paas
 assignees:
 - ashvayka
-title: Device authentication options
-description: ThingsBoard IoT Device authentication options.
+title: 设备认证选项
+description: ThingsBoard IoT 设备认证选项。
 
 ---
 

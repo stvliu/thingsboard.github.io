@@ -2,34 +2,34 @@
 layout: docwithnav
 assignees:
 - ashvayka
-title: Notification center
-description: IoT alarm notifications
+title: 通知中心
+description: IoT 警报通知
 
 notification-center-send-notification:
     0:
         image: /images/user-guide/notifications/notification-center-send-notification-1-ce.png
-        title: 'To send a notification click the “Send notification” button in the upper right corner of the notification page;'
+        title: '要发送通知，请点击通知页面右上角的“发送通知”按钮；'
     1:
         image: /images/user-guide/notifications/notification-center-send-notification-2-ce.png
-        title: 'In new window, select recipients and one or more delivery methods. In this example, let`s consider the Web delivery method;'
+        title: '在新窗口中，选择收件人和一种或多种发送方式。在此示例中，我们考虑 Web 发送方式；'
     2:
         image: /images/user-guide/notifications/notification-center-send-notification-3-ce.png
-        title: 'If necessary, use the scheduler. Click "Next";'
+        title: '如有必要，请使用调度程序。点击“下一步”；'
     3:
         image: /images/user-guide/notifications/notification-center-send-notification-4-ce.png
-        title: 'Enter the subject of the message and the text of the message;'
+        title: '输入消息的主题和消息的文本；'
     4:
         image: /images/user-guide/notifications/notification-center-send-notification-5-ce.png
-        title: 'You can use the "Action button" in the notification. Enter the button text, select the action type ("Open dashboard" or "Open URL link") and specify the URL link or dashboard that should open when the button is clicked. You can also display the icon in the notification and set its color. Click "Next";'
+        title: '您可以在通知中使用“操作按钮”。输入按钮文本，选择操作类型（“打开仪表盘”或“打开 URL 链接”），并指定点击按钮时应打开的 URL 链接或仪表盘。您还可以显示通知中的图标并设置其颜色。点击“下一步”；'
     5:
         image: /images/user-guide/notifications/notification-center-send-notification-6-ce.png
-        title: 'In this window, you can see how the notification will look and also view the list of notification recipients. Click "Send";'
+        title: '在此窗口中，您可以看到通知的外观，还可以查看通知收件人列表。点击“发送”；'
     6:
         image: /images/user-guide/notifications/notification-center-send-notification-7-ce.png
-        title: 'User received a new notification. The user can view it by clicking on the bell icon in the upper right corner of the screen or in the Notification center page;'
+        title: '用户收到一条新通知。用户可以通过点击屏幕右上角的铃铛图标或在通知中心页面中查看该通知；'
     7:
         image: /images/user-guide/notifications/notification-center-send-notification-9-ce.png
-        title: 'By clicking on the "Open this dashboard" button in the message, the user will open the dashboard window.'
+        title: '通过点击消息中的“打开此仪表盘”按钮，用户将打开仪表盘窗口。'
     8:
         image: /images/user-guide/notifications/notification-center-send-notification-10-ce.png
         title: ''
@@ -37,183 +37,183 @@ notification-center-send-notification:
 notification-center-inbox:
     0:
         image: /images/user-guide/notifications/notification-center-inbox-1-ce.png
-        title: 'The “Inbox” tab displays unread notifications by default;'
+        title: '“收件箱”选项卡默认显示未读通知；'
     1:
         image: /images/user-guide/notifications/notification-center-inbox-2-ce.png
-        title: 'You may browse the notifications, delete them and mark them as read;'
+        title: '您可以浏览通知，删除通知并将其标记为已读；'
     2:
         image: /images/user-guide/notifications/notification-center-inbox-3-ce.png
-        title: 'You may also switch the view to browse all notifications.'
+        title: '您还可以切换视图以浏览所有通知。'
 
 notification-center-inbox-bell-icon:
     0:
         image: /images/user-guide/notifications/notification-inbox-bell-icon-1-ce.png
-        title: 'Click on the bell icon to view incoming notifications.'
+        title: '点击铃铛图标以查看传入通知。'
 
 notification-center-sent:
     0:
         image: /images/user-guide/notifications/notification-center-sent-1-ce.png
-        title: 'The “Sent” tab displays the status of sent notifications. You may use the “Notify again” button to copy an existing notification and send it again.'
+        title: '“已发送”选项卡显示已发送通知的状态。您可以使用“再次通知”按钮复制现有通知并再次发送。'
 
 notification-center-recipients:
     0:
         image: /images/user-guide/notifications/notification-center-recipients-1-ce.png
-        title: 'Click the "Add recipients" button;'
+        title: '点击“添加收件人”按钮；'
 
 notification-center-recipients-1:
     0:
         image: /images/user-guide/notifications/notification-center-recipients-2-ce.png
-        title: 'Click the "Add recipients" button. Enter the name of the notification recipients. Next, select one of the three types of recipients: platform users, Microsoft Teams and Slack entities. Click "Add";'
+        title: '点击“添加收件人”按钮。输入通知收件人的姓名。接下来，选择三种类型的收件人之一：平台用户、Microsoft Teams 和 Slack 实体。点击“添加”；'
     1:
         image: /images/user-guide/notifications/notification-center-recipients-3-ce.png
-        title: 'The new recipient is added.'
+        title: '添加了新收件人。'
 
 notification-center-recipients-2:
     0:
         image: /images/user-guide/notifications/notification-center-recipients-4-ce.png
-        title: 'Click the “Send notification” button. Then click the “Create new” button;'
+        title: '点击“发送通知”按钮。然后点击“新建”按钮；'
     1:
         image: /images/user-guide/notifications/notification-center-recipients-5-ce.png
-        title: 'Enter the name of the notification recipients. Next, select one of the three types of recipients: platform users, Microsoft Teams and Slack entities. From the "User filter" list, select who you want to send messages or notifications to. Click "Add";'
+        title: '输入通知收件人的姓名。接下来，选择三种类型的收件人之一：平台用户、Microsoft Teams 和 Slack 实体。从“用户筛选器”列表中，选择您要向其发送消息或通知的人员。点击“添加”；'
     2:
         image: /images/user-guide/notifications/notification-center-recipients-6-ce.png
-        title: 'The new recipient is added.'
+        title: '添加了新收件人。'
 
 notification-center-platform-users:
     0:
         image: /images/user-guide/notifications/notification-center-recipients-list-1-ce.png
-        title: 'Use "User filter" to define notification recipients.'
+        title: '使用“用户筛选器”定义通知收件人。'
 
 notification-center-recipients-slack:
     0:
         image: /images/user-guide/notifications/notification-center-recipients-slack-1-ce.png
-        title: 'Select Slack channel type to define notification recipients.'
+        title: '选择 Slack 频道类型以定义通知收件人。'
 
 notification-center-recipients-microsoft-teams:
     0:
         image: /images/user-guide/notifications/notification-center-recipients-microsoft-teams-1-ce.png
-        title: 'Create a new notification recipients group of type "Microsoft Teams" enter webhook URL and channel name.'
+        title: '创建类型为“Microsoft Teams”的新通知收件人组，输入 Webhook URL 和频道名称。'
 
 notification-center-templates:
     0:
         image: /images/user-guide/notifications/notification-center-templates-1-ce.png
-        title: 'Use "User filter" to define notification recipients.'
+        title: '使用“用户筛选器”定义通知收件人。'
 
 notification-center-add-templates:
     0:
         image: /images/user-guide/notifications/notification-center-add-templates-1-ce.png
-        title: 'Click the “Add template” button. Then enter notification template name and type. Select one or more delivery methods. In this example, let’s consider the Web delivery method. Click “Next”;'
+        title: '点击“添加模板”按钮。然后输入通知模板名称和类型。选择一种或多种发送方式。在此示例中，我们考虑 Web 发送方式。点击“下一步”；'
     1:
         image: /images/user-guide/notifications/notification-center-add-templates-2-ce.png
-        title: 'Enter the subject of the message and the text of the message;'
+        title: '输入消息的主题和消息的文本；'
     2:
         image: /images/user-guide/notifications/notification-center-add-templates-3-ce.png
-        title: 'You can use the "Action button" in the notification. Enter the button text, select the action type (“Open dashboard” or “Open URL link”) and specify the URL link or dashboard that should open when the button is clicked. You can also display the icon in the notification and set its color. Click “Next”;'
+        title: '您可以在通知中使用“操作按钮”。输入按钮文本，选择操作类型（“打开仪表盘”或“打开 URL 链接”），并指定点击按钮时应打开的 URL 链接或仪表盘。您还可以显示通知中的图标并设置其颜色。点击“下一步”；'
     3:
         image: /images/user-guide/notifications/notification-center-add-templates-4-ce.png
-        title: 'The new template is added.'
+        title: '添加了新模板。'
 
 notification-center-add-rule-alarm:
     0:
         image: /images/user-guide/notifications/notification-center-add-rule-alarm-1-ce.png
-        title: 'Сlick the "Add rule" button. Then enter rule name. Select trigger - Alarm. Then, select template from the list or create your own;'
+        title: '点击“添加规则”按钮。然后输入规则名称。选择触发器 - 警报。然后，从列表中选择模板或创建您自己的模板；'
     1:
         image: /images/user-guide/notifications/notification-center-add-rule-alarm-2-ce.png
-        title: 'Build an Escalation chain. Configure one or multiple recipients of the notification. Also configure alarm statuses, which will stop the escalation chain Click "Next";'
+        title: '构建升级链。配置通知的一个或多个收件人。还要配置警报状态，这将停止升级链。点击“下一步”；'
     2:
         image: /images/user-guide/notifications/notification-center-add-rule-alarm-3-ce.png
-        title: 'Filter alarms by type and severity. Also select the event types that will trigger notification. Click "Add";'
+        title: '按类型和严重性筛选警报。还要选择将触发通知的事件类型。点击“添加”；'
     3:
         image: /images/user-guide/notifications/notification-center-add-rule-alarm-4-ce.png
-        title: 'The new rule is created.'
+        title: '创建了新规则。'
 
 notification-center-add-rule-device-activity:
     0:
         image: /images/user-guide/notifications/notification-center-add-rule-device-activity-1-ce.png
-        title: 'Сlick the "Add rule" button. Then enter rule name. Select trigger - Alarm. Then, select template from the list and specify recipient. Click "Next";'
+        title: '点击“添加规则”按钮。然后输入规则名称。选择触发器 - 警报。然后，从列表中选择模板并指定收件人。点击“下一步”；'
     1:
         image: /images/user-guide/notifications/notification-center-add-rule-device-activity-2-ce.png
-        title: 'Filter notifications by specific devices or by device types. You may also select the event types that will trigger notification. Click "Add";'
+        title: '按特定设备或按设备类型筛选通知。您还可以选择将触发通知的事件类型。点击“添加”；'
     2:
         image: /images/user-guide/notifications/notification-center-add-rule-device-activity-3-ce.png
-        title: 'The new rule is created.'
+        title: '创建了新规则。'
 
 notification-center-add-rule-entity-action:
     0:
         image: /images/user-guide/notifications/notification-center-add-rule-entity-action-1-ce.png
-        title: 'Сlick the "Add rule" button. Then enter rule name. Select trigger - Entity action. Then, select template from the list and specify recipient. Click "Next";'
+        title: '点击“添加规则”按钮。然后输入规则名称。选择触发器 - 实体操作。然后，从列表中选择模板并指定收件人。点击“下一步”；'
     1:
         image: /images/user-guide/notifications/notification-center-add-rule-entity-action-2-ce.png
-        title: 'Filter notifications by entity type. You may also select the event types that will trigger notification. Click "Add";'
+        title: '按实体类型筛选通知。您还可以选择将触发通知的事件类型。点击“添加”；'
     2:
         image: /images/user-guide/notifications/notification-center-add-rule-entity-action-3-ce.png
-        title: 'The new rule is created.'
+        title: '创建了新规则。'
 
 notification-center-add-rule-alarm-comment:
     0:
         image: /images/user-guide/notifications/notification-center-add-rule-alarm-comment-1-ce.png
-        title: 'Сlick the "Add rule" button. Then enter rule name. Select trigger - Alarm comment. Then, select template from the list and specify recipient. Click "Next";'
+        title: '点击“添加规则”按钮。然后输入规则名称。选择触发器 - 警报注释。然后，从列表中选择模板并指定收件人。点击“下一步”；'
     1:
         image: /images/user-guide/notifications/notification-center-add-rule-alarm-comment-2-ce.png
-        title: 'The trigger filter allows you to filter alarms by type, severity, and status. You may also select to notify only on user comments and skip system comments. Optionally, you may notify users on comments update. Click "Add";'
+        title: '触发器筛选器允许您按类型、严重性和状态筛选警报。您还可以选择仅在用户评论时通知并跳过系统评论。或者，您可以在评论更新时通知用户。点击“添加”；'
     2:
         image: /images/user-guide/notifications/notification-center-add-rule-alarm-comment-3-ce.png
-        title: 'The new rule is created.'
+        title: '创建了新规则。'
 
 notification-center-add-rule-alarm-assignment:
     0:
         image: /images/user-guide/notifications/notification-center-add-rule-alarm-assignment-1-ce.png
-        title: 'Сlick the "Add rule" button. Then enter rule name. Select trigger - Alarm assignment. Then, select template from the list and specify recipient. Click "Next";'
+        title: '点击“添加规则”按钮。然后输入规则名称。选择触发器 - 警报分配。然后，从列表中选择模板并指定收件人。点击“下一步”；'
     1:
         image: /images/user-guide/notifications/notification-center-add-rule-alarm-assignment-2-ce.png
-        title: 'The trigger filter allows you to filter alarms by type, severity, and status. You may also select the event types that will trigger notification: assign or unassign. Click "Add";'
+        title: '触发器筛选器允许您按类型、严重性和状态筛选警报。您还可以选择将触发通知的事件类型：分配或取消分配。点击“添加”；'
     2:
         image: /images/user-guide/notifications/notification-center-add-rule-alarm-assignment-3-ce.png
-        title: 'The new rule is created.'
+        title: '创建了新规则。'
 
 notification-center-add-rule-engine-lifecycle-event:
     0:
         image: /images/user-guide/notifications/notification-center-add-rule-engine-lifecycle-event-1-ce.png
-        title: 'Сlick the "Add rule" button. Then enter rule name. Select trigger - Rule engine lifecycle event. Then, select template from the list and specify recipient. Click "Next";'
+        title: '点击“添加规则”按钮。然后输入规则名称。选择触发器 - 规则引擎生命周期事件。然后，从列表中选择模板并指定收件人。点击“下一步”；'
     1:
         image: /images/user-guide/notifications/notification-center-add-rule-engine-lifecycle-event-2-ce.png
-        title: 'The trigger filter allows you to filter alarms by type, severity, and status. You may also select the event types that will trigger notification: assign or unassign. Click "Add";'
+        title: '触发器筛选器允许您按类型、严重性和状态筛选警报。您还可以选择将触发通知的事件类型：分配或取消分配。点击“添加”；'
     2:
         image: /images/user-guide/notifications/notification-center-add-rule-engine-lifecycle-event-3-ce.png
-        title: 'The new rule is created.'
+        title: '创建了新规则。'
 
 notification-center-add-rule-entities-limit:
     0:
         image: /images/user-guide/notifications/notification-center-add-rule-entities-count-limit-1-ce.png
-        title: 'Сlick the "Add rule" button. Then enter rule name. Select trigger - Entities limit. Then, select template from the list and specify recipient. Click "Next";'
+        title: '点击“添加规则”按钮。然后输入规则名称。选择触发器 - 实体限制。然后，从列表中选择模板并指定收件人。点击“下一步”；'
     1:
         image: /images/user-guide/notifications/notification-center-add-rule-entities-count-limit-2-ce.png
-        title: 'The trigger filter allows you to filter entities by type and setup threshold. Click "Add";'
+        title: '触发器筛选器允许您按类型筛选实体并设置阈值。点击“添加”；'
     2:
         image: /images/user-guide/notifications/notification-center-add-rule-entities-count-limit-3-ce.png
-        title: 'The new rule is created.'
+        title: '创建了新规则。'
 
 notification-center-add-rule-api-usage-limit:
     0:
         image: /images/user-guide/notifications/notification-center-add-rule-api-usage-limit-1-ce.png
-        title: 'Сlick the "Add rule" button. Then enter rule name. Select trigger - API usage limit. Then, select template from the list and specify recipient. Click "Next";'
+        title: '点击“添加规则”按钮。然后输入规则名称。选择触发器 - API 使用限制。然后，从列表中选择模板并指定收件人。点击“下一步”；'
     1:
         image: /images/user-guide/notifications/notification-center-add-rule-api-usage-limit-2-ce.png
-        title: 'The trigger filter allows you to filter entities by API features. You may also select the event types that will trigger notification: enable, warning, disabled. Click "Add";'
+        title: '触发器筛选器允许您按 API 功能筛选实体。您还可以选择将触发通知的事件类型：启用、警告、禁用。点击“添加”；'
     2:
         image: /images/user-guide/notifications/notification-center-add-rule-api-usage-limit-3-ce.png
-        title: 'The new rule is created.'
+        title: '创建了新规则。'
 
 notification-center-add-rule-new-platform-version:
     0:
         image: /images/user-guide/notifications/notification-center-add-rule-new-platform-version-1-ce.png
-        title: 'Сlick the "Add rule" button. Then enter rule name. Select trigger - New platform version. Then, select template from the list and specify recipient. Click "Next";'
+        title: '点击“添加规则”按钮。然后输入规则名称。选择触发器 - 新平台版本。然后，从列表中选择模板并指定收件人。点击“下一步”；'
     1:
         image: /images/user-guide/notifications/notification-center-add-rule-new-platform-version-2-ce.png
-        title: 'Optionally enter a description, then click "Add";'
+        title: '或者输入说明，然后点击“添加”；'
     2:
         image: /images/user-guide/notifications/notification-center-add-rule-new-platform-version-3-ce.png
-        title: 'The new rule is created.'
+        title: '创建了新规则。'
 
 ---
 

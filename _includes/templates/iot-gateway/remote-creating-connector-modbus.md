@@ -1,27 +1,25 @@
-Let's add a **Modbus connector**, which will read some data from the demo slave to the 
-created gateway.
+让我们添加一个 **Modbus 连接器**，它将从演示从站读取一些数据到创建的网关。
 
-### Setup demo server
+### 设置演示服务器
 
-As a demo simulation slave, we will use docker image, that can be installed and run using the following commands:
+作为演示模拟从站，我们将使用 docker 镜像，可以使用以下命令安装并运行：
 ```shell
 docker ps
 ```
 {:.copy-code}
 
-Find your gateway container name as you can see on the following image and copy it:
+找到您的网关容器名称，如您在以下图像中看到的那样，并复制它：
 
 ![](/images/gateway/dashboard/copy-gateway-docker-container-name.png)
 
-Create an environment variable using the following command, replace `YOUR_TB_GATEWAY_CONTAINER_NAME` with the copied 
-gateway container name. Copy and run the provided command in your terminal:
+使用以下命令创建一个环境变量，将 `YOUR_TB_GATEWAY_CONTAINER_NAME` 替换为复制的网关容器名称。复制并运行终端中提供的命令：
 
 ```shell
 export TB_GATEWAY_CONTAINER_NAME=YOUR_TB_GATEWAY_CONTAINER_NAME
 ```
 {:.copy-code}
 
-Copy and execute the following command in your terminal:
+复制并执行终端中的以下命令：
 
 {% assign containerId = "{" | append: "{" | append: ".Id" | append: "}" | append: "}" %}
 
@@ -30,13 +28,13 @@ docker run -it --net=container:$(docker inspect -f '{{containerId}}' ${TB_GATEWA
 ```
 {:.copy-code}
 
-After running docker image, you can see the following logs in your terminal:
+运行 docker 镜像后，您可以在终端中看到以下日志：
 
 ![](/images/gateway/dashboard/run-demo-modbus-server.png)
 
-### Setup connector
+### 设置连接器
 
-Copy the following connector configuration (we will use it later):  
+复制以下连接器配置（我们稍后会用到）：
 
 ```json
 {
@@ -102,42 +100,39 @@ Copy the following connector configuration (we will use it later):
 ```
 {:.copy-code.expandable-20}
 
-To create a connector, use the following steps:
+要创建连接器，请执行以下步骤：
 
 {% assign addNewConnector = '
     ===
         image: /images/gateway/dashboard/gateway-getting-started-7-ce.png,
-        title: Click "**Connectors configuration**" button on the right panel.
+        title: 单击右侧面板上的“**连接器配置**”按钮。
     ===
         image: /images/gateway/dashboard/gateway-getting-started-modbus-8-ce.png,
-        title: Click the "**+**" button, fill in "**Name**", "**Type**" and "**Logging level**" fields, paste your connector configuration into **Configuration** field and click on **Save** button.
+        title: 单击“**+**”按钮，填写“**名称**”、“**类型**”和“**日志级别**”字段，将连接器配置粘贴到**配置**字段中，然后单击**保存**按钮。
     ===
         image: /images/gateway/dashboard/gateway-getting-started-modbus-9-ce.png,
-        title: Connector has been successfully added.
+        title: 连接器已成功添加。
     ===
         image: /images/gateway/dashboard/gateway-getting-started-modbus-10-ce.png,
-        title: Toggle the switch to enable the connector.
+        title: 切换开关以启用连接器。
 '
 %}
 
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=addNewConnector %} 
 
-Following the steps outlined, your gateway will receive and apply the new configuration. It will then synchronize 
-its state with the remote server. You can view the synchronization status of the connector configuration 
-in the "**Configuration**" column, which will indicate whether the gateway is successfully aligned with 
-the remote settings.
+按照概述的步骤，您的网关将接收并应用新配置。然后，它将与其状态同步远程服务器。您可以在“**配置**”列中查看连接器配置的同步状态，该列将指示网关是否已成功与远程设置对齐。
 
-Also, you can see the connector logs to make sure that connector works, for this purpose, use the following steps:
+此外，您可以查看连接器日志以确保连接器正常工作，为此，请执行以下步骤：
 {% assign seeConnectorLogs = '
     ===
         image: /images/gateway/dashboard/gateway-getting-started-modbus-logs-11-ce.png,
-        title: Click on logs icon to open connector logs page.
+        title: 单击日志图标以打开连接器日志页面。
     ===
         image: /images/gateway/dashboard/gateway-getting-started-modbus-logs-12-ce.png,
-        title: You can see the "**Logs**" table that consists of "**Created time**", "**Status**" and "**Message**" columns.
+        title: 您可以看到由“**创建时间**”、“**状态**”和“**消息**”列组成的“**日志**”表。
 '
 %}
 
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=seeConnectorLogs %}
 
-For now, the gateway is ready to process data through the newly created and configured Modbus connector.
+现在，网关已准备好通过新创建和配置的 Modbus 连接器处理数据。

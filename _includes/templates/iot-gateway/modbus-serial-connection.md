@@ -1,14 +1,13 @@
-| **Parameter**                 | **Default value**                     | **Description**                                                                                                               |
-|:-|:-|-
-| name                          | **Modbus Default Server**             | Name of connector to server.                                                                                                  |
-| type                          | **serial**                            | Type of connection may be **tcp**, **udp** or **serial**.                                                                     |
-| method                        | **rtu**                               | Type of application data unit - **rtu** or **ascii**                                                                          |
-| port                          | **/dev/ttyUSB0**                      | Serial port for connection.                                                                                                   |
-| baudrate                      | **19200**                             | Baudrate for The baud rate to use for the serial device.                                                                      |
-| stopbits                      | **1**                                 | The number of bits sent after each character in a message to indicate the end of the byte.                                    |
-| bytesize                      | **8**                                 | The number of bits in a byte of serial data.  This can be one of 5, 6, 7, or 8.                                               |
-| parity                        | **N**                                 | The type of checksum to use to verify data integrity. This can be on of the following: (**E**)ven, (**O**)dd, (**N**)one.     |
-| strict                        | **true**                              | Use Inter char timeout for baudrates <= 19200.                                                                                | 
-| timeout                       | **35**                                | Timeout in seconds for connecting to Modbus server.                                                                           |
-| byteOrder                     | **BIG**                               | Order of bytes to read.                                                                                                       |
-|---
+| **参数** | **默认值** | **说明** |
+|:-|:-|-|
+| 名称 | **Modbus 默认服务器** | 连接到服务器的名称。 |
+| 类型 | **串行** | 连接类型可以是 **tcp**、**udp** 或 **串行**。 |
+| 方法 | **rtu** | 应用数据单元类型 - **rtu** 或 **ascii** |
+| 端口 | **/dev/ttyUSB0** | 用于连接的串行端口。 |
+| 波特率 | **19200** | 用于串行设备的波特率。 |
+| 停止位 | **1** | 消息中每个字符后发送的位数，以指示字节的结束。 |
+| 字节大小 | **8** | 串行数据字节中的位数。可以是 5、6、7 或 8 之一。 |
+| 奇偶校验 | **N** | 用于验证数据完整性的校验和类型。可以是以下之一：（**E**)ven、（**O**)dd、（**N**)one。 |
+| 严格 | **true** | 对波特率 <= 19200 使用字符间超时。 |
+| 超时 | **35** | 连接到 Modbus 服务器的超时时间（以秒为单位）。 |
+| 字节顺序 | **BIG** | 要读取的字节顺序。 |

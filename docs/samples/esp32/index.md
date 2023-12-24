@@ -1,19 +1,19 @@
 ---
 layout: docwithnav
-title: ESP32 overview
-description: ThingsBoard IoT Platform hardware samples for ESP32 devices.
+title: ESP32 概述
+description: ThingsBoard IoT 平台硬件示例，适用于 ESP32 设备。
 
 ---
 
 * TOC
 {:toc}
 
-## Samples
+## 示例
 
- - [ESP32 Pico Kit GPIO control over MQTT and temperature monitor using ThingsBoard](/docs/samples/esp32/gpio-control-pico-kit-dht22-sensor/)
- - [ESP32 OTA update using ThingsBoard](/docs/samples/esp32/ota/)
+ - [ESP32 Pico Kit GPIO 控制通过 MQTT 和使用 ThingsBoard 的温度监视器](/docs/samples/esp32/gpio-control-pico-kit-dht22-sensor/)
+ - [使用 ThingsBoard 进行 ESP32 OTA 更新](/docs/samples/esp32/ota/)
 
-## Documentation
+## 文档
 
- - [Official site](https://www.espressif.com/en/products/hardware/esp32/overview)
- - [Espressif IoT Development Framework](https://docs.espressif.com/projects/esp-idf/en/latest/)
+ - [官方网站](https://www.espressif.com/en/products/hardware/esp32/overview)
+ - [Espressif IoT 开发框架](https://docs.espressif.com/projects/esp-idf/en/latest/)

@@ -1,9 +1,9 @@
 ---
 layout: devices-library-article
-title: How to connect Raspberry Pi 3 Model B+ to ThingsBoard?
-category: Single-board computers
-chip: Broadcom BCM2837B0
-connectivity: HTTP, MQTT, WIFI
+title: 如何将 Raspberry Pi 3 Model B+ 连接到 ThingsBoard？
+category: 单板计算机
+chip: 博通 BCM2837B0
+connectivity: HTTP、MQTT、WIFI
 vendor: Raspberry
 deviceImageFileName: raspberrypi3bplus.jpg
 docsPrefix: pe/

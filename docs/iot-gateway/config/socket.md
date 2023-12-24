@@ -1,32 +1,29 @@
 ---
 layout: docwithnav-gw
-title: Socket Connector Configuration
-description: Socket API support for ThingsBoard IoT Gateway
+title: Socket 连接器配置
+description: ThingsBoard IoT 网关的 Socket API 支持
 
 ---
 
 * TOC
 {:toc}
 
-This guide will help you to get familiar with Socket Connector configuration for ThingsBoard IoT Gateway. 
-Use [general configuration guide](/docs/iot-gateway/configuration/) to enable this Connector. The purpose of this 
-Connector is to connect to your server using TCP or UDP connection type.
+本指南将帮助您熟悉 ThingsBoard IoT 网关的 Socket 连接器配置。
+使用 [通用配置指南](/docs/iot-gateway/configuration/) 启用此连接器。此连接器的目的是使用 TCP 或 UDP 连接类型连接到您的服务器。
 
-This Connector is useful when you have local server in your facility or corporate network, and you would like to push
-data from the server to ThingsBoard.
+当您在设施或公司网络中拥有本地服务器，并且您希望将数据从服务器推送到 ThingsBoard 时，此连接器非常有用。
 
-We will describe connector configuration file below.
+我们将在下面描述连接器配置文件。
 
-## Connector configuration: socket.json
+## 连接器配置：socket.json
 
-Connector configuration is a JSON file that contains information about how to connect to external server, how to process
-the data and other service features. Let’s review the format of the configuration file using example below.
+连接器配置是一个 JSON 文件，其中包含有关如何连接到外部服务器、如何处理数据以及其他服务功能的信息。让我们使用下面的示例来回顾配置文件的格式。
 
-<b>Example of Socket Connector config file.</b>
+<b>Socket 连接器配置文件示例。</b>
 
 {% capture socketConf %}
 {
-  "name": "TCP Connector Example",
+  "name": "TCP 连接器示例",
   "type": "TCP",
   "address": "127.0.0.1",
   "port": 50000,
@@ -34,7 +31,7 @@ the data and other service features. Let’s review the format of the configurat
   "devices": [
     {
       "address": "127.0.0.1:50001",
-      "deviceName": "Device Example",
+      "deviceName": "设备示例",
       "deviceType": "default",
       "encoding": "utf-8",
       "telemetry": [
@@ -88,22 +85,22 @@ the data and other service features. Let’s review the format of the configurat
 {% endcapture %}
 {% include code-toggle.liquid code=socketConf params="conf|.copy-code.expandable-20" %}
 
-### General section
+### 常规部分
 
-| **Parameter**     | **Default value**                     | **Description**                                          |
+| **参数**     | **默认值**                     | **说明**                                          |
 |:-|:-|-
-| name              | **TCP Connector Example**             | Connector name                                           |
-| type              | **TCP**                               | Socket type, that can be TCP or UDP                      |
-| address           | **127.0.0.1**                         | Connector bound address                                  |
-| port              | **50000**                             | Connector bound port                                     |
-| bufferSize        | **1024**                              | Size of received data block buffer                       |
+| name              | **TCP 连接器示例**             | 连接器名称                                           |
+| type              | **TCP**                               | 套接字类型，可以是 TCP 或 UDP                      |
+| address           | **127.0.0.1**                         | 连接器绑定地址                                  |
+| port              | **50000**                             | 连接器绑定端口                                     |
+| bufferSize        | **1024**                              | 接收到的数据块缓冲区的大小                       |
 |---
 
-Configuration section will look like:
+配置部分将如下所示：
 
 ```json
 {
-  "name": "TCP Connector Example",
+  "name": "TCP 连接器示例",
   "type": "TCP",
   "address": "127.0.0.1",
   "port": 50000,
@@ -112,36 +109,35 @@ Configuration section will look like:
 }
 ```
 
-### General section
+### 常规部分
 
-This configuration section contains an array of objects that contains clients that can be connected to the connector and
-send the data. It is mean that connector reject all connection, which is not included in this array.
+此配置部分包含一个对象数组，其中包含可以连接到连接器并发送数据的客户端。这意味着连接器拒绝所有未包含在此数组中的连接。
 
-#### Device subsection
+#### 设备子部分
 
-This object configuration section includes the parameters of how to proceed with incoming data.
+此对象配置部分包括有关如何处理传入数据的信息。
 
-| **Parameter**     | **Default value**                     | **Description**                                                                                                      |
+| **参数**     | **默认值**                     | **说明**                                                                                                      |
 |:-|:-|-
-| address           | **127.0.0.1:50001**                   | The address and port of the client that will be connecting to the connector.                                         |
-| deviceName        | **Device Example**                    | Name for the device in ThingsBoard.                                                                                  |
-| deviceType        | **default**                           | Device type for ThingsBoard, by default this parameter is absent, but you can add it.                                |
-| encoding          | **utf-8**                             | Encoding used when writing string data to storage.                                                                   |
-| telemetry         |                                       | This subsection contains parameters of the incoming message, that will be interpreted as telemetry for the device.   |
-| ... key           | **temp**                              | Name for telemetry in ThingsBoard.                                                                                   |
-| ... byteFrom      | **0**                                 | Used to slice received data from the specific index.                                                                 |
-| ... byteTo        | **-1**                                | Used to slice received data to the specific index.                                                                   |
-| attributes        |                                       | This subsection contains parameters of the incoming requests, that will be interpreted as attributes for the device. |
-| ... key           | **hum**                               | Name for attribute in ThingsBoard.                                                                                   |
-| ... byteFrom      | **2**                                 | Used to slice received data from the specific index.                                                                 |
-| ... byteTo        | **4**                                 | Used to slice received data to the specific index.                                                                   |
+| address           | **127.0.0.1:50001**                   | 将连接到连接器的客户端的地址和端口。                                                                                  |
+| deviceName        | **设备示例**                    | ThingsBoard 中的设备名称。                                                                                              |
+| deviceType        | **default**                           | ThingsBoard 的设备类型，默认情况下此参数不存在，但您可以添加它。                                |
+| encoding          | **utf-8**                             | 将字符串数据写入存储时使用的编码。                                                                                   |
+| telemetry         |                                       | 此子部分包含传入消息的参数，这些参数将被解释为设备的遥测数据。                                  |
+| ... key           | **temp**                              | ThingsBoard 中的遥测数据名称。                                                                                              |
+| ... byteFrom      | **0**                                 | 用于从特定索引截取接收到的数据。                                                                                         |
+| ... byteTo        | **-1**                                | 用于将接收到的数据截取到特定索引。                                                                                           |
+| attributes        |                                       | 此子部分包含传入请求的参数，这些参数将被解释为设备的属性。                                                |
+| ... key           | **hum**                               | ThingsBoard 中的属性名称。                                                                                              |
+| ... byteFrom      | **2**                                 | 用于从特定索引截取接收到的数据。                                                                                         |
+| ... byteTo        | **4**                                 | 用于将接收到的数据截取到特定索引。                                                                                           |
 |---
 
-Example:
+示例：
 ```json
 {
   "address": "127.0.0.1:50001",
-  "deviceName": "Device Example",
+  "deviceName": "设备示例",
   "deviceType": "default",
   "encoding": "utf-8",
   "telemetry": [
@@ -171,19 +167,18 @@ Example:
 }
 ```
 
-#### Attribute request subsection
+#### 属性请求子部分
 
-In order to request client-side or shared device attributes to ThingsBoard server node, Gateway allows sending attribute
-requests.
+为了向 ThingsBoard 服务器节点请求客户端或共享设备属性，网关允许发送属性请求。
 
-| **Parameter**           | **Default value**                     | **Description**                                                                                   |
+| **参数**           | **默认值**                     | **说明**                                                                                                      |
 |:-|:-|-
-| type                    | **shared**                            | The type of requested attribute can be “shared” or “client”.                                      |
-| requestExpression       | **${[0:3]==atr}**                     | The expression that is used to know if the request from the device is "Attribute Request" or not. |
-| attributeNameExpression | **[3:]**                              | The expression that is used to get the name of the requested attribute from the received data.    |
+| type                    | **shared**                            | 请求的属性类型可以是“shared”或“client”。                                                                     |
+| requestExpression       | **${[0:3]==atr}**                     | 用于判断设备的请求是否为“属性请求”的表达式。                                                                 |
+| attributeNameExpression | **[3:]**                              | 用于从接收到的数据中获取请求的属性名称的表达式。                                                               |
 |---
 
-Configuration of this subsection looks like:
+此子部分的配置如下所示：
 
 ```json
 "attributeRequests": [
@@ -195,9 +190,7 @@ Configuration of this subsection looks like:
 ]
 ```
 
-Also, you can request multiple attributes at once. Simply add one more JSON-path to 
-attributeNameExpression parameter. For example, we want to request two shared attributes in one request, our config 
-will look like:
+此外，您还可以一次请求多个属性。只需向 attributeNameExpression 参数添加一个 JSON 路径即可。例如，我们希望在一个请求中请求两个共享属性，我们的配置将如下所示：
 
 ```json
 "attributeRequests": [
@@ -209,25 +202,22 @@ will look like:
 ]
 ```
 
-That means that we have to send the next message for requesting two shared attributes:
+这意味着我们必须发送以下消息来请求两个共享属性：
 `atr sharedAttribute sharedAttribite1`
 
-#### Attribute update subsection
+#### 属性更新子部分
 
-This configuration section is optional. ThingsBoard allows provisioning device attributes and fetch some of them from 
-the device application. You can treat this as a remote configuration for devices. Your devices are able to request 
-shared attributes from ThingsBoard. See user guide for more details.
+此配置部分是可选的。ThingsBoard 允许配置设备属性并从设备应用程序中获取其中一些属性。您可以将其视为设备的远程配置。您的设备能够从 ThingsBoard 请求共享属性。有关更多详细信息，请参阅用户指南。
 
-The “attributeRequests” configuration allows configuring the format of the corresponding attribute data that will be 
-sending to the server.
+“attributeRequests”配置允许配置将发送到服务器的相应属性数据格式。
 
-| **Parameter**           | **Default value**                     | **Description**                                             |
+| **参数**           | **默认值**                     | **说明**                                             |
 |:-|:-|-
-| encoding                | **utf-16**                            | Encoding used when writing received string data to storage. |
-| attributeOnThingsBoard  | **sharedName**                        | Shared attribute name                                       |
+| encoding                | **utf-16**                            | 将接收到的字符串数据写入存储时使用的编码。 |
+| attributeOnThingsBoard  | **sharedName**                        | 共享属性名称                                       |
 |---
 
-This subsection in configuration file looks like:
+配置文件中的此子部分如下所示：
 
 ```json
 "attributeUpdates": [
@@ -238,21 +228,21 @@ This subsection in configuration file looks like:
 ]
 ```
 
-#### Server side RPC subsection
+#### 服务器端 RPC 子部分
 
-ThingsBoard allows sending RPC commands to the device that is connected to ThingsBoard directly or via Gateway.
+ThingsBoard 允许直接或通过网关连接到 ThingsBoard 的设备发送 RPC 命令。
 
-Configuration, provided in this section uses for sending RPC requests from ThingsBoard to device.
+此部分中提供的配置用于从 ThingsBoard 向设备发送 RPC 请求。
 
-| **Parameter**           | **Default value**                     | **Description**                                                       |
+| **参数**           | **默认值**                     | **说明**                                                       |
 |:-|:-|-
-| methodRPC               | **rpcMethod1**                        | RPC method name.                                                      |
-| withResponse            | **true**                              | Boolean value that means as send or not response back to ThingsBoard. |
-| methodProcessing        | **write**                             | Type of operation.                                                    |
-| encoding                | **utf-8**                             | Encoding used when writing received string data to storage.           |
+| methodRPC               | **rpcMethod1**                        | RPC 方法名称。                                                      |
+| withResponse            | **true**                              | 布尔值，表示是否向 ThingsBoard 发送或不发送响应。 |
+| methodProcessing        | **write**                             | 操作类型。                                                    |
+| encoding                | **utf-8**                             | 将接收到的字符串数据写入存储时使用的编码。           |
 |---
 
-This subsection in configuration file looks like:
+配置文件中的此子部分如下所示：
 
 ```json
 "serverSideRpc": [
@@ -265,17 +255,15 @@ This subsection in configuration file looks like:
 ]
 ```
 
-Also, every telemetry and attribute parameter has built-in SET RPC method out of the box, so you don’t need to configure
-it manually. To use them, make sure you set all required parameters (in the case of Socket Connector, these are the following:
-**withResponse**, **methodProcessing**, **encoding**). 
-See [the guide](/docs/iot-gateway/guides/how-to-use-get-set-rpc-methods).
+此外，每个遥测数据和属性参数都内置了 SET RPC 方法，因此您无需手动配置它。要使用它们，请确保设置所有必需的参数（在 Socket Connector 的情况下，这些参数如下：**withResponse**、**methodProcessing**、**encoding**）。
+请参阅[指南](/docs/iot-gateway/guides/how-to-use-get-set-rpc-methods)。
 
-## Next steps
+## 后续步骤
 
-Explore guides related to main ThingsBoard features:
+探索与 ThingsBoard 主要功能相关的指南：
 
- - [Data Visualization](/docs/user-guide/visualization/) - how to visualize collected data.
- - [Device attributes](/docs/user-guide/attributes/) - how to use device attributes.
- - [Telemetry data collection](/docs/user-guide/telemetry/) - how to collect telemetry data.
- - [Using RPC capabilities](/docs/user-guide/rpc/) - how to send commands to/from devices.
- - [Rule Engine](/docs/user-guide/rule-engine/) - how to use rule engine to analyze data from devices.
+- [数据可视化](/docs/user-guide/visualization/) - 如何可视化收集到的数据。
+- [设备属性](/docs/user-guide/attributes/) - 如何使用设备属性。
+- [遥测数据收集](/docs/user-guide/telemetry/) - 如何收集遥测数据。
+- [使用 RPC 功能](/docs/user-guide/rpc/) - 如何向设备发送/从设备接收命令。
+- [规则引擎](/docs/user-guide/rule-engine/) - 如何使用规则引擎分析来自设备的数据。

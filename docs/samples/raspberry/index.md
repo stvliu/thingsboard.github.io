@@ -1,27 +1,27 @@
 ---
 layout: docwithnav
-title: Raspberry Pi overview
-description: ThingsBoard IoT Platform hardware samples for Raspberry Pi devices.
+title: Raspberry Pi 概述
+description: ThingsBoard IoT 平台硬件示例，适用于 Raspberry Pi 设备。
 
 ---
 
 * TOC
 {:toc}
 
-[Raspberry Pi](https://en.wikipedia.org/wiki/Raspberry_Pi) is a credit-card sized computer. It is able to run Linux and has WiFi module built-in (starting Raspberry Pi 3).
+[Raspberry Pi](https://en.wikipedia.org/wiki/Raspberry_Pi) 是一款信用卡大小的计算机。它能够运行 Linux，并且内置 WiFi 模块（从 Raspberry Pi 3 开始）。
 
-The applications in these samples that are running on [Raspbian](https://www.raspberrypi.org/downloads/raspbian/) are written in Python programming language.
-However, you are able to use other programming languages and OS.
+在这些示例中，在 [Raspbian](https://www.raspberrypi.org/downloads/raspbian/) 上运行的应用程序使用 Python 编程语言编写。
+但是，您可以使用其他编程语言和操作系统。
 
-## Samples
+## 示例
 
- - [Raspberry Pi GPIO control over MQTT using ThingsBoard](/docs/samples/raspberry/gpio/)
- - [Raspberry Pi GPIO control using Android Things and ThingsBoard](/docs/samples/raspberry/gpio-android-things/)
- - [Temperature upload over MQTT using Raspberry Pi and DHT22 sensor](/docs/samples/raspberry/temperature/) 
- - [Connecting Raspberry Pi with Grove Base Hat to ThingsBoard](/docs/samples/raspberry/grove/) 
+- [使用 ThingsBoard 通过 MQTT 控制 Raspberry Pi GPIO](/docs/samples/raspberry/gpio/)
+- [使用 Android Things 和 ThingsBoard 控制 Raspberry Pi GPIO](/docs/samples/raspberry/gpio-android-things/)
+- [使用 Raspberry Pi 和 DHT22 传感器通过 MQTT 上传温度](/docs/samples/raspberry/temperature/)
+- [将带有 Grove Base Hat 的 Raspberry Pi 连接到 ThingsBoard](/docs/samples/raspberry/grove/)
 
-## Documentation
+## 文档
 
- - [Official website](https://www.raspberrypi.org)
- - [GPIO mapping](https://en.wikipedia.org/wiki/Raspberry_Pi#General_purpose_input-output_.28GPIO.29_connector)
- - [GPIO guide for beginners](https://www.raspberrypi.org/documentation/usage/gpio/)
+- [官方网站](https://www.raspberrypi.org)
+- [GPIO 映射](https://en.wikipedia.org/wiki/Raspberry_Pi#General_purpose_input-output_.28GPIO.29_connector)
+- [面向初学者的 GPIO 指南](https://www.raspberrypi.org/documentation/usage/gpio/)

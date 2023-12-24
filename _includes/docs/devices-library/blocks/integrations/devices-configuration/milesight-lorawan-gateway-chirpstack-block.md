@@ -1,26 +1,26 @@
-### Configure the gateway to send data
+### 配置网关以发送数据
 
-To connect and send data to the Chirpstack we should configure the gateway.  
-To do this please follow next steps:  
+要连接并向 Chirpstack 发送数据，我们应该配置网关。
+要做到这一点，请按照以下步骤操作：
 {% assign connectGatewayToNS = '
     ===
         image: /images/devices-library/ready-to-go-devices/milesight-lorawan-gateway/general-settings-view.png,
-        title: Open gateway control panel.
+        title: 打开网关控制面板。
     ===
         image: /images/devices-library/ready-to-go-devices/milesight-lorawan-gateway/ns-configuration-before.png,
-        title: Click on **plus** button, to add a new forwarder.
+        title: 单击 **加号** 按钮，以添加新的转发器。
     ===
         image: /images/devices-library/ready-to-go-devices/milesight-lorawan-gateway/ns-chirpstack-configuration-window.png,
-        title: Put into **Server address** your server address, in our case it is **sample.network.server.com**.
+        title: 在 **服务器地址** 中输入您的服务器地址，在我们的示例中，它是 **sample.network.server.com**。
     ===
         image: /images/devices-library/ready-to-go-devices/milesight-lorawan-gateway/ns-configuration-after.png,
-        title: Press **Save** button.
+        title: 按 **保存** 按钮。
     ===
         image: /images/devices-library/basic/integrations/chirpstack/gateway-added.png,
-        title: Now you can check the status of the gateway on Chirpstack, it should be online.
+        title: 现在，您可以在 Chirpstack 上检查网关的状态，它应该处于在线状态。
 '
 %}
 
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=connectGatewayToNS %}
 
-Now, the gateway is able to send a data to the network server.  
+现在，网关能够向网络服务器发送数据。

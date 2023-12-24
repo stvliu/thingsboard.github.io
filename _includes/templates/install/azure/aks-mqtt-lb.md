@@ -1,12 +1,11 @@
-Configure MQTT load balancer if you plan to use MQTT protocol to connect devices.
+如果您计划使用 MQTT 协议连接设备，请配置 MQTT 负载均衡器。
 
-Create TCP load balancer using following command:
+使用以下命令创建 TCP 负载均衡器：
 ```
 kubectl apply -f receipts/mqtt-load-balancer.yml
 ```
 {: .copy-code}
-The load balancer will forward all TCP traffic for ports 1883 and 8883.
+负载均衡器将转发端口 1883 和 8883 的所有 TCP 流量。
 
-This type of the load balancer requires you to provision and maintain valid SSL certificate on your own.
-Follow the generic [MQTT over SSL](/docs/{{docsPrefix}}user-guide/mqtt-over-ssl) guide
-to configure required environment variables in the *{{tbServicesFile}}* file.
+此类型的负载均衡器要求您自行配置和维护有效的 SSL 证书。
+按照通用 [MQTT over SSL](/docs/{{docsPrefix}}user-guide/mqtt-over-ssl) 指南在 *{{tbServicesFile}}* 文件中配置所需的变量。

@@ -1,23 +1,23 @@
-### Configure the gateway to send data
+### 配置网关以发送数据
 
-To connect and send data to The Things Industries cloud we should configure the gateway.  
-To do this please follow next steps:  
+要连接并向 The Things Industries 云发送数据，我们应该配置网关。  
+为此，请按照以下步骤操作：  
 {% assign connectGatewayToNS = '
     ===
         image: /images/devices-library/ready-to-go-devices/milesight-lorawan-gateway/general-settings-view.png,
-        title: Open gateway control panel 
+        title: 打开网关控制面板
     ===
         image: /images/devices-library/ready-to-go-devices/milesight-lorawan-gateway/ns-configuration-before.png,
-        title: Click on <b>plus</b> button, to add a new forwarder
+        title: 单击<b>加号</b>按钮，以添加新的转发器
     ===
         image: /images/devices-library/ready-to-go-devices/milesight-lorawan-gateway/ns-configuration-window.png,
-        title: Put <b>Gateway Server address</b> from the network server
+        title: 放置来自网络服务器的<b>网关服务器地址</b>
     ===
         image: /images/devices-library/ready-to-go-devices/milesight-lorawan-gateway/ns-configuration-after.png,
-        title: Press <b>Save</b> button
+        title: 按<b>保存</b>按钮
 '
 %}
 
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=connectGatewayToNS %}
 
-Now, the gateway is able to send a data to the network server.  
+现在，网关能够向网络服务器发送数据。

@@ -2,89 +2,89 @@
 layout: docwithnav
 assignees:
 - ashvayka
-title: Microservices setup using AWS EKS
-description: ThingsBoard IoT platform microservices setup with Kubernetes in AWS EKS
+title: 使用 AWS EKS 设置微服务
+description: 使用 AWS EKS 中的 Kubernetes 设置 ThingsBoard IoT 平台微服务
 
 rdsSetup:
     0:
         image: /images/install/cloud/aws/rds-1.png
-        title: 'Make sure your PostgreSQL version is latest 12.x, not 13.x yet.'
+        title: '确保你的 PostgreSQL 版本是最新 12.x，而不是 13.x。'
     1:
         image: /images/install/cloud/aws/rds-2.png
-        title: 'Keep your PostgreSQL master password in a safe place. We will refer to it later in this guide using YOUR_RDS_PASSWORD.'
+        title: '将你的 PostgreSQL 主密码保存在安全的地方。我们将在本指南的后面使用它，用 YOUR_RDS_PASSWORD 表示。'
     2:
         image: /images/install/cloud/aws/rds-3.png
-        title: 'Use "Provisioned IOPS" for better performance.'
+        title: '使用“预置 IOPS”以获得更好的性能。'
     3:
         image: /images/install/cloud/aws/rds-4.png
-        title: 'Make sure your PostgreSQL RDS instance is accessible from the ThingsBoard cluster; The easiest way to achieve this is to deploy the PostgreSQL RDS instance in the same VPC and use "eksctl-thingsboard-cluster-ClusterSharedNodeSecurityGroup-*" security group.'
+        title: '确保你的 PostgreSQL RDS 实例可从 ThingsBoard 集群访问；实现此目的最简单的方法是在同一 VPC 中部署 PostgreSQL RDS 实例并使用“eksctl-thingsboard-cluster-ClusterSharedNodeSecurityGroup-*”安全组。'
     4:
         image: /images/install/cloud/aws/rds-5.png
-        title: 'Make sure you use "thingsboard" as initial database name.'
+        title: '确保使用“thingsboard”作为初始数据库名称。'
     5:
         image: /images/install/cloud/aws/rds-6.png
-        title: 'Disable "auto minor version update".'  
+        title: '禁用“自动次要版本更新”。'  
 
 rdsEndpointUrl:
     0:
         image: /images/install/cloud/aws/rds-endpoint-url.png
-        title: 'Once the database switch to the "Available" state, navigate to the "Connectivity and Security" and copy the endpoint value. We will refer to it later in this guide using **YOUR_RDS_ENDPOINT_URL**.'
+        title: '一旦数据库切换到“可用”状态，导航到“连接和安全”并复制端点值。我们将在本指南的后面使用它，用 **YOUR_RDS_ENDPOINT_URL** 表示。'
 
 mskSetup:
     0:
         image: /images/install/cloud/aws/msk-1.png
-        title: 'Make sure your Apache Kafka version is 2.6.x.'
+        title: '确保你的 Apache Kafka 版本是 2.6.x。'
     1:
         image: /images/install/cloud/aws/msk-2.png
-        title: 'Make sure your MSK instance is accessible from the ThingsBoard cluster. The easiest way to achieve this is to deploy the MSK instance in the same VPC. We also recommend to use private subnets. This way it will be nearly impossible to accidentally expose it to the internet.'
+        title: '确保你的 MSK 实例可从 ThingsBoard 集群访问。实现此目的最简单的方法是在同一 VPC 中部署 MSK 实例。我们还建议使用专用子网。这样，几乎不可能意外地将其暴露给互联网。'
     2:
         image: /images/install/cloud/aws/msk-3.png
-        title: 'Use m5.large or similar instance types.'
+        title: '使用 m5.large 或类似的实例类型。'
     3:
         image: /images/install/cloud/aws/msk-4.png
-        title: 'Choose default security settings. Make sure "Plaintext" mode is enabled.'
+        title: '选择默认安全设置。确保启用“纯文本”模式。'
     4:
         image: /images/install/cloud/aws/msk-5.png
-        title: 'Use default "Monitoring" settings or enable "Enhenced topic level monitoring".'
+        title: '使用默认“监控”设置或启用“增强型主题级别监控”。'
 
 mskConnectionParams:
     0:
         image: /images/install/cloud/aws/msk-connection-params.png
-        title: 'Once the MSK cluster switch to the "Active" state, navigate to "Details" and click "View client information".'
+        title: '一旦 MSK 集群切换到“活动”状态，导航到“详细信息”并单击“查看客户端信息”。'
     1:
         image: /images/install/cloud/aws/msk-connection-params2.png
-        title: 'Copy bootstrap server information in plaintext. We will refer to it later in this guide using **YOUR_MSK_BOOTSTRAP_SERVERS_PLAINTEXT**.'
+        title: '以纯文本形式复制引导服务器信息。我们将在本指南的后面使用它，用 **YOUR_MSK_BOOTSTRAP_SERVERS_PLAINTEXT** 表示。'
 
 redisSetup:
     0:
         image: /images/install/cloud/aws/redis-single-1.png
-        title: 'Specify Redis Engine version 6.x and node type with at least 1 GB of RAM.'
+        title: '指定 Redis Engine 版本 6.x 和至少 1 GB RAM 的节点类型。'
     1:
         image: /images/install/cloud/aws/redis-single-2.png
-        title: 'Make sure your Redis cluster is accessible from the ThingsBoard cluster. The easiest way to achieve this is to deploy the Redis cluster in the same VPC. We also recommend to use private subnets. Use "eksctl-thingsboard-cluster-ClusterSharedNodeSecurityGroup-*" security group.'
+        title: '确保你的 Redis 集群可从 ThingsBoard 集群访问。实现此目的最简单的方法是在同一 VPC 中部署 Redis 集群。我们还建议使用专用子网。使用“eksctl-thingsboard-cluster-ClusterSharedNodeSecurityGroup-*”安全组。'
     2:
         image: /images/install/cloud/aws/redis-single-3.png
-        title: 'Disable automatic backups.'
+        title: '禁用自动备份。'
 
 redisEndpointUrl:
     0:
         image: /images/install/cloud/aws/redis-endpoint-url.png
-        title: 'Once the Redis cluster switch to the "Available" state, navigate to "Details" and copy "Primary Endpoint" without ":6379" port sufix. We will refer to it later in this guide using **YOUR_REDIS_ENDPOINT_URL_WITHOUT_PORT**.'
+        title: '一旦 Redis 集群切换到“可用”状态，导航到“详细信息”并复制“主端点”，不带“:6379”端口后缀。我们将在本指南的后面使用它，用 **YOUR_REDIS_ENDPOINT_URL_WITHOUT_PORT** 表示。'
 
 ---
 
 * TOC
 {:toc}
 
-This guide will help you to setup ThingsBoard in microservices mode using AWS EKS. 
-See [microservices](/docs/reference/msa/) architecture page for more details about each component that will be installed.
-We will use Amazon RDS for managed PostgreSQL, Amazon MSK for managed Kafka and Amazon ElastiCache for managed Redis.
+本指南将帮助你使用 AWS EKS 在微服务模式下设置 ThingsBoard。
+请参阅[微服务](/docs/reference/msa/)架构页面，了解有关将要安装的每个组件的更多详细信息。
+我们将使用 Amazon RDS 管理 PostgreSQL，Amazon MSK 管理 Kafka，Amazon ElastiCache 管理 Redis。
 
-## Prerequisites
+## 先决条件
 
 {% include templates/install/aws/eks-prerequisites.md %}
 
-## Step 1. Clone ThingsBoard CE K8S scripts repository
+## 步骤 1. 克隆 ThingsBoard CE K8S 脚本存储库
 
 ```bash
 git clone -b release-{{ site.release.ver }} https://github.com/thingsboard/thingsboard-ce-k8s.git
@@ -92,93 +92,89 @@ cd thingsboard-ce-k8s/aws/microservices
 ```
 {: .copy-code}
 
-## Step 2. Configure and create EKS cluster
+## 步骤 2. 配置并创建 EKS 集群
 
-{% assign eksNote = "**3** nodes of type **m5.xlarge**" %}
+{% assign eksNote = "**3** 个 **m5.xlarge** 类型的节点" %}
 {% include templates/install/aws/eks-create-cluster.md %}
 
-## Step 3. Create AWS load-balancer controller
+## 步骤 3. 创建 AWS 负载均衡器控制器
 
 {% include templates/install/aws/eks-lb-controller.md %}
 
-## Step 4. Provision Databases
+## 步骤 4. 配置数据库
 
-### Step 4.1 Amazon PostgreSQL DB Configuration
+### 步骤 4.1 Amazon PostgreSQL 数据库配置
 
 {% include templates/install/aws/rds-setup.md %}
 
-### Step 4.2 Cassandra
+### 步骤 4.2 Cassandra
 
 {% include templates/install/aws/configure-cassandra.md %}
 
-## Step 5. Amazon MSK Configuration
+## 步骤 5. Amazon MSK 配置
 
 {% include templates/install/aws/msk-setup.md %}
 
-## Step 6. Amazon ElactiCache (Redis) Configuration
+## 步骤 6. Amazon ElactiCache（Redis）配置
 
 {% include templates/install/aws/redis-setup.md %}
 
-## Step 7. CPU and Memory resources allocation
+## 步骤 7. CPU 和内存资源分配
 
-The scripts have preconfigured values of resources for each service. You can change them in `.yml` files under `resources` submenu.
+脚本预先配置了每个服务的资源值。你可以在 `resources` 子菜单下的 `.yml` 文件中更改它们。
 
-**Note**: if you want to allocate more resources you'll need to increase the number of Amazon nodes or use larger machines. 
+**注意**：如果你想分配更多资源，你需要增加 Amazon 节点数或使用更大的机器。
 
-Recommended CPU/memory resources allocation:
-- TB Node: 1.0 CPU / 2Gi memory
-- TB HTTP Transport: 0.5 CPU / 0.5Gi memory
-- TB MQTT Transport: 0.5 CPU / 0.5Gi memory
-- TB COAP Transport: 0.5 CPU / 0.5Gi memory
-- TB Web UI: 0.1 CPU / 100Mi memory
-- JS Executor: 0.1 CPU / 100Mi memory
-- Zookeeper: 0.1 CPU / 0.5Gi memory
+建议的 CPU/内存资源分配：
+- TB 节点：1.0 CPU / 2Gi 内存
+- TB HTTP 传输：0.5 CPU / 0.5Gi 内存
+- TB MQTT 传输：0.5 CPU / 0.5Gi 内存
+- TB COAP 传输：0.5 CPU / 0.5Gi 内存
+- TB Web UI：0.1 CPU / 100Mi 内存
+- JS 执行器：0.1 CPU / 100Mi 内存
+- Zookeeper：0.1 CPU / 0.5Gi 内存
 
-## Step 8. Installation
+## 步骤 8. 安装
 
-{% include templates/install/aws/eks-installation.md %}
-
-## Step 9. Starting
-
-Execute the following command to deploy ThingsBoard services:
+执行以下命令以部署 ThingsBoard 服务：
 
 ```
  ./k8s-deploy-resources.sh
 ```
 {: .copy-code}
 
-After few minutes you may call `kubectl get pods`. If everything went fine, you should be able to see:
+几分钟后，你可以调用 `kubectl get pods`。如果一切顺利，你应该能够看到：
 
 * 5x `tb-pe-js-executor`
 * 2x `tb-pe-web-ui`
 * 1x `tb-pe-node`
 * 1x `tb-pe-web-report`
-* 3x `zookeeper`.
-  
-Every pod should be in the `READY` state.
+* 3x `zookeeper`。
+
+每个 pod 都应处于 `READY` 状态。
 
 {% include templates/install/aws/start-transports.md %}
 
-## Step 10. Configure Load Balancers
+## 步骤 9. 配置负载均衡器
 
-### 10.1 Configure HTTP(S) Load Balancer
+### 9.1 配置 HTTP(S) 负载均衡器
 
 {% include templates/install/aws/http-lb.md %}
 
-### 10.2. Configure MQTT Load Balancer (Optional)
+### 9.2. 配置 MQTT 负载均衡器（可选）
 
 {% assign tbServicesFile = "tb-services.yml" %}
 {% include templates/install/aws/configure-mqtt.md %}
 
-### 10.3. Configure UDP Load Balancer (Optional)
+### 9.3. 配置 UDP 负载均衡器（可选）
 
 {% include templates/install/aws/configure-udp.md %}
 
-### 10.4. Configure Edge Load Balancer (Optional)
+### 9.4. 配置边缘负载均衡器（可选）
 
 {% include templates/install/k8s-configure-edge-load-balancer.md %}
 
-## Step 11. Validate the setup
+## 步骤 10. 验证设置
 
 {% include templates/install/aws/eks-validate.md %}
 
@@ -186,6 +182,6 @@ Every pod should be in the `READY` state.
 
 {% include templates/install/aws/eks-deletion.md %}
 
-## Next steps
+## 后续步骤
 
 {% assign currentGuide = "InstallationGuides" %}{% include templates/guides-banner.md %}

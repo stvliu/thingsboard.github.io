@@ -2,32 +2,32 @@
 layout: docwithnav
 assignees:
 - ashvayka
-title: Mail Plugin
+title: 邮件插件
 
 ---
 
 {% include templates/old-guide-notice.md %}
 
-## Overview
+## 概述
 
-Mail plugin is responsible for sending email messages that are triggered by corresponding rule [actions](/docs/reference/actions/send-mail-action/).  
+邮件插件负责发送由相应规则 [操作](/docs/reference/actions/send-mail-action/)触发的电子邮件。
 
-## Configuration
+## 配置
 
-You can specify following parameters:
- 
- - mail server host
- - mail server port
- - user name
- - password
- - map with other properties. 
-See [java mail sender](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/mail/javamail/JavaMailSenderImpl.html#setJavaMailProperties-java.util.Properties-) for more details. 
+您可以指定以下参数：
 
-## Server-side API
+- 邮件服务器主机
+- 邮件服务器端口
+- 用户名
+- 密码
+- 包含其他属性的映射。
+有关更多详细信息，请参阅 [java 邮件发送器](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/mail/javamail/JavaMailSenderImpl.html#setJavaMailProperties-java.util.Properties-)。
 
-This plugin does not provide any server-side API. 
+## 服务器端 API
 
-## Example
+此插件不提供任何服务器端 API。
 
-As a tenant administrator, you are able to review plugin example inside **Plugins->Demo Email Plugin** that is configured to Gmail server.
-You may want to update username and password to match existing account and start receiving emails.
+## 示例
+
+作为租户管理员，您可以在 **插件->演示电子邮件插件**中查看插件示例，该插件已配置为 Gmail 服务器。
+您可能需要更新用户名和密码以匹配现有帐户并开始接收电子邮件。

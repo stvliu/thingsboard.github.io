@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-edge
 title: ThingsBoard Edge
-description: ThingsBoard Edge to distribute data processing and analysis using edge computing
+description: ThingsBoard Edge 用于使用边缘计算来分布式处理和分析数据
 
 ---
 

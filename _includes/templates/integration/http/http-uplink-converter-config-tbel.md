@@ -5,25 +5,25 @@
 ![image](/images/user-guide/integrations/http/data-converters-2-tbel-pe.png)
 {% endif %}
 
-**Example for the Uplink converter:**
+**上行转换器的示例：**
 
 ```ruby
-// Decode an uplink message from a buffer
-// payload - array of bytes
-// metadata - key/value object
+// 从缓冲区解码上行消息
+// payload - 字节数组
+// metadata - 键/值对象
 
-/** Decoder **/
- 
-// decode payload to string
+/** 解码器 **/
+
+// 将有效负载解码为字符串
 // var payloadStr = decodeToString(payload);
 
-// decode payload to JSON
+// 将有效负载解码为 JSON
 var data = decodeToJson(payload);
 
 var deviceName = data.deviceName;
 var deviceType = data.deviceType;
 
-// Result object with device attributes/telemetry data
+// 具有设备属性/遥测数据的 Result 对象
 var result = {
    deviceName: deviceName,
    deviceType: deviceType,
@@ -36,13 +36,13 @@ var result = {
    }
 };
 
-/** Helper functions 'decodeToString' and 'decodeToJson' are already built-in **/
+/** 帮助器函数 'decodeToString' 和 'decodeToJson' 已内置 **/
 
 return result;
 ```
 {: .copy-code}
 
-You can change the decoder function while creating the converter or after creating it. If the converter has already been created, then click on the “pencil” icon to edit it.
-Copy the configuration example for the converter (or your own configuration) and insert it into the decoder function. Save changes by clicking on the “checkmark” icon.
+您可以在创建转换器或创建转换器后更改解码器函数。如果转换器已创建，请单击“铅笔”图标进行编辑。
+复制转换器的配置示例（或您自己的配置）并将其插入解码器函数。单击“对勾”图标保存更改。
 
 {% include images-gallery.html imageCollection="converter-tbel" %}

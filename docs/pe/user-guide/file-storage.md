@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-pe
-title: File Storage
-description: File Storage Guide
+title: 文件存储
+description: 文件存储指南
 redirect_from: "/docs/user-guide/file-storage/"
 ---
 

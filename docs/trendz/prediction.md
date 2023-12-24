@@ -2,39 +2,37 @@
 layout: docwithnav-trendz
 assignees:
 - vparomskiy
-title: Build prediction model for time series data
-description: How to build accurate prediction of time series data. Explore available ML models for forecasting and visualizing predicted data.
+title: 构建时间序列数据的预测模型
+description: 如何构建时间序列数据的准确预测。探索可用于预测和可视化预测数据的机器学习模型。
 
 trendz-prediction-overview-simple:
   0:
     image: /images/trendz/prediction-simple-initial.png
-    title: 'Configure prediction for energy consumption on line chart'
+    title: '配置折线图上的能耗预测'
   1:
     image: /images/trendz/prediction-simple-cfg.png
-    title: 'Select prediction model and forecast horizon'
+    title: '选择预测模型和预测范围'
 
 trendz-prediction-overview-bar-consumption:
  0:
   image: /images/trendz/prediction-sum-view.png
-  title: 'Resource usage foreacast for the next year'
+  title: '未来一年的资源使用预测'
  1:
   image: /images/trendz/prediction-sum-cfg1.png
-  title: 'Select prediction model and forecast horizon'
+  title: '选择预测模型和预测范围'
 
 ---
 
 * TOC
 {:toc}
 
-Trendz has built-in instruments for time-series prediction in few clicks. All required work, like data filtering, normalization 
-and model training performed in the background. You can enable prediction for any fields including calculated fields. 
-Time series prediction unlock a lot of insights that can be extract for your data. Here is a small list of questions that can be answered with Trendz time series prediction:
+Trendz 内置了只需点击几下即可进行时间序列预测的工具。所有必需的工作，如数据过滤、标准化和模型训练都在后台执行。您可以对包括计算字段在内的任何字段启用预测。时间序列预测解锁了许多可以从您的数据中提取的见解。以下是 Trendz 时间序列预测可以回答的一些问题：
 
-* Forecast energy consumption for the next quarter or year
-* Predict when the next maintenance should be scheduled
-* Predict when the next failure will occur
-* Forecast manufacturing KPIs and how they are affected by current system state
-* Forecast remaining time till fuel tank will be empty
+* 预测未来一个季度或一年的能耗
+* 预测下次应安排维护的时间
+* 预测下次故障发生的时间
+* 预测制造 KPI 以及它们如何受当前系统状态的影响
+* 预测油箱将耗尽剩余时间
 
 &nbsp;
 <div id="video">  
@@ -43,40 +41,39 @@ Time series prediction unlock a lot of insights that can be extract for your dat
     </div>
 </div>
 
-## Prediction Models
+## 预测模型
 
-Trendz implements different multivariable and univariable ML models for timeseries prediction:
+Trendz 为时间序列预测实现了不同的多变量和单变量机器学习模型：
 
-* `Fourier Transformation` - dissects a time series into its frequency components. Its prowess lies in discerning cyclic trends and seasonal patterns entrenched within the data, contributing to the efficacy of forecasting exercises.
-* `Prophet` - a forecasting paradigm devised by Facebook, meticulously crafted to handle time series datasets accentuated by pronounced seasonal patterns and holiday impacts. This technique utilizes an additive framework to encapsulate trends, seasonality, and holiday-induced influences.
-* `Multi Prophet` - evolves from the Prophet forecast model, enabling the simultaneous prediction of interconnected time series. This becomes particularly advantageous when dealing with numerous interconnected variables that warrant predictive insights.
-* `ARIMA` - combines autoregressive and moving average aspects to anticipate upcoming values founded on historical observations. This approach adeptly accommodates trends and seasonal variations ingrained within the dataset.
-* `SARIMAX` (Seasonal ARIMA with Exogenous Variables) - extends the ARIMA methodology by assimilating supplementary exogenous variables, capable of influencing the predictive outcomes. This model comes into play when external factors interplay with the time series, rendering it a valuable tool for enhanced forecasting accuracy.
-* `Linerar Regresssion` - a fundamental statistical method, comes into play to anticipate a dependent variable's trajectory grounded in one or more independent variables. This technique establishes a linear connection between variables, forming the foundation for making forecasts.
-* `Custom Model` - you can write our own multivariable time series prediction model using any Python libraries. In this case you provide a model sources and Trendz is responsible for inserting input dataset from ThingsBoard and process forecasted output.
+* `傅里叶变换` - 将时间序列分解为其频率分量。它的优势在于识别数据中根深蒂固的循环趋势和季节性模式，有助于提高预测练习的效率。
+* `Prophet` - 由 Facebook 设计的预测范例，精心设计用于处理以明显的季节性模式和假日影响为重点的时间序列数据集。此技术利用加法框架来封装趋势、季节性和假日引起的影响。
+* `Multi Prophet` - 从 Prophet 预测模型演变而来，支持同时预测相互关联的时间序列。当处理需要预测见解的众多相互关联变量时，这一点尤其有利。
+* `ARIMA` - 将自回归和移动平均方面结合起来，根据历史观测来预测即将到来的值。这种方法巧妙地适应了数据集中根深蒂固的趋势和季节性变化。
+* `SARIMAX`（具有外生变量的季节性 ARIMA） - 通过同化能够影响预测结果的补充外生变量来扩展 ARIMA 方法。当外部因素与时间序列相互作用时，此模型就会发挥作用，使其成为提高预测准确性的宝贵工具。
+* `线性回归` - 一种基本统计方法，用于根据一个或多个自变量预测因变量的轨迹。此技术在变量之间建立线性连接，为进行预测奠定基础。
+* `自定义模型` - 您可以使用任何 Python 库编写我们自己的多变量时间序列预测模型。在这种情况下，您提供模型源，Trendz 负责从 ThingsBoard 插入输入数据集并处理预测输出。
 
 
-## Simple Prediction
+## 简单预测
 
 ![image](/images/trendz/prediction-simple-view.png)
 
-In this example we monitor vibration of pumps on water station. We want predict when vibration will rich critical levels
-so we can schedule preventive maintenance for the pump and avoid unplanned downtime.
+在此示例中，我们监控水站上泵的振动。我们希望预测振动何时会达到临界水平，以便我们可以为泵安排预防性维护并避免计划外停机。
 
-* Create line chart 
-* Add **Date(RAW)** field on **X-axis**
-* Add **Pump** name field to **Filter** section and select required Pump
-* Add Pump **vibration** telemetry on **Y-axis** 
+* 创建折线图
+* 在 **X 轴** 上添加 **Date(RAW)** 字段
+* 将 **Pump** 名称字段添加到 **Filter** 部分并选择所需的 Pump
+* 在 **Y 轴** 上添加 Pump **vibration** 遥测
 
-Now Our Chart is ready for making forecast:
-* Enable **Predction** check box for forecast field
-* Select **FOURIER_TRANSFORMATION** as **Prediction Method**
-* Set **Prediction Unit** to **days**
-* Set **Prediction Range** to **2** - we make forecast for the next 2 days
+现在我们的图表已准备好进行预测：
+* 为预测字段启用 **Predction** 复选框
+* 选择 **FOURIER_TRANSFORMATION** 作为 **Prediction Method**
+* 将 **Prediction Unit** 设置为 **days**
+* 将 **Prediction Range** 设置为 **2** - 我们对未来 2 天进行预测
 
 {% include images-gallery.html imageCollection="trendz-prediction-overview-simple" %}
 
-Now we can press 'Build report' buten and check how our forecast looks like.
+现在我们可以按“生成报告”按钮并检查我们的预测是什么样子。
 
 <div class="image-block">
     <div class="image-wrapper">
@@ -87,19 +84,18 @@ Now we can press 'Build report' buten and check how our forecast looks like.
 </div>
 
 
-## Forecast resource usage
+## 预测资源使用情况
 
-In this example, we forecast how much energy would be consumed by teh building during next year. We have Buildings, Apartments and each Apartment 
-has energy meter. We need to aggregate telemetry from sensors on building level and then build a forecast.
+在此示例中，我们预测明年建筑物将消耗多少能源。我们有建筑物、公寓，每个公寓都有电表。我们需要汇总建筑物级别的传感器遥测，然后建立预测。
 
-* Create Bar chart 
-* Add **Date(RAW)** field on **X-axis**
-* Add **Building** name field to **Filter** section and select required Building
-* Add Energy Meter **energyConsumption** telemetry on **Y-axis**
-* Enable **Prediction** check box for **energyConsumption** field
-* Select **LINEAR_REGRESSION** as **Prediction Method**
-* Set **Prediction Unit** to **years**
-* Set **Prediction Range** to **1** - we make forecast for the next year
+* 创建条形图
+* 在 **X 轴** 上添加 **Date(RAW)** 字段
+* 将 **Building** 名称字段添加到 **Filter** 部分并选择所需的 Building
+* 在 **Y 轴** 上添加 Energy Meter **energyConsumption** 遥测
+* 为 **energyConsumption** 字段启用 **Prediction** 复选框
+* 选择 **LINEAR_REGRESSION** 作为 **Prediction Method**
+* 将 **Prediction Unit** 设置为 **years**
+* 将 **Prediction Range** 设置为 **1** - 我们对明年进行预测
 
 {% include images-gallery.html imageCollection="trendz-prediction-overview-bar-consumption" %}
 
@@ -112,13 +108,12 @@ has energy meter. We need to aggregate telemetry from sensors on building level 
 </div>
 
 
-## Compare prediction with historical data 
+## 将预测与历史数据进行比较
 
-If you want to see how trained model looks like compared to historical data you need to enable **Show Historical part** checkbox
- in field configuration. Once enabled, predicted dataset will contain historical part predicted with the same model.
+如果您想了解训练后的模型与历史数据相比如何，您需要在字段配置中启用 **Show Historical part** 复选框。启用后，预测数据集将包含使用相同模型预测的历史部分。
  
 ![image](/images/trendz/prediction-validation.png)
  
-## Next Steps
+## 后续步骤
 
 {% assign currentGuide = "Prediction" %}{% include templates/trndz-guides-banner.md %}

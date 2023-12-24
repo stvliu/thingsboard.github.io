@@ -1,6 +1,5 @@
-
-The construction of the topic name is determined by mapping the MQTT topic filter to the corresponding Kafka topic. 
-This mapping is achieved by following a specific naming convention (MQTT topic filter -> Kafka topic).
+主题名称的构建由将 MQTT 主题过滤器映射到相应的 Kafka 主题来确定。
+这种映射是通过遵循特定的命名约定（MQTT 主题过滤器 -> Kafka 主题）来实现的。
 
 ```
 test/topic -> tbmq.msg.app.shared.test.topic
@@ -8,23 +7,23 @@ test/# -> tbmq.msg.app.shared.test.mlw
 test/+ -> tbmq.msg.app.shared.test.slw
 ```
 
-where
-* `tbmq.msg.app.shared.` is added as a prefix
-* `/` is replaced by `.`
-* `#` is replaced by `mlw` (multi-lvl wildcard)
-* `+` is replaced by `slw` (single-lvl wildcard)
+其中
+* `tbmq.msg.app.shared.` 添加为前缀
+* `/` 替换为 `.`
+* `#` 替换为 `mlw`（多级通配符）
+* `+` 替换为 `slw`（单级通配符）
 
-If the MQTT topic filter contains any special characters not mentioned earlier (other than alphanumeric characters), 
-the hash derived from the topic filter will be utilized to create the Kafka topic. 
-This approach ensures that the resulting Kafka topic remains valid and adheres to the necessary naming conventions.
+如果 MQTT 主题过滤器包含任何前面未提及的特殊字符（字母数字字符除外），
+则将利用从主题过滤器派生的哈希来创建 Kafka 主题。
+这种方法确保生成的 Kafka 主题保持有效并遵守必要的命名约定。
 
 ```
 tbmq.msg.app.shared.$TOPIC_FILTER_HASH
 ```
 
-The behavior described above can be regulated by the `TB_APP_PERSISTED_MSG_SHARED_TOPIC_VALIDATION` property.
-By default, this variable is enabled, meaning that the validation process is active, ensuring proper topic creation.
-However, if you choose to disable this validation by setting the variable to _false_,
-the system will no longer create Kafka topics for shared subscriptions having topic filters with special characters, 
-resulting in a failure to create the corresponding topics.
-It's important to consider this when configuring your environment and handling client IDs with special characters.
+上述行为可以通过 `TB_APP_PERSISTED_MSG_SHARED_TOPIC_VALIDATION` 属性来调节。
+默认情况下，此变量处于启用状态，这意味着验证过程处于活动状态，确保正确创建主题。
+但是，如果您选择通过将变量设置为 _false_ 来禁用此验证，
+则系统将不再为具有特殊字符的主题过滤器的共享订阅创建 Kafka 主题，
+导致无法创建相应的主题。
+在配置环境和处理具有特殊字符的客户端 ID 时，这一点很重要。

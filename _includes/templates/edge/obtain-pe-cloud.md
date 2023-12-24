@@ -1,4 +1,4 @@
-The easiest way is to use [**ThingsBoard Cloud**](https://thingsboard.cloud/signup){:target="_blank"} server.
+最简单的方法是使用 [**ThingsBoard Cloud**](https://thingsboard.cloud/signup){:target="_blank"} 服务器。
 
-Alternatively, you can install the ThingsBoard Professional Edition server on-premise.
-For installation guidance, please refer to [Install PE](/docs/user-guide/install/pe/installation-options/){:target="_blank"}.
+或者，您可以在本地安装 ThingsBoard Professional Edition 服务器。
+有关安装指南，请参阅 [安装 PE](/docs/user-guide/install/pe/installation-options/){:target="_blank"}。

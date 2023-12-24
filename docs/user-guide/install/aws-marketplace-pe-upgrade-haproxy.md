@@ -1,30 +1,29 @@
 ---
 layout: docwithnav
-title: Upgrading HAProxy Load Balancer for ThingsBoard PE from AWS Marketplace
-description: Upgrading HAProxy Load Balancer for ThingsBoard PE from AWS Marketplace
+title: 从 AWS Marketplace 升级 ThingsBoard PE 的 HAProxy 负载均衡器
+description: 从 AWS Marketplace 升级 ThingsBoard PE 的 HAProxy 负载均衡器
 hidetoc: "true"
 ---
 
-This guide describes how to remove dockerized version of HAProxy Load Balancer and install HAProxy with Let's Encrypt
-as ubuntu service for ThingsBoard Professional Edition from AWS Marketplace.
+本指南介绍如何从 AWS Marketplace 中移除 HAProxy 负载均衡器的 docker 版本，并为 ThingsBoard Professional Edition 安装带有 Let's Encrypt 的 HAProxy 作为 ubuntu 服务。
 
 * TOC
 {:toc}
 
-#### Connect to your ThingsBoard PE AWS instance over SSH
+#### 通过 SSH 连接到你的 ThingsBoard PE AWS 实例
 
-Below is example command as a reference:
+以下是一个参考示例命令：
 
 ```bash
-$ ssh -i <PRIVATE-KEY> ubuntu@<PUBLIC_DNS_NAME>
+$ ssh -i <PRIVATE-KEY> ubuntu@<PUBLIC-DNS_NAME>
 ```
 
-or goto EC2 instances and locate your ThingsBoard PE instance. 
-Then select **Actions -> Connect** and follow instructions provided in **Connect To Your Instance** dialog.
+或者转到 EC2 实例并找到你的 ThingsBoard PE 实例。
+然后选择 **操作 -> 连接**，并按照 **连接到你的实例** 对话框中提供的说明进行操作。
 
-#### Remove dockerized version of HAProxy Load Balancer
+#### 移除 HAProxy 负载均衡器的 docker 版本
 
-Execute the following commands to remove HAProxy docker containers and docker services:
+执行以下命令以移除 HAProxy docker 容器和 docker 服务：
 
 ```bash
 $ cd /usr/share/tb-haproxy && docker-compose down -v && cd ~
@@ -33,9 +32,9 @@ $ sudo apt-get autoremove -y --purge docker-engine docker docker.io docker-ce
 $ sudo rm -rf /var/lib/docker && sudo groupdel docker && sudo rm -rf /var/run/docker.sock
 ```
 
-#### Install HAProxy Load Balancer package
+#### 安装 HAProxy 负载均衡器软件包
 
-Execute the following commands to install HAProxy package:
+执行以下命令以安装 HAProxy 软件包：
 
 ```bash
 $ sudo add-apt-repository ppa:vbernat/haproxy-1.7
@@ -43,17 +42,17 @@ $ sudo apt-get update
 $ sudo apt-get install haproxy openssl
 ```
 
-#### Install Certbot package
+#### 安装 Certbot 软件包
 
-Execute the following commands to install Certbot package:
+执行以下命令以安装 Certbot 软件包：
 
 ```bash
 $ sudo apt-get install ca-certificates certbot
 ```
 
-#### Install default self-signed certificate
+#### 安装默认自签名证书
 
-Execute the following commands to install default self-signed certificate:
+执行以下命令以安装默认自签名证书：
 
 ```bash
 $ cat <<EOT | sudo tee /usr/bin/haproxy-default-cert
@@ -82,7 +81,7 @@ if [ ! -e \${CERTS_D_DIR} ]; then
 fi
 
 
-# Check if default.pem has been created
+# 检查是否已创建 default.pem
 if [ ! -e \${DEFAULT_PEM} ]; then
   openssl genrsa -des3 -passout pass:\${PASSWORD} -out \${KEY} 2048 &> /dev/null
   sleep 1
@@ -104,9 +103,9 @@ $ sudo chmod +x /usr/bin/haproxy-default-cert
 $ sudo haproxy-default-cert
 ```
 
-#### Configure HAProxy Load Balancer
+#### 配置 HAProxy 负载均衡器
 
-Execute the following command to create HAProxy Load Balancer configuration file:
+执行以下命令以创建 HAProxy 负载均衡器配置文件：
 
 ```bash
 $ cat <<EOT | sudo tee /etc/haproxy/haproxy.cfg
@@ -182,9 +181,9 @@ backend tb-backend
 EOT
 ```
 
-#### Configure Certbot with Let’s Encrypt
+#### 使用 Let's Encrypt 配置 Certbot
 
-Execute the following commands to create Certbot with Let’s Encrypt configuration and helper files:
+执行以下命令以创建 Certbot 与 Let's Encrypt 配置和帮助程序文件：
 
 ```bash
 $ sudo mkdir -p /usr/local/etc/letsencrypt \
@@ -212,13 +211,13 @@ HA_PROXY_DIR=/usr/share/tb-haproxy
 LE_DIR=/usr/share/tb-haproxy/letsencrypt/live
 DOMAINS=\$(ls \${LE_DIR})
 
-# update certs for HA Proxy
+# 更新 HA Proxy 的证书
 for DOMAIN in \${DOMAINS}
 do
  cat \${LE_DIR}/\${DOMAIN}/fullchain.pem \${LE_DIR}/\${DOMAIN}/privkey.pem > \${HA_PROXY_DIR}/certs.d/\${DOMAIN}.pem
 done
 
-# restart haproxy
+# 重启 haproxy
 exec service haproxy restart
 EOT
 ```
@@ -243,9 +242,9 @@ EOT
 $ sudo chmod +x /usr/bin/haproxy-refresh /usr/bin/certbot-certonly /usr/bin/certbot-renew
 ```
 
-#### Install certificates auto renewal cron job
+#### 安装证书自动续订 cron 作业
 
-Execute the following command to create certificates auto renewal cron job: 
+执行以下命令以创建证书自动续订 cron 作业：
 
 ```bash
 $ cat <<EOT | sudo tee /etc/cron.d/certbot
@@ -263,9 +262,9 @@ PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 EOT
 ```
 
-#### Restart HAProxy Load Balancer
+#### 重启 HAProxy 负载均衡器
 
-Finally restart HAProxy Load Balancer service in order changes take effect:
+最后，重启 HAProxy 负载均衡器服务，以便更改生效：
 
 ```bash
 $ sudo service haproxy restart

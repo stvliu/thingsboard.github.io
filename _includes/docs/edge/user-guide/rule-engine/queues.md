@@ -1,25 +1,25 @@
 * TOC
 {:toc}
 
-#### Overview
+#### 概述
 
-Edge Queues are designed in the same way, as [Platform (Cloud) Queues](/docs/{{cloudDocsPrefix}}user-guide/rule-engine-2-5/queues/).
-Please read Platform Queues documentation to get knowledge on Queues functionality in general.
+边缘队列的设计方式与 [平台（云）队列](/docs/{{cloudDocsPrefix}}user-guide/rule-engine-2-5/queues/) 相同。
+请阅读平台队列文档以了解有关队列功能的总体知识。
 
-#### Propagation Queues to Edge
+#### 将队列传播到边缘
 
-Queues are created on the *Platform*. In the current version you **can not** create, modify or delete them on the *Edge*.
+队列在 *平台* 上创建。在当前版本中，您**不能**在 *边缘* 上创建、修改或删除它们。
 
-All the Queues, that are created on the Platform, are automatically propagated to every Edge instance, that is connected to the Platform. 
-No additional assignment actions required from Tenant administrator or user.
+在平台上创建的所有队列都会自动传播到连接到平台的每个边缘实例。
+租户管理员或用户无需执行其他分配操作。
 
-#### Queues Usage in the Rule Engine
+#### 在规则引擎中使用队列
 
-Tenant administrator is able to use any Queue in the *Edge* Rule Chain, in the same way as it used for *Platform* Rule Chain.
+租户管理员能够在 *边缘* 规则链中使用任何队列，就像在 *平台* 规则链中使用队列一样。
 
-You can use Queues in *Checkpoint* or any analytics (**PE**) rule nodes. 
-No additional configuration steps required. 
- 
-## Next steps
+您可以在 *检查点* 或任何分析（**PE**）规则节点中使用队列。
+无需执行其他配置步骤。
+
+## 后续步骤
 
 {% include templates/edge/guides-banner-edge.md %}

@@ -1,24 +1,25 @@
-### Add a gateway on the Loriot
+### 在 Loriot 上添加网关
 
-We need to add a gateway on the [Loriot](https://loriot.io){: target="_blank"}.   
-To add a gateway, you can follow next steps:
+我们需要在 [Loriot](https://loriot.io){: target="_blank"} 上添加一个网关。
+
+若要添加网关，可以按照以下步骤操作：
 
 {% assign addGatewaySteps = '
     ===
         image: /images/devices-library/basic/integrations/loriot/main-page.png,
-        title: Login to Loriot server. We use **eu2.loriot.io**, but it depends on chosen region during registration.
+        title: 登录 Loriot 服务器。我们使用 **eu2.loriot.io**，但它取决于注册期间选择的区域。
     ===
         image: /images/devices-library/basic/integrations/loriot/sample-network.png,
-        title: Go to **Networks** and open **Sample network** or create a new one.
+        title: 转到 **Networks** 并打开 **Sample network** 或创建一个新的网络。
     ===
         image: /images/devices-library/basic/integrations/loriot/register-gateway.png,
-        title: Scroll down and choose **Packet Forwarder Semtech** option.
+        title: 向下滚动并选择 **Packet Forwarder Semtech** 选项。
     ===
         image: /images/devices-library/basic/integrations/loriot/add-gateway.png,
-        title: Scroll up and put information about the gateway **MAC Address** (Just remove **FFFF** or **FFFE** in the middle of ***gateway EUI***) into **eth0 MAC address** and gateway EUI to **Custom EUI** field.
+        title: 向上滚动并将有关网关 **MAC 地址** 的信息（只需删除 ***gateway EUI*** 中间的 **FFFF** 或 **FFFE**）放入 **eth0 MAC 地址** 和网关 EUI 到 **Custom EUI** 字段。
     ===
         image: /images/devices-library/basic/integrations/loriot/gateway-added-disconnected.png,
-        title: The gateway is added. 
+        title: 网关已添加。
 '%}
 
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=addGatewaySteps %}
@@ -31,9 +32,9 @@ To add a gateway, you can follow next steps:
 
 {% endif %}
 
-### Create uplink converter
+### 创建上行转换器
 
-At first, copy the code for uplink converter, we will need it for integration:
+首先，复制上行转换器的代码，我们需要它进行集成：
 
 {% capture converterCode %}
 var data = decodeToJson(payload);
@@ -132,29 +133,29 @@ return uplinkDataList;
 
 {% include code-toggle.liquid code=converterCode params="javascript|.copy-code.expandable-20" %}
 
-### Create integration
+### 创建集成
 
-Next we will create an integration with Loriot inside the ThingsBoard.  
+接下来，我们将在 ThingsBoard 中创建与 Loriot 的集成。
 
 
 {% assign createLoriotIntegration = '
     ===
         image: /images/devices-library/basic/integrations/loriot/1-create-integration-name-type.png,
-        title: Go to **Integrations**, press **plus** button and choose **Loriot** as a type, put some name.
+        title: 转到 **Integrations**，按 **加号** 按钮并选择 **Loriot** 作为类型，输入一些名称。
     ===
         image: /images/devices-library/basic/integrations/loriot/2-create-integration-uplink.png,
-        title: Check **Create new uplink data converter** and replace a code or create the existing one.
+        title: 选中 **Create new uplink data converter** 并替换代码或创建现有代码。
     ===
         image: /images/devices-library/basic/integrations/loriot/sample-application.png,
-        title: Go to **Applications** in the left menu and choose **SampleApp** or create a new one. Copy **Application ID**.
+        title: 转到左侧菜单中的 **Applications** 并选择 **SampleApp** 或创建一个新的应用程序。复制 **Application ID**。
     ===
         image: /images/devices-library/basic/integrations/loriot/4-create-integration-configuration.png,
-        title: Fill the field with your parameters, 
+        title: 用你的参数填写字段，
 '
 %}
 
-To add integration click on '**+**' button and follow the next steps:  
+若要添加集成，请单击“**+**”按钮并按照以下步骤操作：
 
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=createLoriotIntegration %} 
 
-Press **Add** button and integration will be added.  
+按 **Add** 按钮，集成将被添加。

@@ -1,6 +1,6 @@
 ---
 layout: docwithnav-mobile-pe
-title: Build and release ThingsBoard PE Mobile Application
+title: 构建并发布 ThingsBoard PE 移动应用程序
 
 ---
 

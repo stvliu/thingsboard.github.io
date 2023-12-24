@@ -1,42 +1,42 @@
 ---
 layout: docwithnav-edge
-title: Cloud Events
-description: Cloud Events
+title: 云事件
+description: 云事件
 cloudEvents:
     0:
         image: /images/edge/cloud-events.png
 ---
 
-**Cloud Events** page shows events that ThingsBoard Edge pushes to the cloud.
+**云事件**页面显示 ThingsBoard Edge 推送到云的事件。
 
 {% include images-gallery.html imageCollection="cloudEvents" %}
 
-Check **Status** column to know if an event has been pushed to the cloud.
-There are two status types:
-* **Deployed** - event has been already pushed to the ThingsBoard CE/PE server.
-* **Pending** - event has been created on the ThingsBoard Edge, stored to the local database and will be pushed to cloud as soon as connection is restored.
+查看 **状态** 列以了解事件是否已推送到云。
+有两种状态类型：
+* **已部署** - 事件已推送到 ThingsBoard CE/PE 服务器。
+* **待处理** - 事件已在 ThingsBoard Edge 上创建，存储到本地数据库，并在连接恢复后立即推送到云。
 
-List of possible cloud actions:
-* Added
-* Deleted
-* Updated
-* Attributes Updated
-* Attributes Deleted
-* Timeseries Deleted
-* Timeseries Updated
-* RPC Call
-* Credentials Updated
-* Relation Add or Update
-* Relation Deleted
-* Relations Deleted
-* Alarm Ack
-* Alarm Clear
-* Attributes Request
-* Rule Chain Metadata Request
-* Relation Request
-* Credentials Request
+可能的云操作列表：
+* 已添加
+* 已删除
+* 已更新
+* 已更新属性
+* 已删除属性
+* 已删除时序
+* 已更新时序
+* RPC 调用
+* 已更新凭据
+* 关系添加或更新
+* 已删除关系
+* 已删除关系
+* 警报确认
+* 警报清除
+* 属性请求
+* 规则链元数据请求
+* 关系请求
+* 凭据请求
 
-## Next steps
+## 后续步骤
 
 {% assign currentGuide = "CloudEvents" %}
 {% assign docsPrefix = "edge/" %}

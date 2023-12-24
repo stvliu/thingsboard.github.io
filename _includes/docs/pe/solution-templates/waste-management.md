@@ -1,45 +1,44 @@
-
-* TOC 
+* TOC
 {:toc}
 
 {% include templates/solution-templates.md %}
 
-The Waste Management template represents a solution for monitoring and controlling the fullness of waste containers. With this solution, you will be able to monitor the placement of garbage bins, their fullness, and also view statistics about garbage bins.
+废物管理模板代表了用于监控和控制废物容器满度的解决方案。借助此解决方案，您将能够监控垃圾箱的位置、其满度，还可以查看有关垃圾箱的统计信息。
 
 {% include images-gallery.html imageCollection="solution-highlights" %}
 
-### Dashboard
+### 仪表板
 
-As part of this solution, we have created the **Waste Management Administration** dashboard that displays data from waste sensors.
+作为此解决方案的一部分，我们创建了**废物管理管理**仪表板，该仪表板显示来自废物传感器的的数据。
 
-#### Waste Management Administration
+#### 废物管理管理
 
-The Waste Management Administration has multiple states - **Main state** and **Bin state**.
+废物管理管理具有多个状态 - **主状态**和**垃圾箱状态**。
 
-You may use the **Main state** to:
-- revise the location and filling of the required trash bins with the help of an interactive map;
-- receive data in real-time;
-- follow the main indicators of the fullness of the garbage bin;
-- view and manage all available sensors;
-- control the notification system regarding the fullness and battery level.
-
-<br>
-
-To switch to the **Bin state**, click on the row of the desired sensor from the general list of sensors, or click "details" on the card/popup of a specific sensor on the interactive map.
+您可以使用**主状态**来：
+- 在交互式地图的帮助下修改所需垃圾箱的位置和装填；
+- 实时接收数据；
+- 关注垃圾箱满度的主要指标；
+- 查看和管理所有可用传感器；
+- 控制有关满度和电池电量的通知系统。
 
 <br>
 
-You may use the **Bin state** to:
-- view and edit basic information, sensor placement of the specific bin ;
-- monitor basic trash and battery statistics;
-- control the notification system regarding the level of charge and battery level.
+要切换到**垃圾箱状态**，请从传感器的一般列表中单击所需传感器的行，或在交互式地图上单击特定传感器的卡片/弹出窗口上的“详细信息”。
 
-You may always customize the "Waste Management Administration" dashboard using dashboard development [guide](/docs/{{docsPrefix}}user-guide/dashboards/).
+<br>
+
+您可以使用**垃圾箱状态**来：
+- 查看和编辑特定垃圾箱的基本信息、传感器位置；
+- 监控基本的垃圾和电池统计信息；
+- 控制有关电量和电池电量的通知系统。
+
+您可以随时使用仪表板开发[指南](/docs/{{docsPrefix}}user-guide/dashboards/)自定义“废物管理管理”仪表板。
 
 
-### Devices
+### 设备
 
-We have already created 10 waste monitoring sensors and loaded some demo data for them. See solution [instructions](/docs/{{docsPrefix}}solution-templates/overview/#install-solution-template) for the list of created devices and their credentials. The solution expects that the sensor device will upload fullness level and battery level values. The most simple example of the expected payload is in JSON format:
+我们已经创建了 10 个废物监控传感器并为它们加载了一些演示数据。有关创建的设备及其凭据的列表，请参阅解决方案[说明](/docs/{{docsPrefix}}solution-templates/overview/#install-solution-template)。该解决方案期望传感器设备将上传满度等级和电池电量值。预期有效负载的最简单示例采用 JSON 格式：
 
 ```json
 {"fullLevel": 42, "batteryLevel": 77 }
@@ -47,18 +46,8 @@ We have already created 10 waste monitoring sensors and loaded some demo data fo
 {: .copy-code}
 
 
-You may find the exact commands to send data on behalf of created devices in the solution [instructions](/docs/{{docsPrefix}}solution-templates/overview/#install-solution-template).
-See [connecting devices](/docs/{{docsPrefix}}getting-started-guides/connectivity/) for various connectivity options to connect real devices.
+您可以在解决方案[说明](/docs/{{docsPrefix}}solution-templates/overview/#install-solution-template)中找到代表创建的设备发送数据的准确命令。有关连接真实设备的各种连接选项，请参阅[连接设备](/docs/{{docsPrefix}}getting-started-guides/connectivity/)。
 
-### Alarms
-Alarms are generated using two <a href="https://thingsboard.io/docs/user-guide/device-profiles/#alarm-rules" target="_blank">Alarm rules</a> in the
-"Waste Sensor" <a href="/docs/pe/user-guide/device-profiles/" target="_blank">device profile</a>.
-User may turn alarms on and off as well as configure the alarm thresholds via the "Waste Management" dashboard using "Edit Sensor" form.
-
-
-
-
-
-
-
-
+### 警报
+警报是使用“废物传感器”<a href="/docs/pe/user-guide/device-profiles/" target="_blank">设备配置文件</a>中的两个<a href="https://thingsboard.io/docs/user-guide/device-profiles/#alarm-rules" target="_blank">警报规则</a>生成的。
+用户可以通过“编辑传感器”表单通过“废物管理”仪表板打开和关闭警报以及配置警报阈值。

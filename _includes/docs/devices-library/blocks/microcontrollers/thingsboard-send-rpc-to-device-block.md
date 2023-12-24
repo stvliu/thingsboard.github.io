@@ -1,25 +1,25 @@
-
 {% assign changeStateAndMode = '
     ===
         image: /images/devices-library/basic/microcontrollers/dashboard/thingsboard-example-dashboard-change-blinking-mode-0.png,
-        title: Change LED state using switch widget to continuous lightning.
+        title: 使用开关小部件将 LED 状态更改为连续照明。
     ===
         image: /images/devices-library/basic/microcontrollers/dashboard/thingsboard-example-dashboard-change-blinking-mode-1.png,
-        title: Change LED state using round switch widget to blinking mode.
+        title: 使用圆形开关小部件将 LED 状态更改为闪烁模式。
  '
  %}
 
-You can manually change state of the LED and change mode between continuous lightning and blinking.
-To do this, you can use the following parts of our dashboard:  
+您可以手动更改 LED 状态并在连续照明和闪烁之间更改模式。
+为此，您可以使用仪表板的以下部分：
 
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=changeStateAndMode %}
-  
-Please note that you can change the LED state only if blinking mode is disabled.  
 
-In the code example we have functionality to handle [RPC commands](/docs/{{page.docsPrefix}}user-guide/rpc/#server-side-rpc).  
-To get ability to control the device we have used the following parts of the code:  
-- Callback for RPC requests:  
-    
+请注意，只有在禁用闪烁模式时才能更改 LED 状态。
+
+在代码示例中，我们具有处理 [RPC 命令](/docs/{{page.docsPrefix}}user-guide/rpc/#server-side-rpc) 的功能。
+为了获得控制设备的能力，我们使用了以下代码部分：
+
+- RPC 请求的回调：
+
 ```cpp
 ...
 
@@ -58,8 +58,8 @@ const std::array<RPC_Callback, 1U> callbacks = {
 ...
 ```
 
-- Subscribing for RPC requests:  
-    
+- 订阅 RPC 请求：
+
 ```cpp
 ...
     if (!tb.RPC_Subscribe(callbacks.cbegin(), callbacks.cend())) {
@@ -74,17 +74,17 @@ const std::array<RPC_Callback, 1U> callbacks = {
 {% assign takePictureRPC = '
     ===
         image: /images/devices-library/basic/microcontrollers/dashboard/thingsboard-example-dashboard-take-a-picture.png,
-        title: You can take a picture from camera module, by pressing the button on ThingsBoard dashboard. 
+        title: 您可以通过按 ThingsBoard 仪表板上的按钮从摄像头模块拍摄照片。
 '
 %}
 
-Such as the board has included camera we can take a picture and see it on the dashboard.  
+由于电路板已包含摄像头，因此我们可以拍摄照片并在仪表板上查看。
 
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=takePictureRPC %}
 
-To take a picture we send "takePicture" RPC to the device.   
+要拍照，我们会向设备发送“takePicture”RPC。
 
-The following part of the code takes a picture.
+以下代码部分拍摄照片。
 
 ```cpp
 ...
@@ -102,7 +102,7 @@ bool captureImage() {
 ...
 ```
 
-We are unable to send a raw bytes array of the photo in JSON, so we are also encoding bytes to Base64:  
+我们无法在 JSON 中发送照片的原始字节数组，因此我们还将字节编码为 Base64：
 
 ```cpp
 ...
@@ -116,7 +116,7 @@ void encode(const uint8_t *data, size_t length) {
 ...
 ```
 
-Our encoded picture will be sent in the main loop:  
+我们的编码图片将在主循环中发送：
 
 ```cpp
 ...
@@ -129,6 +129,4 @@ sendPicture = false;
 
 {% endif %}
 
-You can change the code to reach your goals and add processing for your RPC commands.  
-
-
+您可以更改代码以实现您的目标并添加对 RPC 命令的处理。

@@ -1,30 +1,30 @@
 ---
 layout: docwithnav-gw
-title: SNMP Connector Configuration
-description: SNMP monitoring support for ThingsBoard IoT Gateway
+title: SNMP 连接器配置
+description: ThingsBoard IoT 网关的 SNMP 监控支持
 
 ---
 
 * TOC
 {:toc}
 
-This guide will help you to get familiar with SNMP Connector configuration for ThingsBoard IoT Gateway.  
-Use [general configuration guide](/docs/iot-gateway/configuration/) to enable this Connector.  
-The purpose of this Connector is to get data from SNMP managers objects and write some data there.  
+本指南将帮助您熟悉 ThingsBoard IoT 网关的 SNMP 连接器配置。  
+使用 [通用配置指南](/docs/iot-gateway/configuration/) 启用此连接器。  
+此连接器的目的是从 SNMP 管理器对象获取数据并在其中写入一些数据。  
 
-This connector is useful when you have SNMP manager in your network and you would like to push this data to the ThingsBoard.    
+当您的网络中有 SNMP 管理器并且您想将此数据推送到 ThingsBoard 时，此连接器非常有用。    
 
-We will describe connector configuration file below.  
+我们将在下面描述连接器配置文件。  
 
-## Connector configuration: snmp.json
+## 连接器配置：snmp.json
 
-Connector configuration is a JSON file that contains information about SNMP managers and how to process the data.  
-Let's review the format of the configuration file using example below.    
+连接器配置是一个 JSON 文件，其中包含有关 SNMP 管理器以及如何处理数据的信息。  
+让我们使用下面的示例来查看配置文件的格式。    
 
-<b>Example of SNMP Connector config file.</b>
+<b>SNMP 连接器配置文件示例。</b>
 
-Example listed below will connect to a manager on **snmp.live.gambitcommunications.com**.  
-Then, connector will try to read the data from objects using configuration from attributes, telemetry section. See more info in a description below.  
+下面列出的示例将连接到 **snmp.live.gambitcommunications.com** 上的管理器。  
+然后，连接器将尝试使用来自属性、遥测部分的配置从对象读取数据。有关更多信息，请参见下面的说明。  
 
 {% capture snmpConf %}
 {
@@ -170,39 +170,39 @@ Then, connector will try to read the data from objects using configuration from 
 {% include code-toggle.liquid code=snmpConf params="conf|.copy-code.expandable-20" %}
 
 
-### General section
+### 常规部分
 
-The general section of the configuration contains *"devices"* list. Every item will be processed as a separate device.
-Main configuration for the device item should contain the following parameters:  
+配置的常规部分包含 *"devices"* 列表。每个项目将被处理为一个单独的设备。
+设备项的主要配置应包含以下参数：  
 
-| **Parameter** | **Default value**                       | **Description**                               |
-|:-|:-|-
-| deviceName    | **SNMP router**                         | Device name in ThingsBoard.                   |
-| deviceType    | **snmp**                                | Device type in ThingsBoard.                   |
-| ip            | **snmp.live.gambitcommunications.com**  | Ip or hostname of SNMP manager.               |
-| port          | **161**                                 | SNMP port.                                    |
-| pollPeriod    | **5000**                                | Period for data checking.                     |
-| community     | **public**                              | Type of community **public** or **private**.  |
+| **参数** | **默认值** | **说明** |
+|:-|:-|:-|
+| deviceName    | **SNMP router** | ThingsBoard 中的设备名称。 |
+| deviceType    | **snmp** | ThingsBoard 中的设备类型。 |
+| ip            | **snmp.live.gambitcommunications.com** | SNMP 管理器的 IP 或主机名。 |
+| port          | **161** | SNMP 端口。 |
+| pollPeriod    | **5000** | 数据检查周期。 |
+| community     | **public** | 社区类型 **public** 或 **private**。 |
 |---
 
-#### Attributes section
+#### 属性部分
 
-This configuration section contains array of objects with configuration for data processing, objects configured there will be processed as device attributes.  
-By default, the gateway uses uplink converter which sends received data from SNMP manager to the ThingsBoard, but it is possible to provide custom converter.  
+此配置部分包含用于数据处理的配置对象数组，配置的对象将被处理为设备属性。  
+默认情况下，网关使用上行转换器，该转换器将从 SNMP 管理器接收到的数据发送到 ThingsBoard，但可以提供自定义转换器。  
 
-**Note**: Some configuration parameters in configuration objects depend on used method. You can read more about specific configuration parameters for methods [here](#supported-methods-and-their-configuration)
+**注意**：配置对象中的一些配置参数取决于所使用的方法。您可以在 [此处](#supported-methods-and-their-configuration) 阅读有关方法的特定配置参数的更多信息
 
-General configuration parameters are:
+常规配置参数为：
 
-| **Parameter**     | **Default value**                     | **Description**                                                                                         |
-|:-|:-|-
+| **参数** | **默认值** | **说明** |
+|:-|:-|:-|
 
-| key               | **ReceivedFromGet**                   | Attribute key in device on ThingsBoard.                                                                 |
-| method            | **get**                               | Method for data processing. Supported methods are [here](#supported-methods-and-their-configuration).   |
-| oid               | **1.3.6.1.2.1.1.1.0**                 | Manager object identifier.                                                                              |
+| key | **ReceivedFromGet** | ThingsBoard 上设备中的属性键。 |
+| method | **get** | 数据处理方法。支持的方法在 [此处](#supported-methods-and-their-configuration) 中。 |
+| oid | **1.3.6.1.2.1.1.1.0** | 管理器对象标识符。 |
 |---
 
-Configuration section item example:  
+配置部分项目示例：  
 
 ```json
     {
@@ -212,24 +212,24 @@ Configuration section item example:
     }
 ```
 
-#### Telemetry section
+#### 遥测部分
 
-This configuration section contains array of objects with configuration for data processing, objects configured there will be processed as device telemetry.  
-By default, the gateway uses uplink converter which sends received data from SNMP manager to the ThingsBoard, but it is possible to provide custom converter.  
+此配置部分包含用于数据处理的配置对象数组，配置的对象将被处理为设备遥测。  
+默认情况下，网关使用上行转换器，该转换器将从 SNMP 管理器接收到的数据发送到 ThingsBoard，但可以提供自定义转换器。  
 
-**Note**: Some configuration parameters in configuration objects depend on used method. You can read more about specific configuration parameters for methods [here](#supported-methods-and-their-configuration)
+**注意**：配置对象中的一些配置参数取决于所使用的方法。您可以在 [此处](#supported-methods-and-their-configuration) 阅读有关方法的特定配置参数的更多信息
 
-General configuration parameters are:
+常规配置参数为：
 
-| **Parameter**     | **Default value**                     | **Description**                                                                                         |
-|:-|:-|-
+| **参数** | **默认值** | **说明** |
+|:-|:-|:-|
 
-| key               | **ReceivedFromTable**                 | Telemetry key in device on ThingsBoard.                                                                 |
-| method            | **table**                             | Method for data processing. Supported methods are [here](#supported-methods-and-their-configuration).   |
-| oid               | **1.3.6.1.2.1.1**                     | Manager object identifier.                                                                              |
+| key | **ReceivedFromTable** | ThingsBoard 上设备中的遥测键。 |
+| method | **table** | 数据处理方法。支持的方法在 [此处](#supported-methods-and-their-configuration) 中。 |
+| oid | **1.3.6.1.2.1.1** | 管理器对象标识符。 |
 |---
 
-Configuration section item example:  
+配置部分项目示例：  
 
 ```json
     {
@@ -240,23 +240,23 @@ Configuration section item example:
 ```
 
 
-#### Attribute update requests section
+#### 属性更新请求部分
 
-Configuration in this section are optional.  
-ThingsBoard allows to provision device attributes and fetch some of them from the device application.
-You can treat this as a remote configuration for devices. Your devices are able to request shared attributes from ThingsBoard.
-See [user guide](/docs/user-guide/attributes/) for more details.
+本节中的配置是可选的。  
+ThingsBoard 允许配置设备属性并从设备应用程序中获取其中一些属性。
+您可以将其视为设备的远程配置。您的设备能够从 ThingsBoard 请求共享属性。
+有关更多详细信息，请参阅 [用户指南](/docs/user-guide/attributes/)。
 
-The "**attributeUpdateRequests**" configuration allows configuring the format of the corresponding attribute request and response messages. 
+"**attributeUpdateRequests**" 配置允许配置相应属性请求和响应消息的格式。
 
-| **Parameter**                 | **Default value**                                     | **Description**                                                                                       |
-|:-|:-|-
-| attributeFilter               | **dataToSet**                                         | Shared attribute name.                                                                                |
-| method                        | **set**                                               | Method for data processing. Supported methods are [here](#supported-methods-and-their-configuration). |
-| oid                           | **1.3.6.1.2.1.1**                                     | Manager object identifier.                                                                            |
+| **参数** | **默认值** | **说明** |
+|:-|:-|:-|
+| attributeFilter | **dataToSet** | 共享属性名称。 |
+| method | **set** | 数据处理方法。支持的方法在 [此处](#supported-methods-and-their-configuration) 中。 |
+| oid | **1.3.6.1.2.1.1** | 管理器对象标识符。 |
 |---
 
-The **attributeUpdates** section will look like:
+**attributeUpdates** 部分将如下所示：
 
 ```json
       "attributeUpdateRequests": [
@@ -277,21 +277,21 @@ The **attributeUpdates** section will look like:
 
 ```
 
-**Note**: In this section **"${attribute}"** in value parameter will be replaced by shared attribute value.  
+**注意**：在本节中，值参数中的 **"${attribute}"** 将被共享属性值替换。  
 
-#### Server side RPC section
+#### 服务器端 RPC 部分
 
 
-ThingsBoard allows sending [RPC commands](/docs/user-guide/rpc/) to the device that is connected to ThingsBoard directly or via Gateway.
- 
-Configuration, provided in this section uses for sending RPC requests from ThingsBoard to device through the gateway.
+ThingsBoard 允许将 [RPC 命令](/docs/user-guide/rpc/) 发送到直接或通过网关连接到 ThingsBoard 的设备。
+
+本节中提供的配置用于通过网关从 ThingsBoard 向设备发送 RPC 请求。
 
 {% capture rpc_variants %}
-**There are 2 types of the RPC calls:**  
-1. With reply, after sending request the gateway will wait for response and send it to ThingsBoard.
-2. With no reply, after sending request the gateway will not wait for response.
+**有 2 种类型的 RPC 调用：**  
+1. 带有回复，在发送请求后，网关将等待响应并将其发送到 ThingsBoard。
+2. 无回复，在发送请求后，网关不会等待响应。
 
-Examples for both methods provided below.
+下面提供了两种方法的示例。
 
 {% endcapture %}
 {% include templates/info-banner.md content=rpc_variants %}
@@ -328,20 +328,20 @@ Examples for both methods provided below.
 ```
 
 
-### Supported methods and their configuration  
+### 支持的方法及其配置  
 
-Supported methods are:  
+支持的方法有：  
 
  - **get**
 
-   Specific configuration parameters:  <br>  
-   **oid** - Array of object identifiers. 
+   特定配置参数：  <br>  
+   **oid** - 对象标识符数组。 
 
-   **method** - Method name. 
+   **method** - 方法名称。 
 
-   **timeout** - Request timeout in seconds.
+   **timeout** - 请求超时（以秒为单位）。
    
-   Configuration example:
+   配置示例：
    ```json
     {
       "key": "ReceivedFromGet",
@@ -353,14 +353,14 @@ Supported methods are:
 
  - **multiget**
  
-   Specific configuration parameters:  <br>  
-   **oid** - Array of object identifiers.  
+   特定配置参数：  <br>  
+   **oid** - 对象标识符数组。  
 
-   **timeout** - Request timeout in seconds.  
+   **timeout** - 请求超时（以秒为单位）。  
 
-   **method** - Method name.
+   **method** - 方法名称。
    
-   Configuration example:  
+   配置示例：  
    ```json
     {
       "key": "ReceivedFromMultiGet",
@@ -375,14 +375,14 @@ Supported methods are:
    
  - **getnext**
  
-   Specific configuration parameters: <br>  
-   **oid** - Array of object identifiers. 
+   特定配置参数： <br>  
+   **oid** - 对象标识符数组。 
 
-   **timeout** - Request timeout in seconds.    
+   **timeout** - 请求超时（以秒为单位）。    
 
-   **method** - Method name.
+   **method** - 方法名称。
    
-   Configuration example:  
+   配置示例：  
    ```json
     {
       "key": "ReceivedFromGetNext",
@@ -394,12 +394,12 @@ Supported methods are:
 
  - **multiwalk**
  
-   Specific configuration parameters:  <br>  
-   **oid** - Array of object identifiers.
+   特定配置参数：  <br>  
+   **oid** - 对象标识符数组。
 
-   **method** - Method name.
+   **method** - 方法名称。
    
-   Configuration example:  
+   配置示例：  
    ```json
     {
       "key": "ReceivedFromMultiWalk",
@@ -413,12 +413,12 @@ Supported methods are:
    
  - **bulkwalk**
  
-   Specific configuration parameters:  <br>  
-   **oid** - Array of object identifiers.
+   特定配置参数：  <br>  
+   **oid** - 对象标识符数组。
 
-   **method** - Method name.
+   **method** - 方法名称。
    
-   Configuration example:  
+   配置示例：  
    ```json
     {
       "key": "ReceivedFromBulkWalk",
@@ -431,14 +431,14 @@ Supported methods are:
    ```
  - **bulkget**
  
-   Specific configuration parameters:  <br>  
-   **scalardOid** - Array of non-repeaters object identifiers.
+   特定配置参数：  <br>  
+   **scalardOid** - 非重复对象标识符数组。
 
-   **repeatingOid** - Array of max-repetitions object identifiers.   
+   **repeatingOid** - 最大重复对象标识符数组。   
 
-   **maxListSize** - Maximum size of the returning list.  
+   **maxListSize** - 返回列表的最大大小。  
    
-   Configuration example:
+   配置示例：
    ```json
     {
       "key": "ReceivedFromBulkGet",
@@ -456,10 +456,10 @@ Supported methods are:
    ```
  - **walk**
  
-   Specific configuration parameters:  <br>  
-   **community** - Manager object community type.    
+   特定配置参数：  <br>  
+   **community** - 管理器对象社区类型。    
    
-   Configuration example:
+   配置示例：
    ```json
     {
       "key": "ReceivedFromWalk",
@@ -471,7 +471,7 @@ Supported methods are:
    
  - **table**
     
-   Configuration example:
+   配置示例：
    ```json
     {
       "key": "ReceivedFromTable",
@@ -481,9 +481,9 @@ Supported methods are:
    ```
       
  - **set**
-    This method is used to write data into single object by it's identifier.
+    此方法用于通过其标识符将数据写入单个对象。
     
-    Configuration example:
+    配置示例：
     ```json
     {
       "attributeFilter": "dataToSet",
@@ -493,12 +493,12 @@ Supported methods are:
     ```
  
  - **multiset**
-    This method is used to write data into multiply object by their's identifiers.
+    此方法用于通过其标识符将数据写入多个对象。
  
-   Specific configuration parameters:  
-   **mapping** - Contains pair of **object identifier** and **value**.    
+   特定配置参数：  
+   **mapping** - 包含 **对象标识符** 和 **值** 的对。    
  
-   Configuration example:
+   配置示例：
    ```json
    {
      "attributeFilter": "dataToMultiSet",
@@ -512,12 +512,12 @@ Supported methods are:
 
 
 
-## Next steps
+## 后续步骤
 
-Explore guides related to main ThingsBoard features:
+探索与 ThingsBoard 主要功能相关的指南：
 
- - [Data Visualization](/docs/user-guide/visualization/) - how to visualize collected data.
- - [Device attributes](/docs/user-guide/attributes/) - how to use device attributes.
- - [Telemetry data collection](/docs/user-guide/telemetry/) - how to collect telemetry data.
- - [Using RPC capabilities](/docs/user-guide/rpc/) - how to send commands to/from devices.
- - [Rule Engine](/docs/user-guide/rule-engine/) - how to use rule engine to analyze data from devices.
+ - [数据可视化](/docs/user-guide/visualization/) - 如何可视化收集到的数据。
+ - [设备属性](/docs/user-guide/attributes/) - 如何使用设备属性。
+ - [遥测数据收集](/docs/user-guide/telemetry/) - 如何收集遥测数据。
+ - [使用 RPC 功能](/docs/user-guide/rpc/) - 如何向/从设备发送命令。
+ - [规则引擎](/docs/user-guide/rule-engine/) - 如何使用规则引擎分析来自设备的数据。

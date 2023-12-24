@@ -1,4 +1,4 @@
-Use this function:
+使用此函数：
 
 ```ruby
 var data = decodeToJson(payload);
@@ -30,7 +30,7 @@ if (data.state != null) {
    result.attributes.state = data.state == '1' ? true : false;
 }
 
-/** Helper functions 'decodeToString' and 'decodeToJson' are already built-in **/
+/** 辅助函数 'decodeToString' 和 'decodeToJson' 已内置 **/
 
 return result;
 ```

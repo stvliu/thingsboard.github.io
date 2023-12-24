@@ -1,31 +1,31 @@
 ---
 layout: docwithnav-pe
-title: Claiming devices
-description: IoT device management using ThingsBoard claiming devices feature
+title: 声明设备
+description: 使用 ThingsBoard 声明设备功能进行物联网设备管理
 
 device-claiming-permissions-in-pe-carousel:
     0:
         image: /images/user-guide/claiming-devices/claiming-generic-role.png
-        title: 'Create a generic role.'
+        title: '创建通用角色。'
     1:
         image: /images/user-guide/claiming-devices/assign-claiming-role.png
-        title: 'Assign that role for a user group.'
+        title: '为用户组分配该角色。'
 device-claiming-widget-carousel:
     0:
         image: /images/user-guide/claiming-devices/claiming-widget-location.png
-        title: 'You are able to find Device Claiming Widget in <b>Static widget</b> section of <b>Input widgets</b> bundle.'
+        title: '您可以在<b>输入小部件</b>包的<b>静态小部件</b>部分找到设备声明小部件。'
     1:
         image: /images/user-guide/claiming-devices/claim-device-widget.png
-        title: 'Claim device widget is quite simple and allows to input device name and Secret Key.'
+        title: '声明设备小部件非常简单，允许输入设备名称和密钥。'
     2:
         image: /images/user-guide/claiming-devices/claim-device-widget-advanced-settings.png
-        title: 'It is possible to "hide" Secret Key input field and change the labels in "General settings".'
+        title: '可以在“常规设置”中“隐藏”密钥输入字段并更改标签。'
     3:
         image: /images/user-guide/claiming-devices/claim-device-widget-message-settings.png
-        title: 'It is also possible to configure all sorts of messages to the user in "Message settings".'
+        title: '还可以在“消息设置”中配置所有类型的用户消息。'
     4:
         image: /images/user-guide/claiming-devices/claim-device-widget-relation-settings.png
-        title: 'Finally, you can relate the claimed device to the current state entity of the dashboard.<br> This is useful if you have multiple assets and would like to relate your device to one of them. '
+        title: '最后，您可以将声明的设备与仪表板的当前状态实体相关联。<br>如果您有多个资产并希望将设备与其中一个相关联，这将非常有用。'
 ---
 
 {% assign docsPrefix = "pe/" %}

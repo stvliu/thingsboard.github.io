@@ -152,20 +152,20 @@
     {% endfor %}
 </ul>
 
-<h1 style="font-size: 28px;">Welcome to the ThingsBoard Devices Library!</h1>
+<h1 style="font-size: 28px;">欢迎来到ThingsBoard设备库！</h1>
 
-The Devices Library is a collection of guides and code snippets that explain how to connect popular IoT **development boards** to the ThingsBoard platform.
-We intentionally concentrate on the code snippets for programmable devices to boost the productivity of the firmware engineers.
-Device Library is a constantly extending resource. We encourage our community members to [contribute](/docs/{{page.docsPrefix}}devices-library/guidelines/).
+设备库是指南和代码片段的集合，它们解释了如何将流行的物联网**开发板**连接到ThingsBoard平台。
+我们有意专注于可编程设备的代码片段，以提高固件工程师的生产力。
+设备库是一个不断扩展的资源。我们鼓励我们的社区成员[贡献](/docs/{{page.docsPrefix}}devices-library/guidelines/)。
 
-In case you wish to integrate existing **LoRaWAN, NB IoT, or SigFox** sensors into ThingsBoard, see the [How to connect my device?](/docs/{{page.docsPrefix}}getting-started-guides/connectivity/)
+如果您希望将现有的**LoRaWAN、NB IoT或SigFox**传感器集成到ThingsBoard中，请参阅[如何连接我的设备？](/docs/{{page.docsPrefix}}getting-started-guides/connectivity/)
 
 <br>
 
 <div class="device-guides">
     <div class="filter-panel">
         <div id="searchGuideBox">
-            <input type="text" id="searchGuideInput" placeholder="Find a device...">
+            <input type="text" id="searchGuideInput" placeholder="查找设备...">
             <button class="searchButton"></button>
         </div>
     </div>
@@ -174,4 +174,4 @@ In case you wish to integrate existing **LoRaWAN, NB IoT, or SigFox** sensors in
 
 <br>
 
-<a href="/docs/{{page.docsPrefix}}devices-library/guidelines/" class="n-button add-device">Add your device</a>
+<a href="/docs/{{page.docsPrefix}}devices-library/guidelines/" class="n-button add-device">添加您的设备</a>

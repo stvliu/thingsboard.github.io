@@ -347,8 +347,3 @@ donut-legend:
     2:
         image: /images/user-guide/ui/widgets/charts/donut-legend-2-pe.png
         title: 'As you can see on the widget, color of the labels font has been changed. '
-
----
-
-{% assign docsPrefix = "pe/" %}
-{% include docs/user-guide/ui/chart-widget.md %}

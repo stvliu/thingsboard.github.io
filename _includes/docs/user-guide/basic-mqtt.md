@@ -1,36 +1,36 @@
-* TOC 
+* TOC
 {:toc}
 
-MQTT Based Authentication is available for devices that connect using MQTT.
-You may change the device credential type from 'Access Token' to 'MQTT Basic'.
-Basic MQTT credentials consist of the optional client id, username and password. There are three options available:
+基于 MQTT 的身份验证适用于使用 MQTT 连接的设备。
+您可以将设备凭证类型从“访问令牌”更改为“MQTT 基本”。
+基本 MQTT 凭证由可选的客户端 ID、用户名和密码组成。有三个选项可用：
 
-#### Authentication based on Client ID only. 
+#### 仅基于客户端 ID 的身份验证。
 
-For this purpose, you should populate only Client ID in the credentials form below.
-MQTT Clients will be able to connect with any username or password if they specify correct Client ID;
+为此，您应该仅在下面的凭证表单中填充客户端 ID。
+如果 MQTT 客户端指定正确的客户端 ID，则可以使用任何用户名或密码进行连接；
 
-Let's review a simple command to upload temperature readings using MQTT Client Id to ThingsBoard Cloud.
-See [MQTT API](/docs/{{docsPrefix}}reference/mqtt-api/) for more details. The command is using plain MQTT without TLS:
+让我们回顾一下使用 MQTT 客户端 ID 将温度读数上传到 ThingsBoard Cloud 的简单命令。
+有关更多详细信息，请参阅 [MQTT API](/docs/{{docsPrefix}}reference/mqtt-api/)。该命令使用没有 TLS 的纯 MQTT：
 
 ```bash
 mosquitto_pub -d -q 1 -h "YOUR_TB_HOST" -p "1883" -t "v1/devices/me/telemetry" -i "YOUR_CLIENT_ID" -m {"temperature":25}
 ```
 {: .copy-code}
 
-The above command requires mosquitto clients library that you can install using the following command: **apt-get install mosquitto-clients**.
-Don't forget to replace:
+上述命令需要 mosquitto 客户端库，您可以使用以下命令安装：**apt-get install mosquitto-clients**。
+别忘了替换：
 
- * **YOUR_TB_HOST** with the host of your ThingsBoard instance;
- * **YOUR_CLIENT_ID** with your client id;
+* **YOUR_TB_HOST** 为您的 ThingsBoard 实例的主机；
+* **YOUR_CLIENT_ID** 为您的客户端 ID；
 
-#### Authentication based on Username and Password. 
+#### 基于用户名和密码的身份验证。
 
-For this purpose, you should populate only Username and Password in the credentials form below.
-MQTT Clients will be able to connect with any client ID if they specify correct Username and Password. Password is optional;
+为此，您应该仅在下面的凭证表单中填充用户名和密码。
+如果 MQTT 客户端指定正确的用户名和密码，则可以使用任何客户端 ID 进行连接。密码是可选的；
 
-Let's review a simple command to upload temperature readings using MQTT Client username and password to ThingsBoard Cloud.
-See [MQTT API](/docs/{{docsPrefix}}reference/mqtt-api/) for more details. The command is using plain MQTT without TLS:
+让我们回顾一下使用 MQTT 客户端用户名和密码将温度读数上传到 ThingsBoard Cloud 的简单命令。
+有关更多详细信息，请参阅 [MQTT API](/docs/{{docsPrefix}}reference/mqtt-api/)。该命令使用没有 TLS 的纯 MQTT：
 
 ```bash
 mosquitto_pub -d -q 1 -h "YOUR_TB_HOST" -p "1883" \
@@ -38,19 +38,19 @@ mosquitto_pub -d -q 1 -h "YOUR_TB_HOST" -p "1883" \
 ```
 {: .copy-code}
 
-The above command requires mosquitto clients library that you can install using the following command: **apt-get install mosquitto-clients**.
-Don't forget to replace:
+上述命令需要 mosquitto 客户端库，您可以使用以下命令安装：**apt-get install mosquitto-clients**。
+别忘了替换：
 
- * **YOUR_TB_HOST** with the host of your ThingsBoard instance;
- * **YOUR_CLIENT_USERNAME/YOUR_CLIENT_PASSWORD** with your client username and password;
+* **YOUR_TB_HOST** 为您的 ThingsBoard 实例的主机；
+* **YOUR_CLIENT_USERNAME/YOUR_CLIENT_PASSWORD** 为您的客户端用户名和密码；
 
-#### Authentication based on Client ID, Username and Password. 
+#### 基于客户端 ID、用户名和密码的身份验证。
 
-For this option, you should populate Client ID, Username and Password.
-MQTT Clients will be able to connect if they specify correct combination of Client ID, Username and Password;
+对于此选项，您应该填写客户端 ID、用户名和密码。
+如果 MQTT 客户端指定正确的客户端 ID、用户名和密码组合，则可以连接；
 
-Let's review a simple command to upload temperature readings using MQTT Client ID, username and password to ThingsBoard Cloud.
-See [MQTT API](/docs/{{docsPrefix}}reference/mqtt-api/) for more details. The command is using plain MQTT without TLS:
+让我们回顾一下使用 MQTT 客户端 ID、用户名和密码将温度读数上传到 ThingsBoard Cloud 的简单命令。
+有关更多详细信息，请参阅 [MQTT API](/docs/{{docsPrefix}}reference/mqtt-api/)。该命令使用没有 TLS 的纯 MQTT：
 
 ```bash
 mosquitto_pub -d -q 1 -h "YOUR_TB_HOST" -p "1883" \
@@ -58,37 +58,37 @@ mosquitto_pub -d -q 1 -h "YOUR_TB_HOST" -p "1883" \
 ```
 {: .copy-code}
 
-The above command requires mosquitto clients library that you can install using the following command: **apt-get install mosquitto-clients**.
-Don't forget to replace:
+上述命令需要 mosquitto 客户端库，您可以使用以下命令安装：**apt-get install mosquitto-clients**。
+别忘了替换：
 
- * **YOUR_TB_HOST** with the host of your ThingsBoard instance;
- * **YOUR_CLIENT_ID** with your client id;
- * **YOUR_CLIENT_USERNAME/YOUR_CLIENT_PASSWORD** with your client username and password;
+* **YOUR_TB_HOST** 为您的 ThingsBoard 实例的主机；
+* **YOUR_CLIENT_ID** 为您的客户端 ID；
+* **YOUR_CLIENT_USERNAME/YOUR_CLIENT_PASSWORD** 为您的客户端用户名和密码；
 
 {% include images-gallery.html imageCollection="options" %}
 
-#### MQTTS (MQTT over TLS)
+#### MQTTS（MQTT over TLS）
 
-One-way SSL authentication is a standard authentication mode, where your client device verifies the identity of a server using server certificate.
-ThingsBoard Team has already provisioned a valid certificate for [ThingsBoard Cloud](https://thingsboard.cloud/signup).
+单向 SSL 身份验证是一种标准身份验证模式，其中您的客户端设备使用服务器证书验证服务器的身份。
+ThingsBoard 团队已经为 [ThingsBoard Cloud](https://thingsboard.cloud/signup) 配置了有效证书。
 {% if docsPrefix != 'paas/' %}
-Follow the [MQTT over SSL](/docs/{{docsPrefix}}user-guide/mqtt-over-ssl/) guide to provision server certificate if you are hosting your own ThingsBoard instance.
+如果您托管自己的 ThingsBoard 实例，请按照 [MQTT over SSL](/docs/{{docsPrefix}}user-guide/mqtt-over-ssl/) 指南配置服务器证书。
 {% endif %}
 
-Once provisioned, you should prepare a CA root certificate in pem format. This certificate will be used by mqtt client to validate the server certificate.
-Save the CA root certificate to your working directory as "**ca-root.pem**".
-An example of CA root certificate for *mqtt.thingsboard.cloud* is located [here](/docs/paas/user-guide/resources/mqtt-over-ssl/ca-root.pem).
+配置完成后，您应该准备一个 pem 格式的 CA 根证书。此证书将由 mqtt 客户端用于验证服务器证书。
+将 CA 根证书保存到您的工作目录中，文件名“**ca-root.pem**”。
+*mqtt.thingsboard.cloud* 的 CA 根证书示例位于 [此处](/docs/paas/user-guide/resources/mqtt-over-ssl/ca-root.pem)。
 
-Now you may use the *ca-root.pem* to setup a secure connection to your ThingsBoard instance (*YOUR_TB_HOST*) to upload telemetry:
+现在，您可以使用 *ca-root.pem* 建立与您的 ThingsBoard 实例 (*YOUR_TB_HOST*) 的安全连接以上传遥测数据：
 ```bash
 mosquitto_pub --cafile ca-root.pem -d -q 1 -h "YOUR_TB_HOST" -p "8883" \
 -t "v1/devices/me/telemetry" -i "YOUR_CLIENT_ID" -u "YOUR_CLIENT_USERNAME" -P "YOUR_CLIENT_PASSWORD" -m {"temperature":25}
 ```
 {: .copy-code}
 
-The above command requires mosquitto clients library that you can install using the following command: **apt-get install mosquitto-clients**.
-Don't forget to replace:
+上述命令需要 mosquitto 客户端库，您可以使用以下命令安装：**apt-get install mosquitto-clients**。
+别忘了替换：
 
- * **YOUR_TB_HOST** with the host of your ThingsBoard instance;
- * **YOUR_CLIENT_ID** with your client id;
- * **YOUR_CLIENT_USERNAME/YOUR_CLIENT_PASSWORD** with your client username and password;
+* **YOUR_TB_HOST** 为您的 ThingsBoard 实例的主机；
+* **YOUR_CLIENT_ID** 为您的客户端 ID；
+* **YOUR_CLIENT_USERNAME/YOUR_CLIENT_PASSWORD** 为您的客户端用户名和密码；

@@ -2,39 +2,39 @@
 layout: docwithnav
 assignees:
 - zbeacon
-title: How to connect OPC-UA server
-description: Understand how to connect OPC-UA server
+title: 如何连接 OPC-UA 服务器
+description: 了解如何连接 OPC-UA 服务器
 
 ---
 
 * TOC
 {:toc}
 
-## Device information
+## 设备信息
 
-For the purpose of this guide, we will use Raspberry Pi with OPC-UA server.  
-We will use [OPC-UA connector](/docs/iot-gateway/config/opc-ua/) to collect data.  
+出于本指南的目的，我们将使用带有 OPC-UA 服务器的 Raspberry Pi。  
+我们将使用 [OPC-UA 连接器](/docs/iot-gateway/config/opc-ua/) 来收集数据。  
 
-The info available at this moment:  
+目前可用的信息：  
 
 
-| Parameter             | Our value                         | **Description**                                                           |
+| 参数             | 我们的值                         | **说明**                                                           |
 |-|-|-|
-| Url to server         | **192.168.1.113:4840/server/**    | OPC-UA server addres.                                                     |
-| Device node path      | **Device\d\*$**                   | Regular expression for path to device object on server.                   |
-| Device name path      | **${server.deviceName}**          | Relative path from the device object to variable contains device name.    | 
+| 服务器 URL         | **192.168.1.113:4840/server/**    | OPC-UA 服务器地址。                                                     |
+| 设备节点路径      | **Device\d\*$**                   | 服务器上设备对象的路径的正则表达式。                                 |
+| 设备名称路径      | **${server.deviceName}**          | 设备对象到变量的相对路径包含设备名称。                                |
 |-|-|
 
-We want to write **Humidity** ( relative path is **${humidity_value}** ) as the telemetry to ThingsBoard and **batteryLevel** ( relative path is **${Battery.Level}** ) as the device client-side attribute.      
+我们希望将 **湿度**（相对路径为 **${humidity_value}** ）作为遥测数据写入 ThingsBoard，并将 **batteryLevel**（相对路径为 **${Battery.Level}** ）作为设备客户端属性。      
 
 
 
-## Step 1. Configuring the OPC-UA connector
+## 步骤 1. 配置 OPC-UA 连接器
 
-In order to configure the connector, we must create OPC-UA setup file and put configuration there.
-You may use default opcua.json file (from /etc/thingsboard-gateway/config in case of daemon installation or from folder with tb_gateway.json file in case you use python package).  
-Simply replace some parameters with our values.
-For example: 
+为了配置连接器，我们必须创建 OPC-UA 设置文件并将配置放在那里。
+您可以使用默认的 opcua.json 文件（在守护程序安装的情况下为 /etc/thingsboard-gateway/config 中的文件，或者在使用 python 包的情况下为包含 tb_gateway.json 文件的文件夹中的文件）。  
+只需用我们的值替换一些参数即可。
+例如：
 
 ```json
 {
@@ -71,22 +71,22 @@ For example:
 {: .copy-code}
 
   
-About sections of OPC-UA configuration file you can [read more here](/docs/iot-gateway/config/opc-ua/).  
+关于 OPC-UA 配置文件的部分，您可以在 [此处](/docs/iot-gateway/config/opc-ua/) 阅读更多信息。  
 
-Let's analyze our settings:
+让我们分析我们的设置：
 
-1. General configuration of connector. In this section we have defined main settings (e. g. connector name — OPC-UA Default Server, url — 192.168.1.113:4840/server/ etc.). You can read more about available parameters [here](/docs/iot-gateway/config/opc-ua/#section-server).  
-2. General device configuration. In this section we have defined main settings of our OPC-UA device (e. g. device object in OPC-UA server pattern - Device\\d*$, device name pattern within ThingsBoard — Device\\d*$ etc.). You can read more about available parameters [here](/docs/iot-gateway/config/opc-ua/#section-mapping).  
-3. Attributes configuration. In this section we have defined the settings for batteryLevel attribute within ThingsBoard. You can read more about available parameters [here](/docs/iot-gateway/config/opc-ua/#subsection-attributes).  
-4. Timeseries configuration. In this section we set up temperature and humidity parameters. You can read more about available parameters [here](/docs/iot-gateway/config/opc-ua/#subsection-timeseries).  
+1. 连接器的常规配置。在此部分中，我们定义了主要设置（例如连接器名称 — OPC-UA 默认服务器、URL — 192.168.1.113:4840/server/ 等）。您可以在 [此处](/docs/iot-gateway/config/opc-ua/#section-server) 阅读有关可用参数的更多信息。  
+2. 常规设备配置。在此部分中，我们定义了 OPC-UA 设备的主要设置（例如 OPC-UA 服务器模式中的设备对象 - Device\\d*$、ThingsBoard 中的设备名称模式 — Device\\d*$ 等）。您可以在 [此处](/docs/iot-gateway/config/opc-ua/#section-mapping) 阅读有关可用参数的更多信息。  
+3. 属性配置。在此部分中，我们定义了 ThingsBoard 中 batteryLevel 属性的设置。您可以在 [此处](/docs/iot-gateway/config/opc-ua/#subsection-attributes) 阅读有关可用参数的更多信息。  
+4. 时序配置。在此部分中，我们设置了温度和湿度参数。您可以在 [此处](/docs/iot-gateway/config/opc-ua/#subsection-timeseries) 阅读有关可用参数的更多信息。  
 
-Save the configuration file as opcua.json in configuration folder (the directory, that contains the general configuration file - **tb_gateway.yaml**).  
+将配置文件另存为 opcua.json，放在配置文件夹中（包含常规配置文件 - **tb_gateway.yaml** 的目录）。  
 
-## Step 3. Turn on the connector 
+## 步骤 3. 打开连接器
 
-To use the connector, we must turn it on in the main configuration file (**[tb_gateway.yaml](/docs/iot-gateway/configuration/#connectors-configuration)**)
+要使用连接器，我们必须在主配置文件（**[tb_gateway.yaml](/docs/iot-gateway/configuration/#connectors-configuration)**）中将其打开
 
-In "connectors" section we should uncomment following strings:
+在“connectors”部分中，我们应该取消注释以下字符串：
 
 ```yaml
   -
@@ -95,23 +95,23 @@ In "connectors" section we should uncomment following strings:
     configuration: opcua.json
 ```
 
-## Step 4. Run the gateway
+## 步骤 4. 运行网关
   
-Command for run depends on type of installation.  
-If you have installed the gateway as daemon, run the following command:  
+运行命令取决于安装类型。  
+如果您已将网关安装为守护程序，请运行以下命令：  
 ```bash
 sudo systemctl restart thingsboard-gateway
 ```  
 {: .copy-code}
 
-If you have installed the gateway as a python module (using [pip package manager](/docs/iot-gateway/install/pip-installation/) or [from sources](/docs/iot-gateway/install/source-installation/)), use following command or script to run the gateway.  
-**Notice**: You must place correct path to the main configuration file (**tb_gateway.yaml**) in the command/script.  
+如果您已将网关安装为 python 模块（使用 [pip 包管理器](/docs/iot-gateway/install/pip-installation/) 或 [从源代码](/docs/iot-gateway/install/source-installation/)），请使用以下命令或脚本运行网关。  
+**注意**：您必须在命令/脚本中放置正确的主配置文件路径（**tb_gateway.yaml**）。  
 
 ```bash
 sudo python3 -c 'from thingsboard_gateway.gateway.tb_gateway_service import TBGatewayService; TBGatewayService("YOUR_PATH_HERE")'
 ```
 
-or script:
+或脚本：
 
 ```python
 from thingsboard_gateway.gateway.tb_gateway_service import TBGatewayService 
@@ -121,16 +121,16 @@ config_file_path = "YOUR_PATH_HERE"
 TBGatewayService(config_file_path)
 ```
 
-## Step 5. Check information from device
+## 步骤 5. 检查设备信息
 
-Check data in your ThingsBoard instance.  
-    - Go to the your ThingsBoard instance and login.  
-    - Go to the "Devices" tab. "Humidity Sensor" will be there.
+检查 ThingsBoard 实例中的数据。  
+    - 转到您的 ThingsBoard 实例并登录。  
+    - 转到“设备”选项卡。“湿度传感器”将显示在那里。
 <br>    
-Go to the device details, **ATTRIBUTES** tab, there you may see the attribute **batteryLevel** with some value.  
+转到设备详细信息，**属性**选项卡，您可能会看到具有某个值的 **batteryLevel** 属性。  
 <br>
     ![](/images/gateway/opcua-sensor-attributes.png)
 <br><br>
-Go to the device details, **LATEST TELEMETRY** tab, to see your telemetries data: **Humidity** with some value.  
+转到设备详细信息，**最新遥测数据**选项卡，以查看您的遥测数据：**湿度**具有某个值。  
 <br>
 ![](/images/gateway/opcua-sensor-telemetry.png)

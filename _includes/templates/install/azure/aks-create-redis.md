@@ -1,24 +1,24 @@
-You’ll need to set up Azure Cache for Redis. ThingsBoard uses cache to improve performance and avoid frequent DB reads.
+您需要设置 Azure Cache for Redis。ThingsBoard 使用缓存来提高性能并避免频繁的数据库读取。
 
-You can do this via this [guide](https://docs.microsoft.com/en-us/azure/azure-cache-for-redis/quickstart-create-redis)
+您可以通过此 [指南](https://docs.microsoft.com/en-us/azure/azure-cache-for-redis/quickstart-create-redis)
 
-or using az cli tools 
+或使用 az cli 工具
 ```
 az redis create --name $TB_REDIS_NAME --location $AKS_LOCATION --resource-group $AKS_RESOURCE_GROUP --sku Basic --vm-size c0 --enable-non-ssl-port 
 ```
 {: .copy-code}
 
-As like az postgres az redis create has a lot of options and few of them are required like: 
+与 az postgres 一样，az redis create 有很多选项，其中一些是必需的，例如：
 
-  - ***name*** (or -n) - Name of the Redis cache;
-  - ***resource-group*** -  Name of resource group;
-  - ***sku*** - Type of Redis cache(accepted values: Basic, Premium, Standard; 
-  - ***vm-size*** - Size of Redis cache to deploy. Basic and Standard Cache sizes start with C. Premium Cache sizes start with P (accepted values: c0, c1, c2, c3, c4, c5, c6, p1, p2, p3, p4, p5);
-  - ***location*** (or -l) - Location. Values from: az account list-locations.
+  - ***name*** (或 -n) - Redis 缓存的名称；
+  - ***resource-group*** - 资源组的名称；
+  - ***sku*** - Redis 缓存的类型（可接受的值：Basic、Premium、Standard；
+  - ***vm-size*** - 要部署的 Redis 缓存的大小。基本和标准缓存大小以 C 开头。高级缓存大小以 P 开头（可接受的值：c0、c1、c2、c3、c4、c5、c6、p1、p2、p3、p4、p5）；
+  - ***location*** (或 -l) - 位置。值来自：az account list-locations。
 
-To see the full list of parameters please [see](https://docs.microsoft.com/en-us/cli/azure/redis?view=azure-cli-latest#az_redis_create)
+要查看参数的完整列表，请 [参阅](https://docs.microsoft.com/en-us/cli/azure/redis?view=azure-cli-latest#az_redis_create)
 
-Example of response:
+响应示例：
 ```
 {
   "accessKeys": null,
@@ -69,12 +69,12 @@ Example of response:
 }
 ```
 
-We need to take `hostName` parameter and replace YOUR_REDIS_ENDPOINT_URL_WITHOUT_PORT in file tb-redis-configmap.yml
+我们需要获取 `hostName` 参数，并在文件 tb-redis-configmap.yml 中替换 YOUR_REDIS_ENDPOINT_URL_WITHOUT_PORT。
 
-After this we need to get redis keys for connection, for this we need to execute: 
+之后，我们需要获取用于连接的 redis 密钥，为此，我们需要执行：
 ```
     az redis list-keys --name $TB_REDIS_NAME --resource-group $AKS_RESOURCE_GROUP
 ```
 {: .copy-code}
 
-after took "primary" and paste into tb-redis-configmap.yml file replacing YOU_REDIS_PASS
+获取“primary”后，将其粘贴到 tb-redis-configmap.yml 文件中，替换 YOU_REDIS_PASS

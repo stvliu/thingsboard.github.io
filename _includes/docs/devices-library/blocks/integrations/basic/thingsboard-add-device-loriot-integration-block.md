@@ -1,21 +1,22 @@
-### Add a device on the Loriot
+### 在 Loriot 上添加设备
 
-We need to add a device on the [Loriot](https://loriot.io){: target="_blank"}.   
-To add a device, you can follow next steps:
+我们需要在 [Loriot](https://loriot.io){: target="_blank"} 上添加一个设备。
+
+若要添加设备，可以按照以下步骤操作：
 
 {% assign addDeviceSteps = '
     ===
         image: /images/devices-library/basic/integrations/loriot/main-page.png,
-        title: Login to Loriot server. We use **eu2.loriot.io**, but it depends on chosen region during registration.
+        title: 登录 Loriot 服务器。我们使用 **eu2.loriot.io**，但它取决于注册期间选择的区域。
     ===
         image: /images/devices-library/basic/integrations/loriot/create-device-step-0.png,
-        title: Go to the **Applications** page in left menu.
+        title: 转到左侧菜单中的 **应用程序** 页面。
     ===
         image: /images/devices-library/basic/integrations/loriot/create-device-step-1.png,
-        title: Open your application, in our case it is **SampleApp**.
+        title: 打开您的应用程序，在我们的示例中是 **SampleApp**。
     ===
         image: /images/devices-library/basic/integrations/loriot/create-device-step-2.png,
-        title: Fill the fields, with a configuration from your device. Then click the **Enroll** button.
+        title: 使用设备中的配置填写字段。然后单击 **注册** 按钮。
 '%}
 
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=addDeviceSteps %}

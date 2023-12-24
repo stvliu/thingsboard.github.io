@@ -1,4 +1,4 @@
-## Manual Installation and Configuration
+## 手动安装和配置
 
-If, for any reason, you are unable to use the prepared ThingsBoard Server Instructions above, please follow the generic steps outlined below.
-These steps will guide you through installing and configuring the Edge by yourself.
+如果出于任何原因，您无法使用上面准备好的 ThingsBoard 服务器说明，请按照下面概述的通用步骤进行操作。
+这些步骤将指导您自行安装和配置 Edge。

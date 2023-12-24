@@ -1,6 +1,6 @@
 {% if docsPrefix == "pe/" %}
 {% capture paas_only %}
-The Solution Templates are available in [ThingsBoard Cloud](/products/paas/). Solution templates for [ThingsBoard PE](/products/thingsboard-pe/) introduced starting from version 3.3.1PE.
+解决方案模板可在 [ThingsBoard Cloud](/products/paas/) 中获得。[ThingsBoard PE](/products/thingsboard-pe/) 的解决方案模板从版本 3.3.1PE 开始引入。
 {% endcapture %}
 {% include templates/info-banner.md content=paas_only %}
 {% endif %}

@@ -1,68 +1,67 @@
-
-Flow Nodes are used to control message processing flow.
+流程节点用于控制消息处理流程。
 
 * TOC
 {:toc}
 
-##### Acknowledge Node
+##### 确认节点
 
-The node will mark the message as successfully processed (acknowledged). See [message processing result](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#message-processing-result) for more details. 
-This indicates to rule engine that the message was successfully processed.
+该节点将把消息标记为已成功处理（已确认）。有关更多详细信息，请参阅[消息处理结果](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#message-processing-result)。
+这向规则引擎指示消息已成功处理。
 
-Useful if you don't want to reprocess the failed messages. 
-For example, the rule chain below will reprocess the failed messages only for important messages. 
-Failure of unimportant message will be simply ignored. 
+如果您不想重新处理失败的消息，这很有用。
+例如，下面的规则链将仅对重要消息重新处理失败的消息。
+不重要的消息的失败将被简单地忽略。
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/acknowledge-failed.png)
 
-**Note:** We recommend the "acknowledge" rule node to be the last in the processing chain.
-Theoretically, you may add other rule nodes after the "acknowledge" one. However, this may cause the OOM errors. 
-For example, subsequent rule nodes may process messages slowly. Unprocessed messages will be stored in memory and will consume too much RAM  
+**注意：**我们建议将“确认”规则节点作为处理链中的最后一个节点。
+从理论上讲，您可以在“确认”节点之后添加其他规则节点。但是，这可能会导致 OOM 错误。
+例如，后续规则节点可能会缓慢处理消息。未处理的消息将存储在内存中，并将消耗过多的 RAM
 
-##### Checkpoint Node
+##### 检查点节点
 
-Publish a copy of the message to the selected [rule engine queue](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/).
-The original message is marked as successfully processed once the target queue acknowledge publish of the copied message. 
+将消息的副本发布到选定的[规则引擎队列](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/)。
+一旦目标队列确认已发布复制的消息，原始消息将被标记为已成功处理。
 
-Useful if you want to mark message as high priority or process messages sequentially grouped by originator of the message. 
-See [default queues](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/#default-queues) or define your own [queue](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/). 
+如果您想将消息标记为高优先级或按消息的发送者对消息进行顺序分组，这很有用。
+请参阅[默认队列](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/#default-queues)或定义您自己的[队列](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/)。
 
-##### Rule Chain Node
+##### 规则链节点
 
 <table  style="width:250px;">
    <thead>
      <tr>
-	 <td style="text-align: center"><strong><em>Since TB Version 3.3.3</em></strong></td>
+	 <td style="text-align: center"><strong><em>自 TB 版本 3.3.3 起</em></strong></td>
      </tr>
    </thead>
 </table> 
 
-Forwards the message to the selected [rule chain](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-chain).
-Since TB Version 3.3.3, the target rule chain may also output the results of processing using [output node](#output-node). 
-The output node enables reuse of the rule chains and extraction of the processing logic to modules (rule chains).
+将消息转发到选定的[规则链](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-chain)。
+自 TB 版本 3.3.3 起，目标规则链还可以使用[输出节点](#output-node)输出处理结果。
+输出节点支持规则链的重用，并将处理逻辑提取到模块（规则链）中。
 
-For example, you may create a rule chain that validates the incoming message, and process valid and invalid messages separately.
+例如，您可以创建一个验证传入消息的规则链，并分别处理有效和无效的消息。
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/rule-chain-node-main.png)
 
-The logic of message validation may be reused in other rule chains. For this purpose, we extract it in a separate rule chain.
+消息验证的逻辑可以在其他规则链中重用。为此，我们将其提取到一个单独的规则链中。
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/rule-chain-node-inner.png)
 
-Notice the "Output" nodes we use in validation rule chain. 
-The names of the output nodes should match the outgoing [relations](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-node-connection) of the "rule chain node" in the main rule chain.
+注意我们在验证规则链中使用的“输出”节点。
+输出节点的名称应与主规则链中“规则链节点”的传出[关系](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-node-connection)相匹配。
 
-##### Output Node
+##### 输出节点
 
 <table  style="width:250px;">
    <thead>
      <tr>
-	 <td style="text-align: center"><strong><em>Since TB Version 3.3.3</em></strong></td>
+	 <td style="text-align: center"><strong><em>自 TB 版本 3.3.3 起</em></strong></td>
      </tr>
    </thead>
 </table> 
 
-Used in combination with the [rule chain node](#rule-chain-node). Allows to publish result of the message processing to the caller rule chain. 
-The output rule node name corresponds to the [relation](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-node-connection) type of the output message,
-and it is used to forward messages to other rule nodes in the caller rule chain.
-See [rule chain node](#rule-chain-node) documentation for example.
+与[规则链节点](#rule-chain-node)结合使用。允许将消息处理结果发布到调用者规则链。
+输出规则节点名称对应于输出消息的[关系](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-node-connection)类型，
+它用于将消息转发到调用者规则链中的其他规则节点。
+请参阅[规则链节点](#rule-chain-node)文档以获取示例。

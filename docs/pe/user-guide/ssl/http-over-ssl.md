@@ -3,7 +3,7 @@ layout: docwithnav-pe
 assignees:
 - ashvayka
 title: HTTP over SSL
-description: Launching ThingsBoard with secure HTTP web interface and REST API.
+description: 启动具有安全 HTTP Web 界面和 REST API 的 ThingsBoard。
 
 ---
 

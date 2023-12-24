@@ -1,4 +1,2 @@
-
-We recommend to use embedded HSQLDB or PostgreSQL DB in this setup. 
-We don't recommend to use Cassandra on machines with less then 4GB of RAM.
-
+我们建议在此设置中使用嵌入式 HSQLDB 或 PostgreSQL DB。
+我们不建议在内存小于 4GB 的机器上使用 Cassandra。

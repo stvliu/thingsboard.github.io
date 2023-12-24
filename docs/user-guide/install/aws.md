@@ -2,9 +2,9 @@
 layout: docwithnav
 assignees:
 - ashvayka
-title: AWS cluster setup
+title: AWS 集群设置
 notitle: "true"
-description: ThingsBoard IoT platform  AWS cluster setup guide
+description: ThingsBoard IoT 平台 AWS 集群设置指南
 
 ---
 
@@ -13,10 +13,10 @@ description: ThingsBoard IoT platform  AWS cluster setup guide
        <div class="install-options-hero">
           <div class="container">
             <div class="install-options-hero-content">
-                <h1>ThingsBoard Setup options on AWS</h1>
+                <h1>AWS 上的 ThingsBoard 设置选项</h1>
                 <div class="install-options-description">
                     <p>
-                        You may deploy ThingsBoard IoT Platform with different infrastructure setup
+                        您可以使用不同的基础设施设置部署 ThingsBoard IoT 平台
                     </p>
                 </div>
             </div>
@@ -30,7 +30,7 @@ description: ThingsBoard IoT platform  AWS cluster setup guide
                                        <a href="/docs/user-guide/install/cluster/aws-self-hosted-setup/">
                                            <span>
                                                <div class="deployment-logo">
-                                                   <img width="" src="/images/install/cloud/amazon_ec2.svg" title="Self-hosted setup using AWS EC2 instance" alt="AWS EC2">
+                                                   <img width="" src="/images/install/cloud/amazon_ec2.svg" title="使用 AWS EC2 实例的自助设置" alt="AWS EC2">
                                                 </div>
                                            </span>
                                        </a>
@@ -39,7 +39,7 @@ description: ThingsBoard IoT platform  AWS cluster setup guide
                                        <a href="/docs/user-guide/install/cluster/aws-eks-setup/">
                                            <span>
                                                <div class="deployment-logo">
-                                                   <img width="" src="/images/install/cloud/eks.svg" title="ThingsBoard setup with Kubernetes on AWS EKS" alt="AWS EKS">
+                                                   <img width="" src="/images/install/cloud/eks.svg" title="在 AWS EKS 上使用 Kubernetes 设置 ThingsBoard" alt="AWS EKS">
                                                 </div>
                                            </span>
                                        </a>

@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-pe
-title: TheThingsStack Integration
-description: TheThingsStack Integration Guide 
+title: TheThingsStack 集成
+description: TheThingsStack 集成指南
 
 api_key_access:
     0:
@@ -14,4 +14,3 @@ api_key_access:
 ---
 {% assign docsPrefix = "pe/" %}
 {% include docs/pe/user-guide/integrations/the-things-stack.md %}
-

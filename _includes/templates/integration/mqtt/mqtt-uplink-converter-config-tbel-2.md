@@ -1,20 +1,20 @@
 ```js
-/** Decoder **/
+/** 解码器 **/
 
-// decode payload to string
+// 将有效负载解码为字符串
 var payloadStr = decodeToString(payload);
 var data = JSON.parse(payloadStr);
 var deviceName =  metadata.topic.split("/")[3];
-// decode payload to JSON
+// 将有效负载解码为 JSON
 var deviceType = 'sensor';
 
-// Result object with device attributes/telemetry data
+// 包含设备属性/遥测数据的 Result 对象
 var telemetry;
 if (metadata.topic.endsWith('/temperature')) {
-    // Transform the incoming data as before
+    // 按之前的方式转换传入的数据
     telemetry = getTemperatureTelemetry(data);
 } else if (metadata.topic.endsWith('/rx/response')) {
-    // Get the input value as is
+    // 按原样获取输入值
     telemetry = data;
 }
 
@@ -27,10 +27,8 @@ var result = {
     telemetry: telemetry
 };
 
-/** Helper functions 'decodeToString' and 'decodeToJson' are already built-in **/
+/** 辅助函数 'decodeToString' 和 'decodeToJson' 已内置 **/
 
 return result;
 ```
 {: .copy-code}
-
-![image](/images/user-guide/integrations/mqtt/mqtt-rpc-edit-uplink-tbel-3-pe.png)

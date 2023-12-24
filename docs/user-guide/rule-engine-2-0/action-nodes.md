@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
-title: Action Nodes
-description: Rule Engine 2.0 Action Nodes
+title: 动作节点
+description: 规则引擎 2.0 动作节点
 
 ---
 

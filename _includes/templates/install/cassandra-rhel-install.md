@@ -1,7 +1,7 @@
-Instructions listed below will help you to install Cassandra. 
+以下列出的说明将帮助您安装 Cassandra。
 
 ```bash
-# Add cassandra repository
+# 添加 cassandra 存储库
 cat << EOF | sudo tee /etc/yum.repos.d/cassandra.repo > /dev/null
 [cassandra]
 name=Apache Cassandra
@@ -11,16 +11,15 @@ repo_gpgcheck=1
 gpgkey=https://downloads.apache.org/cassandra/KEYS
 EOF
 
-# Cassandra installation
+# Cassandra 安装
 sudo yum install cassandra
-# Tools installation
+# 工具安装
 sudo yum install cassandra-tools
-# Start Cassandra
+# 启动 Cassandra
 sudo service cassandra start
-# Configure the database to start automatically when OS starts.
+# 配置数据库在操作系统启动时自动启动。
 sudo chkconfig cassandra on
 ```
 
-You can use Astra DB cloud instead installing your own Cassandra.
-See how to [connect ThingsBoard to Astra DB](/docs/user-guide/install/pe/cassandra-cloud-astra-db/)
-
+您可以使用 Astra DB 云而不是安装您自己的 Cassandra。
+请参阅如何将 [ThingsBoard 连接到 Astra DB](/docs/user-guide/install/pe/cassandra-cloud-astra-db/)

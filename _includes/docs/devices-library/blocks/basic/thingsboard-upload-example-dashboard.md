@@ -1,27 +1,26 @@
-
 {% assign importDashboardCE = '
     ===
         image: /images/user-guide/dashboards/managing-dashboard/import-dashboard-1-ce.png,
-        title: Navigate to the "**Dashboards**" page and click the "**+**" button in the upper right corner of the page and select "**Import dashboard**".
+        title: 导航到“**仪表板**”页面，然后单击页面右上角的“**+**”按钮，并选择“**导入仪表板**”。
     ===
         image: /images/user-guide/dashboards/managing-dashboard/import-dashboard-2-ce.png,
-        title: In the dashboard import window, upload the JSON file and click "**Import**" button.
+        title: 在仪表板导入窗口中，上传 JSON 文件，然后单击“**导入**”按钮。
     ===
         image: /images/user-guide/dashboards/managing-dashboard/import-dashboard-3-ce.png,
-        title: Dashboard has been imported.
+        title: 仪表板已导入。
 '
 %}
 
 {% assign importDashboardPE = '
     ===
         image: /images/user-guide/dashboards/managing-dashboard/import-dashboard-1-pe.png,
-        title: Navigate to the "**Dashboards**" page. By default, you navigate to the dashboard group "All". Click on the "**+**" icon in the top right corner. Select "**Import dashboard**".
+        title: 导航到“**仪表板**”页面。默认情况下，您导航到仪表板组“全部”。单击右上角的“**+**”图标。选择“**导入仪表板**”。
     ===
         image: /images/user-guide/dashboards/managing-dashboard/import-dashboard-2-pe.png,
-        title: In the dashboard import window, upload the JSON file and click "**Import**" button.
+        title: 在仪表板导入窗口中，上传 JSON 文件，然后单击“**导入**”按钮。
     ===
         image: /images/user-guide/dashboards/managing-dashboard/import-dashboard-3-pe.png,
-        title: Dashboard has been imported.
+        title: 仪表板已导入。
 '
 %}
 
@@ -42,12 +41,12 @@
 {% assign exampleDashboardPath = include.exampleDashboardPath %}
 {% endif %}
 
-ThingsBoard provides the ability to create and customize interactive visualizations (dashboards) for monitoring and managing data and devices.  
-Through ThingsBoard dashboards, you can efficiently manage and monitor your IoT devices and data. So, we will create the dashboard, for our device.  
+ThingsBoard 提供创建和自定义交互式可视化（仪表板）以监控和管理数据和设备的功能。  
+通过 ThingsBoard 仪表板，您可以高效地管理和监控您的物联网设备和数据。因此，我们将为我们的设备创建仪表板。  
 
-To add the dashboard to ThingsBoard, we need to import it. To import a dashboard, follow these steps:  
+要将仪表板添加到 ThingsBoard，我们需要导入它。要导入仪表板，请按照以下步骤操作：  
 
-- First download the [Check and control device data dashboard]({{exampleDashboardPath}}){:target="_blank" download="dashboard.json"} file.
+- 首先下载 [检查和控制设备数据仪表板]({{exampleDashboardPath}}){:target="_blank" download="dashboard.json"} 文件。
 
 {% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" or  docsPrefix == "pe/" or docsPrefix == "paas/" %}
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=importDashboardPE %}

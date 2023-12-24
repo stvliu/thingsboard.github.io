@@ -1,10 +1,10 @@
 ---
 layout: devices-library-article
-title: How to connect Hikey 970 Development Board to ThingsBoard?
-category: Single-board computers
+title: 如何将 Hikey 970 开发板连接到 ThingsBoard？
+category: 单板计算机
 chip: Kirin 970
-connectivity: Ethernet, WIFI, Bluetooth
-vendor: Huawei
+connectivity: 以太网、WIFI、蓝牙
+vendor: 华为
 deviceImageFileName: hikey-970-development-board.jpeg
 docsPrefix: paas/
 ---

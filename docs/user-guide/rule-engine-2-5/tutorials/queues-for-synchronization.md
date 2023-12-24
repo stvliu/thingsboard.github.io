@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
-title: Using queues for synchronization
-description: Using queues for synchronization
+title: 使用队列进行同步
+description: 使用队列进行同步
 
 ---
 

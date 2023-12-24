@@ -1,8 +1,8 @@
 ---
 layout: iot-article
-title: ᐉ IoT Monitoring Dashboard
+title: ᐉ 仪表板物联网监控
 notitle: "true"
-description: "IoT Monitoring Dashboard ✔ IoT control panel ⚫ ThingsBoard ➤ Provides the ability to create and manage dashboards ✔ with a plenty of widgets"
+description: "仪表板物联网监控 ✔ 物联网控制面板 ⚫ ThingsBoard ➤ 提供创建和管理仪表板的功能 ✔ 具有大量小部件"
 redirect_from: "/docs/services/monitoring-dashboard/"
 ---
 
@@ -10,124 +10,124 @@ redirect_from: "/docs/services/monitoring-dashboard/"
 <div id="header-block" class="block-wrapper wrapper-main-color">
     <div class="block-content">
         <div class="text-wrapper">
-            <span class="read-info">11 minutes read</span>
-            <h1>IoT Monitoring Dashboard</h1>
-            <div class="text-content medium-margin">In the dynamic landscape of digitization and the Internet of Things (IoT), the importance of data management and monitoring is quite reasonable. In this regard, the IoT monitoring dashboard is a tool that not only simplifies the visualization of large amounts of data but also makes it more efficient and informative.</div>
-            <div class="text-content"><span class="bold">In the ThingsBoard platform the dashboards</span> are an integral part of the user interface for IoT apps, offering solutions for the rapid development, management, and scaling of IoT projects.</div>
+            <span class="read-info">11 分钟阅读</span>
+            <h1>仪表板物联网监控</h1>
+            <div class="text-content medium-margin">在数字化和物联网 (IoT) 的动态格局中，数据管理和监控的重要性是相当合理的。在这方面，物联网监控仪表板是一个不仅简化了大量数据的可视化，而且使其更有效和信息丰富的工具。</div>
+            <div class="text-content"><span class="bold">在 ThingsBoard 平台中，仪表板</span> 是物联网应用程序用户界面的一个组成部分，为物联网项目的快速开发、管理和扩展提供解决方案。</div>
         </div>
-        <img class="image" srcset="/images/iot-articles/monitoring_dashboard_1_1090x742.png 1090w, /images/iot-articles/monitoring_dashboard_1_2180x1484.png 2180w" sizes="(max-width: 1920px) 1090px, (min-width: 1921px) 2180px" src="/images/iot-articles/monitoring_dashboard_1_1090x742.png" alt="IoT energy management office monitoring"/>
+        <img class="image" srcset="/images/iot-articles/monitoring_dashboard_1_1090x742.png 1090w, /images/iot-articles/monitoring_dashboard_1_2180x1484.png 2180w" sizes="(max-width: 1920px) 1090px, (min-width: 1921px) 2180px" src="/images/iot-articles/monitoring_dashboard_1_1090x742.png" alt="物联网能源管理办公室监控"/>
         <div class="text-wrapper">
-            <h2>Basics of an IoT Device Management Dashboard</h2>
-            <div class="text-content small-margin">An Internet of Things dashboard as the command center for your connected devices, providing a visual representation of data and facilitating seamless control. It is also known as an IoT control panel.</div>
-            <div class="text-content medium-margin">As the command center for your connected devices, providing a visual representation of data and facilitating seamless control. It is also known as an IoT control panel.</div>
-            <h3 class="small-padding">The key components of an IoT platform dashboard include:</h3>
+            <h2>物联网设备管理仪表板的基础知识</h2>
+            <div class="text-content small-margin">物联网仪表板作为连接设备的指挥中心，提供数据的可视化表示并促进无缝控制。它也被称为物联网控制面板。</div>
+            <div class="text-content medium-margin">作为连接设备的指挥中心，提供数据的可视化表示并促进无缝控制。它也被称为物联网控制面板。</div>
+            <h3 class="small-padding">物联网平台仪表板的关键组件包括：</h3>
             <ul class="list">
-                <li>Widgets: These are the building blocks, representing individual pieces of information.</li>
-                <li>Data sources: IoT sensor dashboard pull data from diverse sources such as gateways and cloud services. This data is then processed and visualized through widgets.</li>
-                <li>User controls: These interactive elements allow users to interact with the dashboard, triggering actions like sending commands to devices or adjusting settings.</li>
-                <li>Alerts: A good IoT dashboard platform provides users with alerts that help in identifying any anomalies or issues in real-time.</li>
+                <li>小部件：这些是构建块，代表各个信息。</li>
+                <li>数据源：物联网传感器仪表板从网关和云服务等不同来源提取数据。然后通过小部件处理和可视化这些数据。</li>
+                <li>用户控件：这些交互元素允许用户与仪表板交互，触发诸如向设备发送命令或调整设置等操作。</li>
+                <li>警报：一个好的物联网仪表板平台为用户提供警报，帮助识别实时中的任何异常或问题。</li>
             </ul>
-            <div class="text-content">These components work together to ensure that the dashboard is providing valuable insights from the data. Based on the visualized data, enterprises can build their strategy and vision.</div>
-            <h2>The Importance of IoT Monitoring Dashboards</h2>
-            <div class="text-content medium-margin">IoT monitoring dashboards play a pivotal role in enhancing operational efficiency, optimizing resource utilization, and enabling data-driven decision-making. Here are five compelling reasons why integrating IoT dashboards is essential:</div>
+            <div class="text-content">这些组件协同工作以确保仪表板从数据中提供有价值的见解。企业可以根据可视化数据制定其战略和愿景。</div>
+            <h2>物联网监控仪表板的重要性</h2>
+            <div class="text-content medium-margin">物联网监控仪表板在提高运营效率、优化资源利用和实现数据驱动的决策方面发挥着关键作用。以下是集成物联网仪表板必不可少的原因：</div>
             <ul class="list">
-                <li>Real-Time insights. IoT data dashboards provide online visibility into the performance of connected devices and processes, enabling timely responses to critical events and preventing potential failures.</li>
-                <li>Data-driven decision-making. By aggregating and analyzing data from various sources, IoT data dashboards empower businesses to make data-driven decisions.</li>
-                <li>Efficient resource management. Enhanced Productivity: The use of IoT dashboards leads to reduced downtime and improved operational efficiency.</li>
-                <li>Unveiling of business opportunities. Enterprises can compare real-time data with historical data to identify new opportunities for growth and development.</li>
-                <li>Cost savings. By monitoring energy usage and device performance, businesses can optimize their operations and reduce costs.</li>
+                <li>实时见解。物联网数据仪表板提供对连接设备和流程性能的在线可见性，从而能够及时响应关键事件并防止潜在故障。</li>
+                <li>数据驱动的决策。通过汇总和分析来自不同来源的数据，物联网数据仪表板使企业能够做出数据驱动的决策。</li>
+                <li>高效的资源管理。提高生产力：使用物联网仪表板可减少停机时间并提高运营效率。</li>
+                <li>揭示商机。企业可以将实时数据与历史数据进行比较，以发现新的增长和发展机会。</li>
+                <li>节省成本。通过监控能源使用情况和设备性能，企业可以优化其运营并降低成本。</li>
             </ul>
-            <h2 class="line-height-small">An Indispensable IoT Control Panel: Features You Will Approve</h2>
-            <div class="text-content medium-margin">ThingsBoard solution templates are a powerful feature of the ThingsBoard IoT platform that can significantly reduce the time-to-market for your IoT products. Here, we delve into the key characteristics that make it a cornerstone for IoT deployments:</div>
+            <h2 class="line-height-small">不可或缺的物联网控制面板：您将认可的功能</h2>
+            <div class="text-content medium-margin">ThingsBoard 解决方案模板是 ThingsBoard 物联网平台的一项强大功能，可以显着缩短物联网产品的上市时间。在这里，我们深入探讨使其成为物联网部署基石的关键特性：</div>
             <ul class="list">
-                <li>ThingsBoard's IoT control panel boasts an intuitive, user-friendly interface.</li>
-                <li>Our IoT sensor dashboard empowers users with robust device management functionalities.</li>
-                <li>Tailoring the dashboard to your specific needs is a breeze with ThingsBoard.</li>
-                <li>ThingsBoard's control panel incorporates a powerful rule engine that enables automated actions based on predefined conditions.</li>
-                <li>Our IoT device dashboard provides comprehensive tools for data analysis and visualization.</li>
-                <li>Security is paramount in IoT deployments, so we offer robust access control features, ensuring that only authorized personnel have access to sensitive information and critical functionalities.</li>
+                <li>ThingsBoard 的物联网控制面板拥有直观、用户友好的界面。</li>
+                <li>我们的物联网传感器仪表板为用户提供了强大的设备管理功能。</li>
+                <li>使用 ThingsBoard 可以轻松地根据您的特定需求定制仪表板。</li>
+                <li>ThingsBoard 的控制面板包含一个强大的规则引擎，该引擎能够根据预定义的条件启用自动操作。</li>
+                <li>我们的物联网设备仪表板提供了全面的数据分析和可视化工具。</li>
+                <li>安全性在物联网部署中至关重要，因此我们提供了强大的访问控制功能，确保只有授权人员才能访问敏感信息和关键功能。</li>
             </ul>
-            <div class="text-content">For a detailed overview of ThingsBoard's Solution Templates, you can refer to the <a class="article-link" href="/docs/pe/solution-templates/overview/">IoT Solution templates overview</a>.</div>
-            <h2>IoT Monitoring Dashboard Makes Your Business Goals Achievable</h2>
-            <div class="text-content medium-margin">Achieving tangible business objectives requires a strategic approach. An IoT dashboard app serves as a linchpin in this endeavor, offering practical solutions to common challenges encountered during IoT implementation:</div>
+            <div class="text-content">有关 ThingsBoard 解决方案模板的详细概述，您可以参考 <a class="article-link" href="/docs/pe/solution-templates/overview/">物联网解决方案模板概述</a>。</div>
+            <h2>物联网监控仪表板让您的业务目标得以实现</h2>
+            <div class="text-content medium-margin">实现切实的业务目标需要一种战略方法。物联网仪表板应用程序作为这项工作中的关键环节，为物联网实施期间遇到的常见挑战提供了切实可行的解决方案：</div>
         </div>
     </div>
 </div>
 <div class="details-cards-block-wrapper">
     <div class="details-cards-block">
         <div class="details-card">
-            <span class="header">Proactive issue resolution</span>
-            <span class="content">enables proactive maintenance, allowing businesses to address issues before they impact operations.</span>
+            <span class="header">主动问题解决</span>
+            <span class="content">支持主动维护，使企业能够在问题影响运营之前解决问题。</span>
         </div>
         <div class="details-card">
-            <span class="header">Scalability and future-proofing</span>
-            <span class="content">ensures scalability, allowing businesses to seamlessly integrate new devices and technologies as they evolve.</span>
+            <span class="header">可扩展性和面向未来的保障</span>
+            <span class="content">确保可扩展性，使企业能够随着新设备和技术的发展无缝地集成它们。</span>
         </div>
         <div class="details-card">
-            <span class="header">Global market access</span>
-            <span class="content">break down geographical barriers, allowing businesses to offer their products and services globally.</span>
+            <span class="header">全球市场准入</span>
+            <span class="content">打破地域障碍，使企业能够在全球范围内提供其产品和服务。</span>
         </div>
     </div>
 </div>
 <div class="block-wrapper wrapper-main-color medium-padding">
     <div class="block-content">
         <div class="text-wrapper">
-            <div class="text-content">By addressing these common business challenges, an IoT dashboard not only makes your business goals achievable but also gives you a competitive edge in the market.</div>
-            <h2>IoT Dashboard Examples</h2>
-            <div class="text-content medium-margin">IoT dashboards are versatile and can be tailored to meet the specific needs of various industries and applications. Here are some general IoT dashboard examples:</div>
-            <h3 class="small-padding">Equipment Monitoring Dashboard:</h3>
-            <div class="text-content medium-margin">This type of dashboard visualizes sensor data, allowing the manufacturing and facility management department to grasp the operation status of the entire plant, the equipment of each production line, and faulty equipment in real-time.</div>
+            <div class="text-content">通过解决这些常见的业务挑战，物联网仪表板不仅让您的业务目标得以实现，而且还为您在市场中提供了竞争优势。</div>
+            <h2>物联网仪表板示例</h2>
+            <div class="text-content medium-margin">物联网仪表板用途广泛，可以根据不同行业和应用的具体需求进行定制。以下是一些常见的物联网仪表板示例：</div>
+            <h3 class="small-padding">设备监控仪表板：</h3>
+            <div class="text-content medium-margin">此类仪表板可视化传感器数据，使制造和设施管理部门能够实时掌握整个工厂、每条生产线上的设备以及故障设备的操作状态。</div>
         </div>
-        <img class="image" srcset="/images/iot-articles/monitoring_dashboard_2_1090x681.png 1090w, /images/iot-articles/monitoring_dashboard_2_2180x1362.png 2180w" sizes="(max-width: 1920px) 1090px, (min-width: 1921px) 2180px" src="/images/iot-articles/monitoring_dashboard_2_1090x681.png" alt="IoT energy management office monitoring"/>
+        <img class="image" srcset="/images/iot-articles/monitoring_dashboard_2_1090x681.png 1090w, /images/iot-articles/monitoring_dashboard_2_2180x1362.png 2180w" sizes="(max-width: 1920px) 1090px, (min-width: 1921px) 2180px" src="/images/iot-articles/monitoring_dashboard_2_1090x681.png" alt="物联网能源管理办公室监控"/>
         <div class="text-wrapper">
-            <h3 class="small-padding">Power Consumption Dashboard:</h3>
-            <div class="text-content">In buildings such as factories and warehouses, a power consumption dashboard can be used to monitor energy usage. It can issue a warning message when consumption is close to a preset value, enabling appropriate and effective power-saving measures.</div>
+            <h3 class="small-padding">功耗仪表板：</h3>
+            <div class="text-content">在工厂和仓库等建筑物中，可以使用功耗仪表板来监控能源使用情况。当消耗量接近预设值时，它可以发出警告消息，从而启用适当有效的节能措施。</div>
         </div>
-        <img class="image" srcset="/images/iot-articles/monitoring_dashboard_3_1090x658.png 1090w, /images/iot-articles/monitoring_dashboard_3_2180x1316.png 2180w" sizes="(max-width: 1920px) 1090px, (min-width: 1921px) 2180px" src="/images/iot-articles/monitoring_dashboard_3_1090x658.png" alt="IoT energy management office monitoring"/>
+        <img class="image" srcset="/images/iot-articles/monitoring_dashboard_3_1090x658.png 1090w, /images/iot-articles/monitoring_dashboard_3_2180x1316.png 2180w" sizes="(max-width: 1920px) 1090px, (min-width: 1921px) 2180px" src="/images/iot-articles/monitoring_dashboard_3_1090x658.png" alt="物联网能源管理办公室监控"/>
         <div class="text-wrapper">
-            <h3 class="small-padding">Predictive Management Dashboard:</h3>
-            <div class="text-content">This dashboard monitors whether the actual production results of each production line align with the original plan. It thoroughly analyzes the reasons for any gaps and uses them for improvement in all aspects of the next production stage.</div>
+            <h3 class="small-padding">预测性管理仪表板：</h3>
+            <div class="text-content">此仪表板监控每条生产线的实际生产结果是否与原始计划一致。它彻底分析任何差距的原因，并将其用于下一生产阶段的各个方面的改进。</div>
         </div>
-        <img class="image" srcset="/images/iot-articles/monitoring_dashboard_4_1090x672.png 1090w, /images/iot-articles/monitoring_dashboard_4_2180x1344.png 2180w" sizes="(max-width: 1920px) 1090px, (min-width: 1921px) 2180px" src="/images/iot-articles/monitoring_dashboard_4_1090x672.png" alt="IoT energy management office monitoring"/>
+        <img class="image" srcset="/images/iot-articles/monitoring_dashboard_4_1090x672.png 1090w, /images/iot-articles/monitoring_dashboard_4_2180x1344.png 2180w" sizes="(max-width: 1920px) 1090px, (min-width: 1921px) 2180px" src="/images/iot-articles/monitoring_dashboard_4_1090x672.png" alt="物联网能源管理办公室监控"/>
         <div class="text-wrapper">
-            <h2>How to Use the ThingsBoard Dashboard</h2>
-            <div class="sub-title">To use the ThingsBoard IoT dashboard open source, you can follow these steps:</div>
+            <h2>如何使用 ThingsBoard 仪表板</h2>
+            <div class="sub-title">要使用 ThingsBoard 物联网仪表板开源，您可以按照以下步骤操作：</div>
             <ul class="list">
-                <li>Login to your ThingsBoard instance and navigate to the “Entities” section.</li>
-                <li>Click on the “+” icon in the top right corner of the table and then select "Add new dashboard".</li>
-                <li>Input a name for your IoT web dashboard. No other changes are required at this time.</li>
-                <li>After creating the dashboard IoT for free, you can start adding widgets to it.</li>
-                <li>Each widget can be configured to display data from one or more devices. You can choose the type of data to display, the format of the data, and other settings.</li>
-                <li>Once you have added and configured all your widgets, don’t forget to save your dashboard.</li>
+                <li>登录到您的 ThingsBoard 实例并导航到“实体”部分。</li>
+                <li>单击表格右上角的“+”图标，然后选择“添加新仪表板”。</li>
+                <li>输入您的物联网网络仪表板的名称。此时无需进行其他更改。</li>
+                <li>在免费创建物联网仪表板后，您可以开始向其中添加小部件。</li>
+                <li>可以将每个小部件配置为显示来自一个或多个设备的数据。您可以选择要显示的数据类型、数据格式和其他设置。</li>
+                <li>添加并配置所有小部件后，别忘了保存您的仪表板。</li>
             </ul>
-            <div class="text-content">For a more detailed guide on how to use the dashboard for IoT devices, you can refer to our <a class="article-link" href="/docs/pe/user-guide/dashboards/">Working with IoT dashboards</a> guide.</div>
-            <h2>ThingsBoard IoT Dashboard in Action (Case Studies)</h2>
+            <div class="text-content">有关如何使用物联网设备仪表板的更详细指南，您可以参考我们的 <a class="article-link" href="/docs/pe/user-guide/dashboards/">使用物联网仪表板</a> 指南。</div>
+            <h2>ThingsBoard 物联网仪表板的实际应用（案例研究）</h2>
         </div>
         <div class="definitions-block">
             <div class="definitions-list">
                 <div class="definitions-list-item one-to-one-and-half align-start">
-                    <div class="term bold padding-top">Asset Management</div>
-                    <div class="definition">By implementing ThingsBoard's IoT Dashboard, the facility gained real-time visibility into machine performance and production metrics. Predictive maintenance alerts ensured timely repairs, reducing downtime.</div>
+                    <div class="term bold padding-top">资产管理</div>
+                    <div class="definition">通过实施 ThingsBoard 的物联网仪表板，该设施实时了解机器性能和生产指标。预测性维护警报确保及时维修，从而减少停机时间。</div>
                 </div>
                 <div class="definitions-list-item one-to-one-and-half align-start">
-                    <div class="term bold">Enhancing Retail Customer Experience</div>
-                    <div class="definition">ThingsBoard's IoT Dashboard tracked foot traffic, analyzed customer behavior, and monitored inventory levels. Insights gained led to strategic product placements and personalized marketing efforts.</div>
+                    <div class="term bold">提升零售客户体验</div>
+                    <div class="definition">ThingsBoard 的物联网仪表板跟踪客流量、分析客户行为并监控库存水平。获得的见解促成了战略性产品布局和个性化营销工作。</div>
                 </div>
                 <div class="definitions-list-item one-to-one-and-half align-start">
-                    <div class="term bold padding-top">Device Connectivity & Data Collection</div>
-                    <div class="definition">With ThingsBoard's IoT Dashboard, the provider gained real-time monitoring of device performance and proactive alerts for potential issues.</div>
+                    <div class="term bold padding-top">设备连接和数据收集</div>
+                    <div class="definition">借助 ThingsBoard 的物联网仪表板，提供商可以实时监控设备性能并针对潜在问题发出主动警报。</div>
                 </div>
                 <div class="definitions-list-item one-to-one-and-half align-start">
-                    <div class="term bold">Optimizing Agriculture Practices</div>
-                    <div class="definition">Using ThingsBoard's IoT Dashboard, the farm monitored soil moisture, temperature, and crop health. Data-driven irrigation and fertilization strategies were implemented.</div>
+                    <div class="term bold">优化农业实践</div>
+                    <div class="definition">使用 ThingsBoard 的物联网仪表板，农场监控土壤湿度、温度和作物健康状况。实施了数据驱动的灌溉和施肥策略。</div>
                 </div>
             </div>
         </div>
         <div class="text-wrapper">
-            <h2>Wrapping Up</h2>
-            <div class="text-content medium-margin">When it comes to IoT management, ThingsBoard strives to be a leader among IoT solutions. With a seasoned team at the helm, we have crafted the best IoT dashboard that effortlessly transforms complex challenges into intuitive solutions.</div>
-            <div class="text-content medium-margin">Our user-friendly free IoT dashboard software makes it easy to navigate the intricacies of IoT. By offering a range of powerful tools, we help businesses unlock the full potential of their connected ecosystems.</div>
-            <div class="text-content">We offer a refreshing approach that combines cutting-edge technology with user-friendly design. With ThingsBoard, you’re not just choosing an IoT platform; you’re choosing a partner dedicated to helping you achieve your business goals.</div>
+            <h2>总结</h2>
+            <div class="text-content medium-margin">在物联网管理方面，ThingsBoard 致力于成为物联网解决方案的领导者。凭借经验丰富的团队掌舵，我们打造了最佳的物联网仪表板，该仪表板毫不费力地将复杂挑战转化为直观解决方案。</div>
+            <div class="text-content medium-margin">我们用户友好的免费物联网仪表板软件让您能够轻松驾驭物联网的复杂性。通过提供一系列强大的工具，我们帮助企业释放其互联生态系统的全部潜力。</div>
+            <div class="text-content">我们提供了一种令人耳目一新的方法，将尖端技术与用户友好的设计相结合。选择 ThingsBoard，您不仅选择了一个物联网平台；您选择了一个致力于帮助您实现业务目标的合作伙伴。</div>
         </div>
     </div>
 </div>
@@ -135,8 +135,8 @@ redirect_from: "/docs/services/monitoring-dashboard/"
     <div class="block-content">
         <div class="contact-us-content">
             <div class="info">
-                <div class="title">Ready to launch your unique product?</div>
-                <div class="text">Leave us your name and email and we will get back to you within 2 business days</div>
+                <div class="title">准备好推出您的独特产品了吗？</div>
+                <div class="text">留下您的姓名和电子邮件，我们将在 2 个工作日内与您联系</div>
             </div>
             <form id="contact-form" class="contact-form" method="post" onsubmit="return validateContactForm(this)">
                 <fieldset>

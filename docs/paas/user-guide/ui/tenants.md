@@ -2,8 +2,8 @@
 layout: docwithnav-paas
 assignees:
 - ashvayka
-title: Tenants
-description: ThingsBoard Tenants management
+title: 租户
+description: ThingsBoard 租户管理
 
 ---
 

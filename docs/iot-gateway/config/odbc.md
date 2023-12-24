@@ -1,18 +1,18 @@
 ---
 layout: docwithnav-gw
-title: ODBC Connector Configuration
-description: ODBC support for ThingsBoard IoT Gateway
+title: ODBC 连接器配置
+description: ThingsBoard IoT 网关的 ODBC 支持
 
 ---
 
 * TOC
 {:toc}
 
-This guide will help you to get familiar with ODBC connector configuration for ThingsBoard IoT Gateway.
-Use [general configuration](/docs/iot-gateway/configuration/) to enable this connector.
-We will describe connector configuration file below.
+本指南将帮助您熟悉 ThingsBoard IoT 网关的 ODBC 连接器配置。
+使用 [常规配置](/docs/iot-gateway/configuration/) 启用此连接器。
+我们将在下面描述连接器配置文件。
 
-<b>Example of ODBC Connector config file.</b>
+<b>ODBC 连接器配置文件示例。</b>
 
 {% capture odbcConf %}
 
@@ -74,44 +74,48 @@ We will describe connector configuration file below.
 {% endcapture %}
 {% include code-toggle.liquid code=odbcConf params="conf|.copy-code.expandable-20" %}
 
-## Prerequisites
+## 先决条件
 
-To install and get ODBC connector working several additional steps need to be done:
+要安装并使 ODBC 连接器正常工作，需要执行以下几个步骤：
 
-1. Install [Visual C++ Redistributable package](https://github.com/mkleehammer/pyodbc/wiki/Install#installing-on-windows) for Windows or [ODBC package](https://github.com/mkleehammer/pyodbc/wiki/Install#installing-on-linux) for Linux.
-2. Install ODBC driver(s) for database(s) the ThingsBoard gateway need to connect.
-3. Add data source in [ODBC Data source Administrator](https://docs.microsoft.com/en-us/sql/database-engine/configure-windows/open-the-odbc-data-source-administrator) on Windows or add driver information (name, library path etc.) to ODBC configuration file [odbcinst.ini](https://github.com/mkleehammer/pyodbc/wiki/Drivers-and-Driver-Managers#odbc-configuration-files-unix-only) on Unix systems. 
+1. 为 Windows 安装 [Visual C++ Redistributable 包](https://github.com/mkleehammer/pyodbc/wiki/Install#installing-on-windows) 或为 Linux 安装 [ODBC 包](https://github.com/mkleehammer/pyodbc/wiki/Install#installing-on-linux)。
+2. 为 ThingsBoard 网关需要连接的数据库安装 ODBC 驱动程序。
+3. 在 Windows 上的 [ODBC 数据源管理器](https://docs.microsoft.com/en-us/sql/database-engine/configure-windows/open-the-odbc-data-source-administrator) 中添加数据源，或在 Unix 系统上将驱动程序信息（名称、库路径等）添加到 ODBC 配置文件 [odbcinst.ini](https://github.com/mkleehammer/pyodbc/wiki/Drivers-and-Driver-Managers#odbc-configuration-files-unix-only) 中。
 
-## Section "connection"
-This **mandatory** section provides information how to connect or reconnect to ODBC database.
+## “connection”部分
 
-| **Parameter**                     | **Default value**   | **Description**                     |
-|:-|:-|-
-| **str**                           |                     | Database [connection string](https://www.connectionstrings.com).   |
-| attributes                        |                     | Connection [attributes](https://github.com/mkleehammer/pyodbc/wiki/Connection#connection-attributes).   |
-| encoding                          | **utf-16**          | Encoding used when writing string data to database.   |
-| decoding                          |                     | Encoding configuration used when reading string data from database.   |
-| reconnect                         | **true**            | Whether to reconnect after catching database error.   |
-| reconnectPeriod                   | **60.0**            | Period in seconds between reconnect attempts. Floating point means more precise time than seconds.   |
+此 **强制性** 部分提供有关如何连接或重新连接到 ODBC 数据库的信息。
 
-**Note**: More information about encoding/decoding read [there](https://github.com/mkleehammer/pyodbc/wiki/Unicode).
+| **参数** | **默认值** | **说明** |
+|:-|:-|-|
+| **str** | | 数据库 [连接字符串](https://www.connectionstrings.com)。 |
+| attributes | | 连接 [属性](https://github.com/mkleehammer/pyodbc/wiki/Connection#connection-attributes)。 |
+| encoding | **utf-16** | 将字符串数据写入数据库时使用的编码。 |
+| decoding | | 从数据库读取字符串数据时使用的编码配置。 |
+| reconnect | **true** | 在捕获数据库错误后是否重新连接。 |
+| reconnectPeriod | **60.0** | 重新连接尝试之间的间隔（以秒为单位）。浮点数表示比秒更精确的时间。 |
 
-### Subsection "attributes"
-This **optional** subsection provides [several options](https://github.com/mkleehammer/pyodbc/wiki/Connection#connection-attributes) to tune connection procedure.
+**注意**：有关编码/解码的更多信息，请阅读 [此处](https://github.com/mkleehammer/pyodbc/wiki/Unicode)。
 
-### Subsection "decoding"
-This **optional** subsection provides information how to decode string data and metadata read from a database.
+### “attributes”小节
 
-| **Parameter**                     | **Default value**   | **Description**                     |
-|:-|:-|-
-| char                              | **utf-16**          | Encoding used when reading string data from database.   |
-| wchar                             | **utf-16**          | Encoding used when reading Unicode string data from database.   |
-| metadata                          | **utf-16**          | Encoding used when reading metadata from database.   |
+此 **可选** 小节提供了 [多个选项](https://github.com/mkleehammer/pyodbc/wiki/Connection#connection-attributes) 来调整连接过程。
 
-**Note**: More information about encoding/decoding read [there](https://github.com/mkleehammer/pyodbc/wiki/Unicode).
+### “decoding”小节
 
-## Section "pyodbc"
-This **optional** section provides [options](https://github.com/mkleehammer/pyodbc/wiki/The-pyodbc-Module#pyodbc-attributes) to tune *pyodbc* Python library which is working under the hood of ODBC Connector.
+此 **可选** 小节提供了有关如何解码从数据库读取的字符串数据和元数据的信息。
+
+| **参数** | **默认值** | **说明** |
+|:-|:-|-|
+| char | **utf-16** | 从数据库读取字符串数据时使用的编码。 |
+| wchar | **utf-16** | 从数据库读取 Unicode 字符串数据时使用的编码。 |
+| metadata | **utf-16** | 从数据库读取元数据时使用的编码。 |
+
+**注意**：有关编码/解码的更多信息，请阅读 [此处](https://github.com/mkleehammer/pyodbc/wiki/Unicode)。
+
+## “pyodbc”部分
+
+此 **可选** 部分提供了 [选项](https://github.com/mkleehammer/pyodbc/wiki/The-pyodbc-Module#pyodbc-attributes) 来调整在 ODBC 连接器内部工作的 *pyodbc* Python 库。
 
 ```json
 "pyodbc": {
@@ -120,41 +124,43 @@ This **optional** section provides [options](https://github.com/mkleehammer/pyod
 },
 ```
 
-## Property "converter"
-ODBC connector is provided with built-in uplink data converter. One can specify custom converter class in this **optional** property.
+## “converter”属性
+
+ODBC 连接器提供了内置的上行数据转换器。可以在此 **可选** 属性中指定自定义转换器类。
 
 ```json
 "converter": "CustomOdbcUplinkConverter",
 ```
 
-## Section "polling"
-The main idea of ODBC connector is periodically querying ODBC database whether new data is appeared. 
+## “polling”部分
 
-This **mandatory** section provides information how often to query database, what data to select and which database column is used to iterate over result.
+ODBC 连接器的主要思想是定期查询 ODBC 数据库是否出现新数据。
 
-| **Parameter**                     | **Default value**   | **Description**                     |
-|:-|:-|-
-| query                             |                     | SQL select query to fetch data from database.  |
-| period                            | **60.0**            | Period of polling in seconds. Floating point means more precise time than seconds.   |
-| iterator                          |                     | Iterator configuration.   |
+此 **强制性** 部分提供了有关查询数据库的频率、要选择的数据以及用于迭代结果的数据库列的信息。
 
-**The requirements for the *query* option**:
+| **参数** | **默认值** | **说明** |
+|:-|:-|-|
+| query | | 从数据库获取数据的 SQL 选择查询。 |
+| period | **60.0** | 轮询周期（以秒为单位）。浮点数表示比秒更精确的时间。 |
+| iterator | | 迭代器配置。 |
 
-1. Valid SQL *SELECT* statement that meets requirements of SQL dialect of the database the ThingsBoard gateway need to connect.
-2. Include *attributes* or/and *timeseries* columns in _SELECT_ list.
-3. Include the [*device*](/docs/iot-gateway/config/odbc/#subsection-device) column in _SELECT_ list to find out to which device data belongs to.
-4. Include the [*iterator*](/docs/iot-gateway/config/odbc/#subsection-iterator) column in _SELECT_ list.
-5. Among other conditions SQL _WHERE_ clause must include the [*iterator*](/docs/iot-gateway/config/odbc/#subsection-iterator) condition.
-6. Among other sorting expressions SQL _ORDER BY_ clause must include the [*iterator*](/docs/iot-gateway/config/odbc/#subsection-iterator) sorting expression.
-7. It is *recommended* to use SQL _LIMIT_ clause to reduce memory consumption on each read from a database.
+*query* 选项的要求：
 
-**Example**: 
+1. 满足 ThingsBoard 网关需要连接的数据库的 SQL 方言要求的有效 SQL *SELECT* 语句。
+2. 在 _SELECT_ 列表中包含 *attributes* 或/和 *timeseries* 列。
+3. 在 _SELECT_ 列表中包含 [*device*](/docs/iot-gateway/config/odbc/#subsection-device) 列，以找出数据属于哪个设备。
+4. 在 _SELECT_ 列表中包含 [*iterator*](/docs/iot-gateway/config/odbc/#subsection-iterator) 列。
+5. 在其他条件中，SQL _WHERE_ 子句必须包含 [*iterator*](/docs/iot-gateway/config/odbc/#subsection-iterator) 条件。
+6. 在其他排序表达式中，SQL _ORDER BY_ 子句必须包含 [*iterator*](/docs/iot-gateway/config/odbc/#subsection-iterator) 排序表达式。
+7. *建议* 使用 SQL _LIMIT_ 子句来减少每次从数据库读取时的内存消耗。
 
-Each polling iteration the connector will read 10 records sorted by _ts_ column ([*iterator*](/docs/iot-gateway/config/odbc/#subsection-iterator)). 
+**示例**：
 
-Each record consists of timeseries columns (*bool_v*, *str_v*, *dbl_v*, *long_v*), [device](/docs/iot-gateway/config/odbc/#subsection-device) column (*entity_id*) and [*iterator*](/docs/iot-gateway/config/odbc/#subsection-iterator) column (*ts*).
+每次轮询迭代，连接器将按 _ts_ 列（[*iterator*](/docs/iot-gateway/config/odbc/#subsection-iterator)）排序，读取 10 条记录。
 
-After each polling iteration the connector remembers the value of the *ts* column of 10th record (the last record) and use it in _WHERE_ clause on the next iteration.
+每条记录包含时间序列列（*bool_v*、*str_v*、*dbl_v*、*long_v*）、[设备](/docs/iot-gateway/config/odbc/#subsection-device) 列（*entity_id*）和 [*iterator*](/docs/iot-gateway/config/odbc/#subsection-iterator) 列（*ts*）。
+
+每次轮询迭代后，连接器都会记住第 10 条记录（最后一条记录）的 *ts* 列的值，并在下次迭代中将其用于 _WHERE_ 子句。
 ```sql
 SELECT bool_v, str_v, dbl_v, long_v, entity_id, ts   (2-3)
 FROM ts_kv
@@ -163,90 +169,94 @@ ORDER BY ts ASC                                      (5)
 LIMIT 10                                             (6)
 ```
 
-### Subsection "iterator"
-This **mandatory** subsection provides information on what database column is used to iterate through the result set, where to get the initial value of the iterator and whether to use iterator data between gateway work sessions.
+### “iterator”小节
+
+此 **强制性** 小节提供了有关用于迭代结果集的数据库列、迭代器的初始值以及是否在网关工作会话之间使用迭代器数据的信息。
 <br>
 <br>
-**IMPORTANT** 
+**重要提示**
 
-The main challenge of the *iterator* feature is to unambiguously figure out whether to restore iterator data from a previous gateway work session or to use values from the connector configuration file.
+*iterator* 特性的主要挑战是明确确定是从以前的网关工作会话中恢复迭代器数据还是使用连接器配置文件中的值。
 
-Each *iterator* has its own file that has been stored in *config/odbc/* folder. After each polling iteration the connector saves *iterator* data (see below the *persistent* option) to such file.
+每个 *iterator* 都在 *config/odbc/* 文件夹中存储了自己的文件。每次轮询迭代后，连接器都会将 *iterator* 数据（请参见下面的 *persistent* 选项）保存到此类文件中。
 <br>
 <hr/>
-*\- How does connector distinguish iterator files from each other?*
+*\- 连接器如何将迭代器文件彼此区分？*
 
-\- The short answer is a decision is based on the *iterator* file name.
+\- 简短的回答是，决策基于 *iterator* 文件名。
 <hr/>
-In details, once the connector starts and connects to a database it checks whether the *persistent* flag (see below) is set to *true*. If so the connector calculates the *iterator* file name and checks if it exists in *config/odbc/* folder. 
+具体来说，一旦连接器启动并连接到数据库，它就会检查 *persistent* 标志（见下文）是否设置为 *true*。如果是，连接器会计算 *iterator* 文件名并检查它是否存在于 *config/odbc/* 文件夹中。
 
-If the file exists the connector loads *iterator* data from it. Otherwise *iterator* data is loaded from the connector's configuration file.
+如果文件存在，连接器会从其中加载 *iterator* 数据。否则，会从连接器的配置文件中加载 *iterator* 数据。
 
-The *iterator* file name is a hash of:
-* ODBC driver name
-* database server name
-* database name
-* iterator column (see below the *column* option)
+*iterator* 文件名是以下内容的哈希：
+* ODBC 驱动程序名称
+* 数据库服务器名称
+* 数据库名称
+* 迭代器列（请参见下面的 *column* 选项）
 
 <br>
-**DRAWBACK**
+**缺点**
 
-There may happen that while using the same database the list of **tables is totally changed** but the ***iterator* column name is not** just because the same column name is used in the different tables. In this case **the connector loads wrong *iterator* data**.
+在使用同一个数据库时，**表列表可能完全改变**，但 ***iterator* 列名称没有**，仅仅是因为不同的表中使用了相同的列名称。在这种情况下，**连接器会加载错误的 *iterator* 数据**。
 <br>
 <br>
-**CONCLUSION**
+**结论**
 
-1. For the same database use unique name for each iterator.
-2. Enable _iterator_ persistence feature only when other connector's configuration parts have been debugged and the lists of attributes and timeseries are finalized.
+1. 对于同一个数据库，每个迭代器使用唯一的名称。
+2. 仅在其他连接器配置部分已调试且属性和时间序列列表已最终确定时，才启用 _iterator_ 持久性功能。
 
 
-| **Parameter**                     | **Default value**   | **Description**                     |
-|:-|:-|-
-| **column**                        |                     | Database column name that is used to iterate through the result set. |
-| **value**                         |                     | The initial value of the iterator.  |
-| **query**                         |                     | The SQL query to evaluate initial value of the iterator.  |
-| persistent                        | **false**           | Whether to use iterator data between gateway work sessions.  |
+| **参数** | **默认值** | **说明** |
+|:-|:-|-|
+| **column** | | 用于迭代结果集的数据库列名称。 |
+| **value** | | 迭代器的初始值。 |
+| **query** | | 用于计算迭代器初始值的 SQL 查询。 |
+| persistent | **false** | 是否在网关工作会话之间使用迭代器数据。 |
 
-**Note**: Options *value* and *query* are mutually exclusive. If both options are set _value_ will be used.
+**注意**：*value* 和 *query* 选项互斥。如果同时设置了这两个选项，将使用 _value_。
 
-## Section "mapping"
-This **mandatory** section provides information how to map the result set that is get from a database to device attributes and timeseries values.
+## “mapping”部分
 
-| **Parameter**                     | **Default value**   | **Description**                     |
-|:-|:-|-
-| **device**                        |                     | Device configuration.   |
-| sendDataOnlyOnChange              | **false**           | Sending only if data changed from last check, if not specified data will send after each polling iteration.   |
-| attributes                        |                     | List of device attributes.   |
-| timeseries                        |                     | List of time series keys.   |
+此 **强制性** 部分提供了有关如何将从数据库获取的结果集映射到设备属性和时间序列值的信息。
 
-### Subsection "device"
-This **mandatory** subsection provides information how to map the result set to **unique** device name and its type.
+| **参数** | **默认值** | **说明** |
+|:-|:-|-|
+| **device** | | 设备配置。 |
+| sendDataOnlyOnChange | **false** | 仅在数据自上次检查以来发生更改时发送，如果未指定，则每次轮询迭代后都会发送数据。 |
+| attributes | | 设备属性列表。 |
+| timeseries | | 时间序列键列表。 |
 
-| **Parameter**               | **Default value**   | **Description**                     |
-|:-|:-|-
-| **name**                    |                     | Python [eval()](https://docs.python.org/3/library/functions.html#eval) expression to generate **unique** device name. |
-| type                        | **odbc**            | ThingsBoard device type. |
+### “device”小节
 
-**Note** All database columns listed in SQL *SELECT* clause of the [query](/docs/iot-gateway/config/odbc/#section-polling) option are available by its name in the Python [eval()](https://docs.python.org/3/library/functions.html#eval) context.
+此 **强制性** 小节提供了有关如何将结果集映射到 **唯一** 设备名称及其类型的信息。
 
-For example,
+| **参数** | **默认值** | **说明** |
+|:-|:-|-|
+| **name** | | Python [eval()](https://docs.python.org/3/library/functions.html#eval) 表达式，用于生成 **唯一** 的设备名称。 |
+| type | **odbc** | ThingsBoard 设备类型。 |
+
+**注意** SQL *SELECT* 子句中列出的所有数据库列都可以在 Python [eval()](https://docs.python.org/3/library/functions.html#eval) 上下文中通过其名称使用。
+
+例如，
 ```json
 "device": {
   "name": "'ODBC' + entity_id"
 }
 ```
-,means that device name is a result of concatenating two strings: *ODBC* and the value of database column *entity_id*.
+,表示设备名称是两个字符串的连接结果：*ODBC* 和数据库列 *entity_id* 的值。
 
-### Subsections "attributes" and "timeseries"
-These **optional** subsections provides information on what database columns are treated as attributes and what as time series keys and what pre-processing job should be done before sending to ThingsBoard server.
+### “attributes”和“timeseries”小节
 
-The connector supports several configuration modes for these subsections:
+这些 **可选** 小节提供了有关哪些数据库列被视为属性，哪些被视为时间序列键，以及在发送到 ThingsBoard 服务器之前应执行哪些预处理工作的信息。
 
-* list of database columns
+连接器支持这些小节的几种配置模式：
+
+* 数据库列列表
 ```json
 "timeseries": [ "str_v", "ts" ]
 ```
-* list of configurations
+* 配置列表
 ```json
 "timeseries": [
   {
@@ -264,16 +274,16 @@ The connector supports several configuration modes for these subsections:
 ]
 ```
 
-| **Parameter**               | **Description**                                                                                             |
-|:-|-
-| **name**                    | Alias name.                                                                                                 |
-| **nameExpression**          | Python [eval()](https://docs.python.org/3/library/functions.html#eval) expression to evaluate a alias name. |
-| column                      | Database column name.                                                                                       |
-| value                       | Python [eval()](https://docs.python.org/3/library/functions.html#eval) expression to evaluate a value.      |
+| **参数** | **说明** |
+|:-|:-|
+| **name** | 别名。 |
+| **nameExpression** | Python [eval()](https://docs.python.org/3/library/functions.html#eval) 表达式，用于计算别名。 |
+| column | 数据库列名称。 |
+| value | Python [eval()](https://docs.python.org/3/library/functions.html#eval) 表达式，用于计算值。 |
 
-**Note** All database columns listed in SQL *SELECT* clause of the [query](/docs/iot-gateway/config/odbc/#section-polling) option are available by its name in the Python [eval()](https://docs.python.org/3/library/functions.html#eval) context.
+**注意** SQL *SELECT* 子句中列出的所有数据库列都可以在 Python [eval()](https://docs.python.org/3/library/functions.html#eval) 上下文中通过其名称使用。
 
-* combining mode
+* 组合模式
 ```json
 "timeseries": [
   "ts",
@@ -283,30 +293,31 @@ The connector supports several configuration modes for these subsections:
   }
 ]
 ```
-* globbing
+* 通配符
 ```json
 "timeseries": "*"
 ```
-, means treating all database columns as timeseries.
+,表示将所有数据库列视为时间序列。
 
-## Section "serverSideRpc"
-The connector is able to call SQL procedures/functions with or without parameters. Parameters are get either from a connector's configuration file or from [data](/docs/reference/gateway-mqtt-api/#server-side-rpc) received from a server.
+## “serverSideRpc”部分
 
-| **Parameter**                 | **Default value**   | **Description**                     |
-|:-|:-|-
-| enableUnknownRpc              | **false**           | Allow processing RPC commands not listed in *methods* subsection. |
-| overrideRpcConfig             | **false**           | Allow overriding RPC command configuration by data received from server.|
-| methods                       |                     | List of RPC methods and their parameters. |
+连接器能够调用带或不带参数的 SQL 过程/函数。参数可以从连接器的配置文件或从服务器收到的 [数据](/docs/reference/gateway-mqtt-api/#server-side-rpc) 中获取。
 
-The connector supports several configuration modes for the *methods* subsection:
+| **参数** | **默认值** | **说明** |
+|:-|:-|-|
+| enableUnknownRpc | **false** | 允许处理未在 *methods* 小节中列出的 RPC 命令。 |
+| overrideRpcConfig | **false** | 允许通过从服务器收到的数据覆盖 RPC 命令配置。 |
+| methods | | RPC 方法及其参数的列表。 |
 
-* list of procedures/functions without parameter
+连接器支持 *methods* 小节的几种配置模式：
+
+* 不带参数的过程/函数列表
 ```json
 "methods": [ "procedureOne", "procedureTwo" ]
 ```
-* list of procedure/function configurations
+* 过程/函数配置列表
 <br><br>
-**The order of arguments matters**. It must be the same as the order of parameters in SQL procedure/function.
+**参数的顺序很重要**。它必须与 SQL 过程/函数中参数的顺序相同。
 ```json
 "methods": [
   {
@@ -320,17 +331,17 @@ The connector supports several configuration modes for the *methods* subsection:
   }
 ]
 ```
-**Procedure / function configuration parameters**
+**过程 / 函数配置参数**
 
-| **Parameter**     | **Default value** | **Description**                     |
-|:-|:-|-
-| **name**          |                   | Name of RPC method or SQL procedure/function. |
-| query             |                   | Custom SQL query to call procedure/function. |
-| args              |                   | List of SQL procedure/function arguments.        |
-| result            |  **false**        | **Only for SQL functions** Whether to process function result, if not connector returns the status of processing procedure/function (i.e. *succes* / *failure* ).        |
+| **参数** | **默认值** | **说明** |
+|:-|:-|-|
+| **name** | | RPC 方法或 SQL 过程/函数的名称。 |
+| query | | 调用过程/函数的自定义 SQL 查询。 |
+| args | | SQL 过程/函数参数列表。 |
+| result | **false** | **仅适用于 SQL 函数** 是否处理函数结果，如果不处理，连接器将返回处理过程/函数的状态（即 *成功* / *失败* ）。 |
 
 
-* combining mode
+* 组合模式
 ```json
 "methods": [
   "procedureOne",
@@ -341,13 +352,13 @@ The connector supports several configuration modes for the *methods* subsection:
 ]
 ```
 
-**IMPORTANT**
+**重要提示**
 
-If *enableUnknownRpc* is set to *true*, [RPC params](/docs/reference/gateway-mqtt-api/#server-side-rpc) **must have** all needed **procedure/function configuration parameters**.
+如果 *enableUnknownRpc* 设置为 *true*，[RPC 参数](/docs/reference/gateway-mqtt-api/#server-side-rpc) **必须** 具有 **所有必需的** **过程/函数配置参数**。
 
-If *overrideRpcConfig* is set to *true*, [RPC params](/docs/reference/gateway-mqtt-api/#server-side-rpc) **may contain** all or some of **procedure/function configuration parameters** to override ones that are specified in the connector configuration file.
+如果 *overrideRpcConfig* 设置为 *true*，[RPC 参数](/docs/reference/gateway-mqtt-api/#server-side-rpc) **可能包含** **所有或部分** **过程/函数配置参数**，以覆盖连接器配置文件中指定的参数。
 
-**The order of arguments matters**. It must be the same as the order of parameters in SQL procedure/function.
+**参数的顺序很重要**。它必须与 SQL 过程/函数中参数的顺序相同。
 ```json
 {
   "device": "ODBC Device 1", 
@@ -360,13 +371,12 @@ If *overrideRpcConfig* is set to *true*, [RPC params](/docs/reference/gateway-mq
 }
 ```
 
-## Next steps
+## 后续步骤
 
-Explore guides related to main ThingsBoard features:
+探索与 ThingsBoard 主要功能相关的指南：
 
- - [Data Visualization](/docs/user-guide/visualization/) - how to visualize collected data.
- - [Device attributes](/docs/user-guide/attributes/) - how to use device attributes.
- - [Telemetry data collection](/docs/user-guide/telemetry/) - how to collect telemetry data.
- - [Using RPC capabilities](/docs/user-guide/rpc/) - how to send commands to/from devices.
- - [Rule Engine](/docs/user-guide/rule-engine/) - how to use rule engine to analyze data from devices.
-
+- [数据可视化](/docs/user-guide/visualization/) - 如何可视化收集到的数据。
+- [设备属性](/docs/user-guide/attributes/) - 如何使用设备属性。
+- [遥测数据收集](/docs/user-guide/telemetry/) - 如何收集遥测数据。
+- [使用 RPC 功能](/docs/user-guide/rpc/) - 如何向设备发送/从设备接收命令。
+- [规则引擎](/docs/user-guide/rule-engine/) - 如何使用规则引擎分析来自设备的数据。

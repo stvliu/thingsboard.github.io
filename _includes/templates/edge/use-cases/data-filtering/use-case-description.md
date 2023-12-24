@@ -1,18 +1,18 @@
-Let's assume you have a vehicle with mounted IoT monitoring system connected to ThingsBoard **Edge**. 
-You want to collect all messages from the device on the edge and push to the cloud only data related to business logic. 
-For example, mileage readings may help to track how many miles left to travel till the next oil change. 
+假设您有一辆装有连接到 ThingsBoard **Edge** 的 IoT 监控系统的汽车。
+您想在边缘收集设备的所有消息，并仅将与业务逻辑相关的数据推送到云端。
+例如，里程读数可能有助于跟踪到下次换油前还剩多少英里。
 
-The In-vehicle monitoring system has 10 sensors:
-* Distance
-* Gas consumption
-* Vehicle speed
-* Engine temperature
-* Ambient temperature
-* Tire temperature
-* Pressure in each tire (4x)
+车载监控系统有 10 个传感器：
+* 距离
+* 耗油量
+* 车速
+* 发动机温度
+* 环境温度
+* 轮胎温度
+* 每条轮胎的压力（4x）
 
-ThingsBoard Edge has the following responsibilities:
- * **Collects readings** from 10 sensors
- * **Pushes to the cloud** only "distance" readings
+ThingsBoard Edge 具有以下职责：
+* **收集读数**来自 10 个传感器
+* **推送到云端**仅“距离”读数
 
-Please note that this is just a simple theoretical use case to demonstrate the capabilities of the platform. You can use this tutorial as a basis for much more complex scenarios.
+请注意，这只是一个简单的理论用例，用于演示平台的功能。您可以将本教程用作更复杂场景的基础。

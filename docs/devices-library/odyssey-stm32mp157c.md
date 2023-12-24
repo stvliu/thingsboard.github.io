@@ -1,9 +1,9 @@
 ---
 layout: devices-library-article
-title: How to connect ODYSSEY STM32MP157C to ThingsBoard?
-category: Single-board computers
+title: 如何将 ODYSSEY STM32MP157C 连接到 ThingsBoard？
+category: 单板计算机
 chip: STM32MP157C
-connectivity: Ethernet, WIFI, Bluetooth
+connectivity: 以太网、WIFI、蓝牙
 vendor: Seeed Studio
 deviceImageFileName: odyssey-stm32mp157c.png
 

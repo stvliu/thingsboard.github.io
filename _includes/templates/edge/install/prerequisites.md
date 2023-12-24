@@ -1,45 +1,45 @@
-## Prerequisites
+## 先决条件
 
 {% include templates/edge/install/hardware-requirements.md %}
 
-### Setting Up the Server Environment for ThingsBoard Edge 
+### 为 ThingsBoard Edge 设置服务器环境
 
-To start utilizing ThingsBoard **Edge**, it is essential to have an operational {{appPrefix}} server that supports Edge functionality.
+要开始使用 ThingsBoard **Edge**，必须有一个支持 Edge 功能的运行中的 {{appPrefix}} 服务器。
 
 {% if docsPrefix == 'pe/edge/' %}
 {% include templates/edge/obtain-pe-cloud.md %}
 {% else %}
 {% include templates/edge/obtain-ce-cloud.md %}
 {% endif %}
- 
-### Provisioning a New Edge Instance on Server
+
+### 在服务器上配置新的 Edge 实例
 
 {% if docsPrefix == 'pe/edge/' %}
 {% assign addEdge = '
     ===
         image: /images/pe/edge/installation-add-edge-item-1.png,
-        title: Sign in to your ThingsBoard <b>PE</b> instance and navigate to the "Edge Management" -> "Instances" page. Click the "+" icon in the top right corner and select "Add Edge".
+        title: 登录到您的 ThingsBoard <b>PE</b> 实例并导航到“Edge 管理”->“实例”页面。单击右上角的“+”图标并选择“添加 Edge”。
     ===
         image: /images/pe/edge/installation-add-edge-item-2.png,
-        title: Enter a name for your edge. For instance, "My New Edge". If necessary, update the cloud endpoint. This URL should be accessible from the edge. If the edge is running in a Docker container, using "localhost" is <b>incorrect</b>. It must be the IP address of the machine where ThingsBoard <b>PE</b> is running and accessible by the edge container. If you are using the ThingsBoard <b>Cloud</b> server to evaluate the edge, leave this setting as it is. Click "Add" to create your new edge.
+        title: 为您的 Edge 输入一个名称。例如，“我的新 Edge”。如有必要，请更新云端点。Edge 应该可以访问此 URL。如果 Edge 在 Docker 容器中运行，则使用“localhost”是<b>不正确</b>的。它必须是 ThingsBoard <b>PE</b> 运行所在机器的 IP 地址，并且 Edge 容器可以访问。如果您使用 ThingsBoard <b>Cloud</b> 服务器来评估 Edge，请保持此设置不变。单击“添加”以创建您的新 Edge。
     ===
         image: /images/pe/edge/installation-add-edge-item-3.png,
-        title: Your new edge should now appear at the top of the list, as entries are sorted by creation time by default.
+        title: 您的新 Edge 现在应该出现在列表顶部，因为默认情况下按创建时间对条目进行排序。
 '%}
 {% else %}
 {% assign addEdge = '
     ===
         image: /images/edge/installation-add-edge-item-1.png,
-        title: Sign in to your ThingsBoard <b>CE</b> instance and navigate to the "Edge Management" -> "Instances" page. Click the "+" icon in the top right corner and select "Add Edge".
+        title: 登录到您的 ThingsBoard <b>CE</b> 实例并导航到“Edge 管理”->“实例”页面。单击右上角的“+”图标并选择“添加 Edge”。
     ===
         image: /images/edge/installation-add-edge-item-2.png,
-        title: Enter a name for your Edge. For instance, "My New Edge". Click "Add" to confirm the creation of your new Edge.
+        title: 为您的 Edge 输入一个名称。例如，“我的新 Edge”。单击“添加”以确认创建您的新 Edge。
     ===
         image: /images/edge/installation-add-edge-item-3.png,
-        title: Your new Edge should now appear at the top of the list, as entries are sorted by creation time by default.
+        title: 您的新 Edge 现在应该出现在列表顶部，因为默认情况下按创建时间对条目进行排序。
 '%}
 {% endif %}
 
-Additionally, you will need to provision ThingsBoard **Edge** on a server. 
+此外，您需要在服务器上配置 ThingsBoard **Edge**。
 
 {% include images-gallery.liquid imageCollection=addEdge showListImageTitles="true" %}

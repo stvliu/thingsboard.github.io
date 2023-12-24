@@ -2,119 +2,117 @@
 layout: docwithnav-trendz
 assignees:
 - vparomskiy
-title: Installing ThingsBoard Trendz Analytics  on CentOS/RHEL
-description: Installing ThingsBoard Trendz Analytics  on CentOS/RHEL
+title: 在 CentOS/RHEL 上安装 ThingsBoard Trendz Analytics
+description: 在 CentOS/RHEL 上安装 ThingsBoard Trendz Analytics
 
 ---
 
 * TOC
 {:toc}
 
-### Prerequisites
+### 先决条件
 
-This guide describes how to install Trendz Analytics on RHEL/CentOS 7/8. 
+本指南介绍如何在 RHEL/CentOS 7/8 上安装 Trendz Analytics。
 
-**Hardware requirements** depend on amount of analyzed data and amount of devices connected to the system. 
-To run Trendz Analytics on a single machine you will need at least 1Gb of free RAM.
+**硬件要求**取决于分析的数据量和连接到系统上的设备数量。
+要在单台机器上运行 Trendz Analytics，您至少需要 1Gb 的可用 RAM。
 
-In small and medium installations Trendz can be installed **on the same** server with ThingsBoard.
+在小型和中型安装中，Trendz 可以安装**在与** ThingsBoard **相同的**服务器上。
 
-Before continue to installation execute the following commands in order to install necessary tools:
+在继续安装之前，执行以下命令以安装必要的工具：
 
-**For CentOS 7:**
+**对于 CentOS 7：**
 
 ```bash
-# Install wget
+# 安装 wget
 sudo yum install -y nano wget
-# Add latest EPEL release for CentOS 7
+# 添加 CentOS 7 的最新 EPEL 版本
 sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 
 ```
 {: .copy-code}
 
-**For CentOS 8:**
+**对于 CentOS 8：**
 
 ```bash
-# Install wget
+# 安装 wget
 sudo yum install -y nano wget
-# Add latest EPEL release for CentOS 8
+# 添加 CentOS 8 的最新 EPEL 版本
 sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
 
 ```
 {: .copy-code}
 
-### Step 1. Install Java 11 (OpenJDK) 
+### 步骤 1. 安装 Java 11 (OpenJDK)
 
 {% include templates/install/rhel-java-install.md %}
 
-### Step 2. Trendz Analytics service installation
+### 步骤 2. Trendz Analytics 服务安装
 
-Download installation package.
+下载安装包。
 
 ```bash
 wget https://dist.thingsboard.io/trendz-1.10.3-HF3.rpm
 ```
 {: .copy-code}
 
-Install Trendz Analytics as a service
+将 Trendz Analytics 安装为服务
 
 ```bash
 sudo rpm -Uvh trendz-1.10.3-HF3.rpm
 ```
 {: .copy-code}
 
-### Step 3. Obtain and configure license key 
+### 步骤 3. 获取并配置许可证密钥
 
-We assume you have already chosen subscription plan for Trendz and have license key. If not, please get your [Free Trial license](/pricing/?section=trendz-options&product=trendz-self-managed&solution=trendz-pay-as-you-go) before you proceed.
-See [How-to get pay-as-you-go subscription](https://www.youtube.com/watch?v=dK-QDFGxWek){:target="_blank"} for more details.
+我们假设您已经为 Trendz 选择了订阅计划并拥有许可证密钥。如果没有，请在继续之前获取您的[免费试用许可证](/pricing/?section=trendz-options&product=trendz-self-managed&solution=trendz-pay-as-you-go)。
+有关更多详细信息，请参阅[如何获取按需付费订阅](https://www.youtube.com/watch?v=dK-QDFGxWek){:target="_blank"}。
 
-Once you get the license secret, you should put it to the trendz configuration file. 
-Open the file for editing using the following command:
+获得许可证密钥后，您应该将其放入 trendz 配置文件中。
+使用以下命令打开文件进行编辑：
 
 ```bash 
 sudo nano /etc/trendz/conf/trendz.conf
 ``` 
 {: .copy-code}
 
-Add the following lines to the configuration file and put your license secret:
+将以下行添加到配置文件中并放入您的许可证密钥：
 
 ```bash
-# License secret obtained from ThingsBoard License Portal (https://license.thingsboard.io)
+# 从 ThingsBoard 许可证门户 (https://license.thingsboard.io) 获得的许可证密钥
 export TRENDZ_LICENSE_SECRET=YOUR_LICENSE_SECRET_HERE
 ```
 
-### Step 4. Configure connection with ThingsBoard Platform
+### 步骤 4. 配置与 ThingsBoard 平台的连接
 
-You can connect Trendz Analytics to the ThingsBoard Community Edition or ThingsBoard Professional Edition.
+您可以将 Trendz Analytics 连接到 ThingsBoard Community Edition 或 ThingsBoard Professional Edition。
 
-Edit ThingsBoard configuration file
+编辑 ThingsBoard 配置文件
 ```bash 
 sudo nano /etc/trendz/conf/trendz.conf
 ``` 
 {: .copy-code}
 
-Add ThingsBoard REST API URL that would be used for communicating with ThingsBoard Platform. In most cases, when Trendz installed
-in the same server with ThingsBoard, API_URL would be **http://localhost:8080**. Otherwise you should use ThingsBoard domain name.
+添加将用于与 ThingsBoard 平台通信的 ThingsBoard REST API URL。在大多数情况下，当 Trendz 与 ThingsBoard 安装在同一服务器上时，API_URL 将是 **http://localhost:8080**。否则，您应该使用 ThingsBoard 域名。
 
 ```bash
-# ThingsBoard URL that will be used by Trendz
+# Trendz 将使用的 ThingsBoard URL
 export TB_API_URL=http://localhost:8080
 ```
 {: .copy-code}
 
-### Step 5. Configure Trendz database
-Trendz uses PostgreSQL as a database. You can install PostgreSQL on the same serverfor Trendz or use managed PostgreSQL 
-service from your cloud vendor.
+### 步骤 5. 配置 Trendz 数据库
+Trendz 使用 PostgreSQL 作为数据库。您可以在 Trendz 的同一服务器上安装 PostgreSQL，或使用云供应商提供的托管 PostgreSQL 服务。
 
-#### PostgreSQL Installation
+#### PostgreSQL 安装
 
 {% include templates/install/postgres-install-rhel.md %}
 
-Then, press "Ctrl+D" to return to main user console.
+然后，按 “Ctrl+D” 返回到主用户控制台。
 
-After configuring the password, edit the pg_hba.conf to use MD5 authentication with the postgres user.
+配置密码后，编辑 pg_hba.conf 以使用 postgres 用户的 MD5 身份验证。
 
-Edit pg_hba.conf file: 
+编辑 pg_hba.conf 文件：
 
 ```bash
 sudo nano /var/lib/pgsql/12/data/pg_hba.conf
@@ -122,20 +120,20 @@ sudo nano /var/lib/pgsql/12/data/pg_hba.conf
 ```
 {: .copy-code}
 
-Locate the following lines:
+找到以下行：
 
 ```text
 # IPv4 local connections:
 host    all             all             127.0.0.1/32            ident
 ```
 
-Replace `ident` with `md5`:
+将 `ident` 替换为 `md5`：
 
 ```text
 host    all             all             127.0.0.1/32            md5
 ```
 
-Finally, you should restart the PostgreSQL service to initialize the new configuration:
+最后，您应该重新启动 PostgreSQL 服务以初始化新配置：
 
 ```bash
 sudo systemctl restart postgresql-12.service
@@ -143,9 +141,9 @@ sudo systemctl restart postgresql-12.service
 ```
 {: .copy-code}
 
-#### Create Database for Trendz
+#### 为 Trendz 创建数据库
 
-Connect to the database to create trendz DB:
+连接到数据库以创建 trendz 数据库：
 
 ```bash
 psql -U postgres -d postgres -h 127.0.0.1 -W
@@ -153,7 +151,7 @@ psql -U postgres -d postgres -h 127.0.0.1 -W
 ```
 {: .copy-code}
 
-Execute create database statement
+执行创建数据库语句
 
 ```bash
 CREATE DATABASE trendz;
@@ -162,64 +160,62 @@ CREATE DATABASE trendz;
 ```
 {: .copy-code}
 
-#### Configure database connection for Trendz
+#### 为 Trendz 配置数据库连接
 
-Edit Trendz configuration file 
+编辑 Trendz 配置文件
 
 ```bash 
 sudo nano /etc/trendz/conf/trendz.conf
 ``` 
 {: .copy-code}
 
-Add the following lines to the configuration file. Don't forget **to replace** "PUT_YOUR_POSTGRESQL_PASSWORD_HERE" with your **real postgres user password**:
+将以下行添加到配置文件中。不要忘记**替换**“PUT_YOUR_POSTGRESQL_PASSWORD_HERE”为您的**真实 postgres 用户密码**：
 
 ```bash
-# DB Configuration 
+# 数据库配置
 export SPRING_DATASOURCE_URL=jdbc:postgresql://localhost:5432/trendz
 export SPRING_DATASOURCE_USERNAME=postgres
 export SPRING_DATASOURCE_PASSWORD=PUT_YOUR_POSTGRESQL_PASSWORD_HERE
 ```
 {: .copy-code}
 
-### Step 6. Run installation script
+### 步骤 6. 运行安装脚本
 
-Once Trendz service is installed and DB configuration is updated, you can execute the following script:
+一旦 Trendz 服务安装完成并更新了数据库配置，您就可以执行以下脚本：
 
 ```bash
 sudo /usr/share/trendz/bin/install/install.sh
 ``` 
 
-### Step 7. Start Trendz service
+### 步骤 7. 启动 Trendz 服务
 
-Execute the following command to start Trendz Analytics:
+执行以下命令以启动 Trendz Analytics：
 
 ```bash
 sudo service trendz start
 ```
 {: .copy-code}
  
-Once started, you will be able to open Web UI using the following link:
+启动后，您将能够使用以下链接打开 Web UI：
 
 ```bash
 http://localhost:8888/trendz
 ```
 
-**Note**:  If Trendz installed on a remote server, you have to replace localhost with the public IP address of 
-the server or with a domain name. Also, check that port 8888 opened for public access.
+**注意**：如果 Trendz 安装在远程服务器上，您必须将 localhost 替换为服务器的公有 IP 地址或域名。此外，请检查端口 8888 是否已开放供公众访问。
 
-#### Authentication
+#### 身份验证
 
-For first authentication you need to use **Tenant Administrator** credentials from your **ThingsBoard**
+对于首次身份验证，您需要使用来自 **ThingsBoard** 的 **租户管理员**凭据
 
-Trendz uses ThingsBoard as an authentication service. During first sign in ThingsBoard service should be also available 
-to validate credentials.
+Trendz 使用 ThingsBoard 作为身份验证服务。在首次登录期间，ThingsBoard 服务也应该可用以验证凭据。
 
-### Step 8. Install Trendz Python executor
-For writing custom Python models and transformation script you need to install Python libraries on the server where Trendz is installed.
-Alternative option is to run executor as a docker container, you can find how to do that in [install instructions for Docker](/docs/trendz/install/docker/#standalone-python-executor-service).
-But in this section we will write how to install Python libraries directly on the server with Trendz.
+### 步骤 8. 安装 Trendz Python 执行器
+为了编写自定义 Python 模型和转换脚本，您需要在安装 Trendz 的服务器上安装 Python 库。
+另一种选择是将执行器作为 docker 容器运行，您可以在 [Docker 安装说明](/docs/trendz/install/docker/#standalone-python-executor-service)中找到如何执行此操作。
+但在本节中，我们将编写有关如何在安装了 Trendz 的服务器上直接安装 Python 库的内容。
 
-* Install Python3
+* 安装 Python3
 ```bash
 sudo apt update
 sudo apt install python3
@@ -227,7 +223,7 @@ sudo apt install python3-pip
 ```
 {: .copy-code}
 
-* Install required python packages
+* 安装所需的 python 包
 ```bash
 echo "flask == 2.3.2" > requirements.txt
 echo "numpy == 1.24.1" >> requirements.txt
@@ -242,28 +238,28 @@ sudo -u trendz pip3 install --user --no-cache-dir -r requirements.txt
 {: .copy-code}
 
 
-### Step 9. HTTPS configuration
+### 步骤 9. HTTPS 配置
 
-You may want to configure HTTPS access using HAProxy. 
-This is possible in case you are hosting Trendz in the cloud and have a valid DNS name assigned to your instance.
+您可能希望使用 HAProxy 配置 HTTPS 访问。
+如果您在云中托管 Trendz 并为您的实例分配了有效的 DNS 名称，则可以这样做。
 
-**Trendz and ThingsBoard hosted on same server**
+**Trendz 和 ThingsBoard 托管在同一服务器上**
 
-Use this section if HAProxy/Let’s Encrypt already installed in the server and HTTPS enabled for ThingsBoard.
+如果 HAProxy/Let’s Encrypt 已安装在服务器中并且已为 ThingsBoard 启用 HTTPS，请使用此部分。
 
-Open HAProxy configuration file
+打开 HAProxy 配置文件
 ```bash
 sudo nano /etc/haproxy/haproxy.cfg
 ```
 {: .copy-code}
 
-Locate **frontend https_in** section, add new access list that will match traffic by domain name and redirect this traffic to Trendz backend:
+找到 **frontend https_in** 部分，添加一个新的访问列表，该列表将通过域名匹配流量并将该流量重定向到 Trendz 后端：
 ```bash
 acl trendz_http hdr(host) -i new-trendz-domain.com
 use_backend tb-trendz if trendz_http
 ```
 
-In the same file register Trendz backend:
+在同一个文件中注册 Trendz 后端：
 ```bash
 backend tb-trendz
   balance leastconn
@@ -273,45 +269,45 @@ backend tb-trendz
   http-request set-header X-Forwarded-Port %[dst_port]
 ```
 
-Generate SSL certificates for new domain:
+为新域名生成 SSL 证书：
 ```bash
 sudo certbot-certonly --domain new-trendz-domain.com --email some@email.io
 ```
 
-Refresh HAProxy configuration:
+刷新 HAProxy 配置：
 ```bash
 sudo haproxy-refresh
 ```
 
-That's it, HTTPS for Trendz UI configured and now you can access it via:
+就是这样，Trendz UI 的 HTTPS 已配置，现在您可以通过以下方式访问它：
 https://new-trendz-domain.com
 
 
-**Fresh installation on new server**
+**在新服务器上进行全新安装**
 
-Please follow this [guide](/docs/user-guide/install/pe/add-haproxy-ubuntu) to install HAProxy and generate valid SSL certificate using Let's Encrypt.
+请按照本[指南](/docs/user-guide/install/pe/add-haproxy-ubuntu)安装 HAProxy 并使用 Let's Encrypt 生成有效的 SSL 证书。
 
-### Step 10. Host ThingsBoard and Trendz on the same domain
-ThingsBoard and Trendz can share same domain name. In this case ThingsBoard web page would be loaded using following link:
+### 步骤 10. 在同一域名上托管 ThingsBoard 和 Trendz
+ThingsBoard 和 Trendz 可以共享相同的域名。在这种情况下，ThingsBoard 网页将使用以下链接加载：
 
 ```bash
 https://{my-domain}/
 ```
 
-and Trendz web page would be loaded using following link
+Trendz 网页将使用以下链接加载
 
 ```bash
 https://{my-domain}/trendz
 ```
 
-For enabling such configuration we have to update HAProxy config to route specific requests to Trendz service. 
-Open HAProxy configuration file
+为了启用此类配置，我们必须更新 HAProxy 配置以将特定请求路由到 Trendz 服务。
+打开 HAProxy 配置文件
 ```bash
 sudo nano /etc/haproxy/haproxy.cfg
 ```
 {: .copy-code}
 
-Locate **frontend https_in** section, add new access list that will match traffic by URL path and redirect this traffic to Trendz backend:
+找到 **frontend https_in** 部分，添加一个新的访问列表，该列表将通过 URL 路径匹配流量并将该流量重定向到 Trendz 后端：
 
 ```bash
 ...
@@ -320,19 +316,19 @@ acl trendz_acl path_beg /trendz path_beg /apiTrendz
 use_backend tb-trendz if trendz_acl
 ```
 
-### Troubleshooting
+### 故障排除
 
-Trendz logs are stored in the following directory:
+Trendz 日志存储在以下目录中：
  
 ```bash
 /var/log/trendz
 ```
 
-You can issue the following command in order to check if there are any errors on the backend side:
+您可以发出以下命令以检查后端是否有任何错误：
  
 ```bash
 cat /var/log/trendz/trendz.log | grep ERROR
 ```
-### Next steps
+### 后续步骤
 
 {% assign currentGuide = "InstallationOptions" %}{% include templates/trndz-guides-banner.md %}

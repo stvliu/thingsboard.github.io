@@ -1,9 +1,9 @@
 ---
 layout: devices-library-article
-title: How to connect Orange Pi Plus 2E to ThingsBoard?
-category: Single-board computers
-chip: Allwinner H3
-connectivity: Ethernet, WIFI, Bluetooth
+title: 如何将 Orange Pi Plus 2E 连接到 ThingsBoard？
+category: 单板计算机
+chip: 全志 H3
+connectivity: 以太网、WIFI、蓝牙
 vendor: Orange Pi
 deviceImageFileName: orange-pi-plus-2e.jpg
 

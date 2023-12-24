@@ -2,29 +2,29 @@
 layout: docwithnav
 assignees:
 - ashvayka
-title: Working with IoT device attributes
-description: IoT device management using ThingsBoard attributes feature
+title: 使用物联网设备属性
+description: 使用 ThingsBoard 属性功能进行物联网设备管理
 server-side-attrs-ui:
     0:
         image: /images/user-guide/attributes/add-server-side-ce-src.png
-        title: 'Go to Devices. Click on the particular device row to open device details. Select "Attributes" tab. Choose "Server attributes" scope. Click "+" Icon.'
+        title: '转到设备。单击特定设备行以打开设备详细信息。选择“属性”选项卡。选择“服务器属性”范围。单击“+”图标。'
     1:
         image: /images/user-guide/attributes/add-server-side-ce2-src.png
-        title: 'Input new attribute name. Select attribute value type and input attribute value.'
+        title: '输入新的属性名称。选择属性值类型并输入属性值。'
     2:
         image: /images/user-guide/attributes/add-server-side-ce3-src.png
-        title: 'Sort using "Last update time" to quickly locate the newly created attribute.'
+        title: '使用“上次更新时间”进行排序，以快速找到新创建的属性。'
 
 shared-attrs-ui:
     0:
         image: /images/user-guide/attributes/add-shared-ce-src.png
-        title: 'Go to Devices. Click on the particular device row to open device details. Select "Attributes" tab. Choose "Shared attributes" scope. Click "+" Icon.'
+        title: '转到设备。单击特定设备行以打开设备详细信息。选择“属性”选项卡。选择“共享属性”范围。单击“+”图标。'
     1:
         image: /images/user-guide/attributes/add-shared-ce2-src.png
-        title: 'Input new attribute name. Select attribute value type and input attribute value.'
+        title: '输入新的属性名称。选择属性值类型并输入属性值。'
     2:
         image: /images/user-guide/attributes/add-shared-ce3-src.png
-        title: 'Observe the new attribute.'
+        title: '观察新属性。'
 
 ---
 

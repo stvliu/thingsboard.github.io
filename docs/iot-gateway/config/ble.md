@@ -1,18 +1,18 @@
 ---
 layout: docwithnav-gw
-title: BLE Connector Configuration
-description: BLE protocol support for ThingsBoard IoT Gateway
+title: BLE 连接器配置
+description: ThingsBoard IoT 网关的 BLE 协议支持
 
 ---
 
 * TOC
 {:toc}
 
-This guide will help you to get familiar with BLE connector configuration for ThingsBoard IoT Gateway.
-Use [general configuration](/docs/iot-gateway/configuration/) to enable this extension.
-We will describe connector configuration file below.
+本指南将帮助您熟悉 ThingsBoard IoT 网关的 BLE 连接器配置。
+使用 [常规配置](/docs/iot-gateway/configuration/) 启用此扩展。
+我们将在下面描述连接器配置文件。
 
-**BLE connector need some system libraries, to install them please select version of package manager in your system below and run a command to install libraries:**
+**BLE 连接器需要一些系统库，要安装它们，请在系统中选择软件包管理器的版本，然后运行命令以安装库：**
 
 {% capture systemtogglespec %}
 APT-GET<br>%,%deb%,%templates/iot-gateway/ble-requirements-deb.md%br%
@@ -20,12 +20,12 @@ YUM<br>%,%rpm%,%templates/iot-gateway/ble-requirements-rpm.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="SystemLibraries" toggle-spec=systemtogglespec %}
 
-<b> Example of BLE Connector config file.</b>
+<b> BLE 连接器配置文件示例。</b>
 
 {% capture bleConf %}
 
 {
-    "name": "BLE Connector",
+    "name": "BLE 连接器",
     "passiveScanMode": true,
     "showMap": false,
     "scanner": {
@@ -34,7 +34,7 @@ YUM<br>%,%rpm%,%templates/iot-gateway/ble-requirements-rpm.md{% endcapture %}
     },
     "devices": [
         {
-            "name": "Temperature and humidity sensor",
+            "name": "温度和湿度传感器",
             "MACAddress": "4C:65:A8:DF:85:C0",
             "pollPeriod": 5000,
             "showMap": false,
@@ -85,39 +85,38 @@ YUM<br>%,%rpm%,%templates/iot-gateway/ble-requirements-rpm.md{% endcapture %}
 
 <br>
 
-To understand how this connector works, we will describe how to connect device Xiaomi Mi Smart Temperature Humidity Sensor to ThingsBoard using gateway.
-We know following device parameters:
-Device **MAC address** - 4C:65:A8:DF:85:C0
-Default name characteristic id -  00002A00-0000-1000-8000-00805F9B34FB   - This is a default characteristic - we have got it ID from [GATT characeristics documentation](https://www.bluetooth.com/specifications/gatt/characteristics/)
-Temperature characteristic id - 00002A00-0000-1000-8000-00805F9B34FB    - This is a custom characteristic - we have got it after scanning device characteristics. 
+为了了解此连接器的工作原理，我们将介绍如何使用网关将设备小米米家温湿度传感器连接到 ThingsBoard。
+我们知道以下设备参数：
+设备 **MAC 地址** - 4C:65:A8:DF:85:C0
+默认名称特征 ID - 00002A00-0000-1000-8000-00805F9B34FB - 这是一个默认特征 - 我们从 [GATT 特征文档](https://www.bluetooth.com/specifications/gatt/characteristics/) 中获取了它的 ID
+温度特征 ID - 00002A00-0000-1000-8000-00805F9B34FB - 这是一个自定义特征 - 我们在扫描设备特征后获得了它。
 
-Default configuration created for this device to process data from it, receive notifies and write some information.  
+为此设备创建的默认配置可处理来自它的数据，接收通知并写入一些信息。
 
-In a [main section](#main-section) we write general configuration for our connector, such as connector name, scan mode, scanner, etc.  
-In a [device subsection](#device-object-subsection) we write general configuration for connection to our device (name for device in ThingsBoard and device MAC address, etc.).  
-In a [subsection telemetry](#subsection-telemetry) we write the configuration for processing data from the device (Where the gateway should take the data, method and converter will interpret this data to telemetry and attributes on ThingsBoard).  
-In a [subsection attributeUpdates](#subsection-attributes) we write the configuration to rename the device after receiving attribute update request from ThingsBoard.  
-If device shared attribute with a name "sharedName" changed - gateway will write data from this attribute to characteristic with ID - 00002A00-0000-1000-8000-00805F9B34FB.  
+在 [主部分](#main-section) 中，我们为连接器编写常规配置，例如连接器名称、扫描模式、扫描仪等。
+在 [设备子部分](#device-object-subsection) 中，我们为连接到我们的设备编写常规配置（ThingsBoard 中的设备名称和设备 MAC 地址等）。
+在 [子部分遥测](#subsection-telemetry) 中，我们编写配置以处理来自设备的数据（网关应获取数据的位置、方法和转换器将这些数据解释为 ThingsBoard 上的遥测和属性）。
+在 [子部分属性更新](#subsection-attributes) 中，我们编写配置以在从 ThingsBoard 收到属性更新请求后重命名设备。
+如果设备共享属性的名称为“sharedName”，则网关会将此属性中的数据写入具有 ID - 00002A00-0000-1000-8000-00805F9B34FB 的特征。
 
-### Main section
+### 主部分
 
-This section contains general settings for the connector.
+此部分包含连接器的常规设置。
 
-| **Parameter**                  | **Default value**                           | **Description**                                            |
-|:-|:-|-
-| name                           | **BLE Connector**                           | Connector name for logs and saving to persistent devices.  |
-| showMap                        | **false**                                   | Show all or specific finded MAC addresses devices.         |
-| scanner                        | **{"timeout": 1000, "deviceName": "NH11"}** | Using for finding specific device by it name. It is optional section, so can be deleted and BLE Connector will find **ALL** devices that are available. |
-| passiveScanMode                | **true**                                    | Scanning using passive mode.                               |
-| devices                        |                                             | Contains an array of devices of interest.                  |
+| **参数** | **默认值** | **描述** |
+|:-|:-|:-|
+| 名称 | **BLE 连接器** | 用于日志记录和保存到持久设备的连接器名称。 |
+| showMap | **false** | 显示所有或特定已找到的 MAC 地址设备。 |
+| 扫描仪 | **{"timeout": 1000, "deviceName": "NH11"}** | 用于按名称查找特定设备。这是可选部分，因此可以删除，BLE 连接器将找到所有可用的设备。 |
+| passiveScanMode | **true** | 使用被动模式扫描。 |
+| 设备 | | 包含感兴趣的设备数组。 |
 |---
 
-
-This part of configuration will look like:  
+配置的这一部分将如下所示：
 
 ```json
 {
-    "name": "BLE Connector",
+    "name": "BLE 连接器",
     "passiveScanMode": true,
     "showMap": false,
     "scanner": {
@@ -130,68 +129,67 @@ This part of configuration will look like:
 }
 ```
 
-Also let's take a look at methods for discovering available devices. For this we will use two different scenarios.
-1. **First Scenario**
+我们还来看看发现可用设备的方法。为此，我们将使用两种不同的场景。
+1. **第一个场景**
 
-   In the first scenario we have to configure BLE Connector for displaing all finded devices because we don't know MAC address of our device and his name too.
-   For this we have to use the next configuration:
-   ```json
-   {
-       ...
-       "showMap": true
-       ...
-   }
-   ```
-   **Gateway output:**
+在第一个场景中，我们必须为 BLE 连接器配置以显示所有已找到的设备，因为我们不知道我们设备的 MAC 地址及其名称。
+为此，我们必须使用以下配置：
+```json
+{
+    ...
+    "showMap": true
+    ...
+}
+```
+**网关输出：**
 
-   24:71:89:cc:09:05 - NH11
+24:71:89:cc:09:05 - NH11
 
-   54:bb:12:ff:09:01 - Unknown
+54:bb:12:ff:09:01 - 未知
 
-   23:cc:34:23:bb:56 - XYZ123
-2. **Second Scenario**
+23:cc:34:23:bb:56 - XYZ123
+2. **第二个场景**
 
-   In the second scenario we know Bluetooth displaing device name and want to know only his MAC address.
-   For this we have to use the next configuration:
-   ```json
-   {
-       ...
-       "showMap": true,
-       "scanner": {
-           "timeout": 10000,
-           "deviceName": "NH11"
-       }
-       ...
-   }
-   ```
-   **Gateway output:**
+在第二个场景中，我们知道蓝牙显示设备名称，只想知道它的 MAC 地址。
+为此，我们必须使用以下配置：
+```json
+{
+    ...
+    "showMap": true,
+    "scanner": {
+        "timeout": 10000,
+        "deviceName": "NH11"
+    }
+    ...
+}
+```
+**网关输出：**
 
-   24:71:89:cc:09:05 - NH11
+24:71:89:cc:09:05 - NH11
 
-#### Device object subsection
+#### 设备对象子部分
 
-This subsection contains general settings for the device and subsections for processing data.
+此子部分包含设备的常规设置以及用于处理数据的子部分。
 
-| **Parameter**     | **Default value** | **Description**                                                                                           |
-|:-|:-|-
-| name              | **BLE Connector** | Name for the device in ThingsBoard.                                                                       |
-| MACAddress        | **4C:65:A8:DF:C0**| MAC address for the device of interest.                                                                   |
-| deviceType        | **BLEDevice**     | Device type for ThingsBoard, by default this parameter is absent, but you can add it.                     |
-| pollPeriod        | **5000**          | The period of time (in ms) that data in the device will be reading.                                       |
-| showMap           | **false**         | If set to **true** will show all GATT objects (characteristics, services, etc.) in device.                |
-| timeout           | **10000**         | The time that BLE Connector will try to connect to a device.                                              |
-| telemetry         |                   | Array of objects for processing device telemetry.                                                         |
-| attributes        |                   | Array of objects for processing device attributes.                                                        |
-| attributeUpdates  |                   | Array of objects for processing attributeUpdate requests from ThingsBoard.                                |
-| serverSideRpc     |                   | Array of objects for processing RPC requests from ThingsBoard.                                            |
+| **参数** | **默认值** | **描述** |
+|:-|:-|:-|
+| 名称 | **BLE 连接器** | ThingsBoard 中的设备名称。 |
+| MACAddress | **4C:65:A8:DF:C0** | 感兴趣的设备的 MAC 地址。 |
+| deviceType | **BLEDevice** | ThingsBoard 的设备类型，默认情况下此参数不存在，但您可以添加它。 |
+| pollPeriod | **5000** | 设备中读取数据的时间段（以毫秒为单位）。 |
+| showMap | **false** | 如果设置为 **true**，将在设备中显示所有 GATT 对象（特征、服务等）。 |
+| timeout | **10000** | BLE 连接器尝试连接到设备的时间。 |
+| telemetry | | 用于处理设备遥测的数组对象。 |
+| attributes | | 用于处理设备属性的数组对象。 |
+| attributeUpdates | | 用于处理来自 ThingsBoard 的 attributeUpdate 请求的数组对象。 |
+| serverSideRpc | | 用于处理来自 ThingsBoard 的 RPC 请求的数组对象。 |
 |---
 
-
-This part of configuration will look like:  
+配置的这一部分将如下所示：
 
 ```json
 {
-    "name": "Temperature and humidity sensor",
+    "name": "温度和湿度传感器",
     "MACAddress": "4C:65:A8:DF:85:C0",
     "showMap": true,
     "pollPeriod": 5000,
@@ -211,20 +209,19 @@ This part of configuration will look like:
 }
 ```
 
-##### Subsection telemetry
+##### 子部分遥测
 
-This subsection contains general settings for the processing data interpreted as telemetry.  
+此子部分包含将数据解释为遥测的常规设置。
 
-| **Parameter**         | **Default value**                         | **Description**                                                          |
-|:-|:-|-
-| key                   | **temperature**                           | Name for telemetry in ThingsBoard.                                       |
-| method                | **notify**                                | Method for Characteristic processing (Can be **NOTIFY** or **READ**).    |
-| characteristicUUID    | **226CAA55-6476-4566-7562-66734470666D**  | UUID of characteristic on the device.                                    |
-| valueExpression       | **[0:1]**                                 | Final view of data that will be send to ThingsBoard, [0:1] - will replace to device data using python slice rules |
+| **参数** | **默认值** | **描述** |
+|:-|:-|:-|
+| key | **temperature** | ThingsBoard 中的遥测名称。 |
+| method | **notify** | 用于处理特征的方法（可以是 **NOTIFY** 或 **READ**）。 |
+| characteristicUUID | **226CAA55-6476-4566-7562-66734470666D** | 设备上的特征 UUID。 |
+| valueExpression | **[0:1]** | 将发送到 ThingsBoard 的数据的最终视图，[0:1] - 将使用 Python 切片规则替换为设备数据 |
 |---
 
-
-This part of configuration will look like:  
+配置的这一部分将如下所示：
 
 ```json
 {
@@ -235,30 +232,29 @@ This part of configuration will look like:
 },
 ```
 
-**The values shown in the table above may differ in your configuration.**
+**上表中显示的值可能与您的配置不同。**
 
-For example response from device is bytes array like b'\x08<\x08\x00', in this case -- **8** interpreted as value of key.
+例如，来自设备的响应是字节数组，如 b'\x08<\x08\x00'，在这种情况下——**8** 被解释为键的值。
 
-If you need to interpreted full response as value use **"valueExpression": "[:]"**. 
+如果您需要将完整响应解释为值，请使用 **"valueExpression": "[:]"**。
 
-You can find more examples of data converting in section **"Examples of data converting"**.
+您可以在“数据转换示例”部分找到更多数据转换示例。
 
 
 
-##### Subsection attributes
+##### 子部分属性
 
-This subsection contains general settings for the processing data interpreted as attributes.  
+此子部分包含将数据解释为属性的常规设置。
 
-| **Parameter**         | **Default name**                          | **Description**                                                          |
-|:-|:-|-
-| key                   | **name**                                  | Name for telemetry in ThingsBoard.                                       |
-| method                | **read**                                  | Method for Characteristic processing (Can be **NOTIFY** or **READ**).    |
-| characteristicUUID    | **00002A00-0000-1000-8000-00805F9B34FB**  | UUID of characteristic on the device.                                    |
-| valueExpression       | **[0:1] cm**                              | Final view of data that will be send to ThingsBoard, [0:1] - will replace to device data using python slice rules |
+| **参数** | **默认名称** | **描述** |
+|:-|:-|:-|
+| key | **name** | ThingsBoard 中的遥测名称。 |
+| method | **read** | 用于处理特征的方法（可以是 **NOTIFY** 或 **READ**）。 |
+| characteristicUUID | **00002A00-0000-1000-8000-00805F9B34FB** | 设备上的特征 UUID。 |
+| valueExpression | **[0:1] cm** | 将发送到 ThingsBoard 的数据的最终视图，[0:1] - 将使用 Python 切片规则替换为设备数据 |
 |---
 
-
-This part of configuration will look like:  
+配置的这一部分将如下所示：
 
 ```json
 {
@@ -269,61 +265,58 @@ This part of configuration will look like:
 }
 ```
 
+**上表中显示的值可能与您的配置不同。**
 
-**The values shown in the table above may differ in your configuration.**
+例如，来自设备的响应是字节字符串，如 b'**\x08<\x08\x00**'，在这种情况下——**8 cm** 被解释为键的值。
 
-For example response from device is bytes string like b'**\x08<\x08\x00**', in this case -- **8 cm** interpreted as value of key.
+如果您需要将完整响应解释为值，请使用 **"valueExpression": "[:]"**。
 
-If you need to interpreted full response as value use **"valueExpression": "[:]"**.
-
-You can find more examples of data converting in section **"Examples of data converting"**.
+您可以在“数据转换示例”部分找到更多数据转换示例。
 <br><br>
-  
+
 {% capture bleGATTinfo %}
-Services and characteristics, from <a target="_blank" rel="noopener noreferrer" href="https://www.bluetooth.com/specifications/gatt/services/">GATT Specification</a> will also interpret as attributes of device and automatically loaded to ThingsBoard.
+来自 <a target="_blank" rel="noopener noreferrer" href="https://www.bluetooth.com/specifications/gatt/services/">GATT 规范</a> 的服务和特征也将解释为设备的属性并自动加载到 ThingsBoard。
 {% endcapture %}
 {% include templates/info-banner.md content=bleGATTinfo %}
 
 
 
-##### Examples of data converting
-Let's review more examples of data converting:
+##### 数据转换示例
+让我们回顾更多数据转换示例：
 
-**Basic scenario:** we have a device that measures temperature and humidity. Device has charasteristic that can be read and when we receive data from her, the data combine temperature
-and humidity. So, data from device have the next view: **b'\x08<\x08\x00'** and in human readable format: **[8, 34]** (first array element is temperature and the second is humidity).
-1. We want to read only temperature value
-   
+**基本场景：**我们有一个测量温度和湿度的设备。设备具有可读的特征，当我们从它接收数据时，数据结合了温度和湿度。因此，来自设备的数据具有以下视图：**b'\x08<\x08\x00'**，以人类可读格式：**[8, 34]**（第一个数组元素是温度，第二个是湿度）。
+1. 我们只想读取温度值
+
    **"valueExpression": "[0]"**
-   
-   Data to ThingsBoard:**8**
-2. We want to read only humidity value
+
+   数据到 ThingsBoard：**8**
+2. 我们只想读取湿度值
 
    **"valueExpression": "[1]"**
-   
-   Data to ThingsBoard:**34**
-3. We want to read all values
 
-   "valueExpression": "[:]" or "valueExpression": "[0:2]"
-   
-   Data to ThingsBoard: **834**
-4. We want to read all values and dimensional units
+   数据到 ThingsBoard：**34**
+3. 我们想读取所有值
+
+   "valueExpression": "[:]" 或 "valueExpression": "[0:2]"
+
+   数据到 ThingsBoard：**834**
+4. 我们想读取所有值和单位
 
    **"valueExpression": "[0]°C [1]%"**
-   
-   Data to ThingsBoard: **8°C 34%**    
 
-##### Subsection attributeUpdates
+   数据到 ThingsBoard：**8°C 34%**    
 
-This subsection contains settings for the processing attributeUpdate requests from ThingsBoard.  
+##### 子部分属性更新
 
-| **Parameter**          | **Default name**                         | **Description**                                                      |
-|:-|:-|-
-| attributeOnThingsBoard | **sharedName**                           | Name of shared device attribute in ThingsBoard.                      |
-| characteristicUUID     | **00002A00-0000-1000-8000-00805F9B34FB** | UUID of characteristic in which the attribute value will be written. |
+此子部分包含用于处理来自 ThingsBoard 的 attributeUpdate 请求的设置。
+
+| **参数** | **默认名称** | **描述** |
+|:-|:-|:-|
+| attributeOnThingsBoard | **sharedName** | ThingsBoard 中共享设备属性的名称。 |
+| characteristicUUID | **00002A00-0000-1000-8000-00805F9B34FB** | 将写入属性值的特征的 UUID。 |
 |---
 
-
-This part of configuration will look like:  
+配置的这一部分将如下所示：
 
 ```json
 {
@@ -333,25 +326,24 @@ This part of configuration will look like:
 ```
 
 {% capture bleAttrUpdInfo %}
-Characteristic should support method **WRITE** for processing the attributeUpdate request.
+特征应支持 **WRITE** 方法来处理 attributeUpdate 请求。
 {% endcapture %}
 {% include templates/info-banner.md content=bleAttrUpdInfo %}
 
 
-##### Subsection serverSideRpc
+##### 子部分服务器端 RPC
 
-This subsection contains settings for the processing RPC requests from ThingsBoard.  
+此子部分包含用于处理来自 ThingsBoard 的 RPC 请求的设置。
 
-| **Parameter**      | **Default name**                         | **Description**                                                               |
+| **参数** | **默认名称** | **描述** |
 |:-|:
-| methodRPC          | **rpcMethod1**                           | RPC method name.                                                              |
-| withResponse       | **true**                                 | If true, response will be sent to ThingsBoard.                                |
-| characteristicUUID | **00002A00-0000-1000-8000-00805F9B34FB** | UUID of characteristic.                                                       |
-| methodProcessing   | **read**                                 | Method for processing to characteristic. (**READ**/**WRITE**/**NOTIFY**)      |
+| methodRPC | **rpcMethod1** | RPC 方法名称。 |
+| withResponse | **true** | 如果为 true，则响应将发送到 ThingsBoard。 |
+| characteristicUUID | **00002A00-0000-1000-8000-00805F9B34FB** | 特征的 UUID。 |
+| methodProcessing | **read** | 用于处理特征的方法。（**READ**/**WRITE**/**NOTIFY**) |
 |---
 
-
-This part of configuration will look like:  
+配置的这一部分将如下所示：
 
 ```json
 {
@@ -363,13 +355,13 @@ This part of configuration will look like:
 ```
 
 
-## Next steps
+## 后续步骤
 
-Explore guides related to main ThingsBoard features:
+探索与 ThingsBoard 主要功能相关的指南：
 
- - [Connect BLE sensor](/docs/iot-gateway/guides/how-to-connect-ble-sensor-using-gateway/) - how to connect BLE sensor using ThingsBoard IoT Gateway
- - [Data Visualization](/docs/user-guide/visualization/) - how to visualize collected data.
- - [Device attributes](/docs/user-guide/attributes/) - how to use device attributes.
- - [Telemetry data collection](/docs/user-guide/telemetry/) - how to collect telemetry data.
- - [Using RPC capabilities](/docs/user-guide/rpc/) - how to send commands to/from devices.
- - [Rule Engine](/docs/user-guide/rule-engine/) - how to use rule engine to analyze data from devices.
+- [连接 BLE 传感器](/docs/iot-gateway/guides/how-to-connect-ble-sensor-using-gateway/) - 如何使用 ThingsBoard IoT Gateway 连接 BLE 传感器
+- [数据可视化](/docs/user-guide/visualization/) - 如何可视化收集到的数据。
+- [设备属性](/docs/user-guide/attributes/) - 如何使用设备属性。
+- [遥测数据收集](/docs/user-guide/telemetry/) - 如何收集遥测数据。
+- [使用 RPC 功能](/docs/user-guide/rpc/) - 如何向设备发送/从设备接收命令。
+- [规则引擎](/docs/user-guide/rule-engine/) - 如何使用规则引擎分析来自设备的数据。

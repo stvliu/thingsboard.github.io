@@ -1,110 +1,103 @@
-
 * TOC
 {:toc}
 
-In the context of MQTT brokers, optimal performance during high workloads is of utmost importance. 
-This article explores a recent performance test of TBMQ, where we checked its ability to handle an impressive throughput of **3 million messages per second** with a single-digit milliseconds latency.
-With only one node, we pushed the limits of TBMQ's capabilities.
+在 MQTT 代理的背景下，在高工作负载期间的最佳性能至关重要。
+本文探讨了 TBMQ 的最新性能测试，我们检查了它以个位数毫秒的延迟处理每秒 **300 万条消息** 的惊人吞吐量的能力。
+我们仅使用一个节点，就突破了 TBMQ 的功能限制。
 
 ![image](/images/mqtt-broker/reference/single-node-test/tbmq-perf-test-diagram.png)
 
-### Test methodology
+### 测试方法
 
-We established a performance test environment by deploying a single TBMQ node within an [EKS](https://aws.amazon.com/eks/) cluster alongside 3 [Kafka](https://kafka.apache.org/) nodes 
-and an [RDS](https://aws.amazon.com/rds/) instance. This setup served as the foundation for our performance test.
+我们通过在 [EKS](https://aws.amazon.com/eks/) 集群中部署一个 TBMQ 节点以及 3 个 [Kafka](https://kafka.apache.org/) 节点和一个 [RDS](https://aws.amazon.com/rds/) 实例来建立性能测试环境。此设置作为我们性能测试的基础。
 
-In this test, we introduced 100 publishers, each responsible for publishing 10 messages per second. 
-Importantly, each publisher published messages on its own topic, following the pattern `"CountryCode/City/ID"` where "ID" is the unique identifier of each publisher.
-The size of a single “publish” message was approximately 66 bytes. This approach allowed us to simulate diverse data sources.
+在此测试中，我们引入了 100 个发布者，每个发布者负责每秒发布 10 条消息。
+重要的是，每个发布者都在自己的主题上发布消息，遵循模式“`CountryCode/City/ID`”，其中“`ID`”是每个发布者的唯一标识符。
+单个“发布”消息的大小约为 66 个字节。这种方法使我们能够模拟各种数据源。
 
-To gauge TBMQ's ability to efficiently distribute messages, we introduced a network of 3,000 subscribers. 
-Each subscriber subscribed to the topic filter `"CountryCode/City/#"` signifying their interest in receiving all published messages from all publishers. 
-This broad distribution of messages put the broker's capabilities to the test.
+为了评估 TBMQ 有效分发消息的能力，我们引入了一个由 3,000 个订阅者组成的网络。
+每个订阅者都订阅主题过滤器“`CountryCode/City/#`”，表示他们有兴趣接收来自所有发布者的所有已发布消息。这种广泛的消息分发对代理的功能进行了测试。
 
-During the 30-minute performance test, we wanted to test if TBMQ can demonstrate its ability to consistently manage the significant message load 
-without experiencing any performance degradation or resource exhaustion.
+在 30 分钟的性能测试期间，我们希望测试 TBMQ 是否能够证明其持续管理大量消息负载的能力，而不会遇到任何性能下降或资源耗尽的情况。
 
-### Hardware used
+### 使用的硬件
 
-| Service Name              | **TBMQ**    | **AWS RDS (PostgreSQL)** | **Kafka** |
+| 服务名称              | **TBMQ**    | **AWS RDS (PostgreSQL)** | **Kafka** |
 |---------------------------|-------------|--------------------------|-----------|
-| Instance Type             | m7a.8xlarge | db.m6i.large             | m7a.large |
+| 实例类型             | m7a.8xlarge | db.m6i.large             | m7a.large |
 | vCPU                      | 32          | 2                        | 2         |
-| Memory (GiB)              | 128         | 8                        | 8         |
-| Storage (GiB)             | 10          | 30                       | 50        |
-| Network bandwidth (Gibps) | 12.5        | 12.5                     | 12.5      |
+| 内存 (GiB)              | 128         | 8                        | 8         |
+| 存储 (GiB)             | 10          | 30                       | 50        |
+| 网络带宽 (Gibps) | 12.5        | 12.5                     | 12.5      |
 
-[comment]: <> ( To format table as markdown, please use the online table generator https://www.tablesgenerator.com/markdown_tables )
+[comment]: <> ( 要将表格格式化为 markdown，请使用在线表格生成器 https://www.tablesgenerator.com/markdown_tables )
 
-### Test summary
+### 测试摘要
 
-TBMQ, running on a single node, demonstrated remarkable performance by successfully processing a throughput of 3M messages per second. 
-This significant achievement underlines the reliability of TBMQ in real-world scenarios.
+TBMQ 在单个节点上运行，通过成功处理每秒 300 万条消息的吞吐量展示了卓越的性能。
+这一重大成就在现实场景中突显了 TBMQ 的可靠性。
 
-Equally noteworthy is the broker's impressive average message latency of just **7.4 milliseconds**. 
-This low latency is a testament to TBMQ's capability to handle high loads while ensuring prompt message delivery.
+同样值得注意的是，该代理令人印象深刻的平均消息延迟仅为 **7.4 毫秒**。
+这种低延迟证明了 TBMQ 在确保快速消息传递的同时处理高负载的能力。
 
-| Msg latency Avg | Msg latency 95th |
+| 消息延迟平均值 | 消息延迟第 95 个百分位数 |
 |-----------------|------------------|
-| 7.4 ms          | 11 ms            |
+| 7.4 毫秒          | 11 毫秒            |
 
-It would be helpful to review an informative table that summarizes the key elements and results of the test.
+查看总结了测试的关键要素和结果的信息表会很有帮助。
 
-| Publishers | Subscribers | Msg/sec | Throughput | QoS | Payload  | TBMQ CPU | TBMQ Memory |
+| 发布者 | 订阅者 | 消息/秒 | 吞吐量 | QoS | 有效负载  | TBMQ CPU | TBMQ 内存 |
 |------------|-------------|---------|------------|-----|----------|----------|-------------|
-| 100        | 3000        | 10      | 3M msg/s   | 0   | 66 bytes | 54 %     | 75 GiB      |
+| 100        | 3000        | 10      | 300 万条消息/秒   | 0   | 66 字节 | 54 %     | 75 GiB      |
 
-**Lessons Learned**
+**经验教训**
 
-Our test highlighted the importance of optimizing TBMQ for reliability and scalability. 
-It showed the broker's potential to handle large message loads with ease, making it an ideal choice for scenarios where message distribution is critical.
+我们的测试强调了优化 TBMQ 以实现可靠性和可扩展性的重要性。
+它展示了该代理轻松处理大量消息负载的潜力，使其成为消息分发至关重要的场景的理想选择。
 
-We observed the resource management capabilities of TBMQ and its ability to maintain stability under high loads. 
-This insight can guide users in configuring their setups for optimal performance.
+我们观察了 TBMQ 的资源管理能力及其在高负载下保持稳定性的能力。
+此见解可以指导用户配置其设置以获得最佳性能。
 
-**Important notice:** during the course of this performance test, we made experiments with various instance types.
-While we settled on the AWS `m7a.8xlarge` instance type for TBMQ, it's essential to highlight the noteworthy results even on the `m7a.4xlarge` (16 vCPUs, 64 GiB RAM) instance.
-This configuration delivered an average message latency of **14.2 ms** while maintaining a **CPU usage of 90%**.
-These findings highlight the flexibility and potential of TBMQ to perform greatly across diverse instance types, 
-providing users with the opportunity to choose the configuration that best suits their specific requirements.
+**重要提示：**在此性能测试过程中，我们对各种实例类型进行了实验。
+虽然我们为 TBMQ 选择了 AWS `m7a.8xlarge` 实例类型，但即使在 `m7a.4xlarge`（16 个 vCPU，64 GiB RAM）实例上，值得注意的结果也很重要。
+此配置在保持 **90% 的 CPU 使用率** 的同时，提供了 **14.2 毫秒** 的平均消息延迟。
+这些发现突出了 TBMQ 在各种实例类型中出色执行的灵活性和潜力，使用户能够选择最适合其特定要求的配置。
 
-### Running test
+### 运行测试
 
-The test agent represents a cluster of performance test nodes (runners) and an orchestrator that supervises these runners.
-To fulfill their respective roles, we deployed 1 publisher and 6 subscriber Kubernetes pods, with a single pod designated as the orchestrator.
-Notably, each publisher and subscriber pod was allocated to separate AWS EC2 instances.
+测试代理表示性能测试节点（运行程序）的集群和监督这些运行程序的编排器。
+为了履行各自的角色，我们部署了 1 个发布者和 6 个订阅者 Kubernetes pod，其中一个 pod 被指定为编排器。
+值得注意的是，每个发布者和订阅者 pod 都分配给单独的 AWS EC2 实例。
 
-For a comprehensive view of the AWS EC2 instances used in our test setup, you can refer to the following image:
+有关在我们的测试设置中使用的 AWS EC2 实例的全面视图，您可以参考以下图像：
 
 {% include images-gallery.html imageCollection="tbmq-3m-single-node-test-aws-instances" %}
 
-The test initiation involves the establishment of connections between the clients and TBMQ. Subscriber clients promptly set up their subscriptions, while publisher clients begin their warm-up phase.
-Once all the runners are ready, the orchestrator notifies the cluster is ready and the message publishing is started.
+测试启动涉及在客户端和 TBMQ 之间建立连接。订阅者客户端会立即设置其订阅，而发布者客户端会开始其预热阶段。
+一旦所有运行程序都准备就绪，编排器就会通知集群已准备就绪，并开始发布消息。
 
-After a period of processing, we can evaluate the monitoring tools such as JMX, htop, and Kafka UI along with AWS CloudWatch for more comprehensive insights.
+经过一段时间的处理，我们可以评估监控工具，例如 JMX、htop 和 Kafka UI，以及 AWS CloudWatch 以获得更全面的见解。
 
-Monitoring tools show an average CPU load of approximately **54%**.
-This finding indicates that TBMQ demonstrates substantial processing capacity, suggesting its ability to efficiently handle even more significant workloads and manage peaks in message delivery.
+监控工具显示平均 CPU 负载约为 **54%**。
+这一发现表明 TBMQ 表现出强大的处理能力，表明它能够有效地处理更大的工作负载并管理消息传递高峰。
 
 {% include images-gallery.html imageCollection="tbmq-3m-single-node-test-monitoring" %}
 
-### How to repeat the test
+### 如何重复测试
 
-We recommend referring to our [installation guide](/docs/mqtt-broker/install/cluster/aws-cluster-setup/), which provides step-by-step instructions on how to deploy TBMQ on AWS.
-In addition, you may explore the [branch](https://github.com/thingsboard/tbmq/tree/3M-single-node-perf-test/k8s/aws#readme) containing the scripts and parameters used for running TBMQ during this performance test,
-enabling you to gain deeper insights into our configuration.
-For the practical execution of performance tests, we offer a dedicated [performance testing tool](https://github.com/thingsboard/tb-mqtt-perf-tests/tree/3M-single-node-perf-test) 
-capable of generating MQTT clients and simulating the desired message load.
-For configuring the performance tests, you can review and modify the configuration files for the 
-[publishers](https://github.com/thingsboard/tb-mqtt-perf-tests/blob/3M-single-node-perf-test/k8s/broker-tests-publishers-config.yml) and 
-[subscribers](https://github.com/thingsboard/tb-mqtt-perf-tests/blob/3M-single-node-perf-test/k8s/broker-tests-subscribers-config.yml) as per your specific requirements.
+我们建议参考我们的 [安装指南](/docs/mqtt-broker/install/cluster/aws-cluster-setup/)，其中提供了有关如何在 AWS 上部署 TBMQ 的分步说明。
+此外，您可以浏览 [分支](https://github.com/thingsboard/tbmq/tree/3M-single-node-perf-test/k8s/aws#readme)，其中包含在此性能测试期间用于运行 TBMQ 的脚本和参数，
+使您能够更深入地了解我们的配置。
+为了实际执行性能测试，我们提供了一个专用的 [性能测试工具](https://github.com/thingsboard/tb-mqtt-perf-tests/tree/3M-single-node-perf-test)，
+能够生成 MQTT 客户端并模拟所需的消息负载。
+为了配置性能测试，您可以根据您的具体要求查看和修改 [发布者](https://github.com/thingsboard/tb-mqtt-perf-tests/blob/3M-single-node-perf-test/k8s/broker-tests-publishers-config.yml) 和 [订阅者](https://github.com/thingsboard/tb-mqtt-perf-tests/blob/3M-single-node-perf-test/k8s/broker-tests-subscribers-config.yml) 的配置文件。
 
-### Conclusion
+### 结论
 
-The performance test of TBMQ, where it successfully processed 3M messages per second with an average latency of just 7.4 milliseconds, confirms again its position as a robust and scalable MQTT broker. 
-This achievement underscores TBMQ's readiness for handling demanding workloads, making it a reliable choice for applications that rely on efficient message distribution.
+TBMQ 的性能测试成功地以仅 7.4 毫秒的平均延迟处理了每秒 300 万条消息，再次确认了其作为强大且可扩展的 MQTT 代理的地位。
+这一成就突显了 TBMQ 处理苛刻工作负载的准备情况，使其成为依赖于高效消息分发的应用程序的可靠选择。
 
-As we continue to explore TBMQ's capabilities, we remain committed to delivering improved performance and reliability. 
-We look forward to sharing more insights and performance results in the future.
+随着我们继续探索 TBMQ 的功能，我们致力于提供更高的性能和可靠性。
+我们期待在未来分享更多见解和性能结果。
 
-Your feedback is highly appreciated, and we encourage you to stay connected with our project by following us on [GitHub](https://github.com/thingsboard/tbmq) to be updated on our latest developments.
+我们非常感谢您的反馈，并鼓励您关注我们的 [GitHub](https://github.com/thingsboard/tbmq) 以了解我们的最新进展。

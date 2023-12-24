@@ -1,9 +1,9 @@
-For simplicity, we will provision the device manually using the UI.
+为简单起见，我们将使用 UI 手动配置设备。
 
-We are going to provision a device on the Edge. Please open the ThingsBoard **Edge** UI using the URL **EDGE_URL**.
+我们将在 Edge 上配置设备。请使用 URL **EDGE_URL** 打开 ThingsBoard **Edge** UI。
 
 {% include images-gallery.html imageCollection="step1" showListImageTitles="true" %}
 
-You may also use:
-* [Bulk provisioning](/docs/{{cloudDocsPrefix}}user-guide/bulk-provisioning/) to provision multiple devices from a CSV file using UI;
-* [REST API](/docs/{{cloudDocsPrefix}}api/) to provision devices and other entities programmatically;
+您还可以使用：
+* [批量配置](/docs/{{cloudDocsPrefix}}user-guide/bulk-provisioning/) 使用 UI 从 CSV 文件配置多个设备；
+* [REST API](/docs/{{cloudDocsPrefix}}api/) 以编程方式配置设备和其他实体；

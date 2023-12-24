@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
-title: ThingsBoard Monolithic architecture
-description: ThingsBoard architecture
+title: ThingsBoard 单体架构
+description: ThingsBoard 架构
 
 ---
 

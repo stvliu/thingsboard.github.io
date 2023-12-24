@@ -1,7 +1,7 @@
-#### Kafka Installation
+#### Kafka 安装
 
-[Apache Kafka](https://kafka.apache.org/) is an open-source stream-processing software platform.
+[Apache Kafka](https://kafka.apache.org/) 是一个开源流处理软件平台。
 
-##### Install Kafka
+##### 安装 Kafka
 
-Use this [instruction](https://github.com/wurstmeister/kafka-docker) for installing Kafka in Docker container.
+使用此 [说明](https://github.com/wurstmeister/kafka-docker) 在 Docker 容器中安装 Kafka。

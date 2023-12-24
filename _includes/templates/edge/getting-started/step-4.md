@@ -1,9 +1,9 @@
-We will create a dashboard and add both a table and a chart widget to view temperature data on the Server and on the Edge. 
-Please see the instructions below.
+我们将创建一个仪表板，并添加一个表格和一个图表小部件，以查看服务器和边缘上的温度数据。
+请参阅以下说明。
 
-To add the table widget, select it from the widget library, where widgets are organized into bundles. 
-Each widget is associated with a data source, which determines the data it displays.
+要添加表格小部件，请从小部件库中选择它，其中小部件被组织成捆绑包。
+每个小部件都与一个数据源相关联，该数据源决定了它显示的数据。
 
 {% include images-gallery.html imageCollection="step4" showListImageTitles="true" %}
 
-Congratulations! You have successfully configured the dashboard. Now, when you send a new telemetry reading, it will immediately appear in the table.
+恭喜！您已成功配置仪表板。现在，当您发送新的遥测读数时，它将立即显示在表格中。

@@ -1,18 +1,18 @@
-You can use our example of downlink converter, or write your own according to your configuration:
+您可以使用我们的下行链路转换器示例，或根据您的配置编写自己的转换器：
 
 ```javascript
-// Encode downlink data from incoming Rule Engine message
-// msg - JSON message payload downlink message json
-// msgType - type of message, for ex. 'ATTRIBUTES_UPDATED', 'POST_TELEMETRY_REQUEST', etc.
-// metadata - list of key-value pairs with additional data about the message
-// integrationMetadata - list of key-value pairs with additional data defined in Integration executing this converter
-// Result object with encoded downlink payload
+// 对来自规则引擎消息的下行链路数据进行编码
+// msg - JSON 消息有效负载下行链路消息 json
+// msgType - 消息类型，例如“ATTRIBUTES_UPDATED”、“POST_TELEMETRY_REQUEST”等。
+// metadata - 包含有关消息的其他数据的键值对列表
+// integrationMetadata - 包含由执行此转换器的集成中定义的其他数据的键值对列表
+// 包含编码下行链路有效负载的结果对象
 var result = {
-    // downlink data content type: JSON, TEXT or BINARY (base64 format)
+    // 下行链路数据内容类型：JSON、TEXT 或 BINARY（base64 格式）
     contentType: "TEXT",
-    // downlink data
+    // 下行链路数据
     data:  msg.test,
-    // Optional metadata object presented in key/value format
+    // 以键/值格式显示的可选元数据对象
     metadata: {
         "device": "2203961"
     }

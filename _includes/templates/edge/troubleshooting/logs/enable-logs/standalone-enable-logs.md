@@ -1,1 +1,1 @@
-For standalone deployment you need to update <code>/usr/share/tb-edge/conf/logback.xml</code> in order to change logging configuration.
+对于独立部署，您需要更新 <code>/usr/share/tb-edge/conf/logback.xml</code> 以更改日志记录配置。

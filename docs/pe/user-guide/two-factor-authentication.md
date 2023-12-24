@@ -2,99 +2,99 @@
 layout: docwithnav-pe
 assignees:
 - ashvayka
-title: Two-Factor Authentication
-description: Two-Factor Authentication using ThingsBoard
+title: 双因素认证
+description: 使用 ThingsBoard 进行双因素认证
 
 two-factor-authentication-password-and-authentication:
     0:
         image: /images/user-guide/two-factor-authentication/two-factor-authentication-password-and-authentication-1-pe.png
-        title: 'In the upper right corner, click on the three dots icon. In the dropdown menu, proceed with "Security";'
+        title: '在右上角，单击三个点图标。在下拉菜单中，继续“安全”；'
     1:
         image: /images/user-guide/two-factor-authentication/two-factor-authentication-password-and-authentication-2-pe.png
-        title: 'Activate the convenient verification method. One can activate multiple providers. Save changes.'
+        title: '激活方便的验证方法。可以激活多个提供商。保存更改。'
 
 two-factor-authentication-app:
     0:
         image: /images/user-guide/two-factor-authentication/two-factor-authentication-app-1-pe.png
-        title: 'Toggle to enable authentication with the external app;'
+        title: '切换以启用外部应用程序的身份验证；'
     1:
         image: /images/user-guide/two-factor-authentication/two-factor-authentication-app-2-pe.png
-        title: 'Install and open the authenticator app on your mobile device;'
+        title: '在移动设备上安装并打开身份验证器应用程序；'
     2:
         image: /images/user-guide/two-factor-authentication/two-factor-authentication-app-3-pe.png
-        title: 'Scan the QR code using the application;'
+        title: '使用应用程序扫描二维码；'
     3:
         image: /images/user-guide/two-factor-authentication/two-factor-authentication-app-4-pe.png
-        title: 'Enter the 6-digit code from authenticator;'
+        title: '从身份验证器输入 6 位数代码；'
     4:
         image: /images/user-guide/two-factor-authentication/two-factor-authentication-app-5-pe.png
-        title: 'The next time the user logs in, he/she will need to provide the code rendered by the application. Click "Done";'
+        title: '下次用户登录时，他们需要提供应用程序呈现的代码。单击“完成”；'
     5:
         image: /images/user-guide/two-factor-authentication/two-factor-authentication-app-6-pe.png
-        title: '2FA by Authentication app is enabled;'
+        title: '通过身份验证应用程序的 2FA 已启用；'
     6:
         image: /images/user-guide/two-factor-authentication/two-factor-authentication-app-7-pe.png
-        title: 'While login, on the first step the user enters the email and password. Afterward, user should enter the security code from the authenticator app.'
+        title: '在登录时，用户在第一步输入电子邮件和密码。之后，用户应从身份验证器应用程序输入安全代码。'
 
 two-factor-authentication-sms:
     0:
         image: /images/user-guide/two-factor-authentication/two-factor-authentication-sms-1-pe.png
-        title: 'Toggle to enable authentication by SMS;'
+        title: '切换以启用短信身份验证；'
     1:
         image: /images/user-guide/two-factor-authentication/two-factor-authentication-sms-3-pe.png
-        title: 'Enter the valid phone number and expect to receive a verification short message;'
+        title: '输入有效的电话号码并期待收到验证短信；'
     2:
         image: /images/user-guide/two-factor-authentication/two-factor-authentication-sms-4-pe.png
-        title: 'Input the 6-digit code from your verification SMS;'
+        title: '从验证短信中输入 6 位数代码；'
     3:
         image: /images/user-guide/two-factor-authentication/two-factor-authentication-sms-5-pe.png
-        title: 'The next time the user logs in, he/she will need to enter the code from SMS. Click "Done";'
+        title: '下次用户登录时，他们需要输入短信中的代码。单击“完成”；'
     4:
         image: /images/user-guide/two-factor-authentication/two-factor-authentication-sms-6-pe.png
-        title: '2FA by SMS is enabled;'
+        title: '通过短信的 2FA 已启用；'
     5:
         image: /images/user-guide/two-factor-authentication/two-factor-authentication-sms-7-pe.png
-        title: 'While login, on the first step the user enters the email and password. Afterward, user should enter the security code from your SMS.'
+        title: '在登录时，用户在第一步输入电子邮件和密码。之后，用户应从短信中输入安全代码。'
 
 two-factor-authentication-email:
     0:
         image: /images/user-guide/two-factor-authentication/two-factor-authentication-email-1-pe.png
-        title: 'Toggle to enable authentication by email;'
+        title: '切换以启用电子邮件身份验证；'
     1:
         image: /images/user-guide/two-factor-authentication/two-factor-authentication-email-2-pe.png
-        title: 'Enter an email to receive a secret code;'
+        title: '输入电子邮件以接收秘密代码；'
     2:
         image: /images/user-guide/two-factor-authentication/two-factor-authentication-email-4-pe.png
-        title: 'Enter the 6-digit code from your verification email;'
+        title: '从验证电子邮件中输入 6 位数代码；'
     3:
         image: /images/user-guide/two-factor-authentication/two-factor-authentication-email-5-pe.png
-        title: 'Click "Done";'
+        title: '单击“完成”；'
     4:
         image: /images/user-guide/two-factor-authentication/two-factor-authentication-email-6-pe.png
-        title: '2FA by email is enabled;'
+        title: '通过电子邮件的 2FA 已启用；'
     5:
         image: /images/user-guide/two-factor-authentication/two-factor-authentication-email-9-pe.png
-        title: 'While login, on your first step the user enters the email and password. Afterward, user should enter the security code from your mailbox.'
+        title: '在登录时，用户在第一步输入电子邮件和密码。之后，用户应从邮箱中输入安全代码。'
 
 two-factor-authentication-backup-code:
     0:
         image: /images/user-guide/two-factor-authentication/two-factor-authentication-backup-code-1-pe.png
-        title: 'Toggle to enable authentication with backup code;'
+        title: '切换以启用备份代码身份验证；'
     1:
         image: /images/user-guide/two-factor-authentication/two-factor-authentication-backup-code-2-pe.png
-        title: 'Once turned on, the codes will be available on the screen. The user can download them (txt) or print them. Each backup code can be used once;'
+        title: '打开后，代码将在屏幕上可用。用户可以下载它们 (txt) 或打印它们。每个备份代码只能使用一次；'
     2:
         image: /images/user-guide/two-factor-authentication/two-factor-authentication-backup-code-3-pe.png
-        title: '2FA by backup code is enabled;'
+        title: '通过备份代码的 2FA 已启用；'
     3:
         image: /images/user-guide/two-factor-authentication/two-factor-authentication-backup-code-5-pe.png
-        title: 'While regular login process, after email and password step click “Try another way” button;'
+        title: '在常规登录过程中，在电子邮件和密码步骤后，单击“尝试其他方式”按钮；'
     4:
         image: /images/user-guide/two-factor-authentication/two-factor-authentication-backup-code-6-pe.png
-        title: 'Select a way to verify with a backup code;'
+        title: '选择使用备份代码进行验证的方式；'
     5:
         image: /images/user-guide/two-factor-authentication/two-factor-authentication-backup-code-7-pe.png
-        title: 'Enter the 8-digit code from your backup codes list;'
+        title: '从备份代码列表中输入 8 位数代码；'
 
 ---
 

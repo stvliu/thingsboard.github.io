@@ -1,174 +1,166 @@
 * TOC
 {:toc}
 
-This guide provides an overview of the various options you have to manage **authentication** and **authorization** for MQTT clients in accordance with your specific requirements 
-and infrastructure. 
+本指南概述了您在根据特定要求和基础设施管理 MQTT 客户端的 **身份验证** 和 **授权** 时拥有的各种选项。
 
-Authentication refers to the process of verifying the identity of MQTT clients connecting to the broker. 
-It ensures that only authenticated clients can access the system. 
-The guide will explore different authentication mechanisms such as basic authentication, and SSL/TLS client certificate authentication. 
-It will explain how to configure and enable these authentication methods based on your security needs.
+身份验证是指验证连接到代理的 MQTT 客户端的身份的过程。它确保只有经过身份验证的客户端才能访问系统。本指南将探讨不同的身份验证机制，例如基本身份验证和 SSL/TLS 客户端证书身份验证。它将解释如何根据您的安全需求配置和启用这些身份验证方法。
 
-Authorization, on the other hand, involves granting or denying access to specific resources or actions based on the authenticated client's privileges. 
-You will learn how to assign topic authorization rules to clients to control their permissions and restrict their actions within the MQTT system.
+另一方面，授权涉及根据经过身份验证的客户端的权限授予或拒绝对特定资源或操作的访问。您将学习如何向客户端分配主题授权规则以控制其权限并限制其在 MQTT 系统中的操作。
 
-By understanding and implementing the authentication and authorization options outlined in this guide, 
-you can ensure secure and controlled access to the MQTT broker, protecting your infrastructure and data from unauthorized access or misuse.
+通过理解和实施本指南中概述的身份验证和授权选项，您可以确保安全且受控地访问 MQTT 代理，保护您的基础设施和数据免遭未经授权的访问或滥用。
 
-### MQTT Listeners
+### MQTT 侦听器
 
-TBMQ provides the flexibility to configure its listening capabilities for both the TCP and SSL/TLS protocols as well as for MQTT over WebSockets.
+TBMQ 提供了为 TCP 和 SSL/TLS 协议以及 MQTT over WebSockets 配置其侦听功能的灵活性。
 
-#### TCP Listener
+#### TCP 侦听器
 
-By default, TBMQ has the TCP listener enabled on port `1883`.
-However, if you wish to disable the TCP listener, you can set the `LISTENER_TCP_ENABLED` environment variable to `false`.
+默认情况下，TBMQ 在端口 `1883` 上启用了 TCP 侦听器。
+但是，如果您希望禁用 TCP 侦听器，可以将 `LISTENER_TCP_ENABLED` 环境变量设置为 `false`。
 
-Furthermore, if you need to change the host address that the broker is binding to or the port it is listening on, 
-you can modify the `LISTENER_TCP_BIND_ADDRESS` and `LISTENER_TCP_BIND_PORT` variables, respectively. 
-This gives you the flexibility to configure the broker to listen on a specific network interface and port of your choice.
+此外，如果您需要更改代理绑定的主机地址或其侦听的端口，您可以分别修改 `LISTENER_TCP_BIND_ADDRESS` 和 `LISTENER_TCP_BIND_PORT` 变量。这使您可以灵活地配置代理以侦听您选择的特定网络接口和端口。
 
-By adjusting these environment variables, you can customize the TCP listening behavior of TBMQ to suit your specific requirements.
+通过调整这些环境变量，您可以自定义 TBMQ 的 TCP 侦听行为以满足您的特定要求。
 
-#### TLS Listener
+#### TLS 侦听器
 
-To enable the SSL/TLS listener, set the `LISTENER_SSL_ENABLED` environment variable to `true`. By default, the broker is listening on the `8883` port.
-To change the host and/or port that the broker is listening to, update the `LISTENER_SSL_BIND_ADDRESS` and `LISTENER_SSL_BIND_PORT` variables, respectively.
+要启用 SSL/TLS 侦听器，请将 `LISTENER_SSL_ENABLED` 环境变量设置为 `true`。默认情况下，代理在 `8883` 端口上侦听。
+要更改代理侦听的主机和/或端口，请分别更新 `LISTENER_SSL_BIND_ADDRESS` 和 `LISTENER_SSL_BIND_PORT` 变量。
 
-Choose the type of credentials you want to use by setting the `LISTENER_SSL_CREDENTIALS_TYPE` parameter. Currently, the supported options are `PEM` and `KEYSTORE`.
-Note that you can find a list of all available properties in the [configuration documentation](/docs/mqtt-broker/install/config/).
+通过设置 `LISTENER_SSL_CREDENTIALS_TYPE` 参数选择您要使用的凭据类型。目前，支持的选项是 `PEM` 和 `KEYSTORE`。
+请注意，您可以在 [配置文档](/docs/mqtt-broker/install/config/) 中找到所有可用属性的列表。
 
-If you choose KeyStore as the credentials type, you need to configure the following:
-- Set `LISTENER_SSL_KEY_STORE` variable to the path to your `.jks` file with the server certificate chain.
-- Set `LISTENER_SSL_KEY_STORE_PASSWORD` variable to the password used to access the key store.
-- Set `LISTENER_SSL_KEY_PASSWORD` variable to the password for the server certificate.
+如果您选择 KeyStore 作为凭据类型，则需要配置以下内容：
+- 将 `LISTENER_SSL_KEY_STORE` 变量设置为包含服务器证书链的 `.jks` 文件的路径。
+- 将 `LISTENER_SSL_KEY_STORE_PASSWORD` 变量设置为用于访问密钥库的密码。
+- 将 `LISTENER_SSL_KEY_PASSWORD` 变量设置为服务器证书的密码。
 
-If you choose Pem as the credentials type, you need to configure the following:
-- Set `LISTENER_SSL_PEM_CERT` variable to the path of your server certificate file.
-- Set `LISTENER_SSL_PEM_KEY` variable to the path of your server certificate private key file.
-- Set `LISTENER_SSL_PEM_KEY_PASSWORD` variable to the password of your server certificate private key.
+如果您选择 Pem 作为凭据类型，则需要配置以下内容：
+- 将 `LISTENER_SSL_PEM_CERT` 变量设置为服务器证书文件的路径。
+- 将 `LISTENER_SSL_PEM_KEY` 变量设置为服务器证书私钥文件的路径。
+- 将 `LISTENER_SSL_PEM_KEY_PASSWORD` 变量设置为服务器证书私钥的密码。
 
-If you require two-way TLS, you also need to configure the TrustStore by adding the trusted certificates/chains to the configured KeyStore/PEM files.
-For more information about configuration possibilities and certificate generation, please review the following ThingsBoard security [pages](/docs/user-guide/mqtt-over-ssl/).
+如果您需要双向 TLS，您还需要通过将受信任的证书/链添加到已配置的 KeyStore/PEM 文件来配置 TrustStore。
+有关配置可能性和证书生成的更多信息，请查看以下 ThingsBoard 安全 [页面](/docs/user-guide/mqtt-over-ssl/)。
 
-#### WS Listener
+#### WS 侦听器
 
-By default, TBMQ has the WebSocket listener enabled on port `8084`.
-However, in case you want to disable the WS listener, you can set the `LISTENER_WS_ENABLED` environment variable to `false`.
+默认情况下，TBMQ 在端口 `8084` 上启用了 WebSocket 侦听器。
+但是，如果您想禁用 WS 侦听器，可以将 `LISTENER_WS_ENABLED` 环境变量设置为 `false`。
 
-Additionally, if you need to change the host address that the broker is binding to or the port it is listening on,
-you can modify the `LISTENER_WS_BIND_ADDRESS` and `LISTENER_WS_BIND_PORT` variables, respectively.
+此外，如果您需要更改代理绑定的主机地址或其侦听的端口，
+您可以分别修改 `LISTENER_WS_BIND_ADDRESS` 和 `LISTENER_WS_BIND_PORT` 变量。
 
-WS listener is configured to negotiate via all MQTT versions by default, i.e. `WS_NETTY_SUB_PROTOCOLS` is set to `mqttv3.1,mqtt`.
-The subprotocol setting `mqtt` represents MQTT 3.1.1 and MQTT 5.
+WS 侦听器默认配置为通过所有 MQTT 版本进行协商，即 `WS_NETTY_SUB_PROTOCOLS` 设置为 `mqttv3.1,mqtt`。
+子协议设置 `mqtt` 代表 MQTT 3.1.1 和 MQTT 5。
 
-#### WSS Listener
+#### WSS 侦听器
 
-To enable the WebSocket Secure listener, set the `LISTENER_WSS_ENABLED` environment variable to `true`. By default, the broker is listening on the `8085` port.
-To change the host and/or port that the broker is listening to, update the `LISTENER_WSS_BIND_ADDRESS` and `LISTENER_WSS_BIND_PORT` variables, respectively.
+要启用 WebSocket 安全侦听器，请将 `LISTENER_WSS_ENABLED` 环境变量设置为 `true`。默认情况下，代理在 `8085` 端口上侦听。
+要更改代理侦听的主机和/或端口，请分别更新 `LISTENER_WSS_BIND_ADDRESS` 和 `LISTENER_WSS_BIND_PORT` 变量。
 
-Choose the type of credentials you want to use by setting the `LISTENER_WSS_CREDENTIALS_TYPE` parameter. 
-Supported options are the same as for [TLS](#tls-listener) listener.
+通过设置 `LISTENER_WSS_CREDENTIALS_TYPE` 参数选择您要使用的凭据类型。
+支持的选项与 [TLS](#tls-listener) 侦听器相同。
 
-If you choose KeyStore as the credentials type, you need to configure the following:
-- Set `LISTENER_WSS_KEY_STORE` variable to the path to your `.jks` file with the server certificate chain.
-- Set `LISTENER_WSS_KEY_STORE_PASSWORD` variable to the password used to access the key store.
-- Set `LISTENER_WSS_KEY_PASSWORD` variable to the password for the server certificate.
+如果您选择 KeyStore 作为凭据类型，则需要配置以下内容：
+- 将 `LISTENER_WSS_KEY_STORE` 变量设置为包含服务器证书链的 `.jks` 文件的路径。
+- 将 `LISTENER_WSS_KEY_STORE_PASSWORD` 变量设置为用于访问密钥库的密码。
+- 将 `LISTENER_WSS_KEY_PASSWORD` 变量设置为服务器证书的密码。
 
-If you choose Pem as the credentials type, you need to configure the following:
-- Set `LISTENER_WSS_PEM_CERT` variable to the path of your server certificate file.
-- Set `LISTENER_WSS_PEM_KEY` variable to the path of your server certificate private key file.
-- Set `LISTENER_WSS_PEM_KEY_PASSWORD` variable to the password of your server certificate private key.
+如果您选择 Pem 作为凭据类型，则需要配置以下内容：
+- 将 `LISTENER_WSS_PEM_CERT` 变量设置为服务器证书文件的路径。
+- 将 `LISTENER_WSS_PEM_KEY` 变量设置为服务器证书私钥文件的路径。
+- 将 `LISTENER_WSS_PEM_KEY_PASSWORD` 变量设置为服务器证书私钥的密码。
 
-Do not forget to configure the TrustStore by adding the trusted certificates/chains if you require two-way TLS.
-WSS listener is set to the same negotiation subprotocols as [WS](#ws-listener) listener. If you need to change this default behavior, update `WSS_NETTY_SUB_PROTOCOLS` parameter appropriately.
+如果您需要双向 TLS，请不要忘记通过添加受信任的证书/链来配置 TrustStore。
+WSS 侦听器设置为与 [WS](#ws-listener) 侦听器相同的协商子协议。如果您需要更改此默认行为，请相应地更新 `WSS_NETTY_SUB_PROTOCOLS` 参数。
 
-### Authentication
+### 身份验证
 
-#### Basic Authentication
+#### 基本身份验证
 
-To enable basic authentication based on a **username, password, and clientId** in your system, follow these steps:
+要在您的系统中启用基于 **用户名、密码和 clientId** 的基本身份验证，请按照以下步骤操作：
 
-1. Set the `SECURITY_MQTT_BASIC_ENABLED` environment variable to `true`.
-2. Create MQTT client credentials of type `Basic` using either the [Web UI guide](/docs/mqtt-broker/user-guide/ui/mqtt-client-credentials/) or the [REST API guide](/docs/mqtt-broker/mqtt-client-credentials-management/). 
-3. Once the credentials are created, the `credentialsId` field is auto-generated. See below for more information.
+1. 将 `SECURITY_MQTT_BASIC_ENABLED` 环境变量设置为 `true`。
+2. 使用 [Web UI 指南](/docs/mqtt-broker/user-guide/ui/mqtt-client-credentials/) 或 [REST API 指南](/docs/mqtt-broker/mqtt-client-credentials-management/) 创建类型为 `Basic` 的 MQTT 客户端凭据。
+3. 创建凭据后，`credentialsId` 字段会自动生成。有关更多信息，请参见下文。
 
-##### Credentials Matching
+##### 凭据匹配
 
-The following are the **possible combinations** of `Basic` credentials matchers:
-- **clientId** - checks if the connecting client has specified clientId.
-- **username** - checks if the connecting client has specified a username.
-- **clientId and username** - checks if the connecting client has specified both clientId and username.
-- **username and password** - checks if the connecting client has specified both username and password.
-- **clientId and password** - checks if the connecting client has specified both clientId and password.
-- **clientId, username and password** - checks if the connecting client has specified clientId, username, and password.
+以下是 **可能的组合** 的 `Basic` 凭据匹配器：
+- **clientId** - 检查连接的客户端是否指定了 clientId。
+- **username** - 检查连接的客户端是否指定了用户名。
+- **clientId 和 username** - 检查连接的客户端是否同时指定了 clientId 和 username。
+- **username 和 password** - 检查连接的客户端是否同时指定了 username 和 password。
+- **clientId 和 password** - 检查连接的客户端是否同时指定了 clientId 和 password。
+- **clientId、username 和 password** - 检查连接的客户端是否指定了 clientId、username 和 password。
 
-##### Credentials ID
+##### 凭据 ID
 
-When a client connects, the combination of the username, password, and clientId from the `CONNECT` packet is matched with the persisted credentials to authenticate the client.
-The matching is based on the auto-generated `credentialsId` field from the MQTT client credentials. 
+当客户端连接时，`CONNECT` 数据包中的用户名、密码和 clientId 的组合与持久凭据匹配以对客户端进行身份验证。
+匹配基于 MQTT 客户端凭据中自动生成的 `credentialsId` 字段。
 
-The `credentialsId` is generated as follows:
+`credentialsId` 的生成方式如下：
 
-- credentialsId = `username|$CLIENT_USERNAME` when only username is present;
-- credentialsId = `client_id|$CLIENT_ID` when only client ID is present;
-- credentialsId = `mixed|$CLIENT_USERNAME|$CLIENT_ID` when both username and client ID are present.
+- 当仅存在用户名时，credentialsId = `username|$CLIENT_USERNAME`；
+- 当仅存在客户端 ID 时，credentialsId = `client_id|$CLIENT_ID`；
+- 当同时存在用户名和客户端 ID 时，credentialsId = `mixed|$CLIENT_USERNAME|$CLIENT_ID`。
 
-Where `$CLIENT_USERNAME` refers to the specified username, `$CLIENT_ID` refers to the specified client ID from the `CONNECT` packet.
+其中 `$CLIENT_USERNAME` 指的是指定的用户名，`$CLIENT_ID` 指的是 `CONNECT` 数据包中指定的客户端 ID。
 
-#### TLS Authentication
+#### TLS 身份验证
 
-TBMQ supports authentication using TLS. 
-To enable TLS authentication, you must first [enable the TLS listener](/docs/mqtt-broker/security/#tls-listener) so that the client's certificate chain is involved in the authentication process.
+TBMQ 支持使用 TLS 进行身份验证。
+要启用 TLS 身份验证，您必须首先 [启用 TLS 侦听器](/docs/mqtt-broker/security/#tls-listener) 以便客户端的证书链参与身份验证过程。
 
-After enabling the TLS listener, you need to do the following to enable TLS authentication:
+启用 TLS 侦听器后，您需要执行以下操作来启用 TLS 身份验证：
 
-1. Set the `SECURITY_MQTT_SSL_ENABLED` environment variable to `true`.
-2. Create MQTT client credentials of type `X.509 Certificate Chain` using either the [Web UI guide](/docs/mqtt-broker/user-guide/ui/mqtt-client-credentials/) or the [REST API guide](/docs/mqtt-broker/mqtt-client-credentials-management/).
-3. Once the credentials are created, the `credentialsId` field is auto-generated. See below for more information.
+1. 将 `SECURITY_MQTT_SSL_ENABLED` 环境变量设置为 `true`。
+2. 使用 [Web UI 指南](/docs/mqtt-broker/user-guide/ui/mqtt-client-credentials/) 或 [REST API 指南](/docs/mqtt-broker/mqtt-client-credentials-management/) 创建类型为 `X.509 Certificate Chain` 的 MQTT 客户端凭据。
+3. 创建凭据后，`credentialsId` 字段会自动生成。有关更多信息，请参见下文。
 
-##### Credentials Matching
+##### 凭据匹配
 
-When authentication is enabled, only clients connecting using certificates with common names (CN) that match the persisted common names will be authenticated. 
-This matching process is done by comparing the CN of each certificate in the chain with the common names of the persisted credentials.
+启用身份验证后，只有使用与持久通用名称 (CN) 匹配的通用名称 (CN) 的证书连接的客户端才会被身份验证。
+此匹配过程通过将链中每个证书的 CN 与持久凭据的 CN 进行比较来完成。
 
-##### Credentials ID
+##### 凭据 ID
 
-The generation of `credentialsId` is done as follows:
+`credentialsId` 的生成方式如下：
 
-- credentialsId = `ssl|$CERTIFICATE_COMMON_NAME`. 
+- credentialsId = `ssl|$CERTIFICATE_COMMON_NAME`。
 
-Where `$CERTIFICATE_COMMON_NAME` is the common name of the certificate from the chain.
+其中 `$CERTIFICATE_COMMON_NAME` 是链中证书的通用名称。
 
 {% include images-gallery.html imageCollection="security-authentication" %}
 
-#### Strategies
+#### 策略
 
-TBMQ allows to set the authentication strategy by setting the environment variable `SECURITY_MQTT_AUTH_STRATEGY`, which has two possible values:
+TBMQ 允许通过设置环境变量 `SECURITY_MQTT_AUTH_STRATEGY` 来设置身份验证策略，该变量有两个可能的值：
 
-1. **BOTH** (default). When both Basic and TLS authentications are enabled, 
-the MQTT Broker will prioritize `Basic` authentication. 
-This means that if a client successfully authenticates with basic credentials, the system will not attempt to authenticate it using `TLS` authentication. 
-However, if `Basic` authentication fails, the system will continue with the authentication process using `TLS`. 
-If one of the authentication types is disabled, the other type will be used.
-2. **SINGLE**. The broker will only use one type of authentication depending on the listener to which the client is connected. 
-For example, if the client connects to the TCP listener, only `Basic` authentication will be used. 
-On the other hand, if the client connects to the TLS listener, only `TLS` authentication will be used.
+1. **BOTH**（默认）。当基本身份验证和 TLS 身份验证都启用时，
+MQTT 代理将优先考虑 `Basic` 身份验证。
+这意味着如果客户端使用基本凭据成功进行身份验证，系统将不会尝试使用 `TLS` 身份验证对其进行身份验证。
+但是，如果 `Basic` 身份验证失败，系统将继续使用 `TLS` 进行身份验证过程。
+如果禁用其中一种身份验证类型，则将使用另一种类型。
+2. **SINGLE**。代理将仅使用一种身份验证类型，具体取决于客户端连接到的侦听器。
+例如，如果客户端连接到 TCP 侦听器，则仅使用 `Basic` 身份验证。
+另一方面，如果客户端连接到 TLS 侦听器，则仅使用 `TLS` 身份验证。
 
-### Authorization
+### 授权
 
-After the user has been authenticated, it is possible to restrict the client's access to topics they can publish or subscribe to for both TLS and Basic authentications.
+用户经过身份验证后，可以限制客户端访问他们可以发布或订阅的主题，以进行 TLS 和基本身份验证。
 
-To provide flexible control over authorization rules, TBMQ uses regular expressions. 
+为了灵活控制授权规则，TBMQ 使用正则表达式。
 
-For example, to **allow clients to publish or subscribe to all topics** that begin with **city/**, an authorization rule should be created with the value **city/.***.
+例如，要 **允许客户端发布或订阅所有以 **city/** 开头的主题**，应创建一个授权规则，其值为 **city/.***。
 
-#### Basic
+#### 基本
 
-For the Basic type, authorization is configured through the **pubAuthRulePatterns** and **subAuthRulePatterns** of the corresponding MQTT client credentials. 
-Therefore, for each Basic MQTT client credential, you can configure the authorization rules for the topics that these clients can access. 
+对于基本类型，授权是通过相应 MQTT 客户端凭据的 **pubAuthRulePatterns** 和 **subAuthRulePatterns** 配置的。
+因此，对于每个基本 MQTT 客户端凭据，您可以配置这些客户端可以访问的主题的授权规则。
 
-The **pubAuthRulePatterns** and **subAuthRulePatterns** are based on regular expression syntax. For example,
+**pubAuthRulePatterns** 和 **subAuthRulePatterns** 基于正则表达式语法。例如，
 ```
 {
     "pubAuthRulePatterns": ["country/.*"],
@@ -176,12 +168,12 @@ The **pubAuthRulePatterns** and **subAuthRulePatterns** are based on regular exp
 }
 ```
 {: .copy-code}
-The following configuration allows clients to publish messages to topics that start with **country/** and subscribe to topics that start with **city/**.
+以下配置允许客户端将消息发布到以 **country/** 开头的主题，并订阅以 **city/** 开头的主题。
 
 #### TLS
 
-For TLS type, authorization is configured using the **authRulesMapping** field of the corresponding MQTT Client Credentials.
-Here is a model of the credentials value:
+对于 TLS 类型，授权是使用相应 MQTT 客户端凭据的 **authRulesMapping** 字段配置的。
+以下是凭据值模型：
 
 ```
 {
@@ -191,11 +183,11 @@ Here is a model of the credentials value:
 ```
 {: .copy-code}
 
-Where:
-- $certCommonName - the common name that should be present in the certificate chain.
-- $authRulesMapping - the mapping used to configure the access restrictions for different keywords.
-  For example,
-  ```
+其中：
+- $certCommonName - 应存在于证书链中的通用名称。
+- $authRulesMapping - 用于配置不同关键字的访问限制的映射。
+例如，
+```
   {
       "example_1": {
 	      "pubAuthRulePatterns": ["example_pub_topic/.*"],
@@ -209,9 +201,9 @@ Where:
   ```
   {: .copy-code}
 
-This allows clients to connect with a certificate containing **example_1** in its CN to publish only to topics that start with **example_pub_topic/** and 
-subscribe to topics that start with **example_sub_topic/**. Clients with a certificate containing **example_2** are allowed to publish and subscribe to any topic.
+这允许客户端使用其 CN 中包含 **example_1** 的证书仅发布到以 **example_pub_topic/** 开头的主题，
+并订阅以 **example_sub_topic/** 开头的主题。具有包含 **example_2** 的证书的客户端可以发布和订阅任何主题。
 
-**Note**, if either **pubAuthRulePatterns** or **subAuthRulePatterns** is set to `null` or an empty list (`[]`), the client will not be able to publish to or subscribe to any topics.
+**注意**，如果 **pubAuthRulePatterns** 或 **subAuthRulePatterns** 设置为 `null` 或空列表 (`[]`)，则客户端将无法发布或订阅任何主题。
 
 {% include images-gallery.html imageCollection="security-authorization" %}

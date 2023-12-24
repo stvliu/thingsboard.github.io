@@ -1,72 +1,54 @@
-
 * TOC
 {:toc}
 
-## Prerequisites
+## 先决条件
 
-We assume you have completed the general [Getting Started](/docs/{{docsPrefix}}getting-started-guides/helloworld/) guide
-to get familiar with ThingsBoard. We also recommend to review the [Device Profiles](/docs/{{docsPrefix}}user-guide/device-profiles/) documentation first.
+我们假设您已经完成了常规的 [入门](/docs/{{docsPrefix}}getting-started-guides/helloworld/) 指南，以便熟悉 ThingsBoard。我们还建议您首先查看 [设备配置文件](/docs/{{docsPrefix}}user-guide/device-profiles/) 文档。
 
-## Sparkplug basics
+## Sparkplug 基础知识
 
-[Sparkplug](https://sparkplug.eclipse.org/) is an open source software specification that provides MQTT clients the framework 
-to seamlessly integrate data from their applications, sensors, devices, and gateways within the MQTT Infrastructure.
+[Sparkplug](https://sparkplug.eclipse.org/) 是一项开源软件规范，它为 MQTT 客户端提供了一个框架，以便在 MQTT 基础设施中无缝集成来自其应用程序、传感器、设备和网关的数据。
 
-ThingsBoard acts as an MQTT Server which support the SparkPlug payload and topic structure and allows connections from the 
-MQTT Edge of Network (EoN) Node.
+ThingsBoard 充当 MQTT 服务器，支持 SparkPlug 有效负载和主题结构，并允许从 MQTT 网络边缘 (EoN) 节点进行连接。
 
-The EoN Node is any V3.1.1 compliant MQTT Client application that manages an MQTT Session and provides the physical and/or 
-logical gateway functions. The EoN node is responsible for any local protocol interface to existing legacy devices 
-(PLCs, RTUs, Flow Computers, Sensors, etc.) and/or any local discrete I/O, and/or any logical internal process variables(PVs).
+EoN 节点是任何符合 V3.1.1 的 MQTT 客户端应用程序，它管理 MQTT 会话并提供物理和/或逻辑网关功能。EoN 节点负责与现有旧设备（PLC、RTU、流量计算机、传感器等）的任何本地协议接口和/或任何本地离散 I/O 和/或任何逻辑内部过程变量 (PV)。
 
-The protocol [specification](https://sparkplug.eclipse.org/specification/version/2.2/documents/sparkplug-specification-2.2.pdf) 
-defines both MQTT topic and message structure for the EoN Nodes to communicate with the MQTT Server.
-Single EoN Node may represent multiple physical devices and sensors and upload device metrics for each of those devices.
-ThingsBoard decodes the device metrics from the Sparkplug payload and stores it as a corresponding device 
-[attributes](/docs/{{docsPrefix}}user-guide/attributes/) or [time-series](/docs/{{docsPrefix}}user-guide/telemetry/) data. 
-You may also issue an update to the Sparkplug device using 
-[shared attributes update](#update-metrics-from-shared-attributes-to-mqtt-eondevice) or 
-[rpc command](#update-metrics--using-the-thingsboard-rpc-command-from-server-to-mqtt-eondevice).
+该协议 [规范](https://sparkplug.eclipse.org/specification/version/2.2/documents/sparkplug-specification-2.2.pdf) 为 EoN 节点定义了 MQTT 主题和消息结构，以便与 MQTT 服务器通信。单个 EoN 节点可以表示多个物理设备和传感器，并为每个设备上传设备指标。ThingsBoard 从 Sparkplug 有效负载中解码设备指标，并将其存储为相应的设备 [属性](/docs/{{docsPrefix}}user-guide/attributes/) 或 [时序](/docs/{{docsPrefix}}user-guide/telemetry/) 数据。您还可以使用 [从共享属性更新到 MQTT EONDevice](#update-metrics-from-shared-attributes-to-mqtt-eondevice) 或 [rpc 命令](#update-metrics--using-the-thingsboard-rpc-command-from-server-to-mqtt-eondevice) 从服务器端向 Sparkplug 设备发出更新。
 
 {% capture difference %}
-**NOTE:**
+**注意：**
 <br>
-ThingsBoard supports **Sparkplug™ B** payloads only.
+ThingsBoard 仅支持 **Sparkplug™ B** 有效负载。
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-## Getting started
+## 入门
 
-This guide will teach us how to: connect Sparkplug EoN node to ThingsBoard,
-collect device metrics and store them as ThingsBoard time-series data,
-and push commands back to devices.
+本指南将教我们如何：将 Sparkplug EoN 节点连接到 ThingsBoard，收集设备指标并将它们存储为 ThingsBoard 时序数据，以及将命令推送到设备。
 
-### Step 1. Create device profile
+### 步骤 1. 创建设备配置文件
 
-First you need to create MQTT [device profile](/docs/{{docsPrefix}}user-guide/device-profiles/) for Sparkplug devices:
+首先，您需要为 Sparkplug 设备创建 MQTT [设备配置文件](/docs/{{docsPrefix}}user-guide/device-profiles/)：
 
-1. Navigate to *Profiles -> Device profiles* page and click on the "+" icon in the device profile table header to open the *Add device profile* dialog;
-2. Use *MQTT EoN Node* as profile name or any other meaningful value;
-3. Navigate to *Transport configuration* tab and select the *MQTT* transport type;
-4. Make sure you have selected the "MQTT Sparkplug B Edge of Network (EoN) node" checkbox;
-5. Input the names of Sparkplug metrics you would like to store as attributes instead of time-series data. 
-   This list should also include metrics you may want to update from the server side and push to the device.
-   Simple asterisk suffix is supported as a wildcard. For example: "Node Control/\*\", "Device Control/\*\", "Properties/\*\".
+1. 导航到 *配置文件 -> 设备配置文件* 页面，然后单击设备配置文件表标题中的“+”图标以打开 *添加设备配置文件* 对话框；
+2. 使用 *MQTT EoN 节点* 作为配置文件名称或任何其他有意义的值；
+3. 导航到 *传输配置* 选项卡并选择 *MQTT* 传输类型；
+4. 确保已选中“MQTT Sparkplug B 网络边缘 (EoN) 节点”复选框；
+5. 输入您希望存储为属性而不是时序数据的 Sparkplug 指标的名称。此列表还应包括您可能希望从服务器端更新并推送到设备的指标。支持简单的星号后缀作为通配符。例如：“节点控制/*”、“设备控制/*”、“属性/*”。
 
 {% include images-gallery.html imageCollection="sparkplug-create-device-profile" %}
 
-### Step 2. Configure the EoN node credentials
+### 步骤 2. 配置 EoN 节点凭据
 
-1. Navigate to *Entities -> Devices* page and click on the "+" icon in the device table header to open the *Add new device* dialog;
-2. Input your EoN node device name (e.g. *Node 1*) and select the existing device profile: *MQTT EoN Node*.
-3. Create device and navigate to the device details. Copy the access token. We will use it in the next step. Note that you may use other types of [credentials](/docs/{{docsPrefix}}user-guide/device-credentials/) as well.
+1. 导航到 *实体 -> 设备* 页面，然后单击设备表标题中的“+”图标以打开 *添加新设备* 对话框；
+2. 输入您的 EoN 节点设备名称（例如 *节点 1*）并选择现有设备配置文件：*MQTT EoN 节点*。
+3. 创建设备并导航到设备详细信息。复制访问令牌。我们将在下一步中使用它。请注意，您也可以使用其他类型的 [凭据](/docs/{{docsPrefix}}user-guide/device-credentials/)。
 
 {% include images-gallery.html imageCollection="sparkplug-create-device" %}
 
-### Step 3. Launch the EoN node emulator
+### 步骤 3. 启动 EoN 节点模拟器
 
-We have prepared sparkplug node [emulator](https://github.com/thingsboard/sparkplug-emulator) for the testing purposes.
-Let's launch it and connect to our platform instance. We will use access token credentials from the previous step:
+我们已经为测试目的准备了 sparkplug 节点 [模拟器](https://github.com/thingsboard/sparkplug-emulator)。让我们启动它并连接到我们的平台实例。我们将使用上一步中的访问令牌凭据：
 
 {% if docsPrefix == null %}
 ```bash
@@ -74,8 +56,7 @@ docker run -e SPARKPLUG_SERVER_URL='tcp://demo.thingsboard.io:1883' -e SPARKPLUG
 ```
 {: .copy-code}
 
-Don't forget to replace <code>YOUR_THINGSBOARD_DEVICE_TOKEN</code> with the actual value of the token.
-You should also replace <code>demo.thingsboard.io</code> with your server hostname.
+别忘了用令牌的实际值替换 <code>YOUR_THINGSBOARD_DEVICE_TOKEN</code>。您还应该用您的服务器主机名替换 <code>demo.thingsboard.io</code>。
 {% endif %}
 {% if docsPrefix == "pe/" %}
 ```bash
@@ -83,8 +64,7 @@ docker run -e SPARKPLUG_SERVER_URL='tcp://YOUR_SERVER_HOSTNAME:1883' -e SPARKPLU
 ```
 {: .copy-code}
 
-Don't forget to replace <code>YOUR_THINGSBOARD_DEVICE_TOKEN</code> with the actual value of the token.
-You should also replace <code>YOUR_SERVER_HOSTNAME</code> with your server hostname.
+别忘了用令牌的实际值替换 <code>YOUR_THINGSBOARD_DEVICE_TOKEN</code>。您还应该用您的服务器主机名替换 <code>YOUR_SERVER_HOSTNAME</code>。
 {% endif %}
 {% if docsPrefix == "paas/" %}
 ```bash
@@ -92,14 +72,13 @@ docker run -e SPARKPLUG_SERVER_URL='tcp://thingsboard.cloud:1883' -e SPARKPLUG_C
 ```
 {: .copy-code}
 
-Don't forget to replace <code>YOUR_THINGSBOARD_DEVICE_TOKEN</code> with the actual value of the token.
-You should also replace <code>thingsboard.cloud</code> with your server hostname.
+别忘了用令牌的实际值替换 <code>YOUR_THINGSBOARD_DEVICE_TOKEN</code>。您还应该用您的服务器主机名替换 <code>thingsboard.cloud</code>。
 {% endif %}
 
 {% capture difference %}
-**Please note**
+**请注意**
 <br>
-You can't use <code>localhost</code> as a <code>SPARKPLUG_SERVER_URL</code> inside the docker container.
+您不能在 docker 容器内使用 <code>localhost</code> 作为 <code>SPARKPLUG_SERVER_URL</code>。
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
@@ -113,7 +92,7 @@ You can't use <code>localhost</code> as a <code>SPARKPLUG_SERVER_URL</code> insi
 ![image](/images/reference/sparkplug/sparkplug-emulator-pe.png)
 {% endif %}
 
-Once the emulator will launch successfully, you should see the following messages:
+模拟器成功启动后，您应该会看到以下消息：
 
 ```shell
 2023-05-04 13:40:42,787 [pool-2-thread-1] INFO  o.t.sparkplug.SparkplugEmulation - Publishing [Sparkplug Node 1] NBIRTH
@@ -121,46 +100,40 @@ Once the emulator will launch successfully, you should see the following message
 2023-05-04 13:40:42,816 [pool-2-thread-1] INFO  o.t.sparkplug.SparkplugEmulation - Publishing [Sparkplug Device 2] DBIRTH
 ```
 
-### Step 4. Observe device metrics as attributes and telemetry
+### 步骤 4. 观察设备指标作为属性和遥测
 
-Navigate to the details of the EoN node device (e.g. *Node 1*) and open the *Latest telemetry* tab. You should see the device metrics, for example *Current Grid Voltage*.
-Navigate to the *Attributes* tab and select *Shared attributes* scope. You will see metrics that you have previously configured in the [Step 1](#step-1-create-device-profile) (item 5).
+导航到 EoN 节点设备（例如 *节点 1*）的详细信息并打开 *最新遥测* 选项卡。您应该会看到设备指标，例如 *当前电网电压*。导航到 *属性* 选项卡并选择 *共享属性* 范围。您将看到您之前在 [步骤 1](#step-1-create-device-profile)（第 5 项）中配置的指标。
 
 {% include images-gallery.html imageCollection="sparkplug-create-device-telemetry-and-attributes" %}
 
-Refresh the *Devices* page and note that two new Sparkplug devices are created by the emulator: "Sparkplug Device 1" and "Sparkplug Device 2". 
-Both devices have their own attributes and telemetry values that are generated by the emulator.  
+刷新 *设备* 页面并注意模拟器创建了两个新的 Sparkplug 设备：“Sparkplug 设备 1”和“Sparkplug 设备 2”。这两个设备都有自己的属性和遥测值，这些值由模拟器生成。
 
-Additionally, a separate device profile is created for the two new devices with a name consisting of your Sparkplug node's name + "device".
+此外，为这两个新设备创建了一个单独的设备配置文件，其名称由您的 Sparkplug 节点名称 + “设备”组成。
 
 {% include images-gallery.html imageCollection="sparkplug-create-two-devices" %}
 
-### Step 5. Push updates to Sparkplug metrics from Thingsboard server to MQTT EON and Device
+### 步骤 5. 将更新从 Thingsboard 服务器推送到 MQTT EON 和设备的 Sparkplug 指标
 
-You may push update to Sparkplug node/device metric from ThingsBoard via shared attribute update or RPC command. 
+您可以通过共享属性更新或 RPC 命令从 ThingsBoard 将更新推送到 Sparkplug 节点/设备指标。
 
-#### Update Metrics using shared attributes
+#### 使用共享属性更新指标
 
-ThingsBoard [Shared Attributes](/docs/{{docsPrefix}}user-guide/attributes/#shared-attributes) are used to deliver metric value updates to the device.
-You may change the shared attribute in multiple ways - via administration UI, dashboard widget, REST API, or rule engine node.
+ThingsBoard [共享属性](/docs/{{docsPrefix}}user-guide/attributes/#shared-attributes) 用于向设备传递指标值更新。您可以通过多种方式更改共享属性 - 通过管理 UI、仪表板小部件、REST API 或规则引擎节点。
 
 <br>
-Let's manually change the values of the attributes "*Outputs/LEDs/Green*" and "*Device Control/Scan Rate*".
+让我们手动更改属性“*输出/LED/绿色*”和“*设备控制/扫描速率*”的值。
 
-To change the value of the attribute "Outputs/LEDs/Green", you first need to add a particular metric to the *MQTT EoN Node* device profile to store it as a shared attribute instead of telemetry.
-In the *Transport сonfiguration* tab, add a new Sparkplug metric name — *"Outputs/\*\"*.
+要更改属性“输出/LED/绿色”的值，您首先需要将特定指标添加到 *MQTT EoN 节点* 设备配置文件中，以将其存储为共享属性而不是遥测。在 *传输配置* 选项卡中，添加一个新的 Sparkplug 指标名称 — “*输出/*”*。
 
 {% include images-gallery.html imageCollection="sparkplug-update-metrics-using-shared-attributes-1" %}
 
-Go back to the *Devices* page and select the *Sparkplug Device 1*.
-On the *Shared attributes* tab, you will see two new attributes: "*Outputs/LEDs/Green*" with the value "*true*" and "*Outputs/LEDs/Yellow*" with the value "*false*".
-These are metrics that are stored as attributes, and we can modify and send their values to the device.
+返回 *设备* 页面并选择 *Sparkplug 设备 1*。在 *共享属性* 选项卡上，您将看到两个新属性：“*输出/LED/绿色*”的值为“*true*”和“*输出/LED/黄色*”的值为“*false*”。这些是存储为属性的指标，我们可以修改并将其值发送到设备。
 
 {% include images-gallery.html imageCollection="sparkplug-update-metrics-using-shared-attributes-2" %}
 
-Click on the "pencil" icon and change the value of the attribute "*Outputs/LEDs/Green*" from "true" to "false" by unchecking the corresponding box. Then, click Update. An attribute with the name "*Outputs/LEDs/Green*" and the value "*false*" is sent from the server to the device "*Sparkplug Device 1*".
+单击“铅笔”图标并将属性“*输出/LED/绿色*”的值从“true”更改为“false”，方法是取消选中相应的框。然后，单击更新。一个名为“*输出/LED/绿色*”且值为“*false*”的属性从服务器发送到设备“*Sparkplug 设备 1*”。
 
-In the *Terminal* where the emulator is running, you should see the following messages:
+在运行模拟器的 *终端* 中，您应该会看到以下消息：
 
 ```shell
 2023-05-04 14:09:00,417 [MQTT Call: Sparkplug Node 1] INFO  o.t.sparkplug.SparkplugMqttCallback - Message Arrived on topic spBv1.0/Sparkplug Group 1/DCMD/Sparkplug Node 1/Sparkplug Device 1
@@ -168,13 +141,13 @@ In the *Terminal* where the emulator is running, you should see the following me
 2023-05-04 14:09:00,417 [MQTT Call: Sparkplug Node 1] INFO  o.t.sparkplug.SparkplugMqttCallback - Metric [Outputs/LEDs/Green] value [false]
 ```
 
-As you can see, the new attribute value for "*Outputs/LEDs/Green*" has been successfully sent to the device.
+如您所见，“*输出/LED/绿色*”的新属性值已成功发送到设备。
 
 {% include images-gallery.html imageCollection="sparkplug-update-metrics-using-shared-attributes-3" %}
 
-Now let's change the value of the "*Device Control/Scan Rate*" attribute. Click on the "pencil" icon and change the value from "*60000*" to "*30000*". Click Update.
+现在让我们更改“*设备控制/扫描速率*”属性的值。单击“铅笔”图标并将值从“*60000*”更改为“*30000*”。单击更新。
 
-When the new value for the "*Device Control/Scan Rate*" attribute is sent to the "*Sparkplug Device 1*" device, you will see the following messages in the *Terminal*:
+当“*设备控制/扫描速率*”属性的新值发送到“*Sparkplug 设备 1*”设备时，您将在 *终端* 中看到以下消息：
 
 ```shell
 2023-05-04 14:16:51,715 [MQTT Call: Sparkplug Node 1] INFO  o.t.sparkplug.SparkplugMqttCallback - Message Arrived on topic spBv1.0/Sparkplug Group 1/DCMD/Sparkplug Node 1/Sparkplug Device 1
@@ -184,25 +157,25 @@ When the new value for the "*Device Control/Scan Rate*" attribute is sent to the
 
 {% include images-gallery.html imageCollection="sparkplug-update-metrics-using-shared-attributes-4" %}
 
-The attribute values for "*Outputs/LEDs/Green*" and "*Device Control/Scan Rate*" have been changed and sent to the "*Sparkplug Device 1*" device.
+“*输出/LED/绿色*”和“*设备控制/扫描速率*”的属性值已更改并发送到“*Sparkplug 设备 1*”设备。
 
 {% include images-gallery.html imageCollection="sparkplug-update-metrics-using-shared-attributes-5" %}
 
-#### Update Metrics  using the ThingsBoard RPC command from server to MQTT EON/Device
+#### 使用 ThingsBoard RPC 命令从服务器更新指标到 MQTT EON/设备
 
-ThingsBoard supports on-demand update to metrics of the Sparkplug EoN Node or Device using RPC(Remote Procedure Call) feature. We also use term "command" instead of RPC for simplicity.
-You can send the command using REST API, dashboard widget, rule engine, or custom script.
-See the structure of the command is documented [here](/docs/{{docsPrefix}}user-guide/rpc/#server-side-rpc).
+ThingsBoard 支持使用 RPC（远程过程调用）功能按需更新 Sparkplug EoN 节点或设备的指标。我们还使用术语“命令”而不是 RPC 以简化。
+您可以使用 REST API、仪表板小部件、规则引擎或自定义脚本发送命令。
+有关命令的结构，请参阅此处记录 [here](/docs/{{docsPrefix}}user-guide/rpc/#server-side-rpc)。
 
-Key properties of the command are *method* and *params*.
-The *method* defines the Sparkplug operation and is one of the following:
+命令的关键属性是 *方法* 和 *参数*。
+*方法* 定义 Sparkplug 操作，可以是以下之一：
 
- * NCMD - command to the EoN Node;
- * DCMD - command to the EoN Device;
+ * NCMD - 命令到 EoN 节点；
+ * DCMD - 命令到 EoN 设备；
 
-The *params* is a JSON that defines the metric and the value.
+*参数* 是一个 JSON，用于定义指标和值。
 
-For example, to reboot the Sparkplug EoN *Node*, you should send the following command:
+例如，要重新启动 Sparkplug EoN *节点*，您应该发送以下命令：
 
   ```json
   {
@@ -212,7 +185,7 @@ For example, to reboot the Sparkplug EoN *Node*, you should send the following c
   ```
   {: .copy-code}
 
-To reboot the Sparkplug EoN *Device*, you should send the following command: 
+要重新启动 Sparkplug EoN *设备*，您应该发送以下命令： 
 
   ```json
   {
@@ -222,23 +195,23 @@ To reboot the Sparkplug EoN *Device*, you should send the following command:
   ```
   {: .copy-code}
 
-In this example, we will use the "*RPC Button*" widget to reboot *Sparkplug EoN Node*. See the step-by-step guide with screenshots below.
+在此示例中，我们将使用“*RPC 按钮*”小部件重新启动 *Sparkplug EoN 节点*。请参阅以下带有屏幕截图的分步指南。
 
-Go to the *Dashboards* page and create a new dashboard named *Sparkplug*. Open the dashboard and add new alias by clicking on *Entity aliases* icon.
-Name the alias (*EoN Node*, for example), select filter type "*Single Entity*", type "*Device*" and choose *Node 1*. Press Add and then Save.
+转到 *仪表板* 页面并创建一个名为 *Sparkplug* 的新仪表板。打开仪表板并通过单击 *实体别名* 图标添加新别名。
+将别名命名为（例如 *EoN 节点*），选择过滤器类型“*单个实体*”、“*设备*”并选择 *节点 1*。按添加，然后按保存。
 
 {% include images-gallery.html imageCollection="sparkplug-update-metrics-using-the-thingsboard-rpc-command-1" %}
 
-Now create a new widget. Click "Add new widget", select the *Control widgets* bundle from the drop-down menu and select the *RPC Button* widget. On the *Data* field select created alias (EoN Node). 
-Go to *Advanced* tab and enter *button label* - REBOOT NODE. In the *RPC settings* enter *RPC method* - "NCMD" (command to the EoN Node) and *RPC method params* - "*{"metricName": "Node Control/Reboot", "value": true}*". Click Add and save changes.
+现在创建一个新小部件。单击“添加新小部件”，从下拉菜单中选择 *控制小部件* 捆绑包，然后选择 *RPC 按钮* 小部件。在 *数据* 字段中选择创建的别名（EoN 节点）。
+转到 *高级* 选项卡并输入 *按钮标签* - REBOOT NODE。在 *RPC 设置* 中输入 *RPC 方法* - “NCMD”（命令到 EoN 节点）和 *RPC 方法参数* - “*{"metricName": "Node Control/Reboot", "value": true}*”。单击添加并保存更改。
 
 {% include images-gallery.html imageCollection="sparkplug-update-metrics-using-the-thingsboard-rpc-command-2" %}
 
-Now click "*REBOOT NODE*" button on the widget. RPC command with name "Node Control/Reboot" and value "true" is sent from the server to the node "*Sparkplug Node 1*".
+现在单击小部件上的“*REBOOT NODE*”按钮。RPC 命令名称为“Node Control/Reboot”且值为“true”从服务器发送到节点“*Sparkplug Node 1*”。
 
 {% include images-gallery.html imageCollection="sparkplug-update-metrics-using-the-thingsboard-rpc-command-3" %}
 
-In the *Terminal* where the emulator is running, you should see the following messages:
+在运行模拟器的 *终端* 中，您应该会看到以下消息：
 
 ```shell
 2023-05-04 14:27:02,215 [MQTT Call: Sparkplug Node 1] INFO  o.t.sparkplug.SparkplugMqttCallback - Message Arrived on topic spBv1.0/Sparkplug Group 1/NCMD/Sparkplug Node 1
@@ -246,8 +219,8 @@ In the *Terminal* where the emulator is running, you should see the following me
 2023-05-04 14:27:02,215 [MQTT Call: Sparkplug Node 1] INFO  o.t.sparkplug.SparkplugMqttCallback - Metric [Node Control/Reboot] value [true]
 ```
 
-The *Sparkplug EoN Node 1* has been rebooted.
+*Sparkplug EoN 节点 1* 已重新启动。
 
-## Next steps
+## 后续步骤
 
 {% assign currentGuide = "ConnectYourDevice" %}{% include templates/multi-project-guides-banner.md %}

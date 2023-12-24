@@ -1,14 +1,14 @@
 |---
-| **Parameter**             | **Example value**                            | **Description**                                                                |
+| **参数**             | **示例值**                            | **说明**                                                                |
 |:-|:-|-
-| *deviceName*              | **DEVICE_NAME**                              | Device name in ThingsBoard.                                                    |
-| *provisionDeviceKey*      | **PUT_PROVISION_KEY_HERE**                   | Provisioning device key, you should take it from configured device profile.    |
-| *provisionDeviceSecret*   | **PUT_PROVISION_SECRET_HERE**                | Provisioning device secret, you should take it from configured device profile. | 
-| credentialsType           | **ACCESS_TOKEN**                             | Credentials type parameter.                                                    |
-| token                     | **DEVICE_ACCESS_TOKEN**                      | Access token for device in ThingsBoard.                                        |
+| *deviceName*              | **DEVICE_NAME**                              | ThingsBoard 中的设备名称。                                                    |
+| *provisionDeviceKey*      | **PUT_PROVISION_KEY_HERE**                   | プロビジョニング デバイス キー。構成されたデバイス プロファイルから取得する必要があります。    |
+| *provisionDeviceSecret*   | **PUT_PROVISION_SECRET_HERE**                | プロビジョニング デバイス シークレット。構成されたデバイス プロファイルから取得する必要があります。 | 
+| credentialsType           | **ACCESS_TOKEN**                             | 資格情報の種類パラメータ。                                                    |
+| token                     | **DEVICE_ACCESS_TOKEN**                      | ThingsBoard のデバイスのアクセス トークン。                                        |
 |---
 
-Provisioning request data example:
+プロビジョニング要求データの例:
  
 ```json
 {
@@ -20,7 +20,7 @@ Provisioning request data example:
 }
 ```
 
-Provisioning response example:
+プロビジョニング応答の例:
 
 ```json
 {
@@ -31,31 +31,31 @@ Provisioning response example:
 ```
 
 
-#### Sample script
+#### サンプル スクリプト
 
-To communicate with ThingsBoard we will use Paho MQTT module, so we should install it:
+ThingsBoard と通信するには Paho MQTT モジュールを使用するため、インストールする必要があります:
 
 ```bash
 pip3 install paho-mqtt --user
 ```
 {: .copy-code}
 
-The script source code is available below. You may copy-paste it to a file, for example:
+スクリプトのソース コードを以下に示します。ファイルにコピー アンド ペーストできます。たとえば:
 
 ```bash
 device-provision-example.py
 ```
 {: .copy-code}
 
-Now you should run the script and follow the steps inside.  
-You may launch the script using python 3:  
+これでスクリプトを実行して、内部の手順に従う必要があります。  
+python 3 を使用してスクリプトを起動できます:  
 
 ```bash 
 python3 device-provision-example.py
 ```
 {: .copy-code}
 
-The script source code: 
+スクリプトのソース コード: 
 
 ```python
 
@@ -195,4 +195,3 @@ if __name__ == '__main__':
 
 ```
 {: .copy-code}
-

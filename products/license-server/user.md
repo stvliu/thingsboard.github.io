@@ -2,30 +2,28 @@
 layout: docwithnav-license
 assignees:
 - ashvayka
-title: User management via License portal
-description: Users in ThingsBoard License Server
+title: 通过许可证门户进行用户管理
+description: ThingsBoard 许可证服务器中的用户
 
 ---
 
 
-Single account on License server may create unlimited Users. Users page allows invite other users to your account. Each user within a single account have an access to both make new and edit existing subscription as long as managing the billing info. 
+许可证服务器上的单个帐户可以创建无限数量的用户。用户页面允许邀请其他用户加入您的帐户。单个帐户中的每个用户都可以访问创建新订阅和编辑现有订阅以及管理账单信息。
 
-The way for creating a new user as same as any customer os user account in ThingsBoard PE. Press ***Add User*** , fill the required fields and send the ***Activation link*** to the user.    
+创建新用户的方式与 ThingsBoard PE 中的任何客户或用户帐户相同。按 ***添加用户***，填写必填字段，然后将 ***激活链接*** 发送给用户。
 
- ![image](/images/license/users.png)     
+![image](/images/license/users.png)
 
-Within User management page you may log in as particular user or delete the user also. 
+在用户管理页面中，您还可以登录为特定用户或删除用户。
 
-### User Guide
+### 用户指南
 
- - **Launching TB PE using pay-as-you-go subscription**
- 
- - **Launching TB PE using perpetual license**
- 
- - **Migrating from AWS IoT Marketplace**
- 
- - **Upgrading your TB PE subscription** 
- 
- - **Moving ThingsBoard to another hardware instance** 
+- **使用按需付费订阅启动 TB PE**
 
+- **使用永久许可证启动 TB PE**
 
+- **从 AWS IoT Marketplace 迁移**
+
+- **升级您的 TB PE 订阅**
+
+- **将 ThingsBoard 移至另一个硬件实例**

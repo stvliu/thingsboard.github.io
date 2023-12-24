@@ -1,28 +1,28 @@
-Json converter is default converter, it looks for deviceName, deviceType, attributes and telemetry in the incoming request from the client, with rules, described in this subsection:
+Json 转换器是默认转换器，它在来自客户端的传入请求中查找 deviceName、deviceType、attributes 和 telemetry，并遵循本小节中描述的规则：
 
-|**Parameter**|**Default value**|**Description**|
+| **参数** | **默认值** | **说明** |
 |:-|:-|-
-| type                        | **json**                  | Provides information to connector that default converter will be uses for converting data from the incoming request.                                                     | 
-| deviceNameExpression        | **Device ${name}**        | Simple JSON expression, uses for looking device name in the incoming message (value of the parameter "name" from the request will be used as device name).               |
-| deviceTypeExpression        | **default**               | Simple JSON expression, uses for looking device type in the incoming message (string "default" will be used as device type).                                             |
-| attributes                  |                           | This subsection contains parameters of the incoming requests, that will be interpreted as attributes for the device.                                                     |
-| ... type                    | **string**                | Type of incoming data for a current attribute.                                                                                                                           |
-| ... key                     | **model**                 | Simple JSON expression, uses for looking key in the incoming data, that will send to ThingsBoard instance as attribute key.                                              |
-| ... value                   | **${sensorModel}**        | Simple JSON expression, uses for looking value in the incoming data, that will send to ThingsBoard instance as value of key parameter.                                   |
-| timeseries                  |                           | This subsection contains parameters of the incoming message, that will be interpreted as telemetry for the device.                                                       |
-| ... type                    | **double**                | Type of incoming data for a current telemetry.                                                                                                                           |
-| ... key                     | **temperature**           | Simple JSON expression, uses for looking key in the incoming message, that will send to ThingsBoard instance as attribute key.                                           |
-| ... value                   | **${temp}**               | Simple JSON expression, uses for looking value in the incoming message, that will send to ThingsBoard instance as value of key parameter.                                |
-|--- 
+| type | **json** | 向连接器提供信息，表明默认转换器将用于转换来自传入请求的数据。 |
+| deviceNameExpression | **Device ${name}** | 简单 JSON 表达式，用于在传入消息中查找设备名称（请求中参数“name”的值将用作设备名称）。 |
+| deviceTypeExpression | **default** | 简单 JSON 表达式，用于在传入消息中查找设备类型（字符串“default”将用作设备类型）。 |
+| attributes | | 本小节包含传入请求的参数，这些参数将被解释为设备的属性。 |
+| ... type | **string** | 当前属性的传入数据类型。 |
+| ... key | **model** | 简单 JSON 表达式，用于在传入数据中查找键，该键将作为属性键发送到 ThingsBoard 实例。 |
+| ... value | **${sensorModel}** | 简单 JSON 表达式，用于在传入数据中查找值，该值将作为键参数的值发送到 ThingsBoard 实例。 |
+| timeseries | | 本小节包含传入消息的参数，这些参数将被解释为设备的遥测数据。 |
+| ... type | **double** | 当前遥测数据的传入数据类型。 |
+| ... key | **temperature** | 简单 JSON 表达式，用于在传入消息中查找键，该键将作为属性键发送到 ThingsBoard 实例。 |
+| ... value | **${temp}** | 简单 JSON 表达式，用于在传入消息中查找值，该值将作为键参数的值发送到 ThingsBoard 实例。 |
+|---
 
 {% capture difference %}
 <br>
-**Parameters in attributes and telemetry section may differ from those presented above, but will have the same structure.**  
+**attributes 和 telemetry 部分中的参数可能与上面显示的参数不同，但结构相同。**
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
 
-Mapping subsection looks like:
+映射小节如下所示：
 
 ```json
     {
@@ -63,7 +63,7 @@ Mapping subsection looks like:
     }
 ```
 
-Also, you can combine values from MQTT message in attributes, telemetry and serverSideRpc section, for example:
+此外，您还可以将 MQTT 消息中的值组合在 attributes、telemetry 和 serverSideRpc 部分中，例如：
 {% highlight json %}
 {
       "endpoint": "/test_device",

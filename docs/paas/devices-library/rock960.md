@@ -1,9 +1,9 @@
 ---
 layout: devices-library-article
-title: How to connect Rock960 to ThingsBoard?
-category: Single-board computers
+title: 如何将 Rock960 连接到 ThingsBoard？
+category: 单板计算机
 chip: Rockchip RK3399
-connectivity: WIFI, Bluetooth, Ethernet
+connectivity: WIFI，蓝牙，以太网
 vendor: 96Boards
 deviceImageFileName: rock960.jpg
 docsPrefix: paas/

@@ -1,24 +1,23 @@
 ---
 layout: docwithnav-gw
-title: XMPP Connector Configuration
-description: XMPP protocol support for ThingsBoard IoT Gateway
+title: XMPP 连接器配置
+description: ThingsBoard IoT 网关的 XMPP 协议支持
 
 ---
 
 * TOC
 {:toc}
 
-This guide will help you to get familiar with MQTT Connector configuration for ThingsBoard IoT Gateway.
-Use [general configuration](/docs/iot-gateway/configuration/) to enable this Connector.
-The purpose of this connector is to collect data from IoT devices using XMPP protocol.
+本指南将帮助您熟悉 ThingsBoard IoT 网关的 MQTT 连接器配置。
+使用 [常规配置](/docs/iot-gateway/configuration/) 启用此连接器。
+此连接器的目的是使用 XMPP 协议从 IoT 设备收集数据。
 
-We will describe connector configuration file below.
+我们将在下面描述连接器配置文件。
 
-## Connector configuration: xmpp.json
-Connector configuration is a JSON file that contains information about how to connect to devices, how to process
-the data and other service features. Let’s review the format of the configuration file using example below.
+## 连接器配置：xmpp.json
+连接器配置是一个 JSON 文件，其中包含有关如何连接到设备、如何处理数据以及其他服务功能的信息。让我们使用下面的示例来回顾配置文件的格式。
 
-<b>Example of XMPP Connector config file.</b>
+<b>XMPP 连接器配置文件示例。</b>
 
 {% capture xmppConf %}
 {
@@ -77,24 +76,24 @@ the data and other service features. Let’s review the format of the configurat
 {% endcapture %}
 {% include code-toggle.liquid code=xmppConf params="conf|.copy-code.expandable-20" %}
 
-### Section "server"
+### “服务器”部分
 
-This configuration section using for configure Gateway XMPP device and connection to XMPP server. 
+此配置部分用于配置网关 XMPP 设备和与 XMPP 服务器的连接。
 
-| **Parameter**     | **Default value**                    | **Description**                                                                                     |
+| **参数**     | **默认值**                    | **说明**                                                                                     |
 |:-|:-|-
-| jid             | **gateway@localhost**                  | The JID of the XMPP user account.                                                                   |
-| password        | **password**                           | The password for the XMPP user account.                                                             |
-| host            |  **localhost**                         | The host of XMPP server.                                                                            |
-| port            | **5222**                               | The port of XMPP server.                                                                            |
-| use_ssl         | **false**                              | Indicates if the older SSL connection method should be used.                                        |
-| disableStarttls | **false**                              | Disables TLS for the connection.                                                                    |
-| forceStarttls   | **true**                               | Indicates that negotiation should be aborted if the server does not advertise support for STARTTLS. |
+| jid             | **gateway@localhost**                  | XMPP 用户帐户的 JID。                                                                   |
+| password        | **password**                           | XMPP 用户帐户的密码。                                                                   |
+| host            |  **localhost**                         | XMPP 服务器的主机。                                                                            |
+| port            | **5222**                               | XMPP 服务器的端口。                                                                            |
+| use_ssl         | **false**                              | 指示是否应使用较旧的 SSL 连接方法。                                                        |
+| disableStarttls | **false**                              | 禁用连接的 TLS。                                                                            |
+| forceStarttls   | **true**                               | 指示如果服务器未宣传对 STARTTLS 的支持，则应中止协商。                                |
 | timeout         | **10000**                              |  |
-| plugins         | **["xep_0030","xep_0323","xep_0325"]** | List of plugins that will be registered by client. |
+| plugins         | **["xep_0030","xep_0323","xep_0325"]** | 客户端将注册的插件列表。 |
 |---
 
-Configuration section will look like:
+配置部分将如下所示：
 ```json
 {
   "server": {
@@ -115,29 +114,28 @@ Configuration section will look like:
 }
 ```
 
-### Section "devices"
+### “设备”部分
 
-This configuration section contains an array of devices that can be connected to the connector and
-send the data. It is mean that connector reject all device connections, which JID is not included in this array.
+此配置部分包含一个可以连接到连接器并发送数据的设备数组。这意味着连接器拒绝所有设备连接，其 JID 不包含在此数组中。
 
-#### Device subsection
+#### 设备子部分
 
-This object configuration section includes the parameters of how to proceed with incoming data.
+此对象配置部分包括有关如何处理传入数据的信息。
 
-| **Parameter**        | **Default value**             | **Description**                                                                                                                       |
+| **参数**        | **默认值**             | **说明**                                                                                                                       |
 |:-|:-|-
-| jid                  | **device@localhost/TMP_1101** | The JID of the XMPP user account.                                                                                                     |
-| deviceNameExpression | **${serialNumber}**           | JSON-path expression, for looking the device name.                                                                                    |
-| deviceTypeExpression | **${sensorType}**             | JSON-path expression, for looking the device type.                                                                                    |
-| attributes           |                               | This subsection contains parameters of the incoming requests, that will be interpreted as attributes for the device.                  |
-| ... key              | **temperature**               | Name for attribute in ThingsBoard.                                                                                                    |
-| ... value            | **${temp}**                   | Simple JSON expression, uses for looking value in the incoming message, to be sent to ThingsBoard instance as value of key parameter. |
-| timeseries           |                               | This subsection contains parameters of the incoming message, that will be interpreted as telemetry for the device.                    |
-| ... key              | **humidity**                  | Name for telemetry in ThingsBoard.                                                                                                    |
-| ... value            | **${hum}**                    | Simple JSON expression, uses for looking value in the incoming message, to be sent to ThingsBoard instance as value of key parameter. |
+| jid                  | **device@localhost/TMP_1101** | XMPP 用户帐户的 JID。                                                                                                     |
+| deviceNameExpression | **${serialNumber}**           | JSON 路径表达式，用于查找设备名称。                                                                                    |
+| deviceTypeExpression | **${sensorType}**             | JSON 路径表达式，用于查找设备类型。                                                                                    |
+| attributes           |                               | 此子部分包含传入请求的参数，这些参数将被解释为设备的属性。                                                               |
+| ... key              | **temperature**               | ThingsBoard 中的属性名称。                                                                                                    |
+| ... value            | **${temp}**                   | 简单 JSON 表达式，用于在传入消息中查找值，以作为 key 参数的值发送到 ThingsBoard 实例。                                |
+| timeseries           |                               | 此子部分包含传入消息的参数，这些参数将被解释为设备的遥测。                                                               |
+| ... key              | **humidity**                  | ThingsBoard 中的遥测名称。                                                                                                    |
+| ... value            | **${hum}**                    | 简单 JSON 表达式，用于在传入消息中查找值，以作为 key 参数的值发送到 ThingsBoard 实例。                                |
 |---
 
-Example:
+示例：
 ```json
 {
   "jid": "device@localhost/TMP_1101",
@@ -162,22 +160,19 @@ Example:
 }
 ```
 
-#### Attribute updates subsection
+#### 属性更新子部分
 
-This configuration section is optional. ThingsBoard allows provisioning device attributes and fetch some of them from 
-the device application. You can treat this as a remote configuration for devices. Your devices are able to request 
-shared attributes from ThingsBoard. See user guide for more details.
+此配置部分是可选的。ThingsBoard 允许配置设备属性并从设备应用程序中获取其中一些属性。您可以将其视为设备的远程配置。您的设备能够从 ThingsBoard 请求共享属性。有关更多详细信息，请参阅用户指南。
 
-The “attributeUpdates” configuration allows configuring the format of the corresponding attribute data that will be 
-sending to the XMPP device.
+“attributeUpdates”配置允许配置将发送到 XMPP 设备的相应属性数据格式。
 
-| **Parameter**           | **Default value**                               | **Description**                                                                   |
+| **参数**           | **默认值**                               | **说明**                                                                   |
 |:-|:-|-
-| attributeOnThingsBoard  | **sharedName**                                  | Shared attribute name.                                                            |
-| valueExpression         | **{\"${attributeKey}\":\"${attributeValue}\"}** | JSON-path expression uses for creating the message data that will send to device. |
+| attributeOnThingsBoard  | **sharedName**                                  | 共享属性名称。                                                            |
+| valueExpression         | **{\"${attributeKey}\":\"${attributeValue}\"}** | 用于创建将发送到设备的消息数据的 JSON 路径表达式。 |
 |---
 
-This section in configuration file looks like: 
+配置文件中的此部分如下所示：
 ```json
 "attributeUpdates": [
   {
@@ -187,20 +182,20 @@ This section in configuration file looks like:
 ]
 ```
 
-#### Server side RPC subsection
+#### 服务器端 RPC 子部分
 
-ThingsBoard allows sending RPC commands to the device that is connected to ThingsBoard directly or via Gateway.
+ThingsBoard 允许将 RPC 命令直接或通过网关发送到连接到 ThingsBoard 的设备。
 
-Configuration, provided in this section uses for sending RPC requests from ThingsBoard to device.
+此部分中提供的配置用于将 RPC 请求从 ThingsBoard 发送到设备。
 
-| **Parameter**           | **Default value**    | **Description**                                                                   |
+| **参数**           | **默认值**    | **说明**                                                                   |
 |:-|:-|-
-| methodRPC               | **rpcMethod1**       | RPC method name.                                                                  |
-| withResponse            | **true**             | Boolean value that means as send or not response back to ThingsBoard.             |
-| valueExpression         | **${params}**        | JSON-path expression uses for creating the message data that will send to device. |
+| methodRPC               | **rpcMethod1**       | RPC 方法名称。                                                                  |
+| withResponse            | **true**             | 布尔值，表示是否向 ThingsBoard 发送响应。                                            |
+| valueExpression         | **${params}**        | 用于创建将发送到设备的消息数据的 JSON 路径表达式。 |
 |---
 
-This subsection in configuration file looks like:
+配置文件中的此子部分如下所示：
 
 ```json
 "serverSideRpc": [
@@ -212,12 +207,12 @@ This subsection in configuration file looks like:
 ]
 ```
 
-## Next steps
+## 后续步骤
 
-Explore guides related to main ThingsBoard features:
+探索与 ThingsBoard 主要功能相关的指南：
 
- - [Data Visualization](/docs/user-guide/visualization/) - how to visualize collected data.
- - [Device attributes](/docs/user-guide/attributes/) - how to use device attributes.
- - [Telemetry data collection](/docs/user-guide/telemetry/) - how to collect telemetry data.
- - [Using RPC capabilities](/docs/user-guide/rpc/) - how to send commands to/from devices.
- - [Rule Engine](/docs/user-guide/rule-engine/) - how to use rule engine to analyze data from devices.
+- [数据可视化](/docs/user-guide/visualization/) - 如何可视化收集的数据。
+- [设备属性](/docs/user-guide/attributes/) - 如何使用设备属性。
+- [遥测数据收集](/docs/user-guide/telemetry/) - 如何收集遥测数据。
+- [使用 RPC 功能](/docs/user-guide/rpc/) - 如何向设备发送/从设备接收命令。
+- [规则引擎](/docs/user-guide/rule-engine/) - 如何使用规则引擎分析来自设备的数据。

@@ -1,23 +1,23 @@
-We will update "Edge Root Rule Chain" that will be saving on the edge 10 sensor readings. 
-In the rule chain we add rule node that transforms incoming messages and pushes to the cloud message only with distance readings.
-Here is the final configuration of the edge root rule chain:
+我们将更新“边缘根规则链”，该链将在边缘保存 10 个传感器读数。
+在规则链中，我们添加了规则节点，该节点转换传入的消息，并仅将带有距离读数的消息推送到云消息。
+以下是边缘根规则链的最终配置：
 
 {% include images-gallery.html imageCollection="rootRuleChainPreview" %}
 
-In the next steps we are going to create **JavaScript** node to filter data. 
-JavaScript for script node will create an empty object *newMsg*, add property "distance" with corresponding value from the "In-vehicle monitoring system" and send further object *newMsg* as a new message:
+在接下来的步骤中，我们将创建 **JavaScript** 节点来过滤数据。
+脚本节点的 JavaScript 将创建一个空对象 *newMsg*，添加具有来自“车载监控系统”的相应值的属性“distance”，并将进一步的对象 *newMsg* 作为新消息发送：
 
 {% highlight javascript %}
 var newMsg = {};
 newMsg.distance = msg.distance;
 return { msg: newMsg, metadata: metadata, msgType: msgType }; {% endhighlight %}
 
-Please use this snippet in the next steps, if required.
+如果需要，请在接下来的步骤中使用此代码段。
 
-Here are the steps to update default edge "Root Rule Chain" to the rule chain above:
+以下是将默认边缘“根规则链”更新为上述规则链的步骤：
 
 {% include images-gallery.html imageCollection="updateRootRuleChain" showListImageTitles="true" %}
 
-Now let's open ThingsBoard **Edge** UI to see updated root rule chain:
+现在，让我们打开 ThingsBoard **Edge** UI 来查看更新的根规则链：
 
 {% include images-gallery.html imageCollection="updateRootRuleChainEdge" showListImageTitles="true" %}

@@ -2,8 +2,8 @@
 layout: docwithnav-paas
 assignees:
 - ashvayka
-title: Widget Actions
-description: ThingsBoard Dashboard Widget Actions
+title: 小部件操作
+description: ThingsBoard 仪表板小部件操作
 entity-sources:
     0:
         image: /images/user-guide/ui/widgets/actions/entity-cards/entity-sources-1-pe.png
@@ -397,8 +397,3 @@ dialog-window-1:
 entityfromwidget:
     0:
         image: /images/user-guide/ui/widgets/actions/settings/entityfromwidget-pe.png
-
----
-
-{% assign docsPrefix = "paas/" %}
-{% include docs/user-guide/ui/widget-actions.md %}

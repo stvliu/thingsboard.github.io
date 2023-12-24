@@ -1,24 +1,24 @@
 * TOC
 {:toc}
 
-#### Overview
+#### 概述
 
-Edge Over-the-air updates are designed in the same way, as [Platform (Cloud) OTA Updates](/docs/{{cloudDocsPrefix}}user-guide/ota-updates/).
-Please read *Platform* OTA Updates documentation to get knowledge on OTA Updates functionality in general.
+边缘空中更新的设计方式与 [平台（云）OTA 更新](/docs/{{cloudDocsPrefix}}user-guide/ota-updates/) 相同。
+请阅读 *平台* OTA 更新文档以了解有关 OTA 更新功能的总体知识。
 
-#### Propagation OTA Packages to Edge
+#### 将 OTA 软件包传播到边缘
 
-OTA Packages are created on the *Platform*. In the current version you **can not** create, modify or delete them on the *Edge*.
+OTA 软件包在 *平台* 上创建。在当前版本中，您**不能**在 *边缘* 上创建、修改或删除它们。
 
-All the OTA firmware and software packages, that are created on the Platform, are automatically propagated to every Edge instance, that is connected to the Platform. 
-No additional assignment actions required from Tenant administrator or user.
+在平台上创建的所有 OTA 固件和软件包都会自动传播到连接到平台的每个边缘实例。
+租户管理员或用户无需执行其他分配操作。
 
-#### OTA Usage in the Device or Device Profile configurations
+#### 在设备或设备配置文件配置中使用 OTA
 
-OTA Packages on the *Edge* can be used in Device or Device Profile configurations, in the same way as it used for *Platform* Device or Device Profile configurations.
+*边缘* 上的 OTA 软件包可以在设备或设备配置文件配置中使用，与用于 *平台* 设备或设备配置文件配置的方式相同。
 
-Usage of these packages on the *Edge* is the same as on *Platform*, so you can follow [*Platform* documentation](/docs/{{cloudDocsPrefix}}user-guide/ota-updates/). 
- 
-## Next steps
+在 *边缘* 上使用这些软件包与在 *平台* 上相同，因此您可以按照 [*平台* 文档](/docs/{{cloudDocsPrefix}}user-guide/ota-updates/) 进行操作。
+
+## 后续步骤
 
 {% include templates/edge/guides-banner-edge.md %}

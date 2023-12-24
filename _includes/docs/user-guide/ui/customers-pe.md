@@ -1,70 +1,70 @@
 * TOC
 {:toc}
 
-## Introduction
+## 简介
 
-A Customer can be a separate business-entity: an individual, or an organization that purchases or uses tenant devices and/or assets. 
-Customer can also be a division within the tenant organization. 
-Customer can have multiple users, inner customers, and millions of devices and/or assets.
+客户可以是独立的业务实体：个人或购买或使用租户设备和/或资产的组织。
+客户也可以是租户组织内的部门。
+客户可以拥有多个用户、内部客户以及数百万台设备和/或资产。
 
-[Tenant administrators](/docs/{{docsPrefix}}user-guide/ui/tenants/) can create customer groups and customers. 
-In turn, customers have an opportunity to add and edit their own customers, users, assets, devices, entity views, and dashboards.
-All of these you and your customers are able to do in the user details:
-to manage such options as customer groups, [user groups](/docs/{{docsPrefix}}user-guide/ui/users/), [asset groups](/docs/{{docsPrefix}}user-guide/ui/assets/),
-[device groups](/docs/{{docsPrefix}}user-guide/ui/devices/), [entity view groups](/docs/{{docsPrefix}}user-guide/entity-views/),
-[dashboard groups](/docs/{{docsPrefix}}user-guide/dashboards/), [edges](/docs/pe/edge/), and [delete a customer](#delete-customer).
+[租户管理员](/docs/{{docsPrefix}}user-guide/ui/tenants/) 可以创建客户组和客户。
+反过来，客户有机会添加和编辑他们自己的客户、用户、资产、设备、实体视图和仪表板。
+您和您的客户都可以在用户详细信息中执行所有这些操作：
+管理客户组、[用户组](/docs/{{docsPrefix}}user-guide/ui/users/)、[资产组](/docs/{{docsPrefix}}user-guide/ui/assets/)、
+[设备组](/docs/{{docsPrefix}}user-guide/ui/devices/)、[实体视图组](/docs/{{docsPrefix}}user-guide/entity-views/)、
+[仪表板组](/docs/{{docsPrefix}}user-guide/dashboards/)、[边缘](/docs/pe/edge/) 和 [删除客户](#delete-customer) 等选项。
 
 
-## Create new customer
+## 创建新客户
 
-The tenant administrator can add a new customer using the following steps.
+租户管理员可以使用以下步骤添加新客户。
 
 {% include images-gallery.html imageCollection="customer-add-new-pe" showListImageTitles="true" %}
 
-In this case, the new customer will be located in the "All" customer's group.
-You can specify a separate group during the process of creating a customer.
+在这种情况下，新客户将位于“全部”客户组中。
+您可以在创建客户的过程中指定一个单独的组。
 
-Let's create another client and a separate customer group for it.
+让我们为其创建另一个客户端和一个单独的客户组。
 
 {% include images-gallery.html imageCollection="customer-add-new-2-pe" showListImageTitles="true" %}
 
-Read more information about entity groups [here](/docs/{{docsPrefix}}user-guide/groups/).
+[此处](/docs/{{docsPrefix}}user-guide/groups/) 了解更多有关实体组的信息。
 
-## Create customer user
+## 创建客户用户
 
-The tenant administrator can add a customer user to his account with limited permissions. Permissions for the new customer user can be configured later with the help of [Roles](/docs/{{docsPrefix}}user-guide/rbac/).
+租户管理员可以向其帐户添加具有有限权限的客户用户。新客户用户的权限以后可以使用 [角色](/docs/{{docsPrefix}}user-guide/rbac/) 进行配置。
 
 {% include images-gallery.html imageCollection="add-customer-user" showListImageTitles="true" %}
 
-## Edit customer or customer user
+## 编辑客户或客户用户
 
-The Tenant administrator can edit the title, specify a home dashboard and edit the rest of the fields for the customer.
-Let’s see how to do this:
+租户管理员可以编辑标题、指定主页仪表板并编辑客户的其余字段。
+让我们看看如何做到这一点：
 
 {% include images-gallery.html imageCollection="edit-customer-pe" showListImageTitles="true" %}
 
-Also, you can edit customer user information.
+此外，您还可以编辑客户用户信息。
 
-The steps are similar to how we edit the customer:
+步骤与我们编辑客户的方式类似：
 
 {% include images-gallery.html imageCollection="edit-customer-user" showListImageTitles="true" %}
 
-## Delete customer or customer user
+## 删除客户或客户用户
 
-The tenant administrator can delete a customer along with all its customer users using one of the following ways:
+租户管理员可以使用以下方式之一删除客户及其所有客户用户：
 
-First way:
+第一种方式：
 
 {% include images-gallery.html imageCollection="delete-customer-pe" showListImageTitles="true" %}
 
-Second way:
+第二种方式：
 
 {% include images-gallery.html imageCollection="delete-customer-2-pe" showListImageTitles="true" %}
 
-You can also delete multiple customers at once.
+您还可以一次删除多个客户。
 
 {% include images-gallery.html imageCollection="delete-customer-3-pe" showListImageTitles="true" %}
 
-Also, you can delete any customer user from the customer. The steps are the same as when deleting a customer.
+此外，您还可以从客户中删除任何客户用户。步骤与删除客户时相同。
 
 {% include images-gallery.html imageCollection="delete-customer-user-1" showListImageTitles="true" %}

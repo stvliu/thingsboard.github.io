@@ -1,11 +1,11 @@
 {% capture redis-notice %}
-If you use Redis for caching, you need to flush all stored keys before starting the ThingsBoard.
+如果您使用 Redis 进行缓存，则需要在启动 ThingsBoard 之前刷新所有存储的键。
 
-Connect to your Redis instance (or container/pod, depending on your setup) and run the command: 
+连接到您的 Redis 实例（或容器/pod，具体取决于您的设置），然后运行命令：
 
 `redis-cli flushall`
 
-Please note that this command is applicable only if you use Redis exclusively for ThingsBoard. If other applications use Redis, you need to locate the ThingsBoard database and flush only that. The default database index is 0, configurable with REDIS_DB <a style="pointer-events: all;" href="/docs/user-guide/install/config/">ThingsBoard environment value</a>.
+请注意，此命令仅适用于您将 Redis 专用于 ThingsBoard 的情况。如果其他应用程序使用 Redis，则需要找到 ThingsBoard 数据库并仅刷新该数据库。默认数据库索引为 0，可通过 REDIS_DB <a style="pointer-events: all;" href="/docs/user-guide/install/config/">ThingsBoard 环境值</a>进行配置。
 
 `redis-cli`
 
@@ -15,4 +15,3 @@ Please note that this command is applicable only if you use Redis exclusively fo
  
 {% endcapture %}
 {% include templates/info-banner.md content=redis-notice %}
-

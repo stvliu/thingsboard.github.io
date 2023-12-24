@@ -5,69 +5,69 @@
 {% assign peDocsPrefix = docsPrefix %}
 {% endif %}
 
-## Duplicate To Group Node
+## 复制到组节点
 
-{% assign feature = "PE Transformation Nodes" %}{% include templates/pe-feature-banner.md %}
+{% assign feature = "PE 转换节点" %}{% include templates/pe-feature-banner.md %}
 
 <table  style="width:250px;">
    <thead>
      <tr>
-	 <td style="text-align: center"><strong><em>Since TB Version 2.1</em></strong></td>
+	 <td style="text-align: center"><strong><em>自 TB 版本 2.1 起</em></strong></td>
      </tr>
    </thead>
 </table> 
 
 ![image](/images/user-guide/rule-engine-2-0/pe/nodes/transformation-duplicate-to-group.png)
 
-Duplicates message to all entities belonging to specific [Entity Group](/docs/{{peDocsPrefix}}user-guide/groups/).
+将消息复制到属于特定 [实体组](/docs/{{peDocsPrefix}}user-guide/groups/) 的所有实体。
 
-Entities are fetched from Entity Group detected according to the configuration.
+根据配置检测到的实体组获取实体。
 
-Entity Group can be specified directly or can be message originator entity itself.
+可以指定实体组，也可以指定消息发起者实体本身。
 
-For each entity from group new message is created with entity as originator and message parameters copied from original message.
+对于组中的每个实体，都会创建一个新消息，其中实体作为发起者，消息参数从原始消息复制。
 
-Configuration:
+配置：
 
 ![image](/images/user-guide/rule-engine-2-0/pe/nodes/transformation-duplicate-to-group-config.png)
 
-- **Entity group is message originator** - if set, message originator will be considered as Entity Group used to fetch entities.
-  In this case incoming message will be routed via **Failure** chain if message originator type is not Entity Group.
-- **Target entity group** - specific target Entity Group used to fetch entities.
+- **实体组是消息发起者** - 如果设置，则消息发起者将被视为用于获取实体的实体组。
+  在这种情况下，如果消息发起者类型不是实体组，则传入消息将通过 **失败** 链路路由。
+- **目标实体组** - 用于获取实体的特定目标实体组。
 
-New messages will be duplicated to group entities and forwarded via **Success** chain if target Entity Group is detected successfully and contains at least one entity.
-Otherwise original message will be forwarded via **Failure** chain.
+如果成功检测到目标实体组并且其中至少包含一个实体，则新消息将复制到组实体并通过 **成功** 链路转发。
+否则，原始消息将通过 **失败** 链路转发。
 
 <br>
 
-## Duplicate To Related Node
+## 复制到相关节点
 
-{% assign feature = "PE Transformation Nodes" %}{% include templates/pe-feature-banner.md %}
+{% assign feature = "PE 转换节点" %}{% include templates/pe-feature-banner.md %}
 
 <table  style="width:250px;">
    <thead>
      <tr>
-	 <td style="text-align: center"><strong><em>Since TB Version 2.1</em></strong></td>
+	 <td style="text-align: center"><strong><em>自 TB 版本 2.1 起</em></strong></td>
      </tr>
    </thead>
 </table> 
 
 ![image](/images/user-guide/rule-engine-2-0/pe/nodes/transformation-duplicate-to-related.png)
 
-Duplicates message to related entities fetched by relation query.
+将消息复制到通过关系查询获取的相关实体。
 
-Related Entities found using configured relation direction and Relation Type.
+使用配置的关系方向和关系类型找到相关实体。
 
-For each found related entity new message is created with related entity as originator and message parameters copied from original message.
+对于每个找到的相关实体，都会创建一个新消息，其中相关实体作为发起者，消息参数从原始消息复制。
 
-Configuration:
+配置：
 
 ![image](/images/user-guide/rule-engine-2-0/pe/nodes/transformation-duplicate-to-related-config.png)
 
-- **Relations query** - query used to find new entities starting from incoming message originator.
-  In ‘Relations query’ configuration Administrator can select required **Direction** and **relation depth level**. Also set of **Relation filters** can be configured with required Relation type and Entity Types.
+- **关系查询** - 用于从传入消息发起者开始查找新实体的查询。
+  在“关系查询”配置中，管理员可以选择所需的 **方向** 和 **关系深度级别**。还可以使用所需的关系类型和实体类型配置一组 **关系过滤器**。
 
-New messages will be duplicated to found entities and forwarded via **Success** chain if at least one entity will be found using Relations Query.
-Otherwise original message will be forwarded via **Failure** chain.
+如果使用关系查询至少找到一个实体，则新消息将复制到找到的实体并通过 **成功** 链路转发。
+否则，原始消息将通过 **失败** 链路转发。
 
 <br>

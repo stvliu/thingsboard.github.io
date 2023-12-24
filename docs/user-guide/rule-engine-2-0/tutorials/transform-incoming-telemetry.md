@@ -1,40 +1,40 @@
 ---
 layout: docwithnav
-title: Transform incoming telemetry
-description: Transform incoming telemetry
+title: 转换传入遥测数据
+description: 转换传入遥测数据
 ---
 
 * TOC
 {:toc}
 
-## Use case
+## 使用案例
 
-Let's assume your device is using custom sensor to collect and push temperature readings to ThingsBoard. 
-This sensor collects temperature readings in °F and you would like to convert them to °C before storage into the database and visualization.
+假设你的设备使用自定义传感器来收集并将温度读数推送到 ThingsBoard。
+此传感器以 °F 为单位收集温度读数，你想在将温度读数存储到数据库和可视化之前将其转换为 °C。
 
-In this tutorial we will configure ThingsBoard Rule Engine to modify temperature readings according to a formula:
+在本教程中，我们将配置 ThingsBoard 规则引擎以根据以下公式修改温度读数：
 
 ```code
 [°C] = ([°F] - 32) × 5/9.
 ```
 
-## Prerequisites
+## 先决条件
 
-We assume you have completed the following guides and reviewed the articles listed below:
+我们假设你已完成以下指南并阅读了以下文章：
 
-  * [Getting Started](/docs/getting-started-guides/helloworld/) guide.
-  * [Rule Engine Overview](/docs/user-guide/rule-engine-2-0/overview/).
+  * [入门](/docs/getting-started-guides/helloworld/) 指南。
+  * [规则引擎概述](/docs/user-guide/rule-engine-2-0/overview/)。
 
-## Step 1: Adding temperature transformation node
+## 步骤 1：添加温度转换节点
 
-We will modify default rule chain and will add [**transformation**](/docs/user-guide/rule-engine-2-0/transformation-nodes/#script-transformation-node) rule node with temperature transformation script. 
-We will place this rule node between default "message type switch" and "save timeseries" rule nodes.
-Please note that we have removed irrelevant rule nodes from the root rule chain as well.
+我们将修改默认规则链，并将添加带有温度转换脚本的 [**转换**](/docs/user-guide/rule-engine-2-0/transformation-nodes/#script-transformation-node) 规则节点。
+我们将此规则节点放在默认“消息类型开关”和“保存时序”规则节点之间。
+请注意，我们还从根规则链中删除了不相关的规则节点。
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/transformation/rule-chain.png)
 
-Let's assume the data that arrive to a system may or may not have the "temperature" field. 
-We will treat all data that does not have "temperature" field as valid. In order to do this we will use the following function
+假设到达系统的的数据可能具有或不具有“温度”字段。
+我们将所有不具有“温度”字段的数据视为有效数据。为了做到这一点，我们将使用以下函数
 
 ```javascript
 function precisionRound(number, precision) {
@@ -49,27 +49,22 @@ if (typeof msg.temperature !== 'undefined'){
 return {msg: msg, metadata: metadata, msgType: msgType};
 ```
 
-## Step 2: Validation script debugging
+## 步骤 2：验证脚本调试
 
-Let's check that our script is correct by using built-in "Test transformer function" button
+让我们使用内置的“测试转换器函数”按钮来检查我们的脚本是否正确
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/transformation/node-config.png)
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/transformation/test-function.png)
 
-You can check few more cases, for example when temperature is not set.
+你可以检查更多情况，例如当温度未设置时。
 
-## TL;DR
+## 摘要
 
-Download and import attached json [**file**](/docs/user-guide/resources/transformation-rule-chain.json) with a rule chain from this tutorial. Don't forget to mark new rule chain as "root".
+下载并导入附加的 json [**文件**](/docs/user-guide/resources/transformation-rule-chain.json) 和本教程中的规则链。不要忘记将新规则链标记为“根”。
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/make-root.png)
 
-## Next steps
+## 后续步骤
 
 {% assign currentGuide = "DataProcessing" %}{% include templates/guides-banner.md %}
-
-
-
-
-

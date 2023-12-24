@@ -1,97 +1,96 @@
-
 * TOC
 {:toc}
 
-## Entities Overview
+## 实体概述
 
-ThingsBoard provides the user interface and REST APIs to provision and manage multiple entity types and their relations in your IoT application.
-Supported entities are:
+ThingsBoard 提供用户界面和 REST API 来配置和管理多个实体类型及其在 IoT 应用程序中的关系。
+支持的实体有：
 
- - **[Tenants](/docs/{{docsPrefix}}user-guide/ui/tenants/)** - you can treat the tenant as a separate business-entity: it's an individual or an organization who owns or produce devices and assets;
- Tenant may have multiple tenant administrator users and millions of customers, devices and assets;
- - **[Customers](/docs/{{docsPrefix}}user-guide/ui/customers/)** - the customer is also a separate business-entity: individual or organization who purchase or uses tenant devices and/or assets;
- Customer may have multiple users and millions of devices and/or assets;
- - **[Users](/docs/{{docsPrefix}}user-guide/ui/users/)** - users are able to browse dashboards and manage entities;
- - **[Devices](/docs/{{docsPrefix}}user-guide/ui/devices/)** - basic IoT entities that may produce telemetry data and handle RPC commands. For example, sensors, actuators, switches;
- - **[Assets](/docs/{{docsPrefix}}user-guide/ui/assets/)** - abstract IoT entities that may be related to other devices and assets. For example factory, field, vehicle;
- - **[Entity Views](/docs/{{docsPrefix}}user-guide/entity-views/)** - useful if you like to share only part of device or asset data to the customers;
- - **[Alarms](/docs/{{docsPrefix}}user-guide/alarms/)** - events that identify issues with your assets, devices, or other entities;
- - **[Dashboards](/docs/{{docsPrefix}}user-guide/dashboards/)** - visualization of your IoT data and ability to control particular devices through the user interface;
- - **Rule Node** - processing units for incoming messages, entity lifecycle events, etc;
- - **Rule Chain** - defines the flow of the processing in the [Rule Engine](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/re-getting-started/). May contain many rule nodes and links to other rule chains;
+- **[租户](/docs/{{docsPrefix}}user-guide/ui/tenants/)** - 您可以将租户视为一个独立的业务实体：它是拥有或生产设备和资产的个人或组织；
+租户可能有多个租户管理员用户和数百万的客户、设备和资产；
+- **[客户](/docs/{{docsPrefix}}user-guide/ui/customers/)** - 客户也是一个独立的业务实体：购买或使用租户设备和/或资产的个人或组织；
+客户可能有多个用户和数百万的设备和/或资产；
+- **[用户](/docs/{{docsPrefix}}user-guide/ui/users/)** - 用户能够浏览仪表板并管理实体；
+- **[设备](/docs/{{docsPrefix}}user-guide/ui/devices/)** - 可能产生遥测数据并处理 RPC 命令的基本 IoT 实体。例如，传感器、执行器、开关；
+- **[资产](/docs/{{docsPrefix}}user-guide/ui/assets/)** - 可能与其他设备和资产相关的抽象 IoT 实体。例如，工厂、现场、车辆；
+- **[实体视图](/docs/{{docsPrefix}}user-guide/entity-views/)** - 如果您只想向客户共享部分设备或资产数据，则很有用；
+- **[警报](/docs/{{docsPrefix}}user-guide/alarms/)** - 识别您的资产、设备或其他实体问题的事件；
+- **[仪表板](/docs/{{docsPrefix}}user-guide/dashboards/)** - 可视化您的 IoT 数据并通过用户界面控制特定设备的能力；
+- **规则节点** - 用于处理传入消息、实体生命周期事件等的处理单元；
+- **规则链** - 定义 [规则引擎](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/re-getting-started/) 中的处理流程。可能包含许多规则节点和指向其他规则链的链接；
 
-Each entity supports:
+每个实体支持：
 
- - **[Attributes](/docs/{{docsPrefix}}user-guide/attributes/)** - static and semi-static key-value pairs associated with entities. For example serial number, model, firmware version;
- - **[Time-series data](/docs/{{docsPrefix}}user-guide/telemetry/)** - time-series data points available for storage, querying and visualization. For example temperature, humidity, battery level;
- - **[Relations](#relations)** - directed connections to other entities. For example contains, manages, owns, produces.
+- **[属性](/docs/{{docsPrefix}}user-guide/attributes/)** - 与实体关联的静态和半静态键值对。例如序列号、型号、固件版本；
+- **[时序数据](/docs/{{docsPrefix}}user-guide/telemetry/)** - 可用于存储、查询和可视化的时序数据点。例如温度、湿度、电池电量；
+- **[关系](#relations)** - 与其他实体的定向连接。例如包含、管理、拥有、生产。
 
-Some entities support profiles:
+某些实体支持配置文件：
 
-  - **[Tenant Profiles](/docs/{{docsPrefix}}user-guide/tenant-profiles/)** - contains common settings for multiple tenants: entity, API and rate limits, etc. Each Tenant has the one and only profile at a single point in time.
-  - **[Device Profiles](/docs/{{docsPrefix}}user-guide/device-profiles/)** - contains common settings for multiple devices: processing and transport configuration, etc. Each Device has the one and only profile at a single point in time.
-  - **[Asset Profiles](/docs/{{docsPrefix}}user-guide/asset-profiles/)** - contains common settings for multiple assets: processing configuration, etc. Each Asset has the one and only profile at a single point in time.
+- **[租户配置文件](/docs/{{docsPrefix}}user-guide/tenant-profiles/)** - 包含多个租户的常见设置：实体、API 和速率限制等。每个租户在单个时间点只有一个配置文件。
+- **[设备配置文件](/docs/{{docsPrefix}}user-guide/device-profiles/)** - 包含多个设备的常见设置：处理和传输配置等。每个设备在单个时间点只有一个配置文件。
+- **[资产配置文件](/docs/{{docsPrefix}}user-guide/asset-profiles/)** - 包含多个资产的常见设置：处理配置等。每个资产在单个时间点只有一个配置文件。
 
 {% if docsPrefix == "pe/" %}
-**[Entity Groups](/docs/pe/user-guide/groups/)**:
+**[实体组](/docs/pe/user-guide/groups/)**：
 
-ThingsBoard Professional Edition allows you to configure Entity Groups for Customers, Users, Devices, Assets, Entity Views and Dashboards.
-Each entity may belong to multiple groups simultaneously. Entity Group always have an owner - particular Tenant or Customer.
-All entities in the group must have the same entity type (i.e. You can't put device and asset into one group).
-Entity Groups are useful for dashboards and data processing, but the primary reason of their existence is to support advanced Role-Based Access Control ([RBAC](/docs/pe/user-guide/rbac/)) for IoT.
+ThingsBoard Professional Edition 允许您为客户、用户、设备、资产、实体视图和仪表板配置实体组。
+每个实体可以同时属于多个组。实体组始终有一个所有者 - 特定的租户或客户。
+组中的所有实体必须具有相同的实体类型（即您不能将设备和资产放入一个组中）。
+实体组对于仪表板和数据处理很有用，但它们存在的主要原因是为了支持 IoT 的高级基于角色的访问控制 ([RBAC](/docs/pe/user-guide/rbac/))。
 
-**[Integrations](/docs/user-guide/integrations/)** and **[Data Converters](/docs/user-guide/integrations/#data-converters)**:
+**[集成](/docs/user-guide/integrations/)** 和 **[数据转换器](/docs/user-guide/integrations/#data-converters)**：
 
-ThingsBoard Platform integrations feature was designed for two primary use cases / deployment options:
+ThingsBoard 平台集成功能专为两个主要用例/部署选项而设计：
 
-  - Connect existing NB IoT, LoRaWAN, SigFox and other devices with specific payload formats directly to ThingsBoard platform.
-  - Stream data from devices connected to existing IoT Platforms to enable real-time interactive dashboards and efficient data processing.
+- 将具有特定有效负载格式的现有 NB IoT、LoRaWAN、SigFox 和其他设备直接连接到 ThingsBoard 平台。
+- 从连接到现有 IoT 平台的设备流式传输数据，以实现实时交互式仪表板和高效的数据处理。
 
-Data Converters is a part of the Platform Integrations feature. Their purpose is to transform raw payload from device to the format that ThingsBoard uses and vise-versa.
+数据转换器是平台集成功能的一部分。它们的目的是将设备的原始有效负载转换为 ThingsBoard 使用的格式，反之亦然。
 
 {% endif %}
 
-This guide provides an overview of the features listed above, some useful links to get more details, and real-life examples of their usage.
+本指南概述了上面列出的功能、获取更多详细信息的一些有用链接以及它们的使用示例。
 
-## Relations
+## 关系
 
-Entity relation defines connection between two ThingsBoard entities that belong to the same [Tenant](/docs/{{docsPrefix}}user-guide/ui/tenants/).
-The relation has an arbitrary type: Contains, Manages, Supports, etc. The relation is also directional.
-You may treat ThingsBoard relations as a [Has-a](https://en.wikipedia.org/wiki/Has-a) relationship from object-oriented programming.
+实体关系定义属于同一 [租户](/docs/{{docsPrefix}}user-guide/ui/tenants/) 的两个 ThingsBoard 实体之间的连接。
+关系具有任意类型：包含、管理、支持等。关系也是方向性的。
+您可以将 ThingsBoard 关系视为面向对象编程中的 [Has-a](https://en.wikipedia.org/wiki/Has-a) 关系。
 
-Relations help to model physical world objects in ThingsBoard. The easiest way to understand them is using the example.
-Let’s assume we want to build an application that collects data from soil moisture and temperature sensors, visualize this data on the dashboard, detect issues, raise alarms and control the irrigation.
-Let’s also assume we want to support multiple fields with hundreds of sensors. Fields may be also grouped into the Geo regions.
+关系有助于在 ThingsBoard 中建模物理世界对象。了解它们的最简单方法是使用示例。
+假设我们要构建一个应用程序，从土壤湿度和温度传感器收集数据，将此数据可视化到仪表板上，检测问题、发出警报并控制灌溉。
+我们还假设我们要支持具有数百个传感器的多个字段。字段也可以分组到地理区域中。
 
-The following diagram explains how those entities are configured and stored in ThingsBoard:
+下图解释了如何在 ThingsBoard 中配置和存储这些实体：
 
 ![image](/images/user-guide/entities-and-relations.svg)
 
 
-See ["add and delete assets"](/docs/pe/user-guide/ui/assets/#add-and-delete-assets) and ["manage asset relations"](/docs/pe/user-guide/ui/assets/#manage-asset-relations)
-to learn how to configure this entities via Administration UI. You may also use [REST API](/docs/reference/rest-client/) to create entities and relations programmatically.
+请参阅 [“添加和删除资产”](/docs/pe/user-guide/ui/assets/#add-and-delete-assets) 和 [“管理资产关系”](/docs/pe/user-guide/ui/assets/#manage-asset-relations)
+以了解如何通过管理 UI 配置这些实体。您还可以使用 [REST API](/docs/reference/rest-client/) 以编程方式创建实体和关系。
 
-## Next steps
+## 后续步骤
 
-**Assign attributes to the assets and devices**
+**将属性分配给资产和设备**
 
-ThingsBoard provides the ability to assign attributes to entities and manage them.
-You are welcome to learn how to do it here:
-<p><a href="/docs/{{docsPrefix}}user-guide/attributes" class="button">Working with device attributes</a></p>
+ThingsBoard 提供了将属性分配给实体并管理它们的功能。
+欢迎您在此处了解如何操作：
+<p><a href="/docs/{{docsPrefix}}user-guide/attributes" class="button">使用设备属性</a></p>
 
 
-**Upload telemetry data from devices**
+**从设备上传遥测数据**
 
-ThingsBoard provides the ability to work with telemetry data for devices and other entities.
-You are welcome to learn how to do it here:
-<p><a href="/docs/{{docsPrefix}}user-guide/telemetry" class="button">Working with telemetry data</a></p>
+ThingsBoard 提供了处理设备和其他实体的遥测数据的功能。
+欢迎您在此处了解如何操作：
+<p><a href="/docs/{{docsPrefix}}user-guide/telemetry" class="button">使用遥测数据</a></p>
 
-**Creating Rules for Alarms**
+**为警报创建规则**
 
-ThingsBoard provides the ability to raise alarms using rule engine for devices and other entities.
-You are welcome to learn how to do it here:
-<p><a href="/docs/{{docsPrefix}}user-guide/alarms" class="button">Working with alarms</a></p>
+ThingsBoard 提供了使用规则引擎为设备和其他实体发出警报的功能。
+欢迎您在此处了解如何操作：
+<p><a href="/docs/{{docsPrefix}}user-guide/alarms" class="button">使用警报</a></p>
 
-**Design your dashboard**
+**设计您的仪表板**
 
-Please [import](/docs/{{docsPrefix}}user-guide/ui/dashboards/#dashboard-import) the following [**dashboard**](/docs/{{docsPrefix}}user-guide/resources/region_fields_dashboard.json) that demonstrates Map, Alarm, Entity Table and Charts widgets.
+请 [导入](/docs/{{docsPrefix}}user-guide/ui/dashboards/#dashboard-import) 以下 [**仪表板**](/docs/{{docsPrefix}}user-guide/resources/region_fields_dashboard.json)，该仪表板演示了地图、警报、实体表和图表小部件。

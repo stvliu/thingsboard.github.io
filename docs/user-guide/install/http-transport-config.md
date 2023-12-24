@@ -2,8 +2,8 @@
 layout: docwithnav
 assignees:
 - vparomskiy
-title: HTTP transport parameters
-description: ThingsBoard configuration parameters and environment variables
+title: HTTP 传输参数
+description: ThingsBoard 配置参数和环境变量
 
 ---
 

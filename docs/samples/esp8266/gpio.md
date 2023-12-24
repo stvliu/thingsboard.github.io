@@ -1,25 +1,25 @@
 ---
 layout: docwithnav
-title: ESP8266 GPIO control over MQTT using ThingsBoard
-description: ThingsBoard IoT Platform sample for ESP8266 GPIO control over MQTT
+title: ESP8266 GPIO 控制通过 MQTT 使用 ThingsBoard
+description: ThingsBoard IoT 平台示例，用于通过 MQTT 控制 ESP8266 GPIO
 
 ---
 
 * TOC
 {:toc}
 
-## Introduction
+## 简介
 {% include templates/what-is-thingsboard.md %}
 
-This sample application will allow you to control GPIO of your ESP8266 device using ThingsBoard web UI. We will observe GPIO control using LEDs connected to the pins.
-The purpose of this application is to demonstrate ThingsBoard [RPC capabilities](/docs/user-guide/rpc/).
+此示例应用程序允许您使用 ThingsBoard Web UI 控制 ESP8266 设备的 GPIO。我们将观察连接到引脚的 LED 来控制 GPIO。
+此应用程序的目的是演示 ThingsBoard [RPC 功能](/docs/user-guide/rpc/)。
 
-The application that is running on ESP8266 is written using Arduino SDK which is quite simple and easy to understand.
-ESP8266 offers a complete and self-contained Wi-Fi networking solution.
-ESP8266 pushes data to ThingsBoard server via MQTT protocol by using [PubSubClient](https://github.com/knolleary/pubsubclient) library for Arduino.
-Current GPIO state and GPIO control widget is visualized using built-in customizable dashboard. 
+在 ESP8266 上运行的应用程序使用 Arduino SDK 编写，该 SDK 非常简单易懂。
+ESP8266 提供了完整且自包含的 Wi-Fi 网络解决方案。
+ESP8266 通过 MQTT 协议将数据推送到 ThingsBoard 服务器，方法是使用 [PubSubClient](https://github.com/knolleary/pubsubclient) 库 for Arduino。
+当前 GPIO 状态和 GPIO 控制小部件使用内置的可自定义仪表板进行可视化。
 
-The video below demonstrates the final result of this tutorial.
+下面的视频演示了本教程的最终结果。
 
 <br>
 <br>
@@ -33,232 +33,232 @@ The video below demonstrates the final result of this tutorial.
 
 {% include templates/prerequisites.md %}
 
-## List of hardware and pinouts
+## 硬件和引脚列表
 
- - [ESP8266 module](https://www.aliexpress.com/item/2PCS-ESP8266-Serial-Esp-01-WIFI-Wireless-Transceiver-Module-Send-Receive-LWIP-AP-STA/32302638695.html?spm=2114.03010208.3.163.FPBlcc&ws_ab_test=searchweb0_0,searchweb201602_2_10065_10068_10084_10083_10080_10082_10081_10060_10061_10062_10056_10055_10054_10059_10099_10078_10079_10093_427_10073_10103_10102_10096_10052_10050_10051,searchweb201603_3&btsid=1494d8a7-6202-4a69-a0e7-877ffa333243)
+ - [ESP8266 模块](https://www.aliexpress.com/item/2PCS-ESP8266-Serial-Esp-01-WIFI-Wireless-Transceiver-Module-Send-Receive-LWIP-AP-STA/32302638695.html?spm=2114.03010208.3.163.FPBlcc&ws_ab_test=searchweb0_0,searchweb201602_2_10065_10068_10084_10083_10080_10082_10081_10060_10061_10062_10056_10055_10054_10059_10099_10078_10079_10093_427_10073_10103_10102_10096_10052_10050_10051,searchweb201603_3&btsid=1494d8a7-6202-4a69-a0e7-877ffa333243)
 
   ![image](/images/samples/arduino/temperature/esp8266-pinout.png)
 
- - USB to TTL
+ - USB 转 TTL
     
-    - [With DTR & RTS](https://www.aliexpress.com/item/Free-shipping-1pcs-FT232RL-FTDI-USB-3-3V-5-5V-to-TTL-Serial-Adapter-Module-for/32256920717.html?spm=2114.03010208.3.11.qSXSby&ws_ab_test=searchweb0_0,searchweb201602_2_10065_10068_10084_10083_10080_10082_10081_10060_10061_10062_10056_10055_10054_10059_10099_10078_10079_10093_427_10073_10103_10102_10096_10052_10050_10051,searchweb201603_3&btsid=54ef4b72-5ab0-4ce6-aa89-74726d95c099)
+    - [带 DTR 和 RTS](https://www.aliexpress.com/item/Free-shipping-1pcs-FT232RL-FTDI-USB-3-3V-5-5V-to-TTL-Serial-Adapter-Module-for/32256920717.html?spm=2114.03010208.3.11.qSXSby&ws_ab_test=searchweb0_0,searchweb201602_2_10065_10068_10084_10083_10080_10082_10081_10060_10061_10062_10056_10055_10054_10059_10099_10078_10079_10093_427_10073_10103_10102_10096_10052_10050_10051,searchweb201603_3&btsid=54ef4b72-5ab0-4ce6-aa89-74726d95c099)
     
     ![image](/images/samples/esp8266/temperature/usb-ttl-ft232rl-pinout.png)
 
-    - Or [Without DTR & RTS](https://www.aliexpress.com/item/1pcs-lot-PL2303-USB-To-RS232-TTL-Converter-Adapter-Module-with-Dust-proof-Cover-PL2303HX/32642301991.html?spm=2114.03010208.3.50.WdAM18&ws_ab_test=searchweb0_0,searchweb201602_2_10065_10068_10084_10083_10080_10082_10081_10060_10061_10062_10056_10055_10054_10059_10099_10078_10079_10093_427_10073_10103_10102_10096_10052_10050_10051,searchweb201603_3&btsid=9ac20e48-da8c-4a0f-8f33-d40c241fe5a3)
+    - 或 [不带 DTR 和 RTS](https://www.aliexpress.com/item/1pcs-lot-PL2303-USB-To-RS232-TTL-Converter-Adapter-Module-with-Dust-proof-Cover-PL2303HX/32642301991.html?spm=2114.03010208.3.50.WdAM18&ws_ab_test=searchweb0_0,searchweb201602_2_10065_10068_10084_10083_10080_10082_10081_10060_10061_10062_10056_10055_10054_10059_10099_10078_10079_10093_427_10073_10103_10102_10096_10052_10050_10051,searchweb201603_3&btsid=9ac20e48-da8c-4a0f-8f33-d40c241fe5a3)
     
     ![image](/images/samples/esp8266/temperature/usb-ttl-pl2303hx.png)
 
- - Breadboard 
+ - 面包板
   
- - 2 female-to-female jumper wires
+ - 2 根母对母跳线
  
- - 7 female-to-male jumper wires
+ - 7 根母对公跳线
  
- - 2 LEDs
+ - 2 个 LED
  
- - 3.3V power source (for example 2 AA batteries)
+ - 3.3V 电源（例如 2 节 AA 电池）
  
-## Wiring schemes
+## 接线方案
 
-### Programming/flashing scheme 
+### 编程/刷写方案
 
-ESP8266 Pin|USB-TTL Pin
+ESP8266 引脚 | USB-TTL 引脚
 -----------|-----------
-ESP8266 VCC|USB-TTL VCC +3.3V
-ESP8266 CH_PD|USB-TTL VCC +3.3V
-ESP8266 GND (-)|USB-TTL GND
-ESP8266 GPIO 0|USB-TTL GND
-ESP8266 RX|USB-TTL TX
-ESP8266 TX|USB-TTL RX
+ESP8266 VCC | USB-TTL VCC +3.3V
+ESP8266 CH_PD | USB-TTL VCC +3.3V
+ESP8266 GND (-) | USB-TTL GND
+ESP8266 GPIO 0 | USB-TTL GND
+ESP8266 RX | USB-TTL TX
+ESP8266 TX | USB-TTL RX
 
-LED 1 Pin  |USB-TTL Pin
+LED 1 引脚 | USB-TTL 引脚
 -----------|-----------
-cathode|USB-TTL GND
+阴极 | USB-TTL GND
 
-LED 1 Pin  |ESP8266 Pin
+LED 1 引脚 | ESP8266 引脚
 -----------|-----------
-anode|ESP8266 GPIO 2
+阳极 | ESP8266 GPIO 2
 
-The following picture summarizes the connections for this project in programming/debug mode:
+下图总结了此项目在编程/调试模式下的连接：
 
 ![image](/images/samples/esp8266/gpio/schema-flash.png)
 
-### Final schema (Battery Powered)
+### 最终方案（电池供电）
 
-ESP8266 Pin|3.3V power source
+ESP8266 引脚 | 3.3V 电源
 -----------|-----------
-ESP8266 VCC|VCC+
-ESP8266 CH_PD|VCC+
-ESP8266 GND (-)|VCC-
+ESP8266 VCC | VCC+
+ESP8266 CH_PD | VCC+
+ESP8266 GND (-) | VCC-
 
-LED 1 Pin|ESP8266 Pin
+LED 1 引脚 | ESP8266 引脚
 -----------|-----------
-anode|ESP8266 GPIO 2
+阳极 | ESP8266 GPIO 2
 
-LED 1 Pin|3.3V power source
+LED 1 引脚 | 3.3V 电源
 -----------|-----------
-cathode|VCC-
+阴极 | VCC-
 
-LED 2 Pin|ESP8266 Pin
+LED 2 引脚 | ESP8266 引脚
 -----------|-----------
-anode|ESP8266 GPIO 0
+阳极 | ESP8266 GPIO 0
 
-LED 2 Pin|3.3V power source
+LED 2 引脚 | 3.3V 电源
 -----------|-----------
-cathode|VCC-
+阴极 | VCC-
 
-The final picture:
+最终图片：
 
 ![image](/images/samples/esp8266/gpio/schema.png)
  
 {% include templates/thingsboard-configuration.md %}
 
-### Provision your device
+### 配置您的设备
 
-This step contains instructions that are necessary to connect your device to ThingsBoard.
+此步骤包含将您的设备连接到 ThingsBoard 所需的说明。
 
-Open ThingsBoard Web UI (http://localhost:8080) in browser and login as tenant administrator
+在浏览器中打开 ThingsBoard Web UI (http://localhost:8080) 并以租户管理员身份登录
 
- - login: tenant@thingsboard.org
- - password: tenant
+ - 登录名：tenant@thingsboard.org
+ - 密码：tenant
  
-Go to "Devices" section. Click "+" button and create a device with the name "ESP8266 Demo Device". 
+转到“设备”部分。单击“+”按钮并创建一个名为“ESP8266 演示设备”的设备。
 
 ![image](/images/samples/esp8266/temperature/device.png)
 
-Once device created, open its details and click "Manage credentials".
-Copy auto-generated access token from the "Access token" field. Please save this device token. It will be referred to later as **$ACCESS_TOKEN**.
+创建设备后，打开其详细信息并单击“管理凭据”。
+从“访问令牌”字段复制自动生成的访问令牌。请保存此设备令牌。它将在以后称为 **$ACCESS_TOKEN**。
 
 ![image](/images/samples/esp8266/temperature/credentials.png)
 
 
-Click "Copy Device ID" in device details to copy your device id to the clipboard.
-Paste your device id to some place, this value will be used in further steps.
+在设备详细信息中单击“复制设备 ID”以将您的设备 ID 复制到剪贴板。
+将您的设备 ID 粘贴到某个地方，此值将在后续步骤中使用。
 
-### Provision your dashboard
+### 配置您的仪表板
 
-Download the dashboard file using this [**link**](/docs/samples/esp8266/resources/esp8266_gpio_dashboard_v2.json). 
-Use import/export [**instructions**](/docs/user-guide/ui/dashboards/#dashboard-importexport) to import the dashboard to your ThingsBoard instance.
+使用此 [**链接**](/docs/samples/esp8266/resources/esp8266_gpio_dashboard_v2.json) 下载仪表板文件。
+使用导入/导出 [**说明**](/docs/user-guide/ui/dashboards/#dashboard-importexport) 将仪表板导入您的 ThingsBoard 实例。
 
-## Programming the ESP8266
+## 编程 ESP8266
 
-### Step 1. ESP8266 and Arduino IDE setup.
+### 步骤 1. ESP8266 和 Arduino IDE 设置。
 
-In order to start programming ESP8266 device, you will need Arduino IDE installed and all related software. 
+为了开始对 ESP8266 设备进行编程，您需要安装 Arduino IDE 和所有相关软件。
 
-Download and install [Arduino IDE](https://www.arduino.cc/en/Main/Software).
+下载并安装 [Arduino IDE](https://www.arduino.cc/en/Main/Software)。
 
-After starting Arduino IDE, open the preferences from the ‘file’ menu.
+启动 Arduino IDE 后，从“文件”菜单中打开首选项。
 
 ![image](/images/samples/esp8266/temperature/arduino-preferences.png)
 
-Paste the following URL to the “Additional board managers URL”:  http://arduino.esp8266.com/stable/package_esp8266com_index.json
+将以下 URL 粘贴到“其他板管理器 URL”中：http://arduino.esp8266.com/stable/package_esp8266com_index.json
 
-Close the screen by clicking the OK button.
+通过单击“确定”按钮关闭屏幕。
 
-Now we can add the board ESP8266 using the board manager.
+现在我们可以使用板管理器添加板 ESP8266。
 
-In the menu tools, click on the menu option Board: “*Most likely Arduino UNO*”. 
-There you will find the first option “Board Manager”.
+在菜单工具中，单击菜单选项板：“*最有可能的 Arduino UNO*”。
+您将在那里找到第一个选项“板管理器”。
 
-Type in the search bar the 3 letters ESP. Locate and click on "*esp8266 by ESP8266 Community*". 
-Click on install and wait for a minute to download the board.
+在搜索栏中输入 3 个字母 ESP。找到并单击“*esp8266 by ESP8266 Community*”。
+单击安装并等待一分钟下载电路板。
 
 ![image](/images/samples/esp8266/temperature/arduino-board-manager.png)
 
-**Note** that this tutorial was tested with the "*esp8266 by ESP8266 Community*" version 2.3.0.
+**请注意**，本教程使用“*esp8266 by ESP8266 Community*”版本 2.3.0 进行了测试。
 
-In the menu Tools “Board “*Most likely Arduino UNO*” three new boards are added.
+在菜单工具“板“*最有可能的 Arduino UNO*”中添加了三个新板。
 
-Select “Generic ESP8266 Module”.
+选择“通用 ESP8266 模块”。
 
-Prepare your hardware according to the [Programming/flashing scheme](#programmingflashing-schema).
-Connect USB-TTL adapter with PC. 
+根据 [编程/刷写方案](#programmingflashing-schema) 准备您的硬件。
+将 USB-TTL 适配器与 PC 连接。
 
-In the menu Tools, select the corresponding port of the USB-TTL adapter.
-Open the serial monitor (by pressing CTRL-Shift-M or from the menu Tools).
-Set the key emulation to “Both NL & CR” and the speed to 115200 baud. This can be set at the bottom of the terminal screen.
+在菜单工具中，选择 USB-TTL 适配器的相应端口。
+打开串口监视器（按 CTRL-Shift-M 或从菜单工具中）。
+将键模拟设置为“Both NL & CR”，并将速度设置为 115200 波特。这可以在终端屏幕的底部设置。
 
-### Step 2. Install Arduino libraries.
+### 步骤 2. 安装 Arduino 库。
 
-Open Arduino IDE and go to **Sketch -> Include Library -> Manage Libraries**. 
-Find and install the following libraries:
+打开 Arduino IDE 并转到 **草图 -> 包含库 -> 管理库**。
+查找并安装以下库：
 
-- [PubSubClient by Nick O'Leary](http://pubsubclient.knolleary.net/).
-- [ArduinoJson by Benoit Blanchon](https://github.com/bblanchon/ArduinoJson)
+- [Nick O'Leary 的 PubSubClient](http://pubsubclient.knolleary.net/)。
+- [Benoit Blanchon 的 ArduinoJson](https://github.com/bblanchon/ArduinoJson)
 
-**Note** that this tutorial was tested with the following versions of the libraries:
+**请注意**，本教程使用以下版本的库进行了测试：
 
 - PubSubClient 2.6
 - ArduinoJson 5.8.0
 
-### Step 3. Prepare and upload a sketch.
+### 步骤 3. 准备并上传草图。
 
-Download and open **esp8266-gpio-control.ino** sketch. 
+下载并打开 **esp8266-gpio-control.ino** 草图。
 
-**Note** You need to edit following constants and variables in the sketch:
+**注意** 您需要在草图中编辑以下常量和变量：
 
-- WIFI_AP - name of your access point
-- WIFI_PASSWORD - access point password
-- TOKEN - the **$ACCESS_TOKEN** from ThingsBoard configuration step.
-- thingsboardServer - ThingsBoard HOST/IP address that is accessible from within your wifi network. Specify "demo.thingsboard.io" if you are using [live demo](https://demo.thingsboard.io/) server.
+- WIFI_AP - 您的接入点的名称
+- WIFI_PASSWORD - 接入点密码
+- TOKEN - ThingsBoard 配置步骤中的 **$ACCESS_TOKEN**。
+- thingsboardServer - 可从您的 wifi 网络访问的 ThingsBoard HOST/IP 地址。如果您使用的是 [实时演示](https://demo.thingsboard.io/) 服务器，请指定“demo.thingsboard.io”。
 
 {% capture tabspec %}arduino-sketch
 esp8266-gpio-control,esp8266-gpio-control.ino,c,resources/esp8266-gpio-control.ino,/docs/samples/esp8266/resources/esp8266-gpio-control.ino{% endcapture %}
 {% include tabs.html %}
 
-Connect USB-TTL adapter to PC and select the corresponding port in Arduino IDE. Compile and Upload your sketch to the device using "Upload" button.
+将 USB-TTL 适配器连接到 PC，并在 Arduino IDE 中选择相应的端口。使用“上传”按钮编译并上传草图到设备。
 
-After the application is uploaded and started it will try to connect to ThingsBoard node using mqtt client and upload current GPIOs state.
+上传并启动应用程序后，它将尝试使用 mqtt 客户端连接到 ThingsBoard 节点并上传当前 GPIO 状态。
 
-## Autonomous operation
+## 自主运行
 
-When you have uploaded the sketch, you may remove all the wires required for uploading including USB-TTL adapter and connect your ESP8266 and LEDs directly to the power source according to the [Final wiring schema](#final-schema-battery-powered).
+上传草图后，您可以移除上传所需的所有电线，包括 USB-TTL 适配器，并根据 [最终接线方案](#final-schema-battery-powered) 将您的 ESP8266 和 LED 直接连接到电源。
 
-## Troubleshooting
+## 故障排除
 
-In order to perform troubleshooting, you should assemble your hardware according to the [Programming/flashing scheme](#programmingflashing-schema).
-Then connect USB-TTL adapter with PC and select port of the USB-TTL adapter in Arduino IDE. Finally, open "Serial Monitor" in order to view the debug information produced by serial output.
+为了执行故障排除，您应该根据 [编程/刷写方案](#programmingflashing-schema) 组装您的硬件。
+然后将 USB-TTL 适配器与 PC 连接，并在 Arduino IDE 中选择 USB-TTL 适配器的端口。最后，打开“串口监视器”以查看串口输出产生的调试信息。
 
-## Data visualization
+## 数据可视化
 
-Finally, open ThingsBoard Web UI. You can access this dashboard by logging in as a tenant administrator.
+最后，打开 ThingsBoard Web UI。您可以通过以租户管理员身份登录来访问此仪表板。
 
-In case of local installation:
+在本地安装的情况下：
  
- - login: tenant@thingsboard.org
- - password: tenant
+ - 登录名：tenant@thingsboard.org
+ - 密码：tenant
 
-In case of live-demo server:
+在实时演示服务器的情况下：
  
- - login: your live-demo username (email)
- - password: your live-demo password
+ - 登录名：您的实时演示用户名（电子邮件）
+ - 密码：您的实时演示密码
  
-See **[live-demo](/docs/user-guide/live-demo/)** page for more details how to get your account.
+有关如何获取帐户的更多详细信息，请参阅 **[实时演示](/docs/user-guide/live-demo/)** 页面。
  
-Once logged in, open **Dashboards->ESP8266 GPIO Demo Dashboard** page. You should observe demo dashboard with GPIO control and status panel for your device.
-Now you can switch status of GPIOs using control panel. As a result, you will see LEDs status change on the device and on the status panel.
+登录后，打开 **仪表板->ESP8266 GPIO 演示仪表板** 页面。您应该观察到演示仪表板，其中包含设备的 GPIO 控制和状态面板。
+现在，您可以使用控制面板切换 GPIO 的状态。结果，您将在设备和状态面板上看到 LED 状态发生变化。
 
-Below is the screenshot of the "ESP8266 GPIO Demo Dashboard".  
+以下是“ESP8266 GPIO 演示仪表板”的屏幕截图。
 
- ![image](/images/samples/esp8266/gpio/dashboard.png)
+![image](/images/samples/esp8266/gpio/dashboard.png)
  
-## See also
+## 另请参阅
 
-Browse other [samples](/docs/samples) or explore guides related to main ThingsBoard features:
+浏览其他 [示例](/docs/samples) 或探索与 ThingsBoard 主要功能相关的指南：
 
- - [Device attributes](/docs/user-guide/attributes/) - how to use device attributes.
- - [Telemetry data collection](/docs/user-guide/telemetry/) - how to collect telemetry data.
- - [Using RPC capabilities](/docs/user-guide/rpc/) - how to send commands to/from devices.
- - [Rule Engine](/docs/user-guide/rule-engine/) - how to use rule engine to analyze data from devices.
- - [Data Visualization](/docs/user-guide/visualization/) - how to visualize collected data.
+ - [设备属性](/docs/user-guide/attributes/) - 如何使用设备属性。
+ - [遥测数据收集](/docs/user-guide/telemetry/) - 如何收集遥测数据。
+ - [使用 RPC 功能](/docs/user-guide/rpc/) - 如何向/从设备发送命令。
+ - [规则引擎](/docs/user-guide/rule-engine/) - 如何使用规则引擎分析来自设备的数据。
+ - [数据可视化](/docs/user-guide/visualization/) - 如何可视化收集的数据。
 
 {% include templates/feedback.md %}
 
 {% include socials.html %}
 
 
-## Next steps
+## 后续步骤
 
 {% assign currentGuide = "HardwareSamples" %}{% include templates/guides-banner.md %}

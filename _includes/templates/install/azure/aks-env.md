@@ -1,6 +1,6 @@
-Define environment variables that you will use in various commands later in this guide.
+定义您将在本指南后面的各种命令中使用的环境变量。
 
-We assume you are using Linux. Execute the following command:
+我们假设您使用的是 Linux。执行以下命令：
 
 ```bash
 export AKS_RESOURCE_GROUP=ThingsBoardResources
@@ -14,10 +14,10 @@ and cluster in it $TB_CLUSTER_NAME with database $TB_DATABASE_NAME"
 ```
 {: .copy-code}
 
-where: 
-   - myResourceGroup - a logical group in which Azure resources are deployed and managed. We will refer to it later in this guide using ***AKS_RESOURCE_GROUP*** ;
-   - *eastus* - is location where you want to create resource group. We will refer to it later in this guide using ***AKS_LOCATION***;
-    You can see all locations list executing *az account list-locations*;
-   - *tb-gateway* - the name of Azure application gateway;  
-   - *tb-cluster* - cluster name. We will refer to it later in this guide using ***TB_CLUSTER_NAME*** ;
-   - *tb-db* is the name of your database server. You may input a different name. We will refer to it later in this guide using TB_DATABASE_NAME;
+其中：
+   - myResourceGroup - 部署和管理 Azure 资源的逻辑组。我们将在本指南的后面使用 ***AKS_RESOURCE_GROUP*** 来引用它；
+   - *eastus* - 是您想要创建资源组的位置。我们将在本指南的后面使用 ***AKS_LOCATION*** 来引用它；
+    您可以通过执行 *az account list-locations* 来查看所有位置列表；
+   - *tb-gateway* - Azure 应用程序网关的名称；
+   - *tb-cluster* - 集群名称。我们将在本指南的后面使用 ***TB_CLUSTER_NAME*** 来引用它；
+   - *tb-db* 是您的数据库服务器的名称。您可以输入不同的名称。我们将在本指南的后面使用 TB_DATABASE_NAME 来引用它；

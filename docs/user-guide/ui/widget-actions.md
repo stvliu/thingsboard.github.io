@@ -2,8 +2,8 @@
 layout: docwithnav
 assignees:
 - ashvayka
-title: Widget Actions
-description: ThingsBoard Dashboard Widget Actions
+title: 操作部件
+description: ThingsBoard 仪表盘部件操作
 entity-sources:
     0:
         image: /images/user-guide/ui/widgets/actions/entity-cards/entity-sources.png
@@ -385,7 +385,3 @@ dialog-window-1:
 entityfromwidget:
     0:
         image: /images/user-guide/ui/widgets/actions/settings/entityfromwidget.png
-
----
-
-{% include docs/user-guide/ui/widget-actions.md %}

@@ -1,10 +1,10 @@
 ![](/images/gateway/dashboard/gateway-dashboard-other-conf.png)
 
-Other - in this tab, you can configure additional gateway parameters:
-- Checking device activity - enables monitoring the activity of each connected device:
-  - Inactivity timeout - device inactivity time after which the gateway will disconnect the device;
-  - Inactivity check period - periodicity of device activity check.
-- Advanced - configure the following parameters only if you know what you are doing:
-  - Min pack send delay - delay between sending packets (Decreasing this setting results in increased CPU usage);
-  - QoS - quality of Service in MQTT messaging (0 - at most once, 1 - at least once);
-  - Check connectors' configuration - the period of time when the configuration of the connectors will be checked for a change.
+其他 - 在此选项卡中，您可以配置其他网关参数：
+- 检查设备活动 - 启用对每个连接设备的活动进行监视：
+  - 不活动超时 - 设备不活动时间，网关将断开设备连接；
+  - 不活动检查周期 - 设备活动检查的周期。
+- 高级 - 仅在您知道自己在做什么的情况下配置以下参数：
+  - 最小包发送延迟 - 发送数据包之间的延迟（减小此设置会导致 CPU 使用率增加）；
+  - QoS - MQTT 消息传递中的服务质量（0 - 最多一次，1 - 至少一次）；
+  - 检查连接器配置 - 检查连接器配置是否发生更改的时间段。

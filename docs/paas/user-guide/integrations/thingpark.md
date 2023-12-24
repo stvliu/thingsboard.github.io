@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-paas
-title: ThingPark Integration
-description: ThingPark Integration Guide 
+title: ThingPark 集成
+description: ThingPark 集成指南
 
 ---
 {% assign docsPrefix = "paas/" %}

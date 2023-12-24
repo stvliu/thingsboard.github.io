@@ -1,7 +1,7 @@
 <table>
     <thead>
       <tr>
-          <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
+          <td style="width: 25%"><b>参数</b></td><td style="width: 30%"><b>环境变量</b></td><td style="width: 15%"><b>默认值</b></td><td style="width: 30%"><b>描述</b></td>
       </tr>
     </thead>
     <tbody>
@@ -9,15 +9,15 @@
             <td>license.secret</td>
             <td>TB_LICENSE_SECRET</td>
             <td></td>
-            <td>License secret obtained from <a href="https://license.thingsboard.io">ThingsBoard License Portal</a></td>
+            <td>从 <a href="https://license.thingsboard.io">ThingsBoard 许可门户</a> 获得的许可密钥</td>
         </tr>
         <tr>
             <td>license.instance_data_file</td>
             <td>TB_LICENSE_INSTANCE_DATA_FILE</td>
             <td>instance-license.data</td>
-            <td>Instance data is auto-generated and is used to identify particular ThingsBoard Instance.<br>
-                Instance data is periodically updated and stored into the specified file which can be set to absolute or relative path.<br>
-                Please make sure that thingsboard process has access to the instance data file, in case you use absolute path.</td>
+            <td>实例数据是自动生成的，用于标识特定的 ThingsBoard 实例。<br>
+                实例数据会定期更新并存储到指定的文件中，该文件可以设置为绝对路径或相对路径。<br>
+                如果您使用绝对路径，请确保 thingsboard 进程有权访问实例数据文件。</td>
         </tr>
     </tbody>
 </table>

@@ -1,24 +1,25 @@
-### Add a gateway on The Things Industries
+### 在 The Things Industries 上添加网关
 
-We need to add a gateway on The Things Industries cloud.  
-To add a gateway, you can follow next steps:  
+我们需要在 The Things Industries 云上添加一个网关。
+
+要添加网关，您可以按照以下步骤操作：
 
 {% assign addGatewaySteps = '
     ===
         image: /images/devices-library/basic/integrations/thethingsindustries/1-login-page.png,
-        title: Login to the cloud and open your console.
+        title: 登录云并打开控制台。
     ===
         image: /images/devices-library/basic/integrations/thethingsindustries/2-cloud-console.png,
-        title: Choose **Gateways**.
+        title: 选择 **网关**。
     ===
         image: /images/devices-library/basic/integrations/thethingsindustries/3-gateway-list.png,
-        title: Press **Add gateway** button.
+        title: 按 **添加网关** 按钮。
     ===
         image: /images/devices-library/basic/integrations/thethingsindustries/4-register-gateway.png,
-        title: Put information about the gateway (gateway EUI).
+        title: 输入有关网关的信息（网关 EUI）。
     ===
         image: /images/devices-library/basic/integrations/thethingsindustries/5-gateway-info.png,
-        title: The gateway is added, copy and save **Gateway Server address**, we will need it later. 
+        title: 网关已添加，复制并保存 **网关服务器地址**，我们稍后会用到它。 
 '%}
 
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=addGatewaySteps %}
@@ -31,28 +32,28 @@ To add a gateway, you can follow next steps:
 
 {% endif %}
 
-### Configure application on The Things Industries cloud
+### 在 The Things Industries 云上配置应用程序
 
-Now we need to configure integration on The Things Industries. to do this please follow next steps:  
+现在我们需要在 The Things Industries 上配置集成。为此，请按照以下步骤操作：
 
 {% assign addIntegrationSteps = '
     ===
         image: /images/devices-library/basic/integrations/thethingsindustries/application-integration-mqtt.png,
-        title: Open <b>Integrations</b> -> <b>MQTT</b> in the menu.
+        title: 在菜单中打开 **集成** -> **MQTT**。
     ===
         image: /images/devices-library/basic/integrations/thethingsindustries/integration-mqtt-new-key.png,
-        title: Click on <b>Generate new API key</b> button.
+        title: 单击 **生成新的 API 密钥** 按钮。
     ===
         image: /images/devices-library/basic/integrations/thethingsindustries/integration-mqtt.png,
-        title: Press on copy icon to copy a key and save it (After leaving the page it won't be displayed).
+        title: 按复制图标复制密钥并保存它（离开页面后将不会显示）。
 '%}
 
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=addIntegrationSteps %}
 
 
-### Create uplink converter
+### 创建上行转换器
 
-At first, we will create an uplink converter to process the incoming data:
+首先，我们将创建一个上行转换器来处理传入的数据：
 
 {% capture converterCode %}
 var data = decodeToJson(payload);
@@ -60,59 +61,59 @@ var data = decodeToJson(payload);
 var deviceName = data.end_device_ids.device_id;
 var deviceType = data.end_device_ids.application_ids.application_id;
 
-// If you want to parse incoming data somehow, you can add your code to this function.
-// input: bytes
-// expected output:
+// 如果您想以某种方式解析传入数据，可以将您的代码添加到此函数中。
+// 输入：字节
+// 预期输出：
 //  {
 //    "attributes": {"attributeKey": "attributeValue"},
 //    "telemetry": {"telemetryKey": "telemetryValue"}
 //  }
-// default functionality - convert bytes to HEX string with telemetry key "HEX_bytes"
+// 默认功能 - 将字节转换为具有遥测键“HEX_bytes”的 HEX 字符串
 
 function decodeFrmPayload(input) {
     var output = { attributes:{}, telemetry: {} };
-    // --- Decoding code --- //
+    // --- 解码代码 --- //
 
     output.telemetry.HEX_bytes = bytesToHex(input);
 
-    // --- Decoding code --- //
+    // --- 解码代码 --- //
     return output;
 }
 
-// --- attributes and telemetry objects ---
+// --- 属性和遥测对象 ---
 var telemetry = {};
 var attributes = {};
-// --- attributes and telemetry objects ---
+// --- 属性和遥测对象 ---
 
-// --- Timestamp parsing
+// --- 时间戳解析
 var incomingDateString = data.uplink_message.received_at;
 var dateString = incomingDateString.substring(0, incomingDateString.lastIndexOf(".")+3) + "Z";
 var timestamp = new Date(dateString).getTime();
-// --- Timestamp parsing
+// --- 时间戳解析
 
-// You can add some keys manually to attributes or telemetry
+// 您可以手动将一些键添加到属性或遥测
 attributes.f_port = data.uplink_message.f_port;
 attributes.settings = data.uplink_message.settings;
-// We want to save correlation ids as single object, so we are excluding them from attributes parse and add manually
+// 我们希望将相关性 ID 保存为单个对象，因此我们将其从属性解析中排除并手动添加
 attributes.correlation_ids = data.correlation_ids;
 
-// You can exclude some keys from the result
+// 您可以从结果中排除一些键
 var excludeFromAttributesList = ["device_id", "application_id", "uplink_message", "correlation_ids"];
 var excludeFromTelemetryList = ["uplink_token", "gateway_id", "settings"];
 
-// Message parsing
-// To avoid paths in the decoded objects we passing false value to function as "pathInKey" argument.
-// Warning: pathInKey can cause already found fields to be overwritten with the last value found, e.g. receive_at from uplink_message will be written receive_at in the root.
+// 消息解析
+// 为了避免解码对象中的路径，我们将 false 值传递给函数作为“pathInKey”参数。
+// 警告：pathInKey 可能会导致已找到的字段被最后找到的值覆盖，例如，uplink_message 中的 receive_at 将被写入根中的 receive_at。
 var telemetryData = toFlatMap(data.uplink_message, excludeFromTelemetryList, false);
 var attributesData = toFlatMap(data, excludeFromAttributesList, false);
 
-// Passing incoming bytes to decodeFrmPayload function, to get custom decoding
+// 将传入字节传递给 decodeFrmPayload 函数，以获取自定义解码
 var customDecoding = {};
 if (data.uplink_message.get("frm_payload") != null) {
   customDecoding = decodeFrmPayload(base64ToBytes(data.uplink_message.frm_payload));
 }
 
-// Collecting data to result
+// 收集数据以获得结果
 if (customDecoding.?telemetry.size() > 0) {
     telemetry.putAll(customDecoding.telemetry);
 }
@@ -139,31 +140,31 @@ return result;
 
 {% include code-toggle.liquid code=converterCode params="javascript|.copy-code.expandable-20" %}
 
-### Create integration
+### 创建集成
 
-Next we will create an integration with The Things Industries inside the ThingsBoard.  
+接下来，我们将在 ThingsBoard 中创建与 The Things Industries 的集成。
 
 {% assign createTTIIntegration = '
     ===
         image: /images/devices-library/basic/integrations/thethingsindustries/1-create-tti-integration.png,
-        title: Go to **Integrations**, press **plus** button and choose **The Things Industries Integration** as a type, put some name.
+        title: 转到 **集成**，按 **加号** 按钮并选择 **The Things Industries 集成** 作为类型，输入一些名称。
     ===
         image: /images/devices-library/basic/integrations/thethingsindustries/2-create-tti-integration-uplink.png,
-        title: Check **Create new uplink data converter** and replace a code or create the existing one.
+        title: 选中 **创建新的上行数据转换器** 并替换代码或创建现有代码。
     ===
         image: /images/devices-library/basic/integrations/thethingsindustries/3-create-tti-integration-configuration.png,
-        title: Fill the field with your parameters, 
+        title: 用您的参数填写字段， 
 '
 %}
 
-Open **Integrations** section and add new Integration with the following parameters:  
+打开 **集成** 部分并添加具有以下参数的新集成：
 
-- **Region**: *eu1* (region where your application was registered inside The Things Industries Console)
-- **Username**: *thingsboard-data-integration@thingsboard* (use ***Username*** from integration on The Things Stack Industries)
-- **Password**: use ***Password*** from integration on The Things Industries
+- **区域**：*eu1*（在 The Things Industries 控制台中注册应用程序的区域）
+- **用户名**：*thingsboard-data-integration@thingsboard*（使用 The Things Stack Industries 上集成的 ***用户名***）
+- **密码**：使用 The Things Industries 上集成的 ***密码***
 
-To add integration click on '**+**' button and follow the next steps:  
+要添加集成，请单击“**+**”按钮并按照以下步骤操作：
 
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=createTTIIntegration %} 
 
-Press **Add** button and integration will be added.  
+按 **添加** 按钮，集成将被添加。

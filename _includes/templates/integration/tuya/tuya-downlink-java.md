@@ -1,4 +1,4 @@
-You can use our example of Downlink Converter, or write your own according to your configuration:
+您可以使用我们的下行转换器示例，或根据您的配置编写自己的示例：
 
 ```javascript
 /** Encoder **/
@@ -13,13 +13,13 @@ if (msg.params == "false" || msg.params == "true") {
 
 var result = {
 
-    // downlink data content type: JSON, TEXT or BINARY (base64 format)
+    // 下行数据内容类型：JSON、TEXT 或 BINARY（base64 格式）
     contentType: "JSON",
 
-    // downlink data
+    // 下行数据
     data: JSON.stringify(command),
 
-    // Optional metadata object presented in key/value format
+    // 以键/值格式显示的可选元数据对象
     metadata: {
             deviceId: metadata.deviceName
     }

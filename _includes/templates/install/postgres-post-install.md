@@ -1,5 +1,5 @@
-Once PostgreSQL is installed you may want to create a new user or set the password for the the main user. 
-The instructions below will help to set the password for main postgresql user
+安装 PostgreSQL 后，您可能需要创建一个新用户或设置主用户密码。
+以下说明将帮助您设置主 postgresql 用户的密码
 
 ```text
 sudo su - postgres
@@ -7,5 +7,3 @@ psql
 \password
 \q
 ```
-
-

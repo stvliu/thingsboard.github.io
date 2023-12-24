@@ -1,14 +1,13 @@
+要安装 RabbitMQ，请使用此 [说明](https://www.rabbitmq.com/install-debian.html)。
 
-For installing RabbitMQ use this [instruction](https://www.rabbitmq.com/install-debian.html).
-
-Configuration environment file for ThingsBoard queue service:
+ThingsBoard 队列服务的配置环境文件：
 
 ```text
 nano tb-node.env
 ```
 {: .copy-code}
 
-Add the following line to the file. Don't forget to replace "YOUR_USERNAME" and "YOUR_PASSWORD" with your **real user credentials**, "localhost" and "5672" with your **real RabbitMQ host and port**:
+将以下行添加到文件中。不要忘记用你的 **真实用户凭据** 替换“YOUR_USERNAME”和“YOUR_PASSWORD”，用你的 **真实 RabbitMQ 主机和端口** 替换“localhost”和“5672”：
 
 ```bash
 TB_QUEUE_TYPE=rabbitmq
@@ -19,7 +18,7 @@ TB_QUEUE_RABBIT_MQ_PORT=5672
 ```
 {: .copy-code}
 
-Check docker-compose.yml and configure ports if you need:
+检查 docker-compose.yml 并根据需要配置端口：
 
 ```bash
 nano docker-compose.yml

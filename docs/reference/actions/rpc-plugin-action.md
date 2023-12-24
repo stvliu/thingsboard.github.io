@@ -2,18 +2,18 @@
 layout: docwithnav
 assignees:
 - ashvayka
-title: RPC Plugin Action
+title: RPC 插件操作
 
 ---
 
-## Overview
+## 概述
 
-This component allows forwarding incoming rpc requests to various plugins. 
+此组件允许将传入的 rpc 请求转发到各种插件。
 
-## Configuration
+## 配置
 
-There is no specific configuration for this component.
+此组件没有特定配置。
 
-## Example
+## 示例
 
-As a tenant administrator, you are able to review action example inside **Rules->Demo Time RPC Rule->Actions->RPC Plugin Action**.
+作为租户管理员，您可以在 **规则->演示时间 RPC 规则->操作->RPC 插件操作** 中查看操作示例。

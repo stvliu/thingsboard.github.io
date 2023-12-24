@@ -1,7 +1,7 @@
 ---
 layout: devices-library-article
-title: How to connect WS202 PIR & Light LoRaWAN® Sensor to ThingsBoard?
-category: Other devices
+title: 如何将 WS202 PIR 和光照 LoRaWAN® 传感器连接到 ThingsBoard？
+category: 其他设备
 connectivity: LoRaWAN®
 vendor: Milesight
 hasIntegrationDeviceConfiguration: true

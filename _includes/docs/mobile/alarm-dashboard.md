@@ -4,25 +4,25 @@
 {% assign appPrefix = "ThingsBoard" %}
 {% endif %}
 
-{{appPrefix}} allows configuring alarm details dashboard to be displayed when tapping on the alarm in the alarms screen.
-Alarm details dashboard is configurable in the alarm rules of the device profile form:
+{{appPrefix}}允许配置警报详细信息仪表板，以便在警报屏幕中点击警报时显示。
+警报详细信息仪表板可在设备配置文件表单的警报规则中配置：
 
-1. Go to the **Device profiles** through the main menu on the left of the screen;
-2. Click on the device profile you want to modify;
-3. In the opened device profile details navigate to **Alarm rules** tab;
-4. Click **edit** button;
-5. In the **Create alarm rule** form select desired dashboard in the **Mobile dashboard** field;
-6. Click **Apply changes** button;
+1. 通过屏幕左侧的主菜单转到**设备配置文件**；
+2. 单击要修改的设备配置文件；
+3. 在打开的设备配置文件详细信息中，导航到**警报规则**选项卡；
+4. 单击**编辑**按钮；
+5. 在**创建警报规则**表单中，在**移动仪表板**字段中选择所需的仪表板；
+6. 单击**应用更改**按钮；
 
 {% include images-gallery.html imageCollection="alarm-dashboard" %}
 
 {% capture dashboard_state_parameter %}
-**Note:** In order to display specific alarm originator data, dashboard should be configured to use [**Entity from dashboard state**](/docs/{{docsPrefix}}user-guide/ui/aliases/#entity-from-dashboard-state) alias in widgets datasources.
+**注意：**为了显示特定的警报发起者数据，仪表板应配置为在小部件数据源中使用[**仪表板状态的实体**](/docs/{{docsPrefix}}user-guide/ui/aliases/#entity-from-dashboard-state)别名。
 {% endcapture %}
 {% include templates/info-banner.md content=dashboard_state_parameter %}
 
-To verify your configuration run the mobile app. Then navigate to the alarms list. Tap on the alarm having type for which dashboard was configured.
-**Note** that alarm dashboard configuration only applied to alarms generated after applying configuration.
+要验证您的配置，请运行移动应用程序。然后导航到警报列表。点击具有已配置仪表板的类型的警报。
+**注意**警报仪表板配置仅适用于应用配置后生成的警报。
 
 <br>
 
@@ -30,7 +30,7 @@ To verify your configuration run the mobile app. Then navigate to the alarms lis
     <div class="mobile-frame ios">
         <div class="phone-shadow right"></div>
         <div class="frame-image">
-            <img src="/images/mobile/{{docsPrefix}}alarm-dashboard-frame.png" alt="Alarm dashboard frame">
+            <img src="/images/mobile/{{docsPrefix}}alarm-dashboard-frame.png" alt="警报仪表板框架">
         </div>
         <div class="frame-video">
             <video autoplay loop preload="auto" muted playsinline>

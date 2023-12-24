@@ -33,7 +33,7 @@ Besides configuring the integration, we will also set up ThingsBoard to decode i
 
 ## Step 1. Data Converter configuration
 
-In order to create an [Integration](/docs/user-guide/integrations), we should create the [Uplink Data Converter](/docs/user-guide/integrations/#uplink-data-converter) first.
+In order to create an [Integration](/docs/user-guide/integrations/), we should create the [Uplink Data Converter](/docs/user-guide/integrations/#uplink-data-converter) first.
 The converter will decode incoming telemetry payload data from T-Mobile NB IoT that contains in encoded hex string to human readable, simplified ThingsBoard data format.
 
  - Input data from T-Mobile NB IoT Platform looks like this:
@@ -555,4 +555,3 @@ The initial Root Rule Chain has been modified by adding the following node:
 ## Next steps
 
 {% assign currentGuide = "HardwareSamples" %}{% include templates/guides-banner.md %}
-

@@ -1,24 +1,25 @@
-### Add a gateway on the Chirpstack
+### 在 Chirpstack 上添加网关
 
-We need to add a gateway on the [Chirpstack](https://chirpstack.io){: target="_blank"}.   
-To add a gateway, you can follow next steps:
+我们需要在 [Chirpstack](https://chirpstack.io){: target="_blank"} 上添加一个网关。
+
+要添加网关，可以按照以下步骤操作：
 
 {% assign addGatewaySteps = '
     ===
         image: /images/devices-library/basic/integrations/chirpstack/main-page.png,
-        title: Login to Chirpstack server.
+        title: 登录 Chirpstack 服务器。
     ===
         image: /images/devices-library/basic/integrations/chirpstack/gateways.png,
-        title: Go to **Gateways** and click on **Add gateway**.
+        title: 转到 **网关**，然后单击 **添加网关**。
     ===
         image: /images/devices-library/basic/integrations/chirpstack/add-gateway.png,
-        title: Fill **name**, **gateway EUI** (It will be different, you can find it on the gateway control panel) with your data, scroll down and click on **Submit** button.
+        title: 使用您的数据填写 **名称**、**网关 EUI**（它将不同，您可以在网关控制面板上找到它），向下滚动并单击 **提交** 按钮。
     ===
         image: /images/devices-library/basic/integrations/chirpstack/add-gateway.png,
-        title: Scroll up and put information about the gateway **MAC Address** (Just remove **FFFF** or **FFFE** in the middle of ***gateway EUI***) into **eth0 MAC address** and gateway EUI to **Custom EUI** field.
+        title: 向上滚动并将有关网关 **MAC 地址** 的信息（只需删除 ***网关 EUI*** 中间的 **FFFF** 或 **FFFE**）放入 **eth0 MAC 地址** 和网关 EUI 到 **自定义 EUI** 字段。
     ===
         image: /images/devices-library/basic/integrations/chirpstack/gateway-added-offline.png,
-        title: The gateway is added. In gateways tab you can see its status.
+        title: 网关已添加。在网关选项卡中，您可以看到其状态。
 '%}
 
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=addGatewaySteps %}
@@ -31,91 +32,91 @@ To add a gateway, you can follow next steps:
 
 {% endif %}
 
-### Configure application on the Chirpstack
+### 在 Chirpstack 上配置应用程序
 
-Now we need to configure application on the Chirpstack. To do this please follow next steps:  
+现在我们需要在 Chirpstack 上配置应用程序。为此，请按照以下步骤操作：
 
 {% assign addIntegrationSteps = '
     ===
         image: /images/devices-library/basic/integrations/chirpstack/applications.png,
-        title: Go to **Applications** in the left menu and click **Add application**.
+        title: 转到左侧菜单中的 **应用程序**，然后单击 **添加应用程序**。
     ===
         image: /images/devices-library/basic/integrations/chirpstack/create-application.png,
-        title: Fill application name and click on **Submit** button.
+        title: 填写应用程序名称，然后单击 **提交** 按钮。
     ===
         image: /images/devices-library/basic/integrations/chirpstack/api-keys.png,
-        title: Go to **API keys** in the left menu and click on the **Add API key** button.
+        title: 转到左侧菜单中的 **API 密钥**，然后单击 **添加 API 密钥** 按钮。
     ===
         image: /images/devices-library/basic/integrations/chirpstack/create-api-key.png,
-        title: Put some name for the API key and click on **Submit** button.
+        title: 为 API 密钥输入一些名称，然后单击 **提交** 按钮。
     ===
         image: /images/devices-library/basic/integrations/chirpstack/api-key-created.png,
-        title: Copy the created API key and save it, we will need it for integration on ThingsBoard.
+        title: 复制创建的 API 密钥并保存，我们将在 ThingsBoard 上集成时需要它。
 '%}
 
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=addIntegrationSteps %}
 
-Now we can move to ThingsBoard to configure integration.  
+现在我们可以转到 ThingsBoard 来配置集成。
 
-### Create uplink converter
+### 创建上行转换器
 
-At first, copy the code for uplink converter, we will need it for integration:
+首先，复制上行转换器的代码，我们将在集成时需要它：
 
 {% capture converterCode %}
 var data = decodeToJson(payload);
 var deviceName = data.deviceInfo.deviceName;
 var deviceType = data.deviceInfo.deviceProfileName;
 
-// If you want to parse incoming data somehow, you can add your code to this function.
-// input: bytes 
-// expected output: 
+// 如果您想以某种方式解析传入的数据，可以将您的代码添加到此函数中。
+// 输入：字节
+// 预期输出：
 //  {
 //    "attributes": {"attributeKey": "attributeValue"},
 //    "telemetry": {"telemetryKey": "telemetryValue"}
 //  }
-// default functionality - convert bytes to HEX string with telemetry key "HEX_bytes"
+// 默认功能 - 将字节转换为带有遥测键 "HEX_bytes" 的 HEX 字符串
 
 function decodePayload(input) {
     var output = { attributes:{}, telemetry: {} };
-    // --- Decoding code --- //
+    // --- 解码代码 --- //
     
     output.telemetry.HEX_bytes = bytesToHex(input);
     
-    // --- Decoding code --- //
+    // --- 解码代码 --- //
     return output;
 }
 
-// --- attributes and telemetry objects ---
+// --- 属性和遥测对象 ---
 var telemetry = {};
 var attributes = {};
-// --- attributes and telemetry objects ---
+// --- 属性和遥测对象 ---
 
-// --- Timestamp parsing
+// --- 时间戳解析
 var dateString = data.time.substring(0, data.time.lastIndexOf('+')-3) + "Z";
 var timestamp = new Date(dateString).getTime();
-// --- Timestamp parsing
+// --- 时间戳解析
 
-// You can add some keys manually to attributes or telemetry
+// 您可以手动将一些键添加到属性或遥测
 attributes.fPort = data.port;
 attributes.encodedData = data.data;
 
-// You can exclude some keys from the result
+// 您可以从结果中排除一些键
 var excludeFromAttributesList = ["deviceName", "rxInfo", "txInfo", "deduplicationId", "time", "dr", "fCnt", "fPort"];
 var excludeFromTelemetryList = ["data", "deviceInfo", "devAddr", "adr"];
 
-// Message parsing
-// To avoid paths in the decoded objects we passing false value to function as "pathInKey" argument.
-// Warning: pathInKey can cause already found fields to be overwritten with the last value found.
+// 消息解析
+// 为了避免解码对象中的路径，我们将 false 值作为 "pathInKey" 参数传递给函数。
+// 警告：pathInKey 可能会导致已找到的字段被最后找到的值覆盖。
 
 var telemetryData = toFlatMap(data, excludeFromTelemetryList, false);
 var attributesData = toFlatMap(data, excludeFromAttributesList, false);
 
 var uplinkDataList = [];
 
-// Passing incoming bytes to decodePayload function, to get custom decoding
+// 将传入的字节传递给 decodePayload 函数，以获取自定义解码
 var customDecoding = decodePayload(hexToBytes(data.data));
 
-// Collecting data to result
+// 将数据收集到结果中
 if (customDecoding.?telemetry.size() > 0) {
     telemetry.putAll(customDecoding.telemetry);
 }
@@ -159,31 +160,31 @@ return uplinkDataList;
 
 {% include code-toggle.liquid code=converterCode params="javascript|.copy-code.expandable-20" %}
 
-### Create integration
+### 创建集成
 
-Next we will create an integration with Chirpstack inside the ThingsBoard and configure the integration on Chirpstack.
+接下来，我们将在 ThingsBoard 中创建与 Chirpstack 的集成，并在 Chirpstack 上配置集成。
 
 {% assign createChirpstackIntegration = '
     ===
         image: /images/devices-library/basic/integrations/chirpstack/1-create-integration.png,
-        title: Go to **Integrations**, press **plus** button and choose **Chirpstack** as a type, put some name.
+        title: 转到 **集成**，按 **加号** 按钮并选择 **Chirpstack** 作为类型，输入一些名称。
     ===
         image: /images/devices-library/basic/integrations/chirpstack/2-create-integration-uplink.png,
-        title: Check **Create new uplink data converter** and replace a code or create the existing one.
+        title: 选中 **创建新的上行数据转换器** 并替换代码或创建现有代码。
     ===
         image: /images/devices-library/basic/integrations/chirpstack/3-create-integration-configuration.png,
-        title: Put your **Application server URL** and **API Key** from Chirpstack and copy **HTTP endpoint URL**, Click on **Add** button.
+        title: 输入您的 **应用程序服务器 URL** 和 **API 密钥** 从 Chirpstack 并复制 **HTTP 端点 URL**，单击 **添加** 按钮。
     ===
         image: /images/devices-library/basic/integrations/chirpstack/application-integrations.png,
-        title: Open your Chirpstack, go to **Applications** -> Your application -> **Integrations** tab.
+        title: 打开您的 Chirpstack，转到 **应用程序** -> 您的应用程序 -> **集成** 选项卡。
     ===
         image: /images/devices-library/basic/integrations/chirpstack/create-application-integration.png,
-        title: Scroll down and click on **+** under **HTTP** tile. Put **HTTP URL endpoint** into **Event Endpoint URL(s)** field and click on **Submit** button.
+        title: 向下滚动并在 **HTTP** 磁贴下单击 **+**。将 **HTTP URL 端点** 放入 **事件端点 URL(s)** 字段，然后单击 **提交** 按钮。
 '
 %}
 
-To add integration click on '**+**' button and follow the next steps:  
+要添加集成，请单击 '**+**' 按钮并按照以下步骤操作：
 
-{% include images-gallery.liquid showListImageTitles="true" imageCollection=createChirpstackIntegration %} 
+{% include images-gallery.liquid showListImageTitles="true" imageCollection=createChirpstackIntegration %}
 
-Integrations are created.
+集成已创建。

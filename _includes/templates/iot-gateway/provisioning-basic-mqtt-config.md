@@ -1,13 +1,13 @@
-Using the following config, you can configure Gateway to use MQTT Basic provisioning strategy:
+使用以下配置，您可以配置网关以使用 MQTT 基本预配策略：
 
-| **Parameter**         | **Default value**   | **Description**                                                                    |
-|:----------------------|:--------------------|------------------------------------------------------------------------------------
-| type                  | **MQTT_BASIC**      | Type of provisioning strategy.                                                     |
-| provisionDeviceKey    | **DEVICE_KEY**      | Provisioning device key, you should take it from configured device profile.        |
-| provisionDeviceSecret | **DEVICE_SECRET**   | Provisioning device secret, you should take it from configured device profile.     |
-| ---                   
+| **参数** | **默认值** | **说明** |
+|---|---|---|
+| type | **MQTT_BASIC** | 预配策略的类型。 |
+| provisionDeviceKey | **DEVICE_KEY** | 预配设备密钥，您应该从配置的设备配置文件中获取它。 |
+| provisionDeviceSecret | **DEVICE_SECRET** | 预配设备密钥，您应该从配置的设备配置文件中获取它。 |
+| --- | | |
 
-Provisioning subsection in configuration file will look like this:
+配置文件中的预配子部分将如下所示：
 ```json
 ...
 "provisioning": {

@@ -1,9 +1,9 @@
 ---
 layout: devices-library-article
-title: How to connect ASUS Tinker Board 2S to ThingsBoard?
-category: Single-board computers
+title: 如何将 ASUS Tinker Board 2S 连接到 ThingsBoard？
+category: 单板计算机
 chip: Rockchip RK3399
-connectivity: Ethernet, WIFI, Bluetooth
+connectivity: 以太网、WIFI、蓝牙
 vendor: ASUS
 deviceImageFileName: asus-tinker-board-2s.png
 docsPrefix: pe/

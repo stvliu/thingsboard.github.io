@@ -1,23 +1,23 @@
 ---
 layout: docwithnav-mqtt-broker
-title: 3M Msg/sec Throughput with a Single TBMQ Node
-description: TBMQ 3M msg/s throughput single node performance test
+title: 单个 TBMQ 节点 3M 消息/秒吞吐量
+description: TBMQ 3M 消息/秒吞吐量单节点性能测试
 
 tbmq-3m-single-node-test-aws-instances:
   0:
     image: /images/mqtt-broker/reference/single-node-test/aws-instances.png
-    title: 'AWS EC2 instances deployed'
+    title: '已部署的 AWS EC2 实例'
 
 tbmq-3m-single-node-test-monitoring:
   0:
     image: /images/mqtt-broker/reference/single-node-test/tbmq-aws.png
-    title: 'AWS EC2 TBMQ monitoring'
+    title: 'AWS EC2 TBMQ 监控'
   1:
     image: /images/mqtt-broker/reference/single-node-test/tbmq-jmx.png
-    title: 'JMX TBMQ monitoring'
+    title: 'JMX TBMQ 监控'
   2:
     image: /images/mqtt-broker/reference/single-node-test/tbmq-monitoring.png
-    title: 'TBMQ graphs monitoring'
+    title: 'TBMQ 图表监控'
 
 ---
 

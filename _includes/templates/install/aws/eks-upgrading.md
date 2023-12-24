@@ -1,25 +1,24 @@
-## Upgrading to new ThingsBoard version
+## 升级到新的 ThingsBoard 版本
 
-Merge your local changes with the latest release branch from the repo you have used in the [Step 1](#step-1-clone-thingsboard-ce-k8s-scripts-repository).
+将本地更改与您在 [步骤 1](#step-1-clone-thingsboard-ce-k8s-scripts-repository)中使用的存储库中的最新发布分支合并。
 
 
-In case when database upgrade is needed, execute the following commands:
+如果需要数据库升级，请执行以下命令：
 
 ```bash
  ./k8s-upgrade-tb.sh --fromVersion=[FROM_VERSION]
 ```
 {: .copy-code}
 
-Where:
+其中：
 
-- `FROM_VERSION` - from which version upgrade should be started. See [Upgrade Instructions](/docs/user-guide/install/upgrade-instructions) for valid `fromVersion` values.
+- `FROM_VERSION` - 从哪个版本开始升级。有关有效的 `fromVersion` 值，请参阅 [升级说明](/docs/user-guide/install/upgrade-instructions)。
 
-Note: You may optionally stop the tb-node pods while you run the upgrade of the database. This will cause downtime, but will make sure that the DB state will be consistent after the update.
-Most of the updates do not require the tb-nodes to be stopped.
+注意：您可以在运行数据库升级时选择停止 tb-node pod。这会导致停机，但会确保更新后数据库状态一致。
+大多数更新不需要停止 tb-node。
 
-Once completed, execute deployment of the resources again. This will cause rollout restart of the thingsboard components with the newest version.
+完成后，再次执行资源部署。这将导致 thingsboard 组件使用最新版本重新启动。
 
 ```yaml
 ./k8s-deploy-resources.sh
 ```
-

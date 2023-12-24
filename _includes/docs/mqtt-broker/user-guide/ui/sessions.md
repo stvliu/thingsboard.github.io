@@ -1,48 +1,46 @@
-
 * TOC
 {:toc}
 
-The respective page offers the capability to observe and analyze all the sessions stored within the broker's system. 
-This encompasses both the existing online sessions, representing clients currently connected to the broker, and the disconnected sessions of persistent clients. 
-By accessing this page, users can gain a comprehensive overview of all stored sessions, enabling them to monitor and 
-manage both the active and historical records of client interactions with the broker.
+相应页面提供观察和分析存储在代理系统中的所有会话的功能。
+这既包括表示当前连接到代理的客户端的现有在线会话，也包括持久客户端的断开连接的会话。
+通过访问此页面，用户可以全面了解所有存储的会话，从而能够监视和管理客户端与代理交互的活动记录和历史记录。
 
-### Session Details
+### 会话详细信息
 
-To access the detailed information of the current TBMQ sessions, please follow these steps:
+要访问当前 TBMQ 会话的详细信息，请按照以下步骤操作：
 
-**1. Session details.** Navigate to the left-hand menu and click on 'Sessions.' Then, click on the session row. 
-The details dialog will appear, providing you with basic information about the session:
-* Connected Status (Connected/Disconnected).
-* Connected At time. 
-* Disconnected At time.
-* Keep Alive (seconds) - indicates the duration for which the Broker and Client can remain without communication before the session is closed.
-* Node ID.
-* Clean Start. If the checkbox is set to true, it means that the session is non-persistent. In other words, all information and messages from the previous persistent session will be lost upon disconnection.
-* Client ID.
-* Client IP.
-* Client type (Device/Application).
+**1. 会话详细信息。** 导航到左侧菜单并单击“会话”。然后，单击会话行。
+详细信息对话框将出现，为您提供有关会话的基本信息：
+* 连接状态（已连接/已断开连接）。
+* 连接时间。
+* 断开连接时间。
+* 保持活动（秒） - 表示代理和客户端可以在会话关闭之前保持不通信的持续时间。
+* 节点 ID。
+* 清除启动。如果复选框设置为 true，则表示会话是非持久的。换句话说，断开连接后，先前持久会话的所有信息和消息都将丢失。
+* 客户端 ID。
+* 客户端 IP。
+* 客户端类型（设备/应用程序）。
 
-**2. Disconnect Client.** To disconnect a client, click on the "Disconnect client" button. Please note that only `Connected` clients can be disconnected.
+**2. 断开客户端连接。** 要断开客户端连接，请单击“断开客户端连接”按钮。请注意，只有“已连接”客户端才能断开连接。
 
-**3. Remove Client.** To remove a client session, click on the "Remove session" button. Keep in mind that only `Disconnected` clients can be removed.
+**3. 删除客户端。** 要删除客户端会话，请单击“删除会话”按钮。请记住，只有“已断开连接”的客户端才能被删除。
 
 {% include images-gallery.html imageCollection="sessions-info" %}
 
-### Subscriptions Management
+### 订阅管理
 
-Users can view various details about the subscriptions associated with a session, such as:
-* The number of current subscriptions
-* Topic filters
-* Quality of Service (QoS)
-* The share group name for the Shared Subscriptions feature.
+用户可以查看与会话关联的订阅的各种详细信息，例如：
+* 当前订阅数
+* 主题过滤器
+* 服务质量 (QoS)
+* 共享订阅功能的共享组名称。
 
-While session details are generally read-only, users can effectively manage their subscriptions within the session, making additions, removals, and edits as needed. 
-Here are the available actions for managing subscriptions:
-* To **add** a new subscription, click on the "Add Subscription" button. 
-* To **remove** a subscription, click on the "Delete" icon associated with the specific subscription. 
-* To **edit** existing Topic filter or QoS, make the desired changes in the provided form and click the "Update" button.
+虽然会话详细信息通常是只读的，但用户可以有效地管理会话中的订阅，根据需要进行添加、删除和编辑。
+以下是管理订阅的可用操作：
+* 要**添加**新订阅，请单击“添加订阅”按钮。
+* 要**删除**订阅，请单击与特定订阅关联的“删除”图标。
+* 要**编辑**现有的主题过滤器或 QoS，请在提供的表单中进行所需的更改，然后单击“更新”按钮。
 
-Please note that the Shared Subscriptions feature is read-only, meaning that modifications to shared subscriptions are not allowed.
+请注意，共享订阅功能是只读的，这意味着不允许修改共享订阅。
 
 ![image](/images/mqtt-broker/user-guide/ui/session-subscriptions-1.png)

@@ -1,7 +1,7 @@
-Uncomment '# PostgreSQL DAO Configuration' block.  Be sure to update the postgres databases username and password in the bottom two lines of the block (here, as shown, they are both "postgres").
+取消注释“# PostgreSQL DAO 配置”块。务必更新块中最后两行的 postgres 数据库用户名和密码（此处，如所示，它们都是“postgres”）。
 
 ```text
-# PostgreSQL DAO Configuration
+# PostgreSQL DAO 配置
 spring:
   data:
     jpa:

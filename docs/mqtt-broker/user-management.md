@@ -1,23 +1,22 @@
 ---
 layout: docwithnav-mqtt-broker
-title: User Management
-description: User Management Guide
+title: 用户管理
+description: 用户管理指南
 
 ---
 
 * TOC
 {:toc}
 
-By default, the system is initially established with a singular admin user, with username **sysadmin@thingsboard.org** and password **sysadmin**.
+默认情况下，系统最初建立时只有一个管理员用户，用户名为 **sysadmin@thingsboard.org**，密码为 **sysadmin**。
 
-However, when operating in a production environment, it is strongly advised to create a new admin user, either remove the default user entirely 
-or modify the password associated with the aforementioned user.
+但是，在生产环境中运行时，强烈建议创建一个新的管理员用户，完全删除默认用户或修改上述用户关联的密码。
 
-Throughout this documentation, all provided examples will employ the **curl** command to execute REST requests, thus showcasing practical implementations of the API interactions.
+在整个文档中，所有提供的示例都将使用 **curl** 命令来执行 REST 请求，从而展示 API 交互的实际实现。
 
 {% include templates/mqtt-broker/authentication.md %}
 
-##### Get all users
+##### 获取所有用户
 
 ```bash
 curl --location --request GET "http://localhost:8083/api/admin?pageSize=50&page=0" \
@@ -25,10 +24,9 @@ curl --location --request GET "http://localhost:8083/api/admin?pageSize=50&page=
 ```
 {: .copy-code}
 
-Within the system, every user entity possesses a distinct and unique identifier known as the **id**. 
-This id serves as a reference point and can be utilized to perform operations such as _updating_ or _deleting_ users.
+在系统中，每个用户实体都拥有一个称为 **id** 的独特标识符。此 id 用作参考点，可用于执行诸如 _更新_ 或 _删除_ 用户的操作。
 
-##### Create/update user
+##### 创建/更新用户
 
 ```bash
 curl --location --request POST 'http://localhost:8083/api/admin' \
@@ -44,9 +42,9 @@ curl --location --request POST 'http://localhost:8083/api/admin' \
 ```
 {: .copy-code}
 
-If _$USER_ID_ is _null_ or _id_ field is absent in the request body, the new admin user will be created, otherwise the user with _$USER_ID_ identifier will be updated.
+如果 _$USER_ID_ 为 _null_ 或请求正文中没有 _id_ 字段，则将创建新的管理员用户，否则将更新具有 _$USER_ID_ 标识符的用户。
 
-##### Delete user
+##### 删除用户
 
 ```bash
 curl --location --request DELETE 'http://localhost:8083/api/admin/$USER_ID' \
@@ -54,4 +52,4 @@ curl --location --request DELETE 'http://localhost:8083/api/admin/$USER_ID' \
 ```
 {: .copy-code}
 
-Paste actual ID of the user you want to delete instead of _$USER_ID_.
+粘贴要删除的用户的实际 ID，而不是 _$USER_ID_。

@@ -1,6 +1,6 @@
-Define environment variables that you will use in various commands later in this guide.
+定义环境变量，您将在本指南后面的各种命令中使用它们。
 
-We assume you are using Linux. Execute the following command:
+我们假设您使用的是 Linux。执行以下命令：
 
 ```bash
 export GCP_PROJECT=$(gcloud config get-value project)
@@ -13,11 +13,11 @@ echo "You have selected project: $GCP_PROJECT, region: $GCP_REGION, network: $GC
 ```
 {: .copy-code}
 
-where:
+其中：
 
-* first line uses gcloud command to fetch your current GCP project id. We will refer to it later in this guide using **GCP_PROJECT**;
-* *us-central1* is one of the available compute [regions](https://cloud.google.com/compute/docs/regions-zones#available). We will refer to it later in this guide using **GCP_REGION**;
-* *us-central1-a* is one of the available compute [zones](https://cloud.google.com/compute/docs/regions-zones#available). Should match the selected region. We will refer to it later in this guide using **GCP_ZONE**;
-* *default* is a default GCP network name; We will refer to it later in this guide using **;GCP_NETWORK**;
-* *tb-ce* is the name of your cluster. You may input a different name. We will refer to it later in this guide using **$TB_CLUSTER_NAME**;
-* *tb-db* is the name of your database server. You may input a different name. We will refer to it later in this guide using **TB_DATABASE_NAME**;
+* 第一行使用 gcloud 命令获取您当前的 GCP 项目 ID。我们将在本指南的后面使用 **GCP_PROJECT** 来引用它；
+* *us-central1* 是可用的计算 [区域](https://cloud.google.com/compute/docs/regions-zones#available) 之一。我们将在本指南的后面使用 **GCP_REGION** 来引用它；
+* *us-central1-a* 是可用的计算 [区域](https://cloud.google.com/compute/docs/regions-zones#available) 之一。应与所选区域匹配。我们将在本指南的后面使用 **GCP_ZONE** 来引用它；
+* *default* 是默认的 GCP 网络名称；我们将在本指南的后面使用 **;GCP_NETWORK** 来引用它；
+* *tb-ce* 是您的集群的名称。您可以输入不同的名称。我们将在本指南的后面使用 **$TB_CLUSTER_NAME** 来引用它；
+* *tb-db* 是您的数据库服务器的名称。您可以输入不同的名称。我们将在本指南的后面使用 **TB_DATABASE_NAME** 来引用它；

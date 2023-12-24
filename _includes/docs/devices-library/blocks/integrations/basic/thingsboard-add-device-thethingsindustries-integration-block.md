@@ -1,24 +1,25 @@
-### Add a device on The Things Industries
+### 在 The Things Industries 上添加设备
 
-We need to add a device on The Things Industries cloud.  
-To add a device, you can follow next steps:  
+我们需要在 The Things Industries 云上添加一个设备。
+
+要添加设备，您可以按照以下步骤操作：
 
 {% assign addDeviceSteps = '
     ===
         image: /images/devices-library/basic/integrations/thethingsindustries/1-login-page.png,
-        title: Login to the cloud and open your console.
+        title: 登录云并打开控制台。
     ===
         image: /images/devices-library/basic/integrations/thethingsindustries/2-cloud-console.png,
-        title: Choose **Gateways**.
+        title: 选择 **网关**。
     ===
         image: /images/devices-library/basic/integrations/thethingsindustries/3-gateway-list.png,
-        title: Press the **+ Register gateway** button.
+        title: 按 **+ 注册网关** 按钮。
     ===
         image: /images/devices-library/basic/integrations/thethingsindustries/4-register-gateway.png,
-        title: Put information about the gateway (gateway EUI). Then click the **Register gateway** button.
+        title: 输入有关网关的信息（网关 EUI）。然后单击 **注册网关** 按钮。
     ===
         image: /images/devices-library/basic/integrations/thethingsindustries/5-gateway-info.png,
-        title: The gateway is added, copy and save **Gateway Server address**, we will need it later. 
+        title: 网关已添加，复制并保存 **网关服务器地址**，我们稍后会用到它。
 '%}
 
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=addDeviceSteps %}

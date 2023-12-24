@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-edge
-title: Installing ThingsBoard Edge using Docker (Windows)
-description: Installing ThingsBoard Edge using Docker (Windows)
+title: 使用 Docker 在 Windows 上安装 ThingsBoard Edge
+description: 使用 Docker 在 Windows 上安装 ThingsBoard Edge
 ---
 
 * TOC
@@ -11,23 +11,23 @@ description: Installing ThingsBoard Edge using Docker (Windows)
 
 {% assign docsPrefix = "edge/" %}
 
-This guide will help you to install and start ThingsBoard Edge using Docker on Windows. 
+本指南将帮助您在 Windows 上使用 Docker 安装并启动 ThingsBoard Edge。
 
 {% include templates/edge/install/prerequisites.md %}
 
-### Docker installation
+### Docker 安装
 
-- [Install Docker Toolbox for Windows](https://docs.docker.com/toolbox/toolbox_install_windows/){:target="_blank"}
+- [为 Windows 安装 Docker Toolbox](https://docs.docker.com/toolbox/toolbox_install_windows/){:target="_blank"}
 
-## Installation and Configuration
+## 安装和配置
 
-### Step 1. Running ThingsBoard Edge
+### 步骤 1. 运行 ThingsBoard Edge
 
 {% include templates/edge/install/docker-images-location.md %}
 
-Windows users should use docker managed volume for ThingsBoard Edge DataBase. 
-Create docker volume (for ex. `mytb-edge-data`) before executing docker run command:
-Open "Docker Quickstart Terminal". Execute the following command to create docker volume:
+Windows 用户应为 ThingsBoard Edge 数据库使用 docker 管理的卷。
+在执行 docker run 命令之前创建 docker 卷（例如 `mytb-edge-data`）：
+打开“Docker 快速启动终端”。执行以下命令以创建 docker 卷：
 
 ``` 
 docker volume create mytb-edge-data
@@ -38,7 +38,7 @@ docker volume create mytb-edge-data-db
 
 {% include templates/edge/install/copy-edge-credentials.md %}
 
-Create docker compose file for ThingsBoard Edge service:
+为 ThingsBoard Edge 服务创建 docker compose 文件：
 
 ```text
 docker-compose.yml
@@ -88,7 +88,7 @@ volumes:
 {% assign serviceName = "tbedge" %}
 {% include templates/install/docker/docker-compose-up.md %}
 
-In order to get access to necessary resources from external IP/Host on Windows machine, please execute the following commands:
+为了从 Windows 机器上的外部 IP/主机访问必要的资源，请执行以下命令：
 ``` 
 set PATH=%PATH%;"C:\Program Files\Oracle\VirtualBox"
 VBoxManage controlvm "default" natpf1 "tcp-port8080,tcp,,8080,,8080"  
@@ -97,25 +97,25 @@ VBoxManage controlvm "default" natpf1 "tcp-port5683,tcp,,5683,,5683"
 ```
 {: .copy-code}
 
-Where:
-- `C:\Program Files\Oracle\VirtualBox` - path to your VirtualBox installation directory
+其中：
+- `C:\Program Files\Oracle\VirtualBox` - VirtualBox 安装目录的路径
 
-### Step 2. Open ThingsBoard Edge UI
+### 步骤 2. 打开 ThingsBoard Edge UI
 
 {% include templates/edge/install/open-edge-ui.md %}
 
-### Step 3. Detaching, stop and start commands
+### 步骤 3. 分离、停止和启动命令
 
 {% assign serviceName = "tbedge" %}
 {% assign serviceFullName = "ThingsBoard Edge" %}
 {% include templates/install/docker/detaching-stop-start-commands.md %}
 
-## Troubleshooting
+## 故障排除
 
-### DNS issues
+### DNS 问题
 
 {% include templates/troubleshooting/dns-issues-windows.md %}
 
-## Next Steps
+## 后续步骤
 
 {% include templates/edge/install/next-steps.md %}

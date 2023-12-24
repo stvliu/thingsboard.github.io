@@ -1,75 +1,75 @@
-## Push to cloud 
+## 推送到云
 
 <table  style="width:12%">
    <thead>
      <tr>
-	 <td style="text-align: center"><strong><em>Since TB Version 3.3</em></strong></td>
+	 <td style="text-align: center"><strong><em>自 TB 版本 3.3 起</em></strong></td>
      </tr>
    </thead>
 </table> 
 
 ![image](/images/edge/nodes/push-to-cloud.png)
 
-Push messages from edge to cloud. This node used only on edge to push messages from edge to cloud. Once message arrived into this node it’s going to be converted into cloud event and saved to the local database. Node doesn't push messages directly to cloud, but stores event(s) in the cloud queue.
-Supports next originator types:
-- DEVICE
-- ASSET
-- ENTITY_VIEW
-- DASHBOARD
-- TENANT
-- CUSTOMER
-- EDGE
+将消息从边缘推送到云。此节点仅用于边缘，以将消息从边缘推送到云。一旦消息到达此节点，它将被转换为云事件并保存到本地数据库。节点不会将消息直接推送到云，而是将事件存储在云队列中。
+支持以下发起者类型：
+- 设备
+- 资产
+- 实体视图
+- 仪表板
+- 租户
+- 客户
+- 边缘
 
-As well node supports next message types:
+此外，节点还支持以下消息类型：
 - POST_TELEMETRY_REQUEST
 - POST_ATTRIBUTES_REQUEST
 - ATTRIBUTES_UPDATED
 - ATTRIBUTES_DELETED
 - ALARM
 
-In case successful storage edge event to database message will be routed via **Success** route.
+如果成功将边缘事件存储到数据库，则消息将通过 **Success** 路由进行路由。
 
 ![image](/images/edge/nodes/push-to-cloud-form.png)
 
-Message will be routed via **Failure** chain in the following cases:
-- Node was not able to save edge event to database
-- Unsupported originator type arrived
-- Unsupported message type arrived
+在以下情况下，消息将通过 **Failure** 链进行路由：
+- 节点无法将边缘事件保存到数据库
+- 到达了不受支持的发起者类型
+- 到达了不受支持的消息类型
 
-## Push to edge 
+## 推送到边缘
 
 <table  style="width:12%">
    <thead>
      <tr>
-	 <td style="text-align: center"><strong><em>Since TB Version 3.3</em></strong></td>
+	 <td style="text-align: center"><strong><em>自 TB 版本 3.3 起</em></strong></td>
      </tr>
    </thead>
 </table> 
 
 ![image](/images/edge/nodes/push-to-edge.png)
 
-Push messages from cloud to edge. Message originator must be assigned to particular edge or message originator is **EDGE** entity itself. This node used only on cloud instances to push messages from cloud to edge. Once message arrived into this node it’s going to be converted into edge event and saved to the database. Node doesn't push messages directly to edge, but stores event(s) in the edge queue.
-Supports next originator types:
-- DEVICE
-- ASSET
-- ENTITY_VIEW
-- DASHBOARD
-- TENANT
-- CUSTOMER
-- EDGE
+将消息从云推送到边缘。消息发起者必须分配给特定边缘，或者消息发起者本身就是 **EDGE** 实体。此节点仅用于云实例，以将消息从云推送到边缘。一旦消息到达此节点，它将被转换为边缘事件并保存到数据库。节点不会将消息直接推送到边缘，而是将事件存储在边缘队列中。
+支持以下发起者类型：
+- 设备
+- 资产
+- 实体视图
+- 仪表板
+- 租户
+- 客户
+- 边缘
 
-As well node supports next message types:
+此外，节点还支持以下消息类型：
 - POST_TELEMETRY_REQUEST
 - POST_ATTRIBUTES_REQUEST
 - ATTRIBUTES_UPDATED
 - ATTRIBUTES_DELETED
 - ALARM
 
-In case successful storage edge event to database message will be routed via **Success** route.
+如果成功将边缘事件存储到数据库，则消息将通过 **Success** 路由进行路由。
 
 ![image](/images/edge/nodes/push-to-edge-form.png)
 
-Message will be routed via **Failure** chain in the following cases:
-- Node was not able to save edge event to database
-- Unsupported originator type arrived
-- Unsupported message type arrived
+在以下情况下，消息将通过 **Failure** 链进行路由：
+- 节点无法将边缘事件保存到数据库
+- 到达了不受支持的发起者类型
+- 到达了不受支持的消息类型

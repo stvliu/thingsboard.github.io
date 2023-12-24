@@ -1,45 +1,44 @@
-
-This procedure requires device to generate the Secret Key based on some trigger event. 
-For example, once device is booted or when some physical button is pressed. 
-Once the Secret Key is generated, it is valid for certain period of time. 
-The device sends Claiming Information to the server which contains both the Secret Key and the duration of the validity of the key.
+此过程要求设备根据某些触发事件生成密钥。
+例如，设备启动后或按下某个物理按钮时。
+生成密钥后，它在一定时间内有效。
+设备将包含密钥和密钥有效期持续时间的声明信息发送到服务器。
 
 {% capture cache-living-time %}
-By default, you can set the expiration date as the date and time the request was received plus 1 day as the maximum value.  
-To add more time, you should increase the value of the parameter **caffeine.specs.claimDevices.timeToLiveInMinutes** in thingsboard.yaml file.{% endcapture %}
+默认情况下，您可以将到期日期设置为请求接收日期和时间加 1 天作为最大值。
+要增加更多时间，您应该增加 thingsboard.yaml 文件中参数 **caffeine.specs.claimDevices.timeToLiveInMinutes** 的值。{% endcapture %}
 {% include templates/info-banner.md content=cache-living-time %}
 
-ThingsBoard server stores Claiming Information for the duration of the validity of the key. See diagram below.
+ThingsBoard 服务器在密钥有效期内存储声明信息。请参阅下图。
 
 ![image](/images/user-guide/claiming-devices/device-side-key-diagram.png)
 
-Device may send Claiming Information to TB using all supported transport protocols. The message body has two parameters: **secretKey** and **durationMs**, which may be optionally specified. 
-The **secretKey** parameter adds security to the claiming process.
-The **durationMs** parameter determines the expiration of claiming time.
-In case the **secretKey** is not specified, the empty string as a default value is used.
-In case the **durationMs** is not specified, the system parameter **device.claim.duration** is used (in the file **/etc/thingsboard/conf/thingsboard.yml**).
+设备可以使用所有支持的传输协议将声明信息发送到 TB。消息正文有两个参数：**secretKey** 和 **durationMs**，可以根据需要指定。
+**secretKey** 参数为声明过程增加了安全性。
+**durationMs** 参数确定声明时间的到期时间。
+如果未指定 **secretKey**，则使用空字符串作为默认值。
+如果未指定 **durationMs**，则使用系统参数 **device.claim.duration**（在文件 **/etc/thingsboard/conf/thingsboard.yml** 中）。
 
 {% unless docsPrefix == "paas/" %}
-In order to enable claiming devices feature a system parameter **security.claim.allowClaimingByDefault** (see [configuration guide](/docs/user-guide/install/{{docsPrefix}}config/)) 
-should be set to **true**, otherwise a server-side **claimingAllowed** attribute with the value **true** is obligatory for provisioned devices.
+为了启用声明设备功能，系统参数 **security.claim.allowClaimingByDefault**（请参阅 [配置指南](/docs/user-guide/install/{{docsPrefix}}config/))
+应设置为 **true**，否则已配置设备必须具有值为 **true** 的服务器端 **claimingAllowed** 属性。
 {% endunless %}
 
-Please see the Device API references to get the information about the message structure and topics/URLs to which to send the claiming messages.
-You can use the MQTT Gateway API that allows initiating claiming of multiple devices per time as well.
+请参阅设备 API 参考以获取有关消息结构以及要向其发送声明消息的主题/URL 的信息。
+您还可以使用 MQTT 网关 API，该 API 还允许一次启动多个设备的声明。
 
- - [MQTT Device API](/docs/{{docsPrefix}}reference/mqtt-api/#claiming-devices)
- - [CoAP Device API](/docs/{{docsPrefix}}reference/coap-api/#claiming-devices)
- - [HTTP Device API](/docs/{{docsPrefix}}reference/http-api/#claiming-devices)
- - [MQTT Gateway API](/docs/{{docsPrefix}}reference/gateway-mqtt-api/#claiming-devices-api)
- 
+- [MQTT 设备 API](/docs/{{docsPrefix}}reference/mqtt-api/#claiming-devices)
+- [CoAP 设备 API](/docs/{{docsPrefix}}reference/coap-api/#claiming-devices)
+- [HTTP 设备 API](/docs/{{docsPrefix}}reference/http-api/#claiming-devices)
+- [MQTT 网关 API](/docs/{{docsPrefix}}reference/gateway-mqtt-api/#claiming-devices-api)
 
-Once the Claiming Info is sent, device may display the Secret Key either in plain text or using the QR code. User should scan this key and use it to send the Claiming Request.
-Claiming Request consists of the device Name and Secret Key. You may use MAC address or other unique property as the device Name. 
-See instructions how to send the Claiming Request [here](/docs/{{docsPrefix}}user-guide/claiming-devices/#device-claiming-api-request).   
 
-**Note:** The Secret Key may also be an empty string. This is useful if your device does not have any way to display the Secret Key. 
-For example, you may allow to claim device within 30 seconds after the claim button is pressed on the device. In this case user needs to know the device Name (MAC address, etc) only.
+发送声明信息后，设备可以以纯文本或使用 QR 码显示密钥。用户应扫描此密钥并使用它来发送声明请求。
+声明请求由设备名称和密钥组成。您可以使用 MAC 地址或其他唯一属性作为设备名称。
+请参阅 [此处](/docs/{{docsPrefix}}user-guide/claiming-devices/#device-claiming-api-request) 的说明，了解如何发送声明请求。
 
-Server validates the Claiming Request and replies with the Claiming Response. Claiming Response contains status of the Claiming operation and Device ID if the operation was successful.
+**注意：**密钥也可以是空字符串。如果您的设备没有任何方式显示密钥，这将很有用。
+例如，您可以在设备上按下声明按钮后 30 秒内允许声明设备。在这种情况下，用户只需要知道设备名称（MAC 地址等）。
 
-Once Claiming Information is provisioned, Customer User may use [Claim Device](/docs/{{docsPrefix}}user-guide/claiming-devices/#device-claiming-widget) widget.   
+服务器验证声明请求并回复声明响应。声明响应包含声明操作的状态和操作成功时的设备 ID。
+
+配置声明信息后，客户用户可以使用 [声明设备](/docs/{{docsPrefix}}user-guide/claiming-devices/#device-claiming-widget) 小部件。

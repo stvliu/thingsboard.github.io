@@ -1,6 +1,6 @@
-Please refer to the official [TimescaleDB installation page](https://docs.timescale.com/self-hosted/latest/install/installation-linux/) on Ubuntu distros and follow the instructions in accordance with your installed PostgreSQL version.
+请参阅 Ubuntu 发行版上的官方 [TimescaleDB 安装页面](https://docs.timescale.com/self-hosted/latest/install/installation-linux/)，并按照已安装 PostgreSQL 版本中的说明进行操作。
 
-After package installation, you need to create TimescaleDB extension in your ThingsBoard database:
+安装软件包后，您需要在 ThingsBoard 数据库中创建 TimescaleDB 扩展：
 ```bash
 psql -U postgres -h localhost -d thingsboard
 CREATE EXTENSION IF NOT EXISTS timescaledb;

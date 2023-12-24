@@ -1,82 +1,81 @@
-
-* TOC 
+* TOC
 {:toc}
 
 {% include templates/solution-templates.md %}
 
-Smart retail solution represent the generic smart retail solution as a solution provider, where you may provision multiple Customers and assign a pool of IoT devices to each customer.
+智能零售解决方案代表了作为解决方案提供商的通用智能零售解决方案，您可以在其中配置多个客户并为每个客户分配一个物联网设备池。
 
 {% include images-gallery.html imageCollection="solution-highlights" %}
 
-### Dashboard
-As part of this solution, we have created 2 dashboards that display data from multiple sensors - **Smart Supermarkets Dashboard** and **Administration Dashboard**.
+### 仪表板
+作为此解决方案的一部分，我们创建了 2 个仪表板，它们显示来自多个传感器的数据 - **智能超市仪表板** 和 **管理仪表板**。
 
-#### Smart Supermarkets Dashboard
+#### 智能超市仪表板
 
-The **Supermarkets Dashboard** has multiple states:
-- **Main** state contains a map of the supermarkets, and a list of alarms. Alarms are propagated from devices to the corresponding supermarket. The platform calculates state of each supermarket based on the highest severity of the propagated alarms. As a user, you are able to filter supermarkets on the map based on the state of the supermarket.
-- **Floor** plan state contains an indoor map with the floor plan of supermarket and device markers. Besides the map, state also contains two filters: based on device type and device state. Filter settings are persisted on the user level.
-    - State filter allows you to filter devices based on the highest severity of the alarms. For example, you may choose to display devices that have at least one critical alarm.
-    - Device type filter allows you to show or hide specific devices based on the type of device. For example, you may display only Freezers and Chillers and hide all other devices.
-    - Click on specific device marker to display device details state in the right panel of the dashboard. Content of the device details is specific to the device type. For example, freezer device have a line chart with the temperature readings while smart bin has a bar chart with the fullness level. Nevertheless, the common elements of the device details is the header and alarms list. Header contains information about current state of the device and it’s battery level (if device is battery powered). Header also allows you to navigate to the settings of the particular device. Those settings allow you to configure the alarm thresholds.
+**超市仪表板** 具有多个状态：
+- **主要** 状态包含超市地图和警报列表。警报从设备传播到相应的超市。平台根据传播警报的最高严重性计算每个超市的状态。作为用户，您可以根据超市的状态在地图上过滤超市。
+- **楼层** 平面状态包含超市楼层平面图和设备标记的室内地图。除了地图外，状态还包含两个过滤器：基于设备类型和设备状态。过滤器设置在用户级别上保留。
+    - 状态过滤器允许您根据警报的最高严重性过滤设备。例如，您可以选择显示至少有一个严重警报的设备。
+    - 设备类型过滤器允许您根据设备类型显示或隐藏特定设备。例如，您只能显示冰柜和冷藏柜，并隐藏所有其他设备。
+    - 单击特定设备标记以在仪表板的右侧面板中显示设备详细信息状态。设备详细信息的内容特定于设备类型。例如，冷冻设备具有带有温度读数的折线图，而智能垃圾箱具有带有满载水平的条形图。然而，设备详细信息的共同元素是标题和警报列表。标题包含有关设备当前状态的信息及其电池电量（如果设备由电池供电）。标题还允许您导航到特定设备的设置。这些设置允许您配置警报阈值。
 
-Some dashboard features (for example, ability to delete devices) were disabled on the live demo dashboard because it is publicly available.
+一些仪表板功能（例如，删除设备的能力）在公开提供的实时演示仪表板上被禁用。
 
 <br>
-Once you install the solution template, you will also receive access to “Smart Supermarket Administration” that allows you to provision customers, their users, supermarkets and devices.
+安装解决方案模板后，您还可以访问“智能超市管理”，它允许您配置客户、他们的用户、超市和设备。
 
-#### Smart Supermarket Administration Dashboard
+#### 智能超市管理仪表板
 
-The **Smart Supermarkets Administration Dashboard** has multiple states:
-- **Main** state allows you to list the retail companies (customers). We assume that the customer is a retail company that own one or multiple supermarkets. We have provisioned two “fake” retail companies with number of supermarkets for demonstration purposes.
-- **Device management** state allows you to manage devices in scope of the retail company (customer). You may provision new devices or delete existing devices. The state displays a table with all devices assigned to this retail company. This means that Tenant or Supermarket Administrator will be able to use those devices to position them in the Supermarket. You may treat this list as a pool of devices that are available for installation in the Supermarkets of the Customer.
-- **Supermarket management** state allows you to manage supermarkets in scope of the retail company (customer). The dashboard state displays supermarkets on the map and a list of supermarkets in the table.
-  Supermarkets are assets that may contain multiple devices and few attributes: floor plan and address.
-  
-- **Supermarket devices** state displays an indoor map with the floor plan of supermarket and device markers. You may drag-and-drop the device markers to define precise location of the device in the supermarket.
+**智能超市管理仪表板** 具有多个状态：
+- **主要** 状态允许您列出零售公司（客户）。我们假设客户是拥有一个或多个超市的零售公司。我们为演示目的配置了两个“假”零售公司，其中包含许多超市。
+- **设备管理** 状态允许您管理零售公司（客户）范围内的设备。您可以配置新设备或删除现有设备。该状态显示一个表格，其中包含分配给此零售公司的所有设备。这意味着租户或超市管理员将能够使用这些设备将它们定位在超市中。您可以将此列表视为可供在客户的超市中安装的设备池。
+- **超市管理** 状态允许您管理零售公司（客户）范围内的超市。仪表板状态在地图上显示超市并在表格中列出超市。
+超市是可能包含多个设备和少量属性的资产：平面图和地址。
 
-You may always customize the "Smart Retail" dashboard using dashboard development [guide](/docs/{{docsPrefix}}user-guide/dashboards/).
+- **超市设备** 状态显示超市楼层平面图和设备标记的室内地图。您可以拖放设备标记以定义设备在超市中的精确位置。
 
-### Devices
+您始终可以使用仪表板开发[指南](/docs/{{docsPrefix}}user-guide/dashboards/)自定义“智能零售”仪表板。
 
-We have already created multiple sensors and loaded some demo data for them. See solution [instructions](/docs/{{docsPrefix}}solution-templates/overview/#install-solution-template) for the list of created devices and their credentials.
+### 设备
+
+我们已经创建了多个传感器并为它们加载了一些演示数据。有关创建的设备及其凭据的列表，请参阅解决方案[说明](/docs/{{docsPrefix}}solution-templates/overview/#install-solution-template)。
 
 
-#### Smart Shelf
+#### 智能货架
 
-The profile is configured to raise alarms if the value of "weight" telemetry is lower than a threshold. Major alarm is raised when the value is below 20 units (kg or lbs depends on what is reported by the device). Critical alarm is raised when the value is below 10 units.
-Sample device payload:
+如果“重量”遥测值低于阈值，则配置文件被配置为发出警报。当值低于 20 个单位（千克或磅取决于设备报告的内容）时，会发出重大警报。当值低于 10 个单位时，会发出严重警报。
+示例设备有效负载：
 
 ```json
 {"weight": 42}
 ```
 {: .copy-code}
 
-#### Smart Shelf
+#### 智能货架
 
-The profile is configured to raise alarms if the value of "temperature" telemetry is above or below certain thresholds. Major alarm is raised when the value is above -2 degrees or below -25. Critical alarm is raised when the value is above -1 degrees or below -30.
-Sample device payload:
+如果“温度”遥测值高于或低于某些阈值，则配置文件被配置为发出警报。当值高于 -2 度或低于 -25 度时，会发出重大警报。当值高于 -1 度或低于 -30 度时，会发出严重警报。
+示例设备有效负载：
 
 ```json
 {"temperature": -5.4}
 ```
 {: .copy-code}
 
-#### Chiller
+#### 冷藏柜
 
-Chiller profile is very similar to Freezer but with different default threshold values.
-Sample device payload:
+冷藏柜配置文件与冰柜非常相似，但具有不同的默认阈值。
+示例设备有效负载：
 
 ```json
 {"temperature": 6.2}
 ```
 {: .copy-code}
 
-#### Door sensor
+#### 门传感器
 
-The profile is configured to raise major alarm if the door is left open for more than 30 minutes or critical alarm if the door is left opened for 1 hour. The profile is also configured to raise critical alarm if the door is opened during non-working hours. You may configure schedule of the non-working hours in the alarm rule of the device profile.
-Since door sensors are usually battery powered, the corresponding alarms are raised when the battery level is below 30(major) or 10(critical) percent. If your sensor is not battery powered, you may simply ignore the alarm rule.
-Sample device payload:
+如果门打开超过 30 分钟，则配置文件被配置为发出重大警报；如果门打开 1 小时，则发出严重警报。该配置文件还被配置为在非工作时间打开门时发出严重警报。您可以在设备配置文件的警报规则中配置非工作时间的计划。
+由于门传感器通常由电池供电，因此当电池电量低于 30（重大）或 10（严重）百分比时，会发出相应的警报。如果您的传感器不是由电池供电，则可以简单地忽略警报规则。
+示例设备有效负载：
 
 ```json
 {"open": true, "batteryLevel":  99}
@@ -84,27 +83,27 @@ Sample device payload:
 {: .copy-code}
 
 
-#### Motion sensor
+#### 运动传感器
 
-Similar to Door sensor, motion sensor is configured to raise critical alarm if the motion is detected during non-working hours. You may configure schedule of the non-working hours in the alarm rule of the device profile.
+与门传感器类似，运动传感器被配置为在非工作时间检测到运动时发出严重警报。您可以在设备配置文件的警报规则中配置非工作时间的计划。
 
 ```json
 {"motion": true, "batteryLevel":  99}
 ```
 {: .copy-code}
 
-#### Smoke sensor
+#### 烟雾传感器
 
-Smoke sensor will raise critical alarm if the smoke is detected. Since smoke sensors are usually battery powered, the corresponding alarms are raised when the battery level is below 30(major) or 10(critical) percent. If your sensor is not battery powered, you may simply ignore the alarm rule.
+如果检测到烟雾，烟雾传感器将发出严重警报。由于烟雾传感器通常由电池供电，因此当电池电量低于 30（重大）或 10（严重）百分比时，会发出相应的警报。如果您的传感器不是由电池供电，则可以简单地忽略警报规则。
 ```json
 {"alarm": false, "batteryLevel":  99}
 ```
 {: .copy-code}
 
-#### Smart Bin
-The profile is configured to raise alarms if the fullness level is above certain threshold. Major alarm is raised when the level is above 70%. Critical alarm is raised when the level is above 90%.
-Smart bin sensors are usually battery powered, the corresponding alarms are raised when the battery level is below 30(major) or 10(critical) percent. If your sensor is not battery powered, you may simply ignore the alarm rule.
-Sample device payload:
+#### 智能垃圾箱
+如果满载水平高于某个阈值，则配置文件被配置为发出警报。当水平高于 70% 时，会发出重大警报。当水平高于 90% 时，会发出严重警报。
+智能垃圾箱传感器通常由电池供电，当电池电量低于 30（重大）或 10（严重）百分比时，会发出相应的警报。如果您的传感器不是由电池供电，则可以简单地忽略警报规则。
+示例设备有效负载：
 
 ```json
 {"level": 35, "batteryLevel":  89}
@@ -112,19 +111,19 @@ Sample device payload:
 {: .copy-code}
 
 
-#### Liquid Level Sensor
-The profile is configured to raise alarms if the liquid level is below certain threshold. Major alarm is raised when the level is below 30%. Critical alarm is raised when the level is below 10%.
-Liquid Level sensors are usually battery powered, the corresponding alarms are raised when the battery level is below 30(major) or 10(critical) percent. If your sensor is not battery powered, you may simply ignore the alarm rule.
-Sample device payload:
+#### 液位传感器
+如果液位低于某个阈值，则配置文件被配置为发出警报。当液位低于 30% 时，会发出重大警报。当液位低于 10% 时，会发出严重警报。
+液位传感器通常由电池供电，当电池电量低于 30（重大）或 10（严重）百分比时，会发出相应的警报。如果您的传感器不是由电池供电，则可以简单地忽略警报规则。
+示例设备有效负载：
 
 ```json
 {"level": 85, "batteryLevel":  99}
 ```
 {: .copy-code}
 
-#### Occupancy sensor
-The profile is configured to raise major alarm if the room is occupied for more than 30 minutes or critical alarm if the room is occupied for more then 1 hour.
-Since occupancy sensors may be battery powered, the corresponding alarms are raised when the battery level is below 30(major) or 10(critical) percent. If your sensor is not battery powered, you may simply ignore the alarm rule.
+#### 占用传感器
+如果房间被占用超过 30 分钟，则配置文件被配置为发出重大警报；如果房间被占用超过 1 小时，则发出严重警报。
+由于占用传感器可能由电池供电，因此当电池电量低于 30（重大）或 10（严重）百分比时，会发出相应的警报。如果您的传感器不是由电池供电，则可以简单地忽略警报规则。
 
 ```json
 {"occupied": true, "batteryLevel":  99}
@@ -134,16 +133,7 @@ Since occupancy sensors may be battery powered, the corresponding alarms are rai
 
 
 
-You may find the exact commands to send data on behalf of created devices in the solution [instructions](/docs/{{docsPrefix}}solution-templates/overview/#install-solution-template).
-See [connecting devices](/docs/{{docsPrefix}}getting-started-guides/connectivity/) for various connectivity options to connect real devices.
+您可以在解决方案[说明](/docs/{{docsPrefix}}solution-templates/overview/#install-solution-template)中找到代表创建的设备发送数据的准确命令。有关连接真实设备的各种连接选项，请参阅[连接设备](/docs/{{docsPrefix}}getting-started-guides/connectivity/)。
 
-### Alarms
-User may turn alarms on and off as well as configure the alarm thresholds via the <a href="https://thingsboard.io/docs/user-guide/device-profiles/#alarm-rules" target="_blank">“Smart Retail”</a> dashboard. 
-
-
-
-
-
-
-
-
+### 警报
+用户可以通过 <a href="https://thingsboard.io/docs/user-guide/device-profiles/#alarm-rules" target="_blank">“智能零售”</a> 仪表板打开和关闭警报以及配置警报阈值。

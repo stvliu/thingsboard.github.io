@@ -1,28 +1,28 @@
 {% include templates/edge/install/prerequisites.md %}
 
-### Edge Installation and Configuration
+### Edge 安装和配置
 
-#### Guided Installation Using ThingsBoard Server Pre-configured Instructions
+#### 使用预先配置的 ThingsBoard 服务器说明进行引导安装
 
 {% include templates/edge/install/tb-server-pre-configured-install-instructions.md %}
 
-#### Manual Installation and Configuration
+#### 手动安装和配置
 
-If, for any reason, you are unable to use the prepared ThingsBoard Server Instructions above, please follow the generic installation [steps](/docs/user-guide/install/{{docsPrefix}}installation-options/){:target="_blank"}.
-These steps will guide you through installing and configuring the Edge by yourself.
+如果由于任何原因，您无法使用上面准备好的 ThingsBoard 服务器说明，请按照通用安装 [步骤](/docs/user-guide/install/{{docsPrefix}}installation-options/){:target="_blank"} 进行操作。
+这些步骤将指导您自行安装和配置 Edge。
 
-### Accessing User Interfaces: URLs and Credentials
+### 访问用户界面：URL 和凭据
 
 {% if currentThingsBoardVersion == "ThingsBoard Professional Edition" %}
 {% capture contenttogglespec %}
-Cloud<br><small>Connect Edge to https://thingsboard.cloud</small>%,%cloud%,%templates/edge/pe-cloud.md%br%
-On-premise server<br><small>Connect Edge to on-premise instance</small>%,%on-premise%,%templates/edge/on-premise-cloud.md{% endcapture %}
+云<br><small>将 Edge 连接到 https://thingsboard.cloud</small>%,%cloud%,%templates/edge/pe-cloud.md%br%
+本地服务器<br><small>将 Edge 连接到本地实例</small>%,%on-premise%,%templates/edge/on-premise-cloud.md{% endcapture %}
 {% include content-toggle.html content-toggle-id="cloudType" toggle-spec=contenttogglespec %}
 {% endif %}
 {% if currentThingsBoardVersion == "ThingsBoard Community Edition" %}
 {% capture contenttogglespec %}
-Live Demo<br><small>Connect Edge to https://demo.thingsboard.io</small>%,%cloud%,%templates/edge/ce-cloud.md%br%
-On-premise server<br><small>Connect Edge to on-premise instance</small>%,%on-premise%,%templates/edge/on-premise-cloud.md{% endcapture %}
+实时演示<br><small>将 Edge 连接到 https://demo.thingsboard.io</small>%,%cloud%,%templates/edge/ce-cloud.md%br%
+本地服务器<br><small>将 Edge 连接到本地实例</small>%,%on-premise%,%templates/edge/on-premise-cloud.md{% endcapture %}
 {% include content-toggle.html content-toggle-id="cloudType" toggle-spec=contenttogglespec %}
 {% endif %}
 

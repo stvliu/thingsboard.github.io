@@ -1,5 +1,4 @@
-
-Once ThingsBoard Edge is installed and configured please execute the following install script:
+一旦 ThingsBoard Edge 安装并配置好，请执行以下安装脚本：
 
 ```bash
 sudo /usr/share/tb-edge/bin/install/install.sh

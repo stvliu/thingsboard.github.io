@@ -1,29 +1,29 @@
 {% capture hybrid-info %}
-ThingsBoard team recommends to use Hybrid database approach if you do plan to have 1M+ devices in production or high data ingestion rate (> 5000 msg/sec).
-In this case, ThingsBoard will be storing timeseries data in Cassandra while continue to use PostgreSQL for main entities (devices/assets/dashboards/customers).  
+ThingsBoard 团队建议，如果您计划在生产环境中拥有 100 万台以上的设备或高数据摄取率（> 5000 条消息/秒），则使用混合数据库方法。
+在这种情况下，ThingsBoard 将把时序数据存储在 Cassandra 中，同时继续使用 PostgreSQL 作为主要实体（设备/资产/仪表板/客户）。
 {% endcapture %}
 {% include templates/info-banner.md content=hybrid-info %}
 
-##### PostgreSQL Installation
+##### PostgreSQL 安装
 
 {% include templates/install/postgres-install-ubuntu.md %}
 
 {% include templates/install/create-tb-db.md %}
 
-##### Cassandra Installation
+##### Cassandra 安装
 
 {% include templates/install/cassandra-ubuntu-install.md %}
 
-##### ThingsBoard Configuration
+##### ThingsBoard 配置
 
-Edit ThingsBoard configuration file 
+编辑 ThingsBoard 配置文件
 
 ```bash 
 sudo nano /etc/thingsboard/conf/thingsboard.conf
 ``` 
 {: .copy-code}
 
-Add the following lines to the configuration file. Don't forget **to replace** "PUT_YOUR_POSTGRESQL_PASSWORD_HERE" with your **real postgres user password**:
+将以下行添加到配置文件中。别忘了将“PUT_YOUR_POSTGRESQL_PASSWORD_HERE”**替换**为您的**真实 postgres 用户密码**：
 
 ```bash
 # DB Configuration 
@@ -34,7 +34,7 @@ export SPRING_DATASOURCE_PASSWORD=PUT_YOUR_POSTGRESQL_PASSWORD_HERE
 ``` 
 {: .copy-code}
 
-You can optionally add the following parameters to reconfigure your ThingsBoard instance to connect to external Cassandra nodes:
+您可以选择性地添加以下参数，以重新配置 ThingsBoard 实例以连接到外部 Cassandra 节点：
 
 ```bash
 export CASSANDRA_CLUSTER_NAME=Thingsboard Cluster

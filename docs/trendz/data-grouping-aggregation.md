@@ -2,98 +2,91 @@
 layout: docwithnav-trendz
 assignees:
 - vparomskiy
-title: Grouping and Aggregation
-description: Grouping and Aggregation 
+title: 分组和聚合
+description: 分组和聚合
 ---
 
-This guide describes how to prepare your dataset for visualization
+本指南介绍如何准备数据集以进行可视化
 
 * TOC
 {:toc}
 
-During Data Analysis it is a common task to define how a big dataset should be aggregated. 
-This task can be split into 2 phases - define groups that will be used during analysis and define aggregation function for groups.
+在数据分析期间，定义如何聚合大型数据集是一项常见任务。
+此任务可以分为 2 个阶段 - 定义将在分析期间使用的组并定义组的聚合函数。
 
-Before we continue we need to discuss important topic to understand how data resolved by Trendz:
+在继续之前，我们需要讨论一个重要主题，以了解 Trendz 如何解析数据：
 
-## How Trendz resolve fields from different Business Entities
-Let's assume that we have a Smart Building solution. Our topology contains Buildings, Apartments and different Meters that are connected with each other using relations.
-Here is how our topology will look like:
+## Trendz 如何解析来自不同业务实体的字段
+假设我们有一个智能建筑解决方案。我们的拓扑包含相互连接的建筑物、公寓和不同的仪表。
+以下是我们的拓扑结构：
 
 ![image](/images/reference/pe-demo/smart-metering-model.svg)
 
 
-In fact, Trendz operates with this topology as with the flat table that has columns for all attributes/telemetry from all Devices/Assets in this topology.
-The Relation between entities used to join fields from different Business Entities.
+事实上，Trendz 将此拓扑用作具有此拓扑中所有设备/资产的所有属性/遥测的列的平面表。
+用于连接来自不同业务实体的字段的实体之间的关系。
 
-**What it gives us:** when we are using only 2 fields from this topology: 
+**它为我们提供了什么：**当我们仅使用此拓扑中的 2 个字段时：
 
-- `building name` that belongs to the Building Asset
-- `energy` telemetry, that belongs to the Energy Meter Device
-- aggregation type `SUM`
-- time range - last month
+- 属于建筑资产的“建筑名称”
+- 属于能量表设备的“能量”遥测
+- 聚合类型“SUM”
+- 时间范围 - 上个月
 
 
-Trendz will find all available buildings in the ThingsBoard, then all Apartments for each Building and finally all Energy Meters that belong to the apartment.
-After that, for all Energy Meters for each building, Trendz will load all energy telemetry for the last month and sum it. As a result we can see how much energy was consumed by each building.
+Trendz 将在 ThingsBoard 中找到所有可用建筑物，然后为每个建筑物找到所有公寓，最后找到属于该公寓的所有能量表。
+之后，对于每个建筑物的所有能量表，Trendz 将加载上个月的所有能量遥测并对其求和。因此，我们可以看到每栋建筑消耗了多少能量。
 
-It is not an exact algorithm description and there are a lot of optimizations performed in the background. But it allows to understand how much complexity handled inside Trendz, so you can focus on analytics but not on data fetching.
+这不是一个确切的算法描述，并且在后台执行了许多优化。但它可以让我们了解 Trendz 内部处理了多少复杂性，因此您可以专注于分析，而不是数据获取。
 
-## Grouping by time
+## 按时间分组
 
-In most cases data is grouped by time interval - by hour, day, week, month, etc. You should use **Date** field from left panel
-and drag and drop it the **X-axis** section.
+在大多数情况下，数据按时间间隔分组 - 按小时、天、周、月等。您应该使用左侧面板中的**日期**字段并将其拖放到**X 轴**部分。
 
-Default function for Date aggregation is **RAW** - it means that user can control what is an aggregation interval using
-**Group By** combobox near Time Range picker. System will take full range from Time Range picker and devide it 
-into smaller intervals depending on selected value. Latter, selected aggregation function applied for each interval. 
-Allowed values for **Group By** field are:
-* Month
-* Week
-* Day
-* Hour
-* Minute 
+日期聚合的默认函数是**RAW** - 这意味着用户可以使用时间范围选择器附近的**按组**组合框控制聚合间隔。系统将从时间范围选择器中获取完整范围，并根据所选值将其划分为更小的间隔。后者，为每个间隔应用选定的聚合函数。**按组**字段允许的值为：
+* 月
+* 周
+* 天
+* 小时
+* 分钟
 
 ![image](/images/trendz/date-raw-group.png)
 
 
-You can have more control on date intervals by selecting other available Date aggregation options:
-* RAW,
-* MINUTE
-* HOUR
+您可以通过选择其他可用的日期聚合选项来更好地控制日期间隔：
+* RAW，
+* 分钟
+* 小时
 * FULL_HOUR - '2020-03-01 23'
-* DAY - day of the week
-* DATE - day of the month
+* DAY - 星期几
+* DATE - 每月几号
 * FULL_DATE - '2020-03-01'
 * START_OF_WEEK - 2020-03-01
-* WEEK_OF_YEAR - numeric week of the year
-* WEEK_OF_MONTH - numeric week of the month
+* WEEK_OF_YEAR - 一年中的数字周
+* WEEK_OF_MONTH - 一个月中的数字周
 * MONTH
 * QUARTER
 * YEAR
-* YEARMONTH - '2020-Feb' 
+* YEARMONTH - '2020-Feb'
 
-## Define Groups for analysis
-In this step, we want to define on what logical level we want to see our data. In the Energy Metering scenario, we can make analysis on different levels such as 
-city, region, building, apartment or concrete energy meter. The good news is that Trendz provides this grouping automatically in real-time. 
-You don't need to explicitly define aggregation rules and pre-compute value for different levels before analysis.
+## 定义分析组
+在此步骤中，我们希望定义我们希望在什么逻辑级别上查看我们的数据。在能量计量场景中，我们可以在不同的级别进行分析，例如城市、地区、建筑物、公寓或具体能量表。好消息是 Trendz 会实时提供此分组。您无需在分析前显式定义聚合规则并为不同级别预先计算值。
 
-In this example we just add 2 fields - **Building name** and **Energy Consumption**. We do not have any aggregation rules in the Rule Engine. 
-Trendz knows what Energy Meters are registered in each building, so energy meters divided into a separate groups for each building.
+在此示例中，我们只添加了 2 个字段 - **建筑名称**和**能耗**。我们在规则引擎中没有任何聚合规则。Trendz 知道每个建筑物中注册了哪些能量表，因此能量表分为每个建筑物的单独组。
 
 ![image](/images/trendz/data-grouping-simple.png)
 
-We see total consumption for the last year. Now let's group data by quarters - add **Date** field with **quarter** type:
+我们看到去年总消费量。现在让我们按季度对数据进行分组 - 添加**日期**字段，类型为**季度**：
 
 ![image](/images/trendz/data-grouping-quarter.png)
 
-Finally lets deep dive and see total consumption separated by room number - add **Room Number** attribute from **Apartment** Business Entity:
+最后，让我们深入研究并查看按房间号分开的总消费量 - 从**公寓**业务实体中添加**房间号**属性：
 
 ![image](/images/trendz/data-grouping-room.png)
 
 
-## Aggregate telemetry and groups
-The Next important step is to define how data should be aggregated. Here are supported aggregation types:
+## 聚合遥测和组
+下一步是定义如何聚合数据。以下是支持的聚合类型：
 * AVG
 * SUM
 * MIN
@@ -101,26 +94,25 @@ The Next important step is to define how data should be aggregated. Here are sup
 * LATEST
 * COUNT
 * UNIQ
-* DELTA - special case described later in this guide
+* DELTA - 本指南后面描述的特例
 
-For changing aggregation type - just click on the field and select required value.
+要更改聚合类型 - 只需单击该字段并选择所需的值。
 ![image](/images/trendz/field-aggregation.png)
 
 
-## Work with pulse output telemetry
-Water meter is a good example of a device with pulse output - telemetry value always growing and during analysis, we want to convert it into delta values.
-Here is an example chart for such telemetry:
- 
+## 使用脉冲输出遥测
+水表是一个具有脉冲输出的设备的一个很好的例子 - 遥测值总是增长的，在分析期间，我们希望将其转换为增量值。
+以下是此类遥测的示例图表：
+
 ![image](/images/trendz/pulse-before.png)
 
-Let's apply **DELTA** aggregation for this field and see how our data will look like:
+让我们对该字段应用**DELTA**聚合，看看我们的数据会是什么样子：
 
 ![image](/images/trendz/pulse-after.png)
 
-Trendz automatically computes delta for this field for defined time ranges with required granularity. 
-In case when **DELTA** aggregation applied for multiple devices - Trendz will apply **SUM** aggregation to the aggregate group - as the result, we can see total consumption on different levels (city, building, etc.)
+Trendz 会自动计算此字段的增量，以所需的粒度定义的时间范围。在对多个设备应用**DELTA**聚合的情况下 - Trendz 将对聚合组应用**SUM**聚合 - 结果，我们可以在不同级别（城市、建筑物等）上看到总消费量。
 
 
-## Next Steps
+## 后续步骤
 
 {% assign currentGuide = "GroupAndAggregateData" %}{% include templates/trndz-guides-banner.md %}

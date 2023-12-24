@@ -2,8 +2,8 @@
 layout: docwithnav-trendz
 assignees:
 - ashvayka
-title: Installing ThingsBoard Trendz Analytics using Docker (Linux or Mac OS)
-description: Installing ThingsBoard Trendz Analytics using Docker (Linux or Mac OS)
+title: 使用 Docker（Linux 或 Mac OS）安装 ThingsBoard Trendz Analytics
+description: 使用 Docker（Linux 或 Mac OS）安装 ThingsBoard Trendz Analytics
 
 ---
 
@@ -11,34 +11,34 @@ description: Installing ThingsBoard Trendz Analytics using Docker (Linux or Mac 
 {:toc}
 
 
-This guide will help you to install and start Trendz Analytics using Docker on Linux or Mac OS. 
+本指南将帮助您在 Linux 或 Mac OS 上使用 Docker 安装并启动 Trendz Analytics。
 
-## Prerequisites
+## 先决条件
 
-- [Install Docker CE](https://docs.docker.com/engine/installation/)
-- [Install Docker Compose](https://docs.docker.com/compose/install/)
+- [安装 Docker CE](https://docs.docker.com/engine/installation/)
+- [安装 Docker Compose](https://docs.docker.com/compose/install/)
 
-## Step 1. Obtain the license key 
+## 步骤 1. 获取许可证密钥
 
-We assume you have already chosen subscription plan for Trendz and have license key. If not, please get your [Free Trial license](/pricing/?section=trendz-options&product=trendz-self-managed&solution=trendz-pay-as-you-go) before you proceed.
-See [How-to get pay-as-you-go subscription](https://www.youtube.com/watch?v=dK-QDFGxWek){:target="_blank"} for more details.
+我们假设您已经为 Trendz 选择了订阅计划并拥有许可证密钥。如果没有，请在继续之前获取您的[免费试用许可证](/pricing/?section=trendz-options&product=trendz-self-managed&solution=trendz-pay-as-you-go)。
+有关更多详细信息，请参阅[如何获取按需订阅](https://www.youtube.com/watch?v=dK-QDFGxWek){:target="_blank"}。
 
-Note: We will reference the license key you have obtained during this step as PUT_YOUR_LICENSE_SECRET_HERE later in this guide.
+注意：我们将在本指南的后面将您在此步骤中获得的许可证密钥称为 PUT_YOUR_LICENSE_SECRET_HERE。
 
-## Step 2. Running Trendz service
+## 步骤 2. 运行 Trendz 服务
 
-##### Docker Compose setup
+##### Docker Compose 设置
 
-Make sure your have [logged in](https://docs.docker.com/engine/reference/commandline/login/) to docker hub using command line.
+确保您已使用命令行登录到 docker 中心。
 
-Create docker compose file for Trendz Analytics service:
+为 Trendz Analytics 服务创建 docker compose 文件：
 
 ```text
 sudo nano docker-compose.yml
 ```
 {: .copy-code}
 
-Add the following line to the yml file. Don't forget to replace “PUT_YOUR_LICENSE_SECRET_HERE” with your **license secret obtained on the first step**
+将以下行添加到 yml 文件。不要忘记将“PUT_YOUR_LICENSE_SECRET_HERE”替换为您**在第一步中获得的许可证密钥**
 
 ```yml
 
@@ -88,24 +88,23 @@ services:
 ```
 {: .copy-code}
 
-Where: 
-    
-- `TB_API_URL` - url for connecting to ThingsBoard Rest API (for example http://10.5.0.11:8080). Note that ThingsBoard IP address should be resolvable from Trendz docker container
-- `PUT_YOUR_LICENSE_SECRET_HERE` - placeholder for your license secret obtained on the first step
-- `8888:8888`            - connect local port 8888 to exposed internal HTTP port 8888
-- `~/.mytrendz-data:/data`   - mounts the volume `~/.mytrendz-data` to Trendz data directory
-- `~/.mytrendz-data/db:/var/lib/postgresql/datad`   - mounts the volume `~/.mytrendz-data/db` to Postgres data directory
-- `~/.mytrendz-logs:/var/log/thingsboard`   - mounts the volume `~/.mytrendz-logs` to Trendz logs directory
-- `mytrendz`             - friendly local name of this machine
-- `--restart always`        - automatically start Trendz in case of system reboot and restart in case of failure.
-- `thingsboard/trendz:1.10.3-HF3`          - Trendz docker image
-- `thingsboard/trendz-python-executor:1.10.3`          - Trendz python script executor docker image
-- `SCRIPT_ENGINE_RUNTIME_TIMEOUT`          - Python script execution timeout
+其中：
 
+- `TB_API_URL` - 用于连接到 ThingsBoard Rest API 的 URL（例如 http://10.5.0.11:8080）。请注意，Trendz docker 容器应能够解析 ThingsBoard IP 地址
+- `PUT_YOUR_LICENSE_SECRET_HERE` - 您在第一步中获得的许可证密钥的占位符
+- `8888:8888` - 将本地端口 8888 连接到公开的内部 HTTP 端口 8888
+- `~/.mytrendz-data:/data` - 将卷 `~/.mytrendz-data` 挂载到 Trendz 数据目录
+- `~/.mytrendz-data/db:/var/lib/postgresql/datad` - 将卷 `~/.mytrendz-data/db` 挂载到 Postgres 数据目录
+- `~/.mytrendz-logs:/var/log/thingsboard` - 将卷 `~/.mytrendz-logs` 挂载到 Trendz 日志目录
+- `mytrendz` - 此计算机的友好本地名称
+- `--restart always` - 在系统重新启动时自动启动 Trendz，并在发生故障时重新启动。
+- `thingsboard/trendz:1.10.3-HF3` - Trendz docker 镜像
+- `thingsboard/trendz-python-executor:1.10.3` - Trendz python 脚本执行器 docker 镜像
+- `SCRIPT_ENGINE_RUNTIME_TIMEOUT` - Python 脚本执行超时
 
-Run following commands, before starting docker container(s), to create folders for storing data and logs.
-These commands additionally will change owner of newly created folders to docker container user.
-To do this (to change user) **chown** command is used, and this command requires *sudo* permissions (command will request password for a *sudo* access):
+在启动 docker 容器之前，运行以下命令以创建用于存储数据和日志的文件夹。
+此外，这些命令会将新创建的文件夹的所有者更改为 docker 容器用户。
+要执行此操作（更改用户），请使用 **chown** 命令，此命令需要 *sudo* 权限（命令将请求 *sudo* 访问的密码）：
 
 ```bash
 mkdir -p ~/.mytrendz-data && sudo chown -R 799:799 ~/.mytrendz-data
@@ -113,35 +112,33 @@ mkdir -p ~/.mytrendz-logs && sudo chown -R 799:799 ~/.mytrendz-logs
 ```
 {: .copy-code}
 
-**NOTE**: replace directory ~/.mytrendz-data and ~/.mytrendz-logs with directories you’re planning to used in docker-compose.yml.
+**注意**：将目录 ~/.mytrendz-data 和 ~/.mytrendz-logs 替换为您计划在 docker-compose.yml 中使用的目录。
 
-##### Running service
+##### 运行服务
 
 {% assign serviceName = "trendz" %}
 {% include templates/install/docker/docker-compose-up.md %}
-    
-After executing this command you can open `http://{your-host-ip}:8888` in you browser (for ex. `http://localhost:8888`). 
-You should see Trendz login page.
 
-##### Authentication
+执行此命令后，您可以在浏览器中打开 `http://{your-host-ip}:8888`（例如 `http://localhost:8888`）。
+您应该会看到 Trendz 登录页面。
 
-For first authentication you need to use **Tenant Administrator** credentials from your **ThingsBoard**
+##### 身份验证
 
-Trendz uses ThingsBoard as an authentication service. During first sign in ThingsBoard service should be also available 
-to validate credentials.
+对于首次身份验证，您需要使用 **ThingsBoard** 中的 **租户管理员** 凭据
 
-## Detaching, stop and start commands
+Trendz 使用 ThingsBoard 作为身份验证服务。在首次登录期间，ThingsBoard 服务也应该可用以验证凭据。
+
+## 分离、停止和启动命令
 
 {% assign serviceName = "trendz" %}
 {% assign serviceFullName = "Trendz" %}
 {% include templates/install/docker/detaching-stop-start-commands.md %}
 
-## Upgrade Trendz Service
+## 升级 Trendz 服务
 
-Below is example on how to upgrade from 1.10.2 to 1.10.3-HF3
+以下是有关如何从 1.10.2 升级到 1.10.3-HF3 的示例
 
-**Note:** starting from version 1.10.2 we add support of Python script execution. During an upgrade you need to add Python executor image into your docker compose file. 
-Full content of docker compose file you can find at the beginning of this article. Here is an example of the python executor service
+**注意：**从版本 1.10.2 开始，我们增加了对 Python 脚本执行的支持。在升级期间，您需要将 Python 执行器镜像添加到您的 docker compose 文件中。您可以在本文的开头找到 docker compose 文件的完整内容。以下是 python 执行器服务的示例
 ```yml
   mypyexecutor:
     restart: always
@@ -159,7 +156,7 @@ Full content of docker compose file you can find at the beginning of this articl
 ```
 {: .copy-code}
 
-* Create a dump of your database:
+* 创建数据库转储：
 
 ```bash
 docker compose exec postgres sh -c "pg_dump -U postgres trendz > /var/lib/postgresql/data/trendz_dump"
@@ -167,12 +164,12 @@ docker compose exec postgres sh -c "pg_dump -U postgres trendz > /var/lib/postgr
 {: .copy-code}
 
 {% capture dockerComposeStandalone %}
-If you still rely on Docker Compose as docker-compose (with a hyphen) execute next command:
+如果您仍然依赖 Docker Compose 作为 docker-compose（带连字符），请执行以下命令：
 <br>**docker-compose exec postgres sh -c "pg_dump -U postgres trendz > /var/lib/postgresql/data/trendz_dump"**
 {% endcapture %}
 {% include templates/info-banner.md content=dockerComposeStandalone %}
 
-* Set upgradeversion variable to your **previous** Trendz version.
+* 将 upgradeversion 变量设置为您的**以前的** Trendz 版本。
 
 ```bash
 docker compose exec mytrendz sh -c "echo '1.10.1' > /data/.upgradeversion" 
@@ -180,14 +177,14 @@ docker compose exec mytrendz sh -c "echo '1.10.1' > /data/.upgradeversion"
 {: .copy-code}
 
 {% capture dockerComposeStandalone %}
-If you still rely on Docker Compose as docker-compose (with a hyphen) execute next command:
+如果您仍然依赖 Docker Compose 作为 docker-compose（带连字符），请执行以下命令：
 <br>**docker-compose exec mytrendz sh -c "echo '1.10.1' > /data/.upgradeversion"**
 {% endcapture %}
 {% include templates/info-banner.md content=dockerComposeStandalone %}
 
-* After this you need to update docker-compose.yml as in [Step 3](#step-3-running-trendz-service) but with 1.10.3-HF3 instead of 1.10.2:
+* 在此之后，您需要像[步骤 3](#step-3-running-trendz-service)中一样更新 docker-compose.yml，但将 1.10.2 替换为 1.10.3-HF3：
 
-* Restart Trendz container
+* 重新启动 Trendz 容器
 
 ```bash
 docker compose stop mytrendz
@@ -196,27 +193,27 @@ docker compose up -d
 {: .copy-code}
 
 {% capture dockerComposeStandalone %}
-If you still rely on Docker Compose as docker-compose (with a hyphen) here is the list of the above commands:
+如果您仍然依赖 Docker Compose 作为 docker-compose（带连字符），这里列出了上述命令：
 <br>**docker-compose stop mytrendz**
 <br>**docker-compose up -d**
 {% endcapture %}
 {% include templates/info-banner.md content=dockerComposeStandalone %}
 
-To upgrade Trendz to the latest version those steps should be done **for each intermediate version**.
+要将 Trendz 升级到最新版本，这些步骤应该**针对每个中间版本**完成。
 
-## Standalone Python executor service
-You can use following docker compose file in case when you want to start Trendz python executor as a separate service. 
-It is useful when your Trendz service is installed in monolith mode, and you want to logically separate Trendz from service that executes Python scripts for prediction models. 
-Using same configuration you can scale Python executors independently of Trendz service.
+## 独立 Python 执行器服务
+如果您想将 Trendz python 执行器作为单独的服务启动，则可以使用以下 docker compose 文件。
+当您的 Trendz 服务以整体模式安装，并且您想在逻辑上将 Trendz 与执行预测模型的 Python 脚本的服务分开时，这非常有用。
+使用相同的配置，您可以独立于 Trendz 服务扩展 Python 执行器。
 
-Create docker compose file:
+创建 docker compose 文件：
 
 ```text
 sudo nano docker-compose.yml
 ```
 {: .copy-code}
 
-Add following configuration:
+添加以下配置：
 
 ```yml
 version: '3.0'
@@ -236,19 +233,19 @@ services:
 ```
 {: .copy-code}
 
-Where:
+其中：
 
-- `8080`            - Python executor port for communication with Trendz service
-- `--restart always`        - automatically start Trendz in case of system reboot and restart in case of failure.
-- `thingsboard/trendz-python-executor:1.10.3`          - Trendz python script executor docker image
-- `SCRIPT_ENGINE_RUNTIME_TIMEOUT`          - Python script execution timeout
+- `8080` - Python 执行器端口，用于与 Trendz 服务通信
+- `--restart always` - 在系统重新启动时自动启动 Trendz，并在发生故障时重新启动。
+- `thingsboard/trendz-python-executor:1.10.3` - Trendz python 脚本执行器 docker 镜像
+- `SCRIPT_ENGINE_RUNTIME_TIMEOUT` - Python 脚本执行超时
 
 ```text
 docker compose up -d
 docker compose logs -f mypyexecutor
 ```
 
-* Final step is to tell Trendz service how to communicate with Python executor service. You can do that by changing following environment variables in `/usr/share/trendz/conf/trendz.conf` file:
+* 最后一步是告诉 Trendz 服务如何与 Python 执行器服务通信。您可以通过在 `/usr/share/trendz/conf/trendz.conf` 文件中更改以下环境变量来实现：
 
 ```bash
 export SCRIPT_ENGINE_TIMEOUT=30000
@@ -257,14 +254,14 @@ export SCRIPT_ENGINE_DOCKER_PROVIDER_URL=PYTHON_EXECUTOR_HOST:PYTHON_EXECUTOR_PO
 ```
 {: .copy-code}
 
-Note: you need to replace `PYTHON_EXECUTOR_HOST` and `PYTHON_EXECUTOR_PORT` with actual values of your Python executor service and ensure that Trendz is able to send network traffic to that destination.
+注意：您需要将 `PYTHON_EXECUTOR_HOST` 和 `PYTHON_EXECUTOR_PORT` 替换为 Python 执行器服务的实际值，并确保 Trendz 能够向该目标发送网络流量。
 
-## Troubleshooting
+## 故障排除
 
-### DNS issues
+### DNS 问题
 
 {% include templates/troubleshooting/dns-issues.md %}
 
-## Next steps
+## 后续步骤
 
 {% assign currentGuide = "InstallationOptions" %}{% include templates/trndz-guides-banner.md %}

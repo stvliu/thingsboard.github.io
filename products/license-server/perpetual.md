@@ -2,35 +2,33 @@
 layout: docwithnav-license
 assignees:
 - ashvayka
-title: Perpetual fallback license
-description: Definition of perpetual license and its advantages
+title: 永久回退许可证
+description: 永久许可证的定义及其优势
 
 ---
 
-**Perpetual fallback licenses**  
- 
-License Server allows to purchase perpetual fallback licenses. 
-A perpetual fallback license is a license that allows you to use a specific version of software without an active subscription for it. 
-When purchasing perpetual fallback license, you get one year of software updates included to eternal usage of ThingsBoard PE. After the first year the customer can continue using the platform and purchase software updates for subsequent year for the discount fee.
+**永久回退许可证**
 
-Single perpetual fallback license covers single ThingsBoard PE instance (server process). 
-So, if you like to run ThingsBoard PE in a HA mode, you will need at least two licenses. 
+许可证服务器允许购买永久回退许可证。
+永久回退许可证是一种允许您在没有有效订阅的情况下使用特定软件版本的许可证。
+购买永久回退许可证时，您将获得一年的软件更新，包括 ThingsBoard PE 的永久使用权。在第一年之后，客户可以继续使用该平台并以折扣费购买后续年份的软件更新。
 
-In order to purchase the Perpetual license the customer may register on License portal and then follow simple steps: 
-- Go to ***Perpetual*** — ***Choose a product*** — Input ***Billing info*** — ***Create***
+单个永久回退许可证涵盖单个 ThingsBoard PE 实例（服务器进程）。
+因此，如果您想在 HA 模式下运行 ThingsBoard PE，您将至少需要两个许可证。
 
-or choose exact product from [pricing](/pricing/). Once you press ***Get your license*** button you will be routed to the License portal authentication/registration or directly to ***Billing info*** step if you are already logged in on the License portal.   
+为了购买永久许可证，客户可以在许可证门户上注册，然后按照简单的步骤操作：
+- 转到 ***永久*** — ***选择产品*** — 输入 ***账单信息*** — ***创建***
 
-### User Guide
+或从 [定价](/pricing/) 中选择确切的产品。一旦您按下 ***获取您的许可证*** 按钮，您将被路由到许可证门户身份验证/注册，或者如果您已在许可证门户上登录，则直接转到 ***账单信息*** 步骤。
 
- - **Launching TB PE using pay-as-you-go subscription**
- 
- - **Launching TB PE using perpetual license**
- 
- - **Migrating from AWS IoT Marketplace**
- 
- - **Upgrading your TB PE subscription** 
- 
- - **Moving ThingsBoard to another hardware instance** 
+### 用户指南
 
+- **使用按需订阅启动 TB PE**
 
+- **使用永久许可证启动 TB PE**
+
+- **从 AWS IoT Marketplace 迁移**
+
+- **升级您的 TB PE 订阅**
+
+- **将 ThingsBoard 移至另一个硬件实例**

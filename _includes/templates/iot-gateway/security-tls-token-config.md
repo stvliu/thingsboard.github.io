@@ -1,12 +1,12 @@
-In table below described parameters to configure authorization of IoT gateway on ThingsBoard platform.  
+下表描述了在 ThingsBoard 平台上配置 IoT 网关授权的参数。
 
-|**Parameter**|**Default value**|**Description**|
+| **参数** | **默认值** | **说明** |
 |:-|:-|-
-| accessToken              | **PUT_YOUR_GW_ACCESS_TOKEN_HERE**               | Access token for the gateway from ThingsBoard server.       |
-| caCert                   | **/etc/thingsboard-gateway/mqttserver.pub.pem** | Path to CA certificate file.                                |
-|---    
+| accessToken | **PUT_YOUR_GW_ACCESS_TOKEN_HERE** | ThingsBoard 服务器的网关访问令牌。 |
+| caCert | **/etc/thingsboard-gateway/mqttserver.pub.pem** | CA 证书文件的路径。 |
+|---
 
-Security subsection in configuration file will look like this: 
+配置文件中的安全子部分将如下所示：
 
 ```json
 ...

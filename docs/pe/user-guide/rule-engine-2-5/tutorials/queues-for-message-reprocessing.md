@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-pe
-title: Using queues for message reprocessing
-description: Using queues for message reprocessing
+title: 使用队列进行消息重新处理
+description: 使用队列进行消息重新处理
 
 ---
 

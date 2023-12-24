@@ -1,32 +1,32 @@
 ---
 layout: docwithnav-edge
-title: Create Device on edge and provision to cloud
-description: Create Device on edge and provision to cloud
+title: 在边缘创建设备并配置到云端
+description: 在边缘创建设备并配置到云端
 
 ---
 
 ![image](/images/coming-soon.jpg)
 
-### Device management on edge
+### 边缘设备管理
 
-**Device** entity could be created directly on the edge and pushed to the cloud in case connection established.
+**设备**实体可以直接在边缘创建，并在建立连接后推送到云端。
 
-In case Edge connected to ThingsBoard **CE** any tenant administrator user is able to create device entities on the edge.
+如果边缘连接到 ThingsBoard **CE**，任何租户管理员用户都可以在边缘创建设备实体。
 
-In case Edge connected to ThingsBoard **PE** any user that has **DEVICE** write operation is able to create device entities on the edge.
+如果边缘连接到 ThingsBoard **PE**，任何具有 **DEVICE** 写入操作的用户都可以在边缘创建设备实体。
 
-Once device created on the edge this device is going to be pushed for the creation on the cloud.
+在边缘创建设备后，该设备将被推送到云端进行创建。
 
-If Edge connected to ThingsBoard **CE** a newly created device will be *'assigned'* to the edge automatically.
+如果边缘连接到 ThingsBoard **CE**，新创建的设备将自动*'分配'*给边缘。
 
-If Edge connected to ThingsBoard **PE** a newly created device:
-- will be created on the cloud
-- new device entity group will be created, with specific name template: **[Edge] ${NAME_OF_EDGE} All**.
-- a newly created device will be added to group above
-- group above will be *'assigned'* to the edge automatically.
+如果边缘连接到 ThingsBoard **PE**，新创建的设备：
+- 将在云端创建
+- 将创建新的设备实体组，具有特定的名称模板：**[Edge] ${NAME_OF_EDGE} All**。
+- 新创建的设备将被添加到上述组中
+- 上述组将自动*'分配'*给边缘。
 
 
-### Next Steps
+### 后续步骤
 
 {% assign currentGuide = "CreateDeviceOnEdgeAndProvisionToCloud" %}
 {% assign docsPrefix = "edge/" %}

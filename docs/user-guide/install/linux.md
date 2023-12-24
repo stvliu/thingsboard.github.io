@@ -2,8 +2,8 @@
 layout: docwithnav
 assignees:
 - ashvayka
-title: Installing ThingsBoard on Linux
-description: Installing ThingsBoard on Linux
+title: 在 Linux 上安装 ThingsBoard
+description: 在 Linux 上安装 ThingsBoard
 redirect_to: "/docs/user-guide/install/ubuntu"
 
 ---
@@ -13,44 +13,44 @@ redirect_to: "/docs/user-guide/install/ubuntu"
 * TOC
 {:toc}
 
-This guide describes how to install ThingsBoard on a Linux based server machine.
-Instructions below are provided for Ubuntu 16.04 and CentOS 7. 
-These instructions can be easily adapted to other similar operating	 systems. 
+本指南介绍如何在基于 Linux 的服务器计算机上安装 ThingsBoard。
+以下说明适用于 Ubuntu 16.04 和 CentOS 7。
+这些说明可以轻松地适用于其他类似的操作系统。
 
-### Hardware requirements
+### 硬件要求
 
-To run ThingsBoard and third-party components on a single machine you will need at least 1Gb of RAM.
+要在单台计算机上运行 ThingsBoard 和第三方组件，您至少需要 1Gb 的 RAM。
 
-### Third-party components installation
+### 第三方组件安装
 
 #### Java
 
-ThingsBoard service is running on Java 11. 
-The solution is actively tested on both [OpenJDK](http://openjdk.java.net/) and [Oracle JDK](http://www.oracle.com/technetwork/java/javase/overview/index.html).
+ThingsBoard 服务在 Java 11 上运行。
+该解决方案已在 [OpenJDK](http://openjdk.java.net/) 和 [Oracle JDK](http://www.oracle.com/technetwork/java/javase/overview/index.html) 上进行了积极测试。
 
-Follow this instructions to install OpenJDK 11:
+按照以下说明安装 OpenJDK 11：
 
 {% capture tabspec %}java-installation
 A,Ubuntu,shell,resources/java-ubuntu-installation.sh,/docs/user-guide/install/resources/java-ubuntu-installation.sh
 B,CentOS,shell,resources/java-centos-installation.sh,/docs/user-guide/install/resources/java-centos-installation.sh{% endcapture %}  
 {% include tabs.html %}   
 
-Please don't forget to configure your operating system to use OpenJDK 11 by default. 
-See corresponding instructions:
+请不要忘记将您的操作系统配置为默认使用 OpenJDK 11。
+请参阅相应的说明：
 
  - [Ubuntu](https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-on-ubuntu-18-04#managing-java)
  - [CentOS](https://computingforgeeks.com/how-to-install-java-11-openjdk-11-on-rhel-8/#h-selecting-java-versions-with-alternatives)
 
 
-#### External database installation
+#### 外部数据库安装
 
 {% include templates/install/install-db.md %}
 
-###### SQL Database: PostgreSQL
+###### SQL 数据库：PostgreSQL
 
 {% include templates/install/optional-db.md %}
 
-Instructions listed below will help you to install PostgreSQL.
+以下列出的说明将帮助您安装 PostgreSQL。
 
 {% capture tabspec %}postgresql-installation
 A,Ubuntu,shell,resources/postgresql-ubuntu-installation.sh,/docs/user-guide/install/resources/postgresql-ubuntu-installation.sh
@@ -62,36 +62,36 @@ B,CentOS,shell,resources/postgresql-centos-installation.sh,/docs/user-guide/inst
 
 {% include templates/install/create-tb-db.md %}
 
-###### NoSQL Database: Cassandra
+###### NoSQL 数据库：Cassandra
 
 {% include templates/install/optional-db.md %}
 
-Instructions listed below will help you to install Cassandra.
+以下列出的说明将帮助您安装 Cassandra。
 
 {% capture tabspec %}cassandra-installation
 A,Ubuntu,shell,resources/cassandra-ubuntu-installation.sh,/docs/user-guide/install/resources/cassandra-ubuntu-installation.sh
 B,CentOS,shell,resources/cassandra-centos-installation.sh,/docs/user-guide/install/resources/cassandra-centos-installation.sh{% endcapture %}  
 {% include tabs.html %}
 
-### ThingsBoard service installation
+### ThingsBoard 服务安装
 
-Download installation package or [build it from source](/docs/user-guide/install/building-from-source).
+下载安装包或 [从源代码构建](/docs/user-guide/install/building-from-source)。
 
 {% capture tabspec %}thingsboard-download
 A,Ubuntu,shell,resources/thingsboard-ubuntu-download.sh,/docs/user-guide/install/resources/thingsboard-ubuntu-download.sh
 B,CentOS,shell,resources/thingsboard-centos-download.sh,/docs/user-guide/install/resources/thingsboard-centos-download.sh{% endcapture %}  
 {% include tabs.html %}
 
-Install ThingsBoard as a service
+将 ThingsBoard 安装为服务
 
 {% capture tabspec %}thingsboard-installation
 A,Ubuntu,shell,resources/thingsboard-ubuntu-installation.sh,/docs/user-guide/install/resources/thingsboard-ubuntu-installation.sh
 B,CentOS,shell,resources/thingsboard-centos-installation.sh,/docs/user-guide/install/resources/thingsboard-centos-installation.sh{% endcapture %}  
 {% include tabs.html %}
 
-### Configure ThingsBoard to use the external database
+### 配置 ThingsBoard 以使用外部数据库
   
-Edit ThingsBoard configuration file 
+编辑 ThingsBoard 配置文件
 
 ```bash 
 sudo nano /etc/thingsboard/conf/thingsboard.yml
@@ -99,13 +99,13 @@ sudo nano /etc/thingsboard/conf/thingsboard.yml
 
 {% include templates/disable-hsqldb.md %} 
 
-For **PostgreSQL**:
+对于 **PostgreSQL**：
 
 {% include templates/enable-postgresql.md %} 
 
-For **Cassandra DB**:
+对于 **Cassandra DB**：
 
-Locate and set database type configuration parameters to 'cassandra'.
+找到并设置数据库类型配置参数为“cassandra”。
  
 ```text
 database:
@@ -115,10 +115,10 @@ database:
 
 {% include templates/memory-update-for-slow-machines.md %} 
 
-For ThingsBoard service:
+对于 ThingsBoard 服务：
 
 ```bash
-# Update ThingsBoard memory usage and restrict it to 256MB in /etc/thingsboard/conf/thingsboard.conf
+# 在 /etc/thingsboard/conf/thingsboard.conf 中更新 ThingsBoard 内存使用情况并将其限制为 256MB
 export JAVA_OPTS="$JAVA_OPTS -Xms256M -Xmx256M"
 ```
 
@@ -126,22 +126,22 @@ export JAVA_OPTS="$JAVA_OPTS -Xms256M -Xmx256M"
 
 {% include templates/start-service.md %}
 
-**NOTE**: Please allow up to 90 seconds for the Web UI to start
+**注意**：请允许 Web UI 最多 90 秒的时间来启动
 
-### Troubleshooting
+### 故障排除
 
-ThingsBoard logs are stored in the following directory:
+ThingsBoard 日志存储在以下目录中：
  
 ```bash
 /var/log/thingsboard
 ```
 
-You can issue the following command in order to check if there are any errors on the backend side:
+您可以发出以下命令以检查后端是否有任何错误：
  
 ```bash
 cat /var/log/thingsboard/thingsboard.log | grep ERROR
 ```
 
-## Next steps
+## 后续步骤
 
 {% assign currentGuide = "InstallationGuides" %}{% include templates/guides-banner.md %}

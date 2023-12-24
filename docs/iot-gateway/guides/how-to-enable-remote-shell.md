@@ -1,39 +1,39 @@
 ---
 layout: docwithnav-gw
-title: How to enable remote shell feature on ThingsBoard IoT Gateway
-description: How to enable remote shell feature on ThingsBoard IoT Gateway
+title: 如何在 ThingsBoard IoT 网关上启用远程 shell 功能
+description: 如何在 ThingsBoard IoT 网关上启用远程 shell 功能
 
 ---
 
 * TOC
 {:toc}
 
-This guide will help you to enable remote shell feature and control operation system with ThingsBoard IoT Gateway from your ThingsBoard platform instance.  
+本指南将帮助您启用远程 shell 功能，并通过 ThingsBoard 平台实例从 ThingsBoard IoT 网关控制操作系统。
 
-For purpose of this guide, we will use following things:
-1. Instance of ThingsBoard platform (How to install you can [read here](/docs/user-guide/install/installation-options/)). For this guide we will use [thingsboard.cloud](https://thingsboard.cloud)
-2. Installed and configured ThingsBoard IoT Gateway (How to install you can [read here](/docs/iot-gateway/installation/)).
+为了本指南的目的，我们将使用以下内容：
+1. ThingsBoard 平台实例（您可以[在此处](/docs/user-guide/install/installation-options/)阅读如何安装）。对于本指南，我们将使用 [thingsboard.cloud](https://thingsboard.cloud)
+2. 已安装并配置的 ThingsBoard IoT 网关（您可以[在此处](/docs/iot-gateway/installation/)阅读如何安装）。
 
-## Step 1. Remote shell activation
+## 步骤 1. 远程 shell 激活
 
- - To activate remote shell in ThingsBoard IoT Gateway you should add or change parameter **remoteShell** to **true** in the section **thingsboard** in the general configuration file (**tb_gateway.yaml**);
+- 要在 ThingsBoard IoT 网关中激活远程 shell，您应该在常规配置文件 (**tb_gateway.yaml**) 中的 **thingsboard** 部分中添加或将参数 **remoteShell** 更改为 **true**；
 
   ![](/images/gateway/charhe-remote-shell-parameter.png)
   <br>
 {% capture info %}
 <div>
   <p>
-    <b style="color:red">WARNING:</b>
-    <span style="color:black">this feature can cause security problems for your device, we strongly recommend using it with ssl encryption only and not enabling it if you don’t need it.</span>
+    <b style="color:red">警告：</b>
+    <span style="color:black">此功能可能会给您的设备带来安全问题，我们强烈建议仅在使用 ssl 加密时使用它，并且在不需要时不要启用它。</span>
   </p>
 </div>
 {% endcapture %}
 {% include templates/info-banner.md content=info %}
- 
 
- - Restart the gateway with the new configuration.
 
-Example of the **thingsboard** section in the general configuration file:
+- 使用新配置重新启动网关。
+
+常规配置文件中 **thingsboard** 部分的示例：
 ```json
 {
   "thingsboard": {
@@ -47,57 +47,57 @@ Example of the **thingsboard** section in the general configuration file:
 }
 ```
 
-## Step 2. Create a dashboard to use the remote shell
+## 步骤 2. 创建一个仪表板来使用远程 shell
 
-To use the remote shell we have to use **RPC remote shell** widget from **Control widget** bundle.<br>
-To do this we use following steps:
-  
-  - Open **Dashboards** tab;
+要使用远程 shell，我们必须使用 **控制小部件** 捆绑包中的 **RPC 远程 shell** 小部件。<br>
+为此，我们执行以下步骤：
+
+  - 打开 **仪表板** 选项卡；
   <br><br>
   ![](/images/gateway/remote-shell-1.png)
- 
-  - Add a new dashboard;
+
+  - 添加一个新仪表板；
   <br><br>
   ![](/images/gateway/remote-shell-2.png)
-  
-  - Open created dashboard, enter edit mode by clicking **pencil** button in the bottom right corner and click "**Add new widget**" button;
+
+  - 打开创建的仪表板，通过单击右下角的 **铅笔** 按钮进入编辑模式，然后单击“**添加新小部件**”按钮；
   <br><br>
   ![](/images/gateway/remote-shell-3.png)
-  
-  - Select widget bundle - "**Control widgets**";
+
+  - 选择小部件捆绑包 - “**控制小部件**”；
   <br><br>
   ![](/images/gateway/remote-shell-4.png)
-  
-  - Scroll down and select **RPC remote shell** widget;
+
+  - 向下滚动并选择 **RPC 远程 shell** 小部件；
   <br><br>
   ![](/images/gateway/remote-shell-5.png)
-  
-  - We haven't specify the entity type for the widget so we will **create a new one**;
+
+  - 我们尚未为小部件指定实体类型，因此我们将 **创建一个新类型**；
   <br><br>
   ![](/images/gateway/remote-shell-6.png)
-  
-  - Fill in required fields and same the entity. **Gateway** - is our gateway device;
+
+  - 填写必填字段并保存实体。**网关** - 是我们的网关设备；
   <br><br>
   ![](/images/gateway/remote-shell-7.png)
-  
-  - To prevent TimeoutException, increase the default RPC command timeout to 5000 milliseconds in the **advanced** settings tab and press **Add**. Then apply all changes;
+
+  - 为了防止 TimeoutException，在 **高级** 设置选项卡中将默认 RPC 命令超时时间增加到 5000 毫秒，然后按 **添加**。然后应用所有更改；
   <br><br>
   ![](/images/gateway/remote-shell-8.png)
-  
-  - The connected widget looks like (Connection setups automatically);
+
+  - 连接的小部件如下所示（连接自动设置）；
   <br><br>
   ![](/images/gateway/remote-shell-9.png)
-  
-  - Now you can use the shell to control device with the gateway. For example we run **ls** command to get the list of files and directories in the current directory. 
+
+  - 现在您可以使用 shell 通过网关控制设备。例如，我们运行 **ls** 命令以获取当前目录中的文件和目录列表。
   <br><br>
   ![](/images/gateway/remote-shell-10.png)
 
-## Next steps
+## 后续步骤
 
-Explore guides related to main ThingsBoard features:
+探索与 ThingsBoard 主要功能相关的指南：
 
- - [Data Visualization](/docs/user-guide/visualization/) - how to visualize collected data.
- - [Device attributes](/docs/user-guide/attributes/) - how to use device attributes.
- - [Telemetry data collection](/docs/user-guide/telemetry/) - how to collect telemetry data.
- - [Using RPC capabilities](/docs/user-guide/rpc/) - how to send commands to/from devices.
- - [Rule Engine](/docs/user-guide/rule-engine/) - how to use rule engine to analyze data from devices.
+- [数据可视化](/docs/user-guide/visualization/) - 如何可视化收集的数据。
+- [设备属性](/docs/user-guide/attributes/) - 如何使用设备属性。
+- [遥测数据收集](/docs/user-guide/telemetry/) - 如何收集遥测数据。
+- [使用 RPC 功能](/docs/user-guide/rpc/) - 如何向设备发送/从设备接收命令。
+- [规则引擎](/docs/user-guide/rule-engine/) - 如何使用规则引擎分析来自设备的数据。

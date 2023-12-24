@@ -1,14 +1,14 @@
-Using Cassandra is an optional step. 
-We recommend to use Cassandra if you plan to insert more than 5K data points per second or would like to optimize storage space.
+使用 Cassandra 是一个可选步骤。
+如果您计划每秒插入超过 5K 个数据点或希望优化存储空间，我们建议使用 Cassandra。
 
-##### Provision additional node groups
+##### 配置其他节点组
 
-Provision additional node groups that will be hosting Cassandra instances. 
-You may change the machine type. At least 4 vCPUs and 16GB of RAM is recommended.
+配置将托管 Cassandra 实例的其他节点组。
+您可以更改机器类型。建议至少使用 4 个 vCPU 和 16GB RAM。
 
-We will create **3** separate node pools with **1** node per zone. 
-Since we plan to use zonal disks, we don't want k8s to launch a pod on the node where the corresponding disk is not available.
-Those zones will have the same node label. We will use this label to target deployment of our stateful set.
+我们将创建 **3** 个单独的节点池，每个可用区 **1** 个节点。
+由于我们计划使用区域磁盘，因此我们不希望 k8s 在相应磁盘不可用的节点上启动 Pod。
+这些可用区将具有相同的节点标签。我们将使用此标签来定位有状态集的部署。
 
 ```bash
 gcloud container node-pools create cassandra1 --cluster=$TB_CLUSTER_NAME --zone=$GCP_ZONE --node-locations=$GCP_ZONE1 \

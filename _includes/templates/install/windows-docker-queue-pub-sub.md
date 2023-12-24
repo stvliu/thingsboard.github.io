@@ -1,13 +1,13 @@
 {% include templates/install/queue-pub-sub-config.md %}
 
-Create docker compose file for ThingsBoard queue service:
+为 ThingsBoard 队列服务创建 docker compose 文件：
 
 ```text
 docker-compose.yml
 ```
 {: .copy-code}
 
-Add the following line to the yml file. Don’t forget to replace “YOUR_PROJECT_ID”, "YOUR_SERVICE_ACCOUNT" with your **real Pub/Sub project id, and service account (it is whole data from json file):**
+将以下行添加到 yml 文件。不要忘记用你的 **实际 Pub/Sub 项目 ID 和服务帐户（它是 json 文件中的全部数据）** 替换“YOUR_PROJECT_ID”、“YOUR_SERVICE_ACCOUNT”：
 
 ```yml
 version: '3.0'
@@ -25,22 +25,22 @@ services:
       TB_QUEUE_PUBSUB_PROJECT_ID: YOUR_PROJECT_ID
       TB_QUEUE_PUBSUB_SERVICE_ACCOUNT: YOUR_SERVICE_ACCOUNT
 
-      # These params affect the number of requests per second from each partitions per each queue.
-      # Number of requests to particular Message Queue is calculated based on the formula:
-      # ((Number of Rule Engine and Core Queues) * (Number of partitions per Queue) + (Number of transport queues)
-      #  + (Number of microservices) + (Number of JS executors)) * 1000 / POLL_INTERVAL_MS
-      # For example, number of requests based on default parameters is:
-      # Rule Engine queues:
-      # Main 10 partitions + HighPriority 10 partitions + SequentialByOriginator 10 partitions = 30
-      # Core queue 10 partitions
-      # Transport request Queue + response Queue = 2
-      # Rule Engine Transport notifications Queue + Core Transport notifications Queue = 2
-      # Total = 44
-      # Number of requests per second = 44 * 1000 / 25 = 1760 requests
+      # 这些参数影响每个队列的每个分区每秒的请求数。
+      # 到特定消息队列的请求数根据以下公式计算：
+      # ((规则引擎和核心队列数) * (每个队列的分区数) + (传输队列数)
+      #  + (微服务数) + (JS 执行器数)) * 1000 / POLL_INTERVAL_MS
+      # 例如，基于默认参数的请求数为：
+      # 规则引擎队列：
+      # 主 10 个分区 + 高优先级 10 个分区 + 按发起者顺序 10 个分区 = 30
+      # 核心队列 10 个分区
+      # 传输请求队列 + 响应队列 = 2
+      # 规则引擎传输通知队列 + 核心传输通知队列 = 2
+      # 总计 = 44
+      # 每秒请求数 = 44 * 1000 / 25 = 1760 个请求
       # 
-      # Based on the use case, you can compromise latency and decrease number of partitions/requests to the queue, if the message load is low.
-      # By UI set the parameters - interval (1000) and partitions (1) for Rule Engine queues.
-      # Sample parameters to fit into 10 requests per second on a "monolith" deployment: 
+      # 根据用例，如果消息负载较低，你可以权衡延迟并减少队列的分区/请求数。
+      # 通过 UI 为规则引擎队列设置参数 - 间隔 (1000) 和分区 (1)。
+      # 在“整体”部署中每秒适合 10 个请求的示例参数： 
       TB_QUEUE_CORE_POLL_INTERVAL_MS: 1000
       TB_QUEUE_CORE_PARTITIONS: 2
       TB_QUEUE_RULE_ENGINE_POLL_INTERVAL_MS: 1000
@@ -60,4 +60,4 @@ volumes:
 ```
 {: .copy-code}
 
-You can update default Rule Engine queues configuration using UI. More about ThingsBoard Rule Engine queues see in [documentation](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/).
+你可以使用 UI 更新默认规则引擎队列配置。有关 ThingsBoard 规则引擎队列的更多信息，请参阅 [文档](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/)。

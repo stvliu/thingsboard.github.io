@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
-title: Enrichment Nodes
-description: Rule Engine 2.0 Enrichment Nodes
+title: 增强节点
+description: 规则引擎 2.0 增强节点
 
 ---
 

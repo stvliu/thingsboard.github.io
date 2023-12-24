@@ -1,9 +1,9 @@
 ---
 layout: devices-library-article
-title: How to connect LuaNode32 to ThingsBoard?
-category: Microcontrollers
+title: 如何将 LuaNode32 连接到 ThingsBoard？
+category: 微控制器
 chip: ESP32
-connectivity: HTTP, MQTT, WIFI, Bluetooth, BLE
+connectivity: HTTP, MQTT, WIFI, 蓝牙, BLE
 vendor: NodeMCU
 deviceImageFileName: luanode32.jpg
 docsPrefix: pe/

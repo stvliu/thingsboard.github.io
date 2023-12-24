@@ -1,18 +1,18 @@
-{% assign feature = "Custom Menu" %}{% include templates/pe-feature-banner.md %}
+{% assign feature = "自定义菜单" %}{% include templates/pe-feature-banner.md %}
 
 * TOC
 {:toc}
 
-## Introduction
+## 简介
 
-The ThingsBoard Custom Menu feature allows you to extend ThingsBoard UI.
-You can add new and show/hide existing menu items.
+ThingsBoard 自定义菜单功能允许您扩展 ThingsBoard UI。
+您可以添加新菜单项并显示/隐藏现有菜单项。
 
-## Hide existing menu items
+## 隐藏现有菜单项
 
-To hide menu items in the ThingsBoard user interface, specify the menu items you want to hide in JSON data format in the "Custom Menu" window.
+要在 ThingsBoard 用户界面中隐藏菜单项，请在“自定义菜单”窗口中以 JSON 数据格式指定要隐藏的菜单项。
 
-Example of JSON data format to hide "Home" and "Alarms" menu items:
+隐藏“主页”和“警报”菜单项的 JSON 数据格式示例：
 
 ```json
 {
@@ -25,139 +25,139 @@ Example of JSON data format to hide "Home" and "Alarms" menu items:
 ```
 {: .copy-code}
 
-**Available ThingsBoard menu items names that can be disabled:**  
+**可禁用的 ThingsBoard 菜单项名称：**
 
-| **Parameter**             | **Description**                                                                                                                         |
+| **参数**             | **说明**                                                                                                                         |
 |:--------------------------|:----------------------------------------------------------------------------------------------------------------------------------------|
-| home                      | hides the "Home" item on the left panel                                                            |
-| tenants                   | hides the "Tenants" item on the left panel  (only at the system administrator level)               |
-| tenant_profiles           | hides the "Tenant Profiles" item on the left panel (only at the system administrator level)        |
-| billing                   | hides the "Plan and Billing" item on the left panel                                                |
-| alarms                    | hides the "Alarms" item on the left panel                                                          |
-| dashboards                | hides the "Dashboards" item on the left panel                                                      |
-| dashboard_all             | hides the "All" tab on the "Dashboards" page                                                       |
-| dashboard_groups          | hides the "Groups" tab on the "Dashboards" page                                                    |
-| solution_templates        | hides the "Solution Templates" item on the left panel                                              |
-| entities                  | hides the "Entities" item on the left panel                                                        |
-| devices                   | hides the "Devices" item on the left panel                                                         |
-| assets                    | hides the "Assets" item on the left panel                                                          |
-| entity_views              | hides the "Entity Views" item on the left panel                                                    |
-| profiles                  | hides the "Profiles" item on the left panel                                                        |
-| device_profiles           | hides the "Device profiles" item on the left panel                                                 |
-| asset_profiles            | hides the "Asset profiles" item on the left panel                                                  |
-| customers                 | hides the "Customers" item on the left panel                                                       |
-| customer_all              | hides the "All" tab on the "Customers" page                                                        |
-| customer_groups           | hides the "Groups" tab on the "Customers" page                                                     |
-| customers_hierarchy       | hides the "Hierarchy" tab on the "Customers" page                                                  |
-| users                     | hides the "Users" item on the left panel                                                           |
-| user_all                  | hides the "All" tab on the "Customers" page                                                        |
-| user_groups               | hides the "Groups" tab on the "Customers" page                                                     |
-| integrations_center       | hides the "Integrations center" item on the left panel                                             |
-| integrations              | hides the "Integrations" item on the left panel                                                    |
-| converters                | hides the "Data converters" item on the left panel                                                 |
-| rule_chains               | hides the "Rule chains" item on the left panel                                                     |
-| edge_management           | hides the "Edge management" item on the left panel                                                 |
-| edges                     | hides the "Instances" item on the left panel                                                       |
-| rulechain_templates       | hides the "Rule chain templates" item on the left panel                                            |
-| integration_templates     | hides the "Integration templates" item on the left panel                                           |
-| converter_templates       | hides the "Converter templates" item on the left panel                                             |
-| features                  | hides the "Advanced features" item on the left panel                                               |
-| otaUpdates                | hides the "OTA updates" item on the left panel                                                     |
-| version_control           | hides the "Version control" item on the left panel                                                 |
-| scheduler                 | hides the "Scheduler" item on the left panel                                                       |
-| resources                 | hides the "Resources" item on the left panel                                                       |
-| widget_library            | hides the "Widgets Library" item on the left panel                                                 |
-| resources_library         | hides the "Resources library" item on the left panel                                               |
-| notifications_center      | hides the "Notifications center" item on the left panel                                            |
-| notification_inbox        | hides the "Inbox" tab on the "Notifications center" page                                           |
-| notification_sent         | hides the "Sent" tab on the "Notifications center" page                                            |
-| notification_recipients   | hides the "Recipients" tab on the "Notifications center" page                                      |
-| notification_templates    | hides the "Templates" tab on the "Notifications center" page                                       |
-| notification_rules        | hides the "Rules" tab on the "Notifications center" page                                           |
-| api_usage                 | hides the "Api Usage" item on the left panel                                                       |
-| white_labeling            | hides the "White Labeling" item on the left panel                                                  |
-| white_labeling_general    | hides the "General" tab on the "White Labeling" page                                               |
-| login_white_labeling      | hides the "Login" tab on the "White Labeling" page                                                 |
-| mail_templates            | hides the "Mail Templates" tab on the "White Labeling" page                                        |
-| custom_translation        | hides the "Custom Translation" tab on the "White Labeling" page                                    |
-| custom_menu               | hides the "Custom Menu" tab on the "White Labeling" page                                           |
-| settings                  | hides the "Settings" item on the left panel                                                        |
-| general                   | hides the "General" tab on the "Settings" page (only at the system administrator level)            |
-| home_settings             | hides the "Home Settings" tab on the "Settings" page                                               |
-| mail_server               | hides the "Mail Server" tab on the "Settings" page                                                 |
-| notification_settings     | hides the "Notifications" tab on the "Settings" page                                               |
-| queues                    | hides the "Queues" tab on the "Settings" page (only at the system administrator level)             |
-| repository_settings       | hides the "Repository settings" tab on the "Settings" page                                         |
-| auto_commit_settings      | hides the "Auto-commit settings" tab on the "Settings" page                                        |
-| security_settings         | hides the "Security" item on the left panel                                                        |
-| security_settings_general | hides the "General" item in the "Security" drop-down menu (only at the system administrator level) |
-| 2fa                       | hides the "Two-factor authentication" item on the left panel                                       |
-| roles                     | hides the "Roles" item on the left panel                                                           |
-| self_registration         | hides the "Self Registration" item on the left panel                                               |
-| audit_log                 | hides the "Audit Logs" item on the left panel                                                      |
-| oauth2                    | hides the "Oauth2" item on the left panel (only at the system administrator level)                 |
+| home                      | 隐藏左侧面板上的“主页”项                                                            |
+| tenants                   | 隐藏左侧面板上的“租户”项（仅限系统管理员级别）               |
+| tenant_profiles           | 隐藏左侧面板上的“租户配置文件”项（仅限系统管理员级别）        |
+| billing                   | 隐藏左侧面板上的“计划和计费”项                                                |
+| alarms                    | 隐藏左侧面板上的“警报”项                                                          |
+| dashboards                | 隐藏左侧面板上的“仪表板”项                                                      |
+| dashboard_all             | 隐藏“仪表板”页面上的“全部”选项卡                                                       |
+| dashboard_groups          | 隐藏“仪表板”页面上的“组”选项卡                                                    |
+| solution_templates        | 隐藏左侧面板上的“解决方案模板”项                                              |
+| entities                  | 隐藏左侧面板上的“实体”项                                                        |
+| devices                   | 隐藏左侧面板上的“设备”项                                                         |
+| assets                    | 隐藏左侧面板上的“资产”项                                                          |
+| entity_views              | 隐藏左侧面板上的“实体视图”项                                                    |
+| profiles                  | 隐藏左侧面板上的“配置文件”项                                                        |
+| device_profiles           | 隐藏左侧面板上的“设备配置文件”项                                                 |
+| asset_profiles            | 隐藏左侧面板上的“资产配置文件”项                                                  |
+| customers                 | 隐藏左侧面板上的“客户”项                                                       |
+| customer_all              | 隐藏“客户”页面上的“全部”选项卡                                                        |
+| customer_groups           | 隐藏“客户”页面上的“组”选项卡                                                     |
+| customers_hierarchy       | 隐藏“客户”页面上的“层次结构”选项卡                                                  |
+| users                     | 隐藏左侧面板上的“用户”项                                                           |
+| user_all                  | 隐藏“客户”页面上的“全部”选项卡                                                        |
+| user_groups               | 隐藏“客户”页面上的“组”选项卡                                                     |
+| integrations_center       | 隐藏左侧面板上的“集成中心”项                                             |
+| integrations              | 隐藏左侧面板上的“集成”项                                                    |
+| converters                | 隐藏左侧面板上的“数据转换器”项                                                 |
+| rule_chains               | 隐藏左侧面板上的“规则链”项                                                     |
+| edge_management           | 隐藏左侧面板上的“边缘管理”项                                                 |
+| edges                     | 隐藏左侧面板上的“实例”项                                                       |
+| rulechain_templates       | 隐藏左侧面板上的“规则链模板”项                                            |
+| integration_templates     | 隐藏左侧面板上的“集成模板”项                                           |
+| converter_templates       | 隐藏左侧面板上的“转换器模板”项                                             |
+| features                  | 隐藏左侧面板上的“高级功能”项                                               |
+| otaUpdates                | 隐藏左侧面板上的“OTA 更新”项                                                     |
+| version_control           | 隐藏左侧面板上的“版本控制”项                                                 |
+| scheduler                 | 隐藏左侧面板上的“调度程序”项                                                       |
+| resources                 | 隐藏左侧面板上的“资源”项                                                       |
+| widget_library            | 隐藏左侧面板上的“小部件库”项                                                 |
+| resources_library         | 隐藏左侧面板上的“资源库”项                                               |
+| notifications_center      | 隐藏左侧面板上的“通知中心”项                                            |
+| notification_inbox        | 隐藏“通知中心”页面上的“收件箱”选项卡                                           |
+| notification_sent         | 隐藏“通知中心”页面上的“已发送”选项卡                                            |
+| notification_recipients   | 隐藏“通知中心”页面上的“收件人”选项卡                                      |
+| notification_templates    | 隐藏“通知中心”页面上的“模板”选项卡                                       |
+| notification_rules        | 隐藏“通知中心”页面上的“规则”选项卡                                           |
+| api_usage                 | 隐藏左侧面板上的“API 使用情况”项                                                       |
+| white_labeling            | 隐藏左侧面板上的“白标”项                                                  |
+| white_labeling_general    | 隐藏“白标”页面上的“常规”选项卡                                               |
+| login_white_labeling      | 隐藏“白标”页面上的“登录”选项卡                                                 |
+| mail_templates            | 隐藏“白标”页面上的“邮件模板”选项卡                                        |
+| custom_translation        | 隐藏“白标”页面上的“自定义翻译”选项卡                                    |
+| custom_menu               | 隐藏“白标”页面上的“自定义菜单”选项卡                                           |
+| settings                  | 隐藏左侧面板上的“设置”项                                                        |
+| general                   | 隐藏“设置”页面上的“常规”选项卡（仅限系统管理员级别）            |
+| home_settings             | 隐藏“设置”页面上的“主页设置”选项卡                                               |
+| mail_server               | 隐藏“设置”页面上的“邮件服务器”选项卡                                                 |
+| notification_settings     | 隐藏“设置”页面上的“通知”选项卡                                               |
+| queues                    | 隐藏“设置”页面上的“队列”选项卡（仅限系统管理员级别）             |
+| repository_settings       | 隐藏“设置”页面上的“存储库设置”选项卡                                         |
+| auto_commit_settings      | 隐藏“设置”页面上的“自动提交设置”选项卡                                        |
+| security_settings         | 隐藏左侧面板上的“安全”项                                                        |
+| security_settings_general | 隐藏“安全”下拉菜单中的“常规”项（仅限系统管理员级别） |
+| 2fa                       | 隐藏左侧面板上的“双因素身份验证”项                                       |
+| roles                     | 隐藏左侧面板上的“角色”项                                                           |
+| self_registration         | 隐藏左侧面板上的“自助注册”项                                               |
+| audit_log                 | 隐藏左侧面板上的“审计日志”项                                                      |
+| oauth2                    | 隐藏左侧面板上的“Oauth2”项（仅限系统管理员级别）                 |
 | ---                       
 
-Let's see how this works:
+我们来看看它是如何工作的：
 
 {% assign addNewMenuItem = '
     ===
         image: /images/user-guide/white-labeling/custom-menu/custom-menu-add-new-menu-item-1.png,
-        title: Go to the "**White Labeling**" page -> "**Custom Menu**" tab. Menu items names that can be hidden are displayed in the empty "**Custom Menu**" window;
+        title: 转到“**白标**”页面 -> “**自定义菜单**”选项卡。可以隐藏的菜单项名称显示在空的“**自定义菜单**”窗口中；
     ===
         image: /images/user-guide/white-labeling/custom-menu/custom-menu-hide-menu-item-2.png,
-        title: Please provide the menu items you want to hide in JSON data format in the "**Custom Menu**" window. Then click "**Save**";
+        title: 请在“**自定义菜单**”窗口中以 JSON 数据格式提供要隐藏的菜单项。然后单击“**保存**”；
     ===
         image: /images/user-guide/white-labeling/custom-menu/custom-menu-hide-menu-item-3.png,
-        title: Selected menu items are now hidden.
+        title: 选定的菜单项现在已隐藏。
 '
 %}
 
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=addNewMenuItem %}
 
-## Add new menu items
+## 添加新菜单项
 
-You can add a new menu item that will link to a specific dashboard, documentation page, or an external webpage.
-To do this, specify the parameters of the new menu item in JSON data format in the "**Custom Menu**" window.
+您可以添加一个新菜单项，该菜单项将链接到特定仪表板、文档页面或外部网页。
+为此，请在“**自定义菜单**”窗口中以 JSON 数据格式指定新菜单项的参数。
 
-JSON configuration for adding new menu item should contain the following parameters:
+用于添加新菜单项的 JSON 配置应包含以下参数：
 
-| **Parameter**          | **Description**                                             |
+| **参数**          | **说明**                                             |
 |:-----------------------|:------------------------------------------------------------|
-| name                   | Menu item name                                              |
-| iconUrl                | Link to icon                                                |
-| materialIcon           | Icon name which is selected from the default material icons |
-| iframeUrl              | Link to the page you want to open                           |
-| dashboardId            | Specify the dashboard ID you want to open                   |
-| hideDashboardToolbar   | Show/hide the dashboard toolbar                             |
-| childMenuItems         | Сreate sub-menu items grouped under one section             |
+| name                   | 菜单项名称                                              |
+| iconUrl                | 图标链接                                                |
+| materialIcon           | 从默认材质图标中选择的图标名称 |
+| iframeUrl              | 要打开的页面的链接                           |
+| dashboardId            | 指定要打开的仪表板 ID                   |
+| hideDashboardToolbar   | 显示/隐藏仪表板工具栏                             |
+| childMenuItems         | 在一个部分下分组创建子菜单项             |
 | ---                    
 
-Let's create three new menu items: two items will link to dashboards and will be grouped under one section. 
-The third item will link to the documentation.
+我们来创建三个新菜单项：两个项目将链接到仪表板，并将分组在一个部分下。
+第三个项目将链接到文档。
 
 {% assign addNewMenuItem = '
     ===
         image: /images/user-guide/white-labeling/custom-menu/custom-menu-add-new-menu-item-1.png,
-        title: Go to the "**White Labeling**" page -> "**Custom Menu**" tab;
+        title: 转到“**白标**”页面 -> “**自定义菜单**”选项卡；
     ===
         image: /images/user-guide/white-labeling/custom-menu/custom-menu-add-new-menu-item-2.png,
-        title: Specify data in JSON format in the "**Custom Menu**" window. Use the JSON below as an example. Click "**Save**";
+        title: 在“**自定义菜单**”窗口中以 JSON 格式指定数据。使用下面的 JSON 作为示例。单击“**保存**”；
     ===
         image: /images/user-guide/white-labeling/custom-menu/custom-menu-add-new-menu-item-3.png,
-        title: New menu items are created. Click on the "My Dashboards" section -> "Waste Management Administration" page. The dashboard specified in JSON will open;
+        title: 创建了新菜单项。单击“我的仪表板”部分 -> “废物管理管理”页面。将打开 JSON 中指定的仪表板；
     ===
         image: /images/user-guide/white-labeling/custom-menu/custom-menu-add-new-menu-item-4.png,
-        title: Go to the "Smart farming and smart agriculture solutions" page. The page will open with documentation specified in JSON.
+        title: 转到“智能农业和智能农业解决方案”页面。页面将打开 JSON 中指定的文档。
 '
 %}
 
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=addNewMenuItem %}
 
 <br>
-For this example, use the following JSON to add new menu items.
+对于此示例，请使用以下 JSON 添加新菜单项。
 
-Don't forget to replace $DASHBOARD_ID value with your dashboard id.
+别忘了用你的仪表板 ID 替换 $DASHBOARD_ID 值。
 
 ```json
 {
@@ -209,6 +209,6 @@ Don't forget to replace $DASHBOARD_ID value with your dashboard id.
 ```
 {: .copy-code}
 
-## Next steps
+## 后续步骤
 
 {% assign currentGuide = "AdvancedFeatures" %}{% include templates/multi-project-guides-banner.md %}

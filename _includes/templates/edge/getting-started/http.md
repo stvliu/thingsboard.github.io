@@ -1,4 +1,4 @@
-Install cURL for **Ubuntu**:
+**Ubuntu** 安装 cURL：
 
 ```bash
 sudo apt-get install curl
@@ -6,29 +6,28 @@ sudo apt-get install curl
 {: .copy-code}
 
 
-Install cURL for **macOS**:
+**macOS** 安装 cURL：
 
 ```bash
 brew install curl
 ```
 {: .copy-code}
 
-Install cURL for **Windows**:
+**Windows** 安装 cURL：
 
-Starting Windows 10 b17063, cURL is available by default. 
-More info is available in this MSDB blog [post](https://blogs.msdn.microsoft.com/commandline/2018/01/18/tar-and-curl-come-to-windows/).
-If you are using older version of Windows OS, you may find official installation guides [here](https://curl.haxx.se/).
+从 Windows 10 b17063 开始，cURL 默认可用。更多信息请参阅此 MSDB 博客 [文章](https://blogs.msdn.microsoft.com/commandline/2018/01/18/tar-and-curl-come-to-windows/)。
+如果您使用的是较旧版本的 Windows 操作系统，您可以在 [此处](https://curl.haxx.se/) 找到官方安装指南。
 
 <br>
 
-This command works for Windows, Ubuntu and macOS, assuming the cURL tool is already installed. Replace $HOST_NAME and $ACCESS_TOKEN with corresponding values.
+此命令适用于 Windows、Ubuntu 和 macOS，假设已安装 cURL 工具。将 $HOST_NAME 和 $ACCESS_TOKEN 替换为相应的值。
 
 ```bash
 curl -v -X POST -d "{\"temperature\": 25}" $HOST_NAME/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
 ```
 {: .copy-code}
 
-For example, $HOST_NAME reference your local ThingsBoard Edge installation, access token is **ABC123**:
+例如，$HOST_NAME 引用您的本地 ThingsBoard Edge 安装，访问令牌为 **ABC123**：
 
 ```bash
 curl -v -X POST -d "{\"temperature\": 25}" http://localhost:8080/api/v1/ABC123/telemetry --header "Content-Type:application/json"

@@ -1,20 +1,17 @@
+此时，MI-8 应已配置好并可以与 ThingsBoard 通信。  
+要检查传入的数据，您可以执行以下步骤：  
 
-At this point the MI-8 should be configured and ready to communicate with ThingsBoard.  
-To check the incoming data you can do the following steps:  
-
-- Open ThingsBoard and then navigate to Device Groups and then <b>All</b>.  
-- Click on the device that was just associated with the MI-8 and then navigate to the <b>Latest Telemetry</b> tab.  
+- 打开 ThingsBoard，然后导航至设备组，然后选择<b>全部</b>。  
+- 单击刚刚与 MI-8 关联的设备，然后导航至<b>最新遥测</b>选项卡。  
 
 ![](/images/devices-library/ready-to-go-devices/mixed-input-8-channel-analog-cellular-logger/open-device-timeseries.png)
 
-- Also you can check attributes, received from device. 
-    To do this, navigate to the **Attributes** tab.  
-    Attributes are additional data sent from the MI-8 to ThingsBoard that are more or less fixed and do not change such as the modem IMEI, the SIM ID (ICCID), and the MI-8 firmware version. 
+- 您还可以检查从设备接收到的属性。
+    为此，请导航至**属性**选项卡。  
+    属性是从 MI-8 发送到 ThingsBoard 的其他数据，这些数据或多或少是固定的，不会更改，例如调制解调器 IMEI、SIM ID (ICCID) 和 MI-8 固件版本。
 
 ![](/images/devices-library/ready-to-go-devices/mixed-input-8-channel-analog-cellular-logger/check-attributes.png)
 
-All sensor values configured in the active MI-8 trigger should be present once the MI-8 powers up and is able to establish a cellular connection.  
-Note that GPS values are only transmitted after the first GPS fix, which could take several minutes depending on how long it has been and how far the MI-8 has moved since the last fix.  
-GPS values (lat, lon and alt) will only appear in the telemetry window after they have been transmitted at least once.  
-  
-
+一旦 MI-8 加电并能够建立蜂窝连接，则应显示在活动 MI-8 触发器中配置的所有传感器值。  
+请注意，GPS 值仅在首次 GPS 定位后才会传输，具体取决于上次定位已过去多长时间以及 MI-8 自上次定位以来移动了多远。  
+GPS 值（纬度、经度和高度）仅在至少传输一次后才会显示在遥测窗口中。

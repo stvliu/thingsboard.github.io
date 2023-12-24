@@ -1,136 +1,135 @@
-{% assign feature = "Self-registration" %}{% include templates/pe-feature-banner.md %}
+{% assign feature = "自我注册" %}{% include templates/pe-feature-banner.md %}
 
 * TOC
 {:toc}
 
-ThingsBoard self-registration feature allows tenant to configure sign-up page for its customers to be able to simply sign-up and login to the ThingsBoard with predefined permission configurations.
-This feature was introduced in ThingsBoard PE 2.4.1. 
+ThingsBoard 自我注册功能允许租户为其客户配置注册页面，以便客户能够使用预定义的权限配置简单注册并登录到 ThingsBoard。
+此功能在 ThingsBoard PE 2.4.1 中引入。
 
-This documentation page contains complete use case configuration example. 
+此文档页面包含完整的用例配置示例。
 
-## Use Case description
+## 用例说明
 
-As a Tenant Administrator, I would like to allow users to register their own account on my IoT Platform instance. 
-Once they register, I would like to allow them to see specific dashboards 
-and provisioning their own devices or claim existing devices. 
-Let’s start with the prerequisites.
+作为租户管理员，我希望允许用户在我的物联网平台实例上注册自己的帐户。
+一旦他们注册，我希望允许他们查看特定仪表板并配置自己的设备或声明现有设备。
+让我们从先决条件开始。
 
-## Prerequisites
+## 先决条件
 
-### Step 1. Install ThingsBoard in the cloud 
+### 步骤 1. 在云中安装 ThingsBoard
 
-We will need a running ThingsBoard PE instance with white-labeling feature enabled. 
-You can easily deploy your own ThingsBoard PE instance using the [installation instructions](/docs/user-guide/install/pe/installation-options/). 
-Note that your instance should run in the cloud, and have public IP address assigned to it.
+我们需要一个正在运行的 ThingsBoard PE 实例，并启用白标功能。
+您可以使用 [安装说明](/docs/user-guide/install/pe/installation-options/)轻松部署您自己的 ThingsBoard PE 实例。
+请注意，您的实例应在云中运行，并已为其分配公共 IP 地址。
 
-### Step 2. Assign DNS record to your ThingsBoard IP address
+### 步骤 2. 将 DNS 记录分配给您的 ThingsBoard IP 地址
 
-We also need a valid **DNS name** to be assigned to your ThingsBoard instance.
-You can use any domain registrar, if you don't have a domain.
-If you do have the domain name, contact your system administrator to issue sub-domain, for example iot.mycompany.com. 
+我们还需要一个有效的 **DNS 名称** 来分配给您的 ThingsBoard 实例。
+如果您没有域名，可以使用任何域名注册商。
+如果您确实有域名，请联系您的系统管理员以颁发子域名，例如 iot.mycompany.com。
 
-### Step 3. Setup HTTPS access to your ThingsBoard instance
+### 步骤 3. 为您的 ThingsBoard 实例设置 HTTPS 访问
 
-Please note the HAProxy installation instructions in the [post install steps](/docs/user-guide/install/pe/ubuntu/#post-installation-steps). 
-They are available for Linux distributions and Docker. You can easily issue a valid Let's Encrypt certificate and setup HTTPS for your ThingsBoard instance.
+请注意 [安装后步骤](/docs/user-guide/install/pe/ubuntu/#post-installation-steps) 中的 HAProxy 安装说明。
+它们适用于 Linux 发行版和 Docker。您可以轻松颁发有效的 Let's Encrypt 证书并为您的 ThingsBoard 实例设置 HTTPS。
 
-### Step 4. ReCAPTCHA v2
+### 步骤 4. ReCAPTCHA v2
 
-We need to protect our sign-up form from Robots. 
-Generate the ReCAPTCHA for that purpose. Navigate to the Google ReCaptcha [admin console](https://www.google.com/recaptcha/intro/v3.html) and use your new domain name there.
-Important: use ReCAPTCHA v2 only. See example configuration below.
+我们需要保护我们的注册表单免受机器人的攻击。
+为此生成 ReCAPTCHA。导航到 Google ReCaptcha [管理控制台](https://www.google.com/recaptcha/intro/v3.html)并在那里使用您的新域名。
+重要提示：仅使用 ReCAPTCHA v2。请参阅下面的示例配置。
 
 ![image](/images/user-guide/self-registration/reCAPTCHA.png)
 
-Copy-paste the site key and secret to the safe place.
+将站点密钥和密钥复制粘贴到安全的地方。
 
-### Prerequisites summary
+### 先决条件摘要
 
-We have prepared a ThingsBoard Prototype instance running on DigitalOcean. 
-Specific domain name: srd.thingsboard.io (srd stands for “self registration demo”) to server’s IP address: 46.101.146.242.
+我们准备了一个运行在 DigitalOcean 上的 ThingsBoard 原型实例。
+特定域名：srd.thingsboard.io（srd 代表“自我注册演示”）到服务器的 IP 地址：46.101.146.242。
 
 ![image](/images/user-guide/self-registration/digitalocean.png)
 
-## ThingsBoard configuration
+## ThingsBoard 配置
 
-### Step 5. Mail Server settings
+### 步骤 5. 邮件服务器设置
 
-Login to your instance as a tenant administrator and navigate to Whitelabeling —> Mail server.
-Configure ThingsBoard using your SMTP server settings. If you don't have one, the easiest way is to use [SendGrid](https://sendgrid.com/).
-See more info in mail settings [guide](/docs/pe/user-guide/ui/mail-settings/).
+以租户管理员身份登录到您的实例，然后导航至白标 —> 邮件服务器。
+使用您的 SMTP 服务器设置配置 ThingsBoard。如果您没有，最简单的方法是使用 [SendGrid](https://sendgrid.com/)。
+在邮件设置 [指南](/docs/pe/user-guide/ui/mail-settings/) 中查看更多信息。
 
-Don't forget to validate the mail server settings using "Send Test Mail" button.
+不要忘记使用“发送测试邮件”按钮验证邮件服务器设置。
 
 ![image](/images/user-guide/self-registration/mailserver.png)
 
-### Step 6. Create new User Roles
+### 步骤 6. 创建新的用户角色
 
-Create the “Customer Administrator” Role. Navigate to "Roles" and click on "+" button.
-This role is auto-generated when you create first Customer entity in scope of your Tenant. 
-If you don’t have this Role yet, you can easily add it. 
-The Role type is “Generic” and it allows “All” operations for “All” entities.
+创建“客户管理员”角色。导航到“角色”并单击“+”按钮。
+当您在租户范围内创建第一个客户实体时，此角色会自动生成。
+如果您还没有此角色，可以轻松添加它。
+角色类型为“通用”，它允许对“所有”实体执行“所有”操作。
 
 ![image](/images/user-guide/self-registration/customer-admin-role.png)
 
-So, when you apply this role to your customer user, Customer User can control every entity in scope of the Customer. 
-Of course, you may create different role. For example, we may create a Role that is read-only.
+因此，当您将此角色应用于您的客户用户时，客户用户可以控制客户范围内的每个实体。
+当然，您可以创建不同的角色。例如，我们可以创建一个只读角色。
 
-“Read-Only” Group Role. We will use this Role to allow read-only access to the specific dashboard. 
-This Dashboard will be the same for all our Self-Registered Customers.
+“只读”组角色。我们将使用此角色允许对特定仪表板进行只读访问。
+此仪表板对我们所有自我注册的客户都是相同的。
 
 ![image](/images/user-guide/self-registration/read-only-role.png)
 
-### Step 7. Create shared dashboard
+### 步骤 7. 创建共享仪表板
 
-First, navigate to "Device Groups"->"All" and create sample device with name "Device A" and type "sensor". 
-This is necessary to pass certain validation while importing the dashboard. 
+首先，导航到“设备组”->“全部”并创建名为“设备 A”且类型为“传感器”的示例设备。
+在导入仪表板时，有必要通过某些验证。
 
-Now, let’s navigate to the Dashboard Groups and create a new Group called “Shared Dashboards”.
-Import a [simple dashboard](/docs/user-guide/resources/my_smart_devices_dashboard.json) that shows you a list of devices. 
-This dashboard provides the ability to add/edit/remove devices. 
-BTW, we use new widget from Entity Admin Widgets Bundle.
+现在，让我们导航到仪表板组并创建一个名为“共享仪表板”的新组。
+导入一个 [简单仪表板](/docs/user-guide/resources/my_smart_devices_dashboard.json)，该仪表板显示设备列表。
+此仪表板提供了添加/编辑/删除设备的功能。
+顺便说一句，我们使用了实体管理小部件包中的新小部件。
 
-Few things to notice here. 
+这里需要注意几件事。
 
 ![image](/images/user-guide/self-registration/dashboard.gif)
 
-Let’s see what happens when we want to add a device. 
-This and other UI forms are configured in the widget configuration. 
-Open an Edit mode, Click on Edit widget and navigate to “Actions”.
-Here you can see three custom actions. 
-Delete action is as simple as that, but Add and Edit Device actions uses brand new feature called “HTML Templates”. 
-Now you can completely control the UI and logic of your dialogs. 
-Let’s open an “Add” action and expand it to full screen.
+让我们看看当我们想要添加设备时会发生什么。
+此 UI 表单和其他 UI 表单在小部件配置中配置。
+打开编辑模式，单击编辑小部件并导航到“操作”。
+您可以在此处看到三个自定义操作。
+删除操作很简单，但添加和编辑设备操作使用全新的功能，称为“HTML 模板”。
+现在您可以完全控制对话框的 UI 和逻辑。
+让我们打开一个“添加”操作并将其展开到全屏。
 
 ![image](/images/user-guide/self-registration/dashboard-config.png)
- 
-You can see custom Resources, CSS, HTML and JS tabs. 
-This is the exact place where Add/Edit dialogs are configured.
-See more on the custom actions and forms in a separate video tutorial.
+
+您可以看到自定义资源、CSS、HTML 和 JS 选项卡。
+这是配置添加/编辑对话框的确切位置。
+在单独的视频教程中了解有关自定义操作和表单的更多信息。
 
 ![image](/images/user-guide/self-registration/action-config.png)
 
-### Step 8. Signup Form to open Dashboard on Full Screen 
+### 步骤 8. 注册表单以全屏打开仪表板
 
-Finally, we can provision our Signup Form. 
-Use your domain and ReCAPTCHA credentials.  
+最后，我们可以配置我们的注册表单。
+使用您的域名和 ReCAPTCHA 凭据。
 
-Add two User Group Roles. 
-One is for Customer Administrator. It is important that our new User will be able to create and edit any entities within this Customer.
-Second is the Read-Only access to the shared dashboard that we have just created. We also select this dashboard as default and mark “Always Full Screen”.
+添加两个用户组角色。
+一个是客户管理员。重要的是，我们的新用户能够创建和编辑此客户内的任何实体。
+第二个是对我们刚刚创建的共享仪表板的只读访问。我们还选择此仪表板作为默认仪表板并标记为“始终全屏”。
 
-Change the text message and privacy policy (optional).
+更改文本消息和隐私政策（可选）。
 
 ![image](/images/user-guide/self-registration/signup-form-config.png)
 
-Congratulations! We have completed our self-registration form setup. Save now and navigate to sign-up form. 
-Create a new user and see that they are completely isolated and control their own devices.
+恭喜！我们已经完成了自我注册表单设置。立即保存并导航到注册表单。
+创建一个新用户，并查看它们是否完全隔离并控制自己的设备。
 
-See signup form example below:
+请参阅下面的注册表单示例：
 
 ![image](/images/user-guide/self-registration/signup-form.png)
 
 
-## Next steps
+## 后续步骤
 
 {% assign currentGuide = "AdvancedFeatures" %}{% include templates/multi-project-guides-banner.md %}

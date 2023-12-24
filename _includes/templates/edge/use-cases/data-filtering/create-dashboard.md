@@ -1,7 +1,7 @@
-Also we will create a dashboard that displays how many miles has been traveled and how many are left to change the oil in the vehicle.
+我们还将创建一个仪表板，显示已行驶的里程数以及车辆换油剩余里程数。
 
-Please open **{{appPrefix}}** to create a new dashboard:
+请打开 **{{appPrefix}}** 以创建新仪表板：
 
 {% include images-gallery.html imageCollection="createDashboard" showListImageTitles="true" %}
 
-**Congratulations!** You have successfully sent from the device telemetry, saved it on the edge, pushed to the cloud filtered data and visualized it on the dashboard.
+**恭喜！** 您已成功从设备发送遥测数据，将其保存在边缘，推送到云端过滤数据，并在仪表板上对其进行可视化。

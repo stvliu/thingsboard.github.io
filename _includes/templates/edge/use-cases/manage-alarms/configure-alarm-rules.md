@@ -1,8 +1,8 @@
-We will use [alarm rules](/docs/user-guide/device-profiles/#alarm-rules) feature to raise alarm when temperature reading is greater than 50 °C degrees.
-For this purpose, we should create new device profile and add new alarm rule. We recommend creating dedicated [device profiles](/docs/user-guide/device-profiles/) for each corresponding device type. Let's create new device profile "edge thermostat".
+我们将使用[警报规则](/docs/user-guide/device-profiles/#alarm-rules)功能在温度读数高于 50 °C 度时发出警报。
+为此，我们应该创建新的设备配置文件并添加新的警报规则。我们建议为每个相应的设备类型创建专用的[设备配置文件](/docs/user-guide/device-profiles/)。让我们创建新的设备配置文件“边缘恒温器”。
 
 {% include images-gallery.html imageCollection="configureAlarmRules" showListImageTitles="true" %}
 
-Please open ThingsBoard **Edge** UI using the URL: **EDGE_URL** to see provisioned device profiles.
+请使用 URL：**EDGE_URL** 打开 ThingsBoard **Edge** UI 以查看已配置的设备配置文件。
 
 {% include images-gallery.html imageCollection="configureAlarmRulesEdge" showListImageTitles="true" %}

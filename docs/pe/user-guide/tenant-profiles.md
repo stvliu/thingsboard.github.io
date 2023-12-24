@@ -2,8 +2,8 @@
 layout: docwithnav-pe
 assignees:
 - ashvayka
-title: Tenant Profiles
-description: IoT tenant profiles
+title: 租户配置文件
+description: IoT 租户配置文件
 redirect_from: "/docs/pe/user-guide/ui/tenant-profiles"
 entityLimits:
     0:
@@ -20,16 +20,16 @@ rateLimits:
 isolatedQueueConfiguration:
     0:
         image: /images/user-guide/tenant-profile/queue-tenant-profile-1-pe.png
-        title: 'Step 1. Open tenant profile menu and add new tenant profile. Click "isolated ThingsBoard RuleEngine" box, Main queue added by default and can not be renamed or deleted.'
+        title: '步骤 1. 打开租户配置文件菜单并添加新的租户配置文件。单击“隔离的 ThingsBoard RuleEngine”框，默认添加主队列，且无法重命名或删除。'
     1:
         image: /images/user-guide/tenant-profile/queue-tenant-profile-2-pe.png
-        title: 'Step 2. Click "Add Queue" if you need to add new custom queue.'
+        title: '步骤 2. 如果需要添加新的自定义队列，请单击“添加队列”。'
     2:
         image: /images/user-guide/tenant-profile/queue-tenant-profile-3-pe.png
-        title: 'Step 3. Configure submit and processing settings.'
+        title: '步骤 3. 配置提交和处理设置。'
     3:
         image: /images/user-guide/tenant-profile/queue-tenant-profile-4-pe.png
-        title: 'Step 4. Now tenant profile is ready to assign for particular tenants.'
+        title: '步骤 4. 现在，租户配置文件已准备好为特定租户分配。'
 ---
 
 {% assign docsPrefix = "pe/" %}

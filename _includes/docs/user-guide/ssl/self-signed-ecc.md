@@ -1,12 +1,12 @@
-### Self-signed certificates generation
+### 自签名证书生成
 
-Use instructions below to generate your own certificate files. Useful for tests, but time consuming and not recommended for production.
+使用以下说明生成您自己的证书文件。对于测试很有用，但很耗时，不建议用于生产。
 
-#### PEM certificate file
+#### PEM 证书文件
 
-**Note** This step requires Linux based OS with openssl installed.
+**注意** 此步骤需要安装了 openssl 的基于 Linux 的操作系统。
 
-To generate a server self-signed PEM certificate and private key, use the following command:
+要生成服务器自签名 PEM 证书和私钥，请使用以下命令：
 
 ```bash
 openssl ecparam -out server_key.pem -name secp256r1 -genkey
@@ -14,10 +14,10 @@ openssl req -new -key server_key.pem -x509 -nodes -days 365 -out server.pem
 ```
 {: .copy-code}
 
-You can also add -nodes (short for no DES) if you don't want to protect your private key with a passphrase. Otherwise, it will prompt you for "at least a 4 character" password.
+如果您不想使用密码短语保护您的私钥，您还可以添加 -nodes（DES 的简称）。否则，它会提示您输入“至少 4 个字符”的密码。
 
-The **days** parameter (365) you can replace with any number to affect the expiration date. It will then prompt you for things like "Country Name", but you can just hit Enter and accept the defaults.
+您可以用任何数字替换 **days** 参数（365）以影响到期日期。然后它会提示您输入“国家名称”等信息，但您只需按 Enter 并接受默认值即可。
 
-Add -subj '/CN=localhost' to suppress questions about the contents of the certificate (replace localhost with your desired domain).
+添加 -subj '/CN=localhost' 以禁止有关证书内容的问题（将 localhost 替换为您所需的域）。
 
-Self-signed certificates are not validated with any third party unless you import them to the browsers previously. If you need more security, you should use a certificate signed by a certificate authority (CA).
+自签名证书不会通过任何第三方进行验证，除非您之前已将它们导入浏览器。如果您需要更高的安全性，您应该使用由证书颁发机构 (CA) 签名的证书。

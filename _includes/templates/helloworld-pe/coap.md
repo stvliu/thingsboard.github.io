@@ -1,4 +1,4 @@
-Install coap-cli. Assuming you have Node.js and NPM installed on your Windows/Linux/MacOS machine, execute the following command:
+安装 coap-cli。假设您的 Windows/Linux/MacOS 机器上已安装 Node.js 和 NPM，请执行以下命令：
 
 ```bash
 npm install coap-cli -g
@@ -7,14 +7,14 @@ npm install coap-cli -g
 
 {% if docsPrefix == 'paas/' %}
 
-Replace $ACCESS_TOKEN with corresponding value.
+将 $ACCESS_TOKEN 替换为相应的值。
 
 ```bash
 echo -n '{"temperature": 25}' | coap post coap://coap.thingsboard.cloud/api/v1/$ACCESS_TOKEN/telemetry
 ```
 {: .copy-code}
 
-For example, $ACCESS_TOKEN is ABC123:
+例如，$ACCESS_TOKEN 为 ABC123：
 
 ```bash
 echo -n '{"temperature": 25}' | coap post coap://coap.thingsboard.cloud/api/v1/ABC123/telemetry
@@ -23,14 +23,14 @@ echo -n '{"temperature": 25}' | coap post coap://coap.thingsboard.cloud/api/v1/A
 
 {% else %}
 
-Replace $THINGSBOARD_HOST_NAME and $ACCESS_TOKEN with corresponding values.
+将 $THINGSBOARD_HOST_NAME 和 $ACCESS_TOKEN 替换为相应的值。
 
 ```bash
 echo -n '{"temperature": 25}' | coap post coap://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/telemetry
 ```
 {: .copy-code}
 
-For example, $THINGSBOARD_HOST_NAME reference your local installation, $ACCESS_TOKEN is ABC123:
+例如，$THINGSBOARD_HOST_NAME 引用您的本地安装，$ACCESS_TOKEN 为 ABC123：
 
 ```bash
 echo -n '{"temperature": 25}' | coap post coap://localhost/api/v1/ABC123/telemetry

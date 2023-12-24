@@ -1,21 +1,20 @@
-
-**Example for the Uplink converter:**
+**上行转换器的示例：**
 
 ```javascript
-// Decode an uplink message from a buffer
-// payload - array of bytes
-// metadata - key/value object
-/** Decoder **/
-// decode payload to JSON
+// 从缓冲区解码上行消息
+// payload - 字节数组
+// metadata - 键/值对象
+/** 解码器 **/
+// 将有效负载解码为 JSON
 var payloadJson = decodeToJson(payload);
-// Use EUI as unique device name.
+// 使用 EUI 作为唯一的设备名称。
 var deviceName = payloadJson.EUI;
-// Specify the device type. Use one data converter per device type or application.
+// 指定设备类型。每个设备类型或应用程序使用一个数据转换器。
 var deviceType = 'temperature-sensor';
-// Optionally, add the customer name and device group to automatically create them in ThingsBoard and assign new device to it.
+// 可选，添加客户名称和设备组，以便在 ThingsBoard 中自动创建它们并将新设备分配给它们。
 // var customerName = 'customer';
 // var groupName = 'thermostat devices';
-// Result object with device/asset attributes/telemetry data
+// 包含设备/资产属性/遥测数据的 result 对象
 var result = {
     deviceName: deviceName,
     deviceType: deviceType,
@@ -45,7 +44,6 @@ return result;
 
 {% include images-gallery.html imageCollection="uplink-tbel" %}
 
-You can change the decoder function while creating the converter or after creating it. If the converter has already been created, then click on the "pencil" icon to edit it.
-Copy the configuration example for the converter (or your own configuration) and insert it into the decoder function. Save changes by clicking on the "checkmark" icon.
+您可以在创建转换器时或创建转换器后更改解码器函数。如果转换器已经创建，则单击“铅笔”图标进行编辑。复制转换器的配置示例（或您自己的配置）并将其插入解码器函数中。单击“对勾”图标保存更改。
 
 {% include images-gallery.html imageCollection="uplink-edit-tbel" %}

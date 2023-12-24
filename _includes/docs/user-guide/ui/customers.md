@@ -1,72 +1,68 @@
-
 * TOC
 {:toc}
 
-## Introduction
+## 简介
 
-A customer can be a separate business-entity: an individual, or an organization that purchases or uses tenant devices and/or assets. 
-A Customer can also be a division within the tenant organization.
+客户可以是独立的业务实体：个人或购买或使用租户设备和/或资产的组织。客户也可以是租户组织内的部门。
 
-A customer user belongs to the customer and has read permissions to view dashboards and other entities assigned by the tenant administrator.
-In Thingsboard Community Edition a customer user cannot create their own customers, users, or subcustomers.
+客户用户属于客户，并具有读取权限，可以查看租户管理员分配的仪表板和其他实体。
+在 Thingsboard 社区版中，客户用户无法创建自己的客户、用户或子客户。
 
 {% capture difference %}
-**Important:**
+**重要提示：**
 <br>
-In **Thingsboard Professional Edition** customer user can create other customers, users and subcustomers.
-To try this functionality, use the [ThingsBoard Cloud](https://thingsboard.cloud/signup) server.
-The alternative option is to install ThingsBoard locally using this [installation guide](/docs/user-guide/install/pe/installation-options/)
+在 **Thingsboard 专业版** 中，客户用户可以创建其他客户、用户和子客户。
+要试用此功能，请使用 [ThingsBoard Cloud](https://thingsboard.cloud/signup) 服务器。
+另一种选择是使用此 [安装指南](/docs/user-guide/install/pe/installation-options/) 在本地安装 ThingsBoard
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-[Tenant administrators](/docs/{{docsPrefix}}user-guide/ui/tenants/) can create customer and can directly manage their [assets](/docs/{{docsPrefix}}user-guide/ui/assets/), [devices](/docs/{{docsPrefix}}user-guide/ui/devices/),
-[dashboards](/docs/{{docsPrefix}}user-guide/dashboards/), and [edges](/docs/edge/) from the customer details page by clicking the related tab.
+[租户管理员](/docs/{{docsPrefix}}user-guide/ui/tenants/) 可以创建客户，并可以通过单击相关选项卡，直接从客户详细信息页面管理其 [资产](/docs/{{docsPrefix}}user-guide/ui/assets/)、[设备](/docs/{{docsPrefix}}user-guide/ui/devices/)、[仪表板](/docs/{{docsPrefix}}user-guide/dashboards/) 和 [边缘](/docs/edge/)。
 
-## Create new customer
+## 创建新客户
 
-The tenant administrator can add a new customer using the following steps.
+租户管理员可以使用以下步骤添加新客户。
 
 {% include images-gallery.html imageCollection="add-new-customer" showListImageTitles="true" %}
 
-## Create customer user
+## 创建客户用户
 
-The tenant administrator can add a customer user using the following steps.
+租户管理员可以使用以下步骤添加客户用户。
 
 {% include images-gallery.html imageCollection="add-customer-user" showListImageTitles="true" %}
 
-## Edit customer
+## 编辑客户
 
-The tenant administrator can edit the title, specify a home dashboard and edit the rest of the fields for the customer. 
-Let’s see how to do this:
+租户管理员可以编辑标题，指定主页仪表板，并编辑客户的其余字段。让我们看看如何做到这一点：
 
 {% include images-gallery.html imageCollection="edit-customer" showListImageTitles="true" %}
 
-Also, you can edit customer user information.
+此外，您还可以编辑客户用户信息。
 
-The steps are similar to how we edit the customer:
+步骤与我们编辑客户的方式类似：
 
 {% include images-gallery.html imageCollection="edit-customer-user" showListImageTitles="true" %}
 
-## Delete customer or customer user
+## 删除客户或客户用户
 
-The tenant administrator can delete a customer along with all its customer users using one of the following ways:
+租户管理员可以使用以下方式之一删除客户及其所有客户用户：
 
-First way:
+第一种方式：
 
 {% include images-gallery.html imageCollection="delete-customer" showListImageTitles="true" %}
 
-Second way:
+第二种方式：
 
 {% include images-gallery.html imageCollection="delete-customer-2" showListImageTitles="true" %}
 
-You can also delete multiple customers at once.
+您还可以一次删除多个客户。
 
 {% include images-gallery.html imageCollection="delete-customer-3" showListImageTitles="true" %}
 
-Also, you can delete any customer user from the customer. The steps are the same as when deleting a customer.
+此外，您还可以从客户中删除任何客户用户。步骤与删除客户时相同。
 
 {% include images-gallery.html imageCollection="delete-customer-user-1" showListImageTitles="true" %}
 
-## Next steps
+## 后续步骤
 
 {% assign currentGuide = "ConnectYourDevice" %}{% include templates/multi-project-guides-banner.md %}

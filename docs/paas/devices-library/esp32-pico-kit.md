@@ -1,9 +1,9 @@
 ---
 layout: devices-library-article
-title: How to connect ESP32 Pico Kit to ThingsBoard?
-category: Microcontrollers
+title: 如何将 ESP32 Pico Kit 连接到 ThingsBoard？
+category: 微控制器
 chip: ESP32
-connectivity: HTTP, MQTT, WIFI, Bluetooth
+connectivity: HTTP, MQTT, WIFI, 蓝牙
 vendor: Espressif
 deviceImageFileName: esp32-pico-kit.png
 docsPrefix: paas/

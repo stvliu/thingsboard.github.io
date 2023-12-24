@@ -1,48 +1,47 @@
-Your PC must be on the same network as the Gateway: 192.168.1.XXX. If that's not the case, change the IP address of your 
-PC.
+您的电脑必须与网关 192.168.1.XXX 处于同一网络。如果不是这种情况，请更改电脑的 IP 地址。
 
 {% capture infoWired %}
 <body>
   <p>
-    <b style="color:red">WARNING:</b>
-    <span style="color:black">Don’t use an IP address already taken by a device on your network!</span>
+    <b style="color:red">警告：</b>
+    <span style="color:black">不要使用网络上设备已使用的 IP 地址！</span>
   </p>
 </body>
 {% endcapture %}
 {% include templates/warn-banner.md content=infoWired %}
 
-**For Windows:**
-1. Go to **“Control Panel”** → **“Network and Internet”** → **“Network and Sharing Center”**, then click **“Ethernet”** (May have different names);
-2. Navigate to **“Properties”** → **“Internet Protocol Version 4(TCP/IPv4)”** and select **“Use the following IP address”**, then assign a static IP manually within the same subnet of the gateway;
-3. Go to the web interface with your browser by entering its IP address: 192.168.1.1;
-4. To enter the router's Web interface (WebUI), type **http://192.168.1.1** into the URL field of your Internet browser;
-5. When prompted for authentication, enter the username admin and enter the password located on the device information label/engraving;
-6. After logging in, you must set a new password for security reasons. You will not be able to interact with the router’s WebUI until the default password is changed;
-7. Next, the Configuration Wizard will help you set up some of the router's main operational parameters.
+**对于 Windows：**
+1. 转到 **“控制面板”** → **“网络和 Internet”** → **“网络和共享中心”**，然后单击 **“以太网”**（可能名称不同）；
+2. 导航到 **“属性”** → **“Internet 协议版本 4(TCP/IPv4)”** 并选择 **“使用以下 IP 地址”**，然后在网关的同一子网中手动分配一个静态 IP；
+3. 通过输入其 IP 地址 192.168.1.1 使用浏览器转到 Web 界面；
+4. 要进入路由器的 Web 界面 (WebUI)，请在 Internet 浏览器的 URL 字段中输入 **http://192.168.1.1**；
+5. 当提示进行身份验证时，输入用户名 admin 并输入设备信息标签/铭牌上的密码；
+6. 登录后，出于安全原因，您必须设置一个新密码。在更改默认密码之前，您将无法与路由器的 WebUI 进行交互；
+7. 接下来，配置向导将帮助您设置路由器的一些主要操作参数。
 
 ![](/images/devices-library/ready-to-go-devices/teltonika-rut955/wired-connection-1.png)
 <br><br>
 
-**For macOS:**
-1. Go to **“System Settings“** > **“Network“**, then click **“USB 10/100/1000 LAN”** (May have different names);
-2. Navigate to **“Details...”** > **“TCP/IP“** and select **“Manually”**, then assign a static IP manually within the same subnet of the gateway;
-3. Go to the web interface with your browser by entering its IP address: 192.168.1.1;
-4. To enter the router's Web interface (WebUI), type **http://192.168.1.1** into the URL field of your Internet browser;
-5. When prompted for authentication, enter the username admin and enter the password located on the device information label/engraving;
-6. After logging in, you must set a new password for security reasons. You will not be able to interact with the router’s WebUI until the default password is changed;
-7. Next, the Configuration Wizard will help you set up some of the router's main operational parameters.
+**对于 macOS：**
+1. 转到 **“系统设置”** > **“网络”**，然后单击 **“USB 10/100/1000 LAN”**（可能名称不同）；
+2. 导航到 **“详细信息...”** > **“TCP/IP”** 并选择 **“手动”**，然后在网关的同一子网中手动分配一个静态 IP；
+3. 通过输入其 IP 地址 192.168.1.1 使用浏览器转到 Web 界面；
+4. 要进入路由器的 Web 界面 (WebUI)，请在 Internet 浏览器的 URL 字段中输入 **http://192.168.1.1**；
+5. 当提示进行身份验证时，输入用户名 admin 并输入设备信息标签/铭牌上的密码；
+6. 登录后，出于安全原因，您必须设置一个新密码。在更改默认密码之前，您将无法与路由器的 WebUI 进行交互；
+7. 接下来，配置向导将帮助您设置路由器的一些主要操作参数。
 
 ![](/images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-macos-ip.png)
 <br><br>
 
-**For Ubuntu Linux:**
-1. Go to **“Settings“** > **“Network“**, then click **“Wired Settings”** (May have different names);
-2. Navigate to **“IPv4”** and select **“Manually”**, then assign a static IP manually within the same subnet of the gateway;
-3. Go to the web interface with your browser by entering its IP address: 192.168.1.1;
-4. To enter the router's Web interface (WebUI), type **http://192.168.1.1** into the URL field of your Internet browser;
-5. When prompted for authentication, enter the username admin and enter the password located on the device information label/engraving;
-6. After logging in, you must set a new password for security reasons. You will not be able to interact with the router’s WebUI until the default password is changed;
-7. Next, the Configuration Wizard will help you set up some of the router's main operational parameters.
+**对于 Ubuntu Linux：**
+1. 转到 **“设置”** > **“网络”**，然后单击 **“有线设置”**（可能名称不同）；
+2. 导航到 **“IPv4”** 并选择 **“手动”**，然后在网关的同一子网中手动分配一个静态 IP；
+3. 通过输入其 IP 地址 192.168.1.1 使用浏览器转到 Web 界面；
+4. 要进入路由器的 Web 界面 (WebUI)，请在 Internet 浏览器的 URL 字段中输入 **http://192.168.1.1**；
+5. 当提示进行身份验证时，输入用户名 admin 并输入设备信息标签/铭牌上的密码；
+6. 登录后，出于安全原因，您必须设置一个新密码。在更改默认密码之前，您将无法与路由器的 WebUI 进行交互；
+7. 接下来，配置向导将帮助您设置路由器的一些主要操作参数。
 
 ![](/images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-linux-ip.png)
 <br><br>

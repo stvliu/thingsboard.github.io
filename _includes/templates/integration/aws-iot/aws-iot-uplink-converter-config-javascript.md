@@ -1,14 +1,14 @@
-**Example for the Uplink converter:**
+**上行转换器的示例：**
 
 ```ruby
-// decode payload to JSON
+// 将有效负载解码为 JSON
 var payloadStr = decodeToString(payload);
 var data = JSON.parse(payloadStr);
 var topicPattern = 'tb/aws/iot/(.+)/(.+)';
 var deviceName = metadata.topic.match(topicPattern)[2];
 var deviceType = metadata.topic.match(topicPattern)[1];
 
-// Result object with device attributes/telemetry data
+// 包含设备属性/遥测数据的 Result 对象
 var result = {
    deviceName: deviceName,
    deviceType: deviceType,
@@ -22,15 +22,15 @@ var result = {
    }
 };
 
-/** Helper functions **/
+/** 辅助函数 **/
 function decodeToString(payload) {
    return String.fromCharCode.apply(String, payload);
 }
 function decodeToJson(payload) {
-   // convert payload to string.
+   // 将有效负载转换为字符串。
    var str = decodeToString(payload);
 
-   // parse string to JSON
+   // 将字符串解析为 JSON
    var data = JSON.parse(str);
    return data;
 }

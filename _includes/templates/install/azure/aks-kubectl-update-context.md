@@ -1,13 +1,13 @@
-When claster created we can connect kubectl to it using
+当集群创建后，我们可以使用以下命令将 kubectl 连接到它：
 ```
 az aks get-credentials --resource-group $AKS_RESOURCE_GROUP --name $TB_CLUSTER_NAME
 ```
 {: .copy-code}
 
-Fot validation you can execute command
+为了验证，您可以执行以下命令：
 ```
 kubectl get nodes
 ```
 {: .copy-code}
 
-You should see cluster`s nodes list
+您应该会看到集群的节点列表

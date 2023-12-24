@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-pe-edge
-title: Over-the-air firmware and software updates
-description: Over-the-air firmware and software updates
+title: 无线固件和软件更新
+description: 无线固件和软件更新
 ---
 
 {% assign docsPrefix = "pe/edge/" %}
