@@ -1,44 +1,44 @@
 - id: smart-energy
-  title: Smart Energy
+  title: 智慧能源
   link: /smart-energy/
   icon: /images/case-eng-icon.svg
 - id: smart-farming
-  title: Smart Farming
+  title: 智慧农业
   link: /smart-farming/
-  icon: /images/case-fam-icon.svg
+  icon: /images/case-fam-icon.svg 
 - id: fleet-tracking
-  title: Fleet Tracking
+  title: 车队定位
   link: /fleet-tracking/
   icon: /images/case-trk-icon.svg
 - id: smart-metering
-  title: Smart Metering
+  title: 智慧计量
   link: /smart-metering/
   icon: /images/case-met-icon.svg
 - id: environment-monitoring
-  title: Environment Monitoring
+  title: 环境监测
   link: /use-cases/environment-monitoring/
   icon: /images/case-env-icon.svg
-- id: smart-office
-  title: Smart Office
+- id: smart-office  
+  title: 智慧办公
   link: /use-cases/smart-office/
   icon: /images/case-off-icon.svg
 - id: water-metering
-  title: Water Metering
+  title: 水表计量
   link: /use-cases/water-metering/
   icon: /images/case-wat-icon.svg
 - id: smart-retail
-  title: Smart Retail
+  title: 智慧零售
   link: /use-cases/smart-retail/
   icon: /images/case-ret-icon.svg
 - id: air-quality-monitoring
-  title: Air Quality Monitoring
+  title: 空气质量监测
   link: /use-cases/air-quality-monitoring/
   icon: /images/case-aq-icon.svg
 - id: smart-irrigation
-  title: Smart Irrigation
+  title: 智慧灌溉
   link: /use-cases/smart-irrigation/
   icon: /images/smart-irrigation.svg
 - id: waste-management
-  title: Waste Management
-  link: /use-cases/waste-management/
+  title: 污染物管理
+  link: /use-cases/waste-management/ 
   icon: /images/case-waste-icon.svg
