@@ -3,7 +3,7 @@
 
 ## 概述
 
-ThingsBoard 允许您为您的客户提供单点登录功能，并使用支持 OAuth 2.0 协议的外部用户管理平台自动创建租户、客户或子客户。
+GridLinks 允许您为您的客户提供单点登录功能，并使用支持 OAuth 2.0 协议的外部用户管理平台自动创建租户、客户或子客户。
 
 支持 OAuth 2.0 协议的平台列表：[Google](https://developers.google.com/identity/protocols/oauth2/openid-connect)、[Okta](https://www.okta.com/)、[Auth0](https://auth0.com/) 等。
 
@@ -12,7 +12,7 @@ ThingsBoard 允许您为您的客户提供单点登录功能，并使用支持 O
 
 GridLinks 支持授权码授予类型，以将授权码交换为访问令牌。
 
-一旦用户通过重定向 URL 返回 ThingsBoard 客户端，平台将从 URL 中获取授权码，并使用它向外部用户管理平台请求访问令牌。
+一旦用户通过重定向 URL 返回 GridLinks 客户端，平台将从 URL 中获取授权码，并使用它向外部用户管理平台请求访问令牌。
 使用 [基本映射器](/docs/{{docsPrefix}}user-guide/oauth-2-support/#basic-mapper) 或 [自定义映射器](/docs/{{docsPrefix}}user-guide/oauth-2-support/#custom-mapper)，外部用户信息对象将从外部平台转换为 GridLinks 内部 OAuth 2.0 用户。
 此后，将发生常规的 GridLinks 授权流程。
 
@@ -239,13 +239,13 @@ public class OAuth2User {
   如果此选项设置为 **false**，用户将收到访问被拒绝的错误，如果他尝试使用外部 OAuth 2.0 提供商登录，但 GridLinks 中没有具有这些凭据的用户。   
  
 - **emailAttributeKey** -
-  这是外部 OAuth 2.0 用户信息中属性的键，该键将用作 ThingsBoard 用户的电子邮件属性。
+  这是外部 OAuth 2.0 用户信息中属性的键，该键将用作 GridLinks 用户的电子邮件属性。
   
 - **firstNameAttributeKey** -
-  这是外部 OAuth 2.0 用户信息中属性的键，该键将用作 ThingsBoard 用户的姓氏属性。
+  这是外部 OAuth 2.0 用户信息中属性的键，该键将用作 GridLinks 用户的姓氏属性。
     
 - **lastNameAttributeKey** -
-  这是外部 OAuth 2.0 用户信息中属性的键，该键将用作 ThingsBoard 用户的姓氏属性。
+  这是外部 OAuth 2.0 用户信息中属性的键，该键将用作 GridLinks 用户的姓氏属性。
 
 - **tenantNameStrategy** -
   此选项指定将为创建用户选择哪个租户。
@@ -308,7 +308,7 @@ public class OAuth2User {
 如果基本映射器功能无法满足您的业务需求，您可以借助自定义映射器添加一个实现来满足您的特定目标。
 
 自定义映射器设计为一个单独的微服务，它在 GridLinks 核心微服务附近运行。
-ThingsBoard 将所有映射请求转发到此微服务，并期望作为响应的 GridLinks OAuth 2.0 用户对象：
+GridLinks 将所有映射请求转发到此微服务，并期望作为响应的 GridLinks OAuth 2.0 用户对象：
 
 ```java
 public class OAuth2User {

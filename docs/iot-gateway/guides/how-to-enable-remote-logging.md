@@ -63,12 +63,12 @@ NONE
 - 选择**时序表**卡片小部件并将其添加到仪表板。它可以是新的仪表板或现有仪表板。
 ![](/images/gateway/create-new-dashboard-for-logs.png)
 
-- 现在，我们现在可以从 ThingsBoard 环境监视网关设备的状态。
+- 现在，我们现在可以从 GridLinks 环境监视网关设备的状态。
 ![](/images/gateway/logs-dashboard.png)
 
 ## 后续步骤
 
-探索与 ThingsBoard 主要功能相关的指南：
+探索与 GridLinks 主要功能相关的指南：
 
 - [数据可视化](/docs/user-guide/visualization/) - 如何可视化收集的数据。
 - [设备属性](/docs/user-guide/attributes/) - 如何使用设备属性。

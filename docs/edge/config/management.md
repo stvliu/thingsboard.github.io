@@ -8,16 +8,16 @@ description: 边缘管理概述
 
 ### 同步架构
 
-ThingsBoard Edge 和 ThingsBoard CE/PE 云通过 gRPC 协议进行通信。
+ThingsBoard Edge 和 GridLinks CE/PE 云通过 gRPC 协议进行通信。
 
 使用 Protocol Buffers (ProtoBuf) 序列化消息。
 
-从 ThingsBoard Edge 推送到 GridLinks CE/PE 云的所有消息都将存储在本地 PostgreSQL 表（**cloud_event 表**）中，然后再发送。
-通过这种方式，ThingsBoard Edge 能够在没有连接到云的情况下运行。
-一旦建立连接，ThingsBoard Edge 将把本地 **cloud_event** 表中的所有消息推送到云，并标记成功传输到云的消息。
+从 GridLinks Edge 推送到 GridLinks CE/PE 云的所有消息都将存储在本地 PostgreSQL 表（**cloud_event 表**）中，然后再发送。
+通过这种方式，GridLinks Edge 能够在没有连接到云的情况下运行。
+一旦建立连接，GridLinks Edge 将把本地 **cloud_event** 表中的所有消息推送到云，并标记成功传输到云的消息。
 
-从 ThingsBoard CE/PE 云推送到 GridLinks Edge 的所有消息都将存储在云 PostgreSQL 表（**edge_event 表**）中，然后再发送。
-一旦建立连接，ThingsBoard CE/PE 云将把云 **edge_event** 表中的所有消息推送到边缘，并标记成功传输到边缘的消息。
+从 GridLinks CE/PE 云推送到 GridLinks Edge 的所有消息都将存储在云 PostgreSQL 表（**edge_event 表**）中，然后再发送。
+一旦建立连接，GridLinks CE/PE 云将把云 **edge_event** 表中的所有消息推送到边缘，并标记成功传输到边缘的消息。
 
 用户可以使用 **Edge** 实体的 **下行链路** 选项卡查看从云到边缘传输的消息列表。
 
@@ -25,7 +25,7 @@ ThingsBoard Edge 和 ThingsBoard CE/PE 云通过 gRPC 协议进行通信。
 
 ##### 强制同步过程
 
-在网络中断或其他一些通信问题的情况下，ThingsBoard Edge 可能会与云不同步。
+在网络中断或其他一些通信问题的情况下，GridLinks Edge 可能会与云不同步。
 用户可以通过单击 **同步边缘** 按钮强制执行同步过程：
 
 ![image](/images/edge/sync/sync-button.png)
@@ -50,7 +50,7 @@ ThingsBoard Edge 和 ThingsBoard CE/PE 云通过 gRPC 协议进行通信。
 
 ### 云上的实体管理
 
-目前，ThingsBoard Edge 除了 **Device** 实体外，还无法在本地创建任何实体。
+目前，GridLinks Edge 除了 **Device** 实体外，还无法在本地创建任何实体。
 为了能够在边缘使用其他实体，用户必须在使用前将这些实体*'分配'*给边缘。
 
 用户可以使用 **Edge** 实体卡将特定实体*'分配'*给边缘。

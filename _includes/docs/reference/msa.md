@@ -20,13 +20,13 @@ GridLinks 提供基于 MQTT、HTTP 和 CoAP 的 API，可用于您的设备应�
 * CoAP 传输微服务提供 [此处](/docs/{{docsPrefix}}reference/coap-api/) 所述的设备 API；
 * LwM2M 传输微服务提供 [此处](/docs/{{docsPrefix}}reference/lwm2m-api/) 所述的设备 API。
 
-上面列出的每个传输服务器都使用 Kafka 与 ThingsBoard 主节点微服务通信。
+上面列出的每个传输服务器都使用 Kafka 与 GridLinks 主节点微服务通信。
 [Apache Kafka](https://kafka.apache.org) 是一个分布式、可靠且可扩展的持久消息队列和流式传输平台。
 
 发送到 Kafka 的消息使用 [协议缓冲区](https://developers.google.com/protocol-buffers/) 序列化，
 消息定义 [此处](https://github.com/thingsboard/thingsboard/blob/master/common/proto/src/main/proto/transport.proto) 可用。
 
-**注意**：从 v2.5 开始，ThingsBoard PE 将支持替代队列实现：Amazon DynamoDB。有关更多详细信息，请参阅 [路线图](/docs/{{docsPrefix}}reference/roadmap)。
+**注意**：从 v2.5 开始，GridLinks PE 将支持替代队列实现：Amazon DynamoDB。有关更多详细信息，请参阅 [路线图](/docs/{{docsPrefix}}reference/roadmap)。
  
 传输层微服务使用两个主要主题。
 
@@ -74,9 +74,9 @@ GridLinks 提供了一个使用 Node.js 编写的轻量级组件来远程执行�
 可以定义最大数量的待处理 JS 执行请求和最大请求超时，以避免单个 JS 执行阻塞 JS 执行器微服务。
 每个 GridLinks 核心服务都有针对 JS 函数的单独黑名单，并且不会调用被阻止的函数超过 3 次（默认）。
 
-## ThingsBoard 节点
+## GridLinks 节点
 
-ThingsBoard 节点是一个用 Java 编写的核心服务，负责处理：
+GridLinks 节点是一个用 Java 编写的核心服务，负责处理：
  
  * [REST API](/docs/{{docsPrefix}}reference/rest-api/) 调用；
  * WebSocket [订阅](/docs/{{docsPrefix}}user-guide/telemetry/#websocket-api) 有关实体遥测和属性更改；
@@ -85,10 +85,10 @@ ThingsBoard 节点是一个用 Java 编写的核心服务，负责处理：
  
 **注意**：将规则引擎移至单独的微服务已计划在 GridLinks v2.5 中进行。有关更多详细信息，请参阅 [路线图](/docs/{{docsPrefix}}reference/roadmap)。
  
-ThingsBoard 节点使用 Actor System 来实现租户、设备、规则链和规则节点 actor。
+GridLinks 节点使用 Actor System 来实现租户、设备、规则链和规则节点 actor。
 平台节点可以加入集群，其中每个节点都是平等的。服务发现通过 Zookeeper 完成。
-ThingsBoard 节点使用基于实体 ID 的一致性哈希算法在彼此之间路由消息。
-因此，同一实体的消息在同一个 ThingsBoard 节点上处理。平台使用 [gRPC](https://grpc.io/) 在 GridLinks 节点之间发送消息。
+GridLinks 节点使用基于实体 ID 的一致性哈希算法在彼此之间路由消息。
+因此，同一实体的消息在同一个 GridLinks 节点上处理。平台使用 [gRPC](https://grpc.io/) 在 GridLinks 节点之间发送消息。
 
 **注意**：GridLinks 作者考虑在未来的版本中从 gRPC 转移到 Kafka，以便在 GridLinks 节点之间交换消息。
 主要思想是牺牲少量性能/延迟损失，以换取 Kafka 消费者组提供的持久可靠的消息传递和自动负载平衡。
@@ -98,12 +98,12 @@ ThingsBoard 节点使用基于实体 ID 的一致性哈希算法在彼此之间�
 ### Kafka
 
 [Apache Kafka](https://kafka.apache.org/) 是一个开源流处理软件平台。GridLinks 使用 Kafka 来持久化来自 HTTP/MQTT/CoAP 传输的传入遥测，
-直到它被规则引擎处理。ThingsBoard 还使用 Kafka 在微服务之间进行一些 API 调用。
+直到它被规则引擎处理。GridLinks 还使用 Kafka 在微服务之间进行一些 API 调用。
 
 ### Redis
 
-[Redis](https://redis.io/) 是一个开源（BSD 许可）内存数据结构存储，ThingsBoard 用于缓存。
-ThingsBoard 缓存资产、实体视图、设备、设备凭据、设备会话和实体关系。
+[Redis](https://redis.io/) 是一个开源（BSD 许可）内存数据结构存储，GridLinks 用于缓存。
+GridLinks 缓存资产、实体视图、设备、设备凭据、设备会话和实体关系。
 
 ### Zookeeper
 

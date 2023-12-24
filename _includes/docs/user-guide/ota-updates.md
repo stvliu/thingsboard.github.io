@@ -3,17 +3,17 @@
 
 ## 概述
 
-自 ThingsBoard 3.3 起，ThingsBoard 允许您上传并通过无线 (OTA) 更新分发给设备。
+自 GridLinks 3.3 起，GridLinks 允许您上传并通过无线 (OTA) 更新分发给设备。
 作为租户管理员，您可以将固件或软件包上传到 OTA 存储库。
 上传后，您可以将它们分配给 [设备配置文件](/docs/{{docsPrefix}}user-guide/device-profiles/) 或 [设备](/docs/{{docsPrefix}}user-guide/ui/devices/)。
-ThingsBoard 会通知设备有关可用更新的信息，并提供特定于协议的 API 来下载固件。
+GridLinks 会通知设备有关可用更新的信息，并提供特定于协议的 API 来下载固件。
 该平台会跟踪更新状态并存储更新历史记录。
 作为平台用户，您可以使用仪表板监控更新过程。
 <br>
 <object data="/images/user-guide/firmware/firmware-anim3.svg"></object>
 <br>
 
-## 向 ThingsBoard 存储库提供 OTA 包
+## 向 GridLinks 存储库提供 OTA 包
 
 导航到“OTA 更新”菜单项以列出并上传 OTA 更新包。每个包包括：
 
@@ -39,7 +39,7 @@ ThingsBoard 会通知设备有关可用更新的信息，并提供特定于协�
 
 ## 固件与软件
 
-ThingsBoard 内核中 FOTA 和 SOTA 实现之间存在非常细微的差异。许多案例和应用程序只需要使用 FOTA。
+GridLinks 内核中 FOTA 和 SOTA 实现之间存在非常细微的差异。许多案例和应用程序只需要使用 FOTA。
 但是，[LwM2M](/docs/{{docsPrefix}}reference/lwm2m-api/) 设备以不同的方式处理 FOTA 和 SOTA 更新。
 
 ## 将 OTA 包分配给设备配置文件
@@ -78,7 +78,7 @@ ThingsBoard 内核中 FOTA 和 SOTA 实现之间存在非常细微的差异。�
 ## 更新过程
 
 将固件/软件分配给设备或设备配置文件会触发更新过程。
-ThingsBoard 会跟踪更新的进度并将其持久保存到设备属性。
+GridLinks 会跟踪更新的进度并将其持久保存到设备属性。
 
 更新进度可能具有以下状态之一。更新状态存储为设备的属性，并用于在 [仪表板](#dashboard) 上可视化更新过程。
 
@@ -86,13 +86,13 @@ ThingsBoard 会跟踪更新的进度并将其持久保存到设备属性。
 
 固件/软件更新的第一个状态。
 表示有关新固件/软件的通知已排队，但尚未推送到设备。
-ThingsBoard 会对更新通知排队以避免峰值负载。队列以恒定速度处理。
+GridLinks 会对更新通知排队以避免峰值负载。队列以恒定速度处理。
 默认情况下，它被配置为每分钟通知多达 100 个设备。有关更多详细信息，请参阅 [配置属性](/docs/{{docsPrefix}}user-guide/ota-updates/#queue-processing-pace)。
 
 ### 已启动状态
 
 表示从队列中获取有关固件/软件的通知并推送到设备。
-在底层，ThingsBoard 将通知转换为以下 [共享属性](/docs/{{docsPrefix}}user-guide/attributes/#shared-attributes) 的更新：
+在底层，GridLinks 将通知转换为以下 [共享属性](/docs/{{docsPrefix}}user-guide/attributes/#shared-attributes) 的更新：
 
 - fw(sf)_title - 固件（软件）的名称。
 - fw(sf)_version - 固件（软件）的版本。
@@ -119,7 +119,7 @@ ThingsBoard 会对更新通知排队以避免峰值负载。队列以恒定速�
 * 失败 - 校验和未验证，或设备更新失败。有关更多详细信息，请参阅固件仪表板上的“设备失败”选项卡。
 
 
-固件/软件更新后，ThingsBoard 预计设备发送以下遥测：
+固件/软件更新后，GridLinks 预计设备发送以下遥测：
 
 对于固件：
 ```json
@@ -131,7 +131,7 @@ ThingsBoard 会对更新通知排队以避免峰值负载。队列以恒定速�
 {"current_sw_title": "mySoftware", "current_sw_version": "1.2.3", "sw_state": "UPDATED"}
 ```
 
-如果固件/软件更新失败，ThingsBoard 预计设备发送以下遥测：
+如果固件/软件更新失败，GridLinks 预计设备发送以下遥测：
 
 对于固件：
 ```json

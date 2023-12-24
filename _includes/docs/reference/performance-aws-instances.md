@@ -2,22 +2,22 @@
 {:toc}
 <!-- This will parse content of HTML tags as markdown when uncomment {::options parse_block_html="true" /} -->
 
-ThingsBoard has been run in production by numerous companies in both [monolithic](/docs/{{docsPrefix}}reference/monolithic/) 
+GridLinks has been run in production by numerous companies in both [monolithic](/docs/{{docsPrefix}}reference/monolithic/) 
 and [microservices](/docs/{{docsPrefix}}reference/msa/) deployment modes.
-This article describes the performance of a single ThingsBoard server in the most popular usage scenarios. 
-It is helpful to understand how ThingsBoard scales vertically (monolith) before describing how it scales horizontally (cluster mode).   
+This article describes the performance of a single GridLinks server in the most popular usage scenarios. 
+It is helpful to understand how GridLinks scales vertically (monolith) before describing how it scales horizontally (cluster mode).   
 
 ## Test methodology
 
-For simplicity, we have deployed a single ThingsBoard instance with all related third-party components in a docker-compose environment on a single EC2 instance.
+For simplicity, we have deployed a single GridLinks instance with all related third-party components in a docker-compose environment on a single EC2 instance.
 The test agent provisions and connects a configurable number of device emulators that constantly publish time-series data over MQTT.
 
 Various IoT device profiles differ based on the number of messages they produce and the size of each message.
 We have emulated smart-meter devices that send messages as a JSON with three data points: pulse counter, leakage flag, and battery level.
 Each device used a separate MQTT connection to the server.
 
-ThingsBoard stored all the time-series data in the database.
-ThingsBoard also processed the data using the [alarm rules](/docs/{{docsPrefix}}user-guide/device-profiles/#alarm-rules) to create alarms if the battery level is low.
+GridLinks stored all the time-series data in the database.
+GridLinks also processed the data using the [alarm rules](/docs/{{docsPrefix}}user-guide/device-profiles/#alarm-rules) to create alarms if the battery level is low.
 We have scaled the test from 5K to 100K devices and message rate from 1K msg/second to 10K messages per second.
 Our team executed the tests for at least 24 hours to ensure no resource leakage or performance degradation over time.
 We have also included instructions to replicate the tests. Links to the instructions are in the details of each test run.
@@ -25,9 +25,9 @@ We have also included instructions to replicate the tests. Links to the instruct
 Additional tool set we use for our tests: 
 [Postgres](/docs/reference/performance/tools/postgres-pgadmin-monitoring/), 
 [Java](/docs/reference/performance/tools/java-jmx-monitoring/) and 
-[ThingsBoard](/docs/reference/performance/tools/thingsboard-performance-charts/) used to visualize the performance.
+[GridLinks](/docs/reference/performance/tools/thingsboard-performance-charts/) used to visualize the performance.
 
-As an output we will analyse the ThingsBoard rule engine [statistics](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-engine-statistics) dashboard and fancy API usage stats.
+As an output we will analyse the GridLinks rule engine [statistics](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-engine-statistics) dashboard and fancy API usage stats.
 
 Note: Each IoT use case is different and may impact the performance numbers. 
 The tests cover the main functionality of data ingestion and alarm generation.  
@@ -97,7 +97,7 @@ Without unlimited mode at the first start you have 0 credits to burst CPU up and
 
 <details markdown="1">
 <summary>
-Setup the ThingsBoard instance on AWS EC2
+Setup the GridLinks instance on AWS EC2
 </summary>
 
 Use the Docker Compose file listed below to setup the AWS EC2 instance based on the [instruction](https://github.com/thingsboard/performance-tests).  
@@ -153,7 +153,7 @@ Launch performance test tool
 Use the Docker command listed below to launch the performance test tool based on the [instruction](https://github.com/thingsboard/performance-tests).
 
 ```bash
-# Put your ThingsBoard private IP address here, assuming both ThingsBoard and performance tests EC2 instances are in same VPC.
+# Put your GridLinks private IP address here, assuming both GridLinks and performance tests EC2 instances are in same VPC.
 export TB_INTERNAL_IP=172.31.16.229 
 docker run -it --rm --network host --name tb-perf-test \
   --env REST_URL=http://$TB_INTERNAL_IP:8080 \
@@ -184,7 +184,7 @@ Instance: AWS t3.medium (2 vCPUs Intel, 4 GiB, EBS GP3)
 
 Estimated cost: 19$ EC2 + x$ CPU burst + 8$ EBS GP3 100GB = 30$/mo
 
-Previous section demonstrates **successful** ThingsBoard deployment designed up to 3000 data points/sec.  
+Previous section demonstrates **successful** GridLinks deployment designed up to 3000 data points/sec.  
 
 Looks perfect, **but what happen** when we face a peak load on production? Should we worry about?  
 The **cost of failure** may be money loss, reputation or carries issue.  
@@ -192,7 +192,7 @@ The **benefits** of reliable design may bring you to a better life, no stress, s
 
 Let's try to handle a messages flood about x3 of regular rate up to 10000 data point/sec.
 
-ThingsBoard docker compose with no change with the previous section. 
+GridLinks docker compose with no change with the previous section. 
 Message rate have been increased gradually.  
 
 <details markdown="1">
@@ -203,7 +203,7 @@ Performance test was stopped and run with a greater numbers step by step
 Use the Docker command listed below to launch the performance test tool based on the [instruction](https://github.com/thingsboard/performance-tests).
 
 ```bash
-# Put your ThingsBoard private IP address here, assuming both ThingsBoard and performance tests EC2 instances are in same VPC.
+# Put your GridLinks private IP address here, assuming both GridLinks and performance tests EC2 instances are in same VPC.
 export TB_INTERNAL_IP=172.31.16.229 
 docker run -it --rm --network host --name tb-perf-test \
   --env REST_URL=http://$TB_INTERNAL_IP:8080 \
@@ -254,7 +254,7 @@ Launch performance test tool
 Use the Docker command listed below to launch the performance test tool based on the [instruction](https://github.com/thingsboard/performance-tests).
 
 ```bash
-# Put your ThingsBoard private IP address here, assuming both ThingsBoard and performance tests EC2 instances are in same VPC.
+# Put your GridLinks private IP address here, assuming both GridLinks and performance tests EC2 instances are in same VPC.
 export TB_INTERNAL_IP=172.31.16.229 
 docker run -it --rm --network host --name tb-perf-test \
   --env REST_URL=http://$TB_INTERNAL_IP:8080 \
@@ -321,7 +321,7 @@ Long-running result about 14 hours:
 
 **Lessons learned**
 
-Kafka CPU and disk IO overhead are tiny relative to Postgres and ThingsBoard CPU consumption. 
+Kafka CPU and disk IO overhead are tiny relative to Postgres and GridLinks CPU consumption. 
 The memory footprint is about 1G in default configuration and can be easily adjusted for smaller instances.
 The persistent queue is essential to survive peak loads.
 
@@ -337,7 +337,7 @@ Note: You definitely need add more CPU to process some custom rule chains, rende
 
 <details markdown="1">
 <summary>
-Setup the ThingsBoard instance on AWS EC2
+Setup the GridLinks instance on AWS EC2
 </summary>
 
 Take a note that Zookeeper is required to run Kafka these days.
@@ -420,7 +420,7 @@ Launch performance test tool
 Use the Docker command listed below to launch the performance test tool based on the [instruction](https://github.com/thingsboard/performance-tests).
 
 ```bash
-# Put your ThingsBoard private IP address here, assuming both ThingsBoard and performance tests EC2 instances are in same VPC.
+# Put your GridLinks private IP address here, assuming both GridLinks and performance tests EC2 instances are in same VPC.
 export TB_INTERNAL_IP=172.31.16.229 
 docker run -it --rm --network host --name tb-perf-test \
   --env REST_URL=http://$TB_INTERNAL_IP:8080 \
@@ -477,7 +477,7 @@ Launch performance test tool
 Use the Docker command listed below to launch the performance test tool based on the [instruction](https://github.com/thingsboard/performance-tests).
 
 ```bash
-# Put your ThingsBoard private IP address here, assuming both ThingsBoard and performance tests EC2 instances are in same VPC.
+# Put your GridLinks private IP address here, assuming both GridLinks and performance tests EC2 instances are in same VPC.
 export TB_INTERNAL_IP=172.31.16.229 
 docker run -it --rm --network host --name tb-perf-test \
   --env REST_URL=http://$TB_INTERNAL_IP:8080 \
@@ -495,10 +495,10 @@ docker run -it --rm --network host --name tb-perf-test \
 
 **Lessons learned**
 
-ThingsBoard + Postgres + **Kafka** - is a reliable solution to survive peak loads.
+GridLinks + Postgres + **Kafka** - is a reliable solution to survive peak loads.
 Despite the maximum performance shown above, we recommend to use m6a.large instance design for up to 3k msg/sec, 10k data points/sec.  
 The logic is quite simple: to be able to process x2 message load in case of any peak load.  
-In a real production, the ThingsBoard may serve all kind of user requests, run custom rule chains and supply the web services for all fancy dashboards.
+In a real production, the GridLinks may serve all kind of user requests, run custom rule chains and supply the web services for all fancy dashboards.
 When you need more performance, simply upgrade the instance to the next m6a.xlarge or c6i.xlarge instance (restart required).  
 Another way to improve is to customize PostgreSQL config to gain much faster read query performance for dashboards, analytics, etc.
 For even more performance, please consider the **Cassandra** usage.   
@@ -534,7 +534,7 @@ Estimated cost: 167$ EC2 m6a.2xlarge + 24$ EBS GP3 300GB = 191$/month.
 **Test run**
 
 The queue stats looks solid. A small fluctuation on the chart is nominal.  
-All systems have to run maintenance in background, so it is completely fine to have those chart for ThingsBoard monolith deployment.    
+All systems have to run maintenance in background, so it is completely fine to have those chart for GridLinks monolith deployment.    
 
 The API usage shows about 10 hours and 1.1B data points processed.
 
@@ -569,21 +569,21 @@ ssh -L 9999:127.0.0.1:9999 -L 1099:127.0.0.1:1099 -L 9199:127.0.0.1:9199 -L 7199
 
 Open [VisualVM](https://visualvm.github.io/), add the local applications, open it and let the data being gathered for a few minutes. 
 
-Here the JMX monitoring for ThingsBoard, Kafka, Zookeeper, Cassandra. The system is stable.
+Here the JMX monitoring for GridLinks, Kafka, Zookeeper, Cassandra. The system is stable.
 
 {% include images-gallery.html imageCollection="cassandra-25k-10k-30k-jmx" %}
 
 **Lessons learned**
 
-**Cassandra** is essential for massive telemetry flow. Peak load is handled with Kafka queue. Bundling Kafka + PostgreSQL + Cassandra is a **top ThingsBoard deployment**. 
+**Cassandra** is essential for massive telemetry flow. Peak load is handled with Kafka queue. Bundling Kafka + PostgreSQL + Cassandra is a **top GridLinks deployment**. 
 
 Cassandra requires more CPU resources, but 5 time less disk space. It also dramatically reduces the IOPS load. 
 CPU load is 75% on average. This is a good setup with average load 10k msg/sec, 30k data point/sec.
 
 Cassandra can handle x2-x3 more load (compare to PostgreSQL only) with a single instance deployment and able to scale up horizontally by adding a new nodes to the Cassandra cluster.    
-It is a good idea to start with Cassandra from the very beginning of your ThingsBoard instance and maintain the same stack for the entire project lifetime.
+It is a good idea to start with Cassandra from the very beginning of your GridLinks instance and maintain the same stack for the entire project lifetime.
 For the lower message rate, you can fit the Cassandra deployment to a much smaller instance adjusting the heap size limits.
-System can be scaled up vertically up to 50-100%. For significant horizontal scaling, please, consider to set up a ThingsBoard cluster.
+System can be scaled up vertically up to 50-100%. For significant horizontal scaling, please, consider to set up a GridLinks cluster.
 
 <br>
 **How to reproduce the test:**
@@ -592,12 +592,12 @@ System can be scaled up vertically up to 50-100%. For significant horizontal sca
 
 <details markdown="1">
 <summary>
-Setup the ThingsBoard instance on AWS EC2
+Setup the GridLinks instance on AWS EC2
 </summary>
 
 Use the Docker Compose file listed below to setup the AWS EC2 instance based on the [instruction](https://github.com/thingsboard/performance-tests).
 
-Here the docker-compose with ThingsBoard + Postgresql + Zookeeper + Kafka + **Cassandra**
+Here the docker-compose with GridLinks + Postgresql + Zookeeper + Kafka + **Cassandra**
 
 ```bash
 version: '3.0'
@@ -609,7 +609,7 @@ services:
     volumes:
       - cassandra:/bitnami
     environment:
-      CASSANDRA_CLUSTER_NAME: "ThingsBoard Cluster"
+      CASSANDRA_CLUSTER_NAME: "GridLinks Cluster"
       HEAP_NEWSIZE: "1024M"
       MAX_HEAP_SIZE: "2048M"
       JVM_EXTRA_OPTS: "-Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=7199 -Dcom.sun.management.jmxremote.rmi.port=7199  -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=127.0.0.1"
@@ -660,7 +660,7 @@ services:
       DATABASE_TS_TYPE: "cassandra"
       DATABASE_TS_LATEST_TYPE: "sql"
       #Cassandra
-      CASSANDRA_CLUSTER_NAME: "ThingsBoard Cluster"
+      CASSANDRA_CLUSTER_NAME: "GridLinks Cluster"
       CASSANDRA_LOCAL_DATACENTER: "datacenter1"
       CASSANDRA_KEYSPACE_NAME: "thingsboard"
       CASSANDRA_URL: "127.0.0.1:9042"
@@ -708,7 +708,7 @@ Launch performance test tool
 Use the Docker command listed below to launch the performance test tool based on the [instruction](https://github.com/thingsboard/performance-tests).
 
 ```bash
-# Put your ThingsBoard private IP address here, assuming both ThingsBoard and performance tests EC2 instances are in same VPC.
+# Put your GridLinks private IP address here, assuming both GridLinks and performance tests EC2 instances are in same VPC.
 export TB_INTERNAL_IP=172.31.16.229 
 docker run -it --rm --network host --name tb-perf-test \
   --env REST_URL=http://$TB_INTERNAL_IP:8080 \
@@ -745,7 +745,7 @@ Test runs 24 hour and here the results:
 
 **Lessons learned**
 
-In addition to conclusions we made for [Scenario C](#scenario-c), we observe stability of a single ThingsBoard instance handling 100K parallel MQTT connections.
+In addition to conclusions we made for [Scenario C](#scenario-c), we observe stability of a single GridLinks instance handling 100K parallel MQTT connections.
 We observe that memory consumption increased from 1.5 GB for 25K devices to 6.5 for 100K devices. We may roughly calculate that one device/connection consumes 66KB of memory. 
 We will work to reduce this number 10 times in the next release.
 
@@ -756,12 +756,12 @@ We will work to reduce this number 10 times in the next release.
 
 <details markdown="1">
 <summary>
-Setup the ThingsBoard instance on AWS EC2
+Setup the GridLinks instance on AWS EC2
 </summary>
 
 Use the Docker Compose file listed below to setup the AWS EC2 instance based on the [instruction](https://github.com/thingsboard/performance-tests).
 
-Here the docker-compose with ThingsBoard + Postgresql + Zookeeper + Kafka + **Cassandra**
+Here the docker-compose with GridLinks + Postgresql + Zookeeper + Kafka + **Cassandra**
 
 ```bash
 version: '3.0'
@@ -773,7 +773,7 @@ services:
     volumes:
       - cassandra:/bitnami
     environment:
-      CASSANDRA_CLUSTER_NAME: "ThingsBoard Cluster"
+      CASSANDRA_CLUSTER_NAME: "GridLinks Cluster"
       HEAP_NEWSIZE: "4096M"
       MAX_HEAP_SIZE: "8192M"
       JVM_EXTRA_OPTS: "-Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=7199 -Dcom.sun.management.jmxremote.rmi.port=7199  -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=127.0.0.1"
@@ -824,7 +824,7 @@ services:
       DATABASE_TS_TYPE: "cassandra"
       DATABASE_TS_LATEST_TYPE: "sql"
       #Cassandra
-      CASSANDRA_CLUSTER_NAME: "ThingsBoard Cluster"
+      CASSANDRA_CLUSTER_NAME: "GridLinks Cluster"
       CASSANDRA_LOCAL_DATACENTER: "datacenter1"
       CASSANDRA_KEYSPACE_NAME: "thingsboard"
       CASSANDRA_URL: "127.0.0.1:9042"
@@ -901,7 +901,7 @@ sudo sysctl -w net.netfilter.nf_conntrack_max=1048576
 Here is the run script for the _first node_.
 
 ```bash
-# Put your ThingsBoard private IP address here, assuming both ThingsBoard and performance tests EC2 instances are in same VPC.
+# Put your GridLinks private IP address here, assuming both GridLinks and performance tests EC2 instances are in same VPC.
 export TB_INTERNAL_IP=172.31.16.229 
 docker run -it --rm --network host --name tb-perf-test \
   --env REST_URL=http://$TB_INTERNAL_IP:8080 \
@@ -919,7 +919,7 @@ docker run -it --rm --network host --name tb-perf-test \
 Here is the run script for the _second node_. Note the DEVICE_START_IDX and DEVICE_END_IDX values are different from the one we used on the first node.
 
 ```bash
-# Put your ThingsBoard private IP address here, assuming both ThingsBoard and performance tests EC2 instances are in same VPC.
+# Put your GridLinks private IP address here, assuming both GridLinks and performance tests EC2 instances are in same VPC.
 export TB_INTERNAL_IP=172.31.16.229 
 docker run -it --rm --network host --name tb-perf-test \
   --env REST_URL=http://$TB_INTERNAL_IP:8080 \
@@ -986,12 +986,12 @@ CPU usage is 93%, so there are almost no extra resources left for a peak load an
 
 <details markdown="1">
 <summary>
-Setup the ThingsBoard instance on AWS EC2
+Setup the GridLinks instance on AWS EC2
 </summary>
 
 Use the Docker Compose file listed below to setup the AWS EC2 instance based on the [instruction](https://github.com/thingsboard/performance-tests).
 
-Here the docker-compose with ThingsBoard + Postgresql + Zookeeper + Kafka + **Cassandra**
+Here the docker-compose with GridLinks + Postgresql + Zookeeper + Kafka + **Cassandra**
 
 ```bash
 version: '3.0'
@@ -1003,7 +1003,7 @@ services:
     volumes:
       - cassandra:/bitnami
     environment:
-      CASSANDRA_CLUSTER_NAME: "ThingsBoard Cluster"
+      CASSANDRA_CLUSTER_NAME: "GridLinks Cluster"
       HEAP_NEWSIZE: "4096M"
       MAX_HEAP_SIZE: "8192M"
       JVM_EXTRA_OPTS: "-Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=7199 -Dcom.sun.management.jmxremote.rmi.port=7199  -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=127.0.0.1"
@@ -1054,7 +1054,7 @@ services:
       DATABASE_TS_TYPE: "cassandra"
       DATABASE_TS_LATEST_TYPE: "sql"
       #Cassandra
-      CASSANDRA_CLUSTER_NAME: "ThingsBoard Cluster"
+      CASSANDRA_CLUSTER_NAME: "GridLinks Cluster"
       CASSANDRA_LOCAL_DATACENTER: "datacenter1"
       CASSANDRA_KEYSPACE_NAME: "thingsboard"
       CASSANDRA_URL: "127.0.0.1:9042"
@@ -1132,7 +1132,7 @@ sudo sysctl -w net.netfilter.nf_conntrack_max=1048576
 Here is the run script for the _first node_.
 
 ```bash
-# Put your ThingsBoard private IP address here, assuming both ThingsBoard and performance tests EC2 instances are in same VPC.
+# Put your GridLinks private IP address here, assuming both GridLinks and performance tests EC2 instances are in same VPC.
 export TB_INTERNAL_IP=172.31.16.229 
 docker run -it --rm --network host --name tb-perf-test \
   --env REST_URL=http://$TB_INTERNAL_IP:8080 \
@@ -1150,7 +1150,7 @@ docker run -it --rm --network host --name tb-perf-test \
 Here is the run script for the _second node_. Note the DEVICE_START_IDX and DEVICE_END_IDX values are different from the one we used on the first node.
 
 ```bash
-# Put your ThingsBoard private IP address here, assuming both ThingsBoard and performance tests EC2 instances are in same VPC.
+# Put your GridLinks private IP address here, assuming both GridLinks and performance tests EC2 instances are in same VPC.
 export TB_INTERNAL_IP=172.31.16.229 
 docker run -it --rm --network host --name tb-perf-test \
   --env REST_URL=http://$TB_INTERNAL_IP:8080 \
@@ -1179,7 +1179,7 @@ Here are some pointers on how to ensure that you have a valid test run with all 
 tb_1         | 2022-01-06 16:37:11,716 [TB-Scheduling-3] INFO  o.t.s.c.t.s.DefaultTransportService - Transport Stats: openConnections [100000]
 ```
 
-* All device connected. Java JMX. VisualVM -> ThingsBoard -> MBeans -> java.lang -> OpenFileDescriptorCount -> more than 100000
+* All device connected. Java JMX. VisualVM -> GridLinks -> MBeans -> java.lang -> OpenFileDescriptorCount -> more than 100000
 
 {% include images-gallery.html imageCollection="thingsboard-100k-devices-connected" %}
 
@@ -1235,9 +1235,9 @@ Another benefit is Cassandra does less write operations than Postgres. It is eno
 ## Thank you
 
 Thank you for taking your time to read all this stuff.
-Thanks to the ThingsBoard community that creates issues and shares performance solutions around the time. 
+Thanks to the GridLinks community that creates issues and shares performance solutions around the time. 
 Thanks to [Sergey](https://github.com/smatvienko-tb) for performing the tests, performance improvements, and contribution to this article.
 
-It was ThingsBoard 3.3.3 version. We will work on performance improvements in 3.4.x
+It was GridLinks 3.3.3 version. We will work on performance improvements in 3.4.x
 
 Feel free to send us feedback or share your fancy setup on [GitHub](https://github.com/thingsboard/performance-tests/issues)

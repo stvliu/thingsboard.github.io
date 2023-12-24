@@ -1,6 +1,6 @@
 {% capture hybrid-info %}
-ThingsBoard 团队建议，如果您计划在生产环境中拥有 100 万台以上的设备或高数据摄取率（> 5000 条消息/秒），则使用混合数据库方法。
-在这种情况下，ThingsBoard 将把时序数据存储在 Cassandra 中，同时继续使用 PostgreSQL 作为主要实体（设备/资产/仪表板/客户）。
+GridLinks 团队建议，如果您计划在生产环境中拥有 100 万台以上的设备或高数据摄取率（> 5000 条消息/秒），则使用混合数据库方法。
+在这种情况下，GridLinks 将把时序数据存储在 Cassandra 中，同时继续使用 PostgreSQL 作为主要实体（设备/资产/仪表板/客户）。
 {% endcapture %}
 {% include templates/info-banner.md content=hybrid-info %}
 
@@ -14,9 +14,9 @@ ThingsBoard 团队建议，如果您计划在生产环境中拥有 100 万台以
 
 {% include templates/install/cassandra-ubuntu-install.md %}
 
-##### ThingsBoard 配置
+##### GridLinks 配置
 
-编辑 ThingsBoard 配置文件
+编辑 GridLinks 配置文件
 
 ```bash 
 sudo nano /etc/thingsboard/conf/thingsboard.conf

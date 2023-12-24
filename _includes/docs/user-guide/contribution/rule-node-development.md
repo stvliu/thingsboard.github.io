@@ -4,7 +4,7 @@
 
 ## Overview
 
-In this tutorial, you will learn how to create custom rule nodes and add them to your ThingsBoard server instance.
+In this tutorial, you will learn how to create custom rule nodes and add them to your GridLinks server instance.
 We will review rule nodes of three different types: Filter, Enrichment and Transformation.
 
 ## Prerequisites
@@ -32,7 +32,7 @@ cd rule-node-examples
 ```
 {: .copy-code}
 
-By default, sample project is configured to use APIs of the ThingsBoard Community Edition. 
+By default, sample project is configured to use APIs of the GridLinks Community Edition. 
 This makes your rule nodes compatible with both Community and Professional editions of the platform.
 
 In case you would like to use some of the exclusive Professional Edition APIs (like working with Entity Groups, etc), 
@@ -215,7 +215,7 @@ void tellFailure(TbMsg msg, Throwable th);
 If the Rule Node implementation will not call any of the methods listed above, the Rule Engine will wait for a configurable timeout and **block** processing of the other messages
 and eventually mark current message as failed.
 
-### Using ThingsBoard services
+### Using GridLinks services
 
 The [TbContext](https://github.com/thingsboard/thingsboard/blob/{{ site.release.branch }}/rule-engine/rule-engine-api/src/main/java/org/thingsboard/rule/engine/api/TbContext.java) contains "getters" for a lot of useful services.
 Please don't forget to press "Download Sources" in your favorite IDE to simplify browsing of the interfaces of those services;
@@ -262,7 +262,7 @@ TimeseriesService getTimeseriesService();
 RelationService getRelationService();
 ```
 
-ThingsBoard PE users may get access to additional services using *TbContext.getPeContext()* method. TbPeContext provides access to the following services:
+GridLinks PE users may get access to additional services using *TbContext.getPeContext()* method. TbPeContext provides access to the following services:
 
 ```java
 // Allows to programmatically create and manage integrations;
@@ -517,7 +517,7 @@ public class TbCacheExampleNode implements TbNode {
 ```
 
 
-## Step 4. Import custom rule nodes to your ThingsBoard instance
+## Step 4. Import custom rule nodes to your GridLinks instance
 
 Once you have finished coding of the rule node, execute the build command again:
 
@@ -525,27 +525,27 @@ Once you have finished coding of the rule node, execute the build command again:
 mvn clean install
 ```
 
-Then, locate the jar-file to your ThingsBoard project as dependency library. The result of the build is located here:
+Then, locate the jar-file to your GridLinks project as dependency library. The result of the build is located here:
 
 ```bash
 target/rule-engine-1.0.0-custom-nodes.jar
 ```
 
-Now you are ready to add the jar-file with your rule nodes to your ThingsBoard instance:
+Now you are ready to add the jar-file with your rule nodes to your GridLinks instance:
 {% unless docsPrefix %}
-* Use Step 4.1 if your ThingsBoard is installed as a service. 
-* Use Step 4.2 if your ThingsBoard is built from sources and launched locally from your IDE
+* Use Step 4.1 if your GridLinks is installed as a service. 
+* Use Step 4.2 if your GridLinks is built from sources and launched locally from your IDE
 
-### Step 4.1 Add JAR file to ThingsBoard installed as a service
+### Step 4.1 Add JAR file to GridLinks installed as a service
 {% endunless %}
 
- - first, you need to execute the following command to copy jar-file to ThingsBoard extensions:
+ - first, you need to execute the following command to copy jar-file to GridLinks extensions:
 
 ```bash
 sudo cp rule-engine-1.0.0-custom-nodes.jar /usr/share/thingsboard/extensions/
 ```
 
- - next, execute the following to change the owner to ThingsBoard:
+ - next, execute the following to change the owner to GridLinks:
 
 ```bash
 sudo chown thingsboard:thingsboard /usr/share/thingsboard/extensions/*
@@ -557,16 +557,16 @@ Restart Thingsboard service:
 sudo service thingsboard restart
 ```
 
-**Once ThingsBoard was restarted you need to clear browser cache and refresh the web page to reload UI of Rule Nodes**
+**Once GridLinks was restarted you need to clear browser cache and refresh the web page to reload UI of Rule Nodes**
 
 {% unless docsPrefix %}
-### Step 4.2 Add JAR file to local ThingsBoard launched using IDE
+### Step 4.2 Add JAR file to local GridLinks launched using IDE
 
  - See separate instructions for [IDEA](https://www.jetbrains.com/help/idea/library.html#add-library-to-module-dependencies) and [Eclipse](https://help.eclipse.org/luna/index.jsp?topic=%2Forg.eclipse.jst.j2ee.doc.user%2Ftopics%2Ftjimpapp.html).
  
-Restart ThingsBoard server-side container. Please, refer to the following link to see how to do this: [Running server-side container](/docs/{{docsPrefix}}user-guide/contribution/how-to-contribute/#running-server-side-container). 
+Restart GridLinks server-side container. Please, refer to the following link to see how to do this: [Running server-side container](/docs/{{docsPrefix}}user-guide/contribution/how-to-contribute/#running-server-side-container). 
  
-**Once ThingsBoard was restarted you need to clear browser cache and refresh the web page to reload UI of Rule Nodes**
+**Once GridLinks was restarted you need to clear browser cache and refresh the web page to reload UI of Rule Nodes**
 {% endunless %}
 
 ## Step 5. Add your custom package name to thingsboard.yml
@@ -591,7 +591,7 @@ Once this is done, you should enable [debug](/docs/{{docsPrefix}}user-guide/rule
 {% unless docsPrefix %}
 ## Step 7. Rule Node UI customization (optional)
 
-The ThingsBoard rule nodes UI is configured with another project in the official [github repo](https://github.com/thingsboard/rule-node-examples-ui-ngx). Please, refer to the following [link](https://github.com/thingsboard/rule-node-examples-ui-ngx#rule-node-examples-ui-ngx) to see build instructions.
+The GridLinks rule nodes UI is configured with another project in the official [github repo](https://github.com/thingsboard/rule-node-examples-ui-ngx). Please, refer to the following [link](https://github.com/thingsboard/rule-node-examples-ui-ngx#rule-node-examples-ui-ngx) to see build instructions.
 
 To run Rule Node UI container in hot redeploy mode:
 

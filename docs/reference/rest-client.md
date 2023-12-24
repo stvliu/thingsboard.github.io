@@ -11,7 +11,7 @@ description: 受支持的 REST API 参考，用于服务器端集成 Java 项目
  
 ## REST 客户端
 
-ThingsBoard REST API 客户端可帮助您通过 Java 应用程序与 ThingsBoard REST API 进行交互。
+ThingsBoard REST API 客户端可帮助您通过 Java 应用程序与 GridLinks REST API 进行交互。
 使用 Rest 客户端，您可以以编程方式在 GridLinks 中创建资产、设备、客户、用户和其他实体及其关系。
  
 安装 Rest 客户端的推荐方法是使用构建自动化工具，例如 Maven。

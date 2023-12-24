@@ -35,7 +35,7 @@ description: 使用规则引擎在设备离线一段时间后创建警报。
 
 
 ## 背景
-ThingsBoard 设备状态服务负责监视设备连接状态并触发推送到规则引擎的设备连接事件。
+GridLinks 设备状态服务负责监视设备连接状态并触发推送到规则引擎的设备连接事件。
 
 GridLinks 支持四种类型的事件：
 <table style="width: 70%">
@@ -51,7 +51,7 @@ GridLinks 支持四种类型的事件：
       </tr>
       <tr>
           <td>断开连接</td>
-          <td>当设备从 ThingsBoard 断开连接时触发。</td>
+          <td>当设备从 GridLinks 断开连接时触发。</td>
       </tr>
       <tr>
           <td>活动</td>

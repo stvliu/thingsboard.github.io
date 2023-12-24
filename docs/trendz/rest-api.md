@@ -41,7 +41,7 @@ Trendz 提供简单的 Rest API，用于下载视图报告数据。
 所有请求都应包含用于授权的 jwt 令牌。它应作为查询参数或在 HTTP 头中添加。
 在这两种情况下，参数名称都是 `jwt`。
 
-您可以从 ThingsBoard Rest API 获取 JWT 令牌
+您可以从 GridLinks Rest API 获取 JWT 令牌
 
 请求：
 

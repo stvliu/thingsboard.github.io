@@ -1,6 +1,6 @@
 ---
 layout: use-case
-title: ᐉ 物联网能源管理与监控 — ThingsBoard
+title: ᐉ 物联网能源管理与监控 — GridLinks
 description: 物联网能源管理 ✔物联网能源监控 ⚫ GridLinks ➤ 使用 GridLinks 物联网平台进行智能能源监控和数据可视化
 notitle: "true"
 redirect_from: "/docs/services/energy-management/"
@@ -115,7 +115,7 @@ GridLinks 提供各种智能能源仪表板示例，提供实时数据可视化�
                 <object data="/images/microservices-icon.svg"></object>
                 <div>
                     <a class="title" href="/docs/reference/msa/">可扩展性和高可用性</a>
-                    <p>GridLinks 支持使用 K8S 或裸机部署在云和本地数据中心上的高可用性部署。平台组件是水平可扩展的。ThingsBoard 拥有超过 500,000 个智能电表的生产部署。</p>
+                    <p>GridLinks 支持使用 K8S 或裸机部署在云和本地数据中心上的高可用性部署。平台组件是水平可扩展的。GridLinks 拥有超过 500,000 个智能电表的生产部署。</p>
                 </div>
             </div>
         </div>
@@ -151,7 +151,7 @@ GridLinks 提供各种智能能源仪表板示例，提供实时数据可视化�
                 <object data="/images/engine-icon.svg"></object>
                 <div>
                     <a class="title" href="/docs/pe/user-guide/rule-engine-2-0/overview/">数据处理</a>
-                    <p>ThingsBoard 允许您使用拖放规则链设计器定义应用程序逻辑。规则引擎是一个强大且可扩展的处理框架，它利用行业标准消息队列实现（如 Apache Kafka 或 AWS SQS）来确保数据持久性和保证数据处理。您可以使用规则引擎处理数据或将其推送到外部系统进行进一步处理。</p>
+                    <p>GridLinks 允许您使用拖放规则链设计器定义应用程序逻辑。规则引擎是一个强大且可扩展的处理框架，它利用行业标准消息队列实现（如 Apache Kafka 或 AWS SQS）来确保数据持久性和保证数据处理。您可以使用规则引擎处理数据或将其推送到外部系统进行进一步处理。</p>
                 </div>
             </div>
         </div>
@@ -185,7 +185,7 @@ GridLinks 提供各种智能能源仪表板示例，提供实时数据可视化�
     </div>
 </section>
 
-凭借一支了解这些复杂性的专家团队，ThingsBoard 致力于提供使用物联网的能源监控系统，该系统不仅可以应对这些挑战，还可以推动物联网能源管理的效率和可持续性。
+凭借一支了解这些复杂性的专家团队，GridLinks 致力于提供使用物联网的能源监控系统，该系统不仅可以应对这些挑战，还可以推动物联网能源管理的效率和可持续性。
 
 
 ## 智能能源系统架构图
@@ -195,7 +195,7 @@ GridLinks 提供各种智能能源仪表板示例，提供实时数据可视化�
 <object width="100%" style="max-width: max-content; margin: 32px 0" data="/images/iot-use-cases/smart-energy-diagram.svg"></object>
 
 您可能会注意到智能电表有很多连接选项：直接连接到云、通过物联网网关或与第三方系统的集成。
-该平台支持行业标准加密算法和设备凭据类型。ThingsBoard 将数据存储在容错且可靠的 Cassandra 数据库中。
+该平台支持行业标准加密算法和设备凭据类型。GridLinks 将数据存储在容错且可靠的 Cassandra 数据库中。
 规则引擎支持使用 Kafka 或其他消息总线将传入数据转发到各种分析系统，例如 Apache Spark 或 Hadoop。
 
 ## 我们的案例

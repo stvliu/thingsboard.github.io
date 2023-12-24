@@ -51,7 +51,7 @@ docker run hello-world
 该命令类似于下面列出的命令。不要忘记将 TB_INTERNAL_IP 的值替换为目标 GridLinks 实例的专用 IP 地址。
 
 ```bash
-# 在此处放置您的 GridLinks 专用 IP 地址，假设 ThingsBoard 和性能测试 EC2 实例位于同一 VPC 中。
+# 在此处放置您的 GridLinks 专用 IP 地址，假设 GridLinks 和性能测试 EC2 实例位于同一 VPC 中。
 export TB_INTERNAL_IP=172.31.16.229 
 docker run -it --rm --network host --name tb-perf-test \
   --env REST_URL=http://$TB_INTERNAL_IP:8080 \

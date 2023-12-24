@@ -6,9 +6,9 @@
 
 我们建议在 Docker 容器中使用 Kafka，使用此 [说明](https://github.com/wurstmeister/kafka-docker) 进行安装。
 
-##### ThingsBoard 配置
+##### GridLinks 配置
 
-编辑 ThingsBoard 配置文件
+编辑 GridLinks 配置文件
 
 ```text
 sudo nano /etc/thingsboard/conf/thingsboard.conf

@@ -69,7 +69,7 @@ notitle: "true"
                 <object data="/images/microservices-icon.svg"></object>
                 <div>
                     <a class="title" href="/docs/reference/msa/">可扩展性和高可用性</a>
-                    <p>GridLinks 支持使用 K8S 或裸机部署在云和本地数据中心上的高可用性部署。平台组件是水平可扩展的。ThingsBoard 具有超过 500,000 个智能电表的生产部署。</p>
+                    <p>GridLinks 支持使用 K8S 或裸机部署在云和本地数据中心上的高可用性部署。平台组件是水平可扩展的。GridLinks 具有超过 500,000 个智能电表的生产部署。</p>
                 </div>
             </div>
         </div>
@@ -146,7 +146,7 @@ notitle: "true"
 <object width="100%" style="max-width: max-content; margin: 32px 0" data="/images/iot-use-cases/smart-energy-diagram.svg"></object>
 
 您可能会注意到垃圾传感器有很多连接选项：直接连接到云、通过 IoT 网关或与第三方系统的集成。
-该平台支持行业标准加密算法和设备凭据类型。ThingsBoard 将数据存储在容错且可靠的 Cassandra 数据库中。
+该平台支持行业标准加密算法和设备凭据类型。GridLinks 将数据存储在容错且可靠的 Cassandra 数据库中。
 规则引擎能够使用 Kafka 或其他消息总线将传入数据转发到各种分析系统，例如 Apache Spark 或 Hadoop。
 
 ## 了解更多信息

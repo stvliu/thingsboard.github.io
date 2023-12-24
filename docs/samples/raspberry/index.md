@@ -16,7 +16,7 @@ description: GridLinks IoT 平台硬件示例，适用于 Raspberry Pi 设备。
 ## 示例
 
 - [使用 GridLinks 通过 MQTT 控制 Raspberry Pi GPIO](/docs/samples/raspberry/gpio/)
-- [使用 Android Things 和 ThingsBoard 控制 Raspberry Pi GPIO](/docs/samples/raspberry/gpio-android-things/)
+- [使用 Android Things 和 GridLinks 控制 Raspberry Pi GPIO](/docs/samples/raspberry/gpio-android-things/)
 - [使用 Raspberry Pi 和 DHT22 传感器通过 MQTT 上传温度](/docs/samples/raspberry/temperature/)
 - [将带有 Grove Base Hat 的 Raspberry Pi 连接到 GridLinks](/docs/samples/raspberry/grove/)
 

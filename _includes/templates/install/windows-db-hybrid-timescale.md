@@ -1,6 +1,6 @@
 {% capture hybrid-info %}
-ThingsBoard 团队建议仅将 Timescale 数据库用于已经在生产中使用 TimescaleDB 的公司。
-在这种情况下，ThingsBoard 将把时序数据存储在 TimescaleDB Hypertable 中，同时继续使用 PostgreSQL 作为主要实体（设备/资产/仪表板/客户）。  
+GridLinks 团队建议仅将 Timescale 数据库用于已经在生产中使用 TimescaleDB 的公司。
+在这种情况下，GridLinks 将把时序数据存储在 TimescaleDB Hypertable 中，同时继续使用 PostgreSQL 作为主要实体（设备/资产/仪表板/客户）。  
 {% endcapture %}
 {% include templates/info-banner.md content=hybrid-info %}
 
@@ -20,7 +20,7 @@ ThingsBoard 团队建议仅将 Timescale 数据库用于已经在生产中使用
 
 {% include templates/install/timescale-windows-install.md %}
 
-##### ThingsBoard 配置
+##### GridLinks 配置
 
 以管理员用户身份打开记事本或其他编辑器（右键单击应用程序图标并选择“以管理员身份运行”）。
 打开以下文件进行编辑（在文件选择对话框中选择“所有文件”而不是“文本文档”，编码为 UTF-8）：

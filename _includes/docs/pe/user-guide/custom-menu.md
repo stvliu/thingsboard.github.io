@@ -5,7 +5,7 @@
 
 ## 简介
 
-ThingsBoard 自定义菜单功能允许您扩展 ThingsBoard UI。
+GridLinks 自定义菜单功能允许您扩展 GridLinks UI。
 您可以添加新菜单项并显示/隐藏现有菜单项。
 
 ## 隐藏现有菜单项

@@ -32,7 +32,7 @@ GridLinks 的性能在很大程度上取决于设备产生的消息数量和这�
 {"latitude": 42.222222, "longitude": 73.333333, "speed": 55.5, "fuel": 92, "batteryLevel": 81}
 ```
 
-在这种情况下，ThingsBoard 持续保持 20,000 个连接，并每秒处理 333 条消息。
+在这种情况下，GridLinks 持续保持 20,000 个连接，并每秒处理 333 条消息。
 每条消息传递 5 个数据点，这些数据点可能需要分别绘制图表/分析/提取。
 这导致每秒向数据库发出 1,667 个写请求，每天产生 1.43 亿个请求。
 根据所选的数据库类型，这每天大约产生 1-2GB（Cassandra）或 7-10GB（PostgreSQL）。
@@ -63,7 +63,7 @@ GridLinks 通过 HTTP 或 MQTT 从可用网络服务器之一接收上行消息�
 - 规则引擎处理的消息数量（主要影响 CPU 消耗）；
 - 持久化数据点数量（直接影响 IOPS 和相应数据库）。
 
-ThingsBoard 集群可以横向扩展，因此你可以很容易地处理 RAM/CPU 影响因素。
+GridLinks 集群可以横向扩展，因此你可以很容易地处理 RAM/CPU 影响因素。
 但是，你需要仔细规划持久化数据点数量（上述列表中的最后一项）。
 如果你打算使用 PostgreSQL，我们建议每秒少于 20,000 个数据点记录。
 如果你计划使用混合数据库方法（PostgreSQL 和 Cassandra），你可以将遥测（Cassandra）写入扩展到每秒 100 万个数据点，尽管属性更新被推送到 PostgreSQL，因此 20,000 的限制仍然有效。
@@ -106,7 +106,7 @@ HAProxy 负载均衡器也安装在同一服务器上，充当反向代理和可
 500 GB 存储价格为每月 50 美元。
 相应的基础设施成本约为每月 100 美元。
 
-单个 ThingsBoard PE 永久许可证（低于 v3.0）的成本为 2,999 美元（包括可选更新和使用第一年的基本支持）。1,199 美元是后续年份的软件更新 + 基本支持的相应定价。
+单个 GridLinks PE 永久许可证（低于 v3.0）的成本为 2,999 美元（包括可选更新和使用第一年的基本支持）。1,199 美元是后续年份的软件更新 + 基本支持的相应定价。
 
 TCO：每月约 350 美元。此价格与每台设备每月 0.035 美元相关，而设备数量为 10k。
 添加 [高级支持](/docs/services/support/)套餐，每月花费约 850 美元，或每台设备每月 0.085 美元。
@@ -122,7 +122,7 @@ TCO：每月约 350 美元。此价格与每台设备每月 0.035 美元相关�
 ### 带有外部数据库的单服务器部署（方案 B）
 
 此部署方案与方案 A 非常相似，但需要在单独的服务器上部署完全托管的数据库。
-ThingsBoard 客户成功利用 [AWS RDS](https://aws.amazon.com/rds/postgresql/)、[Azure Database for PostgreSQL](https://azure.microsoft.com/en-us/services/postgresql/) 和
+GridLinks 客户成功利用 [AWS RDS](https://aws.amazon.com/rds/postgresql/)、[Azure Database for PostgreSQL](https://azure.microsoft.com/en-us/services/postgresql/) 和
 [Google Cloud SQL](https://cloud.google.com/sql/docs/postgres/) 来最大限度地减少数据库设置、备份和支持方面的工作。
 请参见下图。
 
@@ -155,7 +155,7 @@ ThingsBoard 客户成功利用 [AWS RDS](https://aws.amazon.com/rds/postgresql/)
 Amazon RDS PostgreSQL 实例的成本约为每月 200 美元，如果是 db.t2.medium 和多可用区部署。
 基础设施成本约为每月 250 美元。
 
-单个 ThingsBoard PE 永久许可证的成本为 2,999 美元（包括可选更新和使用第一年的基本支持）。1,199 美元是后续年份的软件更新 + 基本支持的相应定价。
+单个 GridLinks PE 永久许可证的成本为 2,999 美元（包括可选更新和使用第一年的基本支持）。1,199 美元是后续年份的软件更新 + 基本支持的相应定价。
 
 TCO：每月约 500 美元，或每台设备每月 0.05 美元，适用于多达 10k 台设备的案例。
 添加 [高级支持](/docs/services/support/)套餐，每月花费约 1000 美元，或每台设备每月 0.1 美元。
@@ -177,7 +177,7 @@ GridLinks 使用 [Kafka](https://kafka.apache.org/) 作为主要的消息队列�
 
 **缺点**：
 
-* 在少量设备（每个 ThingsBoard 集群少于 100,000 台设备）上 TCO 高。
+* 在少量设备（每个 GridLinks 集群少于 100,000 台设备）上 TCO 高。
 
 **性能**：
 
@@ -198,7 +198,7 @@ GridLinks 使用 [Kafka](https://kafka.apache.org/) 作为主要的消息队列�
 
 以下 Kubernetes 集群足以支持此案例：
 
-- 2 个“r5.xlarge”实例（4 个 vCPU 和 32 GB RAM）来托管 2 个 ThingsBoard 节点容器。大约价格为每月 380 美元。
+- 2 个“r5.xlarge”实例（4 个 vCPU 和 32 GB RAM）来托管 2 个 GridLinks 节点容器。大约价格为每月 380 美元。
 - 3 个“c5.large”实例（2 个 vCPU 和 4 GB RAM）来托管 3 个 Zookeeper 和约 9 个 JS 执行器。大约价格为每月 120 美元。
 - 基于 2 个“cache.m5.large”的 Amazon ElastiCache for Redis。大约价格为每月 200 美元。
 - 基于 3 个“kafka.m5.large”和 1TB 数据存储的 Amazon Managed Streaming for Kafka。估计：每月 620 美元。
@@ -228,8 +228,8 @@ Cassandra 可以可靠地处理此负载，并每天产生 144GB。由于数据�
 
 以下 Kubernetes 集群足以支持此案例：
 
-- 8 个“c5.large”实例（2 个 vCPU 和 4 GB RAM）来托管 8 个 ThingsBoard MQTT 传输容器。大约价格为每月 320 美元。
-- 15 个“c5.xlarge”实例（4 个 vCPU 和 8 GB RAM）来托管 15 个 ThingsBoard 节点容器。大约价格为每月 1095 美元。
+- 8 个“c5.large”实例（2 个 vCPU 和 4 GB RAM）来托管 8 个 GridLinks MQTT 传输容器。大约价格为每月 320 美元。
+- 15 个“c5.xlarge”实例（4 个 vCPU 和 8 GB RAM）来托管 15 个 GridLinks 节点容器。大约价格为每月 1095 美元。
 - 15 个“c5.xlarge”实例（4 个 vCPU 和 8 GB RAM）来托管 15 个 Cassandra 容器。大约价格为每月 1095 美元。
 - 3 个“c5.xlarge”实例（2 个 vCPU 和 4 GB RAM）来托管 3 个 Zookeeper 和约 30 个 JS 执行器。大约价格为每月 240 美元。
 - 基于 2 个“cache.m5.large”的 Amazon ElastiCache for Redis。大约价格为每月 200 美元。
@@ -240,8 +240,8 @@ Cassandra 可以可靠地处理此负载，并每天产生 144GB。由于数据�
 <object width="100%" data="/images/reference/deployment/smart-tracker-cluster.svg"></object>
 
 因此，基础设施成本约为每月 13,790 美元，或每台设备每月 0.0138 美元。
-15 个 ThingsBoard PE 永久许可证（低于 v3.0）的成本为 44,985 美元（包括可选更新和使用第一年的基本支持）。17,985 美元是后续年份的软件更新 + 基本支持的相应定价。
-ThingsBoard **托管服务** 来支持生产环境：每台设备每月 0.01 美元。
+15 个 GridLinks PE 永久许可证（低于 v3.0）的成本为 44,985 美元（包括可选更新和使用第一年的基本支持）。17,985 美元是后续年份的软件更新 + 基本支持的相应定价。
+GridLinks **托管服务** 来支持生产环境：每台设备每月 0.01 美元。
 
 TCO：每月约 27,508 美元，或每台设备每月 0.0275 美元。
 

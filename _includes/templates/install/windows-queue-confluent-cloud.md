@@ -1,6 +1,6 @@
 {% include templates/install/queue-confluent-cloud-config.md %}
 
-##### ThingsBoard 配置
+##### GridLinks 配置
 
 以管理员用户身份打开记事本或其他编辑器（右键单击应用程序图标并选择“以管理员身份运行”）。
 打开以下文件进行编辑（在文件选择对话框中选择“所有文件”而不是“文本文档”，编码为 UTF-8）：

@@ -7,7 +7,7 @@ redirect_from: "/docs/user-guide/install/aws-marketplace-pe/"
 
 本指南介绍如何从 AWS Marketplace 安装 GridLinks Professional Edition。
 使用本指南，您将安装产品的 [BYOL](https://docs.aws.amazon.com/marketplace/latest/userguide/pricing.html#ami-pricing-models) 版本。
-基本上，您直接从 ThingsBoard, Inc 获取许可证，但从 AWS 购买相应的服务器实例和基础设施。
+基本上，您直接从 GridLinks, Inc 获取许可证，但从 AWS 购买相应的服务器实例和基础设施。
 
 * TOC
 {:toc}
@@ -218,12 +218,12 @@ sudo service thingsboard start
 <br>
 
 
-**如何使用 SSH 连接到我的新 ThingsBoard PE 实例？**
+**如何使用 SSH 连接到我的新 GridLinks PE 实例？**
 
 有关更多详细信息，请参阅 <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html">官方文档页面</a>。
 <br><br>
 
-**如何使用 PuTTY 连接到我的新 ThingsBoard PE 实例？**
+**如何使用 PuTTY 连接到我的新 GridLinks PE 实例？**
 
 有关更多详细信息，请参阅 <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html">官方文档页面</a>。
 <br><br>
@@ -246,7 +246,7 @@ sudo service thingsboard start
 <br><br>
 
 **如何备份我的数据库？**
-根据您的实例类型和配置，ThingsBoard 可能会将数据存储在 SQL 或 NoSQL 数据库中。
+根据您的实例类型和配置，GridLinks 可能会将数据存储在 SQL 或 NoSQL 数据库中。
 ThingsBoard 还可以使用混合数据库模式存储数据。
 请查看 <a href="/docs/reference/#sql-vs-nosql-vs-hybrid-database-approach">架构文档</a> 以获取有关可用数据库类型的更多信息。
 一旦您弄清楚了您在实例中使用的数据库类型，您就可以查看官方 <a href="https://www.postgresql.org/docs/9.1/backup.html">PostgreSQL</a>

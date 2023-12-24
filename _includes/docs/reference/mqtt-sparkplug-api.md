@@ -9,16 +9,16 @@
 
 [Sparkplug](https://sparkplug.eclipse.org/) 是一项开源软件规范，它为 MQTT 客户端提供了一个框架，以便在 MQTT 基础设施中无缝集成来自其应用程序、传感器、设备和网关的数据。
 
-ThingsBoard 充当 MQTT 服务器，支持 SparkPlug 有效负载和主题结构，并允许从 MQTT 网络边缘 (EoN) 节点进行连接。
+GridLinks 充当 MQTT 服务器，支持 SparkPlug 有效负载和主题结构，并允许从 MQTT 网络边缘 (EoN) 节点进行连接。
 
 EoN 节点是任何符合 V3.1.1 的 MQTT 客户端应用程序，它管理 MQTT 会话并提供物理和/或逻辑网关功能。EoN 节点负责与现有旧设备（PLC、RTU、流量计算机、传感器等）的任何本地协议接口和/或任何本地离散 I/O 和/或任何逻辑内部过程变量 (PV)。
 
-该协议 [规范](https://sparkplug.eclipse.org/specification/version/2.2/documents/sparkplug-specification-2.2.pdf) 为 EoN 节点定义了 MQTT 主题和消息结构，以便与 MQTT 服务器通信。单个 EoN 节点可以表示多个物理设备和传感器，并为每个设备上传设备指标。ThingsBoard 从 Sparkplug 有效负载中解码设备指标，并将其存储为相应的设备 [属性](/docs/{{docsPrefix}}user-guide/attributes/) 或 [时序](/docs/{{docsPrefix}}user-guide/telemetry/) 数据。您还可以使用 [从共享属性更新到 MQTT EONDevice](#update-metrics-from-shared-attributes-to-mqtt-eondevice) 或 [rpc 命令](#update-metrics--using-the-thingsboard-rpc-command-from-server-to-mqtt-eondevice) 从服务器端向 Sparkplug 设备发出更新。
+该协议 [规范](https://sparkplug.eclipse.org/specification/version/2.2/documents/sparkplug-specification-2.2.pdf) 为 EoN 节点定义了 MQTT 主题和消息结构，以便与 MQTT 服务器通信。单个 EoN 节点可以表示多个物理设备和传感器，并为每个设备上传设备指标。GridLinks 从 Sparkplug 有效负载中解码设备指标，并将其存储为相应的设备 [属性](/docs/{{docsPrefix}}user-guide/attributes/) 或 [时序](/docs/{{docsPrefix}}user-guide/telemetry/) 数据。您还可以使用 [从共享属性更新到 MQTT EONDevice](#update-metrics-from-shared-attributes-to-mqtt-eondevice) 或 [rpc 命令](#update-metrics--using-the-thingsboard-rpc-command-from-server-to-mqtt-eondevice) 从服务器端向 Sparkplug 设备发出更新。
 
 {% capture difference %}
 **注意：**
 <br>
-ThingsBoard 仅支持 **Sparkplug™ B** 有效负载。
+GridLinks 仅支持 **Sparkplug™ B** 有效负载。
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
@@ -114,11 +114,11 @@ docker run -e SPARKPLUG_SERVER_URL='tcp://thingsboard.cloud:1883' -e SPARKPLUG_C
 
 ### 步骤 5. 将更新从 Thingsboard 服务器推送到 MQTT EON 和设备的 Sparkplug 指标
 
-您可以通过共享属性更新或 RPC 命令从 ThingsBoard 将更新推送到 Sparkplug 节点/设备指标。
+您可以通过共享属性更新或 RPC 命令从 GridLinks 将更新推送到 Sparkplug 节点/设备指标。
 
 #### 使用共享属性更新指标
 
-ThingsBoard [共享属性](/docs/{{docsPrefix}}user-guide/attributes/#shared-attributes) 用于向设备传递指标值更新。您可以通过多种方式更改共享属性 - 通过管理 UI、仪表板小部件、REST API 或规则引擎节点。
+GridLinks [共享属性](/docs/{{docsPrefix}}user-guide/attributes/#shared-attributes) 用于向设备传递指标值更新。您可以通过多种方式更改共享属性 - 通过管理 UI、仪表板小部件、REST API 或规则引擎节点。
 
 <br>
 让我们手动更改属性“*输出/LED/绿色*”和“*设备控制/扫描速率*”的值。

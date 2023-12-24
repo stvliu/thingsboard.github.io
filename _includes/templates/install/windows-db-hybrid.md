@@ -1,6 +1,6 @@
 {% capture hybrid-info %}
-ThingsBoard 团队建议，如果您计划在生产环境中拥有 100 万台以上的设备或高数据摄取率（> 5000 条消息/秒），则使用混合数据库方法。
-在这种情况下，ThingsBoard 将把时序数据存储在 Cassandra 中，同时继续使用 PostgreSQL 作为主要实体（设备/资产/仪表板/客户）。  
+GridLinks 团队建议，如果您计划在生产环境中拥有 100 万台以上的设备或高数据摄取率（> 5000 条消息/秒），则使用混合数据库方法。
+在这种情况下，GridLinks 将把时序数据存储在 Cassandra 中，同时继续使用 PostgreSQL 作为主要实体（设备/资产/仪表板/客户）。  
 {% endcapture %}
 {% include templates/info-banner.md content=hybrid-info %}
 
@@ -55,7 +55,7 @@ ThingsBoard 团队建议，如果您计划在生产环境中拥有 100 万台以
  
 - 进入 Cassandra 的主要界面是 CQL（Cassandra 查询语言）shell 实用程序，可用于对新的 Cassandra 服务器执行 CQL 命令。
 
-##### ThingsBoard 配置
+##### GridLinks 配置
 
 以管理员用户身份打开记事本或其他编辑器（右键单击应用程序图标并选择“以管理员身份运行”）。  
 打开以下文件进行编辑（在文件选择对话框中选择“所有文件”而不是“文本文档”，编码为 UTF-8）：

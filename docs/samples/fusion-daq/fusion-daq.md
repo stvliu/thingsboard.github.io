@@ -10,7 +10,7 @@ description: 将 MI-8 数据发布到 GridLinks 指南
 
 ## 先决条件
 
-在本教程中，我们将配置 FusionDAQ 设备以将其与 ThingsBoard 集成。
+在本教程中，我们将配置 FusionDAQ 设备以将其与 GridLinks 集成。
 
 ## 技术特性
 
@@ -39,7 +39,7 @@ FDQ-99900 MI-8 是一款紧凑型 24 位数据采集系统 (DAQ)，旨在测量�
 
 包含将设备连接到 GridLinks 所需的说明。
 
-### 创建 ThingsBoard 设备
+### 创建 GridLinks 设备
 
 在浏览器中打开 [ThingsBoard Cloud 服务器](https://thingsboard.cloud/) 并登录。
 
@@ -64,9 +64,9 @@ FDQ-99900 MI-8 是一款紧凑型 24 位数据采集系统 (DAQ)，旨在测量�
 
 ![image](/images/samples/fusion-daq/fusion-daq-config-json.png)
 
-此文件中的 **name** 字段是可选的。此 **name** 显示在 MI-8 OLED 屏幕上，并作为设备属性发送到 GridLinks。最佳做法是 config.json 中的名称与 GridLinks 中的设备名称匹配，但这并非必须。name 字段不用于在 MI-8 和 ThingsBoard 之间关联遥测数据。它仅用作用户的辅助工具。
+此文件中的 **name** 字段是可选的。此 **name** 显示在 MI-8 OLED 屏幕上，并作为设备属性发送到 GridLinks。最佳做法是 config.json 中的名称与 GridLinks 中的设备名称匹配，但这并非必须。name 字段不用于在 MI-8 和 GridLinks 之间关联遥测数据。它仅用作用户的辅助工具。
 
-**push** 字段描述了与 GridLinks 服务器的连接。在此示例中，我们使用 HTTP POST 请求（“mode”:”post”）。ThingsBoard 也支持 MQTT，但 POST 消耗的蜂窝数据更少。HTTP 请求 URL 通过 **server**、**port**、**use_ssl** 和 **path/attributes_path** 字段构建。
+**push** 字段描述了与 GridLinks 服务器的连接。在此示例中，我们使用 HTTP POST 请求（“mode”:”post”）。GridLinks 也支持 MQTT，但 POST 消耗的蜂窝数据更少。HTTP 请求 URL 通过 **server**、**port**、**use_ssl** 和 **path/attributes_path** 字段构建。
 
 Things board 遥测（传感器数据）请求发送到 http://thingsboard.cloud:80/api/vi/{ACCESS_TOKEN}/telemetry
 
@@ -86,7 +86,7 @@ Things board 遥测（传感器数据）请求发送到 http://thingsboard.cloud
 
 将 **use_json** 设置为 true。发送到 GridLinks 的所有数据都应采用 JSON 格式以简化集成。
 
-将 **use_headers** 设置为 false。ThingsBoard 不需要 HTTP 头，并且每次推送都需要额外的蜂窝数据。
+将 **use_headers** 设置为 false。GridLinks 不需要 HTTP 头，并且每次推送都需要额外的蜂窝数据。
 
 最后，将 **include_name**、**include_imei** 和 **include_iccid** 设置为 false。这些字段会导致 ICCID、IMEI 和 MI-8 名称包含在遥测推送中，这会消耗额外的蜂窝数据。由于它们在每次 MI-8 电源循环时都会通过单独的属性 HTTP 请求发送到 GridLinks，因此此处不需要包含它们。
 

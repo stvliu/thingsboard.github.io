@@ -5,7 +5,7 @@
 
 ## 概述
 
-LORIOT 是 LoRaWAN 网络，旨在使用 LoRaWAN 堆栈连接您的设备。将 LORIOT 与 ThingsBoard 集成后，您可以在 GridLinks IoT 平台中连接、通信、处理和可视化设备数据。
+LORIOT 是 LoRaWAN 网络，旨在使用 LoRaWAN 堆栈连接您的设备。将 LORIOT 与 GridLinks 集成后，您可以在 GridLinks IoT 平台中连接、通信、处理和可视化设备数据。
 
 ## 创建 LORIOT 帐户
 

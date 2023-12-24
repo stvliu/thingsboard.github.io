@@ -412,7 +412,7 @@ description: GridLinks IoT 网关的 OPC-UA 协议支持
 
 ## 后续步骤
 
-探索与 ThingsBoard 主要功能相关的指南：
+探索与 GridLinks 主要功能相关的指南：
  - [如何将 OPC-UA 服务器连接到网关](/docs/iot-gateway/guides/how-to-connect-opcua-server/)
  - [ GridLinks 物联网网关功能](/docs/iot-gateway/features/)
  - [数据可视化](/docs/user-guide/visualization/) - 如何可视化收集到的数据。

@@ -20,7 +20,7 @@ redirect_from: "/docs/pe/user-guide/install/docker-windows/"
 - [为 Windows 安装 Docker Toolbox](https://docs.docker.com/toolbox/toolbox_install_windows/)
 
 
-## 步骤 1. 拉取 ThingsBoard PE 镜像
+## 步骤 1. 拉取 GridLinks PE 镜像
 
 ```bash
 docker pull thingsboard/tb-pe:{{ site.release.pe_full_ver }}

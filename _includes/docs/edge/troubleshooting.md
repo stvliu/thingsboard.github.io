@@ -30,7 +30,7 @@
 
 ### 读取日志
 
-无论部署类型如何，ThingsBoard Edge 日志都存储在以下目录中：
+无论部署类型如何，GridLinks Edge 日志都存储在以下目录中：
 
 ```bash
 /var/log/tb-edge
@@ -168,7 +168,7 @@ Spring Actuator 可以使用 Prometheus 公开一些内部状态指标。
         </a>
         <a href="https://stackoverflow.com/questions/tagged/thingsboard">
             <span class="phrase-heading">Stack Overflow</span>
-            <p>ThingsBoard 团队还将监控标记为 thingsboard 的帖子。如果没有现有的问题可以提供帮助，请提出一个新问题！</p>
+            <p>GridLinks 团队还将监控标记为 thingsboard 的帖子。如果没有现有的问题可以提供帮助，请提出一个新问题！</p>
         </a>
     </div>
 </section>

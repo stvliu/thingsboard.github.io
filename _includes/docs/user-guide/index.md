@@ -1,4 +1,4 @@
-ThingsBoard **指南**可以帮助您熟悉 GridLinks 平台。
+GridLinks **指南**可以帮助您熟悉 GridLinks 平台。
 
 #### 内容
 
@@ -17,7 +17,7 @@ ThingsBoard **指南**可以帮助您熟悉 GridLinks 平台。
 : 介绍遥测数据收集功能和相关案例。
 
 [**使用 RPC 功能**](/docs/{{docsPrefix}}user-guide/rpc/)
-: 提供 ThingsBoard RPC 功能概述。
+: 提供 GridLinks RPC 功能概述。
 
 [**规则引擎**](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/)
 : 介绍规则引擎功能和能力。

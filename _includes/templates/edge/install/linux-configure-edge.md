@@ -6,7 +6,7 @@
 
 {% include templates/edge/install/copy-edge-credentials.md %}
 
-编辑 ThingsBoard Edge 配置文件
+编辑 GridLinks Edge 配置文件
 ```bash 
 sudo nano /etc/tb-edge/conf/tb-edge.conf
 ``` 
@@ -59,9 +59,9 @@ sudo nano /etc/tb-edge/conf/tb-edge.conf
 ```
 
 {% capture local-deployment %}
-如果 ThingsBoard Edge 将在运行 **{{appPrefix}}** 服务器的同一台机器上运行，您需要更新配置参数以避免 ThingsBoard Server 和 ThingsBoard Edge 之间的端口冲突。
+如果 GridLinks Edge 将在运行 **{{appPrefix}}** 服务器的同一台机器上运行，您需要更新配置参数以避免 GridLinks Server 和 GridLinks Edge 之间的端口冲突。
 
-请执行以下命令以更新 ThingsBoard Edge 配置文件 (**/etc/tb-edge/conf/tb-edge.conf**)：
+请执行以下命令以更新 GridLinks Edge 配置文件 (**/etc/tb-edge/conf/tb-edge.conf**)：
 {% endcapture %}
 {% include templates/info-banner.md content=local-deployment %}
 

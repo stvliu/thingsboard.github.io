@@ -3,7 +3,7 @@
  
 ## REST 客户端
 
-ThingsBoard REST API 客户端可帮助您通过 Java 应用程序与 ThingsBoard REST API 进行交互。
+GridLinks REST API 客户端可帮助您通过 Java 应用程序与 GridLinks REST API 进行交互。
 使用 Rest 客户端，您可以以编程方式在 GridLinks 中创建资产、设备、客户、用户和其他实体及其关系。
  
 安装 Rest 客户端的推荐方法是使用构建自动化工具，例如 Maven。
@@ -38,10 +38,10 @@ REST 客户端的版本取决于您正在使用的平台的版本。
 
 ### 基本用法
 
-以下示例代码演示了如何实例化 ThingsBoard 客户端、执行登录并获取当前登录用户的用户详细信息。
+以下示例代码演示了如何实例化 GridLinks 客户端、执行登录并获取当前登录用户的用户详细信息。
 
 ```java
-// ThingsBoard REST API URL
+// GridLinks REST API URL
 String url = "http://localhost:8080";
 
 // 默认租户管理员凭据
@@ -68,7 +68,7 @@ client.close();
 以下示例代码演示了如何获取当前登录用户的允许权限，然后检查示例权限。
 
 ```java
-// ThingsBoard REST API URL
+// GridLinks REST API URL
 String url = "http://localhost:8080";
 
 // 使用默认客户用户凭据登录
@@ -91,7 +91,7 @@ client.close();
 #### 获取用户设备
 以下示例代码演示了如何通过页面链接获取租户设备。
 ```java
-// ThingsBoard REST API URL
+// GridLinks REST API URL
 String url = "http://localhost:8080";
 
 // 默认租户管理员凭据
@@ -120,7 +120,7 @@ client.close();
 #### 获取租户仪表板
 以下示例代码演示了如何通过页面链接获取租户仪表板。
 ```java
-// ThingsBoard REST API URL
+// GridLinks REST API URL
 String url = "http://localhost:8080";
 
 // 默认租户管理员凭据
@@ -151,7 +151,7 @@ client.close();
 以下示例代码演示了如何获取实体组。
 
 ```java
-// ThingsBoard REST API URL
+// GridLinks REST API URL
 String url = "http://localhost:8080";
 
 // 使用默认客户用户凭据登录
@@ -177,7 +177,7 @@ client.close();
 
 以下示例代码演示了如何使用实体数据查询 API 统计设备总数和活动设备总数。
 ```java
-// ThingsBoard REST API URL
+// GridLinks REST API URL
 String url = "http://localhost:8080";
 
 // 使用默认客户用户凭据登录
@@ -226,7 +226,7 @@ client.close();
 以下示例代码演示了如何使用实体数据查询 API 获取所有活动设备。
 
 ```java
-// ThingsBoard REST API URL
+// GridLinks REST API URL
 String url = "http://localhost:8080";
 
 // 使用默认客户用户凭据登录
@@ -290,7 +290,7 @@ client.close();
 
 以下示例代码演示了设备管理 API 的基本概念（添加/获取/删除设备、获取/保存设备属性）。
 ```java
-// ThingsBoard REST API URL
+// GridLinks REST API URL
 String url = "http://localhost:8080";
 
 // 使用默认客户用户凭据登录
@@ -340,7 +340,7 @@ client.close();
 ### 一些有用的代码片段
 
 ```java
-// ThingsBoard REST API URL
+// GridLinks REST API URL
 final String url = "http://localhost:8080";
 
 // 默认系统管理员凭据

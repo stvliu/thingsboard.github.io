@@ -1,6 +1,6 @@
 ---
 layout: docwithnav
-title: 使用 Android Things 和 ThingsBoard 控制 Raspberry Pi GPIO
+title: 使用 Android Things 和 GridLinks 控制 Raspberry Pi GPIO
 description: GridLinks IoT 平台示例，用于通过运行 Android Things 的 MQTT 控制 Raspberry Pi GPIO
 
 ---
@@ -59,7 +59,7 @@ Raspberry Pi 将使用简单的 [Android Things](https://developer.android.com/t
 
 ### 应用程序源代码
 
-现在，您应该从 ThingsBoard 示例 GitHub 存储库获取 GpioControlSample 应用程序的源代码。
+现在，您应该从 GridLinks 示例 GitHub 存储库获取 GpioControlSample 应用程序的源代码。
 您可以通过发出以下 git clone 命令来执行此操作：
 
 ```bash
@@ -128,7 +128,7 @@ adb shell am start -n "org.thingsboard.sample.gpiocontrol/org.thingsboard.sample
 
 ## 另请参阅
 
-浏览其他 [示例](/docs/samples) 或探索与 ThingsBoard 主要功能相关的指南：
+浏览其他 [示例](/docs/samples) 或探索与 GridLinks 主要功能相关的指南：
 
 - [设备属性](/docs/user-guide/attributes/) - 如何使用设备属性。
 - [遥测数据收集](/docs/user-guide/telemetry/) - 如何收集遥测数据。

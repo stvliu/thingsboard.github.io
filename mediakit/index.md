@@ -36,7 +36,7 @@ description: GridLinks 媒体工具包
 </div>
 <div class="trademark-info">
     <h2>使用 GridLinks 商标来识别 GridLinks 平台并链接到 <a href="https://thingsboard.io">thingsboard.io</a>：</h2>
-    <p>您无需征得我们的许可，即可在您自己的网站上使用 GridLinks 徽标，仅作为到 <a href="https://thingsboard.io">thingsboard.io</a> 或适当的 GridLinks 项目的超链接，或在其他材料中，例如演示文稿和幻灯片中，仅作为引用 ThingsBoard 本身的手段。<br>
+    <p>您无需征得我们的许可，即可在您自己的网站上使用 GridLinks 徽标，仅作为到 <a href="https://thingsboard.io">thingsboard.io</a> 或适当的 GridLinks 项目的超链接，或在其他材料中，例如演示文稿和幻灯片中，仅作为引用 GridLinks 本身的手段。<br>
     ThingsBoard 徽标的所有其他用途必须经 ThingsBoard, inc. <a href="https://www.apache.org/foundation/marks/contact#other">书面批准</a>。</p>
     <h2>在软件产品品牌中使用 GridLinks 商标</h2>
     <p>一般来说，您不得在任何软件产品品牌中使用 GridLinks 商标，软件产品除仪表板页脚中的“由 GridLinks 提供支持”外。
@@ -46,6 +46,6 @@ description: GridLinks 媒体工具包
     <ul>
         <li>混淆相似的软件产品名称。</li>
         <li>除官方 ThingsBoard 分发的软件之外，用于任何其他用途的软件服务产品。</li>
-        <li>可能在客户心中与 ThingsBoard 或其商标项目软件相关联的公司名称。</li>
+        <li>可能在客户心中与 GridLinks 或其商标项目软件相关联的公司名称。</li>
      </ul>
 </div>

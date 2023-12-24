@@ -10,12 +10,12 @@
 
 ## 设备声明场景
 
-如果 ThingsBoard 用户“知道”设备名称和密钥，则他们可以声明该设备。
+如果 GridLinks 用户“知道”设备名称和密钥，则他们可以声明该设备。
 密钥是可选的，始终具有到期时间，并且也可能随着时间的推移而更改。
 
 密钥可以通过两种不同的方式预置备：
 
-1. *设备端密钥* 场景 - 设备包含带有到期时间戳的 **expirationTime** 服务器属性。设备向 ThingsBoard 发送带有声明数据的声明请求，只有在此之后，客户才能使用设备声明小部件声明设备。
+1. *设备端密钥* 场景 - 设备包含带有到期时间戳的 **expirationTime** 服务器属性。设备向 GridLinks 发送带有声明数据的声明请求，只有在此之后，客户才能使用设备声明小部件声明设备。
 2. *服务器端密钥* 场景 - 设备包含带有声明数据的 **claimingData** 服务器属性，客户使用声明设备小部件声明设备。
 
 有关更多详细信息，请参见下文。
@@ -129,9 +129,9 @@ from tb_device_mqtt import TBDeviceMqttClient
 def collect_required_data():
     config = {}
     print("\n\n", "="*80, sep="")
-    print(" "*20, "ThingsBoard basic device claiming example script.", sep="")
+    print(" "*20, "GridLinks basic device claiming example script.", sep="")
     print("="*80, "\n\n", sep="")
-    host = input("Please write your ThingsBoard host or leave it blank to use default (thingsboard.cloud): ")
+    host = input("Please write your GridLinks host or leave it blank to use default (thingsboard.cloud): ")
     config["host"] = host if host else "mqtt.thingsboard.cloud"
     token = ""
     while not token:

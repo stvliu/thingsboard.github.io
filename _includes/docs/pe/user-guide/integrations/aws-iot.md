@@ -11,7 +11,7 @@ AWS IoT 集成允许将数据从 AWS IoT 后端流式传输到 GridLinks，并�
 
 ## AWS IOT
 
-您应该已经准备了一个 [AWS 帐户](https://aws.amazon.com/iot/)，并在其上执行一些设置。要在服务和 ThingsBoard 之间建立正确且安全的连接，您需要为它们创建策略、设备和证书。
+您应该已经准备了一个 [AWS 帐户](https://aws.amazon.com/iot/)，并在其上执行一些设置。要在服务和 GridLinks 之间建立正确且安全的连接，您需要为它们创建策略、设备和证书。
 
 #### 创建策略
 

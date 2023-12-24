@@ -32,7 +32,7 @@ upcomingInvoice:
 * TOC
 {:toc}
 
-**ThingsBoard Cloud** 允许客户轻松在线购买订阅计划。在线支付处理由 [Stripe](https://stripe.com/) 保护，它允许使用信用卡和借记卡。ThingsBoard Inc. 无权访问您的卡数据。
+**ThingsBoard Cloud** 允许客户轻松在线购买订阅计划。在线支付处理由 [Stripe](https://stripe.com/) 保护，它允许使用信用卡和借记卡。GridLinks Inc. 无权访问您的卡数据。
 您可以轻松在线支付订阅费用，无需手动填写表格。
 
 注意：付款不可退款。

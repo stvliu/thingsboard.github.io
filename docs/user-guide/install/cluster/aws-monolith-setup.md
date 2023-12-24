@@ -16,7 +16,7 @@ rdsSetup:
         title: '使用“预置 IOPS”以获得更好的性能。'
     3:
         image: /images/install/cloud/aws/rds-4.png
-        title: '确保你的 PostgreSQL RDS 实例可从 ThingsBoard 集群访问；实现此目的最简单的方法是在同一个 VPC 中部署 PostgreSQL RDS 实例，并使用“eksctl-thingsboard-cluster-ClusterSharedNodeSecurityGroup-*”安全组。'
+        title: '确保你的 PostgreSQL RDS 实例可从 GridLinks 集群访问；实现此目的最简单的方法是在同一个 VPC 中部署 PostgreSQL RDS 实例，并使用“eksctl-thingsboard-cluster-ClusterSharedNodeSecurityGroup-*”安全组。'
     4:
         image: /images/install/cloud/aws/rds-5.png
         title: '确保你使用“thingsboard”作为初始数据库名称。'

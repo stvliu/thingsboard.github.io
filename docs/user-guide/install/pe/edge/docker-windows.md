@@ -21,7 +21,7 @@ description: 使用 Docker 在 Windows 上安装 GridLinks Edge
 
 ## 安装和配置
 
-### 步骤 1. 拉取 ThingsBoard Edge 镜像
+### 步骤 1. 拉取 GridLinks Edge 镜像
 
 {% include templates/edge/install/pull-images.md %}
 

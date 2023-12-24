@@ -216,7 +216,7 @@ heatpumps-notify-about-anomalies:
 * 在 `toEmail` 节点后添加 `发送电子邮件` 规则节点，并通过 `成功` 关系将其连接起来。
 * 保存规则链。
 
-通过此配置，一旦在热泵行为中检测到异常，ThingsBoard 将向维护团队发送通知。
+通过此配置，一旦在热泵行为中检测到异常，GridLinks 将向维护团队发送通知。
 
 {% include images-gallery.html imageCollection="heatpumps-notify-about-anomalies" %}
 

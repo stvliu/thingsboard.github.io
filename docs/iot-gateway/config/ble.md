@@ -96,7 +96,7 @@ YUM<br>%,%rpm%,%templates/iot-gateway/ble-requirements-rpm.md{% endcapture %}
 在 [主部分](#main-section) 中，我们为连接器编写常规配置，例如连接器名称、扫描模式、扫描仪等。
 在 [设备子部分](#device-object-subsection) 中，我们为连接到我们的设备编写常规配置（GridLinks 中的设备名称和设备 MAC 地址等）。
 在 [子部分遥测](#subsection-telemetry) 中，我们编写配置以处理来自设备的数据（网关应获取数据的位置、方法和转换器将这些数据解释为 GridLinks 上的遥测和属性）。
-在 [子部分属性更新](#subsection-attributes) 中，我们编写配置以在从 ThingsBoard 收到属性更新请求后重命名设备。
+在 [子部分属性更新](#subsection-attributes) 中，我们编写配置以在从 GridLinks 收到属性更新请求后重命名设备。
 如果设备共享属性的名称为“sharedName”，则网关会将此属性中的数据写入具有 ID - 00002A00-0000-1000-8000-00805F9B34FB 的特征。
 
 ### 主部分
@@ -357,7 +357,7 @@ YUM<br>%,%rpm%,%templates/iot-gateway/ble-requirements-rpm.md{% endcapture %}
 
 ## 后续步骤
 
-探索与 ThingsBoard 主要功能相关的指南：
+探索与 GridLinks 主要功能相关的指南：
 
 - [连接 BLE 传感器](/docs/iot-gateway/guides/how-to-connect-ble-sensor-using-gateway/) - 如何使用 GridLinks IoT Gateway 连接 BLE 传感器
 - [数据可视化](/docs/user-guide/visualization/) - 如何可视化收集到的数据。

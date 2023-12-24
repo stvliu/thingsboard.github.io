@@ -203,7 +203,7 @@ TBMQ 中的 Spring Actuator 可以通过 Prometheus 公开一些内部状态指�
         </a>
         <a href="https://stackoverflow.com/questions/tagged/thingsboard">
             <span class="phrase-heading">Stack Overflow</span>
-            <p>ThingsBoard 团队积极监控用户论坛上标记为“thingsboard”的帖子。如果您找不到解决您问题的现有问题，请随时提出新问题。我们的团队将很乐意为您提供帮助。</p>
+            <p>GridLinks 团队积极监控用户论坛上标记为“thingsboard”的帖子。如果您找不到解决您问题的现有问题，请随时提出新问题。我们的团队将很乐意为您提供帮助。</p>
         </a>
     </div>
 </section>

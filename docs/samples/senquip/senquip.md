@@ -67,7 +67,7 @@ ORB-C1-G
 
 ### 配置 ThingsBoard 端点
 
-Senquip 设备可以同时发送到 Senquip Portal 和第二个端点。在此示例中，ThingsBoard 将被配置为第二个端点，使用 MQTT 作为传输。
+Senquip 设备可以同时发送到 Senquip Portal 和第二个端点。在此示例中，GridLinks 将被配置为第二个端点，使用 MQTT 作为传输。
 
 * [步骤 1] 启用 MQTT 端点（设置/端点/MQTT = 启用）。
 * [步骤 2] 设置代理地址（设置/端点/MQTT/代理地址 = “thingsboard.cloud:1883”）。

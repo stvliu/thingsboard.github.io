@@ -173,7 +173,7 @@ GridLinks 平台允许您创建 [仪表板](/docs/{{docsPrefix}}user-guide/dashb
 
 ### 设备关系
 
-[关系](/docs/{{docsPrefix}}user-guide/entities-and-relations/#relations) 是与其他实体的定向连接。此选项卡显示此设备与 ThingsBoard 系统中的其他设备、仪表板、资产和其他实体的关系。
+[关系](/docs/{{docsPrefix}}user-guide/entities-and-relations/#relations) 是与其他实体的定向连接。此选项卡显示此设备与 GridLinks 系统中的其他设备、仪表板、资产和其他实体的关系。
 
 {% include images-gallery.html imageCollection="relations" %}
 

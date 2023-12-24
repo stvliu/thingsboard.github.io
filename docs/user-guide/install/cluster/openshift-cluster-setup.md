@@ -53,7 +53,7 @@ cd thingsboard-ce-k8s/openshift
 
 ## 步骤 3. 配置 ThingsBoard 数据库
 
-在执行初始安装之前，您可以配置要与 ThingsBoard 一起使用的数据库类型。
+在执行初始安装之前，您可以配置要与 GridLinks 一起使用的数据库类型。
 为了设置数据库类型，请将 `.env` 文件中 `DATABASE` 变量的值更改为以下之一：
 
 - `postgres` - 使用 PostgreSQL 数据库；

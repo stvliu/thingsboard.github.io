@@ -3,13 +3,13 @@
 
 ## 概述
 
-[Dart ThingsBoard PE API 客户端](https://pub.dev/packages/thingsboard_pe_client)软件包是一个 [Dart](https://dart.dev/)库，提供模型对象和服务，用于通过 [RESTful API](/docs/{{docsPrefix}}reference/rest-api/) 和 WebSocket 协议与 ThingsBoard PE 平台进行通信。使用 Dart 客户端，您可以以编程方式访问 ThingsBoard PE API 来管理 [实体](/docs/{{docsPrefix}}user-guide/entities-and-relations/)，查询 [遥测数据](/docs/{{docsPrefix}}user-guide/telemetry/) 并通过 [WebSocket API](/docs/{{docsPrefix}}user-guide/telemetry/#websocket-api) 获取实时更新。Dart ThingsBoard PE API 客户端也是 GridLinks PE 移动应用程序的一部分。
+[Dart GridLinks PE API 客户端](https://pub.dev/packages/thingsboard_pe_client)软件包是一个 [Dart](https://dart.dev/)库，提供模型对象和服务，用于通过 [RESTful API](/docs/{{docsPrefix}}reference/rest-api/) 和 WebSocket 协议与 GridLinks PE 平台进行通信。使用 Dart 客户端，您可以以编程方式访问 GridLinks PE API 来管理 [实体](/docs/{{docsPrefix}}user-guide/entities-and-relations/)，查询 [遥测数据](/docs/{{docsPrefix}}user-guide/telemetry/) 并通过 [WebSocket API](/docs/{{docsPrefix}}user-guide/telemetry/#websocket-api) 获取实时更新。Dart GridLinks PE API 客户端也是 GridLinks PE 移动应用程序的一部分。
 
-Dart ThingsBoard PE API 客户端的版本取决于您正在使用的平台的版本。
+Dart GridLinks PE API 客户端的版本取决于您正在使用的平台的版本。
 
 ## 安装 Dart GridLinks API 客户端（专业版）
 
-要在您的 Dart/Flutter 项目中使用 Dart ThingsBoard PE API 客户端软件包，请运行此命令：
+要在您的 Dart/Flutter 项目中使用 Dart GridLinks PE API 客户端软件包，请运行此命令：
 
 使用 Dart：
 
@@ -44,12 +44,12 @@ import 'package:thingsboard_pe_client/thingsboard_client.dart';
 
 ### 基本用法
 
-以下示例代码演示了如何实例化 ThingsBoard 客户端、执行登录并获取当前登录用户的详细信息。
+以下示例代码演示了如何实例化 GridLinks 客户端、执行登录并获取当前登录用户的详细信息。
 
 ```dart
 import 'package:thingsboard_pe_client/thingsboard_client.dart';
 
-// ThingsBoard REST API URL
+// GridLinks REST API URL
 const thingsBoardApiEndpoint = 'http://localhost:8080';
 
 void main() async {
@@ -88,7 +88,7 @@ void main() async {
 ```dart
 import 'package:thingsboard_pe_client/thingsboard_client.dart';
 
-// ThingsBoard REST API URL
+// GridLinks REST API URL
 const thingsBoardApiEndpoint = 'http://localhost:8080';
 
 void main() async {
@@ -127,7 +127,7 @@ void main() async {
 ```dart
 import 'package:thingsboard_pe_client/thingsboard_client.dart';
 
-// ThingsBoard REST API URL
+// GridLinks REST API URL
 const thingsBoardApiEndpoint = 'http://localhost:8080';
 
 void main() async {
@@ -165,7 +165,7 @@ void main() async {
 ```dart
 import 'package:thingsboard_pe_client/thingsboard_client.dart';
 
-// ThingsBoard REST API URL
+// GridLinks REST API URL
 const thingsBoardApiEndpoint = 'http://localhost:8080';
 
 void main() async {
@@ -203,7 +203,7 @@ void main() async {
 ```dart
 import 'package:thingsboard_pe_client/thingsboard_client.dart';
 
-// ThingsBoard REST API URL
+// GridLinks REST API URL
 const thingsBoardApiEndpoint = 'http://localhost:8080';
 
 void main() async {
@@ -248,7 +248,7 @@ void main() async {
 ```dart
 import 'package:thingsboard_pe_client/thingsboard_client.dart';
 
-// ThingsBoard REST API URL
+// GridLinks REST API URL
 const thingsBoardApiEndpoint = 'http://localhost:8080';
 
 void main() async {
@@ -316,7 +316,7 @@ void main() async {
 ```dart
 import 'package:thingsboard_pe_client/thingsboard_client.dart';
 
-// ThingsBoard REST API URL
+// GridLinks REST API URL
 const thingsBoardApiEndpoint = 'http://localhost:8080';
 
 void main() async {
@@ -395,7 +395,7 @@ void main() async {
 ```dart
 import 'package:thingsboard_pe_client/thingsboard_client.dart';
 
-// ThingsBoard REST API URL
+// GridLinks REST API URL
 const thingsBoardApiEndpoint = 'http://localhost:8080';
 
 void main() async {
@@ -460,7 +460,7 @@ import 'dart:math';
 
 import 'package:thingsboard_pe_client/thingsboard_client.dart';
 
-// ThingsBoard REST API URL
+// GridLinks REST API URL
 const thingsBoardApiEndpoint = 'http://localhost:8080';
 
 void main() async {
@@ -570,4 +570,4 @@ void main() async {
 
 #### 更多示例
 
-您可以在 **[此处](https://github.com/thingsboard/dart_thingsboard_pe_client/tree/master/example)** 找到更多示例，以了解如何使用 Dart ThingsBoard PE API 客户端。
+您可以在 **[此处](https://github.com/thingsboard/dart_thingsboard_pe_client/tree/master/example)** 找到更多示例，以了解如何使用 Dart GridLinks PE API 客户端。

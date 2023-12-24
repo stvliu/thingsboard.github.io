@@ -141,7 +141,7 @@ events:
 relations:
     0:
         image: /images/user-guide/ui/devices/pe/device-relations-1-pe.png
-        title: '此选项卡显示此设备与 ThingsBoard 系统中的其他设备、仪表板、资产和其他实体的关系。'
+        title: '此选项卡显示此设备与 GridLinks 系统中的其他设备、仪表板、资产和其他实体的关系。'
 
 audit-logs:
     0:

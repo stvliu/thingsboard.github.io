@@ -145,7 +145,7 @@ Confluent Cloud<br><small>云解决方案</small>%,%confluent%,%/templates/integ
 
 要获得诸如 Kafka 生产者之类的功能，您需要使用 [Kafka 规则节点](https://thingsboard.io/docs/pe/user-guide/rule-engine-2-0/external-nodes/#kafka-node)，您可以在其中指定引导服务器、主题和其他参数以连接到 Kafka 代理，您可以在相应的 [指南](https://thingsboard.io/docs/pe/user-guide/rule-engine-2-0/external-nodes/#kafka-node) 中找到更多详细信息。
 
-如果无法直接向设备发送命令以从 ThingsBoard 进行管理，而只能通过代理发送，那么在这种情况下，您可以使用 Kafka 下行规则节点。让我们考虑一个带有其节点的小示例，假设数据来自代理并通过转换器，并且根据设备配置文件的配置，被定向到自定义规则链（“Monitoring-sensor”），并且在所有处理结束时，我们将发送一个关于成功或失败的响应回到代理（您可以将响应更改为命令以控制您的设备等）。
+如果无法直接向设备发送命令以从 GridLinks 进行管理，而只能通过代理发送，那么在这种情况下，您可以使用 Kafka 下行规则节点。让我们考虑一个带有其节点的小示例，假设数据来自代理并通过转换器，并且根据设备配置文件的配置，被定向到自定义规则链（“Monitoring-sensor”），并且在所有处理结束时，我们将发送一个关于成功或失败的响应回到代理（您可以将响应更改为命令以控制您的设备等）。
 
 {% include images-gallery.html imageCollection="kafka_confluent_downlink" %}
 

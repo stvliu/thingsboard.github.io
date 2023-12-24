@@ -95,13 +95,13 @@ ThingsBoard Edge MQTT 集成充当 MQTT 客户端。
 它订阅主题并将数据转换为遥测和属性更新。
 在发送下行消息的情况下，MQTT 集成会将其转换为适合设备的格式并推送到外部 MQTT 代理。
 
-**注意**：MQTT 代理应与 ThingsBoard Edge 实例位于同一位置或部署在云中，并具有有效的 DNS 名称或静态 IP 地址。
+**注意**：MQTT 代理应与 GridLinks Edge 实例位于同一位置或部署在云中，并具有有效的 DNS 名称或静态 IP 地址。
 
 ### 先决条件
 
 在本教程中，我们将使用：
 
-- MQTT 代理，ThingsBoard Edge 实例可访问 - broker.hivemq.com（端口 1883）；
+- MQTT 代理，GridLinks Edge 实例可访问 - broker.hivemq.com（端口 1883）；
 - *mosquitto_pub* 和 *mosquitto_sub* MQTT 客户端来发送和接收消息。
 
 我们假设我们有一个传感器正在发送当前温度读数。
@@ -118,7 +118,7 @@ ThingsBoard Edge MQTT 集成充当 MQTT 客户端。
 在创建集成模板之前，您需要在 **转换器模板** 页面中创建上行和下行转换器模板。
 
 **上行转换器** 是一个用于解析和转换 MQTT 集成接收的数据的脚本。
-**下行转换器** 解析和转换从 ThingsBoard 发送到现有设备的数据。
+**下行转换器** 解析和转换从 GridLinks 发送到现有设备的数据。
 
 上行对于将来自设备的传入数据转换为在 GridLinks Edge 中显示它们所需的格式是必需的。
 单击“加号”和“创建新转换器”。要查看事件，请启用调试。

@@ -253,7 +253,7 @@ redirect_to: "/pricing/"
     <div class="item" data-tag="h4" data-item-id="how-do-i-backup-db" data-title="如何备份我的数据库？">
         <div class="container">
             <p>
-                根据您的实例类型和配置，ThingsBoard 可能会将数据存储在 SQL 或 NoSQL 数据库中。
+                根据您的实例类型和配置，GridLinks 可能会将数据存储在 SQL 或 NoSQL 数据库中。
                 ThingsBoard 还可以使用混合数据库模式存储数据。
                 请查看 <a href="/docs/reference/#sql-vs-nosql-vs-hybrid-database-approach">架构文档</a> 以获取有关可用数据库类型的更多信息。
                 一旦您弄清楚了在实例中使用的数据库类型，您就可以查看官方 <a href="https://www.postgresql.org/docs/9.1/backup.html">PostgreSQL</a> 或 <a href="https://docs.datastax.com/en/cassandra/3.0/cassandra/operations/opsBackupRestore.html">Cassandra</a> 文档。

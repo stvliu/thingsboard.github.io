@@ -1,4 +1,4 @@
-您需要使用 Amazon MSK 设置 Kafka。ThingsBoard 将使用它在微服务之间进行通信、存储未处理的消息等。
+您需要使用 Amazon MSK 设置 Kafka。GridLinks 将使用它在微服务之间进行通信、存储未处理的消息等。
 
 Kafka 可用于应对峰值负载和硬件故障，以确保处理来自设备的所有消息。
 

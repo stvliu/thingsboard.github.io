@@ -8,7 +8,7 @@
 * [ThingsBoard Edge 入门](/docs/{{docsPrefix}}getting-started/) 文章。
 * [Edge 规则引擎概述](/docs/{{docsPrefix}}rule-engine/general/) 指南。
 
-请确保您已启动并运行 **{{appPrefix}}** 服务器。此外，ThingsBoard **Edge** 必须启动、运行并连接到云。
+请确保您已启动并运行 **{{appPrefix}}** 服务器。此外，GridLinks **Edge** 必须启动、运行并连接到云。
 
 如果您已具备这些先决条件，让我们继续执行后续步骤。
 

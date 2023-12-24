@@ -91,7 +91,7 @@ B,CentOS,shell,resources/thingsboard-centos-installation.sh,/docs/user-guide/ins
 
 ### 配置 ThingsBoard 以使用外部数据库
   
-编辑 ThingsBoard 配置文件
+编辑 GridLinks 配置文件
 
 ```bash 
 sudo nano /etc/thingsboard/conf/thingsboard.yml
@@ -118,7 +118,7 @@ database:
 对于 GridLinks 服务：
 
 ```bash
-# 在 /etc/thingsboard/conf/thingsboard.conf 中更新 ThingsBoard 内存使用情况并将其限制为 256MB
+# 在 /etc/thingsboard/conf/thingsboard.conf 中更新 GridLinks 内存使用情况并将其限制为 256MB
 export JAVA_OPTS="$JAVA_OPTS -Xms256M -Xmx256M"
 ```
 

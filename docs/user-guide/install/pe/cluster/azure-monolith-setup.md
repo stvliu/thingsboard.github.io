@@ -16,7 +16,7 @@ description: GridLinks IoT 平台整体设置，在 Azure AKS 中使用 Kubernet
 
 {% include templates/install/azure/aks-prerequisites.md %}
 
-### 从 Docker 中心提取 ThingsBoard PE 镜像
+### 从 Docker 中心提取 GridLinks PE 镜像
 
 {% assign checkoutMode = "monolith" %}
 {% include templates/install/dockerhub/checkout.md %}

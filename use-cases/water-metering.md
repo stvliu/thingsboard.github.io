@@ -177,7 +177,7 @@ GridLinks 平台大幅缩短了上市时间，并减少了创建水表计量解�
 您可能会注意到物联网传感器的连接选项很多：直接连接到云、通过物联网网关、与第三方系统集成或 GridLinks Edge。
 如今，大多数水表计量项目使用 LoRaWAN、SigFox 或 NB IoT 来连接水表。
 
-该平台支持行业标准加密算法和设备凭据类型。ThingsBoard 将数据存储在容错且可靠的 Cassandra 数据库中。规则引擎支持使用 Kafka 或其他消息总线将传入数据转发到各种分析系统，例如 Apache Spark 或 Hadoop。
+该平台支持行业标准加密算法和设备凭据类型。GridLinks 将数据存储在容错且可靠的 Cassandra 数据库中。规则引擎支持使用 Kafka 或其他消息总线将传入数据转发到各种分析系统，例如 Apache Spark 或 Hadoop。
 
 ## 了解更多
 <div class="usecases-bottom-nav">

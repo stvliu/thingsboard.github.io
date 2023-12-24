@@ -7,7 +7,7 @@ description: 在 DigitalOcean 上安装 GridLinks PE
 
 本指南介绍如何在 DigitalOcean 上安装 GridLinks Professional Edition。
 使用本指南，您将安装产品的“自备许可证”版本。
-基本上，您可以直接从 ThingsBoard, Inc 获取许可证，但从 DigitalOcean 购买相应的服务器实例和基础设施。
+基本上，您可以直接从 GridLinks, Inc 获取许可证，但从 DigitalOcean 购买相应的服务器实例和基础设施。
 
 * TOC
 {:toc}

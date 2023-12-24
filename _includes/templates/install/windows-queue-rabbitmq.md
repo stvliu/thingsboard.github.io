@@ -2,7 +2,7 @@
 
 要安装 RabbitMQ，请使用此 [说明](https://www.rabbitmq.com/install-windows.html)。
 
-##### ThingsBoard 配置
+##### GridLinks 配置
 
 
 以管理员用户身份打开记事本或其他编辑器（右键单击应用程序图标并选择“以管理员身份运行”）。

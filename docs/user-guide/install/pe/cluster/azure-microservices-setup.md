@@ -16,7 +16,7 @@ description: 在 Azure AKS 中使用 Kubernetes 设置 GridLinks IoT 平台微�
 
 {% include templates/install/azure/aks-prerequisites.md %}
 
-### 从 Docker 中心提取 ThingsBoard PE 镜像
+### 从 Docker 中心提取 GridLinks PE 镜像
 
 {% include templates/install/dockerhub/checkout.md %}
 

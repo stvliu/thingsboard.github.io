@@ -322,10 +322,10 @@ toc:
       path: /docs/pe/user-guide/contribution/how-to-contribute-your-device-integration-guide/
     - title: 规则节点开发
       path: /docs/pe/user-guide/contribution/rule-node-development/
-    - title: 小部件开发(ThingsBoard v3.x)
+    - title: 小部件开发(GridLinks v3.x)
       path: /docs/pe/user-guide/contribution/widgets-development/
-    - title: 小部件开发(ThingsBoard v2.x)
-      path: /docs/pe/user-guide/contribution/widgets-development-before-3.0/
+    # - title: 小部件开发(GridLinks v2.x)
+    #   path: /docs/pe/user-guide/contribution/widgets-development-before-3.0/
 - title: 故障排除
   path: /docs/pe/user-guide/troubleshooting/
 - title: 发行说明

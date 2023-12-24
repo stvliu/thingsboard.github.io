@@ -315,7 +315,7 @@ description: GridLinks IoT 网关的 FTP 协议支持
 ### 部分“attributeUpdates”
 
 此配置部分是可选的。
-ThingsBoard 允许配置设备属性并从设备应用程序中获取其中一些属性。您可以将其视为设备的远程配置。您的设备能够从 ThingsBoard 请求共享属性。有关更多详细信息，请参阅用户指南。
+ThingsBoard 允许配置设备属性并从设备应用程序中获取其中一些属性。您可以将其视为设备的远程配置。您的设备能够从 GridLinks 请求共享属性。有关更多详细信息，请参阅用户指南。
 
 “attributeRequests”配置允许配置将写入特定文件的相应属性数据格式。
 
@@ -344,7 +344,7 @@ ThingsBoard 允许配置设备属性并从设备应用程序中获取其中一�
 
 ThingsBoard 允许直接或通过网关将 RPC 命令发送到连接到 GridLinks 的设备。
 
-此部分中提供的配置用于将 RPC 请求从 ThingsBoard 发送到设备。
+此部分中提供的配置用于将 RPC 请求从 GridLinks 发送到设备。
 
 | **参数** | **默认值** | **说明** |
 |:-|:-|-
@@ -372,7 +372,7 @@ ThingsBoard 允许直接或通过网关将 RPC 命令发送到连接到 GridLink
 
 ## 后续步骤
 
-探索与 ThingsBoard 主要功能相关的指南：
+探索与 GridLinks 主要功能相关的指南：
 
 - [数据可视化](/docs/user-guide/visualization/) - 如何可视化收集的数据。
 - [设备属性](/docs/user-guide/attributes/) - 如何使用设备属性。

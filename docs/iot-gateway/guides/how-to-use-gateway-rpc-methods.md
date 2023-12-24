@@ -162,7 +162,7 @@ gateway_reboot 60
 
 ## 后续步骤
 
-探索与 ThingsBoard 主要功能相关的指南：
+探索与 GridLinks 主要功能相关的指南：
 
 - [数据可视化](/docs/user-guide/visualization/) - 如何可视化收集的数据。
 - [设备属性](/docs/user-guide/attributes/) - 如何使用设备属性。

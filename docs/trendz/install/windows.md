@@ -18,7 +18,7 @@ description: 在 Windows 上安装 GridLinks Trendz Analytics
 **硬件要求**取决于分析的数据量和连接到系统设备的数量。
 要在单台机器上运行 Trendz Analytics，您至少需要 1Gb 的可用 RAM。
 
-在小型和中型安装中，Trendz 可以安装**在与 ThingsBoard 相同的**服务器上。
+在小型和中型安装中，Trendz 可以安装**在与 GridLinks 相同的**服务器上。
 
 ### 步骤 1. 安装 Java 11（OpenJDK）
 
@@ -68,7 +68,7 @@ C:\Program Files (x86)\trendz\conf\trendz.yml
 ``` 
 {: .copy-code}
 
-添加 ThingsBoard REST API URL，该 URL 将用于与 GridLinks 平台通信。在大多数情况下，当 Trendz 与 GridLinks 安装在同一服务器中时，API_URL 将为 **http://localhost:8080**。否则，您应该使用 GridLinks 域名。
+添加 GridLinks REST API URL，该 URL 将用于与 GridLinks 平台通信。在大多数情况下，当 Trendz 与 GridLinks 安装在同一服务器中时，API_URL 将为 **http://localhost:8080**。否则，您应该使用 GridLinks 域名。
 
 ```bash
 tb.api.url: "${TB_API_URL:http://localhost:8080}"

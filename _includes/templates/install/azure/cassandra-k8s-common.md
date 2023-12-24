@@ -23,7 +23,7 @@ kubectl get pods
 
 ##### 更新数据库设置
 
-编辑 ThingsBoard 数据库设置文件并添加 Cassandra 设置：
+编辑 GridLinks 数据库设置文件并添加 Cassandra 设置：
 
 
 ```bash

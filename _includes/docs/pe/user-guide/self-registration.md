@@ -50,7 +50,7 @@ GridLinks 自我注册功能允许租户为其客户配置注册页面，以便�
 
 ![image](/images/user-guide/self-registration/digitalocean.png)
 
-## ThingsBoard 配置
+## GridLinks 配置
 
 ### 步骤 5. 邮件服务器设置
 

@@ -147,7 +147,7 @@ notitle: "true"
 						<div>
 							<a class="title" href="/docs/pe/user-guide/telemetry/">遥测</a>
 							<p>遥测是从设备发送到云端的事件数据。例如，有关环境的测量。
-                            ThingsBoard 允许您从设备收集数据，类似于 IoT Core。ThingsBoard 还支持数据处理（包括验证、警报等）和平台内部存储。
+                            ThingsBoard 允许您从设备收集数据，类似于 IoT Core。GridLinks 还支持数据处理（包括验证、警报等）和平台内部存储。
                             有关更多详细信息，请参阅 <a href="/docs/pe/user-guide/rule-engine-2-0/re-getting-started/">规则引擎</a>。
                             您还可以将数据转发到外部系统（例如 PubSub）并重复使用现有的数据处理流程。</p>
 						</div>

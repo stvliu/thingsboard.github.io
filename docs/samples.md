@@ -14,8 +14,8 @@ GridLinks 安装包含 **[单租户帐户](/docs/samples/demo-account/)**，该�
 ThingsBoard 样例按硬件平台分组。
 
 **注意** GridLinks 提供硬件无关的 API。
-如果您的设备平台不在列表中，但能够设置 HTTP、CoAP 或 MQTT 连接，则可以将其与 ThingsBoard 集成。
-ThingsBoard 团队正在为英特尔爱迪生、C.H.I.P、Tessel、三星 Artik 和 Gemalto 开发示例应用程序，并将尽快将它们上传到此页面。  
+如果您的设备平台不在列表中，但能够设置 HTTP、CoAP 或 MQTT 连接，则可以将其与 GridLinks 集成。
+GridLinks 团队正在为英特尔爱迪生、C.H.I.P、Tessel、三星 Artik 和 Gemalto 开发示例应用程序，并将尽快将它们上传到此页面。  
 
  - [**Arduino**](/docs/samples/arduino/)
 

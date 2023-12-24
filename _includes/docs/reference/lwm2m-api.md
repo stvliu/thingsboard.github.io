@@ -4,7 +4,7 @@
 
 ## Prerequisites
 
-We assume you have completed the general [Getting Started](/docs/{{docsPrefix}}getting-started-guides/helloworld/) guide to get familiar with ThingsBoard.
+We assume you have completed the general [Getting Started](/docs/{{docsPrefix}}getting-started-guides/helloworld/) guide to get familiar with GridLinks.
 
 ## LwM2M basics
 
@@ -67,9 +67,9 @@ Let's define a profile that supports Device Object (id: 3), Connectivity (id: 4)
 
 ##### Step 2.3 Configure the mapping
 
-You may notice that Device Object supports Manufacturer, model, and serial numbers. Let’s configure ThingsBoard to fetch
-those data when device connects and store it as ThingsBoard attributes.
-Also we want to observe Radio Signal Strength, Link Quality and device location push it as ThingsBoard telemetry.
+You may notice that Device Object supports Manufacturer, model, and serial numbers. Let’s configure GridLinks to fetch
+those data when device connects and store it as GridLinks attributes.
+Also we want to observe Radio Signal Strength, Link Quality and device location push it as GridLinks telemetry.
 Observe is a powerful LwM2M feature that will instruct a device to report changes of those values.
 You may also define conditions for reporting specific resource via LwM2M attributes. These settings are covered in the [advanced](#object-and-resource-attributes) documentation.
 
@@ -85,7 +85,7 @@ Transport Configuration also allows you to define bootstrap and other settings.
 We assume you have already created LwM2M device profile using the previous step.
 
 Now, let's create the device using our profile and configure LwM2M Credentials.
-ThingsBoard supports 4 different types of credentials: Pre-Shared Key (PSK), Raw Public Ket (RPK), X.509 Certificates and "No Security" mode.
+GridLinks supports 4 different types of credentials: Pre-Shared Key (PSK), Raw Public Ket (RPK), X.509 Certificates and "No Security" mode.
 
 {% include images-gallery.html imageCollection="device-credentials" showListImageTitles="true" %}
 
@@ -118,38 +118,38 @@ The LwM2M transport implementation also stores the logs of communication with th
 
 {% include images-gallery.html imageCollection="wakaama-terminal" showListImageTitles="true" %}
 
-## ThingsBoard LwM2M support
+## GridLinks LwM2M support
 
-ThingsBoard implements both LwM2M server and bootstrap server that supports plain UDP and DTLS (secure transport over UDP).
-As a platform user, you are able to provision and define the mapping between the LwM2M resources and ThingsBoard device [attributes](/docs/{{docsPrefix}}user-guide/attributes/) and [time-series data](/docs/{{docsPrefix}}user-guide/telemetry/).
+GridLinks implements both LwM2M server and bootstrap server that supports plain UDP and DTLS (secure transport over UDP).
+As a platform user, you are able to provision and define the mapping between the LwM2M resources and GridLinks device [attributes](/docs/{{docsPrefix}}user-guide/attributes/) and [time-series data](/docs/{{docsPrefix}}user-guide/telemetry/).
 The mapping is configured in the corresponding device profile. We will use some screenshots of the LwM2M device profile below to explain the basics. 
 See the [Getting Started](#getting-started) guide for a step-by-step instruction to create the device profile.
 
-#### Read LwM2M resources to ThingsBoard attributes
+#### Read LwM2M resources to GridLinks attributes
 
 You may configure device profile to read and observe certain LwM2M Resource. 
 The values of the resource may be stored as the device [attributes](/docs/{{docsPrefix}}user-guide/attributes/). 
 To do this, select the "Attribute" checkbox for the corresponding Resource. You may optionally change the auto-generated key name, defining the attribute name in GridLinks.
-For example, let's configure the platform to read the LwM2M Resource */3/0/2* (Device Serial Number) and store it as an attribute *serialNumber* in ThingsBoard:
+For example, let's configure the platform to read the LwM2M Resource */3/0/2* (Device Serial Number) and store it as an attribute *serialNumber* in GridLinks:
 
 ![image](/images/lwm2m/attributes-ce.png)
 
-ThingsBoard will read the attribute value during device registration (LwM2M "Register" operation) or during registration update (LwM2M "Update" operation).
+GridLinks will read the attribute value during device registration (LwM2M "Register" operation) or during registration update (LwM2M "Update" operation).
 
 **Note:** 
 
 We may optionally issue the "Observe" operation to make sure we subscribe to the updates of the LwM2M resource.
-To do this, select the "Observe" checkbox for the corresponding Resource. Let's configure ThingsBoard to monitor the LwM2M Resource */3/0/15* (Timezone) and store it as the *timezone* attribute:
+To do this, select the "Observe" checkbox for the corresponding Resource. Let's configure GridLinks to monitor the LwM2M Resource */3/0/15* (Timezone) and store it as the *timezone* attribute:
 
 ![image](/images/lwm2m/attributes-observe-ce.png)
 
 Using the above configuration, we will make sure that the attribute *timezone* will always contain the latest value of the *Timezone* resource.
 
-#### Write LwM2M resource via ThingsBoard attributes update
+#### Write LwM2M resource via GridLinks attributes update
 
-ThingsBoard [Shared Attributes](/docs/{{docsPrefix}}user-guide/attributes/#shared-attributes) are used to deliver the configuration updates to the device.
+GridLinks [Shared Attributes](/docs/{{docsPrefix}}user-guide/attributes/#shared-attributes) are used to deliver the configuration updates to the device.
 You may change the shared attribute in multiple ways - via administration UI, dashboard widget, REST API, or rule engine node. 
-Once you change the shared attribute, ThingsBoard will search for the mapping between the attribute key and LwM2M resource.
+Once you change the shared attribute, GridLinks will search for the mapping between the attribute key and LwM2M resource.
 If the resource is marked as an attribute, platform will send the LwM2M Write operation to the LwM2M client device.
 
 See the *Timezone* example from the [read attributes](#read-lwm2m-resources-to-thingsboard-attributes)
@@ -159,13 +159,13 @@ See the *Timezone* example from the [read attributes](#read-lwm2m-resources-to-t
 You may configure device profile to read and observe certain LwM2M Resource. The values of the resource may be stored as the device [time-series data](/docs/{{docsPrefix}}user-guide/telemetry/).
 To do this, select the "Telemetry" checkbox for the corresponding Resource. You may optionally change the auto-generated key name, defining the telemetry key in GridLinks.
 For example, let's configure the platform to read the LwM2M Resources: */3/0/7* (Power Source Voltage), */3/0/8* (Power Source Current), */3/0/9* (Battery Level), and */3/0/10* (Memory Free),
-and to store them as time-series data in ThingsBoard:
+and to store them as time-series data in GridLinks:
 
 ![image](/images/lwm2m/time-series-ce.png)
 
-#### Execute LwM2M operation using the ThingsBoard RPC command
+#### Execute LwM2M operation using the GridLinks RPC command
 
-ThingsBoard supports on-demand LwM2M operations using RPC(Remote Procedure Call) feature. We also use "command" to device instead of RPC for simplicity. 
+GridLinks supports on-demand LwM2M operations using RPC(Remote Procedure Call) feature. We also use "command" to device instead of RPC for simplicity. 
 You can send the command using REST API, dashboard widget, rule engine, or custom script.
 See the structure of the command is documented [here](/docs/{{docsPrefix}}user-guide/rpc/#server-side-rpc). 
 
@@ -189,7 +189,7 @@ The *method* defines the LwM2M operation and is one of the following:
 The *params* is typically a JSON that defines the resource id or multiple resources ids. 
 For example, to reboot the device one should execute the resource */3/0/4* (Reboot).
 
-So, the following RPC command need to be sent to ThingsBoard:
+So, the following RPC command need to be sent to GridLinks:
 
 ```json
 {
@@ -1122,7 +1122,7 @@ You can find detailed information about `LWM2M DTLS-based Security` [here](http:
 There are three authentication methods available on the Thingsboard for LwM2M DTLS: using the Pre-Shared Key(PSK), using
 the Raw Public Key(RPK) and using the X.509 certificate.
 
-To use DTLS, the end-user device has to connect to the ThingsBoard server using secured port 5686.
+To use DTLS, the end-user device has to connect to the GridLinks server using secured port 5686.
 
 For the demonstration purpose we will use Leshan Demo Client, please refer to the link for downloading and configuration: [here](https://github.com/eclipse/leshan)
 

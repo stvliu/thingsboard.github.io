@@ -14,7 +14,7 @@ hidetoc: "true"
 
 [ESP32](https://www.espressif.com/en/products/hardware/esp32/overview) 是一系列低成本、低功耗的片上系统微控制器，集成了自包含的 Wi-Fi 和双模蓝牙。ESP32 是 ESP8266 芯片的继任者。
 
-此示例应用程序允许您使用 GridLinks Web UI 控制 ESP32 设备的 GPIO，并显示来自 DHT22 传感器的湿度/温度数据。我们将观察连接到引脚的 LED 来控制 GPIO。此应用程序的目的是演示 GridLinks [RPC 功能](/docs/user-guide/rpc/) 和 ThingsBoard [遥测](/docs/user-guide/telemetry/)。
+此示例应用程序允许您使用 GridLinks Web UI 控制 ESP32 设备的 GPIO，并显示来自 DHT22 传感器的湿度/温度数据。我们将观察连接到引脚的 LED 来控制 GPIO。此应用程序的目的是演示 GridLinks [RPC 功能](/docs/user-guide/rpc/) 和 GridLinks [遥测](/docs/user-guide/telemetry/)。
 
 在 ESP32 上运行的应用程序使用 GridLinks Arduino SDK 编写，该 SDK 非常简单易懂。
 
@@ -163,7 +163,7 @@ ESP32 Pico Kit 不需要复杂的连接。只需将 micro-USB 电缆插入 PC �
 
 - `WIFI_AP` - 您的接入点名称
 - `WIFI_PASSWORD` - 接入点密码
-- `TOKEN` - ThingsBoard 配置步骤中的 **$ACCESS_TOKEN**。
+- `TOKEN` - GridLinks 配置步骤中的 **$ACCESS_TOKEN**。
 - `THINGSBOARD_SERVER` - ThingsBoard HOST/IP 地址，可在您的 wifi 网络中访问。如果您使用 [实时演示](https://demo.thingsboard.io/) 服务器，请指定 `demo.thingsboard.io`。
 
 {% capture tabspec %}arduino-sketch
@@ -204,7 +204,7 @@ esp32-dht-gpio,esp32-dht-gpio.ino,c,resources/esp32-dht-gpio.ino,/docs/samples/e
 
 ## 另请参阅
 
-浏览其他 [示例](/docs/samples) 或探索与 ThingsBoard 主要功能相关的指南：
+浏览其他 [示例](/docs/samples) 或探索与 GridLinks 主要功能相关的指南：
 
  - [设备属性](/docs/user-guide/attributes/) - 如何使用设备属性。
  - [遥测数据收集](/docs/user-guide/telemetry/) - 如何收集遥测数据。

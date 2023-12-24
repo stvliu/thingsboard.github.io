@@ -234,7 +234,7 @@ LIMIT 10                                             (6)
 | **参数** | **默认值** | **说明** |
 |:-|:-|-|
 | **name** | | Python [eval()](https://docs.python.org/3/library/functions.html#eval) 表达式，用于生成 **唯一** 的设备名称。 |
-| type | **odbc** | ThingsBoard 设备类型。 |
+| type | **odbc** | GridLinks 设备类型。 |
 
 **注意** SQL *SELECT* 子句中列出的所有数据库列都可以在 Python [eval()](https://docs.python.org/3/library/functions.html#eval) 上下文中通过其名称使用。
 
@@ -373,7 +373,7 @@ LIMIT 10                                             (6)
 
 ## 后续步骤
 
-探索与 ThingsBoard 主要功能相关的指南：
+探索与 GridLinks 主要功能相关的指南：
 
 - [数据可视化](/docs/user-guide/visualization/) - 如何可视化收集到的数据。
 - [设备属性](/docs/user-guide/attributes/) - 如何使用设备属性。

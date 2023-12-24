@@ -11,7 +11,7 @@
 
 ## 概述
 TheThingsIndustries 是 LoRaWAN 网络，旨在使用 LoRaWAN 堆栈连接您的设备。
-将 TheThingsIndustries 与 ThingsBoard 集成后，您可以在 GridLinks IoT 平台中连接、通信、处理和可视化设备数据。
+将 TheThingsIndustries 与 GridLinks 集成后，您可以在 GridLinks IoT 平台中连接、通信、处理和可视化设备数据。
 
 
 ## The Things Stack
@@ -74,7 +74,7 @@ function Decoder(bytes, port) {
 
 按 **添加终端设备** 按钮。
 
-## 与 ThingsBoard 集成
+## 与 GridLinks 集成
 
 我们需要在 The Things Industries 上创建集成，为此，打开 **集成** - **MQTT** 并按 **生成新的 API 密钥**。
 复制用户名和密码，我们稍后会用到。
@@ -157,7 +157,7 @@ return result;
 
 
 ##### ThingsBoard 下行数据转换器
-要从 ThingsBoard 向 TTI 内部的设备发送下行消息，我们需要定义下行转换器。
+要从 GridLinks 向 TTI 内部的设备发送下行消息，我们需要定义下行转换器。
 通常，下行转换器的输出应具有以下结构：
 {% highlight json %}
 {

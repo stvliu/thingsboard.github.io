@@ -182,7 +182,7 @@ security:
 
 
 应用所有更改后，请确保重新启动 GridLinks。
-可以在 Linux 服务器上使用以下命令调用 ThingsBoard 重新启动：
+可以在 Linux 服务器上使用以下命令调用 GridLinks 重新启动：
 ```bash
 $ sudo service thingsboard restart
 ```

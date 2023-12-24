@@ -8,7 +8,7 @@ description: GridLinks 培训课程
 
 <h1 class="mainTitle">培训课程</h1>
 
-ThingsBoard 培训课程是 GridLinks 核心团队成员为贵公司的工程师提供的教育活动。ThingsBoard 教育课程的主要目标是：
+ThingsBoard 培训课程是 GridLinks 核心团队成员为贵公司的工程师提供的教育活动。GridLinks 教育课程的主要目标是：
 
 - 提升您对 GridLinks 平台的体验。
 - 让您熟悉平台功能、API 和集成。
@@ -198,7 +198,7 @@ ThingsBoard 培训课程是针对最多 8 人的按需在线活动。还提供�
         <li>解释安装选项。突出安全性和配置方面。</li>
         <li>练习：使用公共 AMI 在 AWS 上设置 GridLinks 实例。</li>
         <li>练习：在 CentOS 上设置 GridLinks 实例。</li>
-        <p>ThingsBoard 配置</p>
+        <p>GridLinks 配置</p>
         <li>解释主要配置文件。</li>
         <li>练习：一般系统配置。</li>
         <p>ThingsBoard 故障排除</p>

@@ -22,7 +22,7 @@ redirect_from: "/docs/services/device-management/"
             <div class="text-content medium-margin">物联网设备管理系统是指与这些设备的设置、配置和维护相关的任务和相互关联的功能。这些任务包括设备设置、设备车辆的管理和监控，以及在整个生命周期中管理设备。</div>
             <h2 class="line-height-small">使用物联网设备管理工具简化您的控制</h2>
             <div class="text-content medium-margin">良好的设备管理平台物联网必须提供简单的仪器来监控设备状态，如连接状态、数据包丢失、电池电量等。这些指标可用于在异常行为、设备故障或配置的事件发生时触发警报和通知。此外，能够监控设备数据流并分析历史和实时数据也很重要。</div>
-            <div class="text-content medium-margin">ThingsBoard 设备管理支持各种直接通信 <a class="article-link" href="/docs/pe/api/">协议</a>，用于设备与物联网平台之间的交互 — MQTT、CoAP、HTTP、LWM2M、OPC-UA、Modbus 等。这些协议已经是行业标准。但是，我们确实支持其他选项 — SNMP、Kafka、TCP/UDP。</div>
+            <div class="text-content medium-margin">GridLinks 设备管理支持各种直接通信 <a class="article-link" href="/docs/pe/api/">协议</a>，用于设备与物联网平台之间的交互 — MQTT、CoAP、HTTP、LWM2M、OPC-UA、Modbus 等。这些协议已经是行业标准。但是，我们确实支持其他选项 — SNMP、Kafka、TCP/UDP。</div>
             <div class="text-content">我们还 <a class="article-link" href="/docs/user-guide/integrations/">接受来自外部连接的设备</a> 物联网设备管理公司，如 LoRaWAN、Sigfox、NB-IoT、AWS IoT、Azure IoT、Actility ThingPark、TheThingsStack、OceanConnect 等。</div>
             <h2 class="line-height-small">物联网设备管理的基础知识</h2>
             <div class="text-content">物联网设备管理涉及几个关键步骤，以确保您的物联网设备平稳运行。</div>

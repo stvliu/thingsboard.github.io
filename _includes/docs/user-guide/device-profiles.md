@@ -4,10 +4,10 @@
 
 ## Overview
 
-Since ThingsBoard 3.2, the Tenant administrator is able to configure common settings for multiple devices using Device Profiles. 
+Since GridLinks 3.2, the Tenant administrator is able to configure common settings for multiple devices using Device Profiles. 
 Each Device has one and only profile at a single point in time. 
 
-Experienced ThingsBoard users can notice that the device type has been deprecated in favor of the Device Profile. 
+Experienced GridLinks users can notice that the device type has been deprecated in favor of the Device Profile. 
 The update script will automatically create Device Profiles based on unique Device Types and assign them to the appropriate devices.
 
 Let's take a look at the settings available in the device profile one by one.
@@ -20,7 +20,7 @@ By default, the [Root Rule Chain](/docs/{{docsPrefix}}user-guide/rule-engine-2-0
 However, the more different device types you have, the more complex your Root Rule Chain may become. 
 Many platform users create their Root Rule Chain for the sole purpose of sending messages to specific rule chains depending on the device type. 
 
-To avoid this painful and mundane activity, since ThingsBoard 3.2, you can specify a custom Rule Chain for your devices.
+To avoid this painful and mundane activity, since GridLinks 3.2, you can specify a custom Rule Chain for your devices.
 The new Rule Chain will receive all telemetry, device activity(Active/Inactive), and device lifecycle(Created/Updated/Deleted) events.
 This setting is available in the Device Profile wizard and in the Device Profile details.
 
@@ -60,7 +60,7 @@ if you choose to use a custom queue, you should configure it with the **system a
 
 ### Transport configuration
 
-The current version of the ThingsBoard platform supports the following transport types: Default, MQTT, CoAP, LWM2M and SNMP
+The current version of the GridLinks platform supports the following transport types: Default, MQTT, CoAP, LWM2M and SNMP
 
 {% if docsPrefix == null %}
 ![image](/images/user-guide/device-profile/device-profile-transport-setting-1-ce.png)
@@ -136,7 +136,7 @@ By default, the platform expects devices to send data via JSON. However, it is a
 
 Protocol Buffers, or Protobuf, is a language- and a platform-neutral way of serializing structured data. It is convenient to minimize the size of transmitted data.  
 
-The current version of the ThingsBoard platform supports customizable proto schemas for [telemetry upload](/docs/{{docsPrefix}}reference/mqtt-api/#telemetry-upload-api) 
+The current version of the GridLinks platform supports customizable proto schemas for [telemetry upload](/docs/{{docsPrefix}}reference/mqtt-api/#telemetry-upload-api) 
 and [attribute upload](/docs/{{docsPrefix}}reference/mqtt-api/#publish-attribute-update-to-the-server) and implemented the ability to define a schema for downlink messages (RPC calls and attribute updates). 
 
 {% if docsPrefix == null %}
@@ -154,7 +154,7 @@ and [attribute upload](/docs/{{docsPrefix}}reference/mqtt-api/#publish-attribute
 ![image](/images/user-guide/device-profile/device-profile-transport-setting-mqtt-protobuf-setting-3-pe.png)
 {% endif %}
 
-ThingsBoard parses the protobuf structures dynamically, that is why, it does not support some protobuf features like OneOf, extensions and maps, yet.
+GridLinks parses the protobuf structures dynamically, that is why, it does not support some protobuf features like OneOf, extensions and maps, yet.
 
 ###### Compatibility with other payload formats
 
@@ -187,7 +187,7 @@ However, it is also possible to send data via [Protocol Buffers](https://develop
 
 Protocol Buffers, or Protobuf, is a language- and a platform-neutral way of serializing structured data. It is convenient to minimize the size of transmitted data.  
 
-The current version of the ThingsBoard platform supports customizable proto schemas for [telemetry upload](/docs/{{docsPrefix}}reference/coap-api/#telemetry-upload-api) 
+The current version of the GridLinks platform supports customizable proto schemas for [telemetry upload](/docs/{{docsPrefix}}reference/coap-api/#telemetry-upload-api) 
 and [attribute upload](/docs/{{docsPrefix}}reference/coap-api/#publish-attribute-update-to-the-server) and implemented the ability to define a schema for downlink messages (RPC calls and attribute updates).
 
 {% if docsPrefix == null %}
@@ -205,11 +205,11 @@ and [attribute upload](/docs/{{docsPrefix}}reference/coap-api/#publish-attribute
 ![image](/images/user-guide/device-profile/device-profile-transport-setting-coap-protobuf-setting-2-pe.png)
 {% endif %}
 
-ThingsBoard parses the protobuf structures dynamically, that is why, it does not support some protobuf features like OneOf, extensions and maps, yet.
+GridLinks parses the protobuf structures dynamically, that is why, it does not support some protobuf features like OneOf, extensions and maps, yet.
 
 ##### CoAP device type: Efento NB-IoT
 
-The current version of the ThingsBoard platform supports integration with next Efento NB-IoT sensors: 
+The current version of the GridLinks platform supports integration with next Efento NB-IoT sensors: 
 
  - temperature,
  - humidity,
@@ -231,7 +231,7 @@ Requires Efento devices with FW version: 06.02+.
 ### Alarm Rules
 
 Platform users can use Rule Engine to configure alarms. Rule Engine is a quite powerful feature, but it requires some programming skills.
-Since ThingsBoard 3.2, we have introduced Alarm Rules to simplify the process of configuring the most popular alarm types.
+Since GridLinks 3.2, we have introduced Alarm Rules to simplify the process of configuring the most popular alarm types.
 Now you don't need to be the Rule Engine guru to configure your processing logic. 
 Under the hood, Rule Engine evaluates Alarm Rules using the "Device Profile" rule node.
 
@@ -240,7 +240,7 @@ Alarm Rule consists of the following properties:
 
  * **Alarm Type** - a type of Alarm. Alarm type must be unique within the device profile alarm rules;
  * **Create Conditions** - defines the criteria when the Alarm will be created/updated. The condition consists of the following properties:
-   * Severity - will be used to create/update an alarm. ThingsBoard verifies Create Conditions in the descending order of the severity. For example, if a condition with Critical severity is true, the platform will raise alarm with Critical severity, and "Major", "Minor" or "Warning" conditions will not be evaluated. Severity must be unique per alarm rule (e.g., two conditions created within the same alarm rule can't have the same severity);        
+   * Severity - will be used to create/update an alarm. GridLinks verifies Create Conditions in the descending order of the severity. For example, if a condition with Critical severity is true, the platform will raise alarm with Critical severity, and "Major", "Minor" or "Warning" conditions will not be evaluated. Severity must be unique per alarm rule (e.g., two conditions created within the same alarm rule can't have the same severity);        
    * Key Filters - list of logical expressions against attributes or telemetry values. For example, *"(temperature < 0 OR temperature > 20) AND softwareVersion = '2.5.5'"*;
    * Condition Type - either simple, duration, or repeating. For example, *3 times in a row* or *during 5 minutes*. The simple condition will raise an alarm once the first matching event occurrs;
    * Schedule - defines the time interval during which the rule is active. Either "active all the time", "active at specific time" or "custom";
@@ -374,7 +374,7 @@ The Rule Node will fetch the state from the database when the first message from
 
 #### Notifications about alarms
 
-Assuming you have configured alarm rules you may also want to receive a notification when ThingsBoard creates or updates the alarm.
+Assuming you have configured alarm rules you may also want to receive a notification when GridLinks creates or updates the alarm.
 The device profile rule node has three main outbound relation types that you can use: 'Alarm Created', 'Alarm Severity Updated', and 'Alarm Cleared'.
 See the example rule chain below. Please make sure that the system administrator has configured the SMS/email providers before you proceed or configure your own settings in the rule nodes. 
 
@@ -392,7 +392,7 @@ There is also an additional 'Alarm Updated' relation type that should be ignored
 
 ### Device provisioning
 
-Device provisioning allows a device to automatically register in ThingsBoard either during or after manufacturing. 
+Device provisioning allows a device to automatically register in GridLinks either during or after manufacturing. 
 **See separate documentation [page](/docs/{{docsPrefix}}user-guide/device-provisioning/) for more details.**
 
 

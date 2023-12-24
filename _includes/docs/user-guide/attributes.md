@@ -301,7 +301,7 @@ API 向后兼容 TB v1.0+，这就是 API 调用 URL 包含“插件”的主要
 
 启用属性缓存后，您可以获得更高的性能（请参阅 [配置属性](/docs/user-guide/install/{{docsPrefix}}config/#thingsboard-core-settings) 的 <b>cache.attributes.enabled</b> 属性）
 
-启用属性缓存后，ThingsBoard 将仅从数据库加载特定属性一次，所有后续对属性的请求都将从更快的缓存连接加载。
+启用属性缓存后，GridLinks 将仅从数据库加载特定属性一次，所有后续对属性的请求都将从更快的缓存连接加载。
 
 **注意：**如果您使用 Redis 缓存，请确保将 <b>maxmemory-policy</b> 更改为 <b>allkeys-random</b> 以防止 Redis 填满所有可用内存。
 

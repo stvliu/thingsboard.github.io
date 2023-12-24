@@ -1,16 +1,16 @@
 * TOC
 {:toc}
 
-ThingsBoard allows you to send Remote Procedure Calls (RPC) from server-side applications to devices and vice versa.
+GridLinks allows you to send Remote Procedure Calls (RPC) from server-side applications to devices and vice versa.
 Basically, this feature allows you to send commands to/from devices and receive results of commands execution. 
-This guide covers ThingsBoard RPC capabilities. After reading this guide, you will get familiar with the following topics:
+This guide covers GridLinks RPC capabilities. After reading this guide, you will get familiar with the following topics:
 
 - RPC types;
 - Basic RPC use-cases;
 - RPC client-side and server-side APIs;
 - RPC widgets.
 
-ThingsBoard RPC feature may be divided into two types based on the originator of the remote procedure execution:device-originated and server-originated RPC.
+GridLinks RPC feature may be divided into two types based on the originator of the remote procedure execution:device-originated and server-originated RPC.
 In order to use more familiar names, we will name device-originated RPC calls as a **client-side** RPC and server-originated RPC as **server-side** RPC.
 
 ## Client-side RPC
@@ -56,7 +56,7 @@ The RPC response may be any number, string or JSON. For example:
 
 #### Sending the client-side RPC from the device
 
-ThingsBoard provides an API to send RPC commands from the device.
+GridLinks provides an API to send RPC commands from the device.
 The API is specific for each supported network protocol.
 You may review the API and examples on the corresponding reference page:
 
@@ -115,13 +115,13 @@ Server-side RPC is divided into one-way and two-way:
    {: refdef}
    
 
-Before version 3.3, ThingsBoard supported **lightweight** RPC only. 
+Before version 3.3, GridLinks supported **lightweight** RPC only. 
 The lightweight RPC calls are short-lived, typically within 30 seconds which is the default timeout of any REST API call to the platform.
 Since they are short-lived, there was no reason for storing them to the database. 
-They lived in memory of the server, assuming that if server dies, the dashboard widget will send the same request to other ThingsBoard server in the cluster.
+They lived in memory of the server, assuming that if server dies, the dashboard widget will send the same request to other GridLinks server in the cluster.
 The lightweight RPC consume low amount of resources since their processing does not invoke any input/output operations accept storing of the audit logs and rule engine messages.
 
-Since version 3.3, ThingsBoard provides support of [**persistent**](#persistent-rpc) RPC calls.
+Since version 3.3, GridLinks provides support of [**persistent**](#persistent-rpc) RPC calls.
 Persistent RPC has a configurable lifetime and is stored in the database.
 Persistent RPC is extremely useful when your device may not be reachable for long period of time. 
 This typically happens in case of poor network connection or [Power-Saving Mode](/docs/{{docsPrefix}}user-guide/psm) (PSM).
@@ -182,7 +182,7 @@ http(s)://host:port/api/plugins/rpc/{callType}/{deviceId}
 
 where
 
-- **http(s)://host:port** is your ThingsBoard server base URL. For example, [https://thingsboard.cloud](https://thingsboard.cloud)
+- **http(s)://host:port** is your GridLinks server base URL. For example, [https://thingsboard.cloud](https://thingsboard.cloud)
 - **callType** is either **oneway** or **twoway**;
 - **deviceId** is your target [Device ID](/docs/{{docsPrefix}}user-guide/ui/devices/#get-device-id).
 
@@ -256,7 +256,7 @@ return { msg: msg, metadata: metadata, msgType: msgType };
 
 #### Processing server-side RPC on the device
 
-ThingsBoard provides a convenient API to receive and process server-side RPC commands on the device.
+GridLinks provides a convenient API to receive and process server-side RPC commands on the device.
 This API is specific for each supported network protocol.
 You can review API and examples on the corresponding reference page:
 
@@ -269,19 +269,19 @@ You can review API and examples on the corresponding reference page:
 
 ##### States
 
-ThingsBoard tracks state of the persistent RPC. There are 7 available states:
+GridLinks tracks state of the persistent RPC. There are 7 available states:
 
 {% if docsPrefix == 'paas/' %}
 
 * **QUEUED** - RPC was created and saved to the database; 
   No attempt to send the RPC to device yet; 
-  ThingsBoard will attempt to send the RPC immediately when device becomes online or if it is already online;
+  GridLinks will attempt to send the RPC immediately when device becomes online or if it is already online;
   The platform will attempt to send all pending RPC calls at once by default. 
   In rare cased of constrained devices and multiple messages in the queue this may lead to overload of the network or device.
-* **SENT** - ThingsBoard performed attempt to send the RPC to device.
+* **SENT** - GridLinks performed attempt to send the RPC to device.
 * **DELIVERED** - device confirmed that the RPC was delivered; This is the last step of processing for **one-way** RPC;   
-* **SUCCESSFUL** - ThingsBoard received reply for the **two-way** RPC;  
-* **TIMEOUT** - ThingsBoard transport layer (MQTT/CoAP/LwM2M, etc) detected timeout of the RPC delivery;
+* **SUCCESSFUL** - GridLinks received reply for the **two-way** RPC;  
+* **TIMEOUT** - GridLinks transport layer (MQTT/CoAP/LwM2M, etc) detected timeout of the RPC delivery;
 The timeout is controlled using one of the corresponding configuration parameters: 
 MQTT_TIMEOUT (10 seconds by default), COAP_TIMEOUT (10 seconds by default), LWM2M_TIMEOUT (120 seconds by default)
 By default, platform will not retry delivery of the RPC, and the state will change to FAILED.
@@ -294,14 +294,14 @@ The maximum number of retries is 5 by default.
 
 * **QUEUED** - RPC was created and saved to the database;
   No attempt to send the RPC to device yet;
-  ThingsBoard will attempt to send the RPC immediately when device becomes online or if it is already online;
+  GridLinks will attempt to send the RPC immediately when device becomes online or if it is already online;
   The platform will attempt to send all pending RPC calls at once by default.
   In rare cased of constrained devices and multiple messages in the queue this may lead to overload of the network or device.
   To avoid the overload, you may enable sequential delivery of RPC calls using "ACTORS_RPC_SEQUENTIAL" [configuration](/docs/user-guide/install/{{docsPrefix}}config/) parameter.
-* **SENT** - ThingsBoard performed attempt to send the RPC to device.
+* **SENT** - GridLinks performed attempt to send the RPC to device.
 * **DELIVERED** - device confirmed that the RPC was delivered; This is the last step of processing for **one-way** RPC;
-* **SUCCESSFUL** - ThingsBoard received reply for the **two-way** RPC;
-* **TIMEOUT** - ThingsBoard transport layer (MQTT/CoAP/LwM2M, etc) detected timeout of the RPC delivery;
+* **SUCCESSFUL** - GridLinks received reply for the **two-way** RPC;
+* **TIMEOUT** - GridLinks transport layer (MQTT/CoAP/LwM2M, etc) detected timeout of the RPC delivery;
   The timeout is controlled using one of the corresponding [configuration](/docs/user-guide/install/{{docsPrefix}}config/) parameters:
   MQTT_TIMEOUT (10 seconds by default), COAP_TIMEOUT (10 seconds by default), LWM2M_TIMEOUT (120 seconds by default)
   By default, platform will not retry delivery of the RPC, and the state will change to FAILED.

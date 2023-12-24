@@ -29,7 +29,7 @@ description: 使用 Docker 安装 GridLinks Edge（Linux 或 Mac OS）
 
 {% include templates/edge/install/manual-install-instructions-intro.md %}
 
-### 步骤 1. 拉取 ThingsBoard Edge 镜像
+### 步骤 1. 拉取 GridLinks Edge 镜像
 
 {% include templates/edge/install/pull-images.md %}
 

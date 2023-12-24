@@ -104,7 +104,7 @@ description: "IoT 能源管理 ✔IoT 能源监控 ⚫ GridLinks ➤ 使用 Grid
                 <li>我们的软件为您的智能电表和其他设备提供远程控制和 OTA 更新。</li>
                 <li>我们允许使用最少的编码工作来自定义移动应用程序。</li>
             </ul>
-            <div class="text-content">ThingsBoard 拥有一个了解这些复杂性的专家团队，致力于提供使用 IoT 的能源监控系统，该系统不仅可以应对这些挑战，还可以提高 IoT 能源管理的效率和可持续性。</div>
+            <div class="text-content">GridLinks 拥有一个了解这些复杂性的专家团队，致力于提供使用 IoT 的能源监控系统，该系统不仅可以应对这些挑战，还可以提高 IoT 能源管理的效率和可持续性。</div>
             <h3>我们的案例：</h3>
         </div>
         <div class="definitions-block">

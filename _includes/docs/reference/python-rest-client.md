@@ -3,7 +3,7 @@
 
 ## Python REST 客户端
 
-ThingsBoard Python REST API 客户端可帮助您通过 Python 脚本与 ThingsBoard REST API 进行交互。
+GridLinks Python REST API 客户端可帮助您通过 Python 脚本与 GridLinks REST API 进行交互。
 使用 Python Rest 客户端，您可以以编程方式在 GridLinks 中创建资产、设备、客户、用户和其他实体及其关系。
 
 您可以在 [此处](https://github.com/thingsboard/python_tb_rest_client) 找到 Python REST API 客户端的源代码。
@@ -35,7 +35,7 @@ logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s - %(levelname)s - %(module)s - %(lineno)d - %(message)s',
                     datefmt='%Y-%m-%d %H:%M:%S')
 
-# ThingsBoard REST API URL
+# GridLinks REST API URL
 url = "http://localhost:8080"
 
 # 默认租户管理员凭据
@@ -99,7 +99,7 @@ logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s - %(levelname)s - %(module)s - %(lineno)d - %(message)s',
                     datefmt='%Y-%m-%d %H:%M:%S')
 
-# ThingsBoard REST API URL
+# GridLinks REST API URL
 url = "http://localhost:8080"
 # 默认租户管理员凭据
 username = "tenant@gridlinks.com"
@@ -158,7 +158,7 @@ logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s - %(levelname)s - %(module)s - %(lineno)d - %(message)s',
                     datefmt='%Y-%m-%d %H:%M:%S')
 
-# ThingsBoard REST API URL
+# GridLinks REST API URL
 url = "http://localhost:8080"
 # 默认租户管理员凭据
 username = "tenant@gridlinks.com"
@@ -196,7 +196,7 @@ logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s - %(levelname)s - %(module)s - %(lineno)d - %(message)s',
                     datefmt='%Y-%m-%d %H:%M:%S')
 
-# ThingsBoard REST API URL
+# GridLinks REST API URL
 url = "http://localhost:8080"
 # 默认租户管理员凭据
 username = "tenant@gridlinks.com"
@@ -236,7 +236,7 @@ logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s - %(levelname)s - %(module)s - %(lineno)d - %(message)s',
                     datefmt='%Y-%m-%d %H:%M:%S')
 
-# ThingsBoard REST API URL
+# GridLinks REST API URL
 url = "http://localhost:8080"
 # 默认租户管理员凭据
 username = "tenant@gridlinks.com"
@@ -277,10 +277,10 @@ with RestClientCE(base_url=url) as rest_client:
 
 | 命令行参数 | 说明 |
 |-|-|
-| -H | **ThingsBoard 主机（默认：localhost）** |
-| -p | **ThingsBoard 端口（默认：80）** |
-| -U | **ThingsBoard 用户（登录的电子邮件）** |
-| -P | **ThingsBoard 用户密码** |
+| -H | **GridLinks 主机（默认：localhost）** |
+| -p | **GridLinks 端口（默认：80）** |
+| -U | **GridLinks 用户（登录的电子邮件）** |
+| -P | **GridLinks 用户密码** |
 | -r | **存储库 uri，指向存储库的链接** |
 | -b | **默认分支（默认：main）** |
 | -gu | **VCS 用户名**（此参数名为 GITHUB_USERNAME，但它可以与任何 VCS 一起使用） |
@@ -308,10 +308,10 @@ python3 configure_vcs_access.py -H YOUR_THINGSBOARD_HOST -p YOUR_THINGSBOARD_POR
 
 | 命令行参数 | 说明 |
 |-|-|
-| -H | **ThingsBoard 主机（默认：localhost）** |
-| -p | **ThingsBoard 端口（默认：80）** |
-| -U | **ThingsBoard 用户（登录的电子邮件）** |
-| -P | **ThingsBoard 用户密码** |
+| -H | **GridLinks 主机（默认：localhost）** |
+| -p | **GridLinks 端口（默认：80）** |
+| -U | **GridLinks 用户（登录的电子邮件）** |
+| -P | **GridLinks 用户密码** |
 | -r | **存储库 uri，指向存储库的链接** |
 | -b | **默认分支（默认：main）** |
 | -gu | **VCS 用户名**（此参数名为 GITHUB_USERNAME，但它可以与任何 VCS 一起使用） |
@@ -345,10 +345,10 @@ python3 configure_vcs_access.py -H YOUR_THINGSBOARD_HOST -p YOUR_THINGSBOARD_POR
 
 | 命令行参数 | 说明 |
 |-|-|
-| -H | **ThingsBoard 主机（默认：localhost）** |
-| -p | **ThingsBoard 端口（默认：80）** |
-| -U | **ThingsBoard 用户（登录的电子邮件）** |
-| -P | **ThingsBoard 用户密码** |
+| -H | **GridLinks 主机（默认：localhost）** |
+| -p | **GridLinks 端口（默认：80）** |
+| -U | **GridLinks 用户（登录的电子邮件）** |
+| -P | **GridLinks 用户密码** |
 | -b | **默认分支（默认：main）** |
 | -N | **版本名称（如果未提供，将生成 5 个随机字母和数字并用作名称）** |
 | --save_attributes  | **可选，我们是否需要保存目标实体的属性（默认：True）** |
@@ -382,10 +382,10 @@ python3 load_all_entities_to_vcs_ce.py -H YOUR_THINGSBOARD_HOST -p YOUR_THINGSBO
 
 | 命令行参数 | 说明 |
 |-|-|
-| -H | **ThingsBoard 主机（默认：localhost）** |
-| -p | **ThingsBoard 端口（默认：80）** |
-| -U | **ThingsBoard 用户（登录的电子邮件）** |
-| -P | **ThingsBoard 用户密码** |
+| -H | **GridLinks 主机（默认：localhost）** |
+| -p | **GridLinks 端口（默认：80）** |
+| -U | **GridLinks 用户（登录的电子邮件）** |
+| -P | **GridLinks 用户密码** |
 | -b | **默认分支（默认：main）** |
 | -N | **版本名称（您可以提供版本名称的一部分，脚本将为您提供所有包含所提供名称的版本）** |
 | --load_attributes  | **可选，我们是否需要加载目标实体的属性（默认：True）** |

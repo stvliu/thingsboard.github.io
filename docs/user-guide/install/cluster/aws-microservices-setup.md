@@ -17,7 +17,7 @@ rdsSetup:
         title: '使用“预置 IOPS”以获得更好的性能。'
     3:
         image: /images/install/cloud/aws/rds-4.png
-        title: '确保你的 PostgreSQL RDS 实例可从 ThingsBoard 集群访问；实现此目的最简单的方法是在同一 VPC 中部署 PostgreSQL RDS 实例并使用“eksctl-thingsboard-cluster-ClusterSharedNodeSecurityGroup-*”安全组。'
+        title: '确保你的 PostgreSQL RDS 实例可从 GridLinks 集群访问；实现此目的最简单的方法是在同一 VPC 中部署 PostgreSQL RDS 实例并使用“eksctl-thingsboard-cluster-ClusterSharedNodeSecurityGroup-*”安全组。'
     4:
         image: /images/install/cloud/aws/rds-5.png
         title: '确保使用“thingsboard”作为初始数据库名称。'
@@ -36,7 +36,7 @@ mskSetup:
         title: '确保你的 Apache Kafka 版本是 2.6.x。'
     1:
         image: /images/install/cloud/aws/msk-2.png
-        title: '确保你的 MSK 实例可从 ThingsBoard 集群访问。实现此目的最简单的方法是在同一 VPC 中部署 MSK 实例。我们还建议使用专用子网。这样，几乎不可能意外地将其暴露给互联网。'
+        title: '确保你的 MSK 实例可从 GridLinks 集群访问。实现此目的最简单的方法是在同一 VPC 中部署 MSK 实例。我们还建议使用专用子网。这样，几乎不可能意外地将其暴露给互联网。'
     2:
         image: /images/install/cloud/aws/msk-3.png
         title: '使用 m5.large 或类似的实例类型。'
@@ -61,7 +61,7 @@ redisSetup:
         title: '指定 Redis Engine 版本 6.x 和至少 1 GB RAM 的节点类型。'
     1:
         image: /images/install/cloud/aws/redis-single-2.png
-        title: '确保你的 Redis 集群可从 ThingsBoard 集群访问。实现此目的最简单的方法是在同一 VPC 中部署 Redis 集群。我们还建议使用专用子网。使用“eksctl-thingsboard-cluster-ClusterSharedNodeSecurityGroup-*”安全组。'
+        title: '确保你的 Redis 集群可从 GridLinks 集群访问。实现此目的最简单的方法是在同一 VPC 中部署 Redis 集群。我们还建议使用专用子网。使用“eksctl-thingsboard-cluster-ClusterSharedNodeSecurityGroup-*”安全组。'
     2:
         image: /images/install/cloud/aws/redis-single-3.png
         title: '禁用自动备份。'

@@ -379,7 +379,7 @@ IBM Watson IoT 集成允许将数据从 IBM Watson IoT 流式传输到 GridLinks
 
 您将学习如何：
 
-- 为 IBM Watson 平台准备与 ThingsBoard 集成
+- 为 IBM Watson 平台准备与 GridLinks 集成
 - 添加 IBM Watson 集成并设置安全性。
 - 使用转换器和解码器函数。
 
@@ -394,7 +394,7 @@ Azure Event Hub 集成允许将数据从 Azure Event Hub 流式传输到 GridLin
 
 您将学习如何：
 
-- 为 Azure Event Hub 平台准备与 ThingsBoard 集成
+- 为 Azure Event Hub 平台准备与 GridLinks 集成
 - 添加 Azure Event Hub 集成并启用安全性。
 - 使用转换器和解码器函数。
 

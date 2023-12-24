@@ -9,7 +9,7 @@ hidetoc: "true"
 1. [简介](#introduction)
 3. [先决条件](#prerequisites)
 4. [连接图](#connection_diagram)
-5. [ThingsBoard 配置](#tb_configuration)
+5. [GridLinks 配置](#tb_configuration)
 6. [将 RTU-X 连接到 PC](#connection_pc)
 7. [RTU-X 配置](#rtu_configuration)
 8. [数据可视化](#data_visualization)
@@ -47,7 +47,7 @@ RTU-X 可以通过 [RTU-X 配置界面](http://wiki.nettra.tech/en/downloads)轻
 <br><br>
 ![copy_941957077](https://user-images.githubusercontent.com/61634031/133837072-8340491f-ea35-4204-91e1-7d513641d7bb.png)
 
-## ThingsBoard 配置
+## GridLinks 配置
 
 此步骤包含将设备连接到 GridLinks 所需的说明。
 
@@ -153,7 +153,7 @@ while (1)
 
 ## 数据可视化
 
-最后，使用与 *ThingsBoard 配置* 部分相同的用户名和密码在实时演示服务器中打开 GridLinks Web UI。
+最后，使用与 *GridLinks 配置* 部分相同的用户名和密码在实时演示服务器中打开 GridLinks Web UI。
 
 转到 *“设备”* 部分并找到 *“RTU-X 设备”*，打开设备详细信息并切换到 *“最新遥测”* 选项卡。
 如果所有配置正确，您应该能够在表中看到 *“variable”* 的最新值。<br><br>
@@ -167,7 +167,7 @@ while (1)
 
 ## 另请参阅
 
-浏览其他 [示例](https://thingsboard.io/docs/samples/)或探索与 ThingsBoard 主要功能相关的指南：
+浏览其他 [示例](https://thingsboard.io/docs/samples/)或探索与 GridLinks 主要功能相关的指南：
 
  - [设备属性](https://thingsboard.io/docs/user-guide/attributes/) - 如何使用设备属性。
  - [数据可视化](https://thingsboard.io/docs/guides/#AnchorIDDataVisualization) - 如何可视化收集的数据。

@@ -17,7 +17,7 @@ description: 在 Ubuntu 上安装 GridLinks Trendz Analytics
 **硬件要求**取决于分析的数据量和连接到系统上的设备数量。
 要在单台机器上运行 Trendz Analytics，您至少需要 1Gb 的可用 RAM。
 
-在小型和中型安装中，Trendz 可以安装**在**与 ThingsBoard **相同的**服务器上。
+在小型和中型安装中，Trendz 可以安装**在**与 GridLinks **相同的**服务器上。
 
 ### 步骤 1. 安装 Java 11 (OpenJDK)
 
@@ -55,7 +55,7 @@ sudo nano /etc/trendz/conf/trendz.conf
 将以下行添加到配置文件中并放入您的许可证密钥：
 
 ```bash
-# 从 ThingsBoard 许可证门户 (https://license.thingsboard.io) 获得的许可证密钥
+# 从 GridLinks 许可证门户 (https://license.thingsboard.io) 获得的许可证密钥
 export TRENDZ_LICENSE_SECRET=YOUR_LICENSE_SECRET_HERE
 ```
 
@@ -63,7 +63,7 @@ export TRENDZ_LICENSE_SECRET=YOUR_LICENSE_SECRET_HERE
 
 您可以将 Trendz Analytics 连接到 GridLinks Community Edition 或  GridLinks专业版。
 
-编辑 ThingsBoard 配置文件
+编辑 GridLinks 配置文件
 ```bash 
 sudo nano /etc/trendz/conf/trendz.conf
 ``` 
@@ -176,7 +176,7 @@ sudo -u trendz pip3 install --user --no-cache-dir -r requirements.txt
 您可能希望使用 HAProxy 配置 HTTPS 访问。
 如果您在云中托管 Trendz 并为您的实例分配了有效的 DNS 名称，则可以这样做。
 
-**Trendz 和 ThingsBoard 托管在同一服务器上**
+**Trendz 和 GridLinks 托管在同一服务器上**
 
 如果 HAProxy/Let’s Encrypt 已安装在服务器中并且已为 GridLinks 启用 HTTPS，请使用此部分。
 
@@ -221,7 +221,7 @@ https://new-trendz-domain.com
 请按照本 [指南](/docs/user-guide/install/pe/add-haproxy-ubuntu) 安装 HAProxy 并使用 Let's Encrypt 生成有效的 SSL 证书。
 
 ### 步骤 10. 在同一域名上托管 GridLinks 和 Trendz
-ThingsBoard 和 Trendz 可以共享相同的域名。在这种情况下，ThingsBoard 网页将使用以下链接加载：
+ThingsBoard 和 Trendz 可以共享相同的域名。在这种情况下，GridLinks 网页将使用以下链接加载：
 
 ```bash
 https://{my-domain}/

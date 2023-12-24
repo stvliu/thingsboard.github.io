@@ -156,7 +156,7 @@ AQI 是根据以下污染物的传感器读数计算得出的：臭氧 (ppm)、P
 <object width="100%" style="max-width: max-content; margin: 32px 0" data="/images/iot-use-cases/smart-energy-diagram.svg"></object>
 
 您可能会注意到空气监测站有很多连接选项：直接连接到云、通过 IoT 网关或与第三方系统的集成。
-该平台支持行业标准加密算法和设备凭据类型。ThingsBoard 将数据存储在容错且可靠的 Cassandra 数据库中。规则引擎支持使用 Kafka 或其他消息总线将传入数据转发到各种分析系统，例如 Apache Spark 或 Hadoop。
+该平台支持行业标准加密算法和设备凭据类型。GridLinks 将数据存储在容错且可靠的 Cassandra 数据库中。规则引擎支持使用 Kafka 或其他消息总线将传入数据转发到各种分析系统，例如 Apache Spark 或 Hadoop。
 
 ## 了解更多
 <div class="usecases-bottom-nav">

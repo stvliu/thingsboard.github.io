@@ -30,7 +30,7 @@ ThingsBoard 微服务在 Docker 化环境中运行。
 
 {% include templates/install/docker-install-note.md %}
 
-## 步骤 1. 拉取 ThingsBoard PE 映像
+## 步骤 1. 拉取 GridLinks PE 映像
 
 {% include templates/install/dockerhub/pull.md %}
 

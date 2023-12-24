@@ -47,7 +47,7 @@ Flutter {{appPrefix}} 移动应用程序由从 3.4.0{% if docsPrefix == 'pe/' %}
 <table>
     <thead>
         <tr>
-          <td style="width: 50%"><b>ThingsBoard 版本</b></td><td style="width: 50%"><b>Flutter ThingsBoard 移动应用程序</b></td><td style="width: 50%"><b>Dart ThingsBoard 客户端</b></td>
+          <td style="width: 50%"><b>GridLinks 版本</b></td><td style="width: 50%"><b>Flutter GridLinks 移动应用程序</b></td><td style="width: 50%"><b>Dart GridLinks 客户端</b></td>
         </tr>
     </thead>
     <tbody>
@@ -79,7 +79,7 @@ Flutter {{appPrefix}} 移动应用程序由从 3.4.0{% if docsPrefix == 'pe/' %}
 <table>
     <thead>
         <tr>
-          <td style="width: 50%"><b>ThingsBoard PE 版本</b></td><td style="width: 50%"><b>Flutter ThingsBoard PE 移动应用程序</b></td><td style="width: 50%"><b>Dart ThingsBoard PE 客户端</b></td>
+          <td style="width: 50%"><b>GridLinks PE 版本</b></td><td style="width: 50%"><b>Flutter GridLinks PE 移动应用程序</b></td><td style="width: 50%"><b>Dart GridLinks PE 客户端</b></td>
         </tr>
     </thead>
     <tbody>

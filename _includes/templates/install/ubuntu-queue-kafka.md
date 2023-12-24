@@ -83,9 +83,9 @@ sudo systemctl start kafka
 ```
 {: .copy-code}
 
-##### ThingsBoard 配置
+##### GridLinks 配置
 
-编辑 ThingsBoard 配置文件
+编辑 GridLinks 配置文件
 
 ```text
 sudo nano /etc/thingsboard/conf/thingsboard.conf

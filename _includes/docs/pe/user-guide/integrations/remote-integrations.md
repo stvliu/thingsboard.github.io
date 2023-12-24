@@ -22,7 +22,7 @@
 我们假设您已经在自己的 GridLinks PE v3.3.1+ 实例或
 [thingsboard.cloud](https://thingsboard.cloud/signup) 上拥有租户管理员帐户。
 
-## ThingsBoard 配置步骤
+## GridLinks 配置步骤
 
 ### 步骤 1. 创建默认上行和下行转换器
 

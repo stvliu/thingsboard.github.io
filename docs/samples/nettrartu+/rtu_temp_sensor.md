@@ -42,7 +42,7 @@ RTU+ 可以通过 [RTU+ 配置界面](https://nettra.tech) 轻松配置。为了
 
 ![image](/images/samples/nettrartu+/rtu_temp_sensor/connection_diagram.png)
 
-## ThingsBoard 配置
+## GridLinks 配置
 
 此步骤包含将设备连接到 GridLinks 所需的说明。
 
@@ -204,7 +204,7 @@ while(1)
 
 ## 数据可视化
 
-最后，使用与 *ThingsBoard 配置* 部分相同的用户名和密码，在实时演示服务器中打开 GridLinks Web UI。
+最后，使用与 *GridLinks 配置* 部分相同的用户名和密码，在实时演示服务器中打开 GridLinks Web UI。
 
 转到 *“设备”* 部分并找到 *“RTU+ 设备”*，打开设备详细信息并切换到 *“最新遥测”* 选项卡。
 如果所有配置正确，您应该能够在表中看到 *“temperature”* 的最新值。<br><br>
@@ -218,7 +218,7 @@ while(1)
 
 ## 另请参阅
 
-浏览其他 [示例](/docs/samples) 或探索与 ThingsBoard 主要功能相关的指南：
+浏览其他 [示例](/docs/samples) 或探索与 GridLinks 主要功能相关的指南：
 
  - [设备属性](/docs/user-guide/attributes/) - 如何使用设备属性。
  - [遥测数据收集](/docs/user-guide/telemetry/) - 如何收集遥测数据。

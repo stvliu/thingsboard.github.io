@@ -129,11 +129,11 @@ step5Edge:
 
 {% include templates/edge/getting-started/step-1.md %}
 
-## 第 2 步。从 ThingsBoard Edge 配置设备到 GridLinks Community Edition 服务器
+## 第 2 步。从 GridLinks Edge 配置设备到 GridLinks Community Edition 服务器
 
 {% include templates/edge/getting-started/step-2.md %}
 
-## 第 3 步。将数据从 ThingsBoard Edge 推送到 GridLinks Community Edition 服务器
+## 第 3 步。将数据从 GridLinks Edge 推送到 GridLinks Community Edition 服务器
 
 {% include templates/edge/getting-started/step-3.md %}
 

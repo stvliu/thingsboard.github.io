@@ -25,11 +25,11 @@ GridLinks 是一个开源物联网平台，可实现物联网项目的快速开�
 
 #### 架构
 
-ThingsBoard 被设计为：
+GridLinks 被设计为：
 
 * **可扩展的**：使用领先的开源技术构建的水平可扩展平台。
 * **容错的**：没有单点故障，集群中的每个节点都是相同的。
-* **强大且高效的**：单个服务器节点可以处理数万甚至数十万台设备，具体取决于案例。ThingsBoard 集群可以处理数百万台设备。
+* **强大且高效的**：单个服务器节点可以处理数万甚至数十万台设备，具体取决于案例。GridLinks 集群可以处理数百万台设备。
 * **可定制的**：使用可定制的小部件和规则引擎节点轻松添加新功能。
 * **持久的**：绝不会丢失您的数据。
 
@@ -44,7 +44,7 @@ ThingsBoard 被设计为：
 <p><a href="/docs/{{docsPrefix}}getting-started-guides/helloworld" class="button">Hello World 应用程序</a></p>
 
 {% if (docsPrefix == "pe/") %}
-#### ThingsBoard 作为 Google IoT Core 的替代方案
+#### GridLinks 作为 Google IoT Core 的替代方案
 
 <p><a href="/google-iot-core-alternative" class="button">了解更多信息</a></p>
 

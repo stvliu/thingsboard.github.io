@@ -2,7 +2,7 @@
 layout: docwithnav-mqtt-broker
 assignees:
 - stitenko
-title: 与 ThingsBoard 集成
+title: 与 GridLinks 集成
 description: TBMQ 与 GridLinks 的集成指南
 
 create-client-credentials:

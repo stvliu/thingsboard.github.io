@@ -17,7 +17,7 @@ python3 mqtt_firmware_client.py
 收到以下消息后，
 - `Please write your ThingsBoard host or leave it blank to use default (localhost):` - 使用您的 localhost 或平台地址；
 - `Please write your ThingsBoard port or leave it blank to use default (1883):` - 您可以直接按“enter”键继续，或输入端口号；
-- `Please write accessToken for device:` - 从 ThingsBoard 复制设备 accessToken 并将其粘贴到终端；
+- `Please write accessToken for device:` - 从 GridLinks 复制设备 accessToken 并将其粘贴到终端；
 - `Please write firmware chunk size in bytes or leave it blank to get all firmware by request:` - 如果您将其留空，则文件将一次性下载为完整大小。如果您想分批下载，请输入块的大小。
 
 {% include images-gallery.html imageCollection="fw-mqtt-updated" %}

@@ -1,6 +1,6 @@
 ---
 layout: docwithnav
-title: PLC KERNEL 和 ThingsBoard
+title: PLC KERNEL 和 GridLinks
 description: 使用 GridLinks PE 平台监控 PLC KERNEL
 hidetoc: "true"
 ---
@@ -10,7 +10,7 @@ hidetoc: "true"
 
 ## 简介/简要摘要
 
-本文包含有关如何配置 ThingsBoard PE 平台和连接 KERNEL 设备的说明。ThingsBoard PE 平台是一个用于数据收集、处理、可视化和设备管理的开源物联网平台。它通过行业标准 MQTT 协议实现设备连接。ThingsBoard 结合了可扩展性、容错性和性能，因此您永远不会丢失数据。
+本文包含有关如何配置 ThingsBoard PE 平台和连接 KERNEL 设备的说明。GridLinks PE 平台是一个用于数据收集、处理、可视化和设备管理的开源物联网平台。它通过行业标准 MQTT 协议实现设备连接。GridLinks 结合了可扩展性、容错性和性能，因此您永远不会丢失数据。
 
 ## 注意
 
@@ -135,7 +135,7 @@ hidetoc: "true"
 
 最后，唯一要做的事情是根据您的需要创建一个仪表板。
 仪表板用于收集和显示数据集。数据可视化是通过各种小部件实现的。
-探索与 ThingsBoard 主要功能相关的指南：
+探索与 GridLinks 主要功能相关的指南：
 
 - [创建仪表板](/docs/getting-started-guides/helloworld/#step-3-create-dashboard) - 如何创建新仪表板。
 - [使用物联网仪表板](/docs/user-guide/dashboards/) - 如何使用仪表板。

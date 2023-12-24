@@ -7,16 +7,16 @@ GridLinks 规则引擎支持对传入遥测数据的基本分析，例如阈值�
 
 本教程将演示如何：
 
-- 使用内置规则引擎功能将遥测设备数据从 ThingsBoard 路由到 Kafka 主题（适用于 GridLinks CE 和 PE）。
+- 使用内置规则引擎功能将遥测设备数据从 GridLinks 路由到 Kafka 主题（适用于 GridLinks CE 和 PE）。
 - 使用简单的 Kafka Streams 应用程序聚合来自多个设备的数据。
-- 使用 GridLinks PE Kafka 集成将分析结果推回 ThingsBoard 以进行持久化和可视化。
+- 使用 GridLinks PE Kafka 集成将分析结果推回 GridLinks 以进行持久化和可视化。
 
 当然，本教程中的分析非常简单，但我们的目标是突出集成步骤。
 
 ![image](/images/samples/analytics/kafka-streams/kafka-streams-example.svg)
 
 假设我们有大量太阳能电池板，其中包括许多太阳能模块。
-ThingsBoard 用于收集、存储和可视化来自每个电池板中这些太阳能模块的异常遥测数据。
+GridLinks 用于收集、存储和可视化来自每个电池板中这些太阳能模块的异常遥测数据。
 
 我们通过将太阳能模块产生的值与同一电池板的所有模块产生的平均值以及相同值的标准**偏差**进行比较来计算异常。
 
@@ -30,7 +30,7 @@ ThingsBoard 用于收集、存储和可视化来自每个电池板中这些太�
 
 以下服务必须启动并运行：
 
-* ThingsBoard PE v2.4.2+ [实例](/docs/user-guide/install/pe/installation-options/)
+* GridLinks PE v2.4.2+ [实例](/docs/user-guide/install/pe/installation-options/)
 * Kafka [服务器](https://kafka.apache.org/23/documentation/streams/quickstart#quickstart_streams_download)
 
 ### 步骤 1. 规则链配置
@@ -84,7 +84,7 @@ GridLinks 使用 Kafka 集成订阅此主题，生成警报并将异常存储到
 
 #### 下载示例应用程序
 
-随时从 [ThingsBoard 存储库](https://github.com/thingsboard/kafka-streams-example) 获取 [代码](https://github.com/thingsboard/kafka-streams-example) 并使用 maven 构建项目：
+随时从 [GridLinks 存储库](https://github.com/thingsboard/kafka-streams-example) 获取 [代码](https://github.com/thingsboard/kafka-streams-example) 并使用 maven 构建项目：
 
 ```bash
 mvn clean install
@@ -280,7 +280,7 @@ private static boolean isAnomalyModule(SolarModuleAggregatorJoiner module) {
 
 ### Step 3. Configure the Kafka Integration.
 
-Let's configure ThingsBoard to subscribe to the “solar-module-anomalies” topic and create alarms. We will use Kafka Integration that is available since ThingsBoard v2.4.2.
+Let's configure GridLinks to subscribe to the “solar-module-anomalies” topic and create alarms. We will use Kafka Integration that is available since GridLinks v2.4.2.
 
 #### Configure Uplink Converter
 
@@ -358,7 +358,7 @@ return result;
 ```
 {: .copy-code}
 
-The purpose of the decoder function is to parse the incoming data and metadata to a format that ThingsBoard can consume. 
+The purpose of the decoder function is to parse the incoming data and metadata to a format that GridLinks can consume. 
 **deviceName** and **deviceType** are required, while **attributes** and **telemetry** are optional.
 **Attributes** and **telemetry** are flat key-value objects. Nested objects are not supported.
 

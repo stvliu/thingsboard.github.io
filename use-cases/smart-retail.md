@@ -1,7 +1,7 @@
 ---
 layout: use-case
-title: 物联网智能零售解决方案与 ThingsBoard
-description: 物联网智能零售解决方案与 ThingsBoard
+title: 物联网智能零售解决方案与 GridLinks
+description: 物联网智能零售解决方案与 GridLinks
 notitle: "true"
 
 ---
@@ -106,7 +106,7 @@ GridLinks 平台极大地缩短了上市时间并减少了创建智能零售解�
                 <div>
                     <a class="title" href="/docs/reference/msa/">可扩展性和高可用性</a>
                     <p>GridLinks 支持使用 K8S 或裸机部署在云和本地数据中心上的高可用性部署。
-                        平台组件是水平可扩展的。ThingsBoard 具有支持连接超过 500,000 台设备的生产部署。</p>
+                        平台组件是水平可扩展的。GridLinks 具有支持连接超过 500,000 台设备的生产部署。</p>
                 </div>
             </div>
         </div>
@@ -185,7 +185,7 @@ GridLinks 平台极大地缩短了上市时间并减少了创建智能零售解�
 
 您可能会注意到物联网传感器的许多连接选项：直接连接到云、通过物联网网关、与第三方系统集成或 GridLinks Edge。
 
-该平台支持行业标准加密算法和设备凭据类型。ThingsBoard 将数据存储在容错且可靠的 Cassandra 数据库中。
+该平台支持行业标准加密算法和设备凭据类型。GridLinks 将数据存储在容错且可靠的 Cassandra 数据库中。
 规则引擎支持使用 Kafka 或其他消息总线将传入数据转发到各种分析系统，例如 Apache Spark 或 Hadoop。
 
 ## 了解更多信息

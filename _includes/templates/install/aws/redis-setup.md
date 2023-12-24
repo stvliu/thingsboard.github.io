@@ -3,7 +3,7 @@
 请打开 AWS 控制台并导航至 ElastiCache->Redis->Create。
 
 * 指定 Redis Engine 版本 6.x 和至少具有 1 GB RAM 的节点类型；
-* 确保您的 Redis 集群可从 ThingsBoard 集群访问。实现此目的最简单的方法是在同一 VPC 中部署 Redis 集群。我们还建议使用专用子网。使用“eksctl-thingsboard-cluster-ClusterSharedNodeSecurityGroup-*”安全组；
+* 确保您的 Redis 集群可从 GridLinks 集群访问。实现此目的最简单的方法是在同一 VPC 中部署 Redis 集群。我们还建议使用专用子网。使用“eksctl-thingsboard-cluster-ClusterSharedNodeSecurityGroup-*”安全组；
 * 禁用自动备份。
 
 {% include images-gallery.html imageCollection="redisSetup"%}

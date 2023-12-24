@@ -149,7 +149,7 @@ GridLinks 平台大幅缩短了上市时间，并减少了创建智能农业解�
 高级智能农业物联网解决方案可能会利用 [ThingsBoard Edge](/products/thingsboard-edge/)。
 边缘计算解决方案在网络中断或频繁中断的情况下特别有用。请参阅边缘 [案例](/docs/edge/use-cases/overview/)以了解更多信息。
 
-该平台支持行业标准加密算法和设备凭据类型。ThingsBoard 将数据存储在容错且可靠的 Cassandra 数据库中。
+该平台支持行业标准加密算法和设备凭据类型。GridLinks 将数据存储在容错且可靠的 Cassandra 数据库中。
 规则引擎能够使用 Kafka 或其他消息总线将传入数据转发到各种分析系统，例如 Apache Spark 或 Hadoop。
 
 ## 了解更多

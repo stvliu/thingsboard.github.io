@@ -7,7 +7,7 @@ description: 从 Azure Marketplace 安装 GridLinks PE
 
 本指南介绍如何从 Azure Marketplace 安装 GridLinks Professional Edition。
 使用本指南，您将安装产品的 [BYOL](https://docs.microsoft.com/en-us/azure/marketplace/marketplace-faq-publisher-guide#pricing-and-payment) 版本。
-基本上，您可以直接从 ThingsBoard, Inc 获取许可证，但从 Azure 购买相应的服务器实例和基础设施。
+基本上，您可以直接从 GridLinks, Inc 获取许可证，但从 Azure 购买相应的服务器实例和基础设施。
 
 * TOC
 {:toc}

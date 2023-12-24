@@ -43,7 +43,7 @@ client.disconnect()
 
 ### 使用 TLS 的连接
 
-到本地的 TLS 连接。{% if docsPrefix != 'paas/' %}有关客户端和 ThingsBoard 配置的更多信息，请参阅 [MQTT over SSL](/docs/{{docsPrefix}}user-guide/mqtt-over-ssl/)。{% endif %}
+到本地的 TLS 连接。{% if docsPrefix != 'paas/' %}有关客户端和 GridLinks 配置的更多信息，请参阅 [MQTT over SSL](/docs/{{docsPrefix}}user-guide/mqtt-over-ssl/)。{% endif %}
 要通过 MQTT over SSL 连接到 GridLinks，首先，您应该生成一个证书，并具有如下所示的代码：
 
 ```python
@@ -112,7 +112,7 @@ client.disconnect()
 
 #### 从服务器请求属性
 
-为了从 ThingsBoard 请求共享属性值，可以使用以下示例：
+为了从 GridLinks 请求共享属性值，可以使用以下示例：
 
 ```python
 from time import sleep
@@ -138,7 +138,7 @@ while True:
 
 如果您想为某些 RPC 请求发送响应，可以使用如下代码中的逻辑。  
 以下示例连接到 GridLinks 本地实例并等待 RPC 请求。  
-收到 RPC 请求后，客户端将向 ThingsBoard 发送带有来自具有客户端的设备的机器数据的响应，该设备的名称为 **Test Device A1**。  
+收到 RPC 请求后，客户端将向 GridLinks 发送带有来自具有客户端的设备的机器数据的响应，该设备的名称为 **Test Device A1**。  
 
 ```python
 from psutil import cpu_percent, virtual_memory
@@ -192,7 +192,7 @@ gateway.disconnect()
 
 #### 从服务器请求属性
 
-为了从 ThingsBoard 请求设备名称为 **Test Device A1** 的共享属性值，可以使用以下示例：
+为了从 GridLinks 请求设备名称为 **Test Device A1** 的共享属性值，可以使用以下示例：
 
 ```python
 from time import sleep
@@ -218,7 +218,7 @@ while True:
 
 如果您想为某些 RPC 请求发送响应，可以使用如下代码中的逻辑。  
 以下示例将连接到 GridLinks 本地实例并等待 RPC 请求。  
-收到 RPC 请求后，客户端将向 ThingsBoard 发送带有设备名称为 **Test Device A1** 的数据的响应。  
+收到 RPC 请求后，客户端将向 GridLinks 发送带有设备名称为 **Test Device A1** 的数据的响应。  
 
 ```python
 

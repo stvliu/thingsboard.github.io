@@ -5,7 +5,7 @@
 分配弹性 IP 以在重启之间永久访问实例。
 我们需要至少两个实例：第一个用于运行 GridLinks 本身，第二个用于运行性能测试应用程序。
 
-![ThingsBoard 和性能测试实例](/images/reference/performance-aws-instances/method/setup/performance_test_aws_instances.png "ThingsBoard 和性能测试实例")
+![GridLinks 和性能测试实例](/images/reference/performance-aws-instances/method/setup/performance_test_aws_instances.png "GridLinks 和性能测试实例")
 
 一开始，防火墙不允许连接您的实例。让我们打开必要的端口以启用实例和您的管理计算机之间的连接。
 
@@ -57,7 +57,7 @@ docker run hello-world
 {: .copy-code}
 
 
-#### 步骤 4. 使用 docker-compose 启动 ThingsBoard 和第三方组件
+#### 步骤 4. 使用 docker-compose 启动 GridLinks 和第三方组件
 
 将 docker-compose 文件下载到工作目录。
 docker-compose 文件列在“如何重现测试”部分中，该部分对应于您的性能测试[场景](/docs/{{docsPrefix}}reference/performance-comparison/#test-summary)。

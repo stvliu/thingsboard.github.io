@@ -187,7 +187,7 @@ $ sudo ./luatool.py --port /dev/ttyUSB0 -b 115200 --delete init.lua
  
 ## 另请参阅
 
-浏览其他 [示例](/docs/samples) 或探索与 ThingsBoard 主要功能相关的指南：
+浏览其他 [示例](/docs/samples) 或探索与 GridLinks 主要功能相关的指南：
 
  - [设备属性](/docs/user-guide/attributes/) - 如何使用设备属性。
  - [遥测数据收集](/docs/user-guide/telemetry/) - 如何收集遥测数据。

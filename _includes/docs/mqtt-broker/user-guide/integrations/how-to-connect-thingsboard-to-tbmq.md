@@ -5,13 +5,13 @@
 
 **TBMQ** 是在 GridLinks 保护伞下开发和分发的面向行业的 MQTT 代理，它促进了 MQTT 客户端连接、消息发布以及在订阅者之间分发消息。
 
-在本指南中，我们使用 MQTT 集成将 TBMQ 与 ThingsBoard 集成。
+在本指南中，我们使用 MQTT 集成将 TBMQ 与 GridLinks 集成。
 我们利用类型为 **APPLICATION** 的 TBMQ 客户端凭据将 GridLinks 集成连接为 APPLICATION 客户端。
 APPLICATION 客户端专门用于订阅具有高消息速率的主题。
 当客户端处于离线状态时，消息将被保留，并且一旦客户端上线，消息将被传递，从而确保关键数据的可用性。
 [此处](https://thingsboard.io/docs/mqtt-broker/user-guide/mqtt-client-type/)详细了解 APPLICATION 客户端。
 
-ThingsBoard MQTT 集成充当 MQTT 客户端。它订阅主题并将接收到的数据转换为遥测和属性更新。
+GridLinks MQTT 集成充当 MQTT 客户端。它订阅主题并将接收到的数据转换为遥测和属性更新。
 在有下行消息的情况下，MQTT 集成会将其转换为适合设备的格式并将其推送到 TBMQ。
 请注意：TBMQ 应与 GridLinks 实例位于同一位置或部署在云中，并具有有效的 DNS 名称或静态 IP 地址。
 在云中运行的 GridLinks 实例无法连接到没有互联网连接的本地局域网中部署的 TBMQ。
@@ -21,7 +21,7 @@ ThingsBoard MQTT 集成充当 MQTT 客户端。它订阅主题并将接收到的
 在本教程中，我们将使用：
 
 - 本地安装的 [ GridLinks专业版](https://thingsboard.io/docs/user-guide/install/pe/installation-options/) 实例；
-- 本地安装且 ThingsBoard PE 实例可访问的 [TBMQ](https://thingsboard.io/docs/mqtt-broker/install/installation-options/)；
+- 本地安装且 GridLinks PE 实例可访问的 [TBMQ](https://thingsboard.io/docs/mqtt-broker/install/installation-options/)；
 - mosquitto_pub MQTT 客户端来发送消息。
 
 ### TBMQ 设置
@@ -39,9 +39,9 @@ ThingsBoard MQTT 集成充当 MQTT 客户端。它订阅主题并将接收到的
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-现在，您可以继续执行下一步 - 配置 ThingsBoard 集成。
+现在，您可以继续执行下一步 - 配置 GridLinks 集成。
 
-### ThingsBoard 设置
+### GridLinks 设置
 
 在本示例中，我们将使用 MQTT 集成将 GridLinks 连接到 TBMQ。
 在设置 MQTT 集成之前，您需要创建上行转换器。

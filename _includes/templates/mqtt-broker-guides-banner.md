@@ -14,5 +14,5 @@
 - [**MQTT 客户端类型指南**](/docs/mqtt-broker/user-guide/mqtt-client-type/) - 了解 TBMQ 客户端类型。
 {% endif %}
 {% if currentGuide != "TBIntegrationGuide" %}
-- [**与 ThingsBoard 集成**](/docs/mqtt-broker/user-guide/integrations/how-to-connect-thingsboard-to-tbmq/) - 了解如何将 TBMQ 与 ThingsBoard 集成。
+- [**与 GridLinks 集成**](/docs/mqtt-broker/user-guide/integrations/how-to-connect-thingsboard-to-tbmq/) - 了解如何将 TBMQ 与 GridLinks 集成。
 {% endif %}

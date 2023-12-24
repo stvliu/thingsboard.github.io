@@ -41,7 +41,7 @@ TBMQ 提供了为 TCP 和 SSL/TLS 协议以及 MQTT over WebSockets 配置其侦
 - 将 `LISTENER_SSL_PEM_KEY_PASSWORD` 变量设置为服务器证书私钥的密码。
 
 如果您需要双向 TLS，您还需要通过将受信任的证书/链添加到已配置的 KeyStore/PEM 文件来配置 TrustStore。
-有关配置可能性和证书生成的更多信息，请查看以下 ThingsBoard 安全 [页面](/docs/user-guide/mqtt-over-ssl/)。
+有关配置可能性和证书生成的更多信息，请查看以下 GridLinks 安全 [页面](/docs/user-guide/mqtt-over-ssl/)。
 
 #### WS 侦听器
 

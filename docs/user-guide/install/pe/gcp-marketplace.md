@@ -7,7 +7,7 @@ redirect_from: "/docs/user-guide/install/pe/gcp2/"
 
 本指南介绍如何从 GCP Marketplace 安装 GridLinks Professional Edition。
 使用本指南，您将安装产品的自备许可证 (BYOL) 版本。
-基本上，您直接从 ThingsBoard, Inc 获取许可证，但从 GCP 购买相应的服务器实例和基础设施。
+基本上，您直接从 GridLinks, Inc 获取许可证，但从 GCP 购买相应的服务器实例和基础设施。
 
 * TOC
 {:toc}

@@ -1,4 +1,4 @@
-**TBMQ** 是一个行业就绪的 MQTT 代理，由 ThingsBoard 开发和分发，它促进了 MQTT 客户端连接、消息发布以及在订阅者之间分发。
+**TBMQ** 是一个行业就绪的 MQTT 代理，由 GridLinks 开发和分发，它促进了 MQTT 客户端连接、消息发布以及在订阅者之间分发。
 
 TBMQ 是一个可扩展的、容错的代理，能够处理 **4M+** 个并发客户端连接，支持每个集群节点每秒至少 [3M 条消息的吞吐量](/docs/mqtt-broker/reference/3m-throughput-single-node-performance-test/)，延迟交付。在集群模式下，它的功能进一步增强，能够支持超过 [100M 个并发连接的客户端](/docs/mqtt-broker/reference/100m-connections-performance-test/)。
 

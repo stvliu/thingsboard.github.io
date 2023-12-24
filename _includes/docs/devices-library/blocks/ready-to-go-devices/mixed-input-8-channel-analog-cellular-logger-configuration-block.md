@@ -75,7 +75,7 @@ MI-8 [用户手册](https://fusiondaq.com/wp-content/uploads/2023/01/LTEdaq_Oper
 - push 字段描述了与 GridLinks 服务器的连接。在此示例中，我们使用 HTTP POST 请求（“mode”:”post”）。MQTT 也受支持，但 POST 消耗的蜂窝数据更少。HTTP 请求 URL 通过 server、port、use_ssl 和 path/attributes_path 字段构建。
 - 将 use_ssl 字段设置为 true，以便在每次开机时发送属性（例如 MI-8 IMEI 号码等不经常更改的内容）。
 - 将 use_json 设置为 true。发送到 GridLinks 的所有数据都应采用 JSON 格式。
-- 将 use_headers 设置为 false。ThingsBoard 不需要 HTTP 头，但每次推送都需要额外的蜂窝数据。
+- 将 use_headers 设置为 false。GridLinks 不需要 HTTP 头，但每次推送都需要额外的蜂窝数据。
 - 您可以将 include_name、include_imei 和 include_iccid 设置为 false。这些字段会导致 ICCID、IMEI 和 MI-8 名称包含在遥测推送中，这会消耗额外的蜂窝数据。它们不需要包含在这里，因为它们已经通过单独的属性 HTTP 请求在每次 MI-8 电源循环时发送到 GridLinks。
 
 添加或更改配置文件后，执行以下步骤：

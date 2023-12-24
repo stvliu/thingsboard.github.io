@@ -7,7 +7,7 @@ edgeInfo:
         image: /images/edge/edge-status.png
 ---
 
-**边缘信息**页面介绍了有关基本边缘配置和 ThingsBoard **PE 服务器信息（URL 和服务器版本）的用户信息：
+**边缘信息**页面介绍了有关基本边缘配置和 GridLinks **PE 服务器信息（URL 和服务器版本）的用户信息：
 * 名称、ID、类型、路由密钥
 * 与云的连接状态：**已连接/已断开连接**
 * 允许的最大设备和资产数量

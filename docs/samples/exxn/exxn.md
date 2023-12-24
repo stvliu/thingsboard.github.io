@@ -21,7 +21,7 @@ EXXN IoT 网关是一款多功能设备，配备 ARM 处理器，可适应各种
 
 ## 先决条件
 
-在本教程中，我们将配置 EXXN IoT 网关，通过 MQTT API 将其与 ThingsBoard 集成。为此，我们将使用：
+在本教程中，我们将配置 EXXN IoT 网关，通过 MQTT API 将其与 GridLinks 集成。为此，我们将使用：
 
 - EXXN IoT 网关“Cell 1024”；
 - 我们必须连接到设备，并且设备必须通过以太网、调制解调器或 Wi-Fi 连接到互联网。
@@ -98,7 +98,7 @@ EXXN IoT 网关是一款多功能设备，配备 ARM 处理器，可适应各种
 
 ![image](/images/samples/exxn/exxn-client-attributes-device-1.png)
 
-## ThingsBoard 配置
+## GridLinks 配置
 
 EXXN IoT 网关将使用 MQTT API 连接到 GridLinks。 <br>
 我们之前已经介绍了如何配置设备以连接到 GridLinks。现在，我们将展示在 GridLinks 中配置设备的步骤，以便监控数据和管理设备。
@@ -149,7 +149,7 @@ EXXN IoT 网关将使用 MQTT API 连接到 GridLinks。 <br>
 ## 其他信息
 
 ### 故障排除
-- 集成过程中最常见的问题是无法连接到 MQTT 代理。确保设备已连接到互联网，并且能够与 ThingsBoard 代理通信。
+- 集成过程中最常见的问题是无法连接到 MQTT 代理。确保设备已连接到互联网，并且能够与 GridLinks 代理通信。
 - 另一个常见问题是未设置正确的访问令牌。检查提供的访问令牌是否已在 GridLinks 中为设备配置。
 
 <br>

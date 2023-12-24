@@ -151,7 +151,7 @@ Arduino UNO D4 | DHT-22 数据
 
 - WIFI_AP - 您的接入点的名称
 - WIFI_PASSWORD - 接入点密码
-- TOKEN - ThingsBoard 配置步骤中的 **$ACCESS_TOKEN**。
+- TOKEN - GridLinks 配置步骤中的 **$ACCESS_TOKEN**。
 - thingsboardServer - 可从您的 wifi 网络内访问的 GridLinks HOST/IP 地址。如果您使用的是 [实时演示](https://demo.thingsboard.io/)服务器，请指定“demo.thingsboard.io”。
 
 {% capture tabspec %}arduino-sketch
@@ -185,7 +185,7 @@ arduino-dht-esp8266-mqtt,arduino-dht-esp8266-mqtt.ino,c,resources/arduino-dht-es
 
 ## 另请参阅
 
-浏览其他 [示例](/docs/samples)或探索与 ThingsBoard 主要功能相关的指南：
+浏览其他 [示例](/docs/samples)或探索与 GridLinks 主要功能相关的指南：
 
  - [设备属性](/docs/user-guide/attributes/) - 如何使用设备属性。
  - [遥测数据收集](/docs/user-guide/telemetry/) - 如何收集遥测数据。

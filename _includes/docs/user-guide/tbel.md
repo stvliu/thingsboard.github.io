@@ -2,17 +2,17 @@
 {:toc}
 
 
-ThingsBoard supports user-defined functions (UDF) for data processing in the [Rule Engine]() and [Data Converters](). 
+GridLinks supports user-defined functions (UDF) for data processing in the [Rule Engine]() and [Data Converters](). 
 The original programming language for the UDF is JavaScript. It is popular, well-known, and simple. We plan to support JavaScript forever.
 Nevertheless, we have decided to provide an alternative to JavaScript. You may find our motivation below.
 
 ## Motivation
 
-ThingsBoard is written in Java and currently uses Java 11. There are two ways to execute the JS function in ThingsBoard:  
+GridLinks is written in Java and currently uses Java 11. There are two ways to execute the JS function in GridLinks:  
 
-A) use remote JS Executor microservice written in Node.js. It is the default way for ThingsBoard to run in a cluster/microservices mode;
+A) use remote JS Executor microservice written in Node.js. It is the default way for GridLinks to run in a cluster/microservices mode;
 
-B) use local JS Executor powered by Nashorn JS engine that runs inside the JVM. It is the default way for ThingsBoard while deployed in monolithic mode.
+B) use local JS Executor powered by Nashorn JS engine that runs inside the JVM. It is the default way for GridLinks while deployed in monolithic mode.
 
 The Nashorn JS engine is now deprecated and is removed from Java 16. It is also relatively slow. Some users already called Nashorn to be the platform's kryptonite.
 That is why it was absolutely clear that we need a replacement to Nashorn. 
@@ -21,8 +21,8 @@ The most important reason is security and the ability to control every aspect of
 Besides, most UDFs are relatively simple functions that transform or filter data, and we want to find a more effective way to execute them.   
 
 Our search for existing Script/Expression Language (EL) implementations led us to the [MVEL](https://github.com/mvel/mvel).
-The ThingsBoard Expression Language (TBEL) is basically a [fork](https://github.com/thingsboard/tbel) of MVEL with some important security constraints, 
-built-in memory management, and frequently used helper functions that are specific to ThingsBoard.
+The GridLinks Expression Language (TBEL) is basically a [fork](https://github.com/thingsboard/tbel) of MVEL with some important security constraints, 
+built-in memory management, and frequently used helper functions that are specific to GridLinks.
  
 #### TBEL vs Nashorn
 

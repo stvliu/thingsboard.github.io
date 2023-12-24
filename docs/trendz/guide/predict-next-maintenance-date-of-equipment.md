@@ -173,7 +173,7 @@ return [{ts: 1, value: remainingDays}];
 * 清除警报规则
   * 条件 - `capsForecast` 大于 `14`
 
-一旦创建警报规则，ThingsBoard 就会在剩余时间少于 14 天时触发警报，并在剩余时间大于 14 天时清除警报。
+一旦创建警报规则，GridLinks 就会在剩余时间少于 14 天时触发警报，并在剩余时间大于 14 天时清除警报。
 
 {% include images-gallery.html imageCollection="predictive-maintenance-create-alarm" %}
 
@@ -190,7 +190,7 @@ return [{ts: 1, value: remainingDays}];
 * 在 `toEmail` 节点后添加 `发送电子邮件` 规则节点，并通过 `成功` 关系将其连接起来。
 * 保存规则链。
 
-通过此配置，ThingsBoard 将在创建警报后向维护团队发送通知。
+通过此配置，GridLinks 将在创建警报后向维护团队发送通知。
 
 {% include images-gallery.html imageCollection="predictive-maintenance-notify-maintenance-team" %}
 

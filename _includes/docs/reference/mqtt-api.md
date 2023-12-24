@@ -86,7 +86,7 @@ E,telemetry-data-with-ts.json,json,resources/telemetry-data-with-ts.json,/docs/r
 
 ## 属性 API
 
-ThingsBoard 属性 API 允许设备
+GridLinks 属性 API 允许设备
 
 * 将 [客户端](/docs/{{docsPrefix}}user-guide/attributes/#attribute-types) 设备属性上传到服务器。
 * 从服务器请求 [客户端](/docs/{{docsPrefix}}user-guide/attributes/#attribute-types) 和 [共享](/docs/{{docsPrefix}}user-guide/attributes/#attribute-types) 设备属性。
@@ -223,7 +223,7 @@ A,MQTT.js,shell,resources/mqtt-js-rpc-from-server.sh,/docs/reference/resources/m
 B,mqtt-js-rpc-from-server.js,javascript,resources/mqtt-js-rpc-from-server.js,/docs/reference/resources/mqtt-js-rpc-from-server.js{% endcapture %}  
 {% include tabs.html %}
 
-如果您的 MQTT 设备是网关，ThingsBoard 将发送有关预配设备实体更改的服务器端 RPC（通知）。
+如果您的 MQTT 设备是网关，GridLinks 将发送有关预配设备实体更改的服务器端 RPC（通知）。
 
 您的 MQTT 网关设备将收到有关删除或重命名设备的服务 RPC，以 [正确解决此类事件](/docs/iot-gateway/how-device-removing-renaming-works/)。
 
@@ -320,7 +320,7 @@ v1/devices/me/claim
 
 ## 固件 API
 
-当 ThingsBoard 启动 MQTT 设备固件更新时，它会设置 fw_title、fw_version、fw_checksum、fw_checksum_algorithm 共享属性。
+当 GridLinks 启动 MQTT 设备固件更新时，它会设置 fw_title、fw_version、fw_checksum、fw_checksum_algorithm 共享属性。
 为了接收共享属性更新，设备必须订阅
 
 ```bash

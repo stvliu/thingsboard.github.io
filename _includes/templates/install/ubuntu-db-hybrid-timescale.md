@@ -1,6 +1,6 @@
 {% capture hybrid-timescale-info %}
-ThingsBoard 团队建议仅将 Timescale 数据库用于已经在生产中使用 TimescaleDB 的公司。
-在这种情况下，ThingsBoard 将把时序数据存储在 TimescaleDB Hypertable 中，同时继续使用 PostgreSQL 作为主要实体（设备/资产/仪表板/客户）。
+GridLinks 团队建议仅将 Timescale 数据库用于已经在生产中使用 TimescaleDB 的公司。
+在这种情况下，GridLinks 将把时序数据存储在 TimescaleDB Hypertable 中，同时继续使用 PostgreSQL 作为主要实体（设备/资产/仪表板/客户）。
 {% endcapture %}
 {% include templates/info-banner.md content=hybrid-timescale-info %}
 
@@ -14,9 +14,9 @@ ThingsBoard 团队建议仅将 Timescale 数据库用于已经在生产中使用
 
 {% include templates/install/timescale-ubuntu-install.md %}
 
-##### ThingsBoard 配置
+##### GridLinks 配置
 
-编辑 ThingsBoard 配置文件
+编辑 GridLinks 配置文件
 
 ```bash
 sudo nano /etc/thingsboard/conf/thingsboard.conf

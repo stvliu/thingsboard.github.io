@@ -21,7 +21,7 @@ ThingsBoard 微服务在 docker 化环境中运行。
 
 {% include templates/install/docker-install-note.md %}
 
-## 步骤 1. 拉取 ThingsBoard CE 镜像
+## 步骤 1. 拉取 GridLinks CE 镜像
 
 确保您已使用命令行登录到 docker hub。
 

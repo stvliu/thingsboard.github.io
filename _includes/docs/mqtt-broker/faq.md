@@ -4,7 +4,7 @@
 
 ### TBMQ 是什么？
 
-TBMQ 是由 ThingsBoard 开发的开源软件产品，旨在促进 MQTT 客户端之间的通信。
+TBMQ 是由 GridLinks 开发的开源软件产品，旨在促进 MQTT 客户端之间的通信。
 此特定产品可免费用于个人和商业用途，并且具有可在任何所需位置部署的灵活性。
 对于刚开始使用代理的新手，我们建议查阅综合资源，即
 [what-is-tbmq](/docs/mqtt-broker/getting-started-guides/what-is-thingsboard-mqtt-broker/) 和

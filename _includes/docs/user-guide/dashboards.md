@@ -3,12 +3,12 @@
 
 ## Prerequisites
 
-Before proceeding with this guide, it's recommended that you follow [Getting Started](/docs/{{docsPrefix}}getting-started-guides/helloworld/) guide to become familiar with ThingsBoard devices and dashboards. This will enhance your learning experience and understanding of the concepts presented here.
+Before proceeding with this guide, it's recommended that you follow [Getting Started](/docs/{{docsPrefix}}getting-started-guides/helloworld/) guide to become familiar with GridLinks devices and dashboards. This will enhance your learning experience and understanding of the concepts presented here.
 
 ## Introduction
 
-ThingsBoard offers a powerful feature – the ability to create and customize interactive visualizations, also known as dashboards. These dashboards are instruments for monitoring and managing your data and devices efficiently.
-With ThingsBoard dashboards, users can adapt interfaces to their specific needs, making it easier than ever to inspect their IoT devices and data. What's brilliant is that each dashboard can be populated with numerous widgets, offering flexibility and customization.
+GridLinks offers a powerful feature – the ability to create and customize interactive visualizations, also known as dashboards. These dashboards are instruments for monitoring and managing your data and devices efficiently.
+With GridLinks dashboards, users can adapt interfaces to their specific needs, making it easier than ever to inspect their IoT devices and data. What's brilliant is that each dashboard can be populated with numerous widgets, offering flexibility and customization.
 These dashboards aren't limited to a single data source; they can display data from various entities, including devices, assets, and more. Plus, you can assign dashboards to specific Customers, ensuring that the right individuals or teams have access to the data they need.
 
 {% if docsPrefix == null %}
@@ -18,7 +18,7 @@ These dashboards aren't limited to a single data source; they can display data f
 ![image](/images/user-guide/dashboards/overview/dashboard-introduction.png)
 {% endif %}
 
-Dashboards in ThingsBoard provide users with the following capabilities:
+Dashboards in GridLinks provide users with the following capabilities:
 
  - **Data Visualization**: Users can create various widgets such as charts, graphs, tables, and more to visualize data obtained from connected devices. This enables operators and analysts to easily analyze information and track device statuses.
 
@@ -28,10 +28,10 @@ Dashboards in ThingsBoard provide users with the following capabilities:
 
  - **Display Customization**: Users can customize the arrangement and size of widgets, choose color palettes, fonts, and other visualization aspects to create a user-friendly and informative interface.
 
- - **Role-Based Access**: ThingsBoard allows controlling access to dashboards with different levels of privileges based on user [roles](/docs/{{docsPrefix}}user-guide/rbac/). This ensures data security and confidentiality.
+ - **Role-Based Access**: GridLinks allows controlling access to dashboards with different levels of privileges based on user [roles](/docs/{{docsPrefix}}user-guide/rbac/). This ensures data security and confidentiality.
 
 {% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
-ThingsBoard also offers convenient IoT solution templates to reduce time-to-market for your IoT products. 
+GridLinks also offers convenient IoT solution templates to reduce time-to-market for your IoT products. 
 These templates include interactive dashboards, processing logic, sample devices, users, and all other necessary entities. Think of these templates as a complete PoC/MVP. 
 Read more about solution templates [here](/docs/{{docsPrefix}}solution-templates/overview/).
 {% endif %}
@@ -78,7 +78,7 @@ Let's look at each operation.
 
 ### Export dashboard
 
-In the ThingsBoard you can export a dashboard as a configuration file in JSON format.
+In the GridLinks you can export a dashboard as a configuration file in JSON format.
 You can use this file to transfer your Dashboard or widget configuration to another instance.
 
 To export a dashboard, go to the “Dashboards” page. Find the dashboard you want to export in the list and click on the "Export dashboard" button located next to the dashboard's name. The configuration file in JSON format with all settings on the control panel will be saved on your PC.
@@ -221,7 +221,7 @@ Don't forget to save your changes using the "Save" button, or if you decide to d
 
 ### Add new widget
 
-All IoT dashboards are constructed using ThingsBoard widgets.
+All IoT dashboards are constructed using GridLinks widgets.
 A widget is an element that displays a specific type of information or functionality on a dashboard.
 Widgets are used to visualize data, remote device control, alarms management, and display static custom HTML content.
 
@@ -241,8 +241,8 @@ For more information about widgets, how to create them, and their settings, clic
 
 Dashboard timewindow represents the time interval and aggregation function that will be used to fetch the time series or alarm data.
 Timewindow is used by all the time series and alarm widgets unless they are explicitly [configured](/docs/{{docsPrefix}}user-guide/widgets/#widget-time-window) to overwrite its execution.
-In the case of a time series widget, ThingsBoard fetches telemetry with a timestamp that matches the timewindow.
-In the case of an alarm widget, ThingsBoard fetches alarms with the created time that matches the timewindow.
+In the case of a time series widget, GridLinks fetches telemetry with a timestamp that matches the timewindow.
+In the case of an alarm widget, GridLinks fetches alarms with the created time that matches the timewindow.
 
 The timewindow can work in two modes:
 - In the **real-time mode**, widgets constantly receive updates from the server and automatically show you only the data that matches the time window for a current timestamp;
@@ -258,7 +258,7 @@ We recommend using aggregation functions whenever possible if you have a lot of 
 
 {% include images-gallery.html imageCollection="time-window-aggregation" %}
 
-The ThingsBoard it is possible to use predefined **intervals** (Current Day, Previous Day, Previous Month, etc.) in addition to last X minutes/hours/days.
+The GridLinks it is possible to use predefined **intervals** (Current Day, Previous Day, Previous Month, etc.) in addition to last X minutes/hours/days.
 
 {% capture difference %}
 **Please note:**
@@ -276,7 +276,7 @@ To zoom out to the original size of the chart, double-click on the widget.
 
 {% include images-gallery.html imageCollection="time-window-zoom-in" %}
 
-The ThingsBoard introduces time zone configurations. By default, the dashboard uses the time zone provided by the browser.
+The GridLinks introduces time zone configurations. By default, the dashboard uses the time zone provided by the browser.
 Now it is possible to set the time of your browser or a specific country. To quickly find the needed time zone, start typing its name in the time zone bar.
 
 {% include images-gallery.html imageCollection="time-window-time-zone" %}
@@ -496,8 +496,8 @@ For the state to be named after the entity, use **${entityName}** as the name of
 
 ## Next steps
 
- - [Widgets](/docs/{{docsPrefix}}user-guide/widgets) - This guide contains instructions for configuring ThingsBoard widgets.
+ - [Widgets](/docs/{{docsPrefix}}user-guide/widgets) - This guide contains instructions for configuring GridLinks widgets.
 
- - [Data visualization](/docs/{{docsPrefix}}guides/#AnchorIDDataVisualization) - These guides contain instructions how to configure complex ThingsBoard dashboards.
+ - [Data visualization](/docs/{{docsPrefix}}guides/#AnchorIDDataVisualization) - These guides contain instructions how to configure complex GridLinks dashboards.
 
- - [Data processing & actions](/docs/{{docsPrefix}}guides/#AnchorIDDataProcessing) - Learn how to use ThingsBoard Rule Engine.
+ - [Data processing & actions](/docs/{{docsPrefix}}guides/#AnchorIDDataProcessing) - Learn how to use GridLinks Rule Engine.

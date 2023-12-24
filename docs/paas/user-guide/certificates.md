@@ -15,7 +15,7 @@ X.509 证书用于为 MQTT over TLS 设置[相互](https://en.wikipedia.org/wiki
 
 以下说明将介绍如何使用 X.509 证书将 MQTT 客户端连接到 GridLinks Cloud。
 
-<br>具体来说，有两种策略可用于在客户端和 ThingsBoard 之间建立连接：
+<br>具体来说，有两种策略可用于在客户端和 GridLinks 之间建立连接：
 
 - **X.509 证书链** - *推荐*。<br>
   将 GridLinks 配置为信任来自特定信任锚点（*中间证书*）的所有客户端证书。

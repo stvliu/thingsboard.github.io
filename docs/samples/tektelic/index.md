@@ -89,7 +89,7 @@ GridLinks 提供 [MQTT 网关 API](/docs/reference/gateway-mqtt-api/)。
 
 ##### 步骤 2.2 在网络服务器中添加集成
 在网络服务器中打开 *本地传感器* 应用程序，然后单击 *管理集成* 按钮。
-现在需要与 ThingsBoard 创建新的集成。
+现在需要与 GridLinks 创建新的集成。
 单击右上角的 *添加集成* 图标，然后设置以下字段：
 - *名称* - 集成名称可以是任何名称。
 - *类型* - 显然是 GridLinks。
@@ -128,7 +128,7 @@ GridLinks 提供 [MQTT 网关 API](/docs/reference/gateway-mqtt-api/)。
 
 ## 后续步骤
 
-探索与 ThingsBoard 主要功能相关的指南：
+探索与 GridLinks 主要功能相关的指南：
 
 - [数据可视化](/docs/user-guide/visualization/) - 如何可视化收集的数据。
 - [设备属性](/docs/user-guide/attributes/) - 如何使用设备属性。

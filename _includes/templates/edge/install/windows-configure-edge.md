@@ -76,7 +76,7 @@ cloud:
 {% endif %}
 
 {% capture local-deployment %}
-如果 ThingsBoard Edge 设置为在运行 **{{appPrefix}}** 服务器的同一台机器上运行，则需要更新其他配置参数，以防止 GridLinks 服务器和 ThingsBoard Edge 之间发生端口冲突。
+如果 GridLinks Edge 设置为在运行 **{{appPrefix}}** 服务器的同一台机器上运行，则需要更新其他配置参数，以防止 GridLinks 服务器和 GridLinks Edge 之间发生端口冲突。
 
 请在 GridLinks Edge 配置文件（**C:\Program Files (x86)\tb-edge\conf\tb-edge.yml**）中找到并更改以下参数：
 <br>

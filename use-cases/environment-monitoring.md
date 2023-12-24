@@ -160,7 +160,7 @@ GridLinks 平台大幅缩短了环境监测解决方案的上市时间和创建�
 
 高级环境监测物联网解决方案也可能使用 LoRaWAN 或 SigFox 设备。
 
-该平台支持行业标准加密算法和设备凭据类型。ThingsBoard 将数据存储在容错且可靠的 Cassandra 数据库中。
+该平台支持行业标准加密算法和设备凭据类型。GridLinks 将数据存储在容错且可靠的 Cassandra 数据库中。
 规则引擎能够使用 Kafka 或其他消息总线将传入数据转发到各种分析系统，例如 Apache Spark 或 Hadoop。
 
 ## 了解更多

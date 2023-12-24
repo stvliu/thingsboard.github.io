@@ -160,7 +160,7 @@ class ProvisionClient(Client):
 
     def __on_message(self, client, userdata, msg):
         decoded_payload = msg.payload.decode("UTF-8")
-        print("[Provisioning 客户端] 从 ThingsBoard 收到数据: %s" % decoded_payload)
+        print("[Provisioning 客户端] 从 GridLinks 收到数据: %s" % decoded_payload)
         decoded_message = loads(decoded_payload)
         provision_device_status = decoded_message.get("status")
         if provision_device_status == "SUCCESS":

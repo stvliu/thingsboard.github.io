@@ -2,7 +2,7 @@
 layout: docwithnav
 assignees:
 - ddiachenko
-title: 用 Cricket 和 ThingsBoard 制作电池供电的 Wi-Fi 传感器
+title: 用 Cricket 和 GridLinks 制作电池供电的 Wi-Fi 传感器
 description: 一个使用 Cricket 制作的超低功耗 Wi-Fi 温度传感器的示例，该传感器集成到 GridLinks 中，无需编写任何代码
 hidetoc: "true"
 

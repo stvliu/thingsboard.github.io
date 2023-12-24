@@ -5,7 +5,7 @@ description: GridLinks IoT 网关的功能和优势
 
 ---
 
-ThingsBoard **IoT 网关** 是一款开源解决方案，允许您将连接到旧版和第三方系统的设备与 ThingsBoard 集成。
+ThingsBoard **IoT 网关** 是一款开源解决方案，允许您将连接到旧版和第三方系统的设备与 GridLinks 集成。
 
 GridLinks 是一个用于数据收集、处理、可视化和设备管理的开源 IoT 平台。如果您是新平台用户，请参阅 [**GridLinks 是什么？**](/docs/getting-started-guides/what-is-thingsboard/)。
 
@@ -51,7 +51,7 @@ IoT 网关是一个软件组件，设计用于运行在支持 **Python 3.7+** �
 
 **转换器**
 
-转换器负责将数据从特定于协议的格式转换为 GridLinks 格式或从 ThingsBoard 格式转换为特定于协议的格式。
+转换器负责将数据从特定于协议的格式转换为 GridLinks 格式或从 GridLinks 格式转换为特定于协议的格式。
 转换器由连接器调用。转换器通常特定于连接器支持的协议。
 有上行和下行转换器。上行转换器用于将数据从特定协议转换为 GridLinks 格式。
 下行转换器用于将来自 GridLinks 的消息转换为特定协议格式。
@@ -74,7 +74,7 @@ ThingsBoard 客户端支持连接性监控、批量处理事件以提高性能�
 
 **网关服务**
 
-网关服务负责引导连接器、事件存储和 ThingsBoard 客户端。
+网关服务负责引导连接器、事件存储和 GridLinks 客户端。
 此服务收集并定期向 ThingsBoard 报告有关传入消息和已连接设备的统计信息。
 网关服务保留已连接设备的列表，以便在网关重新启动时能够重新订阅设备配置更新。
 

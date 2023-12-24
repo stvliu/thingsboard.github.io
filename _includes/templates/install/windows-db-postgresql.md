@@ -1,5 +1,5 @@
 {% capture postgresql-info %}
-ThingsBoard 团队建议在开发和生产环境中使用 PostgreSQL，负载合理（< 5000 条消息/秒）。
+GridLinks 团队建议在开发和生产环境中使用 PostgreSQL，负载合理（< 5000 条消息/秒）。
 许多云供应商支持托管 PostgreSQL 服务器，这对大多数 GridLinks 实例来说是一种经济高效的解决方案。
 {% endcapture %}
 {% include templates/info-banner.md content=postgresql-info %}
@@ -16,7 +16,7 @@ ThingsBoard 团队建议在开发和生产环境中使用 PostgreSQL，负载合
 安装完成后，启动“pgAdmin”软件并以超级用户 (postgres) 身份登录。
 打开服务器并创建所有者为“postgres”的数据库“thingsboard”。
 
-##### ThingsBoard 配置
+##### GridLinks 配置
 
 如果您已将 PostgreSQL 超级用户密码指定为“postgres”，则可以跳过此步骤。
 

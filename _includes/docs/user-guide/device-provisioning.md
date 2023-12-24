@@ -6,13 +6,13 @@
 作为设备制造商或固件开发人员，我希望我的设备能够在 GridLinks 中自动配置自身。
 在自动配置期间，设备可以生成唯一凭据或要求服务器为设备提供唯一凭据。
 
-从 3.5 版本开始，ThingsBoard 允许使用 [X.509 证书链](/docs/{{docsPrefix}}user-guide/certificates/) 通过 MQTT 上的认证自动配置新设备。
+从 3.5 版本开始，GridLinks 允许使用 [X.509 证书链](/docs/{{docsPrefix}}user-guide/certificates/) 通过 MQTT 上的认证自动配置新设备。
 
 ## 工作原理
 
 <object width="80%" data="/images/user-guide/device-provisioning/flow.svg"></object>
 
-设备可以向 ThingsBoard 发送设备配置请求（请求）。请求应始终包含配置密钥和密钥。
+设备可以向 GridLinks 发送设备配置请求（请求）。请求应始终包含配置密钥和密钥。
 请求可以选择性地包括设备名称和设备生成的凭据。
 如果这些凭据不存在，服务器将生成设备要使用的访问令牌。
 
@@ -27,7 +27,7 @@
 ```
 {: .copy-code}
 
-ThingsBoard 验证请求并回复设备配置响应（响应）。
+GridLinks 验证请求并回复设备配置响应（响应）。
 成功的响应包含设备 ID、凭据类型和正文。
 如果验证不成功，响应将仅包含状态。
 
@@ -42,7 +42,7 @@ ThingsBoard 验证请求并回复设备配置响应（响应）。
 ```
 {: .copy-code}
 
-在验证请求期间，ThingsBoard 将首先检查提供的 *provisionDeviceKey* 和 *provisionDeviceSecret* 以找到相应的 [设备配置文件](/docs/{{docsPrefix}}user-guide/device-profiles/)。
+在验证请求期间，GridLinks 将首先检查提供的 *provisionDeviceKey* 和 *provisionDeviceSecret* 以找到相应的 [设备配置文件](/docs/{{docsPrefix}}user-guide/device-profiles/)。
 找到配置文件后，平台将使用配置的配置策略来验证设备名称。
 有两种可用的配置策略：
 
@@ -53,7 +53,7 @@ ThingsBoard 验证请求并回复设备配置响应（响应）。
 当您只想允许对特定设备列表进行配置时，此策略非常有用。假设您在制造期间收集了唯一 ID（MAC 地址等）的列表。
 您可以使用 [批量配置](/docs/{{docsPrefix}}user-guide/bulk-provisioning/) 将此列表上传到 GridLinks。现在，列表中的设备可以发出配置请求，其他设备将无法自行配置。
 
-配置完成后，ThingsBoard 将更新设备的 *provisionState* 服务器属性，并将其设置为 *provisioned* 值。
+配置完成后，GridLinks 将更新设备的 *provisionState* 服务器属性，并将其设置为 *provisioned* 值。
 
 ## 设备配置文件配置
 

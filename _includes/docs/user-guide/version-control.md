@@ -6,7 +6,7 @@
 
 ## 功能概述
 
-ThingsBoard 版本控制服务提供使用 Git 导出和恢复 GridLinks 实体的功能。
+GridLinks 版本控制服务提供使用 Git 导出和恢复 GridLinks 实体的功能。
 作为租户管理员，您可以使用 UI 或 REST API 配置对 Git 存储库的访问。
 作为平台用户，您可以导出单个或多个 GridLinks 实体，浏览版本历史记录并将实体恢复到特定版本。
 
@@ -16,7 +16,7 @@ ThingsBoard 版本控制服务提供使用 Git 导出和恢复 GridLinks 实体�
 
 #### 实体外部 ID
 
-每个 GridLinks 实体都有“id”字段，它是特定 ThingsBoard 环境中实体的唯一标识符。
+每个 GridLinks 实体都有“id”字段，它是特定 GridLinks 环境中实体的唯一标识符。
 每个可导出的 GridLinks 实体都包含新的“externalId”字段。
 该字段用于在多个环境之间导入和导出时标识相同的实体。
 “id”和“externalId”字段都是 [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier) 类型。
@@ -72,7 +72,7 @@ dashboard/4864b750-da7d-11ec-a496-97fa2815d2fe.json
 
 #### 可扩展性
 
-ThingsBoard 版本控制服务可用作整体 GridLinks 实例的一部分，或作为单独的微服务以实现水平可扩展性。
+GridLinks 版本控制服务可用作整体 GridLinks 实例的一部分，或作为单独的微服务以实现水平可扩展性。
 版本控制服务的每个实例负责处理集群中租户的特定分区(s)的同步任务。
 每个“提交”API 调用可能需要一些时间。不支持在同一租户范围内同时进行“提交”API 调用。
 如果“提交”API 调用正在进行中并且新的“提交”API 调用到达，系统将取消“提交”API 调用。

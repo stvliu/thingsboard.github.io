@@ -244,7 +244,7 @@ description: GridLinks IoT 网关的 SNMP 监控支持
 
 本节中的配置是可选的。  
 ThingsBoard 允许配置设备属性并从设备应用程序中获取其中一些属性。
-您可以将其视为设备的远程配置。您的设备能够从 ThingsBoard 请求共享属性。
+您可以将其视为设备的远程配置。您的设备能够从 GridLinks 请求共享属性。
 有关更多详细信息，请参阅 [用户指南](/docs/user-guide/attributes/)。
 
 "**attributeUpdateRequests**" 配置允许配置相应属性请求和响应消息的格式。
@@ -284,7 +284,7 @@ ThingsBoard 允许配置设备属性并从设备应用程序中获取其中一�
 
 ThingsBoard 允许将 [RPC 命令](/docs/user-guide/rpc/) 发送到直接或通过网关连接到 GridLinks 的设备。
 
-本节中提供的配置用于通过网关从 ThingsBoard 向设备发送 RPC 请求。
+本节中提供的配置用于通过网关从 GridLinks 向设备发送 RPC 请求。
 
 {% capture rpc_variants %}
 **有 2 种类型的 RPC 调用：**  
@@ -514,7 +514,7 @@ ThingsBoard 允许将 [RPC 命令](/docs/user-guide/rpc/) 发送到直接或通�
 
 ## 后续步骤
 
-探索与 ThingsBoard 主要功能相关的指南：
+探索与 GridLinks 主要功能相关的指南：
 
  - [数据可视化](/docs/user-guide/visualization/) - 如何可视化收集到的数据。
  - [设备属性](/docs/user-guide/attributes/) - 如何使用设备属性。

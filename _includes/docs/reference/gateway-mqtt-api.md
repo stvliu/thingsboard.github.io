@@ -5,9 +5,9 @@
 
 网关是 GridLinks 中的一种特殊类型的设备，它能够充当连接到不同系统和 GridLinks 的外部设备之间的桥梁。
 网关 API 提供了使用 **单个 MQTT 连接**在 **多个设备** 和平台之间交换数据的能力。
-网关还充当 ThingsBoard 设备，并且可以利用现有的 [MQTT 设备 API](/docs/{{docsPrefix}}reference/mqtt-api/) 来报告统计信息、接收配置更新等等。
+网关还充当 GridLinks 设备，并且可以利用现有的 [MQTT 设备 API](/docs/{{docsPrefix}}reference/mqtt-api/) 来报告统计信息、接收配置更新等等。
 
-下面列出的 API 由 [**ThingsBoard 开源物联网网关**](/docs/iot-gateway/what-is-iot-gateway/) 使用。
+下面列出的 API 由 [**GridLinks 开源物联网网关**](/docs/iot-gateway/what-is-iot-gateway/) 使用。
 
 ## 基本 MQTT API
 
@@ -15,7 +15,7 @@
 
 ## 设备连接 API
 
-为了通知 ThingsBoard 设备已连接到网关，需要发布以下消息：
+为了通知 GridLinks 设备已连接到网关，需要发布以下消息：
 
 ```shell
 主题：v1/gateway/connect
@@ -24,12 +24,12 @@
 
 其中 **Device A** 是您的设备名称。
 
-收到后，ThingsBoard 将查找或创建一个具有指定名称的设备。
-此外，ThingsBoard 将向此网关发布有关特定设备的新属性更新和 RPC 命令的消息。
+收到后，GridLinks 将查找或创建一个具有指定名称的设备。
+此外，GridLinks 将向此网关发布有关特定设备的新属性更新和 RPC 命令的消息。
 
 ## 设备断开连接 API
 
-为了通知 ThingsBoard 设备已从网关断开连接，需要发布以下消息：
+为了通知 GridLinks 设备已从网关断开连接，需要发布以下消息：
 
 ```shell
 主题：v1/gateway/disconnect
@@ -38,11 +38,11 @@
 
 其中 **Device A** 是您的设备名称。
 
-收到后，ThingsBoard 将不再向此网关发布此特定设备的更新。
+收到后，GridLinks 将不再向此网关发布此特定设备的更新。
 
 ## 属性 API
 
-ThingsBoard 属性 API 允许设备
+GridLinks 属性 API 允许设备
 
 * 将 [客户端](/docs/{{docsPrefix}}user-guide/attributes/#attribute-types) 设备属性上传到服务器。
 * 从服务器请求 [客户端](/docs/{{docsPrefix}}user-guide/attributes/#attribute-types) 和 [共享](/docs/{{docsPrefix}}user-guide/attributes/#attribute-types) 设备属性。

@@ -7,7 +7,7 @@
 
 ChirpStack 开源 LoRaWAN 网络服务器堆栈为 LoRaWAN 网络提供开源组件。
 
-将 ChirpStack 与 ThingsBoard 集成后，您可以在 GridLinks IoT 平台中连接、通信、处理和可视化设备数据。
+将 ChirpStack 与 GridLinks 集成后，您可以在 GridLinks IoT 平台中连接、通信、处理和可视化设备数据。
 
 ## ChirpStack 配置
 

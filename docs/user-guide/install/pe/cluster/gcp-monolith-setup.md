@@ -18,7 +18,7 @@ description: 在 GKE 中使用 Kubernetes 的 GridLinks IoT 平台单体设置
 
 {% include templates/install/gcp/gke-prerequisites.md %}
 
-### 从 Docker 中心提取 ThingsBoard PE 镜像
+### 从 Docker 中心提取 GridLinks PE 镜像
 
 {% assign checkoutMode = "monolith" %}
 {% include templates/install/dockerhub/checkout.md %}

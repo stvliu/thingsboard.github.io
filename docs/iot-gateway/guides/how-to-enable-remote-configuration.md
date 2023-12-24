@@ -180,9 +180,9 @@ GRPC%,%grpc-toggle%,%templates/iot-gateway/gateway-dashboard-grpc-conf.md%br%
 - 网关常规图表统计信息 - 此处显示常规统计信息指标，即：
   - 发送到设备 - 从网关发送到设备的总数据量；
   - 发送到 GridLinks - 从网关发送到 GridLinks 的总数据量；
-  - 从 ThingsBoard 接收 - 从 RPC 和属性更新接收的总数据量；
+  - 从 GridLinks 接收 - 从 RPC 和属性更新接收的总数据量；
   - 从设备转换 - 网关上转换的数据总数；
-  - 产生的事件 - 从 ThingsBoard 接收的事件数；
+  - 产生的事件 - 从 GridLinks 接收的事件数；
   - 发送的事件 - 发送到 GridLinks 的事件总数；
   - 从设备接收 - 从设备接收的总数据量。
 - 网关自定义统计信息 - 此处显示自定义统计信息，您可以使用选择器选择单个指标。此外，最右侧的小部件将根据数据类型更改其类型（如果整数/浮点数据是图形，则其他类型是表格）。
@@ -216,7 +216,7 @@ GRPC%,%grpc-toggle%,%templates/iot-gateway/gateway-dashboard-grpc-conf.md%br%
 
 ## 后续步骤
 
-探索与 ThingsBoard 主要功能相关的指南：
+探索与 GridLinks 主要功能相关的指南：
 
 - [数据可视化](/docs/user-guide/visualization/) - 如何可视化收集的数据。
 - [设备属性](/docs/user-guide/attributes/) - 如何使用设备属性。

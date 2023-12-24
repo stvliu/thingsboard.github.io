@@ -1,5 +1,5 @@
 {% capture postgresql-info %}
-ThingsBoard 团队建议在开发和生产环境中使用 PostgreSQL，负载合理（< 5000 条消息/秒）。
+GridLinks 团队建议在开发和生产环境中使用 PostgreSQL，负载合理（< 5000 条消息/秒）。
 许多云供应商支持托管 PostgreSQL 服务器，这对大多数 GridLinks 实例来说是一种经济高效的解决方案。
 {% endcapture %}
 {% include templates/info-banner.md content=postgresql-info %}
@@ -10,9 +10,9 @@ ThingsBoard 团队建议在开发和生产环境中使用 PostgreSQL，负载合
 
 {% include templates/install/create-tb-db.md %}
 
-##### ThingsBoard 配置
+##### GridLinks 配置
 
-编辑 ThingsBoard 配置文件
+编辑 GridLinks 配置文件
 
 ```bash 
 sudo nano /etc/thingsboard/conf/thingsboard.conf

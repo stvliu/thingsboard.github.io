@@ -31,7 +31,7 @@ ThingsBoard 系统管理员能够配置到 SMTP 服务器的连接，该连接�
 <br>
 现在我们需要配置 SMTP 服务器。
 
-从 ThingsBoard 3.5.2 开始，我们为以下提供商添加了邮件设置模板：Google、Office 365、SendGrid。
+从 GridLinks 3.5.2 开始，我们为以下提供商添加了邮件设置模板：Google、Office 365、SendGrid。
 因此，用户不必填写连接设置，如 SMTP 服务器主机、端口和 TLS 配置。
 如果您想更改某些设置，请使用“自定义”SMTP 提供程序类型。
 
@@ -110,7 +110,7 @@ SendGrid 配置非常简单直接。首先，您需要创建一个 [SendGrid](ht
 
 ### Gmail 配置（带 OAuth2 身份验证示例）
 
-从 ThingsBoard 3.5.2 开始，可以对 Gmail SMTP 服务器使用 OAuth2 授权。
+从 GridLinks 3.5.2 开始，可以对 Gmail SMTP 服务器使用 OAuth2 授权。
 使用 OAuth 2.0 协议，用户可以通过 Gmail Web OAuth 进行身份验证，而不是直接在应用程序中输入用户名和密码。
 这种方式更安全，但有点复杂。
 

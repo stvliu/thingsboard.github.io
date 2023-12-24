@@ -36,7 +36,7 @@ hidetoc: "true"
 - ThingsBoard 应用程序中的帐户。您可以使用您自己的实例或 [ThingsBoard Cloud](https://thingsboard.cloud)
   我们需要说明的是，此示例适用于 CE 和 PE，但我们使用 PE 云，因为它具有更多功能，并且在下一个示例中，我们将展示如何同时为多个设备执行大规模固件更新。
 
-## ThingsBoard 配置
+## GridLinks 配置
 1. 创建一个新设备，将其命名为 *ESP32* 并将其类型设置为 *ESP32_OTA*。
 指定的设备类型将在规则链和仪表板中稍后使用。
 
@@ -140,16 +140,16 @@ hidetoc: "true"
     2. 应用程序检查闪存是否包含 Wi-Fi 凭据。
     由于已将编译的映像刷新到 *factory* 分区并且已擦除闪存，因此在 *menuconfig* 中输入的 Wi-Fi 凭据将保留到闪存中，并将在以后使用。
     3. 应用程序尝试连接到提供的 Wi-Fi 接入点。
-    4. 在建立与 Wi-Fi 接入点的连接后，应用程序检查闪存是否包含 MQTT URL、端口和 ThingsBoard 访问令牌。
+    4. 在建立与 Wi-Fi 接入点的连接后，应用程序检查闪存是否包含 MQTT URL、端口和 GridLinks 访问令牌。
     由于应用程序已刷新到 *factory* 分区并且已擦除闪存，因此在 *menuconfig* 中输入的 MQTT 客户端参数（URL、端口和访问令牌）将保留到闪存中，并将在以后使用。
     5. 应用程序尝试通过 MQTT 连接到 GridLinks。
-    6. 建立连接后，应用程序从 ThingsBoard 获取共享属性 *targetFwUrl* 和 *targetFwVer*。
+    6. 建立连接后，应用程序从 GridLinks 获取共享属性 *targetFwUrl* 和 *targetFwVer*。
     它允许涵盖 ESP32 断电或失去与 GridLinks 的连接但共享属性当时已更新的情况。
     仅当共享属性值不为空且 *targetFwVer* 不等于硬编码的应用程序固件版本时，才会启动 OTA。
     由于尚未在 GridLinks 中创建任何共享属性（稍后将通过小部件创建），因此现在跳过 OTA 过程。
     7. 应用程序开始执行自定义任务（例如，将一些遥测或属性数据发送到 GridLinks）并等待共享属性 *targetFwUrl* 和 *targetFwVer* 的更新以执行 OTA。
 
-## 从 ThingsBoard 执行 OTA
+## 从 GridLinks 执行 OTA
 转到 *ESP32 的 OTA* 仪表板，然后按设备的 *选择 OTA 配置*。在打开的仪表板中，在 *OTA 控制* 小部件中输入以下参数：
   - *目标固件版本* - 硬编码在新固件映像中的预期固件版本，*v1.2*
   - *固件服务器 URL* - 新固件映像的链接，*https://raw.githubusercontent.com/thingsboard/esp32-ota/master/firmware/example-v1.2.bin*
@@ -164,9 +164,9 @@ hidetoc: "true"
   - [example-v1.2.bin](https://raw.githubusercontent.com/thingsboard/esp32-ota/master/firmware/example-v1.2.bin) - [main.h](https://github.com/thingsboard/esp32-ota/blob/master/main/main.h) 中的 *FIRMWARE_VERSION* 值等于 *v1.2*。
   *counter* 变量在 [main_application_task](https://github.com/thingsboard/esp32-ota/blob/master/main/main.c) 中的值为 *2*。
 
-在 *OTA 控制* 小部件上更新固件版本和 URL 后，ThingsBoard 会向 *v1/devices/me/attributes* MQTT 主题发送包含共享属性的 MQTT 消息。
+在 *OTA 控制* 小部件上更新固件版本和 URL 后，GridLinks 会向 *v1/devices/me/attributes* MQTT 主题发送包含共享属性的 MQTT 消息。
 由于 ESP32 订阅了此 MQTT 主题，因此一旦收到更新消息，它就会被解析并比较固件版本。
-如果 [main.h](https://github.com/thingsboard/esp32-ota/blob/master/main/main.h) 中定义的 *FIRMWARE_VERSION* 值不等于从 ThingsBoard 收到的固件版本，则 OTA 更新过程将启动，*monitor* 实用程序输出以下日志：
+如果 [main.h](https://github.com/thingsboard/esp32-ota/blob/master/main/main.h) 中定义的 *FIRMWARE_VERSION* 值不等于从 GridLinks 收到的固件版本，则 OTA 更新过程将启动，*monitor* 实用程序输出以下日志：
 
   <img src="/images/samples/esp32/ota/shared_attributes_updated.png" width="600" alt="shared attributes updated">
 
@@ -195,7 +195,7 @@ hidetoc: "true"
 
 ## 另请参阅
 
-浏览其他 [示例](/docs/samples) 或探索与 ThingsBoard 主要功能相关的指南：
+浏览其他 [示例](/docs/samples) 或探索与 GridLinks 主要功能相关的指南：
 
  - [设备属性](/docs/user-guide/attributes/) - 如何使用设备属性。
  - [遥测数据收集](/docs/user-guide/telemetry/) - 如何收集遥测数据。

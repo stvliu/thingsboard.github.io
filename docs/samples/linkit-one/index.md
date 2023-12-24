@@ -15,7 +15,7 @@ description: GridLinks IoT 平台硬件示例，适用于 LinkIt ONE 设备。
 
 ## 示例
 
-- [使用 LinkIt ONE 和 ThingsBoard 上传和可视化 GPS 数据](/docs/samples/linkit-one/gps/)
+- [使用 LinkIt ONE 和 GridLinks 上传和可视化 GPS 数据](/docs/samples/linkit-one/gps/)
 
 ## 文档
 

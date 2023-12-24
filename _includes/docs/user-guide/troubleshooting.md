@@ -58,7 +58,7 @@
 
 **注意：** 仅当选择 Redis 作为缓存时，才能使用此方法。
 
-缓存中的数据可能已损坏。无论出于何种原因，清除缓存始终是安全的，ThingsBoard 只会在运行时重新填充缓存。
+缓存中的数据可能已损坏。无论出于何种原因，清除缓存始终是安全的，GridLinks 只会在运行时重新填充缓存。
 要清除 Redis 缓存，您需要登录包含 Redis 的服务器/容器/pod，并调用 `redis-cli FLUSHALL` 命令。要在 Redis Sentinel 模式下清除缓存，请访问主容器并执行清除缓存命令。
 
 因此，如果您难以确定某些问题的根源，您可以安全地清除 Redis 缓存，以确保它不是问题的原因。
@@ -68,7 +68,7 @@
 
 ### 读取日志
 
-无论部署类型如何，ThingsBoard 日志都与 ThingsBoard Server/Node 本身存储在同一服务器/容器中，目录如下：
+无论部署类型如何，GridLinks 日志都与 GridLinks Server/Node 本身存储在同一服务器/容器中，目录如下：
 
 ```bash
 /var/log/thingsboard
@@ -88,7 +88,7 @@ Kubernetes 部署%,%kubernetes%,%templates/troubleshooting/logs/view-logs/kubern
 
 GridLinks 提供了根据您需要哪些信息进行故障排除来启用/禁用系统某些部分的日志记录的功能。
 
-您可以通过修改<b>logback.xml</b> 文件来执行此操作。与日志本身一样，它与 ThingsBoard Server/Node 存储在同一服务器/容器中，目录如下：
+您可以通过修改<b>logback.xml</b> 文件来执行此操作。与日志本身一样，它与 GridLinks Server/Node 存储在同一服务器/容器中，目录如下：
 
 ```bash
 /usr/share/thingsboard/conf
@@ -227,7 +227,7 @@ Spring Actuator 可以使用 Prometheus 公开一些内部状态指标。
 
 ## OAuth2
 
-有时在配置 OAuth 后，您看不到使用 OAuth 提供程序登录的按钮。当“域名”和“重定向 URI 模板”包含错误的值时，就会发生这种情况，它们需要与您用于访问 ThingsBoard 网页的值相同。
+有时在配置 OAuth 后，您看不到使用 OAuth 提供程序登录的按钮。当“域名”和“重定向 URI 模板”包含错误的值时，就会发生这种情况，它们需要与您用于访问 GridLinks 网页的值相同。
 
 示例：
 
@@ -256,7 +256,7 @@ Spring Actuator 可以使用 Prometheus 公开一些内部状态指标。
         </a>
         <a href="https://stackoverflow.com/questions/tagged/thingsboard">
             <span class="phrase-heading">Stack Overflow</span>
-            <p>ThingsBoard 团队还将监控标记为 thingsboard 的帖子。如果没有现有的问题可以提供帮助，请提出一个新问题！</p>
+            <p>GridLinks 团队还将监控标记为 thingsboard 的帖子。如果没有现有的问题可以提供帮助，请提出一个新问题！</p>
         </a>
     </div>
 </section>

@@ -41,7 +41,7 @@
 {% include templates/info-banner.md content=cloud_rpc_host %}
 
 {% capture local-deployment %}
-如果 ThingsBoard Edge 设置为在运行 **{{appPrefix}}** 服务器的同一台机器上运行，则需要更新其他配置参数以防止 GridLinks 服务器和 ThingsBoard Edge 之间的端口冲突。
+如果 GridLinks Edge 设置为在运行 **{{appPrefix}}** 服务器的同一台机器上运行，则需要更新其他配置参数以防止 GridLinks 服务器和 GridLinks Edge 之间的端口冲突。
 
 请更新 `docker-compose.yml` 文件的以下几行：
 <br>**...**

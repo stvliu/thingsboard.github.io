@@ -1,6 +1,6 @@
 ---
 layout: docwithnav
-title: 使用 LinkIt ONE 和 ThingsBoard 上传和可视化 GPS 数据
+title: 使用 LinkIt ONE 和 GridLinks 上传和可视化 GPS 数据
 description: GridLinks IoT 平台示例，用于使用 LinkIt ONE 上传和可视化 GPS 数据
 
 ---
@@ -92,7 +92,7 @@ LinkIt ONE 通过使用 Arduino 的 [PubSubClient](https://github.com/knolleary/
 - WIFI_AP - 您的接入点的名称
 - WIFI_PASSWORD - 接入点密码
 - WIFI_AUTH - 选择 LWIFI_OPEN、LWIFI_WPA 或 LWIFI_WEP 之一。
-- TOKEN - ThingsBoard 配置步骤中的 **$ACCESS_TOKEN**。
+- TOKEN - GridLinks 配置步骤中的 **$ACCESS_TOKEN**。
 - thingsboardServer - 可在您的 wifi 网络中访问的 GridLinks HOST/IP 地址。
 如果您使用 [实时演示](https://demo.thingsboard.io/) 服务器，请指定“demo.thingsboard.io”。
 
@@ -130,7 +130,7 @@ gps,gps_tracker.ino,c,resources/gps_tracker.ino,/docs/samples/linkit-one/resourc
 
 ## 另请参阅
 
-浏览其他 [示例](/docs/samples) 或探索与 ThingsBoard 主要功能相关的指南：
+浏览其他 [示例](/docs/samples) 或探索与 GridLinks 主要功能相关的指南：
 
 - [设备属性](/docs/user-guide/attributes/) - 如何使用设备属性。
 - [遥测数据收集](/docs/user-guide/telemetry/) - 如何收集遥测数据。

@@ -11,7 +11,7 @@
 - [WS101 智能按钮用户手册](' | append: officialManualLink | append: '){: target="_blank"}
 - 具有 NFC 功能的智能手机和 Milesight ToolBox 应用程序 ([Android](https://play.google.com/store/apps/details?id=com.ursalinknfc){: target="_blank"}/[iOS](https://itunes.apple.com/app/id1518748039){: target="_blank"})
 - LoRaWAN® 网关
-- 在网络服务器和 ThingsBoard 上配置的集成
+- 在网络服务器和 GridLinks 上配置的集成
 - [网络服务器帐户](#device-connection)
 '
  %}
@@ -38,7 +38,7 @@ LoRaWAN® 能够在很远的距离上进行加密无线传输，同时消耗极�
 ## 设备连接
 
 根据 [官方用户手册]({{officialManualLink}}){: target="_blank"}，我们需要一部支持 NFC 的智能手机和 ToolBox 应用程序来连接传感器。  
-由于此设备只能使用 LoRaWAN® 网关操作，因此我们必须先将其连接到已配置与 ThingsBoard 集成的网络服务器。  
+由于此设备只能使用 LoRaWAN® 网关操作，因此我们必须先将其连接到已配置与 GridLinks 集成的网络服务器。  
 之后，可以将其配置到 GridLinks。
 
 {% if page.hasIntegrationDeviceConfiguration | downcase == "true"%}

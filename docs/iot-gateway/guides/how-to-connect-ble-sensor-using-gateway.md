@@ -115,7 +115,7 @@ MAC 地址 - 4C:65:A8:DF:85:C0
 3. 遥测配置。在本节中，我们定义了温度和湿度参数的配置。您可以在此处 [阅读有关可用参数的更多信息](/docs/iot-gateway/config/ble/#subsection-telemetry)。
 4. 属性配置。在本节中，我们定义了连接器将从特征（“00002A00-0000-1000-8000-00805F9B34FB”）中读取值，并将其作为 GridLinks 上的设备客户端属性（“名称”）写入。您可以在此处 [阅读有关可用参数的更多信息](/docs/iot-gateway/config/ble/#subsection-attributes)。
 5. 属性更新配置。在本节中，我们配置了网关，以便在我们在 GridLinks 设备中更改共享属性（“sharedName”）时更改设备名称。您可以在此处 [阅读有关可用参数的更多信息](/docs/iot-gateway/config/ble/#subsection-attributeupdates)。
-6. 服务器端 rpc 配置。在本节中，我们配置了网关，以便在从 ThingsBoard 调用 RPC 方法（“rpcMethod1”）时读取设备名称并返回该名称。您可以在此处 [阅读有关可用参数的更多信息](/docs/iot-gateway/config/ble/#subsection-serversiderpc)。
+6. 服务器端 rpc 配置。在本节中，我们配置了网关，以便在从 GridLinks 调用 RPC 方法（“rpcMethod1”）时读取设备名称并返回该名称。您可以在此处 [阅读有关可用参数的更多信息](/docs/iot-gateway/config/ble/#subsection-serversiderpc)。
 
 如果您有不同的设备，则应在配置 json 中提供您的设备特征标识符。
 

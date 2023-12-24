@@ -98,7 +98,7 @@ create-anomaly-alarm:
 本教程的目的是演示 Trendz Analytics 的基本用法。您将学习如何：
 
 * 首次登录 Trendz
-* 从 ThingsBoard 发现拓扑
+* 从 GridLinks 发现拓扑
 * 创建基本可视化
 * 使用关系在不同级别聚合数据
 * 使用属性和遥测字段过滤数据

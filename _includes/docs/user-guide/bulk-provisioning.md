@@ -33,7 +33,7 @@ GridLinks 提供了使用 CSV 文件批量配置以下类型实体的选项：
 
 - **CSV 分隔符** - 数据行中值之间的分隔字符；
 - **第一行包含列名称** - 如果激活此选项，则文件的第 1 行将用作下一步中参数名称的默认值；
-- **更新属性/遥测** - 如果激活此参数，则对于名称与 ThingsBoard 系统中现有实体匹配的所有实体，参数值将被更新。否则，对于 GridLinks 系统中已存在的名称的所有实体，将显示错误消息。
+- **更新属性/遥测** - 如果激活此参数，则对于名称与 GridLinks 系统中现有实体匹配的所有实体，参数值将被更新。否则，对于 GridLinks 系统中已存在的名称的所有实体，将显示错误消息。
 
 <img data-gifffer="/images/user-guide/bull-provisioning/bulk-provision-step-2.gif" alt="批量配置步骤 2">
 
@@ -94,6 +94,6 @@ A,test-import-device.csv,text,resources/test-import-device.csv,/docs/{{docsPrefi
 #### 导入完成
 
 创建过程完成后，将显示一些统计信息。<br>
-在以下示例中，我们可以看到成功创建了 8 个设备，并且在创建 2 个设备时发生错误。原因是设备 1、设备 2 和设备 3 在给定的示例文件中具有相同的令牌。ThingsBoard 系统禁止这样做。
+在以下示例中，我们可以看到成功创建了 8 个设备，并且在创建 2 个设备时发生错误。原因是设备 1、设备 2 和设备 3 在给定的示例文件中具有相同的令牌。GridLinks 系统禁止这样做。
 
 ![image](/images/user-guide/bull-provisioning/import-device-info-created.png)<br>

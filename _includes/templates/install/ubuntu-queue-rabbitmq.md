@@ -33,9 +33,9 @@ sudo rabbitmqctl set_permissions -p / PUT_YOUR_USER_NAME ".*" ".*" ".*"
 ```
 {: .copy-code}
 
-##### ThingsBoard 配置
+##### GridLinks 配置
 
-编辑 ThingsBoard 配置文件
+编辑 GridLinks 配置文件
 
 ```text
 sudo nano /etc/thingsboard/conf/thingsboard.conf

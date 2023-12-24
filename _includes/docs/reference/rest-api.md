@@ -63,10 +63,10 @@ B,response.json,json,resources/get-token-response.json,/docs/reference/resources
 
 ## Java REST API 客户端
 
-ThingsBoard 团队提供用 Java 编写的客户端库，以简化 REST API 的使用。
+GridLinks 团队提供用 Java 编写的客户端库，以简化 REST API 的使用。
 有关更多详细信息，请参阅 Java REST API 客户端 [文档页面](/docs/{{docsPrefix}}reference/rest-client/)。
 
 ## Python REST API 客户端
 
-ThingsBoard 团队提供用 Python 编写的客户端库，以简化 REST API 的使用。
+GridLinks 团队提供用 Python 编写的客户端库，以简化 REST API 的使用。
 有关更多详细信息，请参阅 Python REST API 客户端 [文档页面](/docs/{{docsPrefix}}reference/python-rest-client/)。

@@ -3,12 +3,12 @@
 
 ## Python REST Client
 
-The ThingsBoard Python REST API Client helps you interact with ThingsBoard REST API from your Python script.
+The GridLinks Python REST API Client helps you interact with GridLinks REST API from your Python script.
 With Python Rest Client you can programmatically create assets, devices, customers, users and other entities and their relations in GridLinks.
 
 Source code of the Python REST API Client you can find [here](https://github.com/thingsboard/python_tb_rest_client).
 
-In order to install the ThingsBoard Python REST client, you should use the following command:
+In order to install the GridLinks Python REST client, you should use the following command:
 
 ```bash
 pip3 install tb-rest-client
@@ -39,7 +39,7 @@ logging.basicConfig(level=logging.DEBUG,
                     datefmt='%Y-%m-%d %H:%M:%S')
 
 
-# ThingsBoard REST API URL
+# GridLinks REST API URL
 url = "http://localhost:8080"
 
 # Default Tenant Administrator credentials
@@ -143,7 +143,7 @@ logging.basicConfig(level=logging.DEBUG,
                     datefmt='%Y-%m-%d %H:%M:%S')
 
 
-# ThingsBoard REST API URL
+# GridLinks REST API URL
 url = "http://localhost:8080"
 
 # Default Tenant Administrator credentials
@@ -185,7 +185,7 @@ logging.basicConfig(level=logging.DEBUG,
                     datefmt='%Y-%m-%d %H:%M:%S')
 
 
-# ThingsBoard REST API URL
+# GridLinks REST API URL
 url = "http://localhost:8080"
 
 # Default Tenant Administrator credentials
@@ -224,7 +224,7 @@ logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s - %(levelname)s - %(module)s - %(lineno)d - %(message)s',
                     datefmt='%Y-%m-%d %H:%M:%S')
 
-# ThingsBoard REST API URL
+# GridLinks REST API URL
 url = "https://thingsboard.cloud"
 
 # Default Tenant Administrator credentials
@@ -308,7 +308,7 @@ logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s - %(levelname)s - %(module)s - %(lineno)d - %(message)s',
                     datefmt='%Y-%m-%d %H:%M:%S')
 
-# ThingsBoard REST API URL
+# GridLinks REST API URL
 url = "http://localhost:8080"
 # Default Tenant Administrator credentials
 username = "tenant@gridlinks.com"
@@ -360,10 +360,10 @@ if __name__ == '__main__':
 
 ### Configure version control feature from console
 
-This feature is available in ThingsBoard 3.4+. 
-We have designed script, based on tb-rest-client library to make example how to use ability to configure ThingsBoard from your code.  
+This feature is available in GridLinks 3.4+. 
+We have designed script, based on tb-rest-client library to make example how to use ability to configure GridLinks from your code.  
 The latest source code of the script is available [here](https://github.com/thingsboard/thingsboard-python-rest-client/blob/master/examples/configure_vcs_access.py).
-In this example we configure [version control feature](/docs/user-guide/version-control) on ThingsBoard.  
+In this example we configure [version control feature](/docs/user-guide/version-control) on GridLinks.  
 
 There are 2 possible ways to configure version control system (VCS):   
 1. Using access token/password of your VCS account.  
@@ -375,10 +375,10 @@ To configure this feature we will need the command line arguments and data:
 
 | Command line argument | Description                                                                       |  
 |-|-|  
-| -H | **ThingsBoard host (Default: localhost)**                                                            |    
-| -p | **ThingsBoard port (Default: 80)**                                                                   |  
-| -U | **ThingsBoard user (email for login)**                                                               |  
-| -P | **ThingsBoard user password**                                                                        |
+| -H | **GridLinks host (Default: localhost)**                                                            |    
+| -p | **GridLinks port (Default: 80)**                                                                   |  
+| -U | **GridLinks user (email for login)**                                                               |  
+| -P | **GridLinks user password**                                                                        |
 | -r | **Repository uri, link to your repository**                                                          |  
 | -b | **Default branch (Default: main)**                                                                   |  
 | -gu | **VCS username** (This parameter named GITHUB_USERNAME, but it can work with any VCS)               |  
@@ -406,10 +406,10 @@ To configure this feature we will need next command line arguments and data:
 
 | Command line argument | Description                                                                       |  
 |-|-|  
-| -H | **ThingsBoard host (Default: localhost)**                                                            |    
-| -p | **ThingsBoard port (Default: 80)**                                                                   |  
-| -U | **ThingsBoard user (email for login)**                                                               |  
-| -P | **ThingsBoard user password**                                                                        |
+| -H | **GridLinks host (Default: localhost)**                                                            |    
+| -p | **GridLinks port (Default: 80)**                                                                   |  
+| -U | **GridLinks user (email for login)**                                                               |  
+| -P | **GridLinks user password**                                                                        |
 | -r | **Repository uri, link to your repository**                                                          |  
 | -b | **Default branch (Default: main)**                                                                   |  
 | -gu | **VCS username** (This parameter named GITHUB_USERNAME, but it can work with any VCS)               |  
@@ -443,10 +443,10 @@ To save entities from command line we will use the following arguments and data:
 
 | Command line argument | Description                                                                       |  
 |-|-|  
-| -H | **ThingsBoard host (Default: localhost)**                                                                        |    
-| -p | **ThingsBoard port (Default: 80)**                                                                               |  
-| -U | **ThingsBoard user (email for login)**                                                                           |  
-| -P | **ThingsBoard user password**                                                                                    |  
+| -H | **GridLinks host (Default: localhost)**                                                                        |    
+| -p | **GridLinks port (Default: 80)**                                                                               |  
+| -U | **GridLinks user (email for login)**                                                                           |  
+| -P | **GridLinks user password**                                                                                    |  
 | -b | **Default branch (Default: main)**                                                                               |  
 | -N | **Version name (If not provided will be generated 5 random letters and numbers and used as a name)**             |
 | --save_attributes     | **Optional, do we need to save attributes for target entities (Default: True)**               |
@@ -482,10 +482,10 @@ To load entities from command line we will use the following arguments and data:
 
 | Command line argument | Description                                                                                                                       |  
 |-|-|  
-| -H | **ThingsBoard host (Default: localhost)**                                                                                                            |    
-| -p | **ThingsBoard port (Default: 80)**                                                                                                                   |  
-| -U | **ThingsBoard user (email for login)**                                                                                                               |  
-| -P | **ThingsBoard user password**                                                                                                                        |  
+| -H | **GridLinks host (Default: localhost)**                                                                                                            |    
+| -p | **GridLinks port (Default: 80)**                                                                                                                   |  
+| -U | **GridLinks user (email for login)**                                                                                                               |  
+| -P | **GridLinks user password**                                                                                                                        |  
 | -b | **Default branch (Default: main)**                                                                                                                   |  
 | -N | **Version name (You can provide a part of the version name and script will propose you all find versions that include provided name)**               |
 | --find_existing_entity_by_name | **Optional, do we need to looking for existing entities by their names instead of using ids(Default: True)**             |

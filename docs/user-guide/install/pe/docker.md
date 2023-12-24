@@ -21,7 +21,7 @@ redirect_from: "/docs/pe/user-guide/install/docker/"
 
 {% include templates/install/docker-install-note.md %}
 
-## 步骤 1. 拉取 ThingsBoard PE 镜像
+## 步骤 1. 拉取 GridLinks PE 镜像
 
 ```bash
 docker pull thingsboard/tb-pe:{{ site.release.pe_full_ver }}

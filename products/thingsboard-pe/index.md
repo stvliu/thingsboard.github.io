@@ -248,7 +248,7 @@ description:
             <div class="item">
                 <img src="/images/pe/pricing-models.svg" alt="简单且可预测的定价模式">
                 <h3 class="item-heading">简单且可预测的定价模式</h3>
-                <p>对每条消息或每个设备说不，这些消息或设备在生产系统中会变成巨额账单。ThingsBoard PE 支持两种简单且可预测的定价模式，具体取决于您的产品生命周期阶段。</p>
+                <p>对每条消息或每个设备说不，这些消息或设备在生产系统中会变成巨额账单。GridLinks PE 支持两种简单且可预测的定价模式，具体取决于您的产品生命周期阶段。</p>
             </div>
         </div>
     </section>

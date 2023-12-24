@@ -270,7 +270,7 @@ REST 连接器中的响应可以有 3 种配置变体：
 
 此部分中的配置是可选的。  
 ThingsBoard 允许配置设备属性并从设备应用程序中获取其中一些属性。
-您可以将其视为设备的远程配置。您的设备能够从 ThingsBoard 请求共享属性。
+您可以将其视为设备的远程配置。您的设备能够从 GridLinks 请求共享属性。
 有关更多详细信息，请参阅 [用户指南](/docs/user-guide/attributes/)。
 
 "**attributeRequests**" 配置允许配置相应属性请求和响应消息的格式。
@@ -324,7 +324,7 @@ ThingsBoard 允许配置设备属性并从设备应用程序中获取其中一�
 
 ThingsBoard 允许将 [RPC 命令](/docs/user-guide/rpc/) 直接发送到连接到 GridLinks 或通过网关连接的设备。
  
-此部分中提供的配置用于从 ThingsBoard 向设备发送 RPC 请求。
+此部分中提供的配置用于从 GridLinks 向设备发送 RPC 请求。
 
 | **参数** | **默认值** | **说明** |
 |:-|:-|-
@@ -387,7 +387,7 @@ ThingsBoard 允许将 [RPC 命令](/docs/user-guide/rpc/) 直接发送到连接�
 
 ## 后续步骤
 
-探索与 ThingsBoard 主要功能相关的指南：
+探索与 GridLinks 主要功能相关的指南：
 
 - [数据可视化](/docs/user-guide/visualization/) - 如何可视化收集的数据。
 - [设备属性](/docs/user-guide/attributes/) - 如何使用设备属性。

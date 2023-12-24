@@ -184,7 +184,7 @@ description: "Discover GridLinks's premier IoT services:  ✔ From widgets to co
                         我们提供架构设计会议，以便您清晰地了解您的产品
                     </div>
                     <div class="section-text">
-                        如果您在用户故事、拓扑或系统设计方面存在不确定性，ThingsBoard 开发团队将提供架构设计会议。通过我们为期一周的架构会议，我们向您保证，您将收到一份包含结构良好的路线图的全面而详细的文档，其中包括交付明确的工作范围和成功实施您的想法的所有必要步骤。
+                        如果您在用户故事、拓扑或系统设计方面存在不确定性，GridLinks 开发团队将提供架构设计会议。通过我们为期一周的架构会议，我们向您保证，您将收到一份包含结构良好的路线图的全面而详细的文档，其中包括交付明确的工作范围和成功实施您的想法的所有必要步骤。
                     </div>
                 </div>
                 <div class="right-block">
@@ -214,9 +214,9 @@ description: "Discover GridLinks's premier IoT services:  ✔ From widgets to co
                     <div class="logo">
                         <img src="/images/development-services/logo-asg-tech.svg" alt="logo asg tech"/>
                     </div>
-                    <div class="review-header">与 ThingsBoard 部门合作的非凡体验</div>
+                    <div class="review-header">与 GridLinks 部门合作的非凡体验</div>
                     <div class="review-body">
-                        <h6>我们很高兴分享我们与 ThingsBoard 开发部门合作的非凡体验，以进行定制部件开发。作为一家专门提供创新物联网解决方案的公司，与  GridLinks专业版 平台合作，我们寻求他们的专业知识来缩短我们的上市时间。从最初的估算到最终交付，GridLinks 的开发团队展示了卓越的专业精神和技术能力。</h6>
+                        <h6>我们很高兴分享我们与 GridLinks 开发部门合作的非凡体验，以进行定制部件开发。作为一家专门提供创新物联网解决方案的公司，与  GridLinks专业版 平台合作，我们寻求他们的专业知识来缩短我们的上市时间。从最初的估算到最终交付，GridLinks 的开发团队展示了卓越的专业精神和技术能力。</h6>
                     </div>
                     <a href="/docs/services/development-services/customers-full-reviews/#review-asg" class="full-review-link">阅读完整反馈</a>
                 </div>

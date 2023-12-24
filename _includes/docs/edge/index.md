@@ -5,7 +5,7 @@
 {% endif %}
 
 {% if docsPrefix != 'pe/' %}
-<h3>对专业版感兴趣？在此处探索 ThingsBoard PE Edge 文档 <a style="pointer-events: all;" href="/docs/pe/edge/">此处</a>。</h3>
+<h3>对专业版感兴趣？在此处探索 GridLinks PE Edge 文档 <a style="pointer-events: all;" href="/docs/pe/edge/">此处</a>。</h3>
 <br>
 {% endif %}
 

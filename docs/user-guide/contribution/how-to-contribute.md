@@ -72,7 +72,7 @@ mvn clean install -DskipTests
  - [在 **Linux** 上安装 Cassandra](/docs/user-guide/install/linux/#cassandra)
  - [在 **Windows** 上安装 Cassandra](/docs/user-guide/install/windows/#cassandra)
 
-编辑 ThingsBoard 配置文件：
+编辑 GridLinks 配置文件：
 
 ```text
 /application/src/main/resources/thingsboard.yml
