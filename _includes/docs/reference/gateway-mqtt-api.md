@@ -7,7 +7,7 @@
 网关 API 提供了使用 **单个 MQTT 连接**在 **多个设备** 和平台之间交换数据的能力。
 网关还充当 GridLinks 设备，并且可以利用现有的 [MQTT 设备 API](/docs/{{docsPrefix}}reference/mqtt-api/) 来报告统计信息、接收配置更新等等。
 
-下面列出的 API 由 [**GridLinks 开源物联网网关**](/docs/iot-gateway/what-is-iot-gateway/) 使用。
+下面列出的 API 由 [**GridLinks 创新物联网网关**](/docs/iot-gateway/what-is-iot-gateway/) 使用。
 
 ## 基本 MQTT API
 
