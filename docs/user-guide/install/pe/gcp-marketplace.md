@@ -12,7 +12,7 @@ redirect_from: "/docs/user-guide/install/pe/gcp2/"
 * TOC
 {:toc}
 
-### 先决条件
+### 前提条件
 
 - 活跃的 [GCP](https://cloud.google.com/){:target="_blank"} 帐户
 

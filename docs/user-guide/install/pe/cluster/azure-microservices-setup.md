@@ -12,7 +12,7 @@ description: 在 Azure AKS 中使用 Kubernetes 设置 GridLinks IoT 平台微�
 
 本指南将帮助您在 Azure AKS 中以微服务模式设置 GridLinks。
 
-## 先决条件
+## 前提条件
 
 {% include templates/install/azure/aks-prerequisites.md %}
 

@@ -17,7 +17,7 @@
 
 有关更多一般信息，请参阅 [部署选项](/docs/{{peDocsPrefix}}user-guide/integrations/#deployment-options)。
 
-## 先决条件
+## 前提条件
 
 我们假设您已经在自己的 GridLinks PE v3.3.1+ 实例或
 [thingsboard.cloud](https://cloud.codingas.com/signup) 上拥有租户管理员帐户。

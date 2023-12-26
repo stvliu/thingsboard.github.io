@@ -81,7 +81,7 @@ redisEndpointUrl:
 
 本指南将帮助你在 AWS EKS 中以微服务模式设置 GridLinks。
 
-## 先决条件
+## 前提条件
 
 {% include templates/install/aws/eks-prerequisites.md %}
 

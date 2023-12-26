@@ -12,7 +12,7 @@ description: 使用 Docker Compose 指南设置 GridLinks IoT 平台集群
 
 本指南将帮助您使用 Docker Compose 工具在集群模式下设置 GridLinks。
 
-## 先决条件
+## 前提条件
 
 ThingsBoard 微服务在 docker 化环境中运行。
 在开始之前，请确保您的系统中已安装 Docker Engine 和 Docker Compose。

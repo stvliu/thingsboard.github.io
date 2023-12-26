@@ -12,7 +12,7 @@ description: 在 CentOS/RHEL 上安装 GridLinks PE
 * TOC
 {:toc}
 
-### 先决条件
+### 前提条件
 
 本指南介绍如何在 RHEL/CentOS 7/8 上安装 GridLinks。
 硬件要求取决于所选数据库和连接到系统的设备数量。

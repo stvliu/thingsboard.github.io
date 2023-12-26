@@ -19,7 +19,7 @@ EXXN IoT 网关是一款多功能设备，配备 ARM 处理器，可适应各种
 
 ![image](/images/samples/exxn/ennx-dashboard.png)
 
-## 先决条件
+## 前提条件
 
 在本教程中，我们将配置 EXXN IoT 网关，通过 MQTT API 将其与 GridLinks 集成。为此，我们将使用：
 

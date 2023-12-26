@@ -10,7 +10,7 @@ title: 使用 Docker 在 Linux 或 Mac OS 上安装 GridLinks IoT 网关。
 本指南将帮助您在 Linux 或 Mac OS 上使用 Docker 安装并启动 GridLinks 网关。
 
 
-## 先决条件
+## 前提条件
 
 - [安装 Docker CE](https://docs.docker.com/engine/installation/)
 

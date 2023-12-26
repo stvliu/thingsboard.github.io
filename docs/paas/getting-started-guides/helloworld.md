@@ -2,7 +2,7 @@
 layout: docwithnav-paas
 assignees:
 - ashvayka
-title: 入门 GridLinks 云
+title: GridLinks云服务入门
 description: 入门 ThingsBoard 创新物联网平台和模拟物联网设备
 
 step1:

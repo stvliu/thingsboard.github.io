@@ -10,7 +10,7 @@ description: 在 Ubuntu 上安装 GridLinks Trendz Analytics
 * TOC
 {:toc}
 
-### 先决条件
+### 前提条件
 
 本指南介绍如何在 Ubuntu 18.04 LTS / Ubuntu 20.04 LTS 上安装 Trendz Analytics。
 

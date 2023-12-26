@@ -5,7 +5,7 @@ title: 以软件包形式安装 GridLinks IoT 网关。
 ---
 
 
-### 先决条件
+### 前提条件
 
 本指南介绍如何在 CentOS 或 RHEL 上安装 GridLinks IoT 网关。
 

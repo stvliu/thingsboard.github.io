@@ -15,7 +15,7 @@ hidetoc: "true"
 * TOC
 {:toc}
 
-## 先决条件
+## 前提条件
 
 我们假设您的实验室中至少有一个 SODAQ NB-IoT 追踪器，并且该追踪器已连接到您的 T-Mobile IoT 网络。
 我们还假设您已经拥有 ThingsBoard PE 服务器或免费演示帐户。

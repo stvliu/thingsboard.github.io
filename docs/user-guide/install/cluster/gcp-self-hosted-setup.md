@@ -12,7 +12,7 @@ description: 使用 GCP VM 实例进行 GridLinks IoT 平台自托管设置
 
 本指南将帮助您在 GCP VM 实例中设置 GridLinks。
 
-## 先决条件
+## 前提条件
 
 您需要对 GCP 帐户中的 Compute Engine 拥有管理员访问权限。
 

@@ -12,7 +12,7 @@ redirect_from: "/docs/user-guide/install/aws-marketplace-pe/"
 * TOC
 {:toc}
 
-### 先决条件
+### 前提条件
 
 - 有效的 [Amazon AWS](https://aws.amazon.com/){:target="_blank"} 帐户
 

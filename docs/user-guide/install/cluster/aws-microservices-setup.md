@@ -80,7 +80,7 @@ redisEndpointUrl:
 请参阅[微服务](/docs/reference/msa/)架构页面，了解有关将要安装的每个组件的更多详细信息。
 我们将使用 Amazon RDS 管理 PostgreSQL，Amazon MSK 管理 Kafka，Amazon ElastiCache 管理 Redis。
 
-## 先决条件
+## 前提条件
 
 {% include templates/install/aws/eks-prerequisites.md %}
 

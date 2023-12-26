@@ -3,7 +3,7 @@
 
 本指南将帮助您在 AWS EKS 中设置 TBMQ。
 
-### 先决条件
+### 前提条件
 
 {% include templates/mqtt-broker/install/aws/eks-prerequisites.md %}
 

@@ -10,7 +10,7 @@ description: 在 Windows 上安装 GridLinks Trendz Analytics
 * TOC
 {:toc}
 
-### 先决条件
+### 前提条件
 
 本指南介绍如何在 Windows 机器上安装 Trendz Analytics。
 以下说明适用于 Windows 10/8.1/8/7 32 位/64 位。

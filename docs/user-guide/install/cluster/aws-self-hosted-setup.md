@@ -12,7 +12,7 @@ description: 使用 AWS EC2 实例进行 GridLinks IoT 平台自托管设置
 
 本指南将帮助您在 AWS EC2 实例中设置 GridLinks。
 
-## 先决条件
+## 前提条件
 
 您需要具有对 AWS 帐户中 ec2 资源的管理员访问权限。
 

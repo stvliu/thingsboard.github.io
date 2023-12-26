@@ -43,7 +43,7 @@ tb-http-loadbalancer   <none>   *       34.111.24.134   80      7m25s
 #### HTTPS 负载均衡器
 
 使用 Google 管理的 SSL 证书配置负载均衡器的过程在官方 [文档页面](https://cloud.google.com/kubernetes-engine/docs/how-to/managed-certs) 中进行了描述。
-以下说明摘自官方文档。在继续之前，请仔细阅读 [先决条件](https://cloud.google.com/kubernetes-engine/docs/how-to/managed-certs#prerequisites)。
+以下说明摘自官方文档。在继续之前，请仔细阅读 [前提条件](https://cloud.google.com/kubernetes-engine/docs/how-to/managed-certs#prerequisites)。
 
 ```bash
 gcloud compute addresses create thingsboard-http-lb-address --global

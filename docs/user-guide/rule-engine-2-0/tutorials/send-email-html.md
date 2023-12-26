@@ -36,7 +36,7 @@ html_generator:
 * TOC
 {:toc}
 
-## 先决条件
+## 前提条件
 
 * [入门](/docs/getting-started-guides/helloworld/) 指南。
 * [规则引擎概述](/docs/user-guide/rule-engine-2-0/overview/)。

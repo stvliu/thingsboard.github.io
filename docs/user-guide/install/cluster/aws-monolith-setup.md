@@ -40,7 +40,7 @@ rdsEndpointUrl:
 与 Docker Compose 相比，通过 K8S 进行整体式部署的优势在于，如果 AWS 实例中断，
 K8S 将在另一个实例上重新启动服务。我们将使用 Amazon RDS 来管理 PostgreSQL。
 
-## 先决条件
+## 前提条件
 
 {% include templates/install/aws/eks-prerequisites.md %}
 

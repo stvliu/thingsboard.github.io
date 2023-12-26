@@ -12,7 +12,7 @@ description: 从 Google Cloud Platform Marketplace 安装 GridLinks PE
 * TOC
 {:toc}
 
-### 先决条件
+### 前提条件
 
 - 活跃的 [GCP](https://cloud.google.com/){:target="_blank"} 帐户
 

@@ -182,7 +182,7 @@ mqttWindows:
 
 {% include templates/edge/use-cases/manage-alarms/use-case.md %}
 
-## 先决条件
+## 前提条件
 
 {% include templates/edge/use-cases/prerequisites.md %}
 

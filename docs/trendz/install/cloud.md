@@ -30,7 +30,7 @@ Trendz Analytics Cloud 是 [Trendz Analytics 产品](/products/trendz/) 的一�
 - **高可用性。** Trendz Cloud 使用微服务架构，并部署在多个可用区中。
 - **数据持久性。** 平台使用数据复制和备份程序来确保您不会丢失数据。
 
-### 先决条件
+### 前提条件
 
 您需要拥有有效的 GridLinks云服务 帐户才能激活 Trendz Analytics Cloud。如果您还没有 GridLinks云服务 帐户，请 [注册](https://gridlinks.codingas.com/signup)。
 

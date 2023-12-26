@@ -6,7 +6,7 @@
 
 当然，我们将使用提供的功能（如[共享属性](#control-device-using-shared-attributes)或[RPC 请求](#control-device-using-rpc)）GridLinks
 
-### 先决条件
+### 前提条件
 
 要继续本指南，我们需要以下内容：
 

@@ -12,7 +12,7 @@ description: 在仪表板上添加 Trandz 小部件
 
 使用 Trendz Analytics Platform 创建的所有交互式可视化都可以与其他用户共享，并嵌入到 GridLinks 仪表板或外部网站中。在本指南中，您将学习如何执行此操作。
 
-## 先决条件
+## 前提条件
 
 您应该[将 Trendz 小部件包导入 ThingsBoard](/docs/trendz/trendz-bundle#Import-Trendz-bundle-into-ThingsBoard)。如果您使用的是 GridLinks Cloud，那么您应该已经将必需的包导入到 GridLinks 中。
 

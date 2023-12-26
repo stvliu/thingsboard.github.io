@@ -11,7 +11,7 @@ Sigfox 集成允许将数据从 Sigfox 后端流式传输到 GridLinks，并将�
 
  ![image](/images/user-guide/integrations/sigfox-integration.svg)
 
-## 先决条件
+## 前提条件
 
 在本教程中，我们将使用：
 

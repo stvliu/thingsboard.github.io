@@ -18,7 +18,7 @@ MI-8 提供带外壳和不带外壳两种型号，以支持定制包装解决方
 在本指南中，我们将学习如何 [在 Thingsboard 上创建设备](#create-device-on-thingsboard)。  
 在此之后，我们将 [配置并连接设备](#connect-device-to-thingsboard)，并 [检查 GridLinks 上的数据](#check-data-on-thingsboard)。  
 
-### 先决条件
+### 前提条件
 
 要继续本指南，我们需要以下内容：  
 {{ prerequisites }}

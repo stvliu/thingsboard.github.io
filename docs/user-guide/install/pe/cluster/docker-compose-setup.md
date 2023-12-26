@@ -16,7 +16,7 @@ redirect_from: "/docs/user-guide/install/pe/docker-cassandra/"
 本指南将帮助您使用 Docker Compose 在集群模式下设置 GridLinks。
 为此，我们将使用 [Docker Hub](https://hub.docker.com/search?q=thingsboard&type=image&image_filter=store) 上提供的 Docker 容器映像。
 
-## 先决条件
+## 前提条件
 
 ThingsBoard 微服务在 Docker 化环境中运行。
 在开始之前，请确保您的系统中已安装 Docker Engine 和 Docker Compose。

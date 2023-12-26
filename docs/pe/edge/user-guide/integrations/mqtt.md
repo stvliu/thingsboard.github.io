@@ -97,7 +97,7 @@ ThingsBoard Edge MQTT 集成充当 MQTT 客户端。
 
 **注意**：MQTT 代理应与 GridLinks Edge 实例位于同一位置或部署在云中，并具有有效的 DNS 名称或静态 IP 地址。
 
-### 先决条件
+### 前提条件
 
 在本教程中，我们将使用：
 

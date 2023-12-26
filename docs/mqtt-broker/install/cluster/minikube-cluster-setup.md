@@ -10,7 +10,7 @@ description: 使用 Kubernetes 和 Minikube 指南设置 TBMQ 集群
 
 本指南将帮助您使用 Minikube 在集群模式下设置 TBMQ。
 
-### 先决条件
+### 前提条件
 
 您需要有一个 Kubernetes 集群，并且必须将 `kubectl` 命令行工具配置为与您的集群通信。
 如果您尚未安装 Minikube，请按照 [这些说明](https://kubernetes.io/docs/setup/learning-environment/minikube/) 进行操作。

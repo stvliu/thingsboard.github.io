@@ -10,7 +10,7 @@ description: 在 CentOS/RHEL 上安装 GridLinks Trendz Analytics
 * TOC
 {:toc}
 
-### 先决条件
+### 前提条件
 
 本指南介绍如何在 RHEL/CentOS 7/8 上安装 Trendz Analytics。
 

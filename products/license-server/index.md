@@ -86,7 +86,7 @@ License Server 客户端向 License Server 发出定期许可证检查请求。
 这些请求验证订阅/永久许可证是否有效，并且启动的实例数量不超过订阅阈值。
 有关更多详细信息，请参阅 [体系结构](#体系结构)。
 
-### 先决条件
+### 前提条件
 
 License Server 客户端（例如您的 GridLinks PE 实例）需要与主机 license.thingsboard.io 的互联网连接才能发出许可证检查请求。
 如果与主机的互联网连接超过 24 小时不可用，License Server 客户端可能会关闭 GridLinks 实例。

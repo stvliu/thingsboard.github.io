@@ -14,7 +14,7 @@ description: 在 GKE 中使用 Kubernetes 的 GridLinks IoT 平台单体设置
 
 本指南将帮助您使用 [Google Kubernetes Engine](https://cloud.google.com/kubernetes-engine) 以单体模式设置 GridLinks。
 
-## 先决条件
+## 前提条件
 
 {% include templates/install/gcp/gke-prerequisites.md %}
 

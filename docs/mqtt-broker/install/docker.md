@@ -11,7 +11,7 @@ description: 使用 Docker 安装 TBMQ（Linux 或 Mac OS）
 本指南将帮助您在 Linux 或 macOS 上使用 Docker 安装和启动独立的 TBMQ。
 如果您正在寻找集群安装说明，请访问 [集群设置页面](/docs/mqtt-broker/install/cluster/docker-compose-setup/)。
 
-### 先决条件
+### 前提条件
 
 要在单台机器上运行 TBMQ，您至少需要 2Gb 的 RAM。
 

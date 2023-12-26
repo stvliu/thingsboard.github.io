@@ -10,7 +10,7 @@ description: 在 Ubuntu 服务器上安装 GridLinks CE
 * TOC
 {:toc}
 
-### 先决条件
+### 前提条件
 
 本指南介绍如何在 Ubuntu 18.04 LTS / Ubuntu 20.04 LTS 上安装 GridLinks。
 硬件要求取决于所选数据库和连接到系统的设备数量。

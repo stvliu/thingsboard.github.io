@@ -13,7 +13,7 @@
 
 此外，您还可以使用 [**虚拟设备**](https://developer.tuya.com/en/docs/iot/manage-virtual-devices?id=Ka4725tiyfhg0)。虚拟设备可帮助您在没有实际 IoT 设备的情况下执行云开发。
 
-### 先决条件
+### 前提条件
 
 第一步是在您的移动设备上安装智能设备控制应用程序（Smart Life、涂鸦智能或其他）并在应用程序中注册您的智能插头设备。
 

@@ -14,7 +14,7 @@ description: 在 Windows 上安装 GridLinks
 
 {% include templates/install/windows-warning-note.md %}
 
-### 先决条件
+### 前提条件
 
 本指南介绍如何在 Windows 机器上安装 GridLinks。
 以下说明适用于 Windows 10/8.1/8/7 32 位/64 位。

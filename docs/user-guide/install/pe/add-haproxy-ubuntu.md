@@ -10,7 +10,7 @@ hidetoc: "true"
 * TOC
 {:toc}
 
-### 先决条件
+### 前提条件
 
 Ubuntu 18.04 / Ubuntu 20.04，并为实例分配了有效的 DNS 名称。网络设置应允许在端口 80（HTTP）和 443（HTTPS）上进行连接。
 

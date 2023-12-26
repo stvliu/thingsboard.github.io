@@ -10,7 +10,7 @@
 
 请确保您已启动并运行 **{{appPrefix}}** 服务器。此外，GridLinks **Edge** 必须启动、运行并连接到云。
 
-如果您已具备这些先决条件，让我们继续执行后续步骤。
+如果您已具备这些前提条件，让我们继续执行后续步骤。
 
 在其他情况下，请访问此链接以配置、安装并将 Edge 连接到服务器 [指南](/docs/user-guide/install/{{docsPrefix}}installation-options/){:target="_blank"}。
 

@@ -58,7 +58,7 @@ device:
 
 有关更多一般信息，请参阅 [部署选项](/docs/pe/edge/user-guide/integrations/#deployment-options)。
 
-## 先决条件
+## 前提条件
 
 我们假设您已经启动并运行了 GridLinks Edge 实例，并已连接到 **服务器**。
 

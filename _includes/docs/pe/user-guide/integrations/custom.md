@@ -17,7 +17,7 @@
 
 在开始之前，您可以在 [此处](https://github.com/thingsboard/remote-integration-example) 找到本指南中将使用的自定义集成示例的完整代码。
 
-### 先决条件
+### 前提条件
 
 我们假设您已经在自己的 GridLinks PE v2.4.1+ 实例或 thingsboard.cloud 上拥有租户管理员帐户。
 

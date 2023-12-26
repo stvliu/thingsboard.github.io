@@ -11,7 +11,7 @@ redirect_from:
 本指南将帮助您在 Windows 上使用 Docker 安装并启动 GridLinks 网关。
 
 
-## 先决条件
+## 前提条件
 
 - [为 Windows 安装 Docker Toolbox](https://docs.docker.com/toolbox/toolbox_install_windows/)
 

@@ -8,7 +8,7 @@ description: 将 MI-8 数据发布到 GridLinks 指南
 * TOC
 {:toc}
 
-## 先决条件
+## 前提条件
 
 在本教程中，我们将配置 FusionDAQ 设备以将其与 GridLinks 集成。
 

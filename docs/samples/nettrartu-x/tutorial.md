@@ -7,7 +7,7 @@ hidetoc: "true"
 
 ## 目录
 1. [简介](#introduction)
-3. [先决条件](#prerequisites)
+3. [前提条件](#prerequisites)
 4. [连接图](#connection_diagram)
 5. [GridLinks 配置](#tb_configuration)
 6. [将 RTU-X 连接到 PC](#connection_pc)
@@ -29,7 +29,7 @@ RTU-X 可以通过 [RTU-X 配置界面](http://wiki.nettra.tech/en/downloads)轻
 ![rtu_x](https://user-images.githubusercontent.com/61634031/133831823-b6e2420e-5669-433a-a3fa-54b506ab24b9.png) ![dash2](https://user-images.githubusercontent.com/61634031/134074200-5063cd05-6091-4f36-90a3-91771373bd65.png)
 
 
-## 先决条件
+## 前提条件
 
 
 ### 硬件

@@ -11,7 +11,7 @@ description: 使用 Docker Compose 进行集群设置
 
 本指南将帮助您使用 Docker Compose 在集群模式下设置 TBMQ。
 
-### 先决条件
+### 前提条件
 
 - [安装 Docker](https://docs.docker.com/engine/installation/)
 

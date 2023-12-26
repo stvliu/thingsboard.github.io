@@ -12,7 +12,7 @@ description: GridLinks IoT 平台集群设置，附带 Kubernetes 和 OpenShift 
 
 本指南将帮助您使用 OpenShift 在集群模式下设置 GridLinks。
 
-## 先决条件
+## 前提条件
 
 ThingsBoard 微服务在 Kubernetes 集群上运行。要本地部署 OpenShift 集群，您需要 Docker CE 来运行 OpenShift 容器和 OpenShift Origin 本身。
 请按照 [这些说明](https://www.techrepublic.com/article/how-to-install-openshift-origin-on-ubuntu-18-04/) 安装所有必需的软件。

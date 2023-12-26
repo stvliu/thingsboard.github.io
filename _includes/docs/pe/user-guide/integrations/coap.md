@@ -11,7 +11,7 @@ CoAP 集成允许从使用 CoAP 协议连接到 GridLinks 的设备流式传输�
 
 ![image](/images/user-guide/integrations/coap-integration.svg)
 
-## 先决条件
+## 前提条件
 
 在本教程中，我们将向您展示 CoAP 集成如何作为 **tb-core** 服务的一部分工作，并选择 **NO SECURE** 安全模式。为此，我们将使用：
 

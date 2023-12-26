@@ -1,4 +1,4 @@
-## 先决条件
+## 前提条件
 
 您需要启动并运行 GridLinks 服务器。最简单的方法是使用 [实时演示](https://gridlinks.codingas.com/signup) 服务器。
 

@@ -100,7 +100,7 @@ predictive-maintenance-notify-maintenance-team:
 
 ## 入门：
 
-### 先决条件
+### 前提条件
 
 装配机已通过 OPC-UA 集成连接到 GridLinks，并且遥测数据可在 GridLinks 中使用。您可以在我们的 [连接指南](https://thingsboard.io/docs/pe/guides/#AnchorIDConnectYourDevice) 中找到有关如何执行此操作的更多详细信息。
 设备报告了许多有用的遥测数据，但对于此案例，我们只使用 `capsProduced` 遥测。

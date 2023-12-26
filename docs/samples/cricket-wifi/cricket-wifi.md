@@ -30,7 +30,7 @@ Things On Edge 设计了一种易于使用、超低功耗的 Cricket Wi-Fi 模�
 <br>
 ![image](/images/samples/cricket-wifi/TB-graph.png)
 
-## 先决条件
+## 前提条件
 
 ### 硬件
 * Things On Edge - Cricket Wi-Fi 模块

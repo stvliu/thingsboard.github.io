@@ -21,7 +21,7 @@ RTU+ 可以通过 [RTU+ 配置界面](https://nettra.tech) 轻松配置。为了
 <br><br>
 ![image](/images/samples/nettrartu+/nettrartu+.png)   ![image](/images/samples/nettrartu+/rtu_temp_sensor/dashboard.png)
 
-## 先决条件
+## 前提条件
 
 ### 硬件
 

@@ -1,4 +1,4 @@
-## 先决条件
+## 前提条件
 
 {% include templates/edge/install/hardware-requirements.md %}
 

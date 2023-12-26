@@ -95,7 +95,7 @@ downlinkTerminal:
 
 ![image](/images/user-guide/integrations/udp-integration.svg)
 
-## 先决条件
+## 前提条件
 
 在本教程中，我们将使用：
 

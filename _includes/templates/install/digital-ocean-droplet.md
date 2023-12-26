@@ -1,4 +1,4 @@
-### 先决条件
+### 前提条件
 
 - 激活 [DigitalOcean](https://cloud.digitalocean.com/){:target="_blank"} 帐户
 

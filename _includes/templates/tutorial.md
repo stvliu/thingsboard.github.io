@@ -34,7 +34,7 @@
 
 {% else %}
 
-{% include templates/_errorthrower.md missing_block='prerequisites' heading='开始之前' purpose='列出操作先决条件和知识先决条件' %}
+{% include templates/_errorthrower.md missing_block='prerequisites' heading='开始之前' purpose='列出操作前提条件和知识前提条件' %}
 
 {% endif %}
 

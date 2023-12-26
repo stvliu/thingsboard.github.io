@@ -22,7 +22,7 @@ description: 检查关系
 但是，有不同的方法来实现此案例，例如，可以使用 **开关** 节点来实现，该节点将传入消息路由到一个或多个输出链。<br>
 有关如何使用 **开关** 节点的更多信息，请查看 [**开关节点文章**](/docs/user-guide/rule-engine-2-0/tutorials/check-relation-tutorial/#see-also) 中的 [**另请参阅**](/docs/user-guide/rule-engine-2-0/tutorials/check-relation-tutorial/#see-also) 部分的链接。
 
-## 先决条件
+## 前提条件
 
 在开始本教程之前，您需要阅读以下指南：
 

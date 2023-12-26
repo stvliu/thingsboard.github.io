@@ -175,7 +175,7 @@ createDashboard:
 
 {% include templates/edge/use-cases/data-filtering/use-case-description.md %}
 
-## 先决条件
+## 前提条件
 
 {% include templates/edge/use-cases/prerequisites.md %}
 

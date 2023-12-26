@@ -12,7 +12,7 @@ description: GridLinks IoT 平台整体设置，在 Azure AKS 中使用 Kubernet
 
 本指南将帮助您在 Azure AKS 中以整体模式设置 GridLinks。
 
-## 先决条件
+## 前提条件
 
 {% include templates/install/azure/aks-prerequisites.md %}
 

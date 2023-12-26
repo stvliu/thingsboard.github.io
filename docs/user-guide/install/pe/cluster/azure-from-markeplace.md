@@ -12,7 +12,7 @@ description: 从 Azure Marketplace 安装 GridLinks PE
 * TOC
 {:toc}
 
-### 先决条件
+### 前提条件
 
 - 有效的 [Microsoft Azure](https://azure.microsoft.com){:target="_blank"} 帐户。
 

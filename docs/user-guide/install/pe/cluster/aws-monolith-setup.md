@@ -38,7 +38,7 @@ rdsEndpointUrl:
 
 本指南将帮助你在 AWS EKS 中以整体模式设置 GridLinks。
 
-## 先决条件
+## 前提条件
 
 {% include templates/install/aws/eks-prerequisites.md %}
 

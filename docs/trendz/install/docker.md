@@ -13,7 +13,7 @@ description: 使用 Docker（Linux 或 Mac OS）安装 GridLinks Trendz Analytic
 
 本指南将帮助您在 Linux 或 Mac OS 上使用 Docker 安装并启动 Trendz Analytics。
 
-## 先决条件
+## 前提条件
 
 - [安装 Docker CE](https://docs.docker.com/engine/installation/)
 - [安装 Docker Compose](https://docs.docker.com/compose/install/)

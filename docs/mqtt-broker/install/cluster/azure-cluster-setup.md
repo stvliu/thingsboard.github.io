@@ -10,7 +10,7 @@ description: 在 AKS 中使用 Kubernetes 设置 TBMQ 微服务
 
 本指南将帮助您在 Azure AKS 中设置 TBMQ。
 
-### 先决条件
+### 前提条件
 
 #### 安装并配置工具
 

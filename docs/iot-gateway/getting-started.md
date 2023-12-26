@@ -16,7 +16,7 @@ description: 配置 MQTT、OPC-UA 和 Modbus 连接器，以便在 Docker 容器
 - 配置不同类型的连接器（[MQTT](/docs/iot-gateway/config/mqtt/)、[OPC-UA](/docs/iot-gateway/config/opc-ua/)、[Modbus](/docs/iot-gateway/config/modbus/))，以便连接到本地演示服务器并从中读取数据；
 - 在 GridLinks 上检查接收到的设备数据。
 
-## 先决条件
+## 前提条件
 
 - 在启动网关设置之前，请确保 GridLinks 服务器已启动并正在运行。最简单的方法是利用 [实时演示](https://gridlinks.codingas.com) 或 [GridLinks 云](https://gridlinks.codingas.com)。或者，您可以按照 [安装指南](/docs/user-guide/install/installation-options/) 中概述的步骤手动安装 GridLinks。
 - 在继续之前，请确保在您的机器上安装并正确配置了 Docker。如果您尚未安装 Docker，可以从 [Docker 官方网站](https://docs.docker.com/engine/install/) 下载并按照针对您特定操作系统的安装指南进行操作。

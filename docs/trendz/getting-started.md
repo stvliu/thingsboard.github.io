@@ -111,7 +111,7 @@ create-anomaly-alarm:
     </div>
 </div>
 
-## 先决条件
+## 前提条件
 
 您需要启动并运行 Trendz Analytics 服务器。
 最简单的方法是使用 [Trendz Cloud](/docs/trendz/install/cloud/) SaaS。

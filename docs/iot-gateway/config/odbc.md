@@ -74,7 +74,7 @@ description: GridLinks IoT 网关的 ODBC 支持
 {% endcapture %}
 {% include code-toggle.liquid code=odbcConf params="conf|.copy-code.expandable-20" %}
 
-## 先决条件
+## 前提条件
 
 要安装并使 ODBC 连接器正常工作，需要执行以下几个步骤：
 

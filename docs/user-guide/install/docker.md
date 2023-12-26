@@ -15,7 +15,7 @@ description: 使用 Docker 安装 GridLinks IoT 平台（Linux 或 Mac OS）
 本指南将帮助您在 Linux 或 Mac OS 上使用 Docker 安装并启动 GridLinks。
 
 
-## 先决条件
+## 前提条件
 
 {% include templates/install/docker-install.md %}
 

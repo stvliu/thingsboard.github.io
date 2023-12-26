@@ -12,7 +12,7 @@ description: GridLinks IoT 平台集群设置与 Kubernetes 和 Minikube 指南
 
 本指南将帮助您使用 Minikube 工具在集群模式下设置 GridLinks。
 
-## 先决条件
+## 前提条件
 
 ThingsBoard 微服务在 Kubernetes 集群上运行。您需要有一个 Kubernetes 集群，并且必须将 `kubectl` 命令行工具配置为与您的集群通信。
 如果您尚未安装 Minikube，请按照 [这些说明](https://kubernetes.io/docs/setup/learning-environment/minikube/) 进行操作。

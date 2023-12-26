@@ -11,7 +11,7 @@ description: 了解如何在 GridLinks 上获取 Tektelic LoRaWAN 传感器的�
 [Tektelic](https://tektelic.com) 是 LoRaWAN® IoT 网关、传感器和自定义应用程序的主要供应商。
 本指南介绍如何将数据从 TEKTELIC KONA 核心网络服务器流式传输到 GridLinks。
 
-### 先决条件
+### 前提条件
 我们将使用专为在 EU868 频段工作而设计的网关和传感器。
 
 要开始，需要具备以下条件：

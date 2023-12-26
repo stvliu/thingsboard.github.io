@@ -14,7 +14,7 @@ Gas Shutoff Valve LoRaWAN “Smartico V-LR” 设计用于远程关闭低压气�
 
 ![image](/images/samples/smartico/gas-valve-lorawan/MainDash.png)
 
-## 先决条件
+## 前提条件
 LoRaWAN 技术用于将数据从气阀 V-LR 传输到 GridLinks 平台。这是一种无线通信技术，允许在长距离上交换少量数据。首先，您需要配置 LoRaWAN 服务器并确保数据从设备发送到服务器。本指南使用 [ChirpStack 开源 LoRaWAN 网络服务器](https://www.chirpstack.io/application-server/)。
 在应用程序页面上完成服务器配置后，表中应出现带有设备类型的条目。
 

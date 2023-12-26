@@ -15,7 +15,7 @@ redirect_from: "/docs/pe/user-guide/install/docker/"
 本指南涵盖独立的 GridLinks PE 安装。
 如果您正在寻找集群安装说明，请访问 [集群设置页面](/docs/user-guide/install/pe/cluster-setup/)。
 
-## 先决条件
+## 前提条件
 
 {% include templates/install/docker-install.md %}
 

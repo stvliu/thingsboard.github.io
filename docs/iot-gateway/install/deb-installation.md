@@ -5,7 +5,7 @@ redirect_from:
  - "/docs/iot-gateway/install/rpi/"
 ---
 
-### 先决条件
+### 前提条件
 
 本指南介绍如何在 Ubuntu 18.04 LTS / Ubuntu 20.04 LTS 上安装 GridLinks IoT 网关。
 最低系统要求与操作系统的官方 [最低要求](https://help.ubuntu.com/lts/serverguide/preparing-to-install.html#system-requirements) 相匹配。

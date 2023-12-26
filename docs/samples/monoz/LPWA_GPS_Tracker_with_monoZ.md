@@ -20,7 +20,7 @@ description: 配置 monoZ 遥测设备以使其能够将遥测数据发送到 Gr
 
 ![image](/images/samples/monoz/monoZero-01.png)
 
-## 先决条件
+## 前提条件
 
 **硬件组件**：
 

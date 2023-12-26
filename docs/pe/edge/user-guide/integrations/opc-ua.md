@@ -110,7 +110,7 @@ OPC UA 集成允许您将数据从 OPC UA 服务器流式传输到 GridLinks Edg
 
 在本教程中，我们将配置 GridLinks Edge 和 OPC-UA 之间的集成，以从 [OPC UA C++ 演示服务器](https://www.unified-automation.com/downloads/opc-ua-servers.html) 获取空调数据，并允许用户使用集成下行链路功能打开/关闭任何空调。
 
-### 先决条件
+### 前提条件
 
 {% include templates/integration/opc-ua/opc-ua-server-setup-steps.md %}
 
@@ -283,7 +283,7 @@ return result;
 - 应用程序名称：\<empty\>（客户端应用程序名称）
 - 应用程序 uri：\<empty\>（客户端应用程序 uri）
 - 主机：**$\{\{endpointHost\}\}**（我们将在接下来的步骤中添加边缘属性 **endpointHost**）
-- 端口：**端点端口**（请参阅 [先决条件](#prerequisites)）
+- 端口：**端点端口**（请参阅 [前提条件](#prerequisites)）
 - 扫描周期（以秒为单位）：10（重新扫描 OPC UA 节点的频率）
 - 超时（以毫秒为单位）：5000（在向 OPC UA 服务器发出请求之前失败的超时时间）
 - 安全性：无（可以是 *Basic128Rsa15 / Basic256 / Basic256Sha256 / 无*）
@@ -325,7 +325,7 @@ return result;
 
 创建转换器和集成模板后，我们可以将集成模板分配给边缘。
 因为我们在集成配置中使用了占位符 **$\{\{endpointHost\}\}**，所以我们需要先将属性 **endpointHost** 添加到边缘。
-您需要提供 OPC-UA 服务器的 **端点主机**（请参阅 [先决条件](#prerequisites)）。添加属性后，我们就可以分配集成并验证是否已添加。
+您需要提供 OPC-UA 服务器的 **端点主机**（请参阅 [前提条件](#prerequisites)）。添加属性后，我们就可以分配集成并验证是否已添加。
 
 {% include images-gallery.html imageCollection="assignIntegration" showListImageTitles="true" %}
 

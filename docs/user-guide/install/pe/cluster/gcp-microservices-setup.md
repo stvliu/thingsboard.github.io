@@ -12,7 +12,7 @@ description: 在 GKE 中使用 Kubernetes 设置 GridLinks IoT 平台微服务
 
 本指南将帮助您在 GKE 中以微服务模式设置 GridLinks。
 
-## 先决条件
+## 前提条件
 
 {% include templates/install/gcp/gke-prerequisites.md %}
 

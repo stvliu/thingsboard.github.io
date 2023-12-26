@@ -19,7 +19,7 @@ OPC UA 集成允许您将数据从 OPC UA 服务器流式传输到 GridLinks，�
 
 在本教程中，我们将配置 GridLinks 和 OPC-UA 之间的集成，以从 [OPC UA C++ 演示服务器](https://www.unified-automation.com/downloads/opc-ua-servers.html)获取空调数据，并允许用户使用集成下行链路功能开关任何空调。
 
-## 先决条件
+## 前提条件
 
 {% include templates/integration/opc-ua/opc-ua-server-setup-steps.md %}
 
@@ -119,8 +119,8 @@ JavaScript<small></small>%,%anonymous%,%templates/integration/opc-ua/opc-ua-down
 
 ![image](/images/user-guide/integrations/opc-ua/opc-ua-create-integration-3.png)
 
-- 指定主机：**端点主机**（请参阅 [先决条件](#prerequisites)）；
-- 指定端口：**端点端口**（请参阅 [先决条件](#prerequisites)）；
+- 指定主机：**端点主机**（请参阅 [前提条件](#prerequisites)）；
+- 指定端口：**端点端口**（请参阅 [前提条件](#prerequisites)）；
 - 安全性：**无**（可以是 *Basic128Rsa15* / *Basic256* / *Basic256Sha256* / *None*）；
 - 身份：**匿名**（可以是 *匿名* / *用户名*）。
 
