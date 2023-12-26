@@ -289,30 +289,35 @@ step75:
 mqttWindows:
     0:
         image: /images/helloworld/hello-world-pe-step-3-item-1.png
-        title: 'Create new MQTT Client with the properties listed in screenshots below;'
+        title: '使用下面屏幕截图中列出的属性创建新的 MQTT 客户端；'
     1:
         image: /images/helloworld/hello-world-pe-step-3-item-2.png
-        title: 'Populate the topic name and payload. Make sure the payload is a valid JSON document. Click "Publish" button.'
+        title: '填充主题名称和负载。 确保有效负载是有效的 JSON 文档。 单击“发布”按钮。'
 
 mosquitto-windows:
     0:
         image: /images/helloworld/getting-started-pe/mosquitto-windows-1.png
-        title: 'Press the Win + X, then select "System". Then click on the "System" page;'
+        title: '按 Win + X，然后选择“系统”。 然后点击“系统”页面；'
     1:
         image: /images/helloworld/getting-started-pe/mosquitto-windows-2.png
-        title: 'Navigate to the "About" section, then click "Advanced system settings";'
+        title: '导航至“关于”部分，然后单击“高级系统设置”；'
     2:
         image: /images/helloworld/getting-started-pe/mosquitto-windows-3.png
-        title: 'In the "System Properties" pop-up window, click "Environment Variables" button on the "Advanced" tab;'
+        title: '在“系统属性”弹出窗口中，单击“高级”选项卡上的“环境变量”按钮；'
     3:
         image: /images/helloworld/getting-started-pe/mosquitto-windows-4.png
-        title: 'In the "Environment Variables" pop-up window, select the "Path", then click on the "Edit" button;'
+        title: '在“环境变量”弹出窗口中，选择“路径”，然后点击“编辑”按钮；'
     4:
         image: /images/helloworld/getting-started-pe/mosquitto-windows-5.png
-        title: 'In the "Edit environment variable" pop-up window click on the "New" button and add the path to the directory containing &#39;mosquitto_pub.exe&#39; and &#39;mosquitto_sub.exe&#39; (&#39;C:\Program Files\mosquitto&#39; by default). Click "OK";'
+        title: '在“编辑环境变量”弹出窗口中单击“新建”按钮，并添加包含 mosquitto_pub.exe 和 mosquitto_sub.exe（默认情况下为 C:\Program Files\mosquitto）的目录的路径。单击“确定”；'
     5:
         image: /images/helloworld/getting-started-pe/mosquitto-windows-6.png
-        title: 'Click "OK" button to save changes in the environment variables;'
+        title: '单击‘确定’按钮以保存环境变量中的更改；'
     6:
         image: /images/helloworld/getting-started-pe/mosquitto-windows-7.png
-        title: 'Finally, click "OK" button to apply all changes in the system properties.'
+        title: '最后，单击“确定”按钮以应用系统属性中的所有更改。'
+
+---
+
+{% assign docsPrefix = "paas/" %}
+{% include docs/getting-started-guides/helloworld-pe.md %}
