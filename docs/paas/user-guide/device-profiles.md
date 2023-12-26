@@ -138,4 +138,4 @@ alarmСonstantFilters:
 ---
 
 {% assign docsPrefix = "paas/" %}
-{% include {{ docsPrefix }}user-guide/device-profiles.md %}
+{% include docs/user-guide/device-profiles.md %}
