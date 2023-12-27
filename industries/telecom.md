@@ -43,7 +43,7 @@ description:
         <div class="person-container">
             <div class="person-title">
                 <p class="person-name"> David Týr </p>
-                <p class="person-position"> 创新经理 </p>
+                <p class="person-position"> 现代化的经理 </p>
             </div>
         </div>
         <h2>

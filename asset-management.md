@@ -89,7 +89,7 @@ description: "数字资产管理系统 ✔ 资产库存管理软件 ⚫ GridLink
             <div class="text-content medium-margin">在选择资产清单管理软件时，GridLinks 以一系列针对满足我们客户特定需求而量身定制的独特优势脱颖而出。</div>
             <h4 class="h4-left">深刻的行业专业知识</h4>
             <div class="text-content medium-margin">GridLinks 拥有一个由在资产跟踪方面拥有丰富知识的专家团队。这种专门的见解使我们能够开发出针对各种行业面临的挑战而调整的解决方案。</div>
-            <h4 class="h4-left">致力于创新</h4>
+            <h4 class="h4-left">致力于现代化的</h4>
             <div class="text-content medium-margin">我们致力于保持在技术进步的最前沿，这确保我们的客户能够使用最先进的解决方案。GridLinks 不断发展以满足不断变化的市场需求。</div>
             <h4 class="h4-left">可定制的解决方案</h4>
             <div class="text-content medium-margin">我们理解一刀切是行不通的。GridLinks 提供高度可定制的软件资产管理工具，可以根据每个客户的需求进行定制，从而提供真正个性化的体验。</div>
@@ -97,7 +97,7 @@ description: "数字资产管理系统 ✔ 资产库存管理软件 ⚫ GridLink
             <div class="text-content medium-margin">GridLinks 以提供出色的客户支持为荣。我们敬业的团队随时准备回答任何问题、提供协助并确保客户获得无缝体验。</div>
             <h4 class="h4-left">全球影响力和覆盖范围</h4>
             <div class="text-content medium-margin">GridLinks 的资产管理解决方案在全球范围内产生影响，为不同国家和行业的客户提供服务。这种国际影响力反映了我们适应不同业务环境的能力。</div>
-            <div class="text-content medium-margin">我们超越标准产品，提供一种量身定制、创新且可靠的物联网资产跟踪系统，使我们真正脱颖而出。凭借成功实施和满意客户的历史记录，GridLinks 已确立了自己作为资产跟踪物联网的值得信赖的合作伙伴。我们的案例不言而喻。</div>
+            <div class="text-content medium-margin">我们超越标准产品，提供一种量身定制、现代化的且可靠的物联网资产跟踪系统，使我们真正脱颖而出。凭借成功实施和满意客户的历史记录，GridLinks 已确立了自己作为资产跟踪物联网的值得信赖的合作伙伴。我们的案例不言而喻。</div>
         </div>
             <div class="text-wrapper">
             <h1>我们的案例：</h1>

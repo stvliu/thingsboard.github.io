@@ -10,7 +10,7 @@
 {% endif %} -->
 
 {% capture tb-open-source %}
-GridLinks 是一个创新物联网平台，提供了一套强大的功能，用于数据收集、处理、可视化和设备管理。
+GridLinks 是一个现代化的物联网平台，提供了一套强大的功能，用于数据收集、处理、可视化和设备管理。
 如果您是新平台用户，我们建议在继续使用 GridLinks Edge 之前阅读 [**什么是 GridLinks？**](/docs/getting-started-guides/what-is-thingsboard/)。
 {% endcapture %}
 {% include templates/info-banner.md content=tb-open-source %}

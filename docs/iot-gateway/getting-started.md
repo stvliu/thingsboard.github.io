@@ -8,7 +8,7 @@ description: 配置 MQTT、OPC-UA 和 Modbus 连接器，以便在 Docker 容器
 * TOC
 {:toc}
 
- GridLinks 物联网网关是一个创新解决方案，旨在作为连接到 GridLinks 的传统和第三方系统中 IoT 设备的桥梁。
+ GridLinks 物联网网关是一个现代化的解决方案，旨在作为连接到 GridLinks 的传统和第三方系统中 IoT 设备的桥梁。
 
 本指南涵盖了初始 IoT 网关的安装和配置，我们将执行以下操作：
 - 使用 [ GridLinks 物联网网关仪表板](#prerequisites) 创建新的网关设备；

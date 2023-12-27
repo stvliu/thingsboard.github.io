@@ -21,7 +21,7 @@ notitle: "true"
     <a href="/docs/getting-started-guides/what-is-thingsboard/" class="card com">
         <img src="/images/thingsboard-cm-icon.svg" alt="社区版">
         <h5 class="title">GridLinks 社区版</h5>
-        <p>创新平台</p>
+        <p>现代化的平台</p>
     </a>
     <a href="/products/thingsboard-edge/" class="card thingsboard-edge">
         <img src="/images/thingsboard-e-icon.svg" alt="边缘">
