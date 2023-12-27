@@ -42,7 +42,7 @@ notitle: "true"
                 </a>
                 <a href="/docs/trendz/install/installation-options/" class="card trendz">
                     <div class="card-title">
-                        <span class="title-text">Trendz 分析</span>
+                        <span class="title-text">数据分析</span>
                     </div>
                     <div class="card-img product trendz-bg"></div>
                     <div class="card-description">  

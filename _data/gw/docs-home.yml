@@ -5,7 +5,7 @@ toc:
   path: /docs/iot-gateway/
 - title: What is GridLinks IoT Gateway?
   path: /docs/iot-gateway/what-is-iot-gateway/
-- title: Configuration guides
+- title: 配置指南
   section:
     - title: General configuration
       path: /docs/iot-gateway/configuration/

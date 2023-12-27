@@ -7,7 +7,7 @@ description: GridLinks 架构
 
 下面列出的产品路线图仅涵盖主要功能，不涵盖小的改进和错误修复。
 
-## ThingsBoard CE
+##  GridLinks社区版
 
 ### v3.7
 
@@ -23,7 +23,7 @@ description: GridLinks 架构
 * 单独的实体来存储队列统计信息；
 * 新的小部件和规则节点；
 
-请参阅此处正在进行的积极开发 [here](https://github.com/thingsboard/thingsboard/tree/{{ site.release.branch_major_next }})，并在此处处理最新版本的错误修复 [here](https://github.com/thingsboard/thingsboard/tree/master)。
+请参阅此处正在进行的积极开发 [here](https://github.com/gridlinks/gridlinks/tree/{{ site.release.branch_major_next }})，并在此处处理最新版本的错误修复 [here](https://github.com/gridlinks/gridlinks/tree/master)。
 
 ### 即将发布的版本
 

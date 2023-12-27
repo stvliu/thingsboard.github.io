@@ -33,7 +33,7 @@ minikube addons enable ingress
 从 GridLinks v2.2 开始，可以使用新的微服务体系结构和 docker 容器安装 GridLinks 集群。
 有关更多详细信息，请参阅 [**微服务**](/docs/reference/msa/) 体系结构页面。
 
-## 步骤 2. 克隆 ThingsBoard CE Kubernetes 脚本存储库
+## 步骤 2. 克隆 GridLinks社区版 Kubernetes 脚本存储库
 
 ```bash
 git clone -b release-{{ site.release.ver }} https://github.com/thingsboard/thingsboard-ce-k8s.git --depth 1

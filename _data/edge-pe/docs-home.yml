@@ -9,7 +9,7 @@ toc:
   section:
     - title: OTA updates
       path: /docs/pe/edge/user-guide/ota-updates/
-#- title: Configuration guides
+#- title: 配置指南
 #  section:
 #    - title: Edges
 #      path: /docs/pe/user-guide/ui/edges/
@@ -65,7 +65,7 @@ toc:
 #  section:
 #    - title: Edge status
 #      path: /docs/pe/edge/features/edge-status/
-#    - title: Cloud Events
+#    - title: 云部署 Events
 #      path: /docs/pe/edge/features/cloud-events/
 - title: Use Cases
   section:

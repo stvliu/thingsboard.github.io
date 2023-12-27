@@ -5,7 +5,7 @@ toc:
   path: /docs/trendz/install/installation-options/
 - title: Trendz Cloud
   path: /docs/trendz/install/cloud/
-- title: On premise
+- title: 本地部署
   section:
   - title: Ubuntu Server
     path: /docs/trendz/install/ubuntu/
@@ -17,9 +17,9 @@ toc:
     path: /docs/trendz/install/docker-windows/
   - title: Docker (Linux or Mac OS)
     path: /docs/trendz/install/docker/
-- title: Upgrade instructions
+- title: 升级说明
   path: /docs/trendz/install/trndz-upgrade-instructions/
 - title: Connect Trendz to Thingsboard
   path: /docs/trendz/connect-thingsboard/
-- title: Configuration properties
+- title: 配置属性
   path: /docs/trendz/configuration-properties/

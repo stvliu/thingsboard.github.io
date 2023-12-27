@@ -1,9 +1,9 @@
-bigheader: "Installation"
-abstract: "Documentation for installation and configuration of  GridLinks专业版 IoT Platform."
+bigheader: "安装"
+abstract: "GridLinks专业版物联网平台安装和配置的文档。"
 toc:
-- title: Installation options
+- title: 安装选项
   path: /docs/user-guide/install/pe/installation-options/
-- title: On premise
+- title: 本地部署
   section:  
   - title: Ubuntu Server
     path: /docs/user-guide/install/pe/ubuntu/
@@ -17,7 +17,7 @@ toc:
     path: /docs/user-guide/install/pe/docker-windows/
   - title: Cluster setup
     path: /docs/user-guide/install/pe/cluster-setup/
-- title: Cloud
+- title: 云部署
   section:
   - title: AWS
     path: /docs/user-guide/install/pe/aws/
@@ -31,9 +31,9 @@ toc:
     path: /docs/user-guide/install/pe/ibm-cloud/
   - title: Alibaba Cloud
     path: /docs/user-guide/install/pe/alibaba-cloud/
-- title: Upgrade instructions
+- title: 升级说明
   path: /docs/user-guide/install/pe/upgrade-instructions/
-- title: Configuration
+- title: 配置
   section:
   - title: How to change configuration parameters?
     path: /docs/user-guide/install/pe/how-to-change-config/

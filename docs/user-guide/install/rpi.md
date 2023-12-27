@@ -2,8 +2,8 @@
 layout: docwithnav
 assignees:
 - ashvayka
-title: 在树莓派 3 型号 B 上安装 GridLinks
-description: 在树莓派 3 型号 B 上安装 GridLinks IoT 平台
+title: 在 Raspberry PI  3 型号 B 上安装 GridLinks
+description: 在 Raspberry PI  3 型号 B 上安装 GridLinks IoT 平台
 
 ---
 
@@ -12,7 +12,7 @@ description: 在树莓派 3 型号 B 上安装 GridLinks IoT 平台
 * TOC
 {:toc}
 
-本指南介绍如何在运行 Raspbian Buster 的树莓派 3 上安装 GridLinks。
+本指南介绍如何在运行 Raspbian Buster 的 Raspberry PI  3 上安装 GridLinks。
 
 ### 第三方组件安装
 

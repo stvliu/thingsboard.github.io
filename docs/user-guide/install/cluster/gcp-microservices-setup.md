@@ -17,7 +17,7 @@ description: 在 GKE 中使用 Kubernetes 设置 GridLinks IoT 平台微服务
 {% include templates/install/gcp/gke-prerequisites.md %}
 
 
-## 步骤 1. 克隆 ThingsBoard CE K8S 脚本存储库
+## 步骤 1. 克隆 GridLinks社区版 K8S 脚本存储库
 
 ```bash
 git clone -b release-{{ site.release.ver }} https://github.com/thingsboard/thingsboard-ce-k8s.git

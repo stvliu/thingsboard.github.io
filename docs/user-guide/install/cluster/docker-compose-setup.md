@@ -41,7 +41,7 @@ docker pull thingsboard/tb-snmp-transport:{{ site.release.ce_full_ver }}
 从 GridLinks v2.2 开始，可以使用新的微服务架构和 docker 容器安装 GridLinks 集群。
 有关更多详细信息，请参阅[**微服务**](/docs/reference/msa/)架构页面。
 
-## 步骤 3. 克隆 ThingsBoard CE 存储库
+## 步骤 3. 克隆 GridLinks社区版 存储库
 
 ```bash
 git clone -b {{ site.release.branch }} https://github.com/thingsboard/thingsboard.git --depth 1

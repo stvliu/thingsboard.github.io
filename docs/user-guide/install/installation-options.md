@@ -2,20 +2,19 @@
 layout: docwithnav
 assignees:
 - ashvayka
-title: GridLinks 安装选项
-description: GridLinks 安装说明，适用于各种操作系统和云平台
+title: GridLinks安装选项
+description: GridLinks安装说明，适用于各种操作系统和云平台
 notitle: "true"
 ---
-
 <div class="installation-options">
     <div class="install-options-header">
        <div class="install-options-hero">
           <div class="container">
             <div class="install-options-hero-content">
-                <h1>GridLinks 安装选项</h1>
+                <h1>GridLinks安装选项</h1>
                 <div class="install-options-description">
                     <p>
-                        GridLinks 旨在运行并利用大多数硬件，从本地 Raspberry PI 到云中的强大服务器
+                        GridLinks旨在运行并利用大多数硬件，从本地 Raspberry PI 到云中的强大服务器
                     </p>
                 </div>
             </div>

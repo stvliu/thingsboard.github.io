@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
-title: 使用树莓派和 DHT22 传感器通过 MQTT 上传温度
-description: 使用树莓派和 DHT22 传感器通过 MQTT 上传温度数据的物联网平台示例。
+title: 使用 Raspberry PI 和 DHT22 传感器通过 MQTT 上传温度
+description: 使用 Raspberry PI 和 DHT22 传感器通过 MQTT 上传温度数据的物联网平台示例。
 
 ---
 
@@ -14,11 +14,11 @@ description: 使用树莓派和 DHT22 传感器通过 MQTT 上传温度数据的
 此示例应用程序执行由 [DHT22 传感器](https://www.adafruit.com/product/385)产生的温度和湿度值收集，并在实时网络仪表板上进一步显示。
 收集的数据通过 MQTT 推送到物联网平台服务器进行存储和显示。此应用程序的目的是演示物联网平台的 [数据收集 API](/docs/user-guide/telemetry/)和 [可视化功能](/docs/user-guide/visualization/)。
 
-DHT22 传感器连接到 [树莓派](https://en.wikipedia.org/wiki/Raspberry_Pi)。
-树莓派提供完整且自包含的 Wi-Fi 网络解决方案。
-树莓派通过使用 [paho mqtt](https://eclipse.org/paho/clients/python/)python 库通过 MQTT 协议将数据推送到物联网平台服务器。
+DHT22 传感器连接到 [ Raspberry PI ](https://en.wikipedia.org/wiki/Raspberry_Pi)。
+ Raspberry PI 提供完整且自包含的 Wi-Fi 网络解决方案。
+ Raspberry PI 通过使用 [paho mqtt](https://eclipse.org/paho/clients/python/)python 库通过 MQTT 协议将数据推送到物联网平台服务器。
 数据使用内置的可自定义仪表板进行可视化。
-在树莓派上运行的应用程序是用 Python 编写的，非常简单易懂。
+在 Raspberry PI 上运行的应用程序是用 Python 编写的，非常简单易懂。
 
 下面的视频演示了本教程的最终结果。
 
@@ -40,7 +40,7 @@ DHT22 传感器连接到 [树莓派](https://en.wikipedia.org/wiki/Raspberry_Pi)
 
 ## 硬件和引脚列表
 
- - [树莓派 3](https://www.aliexpress.com/item/Raspberry-Pi-Model-B-Featuring-the-ARM1176JZF-S-Running-at-700MHz-with-512MB-of-RAM-version/2008093537.html?spm=2114.01010208.3.186.mgDFUO&ws_ab_test=searchweb0_0,searchweb201602_2_10065_10068_10000009_10084_10083_10080_10082_10081_10060_10062_10056_503_10055_10054_10059_10099_10078_501_10079_426_10103_10073_10102_10096_10052_10053_10108_10050_10107_10051_10106,searchweb201603_3,afswitch_3&btsid=2b2a0772-e248-4fa1-a79c-941b5c410deb)
+ - [ Raspberry PI  3](https://www.aliexpress.com/item/Raspberry-Pi-Model-B-Featuring-the-ARM1176JZF-S-Running-at-700MHz-with-512MB-of-RAM-version/2008093537.html?spm=2114.01010208.3.186.mgDFUO&ws_ab_test=searchweb0_0,searchweb201602_2_10065_10068_10000009_10084_10083_10080_10082_10081_10060_10062_10056_503_10055_10054_10059_10099_10078_501_10079_426_10103_10073_10102_10096_10052_10053_10108_10050_10107_10051_10106,searchweb201603_3,afswitch_3&btsid=2b2a0772-e248-4fa1-a79c-941b5c410deb)
 
   ![image](/images/samples/raspberry/RaspberryPi3.jpg)
 
@@ -60,11 +60,11 @@ DHT22 传感器连接到 [树莓派](https://en.wikipedia.org/wiki/Raspberry_Pi)
  
 ## 接线方案
 
-DHT-22 引脚 | 树莓派引脚
+DHT-22 引脚 |  Raspberry PI 引脚
 -----------|-----------
-DHT-22 数据 | 树莓派 GPIO 4
-DHT-22 VCC | 树莓派 3.3V
-DHT-22 GND (-) | 树莓派 GND
+DHT-22 数据 |  Raspberry PI  GPIO 4
+DHT-22 VCC |  Raspberry PI  3.3V
+DHT-22 GND (-) |  Raspberry PI  GND
 
 最后，在 DHT 传感器的引脚 1 和 2 之间放置一个电阻器（4.7K 到 10K 之间）。
 
@@ -101,7 +101,7 @@ DHT-22 GND (-) | 树莓派 GND
 使用此 [**链接**](/docs/samples/raspberry/resources/dht22_temp_dashboard_v2.json)下载仪表板文件。
 使用导入/导出 [**说明**](/docs/user-guide/ui/dashboards/#dashboard-importexport)将仪表板导入到物联网平台实例。
 
-## 编程树莓派
+## 编程 Raspberry PI 
 
 ### 安装 MQTT 库
 

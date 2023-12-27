@@ -1379,7 +1379,7 @@ Major release which contains 2126 commits and 1668 changed files.
 
 ## v3.2.2 (March 24, 2021)
 
-### ThingsBoard CE
+###  GridLinks社区版
 
 Minor release with the following improvements and bug fixes:
 
@@ -1516,7 +1516,7 @@ Bug Fixes:
 
 ## v3.2.1 (January 26, 2021)
 
-### ThingsBoard CE
+###  GridLinks社区版
 
 Minor release with the following improvements and bug fixes:
 
@@ -1596,7 +1596,7 @@ Bug Fixes:
 
 ## v2.5.6 (January 26, 2021)
 
-### ThingsBoard CE
+###  GridLinks社区版
 
 **Improvements:**
 
@@ -1622,7 +1622,7 @@ Bug fixes:
 
 ## v3.2 (December 1, 2020)
 
-### ThingsBoard CE
+###  GridLinks社区版
 
 The goal of this release is to simplify provisioning and connecting the devices and configuration of the alarms. 
 We have also added features to track tenant API usage.  
@@ -1671,7 +1671,7 @@ Bug Fixes:
 
 ## v2.5.5 (December 1, 2020)
 
-### ThingsBoard CE
+###  GridLinks社区版
 
 **Improvements:**
 
@@ -1712,7 +1712,7 @@ Bug fixes:
 
 ## v3.1.1 (August 28, 2020)
 
-### ThingsBoard CE
+###  GridLinks社区版
 
 Minor bug fix release:
 
@@ -1755,7 +1755,7 @@ Bug Fixes:
 
 ## v2.5.4 (August 28, 2020)
 
-### ThingsBoard CE
+###  GridLinks社区版
 
 **Improvements:**
 
@@ -1782,7 +1782,7 @@ Bug fixes:
 
 ## v3.1 (August 12, 2020)
 
-### ThingsBoard CE
+###  GridLinks社区版
 
 Minor release with the following improvements and bug fixes.
 
@@ -1834,7 +1834,7 @@ Main features:
 
 ## v2.5.3 (August 12, 2020)
 
-### ThingsBoard CE
+###  GridLinks社区版
 
 **Improvements:**
 
@@ -1854,7 +1854,7 @@ Everything from [TB CE v2.5.3](https://github.com/thingsboard/thingsboard/releas
 
 ## v3.0.1 (June 9, 2020)
 
-### ThingsBoard CE
+###  GridLinks社区版
 
 Minor release with everything from 3.0/2.5.2 plus the following improvements.
 
@@ -1884,7 +1884,7 @@ Everything from [TB CE v3.0.1](https://github.com/thingsboard/thingsboard/releas
 
 ## v2.5.2 (June 9, 2020)
 
-### ThingsBoard CE
+###  GridLinks社区版
 
 Minor bug-fix release with few improvements.
 
@@ -1913,7 +1913,7 @@ Everything from [TB CE v2.5.2](https://github.com/thingsboard/thingsboard/releas
 
 ## v3.0 (June 1, 2020)
 
-### ThingsBoard CE
+###  GridLinks社区版
 
 Major release with everything from 2.5 plus the following improvements.
 
@@ -1947,7 +1947,7 @@ Everything from [TB CE v3.0](https://github.com/thingsboard/thingsboard/releases
 
 ## v2.5.1 (June 1, 2020)
 
-### ThingsBoard CE
+###  GridLinks社区版
 
 Minor bug-fix release with few improvements.
 
@@ -1987,7 +1987,7 @@ Everything from [TB CE v2.5.1](https://github.com/thingsboard/thingsboard/releas
 
 ## v2.5 (May 12, 2020)
 
-### ThingsBoard CE
+###  GridLinks社区版
 
 Major release with the following improvements.
 
@@ -2079,7 +2079,7 @@ Everything from [TB CE v2.5](https://github.com/thingsboard/thingsboard/releases
 
 ## v2.4.3 (January 8, 2020)
 
-### ThingsBoard CE
+###  GridLinks社区版
 
 Minor release with the following improvements.
 
@@ -2133,7 +2133,7 @@ Bug fixes:
 
 ## v2.4.2 (December 10, 2019)
 
-### ThingsBoard CE
+###  GridLinks社区版
 
 Minor release with the following improvements.
 
@@ -2212,7 +2212,7 @@ Bug fixes:
 
 ## v2.4.1 (September 13, 2019)
 
-### ThingsBoard CE
+###  GridLinks社区版
 
 Minor release with the following improvements.
 
@@ -2261,7 +2261,7 @@ Additional features:
 
 ## v2.4 (July 10, 2019)
 
-### ThingsBoard CE
+###  GridLinks社区版
 
 Minor release with the following improvements.
 
@@ -2335,7 +2335,7 @@ Bug fixes:
 
 ## v2.3.1 (April 3, 2019)
 
-### ThingsBoard CE
+###  GridLinks社区版
 
 Minor release with the following improvements.
 
@@ -2405,7 +2405,7 @@ Bug fixes:
 
 ## v2.3 (February 7, 2019)
 
-### ThingsBoard CE
+###  GridLinks社区版
 
 Minor release with the following improvements.
 
@@ -2476,7 +2476,7 @@ Bug fixes:
 
 ## v2.2 (November 30, 2018)
 
-### ThingsBoard CE
+###  GridLinks社区版
 
 Minor release with the following improvements.
 

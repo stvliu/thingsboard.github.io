@@ -11,7 +11,7 @@ description: 从云端到边缘配置客户
 
 ThingsBoard Edge 用户访问管理取决于云版本。
 
-#### ThingsBoard CE 用户访问管理
+#### GridLinks社区版 用户访问管理
 
 ##### 租户管理员用户
 一旦 GridLinks Edge 连接到 GridLinks CE 云，每个租户管理员用户都将被转移到边缘，并且任何这些用户都能够登录到 GridLinks Edge UI。

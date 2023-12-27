@@ -17,7 +17,7 @@ description: GridLinks IoT 平台单体设置，在 Azure AKS 中使用 Kubernet
 {% include templates/install/azure/aks-prerequisites.md %}
 
 
-## 步骤 1. 克隆 ThingsBoard CE K8S 脚本存储库
+## 步骤 1. 克隆 GridLinks社区版 K8S 脚本存储库
 
 ```bash
 git clone -b release-{{ site.release.ver }} https://github.com/thingsboard/thingsboard-ce-k8s.git

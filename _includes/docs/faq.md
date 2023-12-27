@@ -27,7 +27,7 @@ GridLinks 提供开箱即用的物联网解决方案，该解决方案将为您�
 {% unless docsPrefix == 'paas/' %}
 ## 我可以在哪里托管 GridLinks？
 
-您可以在云端、本地或在您的笔记本电脑、PC 甚至树莓派上本地托管 GridLinks。我们建议您从 Docker 安装开始
+您可以在云端、本地或在您的笔记本电脑、PC 甚至 Raspberry PI 上本地托管 GridLinks。我们建议您从 Docker 安装开始
   
   - [Linux 和 Mac OS](/docs/user-guide/install/{{docsPrefix}}docker/) 
   - [Windows](/docs/user-guide/install/{{docsPrefix}}docker-windows/)

@@ -1,53 +1,53 @@
-bigheader: "Installation"
-abstract: "Documentation for installation and configuration of GridLinks IoT Platform."
+bigheader: "安装"
+abstract: "GridLinks物联网平台的安装和配置文档。"
 toc:
-- title: 安装 options
-  path: /docs/user-guide/install/installation-options/
-- title: On premise
+- title: 安装选项
+  path: /docs/user-guide/install/installation-options/  
+- title: 本地部署
   section:
-  - title: Ubuntu Server
+  - title: Ubuntu服务器  
     path: /docs/user-guide/install/ubuntu/
-  - title: CentOS/RHEL Server
+  - title: CentOS/RHEL服务器
     path: /docs/user-guide/install/rhel/
   - title: Windows
     path: /docs/user-guide/install/windows/
-  - title: Raspberry Pi 3
+  - title:  Raspberry PI 3
     path: /docs/user-guide/install/rpi/
-  - title: Docker (Windows)
+  - title: Docker(Windows)
     path: /docs/user-guide/install/docker-windows/
-  - title: Docker (Linux or Mac OS)
+  - title: Docker(Linux或Mac OS)
     path: /docs/user-guide/install/docker/
-  - title: Building from sources
+  - title: 源码编译
     path: /docs/user-guide/install/building-from-source/
-  - title: Cluster setup
-    path: /docs/user-guide/install/cluster-setup/
-- title: Cloud
-  section:
+  - title: 集群部署
+    path: /docs/user-guide/install/cluster-setup/ 
+- title: 云部署
+  section:  
   - title: AWS
     path: /docs/user-guide/install/aws/
   - title: DigitalOcean
     path: /docs/user-guide/install/digital-ocean/
-  - title: Google Cloud Platform
+  - title: Google云平台
     path: /docs/user-guide/install/gcp/
-  - title: Azure
+  - title: Azure  
     path: /docs/user-guide/install/azure/
-- title: Upgrade instructions
+- title: 升级说明
   path: /docs/user-guide/install/upgrade-instructions/
-- title: Configuration
+- title: 配置
   section:
-  - title: How to change configuration parameters?
+  - title: 如何修改配置参数?
     path: /docs/user-guide/install/how-to-change-config/
-  - title: Core/Rule engine deployment parameters
+  - title: 核心/规则引擎部署参数
     path: /docs/user-guide/install/config/
-  - title: HTTP Transport parameters
+  - title: HTTP传输参数 
     path: /docs/user-guide/install/http-transport-config/
-  - title: MQTT Transport parameters
+  - title: MQTT传输参数
     path: /docs/user-guide/install/mqtt-transport-config/
-  - title: CoAP Transport parameters
+  - title: CoAP传输参数
     path: /docs/user-guide/install/coap-transport-config/
-  - title: LWM2M Transport parameters
+  - title: LWM2M传输参数
     path: /docs/user-guide/install/lwm2m-transport-config/
-  - title: SNMP Transport parameters
+  - title: SNMP传输参数
     path: /docs/user-guide/install/snmp-transport-config/
-  - title: Version control executor parameters
+  - title: 版本控制执行程序参数
     path: /docs/user-guide/install/vc-executor-config/
