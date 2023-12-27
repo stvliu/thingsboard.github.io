@@ -1,325 +1,325 @@
 - bigheader: Getting started guides
-- title: Getting started guides
-  subtitle: These guides provide quick overview of main GridLinks features. Designed to be completed in 15-30 minutes.
+- title: 入门指南
+  subtitle: 这些指南提供了GridLinks主要功能的快速概述。设计为15-30分钟完成。
   id: GettingStartedGuides
   section:
     - path: /docs/getting-started-guides/helloworld/
-      title: Hello world
-      subtitle: Learn how to collect IoT device data using MQTT, HTTP or CoAP and visualize it on a simple dashboard. Provides variety of sample scripts that you can run on your PC or laptop to simulate the device.
+      title: Hello世界
+      subtitle: 了解如何使用MQTT、HTTP或CoAP收集IoT设备数据并在简单仪表盘上可视化。提供各种可以在您的PC或笔记本电脑上运行以模拟设备的示例脚本。
       keywords: mqtt http coap visualization helloworld
       video: true
       pe: false
     - path: /docs/iot-video-tutorials/#working-with-users-devices-and-dashboards
-      title: End user IoT dashboards
-      subtitle: Learn how to perform basic operations over Devices, Customers, and Dashboards.
+      title: 最终用户IoT仪表板
+      subtitle: 了解如何执行设备、客户和仪表板上的基本操作。
       keywords: devices customers dashboards
       video: true
       pe: false
     - path: /docs/iot-video-tutorials/#device-data-management-using-thingsboard
-      title: Device data management
-      subtitle: Learn how to perform basic operations over device attributes to implement practical device management use cases.
+      title: 设备数据管理
+      subtitle: 了解如何执行设备属性上的基本操作以实现实用的设备管理用例。
       keywords: device management attributes
       video: true
       pe: false
-    - path: /docs/user-guide/rule-engine-2-0/re-getting-started/
-      title: Getting started with Rule Engine
-      subtitle: Learn about GridLinks rule engine and typical use cases you can implement. Review Hello World example and learn how-to enable filtering of incoming telemetry messages.
+    - path: /docs/user-guide/rule-engine-2-0/re-getting-started/  
+      title: Rule Engine入门
+      subtitle: 了解GridLinks规则引擎及可以实现的典型用例。回顾Hello World示例并学习如何启用传入遥测消息的过滤。
       keywords: device management attributes
       video: false
       pe: false
-- title: Connect your device
-  subtitle: Learn how to connect devices based on your connectivity technology or solution.
+- title: 连接您的设备
+  subtitle: 根据您的连接技术或解决方案学习如何连接设备。
   id: ConnectYourDevice
   section:
     - path: /docs/reference/http-api/
-      title: Connect devices using GridLinks HTTP API
-      subtitle: Learn how to connect your devices using HTTP protocol and GridLinks built-in payload format.
+      title: 使用GridLinks HTTP API连接设备
+      subtitle: 了解如何使用HTTP协议和GridLinks内置有效载荷格式连接您的设备。
       keywords: http connect
       pe: false
       video: false
-    - path: /docs/reference/mqtt-api/
-      title: Connect devices using GridLinks MQTT API
-      subtitle: Learn how to connect your devices using MQTT protocol and GridLinks built-in payload format.
+    - path: /docs/reference/mqtt-api/  
+      title: 使用GridLinks MQTT API连接设备
+      subtitle: 了解如何使用MQTT协议和GridLinks内置有效负载格式连接您的设备。
       keywords: mqtt connect
       pe: false
       video: false
     - path: /docs/reference/mqtt-sparkplug-api/
-      title: Connect devices using  GridLinks MQTT Sparkplug API
-      subtitle: Learn how to connect your devices using MQTT Sparkplug protocol and GridLinks built-in payload format.
+      title: 使用 GridLinks MQTT Sparkplug API连接设备
+      subtitle: 了解如何使用MQTT Sparkplug协议和GridLinks内置有效负载格式连接您的设备。  
       keywords: sparkplug connect
       pe: false
       video: false
     - path: /docs/reference/lwm2m-api/
-      title: Connect devices using GridLinks LwM2M API
-      subtitle: Learn how to connect your devices using LwM2M protocol and GridLinks built-in payload format.
+      title: 使用GridLinks LwM2M API连接设备
+      subtitle: 了解如何使用LwM2M协议和GridLinks内置有效负载格式连接您的设备。
       keywords: lwm2m connect
       pe: false
       video: false
     - path: /docs/reference/coap-api/
-      title: Connect devices using GridLinks CoAP API
-      subtitle: Learn how to connect your devices using CoAP protocol and GridLinks built-in payload format.
+      title: 使用GridLinks CoAP API连接设备  
+      subtitle: 了解如何使用CoAP协议和GridLinks内置有效负载格式连接您的设备。
       keywords: coap connect
       pe: false
       video: false
     - path: /docs/iot-gateway/getting-started/
-      title: Connect devices through GridLinks IoT Gateway
-      subtitle: Learn how to deploy IoT Gateway in your local network and route messages from your devices to the cloud.
+      title: 通过GridLinks IoT网关连接设备
+      subtitle: 了解如何在本地网络中部署IoT网关并将消息从您的设备路由到云。
       keywords: gateway connect
       pe: false
       video: false
     - path: /docs/user-guide/integrations/
-      title: GridLinks Integrations basics
-      subtitle: Learn about GridLinks Integrations feature and how you can use it to connect devices and apps that use custom payload formats.
+      title: GridLinks集成基础知识
+      subtitle: 了解GridLinks集成功能及如何使用它连接使用自定义有效负载格式的设备和应用程序。
       keywords:
       pe: false
       video: false
     - path: /docs/user-guide/integrations/#platform-integrations-vs-iot-gateway
-      title: GridLinks Integrations vs IoT Gateway
-      subtitle: Learn the differences between the Platform Integrations and IoT Gateway.
+      title: GridLinks集成与IoT网关
+      subtitle: 了解平台集成与IoT网关之间的区别。
       keywords:
       pe: false
       video: false
     - path: /docs/user-guide/integrations/http/
-      title: Connect devices with custom payload using GridLinks HTTP Integration
-      subtitle: Convert existing protocols and payload formats to GridLinks message format.
+      title: 使用GridLinks HTTP集成连接具有自定义有效负载的设备
+      subtitle: 将现有协议和有效负载格式转换为GridLinks消息格式。
       keywords: http connect
       pe: true
       video: true
     - path: /docs/user-guide/integrations/mqtt/
-      title: Connect devices with custom payload using GridLinks MQTT Integration.
-      subtitle: Connect to external brokers and consume MQTT data stream
+      title: 使用GridLinks MQTT集成连接具有自定义有效负载的设备。
+      subtitle: 连接到外部代理并使用MQTT数据流
       keywords: mqtt connect
       pe: true
       video: true
     - path: /docs/user-guide/integrations/kafka/
-      title: Connect devices with custom payload using GridLinks Kafka Integration.
-      subtitle: Connect to external brokers and consume Kafka data stream
+      title: 使用GridLinks Kafka集成连接具有自定义有效负载的设备。
+      subtitle: 连接到外部代理并使用Kafka数据流
       keywords: kafka connect
       pe: true
       video: true
     - path: /docs/user-guide/integrations/sigfox/
-      title: Connect SigFox devices using TB PE Integration
-      subtitle: Learn how to route messages from Sigfox backend to GridLinks and decode binary device payloads.
+      title: 使用TB PE集成连接SigFox设备
+      subtitle: 了解如何将消息从Sigfox后端路由到GridLinks并解码二进制设备有效负载。
       keywords: sigfox connect
       pe: true
       video: true
     - path: /docs/user-guide/integrations/ttn/
-      title: Connect LoRaWAN devices using TheThingsStack
-      subtitle: Learn how to route messages from TheThingsStack backend to GridLinks and vise-versa.
+      title: 使用TheThingsStack连接LoRaWAN设备
+      subtitle: 了解如何在TheThingsStack后端与GridLinks之间路由消息。
       keywords: ttn connect
       pe: true
       video: false
     - path: /docs/user-guide/integrations/opc-ua/
-      title: Connect OPC-UA servers to GridLinks
-      subtitle: Learn how to connect OPC-UA devices to GridLinks.
+      title: 将OPC-UA服务器连接到GridLinks
+      subtitle: 了解如何将OPC-UA设备连接到GridLinks。
       keywords: opcua connect
       pe: true
       video: true
     - path: /docs/user-guide/integrations/thingpark/
-      title: Connect LoRaWAN devices using Actility ThingPark
-      subtitle: Learn how to route messages from ThingPark to GridLinks and vise-versa.
+      title: 使用Actility ThingPark连接LoRaWAN设备
+      subtitle: 了解如何在ThingPark与GridLinks之间路由消息。
       keywords:
       pe: true
       video: false
     - path: /docs/user-guide/integrations/aws-iot/
-      title: Connect devices through AWS IoT
-      subtitle: Learn how to connect to AWS IoT broker, transform the incoming messages and generate the downlinks using GridLinks.
+      title: 通过AWS IoT连接设备
+      subtitle: 了解如何连接到AWS IoT代理、转换传入消息并使用GridLinks生成下行链路。
       keywords:
       pe: true
       video: true
     - path: /docs/user-guide/integrations/aws-kinesis/
-      title: Connect devices through AWS Kinesis
-      subtitle: Learn how to connect to AWS Kinesis stream, transform the incoming messages and generate the downlinks using GridLinks.
+      title: 通过AWS Kinesis连接设备
+      subtitle: 了解如何连接到AWS Kinesis流,使用GridLinks转换传入消息并生成下行链路。
       keywords:
       pe: true
       video: false
     - path: /docs/user-guide/integrations/ibm-watson-iot/
-      title: Connect devices through IBM Watson IoT
-      subtitle: Learn how to connect to IBM Watson IoT broker, transform the incoming messages and generate the downlinks using GridLinks.
+      title: 通过IBM Watson IoT连接设备
+      subtitle: 了解如何连接到IBM Watson IoT代理,使用GridLinks转换传入消息并生成下行链路。
       keywords:
       pe: true
       video: true
     - path: /docs/user-guide/integrations/azure-event-hub/
-      title: Connect devices through Azure Event Hub
-      subtitle: Learn how to connect to Azure Event Hub, transform the incoming messages and generate the downlinks using GridLinks.
+      title: 通过Azure事件中心连接设备
+      subtitle: 了解如何连接到Azure事件中心,使用GridLinks转换传入消息并生成下行链路。
       keywords:
       pe: true
       video: true
     - path: /docs/user-guide/integrations/azure-iot-hub/
-      title: Connect devices through Azure IoT Hub
-      subtitle: Learn how to connect to Azure IoT Hub and transform the incoming messages using GridLinks.
+      title: 通过Azure IoT中心连接设备  
+      subtitle: 了解如何连接到Azure IoT中心并使用GridLinks转换传入消息。
       keywords:
       pe: true
       video: false
     - path: /docs/user-guide/integrations/tcp/
-      title: Devices uses TCP protocol
-      subtitle: How to connect to GridLinks TCP-server, transform the incoming messages and generate the downlinks using GridLinks.
+      title: 设备使用TCP协议
+      subtitle: 如何连接到GridLinks TCP服务器,转换传入消息并使用GridLinks生成下行链路。  
       keywords: Connect TCP devices
       pe: true
       video: true
     - path: /docs/user-guide/integrations/udp/
-      title: Devices uses UDP protocol
-      subtitle: How to connect to GridLinks UDP-server, transform the incoming messages and generate the downlinks using GridLinks.
+      title: 设备使用UDP协议
+      subtitle: 如何连接到GridLinks UDP服务器,转换传入消息并使用GridLinks生成下行链路。
       keywords: Connect UDP devices
       pe: true
       video: true
     - path: /docs/samples/tektelic/
-      title: Connect Tektelic LoRaWAN sensors using TEKTELIC KONA Core Network Server
-      subtitle: Learn how to route messages from TEKTELIC KONA Core Network Server to GridLinks.
+      title: 使用 TEKTELIC KONA核心网络服务器连接Tektelic LoRaWAN传感器
+      subtitle: 了解如何将消息从TEKTELIC KONA核心网络服务器路由到GridLinks。
       keywords: Tektelic connect
       pe: false
       video: false
     - path: /docs/user-guide/integrations/tuya/
-      title: Connect smart devices through Tuya Smart
-      subtitle: Learn how to connect smart devices using Tuya Smart to GridLinks.
+      title: 通过Tuya智能连接智能设备
+      subtitle: 了解如何使用Tuya智能将智能设备连接到GridLinks。
       keywords:
       pe: true
       video: false
-- title: Data visualization
-  subtitle: These guides contain instructions how to configure complex GridLinks dashboards
+- title: 数据可视化
+  subtitle: 这些指南包含有关如何配置复杂GridLinks仪表板的说明
   id: DataVisualization
   section:
     - path: /docs/iot-video-tutorials/#dashboard-development-guide-part-1-of-3-visualizing-assets-data-using-maps-and-tables
-      title: Visualizing assets data using Maps and Tables
-      subtitle: "Learn how to: create assets and devices and define their relationships; add the server attributes and create a new dashboard; visualize data from the asset attributes using “Entities Table” and “Map” widgets."
+      title: 使用地图和表格可视化资产数据
+      subtitle: "了解如何:创建资产和设备并定义其关系; 添加服务器属性并创建新仪表板; 使用”实体表”和”地图”小部件可视化资产属性的数据。"
       keywords:
       pe: false
       video: true
     - path: /docs/iot-video-tutorials/#dashboard-development-guide-part-2-of-3-dashboard-states-aliases-and-widget-actions
-      title: Dashboard states, aliases and widget actions
-      subtitle: "Learn how to: add and configure new dashboard states; create various aliases; visualize the attributes data using the Image Map widget; create actions in different widgets in order to navigate between states; visualize the telemetry data using Analogue and Digital gauges and the Timeseries widget."
+      title: 仪表板状态、别名和小部件操作
+      subtitle: "了解如何:添加和配置新仪表板状态; 创建各种别名; 使用图像映射小部件可视化属性数据; 在不同的小部件中创建操作以在状态之间导航; 使用模拟和数字测量仪以及时间序列小部件可视化遥测数据。"
       keywords:
-      pe: false
+      pe: false  
       video: true
     - path: /docs/iot-video-tutorials/#dashboard-development-guide-part-3-of-3-remote-device-control-and-alarm-management
-      title: Remote device control and alarm management
-      subtitle: "Learn how to: add and use the Knob Control widget; create alarm rules; handle alarms using the Alarms widget; make a dashboard public."
+      title: 远程设备控制和报警管理
+      subtitle: "了解如何:添加和使用旋钮控件小部件; 创建报警规则; 使用报警小部件处理报警; 使仪表板公开。"
       keywords:
       pe: false
       video: true
     - path: /docs/iot-video-tutorials/#widget-configuration-guide-part-1-of-3-basic-settings
-      title: Basic widget settings
-      subtitle: "Learn how to: change widget title, background, colors, fonts, shadows, etc."
+      title: 基本小部件设置
+      subtitle: "了解如何:更改小部件标题、背景、颜色、字体、阴影等。"
       keywords:
       pe: false
-      video: true
+      video: true 
     - path: /docs/iot-video-tutorials/#widget-configuration-guide-part-2-of-3-latest-values-map-widget
-      title: Latest Values Map widget
-      subtitle: "Learn how to create Map widget, based on latitude and longitude, and customize the Map widget layout and properties."
+      title: 最新值地图小部件
+      subtitle: "了解如何根据纬度和经度创建地图小部件,并自定义地图小部件布局和属性。"
       keywords:
       pe: false
       video: true
     - path: /docs/iot-video-tutorials/#widget-configuration-guide-part-3-of-3-time-series-map-widget
-      title: Time Series Map widget
-      subtitle: "Learn how to display your devices with the latest telemetry data on the Time Series Map widget and modify the widget properties."
+      title: 时间序列地图小部件
+      subtitle: "了解如何在时间序列地图小部件上显示具有最新遥测数据的设备,并修改小部件属性。"
       keywords:
       pe: false
       video: true
-    - path: /docs/user-guide/ui/trip-animation-widget
-      title: Trip Animation widget
-      subtitle: "Learn how to display your devices with the latest telemetry data on the Trip Animation widget and modify the widget properties."
-      keywords: 
+    - path: /docs/user-guide/ui/trip-animation-widget  
+      title: 行程动画小部件
+      subtitle: "了解如何在Trip动画小部件上显示具有最新遥测数据的设备,并修改小部件属性。"
+      keywords:  
       pe: false
       video: true
-- title: Data processing & actions
-  subtitle: Learn how to use GridLinks Rule Engine.
+- title: 数据处理和操作
+  subtitle: 学习如何使用GridLinks规则引擎。
   id: DataProcessing
   section:
     - path: /docs/user-guide/rule-engine-2-0/tutorials/validate-incoming-telemetry/
-      title: Validate incoming telemetry
-      subtitle: Learn how to configure Rule Engine to discard invalid telemetry readings based on JavaScript filter function.
+      title: 验证传入的遥测
+      subtitle: 学习如何配置规则引擎以根据JavaScript过滤器函数丢弃无效的遥测读数。
       pe: false
     - path: /docs/user-guide/rule-engine-2-0/tutorials/telemetry-delta-validation/
-      title: Telemetry delta calculation
-      subtitle: Learn how to configure Rule Engine to calculate telemetry delta readings based on Originator telemetry rule node.
-      pe: false
+      title: 遥测增量计算
+      subtitle: 学习如何配置规则引擎以根据Originator遥测规则节点计算遥测增量读数。
+      pe: false 
     - path: /docs/user-guide/rule-engine-2-0/tutorials/function-based-on-telemetry-from-two-devices/
-      title: Data function based on telemetry from 2 devices
-      subtitle: Learn how to configure Rule Engine to create new telemetry based on telemetry readings from multiple devices.
+      title: 基于两个设备的遥测数据的功能  
+      subtitle: 学习如何配置规则引擎以根据多个设备的遥测读数创建新的遥测。
       pe: false
     - path: /docs/user-guide/rule-engine-2-0/tutorials/transform-incoming-telemetry/
-      title: Transform incoming telemetry
-      subtitle: Learn how to configure Rule Engine to transform incoming telemetry based on JavaScript function before it is stored to the database.
+      title: 转换传入的遥测
+      subtitle: 学习如何在将其存储到数据库之前根据JavaScript函数配置规则引擎以转换传入的遥测。
       pe: false
-    - path: /docs/user-guide/rule-engine-2-0/tutorials/transform-telemetry-using-previous-record/
-      title: Transform telemetry using previous record
-      subtitle: Learn how to configure Rule Engine to calculate “delta” of the counter readings based on current and previous reading.
+    - path: /docs/user-guide/rule-engine-2-0/tutorials/transform-telemetry-using-previous-record/ 
+      title: 使用上一条记录转换遥测
+      subtitle: 学习如何根据当前和上一条读数配置规则引擎以计算计数器读数的“增量”。
       pe: false
     - path: /docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/
-      title: Create & clear alarms
-      subtitle: Learn how to configure Rule Engine to create and clear alarms based on incoming data from devices.
+      title: 创建和清除报警
+      subtitle: 学习如何根据来自设备的数据配置规则引擎以创建和清除报警。 
       pe: false
     - path: /docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms-with-details/
-      title: Working with Alarm details
-      subtitle: Learn how to configure Alarm Details function in Alarm nodes and how to add an Alarm widget to the dashboard.
+      title: 使用报警详细信息
+      subtitle: 学习如何在报警节点中配置报警详细信息函数以及如何将报警小部件添加到仪表板。
       pe: false
     - path: /docs/user-guide/rule-engine-2-0/tutorials/send-email/
-      title: Send email on alarm
-      subtitle: Learn how to configure Rule Engine to send email when new alarm is created.
+      title: 创建新报警时发送电子邮件
+      subtitle: 学习如何配置规则引擎以在创建新报警时发送电子邮件。
       pe: false
-    - path: /docs/user-guide/rule-engine-2-0/tutorials/send-email-to-customer/
-      title: Send email to customer
-      subtitle: Learn how to configure Rule Engine to send email to the customer of the assigned device.
+    - path: /docs/user-guide/rule-engine-2-0/tutorials/send-email-to-customer/ 
+      title: 向客户发送电子邮件
+      subtitle: 学习如何配置规则引擎向分配设备的客户发送电子邮件。
       pe: false
     - path: /docs/user-guide/rule-engine-2-0/tutorials/integration-with-telegram-bot/
-      title: Notifications and Alarms on your smartphone using Telegram Bot
-      subtitle: Learn how to configure Rule Engine to send notification using Telegram Bot when new alarm is created.
-      pe: false
+      title: 使用 Telegram Bot 在智能手机上接收通知和报警
+      subtitle: 学习如何配置规则引擎,以便在创建新报警时使用 Telegram Bot 发送通知。
+      pe: false  
     - path: /docs/user-guide/rule-engine-2-0/tutorials/create-inactivity-alarm/
-      title: Create alarm when the device is offline
-      subtitle: Learn how to create an alarm when the device is offline for a certain period of time using RuleEngine.
+      title: 当设备离线时创建报警
+      subtitle: 了解如何使用RuleEngine在设备在一定时间内离线时创建报警。
       keys: active inactive connected disconnected online offline
       pe: false
     - path: /docs/user-guide/rule-engine-2-0/tutorials/check-relation-tutorial/
-      title: Check relation between Entities
-      subtitle: Learn how the Check Relation node can be used to check the relation between Entities.
+      title: 检查实体之间的关系
+      subtitle: 了解Check Relation节点如何用于检查实体之间的关系。 
       pe: false
     - path: /docs/user-guide/rule-engine-2-0/tutorials/rpc-request-tutorial/
-      title: RPC Request to related Device
-      subtitle: Learn how to send a remote request call to a Related Device using Rule Engine.
-      keys: rpc Request
+      title: 向相关设备发送RPC请求
+      subtitle: 学习如何使用规则引擎向相关设备发送远程调用请求。
+      keys: rpc 请求
       pe: false
     - path: /docs/user-guide/rule-engine-2-0/tutorials/get-weather-using-rest-api-call/
-      title: Using REST API to get weather data
-      subtitle: Learn how to use REST API to get weather data in a specified location.
+      title: 使用REST API获取天气数据
+      subtitle: 学习如何使用REST API获取指定位置的天气数据。
       keys: rest api
       pe: false
     - path: /docs/user-guide/rule-engine-2-0/tutorials/add-devices-to-group/
-      title: Add & remove devices to group dynamically
-      subtitle: Learn how to how to dynamically add & remove device from the device group based on incoming data from device.
-      keys: device group dynamic relation
+      title: 动态添加和删除设备组
+      subtitle: 学习如何根据来自设备的数据动态向设备组添加和删除设备。
+      keys: 设备组 动态 关联
       pe: true
     - path: /docs/user-guide/integrations/send-data-external-mqtt-brokers/
-      title: Send data to external MQTT brokers
-      subtitle: Connect to external brokers and send MQTT data stream
-      keys: mqtt connect
+      title: 将数据发送到外部MQTT代理
+      subtitle: 连接到外部代理并发送MQTT数据流
+      keys: mqtt 连接
       pe: true
     - path: /docs/user-guide/rule-engine-2-5/tutorials/queues-for-synchronization/
-      title: Using queues for synchronization
-      subtitle: Learn how to use Rule Engine 2.5 queues for message processing synchronization.
+      title: 使用队列进行同步
+      subtitle: 学习如何使用规则引擎2.5队列进行消息处理同步。
       pe: false
     - path: /docs/user-guide/rule-engine-2-5/tutorials/queues-for-message-reprocessing/
-      title: Using queues for message reprocessing
-      subtitle: Learn how to use Rule Engine 2.5 queues for message reprocessing in case of failure or timeout.
+      title: 使用队列重新处理消息
+      subtitle: 学习如何在失败或超时的情况下使用规则引擎2.5队列重新处理消息。
       pe: false
-- title: IoT Data analytics
-  subtitle: Learn how to use rule engine to perform basic analytics tasks.
+- title: 物联网数据分析
+  subtitle: 学习如何使用规则引擎执行基本分析任务。
   id: DataAnalytics
   section:
     - path: /docs/user-guide/rule-engine-2-0/tutorials/aggregate-incoming-data-stream/
-      title: Aggregate incoming data stream
-      subtitle: Calculate total water consumption in the building based on readings from multiple water meters within a building.
-      keywords: aggregation water meter analytics rule engine
+      title: 聚合传入的数据流
+      subtitle: 根据建筑内多个水表的读数计算建筑内的总耗水量。
+      keywords: 聚合 水表 分析 规则引擎
       pe: true
     - path: /docs/user-guide/rule-engine-2-0/tutorials/aggregate-latest-data/
-      title: Aggregate latest telemetry values periodically
-      subtitle: Calculate average temperature in the warehouse based on readings from multiple temperature sensors.
-      keywords: average temperature analytics rule engine
+      title: 周期性聚合最新遥测值
+      subtitle: 根据仓库内多个温度传感器的读数计算平均温度。
+      keywords: 平均温度 分析 规则引擎
       pe: true
     - path: /docs/trendz/prediction/
-      title: Predict timeseries
-      subtitle: Build prediction model based on vibration of water pump
-      keywords: analytics forecast prediction
+      title: 预测时间序列
+      subtitle: 基于水泵振动建立预测模型
+      keywords: 分析 预测
       pe: false
 #- title: Pushing data to external systems
 #  subtitle: lorem ipsum dolor
@@ -329,164 +329,164 @@
 #      subtitle: lorem ipsum dolor
 #      keywords: key1 key2 key3
 #      pe: false
-- title: Hardware samples
-  subtitle: Learn how to connect various hardware platforms to GridLinks.
+- title: 硬件样例
+  subtitle: 学习如何将各种硬件平台连接到GridLinks。
   id: HardwareSamples
   section:
     - path: /docs/samples/esp32/ota/
-      title: ESP32 OTA using GridLinks
-      subtitle: Learn how to make ESP32 OTA update using GridLinks custom widget, rule chain and dashboard
+      title: 使用GridLinks进行ESP32空中升级
+      subtitle: 学习如何使用GridLinks自定义小部件、规则链和仪表盘进行ESP32空中升级
       pe: false
       video: true
     - path: /docs/samples/esp32/gpio-control-pico-kit-dht22-sensor/
-      title: ESP32 Pico Kit GPIO control and DHT22 sensor monitor using GridLinks Arduino SDK
-      subtitle: Contains wiring diagram, sketch and dashboard setup guide.
+      title: 使用GridLinks Arduino SDK监控ESP32 Pico Kit GPIO和DHT22传感器
+      subtitle: 包含接线图、代码和仪表盘设置指南。
       pe: false
       video: false
-    - path: /docs/samples/arduino/temperature/
-      title: Temperature upload over MQTT using Arduino UNO, ESP8266 and DHT22 sensor
-      subtitle: Contains wiring diagram, sketch and dashboard setup guide.
+    - path: /docs/samples/arduino/temperature/  
+      title: 使用Arduino UNO、ESP8266和DHT22传感器通过MQTT上传温度
+      subtitle: 包含接线图、代码和仪表盘设置指南。
       pe: false
-    - title: Humidity and temperature upload over HTTP using Arduino UNO, SIM808 Shield and HTU21D sensor
+    - title: 使用Arduino UNO、SIM808 Shield和HTU21D传感器通过HTTP上传温湿度
       path: /docs/samples/arduino/sim808-htu21d/
-      subtitle: Contains wiring diagram, sketch and dashboard setup guide.
+      subtitle: 包含接线图、代码和仪表盘设置指南。
       pe: false
     - path: /docs/samples/esp8266/temperature/
-      title: Temperature upload over MQTT using ESP8266 and DHT22 sensor
-      subtitle: Contains wiring diagram, sketch, dashboard setup guide and demonstration video.
+      title: 使用ESP8266和DHT22传感器通过MQTT上传温度
+      subtitle: 包含接线图、代码、仪表盘设置指南和演示视频。
       pe: false
       video: true
     - path: /docs/samples/esp8266/gpio/
-      title: ESP8266 GPIO control over MQTT using GridLinks
-      subtitle: Contains wiring diagram, sketch, dashboard setup guide and demonstration video.
+      title: 使用GridLinks通过MQTT控制ESP8266 GPIO  
+      subtitle: 包含接线图、代码、仪表盘设置指南和演示视频。
       pe: false
       video: true
     - path: /docs/samples/nodemcu/temperature/
-      title: Temperature upload over MQTT using NodeMCU and DHT11 sensor
-      subtitle: Contains wiring diagram, sketch and dashboard setup guide.
+      title: 使用NodeMCU和DHT11传感器通过MQTT上传温度
+      subtitle: 包含接线图、代码和仪表盘设置指南。
       pe: false
       video: false
     - path: /docs/samples/raspberry/gpio/
-      title: Raspberry Pi GPIO control over MQTT using GridLinks
-      subtitle: Contains wiring diagram, source code, dashboard setup guide and demonstration video.
+      title: 使用GridLinks通过MQTT控制Raspberry Pi GPIO
+      subtitle: 包含接线图、源码、仪表盘设置指南和演示视频。
       pe: false
       video: true
     - path: /docs/samples/raspberry/gpio-android-things/
-      title: Raspberry Pi GPIO control using Android Things and GridLinks
-      subtitle: Contains wiring diagram, source code, dashboard setup guide and demonstration video.
+      title: 使用Android Things和GridLinks控制Raspberry Pi GPIO
+      subtitle: 包含接线图、源码、仪表盘设置指南和演示视频。
       pe: false
       video: true
     - path: /docs/samples/raspberry/temperature/
-      title: Temperature upload over MQTT using Raspberry Pi and DHT22 sensor
-      subtitle: Contains wiring diagram, sketch, dashboard setup guide and demonstration video.
+      title: 使用Raspberry Pi和DHT22传感器通过MQTT上传温度
+      subtitle: 包含接线图、代码、仪表盘设置指南和演示视频。
       pe: false
       video: true
     - path: /docs/samples/linkit-one/gps/
-      title: GPS data upload and visualization using LinkIt ONE and GridLinks
-      subtitle: Contains wiring diagram, sketch and dashboard setup guide.
+      title: 使用LinkIt ONE和GridLinks上传和可视化GPS数据
+      subtitle: 包含接线图、代码和仪表盘设置指南。
       pe: false
       video: false
     - path: /docs/user-guide/integrations/sodaq/
-      title: Learn how to connect your SODAQ Universal Tracker to GridLinks
-      subtitle: Learn how to connect your SODAQ Universal Tracker to GridLinks via T-Mobile – IoT CDP Integration.
+      title: 了解如何通过T-Mobile - IoT CDP集成将SODAQ通用跟踪器连接到GridLinks
+      subtitle: 了解如何通过T-Mobile - IoT CDP集成将SODAQ通用跟踪器连接到GridLinks。
       keywords: NB IoT, NB-IoT, T-Mobile, SODAQ, 5G
       pe: true
       video: false
     - path: /docs/user-guide/integrations/sodaq-udp
-      title: Learn how to connect your SODAQ Universal Tracker to GridLinks
-      subtitle: Learn how to connect your SODAQ Universal Tracker to GridLinks via UDP Integration.
+      title: 了解如何通过UDP集成将SODAQ通用跟踪器连接到GridLinks
+      subtitle: 了解如何通过UDP集成将SODAQ通用跟踪器连接到GridLinks。
       keywords: NB IoT, NB-IoT, T-Mobile, SODAQ, 5G
       pe: true
       video: false
     - path: /docs/samples/ble/raspberry-esp32-xiaomi-sensor-htu21d
-      title: GridLinks BLE Demo with Raspberry PI, ESP32, Xiaomi MI and HTU21D sensors
-      subtitle: Contains wiring diagram and dashboard setup guide.
+      title: 带Raspberry PI、ESP32、小米MI和HTU21D传感器的GridLinks蓝牙演示
+      subtitle: 包含接线图和仪表盘设置指南。
       pe: false
       video: false
     - path: /docs/samples/nettrartu+/rtu_temp_sensor/
-      title: Temperature upload over MQTT using Nettra RTU
-      subtitle: Contains wiring diagram and dashboard setup guide.
+      title: 使用Nettra RTU通过MQTT上传温度
+      subtitle: 包含接线图和仪表盘设置指南。 
       pe: false
       video: false
-- title: Advanced features
-  subtitle: Learn about advanced GridLinks features
+- title: 高级功能
+  subtitle: 了解GridLinks的高级功能
   id: AdvancedFeatures
   section:
     - path: /docs/user-guide/device-connectivity-status/
-      title: Connectivity status
-      subtitle: "Learn how to track connectivity status of the devices: connected, disconnected, active, inactive"
+      title: 设备连接状态
+      subtitle: "了解如何跟踪设备的连接状态: 已连接、未连接、活动、非活动"
       pe: false
       video: false
     - path: /docs/user-guide/audit-log/
-      title: Audit log
-      subtitle: Learn how to track user actions in order to keep audit log.
+      title: 审计日志
+      subtitle: 了解如何跟踪用户操作以保持审计日志。
       pe: false
       video: false
     - path: /docs/user-guide/api-limits/
-      title: API limits
-      subtitle: Learn how to control API usage, by limiting number of requests from single host during single time unit (Minutes, Hours, etc.)
+      title: API限制
+      subtitle: 了解如何控制API使用情况,方法是限制单个主机在单个时间单位内的请求数(分钟、小时等)。
       pe: false
       video: false
     - path: /docs/user-guide/white-labeling/
-      title: White-labeling
-      subtitle: Learn how to configure your company or product logo and color scheme in 2 minutes with zero coding efforts.
+      title: 白标定制
+      subtitle: 学习如何在2分钟内零编码工作量配置公司或产品的徽标和配色方案。
       pe: true
       video: true
     - path: /docs/user-guide/groups/
-      title: Device and Asset groups
-      subtitle: Learn how to work with entity groups and perform bulk operations
+      title: 设备和资产分组
+      subtitle: 学习如何使用实体分组并执行批量操作
       pe: true
       video: true
     - path: /docs/user-guide/scheduler/
-      title: Scheduler
-      subtitle: Learn how to schedule various types of events and trigger actions.
+      title: 计划任务
+      subtitle: 学习如何调度各种类型的事件并触发操作。
       pe: true
       video: true
     - path: /docs/user-guide/reporting/
-      title: Reporting
-      subtitle: Learn how to schedule and generate reports based on existing dashboards.
+      title: 报告
+      subtitle: 学习如何根据现有仪表盘计划和生成报告。
       pe: true
       video: true
 
 - title: OAuth 2.0
-  subtitle: Learn how to step-by-step setup OAuth with different providers.
+  subtitle: 学习如何分步设置与不同提供商的OAuth 
   id: OAuth
   paaspage: "false"
   section:
   - path: /docs/user-guide/oauth-2-support/#login-with-google
-    title: Google OAuth example
-    subtitle: Learn how to step-by-step setup OAuth with Google.
+    title: Google OAuth示例
+    subtitle: 学习如何分步与Google设置OAuth。
   - path: /docs/user-guide/oauth-2-support/#login-with-auth0
-    title: OAuth0 OAuth example
-    subtitle: Learn how to step-by-step setup OAuth with OAuth0.
+    title: OAuth0 OAuth示例
+    subtitle: 学习如何分步与OAuth0设置OAuth。
   - path: /docs/user-guide/oauth-2-support
-    title: OAuth0 Okta example
-    subtitle: Learn how to step-by-step setup OAuth with Okta.
+    title: OAuth0 Okta示例
+    subtitle: 学习如何分步与Okta设置OAuth。
   - path: /docs/user-guide/oauth-2-support
-    title: OAuth0 Azure Active Directory example
-    subtitle: Learn how to step-by-step setup OAuth with Azure Active Directory.
+    title: OAuth0 Azure Active Directory示例
+    subtitle: 学习如何分步与Azure Active Directory设置OAuth。
 
-- title: Contribution and Development
-  subtitle: Learn how to contribute to Thingsboard, customize & develop custom widgets and rule nodes
+- title: 贡献和开发
+  subtitle: 学习如何为Thingsboard做贡献,定制和开发自定义小部件和规则节点
   id: Contribution
   section:
     - path: /docs/user-guide/contribution/how-to-contribute/
-      title: How to Contribute
-      subtitle: "Learn how to contribute to Thingsboard"
+      title: 如何贡献
+      subtitle: "了解如何为Thingsboard做贡献" 
       pe: false
       video: false
     - path: /docs/user-guide/contribution/how-to-contribute-your-device-integration-guide/
-      title: How to contribute your device integration guide
-      subtitle: "Learn how to contribute to Thingsboard"
+      title: 如何贡献您的设备集成指南
+      subtitle: "了解如何为Thingsboard做贡献"
       pe: false
       video: false
     - path: /docs/user-guide/contribution/rule-node-development/
-      title: Rule Node Development Guide
-      subtitle: "Learn how to customize and create custom rule nodes"
+      title: 规则节点开发指南
+      subtitle: "了解如何自定义和创建自定义规则节点"
       pe: false
       video: false
-    - path: /docs/user-guide/contribution/widgets-development/
-      title: Widgets Development Guide
-      subtitle: "Learn how to customize and create custom widgets"
+    - path: /docs/user-guide/contribution/widgets-development/ 
+      title: 小部件开发指南
+      subtitle: "了解如何自定义和创建自定义小部件"
       pe: false
       video: false
