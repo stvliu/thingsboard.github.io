@@ -1,4 +1,4 @@
-- bigheader: Getting started guides
+- bigheader: 入门指南
 - title: 入门指南
   subtitle: 这些指南提供了GridLinks主要功能的快速概述。设计为15-30分钟完成。
   id: GettingStartedGuides
@@ -79,102 +79,102 @@
       keywords:
       pe: false
       video: false
-    - path: /docs/user-guide/integrations/http/
-      title: 使用GridLinks HTTP集成连接具有自定义有效负载的设备
-      subtitle: 将现有协议和有效负载格式转换为GridLinks消息格式。
-      keywords: http connect
-      pe: true
-      video: true
-    - path: /docs/user-guide/integrations/mqtt/
-      title: 使用GridLinks MQTT集成连接具有自定义有效负载的设备。
-      subtitle: 连接到外部代理并使用MQTT数据流
-      keywords: mqtt connect
-      pe: true
-      video: true
-    - path: /docs/user-guide/integrations/kafka/
-      title: 使用GridLinks Kafka集成连接具有自定义有效负载的设备。
-      subtitle: 连接到外部代理并使用Kafka数据流
-      keywords: kafka connect
-      pe: true
-      video: true
-    - path: /docs/user-guide/integrations/sigfox/
-      title: 使用TB PE集成连接SigFox设备
-      subtitle: 了解如何将消息从Sigfox后端路由到GridLinks并解码二进制设备有效负载。
-      keywords: sigfox connect
-      pe: true
-      video: true
-    - path: /docs/user-guide/integrations/ttn/
-      title: 使用TheThingsStack连接LoRaWAN设备
-      subtitle: 了解如何在TheThingsStack后端与GridLinks之间路由消息。
-      keywords: ttn connect
-      pe: true
-      video: false
-    - path: /docs/user-guide/integrations/opc-ua/
-      title: 将OPC-UA服务器连接到GridLinks
-      subtitle: 了解如何将OPC-UA设备连接到GridLinks。
-      keywords: opcua connect
-      pe: true
-      video: true
-    - path: /docs/user-guide/integrations/thingpark/
-      title: 使用Actility ThingPark连接LoRaWAN设备
-      subtitle: 了解如何在ThingPark与GridLinks之间路由消息。
-      keywords:
-      pe: true
-      video: false
-    - path: /docs/user-guide/integrations/aws-iot/
-      title: 通过AWS IoT连接设备
-      subtitle: 了解如何连接到AWS IoT代理、转换传入消息并使用GridLinks生成下行链路。
-      keywords:
-      pe: true
-      video: true
-    - path: /docs/user-guide/integrations/aws-kinesis/
-      title: 通过AWS Kinesis连接设备
-      subtitle: 了解如何连接到AWS Kinesis流,使用GridLinks转换传入消息并生成下行链路。
-      keywords:
-      pe: true
-      video: false
-    - path: /docs/user-guide/integrations/ibm-watson-iot/
-      title: 通过IBM Watson IoT连接设备
-      subtitle: 了解如何连接到IBM Watson IoT代理,使用GridLinks转换传入消息并生成下行链路。
-      keywords:
-      pe: true
-      video: true
-    - path: /docs/user-guide/integrations/azure-event-hub/
-      title: 通过Azure事件中心连接设备
-      subtitle: 了解如何连接到Azure事件中心,使用GridLinks转换传入消息并生成下行链路。
-      keywords:
-      pe: true
-      video: true
-    - path: /docs/user-guide/integrations/azure-iot-hub/
-      title: 通过Azure IoT中心连接设备  
-      subtitle: 了解如何连接到Azure IoT中心并使用GridLinks转换传入消息。
-      keywords:
-      pe: true
-      video: false
-    - path: /docs/user-guide/integrations/tcp/
-      title: 设备使用TCP协议
-      subtitle: 如何连接到GridLinks TCP服务器,转换传入消息并使用GridLinks生成下行链路。  
-      keywords: Connect TCP devices
-      pe: true
-      video: true
-    - path: /docs/user-guide/integrations/udp/
-      title: 设备使用UDP协议
-      subtitle: 如何连接到GridLinks UDP服务器,转换传入消息并使用GridLinks生成下行链路。
-      keywords: Connect UDP devices
-      pe: true
-      video: true
+    # - path: /docs/user-guide/integrations/http/
+    #   title: 使用GridLinks HTTP集成连接具有自定义有效负载的设备
+    #   subtitle: 将现有协议和有效负载格式转换为GridLinks消息格式。
+    #   keywords: http connect
+    #   pe: true
+    #   video: true
+    # - path: /docs/user-guide/integrations/mqtt/
+    #   title: 使用GridLinks MQTT集成连接具有自定义有效负载的设备。
+    #   subtitle: 连接到外部代理并使用MQTT数据流
+    #   keywords: mqtt connect
+    #   pe: true
+    #   video: true
+    # - path: /docs/user-guide/integrations/kafka/
+    #   title: 使用GridLinks Kafka集成连接具有自定义有效负载的设备。
+    #   subtitle: 连接到外部代理并使用Kafka数据流
+    #   keywords: kafka connect
+    #   pe: true
+    #   video: true
+    # - path: /docs/user-guide/integrations/sigfox/
+    #   title: 使用TB PE集成连接SigFox设备
+    #   subtitle: 了解如何将消息从Sigfox后端路由到GridLinks并解码二进制设备有效负载。
+    #   keywords: sigfox connect
+    #   pe: true
+    #   video: true
+    # - path: /docs/user-guide/integrations/ttn/
+    #   title: 使用TheThingsStack连接LoRaWAN设备
+    #   subtitle: 了解如何在TheThingsStack后端与GridLinks之间路由消息。
+    #   keywords: ttn connect
+    #   pe: true
+    #   video: false
+    # - path: /docs/user-guide/integrations/opc-ua/
+    #   title: 将OPC-UA服务器连接到GridLinks
+    #   subtitle: 了解如何将OPC-UA设备连接到GridLinks。
+    #   keywords: opcua connect
+    #   pe: true
+    #   video: true
+    # - path: /docs/user-guide/integrations/thingpark/
+    #   title: 使用Actility ThingPark连接LoRaWAN设备
+    #   subtitle: 了解如何在ThingPark与GridLinks之间路由消息。
+    #   keywords:
+    #   pe: true
+    #   video: false
+    # - path: /docs/user-guide/integrations/aws-iot/
+    #   title: 通过AWS IoT连接设备
+    #   subtitle: 了解如何连接到AWS IoT代理、转换传入消息并使用GridLinks生成下行链路。
+    #   keywords:
+    #   pe: true
+    #   video: true
+    # - path: /docs/user-guide/integrations/aws-kinesis/
+    #   title: 通过AWS Kinesis连接设备
+    #   subtitle: 了解如何连接到AWS Kinesis流,使用GridLinks转换传入消息并生成下行链路。
+    #   keywords:
+    #   pe: true
+    #   video: false
+    # - path: /docs/user-guide/integrations/ibm-watson-iot/
+    #   title: 通过IBM Watson IoT连接设备
+    #   subtitle: 了解如何连接到IBM Watson IoT代理,使用GridLinks转换传入消息并生成下行链路。
+    #   keywords:
+    #   pe: true
+    #   video: true
+    # - path: /docs/user-guide/integrations/azure-event-hub/
+    #   title: 通过Azure事件中心连接设备
+    #   subtitle: 了解如何连接到Azure事件中心,使用GridLinks转换传入消息并生成下行链路。
+    #   keywords:
+    #   pe: true
+    #   video: true
+    # - path: /docs/user-guide/integrations/azure-iot-hub/
+    #   title: 通过Azure IoT中心连接设备  
+    #   subtitle: 了解如何连接到Azure IoT中心并使用GridLinks转换传入消息。
+    #   keywords:
+    #   pe: true
+    #   video: false
+    # - path: /docs/user-guide/integrations/tcp/
+    #   title: 设备使用TCP协议
+    #   subtitle: 如何连接到GridLinks TCP服务器,转换传入消息并使用GridLinks生成下行链路。  
+    #   keywords: Connect TCP devices
+    #   pe: true
+    #   video: true
+    # - path: /docs/user-guide/integrations/udp/
+    #   title: 设备使用UDP协议
+    #   subtitle: 如何连接到GridLinks UDP服务器,转换传入消息并使用GridLinks生成下行链路。
+    #   keywords: Connect UDP devices
+    #   pe: true
+    #   video: true
     - path: /docs/samples/tektelic/
       title: 使用 TEKTELIC KONA核心网络服务器连接Tektelic LoRaWAN传感器
       subtitle: 了解如何将消息从TEKTELIC KONA核心网络服务器路由到GridLinks。
       keywords: Tektelic connect
       pe: false
       video: false
-    - path: /docs/user-guide/integrations/tuya/
-      title: 通过Tuya智能连接智能设备
-      subtitle: 了解如何使用Tuya智能将智能设备连接到GridLinks。
-      keywords:
-      pe: true
-      video: false
+    # - path: /docs/user-guide/integrations/tuya/
+    #   title: 通过Tuya智能连接智能设备
+    #   subtitle: 了解如何使用Tuya智能将智能设备连接到GridLinks。
+    #   keywords:
+    #   pe: true
+    #   video: false
 - title: 数据可视化
   subtitle: 这些指南包含有关如何配置复杂GridLinks仪表板的说明
   id: DataVisualization
@@ -284,16 +284,16 @@
       subtitle: 学习如何使用REST API获取指定位置的天气数据。
       keys: rest api
       pe: false
-    - path: /docs/user-guide/rule-engine-2-0/tutorials/add-devices-to-group/
-      title: 动态添加和删除设备组
-      subtitle: 学习如何根据来自设备的数据动态向设备组添加和删除设备。
-      keys: 设备组 动态 关联
-      pe: true
-    - path: /docs/user-guide/integrations/send-data-external-mqtt-brokers/
-      title: 将数据发送到外部MQTT代理
-      subtitle: 连接到外部代理并发送MQTT数据流
-      keys: mqtt 连接
-      pe: true
+    # - path: /docs/user-guide/rule-engine-2-0/tutorials/add-devices-to-group/
+    #   title: 动态添加和删除设备组
+    #   subtitle: 学习如何根据来自设备的数据动态向设备组添加和删除设备。
+    #   keys: 设备组 动态 关联
+    #   pe: true
+    # - path: /docs/user-guide/integrations/send-data-external-mqtt-brokers/
+    #   title: 将数据发送到外部MQTT代理
+    #   subtitle: 连接到外部代理并发送MQTT数据流
+    #   keys: mqtt 连接
+    #   pe: true
     - path: /docs/user-guide/rule-engine-2-5/tutorials/queues-for-synchronization/
       title: 使用队列进行同步
       subtitle: 学习如何使用规则引擎2.5队列进行消息处理同步。
@@ -306,16 +306,16 @@
   subtitle: 学习如何使用规则引擎执行基本分析任务。
   id: DataAnalytics
   section:
-    - path: /docs/user-guide/rule-engine-2-0/tutorials/aggregate-incoming-data-stream/
-      title: 聚合传入的数据流
-      subtitle: 根据建筑内多个水表的读数计算建筑内的总耗水量。
-      keywords: 聚合 水表 分析 规则引擎
-      pe: true
-    - path: /docs/user-guide/rule-engine-2-0/tutorials/aggregate-latest-data/
-      title: 周期性聚合最新遥测值
-      subtitle: 根据仓库内多个温度传感器的读数计算平均温度。
-      keywords: 平均温度 分析 规则引擎
-      pe: true
+    # - path: /docs/user-guide/rule-engine-2-0/tutorials/aggregate-incoming-data-stream/
+    #   title: 聚合传入的数据流
+    #   subtitle: 根据建筑内多个水表的读数计算建筑内的总耗水量。
+    #   keywords: 聚合 水表 分析 规则引擎
+    #   pe: true
+    # - path: /docs/user-guide/rule-engine-2-0/tutorials/aggregate-latest-data/
+    #   title: 周期性聚合最新遥测值
+    #   subtitle: 根据仓库内多个温度传感器的读数计算平均温度。
+    #   keywords: 平均温度 分析 规则引擎
+    #   pe: true
     - path: /docs/trendz/prediction/
       title: 预测时间序列
       subtitle: 基于水泵振动建立预测模型
@@ -386,18 +386,18 @@
       subtitle: 包含接线图、代码和仪表盘设置指南。
       pe: false
       video: false
-    - path: /docs/user-guide/integrations/sodaq/
-      title: 了解如何通过T-Mobile - IoT CDP集成将SODAQ通用跟踪器连接到GridLinks
-      subtitle: 了解如何通过T-Mobile - IoT CDP集成将SODAQ通用跟踪器连接到GridLinks。
-      keywords: NB IoT, NB-IoT, T-Mobile, SODAQ, 5G
-      pe: true
-      video: false
-    - path: /docs/user-guide/integrations/sodaq-udp
-      title: 了解如何通过UDP集成将SODAQ通用跟踪器连接到GridLinks
-      subtitle: 了解如何通过UDP集成将SODAQ通用跟踪器连接到GridLinks。
-      keywords: NB IoT, NB-IoT, T-Mobile, SODAQ, 5G
-      pe: true
-      video: false
+    # - path: /docs/user-guide/integrations/sodaq/
+    #   title: 了解如何通过T-Mobile - IoT CDP集成将SODAQ通用跟踪器连接到GridLinks
+    #   subtitle: 了解如何通过T-Mobile - IoT CDP集成将SODAQ通用跟踪器连接到GridLinks。
+    #   keywords: NB IoT, NB-IoT, T-Mobile, SODAQ, 5G
+    #   pe: true
+    #   video: false
+    # - path: /docs/user-guide/integrations/sodaq-udp
+    #   title: 了解如何通过UDP集成将SODAQ通用跟踪器连接到GridLinks
+    #   subtitle: 了解如何通过UDP集成将SODAQ通用跟踪器连接到GridLinks。
+    #   keywords: NB IoT, NB-IoT, T-Mobile, SODAQ, 5G
+    #   pe: true
+    #   video: false
     - path: /docs/samples/ble/raspberry-esp32-xiaomi-sensor-htu21d
       title: 带Raspberry PI、ESP32、小米MI和HTU21D传感器的GridLinks蓝牙演示
       subtitle: 包含接线图和仪表盘设置指南。
@@ -427,26 +427,26 @@
       subtitle: 了解如何控制API使用情况,方法是限制单个主机在单个时间单位内的请求数(分钟、小时等)。
       pe: false
       video: false
-    - path: /docs/user-guide/white-labeling/
-      title: 白标定制
-      subtitle: 学习如何在2分钟内零编码工作量配置公司或产品的徽标和配色方案。
-      pe: true
-      video: true
-    - path: /docs/user-guide/groups/
-      title: 设备和资产分组
-      subtitle: 学习如何使用实体分组并执行批量操作
-      pe: true
-      video: true
-    - path: /docs/user-guide/scheduler/
-      title: 计划任务
-      subtitle: 学习如何调度各种类型的事件并触发操作。
-      pe: true
-      video: true
-    - path: /docs/user-guide/reporting/
-      title: 报告
-      subtitle: 学习如何根据现有仪表盘计划和生成报告。
-      pe: true
-      video: true
+    # - path: /docs/user-guide/white-labeling/
+    #   title: 白标定制
+    #   subtitle: 学习如何在2分钟内零编码工作量配置公司或产品的徽标和配色方案。
+    #   pe: true
+    #   video: true
+    # - path: /docs/user-guide/groups/
+    #   title: 设备和资产分组
+    #   subtitle: 学习如何使用实体分组并执行批量操作
+    #   pe: true
+    #   video: true
+    # - path: /docs/user-guide/scheduler/
+    #   title: 计划任务
+    #   subtitle: 学习如何调度各种类型的事件并触发操作。
+    #   pe: true
+    #   video: true
+    # - path: /docs/user-guide/reporting/
+    #   title: 报告
+    #   subtitle: 学习如何根据现有仪表盘计划和生成报告。
+    #   pe: true
+    #   video: true
 
 - title: OAuth 2.0
   subtitle: 学习如何分步设置与不同提供商的OAuth 

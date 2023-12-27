@@ -7,7 +7,7 @@ title: IoT 视频教程
 * TOC
 {:toc}
 
-ThingsBoard Youtube [频道](https://www.youtube.com/channel/UCDb9fsV-YR4JmnipAMGsVAQ/videos) 提供有用的视频教程，涵盖 GridLinks 平台的各种功能。
+GridLinks Youtube [频道](https://www.youtube.com/channel/UCDb9fsV-YR4JmnipAMGsVAQ/videos) 提供有用的视频教程，涵盖 GridLinks 平台的各种功能。
 我们建议订阅此频道以接收最新更新。下面列出了一些视频教程。
 非视频教程可在 [示例](/docs/samples/) 页面上找到。
 
