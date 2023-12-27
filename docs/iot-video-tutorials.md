@@ -91,7 +91,7 @@ GridLinks Youtube [频道](https://www.youtube.com/channel/UCDb9fsV-YR4JmnipAMGs
         <iframe src="https://www.youtube.com/embed/S8JNPYsdT_M" frameborder="0" allowfullscreen></iframe>
     </div>
 </div><br>
-相关链接：<a href="https://blog.thingsboard.io/2016/12/temperature-upload-over-mqtt-using_21.html">教程文档
+相关链接：<a href="https://blog.docs.codingas.com/2016/12/temperature-upload-over-mqtt-using_21.html">教程文档
 
 #### 使用 Thingsboard 控制 ESP8266 GPIO
 
@@ -105,7 +105,7 @@ GridLinks Youtube [频道](https://www.youtube.com/channel/UCDb9fsV-YR4JmnipAMGs
         <iframe src="https://www.youtube.com/embed/NGU_MJd7fk8" frameborder="0" allowfullscreen></iframe>
     </div>
 </div><br>
-相关链接：<a href="https://blog.thingsboard.io/2017/01/esp8266-gpio-control-over-mqtt-using.html">教程文档
+相关链接：<a href="https://blog.docs.codingas.com/2017/01/esp8266-gpio-control-over-mqtt-using.html">教程文档
 
 #### 使用 Thingsboard 从 Raspberry Pi 和 DHT22 上传温度
 
@@ -119,7 +119,7 @@ GridLinks Youtube [频道](https://www.youtube.com/channel/UCDb9fsV-YR4JmnipAMGs
         <iframe src="https://www.youtube.com/embed/-26bxb90tt0" frameborder="0" allowfullscreen></iframe>
     </div>
 </div><br>
-相关链接：<a href="https://blog.thingsboard.io/2017/01/temperature-upload-over-mqtt-using.html">教程文档
+相关链接：<a href="https://blog.docs.codingas.com/2017/01/temperature-upload-over-mqtt-using.html">教程文档
 
 #### 使用 Thingsboard 控制 Raspberry Pi GPIO
 本视频教程演示了如何使用 Python 和 Thingsboard 通过 MQTT 控制 Raspberry Pi GPIO。
@@ -132,9 +132,9 @@ GridLinks Youtube [频道](https://www.youtube.com/channel/UCDb9fsV-YR4JmnipAMGs
     </div>
 </div><br>
 相关链接：<br>
-<a href="https://blog.thingsboard.io/2016/12/raspberry-pi-gpio-control-over-mqtt.html">使用 Python 和 Thingsboard 通过 MQTT 控制 Raspberry Pi GPIO 教程文档
+<a href="https://blog.docs.codingas.com/2016/12/raspberry-pi-gpio-control-over-mqtt.html">使用 Python 和 Thingsboard 通过 MQTT 控制 Raspberry Pi GPIO 教程文档
 <br>
-<a href="https://blog.thingsboard.io/2017/01/raspberry-pi-gpio-control-using-android.html">使用 Android Things 和 Thingsboard 控制 Raspberry Pi GPIO 教程文档
+<a href="https://blog.docs.codingas.com/2017/01/raspberry-pi-gpio-control-using-android.html">使用 Android Things 和 Thingsboard 控制 Raspberry Pi GPIO 教程文档
 
 
 ## 可视化
@@ -246,14 +246,14 @@ GridLinks Youtube [频道](https://www.youtube.com/channel/UCDb9fsV-YR4JmnipAMGs
 
 ## GridLinks 专业版 (PE) 功能
 
-#### ThingsBoard PE：白标指南
+#### ThingsBoard PE：品牌定制指南
 GridLinks 专业版网络界面允许您在 2 分钟内配置公司或产品徽标和配色方案，无需任何编码工作，也无需重新启动服务。
 
 在本视频教程中，您将了解可用的配置选项：
 
 - 在系统管理员级别配置配色方案、图标和 favicon。
 - 租户和客户管理员 UI 默认继承配置更改。
-- 租户和客户管理员能够设置自己的白标配置。
+- 租户和客户管理员能够设置自己的品牌定制配置。
 - 系统和租户管理员能够设置自定义电子邮件服务器设置和客户电子邮件模板以与用户互动。
 
 <div id="video">  

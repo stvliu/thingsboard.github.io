@@ -34,7 +34,7 @@
 
 ### 设备
 
-我们已经创建了多个设备并为它们加载了一些演示数据。有关创建的设备及其凭据的列表，请参阅解决方案 <a href="https://thingsboard.io/docs/paas/solution-templates/overview/#install-solution-template">说明</a>。
+我们已经创建了多个设备并为它们加载了一些演示数据。有关创建的设备及其凭据的列表，请参阅解决方案 <a href="https://docs.codingas.com/docs/paas/solution-templates/overview/#install-solution-template">说明</a>。
 
 #### SI 水表
 如果“电池”遥测值低于可配置阈值，则配置文件被配置为发出警报。当值低于 30 时，会发出警告警报。

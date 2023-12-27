@@ -3,7 +3,7 @@
 为此，您可以使用以下代码。它包含此指南所需的所有功能。
 
 {% capture demoExample %}
-如果您想使用 [**demo.thingsboard.io**](https://gridlinks.codingas.com)，请注意它对 MQTT 消息的大小有限制 - **每条消息 1024 字节**。
+如果您想使用 [**demo.docs.codingas.com**](https://gridlinks.codingas.com)，请注意它对 MQTT 消息的大小有限制 - **每条消息 1024 字节**。
 
 在这种情况下，您可以降低分辨率、质量并裁剪编码后的照片。
 
@@ -38,12 +38,12 @@ extern "C" {
 constexpr char WIFI_SSID[] = "YOUR_WIFI_SSID";
 constexpr char WIFI_PASSWORD[] = "YOUR_WIFI_PASSWORD";
 
-// See https://thingsboard.io/docs/getting-started-guides/helloworld/
+// See https://docs.codingas.com/docs/getting-started-guides/helloworld/
 // to understand how to obtain an access token
 constexpr char TOKEN[] = "YOUR_ACCESS_TOKEN";
 
 // Thingsboard we want to establish a connection too
-constexpr char THINGSBOARD_SERVER[] = "{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}thingsboard.cloud{% else %}demo.thingsboard.io{% endif %}";
+constexpr char THINGSBOARD_SERVER[] = "{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}thingsboard.cloud{% else %}demo.docs.codingas.com{% endif %}";
 // MQTT port used to communicate with the server, 1883 is the default unencrypted MQTT port.
 constexpr uint16_t THINGSBOARD_PORT = 1883U;
 

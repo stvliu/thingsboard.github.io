@@ -28,7 +28,7 @@ description: 在 Ubuntu 上安装 GridLinks Trendz Analytics
 下载安装包。
 
 ```bash
-wget https://dist.thingsboard.io/trendz-1.10.3-HF3.deb
+wget https://dist.docs.codingas.com/trendz-1.10.3-HF3.deb
 ```
 {: .copy-code}
 
@@ -55,7 +55,7 @@ sudo nano /etc/trendz/conf/trendz.conf
 将以下行添加到配置文件中并放入您的许可证密钥：
 
 ```bash
-# 从 GridLinks 许可证门户 (https://license.thingsboard.io) 获得的许可证密钥
+# 从 GridLinks 许可证门户 (https://license.docs.codingas.com) 获得的许可证密钥
 export TRENDZ_LICENSE_SECRET=YOUR_LICENSE_SECRET_HERE
 ```
 

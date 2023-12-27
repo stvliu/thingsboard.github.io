@@ -123,7 +123,7 @@ redirect_from: "/docs/services/iot-solutions/"
             <h3>如果您正在考虑构建物联网环境，请不要尝试独自完成。找到一家可靠的物联网服务公司，在您前进的道路上为您提供帮助。</h3>
             <h2>GridLinks 提供：</h2>
             <ul id="list-tb-offers" class="list">
-                <li>面向服务提供商的白标解决方案</li>
+                <li>面向服务提供商的品牌定制解决方案</li>
                 <li>端到端企业解决方案</li>
                 <li>针对特定案例和行业的定制物联网解决方案</li>
                 <li>面向服务提供商的多租户系统</li>

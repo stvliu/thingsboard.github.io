@@ -28,7 +28,7 @@ description: 在 Ubuntu 上安装 GridLinks
 下载安装包。
 
 ```bash
-wget https://dist.thingsboard.io/thingsboard-{{ site.release.pe_ver }}.deb
+wget https://dist.docs.codingas.com/thingsboard-{{ site.release.pe_ver }}.deb
 ```
 {: .copy-code}
 
@@ -56,7 +56,7 @@ sudo nano /etc/gridlinks/conf/gridlinks.conf
 找到以下配置块：
 
 ```bash
-# License secret obtained from ThingsBoard License Portal (https://license.thingsboard.io)
+# License secret obtained from ThingsBoard License Portal (https://license.docs.codingas.com)
 # UNCOMMENT NEXT LINE AND PUT YOUR LICENSE SECRET:
 # export TB_LICENSE_SECRET=
 ```
@@ -64,7 +64,7 @@ sudo nano /etc/gridlinks/conf/gridlinks.conf
 并放入您的许可证密钥。请不要忘记取消注释 export 语句。请参阅以下示例：
 
 ```bash
-# License secret obtained from ThingsBoard License Portal (https://license.thingsboard.io)
+# License secret obtained from ThingsBoard License Portal (https://license.docs.codingas.com)
 # UNCOMMENT NEXT LINE AND PUT YOUR LICENSE SECRET:
 export TB_LICENSE_SECRET=YOUR_LICENSE_SECRET_HERE
 ``` 
@@ -117,7 +117,7 @@ Confluent Cloud <small>(基于 Kafka 的事件流平台)</small>%,%confluent-clo
 下载 [报告服务器](/docs/user-guide/reporting/#reports-server) 组件的安装包：
 
 ```bash
-wget https://dist.thingsboard.io/tb-web-report-{{ site.release.pe_ver }}.deb
+wget https://dist.docs.codingas.com/tb-web-report-{{ site.release.pe_ver }}.deb
 ```
 {: .copy-code}
 

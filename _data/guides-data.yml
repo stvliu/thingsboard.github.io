@@ -4,7 +4,7 @@
   id: GettingStartedGuides
   section:
     - path: /docs/getting-started-guides/helloworld/
-      title: Hello世界
+      title: 入门
       subtitle: 了解如何使用MQTT、HTTP或CoAP收集IoT设备数据并在简单仪表盘上可视化。提供各种可以在您的PC或笔记本电脑上运行以模拟设备的示例脚本。
       keywords: mqtt http coap visualization helloworld
       video: true
@@ -22,7 +22,7 @@
       video: true
       pe: false
     - path: /docs/user-guide/rule-engine-2-0/re-getting-started/  
-      title: Rule Engine入门
+      title: 规则引擎入门
       subtitle: 了解GridLinks规则引擎及可以实现的典型用例。回顾Hello World示例并学习如何启用传入遥测消息的过滤。
       keywords: device management attributes
       video: false
@@ -187,7 +187,7 @@
       video: true
     - path: /docs/iot-video-tutorials/#dashboard-development-guide-part-2-of-3-dashboard-states-aliases-and-widget-actions
       title: 仪表板状态、别名和小部件操作
-      subtitle: "了解如何:添加和配置新仪表板状态; 创建各种别名; 使用图像映射小部件可视化属性数据; 在不同的小部件中创建操作以在状态之间导航; 使用模拟和数字测量仪以及时间序列小部件可视化遥测数据。"
+      subtitle: "了解如何:添加和配置新仪表板状态; 创建各种别名; 使用图像映射小部件可视化属性数据; 在不同的小部件中创建操作以在状态之间导航; 使用模拟和数字测量仪以及时序小部件可视化遥测数据。"
       keywords:
       pe: false  
       video: true
@@ -210,8 +210,8 @@
       pe: false
       video: true
     - path: /docs/iot-video-tutorials/#widget-configuration-guide-part-3-of-3-time-series-map-widget
-      title: 时间序列地图小部件
-      subtitle: "了解如何在时间序列地图小部件上显示具有最新遥测数据的设备,并修改小部件属性。"
+      title: 时序地图小部件
+      subtitle: "了解如何在时序地图小部件上显示具有最新遥测数据的设备,并修改小部件属性。"
       keywords:
       pe: false
       video: true
@@ -317,7 +317,7 @@
     #   keywords: 平均温度 分析 规则引擎
     #   pe: true
     - path: /docs/trendz/prediction/
-      title: 预测时间序列
+      title: 预测时序
       subtitle: 基于水泵振动建立预测模型
       keywords: 分析 预测
       pe: false
@@ -428,7 +428,7 @@
       pe: false
       video: false
     # - path: /docs/user-guide/white-labeling/
-    #   title: 白标定制
+    #   title: 品牌定制定制
     #   subtitle: 学习如何在2分钟内零编码工作量配置公司或产品的徽标和配色方案。
     #   pe: true
     #   video: true
@@ -466,27 +466,27 @@
     title: OAuth0 Azure Active Directory示例
     subtitle: 学习如何分步与Azure Active Directory设置OAuth。
 
-- title: 贡献和开发
-  subtitle: 学习如何为Thingsboard做贡献,定制和开发自定义小部件和规则节点
-  id: Contribution
-  section:
-    - path: /docs/user-guide/contribution/how-to-contribute/
-      title: 如何贡献
-      subtitle: "了解如何为Thingsboard做贡献" 
-      pe: false
-      video: false
-    - path: /docs/user-guide/contribution/how-to-contribute-your-device-integration-guide/
-      title: 如何贡献您的设备集成指南
-      subtitle: "了解如何为Thingsboard做贡献"
-      pe: false
-      video: false
-    - path: /docs/user-guide/contribution/rule-node-development/
-      title: 规则节点开发指南
-      subtitle: "了解如何自定义和创建自定义规则节点"
-      pe: false
-      video: false
-    - path: /docs/user-guide/contribution/widgets-development/ 
-      title: 小部件开发指南
-      subtitle: "了解如何自定义和创建自定义小部件"
-      pe: false
-      video: false
+# - title: 贡献和开发
+#   subtitle: 学习如何为GridLinks做贡献,定制和开发自定义小部件和规则节点
+#   id: Contribution
+#   section:
+#     - path: /docs/user-guide/contribution/how-to-contribute/
+#       title: 如何贡献
+#       subtitle: "了解如何为GridLinks做贡献" 
+#       pe: false
+#       video: false
+#     - path: /docs/user-guide/contribution/how-to-contribute-your-device-integration-guide/
+#       title: 如何贡献您的设备集成指南
+#       subtitle: "了解如何为GridLinksd做贡献"
+#       pe: false
+#       video: false
+#     - path: /docs/user-guide/contribution/rule-node-development/
+#       title: 规则节点开发指南
+#       subtitle: "了解如何自定义和创建自定义规则节点"
+#       pe: false
+#       video: false
+#     - path: /docs/user-guide/contribution/widgets-development/ 
+#       title: 小部件开发指南
+#       subtitle: "了解如何自定义和创建自定义小部件"
+#       pe: false
+#       video: false

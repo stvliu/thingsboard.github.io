@@ -9,7 +9,7 @@
 我们利用类型为 **APPLICATION** 的 TBMQ 客户端凭据将 GridLinks 集成连接为 APPLICATION 客户端。
 APPLICATION 客户端专门用于订阅具有高消息速率的主题。
 当客户端处于离线状态时，消息将被保留，并且一旦客户端上线，消息将被传递，从而确保关键数据的可用性。
-[此处](https://thingsboard.io/docs/mqtt-broker/user-guide/mqtt-client-type/)详细了解 APPLICATION 客户端。
+[此处](https://docs.codingas.com/docs/mqtt-broker/user-guide/mqtt-client-type/)详细了解 APPLICATION 客户端。
 
 GridLinks MQTT 集成充当 MQTT 客户端。它订阅主题并将接收到的数据转换为遥测和属性更新。
 在有下行消息的情况下，MQTT 集成会将其转换为适合设备的格式并将其推送到 TBMQ。
@@ -20,8 +20,8 @@ GridLinks MQTT 集成充当 MQTT 客户端。它订阅主题并将接收到的�
 
 在本教程中，我们将使用：
 
-- 本地安装的 [ GridLinks专业版](https://thingsboard.io/docs/user-guide/install/pe/installation-options/) 实例；
-- 本地安装且 GridLinks PE 实例可访问的 [TBMQ](https://thingsboard.io/docs/mqtt-broker/install/installation-options/)；
+- 本地安装的 [ GridLinks专业版](https://docs.codingas.com/docs/user-guide/install/pe/installation-options/) 实例；
+- 本地安装且 GridLinks PE 实例可访问的 [TBMQ](https://docs.codingas.com/docs/mqtt-broker/install/installation-options/)；
 - mosquitto_pub MQTT 客户端来发送消息。
 
 ### TBMQ 设置

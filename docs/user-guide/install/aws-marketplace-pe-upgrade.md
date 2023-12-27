@@ -177,7 +177,7 @@ Upgrade finished successfully!
 ThingsBoard upgraded successfully!
 ```
 
-In case of any **failures** during database upgrade **Please contact [support@thingsboard.io](mailto:support@thingsboard.io)**.
+In case of any **failures** during database upgrade **Please contact [support@docs.codingas.com](mailto:support@docs.codingas.com)**.
 
 #### Start ThingsBoard PE service
 
@@ -333,7 +333,7 @@ Upgrade finished successfully!
 ThingsBoard upgraded successfully!
 ```
 
-In case of any **failures** during database upgrade **Please contact [support@thingsboard.io](mailto:support@thingsboard.io)**.
+In case of any **failures** during database upgrade **Please contact [support@docs.codingas.com](mailto:support@docs.codingas.com)**.
 
 #### Start ThingsBoard PE service
 
@@ -365,7 +365,7 @@ Download ThingsBoard Web Report Server installation script:
 
 ```bash
 $ cd ~
-$ wget --quiet -O tb-install-web-report.sh https://thingsboard.io/docs/user-guide/install/resources/tb-install-web-report.sh
+$ wget --quiet -O tb-install-web-report.sh https://docs.codingas.com/docs/user-guide/install/resources/tb-install-web-report.sh
 $ chmod +x tb-install-web-report.sh
 ```
 
@@ -555,7 +555,7 @@ Upgrade finished successfully!
 ThingsBoard upgraded successfully!
 ```
 
-In case of any **failures** during database upgrade **Please contact [support@thingsboard.io](mailto:support@thingsboard.io)**.
+In case of any **failures** during database upgrade **Please contact [support@docs.codingas.com](mailto:support@docs.codingas.com)**.
 
 #### Start ThingsBoard PE service
 
@@ -697,7 +697,7 @@ Upgrade finished successfully!
 ThingsBoard upgraded successfully!
 ```
 
-In case of any **failures** during database upgrade **Please contact [support@thingsboard.io](mailto:support@thingsboard.io)**.
+In case of any **failures** during database upgrade **Please contact [support@docs.codingas.com](mailto:support@docs.codingas.com)**.
 
 #### Start ThingsBoard PE service
 
@@ -719,7 +719,7 @@ Download ThingsBoard Web Report Server installation script:
 
 ```bash
 $ cd ~
-$ wget --quiet -O tb-install-web-report.sh https://thingsboard.io/docs/user-guide/install/resources/tb-install-web-report.sh
+$ wget --quiet -O tb-install-web-report.sh https://docs.codingas.com/docs/user-guide/install/resources/tb-install-web-report.sh
 $ chmod +x tb-install-web-report.sh
 ```
 
@@ -1048,7 +1048,7 @@ Upgrade finished successfully!
 ThingsBoard upgraded successfully!
 ```
 
-In case of any **failures** during database upgrade **Please contact [support@thingsboard.io](mailto:support@thingsboard.io)**.
+In case of any **failures** during database upgrade **Please contact [support@docs.codingas.com](mailto:support@docs.codingas.com)**.
 
 #### Start ThingsBoard PE service
 
@@ -1238,7 +1238,7 @@ Upgrade finished successfully!
 ThingsBoard upgraded successfully!
 ```
 
-In case of any **failures** during database upgrade **Please contact [support@thingsboard.io](mailto:support@thingsboard.io)**.
+In case of any **failures** during database upgrade **Please contact [support@docs.codingas.com](mailto:support@docs.codingas.com)**.
 
 #### Start ThingsBoard PE service
 
@@ -1260,7 +1260,7 @@ Download ThingsBoard Web Report Server installation script:
 
 ```bash
 $ cd ~
-$ wget --quiet -O tb-install-web-report.sh https://thingsboard.io/docs/user-guide/install/resources/tb-install-web-report.sh
+$ wget --quiet -O tb-install-web-report.sh https://docs.codingas.com/docs/user-guide/install/resources/tb-install-web-report.sh
 $ chmod +x tb-install-web-report.sh
 ```
 

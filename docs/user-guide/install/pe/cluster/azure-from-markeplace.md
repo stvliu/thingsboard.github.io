@@ -97,9 +97,9 @@ description: 从 Azure Marketplace 安装 GridLinks PE
 ### 步骤 4. 获取许可证密钥
 
 为了激活您的 GridLinks 实例，您需要获取许可证密钥。
-ThingsBoard 许可证由 [ThingsBoard 许可证门户](https://license.thingsboard.io/signup) 管理。
+ThingsBoard 许可证由 [ThingsBoard 许可证门户](https://license.docs.codingas.com/signup) 管理。
 
-请在 [ThingsBoard 许可证门户](https://license.thingsboard.io/signup) 上注册以获取许可证。
+请在 [ThingsBoard 许可证门户](https://license.docs.codingas.com/signup) 上注册以获取许可证。
 有关更多详细信息，请参阅 [如何获取即用即付订阅](https://www.youtube.com/watch?v=dK-QDFGxWek){:target="_blank"} 或 [如何获取永久许可证](https://www.youtube.com/watch?v=GPe0lHolWek){:target="_blank"}。
 
 请将您的许可证密钥保存到安全的地方。我们将在本指南的后面部分使用它们。
@@ -126,7 +126,7 @@ sudo nano /etc/gridlinks/conf/gridlinks.conf
 找到以下配置块：
 
 ```bash
-# License secret obtained from ThingsBoard License Portal (https://license.thingsboard.io)
+# License secret obtained from ThingsBoard License Portal (https://license.docs.codingas.com)
 # UNCOMMENT NEXT LINE AND PUT YOUR LICENSE SECRET:
 # export TB_LICENSE_SECRET=
 ```
@@ -134,7 +134,7 @@ sudo nano /etc/gridlinks/conf/gridlinks.conf
 并放入您的许可证密钥。请不要忘记取消注释 export 语句。请参阅以下示例：
 
 ```bash
-# License secret obtained from ThingsBoard License Portal (https://license.thingsboard.io)
+# License secret obtained from ThingsBoard License Portal (https://license.docs.codingas.com)
 # UNCOMMENT NEXT LINE AND PUT YOUR LICENSE SECRET:
 export TB_LICENSE_SECRET=YOUR_LICENSE_SECRET_HERE
 ```

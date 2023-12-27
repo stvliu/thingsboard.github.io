@@ -143,7 +143,7 @@ SIM808 受 TinyGSM 驱动程序支持，可以按照以下说明进行安装。
 - `user` - GPRS 接入点用户。咨询您的蜂窝网络提供商以获取更多信息。
 - `pass` - GPRS 接入点密码。咨询您的蜂窝网络提供商以获取更多信息。
 - `TOKEN` - 物联网平台配置步骤中的 **$ACCESS_TOKEN**。
-- `THINGSBOARD_SERVER` - 可从您的 wifi 网络访问的物联网平台主机/IP 地址。如果您使用的是 [实时演示](https://gridlinks.codingas.com/)服务器，请指定“demo.thingsboard.io”。
+- `THINGSBOARD_SERVER` - 可从您的 wifi 网络访问的物联网平台主机/IP 地址。如果您使用的是 [实时演示](https://gridlinks.codingas.com/)服务器，请指定“demo.docs.codingas.com”。
 - `THINGSBOARD_PORT` - 要连接的 HTTP 端口。如有必要，请更改它。
 
 {% capture tabspec %}arduino-sketch

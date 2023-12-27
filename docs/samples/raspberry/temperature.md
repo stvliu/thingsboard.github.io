@@ -131,7 +131,7 @@ sudo python setup.py install
 
 我们的应用程序由一个记录良好的 Python 脚本组成。
 您需要修改 **THINGSBOARD_HOST** 常量以匹配您的物联网平台服务器安装 IP 地址或主机名。
-如果您使用的是 [实时演示](https://gridlinks.codingas.com/)服务器，请使用“demo.thingsboard.io”。
+如果您使用的是 [实时演示](https://gridlinks.codingas.com/)服务器，请使用“demo.docs.codingas.com”。
 
 **ACCESS_TOKEN** 常量值对应于示例 DHT22 演示设备。
 如果您使用的是 [实时演示](https://gridlinks.codingas.com/)服务器 - [获取访问令牌](/docs/user-guide/ui/devices/#manage-device-credentials)以获取预先配置的“DHT22 演示设备”。

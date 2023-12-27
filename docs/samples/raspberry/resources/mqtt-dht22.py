@@ -5,7 +5,7 @@ import Adafruit_DHT as dht
 import paho.mqtt.client as mqtt
 import json
 
-THINGSBOARD_HOST = 'demo.thingsboard.io'
+THINGSBOARD_HOST = 'demo.docs.codingas.com'
 ACCESS_TOKEN = 'DHT22_DEMO_TOKEN'
 
 # Data capture and upload interval in seconds. Less interval will eventually hang the DHT22.

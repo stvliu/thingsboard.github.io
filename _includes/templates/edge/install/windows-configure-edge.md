@@ -47,7 +47,7 @@ spring:
 **注意**：**thingsboard.cloud** 使用 SSL 协议进行 edge 通信。
 请也将 **CLOUD_RPC_SSL_ENABLED** 改为 **true**。
 {% else %}
-* 如果你要将 edge 连接到 [**ThingsBoard Live Demo**](https://gridlinks.codingas.com/signup) 进行评估，请使用 **demo.thingsboard.io**。
+* 如果你要将 edge 连接到 [**ThingsBoard Live Demo**](https://gridlinks.codingas.com/signup) 进行评估，请使用 **demo.docs.codingas.com**。
 {% endif %}
 * 如果 edge 在与云实例相同的机器上运行，请使用 **localhost**。
 * 如果 edge 连接到同一网络或 docker 中的云实例，请使用 **X.X.X.X** IP 地址。

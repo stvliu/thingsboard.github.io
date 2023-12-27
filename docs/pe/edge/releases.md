@@ -66,8 +66,8 @@ description: GridLinks Edge 版本说明
 
 **改进**：
 * 支持 3.3.4.1 版本的最新功能
-   * CE [3.3.4.1 版本说明](https://thingsboard.io/docs/reference/releases/#v3341-march-22-2022)
-   * PE [3.3.4.1 版本说明](https://thingsboard.io/docs/pe/reference/releases/#v3341-march-18-2022)
+   * CE [3.3.4.1 版本说明](https://docs.codingas.com/docs/reference/releases/#v3341-march-22-2022)
+   * PE [3.3.4.1 版本说明](https://docs.codingas.com/docs/pe/reference/releases/#v3341-march-18-2022)
 * 修复在互联网连接缓慢或受限的情况下许可证检查不正确的问题
 
 ## v3.3.3（2022 年 1 月 28 日）
@@ -76,9 +76,9 @@ description: GridLinks Edge 版本说明
 
 **改进**：
  * 支持 3.3.3 版本的最新功能
-   * CE [3.3.3 版本说明](https://thingsboard.io/docs/reference/releases/#v333-january-27-2022)
-   * PE [3.3.3 版本说明](https://thingsboard.io/docs/pe/reference/releases/#v333-january-27-2022)
- * 边缘使用云上所有者的登录白标配置，而不是系统
+   * CE [3.3.3 版本说明](https://docs.codingas.com/docs/reference/releases/#v333-january-27-2022)
+   * PE [3.3.3 版本说明](https://docs.codingas.com/docs/pe/reference/releases/#v333-january-27-2022)
+ * 边缘使用云上所有者的登录品牌定制配置，而不是系统
 
 **错误修复**：
  * 修复边缘到云的重复属性请求

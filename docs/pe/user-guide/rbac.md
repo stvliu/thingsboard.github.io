@@ -173,7 +173,7 @@ supervisors-add-new-user:
         title: '导航到“组”选项卡，然后单击“客户管理员”用户组；'
     3:
         image: /images/user-guide/security/rbac/supervisors-add-new-user-5-pe.png
-        title: '单击屏幕右上角的“+”号。输入电子邮件地址，例如，我们可以使用 janesmith@thingsboard.io，然后单击“添加”；'
+        title: '单击屏幕右上角的“+”号。输入电子邮件地址，例如，我们可以使用 janesmith@docs.codingas.com，然后单击“添加”；'
     4:
         image: /images/user-guide/security/rbac/supervisors-add-new-user-6-pe.png
         title: '在打开的窗口中，您可以看到用户激活链接，单击“确定”；'
@@ -213,7 +213,7 @@ supervisors-create-read-only-user:
         title: '在用户 Jane 的“用户”页面的“组”选项卡上选择“客户用户”；'
     1:
         image: /images/user-guide/security/rbac/supervisors-create-read-only-user-2-pe.png
-        title: '单击屏幕右上角的“+”以添加新用户。输入电子邮件地址，例如，我们将使用 bob@thingsboard.io，然后单击“添加”；'
+        title: '单击屏幕右上角的“+”以添加新用户。输入电子邮件地址，例如，我们将使用 bob@docs.codingas.com，然后单击“添加”；'
     2:
         image: /images/user-guide/security/rbac/supervisors-create-read-only-user-3-pe.png
         title: '在打开的窗口中，您可以看到用户激活链接，单击“确定”；'

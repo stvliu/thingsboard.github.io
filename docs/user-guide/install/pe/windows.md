@@ -31,7 +31,7 @@ description: 在 Windows 上安装 GridLinks
 下载并运行安装包。
 
 ```bash
-https://dist.thingsboard.io/thingsboard-windows-setup-{{ site.release.pe_ver }}.exe
+https://dist.docs.codingas.com/thingsboard-windows-setup-{{ site.release.pe_ver }}.exe
 ```
 {: .copy-code}
 
@@ -58,14 +58,14 @@ C:\Program Files (x86)\thingsboard\conf\thingsboard.yml
 
 ```yml
 license:
-    secret: "${TB_LICENSE_SECRET:}" # license secret obtained from ThingsBoard License Portal (https://license.thingsboard.io)
+    secret: "${TB_LICENSE_SECRET:}" # license secret obtained from ThingsBoard License Portal (https://license.docs.codingas.com)
 ```
 
 并放入您的许可证密钥。请参阅以下示例：
 
 ```yml
 license:
-    secret: "${TB_LICENSE_SECRET:YOUR_LICENSE_SECRET_HERE}" # license secret obtained from ThingsBoard License Portal (https://license.thingsboard.io)
+    secret: "${TB_LICENSE_SECRET:YOUR_LICENSE_SECRET_HERE}" # license secret obtained from ThingsBoard License Portal (https://license.docs.codingas.com)
 ``` 
 
 ### 步骤 4. 配置 GridLinks 数据库
@@ -129,7 +129,7 @@ ThingsBoard installed successfully!
 下载并解压安装包。
 
 ```bash
-https://dist.thingsboard.io/tb-web-report-windows-{{ site.release.pe_ver }}.zip
+https://dist.docs.codingas.com/tb-web-report-windows-{{ site.release.pe_ver }}.zip
 ```
 {: .copy-code}
 

@@ -134,7 +134,7 @@ typeof ss.ZoneType !== 'undefined' && ss.ZoneType === 'Server Room'
 让我们通过发布一些遥测数据来检查我们的配置。我们将使用我们在 [第一步](#step1-create-device) 中创建的设备的访问令牌。
 
 ```shell
-mosquitto_pub -d -h "demo.thingsboard.io" -t "v1/devices/me/telemetry" -u "$YOUR_ACCESS_TOKEN" -m "{'temperature':42, 'humidity':74}"
+mosquitto_pub -d -h "demo.docs.codingas.com" -t "v1/devices/me/telemetry" -u "$YOUR_ACCESS_TOKEN" -m "{'temperature':42, 'humidity':74}"
 ```
 
 ## 故障排除

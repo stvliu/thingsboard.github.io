@@ -57,7 +57,7 @@
         </div>
         {% include images-gallery.html imageCollection="selfManagedPlan" max-width="100%" align="space-between" %}
         <div class="modal-wizard__button">
-          <a href="https://license.thingsboard.io" target="_blank" onClick="goToPurchase(event, '{{ include.defaultPlan }}')">转到许可证门户</a>
+          <a href="https://license.docs.codingas.com" target="_blank" onClick="goToPurchase(event, '{{ include.defaultPlan }}')">转到许可证门户</a>
         </div>
     </div>
   </div>
@@ -145,7 +145,7 @@
 
   function getLicense(event, isPerpetual, productId, planId, productName, coupon) {
     event.preventDefault();
-    var url = "https://license.thingsboard.io/signup?createSubscription=true&perpetual=";
+    var url = "https://license.docs.codingas.com/signup?createSubscription=true&perpetual=";
     if (isPerpetual) {
       url += "true";
     } else {

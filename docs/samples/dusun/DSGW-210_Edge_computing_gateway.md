@@ -1,5 +1,5 @@
 ## 简介
-本文包含有关如何配置 GridLinks IoT 平台和连接 DSGW-210 网关的说明。[ThingsBoard](https://thingsboard.io/) 是一个用于数据收集、处理、可视化和设备管理的 IoT 平台。它支持云和本地部署，并且结合了可扩展性、容错性和性能，以消除 IoT 数据丢失的可能性。
+本文包含有关如何配置 GridLinks IoT 平台和连接 DSGW-210 网关的说明。[ThingsBoard](https://docs.codingas.com/) 是一个用于数据收集、处理、可视化和设备管理的 IoT 平台。它支持云和本地部署，并且结合了可扩展性、容错性和性能，以消除 IoT 数据丢失的可能性。
 
 DSGW-210 是具有多种协议和边缘计算功能的 IoT 网关。它为各种无线 IoT 设备提供可靠的连接。网关的模块化架构提供了自定义许多网关功能的能力，包括蜂窝、蓝牙、Wi-Fi、以太网、USB、ZigBee、Z-wave 和锂电池备份。
 

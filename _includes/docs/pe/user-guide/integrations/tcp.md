@@ -26,7 +26,7 @@ TCP 集成允许将使用 TCP 传输协议的数据从设备流式传输到 Grid
 在本教程中，我们将使用：
 
 {% if docsPrefix == "pe/" %}
- - 本地安装的 [ GridLinks专业版](https://thingsboard.io/docs/user-guide/install/pe/installation-options/) 实例；
+ - 本地安装的 [ GridLinks专业版](https://docs.codingas.com/docs/user-guide/install/pe/installation-options/) 实例；
 {% endif %}
 {% if docsPrefix == "paas/" %}
  -  GridLinks专业版 实例 — [thingsboard.cloud](https://thingsboard.cloud)；

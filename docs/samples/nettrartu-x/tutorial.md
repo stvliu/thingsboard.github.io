@@ -39,7 +39,7 @@ RTU-X 可以通过 [RTU-X 配置界面](http://wiki.nettra.tech/en/downloads)轻
 
 ### 软件
  - [RTU-X 配置界面](http://wiki.nettra.tech/en/downloads)。
- - 您需要启动并运行 GridLinks 服务器。使用 [实时演示](https://thingsboard.io/docs/user-guide/install/installation-options/?ceInstallType=liveDemo)或 [安装指南](https://thingsboard.io/docs/user-guide/install/ubuntu/)安装 GridLinks。
+ - 您需要启动并运行 GridLinks 服务器。使用 [实时演示](https://docs.codingas.com/docs/user-guide/install/installation-options/?ceInstallType=liveDemo)或 [安装指南](https://docs.codingas.com/docs/user-guide/install/ubuntu/)安装 GridLinks。
 
 ## 连接图
 
@@ -51,7 +51,7 @@ RTU-X 可以通过 [RTU-X 配置界面](http://wiki.nettra.tech/en/downloads)轻
 
 此步骤包含将设备连接到 GridLinks 所需的说明。
 
-以 [实时演示](https://gridlinks.codingas.com/signup)的形式注册 GridLinks Web UI。有关如何获取帐户的更多详细信息，请参阅 [实时演示](https://thingsboard.io/docs/user-guide/install/installation-options/?ceInstallType=liveDemo)页面。
+以 [实时演示](https://gridlinks.codingas.com/signup)的形式注册 GridLinks Web UI。有关如何获取帐户的更多详细信息，请参阅 [实时演示](https://docs.codingas.com/docs/user-guide/install/installation-options/?ceInstallType=liveDemo)页面。
 
 ### 设备
 
@@ -67,7 +67,7 @@ RTU-X 可以通过 [RTU-X 配置界面](http://wiki.nettra.tech/en/downloads)轻
 ### 仪表板
 
 使用此 [链接](/docs/samples/nettrartu-x/resources/rtu_x_dashboard.json)下载仪表板文件 (.json)。
-使用导入/导出 [说明](https://thingsboard.io/docs/user-guide/dashboards/#import-dashboard)将仪表板导入到您的 GridLinks 实例。
+使用导入/导出 [说明](https://docs.codingas.com/docs/user-guide/dashboards/#import-dashboard)将仪表板导入到您的 GridLinks 实例。
 
 ## 将 RTU-X 连接到 PC
 
@@ -114,7 +114,7 @@ RTU-X 可以通过 [RTU-X 配置界面](http://wiki.nettra.tech/en/downloads)轻
 
 1. 转到 *“通信”*。
 2. 单击 *“MQTT”*。
-3. 在 *“接口”* 上选择 *“调制解调器”*。在 *“格式”* 上选择 *“Thingsboard”*。在 *“URI”* 上粘贴 *“mqtt://demo.thingsboard.io:1883”*。在 *“密码”* 上粘贴 *“设备”* 步骤中的设备访问令牌。
+3. 在 *“接口”* 上选择 *“调制解调器”*。在 *“格式”* 上选择 *“Thingsboard”*。在 *“URI”* 上粘贴 *“mqtt://demo.docs.codingas.com:1883”*。在 *“密码”* 上粘贴 *“设备”* 步骤中的设备访问令牌。
 4. 单击 *“应用更改”*。
 
 ![rtu5_step5](https://user-images.githubusercontent.com/61634031/134028854-17b5d9c8-c807-4b3b-a557-00ea5b25d7ac.png)
@@ -167,10 +167,10 @@ while (1)
 
 ## 另请参阅
 
-浏览其他 [示例](https://thingsboard.io/docs/samples/)或探索与 GridLinks 主要功能相关的指南：
+浏览其他 [示例](https://docs.codingas.com/docs/samples/)或探索与 GridLinks 主要功能相关的指南：
 
- - [设备属性](https://thingsboard.io/docs/user-guide/attributes/) - 如何使用设备属性。
- - [数据可视化](https://thingsboard.io/docs/guides/#AnchorIDDataVisualization) - 如何可视化收集的数据。
- - [数据分析](https://thingsboard.io/docs/guides/#AnchorIDDataAnalytics) - 如何收集遥测数据。
- - [规则引擎](https://thingsboard.io/docs/user-guide/rule-engine-2-0/re-getting-started/) - 如何使用规则引擎分析来自设备的数据。
- - [使用 RPC 功能](https://thingsboard.io/docs/user-guide/rule-engine-2-0/tutorials/rpc-request-tutorial/) - 如何向设备发送/从设备接收命令。
+ - [设备属性](https://docs.codingas.com/docs/user-guide/attributes/) - 如何使用设备属性。
+ - [数据可视化](https://docs.codingas.com/docs/guides/#AnchorIDDataVisualization) - 如何可视化收集的数据。
+ - [数据分析](https://docs.codingas.com/docs/guides/#AnchorIDDataAnalytics) - 如何收集遥测数据。
+ - [规则引擎](https://docs.codingas.com/docs/user-guide/rule-engine-2-0/re-getting-started/) - 如何使用规则引擎分析来自设备的数据。
+ - [使用 RPC 功能](https://docs.codingas.com/docs/user-guide/rule-engine-2-0/tutorials/rpc-request-tutorial/) - 如何向设备发送/从设备接收命令。

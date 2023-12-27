@@ -104,7 +104,7 @@ monoZ SDK 是一款用户友好的工具，可减少用户在 monoZero HW 上构
 
 ![image](/images/samples/monoz/monoZero-11.png)
 
-输入设备名称，选择现有或创建新的 [设备配置文件](https://thingsboard.io/docs/user-guide/device-profiles/)，然后单击“添加”按钮。
+输入设备名称，选择现有或创建新的 [设备配置文件](https://docs.codingas.com/docs/user-guide/device-profiles/)，然后单击“添加”按钮。
 
 ![image](/images/samples/monoz/monoZero-12.png)
 
@@ -128,7 +128,7 @@ monoZ SDK 是一款用户友好的工具，可减少用户在 monoZero HW 上构
 
 ![image](/images/samples/monoz/monoZero-18.png)
 
-如果您有，请选择现有 [仪表板](https://thingsboard.io/docs/pe/user-guide/dashboards)，如果您没有现有仪表板，则创建一个新的仪表板。单击“添加”按钮将小部件添加到仪表板。
+如果您有，请选择现有 [仪表板](https://docs.codingas.com/docs/pe/user-guide/dashboards)，如果您没有现有仪表板，则创建一个新的仪表板。单击“添加”按钮将小部件添加到仪表板。
 
 ![image](/images/samples/monoz/monoZero-19.png)
 

@@ -16,7 +16,7 @@ CoAP 集成允许从使用 CoAP 协议连接到 GridLinks 的设备流式传输�
 在本教程中，我们将向您展示 CoAP 集成如何作为 **tb-core** 服务的一部分工作，并选择 **NO SECURE** 安全模式。为此，我们将使用：
 
 {% if docsPrefix == "pe/" %}
-- 本地安装的 [ GridLinks专业版](https://thingsboard.io/docs/user-guide/install/pe/installation-options/) 实例；
+- 本地安装的 [ GridLinks专业版](https://docs.codingas.com/docs/user-guide/install/pe/installation-options/) 实例；
 {% endif %}
 {% if docsPrefix == "paas/" %}
 -  GridLinks专业版 实例 — [thingsboard.cloud](https://thingsboard.cloud)；

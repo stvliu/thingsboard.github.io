@@ -33,7 +33,7 @@ description: 在 Windows 上安装 GridLinks Edge
 下载并解压软件包。
 
 ```bash
-https://dist.thingsboard.io/tb-edge-windows-{{ site.release.pe_edge_ver }}.zip
+https://dist.docs.codingas.com/tb-edge-windows-{{ site.release.pe_edge_ver }}.zip
 ```
 {: .copy-code}
 

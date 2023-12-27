@@ -11,7 +11,7 @@ description: ROLTEK 指南
 ## 简介
 
 本文包含有关如何配置 GridLinks IoT 平台和连接 Roltek DC620 设备的说明。
-[GridLinks物联网](https://thingsboard.io/) 平台是一个用于数据收集、处理、可视化和设备管理的开源 IoT 平台。
+[GridLinks物联网](https://docs.codingas.com/) 平台是一个用于数据收集、处理、可视化和设备管理的开源 IoT 平台。
 它通过行业标准 IoT 协议（MQTT、CoAP 和 HTTP）实现设备连接，并支持云端和本地部署。
 ThingsBoard 结合了可扩展性、容错性和性能，因此您永远不会丢失数据。
 

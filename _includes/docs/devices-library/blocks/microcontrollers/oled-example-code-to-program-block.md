@@ -28,12 +28,12 @@ Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1);
 constexpr char WIFI_SSID[] = "YOUR_WIFI_SSID";
 constexpr char WIFI_PASSWORD[] = "YOUR_WIFI_PASSWORD";
 
-// 请参阅 https://thingsboard.io/docs/getting-started-guides/helloworld/
+// 请参阅 https://docs.codingas.com/docs/getting-started-guides/helloworld/
 // 以了解如何获取访问令牌
 constexpr char TOKEN[] = "YOUR_ACCESS_TOKEN";
 
 // 我们希望建立连接的 Thingsboard
-constexpr char THINGSBOARD_SERVER[] = "{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}thingsboard.cloud{% else %}demo.thingsboard.io{% endif %}";
+constexpr char THINGSBOARD_SERVER[] = "{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}thingsboard.cloud{% else %}demo.docs.codingas.com{% endif %}";
 // 用于与服务器通信的 MQTT 端口，1883 是默认的未加密 MQTT 端口。
 constexpr uint16_t THINGSBOARD_PORT = 1883U;
 

@@ -1,6 +1,6 @@
 ---
 layout: docwithnav-pe
-title: 白标
+title: 品牌定制
 description:
 redirect_from: "/docs/user-guide/white-labeling/"
 

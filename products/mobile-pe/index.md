@@ -33,8 +33,8 @@ description:
                         </div>
                         <div class="frame-video">
                             <video autoplay loop preload="auto" muted playsinline>
-                                 <source src="https://video.thingsboard.io/mobile/pe/browse-dashboards.mp4" type="video/mp4">
-                                 <source src="https://video.thingsboard.io/mobile/pe/browse-dashboards.webm" type="video/webm">
+                                 <source src="https://video.docs.codingas.com/mobile/pe/browse-dashboards.mp4" type="video/mp4">
+                                 <source src="https://video.docs.codingas.com/mobile/pe/browse-dashboards.webm" type="video/webm">
                             </video>
                         </div>
                     </div>
@@ -51,14 +51,14 @@ description:
                         </div>
                         <div class="frame-video">
                             <video autoplay loop preload="auto" muted playsinline>
-                                 <source src="https://video.thingsboard.io/mobile/pe/white-labeling.mp4" type="video/mp4">
-                                 <source src="https://video.thingsboard.io/mobile/pe/white-labeling.webm" type="video/webm">
+                                 <source src="https://video.docs.codingas.com/mobile/pe/white-labeling.mp4" type="video/mp4">
+                                 <source src="https://video.docs.codingas.com/mobile/pe/white-labeling.webm" type="video/webm">
                             </video>
                         </div>
                     </div>
                 </div>
-                <div class="feature-des"><h2>白标</h2>
-                    <p>使用 GridLinks PE <a href="/docs/pe/user-guide/white-labeling/">白标</a> 功能，使用您的公司或产品徽标和配色方案重新设计您的移动应用程序界面。</p>
+                <div class="feature-des"><h2>品牌定制</h2>
+                    <p>使用 GridLinks PE <a href="/docs/pe/user-guide/white-labeling/">品牌定制</a> 功能，使用您的公司或产品徽标和配色方案重新设计您的移动应用程序界面。</p>
                     <a class="read-more-button" href="/docs/pe/mobile/white-labeling/">阅读更多<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
                 </div>
             </div>
@@ -87,8 +87,8 @@ description:
                         </div>
                         <div class="frame-video">
                             <video autoplay loop preload="auto" muted playsinline>
-                                 <source src="https://video.thingsboard.io/mobile/pe/self-registration.mp4" type="video/mp4">
-                                 <source src="https://video.thingsboard.io/mobile/pe/self-registration.webm" type="video/webm">
+                                 <source src="https://video.docs.codingas.com/mobile/pe/self-registration.mp4" type="video/mp4">
+                                 <source src="https://video.docs.codingas.com/mobile/pe/self-registration.webm" type="video/webm">
                             </video>
                         </div>
                     </div>
@@ -105,8 +105,8 @@ description:
                         </div>
                         <div class="frame-video">
                             <video autoplay loop preload="auto" muted playsinline>
-                                 <source src="https://video.thingsboard.io/mobile/pe/manage-alarms.mp4" type="video/mp4">
-                                 <source src="https://video.thingsboard.io/mobile/pe/manage-alarms.webm" type="video/webm">
+                                 <source src="https://video.docs.codingas.com/mobile/pe/manage-alarms.mp4" type="video/mp4">
+                                 <source src="https://video.docs.codingas.com/mobile/pe/manage-alarms.webm" type="video/webm">
                             </video>
                         </div>
                     </div>
@@ -141,8 +141,8 @@ description:
                         </div>
                         <div class="frame-video">
                             <video autoplay loop preload="auto" muted playsinline>
-                                 <source src="https://video.thingsboard.io/mobile/pe/navigate-devices.mp4" type="video/mp4">
-                                 <source src="https://video.thingsboard.io/mobile/pe/navigate-devices.webm" type="video/webm">
+                                 <source src="https://video.docs.codingas.com/mobile/pe/navigate-devices.mp4" type="video/mp4">
+                                 <source src="https://video.docs.codingas.com/mobile/pe/navigate-devices.webm" type="video/webm">
                             </video>
                         </div>
                     </div>
@@ -159,8 +159,8 @@ description:
                         </div>
                         <div class="frame-video">
                             <video autoplay loop preload="auto" muted playsinline>
-                                 <source src="https://video.thingsboard.io/mobile/pe/mobile-actions.mp4" type="video/mp4">
-                                 <source src="https://video.thingsboard.io/mobile/pe/mobile-actions.webm" type="video/webm">
+                                 <source src="https://video.docs.codingas.com/mobile/pe/mobile-actions.mp4" type="video/mp4">
+                                 <source src="https://video.docs.codingas.com/mobile/pe/mobile-actions.webm" type="video/webm">
                             </video>
                         </div>
                     </div>

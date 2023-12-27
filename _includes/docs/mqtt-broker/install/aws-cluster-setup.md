@@ -284,7 +284,7 @@ kubectl apply -f receipts/mqtts-load-balancer.yml
 
 启用双向 TLS：
 
-按照[本指南](https://thingsboard.io/docs/user-guide/mqtt-over-ssl/)创建包含 SSL 证书的 .pem 文件。将文件存储为工作目录中的 _server.pem_。
+按照[本指南](https://docs.codingas.com/docs/user-guide/mqtt-over-ssl/)创建包含 SSL 证书的 .pem 文件。将文件存储为工作目录中的 _server.pem_。
 
 您需要使用 PEM 文件创建一个 config-map，您可以通过调用命令来做到这一点：
 

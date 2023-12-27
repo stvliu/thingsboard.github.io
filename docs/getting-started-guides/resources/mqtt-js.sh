@@ -1,7 +1,7 @@
 #!/bin/sh
 
-# Set ThingsBoard host to "demo.thingsboard.io" or "localhost"
-export THINGSBOARD_HOST=demo.thingsboard.io
+# Set ThingsBoard host to "demo.docs.codingas.com" or "localhost"
+export THINGSBOARD_HOST=demo.docs.codingas.com
 
 # Replace YOUR_ACCESS_TOKEN with one from Device details panel.
 export ACCESS_TOKEN=YOUR_ACCESS_TOKEN

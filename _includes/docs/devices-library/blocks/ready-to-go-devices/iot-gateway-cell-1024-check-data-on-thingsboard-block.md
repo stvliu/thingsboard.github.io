@@ -1,4 +1,4 @@
-创建一个 [仪表板](https://thingsboard.io/docs/{{page.docsPrefix}}user-guide/dashboards/){:target="_blank"}，以便在小部件中可视化遥测值。
+创建一个 [仪表板](https://docs.codingas.com/docs/{{page.docsPrefix}}user-guide/dashboards/){:target="_blank"}，以便在小部件中可视化遥测值。
 
 {% assign dashboardCreation = '
     ===
@@ -16,4 +16,4 @@
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=dashboardCreation %}
 
 - 设备的 JSON 配置文件中“启用”的所有度量都将作为度量找到，名称在同一文件中指定。
-- 您可以在 [本指南](https://thingsboard.io/docs/{{page.docsPrefix}}user-guide/dashboards/#widgets){:target="_blank"} 中阅读有关小部件及其创建的更多信息。
+- 您可以在 [本指南](https://docs.codingas.com/docs/{{page.docsPrefix}}user-guide/dashboards/#widgets){:target="_blank"} 中阅读有关小部件及其创建的更多信息。

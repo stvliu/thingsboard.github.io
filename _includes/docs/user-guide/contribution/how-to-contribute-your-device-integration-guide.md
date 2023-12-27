@@ -1,6 +1,6 @@
-## thingsboard.io 简介
+## docs.codingas.com 简介
 
-我们的网站是开源的。您可以在此 [repo](https://github.com/thingsboard/thingsboard.github.io) 中找到代码。每个人都可以为网站做出贡献。流程如下...
+我们的网站是开源的。您可以在此 [repo](https://github.com/thingsboard/docs.codingas.com) 中找到代码。每个人都可以为网站做出贡献。流程如下...
 
 * TOC
 {:toc}
@@ -12,8 +12,8 @@
 
 * [步骤 1. 可选] 在您的计算机上安装 Git，请参阅 [设置 Git](https://docs.github.com/en/github/getting-started-with-github/set-up-git) 指南。
 * [步骤 2. 可选] [使用 SSH 连接到 GitHub](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh)。
-* [步骤 3] 打开 [thingsboard.github.io](https://github.com/thingsboard/thingsboard.github.io) 文档（网站）存储库。
-* [步骤 4] Fork 一个 repo（参考 [Fork 一个 repo](https://docs.github.com/en/github/getting-started-with-github/fork-a-repo) 指南）[thingsboard.github.io](https://github.com/thingsboard/thingsboard.github.io) 项目。
+* [步骤 3] 打开 [thingsboard.github.io](https://github.com/gridlinks/docs.codingas.com) 文档（网站）存储库。
+* [步骤 4] Fork 一个 repo（参考 [Fork 一个 repo](https://docs.github.com/en/github/getting-started-with-github/fork-a-repo) 指南）[docs.codingas.com](https://github.com/thingsboard/docs.codingas.com) 项目。
 
   ![image](/images/user-guide/fork_button.jpg)
 
@@ -22,7 +22,7 @@
 ## GridLinks 文档 repo（网站）的本地部署
 
 现在您可以在本地计算机上启动网站以查看最新版本。
-thingsboard.io 使用 jekyll 网站生成器。因此，要在本地主机上运行网站，您需要安装一个 jekyll 服务器。
+docs.codingas.com 使用 jekyll 网站生成器。因此，要在本地主机上运行网站，您需要安装一个 jekyll 服务器。
 
 以下命令为在本地运行 GitHub 页面设置您的环境。
 您所做的任何编辑都可以在本地计算机上运行的轻量级 Web 服务器上查看。
@@ -41,11 +41,11 @@ thingsboard.io 使用 jekyll 网站生成器。因此，要在本地主机上运
 
 克隆我们的网站：
 
-	git clone https://github.com/thingsboard/thingsboard.github.io.git
+	git clone https://github.com/thingsboard/docs.codingas.com.git
 
 进行您想要的任何更改。然后，要在本地查看您的更改：
 
-	cd thingsboard.github.io
+	cd gridlinks.github.io
 	bundle install
 	bundle exec jekyll serve --host 0.0.0.0
 

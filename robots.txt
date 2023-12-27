@@ -16,4 +16,4 @@ Allow: /*.svg
 Allow: /*.jpeg
 Allow: /*.gif
 
-SITEMAP: https://thingsboard.io/sitemap.xml
+SITEMAP: https://docs.codingas.com/sitemap.xml

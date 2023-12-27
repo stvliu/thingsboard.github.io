@@ -1,6 +1,6 @@
 ---
 layout: docwithnav-paas
-title: 白标
+title: 品牌定制
 description:
 
 white-labeling-default:

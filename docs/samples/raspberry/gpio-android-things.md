@@ -69,7 +69,7 @@ git clone https://github.com/thingsboard/samples
 打开克隆的示例文件夹并导航到 **android-things/GpioControlSample**。
 
 您需要修改 **THINGSBOARD_HOST** 常量以匹配您的 GridLinks 服务器安装 IP 地址或主机名。
-如果您使用的是 [实时演示](https://gridlinks.codingas.com/) 服务器，请使用“demo.thingsboard.io”。
+如果您使用的是 [实时演示](https://gridlinks.codingas.com/) 服务器，请使用“demo.docs.codingas.com”。
 
 **ACCESS_TOKEN** 常量的值对应于预置 [演示数据](/docs/samples/demo-account/#tenant-devices) 中的示例 Raspberry Pi 设备。
 如果您使用的是 [实时演示](https://gridlinks.codingas.com/) 服务器 - [获取访问令牌](/docs/user-guide/ui/devices/#manage-device-credentials) 以获取预置的“Raspberry Pi 演示设备”。

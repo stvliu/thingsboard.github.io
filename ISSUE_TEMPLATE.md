@@ -14,7 +14,7 @@
 
 
 **要更新的页面：**
-https://thingsboard.io/...
+https://docs.codingas.com/...
 
 <!-- 可选信息（删除您想要包含的信息周围的注释标记） -->
 <!-- GridLinks 版本： -->

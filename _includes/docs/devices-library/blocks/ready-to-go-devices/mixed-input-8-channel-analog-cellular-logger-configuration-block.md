@@ -33,7 +33,7 @@ MI-8 [用户手册](https://fusiondaq.com/wp-content/uploads/2023/01/LTEdaq_Oper
       "mode":"post",
       "path":"api/v1/YOUR_ACCESS_TOKEN/telemetry",
       "attributes_path":"api/v1/YOUR_ACCESS_TOKEN/attributes",
-      "server": "{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}thingsboard.cloud{% else %}demo.thingsboard.io{% endif %}",
+      "server": "{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}thingsboard.cloud{% else %}demo.docs.codingas.com{% endif %}",
       "port":80,
       "username":"",
       "password":"",
@@ -66,7 +66,7 @@ MI-8 [用户手册](https://fusiondaq.com/wp-content/uploads/2023/01/LTEdaq_Oper
 |-|-|
 | 路径 | **api/v1/YOUR_ACCESS_TOKEN/telemetry** | 将 **YOUR_ACCESS_TOKEN** 替换为 GridLinks 上设备的访问令牌。 |
 | attributes_path | **api/v1/YOUR_ACCESS_TOKEN/attributes** | 将 **YOUR_ACCESS_TOKEN** 替换为 GridLinks 上设备的访问令牌。 |
-| 服务器 | **{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}thingsboard.cloud{% else %}demo.thingsboard.io{% endif %}** | 您的 GridLinks 实例地址。 |
+| 服务器 | **{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}thingsboard.cloud{% else %}demo.docs.codingas.com{% endif %}** | 您的 GridLinks 实例地址。 |
 | 端口 | **80** | 您的 GridLinks 实例 HTTP 端口。您可以将 **port** 设置为 443，并将 **use_ssl** 设置为 true 以使用 SSL 加密 (HTTPS)。支持任一协议，但每次将数据推送到服务器时，HTTPS 会消耗更多蜂窝数据。|
 
 其他配置参数：

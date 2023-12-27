@@ -220,7 +220,7 @@ sudo service trendz start
 
 #### Trendz Analytics package download
 
-Download ThingsBoard Trendz Analytics installation package for Windows: [trendz-windows-1.10.3-HF3.zip](https://dist.thingsboard.io/trendz-windows-1.10.3-HF3.zip).
+Download ThingsBoard Trendz Analytics installation package for Windows: [trendz-windows-1.10.3-HF3.zip](https://dist.docs.codingas.com/trendz-windows-1.10.3-HF3.zip).
 
 #### Trendz Analytics service upgrade
 
@@ -299,7 +299,7 @@ sudo service trendz start
 
 #### Trendz Analytics package download
 
-Download ThingsBoard Trendz Analytics installation package for Windows: [trendz-windows-1.10.3.zip](https://dist.thingsboard.io/trendz-windows-1.10.3.zip).
+Download ThingsBoard Trendz Analytics installation package for Windows: [trendz-windows-1.10.3.zip](https://dist.docs.codingas.com/trendz-windows-1.10.3.zip).
 
 #### Trendz Analytics service upgrade
 
@@ -381,7 +381,7 @@ sudo service trendz start
 
 #### Trendz Analytics package download
 
-Download ThingsBoard Trendz Analytics installation package for Windows: [trendz-windows-1.10.2.zip](https://dist.thingsboard.io/trendz-windows-1.10.2.zip).
+Download ThingsBoard Trendz Analytics installation package for Windows: [trendz-windows-1.10.2.zip](https://dist.docs.codingas.com/trendz-windows-1.10.2.zip).
 
 #### Trendz Analytics service upgrade
 
@@ -460,7 +460,7 @@ sudo service trendz start
 
 #### Trendz Analytics package download
 
-Download ThingsBoard Trendz Analytics installation package for Windows: [trendz-windows-1.10.1.zip](https://dist.thingsboard.io/trendz-windows-1.10.1.zip).
+Download ThingsBoard Trendz Analytics installation package for Windows: [trendz-windows-1.10.1.zip](https://dist.docs.codingas.com/trendz-windows-1.10.1.zip).
 
 #### Trendz Analytics service upgrade
 
@@ -543,7 +543,7 @@ sudo service trendz start
 
 #### Trendz Analytics package download
 
-Download ThingsBoard Trendz Analytics installation package for Windows: [trendz-windows-1.10.0-HF1.zip](https://dist.thingsboard.io/trendz-windows-1.10.0-HF1.zip).
+Download ThingsBoard Trendz Analytics installation package for Windows: [trendz-windows-1.10.0-HF1.zip](https://dist.docs.codingas.com/trendz-windows-1.10.0-HF1.zip).
 
 #### Trendz Analytics service upgrade
 
@@ -623,7 +623,7 @@ sudo service trendz start
 
 #### Trendz Analytics package download
 
-Download ThingsBoard Trendz Analytics installation package for Windows: [trendz-windows-1.9.2.zip](https://dist.thingsboard.io/trendz-windows-1.9.2.zip).
+Download ThingsBoard Trendz Analytics installation package for Windows: [trendz-windows-1.9.2.zip](https://dist.docs.codingas.com/trendz-windows-1.9.2.zip).
 
 #### Trendz Analytics service upgrade
 
@@ -697,7 +697,7 @@ sudo service trendz start
 
 #### Trendz Analytics package download
 
-Download ThingsBoard Trendz Analytics installation package for Windows: [trendz-windows-1.8.2.zip](https://dist.thingsboard.io/trendz-windows-1.8.2.zip).
+Download ThingsBoard Trendz Analytics installation package for Windows: [trendz-windows-1.8.2.zip](https://dist.docs.codingas.com/trendz-windows-1.8.2.zip).
 
 #### Trendz Analytics service upgrade
 
@@ -769,7 +769,7 @@ sudo service trendz start
 
 #### Trendz Analytics package download
 
-Download ThingsBoard Trendz Analytics installation package for Windows: [trendz-windows-1.8.0.zip](https://dist.thingsboard.io/trendz-windows-1.8.0.zip).
+Download ThingsBoard Trendz Analytics installation package for Windows: [trendz-windows-1.8.0.zip](https://dist.docs.codingas.com/trendz-windows-1.8.0.zip).
 
 #### Trendz Analytics service upgrade
 
@@ -890,7 +890,7 @@ sudo service trendz start
 
 #### Trendz Analytics package download
 
-Download ThingsBoard Trendz Analytics installation package for Windows: [trendz-windows-1.7.0.zip](https://dist.thingsboard.io/trendz-windows-1.7.0.zip).
+Download ThingsBoard Trendz Analytics installation package for Windows: [trendz-windows-1.7.0.zip](https://dist.docs.codingas.com/trendz-windows-1.7.0.zip).
 
 #### Trendz Analytics service upgrade
 
@@ -954,11 +954,11 @@ features introduced in version 1.7.0
 #### Download new Widget Bundle
 
 * For ThingsBoard version **3.x** please use 
-this <a href="https://dist.thingsboard.io/trendz_bundle_tb3.json" download target="_blank">trendz_bundle_tb3</a>
+this <a href="https://dist.docs.codingas.com/trendz_bundle_tb3.json" download target="_blank">trendz_bundle_tb3</a>
 
 
 * For ThingsBoard version **2.x** please use 
-this <a href="https://dist.thingsboard.io/trendz_bundle_tb2.json" download target="_blank">trendz_bundle_tb2</a>
+this <a href="https://dist.docs.codingas.com/trendz_bundle_tb2.json" download target="_blank">trendz_bundle_tb2</a>
 
 #### Replace old Bundle with the new one
 
@@ -1011,7 +1011,7 @@ sudo service trendz start
 
 #### Trendz Analytics package download
 
-Download ThingsBoard Trendz Analytics installation package for Windows: [trendz-windows-1.6.0.zip](https://dist.thingsboard.io/trendz-windows-1.6.0.zip).
+Download ThingsBoard Trendz Analytics installation package for Windows: [trendz-windows-1.6.0.zip](https://dist.docs.codingas.com/trendz-windows-1.6.0.zip).
 
 #### Trendz Analytics service upgrade
 
@@ -1079,7 +1079,7 @@ sudo service trendz start
 
 #### Trendz Analytics package download
 
-Download ThingsBoard Trendz Analytics installation package for Windows: [trendz-windows-1.5.1.zip](https://dist.thingsboard.io/trendz-windows-1.5.1.zip).
+Download ThingsBoard Trendz Analytics installation package for Windows: [trendz-windows-1.5.1.zip](https://dist.docs.codingas.com/trendz-windows-1.5.1.zip).
 
 #### Trendz Analytics service upgrade
 
@@ -1143,7 +1143,7 @@ sudo service trendz start
 
 #### Trendz Analytics package download
 
-Download ThingsBoard Trendz Analytics installation package for Windows: [trendz-windows-1.5.0.zip](https://dist.thingsboard.io/trendz-windows-1.5.0.zip).
+Download ThingsBoard Trendz Analytics installation package for Windows: [trendz-windows-1.5.0.zip](https://dist.docs.codingas.com/trendz-windows-1.5.0.zip).
 
 #### Trendz Analytics service upgrade
 
@@ -1173,11 +1173,11 @@ features introduced in version 1.5.0
 #### Download new Widget Bundle
 
 * For ThingsBoard version **3.x** please use 
-this <a href="https://dist.thingsboard.io/trendz_bundle_tb3.json" download target="_blank">trendz_bundle_tb3</a>
+this <a href="https://dist.docs.codingas.com/trendz_bundle_tb3.json" download target="_blank">trendz_bundle_tb3</a>
 
 
 * For ThingsBoard version **2.x** please use 
-this <a href="https://dist.thingsboard.io/trendz_bundle_tb2.json" download target="_blank">trendz_bundle_tb2</a>
+this <a href="https://dist.docs.codingas.com/trendz_bundle_tb2.json" download target="_blank">trendz_bundle_tb2</a>
 
 #### Replace old Bundle with the new one
 
@@ -1228,7 +1228,7 @@ sudo service trendz start
 
 #### Trendz Analytics package download
 
-Download ThingsBoard Trendz Analytics installation package for Windows: [trendz-windows-1.4.1.zip](https://dist.thingsboard.io/trendz-windows-1.4.1.zip).
+Download ThingsBoard Trendz Analytics installation package for Windows: [trendz-windows-1.4.1.zip](https://dist.docs.codingas.com/trendz-windows-1.4.1.zip).
 
 #### Trendz Analytics service upgrade
 
@@ -1288,7 +1288,7 @@ sudo service trendz start
 
 #### ThingsBoard PE package download
 
-Download ThingsBoard PE installation package for Windows: [trendz-windows-1.4.0.zip](https://dist.thingsboard.io/trendz-windows-1.4.0.zip).
+Download ThingsBoard PE installation package for Windows: [trendz-windows-1.4.0.zip](https://dist.docs.codingas.com/trendz-windows-1.4.0.zip).
 
 #### ThingsBoard PE service upgrade
 

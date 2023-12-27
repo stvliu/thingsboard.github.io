@@ -15,7 +15,7 @@ echo -n '{"temperature": 25}' | coap post coap://$THINGSBOARD_HOST_NAME/api/v1/$
 例如，$THINGSBOARD_HOST_NAME 引用实时演示服务器，$ACCESS_TOKEN 为 ABC123：
 
 ```bash
-echo -n '{"temperature": 25}' | coap post coap://demo.thingsboard.io/api/v1/ABC123/telemetry
+echo -n '{"temperature": 25}' | coap post coap://demo.docs.codingas.com/api/v1/ABC123/telemetry
 ```
 {: .copy-code}
 

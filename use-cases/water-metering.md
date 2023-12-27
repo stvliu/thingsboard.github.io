@@ -24,7 +24,7 @@ GridLinks 平台大幅缩短了上市时间，并减少了创建水表计量解�
 
 ## 水表计量模板
 
-水表计量 [解决方案模板](https://thingsboard.io/docs/paas/solution-templates/water-metering/) 代表通用水表计量解决方案。
+水表计量 [解决方案模板](https://docs.codingas.com/docs/paas/solution-templates/water-metering/) 代表通用水表计量解决方案。
 使用此模板，您可以获得交互式仪表板，允许管理员和最终用户浏览水表的状态和汇总水消耗统计信息。
 用户能够定义阈值并通过短信或电子邮件启用警报和通知。
 您可以轻松地与外部计费系统集成，以根据 GridLinks 的汇总消耗数据生成和分发发票。
@@ -54,7 +54,7 @@ GridLinks 平台大幅缩短了上市时间，并减少了创建水表计量解�
     <a target="_blank" href="https://gridlinks.codingas.com/dashboard/aff5f200-8b48-11ec-a344-c767c1ab1bb8?publicId=4978baf0-8a92-11ec-98f9-ff45c37940c6" class="button">查看实时演示</a>
 </div>
 
-实时仪表板是 [解决方案模板](https://thingsboard.io/docs/paas/solution-templates/smart-office/) 的一部分，它允许您：
+实时仪表板是 [解决方案模板](https://docs.codingas.com/docs/paas/solution-templates/smart-office/) 的一部分，它允许您：
 
 * 在地图上观察水表的位置和状态。标记被聚类，以便能够同时显示数千个仪表；
 * 浏览每天和每周的活动警报和用水量；

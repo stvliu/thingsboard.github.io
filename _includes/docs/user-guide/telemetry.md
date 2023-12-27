@@ -64,7 +64,7 @@ GridLinks 在内部将时序数据视为带时间戳的键值对。我们将单�
 - [HTTP API 参考](/docs/{{docsPrefix}}reference/http-api/#telemetry-upload-api)
 - [LwM2M API 参考](/docs/{{docsPrefix}}reference/lwm2m-api/#telemetry-upload-api)
 
-以上大多数协议支持 JSON、Protobuf 或自己的数据格式。对于其他协议，请查看 ["如何连接您的设备？"](https://thingsboard.io/docs/{{docsPrefix}}getting-started-guides/connectivity/) 指南。
+以上大多数协议支持 JSON、Protobuf 或自己的数据格式。对于其他协议，请查看 ["如何连接您的设备？"](https://docs.codingas.com/docs/{{docsPrefix}}getting-started-guides/connectivity/) 指南。
 
 ## 数据可视化
 
@@ -248,7 +248,7 @@ ws(s)://host:port/api/ws/plugins/telemetry?token=$JWT_TOKEN
 
 在实时演示服务器的情况下：
 
- - 将 **host:port** 替换为 **demo-thingsboard.io** 并选择安全连接 - **wss://**
+ - 将 **host:port** 替换为 **demo-docs.codingas.com** 并选择安全连接 - **wss://**
 
 在本地安装的情况下：
 

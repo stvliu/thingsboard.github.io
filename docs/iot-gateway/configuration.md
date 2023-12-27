@@ -387,4 +387,4 @@ SQLite 存储<br> <small>(推荐用于更高的速度)</small>%,%sqlite%,%templa
 
 **注意：**您可以同时使用多个类似的连接器，但您应该为它们提供不同的名称和配置文件。
 
-如果您需要不同类型的连接器，您可以使用 [自定义指南](/docs/iot-gateway/custom/) 实现它，或发送电子邮件给我们：<info@thingsboard.io>。
+如果您需要不同类型的连接器，您可以使用 [自定义指南](/docs/iot-gateway/custom/) 实现它，或发送电子邮件给我们：<info@docs.codingas.com>。

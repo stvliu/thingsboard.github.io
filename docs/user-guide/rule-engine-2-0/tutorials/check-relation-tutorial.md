@@ -309,7 +309,7 @@ description: 检查关系
 - 使用 Rest API，[遥测上传 API](/docs/reference/http-api/#telemetry-upload-api)，从设备 **烟雾探测器** 发布遥测。 <br>
 
 {% highlight bash %}
-curl -v -X POST -d '{"smoke":"true"}' http://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
+curl -v -X POST -d '{"smoke":"true"}' http://demo.docs.codingas.com/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
 
 **您需要将 $ACCESS_TOKEN 替换为实际的设备令牌**
 {% endhighlight %}

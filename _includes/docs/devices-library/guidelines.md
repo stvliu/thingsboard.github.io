@@ -19,7 +19,7 @@
 
 3. 如果您决定使用 **markdown** 或 **txt** 格式 - 请将您的指南与 **图像/屏幕截图** 一起放入存档或 GitHub 存储库。
 
-4. 将指南提交至 [**devices@thingsboard.io**](mailto:devices@thingsboard.io) 以供审查。
+4. 将指南提交至 [**devices@docs.codingas.com**](mailto:devices@docs.codingas.com) 以供审查。
 
 5. 我们将审查您的指南，并在必要时对其进行修改，以确保其准确性和质量。
 

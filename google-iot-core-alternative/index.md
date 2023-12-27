@@ -99,7 +99,7 @@ notitle: "true"
                             <td><img src="/images/pe/checked.svg" alt="checked"></td>
                         </tr>
                         <tr>
-                            <th><a href="/docs/user-guide/white-labeling/">白标品牌 IoT 解决方案<img src="/images/pe/help-black18.svg" alt="help"></a></th>
+                            <th><a href="/docs/user-guide/white-labeling/">品牌定制品牌 IoT 解决方案<img src="/images/pe/help-black18.svg" alt="help"></a></th>
                             <td><img src="/images/pe/unchecked.svg" alt="unchacked"></td>
                             <td><img src="/images/pe/checked.svg" alt="checked"></td>
                         </tr>

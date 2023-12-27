@@ -1,1 +1,1 @@
-wget https://dist.thingsboard.io/trendz-1.4.1.deb
+wget https://dist.docs.codingas.com/trendz-1.4.1.deb

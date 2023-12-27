@@ -9,12 +9,12 @@ description:
 </div>
 <section id="tb-customers">
 	<main>
-		<a href="/industries/telecom/#tmobile"><object data="https://img.thingsboard.io/customers/clear/t-mobile.svg"></object></a>
-		<a href="https://www.bosch.com/"><object data="https://img.thingsboard.io/customers/clear/bosch.svg"></object></a>
-		<a href="https://www.prosegur.com/"><object data="https://img.thingsboard.io/customers/clear/prosegur.svg"></object></a>
-		<a href="http://www.engie.sk/en/kontakt"><object data="https://img.thingsboard.io/customers/clear/engie.svg"></object></a>
-		<a href="/industries/smart-energy/#circutor"><object data="https://img.thingsboard.io/customers/clear/circutor.svg"></object></a>
-		<a href="/industries/telecom/#tektelic"><object data="https://img.thingsboard.io/customers/clear/tektelic.svg"></object></a>
+		<a href="/industries/telecom/#tmobile"><object data="https://img.docs.codingas.com/customers/clear/t-mobile.svg"></object></a>
+		<a href="https://www.bosch.com/"><object data="https://img.docs.codingas.com/customers/clear/bosch.svg"></object></a>
+		<a href="https://www.prosegur.com/"><object data="https://img.docs.codingas.com/customers/clear/prosegur.svg"></object></a>
+		<a href="http://www.engie.sk/en/kontakt"><object data="https://img.docs.codingas.com/customers/clear/engie.svg"></object></a>
+		<a href="/industries/smart-energy/#circutor"><object data="https://img.docs.codingas.com/customers/clear/circutor.svg"></object></a>
+		<a href="/industries/telecom/#tektelic"><object data="https://img.docs.codingas.com/customers/clear/tektelic.svg"></object></a>
 	</main>
 </section>
 <section id="intro">
@@ -142,7 +142,7 @@ description:
                     <td><img src="/images/pe/checked.svg" alt="已选中"></td>
                 </tr>
                 <tr>
-                    <th><a href="/docs/user-guide/white-labeling/">白标<img src="/images/pe/help-black18.svg" alt="帮助"></a></th>
+                    <th><a href="/docs/user-guide/white-labeling/">品牌定制<img src="/images/pe/help-black18.svg" alt="帮助"></a></th>
                     <td><img src="/images/pe/unchecked.svg" alt="未选中"></td>
                     <td><img src="/images/pe/checked.svg" alt="已选中"></td>
                     <td><img src="/images/pe/checked.svg" alt="已选中"></td>

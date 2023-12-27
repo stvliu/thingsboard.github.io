@@ -230,7 +230,7 @@ sudo service gridlinks start
 
 #### ThingsBoard PE package download
 
-Download ThingsBoard PE installation package for Windows: [thingsboard-windows-setup-2.4.1pe.exe](https://dist.thingsboard.io/thingsboard-windows-setup-2.4.1pe.exe).
+Download ThingsBoard PE installation package for Windows: [thingsboard-windows-setup-2.4.1pe.exe](https://dist.docs.codingas.com/thingsboard-windows-setup-2.4.1pe.exe).
 
 #### ThingsBoard PE service upgrade
 
@@ -328,7 +328,7 @@ sudo service gridlinks start
 
 #### ThingsBoard PE package download
 
-Download ThingsBoard PE installation package for Windows: [thingsboard-windows-setup-2.4.2.1pe.exe](https://dist.thingsboard.io/thingsboard-windows-setup-2.4.2.1pe.exe).
+Download ThingsBoard PE installation package for Windows: [thingsboard-windows-setup-2.4.2.1pe.exe](https://dist.docs.codingas.com/thingsboard-windows-setup-2.4.2.1pe.exe).
 
 #### ThingsBoard PE service upgrade
 
@@ -425,7 +425,7 @@ sudo service gridlinks start
 
 #### ThingsBoard PE package download
 
-Download ThingsBoard PE installation package for Windows: [thingsboard-windows-setup-2.4.3pe.exe](https://dist.thingsboard.io/thingsboard-windows-setup-2.4.3pe.exe).
+Download ThingsBoard PE installation package for Windows: [thingsboard-windows-setup-2.4.3pe.exe](https://dist.docs.codingas.com/thingsboard-windows-setup-2.4.3pe.exe).
 
 #### ThingsBoard PE service upgrade
 
@@ -555,7 +555,7 @@ sudo service gridlinks start
 
 #### ThingsBoard PE package download
 
-Download ThingsBoard PE installation package for Windows: [thingsboard-windows-setup-2.5pe.exe](https://dist.thingsboard.io/thingsboard-windows-setup-2.5pe.exe).
+Download ThingsBoard PE installation package for Windows: [thingsboard-windows-setup-2.5pe.exe](https://dist.docs.codingas.com/thingsboard-windows-setup-2.5pe.exe).
 
 #### ThingsBoard PE service upgrade
 
@@ -713,7 +713,7 @@ sudo service gridlinks start
 
 #### ThingsBoard PE package download
 
-Download ThingsBoard PE installation package for Windows: [thingsboard-windows-setup-3.0pe.exe](https://dist.thingsboard.io/thingsboard-windows-setup-3.0pe.exe).
+Download ThingsBoard PE installation package for Windows: [thingsboard-windows-setup-3.0pe.exe](https://dist.docs.codingas.com/thingsboard-windows-setup-3.0pe.exe).
 
 #### ThingsBoard PE service upgrade
 

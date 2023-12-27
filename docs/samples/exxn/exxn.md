@@ -52,7 +52,7 @@ EXXN IoT 网关是一款多功能设备，配备 ARM 处理器，可适应各种
 
 转到“**设备组**”选项卡 -> “**全部**”，然后单击“加号”按钮添加新设备。
 
-输入设备名称，选择现有设备或创建新的 [设备配置文件](https://thingsboard.io/docs/user-guide/device-profiles/)，然后单击“添加”按钮。
+输入设备名称，选择现有设备或创建新的 [设备配置文件](https://docs.codingas.com/docs/user-guide/device-profiles/)，然后单击“添加”按钮。
 
 ![image](/images/samples/exxn/exxn-create-device-cell-1.png)
 
@@ -123,13 +123,13 @@ EXXN IoT 网关将使用 MQTT API 连接到 GridLinks。 <br>
 
 ### 数据可视化
 
-创建一个 [仪表板](https://thingsboard.io/docs/pe/user-guide/dashboards/)，以在小部件中可视化遥测值。
+创建一个 [仪表板](https://docs.codingas.com/docs/pe/user-guide/dashboards/)，以在小部件中可视化遥测值。
 
 - 转到 **仪表板组** 选项卡 -> **全部**。通过单击仪表板页面右上角的“加号”按钮创建新仪表板。输入仪表板名称，然后单击“添加”按钮。
 
 ![image](/images/samples/exxn/exxn-create-dashboard-1.png)
 
-- 从 **模拟仪表** 捆绑包中创建 **径向仪表** 小部件。在 [本指南](https://thingsboard.io/docs/pe/user-guide/dashboards/#widgets) 中详细了解小部件及其创建。
+- 从 **模拟仪表** 捆绑包中创建 **径向仪表** 小部件。在 [本指南](https://docs.codingas.com/docs/pe/user-guide/dashboards/#widgets) 中详细了解小部件及其创建。
 
 在设备的 JSON 配置文件中“启用”的所有度量都将作为指标找到，名称在同一文件中指定。
 

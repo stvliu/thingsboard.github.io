@@ -57,7 +57,7 @@ description: GridLinks Trendz Analytics 发布说明
 * 添加对多变量预测模型的支持
 * 添加新的预测模型：Prophet、ARIMA、SARIMAX
 * 在 GridLinks 仪表板上以相对时间自动刷新小部件
-* 添加白标设置
+* 添加品牌定制设置
 * 添加暗模式
 * 手动设置轴的最小/最大范围
 
@@ -137,7 +137,7 @@ description: GridLinks Trendz Analytics 发布说明
 * 为条形图和热图添加行单击事件
 * 改进后台任务的身份验证
 * 在视图表中添加计划任务状态
-* 为 Trendz UI 添加白标选项
+* 为 Trendz UI 添加品牌定制选项
 * 改进大型拓扑的 UI 响应能力
 * 支持在 GridLinks 仪表板中原生数据导出
 
@@ -281,7 +281,7 @@ description: GridLinks Trendz Analytics 发布说明
 
 **改进：**
 
-* 添加白标选项
+* 添加品牌定制选项
 * 支持可视化的内置和自定义主题
 * 图表和热图的可配置调色板颜色
 * 可配置的字体大小

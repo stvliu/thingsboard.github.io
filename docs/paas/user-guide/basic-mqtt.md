@@ -84,7 +84,7 @@ ThingsBoard Cloud 使用有效的证书。
 请使用此 [**链接**](/docs/{{docsPrefix}}user-guide/resources/mqtt-over-ssl/ca-root.pem) 下载 CA 根证书，并将其保存到您的工作目录中，文件名“**ca-root.pem**”。
 
 ```bash
-wget https://thingsboard.io/docs/{{docsPrefix}}user-guide/resources/mqtt-over-ssl/ca-root.pem
+wget https://docs.codingas.com/docs/{{docsPrefix}}user-guide/resources/mqtt-over-ssl/ca-root.pem
 ```
 {: .copy-code}
 

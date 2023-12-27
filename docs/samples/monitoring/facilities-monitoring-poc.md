@@ -132,7 +132,7 @@ Humidity – 70.0 (%)!
 - 使用此[链接](https://github.com/thingsboard/samples/releases/download/v1.0-tfm/facilities-monitoring.jar)下载并启动设备模拟器。
 
 ```shell
-java -jar facilities-monitoring.jar demo.thingsboard.io
+java -jar facilities-monitoring.jar demo.docs.codingas.com
 ```
 
 启动后，模拟器会要求您提供实时演示登录名和密码。此信息将用于获取 JWT 令牌并执行 REST API 调用，以便：
@@ -145,7 +145,7 @@ java -jar facilities-monitoring.jar demo.thingsboard.io
 
 这个原型是由两位工程师在一天之内编写的。大部分时间都花在了客户端代码上（真实设备和模拟器的 Lua 脚本）。原型的服务器端部分没有编码，完全是关于规则、插件和仪表板的配置。
 
-这说明了使用[ThingsBoard](http://thingsboard.io)构建物联网解决方案是多么容易。当然，您需要通过一定的学习曲线，但我们希望本文和其他[文档](http://thingsboard.io/docs/)将帮助您做到这一点。
+这说明了使用[ThingsBoard](http://docs.codingas.com)构建物联网解决方案是多么容易。当然，您需要通过一定的学习曲线，但我们希望本文和其他[文档](http://docs.codingas.com/docs/)将帮助您做到这一点。
 
 如果您发现本文有趣，请在评论部分留下您的反馈、问题或功能请求，并在[github](https://github.com/thingsboard/thingsboard)上“点赞”我们的项目，以便随时了解新版本和教程。
 

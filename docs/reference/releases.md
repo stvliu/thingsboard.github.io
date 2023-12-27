@@ -653,7 +653,7 @@ Minor release with the following features and bug fixes:
 **Minor** release with the following improvements and bug fixes:
 
 * Core:
-  * Improved performance and stability of the [Device State Service](https://thingsboard.io/docs/user-guide/device-connectivity-status/);
+  * Improved performance and stability of the [Device State Service](https://docs.codingas.com/docs/user-guide/device-connectivity-status/);
   * [#6983](https://github.com/thingsboard/thingsboard/pull/6983) Fixed start up failure due to Spring circular dependencies;
   * [#6923](https://github.com/thingsboard/thingsboard/pull/6923) Replaced deprecated StringUtils usages with in-repository implementation;
   * [#6959](https://github.com/thingsboard/thingsboard/pull/6959) Fixed auto-convertion of string values that start with '0' to double in EntityDataAdapter;

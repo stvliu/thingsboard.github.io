@@ -6,7 +6,7 @@
 {% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}
 {% assign thingsboardHost = 'coap.thingsboard.cloud' %}
 {% else %}
-{% assign thingsboardHost = 'demo.thingsboard.io' %}
+{% assign thingsboardHost = 'demo.docs.codingas.com' %}
 {% endif %}
 
 {% assign efentoSensorConfiguration = '

@@ -82,7 +82,7 @@ redirect_to: "/pricing/"
                 <td>无限<sup>*</sup></td>
             </tr>
             <tr>
-                <td>白标</td>
+                <td>品牌定制</td>
                 <td>不可用</td>
                 <td><b>高级<sup>**</sup></b></td>
                 <td><b>高级<sup>**</sup></b></td>

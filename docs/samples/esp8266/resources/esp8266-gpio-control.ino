@@ -13,7 +13,7 @@
 #define GPIO0_PIN 3
 #define GPIO2_PIN 5
 
-char thingsboardServer[] = "demo.thingsboard.io";
+char thingsboardServer[] = "demo.docs.codingas.com";
 
 WiFiClient wifiClient;
 

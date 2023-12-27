@@ -212,7 +212,7 @@ JavaScript<small></small>%,%anonymous%,%templates/integration/aws-iot/aws-iot-do
 {% include content-toggle.html content-toggle-id="awsiotdownlinkconverterconfig" toggle-spec=awsiotdownlinkconverterconfig %}
 
 接下来，配置在哪些条件下将通过 AWS IoT 下行集成发送消息。
-为此，您需要打开用于设备的规则链（在我们的示例中，是默认的根规则链），然后添加 [集成下行节点](https://thingsboard.io/docs/pe/user-guide/rule-engine-2-0/action-nodes/#integration-downlink-node)，对于链接条件，设置属性已更新。
+为此，您需要打开用于设备的规则链（在我们的示例中，是默认的根规则链），然后添加 [集成下行节点](https://docs.codingas.com/docs/pe/user-guide/rule-engine-2-0/action-nodes/#integration-downlink-node)，对于链接条件，设置属性已更新。
 
 {% include images-gallery.html imageCollection="downlink_2-3" %}
 

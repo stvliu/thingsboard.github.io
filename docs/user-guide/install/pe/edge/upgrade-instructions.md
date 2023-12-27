@@ -406,7 +406,7 @@ docker compose logs -f mytbedge
 
 #### ThingsBoard Edge package download
 
-Download ThingsBoard Edge package for Windows: [tb-edge-windows-3.6.1pe.zip](https://dist.thingsboard.io/tb-edge-windows-3.6.1pe.zip).
+Download ThingsBoard Edge package for Windows: [tb-edge-windows-3.6.1pe.zip](https://dist.docs.codingas.com/tb-edge-windows-3.6.1pe.zip).
 
 #### ThingsBoard Edge service upgrade
 
@@ -588,7 +588,7 @@ docker compose logs -f mytbedge
 
 #### ThingsBoard Edge package download
 
-Download ThingsBoard Edge package for Windows: [tb-edge-windows-3.6pe.zip](https://dist.thingsboard.io/tb-edge-windows-3.6pe.zip).
+Download ThingsBoard Edge package for Windows: [tb-edge-windows-3.6pe.zip](https://dist.docs.codingas.com/tb-edge-windows-3.6pe.zip).
 
 #### ThingsBoard Edge service upgrade
 
@@ -712,7 +712,7 @@ docker compose logs -f mytbedge
 
 #### ThingsBoard Edge package download
 
-Download ThingsBoard Edge package for Windows: [tb-edge-windows-3.5.1.1pe.zip](https://dist.thingsboard.io/tb-edge-windows-3.5.1.1pe.zip).
+Download ThingsBoard Edge package for Windows: [tb-edge-windows-3.5.1.1pe.zip](https://dist.docs.codingas.com/tb-edge-windows-3.5.1.1pe.zip).
 
 #### ThingsBoard Edge service upgrade
 
@@ -884,7 +884,7 @@ docker compose logs -f mytbedge
 
 #### ThingsBoard Edge package download
 
-Download ThingsBoard Edge package for Windows: [tb-edge-windows-3.5.1pe.zip](https://dist.thingsboard.io/tb-edge-windows-3.5.1pe.zip).
+Download ThingsBoard Edge package for Windows: [tb-edge-windows-3.5.1pe.zip](https://dist.docs.codingas.com/tb-edge-windows-3.5.1pe.zip).
 
 #### ThingsBoard Edge service upgrade
 
@@ -1066,7 +1066,7 @@ docker compose logs -f mytbedge
 
 #### ThingsBoard Edge package download
 
-Download ThingsBoard Edge package for Windows: [tb-edge-windows-3.5pe.zip](https://dist.thingsboard.io/tb-edge-windows-3.5pe.zip).
+Download ThingsBoard Edge package for Windows: [tb-edge-windows-3.5pe.zip](https://dist.docs.codingas.com/tb-edge-windows-3.5pe.zip).
 
 #### ThingsBoard Edge service upgrade
 
@@ -1248,7 +1248,7 @@ docker compose logs -f mytbedge
 
 #### ThingsBoard Edge package download
 
-Download ThingsBoard Edge package for Windows: [tb-edge-windows-3.4.3pe.zip](https://dist.thingsboard.io/tb-edge-windows-3.4.3pe.zip).
+Download ThingsBoard Edge package for Windows: [tb-edge-windows-3.4.3pe.zip](https://dist.docs.codingas.com/tb-edge-windows-3.4.3pe.zip).
 
 #### ThingsBoard Edge service upgrade
 
@@ -1428,7 +1428,7 @@ docker-compose up
 
 #### ThingsBoard Edge package download
 
-Download ThingsBoard Edge package for Windows: [tb-edge-windows-3.4.1pe.zip](https://dist.thingsboard.io/tb-edge-windows-3.4.1pe.zip).
+Download ThingsBoard Edge package for Windows: [tb-edge-windows-3.4.1pe.zip](https://dist.docs.codingas.com/tb-edge-windows-3.4.1pe.zip).
 
 #### ThingsBoard Edge service upgrade
 
@@ -1609,7 +1609,7 @@ docker-compose up
 
 #### ThingsBoard Edge package download
 
-Download ThingsBoard Edge package for Windows: [tb-edge-windows-3.4pe.zip](https://dist.thingsboard.io/tb-edge-windows-3.4pe.zip).
+Download ThingsBoard Edge package for Windows: [tb-edge-windows-3.4pe.zip](https://dist.docs.codingas.com/tb-edge-windows-3.4pe.zip).
 
 #### ThingsBoard Edge service upgrade
 
@@ -1789,7 +1789,7 @@ docker-compose up
 
 #### ThingsBoard Edge package download
 
-Download ThingsBoard Edge package for Windows: [tb-edge-windows-3.3.4.1pe.zip](https://dist.thingsboard.io/tb-edge-windows-3.3.4.1pe.zip).
+Download ThingsBoard Edge package for Windows: [tb-edge-windows-3.3.4.1pe.zip](https://dist.docs.codingas.com/tb-edge-windows-3.3.4.1pe.zip).
 
 #### ThingsBoard Edge service upgrade
 
@@ -1969,7 +1969,7 @@ docker-compose up
 
 #### ThingsBoard Edge package download
 
-Download ThingsBoard Edge package for Windows: [tb-edge-windows-3.3.4pe.zip](https://dist.thingsboard.io/tb-edge-windows-3.3.4pe.zip).
+Download ThingsBoard Edge package for Windows: [tb-edge-windows-3.3.4pe.zip](https://dist.docs.codingas.com/tb-edge-windows-3.3.4pe.zip).
 
 #### ThingsBoard Edge service upgrade
 
@@ -2149,7 +2149,7 @@ docker-compose up
 
 #### ThingsBoard Edge package download
 
-Download ThingsBoard Edge package for Windows: [tb-edge-windows-3.3.3.zip](https://dist.thingsboard.io/tb-edge-windows-3.3.3.zip).
+Download ThingsBoard Edge package for Windows: [tb-edge-windows-3.3.3.zip](https://dist.docs.codingas.com/tb-edge-windows-3.3.3.zip).
 
 #### ThingsBoard Edge service upgrade
 

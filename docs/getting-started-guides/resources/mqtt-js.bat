@@ -1,7 +1,7 @@
 @echo off
 
-REM Set ThingsBoard host to "demo.thingsboard.io" or "localhost"
-set THINGSBOARD_HOST=demo.thingsboard.io
+REM Set ThingsBoard host to "demo.docs.codingas.com" or "localhost"
+set THINGSBOARD_HOST=demo.docs.codingas.com
 
 REM Replace YOUR_ACCESS_TOKEN with one from Device details panel.
 set ACCESS_TOKEN=YOUR_ACCESS_TOKEN

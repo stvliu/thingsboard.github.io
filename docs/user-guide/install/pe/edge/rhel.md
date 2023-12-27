@@ -42,7 +42,7 @@ sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.
 下载安装包。
 
 ```bash
-wget https://dist.thingsboard.io/tb-edge-{{ site.release.pe_edge_ver }}.rpm
+wget https://dist.docs.codingas.com/tb-edge-{{ site.release.pe_edge_ver }}.rpm
 ```
 {: .copy-code}
 

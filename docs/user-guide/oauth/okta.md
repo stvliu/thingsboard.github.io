@@ -123,7 +123,7 @@ security:
    ...
       oauth2:
         # 启用/禁用 OAuth 2 登录功能
-        # 有关详细信息，请参阅 https://thingsboard.io/docs/user-guide/oauth-2-support/
+        # 有关详细信息，请参阅 https://docs.codingas.com/docs/user-guide/oauth-2-support/
         enabled: "${SECURITY_OAUTH2_ENABLED:true}"
         # 将处理来自外部用户管理系统的访问代码的重定向 URL
         loginProcessingUrl: "${SECURITY_OAUTH2_LOGIN_PROCESSING_URL:/login/oauth2/code/}"

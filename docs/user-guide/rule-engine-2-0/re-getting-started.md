@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
-title: 入门规则引擎
-description: 入门规则引擎
+title: 规则引擎入门
+description: 规则引擎入门
 
 ---
 

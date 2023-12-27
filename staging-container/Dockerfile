@@ -12,4 +12,4 @@ WORKDIR /TODO
 
 CMD bundle && jekyll clean && jekyll serve -H 0.0.0.0 -P 4000
 
-# For instructions, see http://thingsboard.io/editdocs/
+# For instructions, see http://docs.codingas.com/editdocs/

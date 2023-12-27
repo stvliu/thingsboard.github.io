@@ -68,7 +68,7 @@ coap://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/telemetry
 如果您使用实时演示服务器，则命令如下所示：
 
 ```shell
-coap://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/telemetry
+coap://demo.docs.codingas.com/api/v1/$ACCESS_TOKEN/telemetry
 ```
 {: .copy-code}
 
@@ -149,7 +149,7 @@ coap://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/attributes
 如果您使用实时演示服务器，则命令如下所示：
 
 ```shell
-coap://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/attributes
+coap://demo.docs.codingas.com/api/v1/$ACCESS_TOKEN/attributes
 ```
 {: .copy-code}
 
@@ -189,7 +189,7 @@ coap://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/attributes?clientKeys=attribu
 如果您使用实时演示服务器，则命令如下所示：
 
 ```shell
-coap://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/attributes?clientKeys=attribute1,attribute2&sharedKeys=shared1,shared2
+coap://demo.docs.codingas.com/api/v1/$ACCESS_TOKEN/attributes?clientKeys=attribute1,attribute2&sharedKeys=shared1,shared2
 ```
 {: .copy-code}
 {% endif %}
@@ -241,7 +241,7 @@ coap://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/attributes
 如果您使用实时演示服务器，则命令如下所示：
 
 ```shell
-coap://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/attributes
+coap://demo.docs.codingas.com/api/v1/$ACCESS_TOKEN/attributes
 ```
 {: .copy-code}
 {% endif %}
@@ -286,7 +286,7 @@ coap://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/rpc
 如果您使用实时演示服务器，则命令如下所示：
 
 ```shell
-coap://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/rpc
+coap://demo.docs.codingas.com/api/v1/$ACCESS_TOKEN/rpc
 ```
 {: .copy-code}
 {% endif %}
@@ -331,7 +331,7 @@ coap://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/rpc/{$id}
 如果您使用实时演示服务器，则命令如下所示：
 
 ```shell
-coap://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/rpc/{$id}
+coap://demo.docs.codingas.com/api/v1/$ACCESS_TOKEN/rpc/{$id}
 ```
 {: .copy-code}
 {% endif %}
@@ -384,7 +384,7 @@ coap://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/rpc
 如果您使用实时演示服务器，则命令如下所示：
 
 ```shell
-coap://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/rpc
+coap://demo.docs.codingas.com/api/v1/$ACCESS_TOKEN/rpc
 ```
 {: .copy-code}
 {% endif %}
@@ -443,7 +443,7 @@ coap://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/claim
 如果您使用实时演示服务器，则命令如下所示：
 
 ```shell
-coap://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/claim
+coap://demo.docs.codingas.com/api/v1/$ACCESS_TOKEN/claim
 ```
 {: .copy-code}
 {% endif %}
@@ -488,7 +488,7 @@ coap://$THINGSBOARD_HOST_NAME/api/v1/provision
 如果您使用实时演示服务器，则命令如下所示：
 
 ```shell
-coap://demo.thingsboard.io/api/v1/provision
+coap://demo.docs.codingas.com/api/v1/provision
 ```
 {: .copy-code}
 {% endif %}
@@ -529,7 +529,7 @@ coap get coap://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/firmware?title=$TITL
 如果您使用实时演示服务器，则命令如下所示：
 
 ```shell
-coap get coap://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/firmware?title=$TITLE&version=$VERSION
+coap get coap://demo.docs.codingas.com/api/v1/$ACCESS_TOKEN/firmware?title=$TITLE&version=$VERSION
 ```
 {: .copy-code}
 {% endif %}

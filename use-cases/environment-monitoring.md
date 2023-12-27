@@ -53,7 +53,7 @@ GridLinks 平台大幅缩短了环境监测解决方案的上市时间和创建�
     <a target="_blank" href="https://gridlinks.codingas.com/dashboard/dfaef940-8a91-11ec-83d0-83ba2015b874?publicId=4978baf0-8a92-11ec-98f9-ff45c37940c6" class="button">查看实时演示</a>
 </div>
 
-实时仪表板是 [解决方案模板](https://thingsboard.io/docs/paas/solution-templates/temperature-humidity-sensors/) 的一部分，并显示使用 GridLinks MQTT API 收集的温度和湿度传感器的实时数据。
+实时仪表板是 [解决方案模板](https://docs.codingas.com/docs/paas/solution-templates/temperature-humidity-sensors/) 的一部分，并显示使用 GridLinks MQTT API 收集的温度和湿度传感器的实时数据。
 您可以使用仪表板来：
 
 * 添加新传感器；

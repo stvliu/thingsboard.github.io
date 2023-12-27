@@ -21,7 +21,7 @@ sudo nano /etc/tb-edge/conf/tb-edge.conf
     **注意**：**thingsboard.cloud** 使用 SSL 协议进行 Edge 通信。
     在这种情况下，您还应该取消注释 **export CLOUD_RPC_SSL_ENABLED=true**。
    {% else %}
-    * 如果您将 Edge 连接到 [**ThingsBoard Live Demo**](https://gridlinks.codingas.com/signup) 进行评估，请使用 **demo.thingsboard.io**。
+    * 如果您将 Edge 连接到 [**ThingsBoard Live Demo**](https://gridlinks.codingas.com/signup) 进行评估，请使用 **demo.docs.codingas.com**。
    {% endif %}
     * 如果 Edge 与服务器实例在同一台机器上运行，请使用 **localhost**。
     * 如果 Edge 连接到同一网络或 Docker 容器中的服务器实例，请使用 **X.X.X.X** IP 地址。
@@ -38,7 +38,7 @@ sudo nano /etc/tb-edge/conf/tb-edge.conf
 # export CLOUD_RPC_SSL_ENABLED=true
 {% else %}
 # 如果 EDGE 连接到 CE 'DEMO.THINGSBOARD.IO' 服务器，取消注释以下行：
-# export CLOUD_RPC_HOST=demo.thingsboard.io
+# export CLOUD_RPC_HOST=demo.docs.codingas.com
 {% endif %}
 # 如果您更改了默认的 CLOUD RPC 主机/端口设置，取消注释以下行：
 # export CLOUD_RPC_HOST=PUT_YOUR_CLOUD_IP

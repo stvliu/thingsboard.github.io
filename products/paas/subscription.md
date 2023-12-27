@@ -8,7 +8,7 @@ description: 订阅付款模式的功能和优势
 ---
 
 ThingsBoars Cloud 基于 **按需付费** 模式提供订阅计划。
-订阅计划的主要特点是：[实体限制](/docs/user-guide/tenant-profiles/#entity-limits)、[api 限制](/docs/user-guide/tenant-profiles/#api-limits--usage)、[白标](/docs/user-guide/white-labeling/) 和您获得的支持级别。
+订阅计划的主要特点是：[实体限制](/docs/user-guide/tenant-profiles/#entity-limits)、[api 限制](/docs/user-guide/tenant-profiles/#api-limits--usage)、[品牌定制](/docs/user-guide/white-labeling/) 和您获得的支持级别。
 
 
 ### 实体限制
@@ -293,10 +293,10 @@ ThingsBoars Cloud 基于 **按需付费** 模式提供订阅计划。
 
 其中“**K**”表示 1 千，“**M**”表示 1 百万，“**B**”表示 10 亿。
 
-### 白标
+### 品牌定制
 
 ThingsBoard Web 界面允许您在 2 分钟内配置公司或产品徽标和配色方案，无需任何编码工作，也无需重新启动服务。
-有关更多详细信息，请参阅功能[文档](/docs/user-guide/white-labeling/)。GridLinks Cloud 扩展了白标功能，可以轻松配置自己的域名。
+有关更多详细信息，请参阅功能[文档](/docs/user-guide/white-labeling/)。GridLinks Cloud 扩展了品牌定制功能，可以轻松配置自己的域名。
 有关更多详细信息，请参阅[管理域](/products/paas/domains/)。
 
-白标功能适用于**原型**和**初创**订阅计划。
+品牌定制功能适用于**原型**和**初创**订阅计划。

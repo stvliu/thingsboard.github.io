@@ -75,12 +75,12 @@ GridLinks 自定义菜单功能允许您扩展 GridLinks UI。
 | notification_templates    | 隐藏“通知中心”页面上的“模板”选项卡                                       |
 | notification_rules        | 隐藏“通知中心”页面上的“规则”选项卡                                           |
 | api_usage                 | 隐藏左侧面板上的“API 使用情况”项                                                       |
-| white_labeling            | 隐藏左侧面板上的“白标”项                                                  |
-| white_labeling_general    | 隐藏“白标”页面上的“常规”选项卡                                               |
-| login_white_labeling      | 隐藏“白标”页面上的“登录”选项卡                                                 |
-| mail_templates            | 隐藏“白标”页面上的“邮件模板”选项卡                                        |
-| custom_translation        | 隐藏“白标”页面上的“自定义翻译”选项卡                                    |
-| custom_menu               | 隐藏“白标”页面上的“自定义菜单”选项卡                                           |
+| white_labeling            | 隐藏左侧面板上的“品牌定制”项                                                  |
+| white_labeling_general    | 隐藏“品牌定制”页面上的“常规”选项卡                                               |
+| login_white_labeling      | 隐藏“品牌定制”页面上的“登录”选项卡                                                 |
+| mail_templates            | 隐藏“品牌定制”页面上的“邮件模板”选项卡                                        |
+| custom_translation        | 隐藏“品牌定制”页面上的“自定义翻译”选项卡                                    |
+| custom_menu               | 隐藏“品牌定制”页面上的“自定义菜单”选项卡                                           |
 | settings                  | 隐藏左侧面板上的“设置”项                                                        |
 | general                   | 隐藏“设置”页面上的“常规”选项卡（仅限系统管理员级别）            |
 | home_settings             | 隐藏“设置”页面上的“主页设置”选项卡                                               |
@@ -103,7 +103,7 @@ GridLinks 自定义菜单功能允许您扩展 GridLinks UI。
 {% assign addNewMenuItem = '
     ===
         image: /images/user-guide/white-labeling/custom-menu/custom-menu-add-new-menu-item-1.png,
-        title: 转到“**白标**”页面 -> “**自定义菜单**”选项卡。可以隐藏的菜单项名称显示在空的“**自定义菜单**”窗口中；
+        title: 转到“**品牌定制**”页面 -> “**自定义菜单**”选项卡。可以隐藏的菜单项名称显示在空的“**自定义菜单**”窗口中；
     ===
         image: /images/user-guide/white-labeling/custom-menu/custom-menu-hide-menu-item-2.png,
         title: 请在“**自定义菜单**”窗口中以 JSON 数据格式提供要隐藏的菜单项。然后单击“**保存**”；
@@ -139,7 +139,7 @@ GridLinks 自定义菜单功能允许您扩展 GridLinks UI。
 {% assign addNewMenuItem = '
     ===
         image: /images/user-guide/white-labeling/custom-menu/custom-menu-add-new-menu-item-1.png,
-        title: 转到“**白标**”页面 -> “**自定义菜单**”选项卡；
+        title: 转到“**品牌定制**”页面 -> “**自定义菜单**”选项卡；
     ===
         image: /images/user-guide/white-labeling/custom-menu/custom-menu-add-new-menu-item-2.png,
         title: 在“**自定义菜单**”窗口中以 JSON 格式指定数据。使用下面的 JSON 作为示例。单击“**保存**”；
@@ -198,7 +198,7 @@ GridLinks 自定义菜单功能允许您扩展 GridLinks UI。
       "name": "Smart farming solutions",
       "iconUrl": "https://cdn-icons-png.flaticon.com/512/3214/3214679.png",
       "materialIcon": null,
-      "iframeUrl": "https://thingsboard.io/smart-farming/",
+      "iframeUrl": "https://docs.codingas.com/smart-farming/",
       "dashboardId": null,
       "hideDashboardToolbar": null,
       "setAccessToken": false,

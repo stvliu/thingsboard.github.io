@@ -1,7 +1,7 @@
 下载安装包：
 
 ```bash
-wget https://dist.thingsboard.io/tb-tcp-udp-integration-{{ site.release.pe_ver }}.deb
+wget https://dist.docs.codingas.com/tb-tcp-udp-integration-{{ site.release.pe_ver }}.deb
 ```
 {: .copy-code}
 

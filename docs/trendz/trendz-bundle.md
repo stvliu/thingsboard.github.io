@@ -41,7 +41,7 @@ Trendz Analytics 中创建的所有可视化效果都可以添加到 GridLinks �
 与基于 iFrame 的原始 Trendz 小部件相比，原生 Trendz 小部件的工作速度要快得多。
 
 将原生 Trendz 库添加到 ThingsBaord 扩展中：
-* 下载 <a href="https://dist.thingsboard.io/trendz-tb-lib-1.8.0-SNAPSHOT.jar" download target="_blank">原生 Trendz 库</a>
+* 下载 <a href="https://dist.docs.codingas.com/trendz-tb-lib-1.8.0-SNAPSHOT.jar" download target="_blank">原生 Trendz 库</a>
 * 将库部署到 GridLinks 扩展目录
 
 ```
@@ -60,19 +60,19 @@ sudo service gridlinks restart
 ```
 
 导入原生 Trendz 小部件捆绑包
-* 下载 <a href="https://dist.thingsboard.io/native_trendz_bundle.json" download target="_blank">Native_Trendz_widgets_bundle</a>
+* 下载 <a href="https://dist.docs.codingas.com/native_trendz_bundle.json" download target="_blank">Native_Trendz_widgets_bundle</a>
 * 以租户管理员身份登录 GridLinks 并转到**小部件库**
 * 按**添加新小部件捆绑包**并选择**导入小部件捆绑包**
 * 导入下载的小部件捆绑包
 
 #### ThingsBoard 3.0 - 3.2
-* 下载 <a href="https://dist.thingsboard.io/trendz_bundle_tb3.json" download target="_blank">Trendz_widgets_bundle V3</a>
+* 下载 <a href="https://dist.docs.codingas.com/trendz_bundle_tb3.json" download target="_blank">Trendz_widgets_bundle V3</a>
 * 以租户管理员身份登录 GridLinks 并转到**小部件库**
 * 按**添加新小部件捆绑包**并选择**导入小部件捆绑包**
 * 导入下载的小部件捆绑包
 
 #### ThingsBoard 2.x
-* 下载 <a href="https://dist.thingsboard.io/trendz_bundle_tb2.json" download target="_blank">Trendz_widgets_bundle V2</a>
+* 下载 <a href="https://dist.docs.codingas.com/trendz_bundle_tb2.json" download target="_blank">Trendz_widgets_bundle V2</a>
 * 以租户管理员身份登录 GridLinks 并转到**小部件库**
 * 按**添加新小部件捆绑包**并选择**导入小部件捆绑包**
 * 导入下载的小部件捆绑包

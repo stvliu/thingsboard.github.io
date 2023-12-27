@@ -112,7 +112,7 @@ description:
                     <td><img src="/images/pe/checked.svg" alt="checked">**</td>
                 </tr>
                 <tr>
-                    <th>白标</th>
+                    <th>品牌定制</th>
                     <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
                     <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
                     <td><img src="/images/pe/checked.svg" alt="checked">***</td>
@@ -139,7 +139,7 @@ description:
     </table>
         <p class="table-description">
             * - 可能需要支付额外费用
-            <br>** - 部署在云中的 GridLinks PE 实例上的租户管理员帐户，专用于 PoC 和销售演示 (partner.thingsboard.io)
+            <br>** - 部署在云中的 GridLinks PE 实例上的租户管理员帐户，专用于 PoC 和销售演示 (partner.docs.codingas.com)
             <br>*** - 系统、租户和客户级别的自定义徽标、配色方案、登录页面、翻译和域
         </p>
 	</main>

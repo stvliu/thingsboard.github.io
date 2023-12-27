@@ -118,8 +118,8 @@ abstract class ThingsboardAppConstants {
         </div>
         <div class="frame-video">
             <video autoplay loop preload="auto" muted playsinline>
-                 <source src="https://video.thingsboard.io/mobile/pe/self-registration.mp4" type="video/mp4">
-                 <source src="https://video.thingsboard.io/mobile/pe/self-registration.webm" type="video/webm">
+                 <source src="https://video.docs.codingas.com/mobile/pe/self-registration.mp4" type="video/mp4">
+                 <source src="https://video.docs.codingas.com/mobile/pe/self-registration.webm" type="video/webm">
             </video>
         </div>
     </div>

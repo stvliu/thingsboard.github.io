@@ -18,7 +18,7 @@ mosquitto_pub -d -q 1 -h "$THINGSBOARD_HOST_NAME" -p "1883" -t "v1/devices/me/te
 例如，$THINGSBOARD_HOST_NAME 引用实时演示服务器，$ACCESS_TOKEN 是 ABC123：
 
 ```bash
-mosquitto_pub -d -q 1 -h "demo.thingsboard.io" -p "1883" -t "v1/devices/me/telemetry" -u "ABC123" -m {"temperature":25}
+mosquitto_pub -d -q 1 -h "demo.docs.codingas.com" -p "1883" -t "v1/devices/me/telemetry" -u "ABC123" -m {"temperature":25}
 ```
 {: .copy-code}
 

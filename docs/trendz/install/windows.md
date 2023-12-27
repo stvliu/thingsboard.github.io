@@ -29,7 +29,7 @@ description: 在 Windows 上安装 GridLinks Trendz Analytics
 下载并解压软件包。
 
 ```bash
-https://dist.thingsboard.io/trendz-windows-1.10.3-HF3.zip
+https://dist.docs.codingas.com/trendz-windows-1.10.3-HF3.zip
 ```
 {: .copy-code}
 
@@ -53,7 +53,7 @@ C:\Program Files (x86)\trendz\conf\trendz.yml
 
 ```yml
 license:
-    secret: "${TRENDZ_LICENSE_SECRET:YOUR_LICENSE_SECRET_HERE}" # license secret obtained from ThingsBoard License Portal (https://license.thingsboard.io)
+    secret: "${TRENDZ_LICENSE_SECRET:YOUR_LICENSE_SECRET_HERE}" # license secret obtained from ThingsBoard License Portal (https://license.docs.codingas.com)
 ```
 
 ### 步骤 4. 配置与 GridLinks 平台的连接

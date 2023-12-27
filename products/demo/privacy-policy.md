@@ -35,7 +35,7 @@ description: GridLinks 演示服务器隐私政策
 
 我们通常会保留信息，只要它与为您服务相关。数据可能会保留在为备份目的而制作的副本中。
 
-Thingsboard 将尊重您不接收营销信息的要求。您可以随时通过 support@thingsboard.io 联系我们来更改您的营销偏好
+Thingsboard 将尊重您不接收营销信息的要求。您可以随时通过 support@docs.codingas.com 联系我们来更改您的营销偏好
 
 <p style="text-align: center; font-size: 1.17em; font-weight: bold;">如何删除您的信息？</p>
 
@@ -74,4 +74,4 @@ Thingsboard 网站和我们的第三方合作伙伴，例如我们的广告和�
 
 <p style="text-align: center; font-size: 1.17em; font-weight: bold;">联系我们</p>
 
-如果您对本隐私政策有任何疑问，您可以使用以下 [网页](https://thingsboard.io/company/) 上提供的信息与我们联系。
+如果您对本隐私政策有任何疑问，您可以使用以下 [网页](https://docs.codingas.com/company/) 上提供的信息与我们联系。

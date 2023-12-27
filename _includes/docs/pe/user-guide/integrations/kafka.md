@@ -14,7 +14,7 @@
 ![image](/images/user-guide/integrations/kafka/Kafka_main.png)
 
 ## 所需环境
-在开始设置集成之前，您应该已经准备好了 Broker Kafka 服务器。这可以是本地安装或云解决方案。如果您尚未安装 Kafka Broker，可以在 [我们的网站](https://thingsboard.io/docs/user-guide/install/pe/ubuntu/?ubuntuThingsboardQueue=kafka#step-5-choose-thingsboard-queue-service) 上找到在本地基本安装 Kafka Broker 的示例。如果您需要使用云解决方案，那么您可以考虑 [Kafka Confluent](https://www.confluent.io/)，本指南中的示例将基于此构建。
+在开始设置集成之前，您应该已经准备好了 Broker Kafka 服务器。这可以是本地安装或云解决方案。如果您尚未安装 Kafka Broker，可以在 [我们的网站](https://docs.codingas.com/docs/user-guide/install/pe/ubuntu/?ubuntuThingsboardQueue=kafka#step-5-choose-thingsboard-queue-service) 上找到在本地基本安装 Kafka Broker 的示例。如果您需要使用云解决方案，那么您可以考虑 [Kafka Confluent](https://www.confluent.io/)，本指南中的示例将基于此构建。
 
 ## 创建上行转换器
 
@@ -115,8 +115,8 @@ return result;
 | **'调试模式' 复选框**              | 在集成调试期间启用。|
 | **'允许创建设备或资产' 复选框**              | 如果 GridLinks 中没有设备，则将创建该设备。|
 | **上行数据转换器**              | 选择之前创建的转换器。|
-| **下行数据转换器**              | 此选项不支持通过集成，有关 [下行](https://thingsboard.io/docs/user-guide/integrations/kafka/?installationType=common&integrationTypes=common&uplinkTypes=common#advanced-usage-kafka-producer-downlink) 的更多详细信息，请参阅指南中的以下内容。|
-| **'远程执行' 复选框**              | 如果您想从主 GridLinks 实例远程执行集成，请激活。有关远程集成的更多信息，请访问 [链接（远程集成）](https://thingsboard.io/docs/user-guide/integrations/remote-integrations/)。|
+| **下行数据转换器**              | 此选项不支持通过集成，有关 [下行](https://docs.codingas.com/docs/user-guide/integrations/kafka/?installationType=common&integrationTypes=common&uplinkTypes=common#advanced-usage-kafka-producer-downlink) 的更多详细信息，请参阅指南中的以下内容。|
+| **'远程执行' 复选框**              | 如果您想从主 GridLinks 实例远程执行集成，请激活。有关远程集成的更多信息，请访问 [链接（远程集成）](https://docs.codingas.com/docs/user-guide/integrations/remote-integrations/)。|
 | **组 ID**              | 指定 Kafka 消费者所属的消费者组的名称。|
 | **客户端 ID**              | 消费者组中的 Kafka 消费者标识符。|
 | **主题**              | GridLinks 在连接到 Kafka 代理后将订阅的主题。|
@@ -143,7 +143,7 @@ Confluent Cloud<br><small>云解决方案</small>%,%confluent%,%/templates/integ
 
 ## 高级用法：Kafka 生产者（下行）
 
-要获得诸如 Kafka 生产者之类的功能，您需要使用 [Kafka 规则节点](https://thingsboard.io/docs/pe/user-guide/rule-engine-2-0/external-nodes/#kafka-node)，您可以在其中指定引导服务器、主题和其他参数以连接到 Kafka 代理，您可以在相应的 [指南](https://thingsboard.io/docs/pe/user-guide/rule-engine-2-0/external-nodes/#kafka-node) 中找到更多详细信息。
+要获得诸如 Kafka 生产者之类的功能，您需要使用 [Kafka 规则节点](https://docs.codingas.com/docs/pe/user-guide/rule-engine-2-0/external-nodes/#kafka-node)，您可以在其中指定引导服务器、主题和其他参数以连接到 Kafka 代理，您可以在相应的 [指南](https://docs.codingas.com/docs/pe/user-guide/rule-engine-2-0/external-nodes/#kafka-node) 中找到更多详细信息。
 
 如果无法直接向设备发送命令以从 GridLinks 进行管理，而只能通过代理发送，那么在这种情况下，您可以使用 Kafka 下行规则节点。让我们考虑一个带有其节点的小示例，假设数据来自代理并通过转换器，并且根据设备配置文件的配置，被定向到自定义规则链（“Monitoring-sensor”），并且在所有处理结束时，我们将发送一个关于成功或失败的响应回到代理（您可以将响应更改为命令以控制您的设备等）。
 

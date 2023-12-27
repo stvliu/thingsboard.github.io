@@ -10,11 +10,11 @@
 // WiFi password
 #define WIFI_PASSWORD       "WIFI_PASSWORD"
 
-// See https://thingsboard.io/docs/getting-started-guides/helloworld/ 
+// See https://docs.codingas.com/docs/getting-started-guides/helloworld/ 
 // to understand how to obtain an access token
 #define TOKEN               "TOKEN"
 // ThingsBoard server instance.
-#define THINGSBOARD_SERVER  "demo.thingsboard.io"
+#define THINGSBOARD_SERVER  "demo.docs.codingas.com"
 
 // Baud rate for debug serial
 #define SERIAL_DEBUG_BAUD    115200
@@ -189,7 +189,7 @@ void loop() {
     Serial.println("Sending data...");
 
     // Uploads new telemetry to ThingsBoard using MQTT. 
-    // See https://thingsboard.io/docs/reference/mqtt-api/#telemetry-upload-api 
+    // See https://docs.codingas.com/docs/reference/mqtt-api/#telemetry-upload-api 
     // for more details
 
     TempAndHumidity lastValues = dht.getTempAndHumidity();    

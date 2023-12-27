@@ -341,7 +341,7 @@ Now, as Facility Manager, we can log in, design dashboards, provision devices, a
 2. Input the title "Building A" and click "Add";
 3. Click on the "Manage customer users" icon opposite the "Building A" customer;
 4. Navigate to the "Groups" tab and click on the "Customer Administrators" user group;
-5. Click on the "+" sign at the top right of the screen. Input email address, for instance, we can use _janesmith@thingsboard.io_, and click "Add";
+5. Click on the "+" sign at the top right of the screen. Input email address, for instance, we can use _janesmith@docs.codingas.com_, and click "Add";
 6. In the opened window you can see the user activation link, click "OK";
 7. Customer user Jane has been created.
 
@@ -368,7 +368,7 @@ Now, let's create a Read-only User. Let's assume we want to assign "End User Das
 So, our read-only user will not have access to the administration panel to the left, since they are still not allowed to perform any server-side API calls, except read-only browsing the data.
 1. Select "Customer Users" on the "Groups" tab of the "Users" page;
 2. Click "+" at the top right of the screen to add new user;
-3. Input email address, for example, we will use _bob@thingsboard.io_, then click "Add";
+3. Input email address, for example, we will use _bob@docs.codingas.com_, then click "Add";
 4. In the opened window you can see the user activation link, click "OK";
 5. Now, click on the created user;
 6. At the right top of the screen you shall see the "pen" icon. Click on it to enter edit mode;

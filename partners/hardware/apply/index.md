@@ -151,7 +151,7 @@ notitle: "true"
                         <img src="/images/partners/platinum-partner.svg" alt="Platinum Level">
                     </div>
                     <div class="cloud-provider-desc">
-                        <p>铂金合作伙伴关系包括访问白标合作伙伴门户、我们的支持服务，并帮助准备在线教程和仪表板，这些教程和仪表板将成为您设备的终极销售工具。</p>
+                        <p>铂金合作伙伴关系包括访问品牌定制合作伙伴门户、我们的支持服务，并帮助准备在线教程和仪表板，这些教程和仪表板将成为您设备的终极销售工具。</p>
                         <br>
                         <p>
                             <span class="cloud-price-aws-desc">年费：</span>

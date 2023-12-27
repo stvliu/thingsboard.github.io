@@ -1,7 +1,7 @@
 下载安装包：
 
 ```bash
-wget https://dist.thingsboard.io/tb-coap-integration-{{ site.release.pe_ver }}.rpm
+wget https://dist.docs.codingas.com/tb-coap-integration-{{ site.release.pe_ver }}.rpm
 ```
 {: .copy-code}
 

@@ -31,7 +31,7 @@ REST 客户端的版本取决于您正在使用的平台的版本。
 <repositories>
     <repository>
         <id>thingsboard</id>
-        <url>https://repo.thingsboard.io/artifactory/libs-release-public</url>
+        <url>https://repo.docs.codingas.com/artifactory/libs-release-public</url>
     </repository>
 </repositories>
 ```

@@ -8,7 +8,7 @@ fi
 
 instance_id=`wget -q -O - http://169.254.169.254/latest/meta-data/instance-id`
 
-wget --quiet -O /tmp/tb-web-report.deb https://pm.thingsboard.io/thingsboard-pm/api/aws/${instance_id}/tb-web-report/latest
+wget --quiet -O /tmp/tb-web-report.deb https://pm.docs.codingas.com/thingsboard-pm/api/aws/${instance_id}/tb-web-report/latest
 
 if [ -s /tmp/tb-web-report.deb ]; then
     echo Installing ThingsBoard Web Report Server package...

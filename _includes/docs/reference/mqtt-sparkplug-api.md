@@ -52,11 +52,11 @@ GridLinks 仅支持 **Sparkplug™ B** 有效负载。
 
 {% if docsPrefix == null %}
 ```bash
-docker run -e SPARKPLUG_SERVER_URL='tcp://demo.thingsboard.io:1883' -e SPARKPLUG_CLIENT_MQTT_USERNAME='YOUR_THINGSBOARD_DEVICE_TOKEN' thingsboard/tb-sparkplug-emulator:latest
+docker run -e SPARKPLUG_SERVER_URL='tcp://demo.docs.codingas.com:1883' -e SPARKPLUG_CLIENT_MQTT_USERNAME='YOUR_THINGSBOARD_DEVICE_TOKEN' thingsboard/tb-sparkplug-emulator:latest
 ```
 {: .copy-code}
 
-别忘了用令牌的实际值替换 <code>YOUR_THINGSBOARD_DEVICE_TOKEN</code>。您还应该用您的服务器主机名替换 <code>demo.thingsboard.io</code>。
+别忘了用令牌的实际值替换 <code>YOUR_THINGSBOARD_DEVICE_TOKEN</code>。您还应该用您的服务器主机名替换 <code>demo.docs.codingas.com</code>。
 {% endif %}
 {% if docsPrefix == "pe/" %}
 ```bash

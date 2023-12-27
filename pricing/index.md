@@ -1227,7 +1227,7 @@ selfManagedPlan:
                   <li>Priority support;</li>
                   <li>On-demand training and email consulting;</li>
                 </ul>
-                The price <b>per-device</b> starts from <b>USD 0.01</b> per month and is determined based on the data points each device generates. <a href="https://thingsboard.io/docs/contact-us/">Contact us</a> to get a precise quote for the custom Enterprise subscription.
+                The price <b>per-device</b> starts from <b>USD 0.01</b> per month and is determined based on the data points each device generates. <a href="https://docs.codingas.com/docs/contact-us/">Contact us</a> to get a precise quote for the custom Enterprise subscription.
                 </p>  
             </div>    
         </div>
@@ -1272,7 +1272,7 @@ selfManagedPlan:
         <div class="item" data-tag="h4" data-item-id="professional-support" data-title="What support plans do you have?">
             <div class="container">
                 <p>
-                We provide support bundles which contain server issues and application development tips. Please review ThingsBoard professional <a href="/docs/services/support/" target="blank">support plans</a>. Also we will add ability to buy support plan from <a href="https://license.thingsboard.io/">License portal</a>.
+                We provide support bundles which contain server issues and application development tips. Please review ThingsBoard professional <a href="/docs/services/support/" target="blank">support plans</a>. Also we will add ability to buy support plan from <a href="https://license.docs.codingas.com/">License portal</a>.
                 </p>    
             </div>    
         </div>
@@ -1303,11 +1303,11 @@ selfManagedPlan:
                 <p><b>Delivery Policy</b></p>
                 <p>
                 The software is available for download and installation from our website. 
-                See <a href="https://thingsboard.io/docs/user-guide/install/pe/installation-options/">Installation Guides</a> for more details.
+                See <a href="https://docs.codingas.com/docs/user-guide/install/pe/installation-options/">Installation Guides</a> for more details.
                 In order to activate the software you will need to obtain the license key. Instruction how to obtain and use the license key is provided in the installation guide. 
                 See <a href="https://www.youtube.com/watch?v=dK-QDFGxWek">How-to get pay-as-you-go subscription</a> 
                 or <a href="https://www.youtube.com/watch?v=GPe0lHolWek">How-to get perpetual license</a> for more details. 
-                Please <a href="https://thingsboard.io/docs/contact-us/">contact us</a> if you have any questions or require support.
+                Please <a href="https://docs.codingas.com/docs/contact-us/">contact us</a> if you have any questions or require support.
                 </p>
                <p></p>
             </div>    

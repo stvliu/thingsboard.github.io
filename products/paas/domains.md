@@ -24,7 +24,7 @@ registerDomain:
 white-labeling:
     0:
         image: /images/user-guide/domain/domain-white-labeling-1.png
-        title: '转到“白标”页面，然后导航到“登录”选项卡。在相应字段中输入域名和基本 URL。不要忘记选中“禁止使用客户端请求标头中的主机名”复选框。然后保存所有更改；'
+        title: '转到“品牌定制”页面，然后导航到“登录”选项卡。在相应字段中输入域名和基本 URL。不要忘记选中“禁止使用客户端请求标头中的主机名”复选框。然后保存所有更改；'
     1:
         image: /images/user-guide/domain/domain-login-1.png
         title: '现在，您可以使用您的域名访问 GridLinks云服务 Web UI 和服务。尝试通过在浏览器地址栏中输入所选域名来登录。'
@@ -76,7 +76,7 @@ deleteDomain:
 
 ### 自定义登录页面 URL
 
-要自定义 Web UI 访问，请转到白标部分。您需要登录选项卡。输入最近注册的域名。建议填写基本 URL 字段并防止使用请求标头中的主机名。
+要自定义 Web UI 访问，请转到品牌定制部分。您需要登录选项卡。输入最近注册的域名。建议填写基本 URL 字段并防止使用请求标头中的主机名。
 
 {% include images-gallery.html imageCollection="white-labeling" %}
 
@@ -172,4 +172,4 @@ mydomain.thingsboard.online. 3600 IN	CNAME	thingsboard.cloud
 ...
 ```
 
-如果所有事情都正确，但仍然存在一些问题 - 请 [联系我们](https://thingsboard.io/docs/contact-us/) 以获得进一步的支持。
+如果所有事情都正确，但仍然存在一些问题 - 请 [联系我们](https://docs.codingas.com/docs/contact-us/) 以获得进一步的支持。

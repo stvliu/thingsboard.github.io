@@ -33,7 +33,7 @@
 **注意：** **thingsboard.cloud** 使用 SSL 协议进行边缘通信。
 请也将 **CLOUD_RPC_SSL_ENABLED** 更改为 **true**。
 {% else %}
-* 如果您将边缘连接到 [**ThingsBoard Live Demo**](https://gridlinks.codingas.com/signup) 进行评估，请使用 **demo.thingsboard.io**。
+* 如果您将边缘连接到 [**ThingsBoard Live Demo**](https://gridlinks.codingas.com/signup) 进行评估，请使用 **demo.docs.codingas.com**。
 {% endif %}
 * 如果边缘连接到同一网络或 docker 中的云实例，请使用 **X.X.X.X** IP 地址。
 

@@ -46,6 +46,6 @@ description:
         <div class="address">中国广东省深圳市福田区科技大厦10楼，邮编 518000</div>
     </div>
     <div class="company-contact">
-        <div class="mail"><a href="mailto:info@thingsboard.io">info@codingas.com</a></div>
+        <div class="mail"><a href="mailto:info@docs.codingas.com">info@codingas.com</a></div>
     </div>
 </div>

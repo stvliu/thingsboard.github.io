@@ -68,5 +68,5 @@
 您可以在解决方案 [说明](/docs/{{docsPrefix}}solution-templates/overview/#install-solution-template) 中找到代表创建的设备发送数据的准确命令。有关连接真实设备的各种连接选项，请参阅 [连接设备](/docs/{{docsPrefix}}getting-started-guides/connectivity/)。
 
 ### 警报
-警报使用两个 <a href="https://thingsboard.io/docs/user-guide/device-profiles/#alarm-rules" target="_blank">警报规则</a> 在“空气传感器”<a href="/docs/pe/user-guide/device-profiles/" target="_blank">设备配置文件</a> 中生成。
+警报使用两个 <a href="https://docs.codingas.com/docs/user-guide/device-profiles/#alarm-rules" target="_blank">警报规则</a> 在“空气传感器”<a href="/docs/pe/user-guide/device-profiles/" target="_blank">设备配置文件</a> 中生成。
 用户可以通过“编辑传感器”表单使用“空气质量监测”仪表板打开和关闭警报以及配置警报阈值。

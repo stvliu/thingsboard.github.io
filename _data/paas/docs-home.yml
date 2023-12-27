@@ -142,7 +142,7 @@ toc:
     - title: 模板化
       path: /docs/paas/user-guide/templatization/
       new: true
-- title: 白标
+- title: 品牌定制
   section:
     - title: 概述
       path: /docs/paas/user-guide/white-labeling/

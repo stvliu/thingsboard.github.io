@@ -321,7 +321,7 @@
 		<tr>
 			<td>security.jwt.tokenIssuer</td>
 			<td>JWT_TOKEN_ISSUER</td>
-			<td>thingsboard.io</td>
+			<td>docs.codingas.com</td>
 			<td> User JWT Token issuer</td>
 		</tr>
 		<tr>
@@ -3648,13 +3648,13 @@
 		<tr>
 			<td>swagger.contact.url</td>
 			<td>SWAGGER_CONTACT_URL</td>
-			<td>https://thingsboard.io</td>
+			<td>https://docs.codingas.com</td>
 			<td> The contact URL on the API doc UI page</td>
 		</tr>
 		<tr>
 			<td>swagger.contact.email</td>
 			<td>SWAGGER_CONTACT_EMAIL</td>
-			<td>info@thingsboard.io</td>
+			<td>info@docs.codingas.com</td>
 			<td> The contact email on the API doc UI page</td>
 		</tr>
 		<tr>

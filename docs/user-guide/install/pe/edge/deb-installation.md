@@ -35,7 +35,7 @@ description: 在 Ubuntu Server 上安装 GridLinks Edge
 下载安装包。
 
 ```bash
-wget https://dist.thingsboard.io/tb-edge-{{ site.release.pe_edge_ver }}.deb
+wget https://dist.docs.codingas.com/tb-edge-{{ site.release.pe_edge_ver }}.deb
 ```
 {: .copy-code}
 

@@ -126,7 +126,7 @@ v1/devices/me/attributes/response/+
 纯命令行示例不可用，因为订阅和发布需要在同一个 mqtt 会话中进行。
 
 {% if docsPrefix == null %}
-将 $ACCESS_TOKEN 替换为您的设备的访问令牌。不要忘记在 "mqtt-js-attributes-request.js" 文件中将主机名 "demo.thingsboard.io" 替换为您的主机。
+将 $ACCESS_TOKEN 替换为您的设备的访问令牌。不要忘记在 "mqtt-js-attributes-request.js" 文件中将主机名 "demo.docs.codingas.com" 替换为您的主机。
 在本示例中，主机名引用实时演示服务器。
 {% endif %}
 {% if docsPrefix == "pe/" %}
@@ -197,7 +197,7 @@ v1/devices/me/rpc/response/$request_id
 纯命令行示例不可用，因为订阅和发布需要在同一个 mqtt 会话中进行。
 
 {% if docsPrefix == null %}
-不要忘记将 $ACCESS_TOKEN 替换为您的设备的访问令牌。不要忘记在 "mqtt-js-rpc-from-server.js" 文件中将主机名 "demo.thingsboard.io" 替换为您的主机。
+不要忘记将 $ACCESS_TOKEN 替换为您的设备的访问令牌。不要忘记在 "mqtt-js-rpc-from-server.js" 文件中将主机名 "demo.docs.codingas.com" 替换为您的主机。
 在本示例中，主机名引用实时演示服务器。
 {% endif %}
 {% if docsPrefix == "pe/" %}
@@ -246,7 +246,7 @@ v1/devices/me/rpc/response/$request_id
 纯命令行示例不可用，因为订阅和发布需要在同一个 mqtt 会话中进行。
 
 {% if docsPrefix == null %}
-不要忘记将 $ACCESS_TOKEN 替换为您的设备的访问令牌。不要忘记在 "mqtt-js-rpc-from-server.js" 文件中将主机名 "demo.thingsboard.io" 替换为您的主机。
+不要忘记将 $ACCESS_TOKEN 替换为您的设备的访问令牌。不要忘记在 "mqtt-js-rpc-from-server.js" 文件中将主机名 "demo.docs.codingas.com" 替换为您的主机。
 在本示例中，主机名引用实时演示服务器。
 {% endif %}
 {% if docsPrefix == "pe/" %}

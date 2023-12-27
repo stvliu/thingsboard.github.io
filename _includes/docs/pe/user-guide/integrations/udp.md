@@ -25,7 +25,7 @@ UDP 集成允许将使用 UDP 协议的设备的数据流式传输到 GridLinks�
 在本教程中，我们将使用：
 
 {% if docsPrefix == "pe/" %}
-- 本地安装的 [ GridLinks专业版](https://thingsboard.io/docs/user-guide/install/pe/installation-options/) 实例；
+- 本地安装的 [ GridLinks专业版](https://docs.codingas.com/docs/user-guide/install/pe/installation-options/) 实例；
   {% endif %}
   {% if docsPrefix == "paas/" %}
 -  GridLinks专业版 实例 — [thingsboard.cloud](https://thingsboard.cloud)；

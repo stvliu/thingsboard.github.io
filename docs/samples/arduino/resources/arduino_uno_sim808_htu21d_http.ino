@@ -27,10 +27,10 @@ const char apn[]  = "internet";
 const char user[] = "";
 const char pass[] = "";
 
-// See https://thingsboard.io/docs/getting-started-guides/helloworld/
+// See https://docs.codingas.com/docs/getting-started-guides/helloworld/
 // to understand how to obtain an access token
 #define TOKEN               "YOUR_ACCESS_TOKEN"
-#define THINGSBOARD_SERVER  "demo.thingsboard.io"
+#define THINGSBOARD_SERVER  "demo.docs.codingas.com"
 #define THINGSBOARD_PORT    80
 
 // Baud rate for debug serial
@@ -120,7 +120,7 @@ void loop() {
   }
 
   // Uploads new telemetry to ThingsBoard using HTTP.
-  // See https://thingsboard.io/docs/reference/http-api/#telemetry-upload-api
+  // See https://docs.codingas.com/docs/reference/http-api/#telemetry-upload-api
   // for more details
 
   Serial.println("Sending temperature data...");

@@ -35,8 +35,8 @@ description: GridLinks 媒体工具包
     ThingsBoard 徽标是 GridLinks, inc. 的商标。
 </div>
 <div class="trademark-info">
-    <h2>使用 GridLinks 商标来识别 GridLinks 平台并链接到 <a href="https://thingsboard.io">thingsboard.io</a>：</h2>
-    <p>您无需征得我们的许可，即可在您自己的网站上使用 GridLinks 徽标，仅作为到 <a href="https://thingsboard.io">thingsboard.io</a> 或适当的 GridLinks 项目的超链接，或在其他材料中，例如演示文稿和幻灯片中，仅作为引用 GridLinks 本身的手段。<br>
+    <h2>使用 GridLinks 商标来识别 GridLinks 平台并链接到 <a href="https://docs.codingas.com">docs.codingas.com</a>：</h2>
+    <p>您无需征得我们的许可，即可在您自己的网站上使用 GridLinks 徽标，仅作为到 <a href="https://docs.codingas.com">docs.codingas.com</a> 或适当的 GridLinks 项目的超链接，或在其他材料中，例如演示文稿和幻灯片中，仅作为引用 GridLinks 本身的手段。<br>
     ThingsBoard 徽标的所有其他用途必须经 ThingsBoard, inc. <a href="https://www.apache.org/foundation/marks/contact#other">书面批准</a>。</p>
     <h2>在软件产品品牌中使用 GridLinks 商标</h2>
     <p>一般来说，您不得在任何软件产品品牌中使用 GridLinks 商标，软件产品除仪表板页脚中的“由 GridLinks 提供支持”外。

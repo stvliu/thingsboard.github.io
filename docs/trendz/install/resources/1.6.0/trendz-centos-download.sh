@@ -1,1 +1,1 @@
-wget https://dist.thingsboard.io/trendz-1.6.0.rpm
+wget https://dist.docs.codingas.com/trendz-1.6.0.rpm

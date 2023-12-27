@@ -13,6 +13,6 @@
 - **[配置移动操作](/docs/{{docsPrefix}}mobile/mobile-actions)**
 - **[配置 OAuth 2.0](/docs/{{docsPrefix}}mobile/oauth2)**
 {% if docsPrefix == 'pe/' %}
-- **[配置白标](/docs/pe/mobile/white-labeling)**
+- **[配置品牌定制](/docs/pe/mobile/white-labeling)**
 - **[配置自助注册](/docs/pe/mobile/self-registration)**
 {% endif %}

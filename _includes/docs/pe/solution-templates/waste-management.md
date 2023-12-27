@@ -49,5 +49,5 @@
 您可以在解决方案[说明](/docs/{{docsPrefix}}solution-templates/overview/#install-solution-template)中找到代表创建的设备发送数据的准确命令。有关连接真实设备的各种连接选项，请参阅[连接设备](/docs/{{docsPrefix}}getting-started-guides/connectivity/)。
 
 ### 警报
-警报是使用“垃圾传感器”<a href="/docs/pe/user-guide/device-profiles/" target="_blank">设备配置文件</a>中的两个<a href="https://thingsboard.io/docs/user-guide/device-profiles/#alarm-rules" target="_blank">警报规则</a>生成的。
+警报是使用“垃圾传感器”<a href="/docs/pe/user-guide/device-profiles/" target="_blank">设备配置文件</a>中的两个<a href="https://docs.codingas.com/docs/user-guide/device-profiles/#alarm-rules" target="_blank">警报规则</a>生成的。
 用户可以通过“编辑传感器”表单通过“垃圾管理”仪表板打开和关闭警报以及配置警报阈值。

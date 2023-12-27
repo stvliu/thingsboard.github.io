@@ -2,13 +2,13 @@
 layout: docwithnav-trendz
 assignees:
 - vparomskiy
-title: 白标
-description: Trendz 白标配置 - 设置颜色方案、徽标和其他品牌设置
+title: 品牌定制
+description: Trendz 品牌定制配置 - 设置颜色方案、徽标和其他品牌设置
 
 trendz-white-labeling-section:
   0:
     image: /images/trendz/trendz-white-labeling-settings.png
-    title: 'Trendz 分析设置中的白标部分'
+    title: 'Trendz 分析设置中的品牌定制部分'
 
 trendz-white-labeling-logo:
   0:
@@ -39,7 +39,7 @@ trendz-white-labeling-url-path:
 * 浏览器选项卡的名称。
 * URL 路径自定义（域名后面的部分）。
 
-您可以在 **白标** 部分的 Trendz **设置** 页面中配置这些设置。
+您可以在 **品牌定制** 部分的 Trendz **设置** 页面中配置这些设置。
 
 {% include images-gallery.html imageCollection="trendz-white-labeling-section" %}
 

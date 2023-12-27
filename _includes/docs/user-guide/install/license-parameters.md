@@ -9,7 +9,7 @@
             <td>license.secret</td>
             <td>TB_LICENSE_SECRET</td>
             <td></td>
-            <td>从 <a href="https://license.thingsboard.io">ThingsBoard 许可门户</a> 获得的许可密钥</td>
+            <td>从 <a href="https://license.docs.codingas.com">ThingsBoard 许可门户</a> 获得的许可密钥</td>
         </tr>
         <tr>
             <td>license.instance_data_file</td>

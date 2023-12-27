@@ -6,12 +6,12 @@ description:
 <main>
     <section id="tb-customers">
         <div class="main-div">
-            <a href="/industries/telecom/#tmobile" aria-hidden="true"><object data="https://img.thingsboard.io/customers/clear/t-mobile.svg"></object></a>
-            <a href="https://www.bosch.com/" aria-hidden="true"><object data="https://img.thingsboard.io/customers/clear/bosch.svg"></object></a>
-            <a href="https://www.prosegur.com/" aria-hidden="true"><object data="https://img.thingsboard.io/customers/clear/prosegur.svg"></object></a>
-            <a href="http://www.engie.sk/en/kontakt" aria-hidden="true"><object data="https://img.thingsboard.io/customers/clear/engie.svg"></object></a>
-            <a href="/industries/smart-energy/#circutor" aria-hidden="true"><object data="https://img.thingsboard.io/customers/clear/circutor.svg"></object></a>
-            <a href="/industries/telecom/#tektelic" aria-hidden="true"><object data="https://img.thingsboard.io/customers/clear/tektelic.svg"></object></a>
+            <a href="/industries/telecom/#tmobile" aria-hidden="true"><object data="https://img.docs.codingas.com/customers/clear/t-mobile.svg"></object></a>
+            <a href="https://www.bosch.com/" aria-hidden="true"><object data="https://img.docs.codingas.com/customers/clear/bosch.svg"></object></a>
+            <a href="https://www.prosegur.com/" aria-hidden="true"><object data="https://img.docs.codingas.com/customers/clear/prosegur.svg"></object></a>
+            <a href="http://www.engie.sk/en/kontakt" aria-hidden="true"><object data="https://img.docs.codingas.com/customers/clear/engie.svg"></object></a>
+            <a href="/industries/smart-energy/#circutor" aria-hidden="true"><object data="https://img.docs.codingas.com/customers/clear/circutor.svg"></object></a>
+            <a href="/industries/telecom/#tektelic" aria-hidden="true"><object data="https://img.docs.codingas.com/customers/clear/tektelic.svg"></object></a>
         </div>
     </section>
     <section id="intro">
@@ -28,8 +28,8 @@ description:
                 </div>
                 <div class="block">
                     <div class="feature-des">
-                    <h3 class="item-heading">白标</h3>
-                    <p>在 2 分钟内使用您的公司或产品徽标和配色方案重新标记 GridLinks 平台网络界面。无需编码或重新启动服务。允许您的客户及其子客户也对他们的界面进行白标标记。</p>
+                    <h3 class="item-heading">品牌定制</h3>
+                    <p>在 2 分钟内使用您的公司或产品徽标和配色方案重新标记 GridLinks 平台网络界面。无需编码或重新启动服务。允许您的客户及其子客户也对他们的界面进行品牌定制标记。</p>
                     <a class="read-more-button" href="/docs/user-guide/white-labeling/">了解更多<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
                     </div>
                     <img class="preview" src="/images/pe/white-labeling.svg" alt="white labeling">
@@ -210,7 +210,7 @@ description:
                         <td><img src="/images/pe/checked.svg" alt="checked"></td>
                     </tr>
                     <tr>
-                        <th><a href="/docs/user-guide/white-labeling/">白标<img src="/images/pe/help-black18.svg" alt="help"></a></th>
+                        <th><a href="/docs/user-guide/white-labeling/">品牌定制<img src="/images/pe/help-black18.svg" alt="help"></a></th>
                         <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
                         <td><img src="/images/pe/checked.svg" alt="checked"></td>
                         <td><img src="/images/pe/checked.svg" alt="checked"></td>
