@@ -17,5 +17,5 @@ toc:
     path: /docs/mqtt-broker/install/cluster/azure-cluster-setup/
   - title: Building from sources
     path: /docs/mqtt-broker/install/building-from-source/
-  - title: 升级说明
-    path: /docs/mqtt-broker/install/upgrade-instructions/
+  # - title: 升级说明
+  #   path: /docs/mqtt-broker/install/upgrade-instructions/

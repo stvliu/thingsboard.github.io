@@ -31,8 +31,8 @@ toc:
     path: /docs/user-guide/install/pe/ibm-cloud/
   - title: Alibaba Cloud
     path: /docs/user-guide/install/pe/alibaba-cloud/
-- title: 升级说明
-  path: /docs/user-guide/install/pe/upgrade-instructions/
+# - title: 升级说明
+#   path: /docs/user-guide/install/pe/upgrade-instructions/
 - title: 配置
   section:
   - title: How to change configuration parameters?

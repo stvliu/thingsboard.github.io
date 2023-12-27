@@ -17,8 +17,8 @@ toc:
     path: /docs/trendz/install/docker-windows/
   - title: Docker (Linux or Mac OS)
     path: /docs/trendz/install/docker/
-- title: 升级说明
-  path: /docs/trendz/install/trndz-upgrade-instructions/
+# - title: 升级说明
+#   path: /docs/trendz/install/trndz-upgrade-instructions/
 - title: Connect Trendz to Thingsboard
   path: /docs/trendz/connect-thingsboard/
 - title: 配置属性

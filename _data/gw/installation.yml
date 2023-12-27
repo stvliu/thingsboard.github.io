@@ -15,8 +15,8 @@ toc:
   path: /docs/iot-gateway/install/pip-installation/
 - title: Installation from sources (Latest version)
   path: /docs/iot-gateway/install/source-installation/
-- title: 升级说明
-  path: /docs/iot-gateway/install/upgrade-instructions/
+# - title: 升级说明
+#   path: /docs/iot-gateway/install/upgrade-instructions/
 - title: Configuration guide
   section:
     - title: General configuration
