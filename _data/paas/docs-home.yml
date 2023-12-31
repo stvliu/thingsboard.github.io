@@ -142,18 +142,18 @@ toc:
     - title: 模板化
       path: /docs/paas/user-guide/templatization/
       new: true
-- title: 品牌定制
-  section:
-    - title: 概述
-      path: /docs/paas/user-guide/white-labeling/
-    - title: 自助注册
-      path: /docs/paas/user-guide/self-registration/
-    - title: 邮件模板
-      path: /docs/paas/user-guide/mail-templates/
-    - title: 自定义翻译
-      path: /docs/paas/user-guide/custom-translation/
-    - title: 自定义菜单
-      path: /docs/paas/user-guide/custom-menu/
+# - title: 品牌定制
+#   section:
+#     - title: 概述
+#       path: /docs/paas/user-guide/white-labeling/
+#     - title: 自助注册
+#       path: /docs/paas/user-guide/self-registration/
+#     - title: 邮件模板
+#       path: /docs/paas/user-guide/mail-templates/
+#     - title: 自定义翻译
+#       path: /docs/paas/user-guide/custom-translation/
+#     - title: 自定义菜单
+#       path: /docs/paas/user-guide/custom-menu/
 - title: 集成
   section:
     - title: 概述
