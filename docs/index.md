@@ -46,7 +46,7 @@ description: GridLinks 文档 - 了解平台并在 GridLinks 上运行您的物�
             </div>
         </a>
     </div>
-    <div class="w-100"></div>
+    <!-- <div class="w-100"></div>
     <div class="col-12 col-sm-6 col-lg-3 col-xxl-6 col-4xl-3 mb-4">
         <a class="feature-card" href="https://www.youtube.com/channel/UCDb9fsV-YR4JmnipAMGsVAQ/videos">
             <img class="feature-logo" src="/images/feature-logo/tutorials.svg" alt="Tutorials icon">
@@ -55,7 +55,7 @@ description: GridLinks 文档 - 了解平台并在 GridLinks 上运行您的物�
                 在 YouTube 上观看有关平台功能的教程。
             </div>
         </a>
-    </div>
+    </div> -->
     <div class="col-12 col-sm-6 col-lg-3 col-xxl-6 col-4xl-3 mb-4">
         <a class="feature-card" href="/docs/devices-library/">
             <img class="feature-logo" src="/images/feature-logo/guides.svg" alt="Guides icon">

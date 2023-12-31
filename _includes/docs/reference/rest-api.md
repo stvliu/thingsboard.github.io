@@ -26,7 +26,7 @@ http://YOUR_HOST:PORT/swagger-ui.html
 
 {% if docsPrefix == "pe/" or docsPrefix == "paas/" %}
 
-获取帐户最简单的方法是使用 [GridLinks Cloud](https://gridlinks.codingas.com/signup) 服务器。
+获取帐户最简单的方法是使用 [GridLinks云服务](https://gridlinks.codingas.com/signup) 服务器。
 
 {% else %}
 

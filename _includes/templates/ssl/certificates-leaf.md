@@ -43,7 +43,7 @@ openssl req -new -key key.pem -x509 -nodes -days 365 -out cert.pem
 
 #### 步骤 4. 测试连接
 
-执行以下命令，使用安全通道将温度读数上传到 GridLinks Cloud：
+执行以下命令，使用安全通道将温度读数上传到 GridLinks云服务：
 
 {% if docsPrefix == 'paas/' %}
 ```bash

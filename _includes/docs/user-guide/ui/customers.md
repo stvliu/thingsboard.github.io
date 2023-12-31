@@ -12,7 +12,7 @@
 **重要提示：**
 <br>
 在 **Thingsboard 专业版** 中，客户用户可以创建其他客户、用户和子客户。
-要试用此功能，请使用 [GridLinks Cloud](https://gridlinks.codingas.com/signup) 服务器。
+要试用此功能，请使用 [GridLinks云服务](https://gridlinks.codingas.com/signup) 服务器。
 另一种选择是使用此 [安装指南](/docs/user-guide/install/pe/installation-options/) 在本地安装 GridLinks
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}

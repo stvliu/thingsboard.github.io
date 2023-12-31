@@ -14,7 +14,7 @@ description: 在仪表板上添加 Trandz 小部件
 
 ## 前提条件
 
-您应该[将 Trendz 小部件包导入 ThingsBoard](/docs/trendz/trendz-bundle#Import-Trendz-bundle-into-ThingsBoard)。如果您使用的是 GridLinks Cloud，那么您应该已经将必需的包导入到 GridLinks 中。
+您应该[将 Trendz 小部件包导入 ThingsBoard](/docs/trendz/trendz-bundle#Import-Trendz-bundle-into-ThingsBoard)。如果您使用的是 GridLinks云服务，那么您应该已经将必需的包导入到 GridLinks 中。
 
 ## 在 GridLinks 仪表板上添加可视化
 

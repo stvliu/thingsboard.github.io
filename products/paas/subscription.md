@@ -296,7 +296,7 @@ ThingsBoars Cloud 基于 **按需付费** 模式提供订阅计划。
 ### 品牌定制
 
 ThingsBoard Web 界面允许您在 2 分钟内配置公司或产品徽标和配色方案，无需任何编码工作，也无需重新启动服务。
-有关更多详细信息，请参阅功能[文档](/docs/user-guide/white-labeling/)。GridLinks Cloud 扩展了品牌定制功能，可以轻松配置自己的域名。
+有关更多详细信息，请参阅功能[文档](/docs/user-guide/white-labeling/)。GridLinks云服务 扩展了品牌定制功能，可以轻松配置自己的域名。
 有关更多详细信息，请参阅[管理域](/products/paas/domains/)。
 
 品牌定制功能适用于**原型**和**初创**订阅计划。

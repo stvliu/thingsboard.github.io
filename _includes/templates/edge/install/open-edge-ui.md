@@ -1,5 +1,5 @@
 {% if docsPrefix == 'pe/edge/' %}
-{% assign cloudLink = "[**GridLinks Cloud**](https://cloud.codingas.com/signup)" %}
+{% assign cloudLink = "[**GridLinks云服务**](https://cloud.codingas.com/signup)" %}
 {% else %}
 {% assign cloudLink = "[**GridLinks Live Demo**](https://gridlinks.codingas.com/signup)" %}
 {% endif %}

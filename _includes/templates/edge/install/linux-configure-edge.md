@@ -16,7 +16,7 @@ sudo nano /etc/tb-edge/conf/tb-edge.conf
 * "PUT_YOUR_POSTGRESQL_PASSWORD_HERE" 为您的 **实际 postgres 用户密码**。
 * "PUT_YOUR_CLOUD_IP" 为运行 **{{appPrefix}}** 服务器的机器的 IP 地址。根据您的设置：
    {% if docsPrefix == 'pe/edge/' %}
-    * 如果您将 Edge 连接到 [**GridLinks Cloud**](https://cloud.codingas.com/signup)，请使用 **thingsboard.cloud**。
+    * 如果您将 Edge 连接到 [**GridLinks云服务**](https://cloud.codingas.com/signup)，请使用 **thingsboard.cloud**。
 
     **注意**：**thingsboard.cloud** 使用 SSL 协议进行 Edge 通信。
     在这种情况下，您还应该取消注释 **export CLOUD_RPC_SSL_ENABLED=true**。

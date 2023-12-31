@@ -8,7 +8,7 @@
 
 #### 纯 MQTT（无 SSL）
 
-让我们回顾一下使用访问令牌 *YOUR_ACCESS_TOKEN* 将温度读数上传到 GridLinks Cloud 的简单命令。
+让我们回顾一下使用访问令牌 *YOUR_ACCESS_TOKEN* 将温度读数上传到GridLinks云服务的简单命令。
 有关更多详细信息，请参阅 [MQTT API](/docs/{{docsPrefix}}reference/mqtt-api/)。该命令使用纯 MQTT，不使用 TLS：
 
 ```bash
@@ -23,7 +23,7 @@ mosquitto_pub -d -q 1 -h "YOUR_TB_HOST" -p "1883" \
 #### MQTTS（MQTT over SSL）
 
 单向 SSL 身份验证是一种标准身份验证模式，其中客户端设备使用服务器证书验证服务器的身份。
-GridLinks 团队已经为 [GridLinks Cloud](https://gridlinks.codingas.com/signup) 配置了有效证书。
+GridLinks 团队已经为 [GridLinks云服务](https://gridlinks.codingas.com/signup) 配置了有效证书。
 {% if docsPrefix != 'paas/' %}
 如果您托管自己的 GridLinks 实例，请按照 [MQTT over SSL](/docs/{{docsPrefix}}user-guide/mqtt-over-ssl/) 指南配置服务器证书。
 {% endif %}

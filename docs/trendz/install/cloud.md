@@ -2,7 +2,7 @@
 layout: docwithnav-trendz
 assignees:
 - vparomskiy
-title: 在 GridLinks Cloud 中启用 Trendz Analytics
+title: 在GridLinks云服务中启用 Trendz Analytics
 description: 激活 Trendz Analytics Cloud
 
 cloudPlan:

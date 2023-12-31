@@ -4,7 +4,7 @@
 X.509 证书用于为 DTLS 上的 CoAP 设置 [相互](https://en.wikipedia.org/wiki/Mutual_authentication)（双向）身份验证。
 它类似于 [访问令牌](/docs/{{docsPrefix}}user-guide/access-token/) 身份验证，但使用 X.509 证书代替令牌。
 
-以下说明将介绍如何使用 X.509 证书将 CoAP 客户端连接到 GridLinks Cloud。
+以下说明将介绍如何使用 X.509 证书将 CoAP 客户端连接到 GridLinks云服务。
 
 #### 步骤 1. 生成客户端证书
 

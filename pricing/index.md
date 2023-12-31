@@ -1145,7 +1145,7 @@ selfManagedPlan:
             <div class="container">
                 <p>
                     ThingsBoard Edge Community Edition is able to connect only to GridLinks社区版 server.
-                    ThingsBoard Edge Professional Edition is able to connect only to  GridLinks专业版 server (it can be <a href="https://gridlinks.codingas.com" target="blank">GridLinks Cloud</a> or on-premise instances).
+                    ThingsBoard Edge Professional Edition is able to connect only to  GridLinks专业版 server (it can be <a href="https://gridlinks.codingas.com" target="blank">GridLinks云服务</a> or on-premise instances).
                     ThingsBoard Edge Community Edition <b>can not</b> be connected to  GridLinks专业版 and vise-verse.
                 </p>    
             </div>
@@ -1199,15 +1199,15 @@ selfManagedPlan:
                 </p>    
             </div>    
         </div>
-        <h3 id="section3">GridLinks Cloud</h3>
-        <div class="item" data-tag="h4" data-item-id="what-is-cloud" data-title="What is GridLinks Cloud?">
+        <h3 id="section3">GridLinks云服务</h3>
+        <div class="item" data-tag="h4" data-item-id="what-is-cloud" data-title="What is GridLinks云服务?">
             <div class="container">
                 <p>
                 GridLinks云服务 is a fully managed, scalable, and fault-tolerant platform for your IoT applications with combined subscription plans based on a monthly fee which already includes hosting costs.
                 </p>  
             </div>    
         </div>
-        <div class="item" data-tag="h4" data-item-id="difference" data-title="What the difference between Pay-as-you-go option and GridLinks Cloud?">
+        <div class="item" data-tag="h4" data-item-id="difference" data-title="What the difference between Pay-as-you-go option and GridLinks云服务?">
             <div class="container">
                 <p>
                 Pay-as-you-go subscription plans include license fees only with no hosing services, which means that you have to deploy ThingsBoard on an external cloud (AWS, Azure, GCP, etc), or on the local server (On-premise). This means you have to pay separately for the infrastructure and manage ThingsBoard PE server.

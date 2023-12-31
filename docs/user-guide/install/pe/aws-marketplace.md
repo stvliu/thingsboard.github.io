@@ -189,7 +189,7 @@ sudo service gridlinks start
 
 **如何启用免费试用？**
 
-客户仍然可以使用 <a href="https://thingsboard.cloud" target="blank">GridLinks Cloud</a>。
+客户仍然可以使用 <a href="https://thingsboard.cloud" target="blank">GridLinks云服务</a>。
 30 天无缝体验和最新功能，除了品牌定制，来自最新的源代码！
 <br><br>
 

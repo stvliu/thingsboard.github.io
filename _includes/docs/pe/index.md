@@ -1,26 +1,26 @@
 {% assign peDocsPrefix = '' %}
 {% if docsPrefix == 'pe/' %}
-{% assign platformName = 'ThingsBoard PE' %}
+{% assign platformName = 'GridLinks专业版 ' %}
 {% assign firstRowItemClasses = 'col-12 col-sm-6 col-lg col-xxl-6 col-4xl' %}
 {% assign faqItemClasses = 'col-12 col-sm-6 col-lg col-xxl-6 col-4xl' %}
-<p>The  GridLinks专业版(PE) documentation can help you set up ThingsBoard PE, learn about the platform and get your IoT projects running on ThingsBoard PE.</p>
+<p>GridLinks专业版(PE)文档可以帮助您设置GridLinks专业版、了解该平台并让您的物联网项目在GridLinks专业版上运行。</p>
 {% elsif docsPrefix == 'paas/' %}
 {% assign peDocsPrefix = docsPrefix %}
-{% assign platformName = 'ThingsBoard Cloud' %}
+{% assign platformName = 'GridLinks 云服务' %}
 {% assign firstRowItemClasses = 'col-12 col-sm-6 col-lg-3 col-xxl-6 col-4xl-3' %}
 {% assign faqItemClasses = 'col col-lg-6 col-xxl col-4xl-6' %}
-<p>The GridLinks云服务 documentation can help you to start with GridLinks Cloud, learn about the platform and get your IoT projects running on GridLinks Cloud.</p>
+<p>GridLinks云服务文档可以帮助您开始使用GridLinks云服务、了解该平台并让您的物联网项目在GridLinks云服务上运行。</p>
 {% endif %}
 
 <div class="doc-features row mt-4">
     <div class="{{firstRowItemClasses}} mb-4">
         <a class="feature-card" href="/docs/{{docsPrefix}}getting-started-guides/what-is-thingsboard/">
-            <img class="feature-logo" src="/images/feature-logo/thingsboard-logo.svg" alt="Thingsboard logo">
-            <div class="feature-title">What is ThingsBoard?</div>
+            <img class="feature-logo" src="/images/feature-logo/thingsboard-logo.svg" alt="GridLinks logo">
+            <div class="feature-title">什么是 GridLinks？</div>
             <div class="feature-text">
                 <ul>
-                    <li>Features</li>
-                    <li>Architecture</li>
+                    <li>功能</li>
+                    <li>架构</li>
                 </ul>
             </div>
         </a>
@@ -28,9 +28,9 @@
     <div class="{{firstRowItemClasses}} mb-4">
         <a class="feature-card" href="/docs/{{docsPrefix}}getting-started-guides/helloworld/">
             <img class="feature-logo" src="/images/feature-logo/getting-started.svg" alt="Getting started icon">
-            <div class="feature-title">Getting started</div>
+            <div class="feature-title">入门</div>
             <div class="feature-text">
-                Learn how to use {{platformName}} platform.
+                了解如何使用 {{platformName}} 平台。
             </div>
         </a>
     </div>
@@ -38,9 +38,9 @@
     <div class="{{firstRowItemClasses}} mb-4">
         <a class="feature-card" href="/docs/user-guide/install/pe/installation-options/">
             <img class="feature-logo" src="/images/feature-logo/install.svg" alt="Install icon">
-            <div class="feature-title">Installation</div>
+            <div class="feature-title">安装</div>
             <div class="feature-text">
-                Learn how to install and upgrade platform.
+                了解如何安装和升级平台。
             </div>
         </a>
     </div>
@@ -48,37 +48,37 @@
     <div class="{{faqItemClasses}} mb-4">
         <a class="feature-card" href="/docs/{{docsPrefix}}faq/">
             <img class="feature-logo" src="/images/feature-logo/faq.svg" alt="Question icon">
-            <div class="feature-title">FAQ</div>
+            <div class="feature-title">常见问题</div>
             <div class="feature-text">
-                Get answers to the most common questions.
+                获取最常见问题的答案。
             </div>
         </a>
     </div>
-    <div class="w-100"></div>
+    <!-- <div class="w-100"></div>
     <div class="col-12 col-sm-6 col-lg-3 col-xxl-6 col-4xl-3 mb-4">
         <a class="feature-card" href="https://www.youtube.com/channel/UCDb9fsV-YR4JmnipAMGsVAQ/videos">
             <img class="feature-logo" src="/images/feature-logo/tutorials.svg" alt="Tutorials icon">
-            <div class="feature-title">Video tutorials</div>
+            <div class="feature-title">视频教程</div>
             <div class="feature-text">
-                Watch tutorials about platform features on YouTube.
+                在 YouTube 上观看有关平台功能的教程。
             </div>
         </a>
-    </div>
+    </div> -->
     <div class="col-12 col-sm-6 col-lg-3 col-xxl-6 col-4xl-3 mb-4">
         <a class="feature-card" href="/docs/{{docsPrefix}}devices-library/">
             <img class="feature-logo" src="/images/feature-logo/guides.svg" alt="Guides icon">
-            <div class="feature-title">Devices library</div>
+            <div class="feature-title">设备库</div>
             <div class="feature-text">
-                Learn how to connect different devices to {{platformName}}.
+                了解如何将不同设备连接到 {{platformName}}。
             </div>
         </a>
     </div>
     <div class="col-12 col-sm-6 col-lg-3 col-xxl-6 col-4xl-3 mb-4">
         <a class="feature-card" href="/docs/{{docsPrefix}}guides/">
             <img class="feature-logo" src="/images/feature-logo/guides.svg" alt="Guides icon">
-            <div class="feature-title">Guides</div>
+            <div class="feature-title">指南</div>
             <div class="feature-text">
-                Learn main {{platformName}} features.
+               了解主要的 {{platformName}} 功能。
             </div>
         </a>
     </div>
@@ -87,141 +87,141 @@
             <img class="feature-logo" src="/images/feature-logo/api.svg" alt="Api documentation icon">
             <div class="feature-title">API</div>
             <div class="feature-text">
-                Learn device connectivity and server-side platform specific API.
+                了解设备连接和服务器端平台特定的 API。
             </div>
         </a>
     </div>
 </div>
 
-<h2 id="features">Features</h2>
+<h2 id="features">功能</h2>
 
 <div class="doc-features row mt-4">
     <div class="col-12 col-sm-6 col-lg-4 col-xxl-6 col-4xl-4 mb-4">
         <a class="feature-card" href="/docs/{{docsPrefix}}guides/#AnchorIDDataVisualization">
-            <div class="feature-title">Data visualization</div>
+            <div class="feature-title">数据可视化</div>
             <div class="feature-text">
-                Covers data visualization capabilities: Widgets, Dashboards, Dashboard states.
+                涵盖数据可视化功能：小部件、仪表板、仪表板状态。
             </div>
         </a>
     </div>
     <div class="col-12 col-sm-6 col-lg-4 col-xxl-6 col-4xl-4 mb-4">
         <a class="feature-card" href="/docs/{{docsPrefix}}user-guide/telemetry/">
-            <div class="feature-title">Telemetry</div>
+            <div class="feature-title">遥测</div>
             <div class="feature-text">
-                API for collection of time-series data and related use cases.
+                用于收集时间序列数据和相关用例的 API。
             </div>
         </a>
     </div>
     <div class="col-12 col-sm-6 col-lg-4 col-xxl-6 col-4xl-4 mb-4">
         <a class="feature-card" href="/docs/{{peDocsPrefix}}user-guide/reporting/">
-            <div class="feature-title">Reporting</div>
+            <div class="feature-title">报告</div>
             <div class="feature-text">
-                Generate reports using existing dashboards and distribute them to end-users via email.
+                使用现有仪表板生成报告并通过电子邮件将其分发给最终用户。
             </div>
         </a>
     </div>
     <div class="col-12 col-sm-6 col-lg-4 col-xxl-6 col-4xl-4 mb-4">
         <a class="feature-card" href="/docs/{{docsPrefix}}user-guide/attributes/">
-            <div class="feature-title">Attributes</div>
+            <div class="feature-title">属性</div>
             <div class="feature-text">
-                Platform ability to assign custom key-value attributes to your entities (e.g configuration, data processing, visualization parameters).
+                平台能够将自定义键值属性分配给您的实体（例如配置、数据处理、可视化参数）。
             </div>
         </a>
     </div>
     <div class="col-12 col-sm-6 col-lg-4 col-xxl-6 col-4xl-4 mb-4">
         <a class="feature-card" href="/docs/{{docsPrefix}}user-guide/rule-engine-2-0/re-getting-started/">
-            <div class="feature-title">Rule engine</div>
+            <div class="feature-title">规则引擎</div>
             <div class="feature-text">
-                Covers data processing & actions on incoming telemetry and events.
+                涵盖传入遥测和事件的数据处理和操作。
             </div>
         </a>
     </div>
     <div class="col-12 col-sm-6 col-lg-4 col-xxl-6 col-4xl-4 mb-4">
         <a class="feature-card" href="/docs/{{docsPrefix}}user-guide/entities-and-relations/">
-            <div class="feature-title">Entities and relations</div>
+            <div class="feature-title">实体和关系</div>
             <div class="feature-text">
-                Platform ability to model physical world objects (e.g. devices and assets) and relations between them.
+                平台能够对物理世界对象（例如设备和资产）及其之间的关系进行建模。
             </div>
         </a>
     </div>
     <div class="col-12 col-sm-6 col-lg-4 col-xxl-6 col-4xl-4 mb-4">
         <a class="feature-card" href="/docs/{{docsPrefix}}user-guide/audit-log/">
-            <div class="feature-title">Audit log</div>
+            <div class="feature-title">审计日志</div>
             <div class="feature-text">
-                Tracking of user activity and API calls usage.
+                跟踪用户活动和 API 调用使用情况。
             </div>
         </a>
     </div>
     <div class="col-12 col-sm-6 col-lg-4 col-xxl-6 col-4xl-4 mb-4">
         <a class="feature-card" href="/docs/{{docsPrefix}}user-guide/api-limits/">
-            <div class="feature-title">API Limits</div>
+            <div class="feature-title">API限流</div>
             <div class="feature-text">
-                Controlling API usage, by limiting number of requests from single host during single time unit.
+                通过限制单个时间单位内来自单个主机的请求数量来控制 API 使用。
             </div>
         </a>
     </div>
     <div class="col-12 col-sm-6 col-lg-4 col-xxl-6 col-4xl-4 mb-4">
         <a class="feature-card" href="/docs/{{docsPrefix}}user-guide/rpc/">
-            <div class="feature-title">RPC</div>
+            <div class="feature-title">远程调用</div>
             <div class="feature-text">
-                API and widgets to push commands from your apps and dashboards to devices and vice versa.
+                API 和小部件可将命令从应用程序和仪表板推送到设备，反之亦然。
             </div>
         </a>
     </div>
-    <div class="col-12 col-sm-6 col-lg-4 col-xxl-6 col-4xl-4 mb-4">
+    <!-- <div class="col-12 col-sm-6 col-lg-4 col-xxl-6 col-4xl-4 mb-4">
         <a class="feature-card" href="/docs/{{peDocsPrefix}}user-guide/white-labeling/">
-            <div class="feature-title">White-labeling</div>
+            <div class="feature-title">品牌定制</div>
             <div class="feature-text">
-                Configure your company or product logo, color scheme and mail tempates in 2 minutes.
+                在 2 分钟内配置您的公司或产品徽标、配色方案和邮件模板。
             </div>
         </a>
-    </div>
+    </div> -->
     <div class="col-12 col-sm-6 col-lg-4 col-xxl-6 col-4xl-4 mb-4">
         <a class="feature-card" href="/docs/{{peDocsPrefix}}user-guide/scheduler/">
-            <div class="feature-title">Scheduler</div>
+            <div class="feature-title">调度器</div>
             <div class="feature-text">
-                Schedule various types of events (i.e. configuration updates, report generation, rpc commands) with flexible configuration options.
+                使用灵活的配置选项安排各种类型的事件（即配置更新、报告生成、rpc 命令）。
             </div>
         </a>
     </div>
     <div class="col-12 col-sm-6 col-lg-4 col-xxl-6 col-4xl-4 mb-4">
         <a class="feature-card" href="/docs/{{docsPrefix}}user-guide/advanced-filters/">
-            <div class="feature-title">Advanced filters</div>
+            <div class="feature-title">高级过滤器</div>
             <div class="feature-text">
-                Filters over entity fields, attributes and latest telemetry.
+                过滤实体字段、属性和最新遥测数据。
             </div>
         </a>
     </div>
     <div class="col-12 col-sm-6 col-lg-4 col-xxl-6 col-4xl-4 mb-4">
         <a class="feature-card" href="/docs/{{peDocsPrefix}}user-guide/groups/">
-            <div class="feature-title">Device & asset groups</div>
+            <div class="feature-title">设备和资产组</div>
             <div class="feature-text">
-                Configure multiple custom device & asset groups.
+                配置多个自定义设备和资产组。
             </div>
         </a>
     </div>
     <div class="col-12 col-sm-6 col-lg-4 col-xxl-6 col-4xl-4 mb-4">
         <a class="feature-card" href="/docs/{{peDocsPrefix}}user-guide/csv-xls-data-export/">
-            <div class="feature-title">CSV/XLS data export</div>
+            <div class="feature-title">CSV/XLS数据导出</div>
             <div class="feature-text">
-                Export data from widgets to CSV or XLS.
+               将数据从小部件导出到 CSV 或 XLS。
             </div>
         </a>
     </div>
     <div class="col col-lg-4 col-xxl col-4xl-4 mb-4">
         <a class="feature-card" href="/docs/{{peDocsPrefix}}user-guide/file-storage/">
-            <div class="feature-title">File storage</div>
+            <div class="feature-title">文件存储</div>
             <div class="feature-text">
-                Ability to store binary content (files) in the DB.
+                能够在数据库中存储二进制内容（文件）。
             </div>
         </a>
     </div>
     <div class="w-100"></div>
     <div class="col col-lg-8 col-xxl col-4xl-8 mb-4">
         <div class="feature-card">
-            <div class="feature-title"><a href="/docs/{{peDocsPrefix}}user-guide/integrations/">Platform Integrations</a></div>
+            <div class="feature-title"><a href="/docs/{{peDocsPrefix}}user-guide/integrations/">平台集成</a></div>
             <div class="feature-text">
-                Connect devices using connectivity solutions like NB IoT, LoRaWAN and SigFox, specific payload formats or various IoT Platforms.
+                使用 NB IoT、LoRaWAN 和 SigFox、特定有效负载格式或各种物联网平台等连接解决方案连接设备。
             </div>
             <div class="row mt-4">
                 <div class="col-12 col-sm-6 mb-4">

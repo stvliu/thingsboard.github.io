@@ -33,7 +33,7 @@ MQTT 基本凭证由可选的客户端 ID、用户名和密码组成。有三个
 为此，您应该仅在下面的凭证表单中填充客户端 ID。
 如果指定正确的客户端 ID，MQTT 客户端将能够使用任何用户名或密码进行连接；
 
-让我们回顾一下使用 MQTT 客户端 ID 将温度读数上传到 GridLinks Cloud 的简单命令。
+让我们回顾一下使用 MQTT 客户端 ID 将温度读数上传到GridLinks云服务的简单命令。
 有关更多详细信息，请参阅 [MQTT API](/docs/{{docsPrefix}}reference/mqtt-api/)。该命令使用不带 TLS 的纯 MQTT：
 
 ```bash
@@ -48,7 +48,7 @@ mosquitto_pub -d -q 1 -h "mqtt.thingsboard.cloud" -p "1883" -t "v1/devices/me/te
 为此，您应该仅在下面的凭证表单中填充用户名和密码。
 如果指定正确的用户名和密码，MQTT 客户端将能够使用任何客户端 ID 进行连接。密码是可选的；
 
-让我们回顾一下使用 MQTT 客户端用户名和密码将温度读数上传到 GridLinks Cloud 的简单命令。
+让我们回顾一下使用 MQTT 客户端用户名和密码将温度读数上传到GridLinks云服务的简单命令。
 有关更多详细信息，请参阅 [MQTT API](/docs/{{docsPrefix}}reference/mqtt-api/)。该命令使用不带 TLS 的纯 MQTT：
 
 ```bash
@@ -64,7 +64,7 @@ mosquitto_pub -d -q 1 -h "mqtt.thingsboard.cloud" -p "1883" \
 对于此选项，您应该填写客户端 ID、用户名和密码。
 如果指定正确的客户端 ID、用户名和密码组合，MQTT 客户端将能够连接；
 
-让我们回顾一下使用 MQTT 客户端 ID、用户名和密码将温度读数上传到 GridLinks Cloud 的简单命令。
+让我们回顾一下使用 MQTT 客户端 ID、用户名和密码将温度读数上传到GridLinks云服务的简单命令。
 有关更多详细信息，请参阅 [MQTT API](/docs/{{docsPrefix}}reference/mqtt-api/)。该命令使用不带 TLS 的纯 MQTT：
 
 ```bash
