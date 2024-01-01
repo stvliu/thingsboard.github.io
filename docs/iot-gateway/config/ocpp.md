@@ -1,14 +1,14 @@
 ---
 layout: docwithnav-gw
 title: OCPP 连接器配置
-description: GridLinks IoT 网关的 OCPP 协议支持
+description: GridLinks物联网网关的 OCPP 协议支持
 
 ---
 
 * TOC
 {:toc}
 
-本指南将帮助您熟悉 GridLinks IoT 网关的 MQTT 连接器配置。
+本指南将帮助您熟悉 GridLinks物联网网关的 MQTT 连接器配置。
 使用 [常规配置](/docs/iot-gateway/configuration/) 启用此连接器。
 此连接器的目的是使用 OCPP 协议在充电点和中央系统之间进行通信。
 

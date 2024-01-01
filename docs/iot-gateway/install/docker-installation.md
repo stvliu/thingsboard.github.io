@@ -1,6 +1,6 @@
 ---
 layout: docwithnav-gw
-title: 使用 Docker 在 Linux 或 Mac OS 上安装 GridLinks IoT 网关。
+title: 使用 Docker 在 Linux 或 Mac OS 上安装 GridLinks物联网网关。
 
 ---
 

@@ -2,8 +2,8 @@
 layout: docwithnav
 assignees:
 - zbeacon
-title: 如何使用 GridLinks IoT 网关将 Modbus 设备连接到 GridLinks
-description: 了解如何使用 GridLinks IoT 网关将 Modbus 设备连接到 GridLinks
+title: 如何使用 GridLinks物联网网关将 Modbus 设备连接到 GridLinks
+description: 了解如何使用 GridLinks物联网网关将 Modbus 设备连接到 GridLinks
 
 ---
 

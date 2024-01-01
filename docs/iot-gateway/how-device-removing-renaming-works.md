@@ -2,9 +2,7 @@
 layout: docwithnav-gw
 title: 设备重命名/删除处理
 description: 设备重命名/删除处理
-
 ---
-
 
 如果设备是使用网关 API 配置的，并且具有管理员权限的用户稍后在 GridLinks 上重命名或删除设备实体，则网关将收到有关更改的通知。
 

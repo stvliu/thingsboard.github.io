@@ -9,26 +9,26 @@ toc:
   section:
     - title: OTA更新
       path: /docs/edge/user-guide/ota-updates/
-- title: 配置指南
-  section:
-   - title: 边缘
-     path: /docs/user-guide/ui/edges/
-   - title: 边缘管理概述
-     path: /docs/edge/config/management/
-   - title: 从边缘到云端配置设备
-     path: /docs/edge/config/create-device/
-   - title: 从云端到边缘配置设备
-     path: /docs/edge/config/provision-device/
-   - title: 从云端到边缘配置资产
-     path: /docs/edge/config/provision-asset/
-   - title: 从云端到边缘配置实体视图
-     path: /docs/edge/config/provision-entity-view/
-   - title: 从云端到边缘配置仪表板
-     path: /docs/edge/config/provision-dashboard/
-   - title: 从云到边缘配置用户
-     path: /docs/edge/config/provision-user/
-   - title: 从云到边缘为客户提供服务
-     path: /docs/edge/config/provision-customer/
+# - title: 配置指南
+#   section:
+#    - title: 边缘
+#      path: /docs/user-guide/ui/edges/
+#    - title: 边缘管理概述
+#      path: /docs/edge/config/management/
+#    - title: 从边缘到云端配置设备
+#      path: /docs/edge/config/create-device/
+#    - title: 从云端到边缘配置设备
+#      path: /docs/edge/config/provision-device/
+#    - title: 从云端到边缘配置资产
+#      path: /docs/edge/config/provision-asset/
+#    - title: 从云端到边缘配置实体视图
+#      path: /docs/edge/config/provision-entity-view/
+#    - title: 从云端到边缘配置仪表板
+#      path: /docs/edge/config/provision-dashboard/
+#    - title: 从云到边缘配置用户
+#      path: /docs/edge/config/provision-user/
+#    - title: 从云到边缘为客户提供服务
+#      path: /docs/edge/config/provision-customer/
 - title: 规则引擎
   section:
     - title: 队列

@@ -2,7 +2,6 @@
 layout: docwithnav-gw
 title: 如何使用内置 GET/SET RPC 方法
 description: 如何使用内置 GET/SET RPC 方法
-
 ---
 
 * TOC
@@ -10,7 +9,6 @@ description: 如何使用内置 GET/SET RPC 方法
 
 
 本指南将帮助您使用 OPC-UA Connector 示例的内置 GET/SET RPC 方法。
-
 
 每个遥测和属性参数都开箱即用地具有 **GET** 和 **SET** RPC 方法，因此您无需手动配置它。
 例如，如果您有一些遥测参数：

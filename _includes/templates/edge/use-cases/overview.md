@@ -1,4 +1,4 @@
-ThingsBoard Edge **案例** 指南可以帮助您熟悉 GridLinks Edge 功能。
+ThingsBoard Edge **案例** 指南可以帮助您熟悉GridLinks Edge 功能。
 
 #### 内容
 

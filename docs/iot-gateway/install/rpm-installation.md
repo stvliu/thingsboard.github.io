@@ -1,13 +1,13 @@
 ---
 layout: docwithnav-gw
-title: 以软件包形式安装 GridLinks IoT 网关。
+title: 以软件包形式安装 GridLinks物联网网关。
 
 ---
 
 
 ### 前提条件
 
-本指南介绍如何在 CentOS 或 RHEL 上安装 GridLinks IoT 网关。
+本指南介绍如何在 CentOS 或 RHEL 上安装 GridLinks物联网网关。
 
 ### 步骤 1. 下载安装包
 
@@ -20,7 +20,7 @@ wget https://github.com/thingsboard/thingsboard-gateway/releases/download/2.0/py
 
 ### 步骤 2. 使用 yum 安装网关
 
-使用以下命令以软件包形式安装 GridLinks IoT 网关并以守护进程形式运行它：<br><br>
+使用以下命令以软件包形式安装 GridLinks物联网网关并以守护进程形式运行它：<br><br>
 
 ```bash
 sudo yum install -y ./python3-thingsboard-gateway.rpm

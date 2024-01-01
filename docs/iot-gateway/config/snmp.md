@@ -1,14 +1,14 @@
 ---
 layout: docwithnav-gw
 title: SNMP 连接器配置
-description: GridLinks IoT 网关的 SNMP 监控支持
+description: GridLinks物联网网关的 SNMP 监控支持
 
 ---
 
 * TOC
 {:toc}
 
-本指南将帮助您熟悉 GridLinks IoT 网关的 SNMP 连接器配置。  
+本指南将帮助您熟悉 GridLinks物联网网关的 SNMP 连接器配置。  
 使用 [通用配置指南](/docs/iot-gateway/configuration/) 启用此连接器。  
 此连接器的目的是从 SNMP 管理器对象获取数据并在其中写入一些数据。  
 

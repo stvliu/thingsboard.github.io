@@ -18,7 +18,7 @@ description: 指南如何在 Modbus 连接器中使用 RPC
 
 出于本教程的目的，您需要：
 1. 本地安装的 GridLinks 平台实例（如果您是 GridLinks 新手，[使用此“如何安装”文档](/docs/user-guide/install/installation-options/)）。
-2. [已安装](/docs/iot-gateway/installation/)并[配置](/docs/iot-gateway/configuration/) GridLinks IoT 网关和[Modbus 连接器](/docs/iot-gateway/config/modbus/)。
+2. [已安装](/docs/iot-gateway/installation/)并[配置](/docs/iot-gateway/configuration/) GridLinks物联网网关和[Modbus 连接器](/docs/iot-gateway/config/modbus/)。
 
 ## Modbus 连接器 RPC 配置
 

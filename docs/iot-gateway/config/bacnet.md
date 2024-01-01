@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-gw
 title: BACnet 连接器配置
-description: GridLinks IoT 网关的 BACnet 协议支持
+description: GridLinks物联网网关的 BACnet 协议支持
 
 ---
 

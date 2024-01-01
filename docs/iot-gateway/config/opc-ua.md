@@ -3,7 +3,7 @@ layout: docwithnav-gw
 assignees:
 - ashvayka
 title: OPC-UA 连接器配置
-description: GridLinks IoT 网关的 OPC-UA 协议支持
+description: GridLinks物联网网关的 OPC-UA 协议支持
 
 ---
 
@@ -18,7 +18,7 @@ description: GridLinks IoT 网关的 OPC-UA 协议支持
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-本指南将帮助您熟悉 GridLinks IoT 网关的 OPC-UA 连接器配置。
+本指南将帮助您熟悉 GridLinks物联网网关的 OPC-UA 连接器配置。
 使用 [常规配置](/docs/iot-gateway/configuration/) 来启用此扩展。
 我们将在下面描述连接器配置文件。
 
