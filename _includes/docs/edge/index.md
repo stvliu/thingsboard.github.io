@@ -61,7 +61,7 @@
             <img class="feature-logo" src="/images/feature-logo/tutorials.svg" alt="Tutorials icon">
             <div class="feature-title">案例</div>
             <div class="feature-text">
-                概述可以使用 {{platformName}} Edge 实现的案例。
+                概述可以使用 {{platformName}} Edge实现的案例。
             </div>
         </a>
     </div>
@@ -70,7 +70,7 @@
             <img class="feature-logo" src="/images/feature-logo/api.svg" alt="API documentationn icon">
             <div class="feature-title">API</div>
             <div class="feature-text">
-                了解设备连接和特定于服务器端的平台 API。
+                了解设备连接和特定于服务器端的平台API。
             </div>
         </a>
     </div>
