@@ -1,5 +1,5 @@
-bigheader: "ThingsBoard Cloud Documentation"
-abstract: "Documentation for using GridLinks云服务 IoT Platform."
+bigheader: "GridLinks云服务文档"
+abstract: "使用GridLinks云服务物联网平台的文档。"
 toc:
 - title: GridLinks云服务
   path: /docs/paas/
@@ -242,7 +242,7 @@ toc:
       path: /docs/paas/user-guide/csv-xls-data-export/
     - title: 文件存储
       path: /docs/paas/user-guide/file-storage/
-    - title: ThingsBoard表达式语言(TBEL)
+    - title: GridLinks表达式语言(TBEL)
       path: /docs/paas/user-guide/tbel/
       new: true
 - title: 安全

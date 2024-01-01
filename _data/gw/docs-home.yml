@@ -1,64 +1,64 @@
-bigheader: "IoT Gateway Documentation"
-abstract: "Integrate legacy and third-party systems with ThingsBoard platform using IoT Gateway."
+bigheader: "物联网网关文档"
+abstract: "使用物联网网关将遗留系统和第三方系统与GridLinks平台集成。"
 toc:
-- title: GridLinks IoT Gateway
+- title: GridLinks物联网网关
   path: /docs/iot-gateway/
-- title: What is GridLinks IoT Gateway?
+- title: 什么是GridLinks物联网网关?
   path: /docs/iot-gateway/what-is-iot-gateway/
 - title: 配置指南
   section:
-    - title: General configuration
+    - title: 通用配置
       path: /docs/iot-gateway/configuration/
-    - title: MQTT Connector
+    - title: MQTT 连接器
       path: /docs/iot-gateway/config/mqtt/
-    - title: Modbus Connector
+    - title: Modbus 连接器
       path: /docs/iot-gateway/config/modbus/
-    - title: OPC-UA Connector
+    - title: OPC-UA 连接器
       path: /docs/iot-gateway/config/opc-ua/
-    - title: BLE Connector
+    - title: BLE 连接器
       path: /docs/iot-gateway/config/ble/
-    - title: Request Connector
+    - title: Request 连接器
       path: /docs/iot-gateway/config/request/
-    - title: CAN Connector
+    - title: CAN 连接器
       path: /docs/iot-gateway/config/can/
-    - title: BACnet Connector
+    - title: BACnet 连接器
       path: /docs/iot-gateway/config/bacnet/
-    - title: ODBC Connector
+    - title: ODBC 连接器
       path: /docs/iot-gateway/config/odbc/
-    - title: REST Connector
+    - title: REST 连接器
       path: /docs/iot-gateway/config/rest/
-    - title: SNMP Connector
+    - title: SNMP 连接器
       path: /docs/iot-gateway/config/snmp/
-    - title: FTP Connector
+    - title: FTP 连接器
       path: /docs/iot-gateway/config/ftp/
-    - title: Socket Connector
+    - title: Socket 连接器
       path: /docs/iot-gateway/config/socket/
-    - title: XMPP Connector
+    - title: XMPP 连接器
       path: /docs/iot-gateway/config/xmpp/
-    - title: OCPP Connector
+    - title: OCPP 连接器
       path: /docs/iot-gateway/config/ocpp/
-- title: IoT Gateway features
+- title: 物联网网关功能
   path: /docs/iot-gateway/features/
   section:
-    - title: Remote configuration
+    - title: 远程配置
       path: /docs/iot-gateway/guides/how-to-enable-remote-configuration/
-    - title: Remote logging
+    - title: 远程日志
       path: /docs/iot-gateway/guides/how-to-enable-remote-logging/
-    - title: Service RPC methods
+    - title: 服务 RPC 方法
       path: /docs/iot-gateway/guides/how-to-use-gateway-rpc-methods/
-    - title: Remote shell
+    - title: 远程shell
       path: /docs/iot-gateway/guides/how-to-enable-remote-shell/
-    - title: Device renaming/removing handling
+    - title: 设备重命名/删除处理
       path: /docs/iot-gateway/how-device-removing-renaming-works/
-    - title: Gateway Configurator
+    - title: 网关配置器
       path: /docs/iot-gateway/guides/how-to-configure-gateway-using-configurator/
-    - title: GET/SET RPC methods
+    - title: GET/SET RPC 方法
       path: /docs/iot-gateway/guides/how-to-use-get-set-rpc-methods/
-    - title: Remote converter update
+    - title: 远程转换器更新
       path: /docs/iot-gateway/guides/how-to-use-remote-converter-update/
-    - title: Gateway Shell
+    - title: 网关Shell
       path: /docs/iot-gateway/guides/how-to-use-gateway-shell/
-- title: IoT Gateway Roadmap
+- title: 物联网网关路线图
   path: /docs/iot-gateway/roadmap/
-- title: Customization guide
+- title: 定制指南
   path: /docs/iot-gateway/custom/

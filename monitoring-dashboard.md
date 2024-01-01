@@ -38,7 +38,7 @@ redirect_from: "/docs/services/monitoring-dashboard/"
                 <li>节省成本。通过监控能源使用情况和设备性能，企业可以优化其运营并降低成本。</li>
             </ul>
             <h2 class="line-height-small">不可或缺的物联网控制面板：您将认可的功能</h2>
-            <div class="text-content medium-margin">ThingsBoard 解决方案模板是 GridLinks 物联网平台的一项强大功能，可以显着缩短物联网产品的上市时间。在这里，我们深入探讨使其成为物联网部署基石的关键特性：</div>
+            <div class="text-content medium-margin">GridLinks 解决方案模板是 GridLinks 物联网平台的一项强大功能，可以显着缩短物联网产品的上市时间。在这里，我们深入探讨使其成为物联网部署基石的关键特性：</div>
             <ul class="list">
                 <li>GridLinks 的物联网控制面板拥有直观、用户友好的界面。</li>
                 <li>我们的物联网传感器仪表板为用户提供了强大的设备管理功能。</li>

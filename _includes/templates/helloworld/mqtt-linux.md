@@ -45,6 +45,6 @@ Client mosqpub|xxx sending DISCONNECT
 ```
 
 {% capture difference %}
-**注意：**自 ThingsBoard 3.2 起，你可以使用基本 MQTT 凭据（客户端 ID、用户名和密码的组合）并使用设备配置文件自定义**主题名称**和**有效负载类型**。更多信息请参阅[此处](/docs/user-guide/device-profiles/#mqtt-transport-type)。
+**注意：**自 GridLinks 3.2 起，你可以使用基本 MQTT 凭据（客户端 ID、用户名和密码的组合）并使用设备配置文件自定义**主题名称**和**有效负载类型**。更多信息请参阅[此处](/docs/user-guide/device-profiles/#mqtt-transport-type)。
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}

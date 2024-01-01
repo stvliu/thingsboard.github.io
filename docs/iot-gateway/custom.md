@@ -1,6 +1,6 @@
 ---
 layout: docwithnav-gw
-title: Custom IoT Gateway Connector
+title: 定制物联网网关连接器
 
 ---
 

@@ -671,7 +671,7 @@
 			<td>cassandra.socket.connect_timeout</td>
 			<td>CASSANDRA_SOCKET_TIMEOUT</td>
 			<td>5000</td>
-			<td> Sets the timeout, in milliseconds, of a native connection from ThingsBoard to Cassandra. The default value is 5000</td>
+			<td> Sets the timeout, in milliseconds, of a native connection from GridLinks to Cassandra. The default value is 5000</td>
 		</tr>
 		<tr>
 			<td>cassandra.socket.read_timeout</td>
@@ -3945,7 +3945,7 @@
 		<tr>
 			<td>swagger.title</td>
 			<td>SWAGGER_TITLE</td>
-			<td>ThingsBoard REST API</td>
+			<td>GridLinks REST API</td>
 			<td> The title on the API doc UI page</td>
 		</tr>
 		<tr>
@@ -3957,7 +3957,7 @@
 		<tr>
 			<td>swagger.contact.name</td>
 			<td>SWAGGER_CONTACT_NAME</td>
-			<td>ThingsBoard, Inc.</td>
+			<td>GridLinks, Inc.</td>
 			<td> The contact name on the API doc UI page</td>
 		</tr>
 		<tr>

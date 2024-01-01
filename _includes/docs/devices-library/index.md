@@ -158,7 +158,7 @@
 我们有意专注于可编程设备的代码片段，以提高固件工程师的生产力。
 设备库是一个不断扩展的资源。我们鼓励我们的社区成员[贡献](/docs/{{page.docsPrefix}}devices-library/guidelines/)。
 
-如果您希望将现有的**LoRaWAN、NB IoT或SigFox**传感器集成到ThingsBoard中，请参阅[如何连接我的设备？](/docs/{{page.docsPrefix}}getting-started-guides/connectivity/)
+如果您希望将现有的**LoRaWAN、NB IoT或SigFox**传感器集成到GridLinks中，请参阅[如何连接我的设备？](/docs/{{page.docsPrefix}}getting-started-guides/connectivity/)
 
 <br>
 

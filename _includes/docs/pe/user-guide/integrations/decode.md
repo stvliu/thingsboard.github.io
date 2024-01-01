@@ -22,7 +22,7 @@
 Decode [DL28](https://decode.rs/product/dl28/) 设备充当通信和信号集中器，并在安装在 DHS 中的所有控制、监控和测量设备与互联网上的 GridLinks 服务器之间提供桥接功能。此示例中使用了三个信号：两个继电器输出和一个来自热量计的温度。
 
 ## 前提条件
-- ThingsBoard 上的演示帐户
+- GridLinks 上的演示帐户
 - 带有以太网连接和网络浏览器的计算机
 - Decode DL28 通信控制器
 - Decode EXIO I/O 扩展设备

@@ -147,7 +147,7 @@ curl -v -X POST -d "{\"deviceName\":\"$DEVICEname\",\"deviceType\":\"$DEVICEtype
 
 <br>
 使用 [仪表板](/docs/{{docsPrefix}}user-guide/dashboards/) 来处理数据。仪表板是收集和可视化数据集的现代格式。通过各种小部件实现数据演示的可见性。
-ThingsBoard 有几种类型的仪表板示例，您可以使用它们。在此处了解有关 **解决方案模板** 的更多信息 [here](/docs/{{docsPrefix}}solution-templates/overview/)。
+GridLinks 有几种类型的仪表板示例，您可以使用它们。在此处了解有关 **解决方案模板** 的更多信息 [here](/docs/{{docsPrefix}}solution-templates/overview/)。
 
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/http/http-solution-templates.png)

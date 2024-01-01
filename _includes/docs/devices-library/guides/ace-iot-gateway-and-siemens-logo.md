@@ -20,7 +20,7 @@
 
 Чтобы продолжить работу с этим руководством, нам потребуется следующее:  
 {{ prerequisites }}
-- [Учетная запись ThingsBoard]({{thingsboardInstanceLink}}){: target="_blank"}  
+- [Учетная запись GridLinks]({{thingsboardInstanceLink}}){: target="_blank"}  
 
 ## Импорт цепочки правил
 
@@ -283,7 +283,7 @@ config topics
 {% endcapture %}
 {% include code-toggle.liquid code=gatewayCode params="conf|.copy-code.expandable-20" %}
 
-## Проверка данных на ThingsBoard
+## Проверка данных на GridLinks
 
 {% include /docs/devices-library/blocks/ready-to-go-devices/check-data-on-thingsboard-block.md %}
 
@@ -297,6 +297,6 @@ config topics
 
 С помощью знаний, изложенных в этом руководстве, вы можете легко подключить свой шлюз ACE Automation MQTT 4G GPS и использовать встроенную интеграцию для получения данных с устройств, подключенных к шлюзу ACE Automation MQTT 4G GPS.
 
-После подключения устройств к шлюзу вы сможете видеть и обрабатывать данные, поступающие с устройств, на ThingsBoard.
+После подключения устройств к шлюзу вы сможете видеть и обрабатывать данные, поступающие с устройств, на GridLinks.
 
 Изучите [документацию](/docs/{{page.docsPrefix}}){: target="_blank"} платформы, чтобы узнать больше о ключевых концепциях и функциях.

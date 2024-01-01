@@ -3,15 +3,15 @@
 {% assign peDocsPrefix = docsPrefix %}
 {% endif %}
 
-{% assign feature = "平台集成" %}{% include templates/pe-feature-banner.md %}
+{% assign feature = "Platform Integrations" %}{% include templates/pe-feature-banner.md %}
 
 * TOC
 {:toc}
 
 ## 简介
 
-可以从主 GridLinks 实例远程执行任何 ThingsBoard 集成。
-本指南包含有关如何远程启动 ThingsBoard 集成的分步说明。
+可以从主 GridLinks 实例远程执行任何 GridLinks 集成。
+本指南包含有关如何远程启动 GridLinks 集成的分步说明。
 例如，我们将启动 MQTT 集成，该集成连接到本地 MQTT 代理并将数据推送到
 [thingsboard.cloud](https://cloud.codingas.com/signup)。
 

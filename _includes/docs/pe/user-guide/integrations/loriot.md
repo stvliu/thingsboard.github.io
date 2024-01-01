@@ -78,7 +78,7 @@ JavaScript<small></small>%,%anonymous%,%templates/integration/loriot/loriot-upli
 
 {% include images-gallery.html imageCollection="integration" %}
 
-为了将数据从 LORIOT 传输到 GridLinks，您需要为 LORIOT 应用程序配置 **输出**。您可以手动执行此操作（推荐），或者 ThingsBoard 集成可以为您执行此操作（您需要向我们提供 LORIOT 帐户的登录名和密码，以便我们能够自动配置输出）。  
+为了将数据从 LORIOT 传输到 GridLinks，您需要为 LORIOT 应用程序配置 **输出**。您可以手动执行此操作（推荐），或者 GridLinks 集成可以为您执行此操作（您需要向我们提供 LORIOT 帐户的登录名和密码，以便我们能够自动配置输出）。  
 <br>
 
 <div style="font-size: 20px; margin-bottom: 8px; font-weight: bold;">配置输出选项</div>
@@ -148,7 +148,7 @@ curl -v -X POST -d "{\"EUI\":\"$YOUR_EUI_DEVICE\",\"deviceType\":\"temperature-s
 
 使用仪表板处理数据。仪表板是收集和可视化数据集的现代格式。通过各种小部件实现数据演示的可见性。
 
-ThingsBoard 有几种类型的仪表板示例，您可以使用它们。您可以在 **解决方案模板** 选项卡中找到它们。
+GridLinks 有几种类型的仪表板示例，您可以使用它们。您可以在 **解决方案模板** 选项卡中找到它们。
 
 {% include images-gallery.html imageCollection="solution_templates" %}
 

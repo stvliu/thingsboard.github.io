@@ -11,7 +11,7 @@ Azure Service Bus 集成允许将数据从 Azure Service Bus 流式传输到 Gri
 
 ## 配置 Azure Service Bus
 
-若要创建 ThingsBoard Service Bus 集成，您需要在 Azure 门户中创建两项内容：**主题**和**订阅**。您还需要找到并保存 Service Bus 命名空间的**连接字符串**，稍后您将需要它。
+若要创建 GridLinks Service Bus 集成，您需要在 Azure 门户中创建两项内容：**主题**和**订阅**。您还需要找到并保存 Service Bus 命名空间的**连接字符串**，稍后您将需要它。
 - [创建主题和对主题的订阅](https://learn.microsoft.com/en-us/azure/service-bus-messaging/service-bus-quickstart-topics-subscriptions-portal)
 - [查找服务总线命名空间的连接字符串](https://azurelessons.com/azure-service-bus-connection-string/)
 

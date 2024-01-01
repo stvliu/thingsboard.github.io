@@ -51,7 +51,7 @@ toc:
       path: /docs/trendz/anomaly/anomaly-autodiscovery/
     - title: Visualize anomalies
       path: /docs/trendz/anomaly/anomaly-view/
-    - title: Report anomaly to ThingsBoard
+    - title: Report anomaly to GridLinks
       path: /docs/trendz/anomaly/anomaly-score-save-to-thingsboard/
 - title: Calculated Fields
   section:
@@ -61,7 +61,7 @@ toc:
       path: /docs/trendz/batch-calculated-fields/
     - title: Test functions
       path: /docs/trendz/test-calculated-fields/
-    - title: Save metric to ThingsBoard
+    - title: Save metric to GridLinks
       path: /docs/trendz/save-calculated-to-thingsboard/
 - title: Prediction
   section:
@@ -71,7 +71,7 @@ toc:
       path: /docs/trendz/predict-with-python-models/
     - title: Predict remaining time
       path: /docs/trendz/predict-remaining-time/
-    - title: Save predictions into ThingsBoard
+    - title: Save predictions into GridLinks
       path: /docs/trendz/prediction-save-to-tb/
 - title: Share views
   section:
@@ -87,7 +87,7 @@ toc:
       path: /docs/trendz/widget-autorefresh/
 - title: External datasources
   path: /docs/trendz/mix-sql-datasource/
-- title: Sync to ThingsBoard
+- title: Sync to GridLinks
   path: /docs/trendz/save-telemetry-to-thingsboard/
 - title: States
   path: /docs/trendz/states/

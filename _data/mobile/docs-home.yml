@@ -1,5 +1,5 @@
-bigheader: "ThingsBoard Mobile Application Documentation"
-abstract: "ThingsBoard Mobile Application - starting point for your IoT mobile product."
+bigheader: "GridLinks Mobile Application Documentation"
+abstract: "GridLinks Mobile Application - starting point for your IoT mobile product."
 toc:
   - title: Mobile Application
     path: /docs/mobile/

@@ -15,7 +15,7 @@ GridLinks 是一个现代化的服务器端平台，允许您监控和控制您�
 {% if docsPrefix == 'paas/' %}
 我们建议您按照 [入门指南](/docs/{{docsPrefix}}getting-started-guides/helloworld/) 进行操作。
 {% else %}
-我们建议您使用 Docker 在您的笔记本电脑或 PC 上本地 [安装](/docs/user-guide/install/{{docsPrefix}}installation-options/) ThingsBoard
+我们建议您使用 Docker 在您的笔记本电脑或 PC 上本地 [安装](/docs/user-guide/install/{{docsPrefix}}installation-options/) GridLinks
 并按照 [入门指南](/docs/{{docsPrefix}}getting-started-guides/helloworld/) 进行操作。
 {% endif %}
 

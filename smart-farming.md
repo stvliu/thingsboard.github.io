@@ -19,7 +19,7 @@ GridLinks 平台大幅缩短了上市时间，并减少了创建智能农业解�
   - 用于实时和历史数据的先进且灵活的可视化；
   - 可自定义的最终用户仪表板，用于共享农场监控结果；
   - 本地和云部署选项；
-  - 在 [ThingsBoard Edge](/products/thingsboard-edge/) 的帮助下，容忍与农场站点的连接问题；
+  - 在 [GridLinks  Edge](/products/thingsboard-edge/) 的帮助下，容忍与农场站点的连接问题；
   - 最小编码工作量的可自定义移动应用程序；
 
 该平台提供生产就绪的服务器基础设施，以连接您的物联网设备、存储和分析收集的物联网数据并优化投入和资源的回报。
@@ -146,7 +146,7 @@ GridLinks 平台大幅缩短了上市时间，并减少了创建智能农业解�
 通常，此设备要么运行 [GridLinks 物联网网关](/docs/iot-gateway/what-is-iot-gateway/)，要么使用 [网关 API](/docs/reference/gateway-mqtt-api/)。
 使用网关，客户可以优化硬件成本并将 Modbus、BACnet 和其他传感器连接到云。
 
-高级智能农业物联网解决方案可能会利用 [ThingsBoard Edge](/products/thingsboard-edge/)。
+高级智能农业物联网解决方案可能会利用 [GridLinks  Edge](/products/thingsboard-edge/)。
 边缘计算解决方案在网络中断或频繁中断的情况下特别有用。请参阅边缘 [案例](/docs/edge/use-cases/overview/)以了解更多信息。
 
 该平台支持行业标准加密算法和设备凭据类型。GridLinks 将数据存储在容错且可靠的 Cassandra 数据库中。

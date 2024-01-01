@@ -35,7 +35,7 @@ constexpr uint32_t SERIAL_DEBUG_BAUD = 115200U;
 
 // Initialize underlying client, used to establish a connection
 WiFiClient wifiClient;
-// Initialize ThingsBoard instance with the maximum needed buffer size
+// Initialize GridLinks instance with the maximum needed buffer size
 ThingsBoard tb(wifiClient, MAX_MESSAGE_SIZE);
 
 // Attribute names for attribute request and attribute updates functionality
@@ -286,7 +286,7 @@ void loop() {
 
   if (!tb.connected()) {
     subscribed = false;
-    // Connect to the ThingsBoard
+    // Connect to the GridLinks
     Serial.print("Connecting to: ");
     Serial.print(THINGSBOARD_SERVER);
     Serial.print(" with token ");

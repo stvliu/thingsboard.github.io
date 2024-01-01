@@ -1,13 +1,13 @@
 ---
 layout: docwithnav-gw
-title: GridLinks IoT 网关是什么？
-description: GridLinks IoT 网关的功能和优势
+title: GridLinks 物联网网关是什么？
+description: GridLinks 物联网网关的功能和优势
 
 ---
 
-ThingsBoard **IoT 网关** 是一款开源解决方案，允许您将连接到旧版和第三方系统的设备与 GridLinks 集成。
+GridLinks **物联网网关** 是一款现代化的解决方案，允许您将连接到旧版和第三方系统的设备与 GridLinks 集成。
 
-GridLinks 是一个用于数据收集、处理、可视化和设备管理的开源 IoT 平台。如果您是新平台用户，请参阅 [**GridLinks 是什么？**](/docs/getting-started-guides/what-is-thingsboard/)。
+GridLinks 是一个用于数据收集、处理、可视化和设备管理的现代化的物联网平台。如果您是新平台用户，请参阅 [**GridLinks 是什么？**](/docs/getting-started-guides/what-is-thingsboard/)。
 
 <object width="95%" data="/images/gateway/python-gateway-animd-ff.svg"></object>
 
@@ -37,7 +37,7 @@ GridLinks 是一个用于数据收集、处理、可视化和设备管理的开�
 
 #### 架构
 
-IoT 网关是一个软件组件，设计用于运行在支持 **Python 3.7+** 的基于 Linux 的微型计算机上。
+物联网网关是一个软件组件，设计用于运行在支持 **Python 3.7+** 的基于 Linux 的微型计算机上。
  GridLinks 物联网网关的主要组件如下所示。
 
 **连接器**
@@ -66,16 +66,16 @@ IoT 网关是一个软件组件，设计用于运行在支持 **Python 3.7+** �
 内存队列最大限度地减少了 IO 操作，但如果网关进程重新启动，可能会丢失消息。
 持久文件存储可在进程重新启动后继续存在，但会对文件系统执行 IO 操作。
 
-**ThingsBoard 客户端**
+**GridLinks 客户端**
 
 网关通过 MQTT 协议与 GridLinks 通信，并使用 [此处](/docs/reference/gateway-mqtt-api/) 描述的 API。
-ThingsBoard 客户端是一个单独的线程，它轮询事件存储，并在与 GridLinks 的连接处于活动状态时传送消息。
-ThingsBoard 客户端支持连接性监控、批量处理事件以提高性能以及许多其他功能。
+GridLinks 客户端是一个单独的线程，它轮询事件存储，并在与 GridLinks 的连接处于活动状态时传送消息。
+GridLinks 客户端支持连接性监控、批量处理事件以提高性能以及许多其他功能。
 
 **网关服务**
 
 网关服务负责引导连接器、事件存储和 GridLinks 客户端。
-此服务收集并定期向 ThingsBoard 报告有关传入消息和已连接设备的统计信息。
+此服务收集并定期向 GridLinks 报告有关传入消息和已连接设备的统计信息。
 网关服务保留已连接设备的列表，以便在网关重新启动时能够重新订阅设备配置更新。
 
 #### 项目路线图

@@ -1,5 +1,5 @@
-bigheader: "ThingsBoard Edge Documentation"
-abstract: "Distribute data processing and analysis using edge computing."
+bigheader: "GridLinks Edge 文档"
+abstract: "使用边缘计算分布式数据处理和分析。"
 toc:
 - title: GridLinks PE Edge
   path: /docs/pe/edge/

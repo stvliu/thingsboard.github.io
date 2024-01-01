@@ -31,7 +31,7 @@ TCP 集成允许将使用 TCP 传输协议的数据从设备流式传输到 Grid
 {% if docsPrefix == "paas/" %}
  -  GridLinks专业版 实例 — [thingsboard.cloud](https://thingsboard.cloud)；
 {% endif %}
- - 外部运行并连接到云 ThingsBoard PE 实例的 TCP 集成；
+ - 外部运行并连接到云 GridLinks PE 实例的 TCP 集成；
  - **echo** 命令，用于显示一行文本，并将输出重定向到 **netcat** (**nc**) 实用程序；
  - **netcat** (**nc**) 实用程序，用于建立 TCP 连接，从那里接收数据并传输数据；    
 
@@ -191,7 +191,7 @@ JSON 有效负载<br>%,%json%,%templates/integration/tcp/tcp-handler-configurati
 
 ### 发送上行消息
 
-创建 ThingsBoard TCP 集成后，TCP 服务器启动，然后等待来自设备的数据。
+创建 GridLinks TCP 集成后，TCP 服务器启动，然后等待来自设备的数据。
 
 选择设备有效负载类型以发送上行消息
 

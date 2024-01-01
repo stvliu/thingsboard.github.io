@@ -137,7 +137,7 @@ GridLinks 的物联网车辆跟踪系统是用于管理和优化车辆和资产�
 
 ## 探索我们的车辆管理物联网解决方案
 
-ThingsBoard 的车辆管理物联网解决方案经过精心打造，可提供无与伦比的洞察力、效率和适应性。
+GridLinks 的车辆管理物联网解决方案经过精心打造，可提供无与伦比的洞察力、效率和适应性。
 
 <span class="bold-text">车辆跟踪解决方案概述。</span> 我们产品/服务核心的车辆管理系统采用物联网，如下图的综合图表所示。
 
@@ -223,7 +223,7 @@ ThingsBoard 的车辆管理物联网解决方案经过精心打造，可提供�
         <img src="/images/tenancy-icon.svg" alt="租户图标">
         <div>
           <a class="title" href="/docs/user-guide/entities-and-relations/">多租户</a>
-          <p>ThingsBoard 提供 UI 和 API 来管理租户、客户、用户、设备和资产。单个租户可拥有多个租户管理员以及数百万个设备和客户。它还为您的智能电表提供开箱即用的 OTA 更新支持。</p>
+          <p>GridLinks 提供 UI 和 API 来管理租户、客户、用户、设备和资产。单个租户可拥有多个租户管理员以及数百万个设备和客户。它还为您的智能电表提供开箱即用的 OTA 更新支持。</p>
         </div>
       </div>
     </div>

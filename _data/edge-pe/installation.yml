@@ -1,5 +1,5 @@
 bigheader: "Installation"
-abstract: "Guides for installing and configuring ThingsBoard PE Edge."
+abstract: "Guides for installing and configuring GridLinks PE Edge."
 toc:
 - title: Installation Options
   path: /docs/user-guide/install/pe/edge/installation-options/

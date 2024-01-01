@@ -10,34 +10,34 @@
 {% endif %} -->
 
 {% capture tb-open-source %}
-GridLinks 是一个现代化的物联网平台，提供了一套强大的功能，用于数据收集、处理、可视化和设备管理。
-如果您是新平台用户，我们建议在继续使用 GridLinks Edge 之前阅读 [**什么是 GridLinks？**](/docs/getting-started-guides/what-is-thingsboard/)。
+GridLinks是一个现代化的物联网平台，提供了一套强大的功能，用于数据收集、处理、可视化和设备管理。
+如果您是新平台用户，我们建议在继续使用GridLinks Edge之前阅读 [**什么是 GridLinks？**](/docs/getting-started-guides/what-is-thingsboard/)。
 {% endcapture %}
 {% include templates/info-banner.md content=tb-open-source %}
 
-**GridLinks Edge** 是 GridLinks 的一款强大的软件产品，旨在利用边缘计算。
+**GridLinks Edge** 是GridLinks的一款强大的软件产品，旨在利用边缘计算。
 
 <!-- {% if docsPrefix == 'pe/edge/' %}
 借助 GridLinks Edge，数据分析和管理被引入数据生成点 - 边缘。它与 GridLinks PE 无缝同步，无论它是 [云](https://thingsboard.cloud) 还是本地安装，都能满足您的业务需求。
 
 GridLinks Edge PE 适用于 **单个** 租户和/或 **多个** 客户。
 因此，您无法在多个租户之间共享 GridLinks Edge，并且来自不同租户的设备无法连接到单个 GridLinks Edge。
-在这种情况下，需要为每个租户配置单独的 GridLinks Edge 实例。
+在这种情况下，需要为每个租户配置单独的GridLinks Edge实例。
 {% else %}
 借助 GridLinks Edge，数据分析和管理被引入边缘，数据生成发生在边缘。它与 GridLinks CE 轻松同步，无论它是 [演示](https://gridlinks.codingas.com/) 还是本地安装，都能满足您的业务需求。
 
-GridLinks Edge CE 适用于 **单个** 租户和/或 **单个** 客户。在多个租户或客户之间共享 GridLinks Edge 是不可行的，并且来自不同租户或客户的设备无法连接到单个 GridLinks Edge。
-在这种情况下，需要为每个租户或客户配置多个 GridLinks Edge 实例。
+GridLinks Edge CE 适用于 **单个** 租户和/或 **单个** 客户。在多个租户或客户之间共享GridLinks Edge是不可行的，并且来自不同租户或客户的设备无法连接到单个 GridLinks Edge。
+在这种情况下，需要为每个租户或客户配置多个GridLinks Edge实例。
 {% endif %} -->
 
 <br>
 
 ![image](/images/edge/overview/edge_overview.svg)
 
-#### GridLinks Edge 的案例
+####GridLinks Edge的案例
 
 - **自动驾驶汽车**
-  边缘计算允许以最小的延迟收集、处理和响应道路事件。现代自动驾驶汽车会生成大量数据 - 每天从 5 TB 到 20 TB 不等。4G 或 5G 网络可能无法处理如此高的吞吐量，但 GridLinks Edge 可以过滤这些数据，在本地处理大部分数据，并且仅将其中一部分数据推送到云端。
+  边缘计算允许以最小的延迟收集、处理和响应道路事件。现代自动驾驶汽车会生成大量数据 - 每天从 5 TB 到 20 TB 不等。4G 或 5G 网络可能无法处理如此高的吞吐量，但GridLinks Edge可以过滤这些数据，在本地处理大部分数据，并且仅将其中一部分数据推送到云端。
 
 - **智能农业**
   即使现场的云连接目前较弱，也能快速响应筒仓曝气系统故障。
@@ -54,7 +54,7 @@ GridLinks Edge CE 适用于 **单个** 租户和/或 **单个** 客户。在多�
 - **预测性维护**
   在更靠近设备的位置处理和存储来自边缘设备的数据，可以在本地分析大量数据。这允许在发生故障之前检测生产线中的变化，并且根据您的业务需求，仅将生产线的平均读数发送到云端。
 
-#### GridLinks Edge 的功能
+####GridLinks Edge的功能
 
 使用 **GridLinks Edge**，您可以获得：
 
@@ -62,7 +62,7 @@ GridLinks Edge CE 适用于 **单个** 租户和/或 **单个** 客户。在多�
 
 ![image](/images/edge/overview/offline_network_.svg)
 
-- **流量过滤**：在 GridLinks Edge 服务上过滤来自本地（边缘）设备的数据，并仅将数据的一部分推送到云端以进行进一步处理或存储。
+- **流量过滤**：在GridLinks Edge服务上过滤来自本地（边缘）设备的数据，并仅将数据的一部分推送到云端以进行进一步处理或存储。
 
 ![image](/images/edge/overview/data_filtering.svg)
 

@@ -1,65 +1,65 @@
-bigheader: "ThingsBoard Edge Documentation"
-abstract: "Distribute data processing and analysis using edge computing."
+bigheader: "GridLinks Edge Documentation"
+abstract: "使用边缘计算分布式数据处理和分析。"
 toc:
-- title: GridLinks Edge
+- title: GridLinks边缘
   path: /docs/edge/
-- title: What is GridLinks Edge?
+- title: 什么是GridLinks边缘？
   path: /docs/edge/getting-started-guides/what-is-edge/
-- title: Key concepts
+- title: 关键概念
   section:
-    - title: OTA updates
+    - title: OTA更新
       path: /docs/edge/user-guide/ota-updates/
-#- title: 配置指南
-#  section:
-#    - title: Edges
-#      path: /docs/user-guide/ui/edges/
-#    - title: Edge Management Overview
-#      path: /docs/edge/config/management/
-#    - title: Create Device on edge and provision to cloud
-#      path: /docs/edge/config/create-device/
-#    - title: Provision Device from cloud to edge
-#      path: /docs/edge/config/provision-device/
-#    - title: Provision Asset from cloud to edge
-#      path: /docs/edge/config/provision-asset/
-#    - title: Provision Entity View from cloud to edge
-#      path: /docs/edge/config/provision-entity-view/
-#    - title: Provision Dashboard from cloud to edge
-#      path: /docs/edge/config/provision-dashboard/
-#    - title: Provision User from cloud to edge
-#      path: /docs/edge/config/provision-user/
-#    - title: Provision Customer from cloud to edge
-#      path: /docs/edge/config/provision-customer/
-- title: Rule Engine
+- title: 配置指南
   section:
-    - title: Queues
+   - title: 边缘
+     path: /docs/user-guide/ui/edges/
+   - title: 边缘管理概述
+     path: /docs/edge/config/management/
+   - title: 从边缘到云端配置设备
+     path: /docs/edge/config/create-device/
+   - title: 从云端到边缘配置设备
+     path: /docs/edge/config/provision-device/
+   - title: 从云端到边缘配置资产
+     path: /docs/edge/config/provision-asset/
+   - title: 从云端到边缘配置实体视图
+     path: /docs/edge/config/provision-entity-view/
+   - title: 从云端到边缘配置仪表板
+     path: /docs/edge/config/provision-dashboard/
+   - title: 从云到边缘配置用户
+     path: /docs/edge/config/provision-user/
+   - title: 从云到边缘为客户提供服务
+     path: /docs/edge/config/provision-customer/
+- title: 规则引擎
+  section:
+    - title: 队列
       path: /docs/edge/rule-engine/queues/
-#    - title: Rule Chain Templates
-#      path: /docs/edge/rule-engine/rule-chain-templates/
-#    - title: Provision Rule Chains from cloud to edge
-#      path: /docs/edge/rule-engine/provision-rule-chains/
-#    - title: Push data from edge to cloud and vice versa
-#      path: /docs/edge/rule-engine/push-data/
-- title: Security
+    - title: 规则链模板
+      path: /docs/edge/rule-engine/rule-chain-templates/
+    - title: 从云端到边缘配置规则链
+      path: /docs/edge/rule-engine/provision-rule-chains/
+    - title: 将数据从边缘推送到云端，反之亦然
+      path: /docs/edge/rule-engine/push-data/
+- title: 安全
   section:
-    - title: Enable gRPC over SSL/TLS for edge communication
+    - title: 启用基于SSL/TLS的gRPC以进行边缘通信
       path: /docs/edge/user-guide/grpc-over-ssl/
-#- title: Features
-#  section:
-#    - title: Edge status
-#      path: /docs/edge/features/edge-status/
-#    - title: 云部署 Events
-#      path: /docs/edge/features/cloud-events/
-- title: Use Cases
+- title: 功能
   section:
-    - title: Overview
+   - title: 边缘状态
+     path: /docs/edge/features/edge-status/
+   - title: 云事件
+     path: /docs/edge/features/cloud-events/
+- title: 用例
+  section:
+    - title: 概述
       path: /docs/edge/use-cases/overview/
-    - title: Manage alarms and RPC requests on edge devices
+    - title: 管理边缘设备上的警报和RPC请求
       path: /docs/edge/use-cases/manage-alarms-rpc-requests/
-    - title: Data filtering and traffic reduce
+    - title: 数据过滤和流量减少
       path: /docs/edge/use-cases/data-filtering-traffic-reduce/
-- title: Troubleshooting
+- title: 故障排除
   path: /docs/edge/user-guide/troubleshooting/
-- title: Release Notes
+- title: 发行说明
   path: /docs/edge/releases/
-- title: Roadmap
+- title: 路线图
   path: /docs/edge/roadmap/

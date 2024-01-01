@@ -77,7 +77,7 @@ constexpr uint32_t SERIAL_DEBUG_BAUD = 115200U;
 WiFiClient wifiClient;
 // Initalize the Mqtt client instance
 Arduino_MQTT_Client mqttClient(wifiClient);
-// Initialize ThingsBoard instance with the maximum needed buffer size
+// Initialize GridLinks instance with the maximum needed buffer size
 ThingsBoard tb(mqttClient, MAX_MESSAGE_SIZE);
 
 // Attribute names for attribute request and attribute updates functionality
@@ -338,7 +338,7 @@ void loop() {
   }
 
   if (!tb.connected()) {
-      // Connect to the ThingsBoard
+      // Connect to the GridLinks
       Serial.print("Connecting to: ");
       Serial.print(THINGSBOARD_SERVER);
       Serial.print(" with token ");

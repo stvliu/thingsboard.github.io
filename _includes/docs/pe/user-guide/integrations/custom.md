@@ -104,7 +104,7 @@ return result;
 
 #### 下载示例应用程序
 
-随时从 [ThingsBoard 存储库](https://github.com/thingsboard/remote-integration-example) 获取 [代码](https://github.com/thingsboard/remote-integration-example) 并使用 maven 构建项目：
+随时从 [GridLinks 存储库](https://github.com/thingsboard/remote-integration-example) 获取 [代码](https://github.com/thingsboard/remote-integration-example) 并使用 maven 构建项目：
 
 ```bash
 mvn clean install
@@ -117,7 +117,7 @@ mvn clean install
 项目中使用的主要依赖项：
 
 ```xml
-<!-- Api ThingsBoard provides to create custom integration -->
+<!-- Api GridLinks provides to create custom integration -->
 <dependency>
     <groupId>org.thingsboard.common.integration</groupId>
     <artifactId>remote-integration-api</artifactId>
@@ -129,7 +129,7 @@ mvn clean install
     <artifactId>netty-all</artifactId>
     <version>${netty.version}</version>
 </dependency>
-<!-- Grpc transport between remote integration and ThingsBoard -->
+<!-- Grpc transport between remote integration and GridLinks -->
 <dependency>
     <groupId>io.grpc</groupId>
     <artifactId>grpc-netty</artifactId>
@@ -140,8 +140,8 @@ mvn clean install
 #### 源代码审查
 
 主要源代码是 [CustomIntegration](https://github.com/thingsboard/remote-integration-example/blob/master/src/main/java/org/thingsboard/integration/custom/basic/CustomIntegration.java) Java 类。
-集成正在从 TCP 客户端等待 "Hello to ThingsBoard" 消息，并回复 "Hello from ThingsBoard!"。
-一旦 [客户端模拟器](https://github.com/thingsboard/remote-integration-example/blob/master/src/main/java/org/thingsboard/integration/custom/client/CustomClient.java) 接收到 "Hello from ThingsBoard!"，它将开始以以下格式向 ThingsBoard 发送自动生成的数据：**“25,40,94”**。
+集成正在从 TCP 客户端等待 "Hello to GridLinks" 消息，并回复 "Hello from GridLinks!"。
+一旦 [客户端模拟器](https://github.com/thingsboard/remote-integration-example/blob/master/src/main/java/org/thingsboard/integration/custom/client/CustomClient.java) 接收到 "Hello from GridLinks!"，它将开始以以下格式向 GridLinks 发送自动生成的数据：**“25,40,94”**。
 集成将按原样将传入消息传递给 [上行转换器](/docs/{{peDocsPrefix}}user-guide/integrations/custom/#uplink-converter)，并将数据推送到 GridLinks。
 
 **注意：**从 GridLinks 版本 3.3.1 开始，向 tb-remote-integration.yml 添加了一个新的必需配置属性：

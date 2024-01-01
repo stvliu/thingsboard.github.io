@@ -242,7 +242,7 @@ toc:
       path: /docs/pe/user-guide/csv-xls-data-export/
     - title: 文件存储
       path: /docs/pe/user-guide/file-storage/
-    - title: ThingsBoard表达式语言(TBEL)
+    - title: GridLinks表达式语言(TBEL)
       path: /docs/pe/user-guide/tbel/
       new: true
 - title: 安全

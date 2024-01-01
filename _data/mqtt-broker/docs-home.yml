@@ -9,7 +9,7 @@ toc:
   path: /docs/mqtt-broker/install/config/
 - title: Security
   path: /docs/mqtt-broker/security/
-- title: Integration with ThingsBoard
+- title: Integration with GridLinks
   path: /docs/mqtt-broker/user-guide/integrations/how-to-connect-thingsboard-to-tbmq/
 - title: Features
   section:

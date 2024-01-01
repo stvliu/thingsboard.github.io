@@ -1,4 +1,4 @@
-bigheader: "ThingsBoard Documentation"
+bigheader: "GridLinks  Documentation"
 abstract: "Documentation for using GridLinks IoT Platform."
 toc:
 - title: 社区版
@@ -237,7 +237,7 @@ toc:
     - title: 文件存储
       path: /docs/pe/user-guide/file-storage/
       pe: true
-    - title: ThingsBoard表达式语言(TBEL)
+    - title: GridLinks 表达式语言(TBEL)
       path: /docs/user-guide/tbel/
       new: true
 - title: 安全

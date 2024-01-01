@@ -1,6 +1,6 @@
 - title: 社区版
-  fulltitle: ThingsBoard社区版
-  description: ThingsBoard文档
+  fulltitle: GridLinks 社区版
+  description: GridLinks 文档
   tag: ce
   icon: /images/thingsboard-cm-icon.svg
   path: /docs/
@@ -8,8 +8,8 @@
   getStarted: /docs/getting-started-guides/helloworld/
   docsPrefix: /docs/
 # - title: 专业版
-#   fulltitle: ThingsBoard专业版
-#   description: ThingsBoard文档
+#   fulltitle: GridLinks 专业版
+#   description: GridLinks 文档
 #   tag: pe
 #   icon: /images/thingsboard-p-icon.svg
 #   path: /docs/pe/
@@ -17,8 +17,8 @@
 #   getStarted: /docs/pe/getting-started-guides/helloworld/
 #   docsPrefix: /docs/pe/
 - title: 云服务
-  fulltitle: ThingsBoard云服务
-  description: ThingsBoard文档
+  fulltitle: GridLinks 云服务
+  description: GridLinks 文档
   tag: paas
   icon: /images/thingsboard-c-icon.svg
   path: /docs/paas/
@@ -26,8 +26,8 @@
   getStarted: /docs/paas/getting-started-guides/helloworld/
   docsPrefix: /docs/paas/
 - title: 边缘计算
-  fulltitle: ThingsBoard边缘计算
-  description: ThingsBoard边缘计算文档
+  fulltitle: GridLinks 边缘计算
+  description: GridLinks 边缘计算文档
   tag: edge
   icon: /images/thingsboard-e-icon.svg
   path: /docs/edge/
@@ -38,27 +38,27 @@
 #   icon: /images/thingsboard-e-icon.svg
 #   path: /docs/pe/edge/
 - title: 物联网网关
-  fulltitle: ThingsBoard物联网网关
-  description: ThingsBoard文档
+  fulltitle: GridLinks物联网网关
+  description: GridLinks 文档
   tag: gw
   icon: /images/gateway-icon.svg
   path: /docs/iot-gateway/
   getStarted: /docs/iot-gateway/getting-started/
 # - title: 授权服务器
-#   fulltitle: ThingsBoard授权服务器
-#   description: ThingsBoard文档
+#   fulltitle: GridLinks 授权服务器
+#   description: GridLinks 文档
 #   tag: license
 #   icon: /images/license-icon.svg
 #   path: /products/license-server/
-- title: 趋势分析
-  fulltitle: 趋势分析
-  description: 趋势文档
+- title: 数据分析
+  fulltitle: 数据分析
+  description: 数据文档
   tag: trendz
   icon: /images/trendz-icon.svg
   path: /docs/trendz/
   getStarted: /docs/trendz/getting-started/
 # - title: 移动应用
-#   fulltitle: ThingsBoard移动应用
+#   fulltitle: GridLinks 移动应用
 #   description: 移动应用文档
 #   tag: mobile
 #   icon: /images/tb-mobile-icon.svg

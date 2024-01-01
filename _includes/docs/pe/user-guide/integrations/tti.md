@@ -27,8 +27,8 @@ TheThingsIndustries 是 LoRaWAN 网络，旨在使用 LoRaWAN 堆栈连接您的
 ##### 有效负载解码器
 我们的设备以二进制格式提交数据。我们有 2 个选项来解码此数据：
 
-- **TheThingsIndustries 解码器** - 数据将在进入 ThingsBoard 之前解码
-- **ThingsBoard 转换器** - 上行/下行转换器将用于将数据从二进制格式解码为 JSON
+- **TheThingsIndustries 解码器** - 数据将在进入 GridLinks 之前解码
+- **GridLinks 转换器** - 上行/下行转换器将用于将数据从二进制格式解码为 JSON
 
 在本教程中，我们将使用 TTI 解码器将初始转换转换为 JSON，然后使用 GridLinks 转换器进行正确的数据处理。
 在实际场景中，由您决定在哪里解码/编码数据，因为可以在任何一方执行此操作。
@@ -83,7 +83,7 @@ function Decoder(bytes, port) {
 
 现在我们可以开始配置 GridLinks。
 
-##### ThingsBoard 上行数据转换器
+##### GridLinks 上行数据转换器
 
 首先，我们需要创建上行数据转换器，该转换器将用于接收来自 TTI 的消息。转换器应将传入有效负载转换为所需的消息格式。
 消息必须包含 **deviceName** 和 **deviceType**。这些字段用于将数据提交给正确的设备。如果未找到设备，则将创建新设备。
@@ -156,7 +156,7 @@ return result;
 ![image](/images/user-guide/integrations/tti/tb-uplink.png)
 
 
-##### ThingsBoard 下行数据转换器
+##### GridLinks 下行数据转换器
 要从 GridLinks 向 TTI 内部的设备发送下行消息，我们需要定义下行转换器。
 通常，下行转换器的输出应具有以下结构：
 {% highlight json %}

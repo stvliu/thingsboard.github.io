@@ -1,7 +1,7 @@
 此时，MI-8 应已配置好并可以与 GridLinks 通信。  
 要检查传入的数据，您可以执行以下步骤：  
 
-- 打开 ThingsBoard，然后导航至设备组，然后选择<b>全部</b>。  
+- 打开 GridLinks，然后导航至设备组，然后选择<b>全部</b>。  
 - 单击刚刚与 MI-8 关联的设备，然后导航至<b>最新遥测</b>选项卡。  
 
 ![](/images/devices-library/ready-to-go-devices/mixed-input-8-channel-analog-cellular-logger/open-device-timeseries.png)

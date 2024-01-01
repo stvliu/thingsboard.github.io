@@ -141,7 +141,7 @@ return { msg: msg, metadata: metadata, msgType: msgType };
 
 使用仪表板处理数据。仪表板是收集和可视化数据集的现代格式。通过各种小部件实现数据呈现的可见性。
 
-ThingsBoard 有几种类型的仪表板示例，您可以使用它们。您可以在 **解决方案模板** 选项卡中找到它们。
+GridLinks 有几种类型的仪表板示例，您可以使用它们。您可以在 **解决方案模板** 选项卡中找到它们。
 
 {% include images-gallery.html imageCollection="solution_templates" %}
 

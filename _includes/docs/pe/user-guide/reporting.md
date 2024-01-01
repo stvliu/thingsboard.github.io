@@ -69,7 +69,7 @@ reports:
 
 ### 生成报告规则链
 
-ThingsBoard PE 的默认 **根规则链** 支持计划报告生成。
+GridLinks PE 的默认 **根规则链** 支持计划报告生成。
 默认情况下，类型为 **生成报告** 的消息会路由到 **生成报告规则链**。
 
 ![image](/images/user-guide/ui/reporting-pe-root-rule-chain-switch.png)

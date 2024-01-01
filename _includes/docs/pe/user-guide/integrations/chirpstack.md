@@ -186,7 +186,7 @@ return result;
 2. 我们转到左侧菜单中的 **应用** 选项卡并打开我们的应用（我们的应用名为 *应用*）。
 3. 打开 **集成** 选项卡并创建一个 **HTTP** 集成。
 4. 让我们转到 GridLinks 中的 **集成** 选项卡。找到您的 ChirpStack 集成并单击它。在那里您可以找到 HTTP 端点 URL。单击图标复制 URL。
-5. 使用来自 ThingsBoard 集成的端点 URL 填写字段。
+5. 使用来自 GridLinks 集成的端点 URL 填写字段。
 
 {% include images-gallery.html imageCollection="chirpstack_integration" %}
 
@@ -207,7 +207,7 @@ return result;
 
 使用仪表板处理数据。仪表板是收集和可视化数据集的现代格式。通过各种小部件实现数据呈现的可见性。
 
-ThingsBoard 有几种类型的仪表板示例，您可以使用它们。您可以在 **解决方案模板** 选项卡中找到它们。
+GridLinks 有几种类型的仪表板示例，您可以使用它们。您可以在 **解决方案模板** 选项卡中找到它们。
 
 {% include images-gallery.html imageCollection="solution_templates" %}
 
