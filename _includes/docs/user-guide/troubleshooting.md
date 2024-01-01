@@ -37,7 +37,7 @@
 为此，您需要使用以下<i>logger</i>来[更新日志记录配置](#enable-certain-logs)：
 
 ```bash
-<logger name="org.thingsboard.server.service.queue.TbMsgPackProcessingContext" level="DEBUG" />
+<logger name="org.gridlinks.server.service.queue.TbMsgPackProcessingContext" level="DEBUG" />
 ```
 
 之后，您可以在 [日志](#logs) 中找到以下消息：

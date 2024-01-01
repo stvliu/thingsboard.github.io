@@ -10,7 +10,7 @@
 要做到这一点，您需要使用以下<i>记录器</i>更新您的日志记录配置（＃enable-certain-logs）：
 
 ```bash
-<logger name="org.thingsboard.server.service.queue.TbMsgPackProcessingContext" level="DEBUG" />
+<logger name="org.gridlinks.server.service.queue.TbMsgPackProcessingContext" level="DEBUG" />
 ```
 
 之后，您可以在日志中找到以下消息：
