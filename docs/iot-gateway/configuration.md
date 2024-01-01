@@ -15,7 +15,7 @@ description: GridLinks 物联网网关的安装结构和配置
 请参阅以下守护程序安装的默认目录结构。
 
 ```text
-/etc/thingsboard-gateway/config                   - 配置文件夹。
+/etc/gridlinks-gateway/config                   - 配置文件夹。
     tb_gateway.json                               - 网关的主要配置文件。
     logs.json                                     - 日志记录的配置文件。
     modbus.json                                   - Modbus 连接器配置。
@@ -26,7 +26,7 @@ description: GridLinks 物联网网关的安装结构和配置
     can.json                                      - CAN 连接器配置。 
     ... 
 
-/var/lib/thingsboard_gateway/extensions           - 自定义连接器/转换器的文件夹。                      
+/var/lib/gridlinks_gateway/extensions           - 自定义连接器/转换器的文件夹。                      
     modbus                                        - Modbus 自定义连接器/转换器的文件夹。
     mqtt                                          - MQTT 自定义连接器/转换器的文件夹。
         __init__.py                               - 默认 Python 包文件，用于正确的导入。
@@ -48,15 +48,15 @@ description: GridLinks 物联网网关的安装结构和配置
 
 用于连接到 GridLinks 平台实例并启用/禁用连接器的主配置文件。
 
-下面提供的示例配置文件设置了与位于 thingsboard.cloud 的 GridLinks 实例的连接，并利用内存文件存储，该存储被设置为最多保存 100,000 条记录。有 4 个不同的连接器处于活动状态。如果您只想使用一个，只需从配置中删除其他连接器即可。
+下面提供的示例配置文件设置了与位于 gridlinks.cloud 的 GridLinks 实例的连接，并利用内存文件存储，该存储被设置为最多保存 100,000 条记录。有 4 个不同的连接器处于活动状态。如果您只想使用一个，只需从配置中删除其他连接器即可。
 
 <b>主配置文件示例。点击以显示。</b>
 
 {% capture genConf %}
 
 {
-  "thingsboard": {
-    "host": "thingsboard.cloud",
+  "gridlinks": {
+    "host": "gridlinks.cloud",
     "port": 1883,
     "remoteShell": false,
     "remoteConfiguration": true,
@@ -130,7 +130,7 @@ description: GridLinks 物联网网关的安装结构和配置
 
 #### 配置文件中的部分
 
-+ **thingsboard** -- 用于连接到 GridLinks 平台的配置。
++ **gridlinks** -- 用于连接到 GridLinks 平台的配置。
   - *security* -- 加密和授权类型的配置。
 + **storage** -- 用于本地存储来自设备的传入数据的配置。
 + **connectors** -- 要使用的连接器及其配置的数组。
@@ -139,8 +139,8 @@ description: GridLinks 物联网网关的安装结构和配置
 
 | **参数** | **默认值** | **描述** |
 | --- | --- | --- |
-| ***thingsboard*** | | 连接到服务器的配置。 |
-| host | **thingsboard.cloud** | GridLinks 服务器的主机名或 IP 地址。 |
+| ***gridlinks*** | | 连接到服务器的配置。 |
+| host | **gridlinks.cloud** | GridLinks 服务器的主机名或 IP 地址。 |
 | port | **1883** | GridLinks 服务器上 MQTT 服务的端口。 |
 | qos | **1** | QoS 级别 0（最多一次）和 1（至少一次）。 |
 | minPackSendDelayMS | **200** | 发送数据包之间的延迟（减小此设置会导致 CPU 使用率增加）。 |

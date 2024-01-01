@@ -2,17 +2,17 @@
 
 |**参数**|**默认值**|**说明**|
 |:-|:-|-
-| caCert                   | **/etc/thingsboard-gateway/ca.pem**          | CA 文件的路径。                                               |
-| privateKey               | **/etc/thingsboard-gateway/privateKey.pem**  | 私钥文件的路径。                                      |
-| cert                     | **/etc/thingsboard-gateway/certificate.pem** | 证书文件的路径。
+| caCert                   | **/etc/gridlinks-gateway/ca.pem**          | CA 文件的路径。                                               |
+| privateKey               | **/etc/gridlinks-gateway/privateKey.pem**  | 私钥文件的路径。                                      |
+| cert                     | **/etc/gridlinks-gateway/certificate.pem** | 证书文件的路径。
 |---    
 
 配置文件中的安全子部分将如下所示：
 
 ```json
   "security":{
-    "caCert": "/etc/thingsboard-gateway/ca.pem",
-    "privateKey": "/etc/thingsboard-gateway/privateKey.pem",
-    "cert": "/etc/thingsboard-gateway/certificate.pem"
+    "caCert": "/etc/gridlinks-gateway/ca.pem",
+    "privateKey": "/etc/gridlinks-gateway/privateKey.pem",
+    "cert": "/etc/gridlinks-gateway/certificate.pem"
   }
 ```

@@ -16,8 +16,8 @@
 
 | **参数** | **默认值** | **说明** |
 |:-|:-|:-|
-| 证书文件 | **/etc/thingsboard-gateway/certificate.pem** | 证书文件的路径。 |
-| 密钥文件 | **/etc/thingsboard-gateway/privateKey.pem** | 私钥文件的路径。 |
+| 证书文件 | **/etc/gridlinks-gateway/certificate.pem** | 证书文件的路径。 |
+| 密钥文件 | **/etc/gridlinks-gateway/privateKey.pem** | 私钥文件的路径。 |
 | 密码 | **YOUR_PASSWORD** | 服务器密码。 |
 | 请求客户端证书 | **false** | 从客户端请求证书文件。 |
 |---
@@ -27,8 +27,8 @@
 "slave": {
   "type": "tcp",
   "security": {
-    "certfile": "/etc/thingsboard-gateway/certificate.pem",
-    "keyfile": "/etc/thingsboard-gateway/privateKey.pem",
+    "certfile": "/etc/gridlinks-gateway/certificate.pem",
+    "keyfile": "/etc/gridlinks-gateway/privateKey.pem",
     "password": "YOUR_PASSWORD",
     "reqclicert": false
   },

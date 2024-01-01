@@ -18,7 +18,7 @@ sudo apt install python3-dev python3-pip libglib2.0-dev
 **2. 使用 pip 安装 GridLinks 网关模块：**
 
 ```bash
-sudo pip3 install thingsboard-gateway
+sudo pip3 install gridlinks-gateway
 ```
 {: .copy-code}
 
@@ -27,13 +27,13 @@ sudo pip3 install thingsboard-gateway
  - 下载配置示例：
 
 ```bash
-wget https://github.com/thingsboard/thingsboard-gateway/releases/download/2.0/configs.tar.gz
+wget https://github.com/gridlinks/gridlinks-gateway/releases/download/2.0/configs.tar.gz
 ```
 {: .copy-code}
 
  - 创建配置目录：
 ```bash
-sudo mkdir /etc/thingsboard-gateway
+sudo mkdir /etc/gridlinks-gateway
 ```
 {: .copy-code}
 
@@ -45,7 +45,7 @@ sudo mkdir /var/log/gridlinks-gateway
 
  - 解压配置：
 ```bash
-sudo tar -xvzf configs.tar.gz -C /etc/thingsboard-gateway
+sudo tar -xvzf configs.tar.gz -C /etc/gridlinks-gateway
 ```
 {: .copy-code}
 
@@ -60,13 +60,13 @@ sudo chown YOUR_USER:YOUR_USER -R /var/log/gridlinks-gateway
 
 - 对于配置文件夹
 ```bash
-sudo chown YOUR_USER:YOUR_USER -R /etc/thingsboard-gateway
+sudo chown YOUR_USER:YOUR_USER -R /etc/gridlinks-gateway
 ```
 其中 `YOUR_USER` 是将运行网关的用户。
 
 **5. 您可以使用命令检查安装**（您将收到有关连接的错误，因为您没有为自己配置网关。*有关配置，请使用 [配置指南](/docs/iot-gateway/configuration/)）：*
 
 ```bash
-thingsboard-gateway
+gridlinks-gateway
 ```
 {: .copy-code}

@@ -34,7 +34,7 @@ description: 了解如何使用 GridLinks IoT 网关将 Modbus 设备连接到 G
 ## 步骤 1. 配置 Modbus 连接器
 
 为了配置连接器，我们必须创建 MODBUS 设置文件并将配置放在那里。
-您可以使用默认的 modbus.json 文件（在守护程序安装的情况下为 /etc/thingsboard-gateway/config 中的文件，或者在使用 python 包的情况下为包含 tb_gateway.json 文件的文件夹中的文件）。  
+您可以使用默认的 modbus.json 文件（在守护程序安装的情况下为 /etc/gridlinks-gateway/config 中的文件，或者在使用 python 包的情况下为包含 tb_gateway.json 文件的文件夹中的文件）。  
 只需用我们的值替换一些参数即可。
 例如：
 
@@ -119,7 +119,7 @@ description: 了解如何使用 GridLinks IoT 网关将 Modbus 设备连接到 G
 运行命令取决于安装类型。  
 如果您已将网关安装为守护程序，请运行以下命令：  
 ```bash
-sudo systemctl restart thingsboard-gateway
+sudo systemctl restart gridlinks-gateway
 ```  
 {: .copy-code}
 
@@ -127,13 +127,13 @@ sudo systemctl restart thingsboard-gateway
 **注意**：您必须在命令/脚本中放置正确的主配置文件路径（**tb_gateway.yaml**）。  
 
 ```bash
-sudo python3 -c 'from thingsboard_gateway.gateway.tb_gateway_service import TBGatewayService; TBGatewayService("YOUR_PATH_HERE")'
+sudo python3 -c 'from gridlinks_gateway.gateway.tb_gateway_service import TBGatewayService; TBGatewayService("YOUR_PATH_HERE")'
 ```
 
 或脚本：
 
 ```python
-from thingsboard_gateway.gateway.tb_gateway_service import TBGatewayService 
+from gridlinks_gateway.gateway.tb_gateway_service import TBGatewayService 
 
 config_file_path = "YOUR_PATH_HERE"
 

@@ -15,7 +15,7 @@
   "type": "X509_CERTIFICATE",
   "provisionDeviceKey": "PUT_YOUR_DEVICE_KEY_HERE",
   "provisionDeviceSecret": "PUT_YOUR_DEVICE_SECRET_HERE",
-  "caCert": "/etc/thingsboard-gateway/ca.pem"
+  "caCert": "/etc/gridlinks-gateway/ca.pem"
 },
 ...
 ```

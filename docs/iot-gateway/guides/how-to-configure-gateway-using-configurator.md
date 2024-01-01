@@ -26,7 +26,7 @@ tb-gateway-configurator
 
 回答依次显示的问题，使用您的选项（您可以使用输入字段中显示的默认值）。
 
-**注意**：默认值取自 **/etc/thingsboard-gateway/config/tb_gateway.yaml**，您通过 CLI 进行的所有配置都将保存在此处。
+**注意**：默认值取自 **/etc/gridlinks-gateway/config/tb_gateway.yaml**，您通过 CLI 进行的所有配置都将保存在此处。
 
 ![](/images/gateway/gateway-cli-questions.png)
 
@@ -34,7 +34,7 @@ tb-gateway-configurator
 
 最后，您可以使用以下命令启动 GridLinks IoT 网关：
 ```bash
-thingsboard-gateway
+gridlinks-gateway
 ```
 {: .copy-code}
 
