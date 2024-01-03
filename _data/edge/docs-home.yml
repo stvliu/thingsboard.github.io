@@ -33,12 +33,12 @@ toc:
   section:
     - title: 队列
       path: /docs/edge/rule-engine/queues/
-    - title: 规则链模板
-      path: /docs/edge/rule-engine/rule-chain-templates/
-    - title: 从云端到边缘配置规则链
-      path: /docs/edge/rule-engine/provision-rule-chains/
-    - title: 将数据从边缘推送到云端，反之亦然
-      path: /docs/edge/rule-engine/push-data/
+    # - title: 规则链模板
+    #   path: /docs/edge/rule-engine/rule-chain-templates/
+    # - title: 从云端到边缘配置规则链
+    #   path: /docs/edge/rule-engine/provision-rule-chains/
+    # - title: 将数据从边缘推送到云端，反之亦然
+    #   path: /docs/edge/rule-engine/push-data/
 - title: 安全
   section:
     - title: 启用基于SSL/TLS的gRPC以进行边缘通信
@@ -49,7 +49,7 @@ toc:
      path: /docs/edge/features/edge-status/
    - title: 云事件
      path: /docs/edge/features/cloud-events/
-- title: 用例
+- title: 使用案例
   section:
     - title: 概述
       path: /docs/edge/use-cases/overview/
