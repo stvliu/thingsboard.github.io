@@ -204,7 +204,7 @@ notitle: "true"
                             <a href="/docs/pe/user-guide/certificates/">X.509 证书</a>。
 
                             除了支持 MQTT 和 HTTP 之外，设备还可以使用其他协议（如 CoAP、LwM2M 和 SNMP）与平台进行本地通信。
-                            您还可以使用我们的 <a href="/docs/iot-gateway/what-is-iot-gateway/">IoT 网关</a> 通过 BLE、CAN、Modbus、OPC-UA、BACnet、ODBC 等将连接到旧版和第三方系统的设备集成在一起。
+                            您还可以使用我们的 <a href="/docs/iot-gateway/what-is-iot-gateway/">IoT 网关</a> 通过 BLE、CAN、Modbus、OPC-UA、BACnet、ODBC 等将连接到旧系统和第三方系统的设备集成在一起。
 
                             ThingsBoard 还内置了与 SigFox、LoRaWAN、NB IoT 等外部系统的集成。
                             您可以在 <a href="/docs/user-guide/integrations/">此处</a> 找到所有可用集成的列表。</p>

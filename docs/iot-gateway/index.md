@@ -1,11 +1,11 @@
 ---
 layout: docwithnav-gw
 title: 物联网网关
-description: GridLinks物联网网关，用于将现有和旧版物联网设备连接到平台
+description: GridLinks物联网网关，用于将现有和遗留物联网设备连接到平台
 
 ---
 
-GridLinks **物联网网关** 将帮助您将连接到旧版和第三方系统的设备与 GridLinks 物联网平台集成。
+GridLinks **物联网网关** 将帮助您将连接到旧系统和第三方系统的设备与 GridLinks 物联网平台集成。
 
 例如，您可以从连接到外部 **MQTT 代理**、**OPC-UA 服务器**、**Sigfox 后端**、**Modbus 从设备** 或 **CAN 节点** 的设备中提取数据。
 

@@ -151,7 +151,7 @@ service:
   type: "${TB_SERVICE_TYPE:tb-integration}"
 ```
 
-如果您正在使用旧版本的自定义远程集成，并计划将您的自定义集成升级到 3.3.1 版本，请确保已将该属性添加到 tb-remote-integration.yml 文件中。
+如果您正在使用章节的自定义远程集成，并计划将您的自定义集成升级到 3.3.1 版本，请确保已将该属性添加到 tb-remote-integration.yml 文件中。
 
 ## 后续步骤
 

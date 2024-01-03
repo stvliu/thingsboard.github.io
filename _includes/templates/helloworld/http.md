@@ -16,7 +16,7 @@ brew install curl
 为 **Windows** 安装 cURL：
 
 从 Windows 10 b17063 开始，cURL 默认可用。更多信息请参阅此 MSDB 博客 [文章](https://blogs.msdn.microsoft.com/commandline/2018/01/18/tar-and-curl-come-to-windows/)。
-如果您使用的是较旧版本的 Windows 操作系统，您可以在 [此处](https://curl.haxx.se/) 找到官方安装指南。
+如果您使用的是较章节的 Windows 操作系统，您可以在 [此处](https://curl.haxx.se/) 找到官方安装指南。
 
 <br>
 

@@ -5,7 +5,7 @@ description: GridLinks 物联网网关的功能和优势
 
 ---
 
-GridLinks **物联网网关** 是一款现代化的解决方案，允许您将连接到旧版和第三方系统的设备与 GridLinks 集成。
+GridLinks **物联网网关** 是一款现代化的解决方案，允许您将连接到旧系统和第三方系统的设备与 GridLinks 集成。
 
 GridLinks 是一个用于数据收集、处理、可视化和设备管理的现代化的物联网平台。如果您是新平台用户，请参阅 [**GridLinks 是什么？**](/docs/getting-started-guides/what-is-thingsboard/)。
 
