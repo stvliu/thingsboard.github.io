@@ -9,7 +9,7 @@ description: GridLinks物联网网关的 BLE 协议支持
 {:toc}
 
 本指南将帮助您熟悉 GridLinks物联网网关的 BLE 连接器配置。
-使用 [常规配置](/docs/iot-gateway/configuration/) 启用此扩展。
+使用 [通用配置](/docs/iot-gateway/configuration/) 启用此扩展。
 我们将在下面描述连接器配置文件。
 
 **BLE 连接器需要一些系统库，要安装它们，请在系统中选择软件包管理器的版本，然后运行命令以安装库：**
@@ -63,7 +63,7 @@ YUM<br>%,%rpm%,%templates/iot-gateway/ble-requirements-rpm.md{% endcapture %}
             ],
             "attributeUpdates": [
                 {
-                    "attributeOnThingsBoard": "sharedName",
+                    "attributeOnGridLinks": "sharedName",
                     "characteristicUUID": "00002A00-0000-1000-8000-00805F9B34FB"
                 }
             ],
@@ -93,15 +93,15 @@ YUM<br>%,%rpm%,%templates/iot-gateway/ble-requirements-rpm.md{% endcapture %}
 
 为此设备创建的默认配置可处理来自它的数据，接收通知并写入一些信息。
 
-在 [主部分](#main-section) 中，我们为连接器编写常规配置，例如连接器名称、扫描模式、扫描仪等。
-在 [设备子部分](#device-object-subsection) 中，我们为连接到我们的设备编写常规配置（GridLinks 中的设备名称和设备 MAC 地址等）。
+在 [主部分](#main-section) 中，我们为连接器编写通用配置，例如连接器名称、扫描模式、扫描仪等。
+在 [设备子部分](#device-object-subsection) 中，我们为连接到我们的设备编写通用配置（GridLinks 中的设备名称和设备 MAC 地址等）。
 在 [子部分遥测](#subsection-telemetry) 中，我们编写配置以处理来自设备的数据（网关应获取数据的位置、方法和转换器将这些数据解释为 GridLinks 上的遥测和属性）。
 在 [子部分属性更新](#subsection-attributes) 中，我们编写配置以在从 GridLinks 收到属性更新请求后重命名设备。
 如果设备共享属性的名称为“sharedName”，则网关会将此属性中的数据写入具有 ID - 00002A00-0000-1000-8000-00805F9B34FB 的特征。
 
 ### 主部分
 
-此部分包含连接器的常规设置。
+此部分包含连接器的通用设置。
 
 | **参数** | **默认值** | **描述** |
 |:-|:-|:-|
@@ -169,7 +169,7 @@ YUM<br>%,%rpm%,%templates/iot-gateway/ble-requirements-rpm.md{% endcapture %}
 
 #### 设备对象子部分
 
-此子部分包含设备的常规设置以及用于处理数据的子部分。
+此子部分包含设备的通用设置以及用于处理数据的子部分。
 
 | **参数** | **默认值** | **描述** |
 |:-|:-|:-|
@@ -211,7 +211,7 @@ YUM<br>%,%rpm%,%templates/iot-gateway/ble-requirements-rpm.md{% endcapture %}
 
 ##### 子部分遥测
 
-此子部分包含将数据解释为遥测的常规设置。
+此子部分包含将数据解释为遥测的通用设置。
 
 | **参数** | **默认值** | **描述** |
 |:-|:-|:-|
@@ -244,7 +244,7 @@ YUM<br>%,%rpm%,%templates/iot-gateway/ble-requirements-rpm.md{% endcapture %}
 
 ##### 子部分属性
 
-此子部分包含将数据解释为属性的常规设置。
+此子部分包含将数据解释为属性的通用设置。
 
 | **参数** | **默认名称** | **描述** |
 |:-|:-|:-|
@@ -312,7 +312,7 @@ YUM<br>%,%rpm%,%templates/iot-gateway/ble-requirements-rpm.md{% endcapture %}
 
 | **参数** | **默认名称** | **描述** |
 |:-|:-|:-|
-| attributeOnThingsBoard | **sharedName** | GridLinks 中共享设备属性的名称。 |
+| attributeOnGridLinks | **sharedName** | GridLinks 中共享设备属性的名称。 |
 | characteristicUUID | **00002A00-0000-1000-8000-00805F9B34FB** | 将写入属性值的特征的 UUID。 |
 |---
 
@@ -320,7 +320,7 @@ YUM<br>%,%rpm%,%templates/iot-gateway/ble-requirements-rpm.md{% endcapture %}
 
 ```json
 {
-    "attributeOnThingsBoard": "sharedName",
+    "attributeOnGridLinks": "sharedName",
     "characteristicUUID": "00002A00-0000-1000-8000-00805F9B34FB"
 }
 ```

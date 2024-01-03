@@ -12,7 +12,7 @@ description: 在 DigitalOcean 上安装 GridLinks
 
 {% include templates/install/digital-ocean-droplet.md %}
 
-### 第 4 步。使用 Ubuntu 的常规安装说明
+### 第 4 步。使用 Ubuntu 的通用安装说明
 
 请导航至 ThingsBoard [**安装说明**](/docs/user-guide/install/ubuntu/)
 适用于 Ubuntu 并完成安装步骤。

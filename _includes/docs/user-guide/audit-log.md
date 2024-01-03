@@ -17,7 +17,7 @@ GridLinks 提供跟踪用户操作以保持审计日志的功能。
 有几个 API 调用允许获取与特定用户、实体、客户相关联的实体或使用页面链接获取所有记录。
 
 {% unless docsPrefix == "paas/" %}
-### 常规配置
+### 通用配置
 
 系统管理员能够使用 [thingsboard.yml](/docs/user-guide/install/{{docsPrefix}}config/) 配置审计日志级别。您可以在下面找到示例配置：
 

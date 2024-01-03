@@ -238,7 +238,7 @@ Spring Actuator 可以使用 Prometheus 公开一些内部状态指标。
 
 “主页”部分中的基本 URL 不应包含“/”或其他字符。
 
-> 以系统管理员身份转到您的 GridLinks。检查常规设置 -> 基本 URL 不应在末尾包含“/”（例如，“https://mycompany.com”而不是“https://mycompany.com/”）。
+> 以系统管理员身份转到您的 GridLinks。检查通用设置 -> 基本 URL 不应在末尾包含“/”（例如，“https://mycompany.com”而不是“https://mycompany.com/”）。
 
 有关 OAuth2 配置，请 [单击此处](/docs/{{docsPrefix}}user-guide/oauth-2-support/)。
 

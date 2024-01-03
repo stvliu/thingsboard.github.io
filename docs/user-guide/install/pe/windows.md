@@ -175,7 +175,7 @@ YYYY-MM-DD HH:mm:ss,sss [main] INFO  o.t.s.ThingsboardServerApplication - Starte
 
 ```
 
-如果出现任何不明确的错误，请使用常规 [故障排除指南](/docs/user-guide/troubleshooting/#getting-help) 或 [联系我们](/docs/contact-us/)。
+如果出现任何不明确的错误，请使用通用 [故障排除指南](/docs/user-guide/troubleshooting/#getting-help) 或 [联系我们](/docs/contact-us/)。
 
 ### Windows 防火墙设置
 

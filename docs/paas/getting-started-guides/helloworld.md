@@ -202,7 +202,7 @@ step72:
         title: '单击“更新”以更改设备的所有者。您始终可以将所有者更改回租户；'
     6:
         image: /images/helloworld/getting-started-pe/hello-world-71-assign-device-to-customer-7-pe.png
-        title: '默认情况下，常规设备列表显示租户设备和您客户的设备。禁用“包括客户实体”以仅在设备列表中查看租户设备；'
+        title: '默认情况下，通用设备列表显示租户设备和您客户的设备。禁用“包括客户实体”以仅在设备列表中查看租户设备；'
     7:
         image: /images/helloworld/getting-started-pe/hello-world-71-assign-device-to-customer-8-pe.png
         title: '您的设备列表现在应该为空。'

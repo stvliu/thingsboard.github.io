@@ -15,7 +15,7 @@
 ## 结论
 ```
 
-2. 使用 **docx**、常规 **txt** 或 **markdown** 创建您的指南。**Markdown** 是首选。
+2. 使用 **docx**、通用 **txt** 或 **markdown** 创建您的指南。**Markdown** 是首选。
 
 3. 如果您决定使用 **markdown** 或 **txt** 格式 - 请将您的指南与 **图像/屏幕截图** 一起放入存档或 GitHub 存储库。
 

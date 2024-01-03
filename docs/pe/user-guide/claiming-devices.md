@@ -19,7 +19,7 @@ device-claiming-widget-carousel:
         title: '声明设备小部件非常简单，允许输入设备名称和密钥。'
     2:
         image: /images/user-guide/claiming-devices/claim-device-widget-advanced-settings.png
-        title: '可以在“常规设置”中“隐藏”密钥输入字段并更改标签。'
+        title: '可以在“通用设置”中“隐藏”密钥输入字段并更改标签。'
     3:
         image: /images/user-guide/claiming-devices/claim-device-widget-message-settings.png
         title: '还可以在“消息设置”中配置所有类型的用户消息。'

@@ -88,7 +88,7 @@ two-factor-authentication-backup-code:
         title: '通过备份代码的 2FA 已启用；'
     3:
         image: /images/user-guide/two-factor-authentication/two-factor-authentication-backup-code-4-ce.png
-        title: '在常规登录过程中，在电子邮件和密码步骤后，单击“尝试其他方式”按钮；'
+        title: '在通用登录过程中，在电子邮件和密码步骤后，单击“尝试其他方式”按钮；'
     4:
         image: /images/user-guide/two-factor-authentication/two-factor-authentication-backup-code-5-ce.png
         title: '选择使用备份代码进行验证的方式；'

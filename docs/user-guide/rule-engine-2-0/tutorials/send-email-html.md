@@ -44,7 +44,7 @@ html_generator:
 
 
 ## 消息流
-- 作为起点，我们将使用 [生成器](/docs/user-guide/rule-engine-2-0/action-nodes/#generator-node)，它将模仿常规规则链消息流：准备好的消息和元数据，其中我们可以包含 **发送电子邮件** 节点的某些动态字段。
+- 作为起点，我们将使用 [生成器](/docs/user-guide/rule-engine-2-0/action-nodes/#generator-node)，它将模仿通用规则链消息流：准备好的消息和元数据，其中我们可以包含 **发送电子邮件** 节点的某些动态字段。
 - [发送电子邮件节点](/docs/user-guide/rule-engine-2-0/transformation-nodes/#to-email-node) 准备数据、目标电子邮件和其他电子邮件消息。
 - [发送电子邮件节点](/docs/user-guide/rule-engine-2-0/external-nodes/#send-email-node) 发送消息。
 

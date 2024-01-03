@@ -56,7 +56,7 @@ SNMP 在 Internet 协议套件的应用层中运行。SNMP 消息可以通过用
 
 {% include images-gallery.html imageCollection="deviceProfileConfiguring2" %}
 
-顺便说一下，支持的数据类型有：`LONG`、`DOUBLE`、`BOOLEAN` 和 `STRING`（对于 SNMP，配置的数据类型为 `JSON` 的接收变量值将被视为常规字符串）。
+顺便说一下，支持的数据类型有：`LONG`、`DOUBLE`、`BOOLEAN` 和 `STRING`（对于 SNMP，配置的数据类型为 `JSON` 的接收变量值将被视为通用字符串）。
 
 对于此查询配置和其他查询配置，正在使用的方法类型是 `GET`。
 

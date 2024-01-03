@@ -136,7 +136,7 @@ mvn clean install -P yarn-start
 
 作为第一个选项，您可以从您的 *IDE* 中运行位于 *application* 模块中的 **org.thingsboard.server.ThingsboardServerApplication** 类的 main 方法。
 
-作为第二个选项，您可以从命令行启动服务器作为常规的 **Spring boot** 应用程序：
+作为第二个选项，您可以从命令行启动服务器作为通用的 **Spring boot** 应用程序：
 
 ```bash
 cd ${TB_WORK_DIR}

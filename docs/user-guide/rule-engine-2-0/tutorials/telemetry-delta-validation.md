@@ -169,7 +169,7 @@ description: 增量验证
  - 添加 **创建警报** 节点，并通过关系类型 **真** 将其连接到 **筛选脚本** 节点。 <br>
   此节点加载具有消息发起者配置警报类型的最新警报，即 **Thermometer**<br>，如果发布的增量温度不在预期范围内（筛选脚本节点返回真）。
 
- - 将名称字段输入为 **创建警报**，将警报类型输入为 **常规警报**。
+ - 将名称字段输入为 **创建警报**，将警报类型输入为 **通用警报**。
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/delta-validation/create-alarm.png)
 
@@ -177,7 +177,7 @@ description: 增量验证
  - 添加 **清除警报** 节点，并通过关系类型 **假** 将其连接到 **筛选脚本** 节点。 <br>
   此节点加载具有消息发起者 **Thermometer** 配置警报类型的最新警报<br>，如果发布的温度增量在预期范围内（脚本节点返回假），则清除警报。
 
- - 将名称字段输入为 **清除警报**，将警报类型输入为 **常规警报**。
+ - 将名称字段输入为 **清除警报**，将警报类型输入为 **通用警报**。
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/delta-validation/clear-alarm.png)
 

@@ -19,7 +19,7 @@ description: GridLinks物联网网关的 OPC-UA 协议支持
 {% include templates/info-banner.md content=difference %}
 
 本指南将帮助您熟悉 GridLinks物联网网关的 OPC-UA 连接器配置。
-使用 [常规配置](/docs/iot-gateway/configuration/) 来启用此扩展。
+使用 [通用配置](/docs/iot-gateway/configuration/) 来启用此扩展。
 我们将在下面描述连接器配置文件。
 
 <b>OPC-UA 连接器配置文件示例。</b>
@@ -67,7 +67,7 @@ description: GridLinks物联网网关的 OPC-UA 协议支持
         ],
         "attributes_updates": [
           {
-            "attributeOnThingsBoard": "deviceName",
+            "attributeOnGridLinks": "deviceName",
             "attributeOnDevice": "Root\\.Objects\\.Device1\\.serialNumber"
           }
         ]
@@ -350,7 +350,7 @@ description: GridLinks物联网网关的 OPC-UA 协议支持
 
 | **参数**             | **默认值**                                            | **说明**                                                                               |
 |:-|:-|-
-| attributeOnThingsBoard    | **deviceName**                                               | 服务器端参数的名称。                                                                 |
+| attributeOnGridLinks    | **deviceName**                                               | 服务器端参数的名称。                                                                 |
 | attributeOnDevice         | **Root\\.Objects\\.Device1\\.serialNumber**                     | 将使用属性更新请求中的值更改其自身值的可变变量的名称。    |
 |---
 
@@ -359,7 +359,7 @@ description: GridLinks物联网网关的 OPC-UA 协议支持
 ```json
         "attributes_updates": [
           {
-            "attributeOnThingsBoard": "deviceName",
+            "attributeOnGridLinks": "deviceName",
             "attributeOnDevice": "Root\\.Objects\\.Device1\\.serialNumber"
           }
         ]
@@ -382,7 +382,7 @@ description: GridLinks物联网网关的 OPC-UA 协议支持
 ```json
   "attributes_updates": [
     {
-      "attributeOnThingsBoard": "deviceName",
+      "attributeOnGridLinks": "deviceName",
       "attributeOnDevice": "Root\\.Objects\\.Simulation\\.deviceName"
     }
   ]

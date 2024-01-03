@@ -16,5 +16,5 @@ notitle: true
 
 ## 后续步骤
 
- - [常规配置](/docs/iot-gateway/configuration/) - 如何配置GridLinks物联网网关。
+ - [通用配置](/docs/iot-gateway/configuration/) - 如何配置GridLinks物联网网关。
  - [自定义指南](/docs/iot-gateway/custom/) - 如何创建自定义连接器和转换器。

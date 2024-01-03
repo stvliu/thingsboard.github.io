@@ -110,8 +110,8 @@ MAC 地址 - 4C:65:A8:DF:85:C0
 
 让我们分析我们的设置：
 
-1. 连接器的常规配置。在本节中，我们定义了常规连接器设置，例如连接器名称（“BLE 连接器”）、重新扫描间隔（100）等。您可以在此处 [阅读有关可用参数的更多信息](/docs/iot-gateway/config/ble/#main-section)。
-2. 常规设备配置。在本节中，我们定义了常规设备设置，例如 GridLinks 中的设备名称（“温度和湿度传感器”）、MAC 地址（“4C:65:A8:DF:85:C0”）等。您可以在此处 [阅读有关可用参数的更多信息](/docs/iot-gateway/config/ble/#device-object-subsection)。
+1. 连接器的通用配置。在本节中，我们定义了通用连接器设置，例如连接器名称（“BLE 连接器”）、重新扫描间隔（100）等。您可以在此处 [阅读有关可用参数的更多信息](/docs/iot-gateway/config/ble/#main-section)。
+2. 通用设备配置。在本节中，我们定义了通用设备设置，例如 GridLinks 中的设备名称（“温度和湿度传感器”）、MAC 地址（“4C:65:A8:DF:85:C0”）等。您可以在此处 [阅读有关可用参数的更多信息](/docs/iot-gateway/config/ble/#device-object-subsection)。
 3. 遥测配置。在本节中，我们定义了温度和湿度参数的配置。您可以在此处 [阅读有关可用参数的更多信息](/docs/iot-gateway/config/ble/#subsection-telemetry)。
 4. 属性配置。在本节中，我们定义了连接器将从特征（“00002A00-0000-1000-8000-00805F9B34FB”）中读取值，并将其作为 GridLinks 上的设备客户端属性（“名称”）写入。您可以在此处 [阅读有关可用参数的更多信息](/docs/iot-gateway/config/ble/#subsection-attributes)。
 5. 属性更新配置。在本节中，我们配置了网关，以便在我们在 GridLinks 设备中更改共享属性（“sharedName”）时更改设备名称。您可以在此处 [阅读有关可用参数的更多信息](/docs/iot-gateway/config/ble/#subsection-attributeupdates)。
@@ -119,7 +119,7 @@ MAC 地址 - 4C:65:A8:DF:85:C0
 
 如果您有不同的设备，则应在配置 json 中提供您的设备特征标识符。
 
-我们将配置文件另存为 **ble.json**，位于 config 文件夹中（包含常规配置文件 - **tb_gateway.yaml** 的目录）。
+我们将配置文件另存为 **ble.json**，位于 config 文件夹中（包含通用配置文件 - **tb_gateway.yaml** 的目录）。
 
 ## 步骤 3. 打开连接器
 
@@ -168,7 +168,7 @@ TBGatewayService(config_file_path)
 
 ## 步骤 5. 检查 ThingsBoard 上的信息
 
-检查您已在 [常规配置指南](/docs/iot-gateway/configuration/) 中配置的 GridLinks 实例中的数据。
+检查您已在 [通用配置指南](/docs/iot-gateway/configuration/) 中配置的 GridLinks 实例中的数据。
 
 - 前往您的 GridLinks 实例并登录。
 - 转到“设备”选项卡。“温度和湿度传感器”应该在那里。

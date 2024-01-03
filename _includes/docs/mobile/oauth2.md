@@ -8,7 +8,7 @@
 
 {{appPrefix}} 移动应用程序提供 OAuth 2.0 支持。启用 OAuth 2.0 后，移动应用程序将在登录屏幕上显示其他登录按钮，允许用户使用配置的 OAuth 2.0 提供程序进行身份验证。
 系统管理员用户可以在 **OAuth2** 设置表单中对其进行配置。
-请参阅 [OAuth 2.0 支持](/docs/{{docsPrefix}}user-guide/oauth-2-support/) 以了解常规 OAuth 配置。
+请参阅 [OAuth 2.0 支持](/docs/{{docsPrefix}}user-guide/oauth-2-support/) 以了解通用 OAuth 配置。
 为了在移动应用程序中启用 OAuth，您应该在 OAuth 设置表单的 **移动应用程序** 选项卡中注册它：
 
 1. 作为系统管理员用户，转到 **系统设置** -> **OAuth2**；

@@ -16,7 +16,7 @@ description: 如何在 GridLinks物联网网关上启用远程 shell 功能
 
 ## 步骤 1. 远程 shell 激活
 
-- 要在 GridLinks物联网网关中激活远程 shell，您应该在常规配置文件 (**tb_gateway.yaml**) 中的 **thingsboard** 部分中添加或将参数 **remoteShell** 更改为 **true**；
+- 要在 GridLinks物联网网关中激活远程 shell，您应该在通用配置文件 (**tb_gateway.yaml**) 中的 **thingsboard** 部分中添加或将参数 **remoteShell** 更改为 **true**；
 
   ![](/images/gateway/charhe-remote-shell-parameter.png)
   <br>
@@ -33,7 +33,7 @@ description: 如何在 GridLinks物联网网关上启用远程 shell 功能
 
 - 使用新配置重新启动网关。
 
-常规配置文件中 **thingsboard** 部分的示例：
+通用配置文件中 **thingsboard** 部分的示例：
 ```json
 {
   "thingsboard": {

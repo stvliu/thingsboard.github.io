@@ -44,7 +44,7 @@ description: GridLinks 物联网网关的安装结构和配置
     tb_connection.log                             - 连接到 GridLinks 实例的日志。
 ```
         
-## 常规配置文件
+## 通用配置文件
 
 用于连接到 GridLinks 平台实例并启用/禁用连接器的主配置文件。
 
@@ -146,9 +146,9 @@ description: GridLinks 物联网网关的安装结构和配置
 | minPackSendDelayMS | **200** | 发送数据包之间的延迟（减小此设置会导致 CPU 使用率增加）。 |
 | minPackSizeToSend | **500** | 要发送的数据包的最小大小。 |
 
-###### 小节“statistics”
+###### 部分“statistics”
 
-此小节用于配置收集统计数据并将它们发送到 GridLinks 网关属性。
+此部分用于配置收集统计数据并将它们发送到 GridLinks 网关属性。
 
 | **参数** | **默认值** | **描述** |
 | :- | :- | :- |
@@ -196,9 +196,9 @@ description: GridLinks 物联网网关的安装结构和配置
 ```
 此外，您可以在 `/config/statistics/` 文件夹中找到不同操作系统（Linux、macOS、Windows）的示例文件。
 
-###### 小节“deviceFiltering”
+###### 部分“deviceFiltering”
 
-此小节是可选的，用于筛选允许向 ThingsBoard 发送数据的设备。
+此部分是可选的，用于筛选允许向 GridLinks 发送数据的设备。
 
 设备筛选功能允许您根据特定条件定义筛选设备的规则。
 
@@ -288,9 +288,9 @@ description: GridLinks 物联网网关的安装结构和配置
 
 设备筛选功能提供了一种灵活的方式来定义允许或拒绝访问连接器类型的规则，具体取决于设备名称。通过使用“deny”和“allow”属性，您可以轻松控制网关内的设备访问。
 
-###### 小节“checkingDeviceActivity”
+###### 部分“checkingDeviceActivity”
 
-此小节是可选的，用于监视每个已连接设备的活动。
+此部分是可选的，用于监视每个已连接设备的活动。
 
 如果您定义此部分，网关将每 n 秒检查每个设备的活动，这意味着如果设备在 n 秒内处于非活动状态，它将断开连接。
 
@@ -302,7 +302,7 @@ description: GridLinks 物联网网关的安装结构和配置
 | ... inactivityCheckPeriodSeconds | **10** | 设备活动检查的周期性 |
 | --- | | |
 
-###### 小节“security”
+###### 部分“security”
 
 {% capture securitytogglespec %}
 访问令牌<small>基本安全</small>%,%accessToken%,%templates/iot-gateway/security-accesstoken-config.md%br%
@@ -310,11 +310,11 @@ description: GridLinks 物联网网关的安装结构和配置
 TLS + 访问令牌<small>高级安全</small>%,%tlsToken%,%templates/iot-gateway/security-tls-token-config.md%br%
 TLS + 私钥<small>高级安全</small>%,%tls%,%templates/iot-gateway/security-tls-config.md{% endcapture %}
 
-安全小节有 3 种变体：
+安全部分有 3 种变体：
 
 {% include content-toggle.html content-toggle-id="securityConfig" toggle-spec=securitytogglespec %}
 
-###### 小节“provisioning”
+###### 部分“provisioning”
 
 {% capture provisioningtogglespec %}
 自动<small>服务器生成的访问令牌</small>%,%auto%,%templates/iot-gateway/provisioning-auto-config.md%br%
@@ -327,7 +327,7 @@ X.509 证书<small></small>%,%x509%,%templates/iot-gateway/provisioning-x-509-co
 
 #### 存储配置
 
-存储小节中的配置提供了在将传入数据发送到 GridLinks 平台之前将其保存的配置。
+存储部分中的配置提供了在将传入数据发送到 GridLinks 平台之前将其保存的配置。
 
 此部分有 2 个变体：内存或文件。
 1. **内存**存储 - 将接收到的数据保存到 RAM 内存。

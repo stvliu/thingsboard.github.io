@@ -9,7 +9,7 @@ description: GridLinks物联网网关的 OCPP 协议支持
 {:toc}
 
 本指南将帮助您熟悉 GridLinks物联网网关的 MQTT 连接器配置。
-使用 [常规配置](/docs/iot-gateway/configuration/) 启用此连接器。
+使用 [通用配置](/docs/iot-gateway/configuration/) 启用此连接器。
 此连接器的目的是使用 OCPP 协议在充电点和中央系统之间进行通信。
 
 我们将在下面描述连接器配置文件。
@@ -73,7 +73,7 @@ description: GridLinks物联网网关的 OCPP 协议支持
       ],
       "attributeUpdates": [
         {
-          "attributeOnThingsBoard": "shared",
+          "attributeOnGridLinks": "shared",
           "valueExpression": "{\"${attributeKey}\":\"${attributeValue}\"}"
         }
       ],
@@ -147,7 +147,7 @@ TLS<small>推荐</small>%,%tls%,%templates/iot-gateway/ocpp-connector-tls-connec
 
 ### “chargePoints” 部分
 
-此子部分包含充电点的常规设置和处理数据的子部分。
+此子部分包含充电点的通用设置和处理数据的子部分。
 
 | **参数**        | **默认值**      | **说明**                                                                                                                        |
 |:-|:-|-
@@ -186,7 +186,7 @@ TLS<small>推荐</small>%,%tls%,%templates/iot-gateway/ocpp-connector-tls-connec
 
 #### 子部分属性
 
-此子部分包含要解释为设备属性的处理数据的常规设置。
+此子部分包含要解释为设备属性的处理数据的通用设置。
 
 | **参数**           | **默认值**                            | **说明**                                                                                                                       |
 |:-|:-|-
@@ -215,7 +215,7 @@ TLS<small>推荐</small>%,%tls%,%templates/iot-gateway/ocpp-connector-tls-connec
 
 #### 子部分时序
 
-此子部分包含要解释为时序的处理数据的常规设置。
+此子部分包含要解释为时序的处理数据的通用设置。
 
 | **参数**           | **默认值**                            | **说明**                                                                                                                       |
 |:-|:-|-
@@ -245,7 +245,7 @@ TLS<small>推荐</small>%,%tls%,%templates/iot-gateway/ocpp-connector-tls-connec
 
 | **参数**           | **默认值**                               | **说明**                                                                         |
 |:-|:-|-
-| attributeOnThingsBoard  | **sharedName**                                  | 共享属性名称。                                                                  |
+| attributeOnGridLinks  | **sharedName**                                  | 共享属性名称。                                                                  |
 | valueExpression         | **{\"${attributeKey}\":\"${attributeValue}\"}** | 用于创建将发送到充电点消息数据的 JSON 路径表达式。 |
 |---
 
@@ -253,7 +253,7 @@ TLS<small>推荐</small>%,%tls%,%templates/iot-gateway/ocpp-connector-tls-connec
 ```json
 "attributeUpdates": [
   {
-    "attributeOnThingsBoard": "shared",
+    "attributeOnGridLinks": "shared",
     "valueExpression": "{\"${attributeKey}\":\"${attributeValue}\"}"
   }
 ]

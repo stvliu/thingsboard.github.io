@@ -1,6 +1,6 @@
 ![](/images/gateway/dashboard/gateway-dashboard-general-conf.png)
 
-常规 - 此选项卡包含主要设置，即：
+通用 - 此选项卡包含主要设置，即：
 - 远程配置 - 启用网关的远程配置和管理；
 - 远程 Shell - 从远程 Shell 小部件启用对网关操作系统的远程控制；
 - GirdLinks 主机 - GridLinks 服务器的主机名或 IP 地址；

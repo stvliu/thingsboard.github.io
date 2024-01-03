@@ -62,7 +62,7 @@ description: GridLinks Edge 版本说明
 
 * [#6953](https://github.com/thingsboard/thingsboard/pull/6953) 在从边缘取消分配规则链期间检查丢失的边缘规则链；
 * [#7044](https://github.com/thingsboard/thingsboard/pull/7044) 固件 ID 未从云同步到边缘的设备/设备配置文件；
-* [#7095](https://github.com/thingsboard/thingsboard/pull/7095) 在同步完成后启动常规边缘事件进程；
+* [#7095](https://github.com/thingsboard/thingsboard/pull/7095) 在同步完成后启动通用边缘事件进程；
 
 ## v3.4（2022 年 7 月 21 日）
 

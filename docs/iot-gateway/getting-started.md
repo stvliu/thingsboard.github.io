@@ -109,7 +109,7 @@ description: 配置 MQTT、OPC-UA 和 Modbus 连接器，以便在 Docker 容器
 {% assign enableRemoteLogging = '
     ===
         image: /images/gateway/dashboard/general-configuration-1-ce.png,
-        title: 在网关仪表板上，单击右侧面板上的 **“常规配置”** 按钮。
+        title: 在网关仪表板上，单击右侧面板上的 **“通用配置”** 按钮。
     ===
         image: /images/gateway/dashboard/general-configuration-2-ce.png,
         title: 导航到“**日志**”选项卡。启用“**远程日志**”开关。在“**日志级别**”行中选择“**DEBUG**”。

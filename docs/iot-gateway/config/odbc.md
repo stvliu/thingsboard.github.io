@@ -9,7 +9,7 @@ description: GridLinks物联网网关的 ODBC 支持
 {:toc}
 
 本指南将帮助您熟悉 GridLinks物联网网关的 ODBC 连接器配置。
-使用 [常规配置](/docs/iot-gateway/configuration/) 启用此连接器。
+使用 [通用配置](/docs/iot-gateway/configuration/) 启用此连接器。
 我们将在下面描述连接器配置文件。
 
 <b>ODBC 连接器配置文件示例。</b>
@@ -18,7 +18,7 @@ description: GridLinks物联网网关的 ODBC 支持
 
 {
   "connection": {
-    "str": "Driver={PostgreSQL};Server=localhost;Port=5432;Database=thingsboard;Uid=postgres;Pwd=postgres;",
+    "str": "Driver={PostgreSQL};Server=localhost;Port=5432;Database=gridlinks;Uid=postgres;Pwd=postgres;",
     "attributes": {
       "autocommit": true,
       "timeout": 0
@@ -97,13 +97,13 @@ description: GridLinks物联网网关的 ODBC 支持
 
 **注意**：有关编码/解码的更多信息，请阅读 [此处](https://github.com/mkleehammer/pyodbc/wiki/Unicode)。
 
-### “attributes”小节
+### “attributes”章节
 
-此 **可选** 小节提供了 [多个选项](https://github.com/mkleehammer/pyodbc/wiki/Connection#connection-attributes) 来调整连接过程。
+此 **可选** 章节提供了 [多个选项](https://github.com/mkleehammer/pyodbc/wiki/Connection#connection-attributes) 来调整连接过程。
 
-### “decoding”小节
+### “decoding”章节
 
-此 **可选** 小节提供了有关如何解码从数据库读取的字符串数据和元数据的信息。
+此 **可选** 章节提供了有关如何解码从数据库读取的字符串数据和元数据的信息。
 
 | **参数** | **默认值** | **说明** |
 |:-|:-|-|
@@ -169,9 +169,9 @@ ORDER BY ts ASC                                      (5)
 LIMIT 10                                             (6)
 ```
 
-### “iterator”小节
+### “iterator”章节
 
-此 **强制性** 小节提供了有关用于迭代结果集的数据库列、迭代器的初始值以及是否在网关工作会话之间使用迭代器数据的信息。
+此 **强制性** 章节提供了有关用于迭代结果集的数据库列、迭代器的初始值以及是否在网关工作会话之间使用迭代器数据的信息。
 <br>
 <br>
 **重要提示**
@@ -227,9 +227,9 @@ LIMIT 10                                             (6)
 | attributes | | 设备属性列表。 |
 | timeseries | | 时序键列表。 |
 
-### “device”小节
+### “device”章节
 
-此 **强制性** 小节提供了有关如何将结果集映射到 **唯一** 设备名称及其类型的信息。
+此 **强制性** 章节提供了有关如何将结果集映射到 **唯一** 设备名称及其类型的信息。
 
 | **参数** | **默认值** | **说明** |
 |:-|:-|-|
@@ -246,11 +246,11 @@ LIMIT 10                                             (6)
 ```
 ,表示设备名称是两个字符串的连接结果：*ODBC* 和数据库列 *entity_id* 的值。
 
-### “attributes”和“timeseries”小节
+### “attributes”和“timeseries”章节
 
-这些 **可选** 小节提供了有关哪些数据库列被视为属性，哪些被视为时序键，以及在发送到 GridLinks 服务器之前应执行哪些预处理工作的信息。
+这些 **可选** 章节提供了有关哪些数据库列被视为属性，哪些被视为时序键，以及在发送到 GridLinks 服务器之前应执行哪些预处理工作的信息。
 
-连接器支持这些小节的几种配置模式：
+连接器支持这些章节的几种配置模式：
 
 * 数据库列列表
 ```json
@@ -305,11 +305,11 @@ LIMIT 10                                             (6)
 
 | **参数** | **默认值** | **说明** |
 |:-|:-|-|
-| enableUnknownRpc | **false** | 允许处理未在 *methods* 小节中列出的 RPC 命令。 |
+| enableUnknownRpc | **false** | 允许处理未在 *methods* 章节中列出的 RPC 命令。 |
 | overrideRpcConfig | **false** | 允许通过从服务器收到的数据覆盖 RPC 命令配置。 |
 | methods | | RPC 方法及其参数的列表。 |
 
-连接器支持 *methods* 小节的几种配置模式：
+连接器支持 *methods* 章节的几种配置模式：
 
 * 不带参数的过程/函数列表
 ```json

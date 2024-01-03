@@ -118,7 +118,7 @@ description: GridLinks物联网网关的 REST API 端点支持
 {% include code-toggle.liquid code=restConf params="conf|.copy-code.expandable-20" %}
 
 
-### 常规部分
+### 通用部分
 {% capture restconnectorsecuritytogglespec %}
 使用 SSL<small>推荐</small>%,%accessToken%,%templates/iot-gateway/rest-connector-ssl-security-config.md%br%
 不使用 SSL<small>无安全</small>%,%anonymous%,%templates/iot-gateway/rest-connector-no-ssl-security-config.md{% endcapture %}
@@ -190,7 +190,7 @@ REST 连接器中的响应可以有 3 种配置变体：
     | ... unsuccessfulResponse      | **Error**                                             | 仅当响应状态不同于 200 时 |
     |---
 
-3. **高级** ThingsBoard 将返回的远程响应。
+3. **高级** GridLinks 将返回的远程响应。
    1. 要配置该变体，您必须在配置文件中指定一个新部分，如下面的示例所示：
 
        | **参数** | **默认值** | **说明** |

@@ -26,7 +26,7 @@ GridLinks Web 界面允许您通过单击几下配置您的公司或产品徽标
 
 {% include images-gallery.html imageCollection="white-labeling-default" %}
 
-在“常规”选项卡中，您可以设置或更改以下选项：
+在“通用”选项卡中，您可以设置或更改以下选项：
 
 - 应用程序标题 - 您可以指定自定义页面标题，该标题显示在浏览器选项卡中；
 

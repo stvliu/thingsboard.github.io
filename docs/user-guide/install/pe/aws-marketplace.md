@@ -22,7 +22,7 @@ redirect_from: "/docs/user-guide/install/aws-marketplace-pe/"
 
 - 单击 **继续订阅** 按钮
 
-### 步骤 2. 常规配置
+### 步骤 2. 通用配置
 
 - 查看并接受所有条款和条件。单击“接受条款”按钮。
 

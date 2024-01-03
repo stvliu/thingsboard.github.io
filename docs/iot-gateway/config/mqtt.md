@@ -14,9 +14,9 @@ redirect_from:
 This guide will help you to get familiar with MQTT Connector configuration for GridLinks IoT Gateway.
 Use [general configuration](/docs/iot-gateway/configuration/) to enable this Connector. 
 The purpose of this Connector is to connect to external MQTT broker and subscribe to data feed from devices. 
-Connector is also able to push data to MQTT brokers based on the updates/commands from ThingsBoard. 
+Connector is also able to push data to MQTT brokers based on the updates/commands from GridLinks. 
 
-This Connector is useful when you have local MQTT broker in your facility or corporate network and you would like to push data from this broker to ThingsBoard.
+This Connector is useful when you have local MQTT broker in your facility or corporate network and you would like to push data from this broker to GridLinks.
 
 We will describe connector configuration file below.
 
@@ -214,7 +214,7 @@ Then, connector will subscribe to a list of topics using topic filters from mapp
 | name                 | **Default Local Broker** | Broker name for logs and saving to persistent devices.                                  |
 | host                 | **localhost**            | Mqtt broker hostname or ip address.                                                     |
 | port                 | **1883**                 | Mqtt port on the broker.                                                                |
-| clientId             | **ThingsBoard_gateway**  | This is the client ID. It must be unique for each session.                              |
+| clientId             | **GridLinks_gateway**  | This is the client ID. It must be unique for each session.                              |
 | version              | **5**                    | MQTT protocol version.                                                                  |
 | sendDataOnlyOnChange | **false**                | Sending only if data changed from last check, if no – data will send after every check. |
 | ---                  
@@ -366,7 +366,7 @@ mosquitto_pub -h 127.0.0.1 -p 1883 -t "/sensor/data" -m '{"serialNumber": "SN-00
 ![image](/images/gateway/mqtt-message-1.png)
 {: refdef}
 
-The device will be created and displayed in ThingsBoard based on the passed parameters.
+The device will be created and displayed in GridLinks based on the passed parameters.
 {:refdef: style="text-align: center;"}
 ![image](/images/gateway/mqtt-created-device-1.png)
 {: refdef}
@@ -377,9 +377,9 @@ The device will be created and displayed in ThingsBoard based on the passed para
 
 ### Section "connectRequests"
 
-ThingsBoard allows sending RPC commands and notifications about device attribute updates to the device.
+GridLinks allows sending RPC commands and notifications about device attribute updates to the device.
 But in order to send them, the platform needs to know if the target device is connected and what gateway or session is used to connect the device at the moment.
-If your device is constantly sending telemetry data - ThingsBoard already knows how to push notifications.
+If your device is constantly sending telemetry data - GridLinks already knows how to push notifications.
 If your device just connects to MQTT broker and waits for commands/updates, you need to send a message to the Gateway and inform that device is connected to the broker.
  
 **1. Name in a message from broker:**
@@ -436,7 +436,7 @@ mosquitto_pub -h 127.0.0.1 -p 1883 -t "/sensor/connect" -m '{"serialNumber": "SN
 ![image](/images/gateway/mqtt-message-connect.png)
 {: refdef}
 
-Your ThingsBoard instance will get information from the broker about last connecting time of the device. You can see this information on the "Server attributes" scope ("Attributes" tab).
+Your GridLinks instance will get information from the broker about last connecting time of the device. You can see this information on the "Server attributes" scope ("Attributes" tab).
 
 {:refdef: style="text-align: center;"}
 ![image](/images/gateway/mqtt-connect-device.png)
@@ -503,7 +503,7 @@ mosquitto_pub -h 127.0.0.1 -p 1883 -t "/sensor/disconnect" -m '{"serialNumber": 
 ![image](/images/gateway/mqtt-message-disconnect.png)
 {: refdef}
 
-Your ThingsBoard instance will get information from the broker about last disconnecting time of the device. You can see this information on the "Server attributes" scope ("Attributes" tab).
+Your GridLinks instance will get information from the broker about last disconnecting time of the device. You can see this information on the "Server attributes" scope ("Attributes" tab).
 
 {:refdef: style="text-align: center;"}
 ![image](/images/gateway/mqtt-disconnect-device.png)
@@ -513,7 +513,7 @@ Your ThingsBoard instance will get information from the broker about last discon
 
 Configuration in this section are optional.
 
-In order to request client-side or shared device attributes to ThingsBoard server node, Gateway allows sending 
+In order to request client-side or shared device attributes to GridLinks server node, Gateway allows sending 
 attribute requests.
 
 | **Parameter**                 | **Default value**                                     | **Description**                                                       |
@@ -559,8 +559,8 @@ will look like:
 ### Section "attributeUpdates"
 
 This configuration section is optional.  
-ThingsBoard allows to provision device attributes and fetch some of them from the device application.
-You can treat this as a remote configuration for devices. Your devices are able to request shared attributes from ThingsBoard.
+GridLinks allows to provision device attributes and fetch some of them from the device application.
+You can treat this as a remote configuration for devices. Your devices are able to request shared attributes from GridLinks.
 See [user guide](/docs/user-guide/attributes/) for more details.
 
 The "**attributeRequests**" configuration allows configuring the format of the corresponding attribute request and response messages. 
@@ -591,7 +591,7 @@ This section in configuration file looks like:
 
 **Let's look at an example.**
 
-Run the command below. You will start the *mosquitto_sub* client that subscribes to the topic “/sensor/SN-001/FirmwareVersion” of the local broker and start waiting for new messages from ThingsBoard server to broker.
+Run the command below. You will start the *mosquitto_sub* client that subscribes to the topic “/sensor/SN-001/FirmwareVersion” of the local broker and start waiting for new messages from GridLinks server to broker.
 
 ```bash
 mosquitto_sub -t /sensor/SN-001/FirmwareVersion
@@ -602,7 +602,7 @@ mosquitto_sub -t /sensor/SN-001/FirmwareVersion
 ![image](/images/gateway/mqtt-mosquitto-sub-wait-1.png)
 {: refdef}
 
-Update device attribute value on the ThingsBoard server. Open Devices -> click by your device -> Attributes tab -> Shared attributes scope and click on the "pencil" button next to *"FirmwareVersion"* attribute.
+Update device attribute value on the GridLinks server. Open Devices -> click by your device -> Attributes tab -> Shared attributes scope and click on the "pencil" button next to *"FirmwareVersion"* attribute.
 
 {:refdef: style="text-align: center;"}
 ![image](/images/gateway/mqtt-update-attribute-1.png)
@@ -620,7 +620,7 @@ The firmware version has been updated to "1.2".
 ![image](/images/gateway/mqtt-update-attribute-3.png)
 {: refdef}
 
-Broker received new message from the ThingsBoard server about updating attribute "FirmwareVersion" to "1.2".
+Broker received new message from the GridLinks server about updating attribute "FirmwareVersion" to "1.2".
 
 {:refdef: style="text-align: center;"}
 ![image](/images/gateway/mqtt-mosquitto-sub-get-1.png)
@@ -628,9 +628,9 @@ Broker received new message from the ThingsBoard server about updating attribute
 
 ### Server side RPC commands
 
-ThingsBoard allows sending [RPC commands](/docs/user-guide/rpc/) to the device that is connected to ThingsBoard directly or via Gateway.
+GridLinks allows sending [RPC commands](/docs/user-guide/rpc/) to the device that is connected to GridLinks directly or via Gateway.
  
-Configuration, provided in this section uses for sending RPC requests from ThingsBoard to device.
+Configuration, provided in this section uses for sending RPC requests from GridLinks to device.
 
 | **Parameter**                 | **Default value**                                                 | **Description**                                                                                                                                                                  |
 |:-|:-|-
@@ -695,7 +695,7 @@ See [the guide](/docs/iot-gateway/guides/how-to-use-get-set-rpc-methods).
 
 ## Next steps
 
-Explore guides related to main ThingsBoard features:
+Explore guides related to main GridLinks features:
 
  - [Data Visualization](/docs/user-guide/visualization/) - how to visualize collected data.
  - [Device attributes](/docs/user-guide/attributes/) - how to use device attributes.

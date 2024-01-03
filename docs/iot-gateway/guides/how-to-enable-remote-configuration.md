@@ -43,7 +43,7 @@ description: 物联网网关远程配置
 
 以及导航元素：
 - **Docker 命令** - 单击后，将打开一个模态窗口，其中包含启动网关的命令；
-- **网关配置** - 单击后，将打开一个包含常规网关设置的模态窗口；
+- **网关配置** - 单击后，将打开一个包含通用网关设置的模态窗口；
 - **连接器** - 单击后，将打开一个用于管理和配置连接器的页面。
 
 此外，在此页面上，您可以创建新的网关，并根据上述参数对它们进行排序。
@@ -55,7 +55,7 @@ description: 物联网网关远程配置
 ![](/images/gateway/dashboard/gateway-dashboard.png)
 
 仪表板由 4 个主要小部件组成：
-- **常规网关信息**，包括以下卡片：
+- **通用网关信息**，包括以下卡片：
    - 状态（活动/非活动）；
    - 网关名称；
    - 网关类型；
@@ -84,7 +84,7 @@ description: 物联网网关远程配置
   
    ![](/images/gateway/dashboard/gateway-dashboard-launch-command.png)
 
-   - [常规配置](#general-configuration) - 包含常规网关设置的仪表板；
+   - [通用配置](#general-configuration) - 包含通用网关设置的仪表板；
   
    [![](/images/gateway/dashboard/gateway-dashboard-gen-conf-button.png)](#general-configuration)
 
@@ -96,7 +96,7 @@ description: 物联网网关远程配置
   
    [![](/images/gateway/dashboard/gateway-dashboard-logs-button.png)](#logs)
 
-   - [统计信息](#statistics) - 包含网关的常规和自定义统计信息的仪表板；
+   - [统计信息](#statistics) - 包含网关的通用和自定义统计信息的仪表板；
 
    [![](/images/gateway/dashboard/gateway-dashboard-statistics-button.png)](#statistics)
 
@@ -108,10 +108,10 @@ description: 物联网网关远程配置
 
    [![](/images/gateway/dashboard/gateway-dashboard-rpc-button.png)](#rpc)
 
-### 常规配置
+### 通用配置
 
-如果您单击导航面板中网关仪表板上的 **常规配置** 按钮，您将被转移到仪表板
-网关的常规设置。
+如果您单击导航面板中网关仪表板上的 **通用配置** 按钮，您将被转移到仪表板
+网关的通用设置。
 
 仪表板包含以下选项卡：
 
@@ -121,7 +121,7 @@ description: 物联网网关远程配置
 {% include templates/info-banner.md content=info %}
 
 {% capture gatewayconfigurationspec %}
-常规%,%general-toggle%,%templates/iot-gateway/gateway-dashboard-general-conf.md%br%
+通用%,%general-toggle%,%templates/iot-gateway/gateway-dashboard-general-conf.md%br%
 日志%,%logs-toggle%,%templates/iot-gateway/gateway-dashboard-logs-conf.md%br%
 存储%,%storage-toggle%,%templates/iot-gateway/gateway-dashboard-storage-conf.md%br%
 GRPC%,%grpc-toggle%,%templates/iot-gateway/gateway-dashboard-grpc-conf.md%br%
@@ -164,7 +164,7 @@ GRPC%,%grpc-toggle%,%templates/iot-gateway/gateway-dashboard-grpc-conf.md%br%
 
 ![](/images/gateway/dashboard/gateway-dashboard-logs.png)
 
-仪表板实时显示主要网关日志信息（常规、服务、连接、存储、扩展）：
+仪表板实时显示主要网关日志信息（通用、服务、连接、存储、扩展）：
 - 创建时间；
 - 状态；
 - 消息。
@@ -176,7 +176,7 @@ GRPC%,%grpc-toggle%,%templates/iot-gateway/gateway-dashboard-grpc-conf.md%br%
 ![](/images/gateway/dashboard/gateway-dashboard-statistics.png)
 
 仪表板包含两个小部件：
-- 网关常规图表统计信息 - 此处显示常规统计信息指标，即：
+- 网关通用图表统计信息 - 此处显示通用统计信息指标，即：
   - 发送到设备 - 从网关发送到设备的总数据量；
   - 发送到 GridLinks - 从网关发送到 GridLinks 的总数据量；
   - 从 GridLinks 接收 - 从 RPC 和属性更新接收的总数据量；

@@ -105,7 +105,7 @@ RTU+ 可以通过 [RTU+ 配置界面](https://nettra.tech) 轻松配置。为了
    <br><br>
    **Interfaz**：以太网 &nbsp;&nbsp; **Puerto**：1883<br>
    **Servidor**：ThingsBoard HOST/IP 地址，可在您的本地网络中访问。如果您使用 [实时演示](https://gridlinks.codingas.com/) 服务器，请指定 `demo.docs.codingas.com`。<br>
-   **Usuario**：$RTU_DEMO_TOKEN（在 *设备* 小节中提供）<br>
+   **Usuario**：$RTU_DEMO_TOKEN（在 *设备* 章节中提供）<br>
    **Contraseña**：留空<br>
    **Client ID**：RTU+<br>
    **Telemetry Topic**：v1/devices/me/telemetry<br>

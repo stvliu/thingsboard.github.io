@@ -75,7 +75,7 @@ user-edit-pe:
         title: '要添加新列，请单击对话框左下角的添加按钮。将出现一个新行，您可以在其中添加列。'
     5:
         image: /images/user-guide/ui/users/pe/user-edit-5-pe.png
-        title: '设置选项卡负责列的常规权限和界面。'
+        title: '设置选项卡负责列的通用权限和界面。'
     6:
         image: /images/user-guide/ui/users/pe/user-edit-6-pe.png
         title: '操作选项卡允许导航到特定仪表板或添加自定义操作（要了解有关操作的更多信息，请参阅下面的链接）。'

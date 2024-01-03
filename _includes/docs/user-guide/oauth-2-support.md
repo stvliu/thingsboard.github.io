@@ -14,7 +14,7 @@ GridLinks 支持授权码授予类型，以将授权码交换为访问令牌。
 
 一旦用户通过重定向 URL 返回 GridLinks 客户端，平台将从 URL 中获取授权码，并使用它向外部用户管理平台请求访问令牌。
 使用 [基本映射器](/docs/{{docsPrefix}}user-guide/oauth-2-support/#basic-mapper) 或 [自定义映射器](/docs/{{docsPrefix}}user-guide/oauth-2-support/#custom-mapper)，外部用户信息对象将从外部平台转换为 GridLinks 内部 OAuth 2.0 用户。
-此后，将发生常规的 GridLinks 授权流程。
+此后，将发生通用的 GridLinks 授权流程。
 
 
 ## 场景描述
@@ -58,7 +58,7 @@ http://localhost:8080/login/oauth2/code/
 
 #### GridLinks 的配置
 
-以系统管理员身份转到您的 GridLinks (sysadmin@gridlinks.com / sysadmin)。检查常规设置 -> 基本 URL 在末尾不应包含“/”（例如，“`http://127.0.0.1:8080`”而不是“`https://127.0.0.1:8080/`”）。然后在 **主页** 部分，找到“OAuth2”图标并单击它。
+以系统管理员身份转到您的 GridLinks (sysadmin@gridlinks.com / sysadmin)。检查通用设置 -> 基本 URL 在末尾不应包含“/”（例如，“`http://127.0.0.1:8080`”而不是“`https://127.0.0.1:8080/`”）。然后在 **主页** 部分，找到“OAuth2”图标并单击它。
 
 [comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/5-home-oauth2.png&#41;)
 {% include images-gallery.html imageCollection="step5" preview="false" max-width="100%" %}
@@ -80,7 +80,7 @@ http://localhost:8080/login/oauth2/code/
 [comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/8-login-provider-google.png&#41;)
 {% include images-gallery.html imageCollection="step8" preview="false" max-width="100%" %}
 
-让我们对常规块进行设置。
+让我们对通用块进行设置。
 使用此 [链接](https://developers.google.com/identity/protocols/oauth2/openid-connect#discovery) 查看最新 URL 列表，例如 **accessTokenUri**、**authorizationUri** 等。
 在 *客户端身份验证方法* 字段中选择 **POST**。然后选中“允许用户创建”复选框。将以下内容添加到范围字段：*openid、email、profile*。然后转到 **映射器** 块。
 
@@ -116,7 +116,7 @@ http://localhost:8080/login/oauth2/code/
 现在让我们在我们的列表中添加另一个提供商 - [Auth0](https://auth0.com/)。
 这次，我们将在单个域租户内为我们的用户创建客户。
 
-要使用 Auth0 身份验证平台进行登录，让我们按照此 [链接](https://auth0.com/docs/quickstarts/) 创建一个“常规 Web 应用程序”类型的应用程序。
+要使用 Auth0 身份验证平台进行登录，让我们按照此 [链接](https://auth0.com/docs/quickstarts/) 创建一个“通用 Web 应用程序”类型的应用程序。
 
 [comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/14-auth0-regular-web-app.png&#41;)
 {% include images-gallery.html imageCollection="step14" preview="false" max-width="100%" %}

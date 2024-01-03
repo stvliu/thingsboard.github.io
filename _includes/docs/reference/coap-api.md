@@ -9,7 +9,7 @@
 CoAP 协议基于 UDP，但类似于 HTTP，它使用请求-响应模型。
 CoAP 观察 [选项](https://tools.ietf.org/html/rfc7641) 允许订阅资源并在资源更改时接收通知。
 
-GridLinks 服务器节点充当支持常规请求和观察请求的 CoAP 服务器。
+GridLinks 服务器节点充当支持通用请求和观察请求的 CoAP 服务器。
 
 ##### 客户端库设置
 

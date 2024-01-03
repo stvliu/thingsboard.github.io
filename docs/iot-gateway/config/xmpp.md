@@ -9,7 +9,7 @@ description: GridLinks物联网网关的 XMPP 协议支持
 {:toc}
 
 本指南将帮助您熟悉 GridLinks物联网网关的 MQTT 连接器配置。
-使用 [常规配置](/docs/iot-gateway/configuration/) 启用此连接器。
+使用 [通用配置](/docs/iot-gateway/configuration/) 启用此连接器。
 此连接器的目的是使用 XMPP 协议从 IoT 设备收集数据。
 
 我们将在下面描述连接器配置文件。
@@ -59,7 +59,7 @@ description: GridLinks物联网网关的 XMPP 协议支持
       ],
       "attributeUpdates": [
         {
-          "attributeOnThingsBoard": "shared",
+          "attributeOnGridLinks": "shared",
           "valueExpression": "{\"${attributeKey}\":\"${attributeValue}\"}"
         }
       ],
@@ -168,7 +168,7 @@ description: GridLinks物联网网关的 XMPP 协议支持
 
 | **参数**           | **默认值**                               | **说明**                                                                   |
 |:-|:-|-
-| attributeOnThingsBoard  | **sharedName**                                  | 共享属性名称。                                                            |
+| attributeOnGridLinks  | **sharedName**                                  | 共享属性名称。                                                            |
 | valueExpression         | **{\"${attributeKey}\":\"${attributeValue}\"}** | 用于创建将发送到设备的消息数据的 JSON 路径表达式。 |
 |---
 
@@ -176,7 +176,7 @@ description: GridLinks物联网网关的 XMPP 协议支持
 ```json
 "attributeUpdates": [
   {
-    "attributeOnThingsBoard": "shared",
+    "attributeOnGridLinks": "shared",
     "valueExpression": "{\"${attributeKey}\":\"${attributeValue}\"}"
   }
 ]
@@ -191,7 +191,7 @@ GridLinks 允许将 RPC 命令直接或通过网关发送到连接到 GridLinks 
 | **参数**           | **默认值**    | **说明**                                                                   |
 |:-|:-|-
 | methodRPC               | **rpcMethod1**       | RPC 方法名称。                                                                  |
-| withResponse            | **true**             | 布尔值，表示是否向 ThingsBoard 发送响应。                                            |
+| withResponse            | **true**             | 布尔值，表示是否向 GridLinks 发送响应。                                            |
 | valueExpression         | **${params}**        | 用于创建将发送到设备的消息数据的 JSON 路径表达式。 |
 |---
 

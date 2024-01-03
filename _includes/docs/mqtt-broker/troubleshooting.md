@@ -137,9 +137,9 @@ TBMQ 中的 Spring Actuator 可以通过 Prometheus 公开一些内部状态指�
 
 #### TBMQ 特定指标：
 
-- <i>incomingPublishMsg_published</i>（statsNames - <i>totalMsgs, successfulMsgs, failedMsgs</i>）：有关要保存在常规队列中的传入发布消息的统计信息。
+- <i>incomingPublishMsg_published</i>（statsNames - <i>totalMsgs, successfulMsgs, failedMsgs</i>）：有关要保存在通用队列中的传入发布消息的统计信息。
 - <i>incomingPublishMsg_consumed</i>（statsNames - <i>totalMsgs, successfulMsgs, timeoutMsgs, failedMsgs, tmpTimeout,
-  tmpFailed, successfulIterations, failedIterations</i>）：有关从常规队列处理传入发布消息的统计信息。
+  tmpFailed, successfulIterations, failedIterations</i>）：有关从通用队列处理传入发布消息的统计信息。
 - <i>deviceProcessor</i>（statsNames - <i>successfulMsgs, failedMsgs, tmpFailed, successfulIterations, failedIterations</i>）：
   有关设备客户端消息处理的统计信息。
   一些统计信息说明：

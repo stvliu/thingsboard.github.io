@@ -71,7 +71,7 @@ We will describe connector configuration file below.
       ],
       "attributeUpdates": [
         {
-          "attributeOnThingsBoard": "softwareVersion",
+          "attributeOnGridLinks": "softwareVersion",
           "nodeId": 64,
           "isExtendedId": true,
           "dataLength": 4,
@@ -339,12 +339,12 @@ If *dataExpression* is not set, the value is left as it is.
 4. Send the final byte array through a CAN bus.
 
 #### Subsection "serverSideRpc"
-This subsection provides the list of configurations to process RPC commands from a ThingsBoard server to a device.
+This subsection provides the list of configurations to process RPC commands from a GridLinks server to a device.
 
 | **Parameter**            | **Default value**     | **Description**                                                         |
 |:-|:-|-
 | **method**               |                       | Name of RPC command.       |
-| response                 | **false**             | If true, [response](/docs/reference/gateway-mqtt-api/#server-side-rpc) will be sent to ThingsBoard.       |
+| response                 | **false**             | If true, [response](/docs/reference/gateway-mqtt-api/#server-side-rpc) will be sent to GridLinks.       |
 | **nodeId**               |                       | CAN node (arbitration) id.                                           |
 | isExtendedId             | **false**             | If True means extended CAN node (arbitration) id.                                                 |
 | isFd                     | **false**             | If True means using CAN FD mode.                                  |
@@ -408,7 +408,7 @@ So after processing the _setSpeed_ RPC command CAN payload is following:
 
 ## Next steps
 
-Explore guides related to main ThingsBoard features:  
+Explore guides related to main GridLinks features:  
 
  - [Data Visualization](/docs/user-guide/visualization/) - how to visualize collected data.
  - [Device attributes](/docs/user-guide/attributes/) - how to use device attributes.

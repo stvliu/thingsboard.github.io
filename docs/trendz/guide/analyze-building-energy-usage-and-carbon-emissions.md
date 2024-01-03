@@ -164,7 +164,7 @@ return totalUsage * emissionConversionFactor;
 * 将 `energyMeter.sourceType` 添加到过滤器部分
 * 将 `energyMeter.area` 添加到过滤器部分
 * 将 `building` 添加到过滤器部分
-* 打开视图设置，`常规` 部分并配置默认排序
+* 打开视图设置，`通用` 部分并配置默认排序
   * 点击 `排序顺序`
   * 启用降序排序
   * 排序列 - `usageKWH`
@@ -189,7 +189,7 @@ return totalUsage * emissionConversionFactor;
 * 将 `energyMeter.usageKWH` 添加到 Y 轴部分
 * 将 `building` 添加到过滤器部分
 * 将默认时间范围设置为本月
-* 打开视图设置，`常规` 部分并配置默认排序
+* 打开视图设置，`通用` 部分并配置默认排序
   * 点击 `排序顺序`
   * 启用降序排序
   * 排序列 - `usageKWH`
@@ -237,7 +237,7 @@ return totalUsage * emissionConversionFactor;
 
 现在我们有一张卡片，上面显示了本月的二氧化碳排放量以及按日细分，这将突出显示异常行为和趋势线。现在让我们启用比较：
 
-* 打开 `常规` 视图设置
+* 打开 `通用` 视图设置
 * 将复选框 `启用比较` 设置为 `true`
 * 将卡片标题设置为 **二氧化碳排放**
 * 使用名称 **卡片：二氧化碳排放见解** 保存视图

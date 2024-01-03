@@ -3,7 +3,7 @@
 
 ## 前提条件
 
-我们假设您已经完成了常规的 [入门](/docs/{{docsPrefix}}getting-started-guides/helloworld/) 指南，以便熟悉 GridLinks。我们还建议您首先查看 [设备配置文件](/docs/{{docsPrefix}}user-guide/device-profiles/) 文档。
+我们假设您已经完成了通用的 [入门](/docs/{{docsPrefix}}getting-started-guides/helloworld/) 指南，以便熟悉 GridLinks。我们还建议您首先查看 [设备配置文件](/docs/{{docsPrefix}}user-guide/device-profiles/) 文档。
 
 ## Sparkplug 基础知识
 

@@ -9,7 +9,7 @@ description: GridLinks物联网网关的 FTP 协议支持
 {:toc}
 
 本指南将帮助您熟悉 GridLinks物联网网关的 FTP 连接器配置。
-使用 [常规配置](/docs/iot-gateway/configuration/) 启用此连接器。
+使用 [通用配置](/docs/iot-gateway/configuration/) 启用此连接器。
 此连接器的目的是连接到外部 FTP 服务器并从特定路径的文件中获取数据。
 连接器还能够根据 GridLinks 的更新/命令将数据推送到 FTP 服务器文件。
 
@@ -99,7 +99,7 @@ description: GridLinks物联网网关的 FTP 协议支持
 {% endcapture %}
 {% include code-toggle.liquid code=ftpConf params="conf|.copy-code.expandable-20" %}
 
-### 常规部分
+### 通用部分
 
 | **参数** | **默认值** | **说明** |
 |:-|:-|-

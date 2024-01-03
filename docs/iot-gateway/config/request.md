@@ -150,7 +150,7 @@ description: GridLinks物联网网关的 HTTP 协议支持
 {% include code-toggle.liquid code=requestConf params="conf|.copy-code.expandable-20" %}
 
 
-### 常规部分
+### 通用部分
 
 | **参数** | **默认值** | **说明** |
 |:-|:-|:-|

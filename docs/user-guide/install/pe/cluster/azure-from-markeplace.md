@@ -32,7 +32,7 @@ description: 从 Azure Marketplace 安装 GridLinks PE
 
 ![image](/images/user-guide/install/azure-marketplace/create.png)
 
-### 步骤 2. 常规配置
+### 步骤 2. 通用配置
 
 - 您将被重定向到“创建虚拟机”对话框，其中包含大量设置。
 不用担心，我们将保留其中大多数的默认值。

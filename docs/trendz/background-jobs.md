@@ -18,7 +18,7 @@ description: Trendz Analytics 中的后台处理作业
 后台作业会通过 API 定期从 GridLinks 获取数据，并且这些请求应该经过身份验证。为了做到这一点，我们需要将 JWT 令牌签名密钥从 GridLinks 复制到 Trendz 配置中。
 
 * 以系统管理员身份登录 ThingsBoard
-* 转到安全 -> 常规
+* 转到安全 -> 通用
 * 复制签名密钥
 * 打开 Trendz 配置文件 **/etc/trendz/conf/trendz.conf**
 * 将以下行添加到配置文件中

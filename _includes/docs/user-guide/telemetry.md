@@ -146,7 +146,7 @@ PostgreSQL 和 Timescale 不支持每个插入行的生存时间 (TTL) 参数。
 GridLinks 提供以下 REST API 来获取实体数据：
 
 {% capture api_note %}
-**注意：**API 可通过 Swagger UI 使用。有关更多详细信息，请查看常规 [REST API](/docs/{{docsPrefix}}reference/rest-api/) 文档。API 向后兼容 TB v1.0+，这就是 API 调用 URL 包含“插件”的主要原因。
+**注意：**API 可通过 Swagger UI 使用。有关更多详细信息，请查看通用 [REST API](/docs/{{docsPrefix}}reference/rest-api/) 文档。API 向后兼容 TB v1.0+，这就是 API 调用 URL 包含“插件”的主要原因。
 {% endcapture %}
 {% include templates/info-banner.md content=api_note %}
 

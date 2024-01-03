@@ -31,7 +31,7 @@ GridLinks 允许您为您的客户提供单点登录功能，并使用支持 **O
 ![image](/images/user-guide/oauth-2-support/oauth0/Application-to-create.png)
 
 然后，我们需要指定应用程序名称和应用程序类型。
-应用程序名称等于 **clientName**。应用程序类型是 **常规 Web 应用程序**。
+应用程序名称等于 **clientName**。应用程序类型是 **通用 Web 应用程序**。
 
 ![image](/images/user-guide/oauth-2-support/oauth0/Application-creation.png)
 

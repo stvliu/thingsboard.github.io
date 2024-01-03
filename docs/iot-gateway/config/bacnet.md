@@ -9,7 +9,7 @@ description: GridLinks物联网网关的 BACnet 协议支持
 {:toc}
 
 BACnet 连接器是一种读取和写入 BACnet IP 设备中某些基本对象和属性的方法。
-使用 [常规配置](/docs/iot-gateway/configuration/) 启用此连接器。  
+使用 [通用配置](/docs/iot-gateway/configuration/) 启用此连接器。  
 我们将在下面描述连接器配置文件。  
 
 
@@ -77,7 +77,7 @@ BACnet 连接器是一种读取和写入 BACnet IP 设备中某些基本对象�
 {% endcapture %}
 {% include code-toggle.liquid code=bacnetConf params="conf|.copy-code.expandable-20" %}
 
-### “常规”部分：描述和配置参数
+### “通用”部分：描述和配置参数
 
 本部分中的配置用于在 BACnet 网络中配置网关。  
 
@@ -127,7 +127,7 @@ BACnet 连接器是一种读取和写入 BACnet IP 设备中某些基本对象�
 
 ###### “属性”的关键设置
 
-本小节中的配置单元提供设置，以便将来自 BACnet 设备的数据作为 GridLinks 平台实例上的设备属性进行处理。
+本章节中的配置单元提供设置，以便将来自 BACnet 设备的数据作为 GridLinks 平台实例上的设备属性进行处理。
 
 | **参数**  | **默认值**  | **描述**                                     |
 |:-|:-|-
@@ -149,7 +149,7 @@ BACnet 连接器是一种读取和写入 BACnet IP 设备中某些基本对象�
 
 ###### “时序”的关键设置
 
-本小节中的配置单元提供设置，以便将来自 BACnet 设备的数据作为 GridLinks 平台实例上的设备遥测进行处理。
+本章节中的配置单元提供设置，以便将来自 BACnet 设备的数据作为 GridLinks 平台实例上的设备遥测进行处理。
 
 | **参数**  | **默认值** | **描述**                                     |
 |:-|:-|-
@@ -170,7 +170,7 @@ BACnet 连接器是一种读取和写入 BACnet IP 设备中某些基本对象�
 ```
 
 ###### “属性更新”的关键设置
-本小节中的配置单元提供设置，以便将来自 GridLinks 平台实例上的共享属性的数据处理到 BACnet 设备。
+本章节中的配置单元提供设置，以便将来自 GridLinks 平台实例上的共享属性的数据处理到 BACnet 设备。
 
 | **参数**  | **默认值**  | **描述**                                                   |
 |:-|:-|-
@@ -193,7 +193,7 @@ BACnet 连接器是一种读取和写入 BACnet IP 设备中某些基本对象�
 ```
 
 ###### “服务器端 RPC”的关键设置
-本小节中的配置单元提供设置，以便将 RPC 从 GridLinks 实例处理到 BACnet 设备。
+本章节中的配置单元提供设置，以便将 RPC 从 GridLinks 实例处理到 BACnet 设备。
 
 | **参数**         | **默认值**  | **描述**                                                           |
 |:-|:-|-
@@ -231,7 +231,7 @@ BACnet 连接器对象标识符由冒号 (“:”) 符号分隔的两个部分�
 
 经过测试和支持的对象：  
 
-| **BACnet 对象 ID** | **ThingsBoard 对象 ID** |
+| **BACnet 对象 ID** | **GridLinks 对象 ID** |
 |-|-
 | **二进制输入**     | **binaryInput**  |
 | **二进制输出**    | **binaryOutput** |

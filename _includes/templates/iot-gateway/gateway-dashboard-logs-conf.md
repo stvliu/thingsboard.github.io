@@ -1,7 +1,7 @@
 ![](/images/gateway/dashboard/gateway-dashboard-logs-conf.png)
 
 日志 - 用于设置本地和 [远程日志](/docs/iot-gateway/guides/how-to-enable-remote-logging/) 的选项卡，它包含 3 个主要部分：
-- 常规日志设置 - 此处使用 Python [logging](https://docs.python.org/3.8/library/logging.config.html) 模块的常用设置：
+- 通用日志设置 - 此处使用 Python [logging](https://docs.python.org/3.8/library/logging.config.html) 模块的常用设置：
   - 日期格式 - 日志消息的日期格式；
   - 日志格式 - 日志消息格式。
 - 远程日志记录 - 配置远程日志：

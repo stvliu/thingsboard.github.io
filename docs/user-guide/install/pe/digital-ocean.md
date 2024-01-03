@@ -15,7 +15,7 @@ description: 在 DigitalOcean 上安装 GridLinks PE
 
 {% include templates/install/digital-ocean-droplet.md %}
 
-### 第 4 步。对 Ubuntu 使用常规安装说明
+### 第 4 步。对 Ubuntu 使用通用安装说明
 
 请导航至 ThingsBoard PE [**安装说明**](/docs/user-guide/install/pe/ubuntu/)
 适用于 Ubuntu 并完成安装步骤。

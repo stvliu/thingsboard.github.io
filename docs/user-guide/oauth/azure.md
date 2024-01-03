@@ -65,7 +65,7 @@ Azure Active Directory 需要使用 SSL。请确保您已为您的域配置 HTTP
 
 ![image](/images/user-guide/oauth-2-support/azure/azure-application-general-data.png)
 
-现在我们位于我们的常规页面上，我们可以在其中找到 **clientId** 和我们之前指定的 **clientName**。
+现在我们位于我们的通用页面上，我们可以在其中找到 **clientId** 和我们之前指定的 **clientName**。
 
 
 ![image](/images/user-guide/oauth-2-support/azure/azure-application-authentication.png)

@@ -170,9 +170,9 @@ description: GridLinks物联网网关的 SNMP 监控支持
 {% include code-toggle.liquid code=snmpConf params="conf|.copy-code.expandable-20" %}
 
 
-### 常规部分
+### 通用部分
 
-配置的常规部分包含 *"devices"* 列表。每个项目将被处理为一个单独的设备。
+配置的通用部分包含 *"devices"* 列表。每个项目将被处理为一个单独的设备。
 设备项的主要配置应包含以下参数：  
 
 | **参数** | **默认值** | **说明** |
@@ -192,12 +192,12 @@ description: GridLinks物联网网关的 SNMP 监控支持
 
 **注意**：配置对象中的一些配置参数取决于所使用的方法。您可以在 [此处](#supported-methods-and-their-configuration) 阅读有关方法的特定配置参数的更多信息
 
-常规配置参数为：
+通用配置参数为：
 
 | **参数** | **默认值** | **说明** |
 |:-|:-|:-|
 
-| key | **ReceivedFromGet** | ThingsBoard 上设备中的属性键。 |
+| key | **ReceivedFromGet** | GridLinks 上设备中的属性键。 |
 | method | **get** | 数据处理方法。支持的方法在 [此处](#supported-methods-and-their-configuration) 中。 |
 | oid | **1.3.6.1.2.1.1.1.0** | 管理器对象标识符。 |
 |---
@@ -219,12 +219,12 @@ description: GridLinks物联网网关的 SNMP 监控支持
 
 **注意**：配置对象中的一些配置参数取决于所使用的方法。您可以在 [此处](#supported-methods-and-their-configuration) 阅读有关方法的特定配置参数的更多信息
 
-常规配置参数为：
+通用配置参数为：
 
 | **参数** | **默认值** | **说明** |
 |:-|:-|:-|
 
-| key | **ReceivedFromTable** | ThingsBoard 上设备中的遥测键。 |
+| key | **ReceivedFromTable** | GridLinks 上设备中的遥测键。 |
 | method | **table** | 数据处理方法。支持的方法在 [此处](#supported-methods-and-their-configuration) 中。 |
 | oid | **1.3.6.1.2.1.1** | 管理器对象标识符。 |
 |---

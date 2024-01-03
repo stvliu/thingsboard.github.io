@@ -206,7 +206,7 @@ We will describe connector configuration file below.
     "deviceName": "Modbus_Slave_Example",
     "deviceType": "default",
     "pollPeriod": 5000,
-    "sendDataToThingsBoard": false,
+    "sendDataToGridLinks": false,
     "byteOrder": "BIG",
     "unitId": 0,
     "values": {
@@ -309,7 +309,7 @@ Available parameters are as follows:
 | deviceType                    | **sensors**                   | Type of the current slave                                                                  |
 | sendDataOnlyOnChange          | **false**                     | Sending only if data changed from last check, if no -- data will send after every check    |
 | connectAttemptTimeMs          | **5000**                      | A period in milliseconds for waiting to connect to the master                              |
-| connectAttemptCount           | **5**                         | The number of connection attempts made through the ThingsBoard gateway                     |
+| connectAttemptCount           | **5**                         | The number of connection attempts made through the GridLinks gateway                     |
 | waitAfterFailedAttemptsMs     | **300000**                    | A period in milliseconds for a wait before trying to send data to the master               |
 |---
 
@@ -346,11 +346,11 @@ Available parameters are as follows:
 ```
 
 ##### Key settings for "attributes"
-Configuration in this unit provides settings for processing data on Modbus server, which will be interpreted in ThingsBoard platform instance as attribute of device.
+Configuration in this unit provides settings for processing data on Modbus server, which will be interpreted in GridLinks platform instance as attribute of device.
 
 | **Parameter** | **Default value**   | **Description**                                                          |
 |:-|:-|-
-| tag           | **certificateNumber** | Tag, which will use as attribute key for ThingsBoard platform instance.        |
+| tag           | **certificateNumber** | Tag, which will use as attribute key for GridLinks platform instance.        |
 | type          | **32int**             | Type of value. [Available data types](#data-types)                             |
 | functionCode  | **4**                 | Function to use in processing data. [Modbus functions](#modbus-functions)      |
 | objectsCount  | **2**                 | Count of objects to read.                                                      |
@@ -387,17 +387,17 @@ Optional parameters:
 {: refdef}
 
 ##### Key settings for "timeseries"
-Configuration in this unit provides settings for processing data on Modbus server, which will be interpreted in ThingsBoard platform instance as telemetry of device.
+Configuration in this unit provides settings for processing data on Modbus server, which will be interpreted in GridLinks platform instance as telemetry of device.
 
 | **Parameter** | **Default value**   | **Description**                                                                              |
 |:-|:-|-
-| tag           | **telemetry_1** | Tag, which will use as attribute key for ThingsBoard platform instance.                             |
+| tag           | **telemetry_1** | Tag, which will use as attribute key for GridLinks platform instance.                             |
 | type          | **16uint**      | Type of value. [Available data types](#data-types)                                                  |
 | functionCode  | **4**           | Function to use in processing data. [Modbus functions](#modbus-functions)                           |
 | objectsCount  | **1**           | Count of objects to read.                                                                           |
 | address       | **1**           | Object address to check.                                                                            |
 |               |                 |                                                                                                     |
-| tag           | **telemetry_2** | Tag, which will use as attribute key for ThingsBoard platform instance.                             |
+| tag           | **telemetry_2** | Tag, which will use as attribute key for GridLinks platform instance.                             |
 | type          | **16uint**      | Type of value. [Available data types](#data-types)                                                  |
 | functionCode  | **4**           | Function to use in processing data. [Modbus functions](#modbus-functions)                           |
 | objectsCount  | **1**           | Count of objects to read.                                                                           |
@@ -437,7 +437,7 @@ Configuration in this unit provides settings for processing data on Modbus serve
 {: refdef}
 
 ##### Key settings for "attributeUpdates"
-Configuration in this unit provides settings for Attribute update requests from ThingsBoard platform instance.
+Configuration in this unit provides settings for Attribute update requests from GridLinks platform instance.
 
 | **Parameter** | **Default value**          | **Description**                                                             |
 |:-|:-|-
@@ -480,7 +480,7 @@ For example, create a new attribute “maxTemperature” and give it a value “
 {: refdef}
 
 ##### Key settings for "rpc"
-Configuration in this unit provides settings for RPC requests from ThingsBoard platform instance to device.
+Configuration in this unit provides settings for RPC requests from GridLinks platform instance to device.
 
 | **Parameter** | **Default value**       | **Description**                                                             |
 |:-|:-|-
@@ -514,7 +514,7 @@ Configuration in this unit provides settings for RPC requests from ThingsBoard p
 
 To send RPC requests to the gateway the one should use RPC Debug Terminal from Control widgets bundle.
 
-Execute "maxTemperature_read" RPC request from the ThingsBoard instance to the device.
+Execute "maxTemperature_read" RPC request from the GridLinks instance to the device.
 
 In response, you should receive the previously recorded value - "25".
 
@@ -559,7 +559,7 @@ Serial<small>Connection over serial port</small>%,%serial%,%templates/iot-gatewa
     "deviceName": "Modbus_Slave_Example",
     "deviceType": "default",
     "pollPeriod": 5000,
-    "sendDataToThingsBoard": false,
+    "sendDataToGridLinks": false,
     "byteOrder": "BIG",
     "unitId": 0
   }
@@ -703,7 +703,7 @@ A list and description of the supported data types for reading/writing data.
 
 ## Next steps
 
-Explore guides related to main ThingsBoard features:
+Explore guides related to main GridLinks features:
 
  - [Connect Modbus device](/docs/iot-gateway/guides/how-to-connect-modbus-device/) - how to connect Modbus device using GridLinks IoT Gateway
  - [Data Visualization](/docs/user-guide/visualization/) - how to visualize collected data.

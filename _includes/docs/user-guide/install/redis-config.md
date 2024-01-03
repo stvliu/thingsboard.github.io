@@ -111,67 +111,67 @@
             <td>redis.pool_config.maxTotal</td>
             <td>REDIS_POOL_CONFIG_MAX_TOTAL</td>
             <td>128</td>
-            <td>常规 redis 池设置</td>
+            <td>通用 redis 池设置</td>
         </tr>
         <tr>
             <td>redis.pool_config.maxIdle</td>
             <td>REDIS_POOL_CONFIG_MAX_IDLE</td>
             <td>128</td>
-            <td>常规 redis 池设置</td>
+            <td>通用 redis 池设置</td>
         </tr>
         <tr>
             <td>redis.pool_config.minIdle</td>
             <td>REDIS_POOL_CONFIG_MIN_IDLE</td>
             <td>16</td>
-            <td>常规 redis 池设置</td>
+            <td>通用 redis 池设置</td>
         </tr>
         <tr>
             <td>redis.pool_config.testOnBorrow</td>
             <td>REDIS_POOL_CONFIG_TEST_ON_BORROW</td>
             <td>true</td>
-            <td>常规 redis 池设置</td>
+            <td>通用 redis 池设置</td>
         </tr>
         <tr>
             <td>redis.pool_config.testOnReturn</td>
             <td>REDIS_POOL_CONFIG_TEST_ON_RETURN</td>
             <td>true</td>
-            <td>常规 redis 池设置</td>
+            <td>通用 redis 池设置</td>
         </tr>
         <tr>
             <td>redis.pool_config.testWhileIdle</td>
             <td>REDIS_POOL_CONFIG_TEST_WHILE_IDLE</td>
             <td>true</td>
-            <td>常规 redis 池设置</td>
+            <td>通用 redis 池设置</td>
         </tr>
         <tr>
             <td>redis.pool_config.minEvictableMs</td>
             <td>REDIS_POOL_CONFIG_MIN_EVICTABLE_MS</td>
             <td>60000</td>
-            <td>常规 redis 池设置</td>
+            <td>通用 redis 池设置</td>
         </tr>
         <tr>
             <td>redis.pool_config.evictionRunsMs</td>
             <td>REDIS_POOL_CONFIG_EVICTION_RUNS_MS</td>
             <td>30000</td>
-            <td>常规 redis 池设置</td>
+            <td>通用 redis 池设置</td>
         </tr>
         <tr>
             <td>redis.pool_config.maxWaitMills</td>
             <td>REDIS_POOL_CONFIG_MAX_WAIT_MS</td>
             <td>60000</td>
-            <td>常规 redis 池设置</td>
+            <td>通用 redis 池设置</td>
         </tr>
         <tr>
             <td>redis.pool_config.numberTestsPerEvictionRun</td>
             <td>REDIS_POOL_CONFIG_NUMBER_TESTS_PER_EVICTION_RUN</td>
             <td>3</td>
-            <td>常规 redis 池设置</td>
+            <td>通用 redis 池设置</td>
         </tr>
         <tr>
             <td>redis.pool_config.blockWhenExhausted</td>
             <td>REDIS_POOL_CONFIG_BLOCK_WHEN_EXHAUSTED</td>
             <td>true</td>
-            <td>常规 redis 池设置</td>
+            <td>通用 redis 池设置</td>
         </tr>
     </tbody>
 </table>

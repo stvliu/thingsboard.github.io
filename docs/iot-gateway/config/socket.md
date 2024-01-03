@@ -68,7 +68,7 @@ description: GridLinks物联网网关的 Socket API 支持
       "attributeUpdates": [
         {
           "encoding": "utf-16",
-          "attributeOnThingsBoard": "sharedName"
+          "attributeOnGridLinks": "sharedName"
         }
       ],
       "serverSideRpc": [
@@ -85,7 +85,7 @@ description: GridLinks物联网网关的 Socket API 支持
 {% endcapture %}
 {% include code-toggle.liquid code=socketConf params="conf|.copy-code.expandable-20" %}
 
-### 常规部分
+### 通用部分
 
 | **参数**     | **默认值**                     | **说明**                                          |
 |:-|:-|-
@@ -109,7 +109,7 @@ description: GridLinks物联网网关的 Socket API 支持
 }
 ```
 
-### 常规部分
+### 通用部分
 
 此配置部分包含一个对象数组，其中包含可以连接到连接器并发送数据的客户端。这意味着连接器拒绝所有未包含在此数组中的连接。
 
@@ -214,7 +214,7 @@ description: GridLinks物联网网关的 Socket API 支持
 | **参数**           | **默认值**                     | **说明**                                             |
 |:-|:-|-
 | encoding                | **utf-16**                            | 将接收到的字符串数据写入存储时使用的编码。 |
-| attributeOnThingsBoard  | **sharedName**                        | 共享属性名称                                       |
+| attributeOnGridLinks  | **sharedName**                        | 共享属性名称                                       |
 |---
 
 配置文件中的此子部分如下所示：
@@ -223,7 +223,7 @@ description: GridLinks物联网网关的 Socket API 支持
 "attributeUpdates": [
   {
     "encoding": "utf-16",
-    "attributeOnThingsBoard": "sharedName"
+    "attributeOnGridLinks": "sharedName"
   }
 ]
 ```
@@ -237,7 +237,7 @@ GridLinks 允许直接或通过网关连接到 GridLinks 的设备发送 RPC 命
 | **参数**           | **默认值**                     | **说明**                                                       |
 |:-|:-|-
 | methodRPC               | **rpcMethod1**                        | RPC 方法名称。                                                      |
-| withResponse            | **true**                              | 布尔值，表示是否向 ThingsBoard 发送或不发送响应。 |
+| withResponse            | **true**                              | 布尔值，表示是否向 GridLinks 发送或不发送响应。 |
 | methodProcessing        | **write**                             | 操作类型。                                                    |
 | encoding                | **utf-8**                             | 将接收到的字符串数据写入存储时使用的编码。           |
 |---

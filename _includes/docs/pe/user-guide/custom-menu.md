@@ -76,13 +76,13 @@ GridLinks 自定义菜单功能允许您扩展 GridLinks UI。
 | notification_rules        | 隐藏“通知中心”页面上的“规则”选项卡                                           |
 | api_usage                 | 隐藏左侧面板上的“API 使用情况”项                                                       |
 | white_labeling            | 隐藏左侧面板上的“品牌定制”项                                                  |
-| white_labeling_general    | 隐藏“品牌定制”页面上的“常规”选项卡                                               |
+| white_labeling_general    | 隐藏“品牌定制”页面上的“通用”选项卡                                               |
 | login_white_labeling      | 隐藏“品牌定制”页面上的“登录”选项卡                                                 |
 | mail_templates            | 隐藏“品牌定制”页面上的“邮件模板”选项卡                                        |
 | custom_translation        | 隐藏“品牌定制”页面上的“自定义翻译”选项卡                                    |
 | custom_menu               | 隐藏“品牌定制”页面上的“自定义菜单”选项卡                                           |
 | settings                  | 隐藏左侧面板上的“设置”项                                                        |
-| general                   | 隐藏“设置”页面上的“常规”选项卡（仅限系统管理员级别）            |
+| general                   | 隐藏“设置”页面上的“通用”选项卡（仅限系统管理员级别）            |
 | home_settings             | 隐藏“设置”页面上的“主页设置”选项卡                                               |
 | mail_server               | 隐藏“设置”页面上的“邮件服务器”选项卡                                                 |
 | notification_settings     | 隐藏“设置”页面上的“通知”选项卡                                               |
@@ -90,7 +90,7 @@ GridLinks 自定义菜单功能允许您扩展 GridLinks UI。
 | repository_settings       | 隐藏“设置”页面上的“存储库设置”选项卡                                         |
 | auto_commit_settings      | 隐藏“设置”页面上的“自动提交设置”选项卡                                        |
 | security_settings         | 隐藏左侧面板上的“安全”项                                                        |
-| security_settings_general | 隐藏“安全”下拉菜单中的“常规”项（仅限系统管理员级别） |
+| security_settings_general | 隐藏“安全”下拉菜单中的“通用”项（仅限系统管理员级别） |
 | 2fa                       | 隐藏左侧面板上的“双因素身份验证”项                                       |
 | roles                     | 隐藏左侧面板上的“角色”项                                                           |
 | self_registration         | 隐藏左侧面板上的“自助注册”项                                               |
