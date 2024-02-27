@@ -2,90 +2,88 @@
 {:toc}
 
 
-## Prerequisites
+## 前提条件
 
-We assume you have completed the general [Getting Started](/docs/{{docsPrefix}}getting-started-guides/helloworld/) guide to get familiar with GridLinks.
+我们假设您已完成一般[入门](/docs/{{docsPrefix}}getting-started-guides/helloworld/) 指南以熟悉 GridLinks。
 
-## LwM2M basics
+## LwM2M 基础知识
 
-[LwM2M](https://en.wikipedia.org/wiki/OMA_LWM2M) is a device management protocol designed for constrained devices and the demands of a machine-to-machine (M2M) environment.
-You can find more information about LwM2M [here](https://omaspecworks.org/what-is-oma-specworks/iot/lightweight-m2m-LWM2M/).
-Key advantage of the LwM2M protocol is a rich library of data structures that is called [LwM2M Object and Resource Registry](https://technical.openmobilealliance.org/OMNA/LwM2M/LwM2MRegistry.html).
-The up-to-date list of available objects is available inside [this](https://github.com/OpenMobileAlliance/lwm2m-registry) Github repository.
+[LwM2M](https://en.wikipedia.org/wiki/OMA_LWM2M) 是一种设备管理协议，专为受限设备和机器对机器 (M2M) 环境的需求而设计。
+您可以在[此处](https://omaspecworks.org/what-is-oma-specworks/iot/lightweight-m2m-LWM2M/)找到有关 LwM2M 的更多信息。
+LwM2M 协议的主要优势是丰富的数据结构库，称为 [LwM2M 对象和资源注册表](https://technical.openmobilealliance.org/OMNA/LwM2M/LwM2MRegistry.html)。
+最新的可用对象列表可在 [this](https://github.com/OpenMobileAlliance/lwm2m-registry) Github 存储库中找到。
 
-The registry allows efficient serialization/deserialization of telemetry.
-LwM2M Protocol defines process of device registration, configuration, management and firmware/software updates.
+注册表允许遥测的高效序列化/反序列化。
+LwM2M 协议定义了设备注册、配置、管理和固件/软件更新的过程。
 
-The LwM2M device supplies the list of LwM2M Objects it supports during registration.
-The LwM2M Object has an ID, version and one or multiple instances. Each LwM2M Object instance has multiple resources.
+LwM2M 设备在注册期间提供其支持的 LwM2M 对象列表。
+LwM2M 对象具有 ID、版本和一个或多个实例。 每个 LwM2M 对象实例都有多个资源。
 
-The LwM2M resource is a key concept that represents some data you may get or write to device. 
-For example, Resource "3.0.2" always represents the device serial number. Where "3" is the Object id, "0" is the Object instance and "2" is the resource id.
+LwM2M 资源是一个关键概念，它代表您可能获取或写入设备的一些数据。
+例如，资源“3.0.2”始终表示设备序列号。 其中“3”是对象 ID，“0”是对象实例，“2”是资源 ID。
 
-Each resource has the following main properties:
+每个资源都具有以下主要属性：
 
-* Name - human readable name of the resource
-* Type - data type: String, Integer, etc.
-* Operations - R (read), RW (read-write), E (execute), etc.
+* 名称 - 人类可读的资源名称
+* Type——数据类型：String、Integer等。
+* 操作 - R（读）、RW（读写）、E（执行）等。
 
-## Getting started
+## 入门
 
-This part of documentation covers provisioning of your first LwM2M device in GridLinks. We will use [Eclipse Wakaama](https://github.com/eclipse/wakaama#test-client-example) test client to simulate LwM2M device.
+这部分文档涵盖了在 GridLinks 中配置您的第一个 LwM2M 设备。 我们将使用[Eclipse Wakaama](https://github.com/eclipse/wakaama#test-client-example)测试客户端来模拟LwM2M设备。
 
-### Step 1. Upload LwM2M models
+### 步骤1.上传LwM2M模型
 
 {% unless docsPrefix == 'paas/' %}
-System administrator is able to upload LwM2M models using "Resource library" UI located in the "System settings" menu.
-One may upload multiple files at once. We recommend you to download list of available models from official [github](https://github.com/OpenMobileAlliance/lwm2m-registry) repo and import all of them.
+系统管理员可以使用“系统设置”菜单中的“资源库”UI 上传 LwM2M 模型。
+一个人可以一次上传多个文件。 我们建议您从官方 [github](https://github.com/OpenMobileAlliance/lwm2m-registry) 存储库下载可用模型列表并导入所有模型。
 
 {% include images-gallery.html imageCollection="upload-models" showListImageTitles="true" %}
 
 {% endunless %}
 
-<p> Tenant administrator is able to use LwM2M models defined by system administrator or overwrite them for the specific tenant.</p>
+<p> 租户管理员可以使用系统管理员定义的 LwM2M 模型或为特定租户覆盖它们。</p>
 
 {% include images-gallery.html imageCollection="upload-tenant" showListImageTitles="true" %}
 
+### 步骤 2. 定义 LwM2M 设备配置文件
 
-### Step 2. Define LwM2M device profile
+上传 LwM2M 模型后，您就可以使用它们来定义设备配置文件。
+有关设备配置文件的详细信息，请参阅常规设备配置文件[文档](/docs/{{docsPrefix}}user-guide/device-profiles/)。
 
-Once you upload the LwM2M models, you are ready to use them to define the device profile.
-See general device profile [documentation](/docs/{{docsPrefix}}user-guide/device-profiles/) for more info about device profiles.
+##### 步骤2.1 创建LwM2M 配置文件。
 
-##### Step 2.1 Create the LwM2M profile.
-
-The important step is to chose LwM2M Transport type on the "Transport configuration" step.
-The Transport Configuration allows us to define list of the LwM2M Objects that your devices supports.
+重要的一步是在“传输配置”步骤中选择 LwM2M 传输类型。
+传输配置允许我们定义您的设备支持的 LwM2M 对象列表。
 
 {% include images-gallery.html imageCollection="device-profile" showListImageTitles="true" %}
 
-##### Step 2.2 Choose LwM2M objects.
+##### 步骤 2.2 选择 LwM2M 对象。
 
-Let's define a profile that supports Device Object (id: 3), Connectivity (id: 4), Firmware Update (id: 5) and Location monitoring (id: 6):
+让我们定义一个支持设备对象 (id: 3)、连接性 (id: 4)、固件更新 (id: 5) 和位置监控 (id: 6) 的配置文件：
 
 {% include images-gallery.html imageCollection="device-objects" showListImageTitles="true" %}
 
-##### Step 2.3 Configure the mapping
+##### 步骤2.3 配置映射
 
-You may notice that Device Object supports Manufacturer, model, and serial numbers. Let’s configure GridLinks to fetch
-those data when device connects and store it as GridLinks attributes.
-Also we want to observe Radio Signal Strength, Link Quality and device location push it as GridLinks telemetry.
-Observe is a powerful LwM2M feature that will instruct a device to report changes of those values.
-You may also define conditions for reporting specific resource via LwM2M attributes. These settings are covered in the [advanced](#object-and-resource-attributes) documentation.
+您可能会注意到设备对象支持制造商、型号和序列号。 让我们配置 GridLinks 来获取
+设备连接时的这些数据并将其存储为 GridLinks 属性。
+此外，我们希望观察无线电信号强度、链路质量和设备位置，将其作为 GridLinks 遥测数据推送。
+观察是一项强大的 LwM2M 功能，它将指示设备报告这些值的变化。
+您还可以通过 LwM2M 属性定义报告特定资源的条件。 这些设置包含在[高级](#object-and-resource-attributes) 文档中。
 
 {% include images-gallery.html imageCollection="data-fetch" showListImageTitles="true" %}
 
-Note: if you un-check all items from the Object(Telemetry, Attributes, Observe) - this object will not be displayed in the
-device profile.
+注意：如果您取消选中对象中的所有项目（遥测、属性、观察） - 该对象将不会显示在设备配置文件。
 
-Transport Configuration also allows you to define bootstrap and other settings.
+传输配置还允许您定义引导程序和其他设置。
 
-### Step 3. Define LwM2M device credentials
+### 步骤 3. 定义 LwM2M 设备凭证
 
-We assume you have already created LwM2M device profile using the previous step.
+我们假设您已经使用上一步创建了 LwM2M 设备配置文件。
 
-Now, let's create the device using our profile and configure LwM2M Credentials.
-GridLinks supports 4 different types of credentials: Pre-Shared Key (PSK), Raw Public Ket (RPK), X.509 Certificates and "No Security" mode.
+现在，让我们使用我们的配置文件创建设备并配置 LwM2M 凭证。
+GridLinks 支持 4 种不同类型的凭据：预共享密钥 (PSK)、原始公钥 (RPK)、X.509 证书和“无安全”模式。
 
 {% include images-gallery.html imageCollection="device-credentials" showListImageTitles="true" %}
 
