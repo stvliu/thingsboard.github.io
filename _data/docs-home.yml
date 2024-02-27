@@ -222,21 +222,21 @@ toc:
       path: /docs/user-guide/psm/
     - title: 批量预配
       path: /docs/user-guide/bulk-provisioning/
-    - title: 实体组
-      path: /docs/pe/user-guide/groups/
-      pe: true
-    - title: 计划任务
-      path: /docs/pe/user-guide/scheduler/
-      pe: true
-    - title: 报告
-      path: /docs/pe/user-guide/reporting/
-      pe: true
-    - title: CSV/XLS数据导出
-      path: /docs/pe/user-guide/csv-xls-data-export/
-      pe: true
-    - title: 文件存储
-      path: /docs/pe/user-guide/file-storage/
-      pe: true
+    # - title: 实体组
+    #   path: /docs/pe/user-guide/groups/
+    #   pe: true
+    # - title: 计划任务
+    #   path: /docs/pe/user-guide/scheduler/
+    #   pe: true
+    # - title: 报告
+    #   path: /docs/pe/user-guide/reporting/
+    #   pe: true
+    # - title: CSV/XLS数据导出
+    #   path: /docs/pe/user-guide/csv-xls-data-export/
+    #   pe: true
+    # - title: 文件存储
+    #   path: /docs/pe/user-guide/file-storage/
+    #   pe: true
     - title: GridLinks 表达式语言(TBEL)
       path: /docs/user-guide/tbel/
       new: true
@@ -299,14 +299,14 @@ toc:
     path: /docs/user-guide/ui/rule-chains/
   - title: 仪表盘
     path: /docs/user-guide/ui/dashboards/
-  - title: 实体组
-    path: /docs/pe/user-guide/groups/
-    pe: true
+  # - title: 实体组
+  #   path: /docs/pe/user-guide/groups/
+  #   pe: true
   - title: SMS供应商设置
     path: /docs/user-guide/ui/sms-provider-settings/
   - title: Slack设置
     path: /docs/user-guide/ui/slack-settings/
-  - title: 微软团队设置
+  - title: Microsoft Teams设置
     path: /docs/user-guide/ui/microsoft-teams-settings/
     new: true
   - title: 邮件设置
