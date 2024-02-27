@@ -14,8 +14,6 @@
 
 **GridLinks Community** 版本支持以下实体的限制：设备、资产、客户、用户、仪表板和规则链。
 
-**GridLinks Professional** 版本支持上述所有内容的限制，以及以下实体的额外约束支持：集成、转换器和调度程序事件。
-
 {% include images-gallery.html imageCollection="entityLimits" %}
 
 ## API 限制和使用情况

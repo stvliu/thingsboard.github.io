@@ -3,7 +3,7 @@
 
 ## 功能概述
 
-ThingsBoard (TB) 实体视图 (EV) 自 v2.2 起可用。此功能是许多 TB 用户要求的。
+GridLinks 实体视图 (EV) 自 v2.2 起可用。此功能是许多 TB 用户要求的。
 类似于 SQL 数据库视图，它限制了底层表对外界的公开程度，TB EV 限制了设备或资产 [遥测](/docs/{{docsPrefix}}user-guide/telemetry/) 和 [属性](/docs/{{docsPrefix}}user-guide/attributes/) 对 [客户](/docs/{{docsPrefix}}user-guide/ui/customers/) 的公开程度。
 作为租户管理员，您能够为每个设备或资产创建多个 EV，并将它们分配给不同的客户。
 
